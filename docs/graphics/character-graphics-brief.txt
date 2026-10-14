@@ -1,0 +1,65 @@
+I want you to upgrade the character graphics in my existing browser game, Bagseed. Start by producing a visual approval package. Do not edit, patch, regenerate, or replace the game HTML until I explicitly approve the character samples.
+
+INPUTS AND AUTHORITY
+- Use Bagseed_v1.1.5.1_Night_Walker_Flashlights_Update.html as the sole implementation baseline. This is the last approved working build.
+- Its SHA-256 is 4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164. Verify the attached bytes and keep an untouched backup. If a different file arrives, identify the mismatch before choosing a baseline.
+- Read all three Bagseed_Reference_Volume ZIPs. They contain 1,080 reference pictures from 30 games, with 35 to 40 pictures per game. Start with Bagseed_Character_Evidence_Guide.pdf, then inspect the individual assets and volume PDFs.
+- Read Reference_Sources.md, .csv, or .json to connect every selected example to a game, reference ID, original URL, and any recorded video timestamp or crop parent.
+- This prompt supersedes the older Claude handoff and any statements in the research PDFs assigning implementation to Claude. Codex is doing this attempt.
+- The previous Bagseed_v1.1.5.1_Character_Art_Update.html was rejected. Do not use its renderer or artwork as your starting point. The earlier 925-reference collection was rejected too. Use these expanded direct-game volumes.
+
+THE VISUAL GOAL
+I want cute, attractive, inviting characters like Stardew Valley and FarmVille. The previous attempt made the faces stiff, the hair blocky, and the shading unpleasant. More pixels alone did not improve the art. Visual quality is central to this game.
+
+Use direct visual evidence from the supplied games to guide readable silhouettes, faces, hairstyles, clothes, expressions, and animation. Stardew Valley and FarmVille are my stated anchors. Fields of Mistria, Roots of Pacha, and other games can support a proposed direction, but I have not approved a blend of their styles.
+
+Create original Bagseed characters. Study proportions, pixel clusters, color relationships, and movement from the references rather than importing another game's character assets. Treat "32 bit" as a request for a richer, clearer visual style. Propose an actual sprite and portrait resolution only after comparing it at the game's real display size.
+
+PHASE 1: RESEARCH, AUDIT, AND VISIBLE SAMPLES
+Complete this phase before requesting approval. A plan, code listing, or verbal description is not a substitute for rendered artwork.
+
+1. Inspect the approved HTML to identify the actual character roster, saved appearance data, sprite and portrait renderers, customization options, scene scaling, and every place a human character appears. Record the current dimensions and drawing anchors. Do not invent characters or appearance details from memory.
+
+2. Inspect relevant images at full size. Select a focused evidence board from the existing collection, with exact reference IDs beside the examples. Explain the visible feature being studied: readable small faces, coherent hair shapes, clothing separation, age cues, matching sprite/portrait identity, or coordinated movement. Distinguish screenshots, artist sheets, video frames, and derived panels. Do not inflate the number of independent sources by counting crops or nearby animation frames as separate artworks.
+
+3. Produce a small but representative original cast sample, using identities extracted from the approved HTML: the player, Remy, Doug Haskell, one adult woman, and one child. Select real existing characters for the last two. Preserve each person's authored age, skin tone, hair, clothing, accessories, and distinguishing features. Read Doug's actual appearance and story from the source.
+
+4. Show front, back, and both side views; a short idle and walk loop; and matching dialogue portraits with neutral, friendly, and concerned expressions. Keep hands attached, foot contact readable, hair masses coherent, and skin shading restrained. Each person should look distinct without excessive texture or tiny noisy marks.
+
+5. Render the samples at the intended actual in-game display size on backgrounds taken from the approved build, including grass, an indoor floor, and night. Also provide clearly labeled enlarged views using nearest-neighbor scaling. Show the current approved art beside the proposal at the same display size. Do not present enlarged sprites as evidence of readability on a phone.
+
+6. Use the same proposed drawing method for the approval previews and eventual production assets. A polished concept illustration can supplement the sample, but cannot replace previews of the actual sprites and portrait renderer that will go into the game.
+
+7. Deliver the source-linked evidence board, actual-size comparison PNGs, animated preview GIFs or equivalent playable previews, a brief roster/rendering audit, and your proposed art rules. Report limitations honestly. Then ask for my approval of the visible samples. Stop before editing the game HTML. Make revisions to these previews if I request them.
+
+During Phase 1, separate preview scripts and asset files are allowed. Preserve the supplied HTML byte for byte, and verify that its checksum is unchanged at the end.
+
+PHASE 2: IMPLEMENT ONLY AFTER MY EXPLICIT VISUAL APPROVAL
+Once I approve the samples, complete the approved character upgrade in a separate working copy of the flashlight build.
+
+- Cover the customizable player, all neighbors and residents, Remy, children, shop staff, visitors, patients, and all other human characters found in the actual source. Audit the full cast rather than assuming a count.
+- Keep world sprites and dialogue images consistent. Also update character creation, wardrobe/mirror previews, People cards, and character appearances in Trellis or other systems wherever the baseline uses them.
+- Preserve established identities and saved appearance choices. Derive each character's views and portraits from shared appearance data so hairstyle, colors, accessories, and outfits agree.
+- Preserve every existing appearance option. Do not silently replace distinctive hair or clothes with generic substitutes.
+- Keep world size, foot anchors, collision, interaction distance, facing direction, camera coordinates, and depth order aligned with the existing gameplay. If a denser art grid is useful, make the smallest rendering change necessary and verify that detail survives the final canvas scale.
+- Preserve walk/idle movement, seated drawing, holding-nose reactions, and hand-attached evening flashlights with their existing beams and obstacle behavior.
+- Preserve the accepted menus, mobile status and action bars, scrolling, save/load, music including Next Track, Trellis video behavior, neighbor routines, food actions, tent transfers and swaps, and plant size/yield logic.
+- The large outdoor plant yield update still has a pending player playtest. Do not mark it approved or rebalance it during this art pass.
+- Keep this update focused on characters, matching portraits, and their existing animations. Broader changes to buildings, interiors, plants, interface design, gameplay balance, or music need a separate request.
+- Work in saved checkpoints, retain the original HTML and intermediate working builds, and preserve files across pauses or context limits. Record the last working checkpoint and next step so work can resume.
+- Do not deploy or publish the game.
+
+VALIDATION AND FINAL DELIVERY AFTER APPROVAL
+Visually inspect every audited character at actual gameplay size in daylight, indoors, and at night. Check the customizable player with representative hair, skin, clothing, and accessory combinations. Verify portrait identity matches each sprite.
+
+Test movement in all four directions, crowds and dialogue, shop layering, room transitions, sitting, smell conversations and dismissal, and flashlight attachment. Test existing-save load and save/reload using copies of saves, without overwriting my real progress. Check mobile portrait and landscape layouts and performance where the environment permits.
+
+Automated checks support behavior; they do not prove the artwork looks good. Report exactly what was tested and what still requires my device playtest. Do not claim browser, phone, or visual tests that were not actually performed.
+
+Deliver:
+1. One complete playable updated HTML, with the approved graphics integrated and existing progress compatible.
+2. Before/after images and animated previews of the final integrated artwork.
+3. A full roster coverage list, reference IDs supporting the approved direction, and concise honest test notes.
+4. The new asset/renderer sources and a ZIP handoff containing the final build and supporting files.
+
+BEGIN NOW WITH PHASE 1 ONLY. Do the research and create actual character previews, then wait for my approval before touching the game HTML.

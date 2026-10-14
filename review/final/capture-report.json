@@ -1,0 +1,56 @@
+{
+  "buildSHA": "15b36ecc24dd1a5454c2ac86f386e83e427c33082d8bd8e4d49b6d6dea611a05",
+  "capturedAt": "2026-10-14T22:12:50.978Z",
+  "appearanceVariants": 72,
+  "sourceCoverage": {
+    "sourceAppearances": 75,
+    "unmatched": []
+  },
+  "rosterBoards": [
+    "roster-grass-1.png",
+    "roster-grass-2.png",
+    "roster-grass-3.png",
+    "roster-grass-4.png",
+    "roster-grass-5.png",
+    "roster-grass-6.png",
+    "roster-indoor-1.png",
+    "roster-indoor-2.png",
+    "roster-indoor-3.png",
+    "roster-indoor-4.png",
+    "roster-indoor-5.png",
+    "roster-indoor-6.png",
+    "roster-night-1.png",
+    "roster-night-2.png",
+    "roster-night-3.png",
+    "roster-night-4.png",
+    "roster-night-5.png",
+    "roster-night-6.png",
+    "customization.png",
+    "all-hairstyles.png"
+  ],
+  "video": {
+    "id": "v1",
+    "played": true,
+    "loopDisabled": true,
+    "replay": true,
+    "framesDiffer": true
+  },
+  "phone": [
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 844
+    },
+    {
+      "width": 844,
+      "scrollWidth": 844,
+      "height": 390
+    }
+  ],
+  "browserErrors": [],
+  "limitations": [
+    "Desktop Chromium and emulated viewport checks; no physical phone test.",
+    "Not a complete long-duration gameplay or plant-yield playtest.",
+    "Additional cast walking uses a limb rig on authored standing views; the five approved characters retain illustrated walk frames."
+  ]
+}

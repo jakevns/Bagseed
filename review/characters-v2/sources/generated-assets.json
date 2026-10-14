@@ -1,0 +1,27 @@
+[
+  {
+    "id": "player",
+    "source": "/workspace/generated_images/exec-0acdb987-7ba5-4f95-b16f-9bf4433f8e1e.png",
+    "file": "assets/generated/player-sheet.png"
+  },
+  {
+    "id": "remy",
+    "source": "/workspace/generated_images/exec-bbd9c2c6-c77f-448f-bb07-33d630e14817.png",
+    "file": "assets/generated/remy-sheet.png"
+  },
+  {
+    "id": "doug",
+    "source": "/workspace/generated_images/exec-fc588f89-8ecd-47b2-be4f-870acdc83973.png",
+    "file": "assets/generated/doug-sheet.png"
+  },
+  {
+    "id": "priya",
+    "source": "/workspace/generated_images/exec-af5e12e2-e680-4c59-b116-55f16a5fca5b.png",
+    "file": "assets/generated/priya-sheet.png"
+  },
+  {
+    "id": "poppy",
+    "source": "/workspace/generated_images/exec-79e9842c-1c56-40b3-8c3e-214fefa554a7.png",
+    "file": "assets/generated/poppy-sheet.png"
+  }
+]

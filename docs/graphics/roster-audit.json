@@ -1,0 +1,4173 @@
+{
+  "gameVersion": "1.1.5",
+  "screen": "game",
+  "scene": "bedroom",
+  "player": {
+    "authoredAge": null,
+    "source": "runtime.cr / state.player",
+    "look": {
+      "skin": "#cf9670",
+      "hairC": "#4a2c1a",
+      "hairS": "short",
+      "facial": "none",
+      "shirtC": "#5f9c33",
+      "topS": "hoodie",
+      "pantsC": "#36405a",
+      "bottomS": "jeans",
+      "shoesC": "#2b1d14",
+      "shoesS": "sneakers",
+      "glasses": "none",
+      "hat": "none",
+      "acc": "none",
+      "pres": "neutral",
+      "body": "average",
+      "eyeC": "#2b1d14",
+      "eyes": "dot",
+      "brows": "thin",
+      "face": "soft",
+      "extras": []
+    }
+  },
+  "collections": {
+    "neighbors": {
+      "doug": {
+        "name": "Doug Haskell",
+        "age": 71,
+        "role": "Retired machinist · tomato guy",
+        "persona": "Widower. Grows Brandywines in the bed his late wife Ruth started. Gruff, fair, notices everything.",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#e9e2d4",
+          "hairS": "balding",
+          "facial": "mustache",
+          "topS": "overalls",
+          "shirtC": "#556f8f",
+          "body": "stocky",
+          "pres": "masc",
+          "face": "square",
+          "brows": "thick",
+          "eyes": "sleepy",
+          "bg": "#d9e8c4",
+          "hat": "none",
+          "prop": "can"
+        }
+      },
+      "priya": {
+        "name": "Priya Raman",
+        "age": 34,
+        "role": "ER night-shift nurse",
+        "persona": "Works three night shifts a week. Dry wit, zero patience for nonsense, endless patience for her dog Biscuit.",
+        "look": {
+          "skin": "#a8704c",
+          "hairC": "#1d1612",
+          "hairS": "ponytail",
+          "topS": "hoodie",
+          "shirtC": "#3f7fbf",
+          "pantsC": "#2b2b33",
+          "bottomS": "joggers",
+          "body": "slim",
+          "pres": "fem",
+          "face": "soft",
+          "eyes": "round",
+          "brows": "arched",
+          "shoesS": "sneakers",
+          "shoesC": "#e9e2d4",
+          "bg": "#dfe9f2"
+        }
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "age": 46,
+        "role": "Middle-school PE teacher · dad of twins",
+        "persona": "Coaches the school track team. Big laugh, bigger rulebook. Protective of his kids and the block.",
+        "look": {
+          "skin": "#5a3624",
+          "hairC": "#1d1612",
+          "hairS": "buzz",
+          "facial": "shortbeard",
+          "topS": "tee",
+          "shirtC": "#c94f4f",
+          "pantsC": "#2b2b33",
+          "bottomS": "joggers",
+          "body": "broad",
+          "pres": "masc",
+          "face": "square",
+          "eyes": "dot",
+          "brows": "thick",
+          "hat": "cap",
+          "capC": "#2f5d8a",
+          "shoesC": "#e9e2d4",
+          "bg": "#f2e0d0"
+        }
+      },
+      "ines": {
+        "name": "Inés Calderón",
+        "age": 67,
+        "role": "Retired librarian · rose whisperer",
+        "persona": "Ran the Willowbrook library for 30 years. Reads on her porch every afternoon. Her late brother used registry medicine.",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#e9e2d4",
+          "hairS": "bob",
+          "topS": "cardigan",
+          "shirtC": "#7d9cc8",
+          "pantsC": "#6b5a3a",
+          "bottomS": "skirt",
+          "glasses": "round",
+          "body": "curvy",
+          "pres": "fem",
+          "face": "round",
+          "eyes": "lashed",
+          "short": true,
+          "shoesS": "boots",
+          "bg": "#efe2f0",
+          "prop": "book"
+        }
+      },
+      "tobias": {
+        "name": "Tobias Nguyen",
+        "age": 24,
+        "role": "Barista · bedroom music producer",
+        "persona": "Makes lo-fi beats at 2 AM and pulls espresso at 7. Speaks fluent sarcasm. Skates everywhere.",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#7d5bd6",
+          "hairS": "medium",
+          "topS": "flannel",
+          "shirtC": "#2f4f3a",
+          "pantsC": "#2b2b33",
+          "bottomS": "cargo",
+          "body": "slim",
+          "pres": "neutral",
+          "face": "soft",
+          "eyes": "sleepy",
+          "acc": "headphones",
+          "extras": [
+            "pierce"
+          ],
+          "shoesC": "#c94f4f",
+          "bg": "#e6e0f4"
+        }
+      },
+      "bev": {
+        "name": "Beverly Sloane",
+        "age": 58,
+        "role": "Real estate agent · neighborhood watch captain",
+        "persona": "Sells houses, runs the watch group chat, power-walks twice a day. Thinks property values are a love language.",
+        "look": {
+          "skin": "#f6d3b3",
+          "hairC": "#d9b46a",
+          "hairS": "bob",
+          "topS": "jacket",
+          "shirtC": "#d26aa0",
+          "pantsC": "#e9e2d4",
+          "bottomS": "jeans",
+          "glasses": "shades",
+          "body": "average",
+          "pres": "fem",
+          "face": "angular",
+          "eyes": "lashed",
+          "brows": "arched",
+          "shoesS": "sneakers",
+          "shoesC": "#e9e2d4",
+          "bg": "#f4e4ec",
+          "prop": "phone"
+        }
+      },
+      "kenji": {
+        "name": "Kenji Mori",
+        "age": 41,
+        "role": "Remote software engineer · chili nerd",
+        "persona": "Quiet, deadpan, extremely online. Grows forty kinds of chili peppers on his porch and rates them in a spreadsheet.",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#1d1612",
+          "hairS": "short",
+          "topS": "sweater",
+          "shirtC": "#6a6f75",
+          "pantsC": "#36405a",
+          "bottomS": "jeans",
+          "glasses": "square",
+          "body": "tall",
+          "pres": "masc",
+          "face": "long",
+          "eyes": "dot",
+          "brows": "straight",
+          "facial": "stubble",
+          "bg": "#e2ecea"
+        }
+      }
+    },
+    "roommate": {
+      "remy": {
+        "name": "Remy Alvarez",
+        "first": "Remy",
+        "role": "Your roommate · graphic designer",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#3e2a1e",
+          "hairS": "curly",
+          "topS": "tee",
+          "shirtC": "#e0a33a",
+          "pantsC": "#3a3a44",
+          "bottomS": "shorts",
+          "body": "average",
+          "pres": "neutral",
+          "face": "soft",
+          "eyes": "round",
+          "brows": "thick",
+          "glasses": "square",
+          "bg": "#f2e6cc",
+          "shoesS": "sandals"
+        }
+      }
+    },
+    "residents": {
+      "mateo": {
+        "hid": "west_market",
+        "name": "Mateo Market",
+        "first": "Mateo",
+        "age": "adult",
+        "role": "Owner of Market Basket",
+        "pron": "he",
+        "look": {
+          "skin": "#a8704c",
+          "hairC": "#2a1a12",
+          "hairS": "short",
+          "facial": "mustache",
+          "topS": "work",
+          "shirtC": "#3f7a3a",
+          "pantsC": "#4a4038",
+          "body": "stocky",
+          "pres": "masc",
+          "face": "round",
+          "brows": "thick",
+          "bg": "#e8f0d4"
+        },
+        "hist": [
+          "A surplus box from the family garden became a tiny stall, then a dependable shop.",
+          "He still keeps the old stall sign, a worn scale and the family receipt book. \"Every customer is in there, by what they grow.\"",
+          "He hopes every small grower in town feels welcome to sell at the market, even if it's one basket of beans."
+        ],
+        "plants": "tomatoes, beans and sunflowers",
+        "likes": [
+          "P031",
+          "P038",
+          "P095"
+        ],
+        "gift": {
+          "k": "apron",
+          "n": "Spare market apron",
+          "t": "A green canvas apron with \"MARKET BASKET\" stitched on the pocket."
+        },
+        "lines": [
+          "Beans are up early this year. Don't tell the tomatoes, they get jealous.",
+          "If you ever have extra produce, bring it by. I buy from neighbors first.",
+          "Leo has decided the sunflowers are employees. They have names. And schedules."
+        ],
+        "id": "mateo"
+      },
+      "elena": {
+        "hid": "west_market",
+        "name": "Elena Market",
+        "first": "Elena",
+        "age": "adult",
+        "role": "Flowers & displays, Market Basket",
+        "pron": "she",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#3a2216",
+          "hairS": "bun",
+          "topS": "cardigan",
+          "shirtC": "#d86a8a",
+          "pantsC": "#4a4a5a",
+          "bottomS": "skirt",
+          "body": "curvy",
+          "pres": "fem",
+          "face": "soft",
+          "eyes": "lashed",
+          "bg": "#f6e0e8"
+        },
+        "hist": [
+          "She learned to make leftover stems look deliberate while helping out at a small event years ago.",
+          "Her pressed-flower album has a page for every season she's been in Willowbrook. The vases never match. On purpose.",
+          "She wants every seasonal display to credit the people who grew the flowers. \"Names on the cards. Always.\""
+        ],
+        "plants": "zinnias, snapdragons and calendula",
+        "likes": [
+          "P096",
+          "P103",
+          "P151"
+        ],
+        "gift": {
+          "k": "pressframe",
+          "n": "Pressed-flower frame",
+          "t": "A small frame of pressed zinnia and calendula petals, arranged just for you."
+        },
+        "lines": [
+          "Zinnias forgive almost everything. Snapdragons forgive nothing.",
+          "A bucket of stems is just a bucket. Two minutes of care and it's a bouquet.",
+          "Rosa's labels are better than mine. Don't tell her I said so. Actually, do."
+        ],
+        "id": "elena"
+      },
+      "rosa": {
+        "hid": "west_market",
+        "name": "Rosa Market",
+        "first": "Rosa",
+        "age": "adult",
+        "role": "Sales & displays, Market Basket",
+        "pron": "she",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#1d1612",
+          "hairS": "ponytail",
+          "topS": "tee",
+          "shirtC": "#f2a03a",
+          "pantsC": "#3a4a6a",
+          "body": "slim",
+          "pres": "fem",
+          "face": "angular",
+          "eyes": "wide",
+          "extras": [
+            "freckles"
+          ],
+          "bg": "#fff0cf"
+        },
+        "hist": [
+          "Rosa designed every produce label at the stall, then let her parents take the compliments.",
+          "She keeps label proofs and a hand-drawn delivery route in a folder she calls \"someday\".",
+          "She wants to run a grower showcase that looks the way she sees color. She's working up to asking."
+        ],
+        "plants": "rainbow chard and bright peppers",
+        "likes": [
+          "P004",
+          "P032"
+        ],
+        "gift": {
+          "k": "labelsketch",
+          "n": "Rosa's display sketch",
+          "t": "A copy of Rosa's market display sketch, signed in the corner."
+        },
+        "lines": [
+          "Chard stems are basically a paint set.",
+          "I redid the pepper sign three times. The third one has a little sun on it.",
+          "Mom says I should take credit. I'm... practicing."
+        ],
+        "id": "rosa"
+      },
+      "leo": {
+        "hid": "west_market",
+        "name": "Leo Market",
+        "first": "Leo",
+        "age": "child",
+        "kid": true,
+        "role": "Kid, sunflower manager",
+        "pron": "he",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#2a1a12",
+          "hairS": "curly",
+          "topS": "tee",
+          "shirtC": "#f2d23a",
+          "pantsC": "#3f6fa8",
+          "body": "slim",
+          "pres": "neutral",
+          "face": "round",
+          "eyes": "round",
+          "bg": "#fff6c8"
+        },
+        "hist": [
+          "Leo built a cardboard market while the grown-ups argued about shelves. It has a cash register made of a tissue box.",
+          "He has a sunflower drawing taped to his door. Every flower has a name tag.",
+          "He wants his own little flower stand at the family event. \"A real one. With a sign.\""
+        ],
+        "plants": "sunflowers and easy flowering pots",
+        "likes": [
+          "P095",
+          "P096"
+        ],
+        "gift": {
+          "k": "sundraw",
+          "n": "Leo's sunflower drawing",
+          "t": "A copy of Leo's sunflower drawing, offered with his parents right there. Every flower is labeled."
+        },
+        "lines": [
+          "This sunflower is named Gary. He is the boss of the other sunflowers.",
+          "Do you want to buy a pretend tomato? It's free. Actually it's one dollar.",
+          "Pinto ate a bean and now he thinks he's a gardener."
+        ],
+        "id": "leo"
+      },
+      "mara": {
+        "hid": "west_rivera",
+        "name": "Mara Rivera",
+        "first": "Mara",
+        "age": "adult",
+        "role": "Owner of Willow Threads",
+        "pron": "she",
+        "look": {
+          "skin": "#a8704c",
+          "hairC": "#3a1a2a",
+          "hairS": "wavy",
+          "topS": "cardigan",
+          "shirtC": "#7a3a6a",
+          "pantsC": "#2b2b33",
+          "body": "average",
+          "pres": "fem",
+          "face": "long",
+          "glasses": "round",
+          "eyes": "lashed",
+          "bg": "#f2e0ec"
+        },
+        "hist": [
+          "Years of repairing the family's clothes turned into a shop where trying things on feels comfortable, not judged.",
+          "She keeps her first receipt book and a tin of sewing notions older than Nico.",
+          "She loves helping people find their own style, and she's learning to leave room for Nico's."
+        ],
+        "plants": "dahlias and soft mixed border flowers",
+        "likes": [
+          "P115",
+          "P097"
+        ],
+        "gift": {
+          "k": "pincushion",
+          "n": "Handmade pincushion",
+          "t": "A tomato-shaped pincushion in Willow Threads colors. Decoration only. Probably."
+        },
+        "lines": [
+          "A good fit is a kindness to yourself.",
+          "Nico moved the jackets again. They look better. I'm not saying that out loud.",
+          "Dahlias are like hems. Pinch early and they behave."
+        ],
+        "id": "mara"
+      },
+      "eli": {
+        "hid": "west_rivera",
+        "name": "Eli Rivera",
+        "first": "Eli",
+        "age": "adult",
+        "role": "Rivera family, scrapbooker",
+        "pron": "they",
+        "look": {
+          "skin": "#a8704c",
+          "hairC": "#1d1612",
+          "hairS": "short",
+          "topS": "jacket",
+          "shirtC": "#3a6a8a",
+          "pantsC": "#4a4038",
+          "body": "slim",
+          "pres": "neutral",
+          "face": "soft",
+          "glasses": "square",
+          "bg": "#dcecf4"
+        },
+        "hist": [
+          "Eli saves ticket stubs, labels and receipts as family history. The scrapbook is three scrapbooks now.",
+          "They repaired the old picnic basket with wire and stubbornness.",
+          "All Eli wants is one weekend picnic that the whole family can actually make it to."
+        ],
+        "plants": "culinary herbs and picnic vegetables",
+        "likes": [
+          "P051",
+          "P054",
+          "P031"
+        ],
+        "gift": {
+          "k": "outingprint",
+          "n": "Town-outing print",
+          "t": "A copy of Eli's favorite town-outing photo, everyone squinting into the sun."
+        },
+        "lines": [
+          "I kept the receipt from the day we moved here. It was for tape. So much tape.",
+          "Picnic's on Saturday. In theory.",
+          "Herbs are the best plants. You get to eat the haircut."
+        ],
+        "id": "eli"
+      },
+      "nico": {
+        "hid": "west_rivera",
+        "name": "Nico Rivera",
+        "first": "Nico",
+        "age": "17",
+        "teen": true,
+        "role": "Clerk at Willow Threads, student",
+        "pron": "they",
+        "look": {
+          "skin": "#a8704c",
+          "hairC": "#1d1612",
+          "hairS": "mohawk",
+          "topS": "jacket",
+          "shirtC": "#2b2b33",
+          "pantsC": "#5a3a6a",
+          "body": "slim",
+          "pres": "neutral",
+          "face": "angular",
+          "eyes": "wide",
+          "short": true,
+          "bg": "#e8dcf4",
+          "acc": "none"
+        },
+        "hist": [
+          "Nico started altering secondhand clothes after a favorite jacket fit badly. It fits perfectly now.",
+          "Their study corner is half homework, half alteration sketches and a box of patches.",
+          "Nico wants to show a small outfit collection of their own, and be taken seriously, not just as \"the owner's kid\"."
+        ],
+        "plants": "purple basil and contrasting marigolds",
+        "likes": [
+          "P052",
+          "P098"
+        ],
+        "gift": {
+          "k": "patch",
+          "n": "Nico's original patch",
+          "t": "A hand-stitched leaf patch, made for you after a styling chat."
+        },
+        "lines": [
+          "Purple basil and orange marigolds. Complementary colors. You're welcome.",
+          "That jacket? I took it in at the shoulders. It was tragic before.",
+          "Don't tell Mom, but I rearranged the window again."
+        ],
+        "id": "nico"
+      },
+      "alma": {
+        "hid": "west_brooks",
+        "name": "Alma Brooks",
+        "first": "Alma",
+        "age": "69",
+        "senior": true,
+        "role": "Retired postal carrier",
+        "pron": "she",
+        "look": {
+          "skin": "#7a4c31",
+          "hairC": "#e9e2d4",
+          "hairS": "curly",
+          "topS": "cardigan",
+          "shirtC": "#3f6fa8",
+          "pantsC": "#4a4a55",
+          "body": "average",
+          "pres": "fem",
+          "face": "round",
+          "glasses": "round",
+          "short": true,
+          "bg": "#dce8f4"
+        },
+        "hist": [
+          "Alma walked the same mail route for thirty-one years and knows every porch step in Willowbrook.",
+          "Her old route satchel hangs by the door. The postcard cabinet is full of cards people sent her after she retired.",
+          "She would love to see everyone on the street write one real letter this year."
+        ],
+        "plants": "sweet peas and cottage flowers",
+        "likes": [
+          "P104",
+          "P133"
+        ],
+        "gift": {
+          "k": "postcard",
+          "n": "Illustrated postcard frame",
+          "t": "A framed postcard Alma painted of Westbrook Way, with a tiny mail truck."
+        },
+        "lines": [
+          "Nimbus and I are both retired. We take the long way everywhere.",
+          "Sweet peas want to climb. Give them a string and they'll thank you.",
+          "I still check the mailbox twice. Old habit."
+        ],
+        "id": "alma"
+      },
+      "owen": {
+        "hid": "west_brooks",
+        "name": "Owen Brooks",
+        "first": "Owen",
+        "age": "19",
+        "role": "Student, photographer",
+        "pron": "he",
+        "look": {
+          "skin": "#7a4c31",
+          "hairC": "#1d1612",
+          "hairS": "short",
+          "topS": "hoodie",
+          "shirtC": "#5a7a4a",
+          "pantsC": "#2b2b33",
+          "body": "tall",
+          "pres": "masc",
+          "face": "long",
+          "eyes": "round",
+          "bg": "#e0ecd8",
+          "prop": "camera"
+        },
+        "hist": [
+          "Owen moved in with his grandmother to study, and stayed because the light on this street is good.",
+          "His desk is covered in contact sheets. The camera case is held together with gaffer tape.",
+          "He wants to make a photo book of the park through a whole year."
+        ],
+        "plants": "strawberries and tiny herb pots",
+        "likes": [
+          "P071",
+          "P051"
+        ],
+        "gift": {
+          "k": "parkphoto",
+          "n": "Park photograph",
+          "t": "A print of the Old Willow at golden hour, from Owen's film roll."
+        },
+        "lines": [
+          "The willow looks different every hour. I counted.",
+          "Grandma reads my contact sheets like mail. She has opinions.",
+          "Strawberries in a hanging pot. The squirrels can't reach. Probably."
+        ],
+        "id": "owen"
+      },
+      "amina": {
+        "hid": "west_haddad_watts",
+        "name": "Amina Haddad",
+        "first": "Amina",
+        "age": "56",
+        "role": "Owner of Bolt Hardware",
+        "pron": "she",
+        "look": {
+          "skin": "#a8704c",
+          "hairC": "#3a2a22",
+          "hairS": "bun",
+          "topS": "work",
+          "shirtC": "#c94f2a",
+          "pantsC": "#3a3f55",
+          "body": "average",
+          "pres": "fem",
+          "face": "angular",
+          "glasses": "square",
+          "bg": "#f4e0d4"
+        },
+        "hist": [
+          "Amina fixed her first lamp at nine. She bought Bolt Hardware from its retiring owner twenty years ago.",
+          "She keeps a stack of repair notebooks and the very first shop key on a string.",
+          "She wants to start a Saturday fix-it table where neighbors teach each other."
+        ],
+        "plants": "trellised beans and practical herbs",
+        "likes": [
+          "P038",
+          "P060"
+        ],
+        "gift": {
+          "k": "toolornament",
+          "n": "Tool ornament",
+          "t": "A little wrench ornament Amina made from a spare part."
+        },
+        "lines": [
+          "Measure twice. Then once more, because you blinked.",
+          "A good trellis is just a fence with ambition.",
+          "If it squeaks, it's asking for help."
+        ],
+        "id": "amina"
+      },
+      "ronan": {
+        "hid": "west_haddad_watts",
+        "name": "Ronan Watts",
+        "first": "Ronan",
+        "age": "55",
+        "role": "Community center coordinator",
+        "pron": "he",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#b8b0a0",
+          "hairS": "balding",
+          "facial": "beard",
+          "topS": "sweater",
+          "shirtC": "#3f7a6a",
+          "pantsC": "#4a4038",
+          "body": "broad",
+          "pres": "masc",
+          "face": "square",
+          "bg": "#dcf0e8"
+        },
+        "hist": [
+          "Ronan has organized every community event in Willowbrook for a decade, mostly with folding chairs and hope.",
+          "He saves annotated seating plans and one hand-made invitation from the very first potluck.",
+          "He dreams of a harvest festival in the park where everyone brings something they grew."
+        ],
+        "plants": "calendula and cheerful mixed flowers",
+        "likes": [
+          "P151",
+          "P097"
+        ],
+        "gift": {
+          "k": "poster",
+          "n": "Event poster",
+          "t": "A copy of Ronan's hand-lettered potluck poster."
+        },
+        "lines": [
+          "Seating plan for twelve, chairs for nine. Classic.",
+          "Calendula: cheerful, tough, edible. Like a good volunteer.",
+          "Leila folded the event maps. They're better than mine."
+        ],
+        "id": "ronan"
+      },
+      "leila": {
+        "hid": "west_haddad_watts",
+        "name": "Leila Haddad-Watts",
+        "first": "Leila",
+        "age": "15",
+        "teen": true,
+        "role": "Student, puzzle maker",
+        "pron": "she",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#2a1a12",
+          "hairS": "braids",
+          "topS": "hoodie",
+          "shirtC": "#7a5ad6",
+          "pantsC": "#2b2b33",
+          "body": "slim",
+          "pres": "fem",
+          "face": "soft",
+          "eyes": "wide",
+          "short": true,
+          "bg": "#e8e0f8"
+        },
+        "hist": [
+          "Leila folds paper into maps, puzzles and very small boats.",
+          "Her puzzle board has a trail map of the park drawn from memory. It's accurate to the bench.",
+          "She wants to make a nature-trail card for the park that little kids can actually follow."
+        ],
+        "plants": "peas and whatever herb she is curious about this week",
+        "likes": [
+          "P028",
+          "P053"
+        ],
+        "gift": {
+          "k": "trailcard",
+          "n": "Nature-trail card",
+          "t": "Leila's folded trail card for Willow Park, offered with her parents' okay."
+        },
+        "lines": [
+          "Did you know peas hold on with tiny curly fingers?",
+          "I mapped the park. There are exactly fourteen benches if you count the broken one.",
+          "Pip says hi. Pip says everything, actually."
+        ],
+        "id": "leila"
+      },
+      "cass": {
+        "hid": "west_mercer_cho",
+        "name": "Cass Mercer",
+        "first": "Cass",
+        "age": "29",
+        "role": "Manager, the café",
+        "pron": "she",
+        "look": {
+          "skin": "#f6d3b3",
+          "hairC": "#c8603a",
+          "hairS": "bob",
+          "topS": "tee",
+          "shirtC": "#5a3a2a",
+          "pantsC": "#2b2b33",
+          "body": "slim",
+          "pres": "fem",
+          "face": "soft",
+          "eyes": "lashed",
+          "extras": [
+            "freckles"
+          ],
+          "bg": "#f4e4d4"
+        },
+        "hist": [
+          "Cass started as the café's weekend barista and now runs the place.",
+          "Her mug shelf at home has one mug from every regular who ever gave her one.",
+          "She wants the café to host a seed swap every spring."
+        ],
+        "plants": "mint (in its own pot!) and strawberries",
+        "likes": [
+          "P061",
+          "P071"
+        ],
+        "gift": {
+          "k": "cafeprint",
+          "n": "Café print",
+          "t": "A little print of the café window Cass drew on a napkin and then redid properly."
+        },
+        "lines": [
+          "Mint goes in its own pot. Trust me. I've seen things.",
+          "Your usual? I'm kidding, I don't know your usual yet.",
+          "Miso knocked a mug off the shelf on purpose. While looking at me."
+        ],
+        "id": "cass"
+      },
+      "jun": {
+        "hid": "west_mercer_cho",
+        "name": "Jun Cho",
+        "first": "Jun",
+        "age": "31",
+        "role": "Bike tinkerer",
+        "pron": "he",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#111",
+          "hairS": "medium",
+          "topS": "flannel",
+          "shirtC": "#3a5a8a",
+          "pantsC": "#3a3a44",
+          "body": "average",
+          "pres": "masc",
+          "face": "long",
+          "glasses": "square",
+          "bg": "#dce4f4"
+        },
+        "hist": [
+          "Jun restores old bicycles on the porch. Half the kids in town ride something he fixed.",
+          "He has a tiny restored bike on the shelf and a sketchbook full of parts.",
+          "He wants a bike-repair day at the community center so nobody has to stop riding over a flat."
+        ],
+        "plants": "compact peppers and tidy flower pots",
+        "likes": [
+          "P033",
+          "P098"
+        ],
+        "gift": {
+          "k": "wheelpatch",
+          "n": "Wheel-pattern patch",
+          "t": "A small embroidered bicycle-wheel patch."
+        },
+        "lines": [
+          "Chain needs oil, brain needs coffee. Same thing really.",
+          "Clover sleeps in the parts bin. I've stopped fighting it.",
+          "Small peppers, small pots, small joys."
+        ],
+        "id": "jun"
+      },
+      "rosie": {
+        "hid": "west_dunn",
+        "name": "Rosie Dunn",
+        "first": "Rosie",
+        "age": "73",
+        "senior": true,
+        "role": "Retired theater seamstress",
+        "pron": "she",
+        "look": {
+          "skin": "#f6d3b3",
+          "hairC": "#e9e2d4",
+          "hairS": "bob",
+          "topS": "cardigan",
+          "shirtC": "#c94f6a",
+          "pantsC": "#4a3a4a",
+          "bottomS": "skirt",
+          "body": "curvy",
+          "pres": "fem",
+          "face": "round",
+          "glasses": "round",
+          "eyes": "lashed",
+          "short": true,
+          "bg": "#f8e0e8"
+        },
+        "hist": [
+          "Rosie sewed costumes for the town theater for forty years. Every curtain call had one of her hems in it.",
+          "She keeps fabric samples and an original stage sketch in a folder that smells like cedar.",
+          "She'd love to make one more costume, for someone who's never worn one."
+        ],
+        "plants": "bold dahlias and scarlet runner flowers",
+        "likes": [
+          "P115",
+          "P038"
+        ],
+        "gift": {
+          "k": "scarf",
+          "n": "Theatrical scarf",
+          "t": "A long, dramatic scarf from Rosie's spare fabric. Takes a bow on its own."
+        },
+        "lines": [
+          "Dahlias are divas. I respect that.",
+          "Arthur built a tiny chair for the tiny room. It's better than our real chairs.",
+          "Never trust a costume without pockets."
+        ],
+        "id": "rosie"
+      },
+      "arthur": {
+        "hid": "west_dunn",
+        "name": "Arthur Dunn",
+        "first": "Arthur",
+        "age": "75",
+        "senior": true,
+        "role": "Retired carpenter, model builder",
+        "pron": "he",
+        "look": {
+          "skin": "#f6d3b3",
+          "hairC": "#d8d4ca",
+          "hairS": "balding",
+          "facial": "mustache",
+          "topS": "sweater",
+          "shirtC": "#6a5a3a",
+          "pantsC": "#3a3a44",
+          "body": "tall",
+          "pres": "masc",
+          "face": "long",
+          "eyes": "sleepy",
+          "bg": "#ece4d4",
+          "hat": "cap",
+          "capC": "#3f5a3a"
+        },
+        "hist": [
+          "Arthur built cabinets for half the kitchens on Willow Lane, and remembers which ones.",
+          "He builds miniature rooms now. His worn ruler is older than the house.",
+          "He wants to teach Miles to build something that lasts."
+        ],
+        "plants": "lettuce in very orderly rows",
+        "likes": [
+          "P001",
+          "P013"
+        ],
+        "gift": {
+          "k": "minichair",
+          "n": "Miniature chair",
+          "t": "A tiny wooden chair, perfectly square, made just for you."
+        },
+        "lines": [
+          "Rows should be straight. Life doesn't have to be, but rows should.",
+          "Lettuce bolts when it's hot. Don't we all.",
+          "I made a chair the size of a stamp. Took a week. Worth it."
+        ],
+        "id": "arthur"
+      },
+      "nadia": {
+        "hid": "west_dunn",
+        "name": "Nadia Dunn",
+        "first": "Nadia",
+        "age": "46",
+        "role": "School office",
+        "pron": "she",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#6a4a2a",
+          "hairS": "ponytail",
+          "topS": "jacket",
+          "shirtC": "#5a7aa8",
+          "pantsC": "#2b2b33",
+          "body": "average",
+          "pres": "fem",
+          "face": "soft",
+          "bg": "#e0e8f4"
+        },
+        "hist": [
+          "Nadia keeps the school running from the front office and the family running from the fridge calendar.",
+          "She carries a pocket sketchbook everywhere and never shows anyone.",
+          "She'd like one quiet afternoon a week that's just for sketching in the park."
+        ],
+        "plants": "beans and reliable seasonal produce",
+        "likes": [
+          "P038",
+          "P031"
+        ],
+        "gift": {
+          "k": "parksketch",
+          "n": "Park sketch",
+          "t": "A copy of Nadia's pencil sketch of the fountain."
+        },
+        "lines": [
+          "The calendar has four colors. Miles added a fifth. It's glitter.",
+          "Beans: plant, water, pick, repeat. My kind of plant.",
+          "I'm not drawing. I'm... taking notes. With shading."
+        ],
+        "id": "nadia"
+      },
+      "miles": {
+        "hid": "west_dunn",
+        "name": "Miles Dunn",
+        "first": "Miles",
+        "age": "9",
+        "kid": true,
+        "role": "Kid, cardboard architect",
+        "pron": "he",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#8a5a32",
+          "hairS": "short",
+          "topS": "tee",
+          "shirtC": "#3fa86a",
+          "pantsC": "#4a4a55",
+          "body": "slim",
+          "pres": "neutral",
+          "face": "round",
+          "eyes": "round",
+          "extras": [
+            "freckles"
+          ],
+          "bg": "#dcf4e4"
+        },
+        "hist": [
+          "Miles builds cardboard rooms like his grandpa builds wooden ones.",
+          "He made a tiny paper swing for the cardboard park. It swings.",
+          "He wants to build a real birdhouse with Grandpa Arthur."
+        ],
+        "plants": "radishes and small sunflowers",
+        "likes": [
+          "P013",
+          "P095"
+        ],
+        "gift": {
+          "k": "playdraw",
+          "n": "Playground drawing",
+          "t": "A copy of Miles's playground drawing, given with his mom right there. You are on the slide."
+        },
+        "lines": [
+          "Radishes are the fastest vegetable. I timed it. Kind of.",
+          "Grandpa says measure twice. I measure like five times.",
+          "The frog on the spring rider is named Kevin."
+        ],
+        "id": "miles"
+      },
+      "hugo": {
+        "hid": "west_serrano_patel",
+        "name": "Hugo Serrano",
+        "first": "Hugo",
+        "age": "38",
+        "role": "Owner of Fern & Forge",
+        "pron": "he",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#2a1a12",
+          "hairS": "medium",
+          "facial": "beard",
+          "topS": "garden",
+          "shirtC": "#4f7a3a",
+          "pantsC": "#4a4038",
+          "body": "broad",
+          "pres": "masc",
+          "face": "square",
+          "bg": "#e0f0d4",
+          "hat": "none"
+        },
+        "hist": [
+          "Hugo's first planting sketch was a balcony with forty pots on it. The landlord was not thrilled.",
+          "He keeps that sketch, a sample planter and a measuring stick scratched with every seedling height he ever cared about.",
+          "He wants Fern & Forge to be the place people learn, not just the place they buy."
+        ],
+        "plants": "herbs, flowers and distinct saplings",
+        "likes": [
+          "P053",
+          "P115",
+          "TREE014"
+        ],
+        "gift": {
+          "k": "marker",
+          "n": "Handmade plant markers",
+          "t": "A set of wooden plant markers, each hand-lettered."
+        },
+        "lines": [
+          "Plant the right thing in the right place and it mostly takes care of itself.",
+          "Sprig ate my notes again. Rabbit-approved, I guess.",
+          "Saplings are patience you can see."
+        ],
+        "id": "hugo"
+      },
+      "anika": {
+        "hid": "west_serrano_patel",
+        "name": "Anika Patel",
+        "first": "Anika",
+        "age": "37",
+        "role": "Transit planner",
+        "pron": "she",
+        "look": {
+          "skin": "#a8704c",
+          "hairC": "#111",
+          "hairS": "long",
+          "topS": "jacket",
+          "shirtC": "#2e4a7a",
+          "pantsC": "#2b2b33",
+          "body": "slim",
+          "pres": "fem",
+          "face": "long",
+          "glasses": "square",
+          "bg": "#dce4f4"
+        },
+        "hist": [
+          "Anika plans bus routes for the county and secretly loves a good detour.",
+          "She has a route sketch of Willowbrook and a photo of her favorite bench framed on her desk.",
+          "She wants a shaded path from Westbrook Way to the library so kids can walk it in summer."
+        ],
+        "plants": "climbing peas and structured flower borders",
+        "likes": [
+          "P028",
+          "P117"
+        ],
+        "gift": {
+          "k": "pathprint",
+          "n": "Neighborhood-path print",
+          "t": "A print of Anika's hand-drawn walking map of the west side."
+        },
+        "lines": [
+          "The best route isn't always the shortest. Sometimes it's the one with a bench.",
+          "Peas are just commuters. Up the string, every day.",
+          "Poppy redrew my bus map. All the buses are flowers now."
+        ],
+        "id": "anika"
+      },
+      "poppy": {
+        "hid": "west_serrano_patel",
+        "name": "Poppy Serrano-Patel",
+        "first": "Poppy",
+        "age": "7",
+        "kid": true,
+        "role": "Kid, flower-house artist",
+        "pron": "she",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#1d1612",
+          "hairS": "bun",
+          "topS": "tee",
+          "shirtC": "#f08ab8",
+          "pantsC": "#f2c02a",
+          "body": "slim",
+          "pres": "fem",
+          "face": "round",
+          "eyes": "round",
+          "bg": "#fbe1ef"
+        },
+        "hist": [
+          "Poppy draws houses made of flowers. Each one has a door for bees.",
+          "Her drawings are taped up all around the rabbit enclosure \"so Sprig has art\".",
+          "She wants a nasturtium so big you can live in it."
+        ],
+        "plants": "nasturtiums and bright container flowers",
+        "likes": [
+          "P105",
+          "P098"
+        ],
+        "gift": {
+          "k": "flowerdraw",
+          "n": "Flower-house drawing",
+          "t": "A copy of Poppy's flower-house drawing, given with her parents watching proudly."
+        },
+        "lines": [
+          "Nasturtium leaves are like little umbrellas for ants.",
+          "Sprig is a rabbit but also a princess.",
+          "I drew you a house. It has a flower door."
+        ],
+        "id": "poppy"
+      },
+      "enzo": {
+        "hid": "west_shared",
+        "name": "Enzo Park",
+        "first": "Enzo",
+        "age": "27",
+        "role": "Front desk, Verity Labs",
+        "pron": "he",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#111",
+          "hairS": "short",
+          "topS": "suit",
+          "shirtC": "#2b3a5a",
+          "pantsC": "#2b2b33",
+          "body": "slim",
+          "pres": "masc",
+          "face": "angular",
+          "glasses": "square",
+          "bg": "#dce4f4"
+        },
+        "hist": [
+          "Enzo runs the front desk at Verity Labs and folds paper animals between visitors.",
+          "His room is full of process-card sketches and origami. There is a crane on the light switch.",
+          "He wants to make a lab tour that actually makes sense to people."
+        ],
+        "plants": "basil and tomatoes",
+        "likes": [
+          "P051",
+          "P031"
+        ],
+        "gift": {
+          "k": "papersculpt",
+          "n": "Paper desk sculpture",
+          "t": "A folded paper willow tree, small enough for a desk."
+        },
+        "lines": [
+          "Please sign in. Kidding. I'm off duty.",
+          "Basil and tomatoes: friends in the garden, friends on a plate.",
+          "Dev recorded the fountain for an hour. It sounds like... a fountain."
+        ],
+        "id": "enzo"
+      },
+      "sasha": {
+        "hid": "west_shared",
+        "name": "Sasha Reed",
+        "first": "Sasha",
+        "age": "26",
+        "role": "Ceramic artist",
+        "pron": "she",
+        "look": {
+          "skin": "#4e2f1e",
+          "hairC": "#1d1612",
+          "hairS": "afro",
+          "topS": "overalls",
+          "shirtC": "#c8603a",
+          "pantsC": "#4a4038",
+          "body": "average",
+          "pres": "fem",
+          "face": "soft",
+          "eyes": "lashed",
+          "bg": "#f4e0d4"
+        },
+        "hist": [
+          "Sasha makes pots, mugs and planters in a garage studio behind the shared house.",
+          "Her first bowl is slightly tilted. It sits in a place of honor anyway.",
+          "She wants to sell planters at the market, one table, one season, see what happens."
+        ],
+        "plants": "chives and sculptural succulents",
+        "likes": [
+          "P056",
+          "P142"
+        ],
+        "gift": {
+          "k": "littlepot",
+          "n": "Little ceramic pot",
+          "t": "A thumb-sized glazed pot Sasha made, decoration only."
+        },
+        "lines": [
+          "Clay remembers everything you do to it. Like a cat.",
+          "Chives in a blue pot. That's the whole look.",
+          "The tilted bowl is staying. It has character."
+        ],
+        "id": "sasha"
+      },
+      "dev": {
+        "hid": "west_shared",
+        "name": "Dev Imani",
+        "first": "Dev",
+        "age": "25",
+        "role": "Sound recordist (hobby)",
+        "pron": "he",
+        "look": {
+          "skin": "#7a4c31",
+          "hairC": "#1d1612",
+          "hairS": "locs",
+          "topS": "hoodie",
+          "shirtC": "#3a3a44",
+          "pantsC": "#2b2b33",
+          "body": "tall",
+          "pres": "masc",
+          "face": "long",
+          "bg": "#e0e0ea",
+          "acc": "headphones"
+        },
+        "hist": [
+          "Dev records the sounds of Willowbrook: rain on the gazebo, the fountain at dawn, the 7:40 bus.",
+          "He keeps field notes and a microphone he repaired with a pencil and a lot of patience.",
+          "He wants to make a \"sound map\" postcard set of the town."
+        ],
+        "plants": "dill and airy flower borders",
+        "likes": [
+          "P055",
+          "P097"
+        ],
+        "gift": {
+          "k": "soundcard",
+          "n": "Sound-postcard print",
+          "t": "A postcard with a drawn waveform of the fountain. It doesn't make sound. It makes you remember it."
+        },
+        "lines": [
+          "Listen. That's a blackbird. That's a bus. That's someone dropping keys.",
+          "Dill smells like a sound. Don't ask me which.",
+          "The willow creaks in a B flat. I checked."
+        ],
+        "id": "dev"
+      },
+      "ari": {
+        "hid": "marcus",
+        "visitor": true,
+        "name": "Ari Bell",
+        "first": "Ari",
+        "age": "child",
+        "kid": true,
+        "role": "Marcus's kid, course builder",
+        "pron": "they",
+        "look": {
+          "skin": "#4e2f1e",
+          "hairC": "#111",
+          "hairS": "buzz",
+          "topS": "tee",
+          "shirtC": "#2e8a5a",
+          "pantsC": "#2b2b33",
+          "body": "slim",
+          "pres": "neutral",
+          "face": "round",
+          "eyes": "round",
+          "bg": "#dcf4e4"
+        },
+        "hist": [
+          "Ari builds elaborate obstacle courses out of cardboard, chalk and whatever Dad left in the garage.",
+          "Ari tests every rule for loopholes. \"You said no running. This is fast walking.\"",
+          "Ari wants a park obstacle course that even the slow kids love."
+        ],
+        "plants": "anything that grows fast enough to race",
+        "likes": [
+          "P013"
+        ],
+        "gift": {
+          "k": "coursemap",
+          "n": "Obstacle-course map",
+          "t": "Ari's chalk-drawn course map, given with Marcus there to approve."
+        },
+        "lines": [
+          "This course has seven obstacles. The fountain is optional.",
+          "Dad times everything. I time Dad.",
+          "Sam draws bugs. I race bugs. We're a team."
+        ],
+        "id": "ari"
+      },
+      "sam": {
+        "hid": "marcus",
+        "visitor": true,
+        "name": "Sam Bell",
+        "first": "Sam",
+        "age": "child",
+        "kid": true,
+        "role": "Marcus's kid, bug artist",
+        "pron": "they",
+        "look": {
+          "skin": "#4e2f1e",
+          "hairC": "#111",
+          "hairS": "afro",
+          "topS": "hoodie",
+          "shirtC": "#d8a03a",
+          "pantsC": "#3f6fa8",
+          "body": "slim",
+          "pres": "neutral",
+          "face": "soft",
+          "eyes": "wide",
+          "glasses": "round",
+          "bg": "#fff0cf"
+        },
+        "hist": [
+          "Sam started a field notebook after mistaking a moth for a leaf. It was a very good moth.",
+          "Sam draws insects in the margins of everything, including homework.",
+          "Sam wants to make little flower labels for the community garden."
+        ],
+        "plants": "flowers that bugs like",
+        "likes": [
+          "P151",
+          "P104"
+        ],
+        "gift": {
+          "k": "bugdraw",
+          "n": "Sam's beetle sketch",
+          "t": "A careful sketch of a ladybug on calendula, given with Marcus's okay."
+        },
+        "lines": [
+          "That's a hoverfly. It looks like a bee but it's lying.",
+          "I'm labeling every flower. With the bug that likes it.",
+          "Ari runs. I watch. Then I draw what Ari scared away."
+        ],
+        "id": "sam"
+      },
+      "talia": {
+        "hid": "doug",
+        "visitor": true,
+        "name": "Talia",
+        "first": "Talia",
+        "age": "young adult",
+        "role": "Doug's granddaughter (visiting)",
+        "pron": "she",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#c8a060",
+          "hairS": "ponytail",
+          "topS": "flannel",
+          "shirtC": "#8a3a2a",
+          "pantsC": "#3a4a6a",
+          "body": "average",
+          "pres": "fem",
+          "face": "square",
+          "bg": "#f4e4d4"
+        },
+        "hist": [
+          "Talia learned small repairs during summers at Grandpa Doug's. She makes miniatures now, for fun.",
+          "She sleeps in the sewing room when she visits. Ruth's quilt is on the bed.",
+          "She wants Doug to show his handmade garden pieces at a community event. He keeps saying \"maybe\"."
+        ],
+        "plants": "Grandpa's tomatoes, obviously",
+        "likes": [
+          "P031"
+        ],
+        "gift": {
+          "k": "minitomato",
+          "n": "Miniature tomato crate",
+          "t": "A tiny crate of clay tomatoes Talia made. Doug pretends not to be proud."
+        },
+        "lines": [
+          "Grandpa says you're \"alright\". That's basically a medal.",
+          "I made a tiny version of his tomato cage. He measured it.",
+          "Back in town for a few days. The house is too quiet without visitors."
+        ],
+        "id": "talia"
+      },
+      "luz": {
+        "hid": "ines",
+        "visitor": true,
+        "name": "Luz",
+        "first": "Luz",
+        "age": "young adult",
+        "role": "Inés's granddaughter, botany student (visiting)",
+        "pron": "she",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#2a1a12",
+          "hairS": "wavy",
+          "topS": "sweater",
+          "shirtC": "#d86a7a",
+          "pantsC": "#3a3a44",
+          "body": "slim",
+          "pres": "fem",
+          "face": "soft",
+          "glasses": "round",
+          "eyes": "lashed",
+          "bg": "#f8e0e4"
+        },
+        "hist": [
+          "Luz's first plant sketch was of Abuela's Blush rose. The leaf was very wrong. She keeps it anyway.",
+          "She stays in the guest room with a sketch desk and a stack of botanical references.",
+          "She wants to write a plant history of Willowbrook that includes the neighbors' memories."
+        ],
+        "plants": "roses, willows and anything with a story",
+        "likes": [
+          "P125"
+        ],
+        "gift": {
+          "k": "rosecard",
+          "n": "Willow & rose card",
+          "t": "A botanical card Luz drew: the Old Willow and Abuela's Blush, side by side."
+        },
+        "lines": [
+          "Abuela says her roses talk. I'm writing down what they say.",
+          "Did you know the willow is older than every house on the street?",
+          "Botany is just gossip about plants, with Latin."
+        ],
+        "id": "luz"
+      }
+    },
+    "NPCs": {
+      "doug": {
+        "skin": "#e8b48f",
+        "hairC": "#e9e2d4",
+        "hairS": "balding",
+        "facial": "mustache",
+        "topS": "overalls",
+        "shirtC": "#556f8f",
+        "body": "stocky",
+        "pres": "masc",
+        "face": "square",
+        "brows": "thick",
+        "eyes": "sleepy",
+        "bg": "#d9e8c4",
+        "hat": "none",
+        "prop": "can"
+      },
+      "officer": {
+        "skin": "#a8704c",
+        "hairC": "#1d1612",
+        "hairS": "short",
+        "topS": "officer",
+        "shirtC": "#2a3a5c",
+        "pantsC": "#1f2a44",
+        "body": "tall",
+        "pres": "fem",
+        "face": "angular",
+        "brows": "straight",
+        "eyes": "dot",
+        "hat": "officer",
+        "bg": "#cfd8e8",
+        "prop": "clipboard",
+        "shoesS": "boots"
+      },
+      "suit": {
+        "skin": "#cf9670",
+        "hairC": "#111",
+        "hairS": "buzz",
+        "topS": "suit",
+        "shirtC": "#16161a",
+        "pantsC": "#16161a",
+        "glasses": "shades",
+        "body": "broad",
+        "pres": "masc",
+        "face": "square",
+        "bg": "#9aa0a8",
+        "suit": true
+      },
+      "amani": {
+        "skin": "#5a3624",
+        "hairC": "#111",
+        "hairS": "short",
+        "topS": "labcoat",
+        "shirtC": "#f2f2ee",
+        "pantsC": "#3a3f55",
+        "glasses": "square",
+        "body": "tall",
+        "pres": "neutral",
+        "face": "long",
+        "eyes": "round",
+        "bg": "#e3eef2",
+        "coat": true
+      },
+      "grandma": {
+        "skin": "#f6d3b3",
+        "hairC": "#f2f2f2",
+        "hairS": "curly",
+        "topS": "cardigan",
+        "shirtC": "#4e8a3c",
+        "glasses": "round",
+        "body": "curvy",
+        "pres": "fem",
+        "face": "round",
+        "eyes": "dot",
+        "extras": [
+          "blush"
+        ],
+        "short": true,
+        "bg": "#e8dcc0"
+      },
+      "pixel": {
+        "skin": "#e8b48f",
+        "hairC": "#e48ab8",
+        "hairS": "bob",
+        "topS": "hoodie",
+        "shirtC": "#7d5bd6",
+        "bg": "#fbe1ef",
+        "acc": "headphones",
+        "body": "slim",
+        "pres": "neutral",
+        "eyes": "wide",
+        "extras": [
+          "freckles"
+        ]
+      },
+      "moon": {
+        "skin": "#7a4c31",
+        "hairC": "#1d1612",
+        "hairS": "locs",
+        "topS": "sweater",
+        "shirtC": "#4a3f7a",
+        "bg": "#e1dcf4",
+        "acc": "moon",
+        "body": "average",
+        "pres": "fem",
+        "face": "soft",
+        "eyes": "lashed"
+      },
+      "auto": {
+        "skin": "#cf9670",
+        "hairC": "#4a2c1a",
+        "hairS": "short",
+        "topS": "jacket",
+        "shirtC": "#e0a33a",
+        "hat": "cap",
+        "capC": "#d9532f",
+        "bg": "#fff0cf",
+        "body": "slim",
+        "pres": "masc",
+        "face": "angular",
+        "eyes": "wide",
+        "facial": "stubble"
+      },
+      "swamp": {
+        "skin": "#b9c8a8",
+        "hairC": "#3e6b4a",
+        "hairS": "long",
+        "facial": "beard",
+        "topS": "flannel",
+        "shirtC": "#2f4f3a",
+        "hat": "wizard",
+        "bg": "#cfe3d4",
+        "body": "tall",
+        "pres": "masc",
+        "face": "long",
+        "eyes": "sleepy"
+      },
+      "rosalind": {
+        "skin": "#a8704c",
+        "hairC": "#e9e2d4",
+        "hairS": "bun",
+        "topS": "cardigan",
+        "shirtC": "#8a5a8f",
+        "pantsC": "#6b5a3a",
+        "bottomS": "skirt",
+        "glasses": "round",
+        "acc": "scarf",
+        "body": "curvy",
+        "pres": "fem",
+        "face": "round",
+        "short": true,
+        "bg": "#f2e4d0",
+        "prop": "knit",
+        "shoesS": "boots"
+      },
+      "theo": {
+        "skin": "#e8b48f",
+        "hairC": "#1d1612",
+        "hairS": "buzz",
+        "topS": "garden",
+        "shirtC": "#2b2b33",
+        "pantsC": "#3a3a44",
+        "bottomS": "joggers",
+        "body": "stocky",
+        "pres": "masc",
+        "face": "round",
+        "eyes": "round",
+        "facial": "goatee",
+        "bg": "#f2e4d0",
+        "shoesC": "#e9e2d4"
+      },
+      "marisol": {
+        "skin": "#cf9670",
+        "hairC": "#4a2c1a",
+        "hairS": "wavy",
+        "topS": "overalls",
+        "shirtC": "#e0a33a",
+        "glasses": "square",
+        "body": "slim",
+        "pres": "fem",
+        "face": "soft",
+        "eyes": "lashed",
+        "extras": [
+          "freckles"
+        ],
+        "hat": "bucket",
+        "hatC": "#5fa04a",
+        "bg": "#f2e4d0"
+      }
+    },
+    "guests": [
+      {
+        "n": "Jules",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#b3412c",
+          "hairS": "bob",
+          "topS": "jacket",
+          "shirtC": "#2f4f6a",
+          "pantsC": "#2b2b33",
+          "bottomS": "jeans",
+          "pres": "fem",
+          "body": "slim",
+          "bg": "#f2e0d0"
+        },
+        "line": [
+          "Remy talks about you like you're a mad scientist.",
+          "Is that a plant thing I smell or a candle thing?"
+        ]
+      },
+      {
+        "n": "Dev",
+        "look": {
+          "skin": "#7a4c31",
+          "hairC": "#1d1612",
+          "hairS": "locs",
+          "topS": "hoodie",
+          "shirtC": "#5f9c33",
+          "pantsC": "#36405a",
+          "bottomS": "joggers",
+          "pres": "masc",
+          "body": "broad",
+          "bg": "#e2ecea"
+        },
+        "line": [
+          "Remy said you grow medicine for patients. That's actually kind of beautiful.",
+          "Your hallway has a vibe. An aroma, even."
+        ]
+      },
+      {
+        "n": "Sasha",
+        "look": {
+          "skin": "#f6d3b3",
+          "hairC": "#d9b46a",
+          "hairS": "ponytail",
+          "topS": "sweater",
+          "shirtC": "#d26aa0",
+          "pantsC": "#6b5a3a",
+          "bottomS": "skirt",
+          "pres": "fem",
+          "body": "average",
+          "bg": "#f4e4ec"
+        },
+        "line": [
+          "I brought snacks. Remy brought nothing. Classic.",
+          "So what's behind the bedroom door? Kidding. Mostly."
+        ]
+      },
+      {
+        "n": "Ari",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#3e9f7a",
+          "hairS": "short",
+          "topS": "tee",
+          "shirtC": "#e0a33a",
+          "pantsC": "#2b2b33",
+          "bottomS": "cargo",
+          "pres": "neutral",
+          "body": "tall",
+          "glasses": "round",
+          "bg": "#e6e0f4"
+        },
+        "line": [
+          "Remy's design portfolio is your fault, apparently. Something about \"plant palettes\".",
+          "Is your house always this... herbal?"
+        ]
+      }
+    ],
+    "patients": {
+      "rosalind": {
+        "name": "Rosalind Ortega",
+        "role": "Retired chemistry teacher",
+        "persona": "Dry humor. Knits during every conversation.",
+        "goal": "managing arthritis-related chronic pain, alongside her physician Dr. Amani",
+        "pref": {
+          "type": "II",
+          "aroma": [
+            "Earthy",
+            "Floral",
+            "Pine"
+          ],
+          "organic": true,
+          "tol": "Low"
+        },
+        "budget": 140,
+        "look": {
+          "skin": "#a8704c",
+          "hair": "#e9e2d4",
+          "style": "bun",
+          "shirt": "#8a5a8f",
+          "glasses": "round"
+        }
+      },
+      "theo": {
+        "name": "Theo Park",
+        "role": "Line cook",
+        "persona": "Loud laugh. Sends voice memos longer than podcasts.",
+        "goal": "managing chemotherapy-associated nausea, in coordination with his oncology team",
+        "pref": {
+          "type": "I",
+          "aroma": [
+            "Citrus",
+            "Tropical",
+            "Mint"
+          ],
+          "organic": false,
+          "tol": "Medium"
+        },
+        "budget": 120,
+        "look": {
+          "skin": "#e8b48f",
+          "hair": "#1d1612",
+          "style": "buzz",
+          "shirt": "#2b2b33",
+          "glasses": "none"
+        }
+      },
+      "marisol": {
+        "name": "Marisol Vega",
+        "role": "Muralist",
+        "persona": "Paints left-handed now. Talks in color palettes.",
+        "goal": "managing MS-related spasticity, with guidance from her neurologist",
+        "pref": {
+          "type": "II",
+          "aroma": [
+            "Berry",
+            "Floral",
+            "Spice"
+          ],
+          "organic": null,
+          "tol": "Low"
+        },
+        "budget": 160,
+        "look": {
+          "skin": "#cf9670",
+          "hair": "#4a2c1a",
+          "style": "long",
+          "shirt": "#e0a33a",
+          "glasses": "square"
+        }
+      },
+      "doug": {
+        "name": "Doug Haskell",
+        "role": "Retired machinist",
+        "persona": "Widower. Grows Brandywines in the bed his late wife Ruth started. Gruff, fair, notices everything.",
+        "goal": "managing knee arthritis aches, in coordination with his doctor",
+        "pref": {
+          "type": "II",
+          "aroma": [
+            "Earthy",
+            "Pine",
+            "Spice"
+          ],
+          "organic": true,
+          "tol": "Low"
+        },
+        "budget": 110,
+        "look": null,
+        "neighbor": true
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "role": "PE teacher",
+        "persona": "Coaches the school track team. Big laugh, bigger rulebook. Protective of his kids and the block.",
+        "goal": "recovering from a knee procedure, comparing options with his orthopedist",
+        "pref": {
+          "type": "III",
+          "aroma": [
+            "Citrus",
+            "Mint",
+            "Floral"
+          ],
+          "organic": null,
+          "tol": "Low"
+        },
+        "budget": 100,
+        "look": null,
+        "neighbor": true
+      },
+      "ines": {
+        "name": "Inés Calderón",
+        "role": "Retired librarian",
+        "persona": "Ran the Willowbrook library for 30 years. Reads on her porch every afternoon. Her late brother used registry medicine.",
+        "goal": "easing sleep trouble tied to chronic back pain, with guidance from her physician",
+        "pref": {
+          "type": "II",
+          "aroma": [
+            "Floral",
+            "Berry",
+            "Earthy"
+          ],
+          "organic": true,
+          "tol": "Low"
+        },
+        "budget": 130,
+        "look": null,
+        "neighbor": true
+      },
+      "kenji": {
+        "name": "Kenji Mori",
+        "role": "Software engineer",
+        "persona": "Quiet, deadpan, extremely online. Grows forty kinds of chili peppers on his porch and rates them in a spreadsheet.",
+        "goal": "managing tension headaches and neck strain with his doctor's input",
+        "pref": {
+          "type": "II",
+          "aroma": [
+            "Citrus",
+            "Mint",
+            "Pine"
+          ],
+          "organic": null,
+          "tol": "Medium"
+        },
+        "budget": 120,
+        "look": null,
+        "neighbor": true
+      },
+      "arthur": {
+        "name": "Arthur Dunn",
+        "role": "Retired carpenter, model builder",
+        "persona": "Rows should be straight. Life doesn't have to be, but rows should.",
+        "goal": "arthritis-related pain, discussed with my clinician",
+        "pref": {
+          "type": "II",
+          "aroma": [
+            "Earthy",
+            "Floral",
+            "Pine"
+          ],
+          "organic": null,
+          "tol": "Low"
+        },
+        "budget": 110,
+        "look": {
+          "skin": "#f6d3b3",
+          "hairC": "#d8d4ca",
+          "hairS": "balding",
+          "facial": "mustache",
+          "topS": "sweater",
+          "shirtC": "#6a5a3a",
+          "pantsC": "#3a3a44",
+          "body": "tall",
+          "pres": "masc",
+          "face": "long",
+          "eyes": "sleepy",
+          "bg": "#ece4d4",
+          "hat": "cap",
+          "capC": "#3f5a3a"
+        }
+      },
+      "rosie": {
+        "name": "Rosie Dunn",
+        "role": "Retired theater seamstress",
+        "persona": "Dahlias are divas. I respect that.",
+        "goal": "persistent pain after an old injury, under my care team",
+        "pref": {
+          "type": "II",
+          "aroma": [
+            "Earthy",
+            "Floral",
+            "Pine"
+          ],
+          "organic": null,
+          "tol": "Low"
+        },
+        "budget": 110,
+        "look": {
+          "skin": "#f6d3b3",
+          "hairC": "#e9e2d4",
+          "hairS": "bob",
+          "topS": "cardigan",
+          "shirtC": "#c94f6a",
+          "pantsC": "#4a3a4a",
+          "bottomS": "skirt",
+          "body": "curvy",
+          "pres": "fem",
+          "face": "round",
+          "glasses": "round",
+          "eyes": "lashed",
+          "short": true,
+          "bg": "#f8e0e8"
+        }
+      }
+    },
+    "social": {
+      "@leafyluna": {
+        "name": "Luna",
+        "kind": "newbie",
+        "likes": [
+          "supportive",
+          "helpful",
+          "enthusiastic"
+        ],
+        "dislikes": [
+          "blunt",
+          "rude",
+          "hostile"
+        ],
+        "posts": [
+          "first grow ever!! is she okay?? she looks a lil droopy",
+          "day 12. I talk to her every morning. too much?",
+          "my roommate named my plant Kevin. it is a girl. kevin is a girl."
+        ]
+      },
+      "@terpturtle": {
+        "name": "Turtle",
+        "kind": "banter",
+        "likes": [
+          "funny",
+          "blunt",
+          "enthusiastic"
+        ],
+        "dislikes": [
+          "hostile",
+          "neutral"
+        ],
+        "posts": [
+          "rate my setup 1-10, wrong answers only",
+          "the light timer failed and so did I",
+          "she's purple. I'm crying. the dog is confused."
+        ]
+      },
+      "@soilsister": {
+        "name": "Mags",
+        "kind": "expert",
+        "likes": [
+          "helpful",
+          "blunt",
+          "supportive"
+        ],
+        "dislikes": [
+          "enthusiastic",
+          "rude",
+          "hostile"
+        ],
+        "posts": [
+          "Living soil bed, year three. The worms have unionized.",
+          "Reminder: overwatering kills more plants than neglect.",
+          "Compost tea brewing. Smells like a forest floor and ambition."
+        ]
+      },
+      "@budgetbotanist": {
+        "name": "Rafi",
+        "kind": "newbie",
+        "likes": [
+          "helpful",
+          "supportive",
+          "funny"
+        ],
+        "dislikes": [
+          "blunt",
+          "rude",
+          "hostile"
+        ],
+        "posts": [
+          "grew this under a $20 light. don't judge me",
+          "DIY reflector made of cereal boxes. it works??",
+          "everything I own is held together with zip ties"
+        ]
+      },
+      "@photonphil": {
+        "name": "Phil",
+        "kind": "expert",
+        "likes": [
+          "helpful",
+          "blunt",
+          "neutral"
+        ],
+        "dislikes": [
+          "enthusiastic",
+          "funny",
+          "hostile"
+        ],
+        "posts": [
+          "Measured my canopy at 12 points. Uniformity is a lifestyle.",
+          "New light. Spreadsheet attached. Yes I have feelings about it.",
+          "If your light says \"1000W equivalent,\" it is lying to you."
+        ]
+      },
+      "@mossmom": {
+        "name": "Jo",
+        "kind": "cozy",
+        "likes": [
+          "supportive",
+          "enthusiastic",
+          "funny"
+        ],
+        "dislikes": [
+          "rude",
+          "hostile",
+          "blunt"
+        ],
+        "posts": [
+          "Sunday plant care with tea and rain sounds ☕",
+          "my houseplants are jealous of the tent. drama.",
+          "little leaf, big dreams"
+        ]
+      },
+      "@growtent.greg": {
+        "name": "Greg",
+        "kind": "brand",
+        "likes": [
+          "enthusiastic",
+          "neutral",
+          "helpful"
+        ],
+        "dislikes": [
+          "blunt",
+          "rude",
+          "hostile"
+        ],
+        "posts": [
+          "NEW unboxing: the zipper sounds like a spaceship (affiliate link in bio)",
+          "Top 5 tents under $100 (number 3 will shock you)",
+          "Sponsored: This fan changed my life. Literally."
+        ]
+      },
+      "@nightshade.nell": {
+        "name": "Nell",
+        "kind": "artist",
+        "likes": [
+          "supportive",
+          "enthusiastic",
+          "helpful"
+        ],
+        "dislikes": [
+          "rude",
+          "hostile",
+          "blunt"
+        ],
+        "posts": [
+          "light study #14: purple hour",
+          "painted my plant before I photographed her. both are art.",
+          "macro of a single trichome. it looks like a chandelier."
+        ]
+      },
+      "@compost.carl": {
+        "name": "Carl",
+        "kind": "grump",
+        "likes": [
+          "blunt",
+          "funny",
+          "helpful"
+        ],
+        "dislikes": [
+          "enthusiastic",
+          "supportive"
+        ],
+        "posts": [
+          "Kids today with their smart pots. In my day the pot was dumb and so were we.",
+          "Hot take: most nutrient lines are just expensive water.",
+          "My compost pile has a higher IQ than most influencers."
+        ]
+      },
+      "@kindleaf.kai": {
+        "name": "Kai",
+        "kind": "medical",
+        "likes": [
+          "supportive",
+          "helpful",
+          "neutral"
+        ],
+        "dislikes": [
+          "funny",
+          "rude",
+          "hostile"
+        ],
+        "posts": [
+          "Registry grower checklist: label everything, describe honestly, never promise results.",
+          "Talked with a patient today about why \"strongest\" isn't \"best.\" Good conversation.",
+          "Patient-first means sometimes saying \"ask your doctor.\""
+        ]
+      },
+      "@trichome.tess": {
+        "name": "Tess",
+        "kind": "banter",
+        "likes": [
+          "funny",
+          "enthusiastic",
+          "supportive"
+        ],
+        "dislikes": [
+          "neutral",
+          "hostile"
+        ],
+        "posts": [
+          "my plant has better skin than me",
+          "pheno hunting is just gambling with extra steps",
+          "tell me your plant's name and I'll guess its personality"
+        ]
+      },
+      "@humidity.hank": {
+        "name": "Hank",
+        "kind": "troll",
+        "likes": [
+          "rude",
+          "hostile",
+          "sarcastic"
+        ],
+        "dislikes": [],
+        "posts": [
+          "all closet growers are clowns 🤡",
+          "imagine paying for a filter lol",
+          "your plant is mid and so are you"
+        ]
+      }
+    },
+    "channels": {
+      "vale": {
+        "name": "Dr. Juniper Vale",
+        "tag": "Plant Science Hour",
+        "format": "University-style lectures",
+        "cats": [
+          "basics",
+          "environment"
+        ],
+        "color": "#5d9bff",
+        "mood": "calm",
+        "look": {
+          "skin": "#7a4c31",
+          "hairC": "#1d1612",
+          "hairS": "locs",
+          "topS": "labcoat",
+          "shirtC": "#f2f2ee",
+          "glasses": "round",
+          "pres": "fem",
+          "body": "average",
+          "bg": "#dfe8f4"
+        }
+      },
+      "shed": {
+        "name": "The Soil Shed",
+        "tag": "with Gus Marlowe",
+        "format": "Deep-dive long-form",
+        "cats": [
+          "health",
+          "basics"
+        ],
+        "color": "#a0703e",
+        "mood": "folksy",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#8a5a2b",
+          "hairS": "balding",
+          "facial": "beard",
+          "topS": "flannel",
+          "shirtC": "#8a3a2a",
+          "pres": "masc",
+          "body": "stocky",
+          "hat": "cap",
+          "capC": "#3f6a3a",
+          "bg": "#efe2c8"
+        }
+      },
+      "patchwork": {
+        "name": "Patchwork Grow Diaries",
+        "tag": "by Noor",
+        "format": "Visual grow diary",
+        "cats": [
+          "basics",
+          "health"
+        ],
+        "color": "#e48ab8",
+        "mood": "dreamy",
+        "look": {
+          "skin": "#a8704c",
+          "hairC": "#4a2c1a",
+          "hairS": "wavy",
+          "topS": "sweater",
+          "shirtC": "#e48ab8",
+          "pres": "fem",
+          "body": "slim",
+          "bg": "#f6e1ec"
+        }
+      },
+      "canopy": {
+        "name": "Canopy Conversations",
+        "tag": "hosted by Dez",
+        "format": "Interview podcast",
+        "cats": [
+          "community",
+          "genetics"
+        ],
+        "color": "#ffb547",
+        "mood": "chatty",
+        "look": {
+          "skin": "#5a3624",
+          "hairC": "#1d1612",
+          "hairS": "afro",
+          "topS": "jacket",
+          "shirtC": "#2f4f6a",
+          "pres": "neutral",
+          "body": "average",
+          "acc": "headphones",
+          "bg": "#f4ead0"
+        }
+      },
+      "pheno": {
+        "name": "Pheno Hunters HQ",
+        "tag": "weekly genetics show",
+        "format": "Genetics show",
+        "cats": [
+          "genetics"
+        ],
+        "color": "#b67cff",
+        "mood": "hype",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#3e9f7a",
+          "hairS": "mohawk",
+          "topS": "hoodie",
+          "shirtC": "#7d5bd6",
+          "pres": "masc",
+          "body": "slim",
+          "bg": "#ece0fa"
+        }
+      },
+      "fern": {
+        "name": "Ask Auntie Fern",
+        "tag": "your questions, answered",
+        "format": "Q&A",
+        "cats": [
+          "health",
+          "post"
+        ],
+        "color": "#7fb03a",
+        "mood": "warm",
+        "look": {
+          "skin": "#f6d3b3",
+          "hairC": "#e9e2d4",
+          "hairS": "bun",
+          "topS": "cardigan",
+          "shirtC": "#4e8a3c",
+          "glasses": "round",
+          "pres": "fem",
+          "body": "curvy",
+          "short": true,
+          "bg": "#e8f2d8"
+        }
+      },
+      "tinker": {
+        "name": "Tinkerbench",
+        "tag": "gear, tested honestly",
+        "format": "Equipment reviews",
+        "cats": [
+          "equipment",
+          "environment"
+        ],
+        "color": "#56b6c2",
+        "mood": "nerdy",
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#b3412c",
+          "hairS": "short",
+          "topS": "work",
+          "shirtC": "#3f7fbf",
+          "pres": "masc",
+          "body": "average",
+          "glasses": "square",
+          "bg": "#dff0f2"
+        }
+      },
+      "netted": {
+        "name": "Netted & Neat",
+        "tag": "canopy craft",
+        "format": "Training tutorials (abstract)",
+        "cats": [
+          "basics",
+          "equipment"
+        ],
+        "color": "#9be15d",
+        "mood": "tidy",
+        "look": {
+          "skin": "#cf9670",
+          "hairC": "#1d1612",
+          "hairS": "ponytail",
+          "topS": "tee",
+          "shirtC": "#3f8a3c",
+          "pres": "neutral",
+          "body": "tall",
+          "bg": "#e4f4d8"
+        }
+      },
+      "cure": {
+        "name": "Cure Corner",
+        "tag": "slow and steady",
+        "format": "Post-harvest stories",
+        "cats": [
+          "post"
+        ],
+        "color": "#c9a35a",
+        "mood": "calm",
+        "look": {
+          "skin": "#4e2f1e",
+          "hairC": "#e9e2d4",
+          "hairS": "buzz",
+          "facial": "goatee",
+          "topS": "garden",
+          "shirtC": "#5a3720",
+          "pres": "masc",
+          "body": "broad",
+          "bg": "#f2e4c4"
+        }
+      },
+      "lumen": {
+        "name": "Lumen & Loam LIVE",
+        "tag": "Sunday night streams",
+        "format": "Live streams",
+        "cats": [
+          "environment",
+          "community"
+        ],
+        "color": "#ff6f5c",
+        "mood": "hype",
+        "live": true,
+        "look": {
+          "skin": "#e8b48f",
+          "hairC": "#e48ab8",
+          "hairS": "long",
+          "topS": "crop",
+          "shirtC": "#1d1f22",
+          "pres": "fem",
+          "body": "average",
+          "acc": "headphones",
+          "bg": "#ffe0d8"
+        }
+      }
+    },
+    "stories": [
+      [
+        "remy",
+        "Remy Alvarez",
+        "Roommate · graphic designer",
+        "Learned layout making flyers for small shows, trading an evening's work for a record or a meal. A steady agency job pays the rent but eats evenings with revisions. The den boxes hold an abandoned neighborhood poster series. Remy wants to finish one project that needs nobody's approval.",
+        "nb",
+        "remy"
+      ],
+      [
+        "doug",
+        "Doug Haskell",
+        "Retired machinist · tomatoes",
+        "Made exact machine parts, and imperfect household fixes for friends. Ruth convinced him a garden wasn't another production schedule; he started stamping little labels for her tomatoes. After she died, keeping her bed going kept an ordinary shared habit alive. He would like to pass on his making skills without admitting he wants company.",
+        "nb",
+        "doug"
+      ],
+      [
+        "priya",
+        "Priya Raman",
+        "Night-shift nurse · Biscuit's person",
+        "Used to treat rest as a chore she could postpone. She fostered Biscuit \"for one weekend\" while adjusting to nights; his cautious first days slowed her down, and their walks became the hour she owes nobody. She wants one weekend that isn't planned around shifts.",
+        "nb",
+        "priya"
+      ],
+      [
+        "marcus",
+        "Marcus Bell",
+        "PE teacher & track coach · dad of twins",
+        "A diligent school runner who didn't always win; a coach noticed him helping others finish. That attention is why he teaches. His proudest mementos are notes from kids who found a place on the team. He wants beginners to feel as welcome as the fast runners.",
+        "nb",
+        "marcus"
+      ],
+      [
+        "ines",
+        "Inés Calderón",
+        "Retired librarian · roses",
+        "Kept a notebook of who recommended which book, and over decades it became a portrait of the town. Her rose labels keep family jokes the same way. Raúl's dry recommendations sit beside books she rereads on hard evenings. She hopes the library always feels like a place anyone belongs.",
+        "nb",
+        "ines"
+      ],
+      [
+        "tobias",
+        "Tobias Nguyen",
+        "Barista · bedroom producer",
+        "Began recording everyday noise on borrowed headphones after café shifts; an espresso machine's hiss became his first kept rhythm. A label's polite \"no\" hurt more than he admits, but neighbors hearing themselves in his tracks makes the work real. He wants to finish a collection about the block.",
+        "nb",
+        "tobias"
+      ],
+      [
+        "bev",
+        "Beverly \"Bev\" Sloane",
+        "Realtor · watch captain",
+        "Learned to make rooms welcoming while selling homes people had loved. Presentation became her way of feeling useful. Since Carl moved out, the formal room stays immaculate and the watch chat keeps her company; upstairs is softer, with her son's crooked craft house. She wants the block to need her for more than complaints.",
+        "nb",
+        "bev"
+      ],
+      [
+        "kenji",
+        "Kenji Mori",
+        "Remote developer · hot sauce",
+        "One balcony pepper survived a hard first remote-work year when everything else died, so he started tracking it. Now it's forty varieties and an absurd flavor scale. Exact language helps him say what he means and invite people to stay, disguised as a taste test. He'd like to host one meal where nobody asks him to fix the Wi-Fi.",
+        "nb",
+        "kenji"
+      ],
+      [
+        "rosalind",
+        "Rosalind Ortega",
+        "Retired chemistry teacher",
+        "Once ran a tiny after-school science club from donated equipment and let pupils paint the storage boxes. Knitting is how she thinks through a problem. She still writes to former pupils and hopes to gather their stories into a reunion booklet.",
+        "pt",
+        "rosalind"
+      ],
+      [
+        "theo",
+        "Theo Park",
+        "Line cook",
+        "Learned that a kitchen shift goes better when someone makes the nervous new hire laugh. His first mentor left him a battered timer. He wants to record a short collection of family-friendly kitchen stories that is, for once, actually short.",
+        "pt",
+        "theo"
+      ],
+      [
+        "marisol",
+        "Marisol Vega",
+        "Muralist",
+        "Her first mural was a communal wall funded by neighbors bringing paint a cup at a time; she keeps every color card because each one is a person who helped. A changed painting rhythm has her noticing smaller shapes. She wants to paint the Old Willow as residents remember it.",
+        "pt",
+        "marisol"
+      ],
+      [
+        "amani",
+        "Dr. Amani",
+        "Willowbrook Clinic",
+        "Before the clinic, Amani ran plain-language community information evenings. A shelf of thank-you cards is a reminder that making uncertainty understandable matters as much as having an answer. Off the clock: tiny paper buildings, one roof at a time.",
+        "clinic",
+        ""
+      ],
+      [
+        "bea",
+        "Officer Bea Lindqvist",
+        "Code compliance",
+        "Got into public service untangling address and permit mistakes. Prefers problems fixed early to problems escalated. Off duty she restores small birdhouses and keeps a notebook of wonderfully absurd signs.",
+        "officer",
+        ""
+      ],
+      [
+        "grandma",
+        "Grandma Green",
+        "Heirloom breeder",
+        "Organized her first collection at a kitchen table, labels written on the backs of grocery lists. A forgotten label can erase a whole story, so she keeps both. She once dismissed newer growers as impatient, then kept one thoughtful modern letter beside her oldest jar.",
+        "br",
+        "grandma"
+      ],
+      [
+        "pixel",
+        "Pixel Seeds",
+        "Color-obsessed breeder",
+        "Began as tiny color studies made during dull desk breaks. The loud palette jokes hide a real fascination with variation, and an archive of unglamorous early failures they plan to publish.",
+        "br",
+        "pixel"
+      ],
+      [
+        "moon",
+        "Moon Medicine Genetics",
+        "Calm, careful breeder",
+        "Early discussions were full of flashy claims, so the collective chose a slower path built on descriptions people can understand. A plain notebook of unanswered questions became its emblem.",
+        "br",
+        "moon"
+      ],
+      [
+        "auto",
+        "AutoPilot Genetics",
+        "Lap-time breeder",
+        "Learned to love logs from amateur racing and brought that language to every hobby. A lost notebook taught them backups and patience. Slowly learning that a satisfying result can matter more than being first.",
+        "br",
+        "auto"
+      ],
+      [
+        "swamp",
+        "Swamp Wizard Seeds",
+        "Experimental breeder",
+        "A creekside nature sketchbook became an extravagant wizard brand. The prophecies are theatre; the notes on what actually happened are real. A rejected frog sticker became the logo everyone loves.",
+        "br",
+        "swamp"
+      ],
+      [
+        "@leafyluna",
+        "Luna (@leafyluna)",
+        "Anxious, supportive beginner",
+        "Kept tiny balcony pots through several moves and finally has room for one deliberate hobby. Asks a lot of questions because she remembers being dismissed. Wants a photo diary she can show another beginner without pretending the first try was perfect.",
+        "sp",
+        "@leafyluna"
+      ],
+      [
+        "@terpturtle",
+        "Turtle (@terpturtle)",
+        "Jokes and banter",
+        "Used to post only polished wins, until a failed-timer joke drew kinder replies. Humor keeps them involved when experiments flop. Wants to host a caption night where nobody has to be the best.",
+        "sp",
+        "@terpturtle"
+      ],
+      [
+        "@soilsister",
+        "Mags (@soilsister)",
+        "Direct soil expert",
+        "Helped restore a neglected shared allotment with a patient older gardener; the third-year bed proved quiet maintenance outlasts flashy purchases. Wants to share what she knows without becoming everyone's help desk.",
+        "sp",
+        "@soilsister"
+      ],
+      [
+        "@budgetbotanist",
+        "Rafi (@budgetbotanist)",
+        "Resourceful novice",
+        "Built his first setup from repurposed storage and secondhand bargains because money was tight. Proud of making things work; tired of being the punchline. Wants to show affordable progress, mistakes included.",
+        "sp",
+        "@budgetbotanist"
+      ],
+      [
+        "@photonphil",
+        "Phil (@photonphil)",
+        "Precise, skeptical expert",
+        "Started measuring after a product disappointed a friend. Learning that a clear explanation reaches more people than a perfect graph.",
+        "sp",
+        "@photonphil"
+      ],
+      [
+        "@mossmom",
+        "Jo (@mossmom)",
+        "Cozy and warm",
+        "Her Sunday tea ritual began in a tiny shared flat where one windowsill plant was the thing everyone checked together. Wants to recreate that feeling in a monthly, low-pressure hangout.",
+        "sp",
+        "@mossmom"
+      ],
+      [
+        "@growtent.greg",
+        "Greg (@growtent.greg)",
+        "Sponsored reviewer",
+        "Started reviews to explain confusing purchases, then learned sponsored posts paid faster. Keeps an embarrassingly honest early review. Wants one clearly disclosed review where enthusiasm doesn't replace useful information.",
+        "sp",
+        "@growtent.greg"
+      ],
+      [
+        "@nightshade.nell",
+        "Nell (@nightshade.nell)",
+        "Artist, light studies",
+        "Photographed plants after years of urban night sketching; their shapes gave her a slower subject. Wants to exhibit paired paintings and photos of the same subject.",
+        "sp",
+        "@nightshade.nell"
+      ],
+      [
+        "@compost.carl",
+        "Carl (@compost.carl)",
+        "Grumpy, blunt, funny",
+        "Learned gardening from a stubborn mentor who distrusted anything in a glossy bottle, and repeats the jokes even when modern methods work. (Not the Carl who moved out of Bev's house.)",
+        "sp",
+        "@compost.carl"
+      ],
+      [
+        "@kindleaf.kai",
+        "Kai (@kindleaf.kai)",
+        "Careful, patient-first",
+        "Volunteered translating intimidating forms into plain language; keeps corrected drafts as a reminder that sounding confident can still mislead. Wants discussions gentler and clearer.",
+        "sp",
+        "@kindleaf.kai"
+      ],
+      [
+        "@trichome.tess",
+        "Tess (@trichome.tess)",
+        "Enthusiastic banter",
+        "Names every plant because a naming game kept friends close when they lived far apart. Wants to turn those running jokes into an illustrated calendar.",
+        "sp",
+        "@trichome.tess"
+      ],
+      [
+        "@humidity.hank",
+        "Hank (@humidity.hank)",
+        "Sarcastic troll",
+        "Enjoyed the attention provocative comments brought and now finds sincerity awkward. A modest hobby notebook exists, if he ever chooses to share it. Muting or blocking him is always fine.",
+        "sp",
+        "@humidity.hank"
+      ],
+      [
+        "vale",
+        "Dr. Juniper Vale",
+        "Plant Science Hour",
+        "Started recording short explanations when students asked the same good questions after class. An over-complicated diagram hangs beside its simpler replacement.",
+        "tr",
+        "vale"
+      ],
+      [
+        "shed",
+        "Gus Marlowe",
+        "The Soil Shed",
+        "Rebuilt an old shed with friends and found the conversations more memorable than the project; long episodes keep that pace.",
+        "tr",
+        "shed"
+      ],
+      [
+        "patchwork",
+        "Noor",
+        "Patchwork Grow Diaries",
+        "Began taking pictures for a friend who moved away; the imperfect snapshots became a visual diary. Wants a yearbook that includes the quiet days.",
+        "tr",
+        "patchwork"
+      ],
+      [
+        "canopy",
+        "Dez",
+        "Canopy Conversations",
+        "Started with a borrowed recorder and a habit of asking the person beside them a good question. Wants to record voices beyond the loudest.",
+        "tr",
+        "canopy"
+      ],
+      [
+        "pheno",
+        "Pheno Hunters HQ",
+        "Genetics show",
+        "Grew out of a tiny group comparing surprise results; an old group photo reminds them why they began.",
+        "tr",
+        "pheno"
+      ],
+      [
+        "fern",
+        "Auntie Fern",
+        "Ask Auntie Fern",
+        "Answered handwritten questions in a neighborhood newsletter long before anyone called her Auntie. Keeps a \"no silly questions\" archive.",
+        "tr",
+        "fern"
+      ],
+      [
+        "tinker",
+        "Tinkerbench",
+        "Equipment reviews",
+        "Inherited a box of perfectly useful broken things and started documenting repairs. Keeps one failed fix beside every success.",
+        "tr",
+        "tinker"
+      ],
+      [
+        "netted",
+        "Netted & Neat",
+        "Canopy craft",
+        "Once built miniature stage sets and loves the order of carefully placed supports. Tidy can still be playful.",
+        "tr",
+        "netted"
+      ],
+      [
+        "cure",
+        "Cure Corner",
+        "Post-harvest stories",
+        "Learned patience on slow restoration projects; a cabinet of dated labels says waiting is part of making.",
+        "tr",
+        "cure"
+      ],
+      [
+        "lumen",
+        "Lumen & Loam LIVE",
+        "Sunday streamer",
+        "Began as a casual Sunday call between friends on opposite shifts. The bright set hides the tiny folding desk where it started.",
+        "tr",
+        "lumen"
+      ]
+    ],
+    "shopStaff": {
+      "cafe": {
+        "n": "Bean There Café",
+        "h": [
+          420,
+          1260
+        ],
+        "staff": [
+          "cass"
+        ],
+        "nb": "tobias",
+        "pt": "Ana",
+        "ptLook": {
+          "skin": "#cf9670",
+          "hairC": "#1d1612",
+          "hairS": "bun",
+          "topS": "tee",
+          "shirtC": "#2c6a6a",
+          "pantsC": "#2b2b33",
+          "body": "slim",
+          "pres": "fem",
+          "face": "soft",
+          "bg": "#dcecec"
+        },
+        "place": "cafe"
+      },
+      "garden": {
+        "n": "Fern & Forge Garden Shop",
+        "h": [
+          420,
+          1260
+        ],
+        "staff": [
+          "hugo"
+        ],
+        "pt": "Wes",
+        "ptLook": {
+          "skin": "#e8b48f",
+          "hairC": "#8a5a2b",
+          "hairS": "short",
+          "topS": "garden",
+          "shirtC": "#4f7a3a",
+          "pantsC": "#4a4038",
+          "body": "average",
+          "pres": "masc",
+          "face": "square",
+          "bg": "#e0f0d4"
+        },
+        "place": "fern"
+      },
+      "hardware": {
+        "n": "Bolt Hardware",
+        "h": [
+          420,
+          1260
+        ],
+        "staff": [
+          "amina"
+        ],
+        "pt": "Dez",
+        "ptLook": {
+          "skin": "#7a4c31",
+          "hairC": "#111",
+          "hairS": "buzz",
+          "topS": "work",
+          "shirtC": "#c94f2a",
+          "pantsC": "#3a3f55",
+          "body": "broad",
+          "pres": "neutral",
+          "face": "square",
+          "bg": "#f4e0d4"
+        },
+        "place": "bolt"
+      },
+      "threads": {
+        "n": "Willow Threads",
+        "h": [
+          540,
+          1200
+        ],
+        "staff": [
+          "mara",
+          "nico"
+        ],
+        "pt": "June",
+        "ptLook": {
+          "skin": "#f6d3b3",
+          "hairC": "#d9b46a",
+          "hairS": "wavy",
+          "topS": "cardigan",
+          "shirtC": "#d26aa0",
+          "pantsC": "#2b2b33",
+          "body": "slim",
+          "pres": "fem",
+          "face": "soft",
+          "bg": "#f8e0ec"
+        },
+        "place": "threads"
+      },
+      "market": {
+        "n": "Market Basket",
+        "h": [
+          480,
+          1200
+        ],
+        "staff": [
+          "mateo",
+          "elena",
+          "rosa"
+        ],
+        "pt": "Kai",
+        "ptLook": {
+          "skin": "#a8704c",
+          "hairC": "#1d1612",
+          "hairS": "curly",
+          "topS": "tee",
+          "shirtC": "#3f7a3a",
+          "pantsC": "#36405a",
+          "body": "average",
+          "pres": "neutral",
+          "face": "round",
+          "bg": "#e8f0d4"
+        },
+        "place": "market"
+      },
+      "community": {
+        "n": "Community Center",
+        "h": [
+          420,
+          1260
+        ],
+        "staff": [
+          "ronan"
+        ],
+        "pt": "Volunteer desk",
+        "ptLook": {
+          "skin": "#e8b48f",
+          "hairC": "#e9e2d4",
+          "hairS": "short",
+          "topS": "sweater",
+          "shirtC": "#3f7fbf",
+          "pantsC": "#3a3a44",
+          "body": "average",
+          "pres": "neutral",
+          "face": "round",
+          "bg": "#dce8f4"
+        },
+        "place": "community"
+      },
+      "clinic": {
+        "n": "Willowbrook Clinic",
+        "h": [
+          420,
+          1260
+        ],
+        "staffNPC": "amani",
+        "place": "clinic"
+      },
+      "lab": {
+        "n": "Verity Labs",
+        "h": [
+          420,
+          1260
+        ],
+        "staff": [
+          "enzo"
+        ],
+        "pt": "Night desk",
+        "ptLook": {
+          "skin": "#cf9670",
+          "hairC": "#3a2216",
+          "hairS": "short",
+          "topS": "suit",
+          "shirtC": "#2b3a5a",
+          "pantsC": "#2b2b33",
+          "body": "slim",
+          "pres": "neutral",
+          "face": "long",
+          "glasses": "square",
+          "bg": "#dce4f4"
+        },
+        "place": "lab"
+      }
+    },
+    "breeders": {
+      "grandma": {
+        "name": "Grandma Green",
+        "handle": "@grandmagreen",
+        "color": "#6cb552",
+        "spec": "Old-school heirloom collector",
+        "persona": "Has kept the same seed jars since 1979. Calls everyone \"sprout\".",
+        "rival": "auto"
+      },
+      "pixel": {
+        "name": "Pixel Seeds",
+        "handle": "@pixel.seeds",
+        "color": "#e48ab8",
+        "spec": "Colorful phenotypes",
+        "persona": "Speaks entirely in color names. Has never posted a green plant on purpose.",
+        "rival": "swamp"
+      },
+      "moon": {
+        "name": "Moon Medicine Genetics",
+        "handle": "@moonmedicine",
+        "color": "#b9a0e6",
+        "spec": "Balanced and CBD-forward lines",
+        "persona": "Calm, careful, cites studies in DMs.",
+        "rival": null
+      },
+      "auto": {
+        "name": "AutoPilot Genetics",
+        "handle": "@autopilot.gen",
+        "color": "#ffb547",
+        "spec": "Autoflowers",
+        "persona": "Treats every grow like a lap time.",
+        "rival": "grandma"
+      },
+      "swamp": {
+        "name": "Swamp Wizard Seeds",
+        "handle": "@swamp.wizard",
+        "color": "#3a937a",
+        "spec": "Bizarre experimental crosses",
+        "persona": "Lives near a bog. Possibly is the bog.",
+        "rival": "pixel"
+      }
+    }
+  },
+  "dimensions": {
+    "worldSprite": [
+      24,
+      36
+    ],
+    "portraitArt": [
+      32,
+      32
+    ],
+    "roomCanvas": [
+      1248,
+      571
+    ],
+    "creatorCanvas": [
+      180,
+      96
+    ],
+    "childDraw": "function (c, x, y, look, anim = {}) {\n  if (!Smell1151.drawing) return previous.call(this, c, x, y, look, anim);\n  const cv = Smell1151.pose({ ...look, short: true }, Smell1151.face({ x, y })); x = Math.round(x); y = Math.round(y);\n  c.drawImage(cv, 0, 0, 24, 21, x - 12, y - 29, 24, 21);\n  c.drawImage(cv, 0, 21, 24, 15, x - 12, y - 8, 24, 8);\n}",
+    "feetAnchor": [
+      12,
+      36
+    ],
+    "roomCSS": {
+      "width": 1248,
+      "height": 571.203125
+    },
+    "viewScale": 3,
+    "viewZoom": "normal",
+    "zoomDevicePixels": 3,
+    "dpr": 1
+  },
+  "options": {
+    "hair": [
+      [
+        "short",
+        "Short"
+      ],
+      [
+        "buzz",
+        "Buzzed"
+      ],
+      [
+        "medium",
+        "Medium"
+      ],
+      [
+        "long",
+        "Long"
+      ],
+      [
+        "bob",
+        "Bob"
+      ],
+      [
+        "curly",
+        "Curly"
+      ],
+      [
+        "wavy",
+        "Wavy"
+      ],
+      [
+        "bun",
+        "Bun"
+      ],
+      [
+        "ponytail",
+        "Ponytail"
+      ],
+      [
+        "braids",
+        "Braids"
+      ],
+      [
+        "locs",
+        "Locs"
+      ],
+      [
+        "afro",
+        "Afro"
+      ],
+      [
+        "mohawk",
+        "Mohawk"
+      ],
+      [
+        "sidecut",
+        "Shaved Side"
+      ],
+      [
+        "balding",
+        "Thinning Top"
+      ],
+      [
+        "pixie",
+        "Pixie"
+      ],
+      [
+        "sidepixie",
+        "Side-swept pixie"
+      ],
+      [
+        "crop",
+        "Textured crop"
+      ],
+      [
+        "caesar",
+        "Caesar"
+      ],
+      [
+        "fade",
+        "Low fade"
+      ],
+      [
+        "hightop",
+        "High-top fade"
+      ],
+      [
+        "flattop",
+        "Flat-top"
+      ],
+      [
+        "quiff",
+        "Quiff"
+      ],
+      [
+        "pomp",
+        "Pompadour"
+      ],
+      [
+        "slick",
+        "Slicked back"
+      ],
+      [
+        "spikes",
+        "Spiky"
+      ],
+      [
+        "fauxhawk",
+        "Faux-hawk"
+      ],
+      [
+        "curlytop",
+        "Curly top fade"
+      ],
+      [
+        "twistsS",
+        "Short twists"
+      ],
+      [
+        "bowl",
+        "Bowl cut"
+      ],
+      [
+        "curtains",
+        "Curtain bangs"
+      ],
+      [
+        "angledbob",
+        "Angled bob"
+      ],
+      [
+        "asymbob",
+        "Asymmetric bob"
+      ],
+      [
+        "braidbob",
+        "Braided bob"
+      ],
+      [
+        "lob",
+        "Lob"
+      ],
+      [
+        "shag",
+        "Shag"
+      ],
+      [
+        "wolf",
+        "Wolf cut"
+      ],
+      [
+        "mullet",
+        "Mullet"
+      ],
+      [
+        "curlybob",
+        "Curly bob"
+      ],
+      [
+        "twistout",
+        "Twist-out"
+      ],
+      [
+        "puff",
+        "Afro puff"
+      ],
+      [
+        "puffs",
+        "Twin puffs"
+      ],
+      [
+        "topknot",
+        "Top knot"
+      ],
+      [
+        "halfup",
+        "Half-up bun"
+      ],
+      [
+        "ponyhi",
+        "High ponytail"
+      ],
+      [
+        "sidepony",
+        "Side ponytail"
+      ],
+      [
+        "spacebuns",
+        "Space buns"
+      ],
+      [
+        "bantu",
+        "Bantu knots"
+      ],
+      [
+        "crownbraid",
+        "Crown braid"
+      ],
+      [
+        "lowbun",
+        "Low bun"
+      ],
+      [
+        "layered",
+        "Layered long"
+      ],
+      [
+        "bluntlong",
+        "Blunt long with bangs"
+      ],
+      [
+        "beachwaves",
+        "Beach waves"
+      ],
+      [
+        "longcurls",
+        "Long curls"
+      ],
+      [
+        "twinbraids",
+        "Twin braids"
+      ],
+      [
+        "boxbraids",
+        "Box braids"
+      ],
+      [
+        "longtwists",
+        "Long twists"
+      ],
+      [
+        "cornrows",
+        "Cornrows"
+      ],
+      [
+        "loosebraid",
+        "Loose side braid"
+      ],
+      [
+        "bigafro",
+        "Big afro"
+      ]
+    ],
+    "skin": [
+      "#f6d3b3",
+      "#e8b48f",
+      "#cf9670",
+      "#a8704c",
+      "#7a4c31",
+      "#4e2f1e",
+      "#fbe3cc",
+      "#f0c8a8",
+      "#e0a87e",
+      "#c08060",
+      "#b07850",
+      "#965c3a",
+      "#6a4028",
+      "#5a3420",
+      "#3a2216",
+      "#d8b090"
+    ],
+    "hairColors": [
+      [
+        "#1d1612",
+        "Black"
+      ],
+      [
+        "#4a2c1a",
+        "Dark brown"
+      ],
+      [
+        "#8a5a2b",
+        "Chestnut"
+      ],
+      [
+        "#d9b46a",
+        "Honey blond"
+      ],
+      [
+        "#b3412c",
+        "Auburn"
+      ],
+      [
+        "#e9e2d4",
+        "Silver"
+      ],
+      [
+        "#7d5bd6",
+        "Violet"
+      ],
+      [
+        "#3e9f7a",
+        "Jade"
+      ],
+      [
+        "#e48ab8",
+        "Pink"
+      ],
+      [
+        "#0e0d12",
+        "Blue-black"
+      ],
+      [
+        "#2e1c12",
+        "Espresso"
+      ],
+      [
+        "#5e3a22",
+        "Cocoa"
+      ],
+      [
+        "#7a4a2a",
+        "Medium brown"
+      ],
+      [
+        "#a8703f",
+        "Light brown"
+      ],
+      [
+        "#c8955a",
+        "Caramel"
+      ],
+      [
+        "#e8c88a",
+        "Golden blond"
+      ],
+      [
+        "#f2e0b0",
+        "Platinum"
+      ],
+      [
+        "#c8b090",
+        "Ash blond"
+      ],
+      [
+        "#8a8a8a",
+        "Salt & pepper"
+      ],
+      [
+        "#c8c8c8",
+        "Gray"
+      ],
+      [
+        "#ffffff",
+        "White"
+      ],
+      [
+        "#d86a2a",
+        "Copper"
+      ],
+      [
+        "#8a2a1a",
+        "Mahogany"
+      ],
+      [
+        "#e05a3a",
+        "Ginger"
+      ],
+      [
+        "#a02a4a",
+        "Burgundy"
+      ],
+      [
+        "#5a2a6a",
+        "Plum"
+      ],
+      [
+        "#3a4ab8",
+        "Cobalt"
+      ],
+      [
+        "#2a8ac8",
+        "Ocean"
+      ],
+      [
+        "#7ac8e0",
+        "Ice blue"
+      ],
+      [
+        "#2a7a4a",
+        "Forest"
+      ],
+      [
+        "#8ad05a",
+        "Lime"
+      ],
+      [
+        "#f2d23a",
+        "Sunflower"
+      ],
+      [
+        "#f28a2a",
+        "Tangerine"
+      ],
+      [
+        "#f08ac0",
+        "Bubblegum"
+      ],
+      [
+        "#c8a0e8",
+        "Lavender"
+      ],
+      [
+        "#a0e0c8",
+        "Mint"
+      ],
+      [
+        "#e8a0a0",
+        "Rose gold"
+      ],
+      [
+        "#3a3a44",
+        "Charcoal"
+      ],
+      [
+        "#6a5a4a",
+        "Mushroom"
+      ],
+      [
+        "#b8d8e8",
+        "Pastel blue"
+      ]
+    ],
+    "face": [
+      [
+        "round",
+        "Round"
+      ],
+      [
+        "soft",
+        "Soft"
+      ],
+      [
+        "angular",
+        "Angular"
+      ],
+      [
+        "long",
+        "Long"
+      ],
+      [
+        "square",
+        "Square"
+      ],
+      [
+        "heart",
+        "Heart"
+      ],
+      [
+        "oval",
+        "Oval"
+      ],
+      [
+        "diamond",
+        "Diamond"
+      ],
+      [
+        "oblong",
+        "Oblong"
+      ],
+      [
+        "pear",
+        "Pear"
+      ],
+      [
+        "triangle",
+        "Triangle"
+      ],
+      [
+        "wide",
+        "Wide"
+      ],
+      [
+        "petite",
+        "Petite"
+      ],
+      [
+        "strong",
+        "Strong jaw"
+      ],
+      [
+        "button",
+        "Button"
+      ]
+    ],
+    "eyes": [
+      [
+        "dot",
+        "Dot"
+      ],
+      [
+        "round",
+        "Round"
+      ],
+      [
+        "wide",
+        "Wide"
+      ],
+      [
+        "sleepy",
+        "Sleepy"
+      ],
+      [
+        "lashed",
+        "Lashed"
+      ],
+      [
+        "almond",
+        "Almond"
+      ],
+      [
+        "hooded",
+        "Hooded"
+      ],
+      [
+        "monolid",
+        "Monolid"
+      ],
+      [
+        "upturned",
+        "Upturned"
+      ],
+      [
+        "downturned",
+        "Downturned"
+      ],
+      [
+        "big",
+        "Big & bright"
+      ],
+      [
+        "narrow",
+        "Narrow"
+      ],
+      [
+        "starry",
+        "Sparkly"
+      ],
+      [
+        "heavy",
+        "Heavy-lidded"
+      ],
+      [
+        "lashed2",
+        "Long lashes"
+      ]
+    ],
+    "brows": [
+      [
+        "thin",
+        "Thin"
+      ],
+      [
+        "thick",
+        "Thick"
+      ],
+      [
+        "arched",
+        "Arched"
+      ],
+      [
+        "straight",
+        "Angled"
+      ],
+      [
+        "none",
+        "None"
+      ],
+      [
+        "bushy",
+        "Bushy"
+      ],
+      [
+        "soft",
+        "Soft"
+      ],
+      [
+        "flat",
+        "Flat"
+      ],
+      [
+        "high",
+        "High arch"
+      ],
+      [
+        "raised",
+        "Raised"
+      ],
+      [
+        "furrowed",
+        "Furrowed"
+      ],
+      [
+        "short",
+        "Short"
+      ],
+      [
+        "slit",
+        "Brow slit"
+      ],
+      [
+        "feathered",
+        "Feathered"
+      ],
+      [
+        "dots",
+        "Dotted"
+      ]
+    ],
+    "nose": [
+      [
+        "default",
+        "Classic"
+      ],
+      [
+        "button",
+        "Button"
+      ],
+      [
+        "dot",
+        "Dot"
+      ],
+      [
+        "long",
+        "Long"
+      ],
+      [
+        "wide",
+        "Wide"
+      ],
+      [
+        "pointed",
+        "Pointed"
+      ],
+      [
+        "round",
+        "Round"
+      ],
+      [
+        "bridge",
+        "High bridge"
+      ],
+      [
+        "hook",
+        "Hooked"
+      ],
+      [
+        "snub",
+        "Snub"
+      ],
+      [
+        "flat",
+        "Flat"
+      ],
+      [
+        "tall",
+        "Tall"
+      ],
+      [
+        "small",
+        "Small"
+      ],
+      [
+        "soft",
+        "Soft"
+      ],
+      [
+        "none",
+        "Minimal"
+      ]
+    ],
+    "mouth": [
+      [
+        "default",
+        "Classic"
+      ],
+      [
+        "smile",
+        "Smile"
+      ],
+      [
+        "wide",
+        "Wide smile"
+      ],
+      [
+        "small",
+        "Small"
+      ],
+      [
+        "full",
+        "Full lips"
+      ],
+      [
+        "pout",
+        "Pout"
+      ],
+      [
+        "smirk",
+        "Smirk"
+      ],
+      [
+        "open",
+        "Open"
+      ],
+      [
+        "teeth",
+        "Toothy grin"
+      ],
+      [
+        "frown",
+        "Frown"
+      ],
+      [
+        "lopsided",
+        "Lopsided"
+      ],
+      [
+        "cupid",
+        "Cupid's bow"
+      ],
+      [
+        "thin",
+        "Thin"
+      ],
+      [
+        "gap",
+        "Gap tooth"
+      ],
+      [
+        "tongue",
+        "Tongue out"
+      ]
+    ],
+    "expression": [
+      [
+        "neutral",
+        "Neutral"
+      ],
+      [
+        "happy",
+        "Happy"
+      ],
+      [
+        "grin",
+        "Grinning"
+      ],
+      [
+        "laugh",
+        "Laughing"
+      ],
+      [
+        "smug",
+        "Smug"
+      ],
+      [
+        "sad",
+        "Sad"
+      ],
+      [
+        "surprised",
+        "Surprised"
+      ],
+      [
+        "angry",
+        "Grumpy"
+      ],
+      [
+        "sleepy",
+        "Sleepy"
+      ],
+      [
+        "wink",
+        "Winking"
+      ],
+      [
+        "determined",
+        "Determined"
+      ],
+      [
+        "shy",
+        "Shy"
+      ],
+      [
+        "proud",
+        "Proud"
+      ],
+      [
+        "worried",
+        "Worried"
+      ],
+      [
+        "silly",
+        "Silly"
+      ]
+    ],
+    "ears": [
+      [
+        "normal",
+        "Normal"
+      ],
+      [
+        "small",
+        "Small"
+      ],
+      [
+        "large",
+        "Large"
+      ],
+      [
+        "pointed",
+        "Pointed"
+      ],
+      [
+        "round",
+        "Round"
+      ],
+      [
+        "elf",
+        "Elfin"
+      ],
+      [
+        "lobed",
+        "Long lobes"
+      ],
+      [
+        "flat",
+        "Close-set"
+      ],
+      [
+        "cuff",
+        "With ear cuff"
+      ],
+      [
+        "hidden",
+        "Hidden"
+      ]
+    ],
+    "facial": [
+      [
+        "none",
+        "None"
+      ],
+      [
+        "stubble",
+        "Stubble"
+      ],
+      [
+        "mustache",
+        "Mustache"
+      ],
+      [
+        "shortbeard",
+        "Short Beard"
+      ],
+      [
+        "beard",
+        "Full Beard"
+      ],
+      [
+        "goatee",
+        "Goatee"
+      ],
+      [
+        "soul",
+        "Soul patch"
+      ],
+      [
+        "chinstrap",
+        "Chinstrap"
+      ],
+      [
+        "handlebar",
+        "Handlebar"
+      ],
+      [
+        "pencil",
+        "Pencil mustache"
+      ],
+      [
+        "mutton",
+        "Mutton chops"
+      ],
+      [
+        "circle",
+        "Circle beard"
+      ],
+      [
+        "anchor",
+        "Anchor"
+      ],
+      [
+        "scruff",
+        "Scruff"
+      ],
+      [
+        "vandyke",
+        "Van Dyke"
+      ]
+    ],
+    "piercings": [
+      [
+        "nose",
+        "Nose stud"
+      ],
+      [
+        "nosering",
+        "Nose ring"
+      ],
+      [
+        "septum",
+        "Septum"
+      ],
+      [
+        "browL",
+        "Brow (left)"
+      ],
+      [
+        "browR",
+        "Brow (right)"
+      ],
+      [
+        "lip",
+        "Lip ring"
+      ],
+      [
+        "labret",
+        "Labret"
+      ],
+      [
+        "earL",
+        "Ear stud (left)"
+      ],
+      [
+        "earR",
+        "Ear stud (right)"
+      ],
+      [
+        "hoops",
+        "Hoops"
+      ],
+      [
+        "double",
+        "Double lobe"
+      ],
+      [
+        "industrial",
+        "Industrial"
+      ],
+      [
+        "tragus",
+        "Tragus"
+      ],
+      [
+        "dimple",
+        "Cheek studs"
+      ],
+      [
+        "bridge",
+        "Bridge"
+      ]
+    ],
+    "marks": [
+      [
+        "moleL",
+        "Mole (left cheek)"
+      ],
+      [
+        "moleR",
+        "Mole (right cheek)"
+      ],
+      [
+        "moleLip",
+        "Mole (lip)"
+      ],
+      [
+        "moleChin",
+        "Mole (chin)"
+      ],
+      [
+        "moleEye",
+        "Mole (under eye)"
+      ],
+      [
+        "frecklesL",
+        "Light freckles"
+      ],
+      [
+        "frecklesH",
+        "Heavy freckles"
+      ],
+      [
+        "birth",
+        "Birthmark"
+      ],
+      [
+        "scarBrow",
+        "Scar (brow)"
+      ],
+      [
+        "scarCheek",
+        "Scar (cheek)"
+      ],
+      [
+        "vitiligo",
+        "Vitiligo patch"
+      ],
+      [
+        "dimples",
+        "Dimples"
+      ],
+      [
+        "star",
+        "Star tattoo"
+      ],
+      [
+        "heart",
+        "Heart tattoo"
+      ],
+      [
+        "temple",
+        "Beauty spot (temple)"
+      ]
+    ],
+    "clothes": {
+      "shirt": [
+        [
+          "tee",
+          "T-shirt"
+        ],
+        [
+          "tank",
+          "Tank"
+        ],
+        [
+          "hoodie",
+          "Hoodie"
+        ],
+        [
+          "flannel",
+          "Flannel"
+        ],
+        [
+          "sweater",
+          "Sweater"
+        ],
+        [
+          "cardigan",
+          "Knit Cardigan"
+        ],
+        [
+          "overalls",
+          "Overalls"
+        ],
+        [
+          "work",
+          "Work Shirt"
+        ],
+        [
+          "crop",
+          "Crop Top"
+        ],
+        [
+          "jacket",
+          "Jacket"
+        ],
+        [
+          "garden",
+          "Garden Apron"
+        ],
+        [
+          "pjs",
+          "Pajamas"
+        ]
+      ],
+      "bottom": [
+        [
+          "jeans",
+          "Jeans"
+        ],
+        [
+          "joggers",
+          "Joggers"
+        ],
+        [
+          "cargo",
+          "Cargo Pants"
+        ],
+        [
+          "shorts",
+          "Shorts"
+        ],
+        [
+          "skirt",
+          "Skirt"
+        ]
+      ],
+      "shoes": [
+        [
+          "sneakers",
+          "Sneakers"
+        ],
+        [
+          "boots",
+          "Work Boots"
+        ],
+        [
+          "sandals",
+          "Sandals"
+        ],
+        [
+          "rainboots",
+          "Rain Boots"
+        ]
+      ],
+      "hat": [
+        [
+          "none",
+          "No hat"
+        ],
+        [
+          "beanie",
+          "Beanie"
+        ],
+        [
+          "cap",
+          "Cap"
+        ],
+        [
+          "bucket",
+          "Bucket Hat"
+        ],
+        [
+          "straw",
+          "Straw Hat"
+        ],
+        [
+          "sunhat",
+          "Sun Hat"
+        ]
+      ],
+      "glasses": [
+        [
+          "none",
+          "None"
+        ],
+        [
+          "round",
+          "Round"
+        ],
+        [
+          "square",
+          "Square"
+        ],
+        [
+          "shades",
+          "Shades"
+        ]
+      ],
+      "acc": [
+        [
+          "none",
+          "None"
+        ],
+        [
+          "earring",
+          "Earring"
+        ],
+        [
+          "bandana",
+          "Bandana"
+        ],
+        [
+          "headphones",
+          "Headphones"
+        ],
+        [
+          "scarf",
+          "Scarf"
+        ]
+      ]
+    },
+    "clothingCatalog": 240,
+    "extraLookFields": [
+      "nose",
+      "mouth",
+      "expr",
+      "ears",
+      "hairHi",
+      "hatC",
+      "accC",
+      "topPat",
+      "topC2",
+      "botPat",
+      "botC2",
+      "emb"
+    ]
+  },
+  "savedKeys": {
+    "main": "bagseed.save.v1",
+    "backup": "bagseed.save.v1.backup",
+    "daily": "bagseed.save.v1.daily",
+    "pre": "bagseed.save.v1.pre-1.1.1",
+    "preImport": "bagseed.save.v1.pre-import",
+    "settings": "bagseed.settings.v1"
+  },
+  "lookForSources": "function (who) {\n  if (Smell1151.active?.dialog?.who === who && Smell1151.active.kind === 'staff') return Smell1151.active.view.look;\n  return previous(who);\n}",
+  "sceneNames": [
+    "bedroom",
+    "hallway",
+    "growroom",
+    "backyard",
+    "street",
+    "nbhome",
+    "town",
+    "library",
+    "park",
+    "westway",
+    "cgarden",
+    "home115",
+    "shop115"
+  ],
+  "screens": []
+}

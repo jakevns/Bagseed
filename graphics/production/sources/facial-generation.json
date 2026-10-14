@@ -1,0 +1,6 @@
+{
+  "id": "facial",
+  "prompt": "Bagseed production modular art atlas, precisely match the attached approved illustrated JRPG linework, soft warm shading and organic shapes. Transparent background with alpha-zero gutters, no background glow, text, border, labels or grid lines. Exactly FIFTEEN evenly spaced ROWS and FOUR equal COLUMNS. Each cell only a bald tan #cf9670 attractive adult head and short neck with brown #4a2c1a FACIAL HAIR, no shoulders/clothes or hair on scalp. Columns FRONT, RIGHT PROFILE, BACK, LEFT PROFILE. Same neutral face and scale throughout. Rows: 1 very light STUBBLE; 2 soft broad MUSTACHE; 3 neatly trimmed SHORT BEARD; 4 full bushy BEARD; 5 GOATEE; 6 SOUL PATCH; 7 CHINSTRAP beard; 8 curled HANDLEBAR MUSTACHE; 9 fine PENCIL MUSTACHE; 10 MUTTON CHOPS; 11 CIRCLE BEARD; 12 ANCHOR beard; 13 unshaven SCRUFF; 14 VAN DYKE pointed goatee and separate mustache; 15 clean-shaven NONE. Complete all 60 cells, no omissions. Facial hair shapes detailed coherent organic strands, flattering grown adult faces. Back views show bald heads and any visible beard edges, not reversed faces. Generous padding between cells; retain consistent anatomical scale. No 3D, no geometric block art.",
+  "source": "/workspace/generated_images/exec-175fc0b9-234e-48e1-b022-08f14e5612d8.png",
+  "reference": "review/characters-v2/assets/master-cast.png"
+}

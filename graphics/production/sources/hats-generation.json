@@ -1,0 +1,6 @@
+{
+  "id": "hats",
+  "prompt": "Production modular illustration atlas for Bagseed. Precisely match attached approved hand-drawn JRPG character artwork: beautiful coherent organic contours, warm subtle shading, detailed natural fabric folds, clean lines, no 3D or block art. Transparent background alpha zero in all gutters, no background gradients/glow. Exactly FIVE evenly spaced ROWS, FOUR equal COLUMNS. Every cell is head-and-short-neck illustrations of the same tan-skinned youthful friendly adult face; no shoulders; short brown hair. Each head wears the hat specified in that row, all hats a neutral muted blue except straw/sunhats which are warm straw colored. Column order FRONT FACING, RIGHT PROFILE, BACK, LEFT PROFILE. Row order TOP TO BOTTOM: 1 soft knitted BEANIE; 2 baseball CAP with curved brim; 3 BUCKET HAT with stitched downward brim; 4 woven STRAW HAT with medium brim; 5 wide-brim SUN HAT with ribbon. Same anatomical body scale in every cell, consistent neck/waist/foot positions, generous transparent padding, complete all 20 cells. No text, no labels, no borders, no props. These are interchangeable production appearance layers, not concept character variations.",
+  "source": "/workspace/generated_images/exec-f211db13-1b39-4bc4-8dec-dd4bfe5ce754.png",
+  "reference": "review/characters-v2/assets/master-cast.png"
+}

@@ -1,0 +1,94 @@
+{
+  "status": "revised art samples awaiting user approval",
+  "baselineSHA256": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
+  "baselineUnchanged": true,
+  "rejectedRendererUsed": false,
+  "preview": {
+    "people": 5,
+    "directions": 4,
+    "portraitExpressions": 3,
+    "evidence": 10
+  },
+  "walkFrames": 80,
+  "standingViews": 20,
+  "portraits": 15,
+  "layout": [
+    {
+      "mode": "portrait",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false
+    },
+    {
+      "mode": "landscape",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "horizontalOverflow": false
+    }
+  ],
+  "nightShaderChecks": [
+    {
+      "input": [
+        50,
+        160,
+        220
+      ],
+      "actual": [
+        36,
+        102,
+        167
+      ],
+      "lookup": [
+        36,
+        102,
+        167
+      ]
+    },
+    {
+      "input": [
+        207,
+        150,
+        112
+      ],
+      "actual": [
+        140,
+        96,
+        85
+      ],
+      "lookup": [
+        140,
+        96,
+        85
+      ]
+    },
+    {
+      "input": [
+        63,
+        127,
+        191
+      ],
+      "actual": [
+        45,
+        81,
+        145
+      ],
+      "lookup": [
+        45,
+        81,
+        145
+      ]
+    }
+  ],
+  "browserErrors": [],
+  "limitations": [
+    "Original full-resolution reference hosts blocked; embedded DOCX images studied.",
+    "Illustrated asset prototype covers five identities only.",
+    "Idle is an upper-body breathing transform; blink variants and full production integration are not completed.",
+    "Generated walk cycles and asset crops were checked in preview, not a game integration or physical-device playtest.",
+    "Higher-density render target and wider transparent drawing canvas would be needed in the game; world feet/collision coordinates would be retained."
+  ]
+}

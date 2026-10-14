@@ -1,0 +1,6 @@
+{
+  "id": "bottoms",
+  "prompt": "Production modular illustration atlas for Bagseed. Precisely match attached approved hand-drawn JRPG character artwork: beautiful coherent organic contours, warm subtle shading, detailed natural fabric folds, clean lines, no 3D or block art. Transparent background alpha zero in all gutters, no background gradients/glow. Exactly FIVE evenly spaced ROWS, FOUR equal COLUMNS. Every cell is WAIST-DOWN body illustrations, NO torso or head, tan skin #cf9670, navy #36405a bottom garment as specified in each row, identical plain brown #2b1d14 white-soled sneakers, same hip height and foot baseline. Column order FRONT FACING, RIGHT PROFILE, BACK, LEFT PROFILE. Row order TOP TO BOTTOM: 1 long fitted JEANS with stitched pockets; 2 elastic-cuff JOGGERS; 3 CARGO PANTS with side pockets; 4 above-knee SHORTS showing tan lower legs; 5 knee-length soft pleated SKIRT showing tan lower legs. Same anatomical body scale in every cell, consistent neck/waist/foot positions, generous transparent padding, complete all 20 cells. No text, no labels, no borders, no props. These are interchangeable production appearance layers, not concept character variations.",
+  "source": "/workspace/generated_images/exec-71baf02c-7e62-4983-9f09-156b294cd876.png",
+  "reference": "review/characters-v2/assets/master-cast.png"
+}

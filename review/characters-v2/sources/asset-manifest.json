@@ -1,0 +1,1383 @@
+{
+  "version": "study-02",
+  "spriteGrid": [
+    96,
+    108
+  ],
+  "portraitGrid": [
+    192,
+    192
+  ],
+  "worldBox": [
+    32,
+    36
+  ],
+  "worldFeet": [
+    16,
+    36
+  ],
+  "nativeFeet": [
+    48,
+    108
+  ],
+  "masterGrid": {
+    "rows": [
+      0,
+      251,
+      509,
+      755,
+      1016,
+      1254
+    ],
+    "columns": [
+      0,
+      390,
+      600,
+      810,
+      1014,
+      1254
+    ]
+  },
+  "people": {
+    "player": {
+      "source": "assets/generated/player-sheet.png",
+      "sourceSHA256": "4c038691bf093bd41e7a87a418417382ab6dd0fa776c5398834140e2a159a16f",
+      "grid": {
+        "rows": [
+          0,
+          286,
+          561,
+          831,
+          1110,
+          1402
+        ],
+        "columns": [
+          0,
+          283,
+          561,
+          841,
+          1122
+        ]
+      },
+      "walk": {
+        "down": [
+          "assets/sprites/player/down-0.png",
+          "assets/sprites/player/down-1.png",
+          "assets/sprites/player/down-2.png",
+          "assets/sprites/player/down-3.png"
+        ],
+        "right": [
+          "assets/sprites/player/right-0.png",
+          "assets/sprites/player/right-1.png",
+          "assets/sprites/player/right-2.png",
+          "assets/sprites/player/right-3.png"
+        ],
+        "up": [
+          "assets/sprites/player/up-0.png",
+          "assets/sprites/player/up-1.png",
+          "assets/sprites/player/up-2.png",
+          "assets/sprites/player/up-3.png"
+        ],
+        "left": [
+          "assets/sprites/player/left-0.png",
+          "assets/sprites/player/left-1.png",
+          "assets/sprites/player/left-2.png",
+          "assets/sprites/player/left-3.png"
+        ]
+      },
+      "idle": {
+        "down": "assets/sprites/player/down-idle.png",
+        "right": "assets/sprites/player/right-idle.png",
+        "up": "assets/sprites/player/up-idle.png",
+        "left": "assets/sprites/player/left-idle.png"
+      },
+      "portraits": {
+        "neutral": "assets/portraits/player-neutral.png",
+        "friendly": "assets/portraits/player-friendly.png",
+        "concerned": "assets/portraits/player-concerned.png"
+      },
+      "extraction": [
+        {
+          "direction": "down",
+          "frame": 0,
+          "boundsWithinCell": [
+            123,
+            16,
+            249,
+            286
+          ],
+          "torsoAnchorWithinCrop": 61.0,
+          "scale": 0.37243947858473,
+          "visibleHeightNativePixels": 101
+        },
+        {
+          "direction": "down",
+          "frame": 1,
+          "boundsWithinCell": [
+            89,
+            18,
+            216,
+            286
+          ],
+          "torsoAnchorWithinCrop": 61.0,
+          "scale": 0.37243947858473,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "down",
+          "frame": 2,
+          "boundsWithinCell": [
+            60,
+            16,
+            188,
+            285
+          ],
+          "torsoAnchorWithinCrop": 65.0,
+          "scale": 0.37243947858473,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "down",
+          "frame": 3,
+          "boundsWithinCell": [
+            37,
+            17,
+            164,
+            285
+          ],
+          "torsoAnchorWithinCrop": 65.0,
+          "scale": 0.37243947858473,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 0,
+          "boundsWithinCell": [
+            119,
+            4,
+            253,
+            271
+          ],
+          "torsoAnchorWithinCrop": 63.0,
+          "scale": 0.37453183520599254,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 1,
+          "boundsWithinCell": [
+            83,
+            5,
+            225,
+            271
+          ],
+          "torsoAnchorWithinCrop": 76.0,
+          "scale": 0.37453183520599254,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 2,
+          "boundsWithinCell": [
+            54,
+            4,
+            196,
+            271
+          ],
+          "torsoAnchorWithinCrop": 66.0,
+          "scale": 0.37453183520599254,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 3,
+          "boundsWithinCell": [
+            32,
+            3,
+            179,
+            271
+          ],
+          "torsoAnchorWithinCrop": 66.0,
+          "scale": 0.37453183520599254,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 0,
+          "boundsWithinCell": [
+            120,
+            3,
+            243,
+            264
+          ],
+          "torsoAnchorWithinCrop": 58.0,
+          "scale": 0.3838771593090211,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 1,
+          "boundsWithinCell": [
+            90,
+            3,
+            214,
+            268
+          ],
+          "torsoAnchorWithinCrop": 62.0,
+          "scale": 0.3838771593090211,
+          "visibleHeightNativePixels": 102
+        },
+        {
+          "direction": "up",
+          "frame": 2,
+          "boundsWithinCell": [
+            59,
+            3,
+            187,
+            263
+          ],
+          "torsoAnchorWithinCrop": 63.0,
+          "scale": 0.3838771593090211,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 3,
+          "boundsWithinCell": [
+            39,
+            3,
+            162,
+            261
+          ],
+          "torsoAnchorWithinCrop": 63.0,
+          "scale": 0.3838771593090211,
+          "visibleHeightNativePixels": 99
+        },
+        {
+          "direction": "left",
+          "frame": 0,
+          "boundsWithinCell": [
+            108,
+            0,
+            248,
+            267
+          ],
+          "torsoAnchorWithinCrop": 74.0,
+          "scale": 0.3766478342749529,
+          "visibleHeightNativePixels": 101
+        },
+        {
+          "direction": "left",
+          "frame": 1,
+          "boundsWithinCell": [
+            76,
+            3,
+            228,
+            267
+          ],
+          "torsoAnchorWithinCrop": 73.0,
+          "scale": 0.3766478342749529,
+          "visibleHeightNativePixels": 99
+        },
+        {
+          "direction": "left",
+          "frame": 2,
+          "boundsWithinCell": [
+            46,
+            0,
+            187,
+            267
+          ],
+          "torsoAnchorWithinCrop": 75.0,
+          "scale": 0.3766478342749529,
+          "visibleHeightNativePixels": 101
+        },
+        {
+          "direction": "left",
+          "frame": 3,
+          "boundsWithinCell": [
+            29,
+            5,
+            171,
+            267
+          ],
+          "torsoAnchorWithinCrop": 73.0,
+          "scale": 0.3766478342749529,
+          "visibleHeightNativePixels": 99
+        }
+      ]
+    },
+    "remy": {
+      "source": "assets/generated/remy-sheet.png",
+      "sourceSHA256": "22f6f66857f200b4439f291771129beeb7d4162b99b5490fcf25709573ca0cfe",
+      "grid": {
+        "rows": [
+          0,
+          300,
+          586,
+          878,
+          1167,
+          1402
+        ],
+        "columns": [
+          0,
+          280,
+          561,
+          841,
+          1122
+        ]
+      },
+      "walk": {
+        "down": [
+          "assets/sprites/remy/down-0.png",
+          "assets/sprites/remy/down-1.png",
+          "assets/sprites/remy/down-2.png",
+          "assets/sprites/remy/down-3.png"
+        ],
+        "right": [
+          "assets/sprites/remy/right-0.png",
+          "assets/sprites/remy/right-1.png",
+          "assets/sprites/remy/right-2.png",
+          "assets/sprites/remy/right-3.png"
+        ],
+        "up": [
+          "assets/sprites/remy/up-0.png",
+          "assets/sprites/remy/up-1.png",
+          "assets/sprites/remy/up-2.png",
+          "assets/sprites/remy/up-3.png"
+        ],
+        "left": [
+          "assets/sprites/remy/left-0.png",
+          "assets/sprites/remy/left-1.png",
+          "assets/sprites/remy/left-2.png",
+          "assets/sprites/remy/left-3.png"
+        ]
+      },
+      "idle": {
+        "down": "assets/sprites/remy/down-idle.png",
+        "right": "assets/sprites/remy/right-idle.png",
+        "up": "assets/sprites/remy/up-idle.png",
+        "left": "assets/sprites/remy/left-idle.png"
+      },
+      "portraits": {
+        "neutral": "assets/portraits/remy-neutral.png",
+        "friendly": "assets/portraits/remy-friendly.png",
+        "concerned": "assets/portraits/remy-concerned.png"
+      },
+      "extraction": [
+        {
+          "direction": "down",
+          "frame": 0,
+          "boundsWithinCell": [
+            81,
+            10,
+            223,
+            300
+          ],
+          "torsoAnchorWithinCrop": 73.0,
+          "scale": 0.3454231433506045,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "down",
+          "frame": 1,
+          "boundsWithinCell": [
+            65,
+            9,
+            206,
+            300
+          ],
+          "torsoAnchorWithinCrop": 69.0,
+          "scale": 0.3454231433506045,
+          "visibleHeightNativePixels": 101
+        },
+        {
+          "direction": "down",
+          "frame": 2,
+          "boundsWithinCell": [
+            48,
+            12,
+            189,
+            300
+          ],
+          "torsoAnchorWithinCrop": 64.0,
+          "scale": 0.3454231433506045,
+          "visibleHeightNativePixels": 99
+        },
+        {
+          "direction": "down",
+          "frame": 3,
+          "boundsWithinCell": [
+            40,
+            11,
+            177,
+            300
+          ],
+          "torsoAnchorWithinCrop": 70.0,
+          "scale": 0.3454231433506045,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 0,
+          "boundsWithinCell": [
+            90,
+            8,
+            248,
+            286
+          ],
+          "torsoAnchorWithinCrop": 71.0,
+          "scale": 0.36036036036036034,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 1,
+          "boundsWithinCell": [
+            67,
+            10,
+            228,
+            286
+          ],
+          "torsoAnchorWithinCrop": 80.0,
+          "scale": 0.36036036036036034,
+          "visibleHeightNativePixels": 99
+        },
+        {
+          "direction": "right",
+          "frame": 2,
+          "boundsWithinCell": [
+            61,
+            7,
+            220,
+            286
+          ],
+          "torsoAnchorWithinCrop": 72.0,
+          "scale": 0.36036036036036034,
+          "visibleHeightNativePixels": 101
+        },
+        {
+          "direction": "right",
+          "frame": 3,
+          "boundsWithinCell": [
+            53,
+            9,
+            220,
+            286
+          ],
+          "torsoAnchorWithinCrop": 82.0,
+          "scale": 0.36036036036036034,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 0,
+          "boundsWithinCell": [
+            86,
+            9,
+            227,
+            292
+          ],
+          "torsoAnchorWithinCrop": 64.0,
+          "scale": 0.35335689045936397,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 1,
+          "boundsWithinCell": [
+            76,
+            9,
+            218,
+            292
+          ],
+          "torsoAnchorWithinCrop": 65.0,
+          "scale": 0.35335689045936397,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 2,
+          "boundsWithinCell": [
+            56,
+            10,
+            198,
+            292
+          ],
+          "torsoAnchorWithinCrop": 71.0,
+          "scale": 0.35335689045936397,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 3,
+          "boundsWithinCell": [
+            53,
+            7,
+            191,
+            292
+          ],
+          "torsoAnchorWithinCrop": 67.0,
+          "scale": 0.35335689045936397,
+          "visibleHeightNativePixels": 101
+        },
+        {
+          "direction": "left",
+          "frame": 0,
+          "boundsWithinCell": [
+            61,
+            9,
+            230,
+            289
+          ],
+          "torsoAnchorWithinCrop": 89.0,
+          "scale": 0.35650623885918004,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "left",
+          "frame": 1,
+          "boundsWithinCell": [
+            55,
+            7,
+            225,
+            288
+          ],
+          "torsoAnchorWithinCrop": 86.0,
+          "scale": 0.35650623885918004,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "left",
+          "frame": 2,
+          "boundsWithinCell": [
+            29,
+            8,
+            197,
+            289
+          ],
+          "torsoAnchorWithinCrop": 91.0,
+          "scale": 0.35650623885918004,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "left",
+          "frame": 3,
+          "boundsWithinCell": [
+            33,
+            8,
+            201,
+            288
+          ],
+          "torsoAnchorWithinCrop": 86.0,
+          "scale": 0.35650623885918004,
+          "visibleHeightNativePixels": 100
+        }
+      ]
+    },
+    "doug": {
+      "source": "assets/generated/doug-sheet.png",
+      "sourceSHA256": "1aa883058b1189a7f5e66e0111934d052d04bd215f3d5cc7e8a25a411dad9726",
+      "grid": {
+        "rows": [
+          0,
+          295,
+          567,
+          841,
+          1122,
+          1402
+        ],
+        "columns": [
+          0,
+          288,
+          565,
+          850,
+          1122
+        ]
+      },
+      "walk": {
+        "down": [
+          "assets/sprites/doug/down-0.png",
+          "assets/sprites/doug/down-1.png",
+          "assets/sprites/doug/down-2.png",
+          "assets/sprites/doug/down-3.png"
+        ],
+        "right": [
+          "assets/sprites/doug/right-0.png",
+          "assets/sprites/doug/right-1.png",
+          "assets/sprites/doug/right-2.png",
+          "assets/sprites/doug/right-3.png"
+        ],
+        "up": [
+          "assets/sprites/doug/up-0.png",
+          "assets/sprites/doug/up-1.png",
+          "assets/sprites/doug/up-2.png",
+          "assets/sprites/doug/up-3.png"
+        ],
+        "left": [
+          "assets/sprites/doug/left-0.png",
+          "assets/sprites/doug/left-1.png",
+          "assets/sprites/doug/left-2.png",
+          "assets/sprites/doug/left-3.png"
+        ]
+      },
+      "idle": {
+        "down": "assets/sprites/doug/down-idle.png",
+        "right": "assets/sprites/doug/right-idle.png",
+        "up": "assets/sprites/doug/up-idle.png",
+        "left": "assets/sprites/doug/left-idle.png"
+      },
+      "portraits": {
+        "neutral": "assets/portraits/doug-neutral.png",
+        "friendly": "assets/portraits/doug-friendly.png",
+        "concerned": "assets/portraits/doug-concerned.png"
+      },
+      "extraction": [
+        {
+          "direction": "down",
+          "frame": 0,
+          "boundsWithinCell": [
+            70,
+            37,
+            286,
+            294
+          ],
+          "torsoAnchorWithinCrop": 97.0,
+          "scale": 0.3801980198019802,
+          "visibleHeightNativePixels": 98
+        },
+        {
+          "direction": "down",
+          "frame": 1,
+          "boundsWithinCell": [
+            51,
+            41,
+            269,
+            293
+          ],
+          "torsoAnchorWithinCrop": 99.0,
+          "scale": 0.3801980198019802,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "down",
+          "frame": 2,
+          "boundsWithinCell": [
+            48,
+            42,
+            263,
+            294
+          ],
+          "torsoAnchorWithinCrop": 95.0,
+          "scale": 0.3801980198019802,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "down",
+          "frame": 3,
+          "boundsWithinCell": [
+            26,
+            42,
+            246,
+            295
+          ],
+          "torsoAnchorWithinCrop": 103.0,
+          "scale": 0.3801980198019802,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "right",
+          "frame": 0,
+          "boundsWithinCell": [
+            72,
+            13,
+            251,
+            272
+          ],
+          "torsoAnchorWithinCrop": 86.0,
+          "scale": 0.37065637065637064,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "right",
+          "frame": 1,
+          "boundsWithinCell": [
+            54,
+            15,
+            249,
+            272
+          ],
+          "torsoAnchorWithinCrop": 90.0,
+          "scale": 0.37065637065637064,
+          "visibleHeightNativePixels": 95
+        },
+        {
+          "direction": "right",
+          "frame": 2,
+          "boundsWithinCell": [
+            44,
+            12,
+            241,
+            272
+          ],
+          "torsoAnchorWithinCrop": 95.0,
+          "scale": 0.37065637065637064,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "right",
+          "frame": 3,
+          "boundsWithinCell": [
+            36,
+            13,
+            238,
+            272
+          ],
+          "torsoAnchorWithinCrop": 99.0,
+          "scale": 0.37065637065637064,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "up",
+          "frame": 0,
+          "boundsWithinCell": [
+            64,
+            16,
+            253,
+            273
+          ],
+          "torsoAnchorWithinCrop": 94.0,
+          "scale": 0.3742690058479532,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "up",
+          "frame": 1,
+          "boundsWithinCell": [
+            21,
+            16,
+            230,
+            272
+          ],
+          "torsoAnchorWithinCrop": 110.0,
+          "scale": 0.3742690058479532,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "up",
+          "frame": 2,
+          "boundsWithinCell": [
+            44,
+            15,
+            228,
+            271
+          ],
+          "torsoAnchorWithinCrop": 89.0,
+          "scale": 0.3742690058479532,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "up",
+          "frame": 3,
+          "boundsWithinCell": [
+            13,
+            16,
+            210,
+            273
+          ],
+          "torsoAnchorWithinCrop": 103.0,
+          "scale": 0.3742690058479532,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "left",
+          "frame": 0,
+          "boundsWithinCell": [
+            65,
+            10,
+            251,
+            272
+          ],
+          "torsoAnchorWithinCrop": 96.0,
+          "scale": 0.366412213740458,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "left",
+          "frame": 1,
+          "boundsWithinCell": [
+            54,
+            10,
+            240,
+            272
+          ],
+          "torsoAnchorWithinCrop": 92.0,
+          "scale": 0.366412213740458,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "left",
+          "frame": 2,
+          "boundsWithinCell": [
+            44,
+            10,
+            236,
+            272
+          ],
+          "torsoAnchorWithinCrop": 95.0,
+          "scale": 0.366412213740458,
+          "visibleHeightNativePixels": 96
+        },
+        {
+          "direction": "left",
+          "frame": 3,
+          "boundsWithinCell": [
+            34,
+            10,
+            217,
+            273
+          ],
+          "torsoAnchorWithinCrop": 94.0,
+          "scale": 0.366412213740458,
+          "visibleHeightNativePixels": 96
+        }
+      ]
+    },
+    "priya": {
+      "source": "assets/generated/priya-sheet.png",
+      "sourceSHA256": "1b483e14ffefdbf1fbb478b2bd4780c3a23aaa4315f2818b8b9f2c602f90bb61",
+      "grid": {
+        "rows": [
+          0,
+          294,
+          570,
+          845,
+          1128,
+          1402
+        ],
+        "columns": [
+          0,
+          308,
+          570,
+          841,
+          1122
+        ]
+      },
+      "walk": {
+        "down": [
+          "assets/sprites/priya/down-0.png",
+          "assets/sprites/priya/down-1.png",
+          "assets/sprites/priya/down-2.png",
+          "assets/sprites/priya/down-3.png"
+        ],
+        "right": [
+          "assets/sprites/priya/right-0.png",
+          "assets/sprites/priya/right-1.png",
+          "assets/sprites/priya/right-2.png",
+          "assets/sprites/priya/right-3.png"
+        ],
+        "up": [
+          "assets/sprites/priya/up-0.png",
+          "assets/sprites/priya/up-1.png",
+          "assets/sprites/priya/up-2.png",
+          "assets/sprites/priya/up-3.png"
+        ],
+        "left": [
+          "assets/sprites/priya/left-0.png",
+          "assets/sprites/priya/left-1.png",
+          "assets/sprites/priya/left-2.png",
+          "assets/sprites/priya/left-3.png"
+        ]
+      },
+      "idle": {
+        "down": "assets/sprites/priya/down-idle.png",
+        "right": "assets/sprites/priya/right-idle.png",
+        "up": "assets/sprites/priya/up-idle.png",
+        "left": "assets/sprites/priya/left-idle.png"
+      },
+      "portraits": {
+        "neutral": "assets/portraits/priya-neutral.png",
+        "friendly": "assets/portraits/priya-friendly.png",
+        "concerned": "assets/portraits/priya-concerned.png"
+      },
+      "extraction": [
+        {
+          "direction": "down",
+          "frame": 0,
+          "boundsWithinCell": [
+            104,
+            13,
+            241,
+            294
+          ],
+          "torsoAnchorWithinCrop": 77.0,
+          "scale": 0.35650623885918004,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "down",
+          "frame": 1,
+          "boundsWithinCell": [
+            60,
+            14,
+            189,
+            294
+          ],
+          "torsoAnchorWithinCrop": 71.0,
+          "scale": 0.35650623885918004,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "down",
+          "frame": 2,
+          "boundsWithinCell": [
+            60,
+            16,
+            196,
+            294
+          ],
+          "torsoAnchorWithinCrop": 75.0,
+          "scale": 0.35650623885918004,
+          "visibleHeightNativePixels": 99
+        },
+        {
+          "direction": "down",
+          "frame": 3,
+          "boundsWithinCell": [
+            60,
+            9,
+            189,
+            294
+          ],
+          "torsoAnchorWithinCrop": 70.0,
+          "scale": 0.35650623885918004,
+          "visibleHeightNativePixels": 102
+        },
+        {
+          "direction": "right",
+          "frame": 0,
+          "boundsWithinCell": [
+            102,
+            7,
+            265,
+            276
+          ],
+          "torsoAnchorWithinCrop": 84.0,
+          "scale": 0.373134328358209,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 1,
+          "boundsWithinCell": [
+            46,
+            9,
+            209,
+            276
+          ],
+          "torsoAnchorWithinCrop": 95.0,
+          "scale": 0.373134328358209,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 2,
+          "boundsWithinCell": [
+            59,
+            7,
+            226,
+            276
+          ],
+          "torsoAnchorWithinCrop": 87.0,
+          "scale": 0.373134328358209,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "right",
+          "frame": 3,
+          "boundsWithinCell": [
+            54,
+            10,
+            217,
+            276
+          ],
+          "torsoAnchorWithinCrop": 100.0,
+          "scale": 0.373134328358209,
+          "visibleHeightNativePixels": 99
+        },
+        {
+          "direction": "up",
+          "frame": 0,
+          "boundsWithinCell": [
+            107,
+            9,
+            242,
+            275
+          ],
+          "torsoAnchorWithinCrop": 66.0,
+          "scale": 0.37593984962406013,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 1,
+          "boundsWithinCell": [
+            65,
+            9,
+            196,
+            275
+          ],
+          "torsoAnchorWithinCrop": 59.0,
+          "scale": 0.37593984962406013,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 2,
+          "boundsWithinCell": [
+            66,
+            9,
+            203,
+            275
+          ],
+          "torsoAnchorWithinCrop": 65.0,
+          "scale": 0.37593984962406013,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "up",
+          "frame": 3,
+          "boundsWithinCell": [
+            67,
+            9,
+            196,
+            275
+          ],
+          "torsoAnchorWithinCrop": 58.0,
+          "scale": 0.37593984962406013,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "left",
+          "frame": 0,
+          "boundsWithinCell": [
+            86,
+            8,
+            263,
+            282
+          ],
+          "torsoAnchorWithinCrop": 76.0,
+          "scale": 0.3663003663003663,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "left",
+          "frame": 1,
+          "boundsWithinCell": [
+            33,
+            9,
+            209,
+            282
+          ],
+          "torsoAnchorWithinCrop": 77.0,
+          "scale": 0.3663003663003663,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "left",
+          "frame": 2,
+          "boundsWithinCell": [
+            36,
+            10,
+            217,
+            283
+          ],
+          "torsoAnchorWithinCrop": 81.0,
+          "scale": 0.3663003663003663,
+          "visibleHeightNativePixels": 100
+        },
+        {
+          "direction": "left",
+          "frame": 3,
+          "boundsWithinCell": [
+            38,
+            11,
+            213,
+            282
+          ],
+          "torsoAnchorWithinCrop": 68.0,
+          "scale": 0.3663003663003663,
+          "visibleHeightNativePixels": 99
+        }
+      ]
+    },
+    "poppy": {
+      "source": "assets/generated/poppy-sheet.png",
+      "sourceSHA256": "39ea8d016ee3464e377c10eaa9fbdfdc8a8de1b8f23d1379c9505683ad5f0615",
+      "grid": {
+        "rows": [
+          0,
+          285,
+          573,
+          855,
+          1140,
+          1402
+        ],
+        "columns": [
+          0,
+          280,
+          561,
+          841,
+          1122
+        ]
+      },
+      "walk": {
+        "down": [
+          "assets/sprites/poppy/down-0.png",
+          "assets/sprites/poppy/down-1.png",
+          "assets/sprites/poppy/down-2.png",
+          "assets/sprites/poppy/down-3.png"
+        ],
+        "right": [
+          "assets/sprites/poppy/right-0.png",
+          "assets/sprites/poppy/right-1.png",
+          "assets/sprites/poppy/right-2.png",
+          "assets/sprites/poppy/right-3.png"
+        ],
+        "up": [
+          "assets/sprites/poppy/up-0.png",
+          "assets/sprites/poppy/up-1.png",
+          "assets/sprites/poppy/up-2.png",
+          "assets/sprites/poppy/up-3.png"
+        ],
+        "left": [
+          "assets/sprites/poppy/left-0.png",
+          "assets/sprites/poppy/left-1.png",
+          "assets/sprites/poppy/left-2.png",
+          "assets/sprites/poppy/left-3.png"
+        ]
+      },
+      "idle": {
+        "down": "assets/sprites/poppy/down-idle.png",
+        "right": "assets/sprites/poppy/right-idle.png",
+        "up": "assets/sprites/poppy/up-idle.png",
+        "left": "assets/sprites/poppy/left-idle.png"
+      },
+      "portraits": {
+        "neutral": "assets/portraits/poppy-neutral.png",
+        "friendly": "assets/portraits/poppy-friendly.png",
+        "concerned": "assets/portraits/poppy-concerned.png"
+      },
+      "extraction": [
+        {
+          "direction": "down",
+          "frame": 0,
+          "boundsWithinCell": [
+            76,
+            20,
+            198,
+            285
+          ],
+          "torsoAnchorWithinCrop": 60.0,
+          "scale": 0.3082706766917293,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "down",
+          "frame": 1,
+          "boundsWithinCell": [
+            77,
+            19,
+            197,
+            285
+          ],
+          "torsoAnchorWithinCrop": 60.0,
+          "scale": 0.3082706766917293,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "down",
+          "frame": 2,
+          "boundsWithinCell": [
+            67,
+            19,
+            188,
+            285
+          ],
+          "torsoAnchorWithinCrop": 56.0,
+          "scale": 0.3082706766917293,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "down",
+          "frame": 3,
+          "boundsWithinCell": [
+            87,
+            19,
+            207,
+            285
+          ],
+          "torsoAnchorWithinCrop": 56.0,
+          "scale": 0.3082706766917293,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "right",
+          "frame": 0,
+          "boundsWithinCell": [
+            74,
+            12,
+            234,
+            288
+          ],
+          "torsoAnchorWithinCrop": 78.0,
+          "scale": 0.2987249544626594,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "right",
+          "frame": 1,
+          "boundsWithinCell": [
+            77,
+            12,
+            223,
+            287
+          ],
+          "torsoAnchorWithinCrop": 74.0,
+          "scale": 0.2987249544626594,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "right",
+          "frame": 2,
+          "boundsWithinCell": [
+            60,
+            14,
+            222,
+            288
+          ],
+          "torsoAnchorWithinCrop": 68.0,
+          "scale": 0.2987249544626594,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "right",
+          "frame": 3,
+          "boundsWithinCell": [
+            74,
+            13,
+            225,
+            287
+          ],
+          "torsoAnchorWithinCrop": 75.0,
+          "scale": 0.2987249544626594,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "up",
+          "frame": 0,
+          "boundsWithinCell": [
+            74,
+            14,
+            200,
+            282
+          ],
+          "torsoAnchorWithinCrop": 65.0,
+          "scale": 0.30597014925373134,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "up",
+          "frame": 1,
+          "boundsWithinCell": [
+            81,
+            13,
+            210,
+            282
+          ],
+          "torsoAnchorWithinCrop": 60.0,
+          "scale": 0.30597014925373134,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "up",
+          "frame": 2,
+          "boundsWithinCell": [
+            74,
+            14,
+            201,
+            282
+          ],
+          "torsoAnchorWithinCrop": 62.0,
+          "scale": 0.30597014925373134,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "up",
+          "frame": 3,
+          "boundsWithinCell": [
+            88,
+            14,
+            211,
+            282
+          ],
+          "torsoAnchorWithinCrop": 62.0,
+          "scale": 0.30597014925373134,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "left",
+          "frame": 0,
+          "boundsWithinCell": [
+            60,
+            9,
+            217,
+            282
+          ],
+          "torsoAnchorWithinCrop": 80.0,
+          "scale": 0.29818181818181816,
+          "visibleHeightNativePixels": 81
+        },
+        {
+          "direction": "left",
+          "frame": 1,
+          "boundsWithinCell": [
+            61,
+            7,
+            220,
+            283
+          ],
+          "torsoAnchorWithinCrop": 82.0,
+          "scale": 0.29818181818181816,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "left",
+          "frame": 2,
+          "boundsWithinCell": [
+            51,
+            10,
+            211,
+            284
+          ],
+          "torsoAnchorWithinCrop": 89.0,
+          "scale": 0.29818181818181816,
+          "visibleHeightNativePixels": 82
+        },
+        {
+          "direction": "left",
+          "frame": 3,
+          "boundsWithinCell": [
+            68,
+            9,
+            228,
+            285
+          ],
+          "torsoAnchorWithinCrop": 82.0,
+          "scale": 0.29818181818181816,
+          "visibleHeightNativePixels": 82
+        }
+      ]
+    }
+  }
+}

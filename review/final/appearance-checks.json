@@ -1,0 +1,18 @@
+{
+  "haircuts": 60,
+  "distinctHaircuts": 60,
+  "skinTones": 16,
+  "hairColors": 40,
+  "clothingDesigns": 240,
+  "face": 15,
+  "eyes": 15,
+  "brows": 15,
+  "nose": 15,
+  "mouth": 15,
+  "expression": 15,
+  "ears": 10,
+  "facial": 15,
+  "presentations": 3,
+  "bodies": 6,
+  "appearanceDataUnchanged": true
+}

@@ -1,0 +1,90 @@
+{
+  "id": "cast-14",
+  "people": [
+    {
+      "id": "theo",
+      "source": "collections.NPCs.theo",
+      "name": "Theo Park",
+      "look": {
+        "skin": "#e8b48f",
+        "hairC": "#1d1612",
+        "hairS": "buzz",
+        "facial": "goatee",
+        "shirtC": "#2b2b33",
+        "topS": "garden",
+        "pantsC": "#3a3a44",
+        "bottomS": "joggers",
+        "shoesC": "#e9e2d4",
+        "shoesS": "sneakers",
+        "pres": "masc",
+        "body": "stocky",
+        "face": "round",
+        "eyes": "round",
+        "brows": "thin",
+        "eyeC": "#2b1d14",
+        "nose": "default",
+        "mouth": "default",
+        "expr": "neutral",
+        "ears": "normal",
+        "hat": "none",
+        "glasses": "none",
+        "acc": "none",
+        "hairHi": "none",
+        "bg": "#f2e4d0",
+        "extras": [],
+        "pierce": [],
+        "marks": []
+      },
+      "aliases": [
+        "collections.NPCs.theo"
+      ],
+      "signature": "[[\"#e8b48f\",\"#1d1612\",\"buzz\",\"goatee\",\"#2b2b33\",\"garden\",\"#3a3a44\",\"joggers\",\"#e9e2d4\",\"sneakers\",\"masc\",\"stocky\",\"round\",\"round\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"none\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
+      "assetId": "cast-66-theo"
+    },
+    {
+      "id": "marisol",
+      "source": "collections.NPCs.marisol",
+      "name": "Marisol Vega",
+      "look": {
+        "skin": "#cf9670",
+        "hairC": "#4a2c1a",
+        "hairS": "wavy",
+        "facial": "none",
+        "shirtC": "#e0a33a",
+        "topS": "overalls",
+        "pantsC": "#36405a",
+        "bottomS": "jeans",
+        "shoesC": "#2b1d14",
+        "shoesS": "sneakers",
+        "pres": "fem",
+        "body": "slim",
+        "face": "soft",
+        "eyes": "lashed",
+        "brows": "thin",
+        "eyeC": "#2b1d14",
+        "nose": "default",
+        "mouth": "default",
+        "expr": "neutral",
+        "ears": "normal",
+        "hat": "bucket",
+        "glasses": "square",
+        "acc": "none",
+        "hairHi": "none",
+        "extras": [
+          "freckles"
+        ],
+        "hatC": "#5fa04a",
+        "bg": "#f2e4d0",
+        "pierce": [],
+        "marks": []
+      },
+      "aliases": [
+        "collections.NPCs.marisol"
+      ],
+      "signature": "[[\"#cf9670\",\"#4a2c1a\",\"wavy\",\"none\",\"#e0a33a\",\"overalls\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"fem\",\"slim\",\"soft\",\"lashed\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"bucket\",\"square\",\"none\",\"none\",null,\"#5fa04a\",null,null,null,null,null,null,null,null],[\"freckles\"],[],[]]",
+      "assetId": "cast-67-marisol"
+    }
+  ],
+  "prompt": "Create a finished production CHARACTER ART SHEET for Bagseed in exactly the attached APPROVED art direction: attractive warm illustrated JRPG characters, beautiful expressive faces, coherent organic hair locks, softly shaded fabric with folds, varied human age and build, no square/Mii/robot bodies, no 3D. Transparent background alpha zero between cells, no glow, no text, labels or grid lines. Exactly 2 equal-height ROWS and SEVEN equal-width COLUMNS. Each row is ONE authored character, all seven cells agree completely on face, hair, skin, outfit and accessories. Columns left to right: 1 large HEAD-AND-SHOULDERS PORTRAIT neutral expression, 2 matching portrait warm friendly expression, 3 matching portrait concerned expression, 4 FULL BODY FRONT facing, 5 FULL BODY RIGHT profile, 6 FULL BODY BACK, 7 FULL BODY LEFT profile. Full figures naturally standing, hands attached and at rest or holding the authored prop; shoes fully visible with generous transparent margin. Beautiful distinct people, natural clothing silhouettes and believable relaxed posture. The three portrait expressions must remain the same person and outfit. No extra people, no omissions. Keep feet level within each row. Authored characters TOP TO BOTTOM:\nROW 1: Theo Park; adult; adult, retain the authored age with natural mature cues where relevant. Skin #e8b48f; Buzzed hairstyle colored #1d1612; facial hair goatee; stocky build, masc presentation; round face, round eyes, thin brows. Clothes: garden in #2b2b33; joggers in #3a3a44; sneakers in #e9e2d4. Hat none; glasses none; accessory none; no held prop.  \nROW 2: Marisol Vega; adult; adult, retain the authored age with natural mature cues where relevant. Skin #cf9670; Wavy hairstyle colored #4a2c1a; facial hair none; slim build, fem presentation; soft face, lashed eyes, thin brows. Clothes: overalls in #e0a33a; jeans in #36405a; sneakers in #2b1d14. Hat bucket color #5fa04a; glasses square; accessory none; no held prop.  Details freckles.\nUse ordinary clothes named above, preserve distinctive headwear, eyewear, hair type, skin, ages and props. Never replace diverse textured hair with generic straight hair. Match attached approved cast's appealing proportions and hand-drawn detail. These are the actual game sprite and portrait source assets, not supplemental concept art.",
+  "reference": "review/characters-v2/assets/master-cast.png"
+}

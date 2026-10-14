@@ -1,0 +1,102 @@
+[
+  {
+    "game": "Fields of Mistria",
+    "image": "media/image768.jpg",
+    "paragraph": 436,
+    "caption": "G03-P03",
+    "id": "G03-P03",
+    "kind": "Official character artwork",
+    "source": "https://static.wixstatic.com/media/265122_4c8a2a1717514d438ee10405f391cfd1~mv2.png/v1/fill/w_151,h_147,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Celine-profiile.png",
+    "source_page": "https://www.fieldsofmistria.com/"
+  },
+  {
+    "game": "Fields of Mistria",
+    "image": "media/image767.jpg",
+    "paragraph": 444,
+    "caption": "G03-P05",
+    "id": "G03-P05",
+    "kind": "Official character artwork",
+    "source": "https://static.wixstatic.com/media/265122_80a68b4c10b344fca1eb5c74631c0f21~mv2.png/v1/fill/w_152,h_147,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/reina-icon.png",
+    "source_page": "https://www.fieldsofmistria.com/"
+  },
+  {
+    "game": "Fields of Mistria",
+    "image": "media/image732.jpg",
+    "paragraph": 467,
+    "caption": "G03-P10",
+    "id": "G03-P10",
+    "kind": "Official character artwork",
+    "source": "https://static.wixstatic.com/media/265122_5095d780ff1049929ce8a19d9c2a5d97~mv2.png/v1/fill/w_152,h_147,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hayden-icon.png",
+    "source_page": "https://www.fieldsofmistria.com/"
+  },
+  {
+    "game": "Eastward",
+    "image": "media/image148.jpg",
+    "paragraph": 2318,
+    "caption": "G14-V01-F038  at 48.317 seconds",
+    "id": "G14-V01-F038",
+    "kind": "Publisher video frame",
+    "source": "https://video.akamai.steamstatic.com/store_trailers/977880/401766/15d395f8b6e853b52333c4d4908099b63f0d7305/1750603461/hls_264_1_video.m3u8",
+    "source_page": "https://store.steampowered.com/app/977880/"
+  },
+  {
+    "game": "Sea of Stars",
+    "image": "media/image1030.jpg",
+    "paragraph": 2404,
+    "caption": "G15-S12",
+    "id": "G15-S12",
+    "kind": "Publisher gallery image",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1244090/ss_6c1428488a9c2aeecea2afe5f5e906be488b4dc0.1920x1080.jpg?t=1780931183",
+    "source_page": "https://store.steampowered.com/app/1244090/"
+  },
+  {
+    "game": "CrossCode",
+    "image": "media/image946.jpg",
+    "paragraph": 2594,
+    "caption": "G16-S19",
+    "id": "G16-S19",
+    "kind": "Publisher gallery image",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/368340/ss_982becfd7eda103292bd94559f97bd235b7b7593.1920x1080.jpg?t=1788522282",
+    "source_page": "https://store.steampowered.com/app/368340/"
+  },
+  {
+    "game": "Legend of Mana",
+    "image": "media/image963.jpg",
+    "paragraph": 3681,
+    "caption": "G23-D097",
+    "id": "G23-D097",
+    "kind": "Publisher character artwork",
+    "source": "https://www.jp.square-enix.com/seiken_lom/assets/characters/images/chara-you-img02.png",
+    "source_page": "https://www.jp.square-enix.com/seiken_lom/characters/"
+  },
+  {
+    "game": "Legend of Mana",
+    "image": "media/image933.jpg",
+    "paragraph": 3685,
+    "caption": "G23-D098",
+    "id": "G23-D098",
+    "kind": "Publisher character artwork",
+    "source": "https://www.jp.square-enix.com/seiken_lom/assets/characters/images/chara-you-img01.png",
+    "source_page": "https://www.jp.square-enix.com/seiken_lom/characters/"
+  },
+  {
+    "game": "Roots of Pacha",
+    "image": "media/image871.jpg",
+    "paragraph": 648,
+    "caption": "G04-S15",
+    "id": "G04-S15",
+    "kind": "Publisher gallery image",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245560/ss_6a7af02c5550d1d34f932d57307b7f150de2ae1c.1920x1080.jpg?t=1779280759",
+    "source_page": "https://store.steampowered.com/app/1245560/"
+  },
+  {
+    "game": "Owlboy",
+    "image": "media/image76.jpg",
+    "paragraph": 3851,
+    "caption": "G24-S01",
+    "id": "G24-S01",
+    "kind": "Publisher gallery image",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/115800/ss_9001e3af19a32a48e2b948d5050f626b3240c587.1920x1080.jpg?t=1791834795",
+    "source_page": "https://store.steampowered.com/app/115800/"
+  }
+]

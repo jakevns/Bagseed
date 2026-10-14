@@ -1,0 +1,45 @@
+{
+  "seated": "couch",
+  "stood": true,
+  "shops": [
+    {
+      "id": "cafe",
+      "interactions": 12
+    },
+    {
+      "id": "garden",
+      "interactions": 13
+    },
+    {
+      "id": "hardware",
+      "interactions": 9
+    },
+    {
+      "id": "threads",
+      "interactions": 9
+    },
+    {
+      "id": "market",
+      "interactions": 8
+    },
+    {
+      "id": "community",
+      "interactions": 8
+    },
+    {
+      "id": "clinic",
+      "interactions": 6
+    },
+    {
+      "id": "lab",
+      "interactions": 7
+    }
+  ],
+  "transitionStood": true,
+  "music": {
+    "before": "c01",
+    "after": "c06",
+    "next": true,
+    "audioState": "running"
+  }
+}

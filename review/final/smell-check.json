@@ -1,0 +1,6 @@
+{
+  "id": "remy",
+  "scene": "hallway",
+  "dialog": true,
+  "dismissedWithEscape": true
+}

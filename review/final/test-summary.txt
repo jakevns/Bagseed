@@ -1,0 +1,26 @@
+Validated built HTML SHA-256: 15b36ecc24dd1a5454c2ac86f386e83e427c33082d8bd8e4d49b6d6dea611a05
+Desktop Chromium 154; Playwright 1.62.1; Node 24.19.0.
+
+> bagseed@1.1.5-2 test
+> node --test --test-concurrency=1 tests/*.test.cjs
+
+✔ a save created by the original flashlight build loads with appearance and progress intact (10570.055456ms)
+✔ every hairstyle, skin palette, authored clothing design and appearance choice renders (13352.714888ms)
+✔ seating, shop counters, scene changes and Next Track remain functional (6521.177596ms)
+✔ flashlights follow illustrated hands and retain obstacle-limited beams (5949.588789ms)
+✔ a live smell encounter renders the pose and dismisses with Escape (5741.546695ms)
+✔ title, character creation, and a new playable bedroom (6568.370168ms)
+✔ keyboard movement works in all four directions (6248.142189ms)
+✔ wardrobe appearance and progress survive save, reload, and Continue (8666.628283ms)
+✔ authored cast and all haircuts render without changing their appearance data (9805.33318ms)
+✔ indoor and outdoor scenes render in daylight and at night (7430.369625ms)
+✔ mobile portrait creation, gameplay, and viewport layout (6507.492794ms)
+✔ mobile landscape creation, gameplay, and viewport layout (5749.788764ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 94715.72403

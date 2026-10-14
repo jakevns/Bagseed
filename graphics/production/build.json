@@ -1,0 +1,18 @@
+{
+  "version": "illustrated-1",
+  "approval": "User response to revised visible samples: results exceeded expectations, You nailed it.",
+  "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
+  "workingSourceSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
+  "updatedSHA": "15b36ecc24dd1a5454c2ac86f386e83e427c33082d8bd8e4d49b6d6dea611a05",
+  "bytes": 27627727,
+  "modularAssets": 544,
+  "embeddedImages": 1128,
+  "approvedIdentities": [
+    "player",
+    "remy",
+    "doug",
+    "priya",
+    "poppy"
+  ],
+  "additionalAuthoredAppearances": 67
+}

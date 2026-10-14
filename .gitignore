@@ -1,0 +1,12 @@
+node_modules/
+artifacts/
+.cache/
+.env
+.env.*
+*.log
+.DS_Store
+review/*.zip
+
+graphics/production/encoded/
+review/characters-v1/
+dist/

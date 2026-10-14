@@ -1,0 +1,6 @@
+{
+  "id": "shoes",
+  "prompt": "Bagseed production modular art atlas, precisely match the attached approved illustrated JRPG linework, soft warm shading and organic shapes. Transparent background with alpha-zero gutters, no background glow, text, border, labels or grid lines. Exactly FOUR evenly spaced ROWS and FOUR equal COLUMNS. Each cell a matched PAIR of feet and footwear with short ankle stumps only, no torso/heads or legs above mid-calf. Tan skin #cf9670 where exposed. Brown #6a4630 footwear for runtime recoloring. Columns FRONT, RIGHT PROFILE, BACK, LEFT PROFILE. Rows: 1 casual white-soled lace-up SNEAKERS; 2 leather lace-up WORK BOOTS extending above ankles; 3 open strapped SANDALS showing tan feet/toes; 4 smooth rubber RAIN BOOTS reaching mid-calf. Both feet in every cell, consistent foot size and stance, keep each pair separate. Brown footwear with useful detailed laces/stitching/sole highlights, organic natural feet, no rectangles. Generous padding between cells; retain consistent anatomical scale. No 3D, no geometric block art.",
+  "source": "/workspace/generated_images/exec-08d7d02b-d5a9-4ca4-b587-2ca3e3d3ca66.png",
+  "reference": "review/characters-v2/assets/master-cast.png"
+}
