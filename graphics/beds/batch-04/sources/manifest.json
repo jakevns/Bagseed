@@ -1,0 +1,161 @@
+{
+  "revision": "beds-batch-04",
+  "approval": "Approved. \u2014 Rattan Headboard and Tufted Headboard with all ten bedding choices.",
+  "frames": {
+    "cane": {
+      "path": "assets/cane.png",
+      "sha256": "2fc2c503af158162e45d3045a013946be6ebb5c2fd9a51f71a6ec6b668add6d2",
+      "size": [
+        2001,
+        786
+      ],
+      "tiles": {
+        "bluecheck": [
+          17,
+          51,
+          395,
+          326
+        ],
+        "solidred": [
+          423,
+          51,
+          382,
+          326
+        ],
+        "cream": [
+          811,
+          51,
+          382,
+          326
+        ],
+        "plaid": [
+          1198,
+          51,
+          390,
+          326
+        ],
+        "floral": [
+          1596,
+          51,
+          389,
+          326
+        ],
+        "stars": [
+          17,
+          418,
+          396,
+          325
+        ],
+        "botanical": [
+          423,
+          418,
+          382,
+          325
+        ],
+        "retro": [
+          811,
+          418,
+          382,
+          325
+        ],
+        "neutral": [
+          1198,
+          418,
+          390,
+          325
+        ],
+        "bright": [
+          1596,
+          418,
+          389,
+          325
+        ]
+      }
+    },
+    "tufted": {
+      "path": "assets/tufted.png",
+      "sha256": "a1cfb172ee19b867230eaac33455b686d5db940a39d7767d748cf020050d9c13",
+      "size": [
+        1831,
+        859
+      ],
+      "tiles": {
+        "bluecheck": [
+          14,
+          92,
+          362,
+          300
+        ],
+        "solidred": [
+          384,
+          92,
+          355,
+          300
+        ],
+        "cream": [
+          749,
+          92,
+          349,
+          300
+        ],
+        "plaid": [
+          1103,
+          92,
+          360,
+          300
+        ],
+        "floral": [
+          1471,
+          92,
+          353,
+          300
+        ],
+        "stars": [
+          13,
+          437,
+          364,
+          305
+        ],
+        "botanical": [
+          384,
+          437,
+          356,
+          305
+        ],
+        "retro": [
+          748,
+          437,
+          350,
+          305
+        ],
+        "neutral": [
+          1103,
+          437,
+          363,
+          305
+        ],
+        "bright": [
+          1471,
+          437,
+          353,
+          305
+        ]
+      }
+    }
+  },
+  "registration": {
+    "width": 78,
+    "left": 2,
+    "feetY": 177,
+    "hit": [
+      8,
+      126,
+      72,
+      50
+    ],
+    "walk": [
+      86,
+      160
+    ]
+  }
+}

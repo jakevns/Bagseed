@@ -1,5 +1,58 @@
 # Bedroom update checkpoint
 
+## Seedling desks completed
+
+The user approved all three workstation designs and their matching store artwork: “Great job!! Send it :)”. This increment updates the included Folding Card Table, Used Writing Desk ($49), and Gardener's Bench ($149). These are the existing `workbench` equipment tiers, separate from the two-variant decorative Potting Bench. Prices, mixing bonuses, save identifiers, nutrient/supply behavior and interaction geometry remain unchanged.
+
+Original approval art, transparent production atlas, hash-verified crop/anchor manifest and shared room/store/package renderer are retained under `graphics/desks/`. Both graphics build paths include the desk compiler. Actual room captures for all three tiers, both paid store/package cards and a phone card are retained under `review/seedling-desks/`.
+
+The focused browser check passed: three distinct room frames and previews, full sprite bounds, store artwork matching the room renderer, original bench/storage/supply-box hits, inventory-sensitive supplies, actual $198 store checkout, both package previews and installations, mixing-panel access, save/reload and phone proportions. The character, room-shell and all four bed-batch script payloads were verified byte-for-byte unchanged against the preceding commit. Future furniture still requires its own artwork approval before implementation and push.
+
+Final integration validation: all 21 browser tests passed with no skips. `npm run check` verified the immutable baseline checksum and parsed all 84 script blocks. Repeating the bedroom build produced identical output.
+
+
+## Bed collection complete — batch 04
+
+The user approved Rattan Headboard (`cane`, $75) and Tufted Headboard (`tufted`, $95): "Approved. Youve done great work today heres a tip!" The final increment adds 20 combinations and completes all eight existing frames × ten bedding choices, 80 total. Original transparent atlases, approval boards and hashed crop manifests are retained under `graphics/beds/batch-04/`; rendered review and store/package examples are under `review/beds-batch-04/`.
+
+Focused Batch 04 and actual-store checks passed. Earlier batches are protected by 60 rendered hashes captured before later integrations. With no legacy bed frames remaining, the shared test verifies complete registration of the eight-frame/ten-bedding catalog rather than comparing an empty legacy set. Every batch still exercises its 20 drawings/previews, interactions, purchases, installation, style switching, save/reload, sleep controls and phone layout.
+
+The store check now covers 142 actual card samples across all 79 purchasable combinations. It checks out Canopy/Rattan/Tufted together at their unchanged prices ($390 total) and opens each package to verify the updated image and ownership. The free Starter/Blue Check pairing is not sold. Store and package canvases retain the corrected 252×240 proportions.
+
+Final integration validation: all 20 browser tests passed with no skips. `npm run check` verified the immutable baseline checksum and parsed all 83 script blocks; rebuilding succeeded. The character, room-shell and all three previous bed-batch payloads are byte-for-byte unchanged from the preceding commit. The full collection's sources, tests and review evidence are retained in Git.
+
+Next furniture item has not been selected or approved. Continue one furniture item at a time: audit all its existing variations, show artwork for explicit approval, then implement room/store/package/inventory artwork as applicable, test and push that approved increment. Keep batches at or below 20 combinations when needed. Previous milestone sections below are historical records of their completion state.
+
+## Store artwork verification
+
+The user requested verification that the bedroom artwork also appears in the store (called LeafCart in the game). Actual store cards and opened-package previews already used the approved bed renderer, but their legacy 96×48 thumbnails compressed the new beds vertically. The shared style renderer now sets supported bed/bedding preview canvases to their native 252×240 render size, preserving proportions with the existing responsive CSS. Room sprites, prices, ownership and checkout behavior are unchanged.
+
+`tests/store-bed-art.test.cjs` opens the actual store, navigates Home & Decor → Room Styles, compares 104 rendered product cards with the room artwork (59 distinct purchasable combinations; the free Starter/Blue Check pairing is not sold), checks desktop/phone proportions, searches/sorts, completes a $220 Canopy checkout, and verifies the opened-package preview. Captures/report are in `artifacts/store-art/` and retained examples in `review/store-bed-art/`.
+
+Final validation: all 19 browser tests passed with no skips. The baseline checksum and 82 script blocks passed `npm run check`. All completed in-room bed drawings still match their render hashes; the character and room-shell script payloads are unchanged. This correction changes preview dimensions only and introduces no new artwork.
+
+For each future furniture update, update its shared room/store/preview artwork and verify the actual store UI, plus the item's relevant inventory/package views. Direct renderer calls alone do not establish storefront readiness. Continue the existing explicit artwork approval and 20-combination batch/push workflow.
+
+## Bed batch 03 completed
+
+The user approved the Platform Bed and Fancy Canopy Bed with all ten bedding choices: "Great job! please push the update", followed by "Continue working". This adds exactly 20 combinations, bringing the completed total to 60. Original transparent atlases, approval boards, source hashes and crop rectangles are retained under `graphics/beds/batch-03/`. The existing renderer is instantiated separately for the third batch without changing earlier artwork or gameplay.
+
+Focused checks passed for all three batches. Batches 01 and 02 match their pre-integration rendered hashes (40 combinations). Batch 03 checks all 20 drawings/previews, unchanged interaction geometry, transparent canopy openings, purchases at $110/$220, style switching, saved selections after reload, sleep controls and phone layout. Rattan/Tufted's final 20 combinations still match the archived original. Actual rendered captures and reports are retained under `review/beds-batch-03/`; regenerate with `node --test tests/beds-batch-03.test.cjs`.
+
+Final integration: all 18 browser tests passed with no skips. `npm run check` verified the immutable baseline checksum and parsed all 82 script blocks. Rebuilding succeeded, and the character, bedroom-shell and both earlier bed-batch script payloads were verified byte-for-byte unchanged against the preceding commit. A final focused Batch 03 run also passed after adding its module-registration assertion.
+
+Remaining: Rattan Headboard (`cane`, $75) and Tufted Headboard (`tufted`, $95), each with ten bedding choices. Neither is approved for implementation yet. Prepare that final 20-combination batch for visual approval, then implement/test/push it separately. Previous milestone sections below preserve their historical state.
+
+## Bed batch 02 completed
+
+The user approved the Metal Frame and Cozy Upholstered Bed with all ten bedding choices: "Great work go ahead and push it through". This increment adds exactly 20 combinations, bringing the completed total to 40. Original transparent atlases, approval boards, source hashes and registration rectangles are retained under `graphics/beds/batch-02/`. The same source renderer is instantiated separately for each batch, preserving Batch 01 artwork and allowing readiness to await all four atlases.
+
+Both batch tests passed. Batch 01's 20 rendered images match hashes captured before this integration. Batch 02 checks its 20 drawings and icons, buys both frames at their existing $55/$90 prices plus paid bedding, applies styles, reloads the save, checks sleep controls and emulated phone layout. The remaining 40 combinations match the archived original renderer. Reproduce with `node --test tests/beds-batch-01.test.cjs tests/beds-batch-02.test.cjs`; tests share `tests/helpers/bed-batch.cjs`.
+
+Final integration validation: all 17 browser tests passed with no skips; `npm run check` verified the immutable baseline checksum and parsed all 81 script blocks. The embedded character and bedroom-shell payloads are unchanged from the preceding commit. Repeating the bedroom build succeeded. Original art and actual rendered review captures are retained in Git under this batch's source and review folders.
+
+The four remaining frames are Platform, Fancy Canopy, Rattan Headboard and Tufted Headboard. None is approved for implementation yet. Prepare the next batch of at most two frames × ten beddings for explicit visual approval, then implement, test and push that increment separately. Previous milestone sections below record their state at completion.
+
 ## Bed batch 01 completed
 
 The user approved the Starter Bed and Wooden Frame with all ten bedding choices: "First batch looks great!!" The user explicitly requested batches of at most 20 combinations and pushing each completed approved increment. Batch 01 implements exactly those 20 combinations, including their shop/style previews. Original transparent source atlases, approval boards and crop/registration data are retained under `graphics/beds/batch-01/`.

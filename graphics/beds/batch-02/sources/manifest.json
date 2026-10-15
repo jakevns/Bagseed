@@ -1,0 +1,161 @@
+{
+  "revision": "beds-batch-02",
+  "approval": "Great work go ahead and push it through \u2014 Metal Frame and Cozy Upholstered Bed with all ten bedding choices.",
+  "frames": {
+    "metal": {
+      "path": "assets/metal.png",
+      "sha256": "b00f6f2923cf289910040a2dd93dea6dba1a812c2c38bd1e3373f6d54e5db5df",
+      "size": [
+        1942,
+        809
+      ],
+      "tiles": {
+        "bluecheck": [
+          22,
+          71,
+          357,
+          295
+        ],
+        "solidred": [
+          396,
+          71,
+          362,
+          295
+        ],
+        "cream": [
+          780,
+          71,
+          360,
+          295
+        ],
+        "plaid": [
+          1166,
+          71,
+          364,
+          295
+        ],
+        "floral": [
+          1551,
+          71,
+          367,
+          295
+        ],
+        "stars": [
+          18,
+          435,
+          358,
+          297
+        ],
+        "botanical": [
+          396,
+          435,
+          362,
+          297
+        ],
+        "retro": [
+          782,
+          435,
+          362,
+          297
+        ],
+        "neutral": [
+          1167,
+          435,
+          366,
+          297
+        ],
+        "bright": [
+          1552,
+          435,
+          368,
+          297
+        ]
+      }
+    },
+    "cozy": {
+      "path": "assets/cozy.png",
+      "sha256": "d15c57381db3620aaa275d84767e361dd95771ef95fd667b35a1883a41ee4b62",
+      "size": [
+        1983,
+        793
+      ],
+      "tiles": {
+        "bluecheck": [
+          31,
+          78,
+          377,
+          276
+        ],
+        "solidred": [
+          417,
+          78,
+          378,
+          276
+        ],
+        "cream": [
+          809,
+          78,
+          370,
+          276
+        ],
+        "plaid": [
+          1189,
+          78,
+          379,
+          276
+        ],
+        "floral": [
+          1581,
+          78,
+          376,
+          276
+        ],
+        "stars": [
+          32,
+          422,
+          377,
+          277
+        ],
+        "botanical": [
+          421,
+          422,
+          375,
+          277
+        ],
+        "retro": [
+          809,
+          422,
+          371,
+          277
+        ],
+        "neutral": [
+          1190,
+          422,
+          379,
+          277
+        ],
+        "bright": [
+          1583,
+          422,
+          372,
+          277
+        ]
+      }
+    }
+  },
+  "registration": {
+    "width": 78,
+    "left": 2,
+    "feetY": 177,
+    "hit": [
+      8,
+      126,
+      72,
+      50
+    ],
+    "walk": [
+      86,
+      160
+    ]
+  }
+}

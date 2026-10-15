@@ -1,0 +1,11 @@
+# Bed batch 02 — 20 approved combinations
+
+The user approved the Metal Frame (`metal`, $55) and Cozy Upholstered Bed (`cozy`, $90) with all ten existing bedding choices, then explicitly requested implementation and pushing. This increment contains exactly 20 combinations. Subsequent approved batches completed Platform/Fancy Canopy and Rattan/Tufted, bringing the collection to 80 combinations while preserving this artwork.
+
+`assets/metal-approval.png` and `cozy-approval.png` preserve the approved concept boards. `metal.png` and `cozy.png` are original transparent production atlases derived from those boards, each containing ten complete drawings in catalog order. The Metal Frame has curved slate-iron rails, spindles and ball finials. Cozy Upholstered has a rounded, buttonless oatmeal headboard and padded sides with walnut feet; it is distinct from the later Tufted option. Original atlas bytes are retained without image manipulation.
+
+`sources/manifest.json` records per-atlas SHA-256 hashes, source dimensions and per-combination crop rectangles. The shared renderer in `../batch-01/sources/renderer.js` is instantiated once per batch by `tools/compile-beds.cjs`. It draws only its own supported frame/bedding IDs and falls through for other frames; the latest readiness promise waits for all earlier batches. Each batch is compiled as a separate standalone HTML script with embedded atlases and exactly 20 entries. No network image requests are required.
+
+The 78-unit width, feet at y=177, interaction rectangle `[8,126,72,50]`, walking anchor `[86,160]`, shadow and depth ordering remain unchanged. Room and shop/style previews use the same artwork; preview rendering restores the active selection and hit targets. All saved IDs, ownership, prices, purchase/delivery paths and sleep logic are unchanged.
+
+Build using `npm run build:bedroom`; the full graphics build includes all approved batches. Validate with `npm run check` and `npm test`. Shared batch tests cover every implemented combination and preview, complete catalog registration, purchases/installation, style switching, save/reload, sleep controls and phone layout. Earlier batches are protected by render hashes captured before subsequent integrations. Captures and a report are written to `artifacts/beds-batch-02/`.

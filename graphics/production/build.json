@@ -4,8 +4,8 @@
   "customizationReview": "review/customization-v7/README.md",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
-  "updatedSHA": "335648c1524aaf682255c7a209090105f5722a6a7157ea3c6ac25cdb2e3a56bd",
-  "bytes": 47115790,
+  "updatedSHA": "8f64fb96654cbb1121f45d3dba5eb0625c541f6bedce22ea5a2a374c774e6a48",
+  "bytes": 59414673,
   "modularAssets": 544,
   "embeddedImages": 1552,
   "approvedIdentities": [
@@ -17,6 +17,8 @@
   ],
   "additionalAuthoredAppearances": 67,
   "bedroomRevision": "bedroom-shell-1",
-  "bedRevision": "beds-batch-01",
-  "bedCombinations": 20
+  "bedRevision": "beds-batch-04",
+  "bedCombinations": 80,
+  "deskRevision": "seedling-desks-1",
+  "deskVariations": 3
 }

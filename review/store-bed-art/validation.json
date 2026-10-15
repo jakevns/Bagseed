@@ -1,0 +1,15 @@
+{
+  "samples": 104,
+  "combinations": 59,
+  "preserved": true,
+  "order": {
+    "money": 780,
+    "cart": 0,
+    "keys": [
+      "s:bed:fancy"
+    ],
+    "total": 220,
+    "channel": "leafcart"
+  },
+  "errors": []
+}

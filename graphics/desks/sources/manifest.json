@@ -1,0 +1,41 @@
+{
+  "revision": "seedling-desks-1",
+  "path": "assets/desks-atlas.png",
+  "size": [
+    2103,
+    748
+  ],
+  "sha256": "a715f6f1a87f3f683cf7710c1e7066a7d91e283f81aa3c5a18fedce6ba473924",
+  "tiers": [
+    {
+      "name": "Folding Card Table",
+      "rect": [
+        34,
+        356,
+        655,
+        309
+      ],
+      "anchorY": 450
+    },
+    {
+      "name": "Used Writing Desk",
+      "rect": [
+        713,
+        356,
+        674,
+        309
+      ],
+      "anchorY": 450
+    },
+    {
+      "name": "Gardener's Bench",
+      "rect": [
+        1409,
+        168,
+        666,
+        497
+      ],
+      "anchorY": 450
+    }
+  ]
+}

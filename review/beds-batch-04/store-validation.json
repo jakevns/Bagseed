@@ -1,0 +1,17 @@
+{
+  "samples": 142,
+  "combinations": 79,
+  "preserved": true,
+  "order": {
+    "money": 610,
+    "cart": 0,
+    "keys": [
+      "s:bed:fancy",
+      "s:bed:cane",
+      "s:bed:tufted"
+    ],
+    "total": 390,
+    "channel": "leafcart"
+  },
+  "errors": []
+}

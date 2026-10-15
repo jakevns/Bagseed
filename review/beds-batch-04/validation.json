@@ -1,0 +1,13 @@
+{
+  "combinations": 20,
+  "catalogCombinations": 80,
+  "icons": 20,
+  "purchase": {
+    "firstFrame": true,
+    "bed": "tufted",
+    "bedding": "botanical",
+    "owned": true,
+    "money": 677
+  },
+  "errors": []
+}
