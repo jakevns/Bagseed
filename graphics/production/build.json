@@ -3,10 +3,10 @@
   "approval": "User response to revised visible samples: results exceeded expectations, You nailed it.",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "updatedSHA": "3dbf241de1a7632aac7a854adbce35e1506b80e2fd44bd69934c16eb540bfe6f",
-  "bytes": 29829510,
+  "updatedSHA": "9245fa9fa06cfde50d5bae08d0b22dd67f40245c2fc4c2fc1011d93ce5b24a71",
+  "bytes": 30521501,
   "modularAssets": 544,
-  "embeddedImages": 1213,
+  "embeddedImages": 1238,
   "approvedIdentities": [
     "player",
     "remy",

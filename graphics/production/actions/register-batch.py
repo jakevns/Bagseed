@@ -7,15 +7,46 @@ from pathlib import Path
 import hashlib
 import json
 import sys
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageFilter
 import numpy as np
 
 actions = Path(__file__).resolve().parent
 folder = actions / sys.argv[1]
 config = json.loads((folder / 'crops.json').read_text())
+isolate_components = config.pop('_isolateComponents', False)
 source = Image.open(folder / 'source.png').convert('RGBA')
 people = {p['id']: p for p in json.loads((actions.parent / 'cast/sources/cast-roster.json').read_text())['people']}
 report = {'sourceSHA256': hashlib.sha256((folder / 'source.png').read_bytes()).hexdigest(), 'characters': {}}
+def isolate_subject(crop):
+    """Discard disconnected fragments from neighboring atlas cells, not anatomy."""
+    mask = np.array(crop.getchannel('A')) > 80
+    seen = np.zeros_like(mask)
+    largest = []
+    height, width = mask.shape
+    for yy, xx in zip(*np.nonzero(mask)):
+        if seen[yy, xx]:
+            continue
+        component = [(int(yy), int(xx))]
+        seen[yy, xx] = True
+        for y, x in component:
+            for ny in range(max(0, y - 1), min(height, y + 2)):
+                for nx in range(max(0, x - 1), min(width, x + 2)):
+                    if mask[ny, nx] and not seen[ny, nx]:
+                        seen[ny, nx] = True
+                        component.append((ny, nx))
+        if len(component) > len(largest):
+            largest = component
+    if not largest:
+        raise ValueError('No opaque subject in crop')
+    keep = np.zeros_like(mask, dtype=np.uint8)
+    yy, xx = zip(*largest)
+    keep[yy, xx] = 255
+    # Retain the source's antialiased outline around the connected figure.
+    outline = np.array(Image.fromarray(keep).filter(ImageFilter.MaxFilter(7))) > 0
+    pixels = np.array(crop)
+    pixels[~outline, 3] = 0
+    return Image.fromarray(pixels)
+
 for name, boxes in config.items():
     person = people[name]
     target_height = 82 if person.get('kid') else 93 if person['look'].get('short') else 104 if person['look'].get('body') == 'tall' else 100
@@ -24,6 +55,8 @@ for name, boxes in config.items():
     report['characters'][name] = {}
     for direction, box in zip(['down', 'right', 'up'], boxes):
         crop = source.crop(box)
+        if isolate_components:
+            crop = isolate_subject(crop)
         bounds = crop.getchannel('A').point(lambda v: 255 if v > 160 else 0).getbbox()
         if bounds is None:
             raise ValueError(f'Empty crop: {name} {direction}')
