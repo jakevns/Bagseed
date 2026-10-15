@@ -14,8 +14,13 @@ actions = Path(__file__).resolve().parent
 folder = actions / sys.argv[1]
 config = json.loads((folder / 'crops.json').read_text())
 isolate_components = config.pop('_isolateComponents', False)
+asset_ids = config.pop('_assetIds', {})
+target_heights = config.pop('_targetHeights', {})
 source = Image.open(folder / 'source.png').convert('RGBA')
-people = {p['id']: p for p in json.loads((actions.parent / 'cast/sources/cast-roster.json').read_text())['people']}
+roster = json.loads((actions.parent / 'cast/sources/cast-roster.json').read_text())['people']
+samples = json.loads((actions.parents[2] / 'review/characters-v2/sources/baseline-assets.json').read_text())['people']
+roster += [{**p, 'assetId': p['id'], 'kid': p['id'] == 'poppy'} for p in samples]
+people = {p['id']: p for p in roster}
 report = {'sourceSHA256': hashlib.sha256((folder / 'source.png').read_bytes()).hexdigest(), 'characters': {}}
 def isolate_subject(crop):
     """Discard disconnected fragments from neighboring atlas cells, not anatomy."""
@@ -48,8 +53,9 @@ def isolate_subject(crop):
     return Image.fromarray(pixels)
 
 for name, boxes in config.items():
-    person = people[name]
+    person = next(p for p in roster if p['assetId'] == asset_ids[name]) if name in asset_ids else people[name]
     target_height = 82 if person.get('kid') else 93 if person['look'].get('short') else 104 if person['look'].get('body') == 'tall' else 100
+    target_height = target_heights.get(name, target_height)
     target = folder / name
     target.mkdir(exist_ok=True)
     report['characters'][name] = {}

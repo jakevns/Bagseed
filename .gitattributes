@@ -1,0 +1,2 @@
+# HTML snapshots have byte checksums; keep identical bytes on Windows and Linux.
+*.html text eol=lf

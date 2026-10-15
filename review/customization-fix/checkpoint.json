@@ -1,0 +1,28 @@
+{
+  "status": "Local renderer repair complete; all checks passed",
+  "renderingRevision": "customization-2",
+  "gameSHA256": "93d9fb6649c64b2436f4575ef2444b447ef7d6732b6caa008153cf557f6c2576",
+  "validation": {
+    "browserTests": 14,
+    "browserFailures": 0,
+    "fullRosterComparisons": 1872,
+    "preservedNPCStandingAndPortraitAppearances": 71,
+    "customViewsExercisedAgainstLegacyBuild": 576,
+    "registeredActionAssetChecks": 260,
+    "clothingFootwearCombinations": 1200,
+    "creatorWardrobeSaveReload": "passed",
+    "visualReview": "passed"
+  },
+  "changes": [
+    "Register independent trousers to torso width; remove the original trousers/shoes before drawing selected footwear.",
+    "Use a consistent modular player face and body for default and customized appearances.",
+    "Replace rectangular leg slicing with continuous whole-figure motion.",
+    "Use source-resolution torso artwork for custom portraits; retain existing customization IDs and save data.",
+    "Render long hair behind the shoulders and improve colored-hair shading."
+  ],
+  "motionLimitations": "Generic walkers use gentle whole-figure sway/bob, not newly drawn walk cycles. Remy, Doug, Priya and Poppy retain their authored walking frames.",
+  "poseProgress": {
+    "completed": 52,
+    "remaining": 20
+  }
+}

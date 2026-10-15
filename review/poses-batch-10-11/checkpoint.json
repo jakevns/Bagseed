@@ -1,0 +1,42 @@
+{
+  "status": "Integrated locally; all validation passed",
+  "completedAppearances": 52,
+  "additionalCastCompleted": 47,
+  "originalSamplesCompleted": 5,
+  "remainingAppearances": 20,
+  "newAssetIds": [
+    "player",
+    "remy",
+    "doug",
+    "priya",
+    "poppy",
+    "cast-28-dev",
+    "cast-29-ari",
+    "cast-30-sam",
+    "cast-31-talia",
+    "cast-32-luz"
+  ],
+  "gameSHA256": "7bc05c25f37cdb4161a0cd90f258166c7d53ced9a34293ca7176381984176a4c",
+  "previousLocalGameSHA256": "aa8be7eb1ab659b8de46efe62b774669d079875a6b461335027bba1ae887c626",
+  "reviewSheetSHA256": {
+    "batch-10": "efa22291960527df55d960aaa27745484b6d5d5fc4718d5f6d89dcdb2c7d6322",
+    "batch-11": "a2d82b0f15891a64ac81b03d340791dd3e9c939ddc42cda0977abc7f4ede2ca4"
+  },
+  "validation": {
+    "browserTests": 12,
+    "browserFailures": 0,
+    "fullRosterAppearancesCompared": 72,
+    "fullCastImageComparisons": 1872,
+    "directAssetChecks": 260,
+    "baselineChecksum": "passed",
+    "gameScriptBlocksParsed": 78,
+    "visualRegistrationReview": "passed",
+    "earlier42ActionSets": "preserved"
+  },
+  "limitations": [
+    "Left profiles mirror right profiles, including hand and prop side.",
+    "Only canonical appearances use complete action drawings; customized appearances use the existing generic renderer.",
+    "Some original sample reaction drawings include the supplied walking stance; new walk frames are outside this batch."
+  ],
+  "deployment": "Local only"
+}

@@ -1,0 +1,38 @@
+{
+  "status": "Integrated locally; all validation passed",
+  "completedAppearances": 42,
+  "remainingAppearances": 25,
+  "newAssetIds": [
+    "cast-63-auto",
+    "cast-64-swamp",
+    "cast-65-rosalind",
+    "cast-66-theo",
+    "cast-67-marisol",
+    "cast-48-cure",
+    "cast-49-lumen",
+    "cast-50-cafePT",
+    "cast-51-gardenPT",
+    "cast-52-hardwarePT"
+  ],
+  "gameSHA256": "aa8be7eb1ab659b8de46efe62b774669d079875a6b461335027bba1ae887c626",
+  "previousLocalGameSHA256": "6c15fb9442fb13d9989bd994f4107b7775c8f69d8d363bc92438dc2d073f63a1",
+  "reviewSheetSHA256": {
+    "batch-08": "6206e45d2e3ff8602735b4280398b6934596ac0bbbfaf17ae4467c788db6913b",
+    "batch-09": "cbf4b9fb71a10a3cf62b15db32763549fcad9d46eb9167ab66bab186b14b2582"
+  },
+  "validation": {
+    "browserTests": 12,
+    "browserFailures": 0,
+    "fullCastImageComparisons": 1742,
+    "directAssetChecks": 210,
+    "baselineChecksum": "passed",
+    "gameScriptBlocksParsed": 78,
+    "visualRegistrationReview": "passed",
+    "earlier32ActionSets": "preserved"
+  },
+  "limitations": [
+    "Left profile mirrors the supplied right profile, including hand and prop side.",
+    "Custom outfits retain the generic renderer."
+  ],
+  "deployment": "Local only"
+}

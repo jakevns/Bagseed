@@ -1,0 +1,36 @@
+{
+  "status": "Integrated locally; validation passed",
+  "completedAppearances": 32,
+  "remainingAppearances": 35,
+  "newAssetIds": [
+    "cast-33-0",
+    "cast-34-1",
+    "cast-35-2",
+    "cast-36-3",
+    "cast-37-rosalind",
+    "cast-58-suit",
+    "cast-59-amani",
+    "cast-60-grandma",
+    "cast-61-pixel",
+    "cast-62-moon"
+  ],
+  "gameSHA256": "6c15fb9442fb13d9989bd994f4107b7775c8f69d8d363bc92438dc2d073f63a1",
+  "reviewSheetSHA256": {
+    "batch-06": "69d6ae066dc2e7cea13f4567343932a3a86fe0a5adeba759c9ac346c0872485a",
+    "batch-07": "a55e3187c6305c29c72fb62d25417c07a16648ac7a673b1c4608e528d6917120"
+  },
+  "validation": {
+    "browserTests": 12,
+    "browserFailures": 0,
+    "fullCastImageComparisons": 1742,
+    "directAssetChecks": 160,
+    "baselineChecksum": "passed",
+    "gameScriptBlocksParsed": 78,
+    "visualRegistrationReview": "passed"
+  },
+  "limitations": [
+    "Left profile mirrors the supplied right profile, including hand side.",
+    "Custom outfits retain the generic renderer."
+  ],
+  "deployment": "Local only"
+}

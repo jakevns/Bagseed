@@ -61,6 +61,7 @@
     const source=pixels(id),out=cv(source.width,source.height),g=out.getContext('2d');
     const d=new ImageData(new Uint8ClampedArray(source.data.data),source.width,source.height),p=d.data;
     const skin=rgb(L.skin),hair=rgb(L.hairC),top=rgb(L.shirtC),bot=rgb(L.pantsC),shoe=rgb(L.shoesC),hi=rgb(L.hairHi);
+    const density=['top','bottom','shoe'].includes(kind)?source.width/96:1;
     let hatMask;const faceAlpha=kind==='head'?faceMask(id).bagseedAlpha:null;
     if(kind==='hat'){
       const w=source.width,h=source.height,seed=new Uint8Array(w*h);hatMask=new Uint8Array(w*h);
@@ -69,7 +70,7 @@
       for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(seed[y*w+x])for(let dy=-3;dy<=3;dy++)for(let dx=-3;dx<=3;dx++){const xx=x+dx,yy=y+dy;if(xx>=0&&xx<w&&yy>=0&&yy<h)hatMask[yy*w+xx]=1;}
     }
     for(let i=0;i<p.length;i+=4){if(p[i+3]<16){p[i+3]=0;continue;}
-      const x=(i/4)%source.width,y=Math.floor(i/4/source.width),r=p[i],gg=p[i+1],b=p[i+2],l=lum(r,gg,b);
+      const x=((i/4)%source.width)/density,y=Math.floor(i/4/source.width)/density,r=p[i],gg=p[i+1],b=p[i+2],l=lum(r,gg,b);
       const isSkin=kind==='top'||kind==='bottom'?bodySkinPixel(r,gg,b):kind==='shoe'?bodySkinPixel(r,gg,b)&&b>gg*.67&&(L.shoesS==='sandals'||y<98):skinPixel(r,gg,b);
       if(kind==='top'&&L.topS==='garden'&&x>32&&x<63&&y>48&&y<87&&r>gg&&gg>b*1.35&&r<gg*1.4)continue;
       let tone,base=160;
@@ -106,7 +107,7 @@
           if(r>175&&gg>160&&b>125&&Math.abs(r-gg)<45)continue;
         }
       }
-      const lightHair=kind==='head'&&!isSkin&&lum(...hair)>150&&!id.includes('/balding/');
+      const lightHair=kind==='head'&&!isSkin&&lum(...hair)>65&&!id.includes('/balding/');
       const edge=lightHair&&[i-4,i+4,i-source.width*4,i+source.width*4].some(n=>n<0||n>=p.length||source.data.data[n+3]<90);
       if(l<30&&!isSkin&&(!lightHair||edge)){p[i]=Math.min(r,40);p[i+1]=Math.min(gg,32);p[i+2]=Math.min(b,28);continue;}
       const mapped=material(tone,lightHair&&!edge?Math.max(l,36):l,base);p[i]=mapped[0];p[i+1]=mapped[1];p[i+2]=mapped[2];
@@ -195,7 +196,23 @@
   }
   function head(L,dir) {
     const signature=identityKey(L)+'|'+L.expr+'|'+dir;if(heads.has(signature))return heads.get(signature);
-    const id=`hair/${L.hairS}/${dir}`,out=cv(192,192),g=out.getContext('2d');g.drawImage(paint(id,L,'head'),0,0);
+    const longHair=['long','wavy','braids','locs','lob','halfup','layered','bluntlong','beachwaves','longcurls','twinbraids','boxbraids','longtwists','loosebraid'].includes(L.hairS);
+    const id=`hair/${L.hairS}/${dir}`,out=cv(192,longHair?240:192),g=out.getContext('2d'),base=paint(id,L,'head');
+    g.drawImage(base,0,0);
+    if(longHair){
+      // Continue the source's nape hair behind the shoulders. Match the
+      // adjoining scanlines so a portrait crop cannot leave a flat ledge.
+      const tail=cv(192,10),t=tail.getContext('2d',{willReadFrequently:true});t.drawImage(base,0,124,192,10,0,0,192,10);
+      const a=t.getImageData(0,0,192,10),mask=faceMask(id).bagseedAlpha;
+      for(let y=0;y<10;y++)for(let x=0;x<192;x++)if(mask[(y+124)*192+x]>80)a.data[(y*192+x)*4+3]=0;
+      t.putImageData(a,0,0);g.drawImage(tail,0,0,192,10,0,130,192,80);
+      const extended=g.getImageData(0,0,192,240);
+      for(let y=185;y<240;y++)for(let x=0;x<192;x++){
+        const end=210-Math.abs(x-96)*.13+Math.sin(x*.13)*3,i=(y*192+x)*4;
+        extended.data[i+3]*=Math.max(0,Math.min(1,(end-y)/5));
+      }
+      g.putImageData(extended,0,0);
+    }
     const trait=traits.get(key(L));
     const faceShape=trait?.age>=60?(L.pres==='fem'?'triangle':L.face==='square'?'strong':'wide'):trait?.kid?'petite':L.face;
     const face=cv(192,192),f=face.getContext('2d'),faceId=`face/${faceShape}/${dir}`;
@@ -206,20 +223,33 @@
     if(L.hat!=='none')g.drawImage(paint(`hat/${L.hat==='hood'?'beanie':L.hat}/${dir}`,L,'hat'),0,0);
     if(heads.size>200)heads.clear();heads.set(signature,out);return out;
   }
-  function body(L,dir,nose=false) {
-    const signature=JSON.stringify([L.skin,L.topS,L.shirtC,L.bottomS,L.pantsC,L.shoesS,L.shoesC,L.acc,L.accC,L.topPat,L.topC2,L.botPat,L.botC2,L.emb,dir,nose]);if(bodies.has(signature))return bodies.get(signature);
-    const out=cv(),g=out.getContext('2d'),top=`${nose?'nose':'top'}/${L.topS}/${dir}`;
-    const full=paint(top,L,'top');
-    const bottomId=`bottom/${L.bottomS==='pjs'?'jeans':L.bottomS}/${dir}`;
-    g.drawImage(paint(bottomId,L,'bottom'),0,0);g.drawImage(full,0,0);
-    if(!['overalls','pjs','suit'].includes(L.topS)){
-      // Keep hands and long coat/apron hems over independently chosen bottoms.
-      const overlay=cv(),o=overlay.getContext('2d',{willReadFrequently:true});o.drawImage(full,0,0);const a=o.getImageData(0,0,96,108),raw=pixels(top).data.data;
-      for(let y=76;y<108;y++)for(let x=0;x<96;x++){const i=(y*96+x)*4,r=raw[i],gg=raw[i+1],b=raw[i+2];if(!bodySkinPixel(r,gg,b)&&!(['labcoat','garden'].includes(L.topS)&&y<(L.topS==='labcoat'?94:87))){a.data[i+3]=0;}}
-      o.putImageData(a,0,0);g.clearRect(0,0,96,108);g.drawImage(paint(bottomId,L,'bottom'),0,0);g.drawImage(overlay,0,0);
+  function body(L,dir,nose=false,density=1) {
+    const signature=JSON.stringify([L.skin,L.topS,L.shirtC,L.bottomS,L.pantsC,L.shoesS,L.shoesC,L.acc,L.accC,L.topPat,L.topC2,L.botPat,L.botC2,L.emb,dir,nose,density]);if(bodies.has(signature))return bodies.get(signature);
+    const out=cv(96*density,108*density),g=out.getContext('2d');g.scale(density,density);
+    const asset=id=>density>1&&images.has('hires/'+id)?'hires/'+id:id;
+    const top=asset(`${nose?'nose':'top'}/${L.topS}/${dir}`),full=paint(top,L,'top');
+    const bottomId=asset(`bottom/${L.bottomS==='pjs'?'jeans':L.bottomS}/${dir}`),side=dir==='right'||dir==='left';
+    // Component sheets use different proportions. Register trousers to the
+    // torso's waist and shoes to its ankles before layering, once per body.
+    const lowerScale=1.8,shoeScale=side?1.25:1.5;
+    const fullSuit=['overalls','pjs','suit'].includes(L.topS);
+    if(!fullSuit){
+      g.save();g.beginPath();g.rect(0,76,96,24);g.clip();g.translate(48,0);g.scale(lowerScale,1);g.drawImage(paint(bottomId,L,'bottom'),-48,0,96,108);g.restore();
     }
-    // Footwear is its own authored asset, including bare skin in open sandals.
-    g.clearRect(0,L.shoesS==='boots'||L.shoesS==='rainboots'?96:101,96,12);g.drawImage(paint(`shoe/${L.shoesS}/${dir}`,L,'shoe'),0,0);
+    const overlay=cv(full.width,full.height),o=overlay.getContext('2d',{willReadFrequently:true});o.drawImage(full,0,0);
+    const a=o.getImageData(0,0,full.width,full.height),raw=pixels(top).data.data,d=full.width/96;
+    for(let yy=0;yy<full.height;yy++)for(let xx=0;xx<full.width;xx++){
+      const i=(yy*full.width+xx)*4,y=yy/d,x=xx/d;
+      const hand=y<88&&(x<37||x>59)&&bodySkinPixel(raw[i],raw[i+1],raw[i+2]);
+      const hem=L.topS==='labcoat'?y<94:L.topS==='garden'?y<87:y<81;
+      if(y>=100||(!fullSuit&&!hem&&!hand))a.data[i+3]=0;
+    }
+    o.putImageData(a,0,0);g.drawImage(overlay,0,0,96,108);
+    // Exclude the feet baked into clothing sheets. The selected footwear is
+    // the only shoe layer; its ankle overlaps the trousers by a few pixels.
+    const shoeTop=['boots','rainboots'].includes(L.shoesS)?94:99;
+    g.clearRect(0,shoeTop,96,108-shoeTop);
+    g.save();g.beginPath();g.rect(0,shoeTop,96,108-shoeTop);g.clip();g.translate(48,0);g.scale(shoeScale,1);g.drawImage(paint(asset(`shoe/${L.shoesS}/${dir}`),L,'shoe'),-48,0,96,108);g.restore();
     if(L.acc==='bandana'||L.acc==='scarf'){
       const color=L.accC||(L.acc==='bandana'?'#c94f4f':'#d26aa0');path(g,color,3,[39,43,48,46,57,43]);path(g,color,4,L.acc==='scarf'?[54,46,57,58]:[44,46,48,51,52,46]);
     }
@@ -233,15 +263,16 @@
     }
     if(bodies.size>200)bodies.clear();bodies.set(signature,out);return out;
   }
-  function generic(L,dir,nose=false,canonicalImage=null) {
-    const out=cv(),g=out.getContext('2d'),B=body(L,dir,nose),H=canonicalImage?null:head(L,dir);
+  function generic(L,dir,nose=false) {
+    const out=cv(),g=out.getContext('2d'),B=body(L,dir,nose),H=head(L,dir);
     const width={slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1;
     const short=!!L.short,kid=isChild(L),sy=kid?.74:short?.9:L.body==='tall'?1.07:1;
     const neckY=107-66*sy,headScale=kid?.9:1,headY=neckY-43*headScale;
     const presentation=L.pres==='masc'?1.045:L.pres==='fem'?.955:1;
+    const drawHead=()=>g.drawImage(H,48-32*headScale,headY,64*headScale,H.height/3*headScale);
+    drawHead();
     g.save();g.translate(48,107);g.scale(width*presentation,sy);g.drawImage(B,-48,-107);g.restore();
-    if(canonicalImage){const cut=kid?65:44;if(nose){const waist=Math.round(107-32*sy);g.drawImage(canonicalImage,0,waist,96,108-waist,0,waist,96,108-waist);}g.drawImage(canonicalImage,0,0,96,cut,0,0,96,cut);}
-    else g.drawImage(H,48-32*headScale,headY,64*headScale,64*headScale);
+    g.save();g.beginPath();g.rect(0,0,96,neckY+2);g.clip();drawHead();g.restore();
     if(nose){g.save();g.beginPath();g.rect(0,0,96,neckY+3);g.clip();g.translate(48,107);g.scale(width*presentation,sy);g.drawImage(B,-48,-107);g.restore();}
     if(L.prop&&!nose&&dir!=='up')props(g,L,dir);
     return out;
@@ -269,15 +300,11 @@
   function animate(source,L,dir,frame,breath,blink,act,rig) {
     const out=cv(),g=out.getContext('2d');g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';
     if(rig&&frame){
-      const phase=frame===1?1:frame===3?-1:0;
-      const hip=isChild(L)?86:79,side=dir==='right'||dir==='left';
-      for(let leg=0;leg<2;leg++){
-        const sign=leg?-1:1;g.save();g.translate(48,hip);
-        if(side)g.rotate(sign*phase*.18*(dir==='left'?-1:1));else g.translate(sign*phase,sign*phase<0?-1.5:0);
-        g.drawImage(source,leg*48,hip,48,108-hip,leg*48-48,0,48,108-hip);g.restore();
-      }
-      g.drawImage(source,0,0,96,hip+2,0,frame%2?-1:0,96,hip+2);
-    }else if(breath){g.drawImage(source,0,0,96,77,0,-1,96,78);g.drawImage(source,0,77,96,31,0,77,96,31);}
+      // Move one continuous silhouette. Cutting a drawing at x=48/y=79
+      // severed overlapping profile legs and exposed rectangular seams.
+      const phase=frame===1?1:frame===3?-1:0,side=dir==='right'||dir==='left';
+      g.save();g.translate(48,107);g.transform(1,0,phase*(side?.018:.01),frame%2?.988:1,0,0);g.drawImage(source,-48,-107);g.restore();
+    }else if(breath){g.save();g.translate(48,107);g.scale(1,.99);g.drawImage(source,-48,-107);g.restore();}
     else g.drawImage(source,0,0);
     if(blink&&dir!=='up'){
       const metrics=faceCoordinates(out,L),y=metrics.eyeY,xs=dir==='down'?[metrics.x-metrics.width*.23,metrics.x+metrics.width*.23]:[metrics.x+(dir==='right'?1:-1)*metrics.width*.16];
@@ -303,25 +330,25 @@
     if(!loaded)return cv();const L=normalize(look),signature=key(L)+'|'+dir+'|'+[frame,breath,blink,act,nose].join(',');if(cache.has(signature))return cache.get(signature);
     const person=canonical.get(approvalKey(L));let source,rig=true;
     if(person&&nose&&person.actions){source=images.get(person.actions[dir]);rig=false;}
-    else if(person&&!nose){source=images.get(person.assets[(!person.rig&&frame?`${dir}-${frame%4}`:`${dir}-idle`)]);rig=!!person.rig;}
-    else {const owner=person||identities.get(identityKey(L));source=generic(L,dir,nose,owner?images.get(owner.assets[dir+'-idle']):null);}
+    else if(person&&person.id!=='player'&&!nose){source=images.get(person.assets[(!person.rig&&frame?`${dir}-${frame%4}`:`${dir}-idle`)]);rig=!!person.rig;}
+    else source=generic(L,dir,nose);
     const out=animate(source,L,dir,frame,breath,blink,act&&!nose,rig&&!nose);
-    if(person&&L.expr!=='neutral'&&dir!=='up'&&!nose){const g=out.getContext('2d'),f=faceCoordinates(out,L);g.save();g.translate(f.x-32,f.eyeY-79/3);g.scale(1/3,1/3);faceDetails(g,{...L,eyes:'round',eyeC:'#2b1d14',brows:'thin',mouth:'default',nose:'default',ears:'normal',extras:[],marks:[],pierce:[],glasses:'none',acc:'none'},dir);g.restore();}
+    if(person&&person.id!=='player'&&L.expr!=='neutral'&&dir!=='up'&&!nose){const g=out.getContext('2d'),f=faceCoordinates(out,L);g.save();g.translate(f.x-32,f.eyeY-79/3);g.scale(1/3,1/3);faceDetails(g,{...L,eyes:'round',eyeC:'#2b1d14',brows:'thin',mouth:'default',nose:'default',ears:'normal',extras:[],marks:[],pierce:[],glasses:'none',acc:'none'},dir);g.restore();}
     if(cache.size>600)cache.delete(cache.keys().next().value);cache.set(signature,out);return out;
   }
   function portrait(look) {
     if(!loaded)return cv(192,192);const L=normalize(look),signature=key(L)+'|'+(L.bg||'');if(portraits.has(signature))return portraits.get(signature);
     const out=cv(192,192),g=out.getContext('2d');g.fillStyle=L.bg||'#eadfc9';g.fillRect(0,0,192,192);
     const person=canonical.get(approvalKey(L));
-    if(person){const expression=['happy','grin','laugh','proud'].includes(L.expr)?'friendly':['sad','worried','angry'].includes(L.expr)?'concerned':'neutral';g.drawImage(images.get(person.portraits[expression]),0,0);}
+    if(person&&person.id!=='player'){const expression=['happy','grin','laugh','proud'].includes(L.expr)?'friendly':['sad','worried','angry'].includes(L.expr)?'concerned':'neutral';g.drawImage(images.get(person.portraits[expression]),0,0);}
     else{
-      g.drawImage(body(L,'down'),0,40,96,40,-48,124,288,120);
-      const owner=identities.get(identityKey(L));
-      if(owner){
-        const face=cv(192,192),f=face.getContext('2d',{willReadFrequently:true});f.drawImage(images.get(owner.portraits.neutral),0,0);const a=f.getImageData(0,0,192,192),d=a.data,hair=rgb(L.hairC),hairLight=lum(...hair);
-        for(let y=126;y<192;y++)for(let x=0;x<192;x++){const i=(y*192+x)*4,r=d[i],gg=d[i+1],b=d[i+2],isHair=Math.abs(r/Math.max(1,gg)-hair[0]/Math.max(1,hair[1]))<.3&&Math.abs(gg/Math.max(1,b)-hair[1]/Math.max(1,hair[2]))<.45&&lum(r,gg,b)<Math.max(80,hairLight*1.7);if(!(y<145&&x>65&&x<126&&skinPixel(r,gg,b))&&!(isHair&&(y<145||x<68||x>126)))d[i+3]=0;}
-        f.putImageData(a,0,0);g.drawImage(face,0,0);
-      }else g.drawImage(head(L,'down'),0,0);
+      const torso=body(L,'down',false,3),d=torso.width/96;
+      const width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1);
+      g.save();g.translate(96,0);g.scale(width,1);g.translate(-96,0);
+      g.drawImage(torso,0,40*d,96*d,40*d,-48,124,288,120);
+      g.restore();
+      g.drawImage(head(L,'down'),0,0);
+
     }
     portraits.set(signature,out);return out;
   }
@@ -386,6 +413,6 @@
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',ready,sprite,portrait,normalize,key,head,body,assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-2',ready,sprite,portrait,normalize,key,head,body,assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();

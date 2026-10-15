@@ -9,6 +9,9 @@ const encoded=JSON.parse(fs.readFileSync(path.join(art,'encoded/manifest.json'))
 assert.equal(encoded.decodedRGBAEqual,true,'Lossless encoding has not been verified');
 const images={},add=(id,file)=>{const entry=encoded.files[path.relative(root,file)];assert.ok(entry,'Missing encoded image: '+file);assert.equal(sha(fs.readFileSync(file)),entry.sourceSHA256,'Stale encoded asset');const bytes=fs.readFileSync(path.join(root,entry.encoded));assert.equal(sha(bytes),entry.encodedSHA256,'Encoded image checksum differs');images[id]='data:image/webp;base64,'+bytes.toString('base64');return id;};
 for(const [id,entry]of Object.entries(manifest.assets))add(id,path.join(art,entry.path));
+const customization=JSON.parse(fs.readFileSync(path.join(art,'customization/manifest.json')));
+for(const [source,expected]of Object.entries(customization.sourceSHA256))assert.equal(sha(fs.readFileSync(path.join(art,manifest.sources[source].path))),expected,'Stale customization source: '+source);
+for(const [id,file]of Object.entries(customization.assets))images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,file)).toString('base64');
 const preview=path.join(root,'review/characters-v2'),fixtures=JSON.parse(fs.readFileSync(path.join(preview,'sources/baseline-assets.json')));
 const approved=fixtures.people.map(person=>{
   const assets={},portraits={};
@@ -30,9 +33,17 @@ for(const [batch,names] of Object.entries({
   'batch-02':['tobias','bev','kenji','mateo','elena'],
   'batch-03':['rosa','leo','mara','eli','nico'],
   'batch-04':['alma','owen','amina','ronan','leila'],
-  'batch-05':['cass','jun','rosie','arthur','nadia']
+  'batch-05':['cass','jun','rosie','arthur','nadia'],
+  'batch-06':['0','1','2','3','rosalind'],
+  'batch-07':['suit','amani','grandma','pixel','moon'],
+  'batch-08':['auto','swamp','rosalind','theo','marisol'],
+  'batch-09':['cure','lumen','cafePT','gardenPT','hardwarePT'],
+  'batch-10':['player','remy','doug','priya','poppy'],
+  'batch-11':['dev','ari','sam','talia','luz']
 })) for(const name of names) {
-  const person=cast.find(p=>p.id.endsWith('-'+name));
+  const configPath=path.join(art,'actions',batch,'sheet.json');
+  const assetId=fs.existsSync(configPath)?JSON.parse(fs.readFileSync(configPath)).assetIds[name]:null;
+  const person=[...approved,...cast].find(p=>assetId?p.id===assetId:p.id.endsWith('-'+name));
   assert.ok(person,'Missing pose owner: '+name);
   person.actions={};
   for(const view of ['down','right','up','left','portrait']) {
@@ -49,13 +60,14 @@ function visit(value,location='collections'){
 }
 visit(audit.collections);
 const data={images,approved,cast,traits,haircuts:60,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
-const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace('__BAGSEED_ART_DATA__',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
+const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace(/\r\n/g,'\n').replace('__BAGSEED_ART_DATA__',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
 new (require('node:vm').Script)(characterCode,{filename:'illustrated-production-code'});
 const marker='bagseed-illustrated-production-code';
 const target=path.join(root,'public/index.html'),current=fs.readFileSync(target);
 const priorReport=path.join(art,'build.json'),priorSHA=fs.existsSync(priorReport)?JSON.parse(fs.readFileSync(priorReport)).updatedSHA:null;
 assert.ok(sha(current)===baselineSHA||sha(current)===priorSHA,'Unexpected edits to the working HTML; preserve them before rebuilding');
 const html=original.toString().replace('</body></html>',`<script id="${marker}">\n${characterCode}\n</script>\n</body></html>`);
-assert.ok(html.includes(marker),'Could not find baseline insertion point');fs.writeFileSync(target,html);
+assert.ok(html.includes(marker),'Could not find baseline insertion point');
+const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging,target);
 const report={version:'illustrated-1',approval:'User response to revised visible samples: results exceeded expectations, You nailed it.',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length};
 fs.writeFileSync(path.join(art,'build.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
