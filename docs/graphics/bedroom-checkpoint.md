@@ -1,5 +1,13 @@
 # Bedroom update checkpoint
 
+## Curtain batch 02 — pending picture approval
+
+The user requested the next pair. Proposal is exactly Floral Curtains ($18) and Sheer Curtains ($14), including animations and store artwork. Source atlas and renderer are under `graphics/curtains/batch-02/`. Floral is cream with rose-and-sage flowers; Sheer is ivory with real cloth transparency and a looser sway. Hardware stays fixed/opaque and reduced motion is still. All original source proportions are preserved in a common display frame.
+
+`node tools/preview-curtains.cjs 02` injects this proposed batch into the complete production `public/index.html` in its browser, without changing the game source, production HTML or build metadata. Checks passed motion/Windy/reduced motion/fixed rods/transparency, five unchanged options (including both earlier approved sets in all motion modes), and both actual store cards at desktop/phone proportions. The original atlas, approval board, animation and store pictures are saved under this batch's source/review folders. The compiler defaults to Batch 01 and still emits the existing Batch 01 payload byte-for-byte.
+
+Show `review/curtains-batch-02/approval.png` and its motion loop directly in chat; wait for explicit approval before production integration and push. Read this batch's README for remaining integration checks. Then the final pair is Patterned/Blinds. Keep TWO sets per batch and push each approved completed pair before proceeding.
+
 ## Curtain batch 01 — approved and integrated
 
 The user approved Basic Curtains (included) and Blackout Curtains ($20) with “Excellent work! Approved+!!”. Exactly TWO sets are complete. The shared painted renderer now ships in `public/index.html` through both graphics build paths; metadata records `curtains-batch-01` / two sets. Normal/Windy cloth sway keeps the rods fixed, and reduced motion is still. Matching store and opened-package artwork preserve native proportions. Original game source, names, prices, ownership, live-window behavior and the eight earlier artwork modules are unchanged.
