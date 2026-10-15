@@ -1,5 +1,20 @@
 # Bedroom update checkpoint
 
+## Preview entry point — user preference
+
+For any “web preview” or “Open in ChatGPT” preview, use `public/index.html`, the complete built game containing the updated graphics. Never use `src/game.html` as the playable preview: it is the gameplay source and omits the appended illustrated renderers. The user explicitly requested this after receiving the original-looking source preview. Picture approvals should be shown directly in chat; workspace file links have not been accessible to this user.
+
+
+## Approved tabletop depth and usable pegboard-top ledge
+
+The user clarified that the lava lamp belongs ABOVE the green desk's pegboard and asked to retain the old ability to stack decorations. The upper surface now aligns with the illustrated pegboard's top trim at y=52 (x=231–286), while the other workbench tiers retain the original y=56 windowsill. The main supply row stays centered across tabletop depth at y=74.5. The proposed block against placing decor on the built-in supply row has been removed; original main-tabletop/custom-furniture placement and stacking are available.
+
+Old upper decorations retain their horizontal positions above the pegboard and align to the top trim. Main-tabletop items align with the illustrated surface. Save/reload, repeated migration and changing desk tiers preserve the upper decorations. The focused tests passed 48 desk/supply cases, three decorations placed on the upper ledge through the actual UI, original main-desk/custom-table placement, legacy-save alignment and tier switching. Picture previews and the report are under `review/desk-tabletop-placement/`; use `pegboard-top-preview.png` for the current close-up.
+
+Final validation: all 22 browser tests passed with no skips; `npm run check` verified the immutable baseline checksum and parsed all 84 scripts. Current source/build hashes match the build report, and character, room-shell and all four bed payloads remain byte-for-byte unchanged.
+
+The user approved this final placement with “Go ahead and push the updates”. Pictures were shown directly in chat. The pull before committing reported main already up to date at `c5b0e24`. Commit and push this approved increment; future artwork still requires its own approval. Web previews must use `public/index.html`.
+
 ## Centered seedling desk supplies completed
 
 User request: “clean up the things on top of the desk and ensure theyre centered on each desk”. The local update replaces the old blocky tabletop props with seven illustrated cutouts and centers the visible group dynamically on all three existing seedling desks. The common baseline places supplies on the tabletop, with even gaps and side clearance. Availability continues to follow inventory and active/brewing feed. Existing frames, store/package art and storage/supply-box interactions remain intact.

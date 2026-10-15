@@ -1,6 +1,6 @@
 # Bagseed
 
-The supplied **v1.1.5.1 Night Walker Flashlights** game, updated with the user-approved illustrated character direction. Open [public/index.html](public/index.html) for the complete standalone game, or serve `public/` with any static host.
+The supplied **v1.1.5.1 Night Walker Flashlights** game, updated with the user-approved illustrated character direction. Open [public/index.html](public/index.html) for the complete standalone game, or serve `public/` with any static host. Use this `index.html` for **Web Preview / Open in ChatGPT**; `src/game.html` is source-only and does not include the appended illustrated graphics.
 
 The update includes the five approved identities, 67 additional authored appearance variants, matching portraits, all 60 hairstyles and the existing customization choices. The [final review](review/final/index.html) contains comparisons, motion previews, a complete appearance roster, screenshots and validation notes. [Study 02](review/characters-v2/index.html) records the approved samples and reference evidence. Study 01 was rejected and is excluded from this release.
 

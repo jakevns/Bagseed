@@ -2,9 +2,9 @@
   "version": "illustrated-1",
   "approval": "User response to revised visible samples: results exceeded expectations, You nailed it.",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "534f0f44ff17ce621090c9ed2ceba91bfb6f535b0a5157d4a9ceddb3805bd25e",
-  "updatedSHA": "d44dfc5a243ee51748b6a1365ade732afe5aee227f0f0fa5d8f5d24ab13eed7c",
-  "bytes": 55285856,
+  "workingSourceSHA": "f0263bfc76c7aecb20c432b083fa3ccde592e53d326ad84b95579f52084524b5",
+  "updatedSHA": "2526327ca97ae72c20b0fd7d5a2ab42a8eead44b2c4914bc840b882f0d239264",
+  "bytes": 55287473,
   "modularAssets": 544,
   "embeddedImages": 1427,
   "approvedIdentities": [

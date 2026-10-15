@@ -2998,8 +2998,12 @@ const RUG_BLOCK = [[4, 94, 92, 26], [280, 94, 40, 34]];
 const tentBlocks = () => state.locations.tent2.owned ? [TENT_ZONE, [86, 94, 104, 34]] : [];
 function evictTentZone() { const keep = [], moved = []; for (const d of state.room.placed) { const D = decorDef(d.id); if (D && hitRect([d.x, d.y, D.w, D.h], d.y < 97 ? TENT_ZONE : [86, 94, 104, 34]) && D.k !== 'desk') moved.push(D.n); else keep.push(d); } state.room.placed = keep; if (moved.length) toast(`Moved ${moved.length} decoration(s) out of the tent's spot. They're back in your collection.`); }
 const hitRect = (a, b) => a[0] < b[0] + b[2] && a[0] + a[2] > b[0] && a[1] < b[1] + b[3] && a[1] + a[3] > b[1];
+const BENCH_TABLETOP = Object.freeze({ y: 74.5, x0: 224, x1: 292, name: 'bench' });
+const BENCH_PEGBOARD_TOP = Object.freeze({ y: 52, x0: 231, x1: 286, name: 'benchTop' });
 function surfaces() {
-  const out = [{ y: 74, x0: 156, x1: 222, name: 'desk' }, { y: 80, x0: 224, x1: 292, name: 'bench' }, { y: 56, x0: 222, x1: 282, name: 'sill' }];
+  const out = [{ y: 74, x0: 156, x1: 222, name: 'desk' }, BENCH_TABLETOP];
+  // Keep the upper decoration surface, aligned with the pegboard's top trim.
+  out.push(state.gear.workbench === 2 ? BENCH_PEGBOARD_TOP : { y: 56, x0: 222, x1: 282, name: 'sill' });
   for (const d of state.room.placed) { const D = decorDef(d.id); if (D && D.surfY !== undefined) out.push({ y: d.y + D.surfY, x0: d.x, x1: d.x + D.w, name: d.uid }); }
   return out;
 }
@@ -11177,7 +11181,7 @@ const DecoZ = {
   hitFoot(zone, x, y) { if (!state) return false; for (const d of this.list(zone)) { const D = decorDef(d.id), f = this.foot(Object.assign({ zone }, d), D); if (f && x + 3 > f[0] && x - 3 < f[0] + f[2] && y > f[1] && y - 2 < f[1] + f[3]) return true; } return false; },
   surfaces(zone, ignoreUid) {
     const out = [];
-    if (zone === 'bedroom') { for (const s of surfaces()) if (s.name === 'desk' || s.name === 'bench' || s.name === 'sill') out.push(s); }
+    if (zone === 'bedroom') { for (const s of surfaces()) if (s.name === 'desk' || s.name === 'bench' || s.name === 'sill' || s.name === 'benchTop') out.push(s); }
     if (zone === 'house') out.push({ y: 90, x0: 86, x1: 134, name: 'dining' }, { y: 238, x0: 70, x1: 100, name: 'coffee' }, { y: 46, x0: 64, x1: 118, name: 'counter' });
     for (const d of this.list(zone)) { if (d.uid === ignoreUid) continue; const D = decorDef(d.id); if (D && D.surfY !== undefined && D.k !== 'desk') { const [w] = this.dims(Object.assign({ zone }, d), D); out.push({ y: d.y + D.surfY, x0: d.x, x1: d.x + w, name: d.uid }); } }
     return out;

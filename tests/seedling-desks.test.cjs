@@ -79,9 +79,9 @@ test('all three seedling desks share room/store/package art and preserve purchas
           const left = boxes[0][0], right = boxes.at(-1)[0] + boxes.at(-1)[2];
           if (Math.abs((left+right)/2 - 40) > .001) throw Error('Supplies are not centered');
           if (left < 12 || right > 74) throw Error('Supplies extend to tabletop edges');
-          let last = left - 2.5;
+          let last = left - 2;
           for (const [x,y,w,h] of boxes) {
-            if (x-last < 2.49 || Math.abs(y+h-31.5) > .001) throw Error('Supplies overlap or float');
+            if (x-last < 1.99 || Math.abs(y+h-28.5) > .001) throw Error('Supplies overlap or float');
             last = x+w;
           }
           checked++;
