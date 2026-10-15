@@ -12,6 +12,6 @@ New cast walking uses a limb rig applied to the authored standing drawings. Thes
 
 Rebuild from the repository root using `npm run build:graphics` with the pinned Python requirements installed. `sources/encode.py` verifies identical decoded RGBA for every lossless WebP against its retained PNG. Its cache is ignored. `sources/build.cjs` compiles the renderer, protects the immutable baseline and last generated output, embeds all artwork, and writes `public/index.html` plus `build.json`.
 
-The baseline gameplay source remains unchanged in this graphics release. The compatibility test creates a save with the old build, then loads the same disposable browser storage with the new one. It does not access the user's live save. The outdoor plant-yield update still requires the user's playtest; no plant balancing or approval is included here.
+The bedroom shell update adds a rendering hook to the gameplay source for dynamic window light and appends a separate room renderer; the archived baseline remains unchanged. The compatibility test creates a save with the old build, then loads the same disposable browser storage with the new one. It does not access the user's live save. The outdoor plant-yield update still requires the user's playtest; no plant balancing or approval is included here.
 
 Final evidence is under `review/final/`. Automated coverage and viewport emulation do not establish physical-phone performance, long-duration gameplay or visual perfection across every possible customization combination.
