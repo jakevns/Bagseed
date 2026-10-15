@@ -73,7 +73,7 @@ const marker='bagseed-illustrated-production-code';
 const target=path.join(root,'public/index.html'),current=fs.readFileSync(target);
 const priorReport=path.join(art,'build.json'),priorSHA=fs.existsSync(priorReport)?JSON.parse(fs.readFileSync(priorReport)).updatedSHA:null;
 assert.ok(sha(current)===baselineSHA||sha(current)===priorSHA,'Unexpected edits to the working HTML; preserve them before rebuilding');
-const html=require('../../../tools/compile-main-menu.cjs')(original.toString()).replace('</body></html>',`<script id="${marker}">\n${characterCode}\n</script>\n${require('../../../tools/build-bedroom.cjs')()}</body></html>`);
+const html=require('../../../tools/compile-main-menu.cjs')(original.toString()).replace('</body></html>',`<script id="${marker}">\n${characterCode}\n</script>\n${require('../../../tools/build-bedroom.cjs')()}</body></html>`).replace(/\r\n/g,'\n');
 assert.ok(html.includes(marker),'Could not find baseline insertion point');
 const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging,target);
 const characterSources=['graphics/production/sources/renderer.js','graphics/production/sources/face-details.js','graphics/production/sources/build.cjs','graphics/production/customization-v5/detail-landmarks.json','graphics/production/customization-v5/manifest.json'];

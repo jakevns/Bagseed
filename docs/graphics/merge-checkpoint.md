@@ -6,6 +6,8 @@ The merge keeps the current transparent bald anatomy and hair loader, facial lan
 
 `npm run check` now verifies the entire game against its build report, the embedded character payload against its recorded checksum, and five character input files against their source checksums. It rejects a source update paired with stale character output. The Pages workflow publishes the character revision and game checksum alongside the deployed commit in `version.json`. Build reports are replaced atomically to avoid Windows file-mapping failures.
 
+Both builders normalize the generated HTML to LF before hashing and writing it. This keeps Windows builds byte-identical to Git's committed HTML and to Linux deployment checkouts. The release checksum is verified against the committed blob as well as the working file.
+
 Pre-publish files and the Git index are preserved in ignored `artifacts/publish-backup-2026-10-15T22-27-25-888Z/`. All checks use disposable browser storage. The previous local merge below is historical.
 
 ## Earlier local bed/desk merge
