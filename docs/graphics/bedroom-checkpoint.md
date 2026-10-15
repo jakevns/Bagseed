@@ -1,5 +1,15 @@
 # Bedroom update checkpoint
 
+## Store artwork verification
+
+The user requested verification that the bedroom artwork also appears in the store (called LeafCart in the game). Actual store cards and opened-package previews already used the approved bed renderer, but their legacy 96×48 thumbnails compressed the new beds vertically. The shared style renderer now sets supported bed/bedding preview canvases to their native 252×240 render size, preserving proportions with the existing responsive CSS. Room sprites, prices, ownership and checkout behavior are unchanged.
+
+`tests/store-bed-art.test.cjs` opens the actual store, navigates Home & Decor → Room Styles, compares 104 rendered product cards with the room artwork (59 distinct purchasable combinations; the free Starter/Blue Check pairing is not sold), checks desktop/phone proportions, searches/sorts, completes a $220 Canopy checkout, and verifies the opened-package preview. Captures/report are in `artifacts/store-art/` and retained examples in `review/store-bed-art/`.
+
+Final validation: all 19 browser tests passed with no skips. The baseline checksum and 82 script blocks passed `npm run check`. All completed in-room bed drawings still match their render hashes; the character and room-shell script payloads are unchanged. This correction changes preview dimensions only and introduces no new artwork.
+
+For each future furniture update, update its shared room/store/preview artwork and verify the actual store UI, plus the item's relevant inventory/package views. Direct renderer calls alone do not establish storefront readiness. Continue the existing explicit artwork approval and 20-combination batch/push workflow.
+
 ## Bed batch 03 completed
 
 The user approved the Platform Bed and Fancy Canopy Bed with all ten bedding choices: "Great job! please push the update", followed by "Continue working". This adds exactly 20 combinations, bringing the completed total to 60. Original transparent atlases, approval boards, source hashes and crop rectangles are retained under `graphics/beds/batch-03/`. The existing renderer is instantiated separately for the third batch without changing earlier artwork or gameplay.

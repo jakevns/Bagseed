@@ -26802,6 +26802,12 @@ lightTint=(previous=>function(c,W,H,outdoor){
     const frame = slot === 'bed' ? id : state.room.bed;
     const bedding = slot === 'bedding' ? id : state.room.bedding;
     if (!['bed', 'bedding'].includes(slot) || !supported(frame, bedding)) return originalIcon(ctx, canvas, slot, id);
+    // Store/package cards originally allocate 96×48 pixel-art thumbnails.
+    // Match the production bed canvas so CSS width:100%;height:auto preserves
+    // its proportions and retains detail in the enlarged store preview.
+    if (canvas.width !== 252 || canvas.height !== 240) {
+      canvas.width = 252; canvas.height = 240;
+    }
     const saved = state.room[slot], hits = RoomArt.hits;
     const tmp = document.createElement('canvas'); tmp.width = 252; tmp.height = 240;
     const g = tmp.getContext('2d'); g.scale(3, 3); g.translate(0, -100);
@@ -26861,6 +26867,12 @@ lightTint=(previous=>function(c,W,H,outdoor){
     const frame = slot === 'bed' ? id : state.room.bed;
     const bedding = slot === 'bedding' ? id : state.room.bedding;
     if (!['bed', 'bedding'].includes(slot) || !supported(frame, bedding)) return originalIcon(ctx, canvas, slot, id);
+    // Store/package cards originally allocate 96×48 pixel-art thumbnails.
+    // Match the production bed canvas so CSS width:100%;height:auto preserves
+    // its proportions and retains detail in the enlarged store preview.
+    if (canvas.width !== 252 || canvas.height !== 240) {
+      canvas.width = 252; canvas.height = 240;
+    }
     const saved = state.room[slot], hits = RoomArt.hits;
     const tmp = document.createElement('canvas'); tmp.width = 252; tmp.height = 240;
     const g = tmp.getContext('2d'); g.scale(3, 3); g.translate(0, -100);
@@ -26920,6 +26932,12 @@ lightTint=(previous=>function(c,W,H,outdoor){
     const frame = slot === 'bed' ? id : state.room.bed;
     const bedding = slot === 'bedding' ? id : state.room.bedding;
     if (!['bed', 'bedding'].includes(slot) || !supported(frame, bedding)) return originalIcon(ctx, canvas, slot, id);
+    // Store/package cards originally allocate 96×48 pixel-art thumbnails.
+    // Match the production bed canvas so CSS width:100%;height:auto preserves
+    // its proportions and retains detail in the enlarged store preview.
+    if (canvas.width !== 252 || canvas.height !== 240) {
+      canvas.width = 252; canvas.height = 240;
+    }
     const saved = state.room[slot], hits = RoomArt.hits;
     const tmp = document.createElement('canvas'); tmp.width = 252; tmp.height = 240;
     const g = tmp.getContext('2d'); g.scale(3, 3); g.translate(0, -100);
