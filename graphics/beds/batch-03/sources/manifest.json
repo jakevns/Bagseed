@@ -1,0 +1,161 @@
+{
+  "revision": "beds-batch-03",
+  "approval": "Great job! please push the update \u2014 Platform and Fancy Canopy with all ten bedding choices.",
+  "frames": {
+    "platform": {
+      "path": "assets/platform.png",
+      "sha256": "22b1937c9cf3683a226b67dcee326b2c23b396ba2e61b878669029f3b3b67973",
+      "size": [
+        1832,
+        859
+      ],
+      "tiles": {
+        "bluecheck": [
+          14,
+          149,
+          360,
+          238
+        ],
+        "solidred": [
+          378,
+          149,
+          362,
+          238
+        ],
+        "cream": [
+          744,
+          149,
+          357,
+          238
+        ],
+        "plaid": [
+          1104,
+          149,
+          361,
+          238
+        ],
+        "floral": [
+          1469,
+          149,
+          357,
+          238
+        ],
+        "stars": [
+          13,
+          474,
+          361,
+          241
+        ],
+        "botanical": [
+          378,
+          474,
+          362,
+          241
+        ],
+        "retro": [
+          743,
+          474,
+          358,
+          241
+        ],
+        "neutral": [
+          1104,
+          474,
+          361,
+          241
+        ],
+        "bright": [
+          1469,
+          474,
+          357,
+          241
+        ]
+      }
+    },
+    "fancy": {
+      "path": "assets/fancy.png",
+      "sha256": "370bd1793f28547de0f5c05f4ded65ed8704b29364dfe3de3794b8bc98c8b346",
+      "size": [
+        1831,
+        859
+      ],
+      "tiles": {
+        "bluecheck": [
+          39,
+          89,
+          326,
+          316
+        ],
+        "solidred": [
+          398,
+          89,
+          326,
+          316
+        ],
+        "cream": [
+          754,
+          89,
+          325,
+          316
+        ],
+        "plaid": [
+          1111,
+          89,
+          327,
+          316
+        ],
+        "floral": [
+          1467,
+          89,
+          329,
+          316
+        ],
+        "stars": [
+          39,
+          454,
+          326,
+          316
+        ],
+        "botanical": [
+          398,
+          454,
+          326,
+          316
+        ],
+        "retro": [
+          755,
+          454,
+          324,
+          316
+        ],
+        "neutral": [
+          1111,
+          454,
+          327,
+          316
+        ],
+        "bright": [
+          1468,
+          454,
+          327,
+          316
+        ]
+      }
+    }
+  },
+  "registration": {
+    "width": 78,
+    "left": 2,
+    "feetY": 177,
+    "hit": [
+      8,
+      126,
+      72,
+      50
+    ],
+    "walk": [
+      86,
+      160
+    ]
+  }
+}

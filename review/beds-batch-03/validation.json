@@ -1,0 +1,13 @@
+{
+  "combinations": 20,
+  "remainingUnchanged": 20,
+  "icons": 20,
+  "purchase": {
+    "firstFrame": true,
+    "bed": "fancy",
+    "bedding": "botanical",
+    "owned": true,
+    "money": 517
+  },
+  "errors": []
+}

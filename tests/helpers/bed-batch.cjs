@@ -47,7 +47,7 @@ test(`${config.batch}: 20 drawings/previews, remaining frames, purchase, save an
       const g = cv.getContext('2d'); g.scale(3, 3); g.translate(0, -100);
       const images = {};
       try {
-        for (const [frame] of STYLES.bed.filter(([id]) => !['starter', 'wooden', 'metal', 'cozy'].includes(id))) {
+        for (const [frame] of STYLES.bed.filter(([id]) => !['starter', 'wooden', 'metal', 'cozy', 'platform', 'fancy'].includes(id))) {
           state.room.bed = frame;
           for (const [bedding] of STYLES.bedding) {
             state.room.bedding = bedding; g.clearRect(0, 100, 84, 80); RoomArt.hits = [];
@@ -58,7 +58,7 @@ test(`${config.batch}: 20 drawings/previews, remaining frames, purchase, save an
       return images;
     };
     const legacy = await baseline.evaluate(remaining);
-    assert.equal(Object.keys(legacy).length, 40);
+    assert.equal(Object.keys(legacy).length, 20);
     assert.deepEqual(await page.evaluate(remaining), legacy, 'Unapproved frames were redrawn');
     await baseline.close();
     const report = await page.evaluate(({ frames }) => {
@@ -75,6 +75,7 @@ test(`${config.batch}: 20 drawings/previews, remaining frames, purchase, save an
           const pixels = g.getImageData(0, 0, cv.width, cv.height).data;
           const opaque = pixels.filter((v, i) => i % 4 === 3 && v > 200).length;
           if (opaque < 10000) throw Error('Blank or severely clipped bed: ' + frame + ':' + bedding);
+          if (frame === 'fancy' && g.getImageData(42 * 3, 20 * 3, 1, 1).data[3] > 20) throw Error('Canopy opening is not transparent');
           const item = { frame, bedding, name, image: cv.toDataURL(), opaque };
           const icon = document.createElement('canvas'); icon.width = 126; icon.height = 120;
           const before = JSON.stringify(state.room), hits = RoomArt.hits;
@@ -84,10 +85,11 @@ test(`${config.batch}: 20 drawings/previews, remaining frames, purchase, save an
         }
       } finally { Object.assign(state.room, JSON.parse(original)); RoomArt.hits = previousHits; }
       return { images, distinct: new Set(images.map(x => x.image)).size, icons: icons.size,
-        preserved: original === JSON.stringify(state.room), ready: BagseedBeds.loaded };
+        preserved: original === JSON.stringify(state.room), ready: BagseedBeds.loaded,
+        registered: frames.every(frame => BagseedBeds.frames.includes(frame)) };
     }, config);
     assert.equal(report.images.length, 20); assert.equal(report.distinct, 20); assert.equal(report.icons, 20);
-    assert.equal(report.preserved, true); assert.equal(report.ready, true);
+    assert.equal(report.preserved, true); assert.equal(report.ready, true); assert.equal(report.registered, true);
     if (config.hashFile) {
       const expectedHashes = JSON.parse(fs.readFileSync(path.join(root, config.hashFile)));
       for (const image of report.images) assert.equal(createHash('sha256').update(image.image).digest('hex'), expectedHashes[image.frame + ':' + image.bedding], 'Previously approved artwork changed');
@@ -123,7 +125,7 @@ test(`${config.batch}: 20 drawings/previews, remaining frames, purchase, save an
     const board = await browser.newPage({ viewport: { width: 1200, height: 1800 } });
     await board.setContent(`<body style="margin:0;padding:24px;background:#ece8da;color:#304438;font:16px sans-serif"><h1>Bagseed · Approved bed ${config.batch} · Actual game art</h1><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">${report.images.map(x => `<div style="background:#b8bda1;padding:12px"><b>${config.names[config.frames.indexOf(x.frame)]}</b><div>${x.name}</div><img width="252" height="240" src="${x.image}"></div>`).join('')}</div></body>`);
     await board.screenshot({ path: path.join(out, 'all-20.png'), fullPage: true });
-    fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify({ combinations: 20, remainingUnchanged: 40, previousDrawingsVerified: config.hashFile ? 20 : undefined, icons: report.icons, purchase, errors }, null, 2));
+    fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify({ combinations: 20, remainingUnchanged: 20, previousDrawingsVerified: config.hashFile ? 20 : undefined, icons: report.icons, purchase, errors }, null, 2));
     assert.deepEqual(errors, []);
   } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); }
 });

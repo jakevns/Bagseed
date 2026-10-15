@@ -2,7 +2,7 @@ const fs = require('node:fs'), path = require('node:path'), assert = require('no
 const { createHash } = require('node:crypto');
 module.exports = function compileBeds() {
   const ids = new Set();
-  return ['batch-01', 'batch-02'].map(batch => {
+  return ['batch-01', 'batch-02', 'batch-03'].map(batch => {
     const root = path.resolve(__dirname, '../graphics/beds', batch);
     const data = JSON.parse(fs.readFileSync(path.join(root, 'sources/manifest.json')));
     let count = 0;

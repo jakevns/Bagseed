@@ -1,5 +1,15 @@
 # Bedroom update checkpoint
 
+## Bed batch 03 completed
+
+The user approved the Platform Bed and Fancy Canopy Bed with all ten bedding choices: "Great job! please push the update", followed by "Continue working". This adds exactly 20 combinations, bringing the completed total to 60. Original transparent atlases, approval boards, source hashes and crop rectangles are retained under `graphics/beds/batch-03/`. The existing renderer is instantiated separately for the third batch without changing earlier artwork or gameplay.
+
+Focused checks passed for all three batches. Batches 01 and 02 match their pre-integration rendered hashes (40 combinations). Batch 03 checks all 20 drawings/previews, unchanged interaction geometry, transparent canopy openings, purchases at $110/$220, style switching, saved selections after reload, sleep controls and phone layout. Rattan/Tufted's final 20 combinations still match the archived original. Actual rendered captures and reports are retained under `review/beds-batch-03/`; regenerate with `node --test tests/beds-batch-03.test.cjs`.
+
+Final integration: all 18 browser tests passed with no skips. `npm run check` verified the immutable baseline checksum and parsed all 82 script blocks. Rebuilding succeeded, and the character, bedroom-shell and both earlier bed-batch script payloads were verified byte-for-byte unchanged against the preceding commit. A final focused Batch 03 run also passed after adding its module-registration assertion.
+
+Remaining: Rattan Headboard (`cane`, $75) and Tufted Headboard (`tufted`, $95), each with ten bedding choices. Neither is approved for implementation yet. Prepare that final 20-combination batch for visual approval, then implement/test/push it separately. Previous milestone sections below preserve their historical state.
+
 ## Bed batch 02 completed
 
 The user approved the Metal Frame and Cozy Upholstered Bed with all ten bedding choices: "Great work go ahead and push it through". This increment adds exactly 20 combinations, bringing the completed total to 40. Original transparent atlases, approval boards, source hashes and registration rectangles are retained under `graphics/beds/batch-02/`. The same source renderer is instantiated separately for each batch, preserving Batch 01 artwork and allowing readiness to await all four atlases.
