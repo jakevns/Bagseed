@@ -1,13 +1,13 @@
 {
   "version": "illustrated-1",
-  "approval": "Approved cast artwork retained; current customization changes await user visual review.",
-  "customizationReview": "review/customization-v4/README.md",
+  "approval": "Approved cast artwork retained; customization changes await user visual review.",
+  "customizationReview": "review/customization-v6/README.md",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "updatedSHA": "f421649c98fabc5623a1f99af3aa0d4e5d633bfcfdb5df674983b25213f42a2f",
-  "bytes": 43627432,
+  "workingSourceSHA": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
+  "updatedSHA": "2867171c5780e6fcfdbce578a76a90d55247fecae27c5df1b1b23537fa17038c",
+  "bytes": 47954130,
   "modularAssets": 544,
-  "embeddedImages": 1544,
+  "embeddedImages": 1552,
   "approvedIdentities": [
     "player",
     "remy",
@@ -15,5 +15,8 @@
     "priya",
     "poppy"
   ],
-  "additionalAuthoredAppearances": 67
+  "additionalAuthoredAppearances": 67,
+  "bedroomRevision": "bedroom-shell-1",
+  "bedRevision": "beds-batch-01",
+  "bedCombinations": 20
 }

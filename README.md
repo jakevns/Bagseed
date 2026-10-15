@@ -4,6 +4,8 @@ The supplied **v1.1.5.1 Night Walker Flashlights** game, updated with the user-a
 
 The update includes the five approved identities, 67 additional authored appearance variants, matching portraits, all 60 hairstyles and the existing customization choices. The [final review](review/final/index.html) contains comparisons, motion previews, a complete appearance roster, screenshots and validation notes. [Study 02](review/characters-v2/index.html) records the approved samples and reference evidence. Study 01 was rejected and is excluded from this release.
 
+The latest local custom-character repair retains natural fringe transparency over the bald base, fits profile hair without a forehead cut, registers footwear to consistent footprints, and adjusts hat brims. Current renderer screenshots and checks are in the [customization v6 review](review/customization-v6/README.md).
+
 ## Develop and verify
 
 Use the existing checkout; cloud tasks are already isolated. Node.js 22+ and Chromium are required for development checks. Playwright is locked in `package-lock.json`; the prepared cloud machine uses `/usr/bin/chromium`. Set `BAGSEED_BROWSER_PATH` for another installation.
@@ -19,7 +21,9 @@ The development server serves `public/` on port 5173. `HOST` and `PORT` override
 
 ## Rebuild the graphics release
 
-`src/game.html` is the editable gameplay source. `baselines/` retains the immutable uploaded HTML, SHA-256 `4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164`. The gameplay source is identical to that baseline for this release. The builder appends the graphics renderer and embedded lossless images to produce `public/index.html`; edit the source, not the generated output. It refuses to overwrite an output changed since the last recorded build.
+`src/game.html` is the editable gameplay source. `baselines/` retains the immutable uploaded HTML, SHA-256 `4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164`. The bedroom shell update adds a rendering hook for dynamic window light; gameplay rules remain unchanged. The builder appends the graphics renderers and embedded images to produce `public/index.html`; edit the sources, not the generated output. It refuses to overwrite an output changed since the last recorded build.
+
+The approved bedroom background uses sage plaster, paneled trim, and honey oak. [Bed batch 01](graphics/beds/batch-01/README.md) upgrades the Starter Bed and Wooden Frame with all ten existing bedding choices (20 combinations). The other six frames retain their previous art pending approval of subsequent batches. See [bedroom sources](graphics/bedroom/README.md). To rebuild the bedroom and approved bed batch with the existing verified character payload, run `npm run build:bedroom`, then `npm run check` and `npm test`. The full graphics build includes both renderers too.
 
 ```sh
 python3 -m venv /workspace/.venvs/bagseed-art

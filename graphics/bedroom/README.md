@@ -1,0 +1,13 @@
+# Bedroom shell
+
+The user approved Concept 01 ("Thats perfect great job") and requested integration of the baseline bedroom before individual furniture updates. `assets/approved-concept.png` preserves that approval board. `assets/room-shell.png` is the original generated production background derived from it, with openings, furnishings and baked window light removed so live game layers remain independent. The generated image is retained at its original 1829×860 resolution.
+
+The room renderer registers the wall/floor boundary at source y=500 to the game's existing `ROOM.floorY`. It caches surfaces at three times logical resolution and adapts to the current expanded 480×180 room. The baseline `sage` wall and `wood` floor receive the approved artwork independently. Every other purchased finish retains its existing renderer and saved identifier. This pass does not claim revised artwork for those alternate finishes.
+
+Window and door trim surround existing live renderers; the outdoor view, visiting neighbors, window cat, curtain variations, open door and interaction targets remain intact. Sunlight and moonlight are separate floor layers, drawn before furnishings and modified by time, weather and curtain choice. Existing ambient tint and equipment lighting still run afterward. Subsequent approved furniture art is kept in separate modules: [bed batch 01](../beds/batch-01/README.md) covers 20 Starter Bed/Wooden Frame and bedding combinations. Other furniture remains unchanged.
+
+`sources/renderer.js` is embedded as a separate script in the standalone game. `npm run build:bedroom` checks the existing output hash, retains the verified character payload byte for byte, combines it with current `src/game.html` and the bedroom script, and refreshes `graphics/production/build.json`. Repeating the command produces the same output. The full graphics builder also calls this compiler. No external image requests are needed at runtime.
+
+Research anchors from the supplied source index: Fields of Mistria G03-S14 (quiet cream/wood surfaces and separated panel shapes) and Stardew Valley G01-S08 (readable window light and floor values). These informed original artwork, not imported game assets. The concept and its generated production derivative are distinct assets; exact furniture and room layout remain those of Bagseed.
+
+Run `npm run check` and `npm test`. `tests/bedroom.test.cjs` compares furniture/save configuration and interaction geometry to the archived original, checks alternate finishes and restoration, verifies weather/blackout/night light behavior and time-independent surface art, and captures desktop day/night and phone screenshots under ignored `artifacts/bedroom/`. Viewport emulation does not establish physical-device performance.

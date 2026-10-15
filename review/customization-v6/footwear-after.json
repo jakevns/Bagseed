@@ -1,0 +1,82 @@
+[
+  {
+    "shoesS": "sneakers",
+    "dir": "down",
+    "width": 32
+  },
+  {
+    "shoesS": "sneakers",
+    "dir": "right",
+    "width": 28
+  },
+  {
+    "shoesS": "sneakers",
+    "dir": "up",
+    "width": 32
+  },
+  {
+    "shoesS": "sneakers",
+    "dir": "left",
+    "width": 28
+  },
+  {
+    "shoesS": "boots",
+    "dir": "down",
+    "width": 32
+  },
+  {
+    "shoesS": "boots",
+    "dir": "right",
+    "width": 28
+  },
+  {
+    "shoesS": "boots",
+    "dir": "up",
+    "width": 32
+  },
+  {
+    "shoesS": "boots",
+    "dir": "left",
+    "width": 28
+  },
+  {
+    "shoesS": "sandals",
+    "dir": "down",
+    "width": 32
+  },
+  {
+    "shoesS": "sandals",
+    "dir": "right",
+    "width": 28
+  },
+  {
+    "shoesS": "sandals",
+    "dir": "up",
+    "width": 32
+  },
+  {
+    "shoesS": "sandals",
+    "dir": "left",
+    "width": 28
+  },
+  {
+    "shoesS": "rainboots",
+    "dir": "down",
+    "width": 32
+  },
+  {
+    "shoesS": "rainboots",
+    "dir": "right",
+    "width": 28
+  },
+  {
+    "shoesS": "rainboots",
+    "dir": "up",
+    "width": 32
+  },
+  {
+    "shoesS": "rainboots",
+    "dir": "left",
+    "width": 28
+  }
+]

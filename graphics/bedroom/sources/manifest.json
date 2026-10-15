@@ -1,0 +1,25 @@
+{
+  "revision": "bedroom-shell-1",
+  "approval": "User approved Concept 01, then requested bedroom baseline integration before furniture variations.",
+  "assets": {
+    "approved-concept.png": "55129f49b240718304f33c7db597056ce40005d2e9155226cda845e185d88440",
+    "room-shell.png": "62fa625155681b03ec0c2a8725e9d927728ca0400db8451f4177e0e1abc43741"
+  },
+  "registration": {
+    "sourceSize": [
+      1829,
+      860
+    ],
+    "sourceFloorY": 500,
+    "logicalRoomSize": [
+      480,
+      180
+    ],
+    "logicalFloorY": 97
+  },
+  "research": [
+    "Fields of Mistria G03-S14",
+    "Stardew Valley G01-S08"
+  ],
+  "generation": "Production derivative generated from the approved concept with openings, furniture, text and baked sunlight removed. Original PNG bytes retained."
+}

@@ -1,0 +1,13 @@
+# Bed batch 01 — 20 approved combinations
+
+Scope: `starter` (Starter Bed) and `wooden` (Wooden Frame), each with the ten existing bedding IDs: `bluecheck`, `solidred`, `cream`, `plaid`, `floral`, `stars`, `botanical`, `retro`, `neutral`, `bright`. The user approved this specific batch after seeing the frame and bedding artwork. They require at most 20 combinations per batch and a push after each approved increment.
+
+`assets/frame-approval.png` and `bedding-approval.png` retain the concept boards; only the first two frames are included in this implementation. `starter.png` and `wooden.png` are original transparent production atlases generated from those approved designs, with ten complete drawings each. Wooden Frame uses a curved/slatted honey-oak headboard distinct from the simpler starter frame. Every atlas is retained without image manipulation. The renderer uses the source rectangles recorded in `sources/manifest.json`; it does not assume evenly spaced cells or import neighboring sprites.
+
+The manifest records SHA-256 hashes, source dimensions and per-combination bounds. Assets are cached into 252×240 transparent canvases and drawn at the original bed position in logical coordinates. The 78-unit width, feet at y=177, interaction rectangle `[8,126,72,50]`, walking anchor `[86,160]`, depth ordering and ground shadow remain native. Source atlases contain complete frame/bedding drawings; they are not interchangeable cloth layers at runtime.
+
+`sources/renderer.js` replaces only these two frame IDs with recognized existing bedding IDs. All other frames use the prior renderer, including the original rattan/tufted wrappers. Save identifiers, catalog names, prices, ownership, purchases, delivery, style switching and sleep behavior are unchanged. The same production drawings appear in room and style/shop previews. Preview rendering restores temporary selection and interaction state.
+
+The compiler embeds both PNG atlases directly into the standalone HTML, verifies their recorded hashes and crop bounds, and requires exactly 20 entries. `npm run build:bedroom` includes this batch and retains the existing verified character payload. The full graphics builder also includes it. No new runtime image requests or dependencies are needed. No later furniture batch is implemented here.
+
+Validate with `npm run check` and `npm test`. The batch test exercises all 20 drawings and icons, compares the remaining 60 combinations pixel for pixel with the archived original, purchases the Wooden Frame and paid bedding choices at existing prices, applies them, saves and reloads, and checks the sleep controls and phone layout. Captures and a validation report are generated under ignored `artifacts/beds-batch-01/`.

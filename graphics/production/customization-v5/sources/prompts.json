@@ -1,0 +1,272 @@
+{
+  "tool": "built-in image_gen",
+  "specs": [
+    [
+      "short",
+      "short tousled rounded crop"
+    ],
+    [
+      "buzz",
+      "uniform scalp-close buzzcut with no bangs"
+    ],
+    [
+      "medium",
+      "medium ear-length layers"
+    ],
+    [
+      "long",
+      "long straight hair with complete tapered ends"
+    ],
+    [
+      "bob",
+      "chin-length bob"
+    ],
+    [
+      "curly",
+      "voluminous rounded curls"
+    ],
+    [
+      "wavy",
+      "long loose waves with complete ends"
+    ],
+    [
+      "bun",
+      "single high bun with swept scalp hair"
+    ],
+    [
+      "ponytail",
+      "single low ponytail; NO braids; tail behind head"
+    ],
+    [
+      "braids",
+      "two long neat braids"
+    ],
+    [
+      "locs",
+      "shoulder-length dreadlocks with complete ends"
+    ],
+    [
+      "afro",
+      "large round afro"
+    ],
+    [
+      "mohawk",
+      "narrow upright mohawk, sides transparent shaved scalp"
+    ],
+    [
+      "sidecut",
+      "one shaved side transparent, swept long fringe opposite side"
+    ],
+    [
+      "balding",
+      "bald crown entirely transparent, thin hair ONLY at sides and nape"
+    ],
+    [
+      "pixie",
+      "short feminine pixie haircut"
+    ],
+    [
+      "sidepixie",
+      "side-swept short pixie"
+    ],
+    [
+      "crop",
+      "short textured crop"
+    ],
+    [
+      "caesar",
+      "short Caesar with straight fringe"
+    ],
+    [
+      "fade",
+      "low fade, short top and subtly close scalp hair"
+    ],
+    [
+      "hightop",
+      "high-top fade"
+    ],
+    [
+      "flattop",
+      "flat top haircut"
+    ],
+    [
+      "quiff",
+      "swept up quiff"
+    ],
+    [
+      "pomp",
+      "round pompadour"
+    ],
+    [
+      "slick",
+      "short slicked back hair"
+    ],
+    [
+      "spikes",
+      "short spiky hair"
+    ],
+    [
+      "fauxhawk",
+      "faux hawk"
+    ],
+    [
+      "curlytop",
+      "curly top fade"
+    ],
+    [
+      "twistsS",
+      "short twists"
+    ],
+    [
+      "bowl",
+      "round bowl cut"
+    ],
+    [
+      "curtains",
+      "middle-part curtain bangs"
+    ],
+    [
+      "angledbob",
+      "angled chin-length bob"
+    ],
+    [
+      "asymbob",
+      "asymmetric bob"
+    ],
+    [
+      "braidbob",
+      "braided bob"
+    ],
+    [
+      "lob",
+      "long bob to shoulders"
+    ],
+    [
+      "shag",
+      "layered shag"
+    ],
+    [
+      "wolf",
+      "wolf cut"
+    ],
+    [
+      "mullet",
+      "mullet, short sides and longer full nape tail"
+    ],
+    [
+      "curlybob",
+      "curly bob"
+    ],
+    [
+      "twistout",
+      "rounded twist-out"
+    ],
+    [
+      "puff",
+      "single afro puff with swept scalp hair"
+    ],
+    [
+      "puffs",
+      "two afro puffs with swept scalp hair"
+    ],
+    [
+      "topknot",
+      "high top knot"
+    ],
+    [
+      "halfup",
+      "half-up bun and long loose hair"
+    ],
+    [
+      "ponyhi",
+      "high ponytail"
+    ],
+    [
+      "sidepony",
+      "single side ponytail"
+    ],
+    [
+      "spacebuns",
+      "two space buns"
+    ],
+    [
+      "bantu",
+      "Bantu knots"
+    ],
+    [
+      "crownbraid",
+      "crown braid"
+    ],
+    [
+      "lowbun",
+      "low bun"
+    ],
+    [
+      "layered",
+      "long layered hair"
+    ],
+    [
+      "bluntlong",
+      "long blunt hair with bangs"
+    ],
+    [
+      "beachwaves",
+      "long beach waves"
+    ],
+    [
+      "longcurls",
+      "long curls"
+    ],
+    [
+      "twinbraids",
+      "two long braids with naturally tapered ends"
+    ],
+    [
+      "boxbraids",
+      "long box braids"
+    ],
+    [
+      "longtwists",
+      "long twists"
+    ],
+    [
+      "cornrows",
+      "close scalp cornrows with transparent gaps BETWEEN braids"
+    ],
+    [
+      "loosebraid",
+      "one loose side braid"
+    ],
+    [
+      "bigafro",
+      "very large round afro"
+    ]
+  ],
+  "prompts": {
+    "bald": "Production game sprite asset: one horizontal row of FOUR complete BALD HEADS with short bare neck stubs, on TRUE TRANSPARENT ALPHA. Image1 is solely a style reference for the round friendly Bagseed face and linework. Columns in exact order: FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Same soft young adult chibi head every view, round cheeks, broad forehead, short rounded chin, warm tan skin #cf9670 and large friendly dark eyes, precise warm illustrated linework, polished subtle shading. COMPLETELY BALD clean smooth skin scalp in all four directions: absolutely NO hairstyle, NO hair at nape, NO brown skull patch, NO sideburns, NO stubble, NO fringe. Just matching normal dark eyebrows and eyes as facial features. Back is a full bare tan scalp/ears/neck with no face. FRONT head has equal ears, profiles have anatomically matching ears and short neck. All four heads same skull dimensions and same level neck bottom. Straight neutral eye-level camera, no tilt. Heads only, no clothes, shoulders, jewelry, hats, or other objects. Four equally spaced cells with generous empty transparent gutters all around, never touching or cut off. No labels, no text, no framing, no shadows or glow, no paper, no color backdrop. Wide landscape composition, target1536x1024. This is a bald BASE layer: no hair of any kind may exist on it.",
+    "hair01": "Create a production HAIR-ONLY sprite atlas for Bagseed, using Image1 ONLY as the bald mannequin shape/style reference. Output ONLY isolated grayscale HAIR cutouts on true transparent alpha; never include the mannequin, skin, face, eyes, ears, neck, shoulders or clothing. Exactly FOUR ROWS and FOUR COLUMNS, ample fully transparent gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Same hair style in every view of each row. The hair is fitted as a wig layer over Image1's round chibi skull; the front and profile face openings are genuinely transparent, and all hair/strands end naturally. The BACK hair is a complete filled scalp covering from crown to nape, not a hollow wig opening. All four directions same skull scale and level nape. Neutral GRAYSCALE only (black ink, gray mids, silver highlights; absolutely no brown or skin hues), detailed softly shaded illustrated strands matching reference linework. Maintain anatomical scalp width across styles; allow extra extent for longer hair without reducing scalp size. Exact rows: 1 short tousled rounded haircut with side swept fringe, 2 genuine uniform very short buzzcut hair cap with no bangs or forelock, 3 medium ear length layered hair, 4 long straight hair with natural tapered ends below shoulder length and clear transparent face opening. Back view must have no face opening, just hair. Side views must leave room for the profile face and ear. NO head or face outlines; the only dark outlines belong to real hair boundaries. Every full silhouette has generous clear margins, no touching rows or clipped tips. No text, labels, grid, backgrounds, shadows or glows. Tall portrait layout target1536x2048 or higher. Ready to layer over a bald head, all non-hair space is fully transparent.",
+    "hair02": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. chin-length bob; 2. voluminous rounded curls; 3. long loose waves with complete ends; 4. single high bun with swept scalp hair.",
+    "hair03": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. single low ponytail; NO braids; tail behind head; 2. two long neat braids; 3. shoulder-length dreadlocks with complete ends; 4. large round afro.",
+    "hair04": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. narrow upright mohawk, sides transparent shaved scalp; 2. one shaved side transparent, swept long fringe opposite side; 3. bald crown entirely transparent, thin hair ONLY at sides and nape; 4. short feminine pixie haircut.",
+    "hair05": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. side-swept short pixie; 2. short textured crop; 3. short Caesar with straight fringe; 4. low fade, short top and subtly close scalp hair.",
+    "hair06": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. high-top fade; 2. flat top haircut; 3. swept up quiff; 4. round pompadour.",
+    "hair07": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. short slicked back hair; 2. short spiky hair; 3. faux hawk; 4. curly top fade.",
+    "hair08": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. short twists; 2. round bowl cut; 3. middle-part curtain bangs; 4. angled chin-length bob.",
+    "hair09": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. asymmetric bob; 2. braided bob; 3. long bob to shoulders; 4. layered shag.",
+    "hair10": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. wolf cut; 2. mullet, short sides and longer full nape tail; 3. curly bob; 4. rounded twist-out.",
+    "hair11": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. single afro puff with swept scalp hair; 2. two afro puffs with swept scalp hair; 3. high top knot; 4. half-up bun and long loose hair.",
+    "hair12": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. high ponytail; 2. single side ponytail; 3. two space buns; 4. Bantu knots.",
+    "hair13": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. crown braid; 2. low bun; 3. long layered hair; 4. long blunt hair with bangs.",
+    "hair14": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. long beach waves; 2. long curls; 3. two long braids with naturally tapered ends; 4. long box braids.",
+    "hair15": "Production HAIR-ONLY game atlas for Bagseed. Image1 is ONLY the bald mannequin shape reference; Image2 is ONLY hair rendering/cohesion reference. EXACTLY FOUR ROWS and FOUR COLUMNS, generous empty alpha gutters. Columns FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Output just separate HAIR cutouts: NO head, scalp skin, facial features, ears, face outline, neck, shoulders or clothing. The skin/face openings must be genuinely transparent, the back hair must be filled where actual hair covers scalp. Each haircut fits the same round chibi skull as Image1 and same scale as Image2; never shrink scalp to accommodate long hair. Neutral grayscale hair only, dark neutral-gray outlines and mid-gray/silver softly shaded illustrated strands. Absolutely NO brown hues, glow, backdrop, mannequin, face, labels or grid. No clipped ends, no touching rows. Complete natural silhouettes, all transparent outside actual hair. Portrait layout target1536x2048 or higher. Four view angles must match the same haircut per row. Exact top-to-bottom rows: 1. long twists; 2. close scalp cornrows with transparent gaps BETWEEN braids; 3. one loose side braid; 4. very large round afro.",
+    "hats01": "Create a wearable HAT OVERLAY atlas for Bagseed. Image1 is the bald head shape reference ONLY. Four ROWS and four COLUMNS: FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Hats ONLY on true transparent alpha, no heads, faces, ears, skin, hair, mannequins or labels. CRITICAL viewpoint: draw the visible OUTER SURFACES as the hats would appear WORN firmly on a level head at eye-level. The forehead edge is a shallow line resting on the brow. NO hollow oval bottom opening, NO interior bowl, NO exposed underside facing the viewer, NO floating hat. In front/profile views the bottom edge must be a thin natural seam/brim, with empty TRANSPARENT pixels directly below it for the wearer's forehead. Back baseball cap adjustment opening is true transparency. Same skull size, camera and fitting as the bald reference. Rich softly shaded illustrated linework, complete brims, no cropped parts, wide transparent gutters. No backdrop, glow, shadow or grid. Target1536x2048 portrait. Rows: 1 blue denim baseball cap, 2 blue knitted close-fitting beanie, 3 blue bucket hat, 4 natural straw boater hat with dark ribbon. Hats rest on an actual head, so do not render them as hollow items seen from below.",
+    "hats02": "Create a wearable HAT OVERLAY atlas for Bagseed. Image1 is the bald head shape reference ONLY. Four ROWS and four COLUMNS: FRONT, RIGHT profile facing RIGHT, BACK, LEFT profile facing LEFT. Hats ONLY on true transparent alpha, no heads, faces, ears, skin, hair, mannequins or labels. CRITICAL viewpoint: draw the visible OUTER SURFACES as the hats would appear WORN firmly on a level head at eye-level. The forehead edge is a shallow line resting on the brow. NO hollow oval bottom opening, NO interior bowl, NO exposed underside facing the viewer, NO floating hat. In front/profile views the bottom edge must be a thin natural seam/brim, with empty TRANSPARENT pixels directly below it for the wearer's forehead. Back baseball cap adjustment opening is true transparency. Same skull size, camera and fitting as the bald reference. Rich softly shaded illustrated linework, complete brims, no cropped parts, wide transparent gutters. No backdrop, glow, shadow or grid. Target1536x2048 portrait. Rows: 1 natural straw sunhat with wide brim, 2 navy police officer cap with brass badge, 3 purple pointed wizard hat with small gold crescent, 4 blue soft beret. Hats rest on an actual head, so do not render them as hollow items seen from below."
+  },
+  "revisions": {
+    "hair08redo": "Edit the attached HAIR-ONLY atlas. Preserve its same grayscale rendering style and EXACT hairstyles/order (row1 short twists, row2 bowl cut, row3 center-part curtain bangs, row4 angled bob; four columns front/right/back/left). Fix production spacing: each of the16 complete hair silhouettes MUST be wholly separate from ALL neighbors, with a VERY WIDE completely transparent gutter. Shrink each whole silhouette within its own cell to occupy at most65% of cellwidth; leave minimum60 transparent pixels at both left and right of every cell, at least60 empty pixels above and below every hair cutout. Canvas can grow larger to accommodate this. No hairstyle can touch or overlap any other style or view, especially right/left profile curtain bangs and angled bob. No hair tips cropped anywhere. Keep all actual hair boundaries naturally tapered and complete. Output ONLY grayscale hair on true alpha transparency, all face/ear/neck openings transparent; NO heads, skin, face outlines, bodies, labels, paper, glow, shadows or grid. Four equally spaced rows xfour equally spaced columns. Use a high resolution portrait atlas, crisp illustration. Protect the gaps even if it makes the hair images smaller in their cells.",
+    "shortTwists": "Create ONE ROW of FOUR separate HAIR-ONLY game overlays: front, right profile facing right, back, left profile facing left. The hairstyle is SHORT TWO-STRAND TWISTS, unmistakable thick little rope-shaped spiral twist locks standing/hanging 3-5cm from scalp, each strand visibly twists around another. Not wavy tousled hair, not spikes, not curtain bangs, not a long forelock, not dreadlocks, no taper-bangs. Uniform short twist lengths across the head, natural rounded silhouette. Image1 is just bald chibi skull fitting reference; Image2 shows grayscale strand rendering style only. Render ONLY neutral gray hair and twisting strands on true alpha transparency. No face, scalp skin, ears, neck, mannequin, face outline or clothes. Front/profile facial openings transparent; back actual hair covers skull. Same round chibi skull scale in all views. Wide landscape image1536x1024, HUGE transparent margins and clear gutters between all4fullhaircutouts; no cropping or touching. Crisp softly shaded illustration with visible double-strand spiral texture. No words, grid, backdrop, shadow or glow.",
+    "shortThinning": "Create a game production HAIR-ONLY atlas on true transparent alpha. The reference is ONLY the shape and illustration style of the bald mannequin. Exactly ONE horizontal row of FOUR isolated short thinning-hair cutouts in order FRONT, RIGHT profile facing right, BACK, LEFT profile facing left. Classic natural male-pattern baldness: completely bald upper crown, very SHORT sparse close-combed hair only around the temples, sides above the ears and low occipital nape. Front is two small rounded short temple patches, maximum height one quarter of the skull; NO long wisps, NO upright spikes, NO swept forelock, NO horns. Side profiles are a short shallow crescent fringe hugging the lower rear scalp behind the ear, upper crown genuinely transparent. Back is a compact low horseshoe band of short wispy hair wrapping the lower occipital scalp, upper two-thirds of skull empty transparent. Natural fine tapered short strands. All four shapes same skull scale as reference, level nape, neutral GRAYSCALE material with dark gray outlines and midgray/silver strands, no retained brown. Output HAIR ONLY: do not show skull, skin, head outline, face, ears, neck or mannequin. All non-hair regions and crown openings must be genuinely transparent. Very generous gutters between views, each full silhouette with clear margins, no touching. No props, text, labels, shadows or glow, no backdrop. Wide landscape composition. This is a subtle short thinning style, not a fantasy hairstyle.",
+    "roundedVolume": "Production HAIR-ONLY sprite atlas for Bagseed using the supplied bald head as the exact anatomical fit reference. TRUE TRANSPARENT ALPHA. Exactly THREE ROWS by FOUR COLUMNS. Columns front, right profile facing right, back, left profile facing left. Row1 medium full rounded natural Afro. Row2 large full rounded Afro 25% larger than row1. Row3 two matching round Afro puffs on the upper sides of a tightly swept scalp, same hairstyle from each angle. Hair-only cutouts in neutral grayscale with clean dark gray linework and silver/mid-gray curly strand detail matching the illustrated reference, no brown. Absolutely no face, skin, scalp skin, ears, neck, head outline or mannequin. Front and profile face openings genuinely transparent. Most critical correction: an Afro is a big full rounded cloud over the forehead, the FRONT face opening should be a small SHALLOW concave notch at the bottom center ONLY, occupying the bottom third of the cloud, not a tall hollow oval extending up into the crown. This leaves thick abundant curls above the forehead and consistent large round volume when turning from front to profile to back. The front forehead is below the lower two-thirds of the hair mass, eyes/face below the hair. Profiles same rounded height and diameter as front, not a tall upright column or pompadour. Puffs: consistent equal puff size in all views, swept scalp hair layer matching the bald skull; front equal large puffs at10 and2 o'clock, profiles overlap naturally. Front should not shrink the whole hairstyle relative to other views. All twelve cutouts generously separated in a grid, no touching or clipped curl tips, all complete silhouettes. No text, labels, grid, shadows or glow, no background. Portrait canvas target1536x1536 or larger. Ready to lay directly over the bald anatomy reference at identical skull scale.",
+    "roundedVolumeMarginRevision": "Production HAIR-ONLY sprite atlas for Bagseed using the supplied bald head as the exact anatomical fit reference. TRUE TRANSPARENT ALPHA. Exactly THREE ROWS by FOUR COLUMNS. Columns front, right profile facing right, back, left profile facing left. Row1 medium full rounded natural Afro. Row2 large full rounded Afro 25% larger than row1. Row3 two matching round Afro puffs on the upper sides of a tightly swept scalp, same hairstyle from each angle. Hair-only cutouts in neutral grayscale with clean dark gray linework and silver/mid-gray curly strand detail matching the illustrated reference, no brown. Absolutely no face, skin, scalp skin, ears, neck, head outline or mannequin. Front and profile face openings genuinely transparent. Most critical correction: an Afro is a big full rounded cloud over the forehead, the FRONT face opening should be a small SHALLOW concave notch at the bottom center ONLY, occupying the bottom third of the cloud, not a tall hollow oval extending up into the crown. This leaves thick abundant curls above the forehead and consistent large round volume when turning from front to profile to back. The front forehead is below the lower two-thirds of the hair mass, eyes/face below the hair. Profiles same rounded height and diameter as front, not a tall upright column or pompadour. Puffs: consistent equal puff size in all views, swept scalp hair layer matching the bald skull; front equal large puffs at10 and2 o'clock, profiles overlap naturally. Front should not shrink the whole hairstyle relative to other views. All twelve cutouts generously separated in a grid, no touching or clipped curl tips, all complete silhouettes. No text, labels, grid, shadows or glow, no background. Portrait canvas target1536x1536 or larger. Ready to lay directly over the bald anatomy reference at identical skull scale.\nCRITICAL PRODUCTION REVISION: Preserve these three hairstyles and four views but reduce each individual cutout to only 70% of its cell width and height. Leave at least 45 pixels of genuinely clear alpha around EVERY silhouette, including the outside edges. No hair may touch another cell or touch any image edge. All four views of each row must have equal hair mass height and consistent curl volume. Big afro front must have enough thick hair above its shallow bottom face notch to retain the same volume as the profiles. Portrait atlas of three rows and four columns, large empty gutters."
+  }
+}

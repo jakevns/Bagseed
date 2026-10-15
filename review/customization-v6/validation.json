@@ -1,0 +1,403 @@
+{
+  "revision": "customization-6",
+  "date": "2026-10-15",
+  "build": {
+    "version": "illustrated-1",
+    "approval": "Approved cast artwork retained; customization changes await user visual review.",
+    "customizationReview": "review/customization-v6/README.md",
+    "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
+    "workingSourceSHA": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
+    "updatedSHA": "2867171c5780e6fcfdbce578a76a90d55247fecae27c5df1b1b23537fa17038c",
+    "bytes": 47954130,
+    "modularAssets": 544,
+    "embeddedImages": 1552,
+    "approvedIdentities": [
+      "player",
+      "remy",
+      "doug",
+      "priya",
+      "poppy"
+    ],
+    "additionalAuthoredAppearances": 67,
+    "bedroomRevision": "bedroom-shell-1",
+    "bedRevision": "beds-batch-01",
+    "bedCombinations": 20
+  },
+  "browserSuite": {
+    "standaloneFileCreationAndSaveIncluded": true,
+    "command": "node --test --test-concurrency=1 tests/*.test.cjs",
+    "passed": 27,
+    "log": "artifacts/custom-fix-v6/final-tests.log",
+    "failed": 0
+  },
+  "baseline": {
+    "scriptBlocksParsed": 80,
+    "checksumVerified": true
+  },
+  "fringe": {
+    "views": 183,
+    "strands": 936576,
+    "failures": []
+  },
+  "footwear": {
+    "measurements": [
+      {
+        "dir": "down",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "right",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "up",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "left",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "width": 28
+      }
+    ],
+    "failures": []
+  },
+  "additionalRegressions": {
+    "blink": {
+      "views": 549,
+      "failures": []
+    },
+    "hatEyePlacement": {
+      "views": 1464,
+      "failures": []
+    },
+    "separateHair": {
+      "layers": 244,
+      "pixels": 2631343,
+      "failures": []
+    },
+    "facialHair": {
+      "views": 2562,
+      "eyes": 3416,
+      "silverLayers": 2562,
+      "backViews": 854,
+      "failures": []
+    },
+    "headMargins": {
+      "views": 732,
+      "failures": []
+    },
+    "bodyDetail": {
+      "outfits": 300,
+      "extraDetail": 4954,
+      "failures": []
+    }
+  },
+  "castPreservation": {
+    "npcAppearances": 71,
+    "browserErrors": 0,
+    "directPoseAssetChecks": 260,
+    "completedSmellSets": 52,
+    "comparisons": 1872,
+    "log": "artifacts/custom-fix-v6/cast-preservation.log"
+  },
+  "visualReview": {
+    "userVisualAcceptance": "pending",
+    "reportedOutfit": "reconstructed-appearance.json",
+    "hairChoices": 61,
+    "headBoundaryIssues": [],
+    "fullGameScreenshot": "gameplay.png",
+    "hats": 8,
+    "colors": [
+      "white",
+      "jade",
+      "pink"
+    ],
+    "actualMirrorScreenshots": [
+      "mirror-none.png",
+      "mirror-beanie.png",
+      "mirror-cap.png",
+      "mirror-bucket.png",
+      "mirror-straw.png",
+      "mirror-purple-shorts.png"
+    ],
+    "directions": 4
+  },
+  "artwork": {
+    "renderer": "graphics/production/sources/renderer.js",
+    "newGeneration": false,
+    "registration": "graphics/production/customization-v5/register.py",
+    "retainedSources": "graphics/production/customization-v5/sources"
+  },
+  "deployment": "No push or deployment performed"
+}

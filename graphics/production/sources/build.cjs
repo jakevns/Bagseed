@@ -8,16 +8,15 @@ const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'asset-manifest.js
 const encoded=JSON.parse(fs.readFileSync(path.join(art,'encoded/manifest.json')));
 assert.equal(encoded.decodedRGBAEqual,true,'Lossless encoding has not been verified');
 const images={},add=(id,file)=>{const entry=encoded.files[path.relative(root,file)];assert.ok(entry,'Missing encoded image: '+file);assert.equal(sha(fs.readFileSync(file)),entry.sourceSHA256,'Stale encoded asset');const bytes=fs.readFileSync(path.join(root,entry.encoded));assert.equal(sha(bytes),entry.encodedSHA256,'Encoded image checksum differs');images[id]='data:image/webp;base64,'+bytes.toString('base64');return id;};
-for(const [id,entry]of Object.entries(manifest.assets))add(id,path.join(art,entry.path));
+for(const [id,entry]of Object.entries(manifest.assets))if(!id.startsWith('hair/')&&!id.startsWith('hat/'))add(id,path.join(art,entry.path));
 const customization=JSON.parse(fs.readFileSync(path.join(art,'customization/manifest.json')));
 for(const [source,expected]of Object.entries(customization.sourceSHA256))assert.equal(sha(fs.readFileSync(path.join(art,manifest.sources[source].path))),expected,'Stale customization source: '+source);
 for(const [id,file]of Object.entries(customization.assets))images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,file)).toString('base64');
-const heads=JSON.parse(fs.readFileSync(path.join(art,'customization-v3/manifest.json')));
-for(const [name,source]of Object.entries(heads.sources))assert.equal(sha(fs.readFileSync(path.join(art,'customization-v3/sources',name+'.png'))),source.sha256,'Stale chibi head source: '+name);
-for(const [id,file]of Object.entries(heads.assets))images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,'customization-v3',file)).toString('base64');
-const hats=JSON.parse(fs.readFileSync(path.join(art,'customization-v3/hats-manifest.json')));
-assert.equal(sha(fs.readFileSync(path.join(art,'customization-v3/sources/hats.png'))),hats.sourceSHA256,'Stale isolated hat source');
-for(const [id,file]of Object.entries(hats.assets))images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,'customization-v3',file)).toString('base64');
+const layers=JSON.parse(fs.readFileSync(path.join(art,'customization-v5/manifest.json')));
+assert.equal(Object.keys(layers.hair).length,60,'All sixty independent hairstyles must be registered');
+assert.equal(Object.keys(layers.hats).length,32,'All eight hat styles must be registered');
+for(const [name,source]of Object.entries(layers.sources))assert.equal(sha(fs.readFileSync(path.join(art,'customization-v5/sources',name))),source.sha256,'Stale separate-layer source: '+name);
+for(const [id,file]of Object.entries(layers.assets))images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,'customization-v5',file)).toString('base64');
 const preview=path.join(root,'review/characters-v2'),fixtures=JSON.parse(fs.readFileSync(path.join(preview,'sources/baseline-assets.json')));
 const approved=fixtures.people.map(person=>{
   const assets={},portraits={};
@@ -65,15 +64,15 @@ function visit(value,location='collections'){
   for(const [k,v]of Object.entries(value))if(k!=='look')visit(v,location+'.'+k);
 }
 visit(audit.collections);
-const data={images,approved,cast,traits,headFeatures:heads.features,hatAssets:Object.keys(hats.assets),hatFits:hats.fits,haircuts:60,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
+const data={images,approved,cast,traits,headFeatures:layers.features,hatRegistration:layers.hats,hatAssets:Object.keys(layers.hats),layeredHair:true,haircuts:61,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
 const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace(/\r\n/g,'\n').replace('__BAGSEED_ART_DATA__',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
 new (require('node:vm').Script)(characterCode,{filename:'illustrated-production-code'});
 const marker='bagseed-illustrated-production-code';
 const target=path.join(root,'public/index.html'),current=fs.readFileSync(target);
 const priorReport=path.join(art,'build.json'),priorSHA=fs.existsSync(priorReport)?JSON.parse(fs.readFileSync(priorReport)).updatedSHA:null;
 assert.ok(sha(current)===baselineSHA||sha(current)===priorSHA,'Unexpected edits to the working HTML; preserve them before rebuilding');
-const html=original.toString().replace('</body></html>',`<script id="${marker}">\n${characterCode}\n</script>\n</body></html>`);
+const html=original.toString().replace('</body></html>',`<script id="${marker}">\n${characterCode}\n</script>\n${require('../../../tools/build-bedroom.cjs')()}</body></html>`);
 assert.ok(html.includes(marker),'Could not find baseline insertion point');
 const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging,target);
-const report={version:'illustrated-1',approval:'Approved cast artwork retained; current customization changes await user visual review.',customizationReview:'review/customization-v4/README.md',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length};
+const report={version:'illustrated-1',approval:'Approved cast artwork retained; customization changes await user visual review.',customizationReview:'review/customization-v6/README.md',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length,bedroomRevision:'bedroom-shell-1',bedRevision:'beds-batch-01',bedCombinations:20};
 fs.writeFileSync(path.join(art,'build.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

@@ -65,6 +65,24 @@ test('title, character creation, and a new playable bedroom', async () => {
   });
 });
 
+test('the standalone local file creates a bald character and retains its saved appearance',async()=>{
+  await withPage({viewport:{width:1280,height:800}},async page=>{
+    await page.goto(require('node:url').pathToFileURL(path.resolve(__dirname,'../public/index.html')).href);
+    await page.evaluate(()=>BagseedArt.ready);
+    await page.locator('[data-act="newGame"]').click();
+    await page.locator('[data-act="hairGrp"][data-arg="short"]').click();
+    for(const arg of ['hairS:bald','hairC:#e9e2d4','hat:cap'])await page.locator(`[data-act="cr"][data-arg="${arg}"]`).click();
+    await page.locator('[data-act="crWalk"][data-arg="0"]').click();
+    const preview=await page.locator('#creatorPreview').evaluate(c=>{drawCreatorPreview(0);const r=c.getBoundingClientRect();return {width:c.width,height:c.height,ratio:r.width/r.height,look:creatorLook(runtime.cr)};});
+    assert.equal(preview.width,540);assert.equal(preview.height,336);assert.ok(Math.abs(preview.ratio-180/112)<.02);assert.equal(preview.look.hairS,'bald');
+    await page.locator('#creatorPreview').screenshot({path:path.join(artifacts,'standalone-bald-cap.png')});
+    await page.locator('[data-act="startGame"]').click();await page.waitForFunction(()=>screen==='game'&&state?.player);
+    const saved=await page.evaluate(()=>{settings.speed=0;if(!SaveSys.now('standalone character test'))throw Error('File save failed');return playerLook();});
+    await page.reload();await page.evaluate(()=>BagseedArt.ready);await page.locator('[data-act="continueGame"]').click();await page.waitForFunction(()=>screen==='game');
+    assert.deepEqual(await page.evaluate(()=>playerLook()),saved);assert.equal(saved.hairS,'bald');assert.equal(saved.hat,'cap');
+  });
+});
+
 test('keyboard movement works in all four directions', async () => {
   await withPage({ viewport: { width: 1280, height: 800 } }, async page => {
     await startGame(page);
@@ -132,7 +150,7 @@ test('authored cast and all haircuts render without changing their appearance da
       return { appearanceUnchanged: JSON.stringify(looks) === before, looks: looks.length, haircuts: HAIRS.length, frames };
     });
     assert.ok(result.looks >= 60);
-    assert.equal(result.haircuts, 60);
+    assert.equal(result.haircuts, 61);
     assert.ok(result.frames >= 1200);
     assert.equal(result.appearanceUnchanged, true);
   });

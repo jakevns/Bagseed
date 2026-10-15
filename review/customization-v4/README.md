@@ -1,5 +1,7 @@
 # Character customization repair
 
+Historical review, rejected by the user. Superseded by `../customization-v5/README.md`; the claims and screenshots below describe the previous implementation.
+
 This revision addresses the user's reports of brown rear hair under silver hair, cropped hairstyles, misplaced facial hair and hats, damaged trousers and neck joins, blurred previews, and a dark line appearing during animation. It supersedes the rejected customization-v3 review. The playable local file is `public/index.html`.
 
 Hair registration now isolates each complete head before cropping; all 240 views retain their crowns and ends. Rear skin patches are masked locally, including the saturated neck shadows, so the chosen hair color cannot paint the neck. The nape's ink no longer retains the source brown. Face-shape changes preserve canvas margins. Long hair sits behind the actual shoulder silhouette, without the rectangular foreground cuts.

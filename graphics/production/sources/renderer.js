@@ -6,6 +6,8 @@
   'use strict';
   const DATA = __BAGSEED_ART_DATA__;
   const DIRS = ['down','right','up','left'];
+  const HEAD_PAD=64,HEAD_HEIGHT=320,HEAD_NECK=199;
+  if(!HAIRS.some(([id])=>id==='bald'))HAIRS.unshift(['bald','Bald']);
   const images = new Map(), colored = new Map(), heads = new Map(), bodies = new Map();
   const cache = new Map(), portraits = new Map(), rawPixels = new Map(), faceMasks = new Map();
   let loaded = false;
@@ -159,7 +161,7 @@
   function faceDetails(c,L,dir,features=null) {
     if(dir==='up')return;
     c.save();if(dir==='left'){c.translate(192,0);c.scale(-1,1);}
-    if(features){const eyes=features.eyes;const x=dir==='down'?(eyes[0][0]+eyes[1][0])/2:dir==='left'?192-eyes[0][0]:eyes[0][0],y=eyes.reduce((n,e)=>n+e[1],0)/eyes.length;const sx=dir==='down'?Math.max(.8,Math.min(1.4,(eyes[1][0]-eyes[0][0])/32)):1;c.translate(x,y);c.scale(sx,.8);c.translate(dir==='down'?-94:-113,-79);}
+    if(features){const eyes=features.eyes;const x=dir==='down'?(eyes[0][0]+eyes[1][0])/2:dir==='left'?192-eyes[0][0]:eyes[0][0],y=eyes.reduce((n,e)=>n+e[1],0)/eyes.length;const sx=dir==='down'?(eyes[1][0]-eyes[0][0])/32:1,sy=features.mouth?(features.mouth[1]-y)/29:.8;c.translate(x,y);c.scale(sx,sy);c.translate(dir==='down'?-94:-113,-79);}
     const side=dir!=='down',eyeY=79,mouthY=108,skin=L.skin,ink='#59372c';
     const eyes=side?[113]:[78,110];
     const eyeScale={dot:.94,round:1,wide:1.1,sleepy:.74,lashed:1,almond:.9,hooded:.8,monolid:.72,upturned:.95,downturned:.94,big:1.15,narrow:.68,starry:1.1,heavy:.78,lashed2:1.04}[L.eyes]||1;
@@ -277,89 +279,70 @@
       g.putImageData(d,0,0);layer=out;if(facialLayers.size>100)facialLayers.clear();facialLayers.set(signature,layer);
     }
     const eyes=features?.eyes|| (dir==='down'?[[75,94],[117,94]]:[[dir==='right'?120:72,96]]),eyeY=eyes.reduce((n,p)=>n+p[1],0)/eyes.length,eyeX=eyes.reduce((n,p)=>n+p[0],0)/eyes.length;
-    const mouthX=dir==='down'?eyeX:eyeX+(dir==='right'?12:-12),mouthY=eyeY+(dir==='down'?16:20);
+    const mouthX=features?.mouth?.[0]??(dir==='down'?eyeX:eyeX+(dir==='right'?12:-12)),mouthY=features?.mouth?.[1]??(eyeY+(dir==='down'?16:20));
     c.save();
     // The adult source studies have smaller eyes. Keep their sideburn texture
     // outside the larger illustrated eyes instead of painting over a lower
     // eyelid when the study is fitted to the new jaw.
-    c.beginPath();c.rect(0,0,192,256);for(const [x,y]of eyes){c.moveTo(x+11,y);c.ellipse(x,y,11,10,0,0,Math.PI*2);}c.clip('evenodd');
+    c.beginPath();c.rect(0,0,192,HEAD_HEIGHT);for(const [x,y]of eyes){c.moveTo(x+11,y);c.ellipse(x,y,11,10,0,0,Math.PI*2);}c.clip('evenodd');
     c.translate(mouthX,mouthY);c.scale(dir==='down'?1.04:1,.69);c.drawImage(layer,-src.mouthX,-src.mouthY);c.restore();
   }
-/* Fit isolated hat artwork to the skull without resizing the wearer's face.
- * Call before the complete head's face-shape transform. Coordinates retain
- * the registered neck at (96,135) on a 192x256 head canvas.
- */
-function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, directionFeatures) {
-  const hatName = look.hat === 'hood' ? 'beanie' : look.hat;
-  const settings = {
-    beanie: {width:1.15, sideWidth:1.13, height:76, forehead:13},
-    cap: {width:1.18, sideWidth:1.32, height:76, forehead:13},
-    bucket: {width:1.30, sideWidth:1.31, height:76, forehead:13},
-    straw: {width:1.51, sideWidth:1.53, height:63, forehead:14},
-    sunhat: {width:1.64, sideWidth:1.66, height:77, forehead:12},
-    officer: {width:1.31, sideWidth:1.36, height:63, forehead:12},
-    wizard: {width:1.46, sideWidth:1.47, height:91, forehead:12},
-    beret: {width:1.20, sideWidth:1.20, height:65, forehead:14}
-  };
-  const spec = settings[hatName];
-  if (!spec) return headCanvas;
-  const width=hatCanvas.width,height=hatCanvas.height;
-  const pixels=hatCanvas.getContext('2d').getImageData(0,0,width,height).data;
-  let left=width,top=height,right=0,bottom=0;
-  for(let y=0;y<height;y++)for(let x=0;x<width;x++)if(pixels[(y*width+x)*4+3]>32){left=Math.min(left,x);right=Math.max(right,x+1);top=Math.min(top,y);bottom=Math.max(bottom,y+1);}
-  if(right<=left||bottom<=top)return headCanvas;
-  const eyes=frontFeatures?.eyes||[[76,96],[116,96]];
-  const eyeDistance=Math.abs(eyes[1][0]-eyes[0][0]);
-  const skullWidth=Math.max(72,Math.min(112,eyeDistance*2.4));
-  const viewEyes=directionFeatures?.eyes||eyes;
-  const eyeY=viewEyes.reduce((total,eye)=>total+eye[1],0)/viewEyes.length;
-  const side=direction==='right'||direction==='left';
-  const drawWidth=Math.min(178,skullWidth*(side?spec.sideWidth:spec.width));
-  const brimY=eyeY-spec.forehead+(direction==='up'?2:0);
-  const naturalHeight=(bottom-top)*drawWidth/(right-left);
-  const drawHeight=Math.min(naturalHeight,spec.height,brimY-8);
-  let anchor=.5;
-  // The profile bill projects beyond the scalp; align the crown, not the
-  // image rectangle's midpoint, with the skull.
-  if(['cap','officer'].includes(hatName)&&side)anchor=direction==='right'?.42:.58;
-  else if(hatName==='beret'&&side)anchor=direction==='right'?.47:.53;
-  const center=direction==='down'?(eyes[0][0]+eyes[1][0])/2:96;
-  const drawX=Math.max(6,Math.min(186-drawWidth,center-drawWidth*anchor));
-  const drawY=brimY-drawHeight;
-  const layer=document.createElement('canvas');layer.width=192;layer.height=256;
-  const h=layer.getContext('2d');
-  h.drawImage(hatCanvas,left,top,right-left,bottom-top,drawX,drawY,drawWidth,drawHeight);
-  const hatPixels=h.getImageData(0,0,192,256).data;
-  const band=new Int16Array(192);band.fill(-1);
-  for(let y=0;y<256;y++)for(let x=0;x<192;x++)if(hatPixels[(y*192+x)*4+3]>80)band[x]=y;
-  const context=headCanvas.getContext('2d');
-  // A fitted hat contains the crown and tied-up hair. Long hair, braids and
-  // curls below the band remain visible; no hair can poke through its top.
-  context.save();context.globalCompositeOperation='destination-out';
-  for(let x=0;x<192;x++)context.fillRect(x,0,1,band[x]>=0?band[x]-1:brimY-7);
-  context.restore();context.drawImage(layer,0,0);
-  return headCanvas;
-}
-
+  function baldBase(L,dir){
+    const signature='bald|'+dir+'|'+L.skin+'|'+L.hairC;if(colored.has(signature))return colored.get(signature);
+    const raw=pixels('base/'+dir),out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),d=new ImageData(new Uint8ClampedArray(raw.data.data),192,HEAD_HEIGHT),a=d.data,skin=rgb(L.skin),hair=rgb(L.hairC),f=DATA.headFeatures['base/'+dir];
+    for(let n=0;n<a.length;n+=4){if(a[n+3]<10){a[n+3]=0;continue;}const x=n/4%192,y=Math.floor(n/4/192),l=lum(a[n],a[n+1],a[n+2]);
+      const eye=(f.eyes||[]).some(([ex,ey])=>((x-ex)/12)**2+((y-ey)/11)**2<1),brow=(f.eyes||[]).some(([ex,ey])=>Math.abs(x-ex)<13&&Math.abs(y-(ey-20))<8);
+      if(eye&&(l<150||a[n]-a[n+2]<40))continue;
+      const tone=brow&&l<125?hair:skin,base=brow&&l<125?65:175,color=material(tone,l,base);
+      a[n]=color[0];a[n+1]=color[1];a[n+2]=color[2];
+    }
+    g.putImageData(d,0,0);colored.set(signature,out);return out;
+  }
+  function hairLayer(L,dir){
+    const signature='wig|'+dir+'|'+L.hairS+'|'+L.hairC+'|'+L.hairHi+'|'+L.hat;if(colored.has(signature))return colored.get(signature);
+    const raw=pixels(`wig/${L.hairS}/${dir}`),out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),d=new ImageData(new Uint8ClampedArray(raw.data.data),192,HEAD_HEIGHT),a=d.data,target=rgb(L.hairC),anatomy=L.hairS==='buzz'?pixels('base/'+dir).data.data:null;
+    for(let n=0;n<a.length;n+=4){if(a[n+3]<10){a[n+3]=0;continue;}const x=n/4%192,y=Math.floor(n/4/192),l=a[n],tone=L.hairHi!=='none'&&l>115&&(x+y*.45)%28<5?rgb(L.hairHi):target,factor=.2+l/180;
+      for(let k=0;k<3;k++)a[n+k]=Math.min(255,tone[k]*factor);
+      // A buzzcut follows the bald skull, with no projecting fringe. Fade
+      // density is alpha, so pale stubble reveals skin rather than a white cap.
+      if(anatomy){a[n+3]=a[n+3]*anatomy[n+3]/255;if(dir==='up'){const scalp=((x-96)/47)**2+((y-144)/44)**2;a[n+3]*=Math.max(0,Math.min(1,(1.025-scalp)*20));}}
+      if(['fade','hightop','flattop','curlytop'].includes(L.hairS)&&dir!=='down'){
+        const ey=DATA.headFeatures['base/down'].eyes[0][1],fade=Math.max(0,Math.min(1,(y-ey+9)/35)),density=Math.max(.05,Math.min(1,1-(l-65)/125));a[n+3]*=1-fade*(1-density);
+      }
+    }
+    if(L.hat!=='none'){
+      const name=L.hat==='hood'?'beanie':L.hat,id=`headwear/${name}/${dir}`,hat=pixels(id).data.data,brim=DATA.hatRegistration[id].brimY;
+      // Keep hair only inside the worn hat's outer crown or below its brim.
+      // Filling the crown span preserves correctly colored hair through a cap
+      // adjustment opening. The bald head itself is never erased.
+      for(let y=0;y<brim-3;y++){let left=192,right=-1;for(let x=0;x<192;x++)if(hat[(y*192+x)*4+3]>60){left=Math.min(left,x);right=Math.max(right,x);}
+        for(let x=0;x<192;x++)if(x<left||x>right)a[(y*192+x)*4+3]=0;
+      }
+    }
+    g.putImageData(d,0,0);if(colored.size>700)colored.clear();colored.set(signature,out);return out;
+  }
   function head(L,dir,blink=false) {
     const signature=identityKey(L)+'|'+L.expr+'|'+dir+'|'+blink;if(heads.has(signature))return heads.get(signature);
-    const id=`hair/${L.hairS}/${dir}`,out=cv(192,256),g=out.getContext('2d');g.drawImage(paint(id,L,'head'),0,0);
+    const id=`hair/${L.hairS}/${dir}`,out=cv(192,HEAD_HEIGHT),g=out.getContext('2d');g.drawImage(baldBase(L,dir),0,0);
     const faceShape=L.face,shape={round:[1.03,.98],angular:[.97,1.02],long:[.94,1.08],square:[1.06,.99],heart:[1.03,1],oval:[.97,1.03],diamond:[1.06,1.03],oblong:[.94,1.07],pear:[1.05,1.03],triangle:[1.06,1.02],wide:[1.12,.98],petite:[.92,.96],strong:[1.09,1.02],button:[.97,.94]}[faceShape]||[1,1];
     facialHair(g,L,dir,DATA.headFeatures?.[id]);
     faceDetails(g,{...L,_blink:blink},dir,DATA.headFeatures?.[id]);
-    if(L.acc==='headphones'){path(g,'#343239',8,[55,86,54,51,77,29,117,29,137,52,138,87]);for(const x of [55,138]){g.fillStyle=L.accC||'#4d4654';g.beginPath();g.roundRect(x-6,78,12,23,5);g.fill();}}
-    if(L.hat!=='none')fitHat(out,paint(`hat/${L.hat==='hood'?'beanie':L.hat}/${dir}`,L,'hat'),L,dir,DATA.headFeatures?.[`hair/${L.hairS}/down`],DATA.headFeatures?.[id]);
+    g.drawImage(hairLayer(L,dir),0,0);
+    // Hair's original transparent opening reveals the face. Never repaint a
+    // forehead/face plate over the strands: that sheared every fringe flat.
+    if(L.acc==='headphones'){g.save();g.translate(0,HEAD_PAD);path(g,'#343239',8,[55,86,54,51,77,29,117,29,137,52,138,87]);for(const x of [55,138]){g.fillStyle=L.accC||'#4d4654';g.beginPath();g.roundRect(x-6,78,12,23,5);g.fill();}g.restore();}
+    if(L.hat!=='none')g.drawImage(paint(`headwear/${L.hat==='hood'?'beanie':L.hat}/${dir}`,L,'hat'),0,0);
     let faceScale=[1,1];
     if(faceShape!=='soft'){
       // Apply one transform to hair, face and facial hair together, with
       // explicit canvas margins so wide/long faces cannot crop a hairstyle.
-      const base=cv(192,256);base.getContext('2d').drawImage(out,0,0);const a=g.getImageData(0,0,192,256).data;let left=192,right=0,top=256,bottom=0;
-      for(let y=0;y<256;y++)for(let x=0;x<192;x++)if(a[(y*192+x)*4+3]>80){left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y);}
-      const sx=Math.min(shape[0],90/Math.max(1,96-left),90/Math.max(1,right-96)),sy=Math.min(shape[1],129/Math.max(1,135-top),114/Math.max(1,bottom-135));
+      const base=cv(192,HEAD_HEIGHT);base.getContext('2d').drawImage(out,0,0);const a=g.getImageData(0,0,192,HEAD_HEIGHT).data;let left=192,right=0,top=HEAD_HEIGHT,bottom=0;
+      for(let y=0;y<HEAD_HEIGHT;y++)for(let x=0;x<192;x++)if(a[(y*192+x)*4+3]>80){left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y);}
+      const sx=Math.min(shape[0],90/Math.max(1,96-left),90/Math.max(1,right-96)),sy=Math.min(shape[1],(HEAD_NECK-6)/Math.max(1,HEAD_NECK-top),114/Math.max(1,bottom-HEAD_NECK));
       faceScale=[sx,sy];
-      g.clearRect(0,0,192,256);g.save();g.translate(96,135);g.scale(sx,sy);g.drawImage(base,-96,-135);g.restore();
+      g.clearRect(0,0,192,HEAD_HEIGHT);g.save();g.translate(96,HEAD_NECK);g.scale(sx,sy);g.drawImage(base,-96,-HEAD_NECK);g.restore();
     }
-    out.bagseedEyes=(DATA.headFeatures?.[id]?.eyes||[]).map(([x,y])=>[96+(x-96)*faceScale[0],135+(y-135)*faceScale[1]]);
+    out.bagseedEyes=(DATA.headFeatures?.[id]?.eyes||[]).map(([x,y])=>[96+(x-96)*faceScale[0],HEAD_NECK+(y-HEAD_NECK)*faceScale[1]]);
     if(heads.size>200)heads.clear();heads.set(signature,out);return out;
   }
   function body(L,dir,nose=false,density=1) {
@@ -370,7 +353,7 @@ function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, direction
     const bottomId=asset(`bottom/${L.bottomS==='pjs'?'jeans':L.bottomS}/${dir}`),side=dir==='right'||dir==='left';
     // Component sheets use different proportions. Register trousers to the
     // torso's waist and shoes to its ankles before layering, once per body.
-    const lowerScale=side?1.9:1.8,shoeScale=side?1.25:1.5;
+    const lowerScale=side?1.9:1.8;
     const fullSuit=['overalls','pjs','suit'].includes(L.topS);
     const waist={tee:73,tank:73,hoodie:75,flannel:76,sweater:75,cardigan:76,work:75,crop:71,jacket:74,garden:75,pjs:75,labcoat:75,suit:75,officer:75}[L.topS]||75;
     if(!fullSuit){
@@ -392,9 +375,15 @@ function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, direction
     g.drawImage(overlay,0,waist*d,96*d,(107-waist)*d,0,69,96,38);
     // Exclude the feet baked into clothing sheets. The selected footwear is
     // the only shoe layer; its ankle overlaps the trousers by a few pixels.
-    const shoeTop=['boots','rainboots'].includes(L.shoesS)?94:99;
+    const shoeTop=['boots','rainboots'].includes(L.shoesS)?93:99;
+    const shoeId=asset(`shoe/${L.shoesS}/${dir}`),shoe=paint(shoeId,L,'shoe'),shoeSource=pixels(shoeId),sd=shoe.width/96;
+    if(!shoeSource.footprint){let left=shoe.width,right=-1;for(let y=0;y<shoe.height;y++)for(let x=0;x<shoe.width;x++)if(shoeSource.data.data[(y*shoe.width+x)*4+3]>80){left=Math.min(left,x);right=Math.max(right,x);}shoeSource.footprint={left,right};}
+    const {left:shoeLeft,right:shoeRight}=shoeSource.footprint;
+    // Source sheets were fitted to equal height, making taller boots much
+    // narrower than sneakers. Register every pair by its actual footprint.
+    const shoeScale=(side?28:32)/((shoeRight-shoeLeft+1)/sd),shoeCenter=(shoeLeft+shoeRight+1)/(2*sd);
     g.clearRect(0,shoeTop,96,108-shoeTop);
-    g.save();g.beginPath();g.rect(0,shoeTop,96,108-shoeTop);g.clip();g.translate(48,0);g.scale(shoeScale,1);g.drawImage(paint(asset(`shoe/${L.shoesS}/${dir}`),L,'shoe'),-48,0,96,108);g.restore();
+    g.save();g.beginPath();g.rect(0,shoeTop,96,108-shoeTop);g.clip();g.translate(48,0);g.scale(shoeScale,1);g.drawImage(shoe,-shoeCenter,0,96,108);g.restore();
     if(L.acc==='bandana'||L.acc==='scarf'){
       const color=L.accC||(L.acc==='bandana'?'#c94f4f':'#d26aa0');path(g,color,3,[39,43,48,46,57,43]);path(g,color,4,L.acc==='scarf'?[54,46,57,58]:[44,46,48,51,52,46]);
     }
@@ -409,24 +398,18 @@ function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, direction
     if(bodies.size>200)bodies.clear();bodies.set(signature,out);return out;
   }
   function generic(L,dir,nose=false,blink=false,density=1) {
-    const out=cv(96*density,108*density),stage=cv(96*density,144*density),g=stage.getContext('2d'),B=body(L,dir,nose,3),H=head(L,dir,blink);g.scale(density,density);g.translate(0,36);
+    const out=cv(96*density,144*density),g=out.getContext('2d'),B=body(L,dir,nose,3),H=head(L,dir,blink);g.scale(density,density);
     const width={slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1;
     const short=!!L.short,kid=isChild(L),sy=kid?.74:short?.9:L.body==='tall'?1.07:1;
-    const neckY=107-66*sy,headScale=kid?.9:1,headY=neckY-43*headScale;
+    const neckY=143-66*sy,headScale=kid?.9:1,headY=neckY-(HEAD_NECK/3-2)*headScale;
     const presentation=L.pres==='masc'?1.045:L.pres==='fem'?.955:1;
     const drawHead=()=>g.drawImage(H,48-32*headScale,headY,64*headScale,H.height/3*headScale);
     drawHead();
-    g.save();g.translate(48,107);g.scale(width*presentation,sy);g.drawImage(B,-48,-107,96,108);g.restore();
-    g.save();g.beginPath();g.rect(0,-36,96,neckY+38);g.clip();drawHead();g.restore();
-    if(nose){g.save();g.beginPath();g.rect(0,0,96,neckY+3);g.clip();g.translate(48,107);g.scale(width*presentation,sy);g.drawImage(B,-48,-107,96,108);g.restore();}
-    if(L.prop&&!nose&&dir!=='up')props(g,L,dir);
-    // Fit the complete silhouette once, at the feet. Tall bodies and tall
-    // hairstyles used to lose their crowns at the fixed sprite canvas edge.
-    const w=stage.width,h=stage.height,a=g.getImageData(0,0,w,h).data;let top=h-1;
-    for(let y=0;y<h&&top===h-1;y++)for(let x=0;x<w;x++)if(a[(y*w+x)*4+3]>80){top=y;break;}
-    const fit=Math.min(1,104/Math.max(1,143-top/density)),o=out.getContext('2d');
-    o.scale(density,density);o.translate(48,107);o.scale(fit,fit);o.drawImage(stage,-48,-143,96,144);
-    out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[48+((x-96)*headScale/3)*fit,107+(headY+y*headScale/3-107)*fit]);
+    g.save();g.translate(48,143);g.scale(width*presentation,sy);g.drawImage(B,-48,-107,96,108);g.restore();
+    g.save();g.beginPath();g.rect(0,0,96,neckY+2);g.clip();drawHead();g.restore();
+    if(nose){g.save();g.beginPath();g.rect(0,0,96,neckY+3);g.clip();g.translate(48,143);g.scale(width*presentation,sy);g.drawImage(B,-48,-107,96,108);g.restore();}
+    if(L.prop&&!nose&&dir!=='up'){g.save();g.translate(0,36);props(g,L,dir);g.restore();}
+    out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[48+(x-96)*headScale/3,headY+y*headScale/3]);
     return out;
   }
   function props(g,L,dir) {
@@ -438,33 +421,33 @@ function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, direction
     g.restore();
   }
   function hands(canvas,L,dir) {
-    const a=canvas.getContext('2d',{willReadFrequently:true}).getImageData(0,0,96,108).data,skin=rgb(L.skin),sRatio=skin[0]/Math.max(1,skin[1]);let points=[];
-    for(let y=54;y<85;y++)for(let x=14;x<82;x++){
+    const offset=canvas.height-108,a=canvas.getContext('2d',{willReadFrequently:true}).getImageData(0,0,96,canvas.height).data,skin=rgb(L.skin),sRatio=skin[0]/Math.max(1,skin[1]);let points=[];
+    for(let y=54+offset;y<85+offset;y++)for(let x=14;x<82;x++){
       const i=(y*96+x)*4;if(a[i+3]<120)continue;const ratio=a[i]/Math.max(1,a[i+1]);
       if(Math.abs(ratio-sRatio)<.22&&Math.abs(a[i+1]/Math.max(1,a[i+2])-skin[1]/Math.max(1,skin[2]))<.45&&a[i]>a[i+1]*1.12&&a[i+1]>a[i+2]*1.1){
         const expected=dir==='down'||dir==='up'?28:dir==='right'?50:46;
-        points.push({x,y,score:Math.abs(x-expected)*1.3+Math.abs(y-72)*.35});
+        points.push({x,y,score:Math.abs(x-expected)*1.3+Math.abs(y-72-offset)*.35});
       }
     }
     points.sort((a,b)=>a.score-b.score);const near=points.slice(0,8);
-    return near.length?{x:near.reduce((s,p)=>s+p.x,0)/near.length,y:near.reduce((s,p)=>s+p.y,0)/near.length}:{x:dir==='down'||dir==='up'?31:48,y:72};
+    return near.length?{x:near.reduce((s,p)=>s+p.x,0)/near.length,y:near.reduce((s,p)=>s+p.y,0)/near.length}:{x:dir==='down'||dir==='up'?31:48,y:72+offset};
   }
   function animate(source,L,dir,frame,breath,blink,act,rig,density=1) {
-    const out=cv(96*density,108*density),g=out.getContext('2d');g.scale(density,density);g.imageSmoothingEnabled=source.width>=out.width;g.imageSmoothingQuality='high';
+    const height=source.height/(source.width/96),ground=height-1,offset=height-108,out=cv(96*density,height*density),g=out.getContext('2d');g.scale(density,density);g.imageSmoothingEnabled=source.width>=out.width;g.imageSmoothingQuality='high';
     if(rig&&frame){
       // Move one continuous silhouette. Cutting a drawing at x=48/y=79
       // severed overlapping profile legs and exposed rectangular seams.
       const phase=frame===1?1:frame===3?-1:0,side=dir==='right'||dir==='left';
-      g.save();g.translate(48,107);g.transform(1,0,phase*(side?.018:.01),frame%2?.988:1,0,0);g.drawImage(source,-48,-107,96,108);g.restore();
-    }else if(breath){g.save();g.translate(48,107);g.scale(1,.99);g.drawImage(source,-48,-107,96,108);g.restore();}
-    else g.drawImage(source,0,0,96,108);
+      g.save();g.translate(48,ground);g.transform(1,0,phase*(side?.018:.01),frame%2?.988:1,0,0);g.drawImage(source,-48,-ground,96,height);g.restore();
+    }else if(breath){g.save();g.translate(48,ground);g.scale(1,.99);g.drawImage(source,-48,-ground,96,height);g.restore();}
+    else g.drawImage(source,0,0,96,height);
     if(act&&dir!=='up'){
       // Existing interact flag remains visible; a small wrist/forearm lift uses
       // the same illustrated arm pixels, never the old character renderer.
-      const x=dir==='left'?34:dir==='right'?46:62,arm=cv(12*density,22*density);arm.getContext('2d').drawImage(out,(x-4)*density,58*density,12*density,22*density,0,0,12*density,22*density);
-      g.clearRect(x-4,65,12,15);g.save();g.translate(x+2,61);g.rotate(dir==='left'?.35:-.35);g.drawImage(arm,-6,0,12,22);g.restore();
+      const x=dir==='left'?34:dir==='right'?46:62,arm=cv(12*density,22*density);arm.getContext('2d').drawImage(out,(x-4)*density,(58+offset)*density,12*density,22*density,0,0,12*density,22*density);
+      g.clearRect(x-4,65+offset,12,15);g.save();g.translate(x+2,61+offset);g.rotate(dir==='left'?.35:-.35);g.drawImage(arm,-6,0,12,22);g.restore();
     }
-    out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-107),107+(y-107)*(frame%2?.988:1)]:breath?[x,107+(y-107)*.99]:[x,y]);
+    out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-ground),ground+(y-ground)*(frame%2?.988:1)]:breath?[x,ground+(y-ground)*.99]:[x,y]);
     if(density===1)out.bagseedHand=hands(out,L,dir);return out;
   }
   function faceCoordinates(canvas,L){
@@ -493,11 +476,11 @@ function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, direction
     else{
       const torso=body(L,'down',false,3),d=torso.width/96;
       const width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1);
-      const h=head(L,'down');g.drawImage(h,0,0);
-      g.save();g.translate(96,0);g.scale(width,1);g.translate(-96,0);
-      g.drawImage(torso,0,40*d,96*d,40*d,-48,124,288,120);
-      g.restore();
-      g.save();g.beginPath();g.rect(0,0,192,136);g.clip();g.drawImage(h,0,0);g.restore();
+      const h=head(L,'down'),p=h.getContext('2d').getImageData(0,0,192,HEAD_HEIGHT).data;let top=HEAD_HEIGHT;
+      for(let y=0;y<HEAD_HEIGHT&&top===HEAD_HEIGHT;y++)for(let x=0;x<192;x++)if(p[(y*192+x)*4+3]>100){top=y;break;}
+      const fit=Math.min(1,130/(HEAD_NECK-top));g.save();g.translate(96,135);g.scale(fit,fit);g.drawImage(h,-96,-HEAD_NECK);
+      g.save();g.scale(width,1);g.drawImage(torso,0,40*d,96*d,40*d,-144,-11,288,120);g.restore();
+      g.save();g.beginPath();g.rect(-96,-HEAD_NECK,192,HEAD_NECK+1);g.clip();g.drawImage(h,-96,-HEAD_NECK);g.restore();g.restore();
 
     }
     portraits.set(signature,out);return out;
@@ -512,24 +495,24 @@ function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, direction
     const dir=smell?Smell1151.face({x,y}):anim.dir||'down';
     const transform=c.getTransform(),density=Math.max(1,Math.min(3,Math.ceil(Math.max(Math.abs(transform.a),Math.abs(transform.d))*scale/3)));
     const image=sprite(look,dir,smell?0:anim.frame||0,anim.breath?1:0,anim.blink?1:0,anim.act?1:0,!!smell,density);
-    c.save();c.imageSmoothingEnabled=image.width>=32*scale*Math.abs(transform.a);c.imageSmoothingQuality='high';c.drawImage(image,Math.round(x)-16*scale,Math.round(y)-36*scale,32*scale,36*scale);c.restore();
+    const height=32*image.height/image.width;c.save();c.imageSmoothingEnabled=image.width>=32*scale*Math.abs(transform.a);c.imageSmoothingQuality='high';c.drawImage(image,Math.round(x)-16*scale,Math.round(y)-height*scale,32*scale,height*scale);c.restore();
     if(scale===1&&NightLamps1151.drawing)NightLamps1151.carry(c,x,y,look,anim);
   };
   Cast115.drawKid=function(c,x,y,look,anim={}){drawPerson(c,x,y,{...look,short:true},1,anim);};
   drawTinyPerson=(c,x,y,look,frame=0,prop)=>drawPerson(c,x,y,{...look,prop},.42,{frame});
   drawCreatorPreview=function(t){
     const canvas=$('#creatorPreview');if(!canvas||!runtime.cr)return;
-    if(!canvas.dataset.illustratedDensity){canvas.width=540;canvas.height=288;canvas.dataset.illustratedDensity='3';canvas.style.imageRendering='auto';}
+    if(!canvas.dataset.illustratedDensity){canvas.width=540;canvas.height=336;canvas.dataset.illustratedDensity='3';canvas.style.imageRendering='auto';canvas.style.aspectRatio='180 / 112';canvas.style.height='auto';}
     const g=canvas.getContext('2d');g.setTransform(3,0,0,3,0,0);
-    const W=180,H=96,look=creatorLook(runtime.cr),walk=runtime.crWalk!==false&&!settings.reduced,frame=walk?Math.floor(t*6)%4:0;
+    const W=180,H=112,look=creatorLook(runtime.cr),walk=runtime.crWalk!==false&&!settings.reduced,frame=walk?Math.floor(t*6)%4:0;
     R(g,0,0,W,H,'#2a2230');for(let y=H-16;y<H;y+=4)R(g,0,y,W,2,'#352b3c');
     [['FRONT','down'],['SIDE','right'],['BACK','up']].forEach(([label,dir],i)=>{const x=30+i*60;groundShadow(g,x,H-10,22);drawPerson(g,x,H-10,look,2,{dir,frame,breath:!walk&&Math.floor(t/1.4)%2,blink:!walk&&idleBlink(t,i)});pxText(g,label,x-pxTextW(label)/2,3,1,'#b3b89c');});
   };
   CharacterUI115.mirrorDraw=function(){
     const root=$('#panelBody'),canvas=root?.querySelector('canvas[data-draw="person"]');if(!canvas||!root.querySelector('.character-layout115'))return;
-    if(!canvas.dataset.illustratedDensity){canvas.width=540;canvas.height=288;canvas.dataset.illustratedDensity='3';canvas.style.imageRendering='auto';}
-    const g=canvas.getContext('2d'),look=playerLook();g.setTransform(3,0,0,3,0,0);R(g,0,0,180,96,'#2a2230');
-    [['FRONT','down'],['SIDE','right'],['BACK','up']].forEach(([label,dir],i)=>{const x=30+i*60;groundShadow(g,x,86,22);drawPerson(g,x,86,look,2,{dir,frame:0,blink:false,breath:false});pxText(g,label,x-pxTextW(label)/2,3,1,'#b3b89c');});
+    if(!canvas.dataset.illustratedDensity){canvas.width=540;canvas.height=336;canvas.dataset.illustratedDensity='3';canvas.style.imageRendering='auto';canvas.style.aspectRatio='180 / 112';canvas.style.height='auto';}
+    const g=canvas.getContext('2d'),look=playerLook();g.setTransform(3,0,0,3,0,0);R(g,0,0,180,112,'#2a2230');
+    [['FRONT','down'],['SIDE','right'],['BACK','up']].forEach(([label,dir],i)=>{const x=30+i*60;groundShadow(g,x,102,22);drawPerson(g,x,102,look,2,{dir,frame:0,blink:false,breath:false});pxText(g,label,x-pxTextW(label)/2,3,1,'#b3b89c');});
   };
   drawPortrait=function(canvas,look){
     if(!loaded)return originalDrawPortrait(canvas,look);
@@ -560,7 +543,7 @@ function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, direction
       g.save();g.scale(canvas.width/192,canvas.height/192);g.drawImage(arm,nx-hx*3,ny-hy*3,288,324);g.restore();
     }
   };
-  NightLamps1151.hand=function(x,y,look,anim={}){const dir=anim.dir||'down',hand=sprite(look,dir,anim.frame||0,anim.breath?1:0,0,0).bagseedHand||{x:31,y:72};return {x:x+(hand.x-48)/3,y:y+(hand.y-108)/3,dir};};
+  NightLamps1151.hand=function(x,y,look,anim={}){const dir=anim.dir||'down',image=sprite(look,dir,anim.frame||0,anim.breath?1:0,0,0),hand=image.bagseedHand||{x:31,y:image.height-36};return {x:x+(hand.x-48)/3,y:y+(hand.y-image.height)/3,dir};};
   const ensure=View.ensureWorld;
   View.ensureWorld=function(){
     const S=curScene();if(this.world.width!==S.w*3||this.world.height!==S.h*3){this.world.width=S.w*3;this.world.height=S.h*3;this.wctx=this.world.getContext('2d');}
@@ -578,6 +561,6 @@ function fitHat(headCanvas, hatCanvas, look, direction, frontFeatures, direction
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-4',ready,sprite,portrait,normalize,key,head,body,assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-6',ready,sprite,portrait,normalize,key,head,body,baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();

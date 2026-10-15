@@ -1,0 +1,125 @@
+{
+  "revision": "customization-5",
+  "date": "2026-10-15",
+  "build": {
+    "version": "illustrated-1",
+    "approval": "Approved cast artwork retained; customization changes await user visual review.",
+    "customizationReview": "review/customization-v5/README.md",
+    "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
+    "workingSourceSHA": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
+    "updatedSHA": "c08fdd21179ca008be473f36005a4dfe2a3573a9ccc6ee5b89c841e04bcf7b9c",
+    "bytes": 48107536,
+    "modularAssets": 544,
+    "embeddedImages": 1552,
+    "approvedIdentities": [
+      "player",
+      "remy",
+      "doug",
+      "priya",
+      "poppy"
+    ],
+    "additionalAuthoredAppearances": 67,
+    "bedroomRevision": "bedroom-shell-1",
+    "bedRevision": "beds-batch-01",
+    "bedCombinations": 20
+  },
+  "validation": {
+    "browserSuite": {
+      "failed": 0,
+      "passed": 24,
+      "log": "artifacts/custom-fix-v5/final-tests.log",
+      "command": "node --test --test-concurrency=1 tests/*.test.cjs"
+    },
+    "standaloneFile": {
+      "failed": 0,
+      "checks": [
+        "Direct file URL loads",
+        "Bald selection and cap use actual creator controls",
+        "540x336 preview has matching CSS proportions",
+        "Create, save, reload and Continue retain appearance"
+      ],
+      "passed": 1,
+      "command": "node --test --test-name-pattern='standalone local file' tests/smoke.test.cjs"
+    },
+    "baseline": {
+      "scriptBlocksParsed": 80,
+      "checksumVerified": true
+    },
+    "castPreservation": {
+      "comparisons": 1872,
+      "browserErrors": 0,
+      "directPoseAssetChecks": 260,
+      "completedSmellSets": 52,
+      "npcAppearances": 71
+    },
+    "visualReview": {
+      "colors": [
+        "white",
+        "jade",
+        "pink"
+      ],
+      "boards": [
+        "hair-colors-1.png",
+        "hair-colors-2.png",
+        "hair-colors-3.png",
+        "hair-colors-4.png",
+        "hair-colors-5.png",
+        "hair-colors-6.png",
+        "hair-colors-7.png",
+        "hats.png",
+        "bald-hair-hat-layers.png",
+        "facial-hair.png",
+        "outfits.png",
+        "animation-frames.png"
+      ],
+      "directions": 4,
+      "hats": 8,
+      "userAcceptance": "pending",
+      "hairChoices": 61,
+      "boundaryIssues": null
+    },
+    "targeted": {
+      "bodyDetail": {
+        "outfits": 300,
+        "extraDetail": 5093,
+        "failures": []
+      },
+      "blinking": {
+        "views": 549,
+        "failures": []
+      },
+      "hairMargins": {
+        "views": 732,
+        "failures": []
+      },
+      "hatFaceScale": {
+        "views": 1464,
+        "failures": []
+      },
+      "independentHair": {
+        "layers": 244,
+        "pixels": 2701119,
+        "failures": []
+      },
+      "facialHair": {
+        "views": 2562,
+        "eyes": 3416,
+        "silverLayers": 2562,
+        "backViews": 854,
+        "failures": []
+      }
+    }
+  },
+  "generation": {
+    "manifest": "graphics/production/customization-v5/manifest.json",
+    "prompts": "graphics/production/customization-v5/sources/prompts.json",
+    "tool": "built-in image_gen",
+    "registeredPath": "graphics/production/customization-v5/registered",
+    "sourcePath": "graphics/production/customization-v5/sources"
+  },
+  "limitations": [
+    "Generic movement uses continuous figure motion rather than newly authored walk cycles",
+    "User visual acceptance remains pending"
+  ],
+  "deployment": "No push or deployment performed"
+}

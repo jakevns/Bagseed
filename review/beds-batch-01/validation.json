@@ -1,0 +1,13 @@
+{
+  "combinations": 20,
+  "remainingUnchanged": 60,
+  "icons": 20,
+  "purchase": {
+    "starter": true,
+    "bed": "wooden",
+    "bedding": "botanical",
+    "owned": true,
+    "money": 787
+  },
+  "errors": []
+}
