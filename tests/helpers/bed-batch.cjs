@@ -12,7 +12,9 @@ test(`${config.batch}: 20 drawings/previews, complete catalog, purchase, save an
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   let browser;
   try {
-    browser = await chromium.launch({ executablePath: process.env.BAGSEED_BROWSER_PATH || '/usr/bin/chromium' });
+    // These checks compare approved PNG hashes. Use software canvas so the
+    // same artwork produces identical pixels on Windows and Linux GPUs.
+    browser = await chromium.launch({ executablePath: process.env.BAGSEED_BROWSER_PATH || '/usr/bin/chromium', args: ['--disable-accelerated-2d-canvas'] });
     const errors = [], base = `http://127.0.0.1:${server.address().port}`;
     const out = path.join(root, 'artifacts/beds-' + config.batch); fs.mkdirSync(out, { recursive: true });
     async function start(url) {

@@ -1,0 +1,76 @@
+{
+  "incomingCommit": "7ddc178c3bed29ac755d9f9434668aebd391b5c9",
+  "characterCommit": "2072741607c25e6ac32d7675e02c1ae2872bf7c7",
+  "buildSHA256": "d39e7e220cb1f0f86f84e33c7153f3f3e7886d6620b9d67e73f639c2d385917b",
+  "characterScriptSHA256": "69071366847d1cbfe7f832b3849501c68bc2d6ff80e466545cf199938b559ba9",
+  "localCharacterPayloadExact": true,
+  "incomingNonCharacterScriptsExact": 87,
+  "scriptCount": 88,
+  "characterSourcesPreserved": true,
+  "incomingSourcesPreserved": true,
+  "bytes": 73154526,
+  "bedCombinations": 80,
+  "seedlingDesks": 3,
+  "curtainSets": 6,
+  "menuRevision": "community-menu-3",
+  "characterRevision": "customization-9",
+  "characterPayloadSHA256": "08eedc52ecd089552793907a164d88219a8d03146f3ba1eccf380a9d146dacb0",
+  "sourceChecksums": {
+    "graphics/production/sources/renderer.js": "5cb97c7d6d228cdbd173b77c6ec3bb25b4e3130bdc25f188b8cf81c228f43b5c",
+    "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
+    "graphics/production/sources/build.cjs": "99e7c5636c996112273a528ea8e909fee50242eb5e540d79286328ac6eabc5ad",
+    "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
+    "graphics/production/customization-v5/manifest.json": "9ba47c41a45a3475761d593f50ed9dd5478ac7a86a9a0d9af13c4fd0f7691a26"
+  },
+  "validation": {
+    "initialFullRun": {
+      "tests": 50,
+      "passed": 46,
+      "failed": 4,
+      "log": "artifacts/publish-merged-tests.log"
+    },
+    "resolvedFailures": "Windows accelerated canvas differed from reference hashes and varied fixed-hardware pixels. All four curtain tests pass with software canvas, preserving all expected hashes and renderer source artwork.",
+    "finalCurtainRun": {
+      "passed": 4,
+      "failed": 0,
+      "log": "artifacts/publish-curtain-software.log"
+    },
+    "distinctTestsVerified": 50,
+    "unresolvedFailures": 0,
+    "parsedScripts": 88,
+    "stagedPages": {
+      "subpath": "/Bagseed/",
+      "playableBedroom": true,
+      "versionMetadataMatchesRuntime": true,
+      "browserErrors": []
+    },
+    "publishingGate": {
+      "results": [
+        {
+          "fixture": "stale source",
+          "rejected": true,
+          "message": "Character source changed without rebuilding: graphics/production/sources/renderer.js"
+        },
+        {
+          "fixture": "changed game",
+          "rejected": true,
+          "message": "The playable game differs from its build report. Rebuild before publishing."
+        },
+        {
+          "fixture": "wrong character payload",
+          "rejected": true,
+          "message": "The embedded character release is missing or stale. Run the full character builder."
+        }
+      ]
+    },
+    "lineEndingVerification": "Canonical HTML is byte-identical to the committed game; character and other scripts retain their verified content."
+  },
+  "backupDirectory": "artifacts/publish-backup-2026-10-15T22-27-25-888Z",
+  "targetBranch": "main",
+  "userRequestedPush": true,
+  "canonicalLineEndings": "LF",
+  "buildIntegrationAdjustments": [
+    "Normalize generated HTML to LF before hashing and writing",
+    "Atomically replace build reports"
+  ]
+}

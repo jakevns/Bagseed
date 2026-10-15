@@ -1,0 +1,753 @@
+{
+  "sourceSHA256": "09ece703e9fcfd10459f7183a6a550485008b15ddd1c455b6a226daa902077a9",
+  "assets": {
+    "hat/beanie/down": "hats\\beanie\\down.png",
+    "hat/beanie/right": "hats\\beanie\\right.png",
+    "hat/beanie/up": "hats\\beanie\\up.png",
+    "hat/beanie/left": "hats\\beanie\\left.png",
+    "hat/cap/down": "hats\\cap\\down.png",
+    "hat/cap/right": "hats\\cap\\right.png",
+    "hat/cap/up": "hats\\cap\\up.png",
+    "hat/cap/left": "hats\\cap\\left.png",
+    "hat/bucket/down": "hats\\bucket\\down.png",
+    "hat/bucket/right": "hats\\bucket\\right.png",
+    "hat/bucket/up": "hats\\bucket\\up.png",
+    "hat/bucket/left": "hats\\bucket\\left.png",
+    "hat/straw/down": "hats\\straw\\down.png",
+    "hat/straw/right": "hats\\straw\\right.png",
+    "hat/straw/up": "hats\\straw\\up.png",
+    "hat/straw/left": "hats\\straw\\left.png",
+    "hat/sunhat/down": "hats\\sunhat\\down.png",
+    "hat/sunhat/right": "hats\\sunhat\\right.png",
+    "hat/sunhat/up": "hats\\sunhat\\up.png",
+    "hat/sunhat/left": "hats\\sunhat\\left.png",
+    "hat/officer/down": "hats\\officer\\down.png",
+    "hat/officer/right": "hats\\officer\\right.png",
+    "hat/officer/up": "hats\\officer\\up.png",
+    "hat/officer/left": "hats\\officer\\left.png",
+    "hat/wizard/down": "hats\\wizard\\down.png",
+    "hat/wizard/right": "hats\\wizard\\right.png",
+    "hat/wizard/up": "hats\\wizard\\up.png",
+    "hat/wizard/left": "hats\\wizard\\left.png",
+    "hat/beret/down": "hats\\beret\\down.png",
+    "hat/beret/right": "hats\\beret\\right.png",
+    "hat/beret/up": "hats\\beret\\up.png",
+    "hat/beret/left": "hats\\beret\\left.png"
+  },
+  "registrations": {
+    "hat/beanie/down": {
+      "sourceBox": [
+        0,
+        0,
+        256,
+        225
+      ],
+      "alphaBounds": [
+        56,
+        57,
+        250,
+        213
+      ],
+      "placement": [
+        32,
+        101
+      ],
+      "size": [
+        128,
+        103
+      ]
+    },
+    "hat/beanie/right": {
+      "sourceBox": [
+        256,
+        0,
+        512,
+        225
+      ],
+      "alphaBounds": [
+        53,
+        61,
+        243,
+        219
+      ],
+      "placement": [
+        32,
+        98
+      ],
+      "size": [
+        128,
+        106
+      ]
+    },
+    "hat/beanie/up": {
+      "sourceBox": [
+        512,
+        0,
+        767,
+        225
+      ],
+      "alphaBounds": [
+        26,
+        58,
+        215,
+        209
+      ],
+      "placement": [
+        32,
+        102
+      ],
+      "size": [
+        128,
+        102
+      ]
+    },
+    "hat/beanie/left": {
+      "sourceBox": [
+        767,
+        0,
+        1024,
+        225
+      ],
+      "alphaBounds": [
+        1,
+        61,
+        191,
+        218
+      ],
+      "placement": [
+        32,
+        98
+      ],
+      "size": [
+        128,
+        106
+      ]
+    },
+    "hat/cap/down": {
+      "sourceBox": [
+        0,
+        225,
+        256,
+        385
+      ],
+      "alphaBounds": [
+        59,
+        8,
+        244,
+        152
+      ],
+      "placement": [
+        26,
+        97
+      ],
+      "size": [
+        140,
+        109
+      ]
+    },
+    "hat/cap/right": {
+      "sourceBox": [
+        256,
+        225,
+        526,
+        385
+      ],
+      "alphaBounds": [
+        37,
+        10,
+        270,
+        143
+      ],
+      "placement": [
+        26,
+        126
+      ],
+      "size": [
+        140,
+        80
+      ]
+    },
+    "hat/cap/up": {
+      "sourceBox": [
+        526,
+        225,
+        747,
+        385
+      ],
+      "alphaBounds": [
+        18,
+        9,
+        198,
+        143
+      ],
+      "placement": [
+        26,
+        102
+      ],
+      "size": [
+        140,
+        104
+      ]
+    },
+    "hat/cap/left": {
+      "sourceBox": [
+        747,
+        225,
+        1024,
+        385
+      ],
+      "alphaBounds": [
+        1,
+        9,
+        231,
+        142
+      ],
+      "placement": [
+        26,
+        125
+      ],
+      "size": [
+        140,
+        81
+      ]
+    },
+    "hat/bucket/down": {
+      "sourceBox": [
+        0,
+        385,
+        270,
+        570
+      ],
+      "alphaBounds": [
+        35,
+        13,
+        270,
+        174
+      ],
+      "placement": [
+        24,
+        109
+      ],
+      "size": [
+        144,
+        99
+      ]
+    },
+    "hat/bucket/right": {
+      "sourceBox": [
+        270,
+        385,
+        516,
+        570
+      ],
+      "alphaBounds": [
+        24,
+        10,
+        246,
+        174
+      ],
+      "placement": [
+        24,
+        102
+      ],
+      "size": [
+        144,
+        106
+      ]
+    },
+    "hat/bucket/up": {
+      "sourceBox": [
+        516,
+        385,
+        761,
+        570
+      ],
+      "alphaBounds": [
+        9,
+        10,
+        234,
+        171
+      ],
+      "placement": [
+        24,
+        105
+      ],
+      "size": [
+        144,
+        103
+      ]
+    },
+    "hat/bucket/left": {
+      "sourceBox": [
+        761,
+        385,
+        1024,
+        570
+      ],
+      "alphaBounds": [
+        1,
+        10,
+        225,
+        173
+      ],
+      "placement": [
+        24,
+        103
+      ],
+      "size": [
+        144,
+        105
+      ]
+    },
+    "hat/straw/down": {
+      "sourceBox": [
+        0,
+        570,
+        268,
+        742
+      ],
+      "alphaBounds": [
+        34,
+        14,
+        268,
+        158
+      ],
+      "placement": [
+        12,
+        103
+      ],
+      "size": [
+        168,
+        103
+      ]
+    },
+    "hat/straw/right": {
+      "sourceBox": [
+        268,
+        570,
+        515,
+        742
+      ],
+      "alphaBounds": [
+        20,
+        12,
+        247,
+        159
+      ],
+      "placement": [
+        12,
+        97
+      ],
+      "size": [
+        168,
+        109
+      ]
+    },
+    "hat/straw/up": {
+      "sourceBox": [
+        515,
+        570,
+        762,
+        742
+      ],
+      "alphaBounds": [
+        16,
+        13,
+        235,
+        158
+      ],
+      "placement": [
+        12,
+        95
+      ],
+      "size": [
+        168,
+        111
+      ]
+    },
+    "hat/straw/left": {
+      "sourceBox": [
+        762,
+        570,
+        1024,
+        742
+      ],
+      "alphaBounds": [
+        1,
+        11,
+        223,
+        159
+      ],
+      "placement": [
+        12,
+        94
+      ],
+      "size": [
+        168,
+        112
+      ]
+    },
+    "hat/sunhat/down": {
+      "sourceBox": [
+        0,
+        742,
+        286,
+        932
+      ],
+      "alphaBounds": [
+        17,
+        14,
+        286,
+        176
+      ],
+      "placement": [
+        8,
+        104
+      ],
+      "size": [
+        176,
+        106
+      ]
+    },
+    "hat/sunhat/right": {
+      "sourceBox": [
+        286,
+        742,
+        516,
+        932
+      ],
+      "alphaBounds": [
+        4,
+        15,
+        230,
+        189
+      ],
+      "placement": [
+        8,
+        74
+      ],
+      "size": [
+        176,
+        136
+      ]
+    },
+    "hat/sunhat/up": {
+      "sourceBox": [
+        516,
+        742,
+        759,
+        932
+      ],
+      "alphaBounds": [
+        1,
+        14,
+        243,
+        184
+      ],
+      "placement": [
+        8,
+        86
+      ],
+      "size": [
+        176,
+        124
+      ]
+    },
+    "hat/sunhat/left": {
+      "sourceBox": [
+        759,
+        742,
+        1024,
+        932
+      ],
+      "alphaBounds": [
+        1,
+        14,
+        231,
+        189
+      ],
+      "placement": [
+        8,
+        76
+      ],
+      "size": [
+        176,
+        134
+      ]
+    },
+    "hat/officer/down": {
+      "sourceBox": [
+        0,
+        932,
+        261,
+        1076
+      ],
+      "alphaBounds": [
+        43,
+        5,
+        261,
+        137
+      ],
+      "placement": [
+        24,
+        118
+      ],
+      "size": [
+        144,
+        87
+      ]
+    },
+    "hat/officer/right": {
+      "sourceBox": [
+        261,
+        932,
+        512,
+        1076
+      ],
+      "alphaBounds": [
+        26,
+        6,
+        247,
+        132
+      ],
+      "placement": [
+        24,
+        123
+      ],
+      "size": [
+        144,
+        82
+      ]
+    },
+    "hat/officer/up": {
+      "sourceBox": [
+        512,
+        932,
+        768,
+        1076
+      ],
+      "alphaBounds": [
+        26,
+        5,
+        238,
+        137
+      ],
+      "placement": [
+        24,
+        115
+      ],
+      "size": [
+        144,
+        90
+      ]
+    },
+    "hat/officer/left": {
+      "sourceBox": [
+        768,
+        932,
+        1024,
+        1076
+      ],
+      "alphaBounds": [
+        6,
+        7,
+        222,
+        132
+      ],
+      "placement": [
+        24,
+        122
+      ],
+      "size": [
+        144,
+        83
+      ]
+    },
+    "hat/wizard/down": {
+      "sourceBox": [
+        0,
+        1076,
+        285,
+        1322
+      ],
+      "alphaBounds": [
+        18,
+        6,
+        285,
+        238
+      ],
+      "placement": [
+        6,
+        54
+      ],
+      "size": [
+        180,
+        156
+      ]
+    },
+    "hat/wizard/right": {
+      "sourceBox": [
+        285,
+        1076,
+        519,
+        1322
+      ],
+      "alphaBounds": [
+        6,
+        20,
+        234,
+        234
+      ],
+      "placement": [
+        6,
+        41
+      ],
+      "size": [
+        180,
+        169
+      ]
+    },
+    "hat/wizard/up": {
+      "sourceBox": [
+        519,
+        1076,
+        768,
+        1322
+      ],
+      "alphaBounds": [
+        5,
+        9,
+        244,
+        236
+      ],
+      "placement": [
+        6,
+        39
+      ],
+      "size": [
+        180,
+        171
+      ]
+    },
+    "hat/wizard/left": {
+      "sourceBox": [
+        768,
+        1076,
+        1024,
+        1322
+      ],
+      "alphaBounds": [
+        1,
+        25,
+        223,
+        235
+      ],
+      "placement": [
+        6,
+        40
+      ],
+      "size": [
+        180,
+        170
+      ]
+    },
+    "hat/beret/down": {
+      "sourceBox": [
+        0,
+        1322,
+        265,
+        1536
+      ],
+      "alphaBounds": [
+        40,
+        8,
+        265,
+        162
+      ],
+      "placement": [
+        30,
+        112
+      ],
+      "size": [
+        132,
+        90
+      ]
+    },
+    "hat/beret/right": {
+      "sourceBox": [
+        265,
+        1322,
+        512,
+        1536
+      ],
+      "alphaBounds": [
+        25,
+        9,
+        234,
+        160
+      ],
+      "placement": [
+        30,
+        107
+      ],
+      "size": [
+        132,
+        95
+      ]
+    },
+    "hat/beret/up": {
+      "sourceBox": [
+        512,
+        1322,
+        768,
+        1536
+      ],
+      "alphaBounds": [
+        25,
+        7,
+        239,
+        164
+      ],
+      "placement": [
+        30,
+        105
+      ],
+      "size": [
+        132,
+        97
+      ]
+    },
+    "hat/beret/left": {
+      "sourceBox": [
+        768,
+        1322,
+        1024,
+        1536
+      ],
+      "alphaBounds": [
+        5,
+        10,
+        214,
+        160
+      ],
+      "placement": [
+        30,
+        107
+      ],
+      "size": [
+        132,
+        95
+      ]
+    }
+  },
+  "fits": {
+    "beanie": 0.8,
+    "cap": 0.7951807228915663,
+    "bucket": 0.8198757763975155,
+    "straw": 0.7810650887573964,
+    "sunhat": 0.6984126984126984,
+    "officer": 0.8918918918918919,
+    "wizard": 0.5892857142857143,
+    "beret": 0.8354430379746836
+  }
+}

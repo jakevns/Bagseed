@@ -1,5 +1,5 @@
 {
-  "status": "Local renderer repair complete; all checks passed",
+  "status": "Superseded: user rejected the visual result despite passing functional checks",
   "renderingRevision": "customization-2",
   "gameSHA256": "93d9fb6649c64b2436f4575ef2444b447ef7d6732b6caa008153cf557f6c2576",
   "validation": {
@@ -24,5 +24,6 @@
   "poseProgress": {
     "completed": 52,
     "remaining": 20
-  }
+  },
+  "supersededBy": "review/customization-v3/checkpoint.json"
 }

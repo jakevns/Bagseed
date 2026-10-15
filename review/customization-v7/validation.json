@@ -1,0 +1,657 @@
+{
+  "renderer": "customization-7",
+  "buildSHA256": "335648c1524aaf682255c7a209090105f5722a6a7157ea3c6ac25cdb2e3a56bd",
+  "bytes": 47115790,
+  "workingSourceSHA256": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
+  "baselineSHA256": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
+  "sourceImagesRetained": 21,
+  "changedSources": [],
+  "finalHeadSuite": {
+    "passed": 11,
+    "failed": 0,
+    "log": "artifacts/custom-fix-v7/final-head-tests.log"
+  },
+  "fullSuiteBeforeFinalBigAfroMarginCorrection": {
+    "passed": 27,
+    "failed": 1,
+    "resolvedFailure": "Big afro/right/wide head reached the left canvas edge. Re-registered with enough margin for the widest head; final 3660-view margin check passes.",
+    "log": "artifacts/custom-fix-v7/initial-tests.log",
+    "otherGameplayTestsPassed": 17
+  },
+  "margins": {
+    "views": 3660,
+    "failures": []
+  },
+  "faceGeometry": {
+    "views": 3660,
+    "failures": []
+  },
+  "fringe": {
+    "views": 183,
+    "strands": 918909,
+    "failures": []
+  },
+  "skullFit": {
+    "measurements": [
+      {
+        "hairS": "short",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 42,
+          "right": 148,
+          "top": 95,
+          "bottom": 190,
+          "width": 107,
+          "height": 96
+        }
+      },
+      {
+        "hairS": "pixie",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 43,
+          "right": 148,
+          "top": 83,
+          "bottom": 194,
+          "width": 106,
+          "height": 112
+        }
+      },
+      {
+        "hairS": "sidepixie",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 43,
+          "right": 148,
+          "top": 89,
+          "bottom": 190,
+          "width": 106,
+          "height": 102
+        }
+      },
+      {
+        "hairS": "crop",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 42,
+          "right": 148,
+          "top": 86,
+          "bottom": 189,
+          "width": 107,
+          "height": 104
+        }
+      },
+      {
+        "hairS": "caesar",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 42,
+          "right": 149,
+          "top": 80,
+          "bottom": 189,
+          "width": 108,
+          "height": 110
+        }
+      },
+      {
+        "hairS": "fade",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 42,
+          "right": 149,
+          "top": 93,
+          "bottom": 189,
+          "width": 108,
+          "height": 97
+        }
+      },
+      {
+        "hairS": "hightop",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 39,
+          "right": 152,
+          "top": 86,
+          "bottom": 190,
+          "width": 114,
+          "height": 105
+        }
+      },
+      {
+        "hairS": "flattop",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 42,
+          "right": 148,
+          "top": 95,
+          "bottom": 187,
+          "width": 107,
+          "height": 93
+        }
+      },
+      {
+        "hairS": "quiff",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 39,
+          "right": 152,
+          "top": 72,
+          "bottom": 192,
+          "width": 114,
+          "height": 121
+        }
+      },
+      {
+        "hairS": "pomp",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 39,
+          "right": 152,
+          "top": 83,
+          "bottom": 190,
+          "width": 114,
+          "height": 108
+        }
+      },
+      {
+        "hairS": "slick",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 42,
+          "right": 149,
+          "top": 92,
+          "bottom": 189,
+          "width": 108,
+          "height": 98
+        }
+      },
+      {
+        "hairS": "spikes",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 40,
+          "right": 151,
+          "top": 83,
+          "bottom": 190,
+          "width": 112,
+          "height": 108
+        }
+      },
+      {
+        "hairS": "fauxhawk",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 39,
+          "right": 151,
+          "top": 65,
+          "bottom": 186,
+          "width": 113,
+          "height": 122
+        }
+      },
+      {
+        "hairS": "curlytop",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 39,
+          "right": 152,
+          "top": 83,
+          "bottom": 189,
+          "width": 114,
+          "height": 107
+        }
+      },
+      {
+        "hairS": "twistsS",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 39,
+          "right": 152,
+          "top": 92,
+          "bottom": 190,
+          "width": 114,
+          "height": 99
+        }
+      },
+      {
+        "hairS": "bowl",
+        "skull": {
+          "left": 52,
+          "right": 141,
+          "top": 104,
+          "bottom": 198,
+          "width": 90,
+          "height": 95
+        },
+        "hair": {
+          "left": 42,
+          "right": 149,
+          "top": 86,
+          "bottom": 187,
+          "width": 108,
+          "height": 102
+        }
+      }
+    ],
+    "failures": []
+  },
+  "footwear": {
+    "measurements": [
+      {
+        "dir": "down",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "down",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "right",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "right",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "up",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "width": 32
+      },
+      {
+        "dir": "up",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "width": 32
+      },
+      {
+        "dir": "left",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "width": 28
+      },
+      {
+        "dir": "left",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "width": 28
+      }
+    ],
+    "failures": []
+  },
+  "castPreservation": {
+    "standingAndPortraitAppearances": 71,
+    "comparisons": 1872,
+    "smellPoseOwners": 52,
+    "directPoseAssetChecks": 260,
+    "browserErrors": 0,
+    "log": "artifacts/custom-fix-v7/cast-preservation.log"
+  },
+  "buildCheck": {
+    "baselineChecksumVerified": true,
+    "parsedScripts": 80
+  },
+  "visualReview": {
+    "allHairSheets": 7,
+    "headShapeSheets": 3,
+    "wardrobeMirrors": 8,
+    "unclippedBaseStyleViews": 244
+  },
+  "userAcceptance": "pending",
+  "liveSavesAccessed": false,
+  "pushed": false
+}

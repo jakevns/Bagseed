@@ -4,7 +4,7 @@ test('all six window treatments visibly animate at native resolution in the real
   const {createStaticServer}=await import('../tools/server.mjs'),server=createStaticServer();
   await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
   try {
-    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});
+    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
     const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');await page.evaluate(()=>BagseedCurtains.ready);
     await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Curtain Motion');

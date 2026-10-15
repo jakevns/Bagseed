@@ -37,10 +37,13 @@ jobs:
           BUILD_COMMIT: ${{ github.sha }}
         run: |
           node --input-type=module <<'JS'
-          import { writeFileSync } from 'node:fs';
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const release = JSON.parse(readFileSync('graphics/production/build.json', 'utf8'));
           writeFileSync('public/version.json', JSON.stringify({
             commit: process.env.BUILD_COMMIT,
-            deployedAt: new Date().toISOString()
+            deployedAt: new Date().toISOString(),
+            characterRevision: release.characterRevision,
+            gameSHA256: release.updatedSHA
           }, null, 2) + '\n');
           JS
       - name: Configure GitHub Pages

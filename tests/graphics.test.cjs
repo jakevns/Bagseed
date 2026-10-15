@@ -39,7 +39,7 @@ test('every hairstyle, skin palette, authored clothing design and appearance cho
       counts.bodies=new Set(['slim','average','broad','curvy','stocky','tall'].map(body=>check({...base,body}))).size;
       counts.appearanceDataUnchanged=JSON.stringify(state.player)===original;return counts;
     },options);
-    assert.equal(report.haircuts,60);assert.equal(report.distinctHaircuts,60);assert.equal(report.skinTones,16);assert.equal(report.hairColors,40);assert.equal(report.clothingDesigns,240);assert.equal(report.presentations,3);assert.equal(report.bodies,6);assert.equal(report.appearanceDataUnchanged,true);
+    assert.equal(report.haircuts,61);assert.equal(report.distinctHaircuts,61);assert.equal(report.skinTones,16);assert.equal(report.hairColors,40);assert.equal(report.clothingDesigns,240);assert.equal(report.presentations,3);assert.equal(report.bodies,6);assert.equal(report.appearanceDataUnchanged,true);
     fs.writeFileSync(path.join(OUT,'appearance-checks.json'),JSON.stringify(report,null,2)+'\n');
   });
 });
@@ -48,12 +48,23 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
   await pageFor(async page=>{
     const report=await page.evaluate(()=>{
       const base={skin:'#cf9670',hairC:'#3e9f7a',hairS:'short',facial:'none',shirtC:'#5f9c33',topS:'hoodie',pantsC:'#36405a',bottomS:'jeans',shoesC:'#2b1d14',shoesS:'sneakers',glasses:'none',hat:'none',acc:'none',pres:'neutral',body:'average',eyeC:'#2b1d14',eyes:'dot',brows:'thin',face:'soft',extras:[]};
-      const region=(canvas,x,y,w,h)=>Array.from(canvas.getContext('2d').getImageData(x,y,w,h).data).join(',');
+      const region=(canvas,x,y,w,h)=>Array.from(canvas.getContext('2d').getImageData(x,y+(canvas.width===96?canvas.height-108:0),w,h).data).join(',');
       const head=region(BagseedArt.portrait(base),0,0,192,124),mismatches=[],widths={};let footChecks=0;
+      // Check anatomical landmarks and material masks, not just nonblank art.
+      const redTop=charSprite({...base,shirtC:'#c94f4f'},'down').getContext('2d').getImageData(0,36,96,108).data;
+      let waistband=108;
+      for(let y=55;y<85;y++)for(let x=44;x<53;x++){const i=(y*96+x)*4;if(redTop[i+3]>128&&redTop[i+2]>redTop[i]*1.25&&redTop[i+2]>redTop[i+1]*1.1)waistband=Math.min(waistband,y);}
+      if(waistband<66||waistband>71)mismatches.push('Waistband leaves the legs too short: '+waistband);
+      for(const [hairS]of HAIRS){const look={...BagseedArt.normalize(base),hairS},pixels=BagseedArt.baldBase(look,'down').getContext('2d').getImageData(0,0,192,192).data,reference=BagseedArt.baldBase({...look,hairC:'#e9e2d4'},'down').getContext('2d').getImageData(0,0,192,192).data;let changedSkin=0;
+        // A natural strand may cross a cheek. The skin underneath must retain
+        // its own color; visible strands must not be misclassified as skin.
+        for(let y=171;y<181;y++)for(let x=88;x<106;x++){const i=(y*192+x)*4;if([0,1,2,3].some(k=>pixels[i+k]!==reference[i+k]))changedSkin++;}
+        if(changedSkin)mismatches.push('Hair color leaks into bald face anatomy: '+hairS+' '+changedSkin);
+      }
       const tops=['tee','tank','hoodie','flannel','sweater','cardigan','overalls','work','crop','jacket','garden','pjs','labcoat','suit','officer'];
       for(const topS of tops)if(region(BagseedArt.portrait({...base,topS}),0,0,192,124)!==head)mismatches.push('face changed with '+topS);
       for(const dir of ['down','right','up','left']){
-        const image=charSprite(base,dir),a=image.getContext('2d').getImageData(0,0,96,108).data,rows=[];
+        const image=charSprite(base,dir),a=image.getContext('2d').getImageData(0,image.height-108,96,108).data,rows=[];
         for(let y=84;y<97;y++){const xs=[];for(let x=0;x<96;x++)if(a[(y*96+x)*4+3]>128)xs.push(x);rows.push(xs.length?xs.at(-1)-xs[0]+1:0);}
         widths[dir]=rows.reduce((a,b)=>a+b,0)/rows.length;
         for(const shoesS of ['sneakers','boots','sandals','rainboots']){
@@ -64,11 +75,11 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
           }
         }
         for(const frame of [1,2,3]){
-          const moving=charSprite(base,dir,frame).getContext('2d').getImageData(0,0,96,108).data;
+          const moving=charSprite(base,dir,frame).getContext('2d').getImageData(0,36,96,108).data;
           for(let y=82;y<105;y++)if(!Array.from({length:96},(_,x)=>moving[(y*96+x)*4+3]).some(a=>a>128))mismatches.push('disconnected lower body '+dir+'/'+frame+'/'+y);
         }
       }
-      return {mismatches,widths,footChecks};
+      return {mismatches,widths,footChecks,waistband};
     });
     fs.writeFileSync(path.join(OUT,'custom-body-regressions.json'),JSON.stringify(report,null,2)+'\n');
     assert.deepEqual(report.mismatches,[]);
@@ -84,10 +95,14 @@ test('a character customized through creator controls renders, plays and survive
     for(const arg of ['body:broad','hairC:#3e9f7a','topS:flannel','bottomS:cargo','shoesS:boots','glasses:round'])await page.locator(`[data-act="cr"][data-arg="${arg}"]`).first().click();
     await page.locator('[data-act=crWalk][data-arg="0"]').click();
     const expected=await page.evaluate(()=>{drawCreatorPreview(0);$('#screen-create').scrollTop=0;return creatorLook(runtime.cr);});
+    assert.equal(await page.locator('#creatorPreview').evaluate(c=>c.width),540);
     await page.screenshot({path:path.join(OUT,'custom-creator.png')});
     await page.locator('[data-act=startGame]').click();await page.waitForFunction(()=>screen==='game');await page.waitForTimeout(2200);
     await page.evaluate(()=>{settings.speed=0;runtime.dialogQ=[];if(runtime.curDialog)ACT.dlg(0);state.tut.on=false;$('#tip').hidden=true;closePanel();});
     const created=await page.evaluate(()=>playerLook());assert.deepEqual(created,expected);
+    await page.evaluate(()=>{ACT.wardrobe();ACT.wardTab('look');CharacterUI115.mirrorDraw();});
+    assert.equal(await page.locator('#panelBody canvas[data-draw="person"]').evaluate(c=>c.width),540);
+    await page.screenshot({path:path.join(OUT,'custom-mirror.png')});
     await page.evaluate(()=>{ACT.wardrobe();ACT.wear('hairS:ponyhi');ACT.wear('extra:freckles');closePanel();Scene.place('street','start');View.snap();if(!SaveSys.now('custom character regression'))throw Error('Save failed');});
     const saved=await page.evaluate(()=>({look:playerLook(),sprites:['down','right','up','left'].map(d=>charSprite(playerLook(),d,1).toDataURL())}));
     await page.screenshot({path:path.join(OUT,'custom-street.png')});

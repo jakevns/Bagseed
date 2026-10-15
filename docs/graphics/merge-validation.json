@@ -1,0 +1,75 @@
+{
+  "remoteCommit": "06078be75be3f5026cc2b49c736422d00052fc60",
+  "characterCheckpoint": "c02baf1",
+  "buildSHA256": "8f64fb96654cbb1121f45d3dba5eb0625c541f6bedce22ea5a2a374c774e6a48",
+  "rendererChecks": [
+    {
+      "id": "bagseed-illustrated-production-code",
+      "sha256": "cb2e6ecde3a6f752b73aee6e60ffde024b0d1d4c2a40b9a7bc329551db69e547",
+      "preservedFrom": "local character backup"
+    },
+    {
+      "id": "bagseed-bedroom-production-code",
+      "sha256": "fa8d54cd6d2e7fdd8cd5a8c704a46313bdd5e2fae16b6a262f2918f13d0e7566",
+      "preservedFrom": "origin/main"
+    },
+    {
+      "id": "bagseed-beds-batch-01",
+      "sha256": "64973b53eb3cff517d58663d878b95b99f2b3f8986a6bd46888d0fc2018bfb5a",
+      "preservedFrom": "origin/main"
+    },
+    {
+      "id": "bagseed-beds-batch-02",
+      "sha256": "a285622977b7d8cbf0794fccc009af32a033a6615e26cb602a612454c7ec0805",
+      "preservedFrom": "origin/main"
+    },
+    {
+      "id": "bagseed-beds-batch-03",
+      "sha256": "7f95e8ee233fab4e0125deb4e3e66de99b75338812fa8b4de6de969b1c827d26",
+      "preservedFrom": "origin/main"
+    },
+    {
+      "id": "bagseed-beds-batch-04",
+      "sha256": "977efdd54e81e895078e4ee6dfbb040f52a58c93f710208a9c2b20fab4a086a2",
+      "preservedFrom": "origin/main"
+    },
+    {
+      "id": "bagseed-desks-production-code",
+      "sha256": "28b0698de416014283bf7be3a186ef7edca73bd8cfb6f3cfd2b1012f2cb85717",
+      "preservedFrom": "origin/main"
+    }
+  ],
+  "remoteFurnitureSourcesUnchanged": true,
+  "localCharacterSourcesUnchanged": true,
+  "bedCombinations": 80,
+  "deskVariations": 3,
+  "furnitureComparison": {
+    "incomingRef": "06078be75be3f5026cc2b49c736422d00052fc60",
+    "bedViews": 80,
+    "deskViews": 3,
+    "mismatches": [],
+    "storedPNGHashMatches": 60,
+    "storedPNGHashCount": 60,
+    "errors": []
+  },
+  "buildIdempotent": true,
+  "parsedScripts": 84,
+  "validation": {
+    "fullRun": {
+      "passed": 30,
+      "failed": 3,
+      "log": "artifacts/merge-backup-2026-10-15T17-42-40-255Z/merged-tests.log"
+    },
+    "resolvedFailures": "Three exact-PNG bed checks differed with Windows accelerated canvas. Software canvas matches all 60 stored hashes, and all four bed batches pass without modifying expected art.",
+    "finalBedRun": {
+      "passed": 4,
+      "failed": 0,
+      "log": "artifacts/merge-backup-2026-10-15T17-42-40-255Z/final-bed-tests.log"
+    },
+    "distinctTestsVerified": 33,
+    "unresolvedFailures": 0
+  },
+  "backupBranch": "codex/character-before-furniture-merge",
+  "backupDirectory": "artifacts/merge-backup-2026-10-15T17-42-40-255Z",
+  "pushed": false
+}

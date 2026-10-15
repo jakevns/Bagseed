@@ -1,0 +1,145 @@
+{
+  "renderer": "customization-9",
+  "visualAcceptance": "Pending user review",
+  "buildSHA256": "b9847c6dd2f8497e7c3359339c2e68008c2c924ed6e1b5525f52c56fdec5f68c",
+  "bytes": 59438206,
+  "workingSourceSHA256": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
+  "baselineSHA256": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
+  "beforeMouthsSHA256": "ba299556adb99892b40db059914d1f165b73936e5eb6fffd0fb817b60bf89a92",
+  "beforeBeardsSHA256": "77f66cce4d8a88ea6e3b210c114d10054363b82f448bf218aeed122cf673d87c",
+  "sourceImagesRetained": 21,
+  "fullSuite": {
+    "tests": 44,
+    "passed": 44,
+    "failed": 0,
+    "skipped": 0,
+    "log": "artifacts/custom-beards-v9/final-suite.log"
+  },
+  "mouths": {
+    "choices": 18,
+    "newChoices": [
+      "braces",
+      "fangs",
+      "cat"
+    ],
+    "readability": {
+      "views": 153,
+      "counts": [
+        {
+          "expr": "neutral",
+          "dir": "down",
+          "distinct": 17
+        },
+        {
+          "expr": "neutral",
+          "dir": "right",
+          "distinct": 17
+        },
+        {
+          "expr": "neutral",
+          "dir": "left",
+          "distinct": 17
+        },
+        {
+          "expr": "happy",
+          "dir": "down",
+          "distinct": 17
+        },
+        {
+          "expr": "happy",
+          "dir": "right",
+          "distinct": 17
+        },
+        {
+          "expr": "happy",
+          "dir": "left",
+          "distinct": 17
+        },
+        {
+          "expr": "sad",
+          "dir": "down",
+          "distinct": 17
+        },
+        {
+          "expr": "sad",
+          "dir": "right",
+          "distinct": 17
+        },
+        {
+          "expr": "sad",
+          "dir": "left",
+          "distinct": 17
+        }
+      ],
+      "failures": []
+    },
+    "expressionSelection": {
+      "views": 270,
+      "failures": []
+    },
+    "placement": {
+      "views": 1080,
+      "failures": []
+    }
+  },
+  "beards": {
+    "styles": 14,
+    "anatomicalProtection": {
+      "views": 630,
+      "failures": []
+    },
+    "facialHairAcrossHaircuts": {
+      "views": 2562,
+      "eyes": 3416,
+      "silverLayers": 2562,
+      "backViews": 854,
+      "failures": []
+    },
+    "blinks": {
+      "views": 549,
+      "failures": []
+    }
+  },
+  "preservation": {
+    "scripts": 84,
+    "unchangedScriptBlocks": 83,
+    "changedScripts": [
+      " id=\"bagseed-illustrated-production-code\""
+    ],
+    "gameplayAndFurniturePreserved": true,
+    "sourceSHA256": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
+    "buildSHA256": "b9847c6dd2f8497e7c3359339c2e68008c2c924ed6e1b5525f52c56fdec5f68c",
+    "npcComparisons": 1872,
+    "authoredNPCAppearances": 71,
+    "directSmellAssetChecks": 260,
+    "smellPoseOwners": 52,
+    "bedCombinations": 80,
+    "seedlingDesks": 3,
+    "log": "artifacts/custom-beards-v9/npc-preservation.log"
+  },
+  "syntax": {
+    "baselineChecksumVerified": true,
+    "scriptBlocksParsed": 84
+  },
+  "visualReview": {
+    "browserErrors": [],
+    "boards": [
+      "mouth-menu",
+      "mouth-sprites",
+      "beards-silver-1",
+      "beards-silver-2",
+      "beard-colors",
+      "beard-shapes-1",
+      "beard-shapes-2",
+      "beard-shapes-3"
+    ],
+    "uiCaptures": [
+      "creator-braces.png",
+      "mirror-beard.png",
+      "mirror-mutton.png",
+      "mirror-goatee.png"
+    ],
+    "storage": "Disposable browser profiles; live save untouched"
+  },
+  "published": false
+}

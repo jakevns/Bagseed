@@ -23,12 +23,12 @@ if (require.main === module) {
   const character = current.toString().match(/<script id="bagseed-illustrated-production-code">[\s\S]*?<\/script>/g);
   assert.equal(character?.length, 1, 'Expected exactly one verified character renderer');
   assert.ok(source.endsWith('</body></html>\n') || source.endsWith('</body></html>'), 'Missing insertion point');
-  const html = require('./compile-main-menu.cjs')(source).replace('</body></html>', `${character[0]}\n${bedroomScript()}</body></html>`);
+  const html = require('./compile-main-menu.cjs')(source).replace('</body></html>', `${character[0]}\n${bedroomScript()}</body></html>`).replace(/\r\n/g, '\n');
   assert.equal(sha(fs.readFileSync(path.join(root, 'baselines/Bagseed_v1.1.5.1_Night_Walker_Flashlights_Update.html'))), report.baselineSHA);
   fs.writeFileSync(output + '.tmp', html); fs.renameSync(output + '.tmp', output);
   Object.assign(report, { workingSourceSHA: sha(source), updatedSHA: sha(html), bytes: Buffer.byteLength(html), bedroomRevision: 'bedroom-shell-1', bedRevision: 'beds-batch-04', bedCombinations: 80, deskRevision: 'seedling-desks-1', deskVariations: 3, menuRevision: JSON.parse(fs.readFileSync(path.join(root, 'graphics/main-menu/sources/manifest.json'))).revision });
   Object.assign(report, { curtainRevision: 'curtains-batch-03', curtainSets: 6 });
   Object.assign(report, { computerDeskRevision: 'computer-desks-1', computerDeskDesigns: 4 });
-  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
+  fs.writeFileSync(reportPath + '.tmp', JSON.stringify(report, null, 2) + '\n'); fs.renameSync(reportPath + '.tmp', reportPath);
   console.log('Rebuilt approved main menu, bedroom, beds, desks and curtains; verified character payload retained unchanged.');
 }

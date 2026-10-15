@@ -9,7 +9,8 @@ test('curtain batch '+config.batch+': animation, original window behavior, store
   await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
   const out=path.join(root,'artifacts/curtains-batch-'+config.batch+'/integration');fs.mkdirSync(out,{recursive:true});
   try {
-    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});
+    // Software canvas keeps exact art hashes consistent across GPU drivers.
+    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
     const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');
