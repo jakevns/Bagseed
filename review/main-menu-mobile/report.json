@@ -1,0 +1,46 @@
+{
+  "layouts": [
+    {
+      "width": 1440,
+      "height": 960,
+      "buttons": 4,
+      "art": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "buttons": 4,
+      "art": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "buttons": 4,
+      "art": true
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "buttons": 4,
+      "art": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "buttons": 4,
+      "art": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "buttons": 4,
+      "art": true
+    }
+  ],
+  "keyboard": true,
+  "settings": true,
+  "invalidImportPreservedState": true,
+  "validImport": true,
+  "continuePreservedProgress": true,
+  "errors": []
+}

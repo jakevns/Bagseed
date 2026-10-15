@@ -1,0 +1,16 @@
+{
+  "browserTests": 27,
+  "passed": 27,
+  "failed": 0,
+  "skipped": 0,
+  "parsedScripts": 88,
+  "baselineChecksumVerified": true,
+  "priorArtworkModulesUnchanged": 10,
+  "priorCurtainModesVerified": [
+    "still",
+    "Sunny",
+    "Windy"
+  ],
+  "realFrameLoopStylesVerified": 6,
+  "repeatableBuild": true
+}

@@ -1,0 +1,55 @@
+{
+  "nativeResolution": true,
+  "realFrameLoop": true,
+  "results": [
+    {
+      "id": "basic",
+      "realGameFrames": 49,
+      "nativePixels": {
+        "calmUpper": 1.1707559019645846,
+        "calmHem": 1.7246216756275938,
+        "windUpper": 2.4278236232839756,
+        "windHem": 3.6597664027895274
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    },
+    {
+      "id": "blackout",
+      "realGameFrames": 50,
+      "nativePixels": {
+        "calmUpper": 0.9299935348070996,
+        "calmHem": 1.364757737579069,
+        "windUpper": 1.995931415286254,
+        "windHem": 2.9582422353408937
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    },
+    {
+      "id": "floral",
+      "realGameFrames": 50,
+      "nativePixels": {
+        "calmUpper": 1.119813080700844,
+        "calmHem": 1.7201450778581968,
+        "windUpper": 2.587930572701474,
+        "windHem": 3.704810235511447
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    },
+    {
+      "id": "sheer",
+      "realGameFrames": 49,
+      "nativePixels": {
+        "calmUpper": 1.6275330587903412,
+        "calmHem": 2.441455955294227,
+        "windUpper": 3.573938920507384,
+        "windHem": 5.3566006428452155
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    }
+  ],
+  "errors": []
+}

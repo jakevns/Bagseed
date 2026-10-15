@@ -1,0 +1,41 @@
+{
+  "layouts": 48,
+  "migrated": [
+    {
+      "uid": "floating-lamp",
+      "id": "lavalamp",
+      "x": 256,
+      "y": 38,
+      "on": "benchTop"
+    },
+    {
+      "uid": "old-top-lamp",
+      "id": "lavalamp",
+      "x": 284,
+      "y": 60.5,
+      "on": "bench"
+    },
+    {
+      "uid": "custom-shelf-item",
+      "id": "moonlamp",
+      "x": 230,
+      "y": 42,
+      "on": "custom-shelf"
+    },
+    {
+      "uid": "other-desk-item",
+      "id": "moonlamp",
+      "x": 206,
+      "y": 66
+    }
+  ],
+  "idempotent": true,
+  "saveReload": true,
+  "upperDecorations": 3,
+  "customStacking": true,
+  "tierSwitching": {
+    "sill": true,
+    "top": true
+  },
+  "errors": []
+}

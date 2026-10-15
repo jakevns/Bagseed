@@ -1,11 +1,20 @@
 {
   "version": "illustrated-1",
-  "approval": "Approved cast artwork retained; customization changes await user visual review.",
+  "approval": "User requested publishing the latest character fixes together with the incoming menu and furniture work.",
   "customizationReview": "review/customization-v9/README.md",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
-  "updatedSHA": "b9847c6dd2f8497e7c3359339c2e68008c2c924ed6e1b5525f52c56fdec5f68c",
-  "bytes": 59438206,
+  "workingSourceSHA": "7bc2d76b527c4b717d3f86947a7eb31d5711c87dd2dd12489730e73167a179e4",
+  "updatedSHA": "0e18c9cce9ddc2ea6929d99d2d2fd54d89705934bab85364070e3988a4c2d5b9",
+  "characterRevision": "customization-9",
+  "characterPayloadSHA256": "08eedc52ecd089552793907a164d88219a8d03146f3ba1eccf380a9d146dacb0",
+  "characterSourcesSHA256": {
+    "graphics/production/sources/renderer.js": "5cb97c7d6d228cdbd173b77c6ec3bb25b4e3130bdc25f188b8cf81c228f43b5c",
+    "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
+    "graphics/production/sources/build.cjs": "35024ee150a34f709e8330750cf3ee48c0b7f4e6138fbcbc2f4999eb694b6240",
+    "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
+    "graphics/production/customization-v5/manifest.json": "9ba47c41a45a3475761d593f50ed9dd5478ac7a86a9a0d9af13c4fd0f7691a26"
+  },
+  "bytes": 73155294,
   "modularAssets": 544,
   "embeddedImages": 1552,
   "approvedIdentities": [
@@ -20,5 +29,8 @@
   "bedRevision": "beds-batch-04",
   "bedCombinations": 80,
   "deskRevision": "seedling-desks-1",
-  "deskVariations": 3
+  "deskVariations": 3,
+  "curtainRevision": "curtains-batch-03",
+  "curtainSets": 6,
+  "menuRevision": "community-menu-3"
 }

@@ -1,5 +1,59 @@
 # Bedroom update checkpoint
 
+## Curtain collection complete — batch 03 approved and integrated
+
+The user approved the final pair with “Perfect :) go head and push”: Patterned Curtains ($18), muted teal/gold woven diamonds, and Blinds ($22), ivory raised slats with a moving wooden pull cord. Both production build paths now include all three batches and record `curtains-batch-03` / SIX completed sets. Original No Curtains remains the bare-window choice.
+
+The focused final-pair check passed the actual $40 LeafCart checkout, store/package image equality, ownership and applying both styles, saving/reloading, window geometry and light behavior, phone/store proportions, animation and reduced motion. All five preceding options retain their pre-integration still/normal/Windy render hashes. All ten earlier artwork modules and gameplay source are byte-for-byte unchanged. Builds are repeatable; `npm run check` verified the baseline and 88 scripts. The live animation check now covers all five cloth styles plus the blind cord, with fixed mounting hardware and still reduced motion. Final validation: all 27 browser tests passed, with no failures or skips.
+
+Original art/crops/hashes are under `graphics/curtains/batch-03/`; final boards, animations, store cards and integration reports are under `review/curtains-batch-03/`. No further curtain batch remains. The next furniture item has not been chosen; retain the explicit picture approval and separate push for each completed increment. Any web preview must use `public/index.html`; show picture approvals directly in chat. Loading-screen work remains deferred.
+
+## Curtain batch 02 — approved and integrated; all four animations strengthened
+
+The user approved Floral Curtains ($18) and Sheer Curtains ($14), authorized pushing, and reported that the earlier pair hardly moved. Both production builders now append Batch 02 after Batch 01, for FOUR completed sets. Source art/transparency and store/reduced-motion appearance match the approved designs; both batches’ motion has been intentionally strengthened. Calm movement was only .35 logical units (.217 for Blackout), with almost no movement above the tiebacks. It is now 1.15 (2.5 in wind), including a visible upper billow above fixed tiebacks and freer hems; Blackout uses .8 and Sheer 1.45 multipliers. Rods remain fixed and reduced motion is still.
+
+Both focused batch tests passed purchases, packages, applying styles, saved ownership/selections, unchanged window geometry/light behavior, three untouched options and phone/store proportions. Basic/Blackout still drawings match their pre-integration render hashes; their motion differs by explicit user request. A separate real-frame-loop test passed visible native-resolution motion on ALL FOUR sets, stronger wind, fixed hardware and still reduced motion. Source art is under `graphics/curtains/batch-02/`; revised boards/animations, store pictures and integration reports are under its review folder. The eight preceding non-curtain art modules and gameplay source are unchanged. Builds are repeatable, and `npm run check` verifies the baseline and 87 scripts. Final validation: all 26 browser tests passed, with no failures or skips.
+
+Next is the final TWO-set pair: Patterned Curtains ($18) + Blinds ($22). No Curtains stays the existing open window. Do not implement/publish the last pair without its own artwork approval. Show pictures directly in chat and push each approved completed pair before proceeding. The loading screen remains deferred.
+
+## Curtain batch 01 — approved and integrated
+
+The user approved Basic Curtains (included) and Blackout Curtains ($20) with “Excellent work! Approved+!!”. Exactly TWO sets are complete. The shared painted renderer now ships in `public/index.html` through both graphics build paths; metadata records `curtains-batch-01` / two sets. Normal/Windy cloth sway keeps the rods fixed, and reduced motion is still. Matching store and opened-package artwork preserve native proportions. Original game source, names, prices, ownership, live-window behavior and the eight earlier artwork modules are unchanged.
+
+The focused integration test passed motion/transparency, comparison with the original renderer for all five other options, window interaction geometry and daylight/blackout behavior, an actual $20 LeafCart purchase, package/store image equality, applying both sets, saving/reloading ownership/selection and phone rendering. Source art is under `graphics/curtains/batch-01/`; approved design board/animation are in `review/curtains-batch-01/`, with production screenshots and report under its `integration/` directory. Builds are repeatable; `npm run check` verifies the baseline and 86 scripts. Final integration validation: all 24 browser tests passed with no failures or skips.
+
+Continue the TWO-set limit: next Floral Curtains ($18) + Sheer Curtains ($14), then Patterned Curtains ($18) + Blinds ($22). No Curtains stays the open-window choice. Do not start implementing the next pair without its own artwork approval. Show pictures directly in chat and push each completed approved pair before proceeding. The separate loading screen remains deferred.
+
+## Mobile corner details — approved for publication
+
+The user rejected the continuous foliage frame: “Instead of forcing an illustration that doesnt fit design one that fits like the reference. It doesnt have to frame it just add details around the corners and seperate hard edges”. The rejected frame was replaced before publication. The new revision uses six individually registered painted pieces from `graphics/main-menu/assets/mobile-details.png`: two header sprigs, two footer corners and two low flower clusters at the garden/menu seam. All pieces preserve their proportions, with no plant fading masks or full-height border. A shallow irregular clip softens the garden's hard horizontal edges.
+
+The user approved the revised picture and authorized publication with “Great work :) please pushb”. The focused menu test passed all six layouts and menu interactions; `npm run check` verified the baseline and 85 scripts. Desktop/landscape pixels and all seven gameplay artwork payloads match the preceding approved version. Current captures/report: `review/main-menu-mobile-details/`. Earlier `review/main-menu-mobile/` images are REJECTED and must not be used as current previews. Desktop/landscape and gameplay artwork are unchanged. Continue using `public/index.html` for any game preview. The separate loading screen is still deferred.
+
+## Preview entry point — user preference
+
+For any “web preview” or “Open in ChatGPT” preview, use `public/index.html`, the complete built game containing the updated graphics. Never use `src/game.html` as the playable preview: it is the gameplay source and omits the appended illustrated renderers. The user explicitly requested this after receiving the original-looking source preview. Picture approvals should be shown directly in chat; workspace file links have not been accessible to this user.
+
+
+## Approved tabletop depth and usable pegboard-top ledge
+
+The user clarified that the lava lamp belongs ABOVE the green desk's pegboard and asked to retain the old ability to stack decorations. The upper surface now aligns with the illustrated pegboard's top trim at y=52 (x=231–286), while the other workbench tiers retain the original y=56 windowsill. The main supply row stays centered across tabletop depth at y=74.5. The proposed block against placing decor on the built-in supply row has been removed; original main-tabletop/custom-furniture placement and stacking are available.
+
+Old upper decorations retain their horizontal positions above the pegboard and align to the top trim. Main-tabletop items align with the illustrated surface. Save/reload, repeated migration and changing desk tiers preserve the upper decorations. The focused tests passed 48 desk/supply cases, three decorations placed on the upper ledge through the actual UI, original main-desk/custom-table placement, legacy-save alignment and tier switching. Picture previews and the report are under `review/desk-tabletop-placement/`; use `pegboard-top-preview.png` for the current close-up.
+
+Final validation: all 22 browser tests passed with no skips; `npm run check` verified the immutable baseline checksum and parsed all 84 scripts. Current source/build hashes match the build report, and character, room-shell and all four bed payloads remain byte-for-byte unchanged.
+
+The user approved this final placement with “Go ahead and push the updates”. Pictures were shown directly in chat. The pull before committing reported main already up to date at `c5b0e24`. Commit and push this approved increment; future artwork still requires its own approval. Web previews must use `public/index.html`.
+
+## Centered seedling desk supplies completed
+
+User request: “clean up the things on top of the desk and ensure theyre centered on each desk”. The local update replaces the old blocky tabletop props with seven illustrated cutouts and centers the visible group dynamically on all three existing seedling desks. The common baseline places supplies on the tabletop, with even gaps and side clearance. Availability continues to follow inventory and active/brewing feed. Existing frames, store/package art and storage/supply-box interactions remain intact.
+
+Artwork source and crop/hash registration are under `graphics/desks/`; actual in-game previews and the focused report are under `review/seedling-desk-supplies/`. The focused check passed all 48 layouts plus normal store, package, install, mixing and save behavior. The user approved the preview with “Great work” and asked to pull before pushing because another worker may have updated the repository. Fetching all remote refs and `git pull --ff-only origin main` confirmed main was already up to date at `06078be`; no newer remote commits were available to integrate.
+
+Cleanup validation: all 21 browser tests passed with no skips. The baseline checksum and all 84 game scripts passed `npm run check`. Existing character, room-shell and all four bed payloads remain byte-for-byte unchanged. Approved for commit and a normal, non-forced push to main. Future items still require their own artwork approval.
+
+
 ## Seedling desks completed
 
 The user approved all three workstation designs and their matching store artwork: “Great job!! Send it :)”. This increment updates the included Folding Card Table, Used Writing Desk ($49), and Gardener's Bench ($149). These are the existing `workbench` equipment tiers, separate from the two-variant decorative Potting Bench. Prices, mixing bonuses, save identifiers, nutrient/supply behavior and interaction geometry remain unchanged.

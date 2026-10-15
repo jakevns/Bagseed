@@ -1,0 +1,43 @@
+{
+  "revision": "curtains-batch-02",
+  "status": "approved",
+  "path": "assets/curtains-atlas.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "frame": [
+    72,
+    61
+  ],
+  "sha256": "8eb63dba9a9a122187bf387f71aaceb0c6f95f0e975134bc3dcb428b9c4c4f5e",
+  "styles": {
+    "floral": {
+      "name": "Floral Curtains",
+      "price": 18,
+      "caption": "$18 · cream cotton with rose-and-sage flowers",
+      "rect": [
+        28,
+        160,
+        738,
+        695
+      ],
+      "motion": 1,
+      "clothOpacity": 1
+    },
+    "sheer": {
+      "name": "Sheer Curtains",
+      "price": 14,
+      "caption": "$14 · translucent ivory voile",
+      "rect": [
+        792,
+        160,
+        728,
+        695
+      ],
+      "motion": 1.45,
+      "clothOpacity": 0.62
+    }
+  },
+  "approval": "Approved. Go ahead and push it. Ensure the animation is working on this and on the one you previously pushed its not moving much in my test"
+}

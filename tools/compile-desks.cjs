@@ -11,6 +11,13 @@ module.exports = function compileDesks() {
     assert.ok(anchorY >= y && anchorY <= y + h);
   }
   data.image = 'data:image/png;base64,' + bytes.toString('base64');
+  const supplies = fs.readFileSync(path.join(root, data.supplies.path));
+  assert.equal(createHash('sha256').update(supplies).digest('hex'), data.supplies.sha256, 'Desk supplies atlas hash changed');
+  for (const { rect: [x, y, w, h], width } of Object.values(data.supplies.sprites)) {
+    assert.ok(x >= 0 && y >= 0 && w > 0 && h > 0 && x + w <= data.supplies.size[0] && y + h <= data.supplies.size[1]);
+    assert.ok(width > 0);
+  }
+  data.supplies.image = 'data:image/png;base64,' + supplies.toString('base64');
   const code = fs.readFileSync(path.join(root, 'sources/renderer.js'), 'utf8')
     .replace('__BAGSEED_DESK_DATA__', () => JSON.stringify(data));
   new (require('node:vm').Script)(code);

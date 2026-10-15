@@ -1,6 +1,6 @@
 # Local customization checkpoint
 
-The current requests are to make mouth choices visibly different and clean up beard cropping like the earlier forehead-hair repair. V9 visual acceptance is pending. V8 detail placement and the previous hair-fitting repairs remain in place. Work remains local; no push or deployment is requested.
+The mouth and beard repairs are complete, and the user requested merging the latest GitHub work and publishing all character updates. V9 is retained alongside the incoming community menu, curtains and desk-supply improvements. See `merge-checkpoint.md` and `publish-validation.json` for the integration and delivery checks.
 
 Current renderer: `graphics/production/sources/renderer.js`, revision `customization-9`. Detail rendering is in `graphics/production/sources/face-details.js`, injected by the builder. Retained transparent sources, registration code and asset manifest live in `graphics/production/customization-v5/`; that directory name identifies the original source pack, not the current renderer revision. All 60 haircuts plus Bald use genuine bald anatomy. Source PNGs and generation prompts remain intact.
 

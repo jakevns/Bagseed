@@ -1,0 +1,22 @@
+{
+  "status": "approved",
+  "scope": "Main menu/home screen before the separate loading-screen task",
+  "concept": "Sunny community garden with familiar adult neighbors, two cannabis plants, and desktop/phone menu layouts",
+  "image": "graphics/main-menu/assets/approval-concept.png",
+  "sha256": "e3cb59ccdce4b851a058b03ae642acacb28793d8d0f6b984655595780ffe339a",
+  "references": [
+    "review/characters-v2/character-samples.png",
+    "graphics/bedroom/assets/approved-concept.png",
+    "Uploaded reference G03-S01 (Fields of Mistria: friendly cottage garden layout)",
+    "Uploaded reference G04-S01 (Roots of Pacha: garden gathering space)"
+  ],
+  "actions": [
+    "Continue",
+    "New game",
+    "Settings",
+    "Import save"
+  ],
+  "previewEntryPoint": "public/index.html",
+  "implementation": "Approved community menu integrated through source templates and the shared build pipeline; verification in tests/main-menu.test.cjs.",
+  "approval": "Excellent!!! Approved :)"
+}

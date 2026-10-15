@@ -1,0 +1,42 @@
+{
+  "encoding": "PNG data URI SHA-256",
+  "time": 0.5,
+  "canvas": [
+    400,
+    340
+  ],
+  "scale": 5,
+  "window": [
+    14,
+    10,
+    52,
+    42
+  ],
+  "styles": {
+    "basic": {
+      "still": "0f60359f332c43087bb1b4b73ca97b56f1f355e9e136a7e9d0267202b3d1dbd5",
+      "Sunny": "85f9c1ecebe83c11728ef0d2e975c6535556e41b495070dcdd79938748fd5dd4",
+      "Windy": "5afca09f5b70a0539294bae8d1c3ddae83301b5d5590a979b570d9d4a23fc93b"
+    },
+    "none": {
+      "still": "0adda8dd3a6d502847962146910ae955237a1e3ac34f8ae5f00d9513f86dbd95",
+      "Sunny": "0adda8dd3a6d502847962146910ae955237a1e3ac34f8ae5f00d9513f86dbd95",
+      "Windy": "0adda8dd3a6d502847962146910ae955237a1e3ac34f8ae5f00d9513f86dbd95"
+    },
+    "blackout": {
+      "still": "e71b826ddd21e9830accc22e718cfa62c4857ad6606adb3f02e9a5345e4a55d1",
+      "Sunny": "e3c6e855dd00f6d4ba12ab00fba77c64b786582631e6a5ec945ee3ab822f3cb8",
+      "Windy": "ce0be84014af8e4d5f45927d51310e6b1f6583f1c58454f8e06f71ea94c79629"
+    },
+    "pattern": {
+      "still": "f2ebb38e60c32f73ccb20c9dff6d80b90539ba2dcfdc3af944fd3a0b2a93a6e2",
+      "Sunny": "f2ebb38e60c32f73ccb20c9dff6d80b90539ba2dcfdc3af944fd3a0b2a93a6e2",
+      "Windy": "d23467592e5f080d777fc38165e843b0f93fd7c989205e660a06c3158865c23b"
+    },
+    "blinds": {
+      "still": "bd6ebace881f74ac8c7ee44014a57b327bbc2a24b8d3b53fc689335564b58f56",
+      "Sunny": "bd6ebace881f74ac8c7ee44014a57b327bbc2a24b8d3b53fc689335564b58f56",
+      "Windy": "bd6ebace881f74ac8c7ee44014a57b327bbc2a24b8d3b53fc689335564b58f56"
+    }
+  }
+}

@@ -59,6 +59,42 @@ test('all three seedling desks share room/store/package art and preserve purchas
     });
     assert.deepEqual(report, { loaded: true, frames: 3, previews: 3, unchanged: true,
       catalog: [['Folding Card Table',0,0],['Used Writing Desk',49,.05],["Gardener's Bench",149,.12]] });
+    const layout = await page.evaluate(() => {
+      const before = JSON.stringify(state), samples = []; let checked = 0;
+      const batches = Feed.S().batches;
+      try {
+        for (let tier = 0; tier < 3; tier++) for (let mask = 0; mask < 16; mask++) {
+          state.gear.workbench = tier;
+          state.inv.synth = mask & 1 ? 1 : 0; state.inv.organic = mask & 2 ? 1 : 0;
+          state.inv.phpen = !!(mask & 8);
+          Feed.S().batches = mask & 4 ? [{ uses: 1, line: 'synthetic' }] : [];
+          const cv = document.createElement('canvas'); cv.width = 400; cv.height = 300;
+          const g = cv.getContext('2d'); g.scale(5,5); Gear.bench(g,6,34,tier);
+          const boxes = [], draw = g.drawImage.bind(g);
+          g.drawImage = (...args) => { boxes.push(args.slice(5)); draw(...args); };
+          const snapshot = JSON.stringify(state);
+          Gear.benchSupplies(g,6,34);
+          if (JSON.stringify(state) !== snapshot) throw Error('Supplies rendering changes inventory');
+          if (boxes.length !== 3 + [1,2,4,8].filter(bit=>mask&bit).length) throw Error('Incorrect visible supplies');
+          const left = boxes[0][0], right = boxes.at(-1)[0] + boxes.at(-1)[2];
+          if (Math.abs((left+right)/2 - 40) > .001) throw Error('Supplies are not centered');
+          if (left < 12 || right > 74) throw Error('Supplies extend to tabletop edges');
+          let last = left - 2;
+          for (const [x,y,w,h] of boxes) {
+            if (x-last < 1.99 || Math.abs(y+h-28.5) > .001) throw Error('Supplies overlap or float');
+            last = x+w;
+          }
+          checked++;
+          if (mask === 0 || mask === 15) samples.push({ tier, stocked: mask === 15, image: cv.toDataURL() });
+        }
+      } finally { Feed.S().batches = batches; state = JSON.parse(before); }
+      return { checked, samples };
+    });
+    assert.equal(layout.checked,48);
+    const preview = await browser.newPage({viewport:{width:1296,height:910},deviceScaleFactor:1});
+    await preview.setContent(`<style>body{margin:0;padding:24px;background:#f4efdf;color:#254537;font:18px Georgia}h1{margin:0 0 8px}p{margin:0 0 20px}main{display:grid;grid-template-columns:repeat(3,400px);gap:16px}article{border:1px solid #c4cbb4;border-radius:12px;background:#fffaf0;text-align:center;padding:8px 0}h2{font-size:21px;margin:4px}small{color:#66705b}img{display:block;width:400px;height:300px}</style><h1>Centered seedling desk supplies</h1><p>Actual game artwork · Everyday supplies above, fully stocked below</p><main>${[false,true].flatMap(stocked=>layout.samples.filter(s=>s.stocked===stocked).map(s=>`<article><h2>${report.catalog[s.tier][0]}</h2><small>${stocked?'Fully stocked':'Everyday supplies'}</small><img src="${s.image}"></article>`)).join('')}</main>`);
+    await preview.locator('img').evaluateAll(images=>Promise.all(images.map(i=>i.decode())));
+    await preview.screenshot({path:path.join(out,'centered-supplies-preview.png'),fullPage:true}); await preview.close();
     for (let tier=0;tier<3;tier++) {
       await page.evaluate(tier=>{state.gear.workbench=tier; closePanel(); View.snap();},tier);
       await page.waitForTimeout(100);
@@ -104,6 +140,6 @@ test('all three seedling desks share room/store/package art and preserve purchas
     await phone.locator('..').screenshot({path:path.join(out,'store-phone.png')});
     assert.ok(Math.abs(await phone.evaluate(c=>{const r=c.getBoundingClientRect();return r.width/r.height;})-4/3)<.01);
     assert.deepEqual(errors,[]);
-    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({...report,purchaseTotal:198,finalTier:2,errors},null,2));
+    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({...report,supplyLayouts:layout.checked,purchaseTotal:198,finalTier:2,errors},null,2));
   } finally { await browser?.close(); await new Promise(resolve=>server.close(resolve)); }
 });

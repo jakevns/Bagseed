@@ -1,4 +1,14 @@
-# Character and furniture merge
+# Character, menu and furniture merge
+
+The user requested merging and pushing all current character work after reviewing the mouth and beard updates. Character checkpoint `2072741` (renderer `customization-9`) is combined with incoming `origin/main` at `7ddc178`: the community-garden menu, all six curtain styles and live motion, centered desk supplies, tabletop/pegboard placement, all 80 beds and all three seedling desks.
+
+The merge keeps the current transparent bald anatomy and hair loader, facial landmarks, 18 mouth choices and cleaned facial hair. The generated game was rebuilt from the combined sources rather than taking either worker's HTML wholesale. The embedded character script exactly matches the local checkpoint, and all 87 non-character script blocks exactly match the incoming build after line-ending normalization. Character source/assets match `2072741`; incoming menu, curtain, desk and gameplay sources match `7ddc178`. Current checks are recorded in `publish-validation.json`.
+
+`npm run check` now verifies the entire game against its build report, the embedded character payload against its recorded checksum, and five character input files against their source checksums. It rejects a source update paired with stale character output. The Pages workflow publishes the character revision and game checksum alongside the deployed commit in `version.json`. Build reports are replaced atomically to avoid Windows file-mapping failures.
+
+Pre-publish files and the Git index are preserved in ignored `artifacts/publish-backup-2026-10-15T22-27-25-888Z/`. All checks use disposable browser storage. The previous local merge below is historical.
+
+## Earlier local bed/desk merge
 
 Local character checkpoint `c02baf1` was merged with `origin/main` through `06078be` (all 80 bed/bedding combinations and all three seedling-desk tiers). The character renderer remains `customization-7`. No furniture or character source artwork was replaced during conflict resolution.
 

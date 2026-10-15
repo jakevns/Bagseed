@@ -1,0 +1,40 @@
+{
+  "proposalOnly": false,
+  "entryPoint": "public/index.html",
+  "checks": [
+    {
+      "id": "floral",
+      "name": "Floral Curtains",
+      "price": 18,
+      "animated": true,
+      "wind": true,
+      "reducedMotion": true,
+      "fixedRod": true,
+      "store": true
+    },
+    {
+      "id": "sheer",
+      "name": "Sheer Curtains",
+      "price": 14,
+      "animated": true,
+      "wind": true,
+      "reducedMotion": true,
+      "fixedRod": true,
+      "store": true,
+      "translucentFraction": 1
+    }
+  ],
+  "unchangedOptions": [
+    "basic",
+    "none",
+    "blackout",
+    "pattern",
+    "blinds"
+  ],
+  "actualStoreCard": true,
+  "actualStoreCards": [
+    "floral",
+    "sheer"
+  ],
+  "errors": []
+}

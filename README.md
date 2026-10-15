@@ -1,10 +1,14 @@
 # Bagseed
 
-The supplied **v1.1.5.1 Night Walker Flashlights** game, updated with the user-approved illustrated character direction. Open [public/index.html](public/index.html) for the complete standalone game, or serve `public/` with any static host.
+The approved main menu uses a sunny community-garden illustration with familiar neighbors, two cannabis plants, and responsive desktop/phone controls. See [menu artwork and build notes](graphics/main-menu/README.md).
+
+The supplied **v1.1.5.1 Night Walker Flashlights** game, updated with the user-approved illustrated character direction. Open [public/index.html](public/index.html) for the complete standalone game, or serve `public/` with any static host. Use this `index.html` for **Web Preview / Open in ChatGPT**; `src/game.html` is source-only and does not include the appended illustrated graphics.
 
 The update includes the five approved identities, 67 additional authored appearance variants, matching portraits, all 60 hairstyles and the existing customization choices. The [final review](review/final/index.html) contains comparisons, motion previews, a complete appearance roster, screenshots and validation notes. [Study 02](review/characters-v2/index.html) records the approved samples and reference evidence. Study 01 was rejected and is excluded from this release.
 
 The latest local custom-character repair adds distinct mouth silhouettes, braces, fangs and a cat smile, and keeps selected mouths visible when expressions change. Facial hair uses clean transparent edges without recolored ear/neck outlines or rectangular cheek cuts. Current screenshots and checks are in the [customization v9 review](review/customization-v9/README.md). The [v8 detail alignment](review/customization-v8/README.md) and [v7 hair fitting](review/customization-v7/README.md) are retained across all 15 head shapes.
+
+The [combined release checkpoint](docs/graphics/merge-checkpoint.md) records the merge with the latest menu, curtains and desk work. Publishing checks require the generated game, embedded character payload and character source checksums to agree, preventing a stale character release from passing deployment validation.
 
 ## Develop and verify
 
@@ -46,6 +50,6 @@ The user's reference DOCX is preserved in the repository. Its 1,080 embedded ima
 
 GitHub Pages publishes the standalone game at **https://jakevns.github.io/Bagseed/** after the first successful deployment. `.github/workflows/pages.yml` verifies the HTML and publishes only `public/` whenever approved changes are merged or pushed to `main`. It can also be rerun from Actions → Publish Bagseed to GitHub Pages → Run workflow on `main`. The repository's Settings → Pages → Build and deployment → Source must be **GitHub Actions** (enabled by the repository owner during setup).
 
-The link stays the same for future updates. Check the workflow's green deployment result before refreshing; `https://jakevns.github.io/Bagseed/version.json` identifies the deployed commit. Review boards and original HTML backups remain in Git and are not included in the published site. Local browser saves are tied to the site's origin, so progress from another host does not automatically appear on the Pages address. GitHub Pages does not serve branch previews; the site follows merged `main`.
+The link stays the same for future updates. Check the workflow's green deployment result before refreshing; `https://jakevns.github.io/Bagseed/version.json` identifies the deployed commit, character revision and game checksum. Review boards and original HTML backups remain in Git and are not included in the published site. Local browser saves are tied to the site's origin, so progress from another host does not automatically appear on the Pages address. GitHub Pages does not serve branch previews; the site follows merged `main`.
 
 `netlify.toml` publishes `public/` without a build step. The task authorizes a GitHub push; no manual Netlify deployment is performed. A connected Netlify project may automatically build on a push. Live deployment status and physical-device performance are not verified by local checks. Browser saves are scoped to the site's origin.

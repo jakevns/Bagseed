@@ -1,0 +1,61 @@
+{
+  "revision": "community-menu-3",
+  "path": "assets/community-garden.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "ad2d21183d717dbd9666c016e5f5ba0adafecde99d9bf36f04d89fb5ae663f76",
+  "phoneCrop": [
+    537,
+    0,
+    999,
+    1024
+  ],
+  "details": {
+    "path": "assets/mobile-details.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "sha256": "47a7d7c3eb77d9a5bad7217bd9894977adf8e06363bb7985582e85927adef728",
+    "tiles": {
+      "upperLeft": [
+        60,
+        50,
+        490,
+        380
+      ],
+      "upperRight": [
+        800,
+        50,
+        410,
+        370
+      ],
+      "lowerLeft": [
+        50,
+        470,
+        520,
+        390
+      ],
+      "lowerRight": [
+        725,
+        500,
+        500,
+        365
+      ],
+      "gardenLeft": [
+        15,
+        955,
+        610,
+        265
+      ],
+      "gardenRight": [
+        650,
+        895,
+        590,
+        325
+      ]
+    }
+  }
+}
