@@ -2,20 +2,23 @@
 (() => {
   'use strict';
   const image = document.getElementById('menuArtwork'), canvas = document.getElementById('menuScene');
+  const foliage = document.getElementById('menuFoliage');
   const DATA = __BAGSEED_MENU_MANIFEST__;
   let loaded = false;
-  const ready = new Promise((resolve, reject) => {
-    function finish() {
-      const [x,y,w,h] = DATA.phoneCrop;
-      canvas.width = w; canvas.height = h;
-      canvas.getContext('2d').drawImage(image,x,y,w,h,0,0,w,h);
-      loaded = true; resolve({ revision: DATA.revision });
-    }
-    if (image.complete && image.naturalWidth) finish();
-    else {
-      image.addEventListener('load', finish, { once: true });
-      image.addEventListener('error', () => reject(new Error('Main menu artwork failed to load')), { once: true });
-    }
+  function imageReady(element) {
+    return new Promise((resolve, reject) => {
+      if (element.complete && element.naturalWidth) resolve();
+      else {
+        element.addEventListener('load', resolve, { once: true });
+        element.addEventListener('error', () => reject(new Error('Main menu artwork failed to load: ' + element.id)), { once: true });
+      }
+    });
+  }
+  const ready = Promise.all([imageReady(image), imageReady(foliage)]).then(() => {
+    const [x,y,w,h] = DATA.phoneCrop;
+    canvas.width = w; canvas.height = h;
+    canvas.getContext('2d').drawImage(image,x,y,w,h,0,0,w,h);
+    loaded = true; return { revision: DATA.revision };
   });
   window.BagseedMenu = Object.freeze({ revision: DATA.revision, ready, get loaded() { return loaded; } });
   ready.catch(error => console.error(error));

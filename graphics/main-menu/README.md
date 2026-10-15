@@ -11,3 +11,9 @@ The menu test covers six viewport sizes, visible full-size controls, keyboard ac
 The separate graphics-loading screen remains a future task, as requested. This increment changes the title screen and the related import-confirmation portrait only.
 
 Validation: all 23 browser tests passed with no skips; the baseline checksum and 85 scripts passed `npm run check`. Repeating the build produced identical output.
+
+## Mobile foliage revision — awaiting approval
+
+The user requested more plants around the mobile menu to match the approved phone reference. `assets/mobile-foliage.png` is an original transparent painted border generated using `assets/approval-concept.png` as the visual reference; its checksum is recorded in the manifest. Mobile-only CSS frames the logo, garden, controls and lower corners with flowering vines and a second fine border. Soft masks keep the title/footer clear. The active primary button has small leaf ornaments. The decorative layer ignores pointer events and is hidden on desktop and landscape layouts.
+
+The image-readiness hook awaits both menu assets. Both build paths read the menu revision from the manifest. The focused menu test additionally checks that decoration cannot intercept taps at the center or edges of enabled buttons across all six layouts. Revised actual-game captures and validation are retained under `review/main-menu-mobile/`. This revision is pending visual approval and has not been pushed.

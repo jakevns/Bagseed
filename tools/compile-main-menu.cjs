@@ -9,6 +9,10 @@ module.exports = function compileMainMenu(source) {
   assert.ok(x >= 0 && y >= 0 && w > 0 && h > 0 && x+w <= manifest.size[0] && y+h <= manifest.size[1]);
   assert.ok(source.includes('__BAGSEED_MENU_IMAGE__'), 'Missing menu artwork hook');
   source = source.replace('__BAGSEED_MENU_IMAGE__', 'data:image/png;base64,' + art.toString('base64'));
+  const foliage = fs.readFileSync(path.join(root, manifest.foliage.path));
+  assert.equal(createHash('sha256').update(foliage).digest('hex'), manifest.foliage.sha256, 'Menu foliage changed');
+  assert.ok(source.includes('__BAGSEED_MENU_FOLIAGE__'), 'Missing mobile foliage hook');
+  source = source.replace('__BAGSEED_MENU_FOLIAGE__', 'data:image/png;base64,' + foliage.toString('base64'));
   const css = fs.readFileSync(path.join(root, 'sources/style.css'), 'utf8');
   const code = fs.readFileSync(path.join(root, 'sources/renderer.js'), 'utf8').replace('__BAGSEED_MENU_MANIFEST__', () => JSON.stringify(manifest));
   new (require('node:vm').Script)(code);

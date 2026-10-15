@@ -1,5 +1,11 @@
 # Bedroom update checkpoint
 
+## Mobile menu foliage — pending picture approval
+
+Current user request: make the mobile main menu closer to the approved reference, with more plants. The local revision adds a transparent painted flowering-vine border, fine inner outline and small primary-button leaves; mobile-only masks preserve clear title/footer areas. Desktop and landscape retain the approved layout. Source art, hash and integration are under `graphics/main-menu/`; actual `public/index.html` captures are under `review/main-menu-mobile/`.
+
+Show the phone picture directly in chat and wait for explicit approval before pushing. Do not implement the separately discussed loading screen yet. The focused main-menu browser test covers six viewport sizes, decoration not blocking button taps, keyboard/new-game/settings/import/Continue behavior. `npm run check` verifies the baseline and all 85 scripts. Gameplay art modules are unchanged.
+
 ## Preview entry point — user preference
 
 For any “web preview” or “Open in ChatGPT” preview, use `public/index.html`, the complete built game containing the updated graphics. Never use `src/game.html` as the playable preview: it is the gameplay source and omits the appended illustrated renderers. The user explicitly requested this after receiving the original-looking source preview. Picture approvals should be shown directly in chat; workspace file links have not been accessible to this user.

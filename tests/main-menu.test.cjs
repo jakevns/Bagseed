@@ -32,11 +32,21 @@ test('community main menu fits desktop/phone layouts and preserves keyboard, set
           if(r.height<44 || r.width<160) throw Error('Menu target too small');
           if(button.scrollWidth>button.clientWidth+1) throw Error('Button label clipped');
           if(r.left<shell.left || r.right>shell.right) throw Error('Button outside menu panel');
+          if(!button.disabled) {
+            for(const x of [r.left+8, r.left+r.width/2, r.right-8]) {
+              if(document.elementFromPoint(x,r.top+r.height/2)?.closest('button')!==button) throw Error('Menu decoration blocks a button');
+            }
+          }
         }
         if(width<=700) {
           const cv=document.getElementById('menuScene');
           if(!cv.getContext('2d').getImageData(0,0,cv.width,cv.height).data.some((v,i)=>i%4===3&&v)) throw Error('Phone scene is blank');
           if(getComputedStyle(cv).objectFit!=='cover') throw Error('Phone scene proportions distorted');
+          const foliage=document.getElementById('menuFoliage');
+          if(!foliage.complete || !foliage.naturalWidth || getComputedStyle(foliage).display==='none') throw Error('Phone foliage missing');
+          if(getComputedStyle(foliage).pointerEvents!=='none') throw Error('Foliage intercepts touches');
+        } else if(getComputedStyle(document.getElementById('menuFoliage')).display!=='none') {
+          throw Error('Mobile foliage changed desktop layout');
         }
         return {width,height,buttons:buttons.length,art:BagseedMenu.loaded};
       },{width,height}));

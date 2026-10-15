@@ -1,5 +1,5 @@
 {
-  "revision": "community-menu-1",
+  "revision": "community-menu-2",
   "path": "assets/community-garden.png",
   "size": [
     1536,
@@ -11,5 +11,9 @@
     0,
     999,
     1024
-  ]
+  ],
+  "foliage": {
+    "path": "assets/mobile-foliage.png",
+    "sha256": "5da0b518b13f7cae4e245a6c81da5bde95d1127982d58166699094986289496f"
+  }
 }

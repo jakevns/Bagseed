@@ -2,9 +2,9 @@
   "version": "illustrated-1",
   "approval": "User response to revised visible samples: results exceeded expectations, You nailed it.",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "c4692fa42ac4b409c1c6337c8dff06a63a57d14753d601212b5378f3ded7b2aa",
-  "updatedSHA": "372f24481df38624e391c33ded299d54718bd19718acf8de20a587e8b2b992f1",
-  "bytes": 59392655,
+  "workingSourceSHA": "5ca8e72bbf25dec7ca39ef7beb1a805ab4325638ce973e172d9ec594942db9f9",
+  "updatedSHA": "ee2ed06b8df236ba5e59fb1bd21de707363bd6383d80ae3a5952563c1ccc7bbf",
+  "bytes": 61905741,
   "modularAssets": 544,
   "embeddedImages": 1427,
   "approvedIdentities": [
@@ -20,5 +20,5 @@
   "bedCombinations": 80,
   "deskRevision": "seedling-desks-1",
   "deskVariations": 3,
-  "menuRevision": "community-menu-1"
+  "menuRevision": "community-menu-2"
 }
