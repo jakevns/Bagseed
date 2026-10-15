@@ -1,0 +1,51 @@
+{
+  "revision": "curtains-batch-03",
+  "status": "proposed",
+  "path": "assets/curtains-atlas.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "frame": [
+    72,
+    61
+  ],
+  "sha256": "ca64f9babf0f8ca2411cdfbc53b046b0c7c0cd893a17117d051f0f423ba4ee96",
+  "styles": {
+    "pattern": {
+      "name": "Patterned Curtains",
+      "price": 18,
+      "caption": "$18 · muted teal with golden woven diamonds",
+      "kind": "cloth",
+      "rect": [
+        18,
+        116,
+        790,
+        746
+      ],
+      "motion": 1,
+      "clothOpacity": 1
+    },
+    "blinds": {
+      "name": "Blinds",
+      "price": 22,
+      "caption": "$22 · warm ivory slats with a moving pull cord",
+      "kind": "blinds",
+      "rect": [
+        834,
+        108,
+        664,
+        240
+      ],
+      "cordRect": [
+        1434,
+        348,
+        44,
+        295
+      ],
+      "cordAnchorX": 1456,
+      "cordPivot": 0.5,
+      "cordLength": 22
+    }
+  }
+}

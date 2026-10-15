@@ -1,5 +1,13 @@
 # Bedroom update checkpoint
 
+## Curtain batch 03 — pending picture approval
+
+The user requested the next set. This is the final TWO-design proposal: Patterned Curtains ($18), muted teal with golden woven diamonds, and Blinds ($22), warm ivory raised slats with a moving wooden pull cord. Original source atlas/crop/hash data and renderer are under `graphics/curtains/batch-03/`. Cloth sway uses the stronger animation from the approved earlier pairs. Blind slats/headrail stay fixed while the cord swings; reduced motion is still.
+
+`node tools/preview-curtains.cjs 03` injects this proposed pair into the complete production page for review without changing production HTML, gameplay source, build metadata or the earlier compiled modules. Preview checks passed static/normal/Windy preservation for all five other choices, actual store cards on desktop/phone, and visible native-resolution motion through the real game frame loop. Earlier-render hashes, board, animation, store cards and reports are retained in `review/curtains-batch-03/`.
+
+Show `approval.png` and `wind-animation.gif` directly in chat and wait for explicit approval before integrating/pushing. Read the batch README for remaining purchase/save/integration checks. After this pair is approved and integrated, all six cloth/blind styles will be complete; No Curtains retains the open window. Keep two sets per batch and push each approved completed increment. Loading-screen work remains deferred.
+
 ## Curtain batch 02 — approved and integrated; all four animations strengthened
 
 The user approved Floral Curtains ($18) and Sheer Curtains ($14), authorized pushing, and reported that the earlier pair hardly moved. Both production builders now append Batch 02 after Batch 01, for FOUR completed sets. Source art/transparency and store/reduced-motion appearance match the approved designs; both batches’ motion has been intentionally strengthened. Calm movement was only .35 logical units (.217 for Blackout), with almost no movement above the tiebacks. It is now 1.15 (2.5 in wind), including a visible upper billow above fixed tiebacks and freer hems; Blackout uses .8 and Sheer 1.45 multipliers. Rods remain fixed and reduced motion is still.

@@ -1,7 +1,7 @@
 const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
 const { createHash } = require('node:crypto');
 module.exports = function compileCurtains(batch = '01') {
-  const styles = { '01': ['basic','blackout'], '02': ['floral','sheer'] }[batch];
+  const styles = { '01': ['basic','blackout'], '02': ['floral','sheer'], '03': ['pattern','blinds'] }[batch];
   assert.ok(styles, 'Unknown curtain batch');
   const root = path.resolve(__dirname, '../graphics/curtains/batch-' + batch);
   const data = JSON.parse(fs.readFileSync(path.join(root, 'sources/manifest.json')));
@@ -17,6 +17,17 @@ module.exports = function compileCurtains(batch = '01') {
       assert.ok(Number.isFinite(motion) && motion > 0 && motion <= 2);
       assert.ok(Number.isFinite(clothOpacity) && clothOpacity > 0 && clothOpacity <= 1);
     }
+  }
+  if (batch === '03') {
+    assert.deepEqual(data.frame,[72,61]);
+    const blinds=data.styles.blinds;assert.equal(blinds.kind,'blinds');
+    const [x,y,w,h]=blinds.cordRect;
+    assert.ok(x>=0&&y>=0&&w>0&&h>0&&x+w<=data.size[0]&&y+h<=data.size[1]);
+    assert.ok(y>=blinds.rect[1]+blinds.rect[3], 'Moving cord overlaps fixed slats');
+    assert.ok(blinds.cordAnchorX>=blinds.rect[0]&&blinds.cordAnchorX<=blinds.rect[0]+blinds.rect[2]);
+    assert.ok(blinds.cordPivot>=0&&blinds.cordPivot<=1&&blinds.cordLength>0&&blinds.cordLength<=28);
+    assert.equal(data.styles.pattern.kind,'cloth');
+    assert.ok(data.styles.pattern.motion>0&&data.styles.pattern.motion<=2);
   }
   data.image = 'data:image/png;base64,' + art.toString('base64');
   const code = fs.readFileSync(path.join(root, 'sources/renderer.js'),'utf8')

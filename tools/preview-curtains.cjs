@@ -4,7 +4,7 @@ const {chromium}=require('playwright');
 const {createHash}=require('node:crypto');
 (async()=>{
   const root=path.resolve(__dirname,'..'),batch=process.argv[2]||'01';
-  assert.ok(['01','02'].includes(batch),'Unknown curtain preview batch');
+  assert.ok(['01','02','03'].includes(batch),'Unknown curtain preview batch');
   const manifest=JSON.parse(fs.readFileSync(path.join(root,`graphics/curtains/batch-${batch}/sources/manifest.json`)));
   const ids=Object.keys(manifest.styles),out=path.join(root,'review/curtains-batch-'+batch);
   fs.mkdirSync(out,{recursive:true});
@@ -72,7 +72,7 @@ const {createHash}=require('node:crypto');
           if(a.toDataURL()===b.toDataURL())throw Error('Curtain does not animate: '+id);
           if(b.toDataURL()===wind.toDataURL())throw Error('Wind has no effect: '+id);
           if(stillA.toDataURL()!==stillB.toDataURL())throw Error('Reduced-motion curtain moves: '+id);
-          const rod=cv=>Array.from(cv.getContext('2d').getImageData(0,0,400,40).data).join(',');
+          const rod=cv=>Array.from(cv.getContext('2d').getImageData(0,0,400,id==='blinds'?Math.floor((4+54*styles[id].rect[3]/styles[id].rect[2])*5):40).data).join(',');
           if(rod(a)!==rod(wind))throw Error('Mounting hardware moves: '+id);
           let transmission;
           if(id==='sheer') {
@@ -102,7 +102,7 @@ const {createHash}=require('node:crypto');
             g.font='14px Georgia';g.fillStyle='#526247';g.fillText(['0.0s','1.2s','2.4s'][j],x+212+j*112,764);
           });
         });
-        g.font='17px Georgia';g.fillStyle='#526247';g.fillText('Gentle sway in calm weather · stronger in wind · still with reduced motion',30,831);
+        g.font='17px Georgia';g.fillStyle='#526247';g.fillText(batch==='03'?'Cloth sway and a moving blind cord · stronger in wind · reduced motion stays still':'Gentle sway in calm weather · stronger in wind · still with reduced motion',30,831);
         g.font='15px Georgia';g.fillText(integrated?'Actual integrated game. The remaining curtain choices keep their existing artwork.':'Preview proposal only. The remaining curtain choices keep their existing artwork.',30,857);
         const frames=[];
         for(let i=0;i<42;i++) {
@@ -120,6 +120,11 @@ const {createHash}=require('node:crypto');
     write('approval.png',result.board);
     const framesDir=path.join(root,'artifacts/curtains-batch-'+batch+'/frames');fs.mkdirSync(framesDir,{recursive:true});
     result.frames.forEach((data,i)=>fs.writeFileSync(path.join(framesDir,String(i).padStart(3,'0')+'.png'),Buffer.from(data.split(',')[1],'base64')));
+    let liveMotion;
+    if(batch==='03') {
+      liveMotion=await require('./check-curtain-preview-motion.cjs')(page,manifest.styles);
+      fs.writeFileSync(path.join(out,'live-motion.json'),JSON.stringify(liveMotion,null,2)+'\n');
+    }
     await page.evaluate(()=>Panels.app('leafcart'));
     await page.locator('[data-act=shopCat][data-arg=decor]').click();await page.locator('[data-act=decorCat][data-arg=styles]').click();
     const actualStoreCards=[];
@@ -134,7 +139,7 @@ const {createHash}=require('node:crypto');
       await page.setViewportSize({width:1440,height:1000});actualStoreCards.push(id);
     }
     assert.deepEqual(errors,[]);
-    const report={proposalOnly:!integrated,entryPoint:'public/index.html',checks:result.checks,unchangedOptions:result.untouched,actualStoreCard:true,actualStoreCards,errors};
+    const report={proposalOnly:!integrated,entryPoint:'public/index.html',checks:result.checks,unchangedOptions:result.untouched,actualStoreCard:true,actualStoreCards,...(liveMotion?{liveMotion}:{}),errors};
     fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
   } finally {await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

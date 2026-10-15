@@ -1,0 +1,42 @@
+{
+  "encoding": "PNG data URI SHA-256",
+  "time": 0.5,
+  "canvas": [
+    400,
+    340
+  ],
+  "scale": 5,
+  "window": [
+    14,
+    10,
+    52,
+    42
+  ],
+  "styles": {
+    "basic": {
+      "still": "0f60359f332c43087bb1b4b73ca97b56f1f355e9e136a7e9d0267202b3d1dbd5",
+      "Sunny": "96c032bea77686fb41fc1db5dfb233156a40d35069f5c24b12e58697eb2e9037",
+      "Windy": "3e16864cf3d1f740ce71b3d041356fef084dea985ae1f61d6f6562b519c86941"
+    },
+    "none": {
+      "still": "0adda8dd3a6d502847962146910ae955237a1e3ac34f8ae5f00d9513f86dbd95",
+      "Sunny": "0adda8dd3a6d502847962146910ae955237a1e3ac34f8ae5f00d9513f86dbd95",
+      "Windy": "0adda8dd3a6d502847962146910ae955237a1e3ac34f8ae5f00d9513f86dbd95"
+    },
+    "blackout": {
+      "still": "e71b826ddd21e9830accc22e718cfa62c4857ad6606adb3f02e9a5345e4a55d1",
+      "Sunny": "2bf60baf36b402ce3b2676dc141e62b6420c6c5dc3818478b550771a92b6681c",
+      "Windy": "cb5ca7df1567fae68efd16db6582c153a0b2f036b47c9171a571f20f4ee91510"
+    },
+    "floral": {
+      "still": "a750fd30103dce80ef97f2d4b108808af0869d6b99fdb38176c289a6f6a42e3e",
+      "Sunny": "214c1da4a39c52ee21a67f651dc68e016877732600089dcca1b7d75b81127d4a",
+      "Windy": "7cc45423ae659bb7e9d2a4bd5426460849a12100bd023a206cbf2f21e507462c"
+    },
+    "sheer": {
+      "still": "3cdba89b767581ff4ff85a024451d1411ad08c0f9098cd33dcef82b4686a61b4",
+      "Sunny": "c363d0f907e71b21e30a62cc72c55d55c18ad3678d831da9821c22fd883bb1aa",
+      "Windy": "6d6b6e4ddc7e7b54651410d8b555a19074133d3ec14b56df2870444e4860664e"
+    }
+  }
+}
