@@ -1,0 +1,161 @@
+{
+  "revision": "beds-batch-01",
+  "approval": "First batch looks great!! \u2014 Starter Bed and Wooden Frame with all ten bedding choices.",
+  "frames": {
+    "starter": {
+      "path": "assets/starter.png",
+      "sha256": "f75a498796b2cc878432d3ed0c623ba8633181a3e1f6c5088659fa3ebfe85b1c",
+      "size": [
+        1986,
+        792
+      ],
+      "tiles": {
+        "bluecheck": [
+          38,
+          83,
+          372,
+          279
+        ],
+        "solidred": [
+          426,
+          83,
+          370,
+          279
+        ],
+        "cream": [
+          812,
+          83,
+          366,
+          279
+        ],
+        "plaid": [
+          1195,
+          83,
+          371,
+          279
+        ],
+        "floral": [
+          1582,
+          83,
+          369,
+          279
+        ],
+        "stars": [
+          38,
+          414,
+          372,
+          279
+        ],
+        "botanical": [
+          426,
+          414,
+          370,
+          279
+        ],
+        "retro": [
+          812,
+          414,
+          366,
+          279
+        ],
+        "neutral": [
+          1195,
+          414,
+          371,
+          279
+        ],
+        "bright": [
+          1582,
+          414,
+          369,
+          279
+        ]
+      }
+    },
+    "wooden": {
+      "path": "assets/wooden.png",
+      "sha256": "7bd81bfb130475cb91470fe892f78191420a10a72c5c69426707ed512f8ecda3",
+      "size": [
+        1983,
+        793
+      ],
+      "tiles": {
+        "bluecheck": [
+          20,
+          47,
+          384,
+          320
+        ],
+        "solidred": [
+          426,
+          47,
+          380,
+          320
+        ],
+        "cream": [
+          822,
+          47,
+          367,
+          320
+        ],
+        "plaid": [
+          1203,
+          47,
+          372,
+          320
+        ],
+        "floral": [
+          1590,
+          47,
+          383,
+          320
+        ],
+        "stars": [
+          20,
+          395,
+          385,
+          324
+        ],
+        "botanical": [
+          427,
+          395,
+          379,
+          324
+        ],
+        "retro": [
+          822,
+          395,
+          367,
+          324
+        ],
+        "neutral": [
+          1204,
+          395,
+          373,
+          324
+        ],
+        "bright": [
+          1592,
+          395,
+          382,
+          324
+        ]
+      }
+    }
+  },
+  "registration": {
+    "width": 78,
+    "left": 2,
+    "feetY": 177,
+    "hit": [
+      8,
+      126,
+      72,
+      50
+    ],
+    "walk": [
+      86,
+      160
+    ]
+  }
+}

@@ -21,7 +21,7 @@ The development server serves `public/` on port 5173. `HOST` and `PORT` override
 
 `src/game.html` is the editable gameplay source. `baselines/` retains the immutable uploaded HTML, SHA-256 `4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164`. The bedroom shell update adds a rendering hook for dynamic window light; gameplay rules remain unchanged. The builder appends the graphics renderers and embedded images to produce `public/index.html`; edit the sources, not the generated output. It refuses to overwrite an output changed since the last recorded build.
 
-The approved bedroom background uses sage plaster, paneled trim, and honey oak. Furniture and all its existing variations remain separate for subsequent art updates. See [bedroom sources](graphics/bedroom/README.md). To rebuild just the bedroom with the existing verified character payload, run `npm run build:bedroom`, then `npm run check` and `npm test`. The full graphics build also includes the bedroom renderer.
+The approved bedroom background uses sage plaster, paneled trim, and honey oak. [Bed batch 01](graphics/beds/batch-01/README.md) upgrades the Starter Bed and Wooden Frame with all ten existing bedding choices (20 combinations). The other six frames retain their previous art pending approval of subsequent batches. See [bedroom sources](graphics/bedroom/README.md). To rebuild the bedroom and approved bed batch with the existing verified character payload, run `npm run build:bedroom`, then `npm run check` and `npm test`. The full graphics build includes both renderers too.
 
 ```sh
 python3 -m venv /workspace/.venvs/bagseed-art
