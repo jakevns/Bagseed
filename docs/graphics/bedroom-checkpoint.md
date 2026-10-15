@@ -1,5 +1,14 @@
 # Bedroom update checkpoint
 
+## Centered seedling desk supplies completed
+
+User request: “clean up the things on top of the desk and ensure theyre centered on each desk”. The local update replaces the old blocky tabletop props with seven illustrated cutouts and centers the visible group dynamically on all three existing seedling desks. The common baseline places supplies on the tabletop, with even gaps and side clearance. Availability continues to follow inventory and active/brewing feed. Existing frames, store/package art and storage/supply-box interactions remain intact.
+
+Artwork source and crop/hash registration are under `graphics/desks/`; actual in-game previews and the focused report are under `review/seedling-desk-supplies/`. The focused check passed all 48 layouts plus normal store, package, install, mixing and save behavior. The user approved the preview with “Great work” and asked to pull before pushing because another worker may have updated the repository. Fetching all remote refs and `git pull --ff-only origin main` confirmed main was already up to date at `06078be`; no newer remote commits were available to integrate.
+
+Cleanup validation: all 21 browser tests passed with no skips. The baseline checksum and all 84 game scripts passed `npm run check`. Existing character, room-shell and all four bed payloads remain byte-for-byte unchanged. Approved for commit and a normal, non-forced push to main. Future items still require their own artwork approval.
+
+
 ## Seedling desks completed
 
 The user approved all three workstation designs and their matching store artwork: “Great job!! Send it :)”. This increment updates the included Folding Card Table, Used Writing Desk ($49), and Gardener's Bench ($149). These are the existing `workbench` equipment tiers, separate from the two-variant decorative Potting Bench. Prices, mixing bonuses, save identifiers, nutrient/supply behavior and interaction geometry remain unchanged.

@@ -2443,6 +2443,14 @@ const Gear = {
       R(c, x, y, 68, 4, '#6f8f5a'); R(c, x, y, 68, 1, '#8aac72'); for (let i = 0; i < 68; i += 4) R(c, x + i, y, 1, 4, '#56734a'); R(c, x + 2, y + 4, 3, 17, '#4f6a42'); R(c, x + 63, y + 4, 3, 17, '#4f6a42'); R(c, x + 2, y + 13, 64, 2, '#56734a');
     }
   },
+  benchSupplies(c, x, y) {
+    R(c, x + 4, y - 9, 10, 9, '#8a6a48'); R(c, x + 5, y - 8, 8, 3, '#e6d3a8'); R(c, x + 18, y - 4, 1, 4, '#9aa0a6'); R(c, x + 17, y - 6, 3, 2, '#7a4e2a');
+    R(c, x + 24, y - 7, 4, 7, '#d9e8f0'); R(c, x + 24, y - 9, 4, 2, '#2f6d1f'); R(c, x + 25, y - 6, 1, 4, '#ffffff');
+    if (state.inv.synth > 0) { R(c, x + 32, y - 8, 3, 8, '#d9452f'); R(c, x + 36, y - 8, 3, 8, '#3f8fd1'); R(c, x + 40, y - 8, 3, 8, '#f2c94c'); }
+    if (state.inv.organic > 0) { R(c, x + 45, y - 9, 7, 9, '#7a5a3a'); R(c, x + 46, y - 7, 5, 2, '#c9a35a'); }
+    { const jb = Feed.all().find(b => b.uses > 0 || b.brewing); if (jb) { R(c, x + 54, y - 11, 8, 11, '#f2f4f6'); R(c, x + 55, y - 7, 6, 6, jb.line === 'organic' ? '#7a5a3a' : '#5aa0d8'); R(c, x + 56, y - 13, 4, 2, '#333'); } }
+    if (state.inv.phpen) { R(c, x + 63, y - 6, 2, 6, '#2b2b2b'); R(c, x + 63, y - 7, 2, 1, '#5fe07a'); }
+  },
   storage(c, x, y, tier) {
     if (tier === 0) { R(c, x, y, 18, 12, '#a0703e'); R(c, x + 1, y + 1, 16, 4, '#8a5a32'); R(c, x + 7, y + 2, 4, 1, '#e3c06a'); R(c, x + 1, y + 6, 16, 5, '#8a5a32'); R(c, x + 7, y + 8, 4, 1, '#e3c06a'); R(c, x + 3, y - 1, 6, 2, '#d9452f'); R(c, x + 11, y - 1, 3, 1, '#f4f2ec'); }
     else if (tier === 1) { const cols = ['#e35d6a', '#f2c94c', '#56b6c2', '#9be15d']; for (let i = 0; i < 4; i++) { R(c, x, y + i * 3, 18, 3, '#e8edf0'); R(c, x + 2, y + i * 3 + 1, 14, 1, cols[i]); } }
@@ -2766,12 +2774,7 @@ const RoomArt = {
   drawBench(c, t) {
     const tier = state.gear.workbench, x = 224, y = 80;
     Gear.bench(c, x, y, tier);
-    R(c, x + 4, y - 9, 10, 9, '#8a6a48'); R(c, x + 5, y - 8, 8, 3, '#e6d3a8'); R(c, x + 18, y - 4, 1, 4, '#9aa0a6'); R(c, x + 17, y - 6, 3, 2, '#7a4e2a');
-    R(c, x + 24, y - 7, 4, 7, '#d9e8f0'); R(c, x + 24, y - 9, 4, 2, '#2f6d1f'); R(c, x + 25, y - 6, 1, 4, '#ffffff');
-    if (state.inv.synth > 0) { R(c, x + 32, y - 8, 3, 8, '#d9452f'); R(c, x + 36, y - 8, 3, 8, '#3f8fd1'); R(c, x + 40, y - 8, 3, 8, '#f2c94c'); }
-    if (state.inv.organic > 0) { R(c, x + 45, y - 9, 7, 9, '#7a5a3a'); R(c, x + 46, y - 7, 5, 2, '#c9a35a'); }
-    { const jb = Feed.all().find(b => b.uses > 0 || b.brewing); if (jb) { R(c, x + 54, y - 11, 8, 11, '#f2f4f6'); R(c, x + 55, y - 7, 6, 6, jb.line === 'organic' ? '#7a5a3a' : '#5aa0d8'); R(c, x + 56, y - 13, 4, 2, '#333'); } }
-    if (state.inv.phpen) { R(c, x + 63, y - 6, 2, 6, '#2b2b2b'); R(c, x + 63, y - 7, 2, 1, '#5fe07a'); }
+    Gear.benchSupplies(c, x, y);
     this.hit('bench', x, y - 12, 68, 16, EQ.workbench[tier].name + ' (mix nutrients)', null, 'furniture');
     Gear.storage(c, x + 4, y + 9, state.gear.storage); this.hit('storage', x + 3, y + 3, 20, 18, EQ.storage[state.gear.storage].name + ' (seeds)', null, 'item');
     R(c, x + 44, y + 9, 18, 12, '#c49a62'); R(c, x + 44, y + 9, 18, 2, '#d8b27a'); R(c, x + 47, y + 14, 12, 1, '#8a6a48');
