@@ -4,7 +4,7 @@ The supplied **v1.1.5.1 Night Walker Flashlights** game, updated with the user-a
 
 The update includes the five approved identities, 67 additional authored appearance variants, matching portraits, all 60 hairstyles and the existing customization choices. The [final review](review/final/index.html) contains comparisons, motion previews, a complete appearance roster, screenshots and validation notes. [Study 02](review/characters-v2/index.html) records the approved samples and reference evidence. Study 01 was rejected and is excluded from this release.
 
-The latest local custom-character repair fits hair to the skull in every direction, keeps short back views at the nape, and maintains a stable face size across all 15 head shapes. Natural fringe transparency, consistent footwear and the earlier hat improvements are retained. Current screenshots and checks are in the [customization v7 review](review/customization-v7/README.md).
+The latest local custom-character repair adds distinct mouth silhouettes, braces, fangs and a cat smile, and keeps selected mouths visible when expressions change. Facial hair uses clean transparent edges without recolored ear/neck outlines or rectangular cheek cuts. Current screenshots and checks are in the [customization v9 review](review/customization-v9/README.md). The [v8 detail alignment](review/customization-v8/README.md) and [v7 hair fitting](review/customization-v7/README.md) are retained across all 15 head shapes.
 
 ## Develop and verify
 

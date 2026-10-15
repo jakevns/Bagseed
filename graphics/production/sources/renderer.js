@@ -8,6 +8,7 @@
   const DIRS = ['down','right','up','left'];
   const HEAD_PAD=64,HEAD_HEIGHT=320,HEAD_NECK=199;
   if(!HAIRS.some(([id])=>id==='bald'))HAIRS.unshift(['bald','Bald']);
+  for(const mouth of [['braces','Braces'],['fangs','Fangs'],['cat','Cat smile']])if(!MOUTHS115.some(([id])=>id===mouth[0]))MOUTHS115.push(mouth);
   const images = new Map(), colored = new Map(), heads = new Map(), bodies = new Map();
   const cache = new Map(), portraits = new Map(), rawPixels = new Map(), faceMasks = new Map();
   let loaded = false;
@@ -158,7 +159,7 @@
     c.beginPath();c.moveTo(points[0],points[1]);for(let i=2;i<points.length;i+=2)c.lineTo(points[i],points[i+1]);
     c.strokeStyle=color;c.lineWidth=width;c.lineCap='round';c.lineJoin='round';if(fill){c.closePath();c.fillStyle=color;c.fill();}else c.stroke();
   }
-  function faceDetails(c,L,dir,features=null) {
+  function legacyFaceDetails(c,L,dir,features=null) {
     if(dir==='up')return;
     c.save();if(dir==='left'){c.translate(192,0);c.scale(-1,1);}
     if(features){const eyes=features.eyes;const x=dir==='down'?(eyes[0][0]+eyes[1][0])/2:dir==='left'?192-eyes[0][0]:eyes[0][0],y=eyes.reduce((n,e)=>n+e[1],0)/eyes.length;const sx=dir==='down'?(eyes[1][0]-eyes[0][0])/32:1,sy=features.mouth?(features.mouth[1]-y)/29:.8;c.translate(x,y);c.scale(sx,sy);c.translate(dir==='down'?-94:-113,-79);}
@@ -234,6 +235,7 @@
     }
     c.restore();
   }
+  __BAGSEED_DETAIL_RENDERER__
   // Facial atlases contain complete bald studies. Extract only the requested
   // hair, then attach its upper lip to the replacement head's own landmarks.
   // A complete lower face must never be pasted over the character's face.
@@ -254,38 +256,59 @@
   }
   function facialHair(c,L,dir,features) {
     if(L.facial==='none'||dir==='up')return;
-    const src=facialSource(L.facial,dir),signature=L.facial+'|'+dir+'|'+L.hairC;
-    let layer=facialLayers.get(signature);
-    if(!layer){
-      const {width:w,height:h,data}=src.raw,a=data.data,out=cv(w,h),g=out.getContext('2d'),d=g.createImageData(w,h),target=rgb(L.hairC),side=dir!=='down';
-      const moustache=['mustache','pencil','handlebar'].includes(L.facial),light=['stubble','scruff'].includes(L.facial);
-      const origin=src.mouthX,my=src.mouthY,mask=new Uint8Array(w*h);
-      for(let y=0;y<h;y++)for(let x=0;x<w;x++){
-        const i=(y*w+x)*4,r=a[i],gg=a[i+1],b=a[i+2],l=lum(r,gg,b),dx=x-origin,dy=y-my;
-        if(a[i+3]<20||r>165||gg>117||b>91||l>135)continue;
-        let keep;
-        if(moustache){const reach=L.facial==='handlebar'?36:L.facial==='pencil'?23:27;keep=Math.abs(dx)<(side?19:reach)&&dy>(L.facial==='handlebar'?-14:-9)&&dy<1;}
-        else if(L.facial==='soul')keep=Math.abs(dx)<(side?10:13)&&dy>3&&dy<19;
-        else if(['goatee','vandyke'].includes(L.facial))keep=dy>-10&&dy<1&&Math.abs(dx)<(side?19:28)||dy>3&&dy<24&&(side?dx>-15&&dx<11:Math.abs(dx)<22);
-        else if(light)keep=dy>3&&dy<18&&Math.abs(dx)<(side?32:31)||dy>-7&&dy<11&&(side?dx<-10:Math.abs(dx)>21)&&Math.abs(dx)<38;
-        else {keep=dy>-22&&dy<27&&Math.abs(dx)<(side?43:42);if(Math.abs(dx)<(side?9:13)&&dy<-9)keep=false;}
-        if(L.facial==='anchor')keep=keep&&(dy<1&&Math.abs(dx)<(side?18:28)||dy>5&&(side?dx>-21&&dx<11:Math.abs(dx)<26));
-        if(keep)mask[y*w+x]=1;
+    const f=features||detailGeometry(L,dir),[mouthX,mouthY]=f.mouth,side=dir!=='down',sign=dir==='left'?-1:1;
+    const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t);};
+    const result=cv(192,HEAD_HEIGHT),r=result.getContext('2d');
+    if(['stubble','scruff'].includes(L.facial)){
+      // Faint source stubble was mostly skin shading plus the neck outline.
+      // Fine deterministic hairs follow the current jaw instead of recoloring
+      // those anatomical lines into a pale chin strap.
+      const scruff=L.facial==='scruff',base=detailBase(L,dir).getContext('2d').getImageData(0,0,192,HEAD_HEIGHT).data;
+      const left=side?mouthX+Math.min(-30*sign,5*sign):mouthX-34,right=side?mouthX+Math.max(-30*sign,5*sign):mouthX+34;
+      for(let y=Math.floor(mouthY-8);y<mouthY+11;y++)for(let x=Math.floor(left);x<right;x++){
+        const dx=side?(x-mouthX)*sign:x-mouthX,dy=y-mouthY,edge=side?Math.hypot((dx+12)/22,(dy-2)/12):Math.hypot(dx/33,(dy-1)/12),seed=((x*73856093)^(y*19349663))>>>0,n=(y*192+x)*4;
+        const opening=side?dx>-10&&dy<4:Math.abs(dx)<12&&dy<4;
+        if(x<0||x>=192||base[n+3]<220||opening||edge>.98||seed%101>(scruff?40:22))continue;
+        r.globalAlpha=(scruff?.45:.28)*smooth(1,.72,edge);r.strokeStyle=L.hairC;r.lineWidth=scruff?.95:.7;r.lineCap='round';r.beginPath();r.moveTo(x,y);r.lineTo(x+(seed%3-1)*.35,y+(scruff?1.3:.7));r.stroke();
+      }r.globalAlpha=1;
+    }else{
+      const src=facialSource(L.facial,dir),signature=L.facial+'|'+dir+'|'+L.hairC;let layer=facialLayers.get(signature);
+      if(!layer){
+        const {width:w,height:h,data}=src.raw,a=data.data,out=cv(w,h),g=out.getContext('2d'),d=g.createImageData(w,h),target=rgb(L.hairC),matte=new Float32Array(w*h),distance=new Float32Array(w*h).fill(99),queue=[];
+        const moustache=['mustache','pencil','handlebar'].includes(L.facial),my=src.mouthY,origin=src.mouthX;
+        for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+          const i=(y*w+x)*4,dx=x-origin,dy=y-my;
+          let region=smooth(-22,-15,dy);
+          if(moustache)region*=smooth(4,0,dy)*smooth(1.15,.95,Math.hypot(dx/(side?25:L.facial==='handlebar'?43:34),(dy+4)/11));
+          else if(L.facial==='soul')region*=smooth(1.15,.9,Math.hypot(dx/(side?8:10),(dy-10)/10));
+          else if(['goatee','vandyke','anchor','circle'].includes(L.facial)){
+            const top=smooth(1.15,.95,Math.hypot(dx/(side?22:30),(dy+4)/9));
+            const chin=smooth(1.15,.95,Math.hypot(dx/(side?16:L.facial==='vandyke'?18:23),(dy-15)/18));region*=Math.max(top,chin);
+          }else if(L.facial==='mutton'&&dy>3)region*=smooth(12,19,Math.abs(dx));
+          // Keep the original mouth opening transparent, including its ink.
+          region*=smooth(1,2.1,Math.hypot(dx/(side?8:11),(dy-1)/2.5));
+          matte[y*w+x]=a[i+3]/255*smooth(180,125,a[i])*smooth(126,83,a[i+1])*smooth(102,66,a[i+2])*region;
+        }
+        // A moustache's authored pieces must connect to the upper lip. Ear
+        // folds and cheek outlines are separate components, even when dark.
+        if(moustache){const seen=new Uint8Array(w*h);for(let start=0;start<matte.length;start++)if(matte[start]>.04&&!seen[start]){const part=[start];seen[start]=1;let lip=false;for(let at=0;at<part.length;at++){const p=part[at],x=p%w,y=Math.floor(p/w);if(Math.abs(x-origin)<18&&y>my-12&&y<my+2)lip=true;for(let yy=Math.max(0,y-1);yy<=Math.min(h-1,y+1);yy++)for(let xx=Math.max(0,x-1);xx<=Math.min(w-1,x+1);xx++){const q=yy*w+xx;if(matte[q]>.04&&!seen[q]){seen[q]=1;part.push(q);}}}if(!lip)for(const p of part)matte[p]=0;}}
+        // Seed actual hair masses. Single-pixel ear, nose and neck contours
+        // cannot seed a beard. Nearby strand tips retain their natural alpha.
+        const need=moustache?4:7,core=new Uint8Array(w*h);
+        for(let y=1;y<h-1;y++)for(let x=1;x<w-1;x++)if(matte[y*w+x]>.55){let count=0;for(let yy=y-1;yy<=y+1;yy++)for(let xx=x-1;xx<=x+1;xx++)if(matte[yy*w+xx]>.55)count++;if(count>=need)core[y*w+x]=1;}
+        const minimum=L.facial==='pencil'?6:L.facial==='chinstrap'?8:moustache?12:25;
+        for(let start=0;start<core.length;start++)if(core[start]===1){const component=[start];core[start]=2;for(let at=0;at<component.length;at++){const p=component[at],x=p%w,y=Math.floor(p/w);for(let yy=Math.max(0,y-1);yy<=Math.min(h-1,y+1);yy++)for(let xx=Math.max(0,x-1);xx<=Math.min(w-1,x+1);xx++){const n=yy*w+xx;if(core[n]===1){core[n]=2;component.push(n);}}}if(component.length>=minimum)for(const p of component){distance[p]=0;queue.push(p);}}
+        for(let at=0;at<queue.length;at++){const p=queue[at],x=p%w,y=Math.floor(p/w),next=distance[p]+1;if(next>4)continue;for(let yy=Math.max(0,y-1);yy<=Math.min(h-1,y+1);yy++)for(let xx=Math.max(0,x-1);xx<=Math.min(w-1,x+1);xx++){const q=yy*w+xx;if(matte[q]>.015&&distance[q]>next){distance[q]=next;queue.push(q);}}}
+        for(let at=0;at<matte.length;at++)if(distance[at]<=4){const i=at*4,l=lum(a[i],a[i+1],a[i+2]),color=material(target,l,65),alpha=matte[at]*smooth(5,2,distance[at]);for(let k=0;k<3;k++)d.data[i+k]=color[k];d.data[i+3]=Math.round(alpha*255);}
+        g.putImageData(d,0,0);layer=out;if(facialLayers.size>100)facialLayers.clear();facialLayers.set(signature,layer);
       }
-      // Reject detached nose and neck contour fragments. Facial-hair strands
-      // stay attached to a substantial beard/moustache component.
-      if(!light){const seen=new Uint8Array(w*h);for(let start=0;start<mask.length;start++)if(mask[start]&&!seen[start]){const todo=[start],component=[];seen[start]=1;while(todo.length){const at=todo.pop();component.push(at);const x=at%w,y=Math.floor(at/w);for(let yy=Math.max(0,y-1);yy<=Math.min(h-1,y+1);yy++)for(let xx=Math.max(0,x-1);xx<=Math.min(w-1,x+1);xx++){const n=yy*w+xx;if(mask[n]&&!seen[n]){seen[n]=1;todo.push(n);}}}if(component.length<7)for(const n of component)mask[n]=0;}}
-      for(let at=0;at<mask.length;at++)if(mask[at]){const i=at*4,l=lum(a[i],a[i+1],a[i+2]),shade=Math.max(.32,Math.min(1.35,l/52)),color=target.map(v=>Math.min(255,v*shade));d.data[i]=color[0];d.data[i+1]=color[1];d.data[i+2]=color[2];d.data[i+3]=a[i+3]*(light?.55:1);}
-      g.putImageData(d,0,0);layer=out;if(facialLayers.size>100)facialLayers.clear();facialLayers.set(signature,layer);
+      r.save();r.translate(mouthX,mouthY);r.scale(side?1:1.04,.69);r.drawImage(layer,-src.mouthX,-src.mouthY);r.restore();
     }
-    const eyes=features?.eyes|| (dir==='down'?[[75,94],[117,94]]:[[dir==='right'?120:72,96]]),eyeY=eyes.reduce((n,p)=>n+p[1],0)/eyes.length,eyeX=eyes.reduce((n,p)=>n+p[0],0)/eyes.length;
-    const mouthX=features?.mouth?.[0]??(dir==='down'?eyeX:eyeX+(dir==='right'?12:-12)),mouthY=features?.mouth?.[1]??(eyeY+(dir==='down'?16:20));
-    c.save();
-    // The adult source studies have smaller eyes. Keep their sideburn texture
-    // outside the larger illustrated eyes instead of painting over a lower
-    // eyelid when the study is fitted to the new jaw.
-    c.beginPath();c.rect(0,0,192,HEAD_HEIGHT);for(const [x,y]of eyes){c.moveTo(x+11,y);c.ellipse(x,y,11,10,0,0,Math.PI*2);}c.clip('evenodd');
-    c.translate(mouthX,mouthY);c.scale(dir==='down'?1.04:1,.69);c.drawImage(layer,-src.mouthX,-src.mouthY);c.restore();
+    // Protect the larger eyes with a curved, feathered clearance. There is no
+    // rectangular cheek window and no skin plate painted over beard strands.
+    const image=r.getImageData(0,0,192,HEAD_HEIGHT),a=image.data;
+    for(let y=130;y<180;y++)for(let x=35;x<158;x++){const n=(y*192+x)*4;if(!a[n+3])continue;for(const [ex,ey]of f.eyes){const d=Math.hypot((x-ex)/14,(y-ey)/12);a[n+3]*=smooth(1,1.18,d);}}
+    r.putImageData(image,0,0);c.drawImage(result,0,0);
   }
   function baldBase(L,dir){
     const signature='bald|'+dir+'|'+L.skin+'|'+L.hairC;if(colored.has(signature))return colored.get(signature);
@@ -323,16 +346,15 @@
   }
   function head(L,dir,blink=false) {
     const signature=identityKey(L)+'|'+L.expr+'|'+dir+'|'+blink;if(heads.has(signature))return heads.get(signature);
-    const id=`hair/${L.hairS}/${dir}`,out=cv(192,HEAD_HEIGHT),g=out.getContext('2d');g.drawImage(baldBase(L,dir),0,0);
-    const faceShape=L.face,shape={round:[1.03,.98],angular:[.97,1.02],long:[.94,1.08],square:[1.06,.99],heart:[1.03,1],oval:[.97,1.03],diamond:[1.06,1.03],oblong:[.94,1.07],pear:[1.05,1.03],triangle:[1.06,1.02],wide:[1.12,.98],petite:[.92,.96],strong:[1.09,1.02],button:[.97,.94]}[faceShape]||[1,1];
-    facialHair(g,L,dir,DATA.headFeatures?.[id]);
-    faceDetails(g,{...L,_blink:blink},dir,DATA.headFeatures?.[id]);
+    const out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),details=detailGeometry(L,dir);g.drawImage(detailBase(L,dir),0,0);
+    const faceShape=L.face,shape=faceFits[faceShape]||[1,1];
+    faceDetails(g,{...L,_blink:blink},dir,details);
+    facialHair(g,L,dir,details);
     g.drawImage(hairLayer(L,dir),0,0);
     // Hair's original transparent opening reveals the face. Never repaint a
     // forehead/face plate over the strands: that sheared every fringe flat.
-    if(L.acc==='headphones'){g.save();g.translate(0,HEAD_PAD);path(g,'#343239',8,[55,86,54,51,77,29,117,29,137,52,138,87]);for(const x of [55,138]){g.fillStyle=L.accC||'#4d4654';g.beginPath();g.roundRect(x-6,78,12,23,5);g.fill();}g.restore();}
+    if(L.acc==='headphones')detailHeadphones(g,L,dir);
     if(L.hat!=='none')g.drawImage(paint(`headwear/${L.hat==='hood'?'beanie':L.hat}/${dir}`,L,'hat'),0,0);
-    let faceScale=[1,1];
     if(faceShape!=='soft'){
       // Each face shape gets a fitted head variant around the same neck root.
       // Its anatomy, ear openings and hair roots share this transform. Never
@@ -340,10 +362,10 @@
       // shrink the face, especially on wide heads and long/voluminous cuts.
       const base=cv(192,HEAD_HEIGHT);base.getContext('2d').drawImage(out,0,0);
       const [sx,sy]=shape;
-      faceScale=[sx,sy];
       g.clearRect(0,0,192,HEAD_HEIGHT);g.save();g.translate(96,HEAD_NECK);g.scale(sx,sy);g.drawImage(base,-96,-HEAD_NECK);g.restore();
     }
-    out.bagseedEyes=(DATA.headFeatures?.[id]?.eyes||[]).map(([x,y])=>[96+(x-96)*faceScale[0],HEAD_NECK+(y-HEAD_NECK)*faceScale[1]]);
+    out.bagseedFeatures=transformedDetails(L,dir);
+    out.bagseedEyes=out.bagseedFeatures.eyes;
     if(heads.size>200)heads.clear();heads.set(signature,out);return out;
   }
   function body(L,dir,nose=false,density=1) {
@@ -562,6 +584,6 @@
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-7',ready,sprite,portrait,normalize,key,head,body,baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-9',ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();

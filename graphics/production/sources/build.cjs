@@ -64,8 +64,10 @@ function visit(value,location='collections'){
   for(const [k,v]of Object.entries(value))if(k!=='look')visit(v,location+'.'+k);
 }
 visit(audit.collections);
-const data={images,approved,cast,traits,headFeatures:layers.features,hatRegistration:layers.hats,hatAssets:Object.keys(layers.hats),layeredHair:true,haircuts:61,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
-const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace(/\r\n/g,'\n').replace('__BAGSEED_ART_DATA__',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
+const detailLandmarks=JSON.parse(fs.readFileSync(path.join(art,'customization-v5/detail-landmarks.json')));
+assert.deepEqual(detailLandmarks.canvas,[192,320],'Detail landmarks must use the registered bald-head canvas');
+const data={images,approved,cast,traits,headFeatures:layers.features,detailLandmarks,hatRegistration:layers.hats,hatAssets:Object.keys(layers.hats),layeredHair:true,haircuts:61,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
+const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace(/\r\n/g,'\n').replace('__BAGSEED_DETAIL_RENDERER__',()=>fs.readFileSync(path.join(__dirname,'face-details.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_ART_DATA__',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
 new (require('node:vm').Script)(characterCode,{filename:'illustrated-production-code'});
 const marker='bagseed-illustrated-production-code';
 const target=path.join(root,'public/index.html'),current=fs.readFileSync(target);
@@ -74,5 +76,5 @@ assert.ok(sha(current)===baselineSHA||sha(current)===priorSHA,'Unexpected edits 
 const html=original.toString().replace('</body></html>',`<script id="${marker}">\n${characterCode}\n</script>\n${require('../../../tools/build-bedroom.cjs')()}</body></html>`);
 assert.ok(html.includes(marker),'Could not find baseline insertion point');
 const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging,target);
-const report={version:'illustrated-1',approval:'Approved cast artwork retained; customization changes await user visual review.',customizationReview:'review/customization-v7/README.md',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length,bedroomRevision:'bedroom-shell-1',bedRevision:'beds-batch-04',bedCombinations:80,deskRevision:'seedling-desks-1',deskVariations:3};
+const report={version:'illustrated-1',approval:'Approved cast artwork retained; customization changes await user visual review.',customizationReview:'review/customization-v9/README.md',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length,bedroomRevision:'bedroom-shell-1',bedRevision:'beds-batch-04',bedCombinations:80,deskRevision:'seedling-desks-1',deskVariations:3};
 fs.writeFileSync(path.join(art,'build.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

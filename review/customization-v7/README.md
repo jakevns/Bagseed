@@ -1,5 +1,7 @@
 # Hair proportions and head-shape fitting
 
+This is the historical hair-fitting checkpoint. The current facial-detail work and build evidence are in [customization v8](../customization-v8/README.md).
+
 The user reported oversized back views and off-center profiles in v6, particularly flat-top, swept cuts and fades. V7 re-registers the retained transparent hair artwork against skull proportions and roots. The local playable file is `public/index.html`. User visual acceptance is pending.
 
 The old fitter treated outer wig dimensions as skull dimensions. The new registration assigns appropriate volume to close cuts, layers, curls, long hair and up-dos; it scores the original eye/ear opening and anchors the back at the nape. Loose hair's front length also constrains profile/rear length, preventing locs and long bobs from growing dramatically when turned. Complete source silhouettes and fringe edges remain intact.
