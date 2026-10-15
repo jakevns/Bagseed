@@ -1,0 +1,15 @@
+{
+  "revision": "community-menu-1",
+  "path": "assets/community-garden.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "ad2d21183d717dbd9666c016e5f5ba0adafecde99d9bf36f04d89fb5ae663f76",
+  "phoneCrop": [
+    537,
+    0,
+    999,
+    1024
+  ]
+}

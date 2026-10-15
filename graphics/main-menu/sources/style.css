@@ -1,0 +1,77 @@
+/* Approved community-garden title screen; all rules stay inside this screen. */
+body:has(#screen-title.menu-home:not([hidden])) { background: #e4e8d7; }
+body #screen-title.menu-home { padding: clamp(4px, 1.6vw, 22px); gap: 0; overflow: auto; }
+body #screen-title.menu-home .menu-shell {
+  position: relative; isolation: isolate; display: grid; grid-template-columns: 35% 65%;
+  width: 100%; height: 100%; max-width: 1360px; max-height: 900px; min-height: 0;
+  flex-shrink: 0; overflow: hidden; border: 2px solid #7a896b; border-radius: 22px;
+  background: #fff5e2; box-shadow: 0 12px 36px #30452a25; color: #29432d;
+}
+body #screen-title.menu-home .menu-backdrop {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;
+}
+body #screen-title.menu-home .menu-panel {
+  grid-area: 1 / 1; display: flex; flex-direction: column; justify-content: center; gap: 24px;
+  min-width: 0; padding: 38px clamp(20px, 3.2vw, 46px) clamp(80px, 12vh, 130px);
+}
+body #screen-title.menu-home .menu-brand { text-align: center; }
+body #screen-title.menu-home .menu-sprout { display: block; height: clamp(36px, 5vh, 54px); width: auto; margin: 0 auto 4px; }
+body #screen-title.menu-home h1 {
+  margin: 0; font: 700 clamp(48px, 5.9vw, 84px)/1 Georgia, 'Times New Roman', serif;
+  font-variant: small-caps; letter-spacing: -.065em; color: #233f26; text-shadow: 0 1px #fff8;
+}
+body #screen-title.menu-home .menu-tagline { margin: 10px 0 0; font: italic clamp(13px, 1.2vw, 17px)/1.4 Georgia, serif; color: #34492c; }
+body #screen-title.menu-home .title-actions { display: grid; grid-template-columns: minmax(0, 1fr); justify-content: stretch; gap: 12px; margin: 0; width: 100%; }
+body #screen-title.menu-home .title-actions .btn {
+  width: 100%; min-height: 48px; padding: 9px 12px; border: 1px solid #6b7c4d; border-radius: 12px;
+  clip-path: none; background: #fff6e3e8; color: #29432d;
+  box-shadow: inset 0 0 0 3px #fff9e8; font: 400 18px/1.2 Georgia, serif; text-transform: none; letter-spacing: 0;
+  transition: background .15s, transform .15s, box-shadow .15s; touch-action: manipulation;
+}
+body #screen-title.menu-home .title-actions [data-act=continueGame],
+body #screen-title.menu-home .title-actions [data-act=newGame] { min-height: 60px; font-size: 25px; border-radius: 17px; }
+body #screen-title.menu-home .title-actions .primary,
+body #screen-title.menu-home:has(#btnContinue:disabled) .title-actions [data-act=newGame] {
+  background: #34583a; color: #fff8e5; border-color: #2d4b31; box-shadow: inset 0 0 0 3px #34583a, inset 0 0 0 4px #d6deb7;
+}
+body #screen-title.menu-home .title-actions .btn:disabled { background: #e1e3cf; color: #61705a; border-color: #a1aa8d; box-shadow: none; opacity: .8; }
+body #screen-title.menu-home .title-actions .btn:not(:disabled):hover { filter: none; transform: translateY(-1px); box-shadow: inset 0 0 0 3px #e8edce, 0 3px 8px #30452a25; }
+body #screen-title.menu-home .title-actions .btn:focus-visible { outline: 3px solid #9f7b25; outline-offset: 4px; }
+body #screen-title.menu-home .menu-foot { text-align: center; color: #526141; }
+body #screen-title.menu-home .menu-divider { display: block; margin: 0 auto 10px; color: #607444; font: 22px/1 Georgia, serif; }
+body #screen-title.menu-home .menu-caption { margin: 0; font: italic 12px/1.4 Georgia, serif; }
+body #screen-title.menu-home .menu-legal { margin: 12px 0 0; font: 10px/1.4 var(--f-ui); color: #637053; }
+body #screen-title.menu-home #titleNote { margin: 10px 0 0; color: #754826; font-size: 12px; }
+body #screen-title.menu-home #titleNote:empty { display: none; }
+body #screen-title.menu-home .menu-scene { display: none; }
+@media (max-width: 700px) {
+  body #screen-title.menu-home { padding: 0; }
+  body #screen-title.menu-home .menu-shell { grid-template-columns: 1fr; grid-template-rows: auto minmax(100px, 1fr) auto auto; border-radius: 18px; max-width: 480px; max-height: none; }
+  body #screen-title.menu-home .menu-panel { display: contents; }
+  body #screen-title.menu-home .menu-backdrop { display: none; }
+  body #screen-title.menu-home .menu-brand { grid-area: 1 / 1; padding: 10px 14px 12px; }
+  body #screen-title.menu-home .menu-sprout { height: 28px; margin-bottom: 0; }
+  body #screen-title.menu-home h1 { font-size: clamp(48px, 14vw, 62px); }
+  body #screen-title.menu-home .menu-tagline { font-size: 12px; margin-top: 3px; }
+  body #screen-title.menu-home .menu-scene { display: block; grid-area: 2 / 1; width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: 50% 40%; image-rendering: auto; }
+  body #screen-title.menu-home .title-actions { grid-area: 3 / 1; gap: 8px; padding: 14px 24px 0; }
+  body #screen-title.menu-home .title-actions .btn { min-height: 44px; padding: 7px 12px; font-size: 16px; border-radius: 10px; }
+  body #screen-title.menu-home .title-actions [data-act=continueGame],
+  body #screen-title.menu-home .title-actions [data-act=newGame] { min-height: 46px; font-size: 20px; border-radius: 13px; }
+  body #screen-title.menu-home .menu-foot { grid-area: 4 / 1; padding: 10px 20px 12px; }
+  body #screen-title.menu-home .menu-divider { margin-bottom: 5px; font-size: 16px; }
+  body #screen-title.menu-home .menu-caption { font-size: 10px; }
+  body #screen-title.menu-home .menu-legal { margin-top: 6px; font-size: 9px; line-height: 1.25; }
+}
+@media (min-width: 701px) and (max-height: 540px) {
+  body #screen-title.menu-home { padding: 0; }
+  body #screen-title.menu-home .menu-panel { padding: 10px 20px; gap: 8px; }
+  body #screen-title.menu-home h1 { font-size: 48px; }
+  body #screen-title.menu-home .menu-sprout { height: 24px; margin: 0 auto; }
+  body #screen-title.menu-home .menu-tagline { font-size: 11px; margin-top: 3px; }
+  body #screen-title.menu-home .title-actions { gap: 6px; }
+  body #screen-title.menu-home .title-actions .btn { min-height: 44px; padding: 6px 10px; font-size: 16px; }
+  body #screen-title.menu-home .menu-divider, body #screen-title.menu-home .menu-legal { display: none; }
+  body #screen-title.menu-home .menu-caption { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { body #screen-title.menu-home .title-actions .btn { transition: none; } }

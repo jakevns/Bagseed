@@ -502,16 +502,31 @@ body.touch-ui #pauseTag{top:auto;bottom:96px}
 
 <div id="app">
   <!-- TITLE -->
-  <section id="screen-title" class="screen">
-    <canvas id="titleCanvas" class="px" width="320" height="180"></canvas>
-    <div class="title-actions">
-      <button class="btn primary" data-act="newGame">New game</button>
-      <button class="btn" data-act="continueGame" id="btnContinue">Continue</button>
-      <button class="btn ghost" data-act="openSettings">Settings</button>
-      <button class="btn ghost" data-act="importSave">Import save</button>
+  <section id="screen-title" class="screen menu-home" aria-label="Bagseed main menu">
+    <canvas id="titleCanvas" class="px" width="320" height="180" hidden aria-hidden="true"></canvas>
+    <div class="menu-shell">
+      <img id="menuArtwork" class="menu-backdrop" src="__BAGSEED_MENU_IMAGE__" alt="" aria-hidden="true" fetchpriority="high">
+      <div class="menu-panel">
+        <header class="menu-brand">
+          <svg class="menu-sprout" viewBox="0 0 72 76" aria-hidden="true"><path d="M36 51C36 35 34 24 25 14" fill="none" stroke="#526838" stroke-width="3"/><path d="M35 37C18 39 9 29 7 17c17-1 27 5 28 20Z" fill="#6e8944" stroke="#344e30" stroke-width="2"/><path d="M35 30C36 12 47 7 65 5c-2 16-12 25-30 25Z" fill="#819c4c" stroke="#344e30" stroke-width="2"/><ellipse cx="36" cy="60" rx="14" ry="12" fill="#947245" stroke="#503d29" stroke-width="2"/><path d="M35 51c-5 5-6 11-3 17" fill="none" stroke="#c5a56d" stroke-width="2"/></svg>
+          <h1>Bagseed</h1>
+          <p class="menu-tagline">One seed. A whole community.</p>
+        </header>
+        <nav class="title-actions" aria-label="Main menu">
+          <button class="btn primary" data-act="continueGame" id="btnContinue">Continue</button>
+          <button class="btn" data-act="newGame">New game</button>
+          <button class="btn ghost" data-act="openSettings">Settings</button>
+          <button class="btn ghost" data-act="importSave">Import save</button>
+        </nav>
+        <footer class="menu-foot">
+          <span class="menu-divider" aria-hidden="true">❧</span>
+          <p class="menu-caption">A cozy life sim about growing and belonging.</p>
+          <p class="title-foot" id="titleNote" role="status"></p>
+          <p class="menu-legal">A fictional world with fictional rules. Nothing here is cultivation, legal or medical advice.</p>
+        </footer>
+      </div>
+      <canvas id="menuScene" class="menu-scene" width="996" height="1024" role="img" aria-label="Neighbors sharing seedlings in a sunny community garden, with two potted cannabis plants."></canvas>
     </div>
-    <p class="title-foot" id="titleNote"></p>
-    <p class="title-foot">BAGSEED — Version 1.1.4 · A cozy life sim about a legal medical garden. Fictional world, fictional rules: nothing here is cultivation, legal or medical advice.</p>
   </section>
 
   <!-- CHARACTER CREATOR -->
@@ -3588,7 +3603,7 @@ function nextDialog() {
   runtime.dialogOpen = true; runtime.curDialog = d; el.hidden = false;
   el.innerHTML = `<canvas class="portrait px" width="64" height="64"></canvas><div style="min-width:0;flex:1"><div class="who">${esc(d.name)}</div><div class="say">${esc(prf(d.text))}</div><div class="choices${d.tones || d.choices.length > 3 ? ' tones' : ''}">${d.choices.map((c, i) => `<button class="btn${c.tone ? ' tone-btn tone-' + c.tone : ''}" data-act="dlg" data-arg="${i}">${c.tone && TONES[c.tone] ? `<span class="tchip">${TONES[c.tone].mark} ${TONES[c.tone].label}</span>` : ''}<span class="tl">${esc(c.label)}</span></button>`).join('')}</div>${d.tiny ? `<div class="tiny">${esc(d.tiny)}</div>` : ''}</div>`;
   document.body.classList.add('dialog-open');
-  drawPortrait(el.querySelector('canvas'), lookFor(d.who));
+  drawPortrait(el.querySelector('canvas'), d.look || lookFor(d.who));
   { const say = el.querySelector('.say'), full = say.textContent; clearInterval(runtime.tw); if (!settings.reduced && full.length > 12) { say.textContent = ''; let i = 0; runtime.tw = setInterval(() => { i += 2; say.textContent = full.slice(0, i); if (i >= full.length) clearInterval(runtime.tw); }, 16); } }
   Sfx.notify(); const b = el.querySelector('.btn'); if (b) b.focus({ preventScroll: true });
 }
@@ -7683,7 +7698,7 @@ function importFrom(text) {
   const res = SaveSys.readImport(text), m = $('#importMsg');
   if (res.err) { if (m) m.innerHTML = `<span style="color:var(--danger)">${esc(res.err)}</span>`; Sfx.bad(); return; }
   const s = res.state;
-  dialog({ who: 'you', name: 'Import this save?', text: `${s.player.name} · Day ${s.day} · ${money(s.money)} · ${s.social.followers} followers${res.meta ? ` · exported ${String(res.meta.exportedAt).slice(0, 10)} (v${res.meta.gameVersion})` : ''}. Your current save will be backed up first.`, choices: [{ label: 'Import it', fn: () => { closePanel(); SaveSys.applyImport(s); } }, { label: 'Cancel', fn: () => { } }] });
+  dialog({ who: 'you', look: state ? null : Object.assign(withState(s, playerLook), { bg: '#e6d9f2' }), name: 'Import this save?', text: `${s.player.name} · Day ${s.day} · ${money(s.money)} · ${s.social.followers} followers${res.meta ? ` · exported ${String(res.meta.exportedAt).slice(0, 10)} (v${res.meta.gameVersion})` : ''}. Your current save will be backed up first.`, choices: [{ label: 'Import it', fn: () => { closePanel(); SaveSys.applyImport(s); } }, { label: 'Cancel', fn: () => { } }] });
 }
 Object.assign(ACT, {
   exportSave() { SaveSys.exportFile(); },
@@ -15381,6 +15396,7 @@ const roomCv = $('#room');
 function fitCanvas() { if (state) View.resize(); }
 const titleCv = $('#titleCanvas'), titleCtx = titleCv.getContext('2d');
 function drawTitle(t) {
+  if (titleCv.hidden) return;
   const c = titleCtx; c.imageSmoothingEnabled = false; R(c, 0, 0, 320, 180, '#120f18');
   for (let i = 0; i < 30; i++) R(c, (i * 53) % 320, (i * 29) % 70, 1, 1, (i + Math.floor(t)) % 7 ? (i % 3 ? '#3a3350' : '#6a6290') : '#a8a0d0');
   R(c, 118, 70, 84, 110, '#4a3020'); R(c, 122, 74, 76, 106, '#241d2c');
