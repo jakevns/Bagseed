@@ -1,5 +1,15 @@
 # Bedroom update checkpoint
 
+## Bed batch 02 completed
+
+The user approved the Metal Frame and Cozy Upholstered Bed with all ten bedding choices: "Great work go ahead and push it through". This increment adds exactly 20 combinations, bringing the completed total to 40. Original transparent atlases, approval boards, source hashes and registration rectangles are retained under `graphics/beds/batch-02/`. The same source renderer is instantiated separately for each batch, preserving Batch 01 artwork and allowing readiness to await all four atlases.
+
+Both batch tests passed. Batch 01's 20 rendered images match hashes captured before this integration. Batch 02 checks its 20 drawings and icons, buys both frames at their existing $55/$90 prices plus paid bedding, applies styles, reloads the save, checks sleep controls and emulated phone layout. The remaining 40 combinations match the archived original renderer. Reproduce with `node --test tests/beds-batch-01.test.cjs tests/beds-batch-02.test.cjs`; tests share `tests/helpers/bed-batch.cjs`.
+
+Final integration validation: all 17 browser tests passed with no skips; `npm run check` verified the immutable baseline checksum and parsed all 81 script blocks. The embedded character and bedroom-shell payloads are unchanged from the preceding commit. Repeating the bedroom build succeeded. Original art and actual rendered review captures are retained in Git under this batch's source and review folders.
+
+The four remaining frames are Platform, Fancy Canopy, Rattan Headboard and Tufted Headboard. None is approved for implementation yet. Prepare the next batch of at most two frames × ten beddings for explicit visual approval, then implement, test and push that increment separately. Previous milestone sections below record their state at completion.
+
 ## Bed batch 01 completed
 
 The user approved the Starter Bed and Wooden Frame with all ten bedding choices: "First batch looks great!!" The user explicitly requested batches of at most 20 combinations and pushing each completed approved increment. Batch 01 implements exactly those 20 combinations, including their shop/style previews. Original transparent source atlases, approval boards and crop/registration data are retained under `graphics/beds/batch-01/`.

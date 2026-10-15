@@ -26,7 +26,7 @@ if (require.main === module) {
   const html = source.replace('</body></html>', `${character[0]}\n${bedroomScript()}</body></html>`);
   assert.equal(sha(fs.readFileSync(path.join(root, 'baselines/Bagseed_v1.1.5.1_Night_Walker_Flashlights_Update.html'))), report.baselineSHA);
   fs.writeFileSync(output + '.tmp', html); fs.renameSync(output + '.tmp', output);
-  Object.assign(report, { workingSourceSHA: sha(source), updatedSHA: sha(html), bytes: Buffer.byteLength(html), bedroomRevision: 'bedroom-shell-1', bedRevision: 'beds-batch-01', bedCombinations: 20 });
+  Object.assign(report, { workingSourceSHA: sha(source), updatedSHA: sha(html), bytes: Buffer.byteLength(html), bedroomRevision: 'bedroom-shell-1', bedRevision: 'beds-batch-02', bedCombinations: 40 });
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
-  console.log('Rebuilt bedroom shell and bed batch 01; verified character payload retained unchanged.');
+  console.log('Rebuilt bedroom shell and approved bed batches 01–02; verified character payload retained unchanged.');
 }

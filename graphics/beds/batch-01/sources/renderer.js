@@ -1,8 +1,9 @@
-/* Approved batch 01 only: starter/wooden × the existing ten bedding IDs. */
+/* Shared atlas renderer, instantiated separately for each approved batch. */
 (() => {
   'use strict';
   const DATA = __BAGSEED_BED_DATA__, images = new Map(), sprites = new Map();
   let loaded = false;
+  const previousBatch = window.BagseedBeds;
   const originalBed = RoomArt.drawBed, originalIcon = drawStyleIcon;
   const supported = (frame, bedding) => loaded && !!DATA.frames[frame]?.tiles[bedding];
   function sprite(frame, bedding) {
@@ -37,18 +38,19 @@
     ctx.save(); ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
     ctx.drawImage(tmp, 0, 0, canvas.width, canvas.height); ctx.restore();
   };
-  const ready = Promise.all(Object.entries(DATA.frames).map(([id, frame]) => new Promise((resolve, reject) => {
+  const ready = Promise.all([previousBatch?.ready, ...Object.entries(DATA.frames).map(([id, frame]) => new Promise((resolve, reject) => {
     const image = new Image();
     image.onload = () => { images.set(id, image); resolve(); };
     image.onerror = () => reject(new Error(`Bed artwork failed: ${id}`));
     image.src = frame.image;
-  }))).then(async () => {
+  }))]).then(async () => {
     loaded = true;
     if (window.BagseedArt) await BagseedArt.ready;
     if (screen === 'game') { hydrate(document); View.snap(); }
-    return { frames: Object.keys(DATA.frames), combinations: 20 };
+    return { frames: [...(previousBatch?.frames || []), ...Object.keys(DATA.frames)], combinations: ((previousBatch?.frames.length || 0) + Object.keys(DATA.frames).length) * 10 };
   });
   window.BagseedBeds = Object.freeze({ revision: DATA.revision, ready,
-    frames: Object.keys(DATA.frames), get loaded() { return loaded; } });
+    frames: [...(previousBatch?.frames || []), ...Object.keys(DATA.frames)],
+    get loaded() { return loaded && (!previousBatch || previousBatch.loaded); } });
   ready.catch(error => console.error(error));
 })();
