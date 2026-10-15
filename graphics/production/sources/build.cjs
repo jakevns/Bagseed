@@ -25,7 +25,12 @@ const cast=castManifest.people.map(person=>{
 });
 assert.equal(cast.length,67,'Authored roster art is incomplete');
 // Small approved pose batch: retain complete drawings, never composite an arm.
-for(const [batch,names] of Object.entries({'batch-01':['marcus','ines'],'batch-02':['tobias','bev','kenji','mateo','elena']})) for(const name of names) {
+for(const [batch,names] of Object.entries({
+  'batch-01':['marcus','ines'],
+  'batch-02':['tobias','bev','kenji','mateo','elena'],
+  'batch-03':['rosa','leo','mara','eli','nico'],
+  'batch-04':['alma','owen','amina','ronan','leila']
+})) for(const name of names) {
   const person=cast.find(p=>p.id.endsWith('-'+name));
   assert.ok(person,'Missing pose owner: '+name);
   person.actions={};
