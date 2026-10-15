@@ -1,0 +1,35 @@
+{
+  "proposalOnly": true,
+  "entryPoint": "public/index.html",
+  "checks": [
+    {
+      "id": "basic",
+      "name": "Basic Curtains",
+      "price": 0,
+      "animated": true,
+      "wind": true,
+      "reducedMotion": true,
+      "fixedRod": true,
+      "store": true
+    },
+    {
+      "id": "blackout",
+      "name": "Blackout Curtains",
+      "price": 20,
+      "animated": true,
+      "wind": true,
+      "reducedMotion": true,
+      "fixedRod": true,
+      "store": true
+    }
+  ],
+  "unchangedOptions": [
+    "none",
+    "floral",
+    "sheer",
+    "pattern",
+    "blinds"
+  ],
+  "actualStoreCard": true,
+  "errors": []
+}

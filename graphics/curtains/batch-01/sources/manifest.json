@@ -1,0 +1,32 @@
+{
+  "revision": "curtains-batch-01",
+  "status": "proposed",
+  "path": "assets/curtains-atlas.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "10f9123e88bdd8424924faa661750fe7bc30d71a12ea0ac32575497270c2018c",
+  "styles": {
+    "basic": {
+      "name": "Basic Curtains",
+      "price": 0,
+      "rect": [
+        28,
+        205,
+        720,
+        610
+      ]
+    },
+    "blackout": {
+      "name": "Blackout Curtains",
+      "price": 20,
+      "rect": [
+        796,
+        205,
+        720,
+        610
+      ]
+    }
+  }
+}

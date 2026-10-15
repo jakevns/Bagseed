@@ -1,5 +1,11 @@
 # Bedroom update checkpoint
 
+## Curtain batch 01 — pending picture approval
+
+The new request is all bedroom curtain options, including animations, limited to TWO sets per batch. Six cloth/blind styles exist, plus No Curtains. First proposal: Basic Curtains (included) and Blackout Curtains ($20); later batches Floral/Sheer and Patterned/Blinds. No Curtains retains the existing open window.
+
+The new original atlas and animated shared renderer are under `graphics/curtains/batch-01/`. `tools/preview-curtains.cjs` injects them into the complete `public/index.html` game for review, without editing/publishing the production HTML or game source. Checks cover two distinct drawings, normal/Windy sway, fixed rods, still reduced motion, five untouched options and the actual Blackout store card. The approval board, store picture, animation loop and report are retained in `review/curtains-batch-01/`. Show pictures directly in chat; wait for explicit artwork approval before production integration and push. Read this batch's README for remaining integration checks.
+
 ## Mobile corner details — approved for publication
 
 The user rejected the continuous foliage frame: “Instead of forcing an illustration that doesnt fit design one that fits like the reference. It doesnt have to frame it just add details around the corners and seperate hard edges”. The rejected frame was replaced before publication. The new revision uses six individually registered painted pieces from `graphics/main-menu/assets/mobile-details.png`: two header sprigs, two footer corners and two low flower clusters at the garden/menu seam. All pieces preserve their proportions, with no plant fading masks or full-height border. A shallow irregular clip softens the garden's hard horizontal edges.
