@@ -55,7 +55,7 @@ test('facial hair follows the lower face without repainting eyes, crown or back 
 test('hairstyles retain transparent canvas margins when the face is widened or lengthened',async()=>{
   const result=await inspect(()=>{
     const failures=[];let views=0;
-    for(const [hairS]of HAIRS)for(const dir of ['down','right','up','left'])for(const face of ['soft','wide','long']){
+    for(const [hairS]of HAIRS)for(const dir of ['down','right','up','left'])for(const face of ['soft','round','angular','long','square','heart','oval','diamond','oblong','pear','triangle','wide','petite','strong','button']){
       const c=BagseedArt.head(BagseedArt.normalize({hairS,face,hat:'none',facial:'none'}),dir),a=c.getContext('2d').getImageData(0,0,c.width,c.height).data;let left=c.width,right=-1,top=c.height,bottom=-1;
       for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++)if(a[(y*c.width+x)*4+3]>80){left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y);}
       if(left<1||right>c.width-2||top<1||bottom>c.height-2)failures.push({hairS,dir,face,bounds:[left,top,right,bottom],canvas:[c.width,c.height]});views++;
@@ -63,7 +63,7 @@ test('hairstyles retain transparent canvas margins when the face is widened or l
     return {views,failures};
   });
   fs.writeFileSync(path.join(OUT,'head-margin-regressions.json'),JSON.stringify(result,null,2)+'\n');
-  assert.deepEqual(result.failures,[]);assert.equal(result.views,732);
+  assert.deepEqual(result.failures,[]);assert.equal(result.views,3660);
 });
 
 test('hats preserve the registered face scale and eye placement',async()=>{
@@ -157,15 +157,29 @@ test('changing hair preserves face geometry and gives long and tied styles headr
   const result=await inspect(()=>{
     const failures=[];let views=0;
     const base=BagseedArt.normalize({hairS:'bald',hat:'none',facial:'none',face:'soft'});
-    for(const dir of ['down','right','up','left']){
+    for(const face of ['soft','round','angular','long','square','heart','oval','diamond','oblong','pear','triangle','wide','petite','strong','button'])for(const dir of ['down','right','up','left']){
+      base.face=face;
       const reference=charSprite(base,dir),eyes=JSON.stringify(reference.bagseedEyes);
-      for(const [hairS]of HAIRS){const c=charSprite({...base,hairS},dir);if(c.width!==96||c.height!==144||JSON.stringify(c.bagseedEyes)!==eyes)failures.push({hairS,dir,reason:'hair changed face scale or position'});views++;}
+      for(const [hairS]of HAIRS){const c=charSprite({...base,hairS},dir);if(c.width!==96||c.height!==144||JSON.stringify(c.bagseedEyes)!==eyes)failures.push({hairS,face,dir,reason:'hair changed face scale or position'});views++;}
     }
     // Sparse hair belongs at temples and nape, never floating over a bald crown.
     const a=BagseedArt.hairLayer({...base,hairS:'balding'},'down').getContext('2d').getImageData(0,0,192,120).data;
     if(a.some((v,n)=>n%4===3&&v>100))failures.push('Thinning hair floats above the temples');
     return {views,failures};
-  });assert.deepEqual(result.failures,[]);assert.equal(result.views,244);
+  });fs.writeFileSync(path.join(OUT,'all-head-shape-geometry.json'),JSON.stringify(result,null,2)+'\n');assert.deepEqual(result.failures,[]);assert.equal(result.views,3660);
+});
+
+test('close cuts fit the skull width, stay centered and finish at the nape',async()=>{
+  const result=await inspect(()=>{
+    const failures=[],measurements=[];
+    const bounds=c=>{const a=c.getContext('2d').getImageData(0,0,c.width,c.height).data;let l=c.width,r=0,t=c.height,b=0;for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++)if(a[(y*c.width+x)*4+3]>100){l=Math.min(l,x);r=Math.max(r,x);t=Math.min(t,y);b=Math.max(b,y);}return {left:l,right:r,top:t,bottom:b,width:r-l+1,height:b-t+1};};
+    for(const hairS of ['short','pixie','sidepixie','crop','caesar','fade','hightop','flattop','quiff','pomp','slick','spikes','fauxhawk','curlytop','twistsS','bowl']){
+      const look=BagseedArt.normalize({hairS,hairC:'#c4c4c4',hat:'none',face:'soft'}),skull=bounds(BagseedArt.baldBase(look,'up')),hair=bounds(BagseedArt.hairLayer(look,'up'));
+      const row={hairS,skull,hair};measurements.push(row);
+      if(hair.width>skull.width*1.3||hair.height>skull.height*1.45||hair.bottom>skull.bottom||hair.top>skull.top+4||Math.abs((hair.left+hair.right)/2-96)>4)failures.push(row);
+    }
+    return {measurements,failures};
+  });fs.writeFileSync(path.join(OUT,'hair-skull-fit.json'),JSON.stringify(result,null,2)+'\n');assert.deepEqual(result.failures,[]);assert.equal(result.measurements.length,16);
 });
 
 test('the original opaque fringe strands survive composition over the forehead',async()=>{

@@ -6,6 +6,7 @@ never extracted from a painted face, and the bald base never contains hair.
 from pathlib import Path
 import hashlib
 import json
+import sys
 import numpy as np
 from PIL import Image, ImageFilter
 
@@ -17,6 +18,12 @@ RESAMPLE=Image.Resampling.LANCZOS
 PAD=64
 HEIGHT=320
 report={'version':'bald-and-hair-5','assets':{},'features':{},'anatomy':{},'hair':{},'sources':{}}
+# Optional haircut IDs make local registration corrections reproducible without
+# reprocessing unrelated atlases. The default still rebuilds the complete pack.
+ONLY=set(sys.argv[1:])
+if ONLY:
+    assert ONLY<={s[0] for s in SPECS},('Unknown hairstyle',ONLY)
+    report=json.loads((ROOT/'manifest.json').read_text())
 
 def bbox(mask):
     yy,xx=np.nonzero(mask)
@@ -143,7 +150,7 @@ def mask_for_base(im,features,direction):
             ears=a&(((xx<60)|(xx>132))&(yy>ey-3)&(yy<ey+22))
         else:
             ear=features['ear'][0];right=direction=='right'
-            scalp=a&((yy<ey-27)|((xx<ear-5) if right else (xx>ear+5)))&(yy<118)
+            scalp=a&((yy<ey-27)|((xx<ear-8) if right else (xx>ear+8)))&(yy<106)
             face=a&((xx>ear+13) if right else (xx<ear-13))&(yy>ey-5)&(yy<ey+31)
             ears=a&(((xx-ear)/8)**2+((yy-(features['ear'][1]-PAD))/11)**2<1)
         eyes=np.zeros_like(a)
@@ -183,6 +190,27 @@ for i,direction in enumerate(DIRS):
     features[direction]=f
     report['features']['base/'+direction]=f
 
+# Width is the silhouette's intended volume, not an estimate of skull size.
+# Nape values register the complete ends; no forehead or hair is cut away.
+FIT_GROUPS=[
+    ('short pixie sidepixie crop caesar fade flattop slick bowl', (118,112,108),188),
+    ('hightop quiff pomp spikes fauxhawk curlytop twistsS', (124,118,114),188),
+    ('buzz cornrows', (104,103,102),185),
+    ('medium curtains', (124,118,116),202),
+    ('bob angledbob asymbob braidbob', (128,120,122),216),
+    ('shag wolf mullet curlybob twistout', (132,124,126),221),
+    ('curly', (140,132,134),214),
+    ('afro puff', (150,142,146),204),
+    ('bigafro', (158,150,156),210),
+    ('puffs', (158,132,156),205),
+    ('bun topknot spacebuns bantu lowbun crownbraid', (128,120,122),190),
+    ('ponytail ponyhi sidepony halfup', (132,130,124),252),
+    ('long wavy locs braids lob layered bluntlong beachwaves longcurls twinbraids boxbraids longtwists loosebraid', (136,124,126),285),
+    ('mohawk sidecut', (118,120,110),192),
+    ('balding', (104,103,102),188),
+]
+FIT={style:(widths,end) for styles,widths,end in FIT_GROUPS for style in styles.split()}
+
 def fit_hair(cell,direction,style):
     raw=np.asarray(cell);box=bbox(raw[:,:,3]>50);crop=cell.crop(box)
     # Fully neutral material data prevents hue fringes in translucent pixels.
@@ -190,20 +218,33 @@ def fit_hair(cell,direction,style):
     masks=mask_for_base(bases[direction],features[direction],direction)
     scalp,face,eyes,ears=masks
     special=style in ['mohawk','sidecut','balding','cornrows','bantu']
-    preferred=174 if style=='bigafro' else 160 if style in ['afro','puffs','puff'] else 145 if style in ['curly','wavy','locs','twistout','curlybob','longcurls','halfup','ponyhi'] else 130
-    if style=='puffs' and direction in ['right','left']:preferred=130
+    widths,end=FIT[style];preferred=widths[0 if direction=='down' else 2 if direction=='up' else 1]
+    reference=report.get('hair',{}).get(style,{}).get('down',{})
+    crown=reference.get('placement',[0,94])[1]
+    # Loose hair keeps its length when the person turns. The former fixed
+    # "long hair" height made locs/lobs double in length in profile and back.
+    loose='medium bob curly wavy braids locs curtains angledbob asymbob braidbob lob shag wolf curlybob twistout layered beachwaves longcurls twinbraids boxbraids longtwists loosebraid'
+    if direction!='down' and style in loose.split() and 'size' in reference:
+        end=min(end,max(200,crown+reference['size'][1]+16))
+    # The rear skull has a stable crown and nape. A tall/long source silhouette
+    # must not be mistaken for a larger head, as happened with every short back.
+    target_top=min(crown,96) if direction=='up' else crown
+    if style in ['bun','topknot','spacebuns','bantu','ponyhi']:target_top=min(crown,80)
     # A scored fit keeps the scalp covered while leaving the actual face and
     # eye landmarks open. No skin pixels are ever removed from a hair bitmap.
     best=None;alpha_cache={}
-    for width in range(max(102,preferred-24),min(181,preferred+25),8):
+    for width in range(preferred-4,preferred+5,4):
         sx=width/crop.width
-        for aspect in [.9,1.,1.1]:
-            sy=sx*aspect;natural_h=max(1,round(crop.height*sy));w=width
-            dx_values=[0] if direction=='up' and style not in ['sidepony','asymbob','sidecut'] else [-24,-18,-12,-6,0,6,12,18,24]
+        heights=[round(crop.height*sx*a) for a in [.85,.95,1.05,1.15]] if direction=='down' else [round(end-target_top+a) for a in [-8,0,8]]
+        for natural_h in heights:
+            w=width
+            dx_values=[0] if direction=='up' and style not in ['sidepony','asymbob','sidecut'] else [-12,-8,-4,0,4,8,12]
             for dx in dx_values:
                 x=round((192-w)/2)+dx
-                if x<4 or x+w>188:continue
-                for y in range(8,113,6):
+                margin=14 if style=='bigafro' else 4
+                if x<margin or x+w>192-margin:continue
+                positions=range(26,113,3) if direction=='down' else range(max(26,round(target_top)-9),min(114,round(target_top)+10),3)
+                for y in positions:
                     h=natural_h
                     # Ear-length layers may extend below the neck too. A
                     # height cap rejected correct fits and floated wigs above
@@ -218,14 +259,13 @@ def fit_hair(cell,direction,style):
                     missing=mean(scalp,1-canvas)
                     # Fit the original transparent face opening to anatomy.
                     # No runtime face plate is allowed to erase fringe strands.
-                    score=(2.2 if special else 40)*missing
-                    if direction!='up':score+=10*mean(eyes,canvas)+mean(face,canvas)
+                    score=(2.2 if special else 30)*missing
+                    if direction!='up':score+=30*mean(eyes,canvas)+mean(face,canvas)+2*mean(ears,canvas)
                     # Turning must not make the crown jump up the head. Use
                     # the fitted front crown as a positional prior in profiles
                     # and back views, without touching the original silhouette.
-                    reference=report.get('hair',{}).get(style,{}).get('down',{})
-                    if direction!='down' and 'placement' in reference:score+=.8*((y-reference['placement'][1])/20)**2
-                    score+=.22*((w-preferred)/24)**2+.1*(aspect-1)**2+.2*(dx/6)**2
+                    if direction!='down':score+=2*((y-target_top)/12)**2+3*((y+h-end)/14)**2
+                    score+=.3*((w-preferred)/4)**2+.08*(dx/4)**2
                     if best is None or score<best[0]:best=(score,x,y,w,h)
     assert best is not None,style
     score,x,y,w,h=best;art=resize(crop,(w,h));out=Image.new('RGBA',(192,HEIGHT))
@@ -234,15 +274,17 @@ def fit_hair(cell,direction,style):
         out.alpha_composite(art.crop((0,0,w,split_at)),(x,y))
         tail=art.crop((0,split_at,w,h));tail=resize(tail,(w,115));out.alpha_composite(tail,(x,135+PAD))
     else:out.alpha_composite(art,(x,y))
-    return out,{'sourceBounds':box,'placement':[x,y],'size':[w,h],'score':round(score,5),'material':'neutral-grayscale-alpha'}
+    return out,{'sourceBounds':box,'placement':[x,y],'size':[w,h],'score':round(score,5),'material':'neutral-grayscale-alpha','fit':'skull-roots-7','targetNape':end if direction!='down' else None}
 
 for group in range(15):
+    if ONLY and not ONLY.intersection(s[0] for s in SPECS[group*4:group*4+4]):continue
     name=f'hair-{group+1:02}.png'
     if not (ROOT/'sources'/name).exists():continue
     print('Registering',name,flush=True)
     atlas=source(name);a=np.asarray(atlas);rows=split((a[:,:,3]>100).sum(axis=1),4);cells=isolate_cells(a,rows)
     for row in range(4):
         style=SPECS[group*4+row][0]
+        if ONLY and style not in ONLY:continue
         report['hair'][style]={}
         for col,direction in enumerate(DIRS):
             cell,box=cells[row*4+col];art,registration=fit_hair(cell,direction,style);key=f'wig/{style}/{direction}'
@@ -251,9 +293,10 @@ for group in range(15):
             registration['sourceCropBoundaryPixels']=0
             report['features'][f'hair/{style}/{direction}']=features[direction]
 
-if (ROOT/'sources/rounded-volume.png').exists():
+if (ROOT/'sources/rounded-volume.png').exists() and (not ONLY or ONLY.intersection(['afro','bigafro','puffs'])):
     atlas=source('rounded-volume.png');a=np.asarray(atlas);rows=split((a[:,:,3]>100).sum(axis=1),3);cells=isolate_cells(a,rows)
     for row,style in enumerate(['afro','bigafro','puffs']):
+        if ONLY and style not in ONLY:continue
         for col,direction in enumerate(DIRS):
             cell,box=cells[row*4+col];art,registration=fit_hair(cell,direction,style);save(art,f'wig/{style}/{direction}')
             registration.update(source='rounded-volume.png',sourceBox=box,sourceCropBoundaryPixels=0);report['hair'][style][direction]=registration
@@ -262,14 +305,14 @@ for direction in DIRS:
     save(Image.new('RGBA',(192,HEIGHT)),'wig/bald/'+direction)
     report['features']['hair/bald/'+direction]=features[direction]
 
-if (ROOT/'sources/short-twists.png').exists():
+if (ROOT/'sources/short-twists.png').exists() and (not ONLY or 'twistsS' in ONLY):
     atlas=source('short-twists.png');a=np.asarray(atlas);columns=split((a[:,:,3]>100).sum(axis=0),4)
     for col,direction in enumerate(DIRS):
         box=[columns[col],0,columns[col+1],atlas.height];cell=atlas.crop(box);assert_cell_margin(cell,('short-twists',direction));art,registration=fit_hair(cell,direction,'twistsS')
         save(art,f'wig/twistsS/{direction}');registration.update(source='short-twists.png',sourceBox=box,sourceCropBoundaryPixels=0)
         report['hair']['twistsS'][direction]=registration
 
-if (ROOT/'sources/short-thinning.png').exists():
+if (ROOT/'sources/short-thinning.png').exists() and (not ONLY or 'balding' in ONLY):
     atlas=source('short-thinning.png');a=np.asarray(atlas)
     # Sparse temple/nape hair intentionally leaves the crown bare. Register
     # those anatomical locations directly instead of maximizing scalp cover.
@@ -286,8 +329,9 @@ if (ROOT/'sources/short-thinning.png').exists():
 hat_settings={
     'cap':(110,1.17,95),'beanie':(108,1.02,95),'bucket':(124,1.04,90),'straw':(146,1.04,60),
     'sunhat':(164,1.02,75),'officer':(122,1.1,65),'wizard':(148,1.03,128),'beret':(114,1.05,65)}
-report['hats']={}
+if not ONLY:report['hats']={}
 for group,names in [(1,['cap','beanie','bucket','straw']),(2,['sunhat','officer','wizard','beret'])]:
+    if ONLY:continue
     filename=f'hats-{group:02}.png'
     if not (ROOT/'sources'/filename).exists():continue
     atlas=source(filename);a=np.asarray(atlas);rows=split((a[:,:,3]>100).sum(axis=1),4);cells=isolate_cells(a,rows)

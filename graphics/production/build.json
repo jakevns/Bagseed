@@ -1,11 +1,11 @@
 {
   "version": "illustrated-1",
   "approval": "Approved cast artwork retained; customization changes await user visual review.",
-  "customizationReview": "review/customization-v6/README.md",
+  "customizationReview": "review/customization-v7/README.md",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "94893002e162490f3dd4b296968549fed36edc6a7aa3ac349f226696ad3c52dd",
-  "updatedSHA": "2867171c5780e6fcfdbce578a76a90d55247fecae27c5df1b1b23537fa17038c",
-  "bytes": 47954130,
+  "updatedSHA": "335648c1524aaf682255c7a209090105f5722a6a7157ea3c6ac25cdb2e3a56bd",
+  "bytes": 47115790,
   "modularAssets": 544,
   "embeddedImages": 1552,
   "approvedIdentities": [

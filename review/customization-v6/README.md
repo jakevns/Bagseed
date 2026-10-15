@@ -1,5 +1,7 @@
 # Natural fringe, footwear and hat fit
 
+Historical v6 evidence. The user reported further hair size/centering defects; current fitting work and validation are in [v7](../customization-v7/README.md).
+
 The user found remaining forehead cuts, inconsistent footwear proportions and hat-fit problems in v5. This revision corrects the renderer and registrations using the retained transparent artwork. No new artwork was generated in this revision. The playable local file is `public/index.html` at the repository root. User visual acceptance remains pending.
 
 The forehead cut came from a broad face plate drawn over the hair. It has been removed. Hair's original transparent opening now reveals the face, with the full strand silhouette composited above the bald anatomy. Registration fits that opening to eye landmarks and uses the front crown as a placement reference while turning. It does not erase pixels to expose the face. Hat occlusion is retained where hair belongs under the worn crown. Each hat has its own brim clearance, lowered to sit against the forehead rather than float above it.

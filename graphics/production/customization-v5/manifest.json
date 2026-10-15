@@ -3650,15 +3650,17 @@
           206
         ],
         "placement": [
-          39,
+          37,
           92
         ],
         "size": [
-          114,
-          83
+          118,
+          81
         ],
-        "score": 0.56841,
+        "score": 1.40511,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           16,
           82,
@@ -3676,15 +3678,17 @@
           231
         ],
         "placement": [
-          49,
+          44,
           92
         ],
         "size": [
-          106,
-          91
+          112,
+          96
         ],
-        "score": 1.06041,
+        "score": 0.77703,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           274,
           81,
@@ -3702,15 +3706,17 @@
           236
         ],
         "placement": [
-          31,
-          92
+          42,
+          95
         ],
         "size": [
-          130,
-          147
+          108,
+          96
         ],
-        "score": 0.39221,
+        "score": 0.83896,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           525,
           83,
@@ -3728,15 +3734,17 @@
           227
         ],
         "placement": [
-          25,
-          80
+          40,
+          92
         ],
         "size": [
-          130,
-          108
+          112,
+          96
         ],
-        "score": 1.33601,
+        "score": 0.66853,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           763,
           83,
@@ -3756,15 +3764,17 @@
           177
         ],
         "placement": [
-          31,
-          86
+          40,
+          98
         ],
         "size": [
-          130,
-          109
+          104,
+          67
         ],
-        "score": 0.38221,
+        "score": 0.92099,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           26,
           393,
@@ -3782,15 +3792,17 @@
           231
         ],
         "placement": [
-          43,
+          44,
           98
         ],
         "size": [
-          106,
-          93
+          103,
+          87
         ],
-        "score": 1.51869,
+        "score": 1.19602,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 185,
         "sourceBox": [
           273,
           395,
@@ -3808,15 +3820,17 @@
           235
         ],
         "placement": [
-          31,
-          86
+          45,
+          99
         ],
         "size": [
-          130,
-          121
+          102,
+          89
         ],
-        "score": 0.36739,
+        "score": 0.87613,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 185,
         "sourceBox": [
           526,
           393,
@@ -3834,15 +3848,17 @@
           232
         ],
         "placement": [
-          43,
-          98
+          44,
+          101
         ],
         "size": [
-          106,
-          104
+          103,
+          87
         ],
-        "score": 1.58046,
+        "score": 1.14986,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 185,
         "sourceBox": [
           769,
           393,
@@ -3862,15 +3878,17 @@
           253
         ],
         "placement": [
-          39,
-          92
+          34,
+          86
         ],
         "size": [
-          114,
-          100
+          124,
+          103
         ],
-        "score": 2.49952,
+        "score": 3.29466,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           12,
           691,
@@ -3888,15 +3906,17 @@
           242
         ],
         "placement": [
-          43,
-          92
+          39,
+          80
         ],
         "size": [
-          106,
-          95
+          114,
+          116
         ],
-        "score": 1.00445,
+        "score": 1.99541,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 202,
         "sourceBox": [
           269,
           700,
@@ -3914,15 +3934,17 @@
           259
         ],
         "placement": [
-          31,
-          92
+          38,
+          86
         ],
         "size": [
-          130,
-          131
+          116,
+          116
         ],
-        "score": 0.38176,
+        "score": 0.29236,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 202,
         "sourceBox": [
           511,
           690,
@@ -3940,15 +3962,17 @@
           241
         ],
         "placement": [
-          43,
-          92
+          39,
+          80
         ],
         "size": [
-          106,
-          95
+          114,
+          116
         ],
-        "score": 1.13228,
+        "score": 2.03958,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 202,
         "sourceBox": [
           769,
           700,
@@ -3968,15 +3992,17 @@
           424
         ],
         "placement": [
-          13,
+          22,
           92
         ],
         "size": [
-          154,
-          226
+          140,
+          194
         ],
-        "score": 1.86885,
+        "score": 5.26142,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           6,
           1003,
@@ -3994,15 +4020,17 @@
           436
         ],
         "placement": [
-          43,
-          80
+          24,
+          89
         ],
         "size": [
-          106,
-          174
+          120,
+          193
         ],
-        "score": 1.54774,
+        "score": 5.92669,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           270,
           998,
@@ -4020,15 +4048,17 @@
           434
         ],
         "placement": [
-          31,
+          33,
           92
         ],
         "size": [
-          130,
-          229
+          126,
+          193
         ],
-        "score": 0.3814,
+        "score": 0.29148,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           501,
           1000,
@@ -4046,15 +4076,17 @@
           436
         ],
         "placement": [
-          43,
-          86
+          48,
+          89
         ],
         "size": [
-          106,
-          168
+          120,
+          193
         ],
-        "score": 1.56709,
+        "score": 5.732,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           766,
           998,
@@ -4074,15 +4106,17 @@
           252
         ],
         "placement": [
-          35,
+          34,
           92
         ],
         "size": [
-          122,
-          102
+          124,
+          98
         ],
-        "score": 2.4399,
+        "score": 4.50212,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           13,
           74,
@@ -4100,15 +4134,17 @@
           246
         ],
         "placement": [
-          43,
-          86
+          32,
+          89
         ],
         "size": [
-          106,
-          98
+          120,
+          106
         ],
-        "score": 1.60592,
+        "score": 3.33255,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 206,
         "sourceBox": [
           288,
           77,
@@ -4126,15 +4162,17 @@
           243
         ],
         "placement": [
-          31,
+          35,
           92
         ],
         "size": [
-          130,
-          135
+          122,
+          114
         ],
-        "score": 0.39505,
+        "score": 0.29969,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 206,
         "sourceBox": [
           558,
           79,
@@ -4152,15 +4190,17 @@
           245
         ],
         "placement": [
-          49,
-          92
+          44,
+          89
         ],
         "size": [
-          106,
-          101
+          120,
+          114
         ],
-        "score": 1.42678,
+        "score": 2.01422,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 206,
         "sourceBox": [
           824,
           80,
@@ -4180,15 +4220,17 @@
           234
         ],
         "placement": [
-          28,
+          24,
           92
         ],
         "size": [
-          137,
-          102
+          144,
+          101
         ],
-        "score": 1.93606,
+        "score": 4.16887,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           6,
           384,
@@ -4206,15 +4248,17 @@
           238
         ],
         "placement": [
-          26,
+          18,
           86
         ],
         "size": [
-          129,
-          111
+          132,
+          117
         ],
-        "score": 1.19363,
+        "score": 4.36635,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 209,
         "sourceBox": [
           293,
           385,
@@ -4232,15 +4276,17 @@
           241
         ],
         "placement": [
-          24,
+          29,
           92
         ],
         "size": [
-          145,
-          125
+          134,
+          117
         ],
-        "score": 0.41378,
+        "score": 0.31536,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 209,
         "sourceBox": [
           549,
           384,
@@ -4258,15 +4304,17 @@
           238
         ],
         "placement": [
-          38,
+          42,
           86
         ],
         "size": [
-          129,
-          112
+          132,
+          117
         ],
-        "score": 1.20861,
+        "score": 4.4044,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 209,
         "sourceBox": [
           833,
           385,
@@ -4286,15 +4334,17 @@
           380
         ],
         "placement": [
-          22,
-          92
+          28,
+          89
         ],
         "size": [
-          161,
-          199
+          136,
+          158
         ],
-        "score": 6.79063,
+        "score": 8.83697,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           11,
           660,
@@ -4312,15 +4362,17 @@
           386
         ],
         "placement": [
-          36,
-          86
+          26,
+          89
         ],
         "size": [
-          121,
-          168
+          124,
+          174
         ],
-        "score": 1.10746,
+        "score": 3.02128,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 263,
         "sourceBox": [
           287,
           663,
@@ -4338,15 +4390,17 @@
           389
         ],
         "placement": [
-          24,
-          92
+          33,
+          89
         ],
         "size": [
-          145,
-          210
+          126,
+          174
         ],
-        "score": 0.41521,
+        "score": 0.53285,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 263,
         "sourceBox": [
           536,
           659,
@@ -4364,15 +4418,17 @@
           388
         ],
         "placement": [
-          36,
+          38,
           86
         ],
         "size": [
-          121,
-          165
+          124,
+          174
         ],
-        "score": 1.07493,
+        "score": 2.98233,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 263,
         "sourceBox": [
           818,
           663,
@@ -4392,15 +4448,17 @@
           350
         ],
         "placement": [
-          19,
-          44
+          32,
+          56
         ],
         "size": [
-          154,
-          208
+          128,
+          163
         ],
-        "score": 2.0474,
+        "score": 5.60976,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           32,
           1061,
@@ -4418,15 +4476,17 @@
           339
         ],
         "placement": [
-          39,
-          50
+          36,
+          59
         ],
         "size": [
-          114,
-          167
+          120,
+          134
         ],
-        "score": 3.10871,
+        "score": 4.36662,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           297,
           1071,
@@ -4444,15 +4504,17 @@
           333
         ],
         "placement": [
-          31,
-          44
+          35,
+          59
         ],
         "size": [
-          130,
-          209
+          122,
+          142
         ],
-        "score": 0.40971,
+        "score": 5.31234,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           572,
           1063,
@@ -4470,15 +4532,17 @@
           335
         ],
         "placement": [
-          35,
-          44
+          40,
+          59
         ],
         "size": [
-          122,
-          177
+          120,
+          134
         ],
-        "score": 2.07881,
+        "score": 4.25966,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           817,
           1073,
@@ -4498,15 +4562,17 @@
           310
         ],
         "placement": [
-          23,
-          86
+          30,
+          92
         ],
         "size": [
-          146,
-          161
+          132,
+          138
         ],
-        "score": 0.55501,
+        "score": 2.06276,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           28,
           26,
@@ -4524,15 +4590,17 @@
           357
         ],
         "placement": [
-          31,
-          80
+          39,
+          83
         ],
         "size": [
-          106,
-          153
+          130,
+          152
         ],
-        "score": 2.57131,
+        "score": 14.89445,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           284,
           28,
@@ -4550,15 +4618,17 @@
           352
         ],
         "placement": [
-          31,
-          86
+          34,
+          92
         ],
         "size": [
-          130,
-          227
+          124,
+          160
         ],
-        "score": 0.41451,
+        "score": 0.31291,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           571,
           28,
@@ -4576,15 +4646,17 @@
           356
         ],
         "placement": [
-          15,
-          68
+          17,
+          83
         ],
         "size": [
-          138,
-          174
+          134,
+          152
         ],
-        "score": 3.12859,
+        "score": 14.70303,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           809,
           29,
@@ -4604,15 +4676,17 @@
           384
         ],
         "placement": [
-          27,
+          26,
           92
         ],
         "size": [
-          138,
-          192
+          140,
+          184
         ],
-        "score": 0.46999,
+        "score": 2.08421,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           29,
           381,
@@ -4630,15 +4704,17 @@
           384
         ],
         "placement": [
-          43,
-          74
+          24,
+          86
         ],
         "size": [
-          130,
-          188
+          120,
+          185
         ],
-        "score": 2.71293,
+        "score": 9.5619,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           303,
           380,
@@ -4656,15 +4732,17 @@
           393
         ],
         "placement": [
-          27,
-          98
+          33,
+          95
         ],
         "size": [
-          138,
-          265
+          126,
+          193
         ],
-        "score": 0.64115,
+        "score": 2.35448,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           568,
           381,
@@ -4682,15 +4760,17 @@
           385
         ],
         "placement": [
-          13,
-          74
+          48,
+          83
         ],
         "size": [
-          130,
-          191
+          120,
+          193
         ],
-        "score": 3.09238,
+        "score": 9.28264,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           815,
           380,
@@ -4710,15 +4790,17 @@
           286
         ],
         "placement": [
-          16,
-          86
+          26,
+          92
         ],
         "size": [
-          161,
-          148
+          140,
+          121
         ],
-        "score": 0.71628,
+        "score": 3.61699,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           4,
           777,
@@ -4736,15 +4818,17 @@
           284
         ],
         "placement": [
-          18,
+          28,
           86
         ],
         "size": [
-          121,
-          119
+          128,
+          137
         ],
-        "score": 3.20807,
+        "score": 17.23471,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 229,
         "sourceBox": [
           286,
           781,
@@ -4762,15 +4846,17 @@
           295
         ],
         "placement": [
-          24,
-          86
+          33,
+          92
         ],
         "size": [
-          145,
-          160
+          126,
+          137
         ],
-        "score": 0.35188,
+        "score": 0.26471,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 229,
         "sourceBox": [
           549,
           774,
@@ -4788,15 +4874,17 @@
           282
         ],
         "placement": [
-          24,
-          68
+          36,
+          89
         ],
         "size": [
-          145,
-          141
+          128,
+          129
         ],
-        "score": 2.27801,
+        "score": 16.54438,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 229,
         "sourceBox": [
           818,
           782,
@@ -4816,15 +4904,17 @@
           224
         ],
         "placement": [
-          16,
-          56
+          21,
+          62
         ],
         "size": [
-          160,
-          116
+          150,
+          102
         ],
-        "score": 0.33338,
+        "score": 1.80941,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "source": "rounded-volume.png",
         "sourceBox": [
           39,
@@ -4842,15 +4932,17 @@
           245
         ],
         "placement": [
-          16,
-          62
+          13,
+          53
         ],
         "size": [
-          136,
-          115
+          142,
+          142
         ],
-        "score": 1.90181,
+        "score": 7.24829,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 204,
         "source": "rounded-volume.png",
         "sourceBox": [
           352,
@@ -4868,15 +4960,17 @@
           244
         ],
         "placement": [
-          16,
-          56
+          23,
+          62
         ],
         "size": [
-          160,
-          147
+          146,
+          142
         ],
-        "score": 0.31586,
+        "score": 0.23663,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 204,
         "source": "rounded-volume.png",
         "sourceBox": [
           638,
@@ -4894,15 +4988,17 @@
           247
         ],
         "placement": [
-          36,
-          56
+          39,
+          65
         ],
         "size": [
-          144,
-          133
+          138,
+          134
         ],
-        "score": 1.46321,
+        "score": 5.29007,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 204,
         "source": "rounded-volume.png",
         "sourceBox": [
           950,
@@ -4922,15 +5018,17 @@
           262
         ],
         "placement": [
-          31,
-          44
+          37,
+          59
         ],
         "size": [
-          130,
-          140
+          118,
+          120
         ],
-        "score": 0.09092,
+        "score": 0.05967,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           49,
           52,
@@ -4948,15 +5046,17 @@
           309
         ],
         "placement": [
-          23,
-          50
+          40,
+          59
         ],
         "size": [
-          146,
-          212
+          120,
+          133
         ],
-        "score": 0.7126,
+        "score": 1.31764,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 192,
         "sourceBox": [
           304,
           63,
@@ -4974,15 +5074,17 @@
           324
         ],
         "placement": [
-          23,
-          44
+          41,
+          59
         ],
         "size": [
-          146,
-          243
+          110,
+          133
         ],
-        "score": 0.1476,
+        "score": 0.90298,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 192,
         "sourceBox": [
           572,
           51,
@@ -5000,15 +5102,17 @@
           308
         ],
         "placement": [
-          23,
-          50
+          32,
+          59
         ],
         "size": [
-          146,
-          215
+          120,
+          133
         ],
-        "score": 0.8444,
+        "score": 1.59205,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 192,
         "sourceBox": [
           826,
           63,
@@ -5028,15 +5132,17 @@
           292
         ],
         "placement": [
-          31,
-          56
+          25,
+          68
         ],
         "size": [
-          130,
-          137
+          118,
+          118
         ],
-        "score": 0.62561,
+        "score": 1.32107,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           27,
           405,
@@ -5054,15 +5160,17 @@
           282
         ],
         "placement": [
-          27,
-          56
+          32,
+          68
         ],
         "size": [
-          138,
-          165
+          120,
+          124
         ],
-        "score": 0.05606,
+        "score": 0.23248,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 192,
         "sourceBox": [
           293,
           412,
@@ -5080,15 +5188,17 @@
           295
         ],
         "placement": [
-          31,
-          56
+          41,
+          68
         ],
         "size": [
-          130,
-          160
+          110,
+          124
         ],
-        "score": 0.02141,
+        "score": 0.21084,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 192,
         "sourceBox": [
           561,
           411,
@@ -5106,15 +5216,17 @@
           274
         ],
         "placement": [
-          23,
-          62
+          36,
+          68
         ],
         "size": [
-          146,
-          174
+          120,
+          124
         ],
-        "score": 1.23338,
+        "score": 1.54185,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 192,
         "sourceBox": [
           818,
           412,
@@ -5236,15 +5348,17 @@
           239
         ],
         "placement": [
-          39,
-          86
+          37,
+          83
         ],
         "size": [
-          114,
-          96
+          118,
+          94
         ],
-        "score": 1.3984,
+        "score": 2.64093,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           20,
           1082,
@@ -5262,15 +5376,17 @@
           249
         ],
         "placement": [
-          43,
-          86
+          40,
+          83
         ],
         "size": [
-          106,
+          112,
           105
         ],
-        "score": 1.20298,
+        "score": 0.49271,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           288,
           1087,
@@ -5288,15 +5404,17 @@
           279
         ],
         "placement": [
-          31,
-          86
+          42,
+          83
         ],
         "size": [
-          130,
-          155
+          108,
+          113
         ],
-        "score": 0.36434,
+        "score": 1.82508,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           554,
           1082,
@@ -5314,15 +5432,17 @@
           256
         ],
         "placement": [
-          43,
-          80
+          40,
+          83
         ],
         "size": [
-          106,
-          111
+          112,
+          105
         ],
-        "score": 1.60228,
+        "score": 0.71683,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           826,
           1085,
@@ -5342,15 +5462,17 @@
           254
         ],
         "placement": [
-          39,
+          33,
           86
         ],
         "size": [
-          114,
-          95
+          118,
+          93
         ],
-        "score": 0.57889,
+        "score": 1.85447,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           13,
           93,
@@ -5368,15 +5490,17 @@
           273
         ],
         "placement": [
-          43,
+          40,
           86
         ],
         "size": [
-          106,
+          112,
           102
         ],
-        "score": 0.65224,
+        "score": 0.48312,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           292,
           89,
@@ -5394,15 +5518,17 @@
           272
         ],
         "placement": [
-          31,
-          86
+          42,
+          89
         ],
         "size": [
-          130,
-          156
+          108,
+          102
         ],
-        "score": 0.34698,
+        "score": 0.96195,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           550,
           92,
@@ -5420,15 +5546,17 @@
           271
         ],
         "placement": [
-          39,
+          44,
           86
         ],
         "size": [
-          114,
-          104
+          112,
+          102
         ],
-        "score": 0.76284,
+        "score": 0.54371,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           809,
           91,
@@ -5448,15 +5576,17 @@
           216
         ],
         "placement": [
-          31,
-          80
+          33,
+          83
         ],
         "size": [
-          130,
-          97
+          118,
+          84
         ],
-        "score": 0.34198,
+        "score": 0.70036,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           17,
           445,
@@ -5474,15 +5604,17 @@
           254
         ],
         "placement": [
-          49,
-          86
+          44,
+          83
         ],
         "size": [
-          106,
-          104
+          112,
+          105
         ],
-        "score": 1.52083,
+        "score": 0.66729,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           288,
           445,
@@ -5500,15 +5632,17 @@
           269
         ],
         "placement": [
-          31,
-          80
+          42,
+          86
         ],
         "size": [
-          130,
-          156
+          108,
+          105
         ],
-        "score": 0.33063,
+        "score": 1.11601,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           555,
           442,
@@ -5526,15 +5660,17 @@
           253
         ],
         "placement": [
-          29,
-          80
+          36,
+          83
         ],
         "size": [
-          122,
-          107
+          112,
+          105
         ],
-        "score": 1.7027,
+        "score": 0.58502,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           813,
           449,
@@ -5554,15 +5690,17 @@
           222
         ],
         "placement": [
-          31,
-          74
+          33,
+          77
         ],
         "size": [
-          130,
-          100
+          118,
+          86
         ],
-        "score": 0.34776,
+        "score": 0.5761,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           15,
           778,
@@ -5580,15 +5718,17 @@
           252
         ],
         "placement": [
-          43,
+          40,
           74
         ],
         "size": [
-          106,
-          112
+          112,
+          111
         ],
-        "score": 1.80478,
+        "score": 1.00324,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           282,
           775,
@@ -5606,15 +5746,17 @@
           248
         ],
         "placement": [
-          31,
-          74
+          42,
+          80
         ],
         "size": [
-          130,
-          144
+          108,
+          111
         ],
-        "score": 0.33087,
+        "score": 0.82104,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           552,
           776,
@@ -5632,15 +5774,17 @@
           252
         ],
         "placement": [
-          29,
-          62
+          36,
+          77
         ],
         "size": [
-          122,
-          128
+          112,
+          111
         ],
-        "score": 2.06888,
+        "score": 0.96453,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           809,
           778,
@@ -5660,15 +5804,17 @@
           218
         ],
         "placement": [
-          31,
-          80
+          37,
+          89
         ],
         "size": [
-          130,
-          112
+          118,
+          87
         ],
-        "score": 0.3266,
+        "score": 0.71644,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           19,
           1095,
@@ -5686,15 +5832,17 @@
           237
         ],
         "placement": [
-          9,
-          80
+          40,
+          86
         ],
         "size": [
-          138,
-          140
+          112,
+          99
         ],
-        "score": 2.30546,
+        "score": 1.62183,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           290,
           1099,
@@ -5712,15 +5860,17 @@
           235
         ],
         "placement": [
-          31,
-          80
+          42,
+          92
         ],
         "size": [
-          130,
-          131
+          108,
+          99
         ],
-        "score": 0.32006,
+        "score": 0.58166,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           562,
           1102,
@@ -5738,15 +5888,17 @@
           239
         ],
         "placement": [
-          39,
-          80
+          40,
+          86
         ],
         "size": [
-          138,
-          144
+          112,
+          99
         ],
-        "score": 1.50702,
+        "score": 1.4229,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           814,
           1099,
@@ -5766,15 +5918,17 @@
           207
         ],
         "placement": [
-          31,
-          80
+          34,
+          83
         ],
         "size": [
-          130,
-          106
+          124,
+          86
         ],
-        "score": 0.31555,
+        "score": 0.62757,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           20,
           88,
@@ -5792,15 +5946,17 @@
           270
         ],
         "placement": [
-          43,
-          86
+          37,
+          83
         ],
         "size": [
-          106,
-          99
+          118,
+          105
         ],
-        "score": 1.14007,
+        "score": 0.73289,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           291,
           91,
@@ -5818,15 +5974,17 @@
           278
         ],
         "placement": [
-          31,
-          80
+          39,
+          86
         ],
         "size": [
-          130,
-          152
+          114,
+          105
         ],
-        "score": 0.31846,
+        "score": 1.06881,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           558,
           89,
@@ -5844,15 +6002,17 @@
           274
         ],
         "placement": [
-          43,
-          86
+          41,
+          83
         ],
         "size": [
-          106,
-          104
+          118,
+          105
         ],
-        "score": 0.87047,
+        "score": 0.83707,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           814,
           91,
@@ -5872,15 +6032,17 @@
           164
         ],
         "placement": [
-          31,
-          92
+          37,
+          95
         ],
         "size": [
-          130,
-          100
+          118,
+          70
         ],
-        "score": 0.35172,
+        "score": 0.34304,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           36,
           438,
@@ -5898,15 +6060,17 @@
           242
         ],
         "placement": [
-          37,
-          92
+          34,
+          95
         ],
         "size": [
-          106,
-          101
+          108,
+          93
         ],
-        "score": 1.88107,
+        "score": 1.8659,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           298,
           423,
@@ -5924,15 +6088,17 @@
           238
         ],
         "placement": [
-          31,
-          92
+          42,
+          95
         ],
         "size": [
-          130,
-          128
+          108,
+          93
         ],
-        "score": 0.32942,
+        "score": 0.70383,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           569,
           429,
@@ -5950,15 +6116,17 @@
           238
         ],
         "placement": [
-          39,
-          74
+          48,
+          95
         ],
         "size": [
-          114,
-          108
+          112,
+          93
         ],
-        "score": 1.89073,
+        "score": 1.49521,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           830,
           425,
@@ -5978,15 +6146,17 @@
           234
         ],
         "placement": [
-          43,
-          80
+          42,
+          74
         ],
         "size": [
-          106,
-          86
+          124,
+          95
         ],
-        "score": 0.58437,
+        "score": 0.87173,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           20,
           721,
@@ -6004,15 +6174,17 @@
           280
         ],
         "placement": [
-          43,
-          86
+          37,
+          74
         ],
         "size": [
-          106,
-          105
+          118,
+          114
         ],
-        "score": 1.00023,
+        "score": 1.69736,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           286,
           723,
@@ -6030,15 +6202,17 @@
           295
         ],
         "placement": [
-          31,
-          80
+          39,
+          71
         ],
         "size": [
-          130,
-          134
+          114,
+          122
         ],
-        "score": 0.34834,
+        "score": 1.22396,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           549,
           719,
@@ -6056,15 +6230,17 @@
           280
         ],
         "placement": [
-          39,
-          80
+          41,
+          77
         ],
         "size": [
-          114,
-          117
+          118,
+          114
         ],
-        "score": 0.94776,
+        "score": 1.40421,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           820,
           722,
@@ -6084,15 +6260,17 @@
           217
         ],
         "placement": [
-          27,
-          86
+          38,
+          80
         ],
         "size": [
-          138,
-          103
+          124,
+          87
         ],
-        "score": 0.36779,
+        "score": 1.06658,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           18,
           1064,
@@ -6110,15 +6288,17 @@
           277
         ],
         "placement": [
-          29,
-          86
+          41,
+          80
         ],
         "size": [
-          122,
-          140
+          118,
+          108
         ],
-        "score": 0.81517,
+        "score": 0.71133,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           289,
           1057,
@@ -6136,15 +6316,17 @@
           272
         ],
         "placement": [
-          31,
-          86
+          39,
+          83
         ],
         "size": [
-          130,
-          164
+          114,
+          108
         ],
-        "score": 0.35018,
+        "score": 0.56539,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           559,
           1067,
@@ -6162,15 +6344,17 @@
           279
         ],
         "placement": [
-          49,
-          86
+          37,
+          80
         ],
         "size": [
-          106,
-          127
+          118,
+          108
         ],
-        "score": 1.01504,
+        "score": 0.60103,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           810,
           1057,
@@ -6190,15 +6374,17 @@
           230
         ],
         "placement": [
-          31,
-          86
+          37,
+          89
         ],
         "size": [
-          130,
-          123
+          118,
+          96
         ],
-        "score": 0.43301,
+        "score": 1.2024,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           16,
           104,
@@ -6216,15 +6402,17 @@
           259
         ],
         "placement": [
-          25,
-          86
+          48,
+          89
         ],
         "size": [
-          130,
-          142
+          112,
+          99
         ],
-        "score": 0.86615,
+        "score": 0.9488,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           283,
           102,
@@ -6242,15 +6430,17 @@
           259
         ],
         "placement": [
-          31,
-          86
+          42,
+          92
         ],
         "size": [
-          130,
-          126
+          108,
+          99
         ],
-        "score": 0.45885,
+        "score": 0.63204,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           551,
           103,
@@ -6268,15 +6458,17 @@
           259
         ],
         "placement": [
-          33,
-          86
+          36,
+          89
         ],
         "size": [
-          114,
-          108
+          112,
+          99
         ],
-        "score": 1.04986,
+        "score": 0.6295,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           801,
           102,
@@ -6296,15 +6488,17 @@
           235
         ],
         "placement": [
-          31,
-          74
+          34,
+          80
         ],
         "size": [
-          130,
-          105
+          124,
+          94
         ],
-        "score": 0.50159,
+        "score": 1.40216,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           18,
           419,
@@ -6322,15 +6516,17 @@
           259
         ],
         "placement": [
-          45,
-          74
+          41,
+          77
         ],
         "size": [
-          114,
-          111
+          118,
+          108
         ],
-        "score": 1.89542,
+        "score": 1.27185,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           285,
           422,
@@ -6348,15 +6544,17 @@
           266
         ],
         "placement": [
-          31,
-          74
+          39,
+          83
         ],
         "size": [
-          130,
-          128
+          114,
+          108
         ],
-        "score": 0.41967,
+        "score": 0.65954,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           556,
           419,
@@ -6374,15 +6572,17 @@
           258
         ],
         "placement": [
-          39,
-          74
+          33,
+          77
         ],
         "size": [
-          138,
-          148
+          118,
+          108
         ],
-        "score": 1.38882,
+        "score": 1.46192,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           808,
           423,
@@ -6402,15 +6602,17 @@
           247
         ],
         "placement": [
-          31,
-          44
+          34,
+          65
         ],
         "size": [
-          130,
-          144
+          124,
+          106
         ],
-        "score": 0.4802,
+        "score": 0.55946,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           32,
           730,
@@ -6428,15 +6630,17 @@
           279
         ],
         "placement": [
-          13,
-          44
+          41,
+          65
         ],
         "size": [
-          154,
-          175
+          118,
+          123
         ],
-        "score": 1.41824,
+        "score": 1.17627,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           283,
           739,
@@ -6454,15 +6658,17 @@
           288
         ],
         "placement": [
-          31,
-          44
+          39,
+          65
         ],
         "size": [
-          130,
-          151
+          114,
+          123
         ],
-        "score": 0.43412,
+        "score": 0.33817,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           564,
           731,
@@ -6480,15 +6686,17 @@
           277
         ],
         "placement": [
-          29,
-          50
+          33,
+          65
         ],
         "size": [
-          146,
-          169
+          118,
+          123
         ],
-        "score": 1.55149,
+        "score": 1.09329,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           805,
           741,
@@ -6508,15 +6716,17 @@
           220
         ],
         "placement": [
-          43,
-          86
+          28,
+          80
         ],
         "size": [
-          106,
-          78
+          120,
+          84
         ],
-        "score": 0.97328,
+        "score": 1.75977,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           13,
           1100,
@@ -6534,15 +6744,17 @@
           253
         ],
         "placement": [
-          25,
+          41,
           80
         ],
         "size": [
-          130,
-          134
+          118,
+          108
         ],
-        "score": 1.15977,
+        "score": 1.07295,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           284,
           1101,
@@ -6560,15 +6772,17 @@
           251
         ],
         "placement": [
-          31,
-          86
+          39,
+          83
         ],
         "size": [
-          130,
-          119
+          114,
+          108
         ],
-        "score": 0.4329,
+        "score": 0.95708,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           554,
           1100,
@@ -6586,15 +6800,17 @@
           255
         ],
         "placement": [
-          43,
-          86
+          37,
+          77
         ],
         "size": [
-          106,
-          98
+          118,
+          108
         ],
-        "score": 1.24588,
+        "score": 0.89605,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           802,
           1099,
@@ -6614,15 +6830,17 @@
           566
         ],
         "placement": [
-          29,
-          86
+          38,
+          89
         ],
         "size": [
-          146,
-          116
+          124,
+          93
         ],
-        "score": 3.0576,
+        "score": 7.53381,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "source": "short-twists.png",
         "sourceBox": [
           0,
@@ -6640,15 +6858,17 @@
           580
         ],
         "placement": [
-          37,
-          86
+          29,
+          89
         ],
         "size": [
-          106,
-          105
+          118,
+          99
         ],
-        "score": 1.2062,
+        "score": 1.79263,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "source": "short-twists.png",
         "sourceBox": [
           546,
@@ -6666,15 +6886,17 @@
           582
         ],
         "placement": [
-          31,
-          86
+          39,
+          92
         ],
         "size": [
-          130,
-          126
+          114,
+          99
         ],
-        "score": 0.357,
+        "score": 0.64339,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "source": "short-twists.png",
         "sourceBox": [
           1093,
@@ -6693,14 +6915,16 @@
         ],
         "placement": [
           49,
-          92
+          89
         ],
         "size": [
-          106,
-          96
+          118,
+          99
         ],
-        "score": 1.45175,
+        "score": 1.75847,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "source": "short-twists.png",
         "sourceBox": [
           1614,
@@ -6720,15 +6944,17 @@
           204
         ],
         "placement": [
-          31,
+          39,
           86
         ],
         "size": [
-          130,
-          98
+          114,
+          81
         ],
-        "score": 0.30955,
+        "score": 1.80158,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           24,
           467,
@@ -6746,15 +6972,17 @@
           220
         ],
         "placement": [
-          33,
+          32,
           86
         ],
         "size": [
-          114,
-          99
+          112,
+          102
         ],
-        "score": 0.71117,
+        "score": 0.84639,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           298,
           466,
@@ -6772,15 +7000,17 @@
           220
         ],
         "placement": [
-          31,
+          42,
           86
         ],
         "size": [
-          130,
-          123
+          108,
+          102
         ],
-        "score": 0.30603,
+        "score": 0.38617,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           555,
           467,
@@ -6798,15 +7028,17 @@
           222
         ],
         "placement": [
-          41,
-          80
+          48,
+          86
         ],
         "size": [
-          122,
-          104
+          112,
+          102
         ],
-        "score": 0.64403,
+        "score": 1.03267,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 188,
         "sourceBox": [
           821,
           465,
@@ -6826,15 +7058,17 @@
           248
         ],
         "placement": [
-          43,
-          92
+          34,
+          83
         ],
         "size": [
-          106,
-          93
+          124,
+          102
         ],
-        "score": 3.37513,
+        "score": 5.06712,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           19,
           791,
@@ -6852,15 +7086,17 @@
           241
         ],
         "placement": [
-          43,
-          86
+          33,
+          80
         ],
         "size": [
-          106,
-          95
+          118,
+          118
         ],
-        "score": 0.86087,
+        "score": 1.35086,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 201,
         "sourceBox": [
           293,
           798,
@@ -6878,15 +7114,17 @@
           259
         ],
         "placement": [
-          31,
-          92
+          38,
+          83
         ],
         "size": [
-          130,
-          130
+          116,
+          118
         ],
-        "score": 0.30573,
+        "score": 0.23041,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 201,
         "sourceBox": [
           539,
           786,
@@ -6904,15 +7142,17 @@
           246
         ],
         "placement": [
-          39,
-          86
+          45,
+          80
         ],
         "size": [
-          114,
-          101
+          118,
+          118
         ],
-        "score": 0.58872,
+        "score": 1.96817,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 201,
         "sourceBox": [
           814,
           797,
@@ -6932,15 +7172,17 @@
           251
         ],
         "placement": [
-          19,
-          86
+          32,
+          92
         ],
         "size": [
-          154,
-          147
+          128,
+          115
         ],
-        "score": 0.80929,
+        "score": 3.55267,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           28,
           1130,
@@ -6958,15 +7200,17 @@
           255
         ],
         "placement": [
-          39,
-          80
+          26,
+          86
         ],
         "size": [
-          114,
-          106
+          116,
+          116
         ],
-        "score": 1.42265,
+        "score": 8.27502,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 216,
         "sourceBox": [
           280,
           1125,
@@ -6984,15 +7228,17 @@
           252
         ],
         "placement": [
-          31,
-          86
+          35,
+          92
         ],
         "size": [
-          130,
-          133
+          122,
+          124
         ],
-        "score": 0.30757,
+        "score": 0.23085,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 216,
         "sourceBox": [
           552,
           1128,
@@ -7010,15 +7256,17 @@
           257
         ],
         "placement": [
-          43,
-          86
+          50,
+          89
         ],
         "size": [
-          106,
-          103
+          116,
+          116
         ],
-        "score": 1.56106,
+        "score": 7.75745,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 216,
         "sourceBox": [
           828,
           1125,
@@ -7038,15 +7286,17 @@
           261
         ],
         "placement": [
-          29,
-          92
+          30,
+          89
         ],
         "size": [
-          122,
-          104
+          124,
+          100
         ],
-        "score": 2.9122,
+        "score": 5.20149,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           8,
           77,
@@ -7064,15 +7314,17 @@
           258
         ],
         "placement": [
-          21,
-          92
+          40,
+          89
         ],
         "size": [
-          138,
-          140
+          120,
+          116
         ],
-        "score": 0.72991,
+        "score": 1.75671,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 205,
         "sourceBox": [
           295,
           78,
@@ -7090,15 +7342,17 @@
           256
         ],
         "placement": [
-          31,
-          92
+          35,
+          89
         ],
         "size": [
-          130,
-          144
+          122,
+          116
         ],
-        "score": 0.36227,
+        "score": 0.28701,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 205,
         "sourceBox": [
           560,
           83,
@@ -7116,15 +7370,17 @@
           260
         ],
         "placement": [
-          31,
-          92
+          48,
+          89
         ],
         "size": [
-          130,
-          121
+          120,
+          116
         ],
-        "score": 0.38293,
+        "score": 1.782,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 205,
         "sourceBox": [
           830,
           78,
@@ -7144,15 +7400,17 @@
           268
         ],
         "placement": [
-          35,
+          34,
           92
         ],
         "size": [
-          122,
-          109
+          124,
+          104
         ],
-        "score": 2.83254,
+        "score": 5.94601,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           10,
           402,
@@ -7170,15 +7428,17 @@
           272
         ],
         "placement": [
-          43,
-          86
+          34,
+          89
         ],
         "size": [
-          106,
-          102
+          116,
+          112
         ],
-        "score": 1.30585,
+        "score": 3.91647,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 212,
         "sourceBox": [
           288,
           402,
@@ -7196,15 +7456,17 @@
           274
         ],
         "placement": [
-          31,
+          35,
           92
         ],
         "size": [
-          130,
-          145
+          122,
+          120
         ],
-        "score": 0.35344,
+        "score": 0.27395,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 212,
         "sourceBox": [
           547,
           400,
@@ -7222,15 +7484,17 @@
           267
         ],
         "placement": [
-          43,
-          92
+          36,
+          89
         ],
         "size": [
-          106,
-          98
+          120,
+          112
         ],
-        "score": 1.58708,
+        "score": 3.21035,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 212,
         "sourceBox": [
           823,
           406,
@@ -7250,15 +7514,17 @@
           308
         ],
         "placement": [
-          17,
+          22,
           92
         ],
         "size": [
-          146,
-          147
+          140,
+          133
         ],
-        "score": 2.99138,
+        "score": 5.92009,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           7,
           741,
@@ -7276,15 +7542,17 @@
           316
         ],
         "placement": [
-          37,
-          92
+          24,
+          86
         ],
         "size": [
-          106,
-          114
+          120,
+          141
         ],
-        "score": 2.15534,
+        "score": 10.57875,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 241,
         "sourceBox": [
           275,
           737,
@@ -7302,15 +7570,17 @@
           310
         ],
         "placement": [
-          31,
+          33,
           92
         ],
         "size": [
-          130,
-          158
+          126,
+          149
         ],
-        "score": 0.36591,
+        "score": 0.27793,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 241,
         "sourceBox": [
           536,
           740,
@@ -7328,15 +7598,17 @@
           318
         ],
         "placement": [
-          33,
-          80
+          48,
+          89
         ],
         "size": [
-          114,
-          123
+          120,
+          149
         ],
-        "score": 2.30788,
+        "score": 8.40587,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 241,
         "sourceBox": [
           815,
           735,
@@ -7356,15 +7628,17 @@
           293
         ],
         "placement": [
-          27,
+          26,
           80
         ],
         "size": [
-          138,
-          129
+          132,
+          117
         ],
-        "score": 3.23536,
+        "score": 5.50484,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           7,
           1091,
@@ -7382,15 +7656,17 @@
           301
         ],
         "placement": [
-          39,
-          80
+          26,
+          77
         ],
         "size": [
-          114,
-          114
+          124,
+          133
         ],
-        "score": 0.69877,
+        "score": 4.22325,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 213,
         "sourceBox": [
           287,
           1080,
@@ -7408,15 +7684,17 @@
           287
         ],
         "placement": [
-          31,
+          33,
           80
         ],
         "size": [
-          130,
-          156
+          126,
+          133
         ],
-        "score": 0.39093,
+        "score": 0.30043,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 213,
         "sourceBox": [
           557,
           1095,
@@ -7434,15 +7712,17 @@
           281
         ],
         "placement": [
-          29,
+          42,
           80
         ],
         "size": [
-          122,
-          117
+          124,
+          133
         ],
-        "score": 1.38142,
+        "score": 3.91511,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 213,
         "sourceBox": [
           818,
           1096,
@@ -7462,15 +7742,17 @@
           290
         ],
         "placement": [
-          31,
-          86
+          30,
+          83
         ],
         "size": [
-          130,
-          119
+          132,
+          115
         ],
-        "score": 2.09493,
+        "score": 3.68043,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           6,
           78,
@@ -7488,15 +7770,17 @@
           279
         ],
         "placement": [
-          39,
-          86
+          34,
+          80
         ],
         "size": [
-          114,
-          112
+          124,
+          131
         ],
-        "score": 0.58864,
+        "score": 1.1039,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 214,
         "sourceBox": [
           292,
           93,
@@ -7514,15 +7798,17 @@
           289
         ],
         "placement": [
-          31,
-          86
+          33,
+          83
         ],
         "size": [
-          130,
-          159
+          126,
+          131
         ],
-        "score": 0.37228,
+        "score": 0.28374,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 214,
         "sourceBox": [
           552,
           85,
@@ -7540,15 +7826,17 @@
           279
         ],
         "placement": [
-          35,
-          86
+          38,
+          80
         ],
         "size": [
-          122,
-          116
+          124,
+          131
         ],
-        "score": 0.54378,
+        "score": 1.20999,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 214,
         "sourceBox": [
           815,
           93,
@@ -7568,15 +7856,17 @@
           292
         ],
         "placement": [
-          35,
-          86
+          34,
+          83
         ],
         "size": [
-          122,
-          119
+          132,
+          121
         ],
-        "score": 0.55911,
+        "score": 1.22004,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           17,
           402,
@@ -7594,15 +7884,17 @@
           309
         ],
         "placement": [
-          41,
-          86
+          34,
+          83
         ],
         "size": [
-          122,
-          128
+          124,
+          138
         ],
-        "score": 0.88652,
+        "score": 1.08797,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 221,
         "sourceBox": [
           288,
           408,
@@ -7620,15 +7912,17 @@
           317
         ],
         "placement": [
-          31,
-          86
+          33,
+          83
         ],
         "size": [
-          130,
-          173
+          126,
+          138
         ],
-        "score": 0.3862,
+        "score": 0.74302,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 221,
         "sourceBox": [
           563,
           402,
@@ -7646,15 +7940,17 @@
           311
         ],
         "placement": [
-          43,
-          86
+          34,
+          80
         ],
         "size": [
-          106,
-          137
+          124,
+          138
         ],
-        "score": 1.12717,
+        "score": 1.16491,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 221,
         "sourceBox": [
           808,
           406,
@@ -7674,15 +7970,17 @@
           251
         ],
         "placement": [
-          14,
-          86
+          30,
+          92
         ],
         "size": [
-          153,
-          123
+          132,
+          100
         ],
-        "score": 2.32658,
+        "score": 5.51372,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           5,
           750,
@@ -7700,15 +7998,17 @@
           252
         ],
         "placement": [
-          30,
-          92
+          22,
+          89
         ],
         "size": [
-          121,
-          108
+          124,
+          116
         ],
-        "score": 1.75534,
+        "score": 3.52001,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 208,
         "sourceBox": [
           289,
           753,
@@ -7726,15 +8026,17 @@
           264
         ],
         "placement": [
-          24,
-          86
+          33,
+          92
         ],
         "size": [
-          145,
-          140
+          126,
+          116
         ],
-        "score": 0.41233,
+        "score": 0.30956,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 208,
         "sourceBox": [
           545,
           752,
@@ -7752,15 +8054,17 @@
           253
         ],
         "placement": [
-          40,
-          86
+          46,
+          89
         ],
         "size": [
-          137,
-          120
+          124,
+          116
         ],
-        "score": 1.78039,
+        "score": 3.6519,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 208,
         "sourceBox": [
           818,
           753,
@@ -7780,15 +8084,17 @@
           271
         ],
         "placement": [
-          12,
+          30,
           80
         ],
         "size": [
-          169,
-          145
+          132,
+          107
         ],
-        "score": 5.05961,
+        "score": 13.55601,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           6,
           1061,
@@ -7806,15 +8112,17 @@
           258
         ],
         "placement": [
-          30,
-          68
+          24,
+          77
         ],
         "size": [
-          121,
-          114
+          120,
+          115
         ],
-        "score": 2.75852,
+        "score": 13.01752,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 203,
         "sourceBox": [
           298,
           1071,
@@ -7832,15 +8140,17 @@
           269
         ],
         "placement": [
-          24,
+          33,
           80
         ],
         "size": [
-          145,
-          159
+          126,
+          123
         ],
-        "score": 0.41371,
+        "score": 0.31151,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 203,
         "sourceBox": [
           547,
           1069,
@@ -7858,15 +8168,17 @@
           260
         ],
         "placement": [
-          42,
-          68
+          48,
+          77
         ],
         "size": [
-          121,
-          112
+          120,
+          115
         ],
-        "score": 3.23971,
+        "score": 11.20626,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 203,
         "sourceBox": [
           822,
           1070,
@@ -7886,15 +8198,17 @@
           306
         ],
         "placement": [
-          16,
-          32
+          21,
+          41
         ],
         "size": [
-          160,
-          198
+          150,
+          176
         ],
-        "score": 0.76374,
+        "score": 1.20554,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           43,
           45,
@@ -7912,15 +8226,17 @@
           298
         ],
         "placement": [
-          16,
-          14
+          23,
+          38
         ],
         "size": [
-          160,
-          191
+          146,
+          155
         ],
-        "score": 3.286,
+        "score": 9.13667,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 204,
         "sourceBox": [
           311,
           45,
@@ -7938,15 +8254,17 @@
           301
         ],
         "placement": [
-          16,
-          32
+          23,
+          41
         ],
         "size": [
-          160,
-          229
+          146,
+          163
         ],
-        "score": 0.42408,
+        "score": 0.35026,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 204,
         "sourceBox": [
           564,
           43,
@@ -7964,15 +8282,17 @@
           298
         ],
         "placement": [
-          18,
-          8
+          23,
+          38
         ],
         "size": [
-          168,
-          196
+          146,
+          155
         ],
-        "score": 2.88951,
+        "score": 9.97874,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 204,
         "sourceBox": [
           830,
           45,
@@ -7992,15 +8312,17 @@
           231
         ],
         "placement": [
-          12,
-          56
+          21,
+          68
         ],
         "size": [
-          168,
-          139
+          158,
+          113
         ],
-        "score": 0.39031,
+        "score": 1.95247,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "source": "rounded-volume.png",
         "sourceBox": [
           44,
@@ -8018,15 +8340,17 @@
           247
         ],
         "placement": [
-          17,
-          56
+          20,
+          65
         ],
         "size": [
-          122,
-          134
+          128,
+          129
         ],
-        "score": 2.83038,
+        "score": 25.4392,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 205,
         "source": "rounded-volume.png",
         "sourceBox": [
           377,
@@ -8044,15 +8368,17 @@
           231
         ],
         "placement": [
-          12,
-          56
+          18,
+          68
         ],
         "size": [
-          168,
-          143
+          156,
+          137
         ],
-        "score": 0.37443,
+        "score": 0.56008,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 205,
         "source": "rounded-volume.png",
         "sourceBox": [
           632,
@@ -8070,15 +8396,17 @@
           247
         ],
         "placement": [
-          57,
-          56
+          44,
+          65
         ],
         "size": [
-          114,
-          137
+          128,
+          129
         ],
-        "score": 2.63365,
+        "score": 26.13718,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 205,
         "source": "rounded-volume.png",
         "sourceBox": [
           961,
@@ -8098,15 +8426,17 @@
           307
         ],
         "placement": [
-          23,
-          44
+          30,
+          53
         ],
         "size": [
-          146,
-          190
+          132,
+          162
         ],
-        "score": 1.06017,
+        "score": 3.35763,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           52,
           647,
@@ -8124,15 +8454,17 @@
           313
         ],
         "placement": [
-          39,
-          44
+          32,
+          59
         ],
         "size": [
-          114,
-          162
+          120,
+          137
         ],
-        "score": 2.95489,
+        "score": 2.97135,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           321,
           648,
@@ -8150,15 +8482,17 @@
           313
         ],
         "placement": [
-          31,
-          44
+          35,
+          56
         ],
         "size": [
-          130,
-          193
+          122,
+          145
         ],
-        "score": 0.44461,
+        "score": 4.49594,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           574,
           646,
@@ -8176,15 +8510,17 @@
           315
         ],
         "placement": [
-          35,
-          38
+          40,
+          59
         ],
         "size": [
-          122,
-          170
+          120,
+          137
         ],
-        "score": 2.66565,
+        "score": 2.63496,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           823,
           648,
@@ -8204,15 +8540,17 @@
           438
         ],
         "placement": [
-          16,
-          68
+          28,
+          74
         ],
         "size": [
-          161,
-          224
+          136,
+          179
         ],
-        "score": 5.32454,
+        "score": 8.21925,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           17,
           969,
@@ -8230,15 +8568,17 @@
           434
         ],
         "placement": [
-          30,
-          74
+          25,
+          77
         ],
         "size": [
-          121,
-          190
+          126,
+          178
         ],
-        "score": 2.41695,
+        "score": 4.12904,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           304,
           983,
@@ -8256,15 +8596,17 @@
           443
         ],
         "placement": [
-          24,
-          68
+          34,
+          74
         ],
         "size": [
-          145,
-          191
+          124,
+          178
         ],
-        "score": 0.42755,
+        "score": 0.52718,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           531,
           974,
@@ -8282,15 +8624,17 @@
           434
         ],
         "placement": [
-          40,
-          68
+          43,
+          77
         ],
         "size": [
-          137,
-          213
+          130,
+          178
         ],
-        "score": 2.47847,
+        "score": 4.44124,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           814,
           983,
@@ -8310,15 +8654,17 @@
           354
         ],
         "placement": [
-          42,
-          68
+          36,
+          62
         ],
         "size": [
-          121,
+          128,
           149
         ],
-        "score": 4.35169,
+        "score": 6.56252,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           22,
           36,
@@ -8336,15 +8682,17 @@
           320
         ],
         "placement": [
-          42,
-          62
+          43,
+          53
         ],
         "size": [
-          145,
-          153
+          130,
+          182
         ],
-        "score": 2.75211,
+        "score": 16.68358,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           289,
           66,
@@ -8362,15 +8710,17 @@
           339
         ],
         "placement": [
-          24,
-          68
+          34,
+          62
         ],
         "size": [
-          145,
-          206
+          124,
+          190
         ],
-        "score": 0.42121,
+        "score": 0.32062,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           575,
           64,
@@ -8388,15 +8738,17 @@
           325
         ],
         "placement": [
-          12,
-          62
+          17,
+          53
         ],
         "size": [
-          145,
-          152
+          134,
+          182
         ],
-        "score": 2.26526,
+        "score": 21.09039,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           800,
           59,
@@ -8416,15 +8768,17 @@
           348
         ],
         "placement": [
-          41,
-          98
+          38,
+          92
         ],
         "size": [
-          122,
-          141
+          132,
+          144
         ],
-        "score": 4.42707,
+        "score": 7.0978,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           16,
           417,
@@ -8442,15 +8796,17 @@
           356
         ],
         "placement": [
-          43,
-          86
+          29,
+          83
         ],
         "size": [
-          106,
-          140
+          126,
+          160
         ],
-        "score": 3.14154,
+        "score": 6.00303,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           298,
           417,
@@ -8468,15 +8824,17 @@
           358
         ],
         "placement": [
-          31,
-          98
+          34,
+          92
         ],
         "size": [
-          130,
-          201
+          124,
+          160
         ],
-        "score": 0.45012,
+        "score": 0.34262,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           566,
           418,
@@ -8494,15 +8852,17 @@
           357
         ],
         "placement": [
-          43,
-          92
+          41,
+          89
         ],
         "size": [
-          106,
-          138
+          126,
+          152
         ],
-        "score": 2.26872,
+        "score": 5.96821,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 252,
         "sourceBox": [
           817,
           416,
@@ -8522,15 +8882,17 @@
           313
         ],
         "placement": [
-          31,
+          34,
           80
         ],
         "size": [
-          130,
-          128
+          132,
+          122
         ],
-        "score": 3.13731,
+        "score": 5.27016,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           10,
           795,
@@ -8548,15 +8910,17 @@
           307
         ],
         "placement": [
-          37,
-          74
+          28,
+          83
         ],
         "size": [
-          106,
-          137
+          120,
+          110
         ],
-        "score": 4.14063,
+        "score": 3.3657,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           317,
           792,
@@ -8574,15 +8938,17 @@
           292
         ],
         "placement": [
-          31,
-          80
+          35,
+          83
         ],
         "size": [
-          130,
-          151
+          122,
+          118
         ],
-        "score": 0.47616,
+        "score": 6.92338,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           550,
           796,
@@ -8600,15 +8966,17 @@
           311
         ],
         "placement": [
-          45,
-          74
+          44,
+          83
         ],
         "size": [
-          114,
-          131
+          120,
+          110
         ],
-        "score": 3.9645,
+        "score": 3.34027,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           821,
           793,
@@ -8628,15 +8996,17 @@
           279
         ],
         "placement": [
-          35,
+          36,
           80
         ],
         "size": [
-          122,
-          123
+          128,
+          122
         ],
-        "score": 0.19676,
+        "score": 1.41949,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           24,
           1108,
@@ -8654,15 +9024,17 @@
           278
         ],
         "placement": [
-          35,
+          32,
           80
         ],
         "size": [
-          122,
-          126
+          120,
+          110
         ],
-        "score": 0.20997,
+        "score": 0.58165,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           300,
           1109,
@@ -8680,15 +9052,17 @@
           287
         ],
         "placement": [
-          31,
+          35,
           80
         ],
         "size": [
-          130,
-          151
+          122,
+          110
         ],
-        "score": 0.02603,
+        "score": 0.44775,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           561,
           1107,
@@ -8706,15 +9080,17 @@
           269
         ],
         "placement": [
-          35,
+          40,
           80
         ],
         "size": [
-          122,
-          123
+          120,
+          110
         ],
-        "score": 0.3258,
+        "score": 0.46393,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           820,
           1115,
@@ -8734,15 +9110,17 @@
           290
         ],
         "placement": [
-          39,
-          86
+          28,
+          80
         ],
         "size": [
-          114,
-          118
+          128,
+          125
         ],
-        "score": 1.47792,
+        "score": 3.82675,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           20,
           28,
@@ -8760,15 +9138,17 @@
           290
         ],
         "placement": [
-          37,
-          80
+          28,
+          83
         ],
         "size": [
-          106,
-          121
+          120,
+          110
         ],
-        "score": 2.36896,
+        "score": 1.9558,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           277,
           27,
@@ -8786,15 +9166,17 @@
           288
         ],
         "placement": [
-          31,
-          86
+          35,
+          83
         ],
         "size": [
-          130,
-          175
+          122,
+          110
         ],
-        "score": 0.38196,
+        "score": 1.15656,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           555,
           31,
@@ -8812,15 +9194,17 @@
           290
         ],
         "placement": [
-          49,
-          80
+          44,
+          83
         ],
         "size": [
-          106,
-          122
+          120,
+          110
         ],
-        "score": 1.77117,
+        "score": 1.90312,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           818,
           27,
@@ -8840,15 +9224,17 @@
           279
         ],
         "placement": [
-          43,
-          98
+          28,
+          89
         ],
         "size": [
-          106,
-          109
+          128,
+          125
         ],
-        "score": 2.64577,
+        "score": 5.57174,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           23,
           342,
@@ -8866,15 +9252,17 @@
           277
         ],
         "placement": [
-          37,
+          32,
           92
         ],
         "size": [
-          106,
-          113
+          120,
+          101
         ],
-        "score": 2.08719,
+        "score": 2.19641,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           281,
           344,
@@ -8892,15 +9280,17 @@
           276
         ],
         "placement": [
-          31,
-          98
+          35,
+          95
         ],
         "size": [
-          130,
-          160
+          122,
+          101
         ],
-        "score": 0.41902,
+        "score": 1.79862,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           563,
           345,
@@ -8918,15 +9308,17 @@
           277
         ],
         "placement": [
-          43,
+          40,
           92
         ],
         "size": [
-          106,
-          103
+          120,
+          101
         ],
-        "score": 1.49319,
+        "score": 2.13938,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 190,
         "sourceBox": [
           816,
           344,
@@ -8946,15 +9338,17 @@
           380
         ],
         "placement": [
-          31,
-          92
+          28,
+          89
         ],
         "size": [
-          130,
-          166
+          136,
+          164
         ],
-        "score": 2.94615,
+        "score": 5.27903,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           12,
           639,
@@ -8972,15 +9366,17 @@
           375
         ],
         "placement": [
-          33,
-          92
+          22,
+          86
         ],
         "size": [
-          114,
-          153
+          124,
+          180
         ],
-        "score": 0.78608,
+        "score": 3.65011,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 269,
         "sourceBox": [
           286,
           640,
@@ -8998,15 +9394,17 @@
           378
         ],
         "placement": [
-          31,
-          92
+          33,
+          89
         ],
         "size": [
-          130,
-          158
+          126,
+          180
         ],
-        "score": 0.39274,
+        "score": 0.30014,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 269,
         "sourceBox": [
           533,
           641,
@@ -9024,15 +9422,17 @@
           375
         ],
         "placement": [
-          39,
+          46,
           86
         ],
         "size": [
-          114,
-          151
+          124,
+          180
         ],
-        "score": 0.84458,
+        "score": 3.70239,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 269,
         "sourceBox": [
           812,
           640,
@@ -9052,15 +9452,17 @@
           389
         ],
         "placement": [
-          27,
-          86
+          28,
+          83
         ],
         "size": [
-          138,
-          183
+          136,
+          190
         ],
-        "score": 0.44735,
+        "score": 2.29289,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           10,
           1032,
@@ -9078,15 +9480,17 @@
           390
         ],
         "placement": [
-          31,
-          92
+          24,
+          77
         ],
         "size": [
-          106,
-          147
+          120,
+          202
         ],
-        "score": 1.80914,
+        "score": 9.31374,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           278,
           1033,
@@ -9104,15 +9508,17 @@
           391
         ],
         "placement": [
-          31,
-          86
+          33,
+          83
         ],
         "size": [
-          130,
-          189
+          126,
+          202
         ],
-        "score": 0.40465,
+        "score": 0.37108,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           525,
           1035,
@@ -9130,15 +9536,17 @@
           391
         ],
         "placement": [
-          55,
-          92
+          48,
+          77
         ],
         "size": [
-          106,
-          147
+          120,
+          202
         ],
-        "score": 1.9559,
+        "score": 7.31825,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 285,
         "sourceBox": [
           817,
           1032,
@@ -9158,15 +9566,17 @@
           351
         ],
         "placement": [
-          27,
+          22,
           98
         ],
         "size": [
-          138,
-          150
+          140,
+          144
         ],
-        "score": 3.17601,
+        "score": 5.98828,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           8,
           4,
@@ -9184,15 +9594,17 @@
           350
         ],
         "placement": [
-          37,
-          98
+          22,
+          92
         ],
         "size": [
-          106,
-          141
+          124,
+          160
         ],
-        "score": 1.39819,
+        "score": 4.66857,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 258,
         "sourceBox": [
           304,
           5,
@@ -9210,15 +9622,17 @@
           353
         ],
         "placement": [
-          31,
-          98
+          33,
+          96
         ],
         "size": [
-          130,
-          143
+          126,
+          162
         ],
-        "score": 0.47962,
+        "score": 0.42239,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 258,
         "sourceBox": [
           548,
           4,
@@ -9236,15 +9650,17 @@
           349
         ],
         "placement": [
-          51,
-          98
+          46,
+          92
         ],
         "size": [
-          114,
-          155
+          124,
+          160
         ],
-        "score": 1.76768,
+        "score": 4.41718,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 258,
         "sourceBox": [
           850,
           6,
@@ -9264,15 +9680,17 @@
           348
         ],
         "placement": [
-          16,
-          92
+          22,
+          98
         ],
         "size": [
-          161,
-          176
+          140,
+          145
         ],
-        "score": 1.96765,
+        "score": 5.32278,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           9,
           361,
@@ -9290,15 +9708,17 @@
           343
         ],
         "placement": [
-          34,
-          80
+          22,
+          98
         ],
         "size": [
-          137,
-          177
+          124,
+          161
         ],
-        "score": 1.75824,
+        "score": 2.90185,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 259,
         "sourceBox": [
           302,
           365,
@@ -9316,15 +9736,17 @@
           350
         ],
         "placement": [
-          24,
-          92
+          33,
+          96
         ],
         "size": [
-          145,
-          195
+          126,
+          163
         ],
-        "score": 0.46439,
+        "score": 0.35669,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 259,
         "sourceBox": [
           551,
           361,
@@ -9342,15 +9764,17 @@
           343
         ],
         "placement": [
-          28,
-          74
+          48,
+          98
         ],
         "size": [
-          137,
-          184
+          120,
+          161
         ],
-        "score": 1.84552,
+        "score": 3.87403,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 259,
         "sourceBox": [
           850,
           365,
@@ -9370,15 +9794,17 @@
           361
         ],
         "placement": [
-          25,
-          92
+          30,
+          83
         ],
         "size": [
-          130,
-          177
+          132,
+          170
         ],
-        "score": 3.92194,
+        "score": 9.18307,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           38,
           712,
@@ -9396,15 +9822,17 @@
           357
         ],
         "placement": [
-          37,
-          98
+          26,
+          83
         ],
         "size": [
-          106,
-          159
+          124,
+          186
         ],
-        "score": 1.67647,
+        "score": 1.83397,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 269,
         "sourceBox": [
           322,
           715,
@@ -9422,15 +9850,17 @@
           358
         ],
         "placement": [
-          31,
-          92
+          33,
+          86
         ],
         "size": [
-          130,
-          235
+          126,
+          186
         ],
-        "score": 0.48269,
+        "score": 2.06495,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 269,
         "sourceBox": [
           582,
           715,
@@ -9448,15 +9878,17 @@
           358
         ],
         "placement": [
-          45,
-          86
+          42,
+          83
         ],
         "size": [
-          114,
-          175
+          124,
+          186
         ],
-        "score": 1.39468,
+        "score": 1.70526,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 269,
         "sourceBox": [
           851,
           715,
@@ -9476,15 +9908,17 @@
           361
         ],
         "placement": [
-          19,
-          98
+          22,
+          101
         ],
         "size": [
-          154,
-          181
+          140,
+          155
         ],
-        "score": 3.61983,
+        "score": 9.76324,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           13,
           1078,
@@ -9502,15 +9936,17 @@
           361
         ],
         "placement": [
-          31,
-          86
+          32,
+          92
         ],
         "size": [
-          130,
-          190
+          128,
+          171
         ],
-        "score": 1.5241,
+        "score": 6.24709,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 272,
         "sourceBox": [
           303,
           1077,
@@ -9528,15 +9964,17 @@
           365
         ],
         "placement": [
-          27,
-          98
+          33,
+          96
         ],
         "size": [
-          138,
-          165
+          126,
+          176
         ],
-        "score": 0.47918,
+        "score": 0.52688,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 272,
         "sourceBox": [
           553,
           1078,
@@ -9554,15 +9992,17 @@
           360
         ],
         "placement": [
-          31,
-          86
+          32,
+          92
         ],
         "size": [
-          130,
-          192
+          128,
+          171
         ],
-        "score": 1.61186,
+        "score": 6.2206,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 272,
         "sourceBox": [
           859,
           1078,
@@ -9582,15 +10022,17 @@
           336
         ],
         "placement": [
-          19,
-          98
+          28,
+          95
         ],
         "size": [
-          154,
-          192
+          136,
+          144
         ],
-        "score": 5.17917,
+        "score": 7.51362,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           14,
           74,
@@ -9608,15 +10050,17 @@
           354
         ],
         "placement": [
-          43,
-          98
+          26,
+          95
         ],
         "size": [
-          106,
-          137
+          124,
+          160
         ],
-        "score": 1.90365,
+        "score": 3.60023,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 255,
         "sourceBox": [
           298,
           68,
@@ -9634,15 +10078,17 @@
           354
         ],
         "placement": [
-          39,
-          92
+          33,
+          95
         ],
         "size": [
-          114,
-          141
+          126,
+          160
         ],
-        "score": 1.23339,
+        "score": 0.98584,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 255,
         "sourceBox": [
           561,
           66,
@@ -9660,15 +10106,17 @@
           350
         ],
         "placement": [
-          39,
-          98
+          38,
+          95
         ],
         "size": [
-          114,
-          156
+          124,
+          160
         ],
-        "score": 1.87369,
+        "score": 3.32422,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 255,
         "sourceBox": [
           841,
           70,
@@ -9688,15 +10136,17 @@
           236
         ],
         "placement": [
-          31,
-          98
+          40,
+          101
         ],
         "size": [
-          130,
-          123
+          104,
+          93
         ],
-        "score": 0.60473,
+        "score": 1.43814,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           40,
           438,
@@ -9714,15 +10164,17 @@
           259
         ],
         "placement": [
-          37,
-          86
+          36,
+          101
         ],
         "size": [
-          106,
-          110
+          103,
+          84
         ],
-        "score": 1.60455,
+        "score": 1.12308,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 185,
         "sourceBox": [
           307,
           436,
@@ -9740,15 +10192,17 @@
           260
         ],
         "placement": [
-          31,
-          98
+          45,
+          96
         ],
         "size": [
-          130,
-          138
+          102,
+          89
         ],
-        "score": 0.62783,
+        "score": 0.88694,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 185,
         "sourceBox": [
           575,
           436,
@@ -9766,15 +10220,17 @@
           260
         ],
         "placement": [
-          49,
-          86
+          52,
+          101
         ],
         "size": [
-          106,
-          112
+          103,
+          84
         ],
-        "score": 1.58936,
+        "score": 1.10853,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 185,
         "sourceBox": [
           845,
           435,
@@ -9794,15 +10250,17 @@
           373
         ],
         "placement": [
-          21,
+          24,
           92
         ],
         "size": [
-          138,
-          169
+          136,
+          157
         ],
-        "score": 3.25344,
+        "score": 5.05249,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "sourceBox": [
           13,
           709,
@@ -9820,15 +10278,17 @@
           366
         ],
         "placement": [
-          37,
-          92
+          22,
+          89
         ],
         "size": [
-          106,
-          154
+          124,
+          173
         ],
-        "score": 1.42912,
+        "score": 2.98795,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 265,
         "sourceBox": [
           301,
           715,
@@ -9846,15 +10306,17 @@
           385
         ],
         "placement": [
-          31,
+          33,
           92
         ],
         "size": [
-          130,
-          192
+          126,
+          173
         ],
-        "score": 0.45414,
+        "score": 0.34177,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 265,
         "sourceBox": [
           572,
           710,
@@ -9872,15 +10334,17 @@
           366
         ],
         "placement": [
-          33,
-          80
+          46,
+          89
         ],
         "size": [
-          114,
-          153
+          124,
+          173
         ],
-        "score": 1.42536,
+        "score": 3.22334,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 265,
         "sourceBox": [
           827,
           715,
@@ -9900,15 +10364,17 @@
           278
         ],
         "placement": [
-          9,
-          32
+          17,
+          47
         ],
         "size": [
-          174,
-          137
+          158,
+          118
         ],
-        "score": 0.33565,
+        "score": 1.91074,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": null,
         "source": "rounded-volume.png",
         "sourceBox": [
           14,
@@ -9926,15 +10392,17 @@
           294
         ],
         "placement": [
-          7,
-          26
+          15,
+          41
         ],
         "size": [
-          166,
-          150
+          146,
+          155
         ],
-        "score": 2.18011,
+        "score": 29.49496,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 210,
         "source": "rounded-volume.png",
         "sourceBox": [
           334,
@@ -9952,15 +10420,17 @@
           300
         ],
         "placement": [
-          9,
-          32
+          18,
+          47
         ],
         "size": [
-          174,
-          191
+          156,
+          163
         ],
-        "score": 0.32382,
+        "score": 0.24291,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 210,
         "source": "rounded-volume.png",
         "sourceBox": [
           628,
@@ -9978,15 +10448,17 @@
           301
         ],
         "placement": [
-          9,
-          20
+          31,
+          41
         ],
         "size": [
-          174,
+          146,
           155
         ],
-        "score": 1.73646,
+        "score": 13.65143,
         "material": "neutral-grayscale-alpha",
+        "fit": "skull-roots-7",
+        "targetNape": 210,
         "source": "rounded-volume.png",
         "sourceBox": [
           933,

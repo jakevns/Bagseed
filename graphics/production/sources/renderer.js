@@ -334,11 +334,12 @@
     if(L.hat!=='none')g.drawImage(paint(`headwear/${L.hat==='hood'?'beanie':L.hat}/${dir}`,L,'hat'),0,0);
     let faceScale=[1,1];
     if(faceShape!=='soft'){
-      // Apply one transform to hair, face and facial hair together, with
-      // explicit canvas margins so wide/long faces cannot crop a hairstyle.
-      const base=cv(192,HEAD_HEIGHT);base.getContext('2d').drawImage(out,0,0);const a=g.getImageData(0,0,192,HEAD_HEIGHT).data;let left=192,right=0,top=HEAD_HEIGHT,bottom=0;
-      for(let y=0;y<HEAD_HEIGHT;y++)for(let x=0;x<192;x++)if(a[(y*192+x)*4+3]>80){left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y);}
-      const sx=Math.min(shape[0],90/Math.max(1,96-left),90/Math.max(1,right-96)),sy=Math.min(shape[1],(HEAD_NECK-6)/Math.max(1,HEAD_NECK-top),114/Math.max(1,bottom-HEAD_NECK));
+      // Each face shape gets a fitted head variant around the same neck root.
+      // Its anatomy, ear openings and hair roots share this transform. Never
+      // derive face scale from the wig's outer bounds: changing hair used to
+      // shrink the face, especially on wide heads and long/voluminous cuts.
+      const base=cv(192,HEAD_HEIGHT);base.getContext('2d').drawImage(out,0,0);
+      const [sx,sy]=shape;
       faceScale=[sx,sy];
       g.clearRect(0,0,192,HEAD_HEIGHT);g.save();g.translate(96,HEAD_NECK);g.scale(sx,sy);g.drawImage(base,-96,-HEAD_NECK);g.restore();
     }
@@ -561,6 +562,6 @@
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-6',ready,sprite,portrait,normalize,key,head,body,baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-7',ready,sprite,portrait,normalize,key,head,body,baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();
