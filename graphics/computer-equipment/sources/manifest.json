@@ -1,6 +1,7 @@
 {
   "revision": "computer-equipment-1",
-  "status": "awaiting approval",
+  "status": "approved",
+  "approval": "Great work I say push it :)",
   "keyboardHeight": 2.8,
   "atlases": {
     "hardware": {
