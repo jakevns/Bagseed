@@ -1,10 +1,12 @@
 # Bedroom update checkpoint
 
-## Curtain batch 01 — pending picture approval
+## Curtain batch 01 — approved and integrated
 
-The new request is all bedroom curtain options, including animations, limited to TWO sets per batch. Six cloth/blind styles exist, plus No Curtains. First proposal: Basic Curtains (included) and Blackout Curtains ($20); later batches Floral/Sheer and Patterned/Blinds. No Curtains retains the existing open window.
+The user approved Basic Curtains (included) and Blackout Curtains ($20) with “Excellent work! Approved+!!”. Exactly TWO sets are complete. The shared painted renderer now ships in `public/index.html` through both graphics build paths; metadata records `curtains-batch-01` / two sets. Normal/Windy cloth sway keeps the rods fixed, and reduced motion is still. Matching store and opened-package artwork preserve native proportions. Original game source, names, prices, ownership, live-window behavior and the eight earlier artwork modules are unchanged.
 
-The new original atlas and animated shared renderer are under `graphics/curtains/batch-01/`. `tools/preview-curtains.cjs` injects them into the complete `public/index.html` game for review, without editing/publishing the production HTML or game source. Checks cover two distinct drawings, normal/Windy sway, fixed rods, still reduced motion, five untouched options and the actual Blackout store card. The approval board, store picture, animation loop and report are retained in `review/curtains-batch-01/`. Show pictures directly in chat; wait for explicit artwork approval before production integration and push. Read this batch's README for remaining integration checks.
+The focused integration test passed motion/transparency, comparison with the original renderer for all five other options, window interaction geometry and daylight/blackout behavior, an actual $20 LeafCart purchase, package/store image equality, applying both sets, saving/reloading ownership/selection and phone rendering. Source art is under `graphics/curtains/batch-01/`; approved design board/animation are in `review/curtains-batch-01/`, with production screenshots and report under its `integration/` directory. Builds are repeatable; `npm run check` verifies the baseline and 86 scripts. Final integration validation: all 24 browser tests passed with no failures or skips.
+
+Continue the TWO-set limit: next Floral Curtains ($18) + Sheer Curtains ($14), then Patterned Curtains ($18) + Blinds ($22). No Curtains stays the open-window choice. Do not start implementing the next pair without its own artwork approval. Show pictures directly in chat and push each completed approved pair before proceeding. The separate loading screen remains deferred.
 
 ## Mobile corner details — approved for publication
 

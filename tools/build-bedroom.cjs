@@ -10,7 +10,7 @@ function bedroomScript() {
   const code = fs.readFileSync(path.join(root, 'graphics/bedroom/sources/renderer.js'), 'utf8')
     .replace('__BAGSEED_BEDROOM_IMAGE__', () => JSON.stringify('data:image/png;base64,' + art.toString('base64')));
   new (require('node:vm').Script)(code);
-  return `<script id="${marker}">\n${code}\n</script>\n${require('./compile-beds.cjs')()}${require('./compile-desks.cjs')()}`;
+  return `<script id="${marker}">\n${code}\n</script>\n${require('./compile-beds.cjs')()}${require('./compile-desks.cjs')()}${require('./compile-curtains.cjs')()}`;
 }
 module.exports = bedroomScript;
 if (require.main === module) {
@@ -27,6 +27,7 @@ if (require.main === module) {
   assert.equal(sha(fs.readFileSync(path.join(root, 'baselines/Bagseed_v1.1.5.1_Night_Walker_Flashlights_Update.html'))), report.baselineSHA);
   fs.writeFileSync(output + '.tmp', html); fs.renameSync(output + '.tmp', output);
   Object.assign(report, { workingSourceSHA: sha(source), updatedSHA: sha(html), bytes: Buffer.byteLength(html), bedroomRevision: 'bedroom-shell-1', bedRevision: 'beds-batch-04', bedCombinations: 80, deskRevision: 'seedling-desks-1', deskVariations: 3, menuRevision: JSON.parse(fs.readFileSync(path.join(root, 'graphics/main-menu/sources/manifest.json'))).revision });
+  Object.assign(report, { curtainRevision: 'curtains-batch-01', curtainSets: 2 });
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
-  console.log('Rebuilt approved main menu, bedroom, beds and desks; verified character payload retained unchanged.');
+  console.log('Rebuilt approved main menu, bedroom, beds, desks and curtains; verified character payload retained unchanged.');
 }

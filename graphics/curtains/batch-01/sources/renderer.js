@@ -1,4 +1,4 @@
-/* Two proposed curtain sets. Room, store and animation use the same painted cloth. */
+/* Two approved curtain sets. Room, store and animation use the same painted cloth. */
 (() => {
   'use strict';
   const DATA = __BAGSEED_CURTAIN_DATA__, image = new Image(), sprites = new Map();
@@ -54,7 +54,10 @@
     };
     image.onerror = () => reject(new Error('Curtain artwork failed to load'));
     image.src = DATA.image;
-  }).then(() => previous?.ready);
+  }).then(async () => {
+    await Promise.all([previous?.ready,window.BagseedArt?.ready,window.BagseedBedroom?.ready,window.BagseedBeds?.ready,window.BagseedDesks?.ready]);
+    if (screen === 'game') { hydrate(document); View.snap(); }
+  });
   window.BagseedCurtains = Object.freeze({ revision: DATA.revision, styles: [...(previous?.styles || []),...Object.keys(DATA.styles)],
     ready, get loaded() { return loaded; } });
   ready.catch(error => console.error(error));

@@ -1,6 +1,6 @@
 {
   "revision": "curtains-batch-01",
-  "status": "proposed",
+  "status": "approved",
   "path": "assets/curtains-atlas.png",
   "size": [
     1536,
@@ -28,5 +28,6 @@
         610
       ]
     }
-  }
+  },
+  "approval": "Excellent work! Approved+!!"
 }

@@ -1,4 +1,4 @@
-/* Proposal-only capture: load public/index.html, then inject the pending art in this browser. */
+/* Capture the full game, injecting pending curtain art only before approval/integration. */
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 (async()=>{
@@ -11,7 +11,7 @@ const {chromium}=require('playwright');
     const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');
-    await page.evaluate(()=>Promise.all([BagseedArt.ready,BagseedBedroom.ready,BagseedBeds.ready,BagseedDesks.ready]));
+    await page.evaluate(()=>Promise.all([BagseedArt.ready,BagseedBedroom.ready,BagseedBeds.ready,BagseedDesks.ready,window.BagseedCurtains?.ready]));
     await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Curtain Review');
     await page.locator('[data-act=startGame]').click();await page.waitForTimeout(2400);
     const before=await page.evaluate(()=>{
@@ -24,10 +24,15 @@ const {chromium}=require('playwright');
         return {id,name,price,art:cv.toDataURL()};
       });
     });
-    const tag=require('./compile-curtains.cjs')();
-    await page.addScriptTag({content:tag.replace(/^<script[^>]*>\n/,'').replace(/<\/script>\n$/,'')});
+    const integrated=await page.evaluate(()=>!!window.BagseedCurtains?.styles.includes('blackout'));
+    const manifest=JSON.parse(fs.readFileSync(path.join(root,'graphics/curtains/batch-01/sources/manifest.json')));
+    if(manifest.status==='approved')assert.ok(integrated,'Approved curtains missing from production build');
+    if(!integrated) {
+      const tag=require('./compile-curtains.cjs')();
+      await page.addScriptTag({content:tag.replace(/^<script[^>]*>\n/,'').replace(/<\/script>\n$/,'')});
+    }
     await page.evaluate(()=>BagseedCurtains.ready);
-    const result=await page.evaluate(before=>{
+    const result=await page.evaluate(({before,integrated})=>{
       const originals=new Map(before.map(s=>[s.id,s])),checks=[];
       const oldRoom=JSON.stringify(state.room),oldHits=RoomArt.hits,oldReduced=settings.reduced;
       function cloth(id,t,weather='Sunny',reduced=false) {
@@ -60,7 +65,7 @@ const {chromium}=require('playwright');
         const board=document.createElement('canvas');board.width=1120;board.height=880;
         const g=board.getContext('2d');g.fillStyle='#fbf5e8';g.fillRect(0,0,1120,880);
         g.fillStyle='#30442f';g.font='bold 29px Georgia';g.fillText('Bagseed / Curtains / Batch 01',30,43);
-        g.font='17px Georgia';g.fillText('Two sets for approval · Room artwork, store previews and cloth movement',30,75);
+        g.font='17px Georgia';g.fillText(integrated?'Approved sets · Integrated room artwork, store previews and cloth movement':'Two sets for approval · Room artwork, store previews and cloth movement',30,75);
         ['basic','blackout'].forEach((id,i)=>{
           const x=30+i*560;g.fillStyle='#30442f';g.font='bold 25px Georgia';g.fillText(originals.get(id).name,x,122);
           g.font='17px Georgia';g.fillText(id==='basic'?'Included · warm terracotta cotton':'$20 · heavy midnight-blue fabric',x,149);
@@ -75,7 +80,7 @@ const {chromium}=require('playwright');
           });
         });
         g.font='17px Georgia';g.fillStyle='#526247';g.fillText('Gentle sway in calm weather · stronger in wind · still with reduced motion',30,831);
-        g.font='15px Georgia';g.fillText('Preview proposal only. The remaining curtain choices keep their existing artwork.',30,857);
+        g.font='15px Georgia';g.fillText(integrated?'Actual integrated game. The remaining curtain choices keep their existing artwork.':'Preview proposal only. The remaining curtain choices keep their existing artwork.',30,857);
         const frames=[];
         for(let i=0;i<42;i++) {
           const cv=document.createElement('canvas');cv.width=760;cv.height=355;const c=cv.getContext('2d');
@@ -87,7 +92,7 @@ const {chromium}=require('playwright');
         }
         return {board:board.toDataURL(),frames,checks,untouched:before.filter(s=>!['basic','blackout'].includes(s.id)).map(s=>s.id)};
       } finally {Object.assign(state.room,JSON.parse(oldRoom));RoomArt.hits=oldHits;settings.reduced=oldReduced;state.weather='Sunny';}
-    },before);
+    },{before,integrated});
     const write=(name,data)=>fs.writeFileSync(path.join(out,name),Buffer.from(data.split(',')[1],'base64'));
     write('approval.png',result.board);
     const framesDir=path.join(root,'artifacts/curtains-batch-01/frames');fs.mkdirSync(framesDir,{recursive:true});
@@ -99,7 +104,7 @@ const {chromium}=require('playwright');
     const box=await card.boundingBox();assert.ok(Math.abs(box.width/box.height-320/272)<.01);
     await card.locator('..').screenshot({path:path.join(out,'store-blackout.png')});
     assert.deepEqual(errors,[]);
-    const report={proposalOnly:true,entryPoint:'public/index.html',checks:result.checks,unchangedOptions:result.untouched,actualStoreCard:true,errors};
+    const report={proposalOnly:!integrated,entryPoint:'public/index.html',checks:result.checks,unchangedOptions:result.untouched,actualStoreCard:true,errors};
     fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
   } finally {await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
