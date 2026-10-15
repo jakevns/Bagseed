@@ -4,19 +4,20 @@ const batches={
  'batch-01':['marcus','ines'],
  'batch-02':['tobias','bev','kenji','mateo','elena'],
  'batch-03':['rosa','leo','mara','eli','nico'],
- 'batch-04':['alma','owen','amina','ronan','leila']
+ 'batch-04':['alma','owen','amina','ronan','leila'],
+ 'batch-05':['cass','jun','rosie','arthur','nadia']
 };
 const roster=JSON.parse(fs.readFileSync('graphics/production/cast/sources/cast-roster.json')).people;
 const allApproved=new Set(Object.values(batches).flat().map(id=>roster.find(p=>p.id===id).assetId));
-const latest=new Set([...batches['batch-03'],...batches['batch-04']].map(id=>roster.find(p=>p.id===id).assetId));
+const latest=new Set(batches['batch-05'].map(id=>roster.find(p=>p.id===id).assetId));
 (async()=>{
  const {createStaticServer}=await import('./server.mjs');const app=createStaticServer();
- const pages={'/before':'review/poses-batch-01/original-illustrated.html','/batch-02':'review/poses-batch-02/candidate.html'};
+ const pages={'/before':'review/poses-batch-01/original-illustrated.html','/prior-batch':'review/poses-batch-04/candidate.html'};
  const server=http.createServer((req,res)=>{const file=pages[req.url];if(file){res.setHeader('Content-Type','text/html');res.end(fs.readFileSync(file));}else app.emit('request',req,res);});
  await new Promise(r=>server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});
  try {
   const page=await browser.newPage(),snapshots=[],errors=[];page.on('pageerror',e=>errors.push(e.message));
-  for(const route of ['/before','/batch-02','/']){
+  for(const route of ['/before','/prior-batch','/']){
    await page.goto('http://127.0.0.1:'+server.address().port+route);await page.evaluate(()=>BagseedArt.ready);
    snapshots.push(await page.evaluate(async()=>{
     const fingerprint=async canvas=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data))).map(v=>v.toString(16).padStart(2,'0')).join('');
@@ -41,7 +42,7 @@ const latest=new Set([...batches['batch-03'],...batches['batch-04']].map(id=>ros
     }
    }
   }
-  console.log(`${comparisons} full-cast image comparisons passed: standing art, regular portraits, custom outfits and earlier batches preserved; 10 new action sets integrated.`);
+  console.log(`${comparisons} full-cast image comparisons passed: standing art, regular portraits, custom outfits and earlier batches preserved; 5 new action sets integrated.`);
   const expected=[];
   for(const [batch,ids]of Object.entries(batches))for(const id of ids){
    const p=roster.find(p=>p.id===id),assets={};for(const view of ['down','right','up','left','portrait'])assets[view]='data:image/png;base64,'+fs.readFileSync(`graphics/production/actions/${batch}/${id}/${view}.png`).toString('base64');
@@ -65,7 +66,7 @@ const latest=new Set([...batches['batch-03'],...batches['batch-04']].map(id=>ros
    }
    return {checks,mismatches};
   },expected);
-  assert.deepEqual(report.mismatches,[]);assert.equal(report.checks,85);assert.deepEqual(errors,[]);
-  console.log(`${report.checks} registered-asset checks passed: all 17 approved characters use their complete drawings in four directions and reaction portraits; no browser errors.`);
+  assert.deepEqual(report.mismatches,[]);assert.equal(report.checks,110);assert.deepEqual(errors,[]);
+  console.log(`${report.checks} registered-asset checks passed: all 22 approved characters use their complete drawings in four directions and reaction portraits; no browser errors.`);
  }finally{await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

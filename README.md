@@ -38,4 +38,8 @@ The user's reference DOCX is preserved in the repository. Its 1,080 embedded ima
 
 ## Hosting
 
+GitHub Pages publishes the standalone game at **https://jakevns.github.io/Bagseed/** after the first successful deployment. `.github/workflows/pages.yml` verifies the HTML and publishes only `public/` whenever approved changes are merged or pushed to `main`. It can also be rerun from Actions → Publish Bagseed to GitHub Pages → Run workflow on `main`. The repository's Settings → Pages → Build and deployment → Source must be **GitHub Actions** (enabled by the repository owner during setup).
+
+The link stays the same for future updates. Check the workflow's green deployment result before refreshing; `https://jakevns.github.io/Bagseed/version.json` identifies the deployed commit. Review boards and original HTML backups remain in Git and are not included in the published site. Local browser saves are tied to the site's origin, so progress from another host does not automatically appear on the Pages address. GitHub Pages does not serve branch previews; the site follows merged `main`.
+
 `netlify.toml` publishes `public/` without a build step. The task authorizes a GitHub push; no manual Netlify deployment is performed. A connected Netlify project may automatically build on a push. Live deployment status and physical-device performance are not verified by local checks. Browser saves are scoped to the site's origin.

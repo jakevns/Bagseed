@@ -29,7 +29,8 @@ for(const [batch,names] of Object.entries({
   'batch-01':['marcus','ines'],
   'batch-02':['tobias','bev','kenji','mateo','elena'],
   'batch-03':['rosa','leo','mara','eli','nico'],
-  'batch-04':['alma','owen','amina','ronan','leila']
+  'batch-04':['alma','owen','amina','ronan','leila'],
+  'batch-05':['cass','jun','rosie','arthur','nadia']
 })) for(const name of names) {
   const person=cast.find(p=>p.id.endsWith('-'+name));
   assert.ok(person,'Missing pose owner: '+name);

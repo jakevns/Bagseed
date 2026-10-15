@@ -1,0 +1,54 @@
+name: Publish Bagseed to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the approved game
+        uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source integrity
+        run: npm run check
+      - name: Record the published revision
+        env:
+          BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          node --input-type=module <<'JS'
+          import { writeFileSync } from 'node:fs';
+          writeFileSync('public/version.json', JSON.stringify({
+            commit: process.env.BUILD_COMMIT,
+            deployedAt: new Date().toISOString()
+          }, null, 2) + '\n');
+          JS
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload the playable site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
