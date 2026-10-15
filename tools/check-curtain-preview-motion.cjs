@@ -23,11 +23,14 @@ module.exports=async function checkPreviewMotion(page,styles){
   const results=[];
   try {
     for(const [id,def] of Object.entries(styles)){
-      await page.evaluate(id=>curtainPreviewMotion.start(id,'Sunny',false),id);await page.waitForTimeout(3050);
+      await page.evaluate(id=>curtainPreviewMotion.start(id,'Sunny',false),id);
+      await page.waitForFunction(()=>{const s=curtainPreviewMotion.take();return s.length>=20&&s.at(-1).t-s[0].t>3;},null,{timeout:15000});
       const calm=await page.evaluate(()=>curtainPreviewMotion.take());
-      await page.evaluate(id=>curtainPreviewMotion.start(id,'Windy',false),id);await page.waitForTimeout(2050);
+      await page.evaluate(id=>curtainPreviewMotion.start(id,'Windy',false),id);
+      await page.waitForFunction(()=>{const s=curtainPreviewMotion.take();return s.length>=15&&s.at(-1).t-s[0].t>2;},null,{timeout:15000});
       const wind=await page.evaluate(()=>curtainPreviewMotion.take());
-      await page.evaluate(id=>curtainPreviewMotion.start(id,'Windy',true),id);await page.waitForTimeout(400);
+      await page.evaluate(id=>curtainPreviewMotion.start(id,'Windy',true),id);
+      await page.waitForFunction(()=>curtainPreviewMotion.take().length>=3,null,{timeout:5000});
       const still=await page.evaluate(()=>curtainPreviewMotion.take());
       const extent=frames=>Math.max(...frames.map(f=>f.x))-Math.min(...frames.map(f=>f.x));
       const calmPixels=extent(calm),windPixels=extent(wind);

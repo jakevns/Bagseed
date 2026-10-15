@@ -14,7 +14,7 @@ test('curtain batch '+config.batch+': animation, original window behavior, store
     page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');
     await page.evaluate(()=>BagseedCurtains.ready);
-    assert.deepEqual(await page.evaluate(()=>BagseedCurtains.styles),['basic','blackout','floral','sheer']);
+    assert.deepEqual(await page.evaluate(()=>BagseedCurtains.styles),['basic','blackout','floral','sheer','pattern','blinds']);
     await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Curtain Fixture');
     await page.locator('[data-act=startGame]').click();await page.waitForTimeout(2400);
     await page.evaluate(()=>{
@@ -48,7 +48,7 @@ test('curtain batch '+config.batch+': animation, original window behavior, store
           const a=cloth(id,0),b=cloth(id,2),wind=cloth(id,2,'Windy');
           if(a.toDataURL()===b.toDataURL()||b.toDataURL()===wind.toDataURL())throw Error('Missing animated/windy cloth');
           if(cloth(id,0,'Windy',true).toDataURL()!==cloth(id,3,'Windy',true).toDataURL())throw Error('Reduced motion failed');
-          const rod=cv=>Array.from(cv.getContext('2d').getImageData(0,0,400,40).data).join(',');
+          const rod=cv=>Array.from(cv.getContext('2d').getImageData(0,0,400,id==='blinds'?117:40).data).join(',');
           if(rod(a)!==rod(wind))throw Error('Hardware moves');
           // Center of the paired curtains must preserve the live window view.
           if(a.getContext('2d').getImageData(200,180,1,1).data[3])throw Error('Curtain has an opaque backdrop');
@@ -61,8 +61,8 @@ test('curtain batch '+config.batch+': animation, original window behavior, store
           if(lit!==(id!=='blackout'))throw Error('Curtain light behavior changed');
           checks.push({id,animation:true,wind:true,fixedRod:true,reducedMotion:true,windowGeometry:true,light:true});
         }
-        const priorStill=Object.fromEntries(['basic','blackout'].map(id=>[id,cloth(id,.5,'Sunny',true).toDataURL()]));
-        return {checks,unchangedOptions:STYLES.curtains.length-BagseedCurtains.styles.length,catalog:STYLES.curtains,priorStill};
+        const priorRenders=Object.fromEntries(['basic','none','blackout','floral','sheer'].map(id=>[id,{still:cloth(id,.5,'Sunny',true).toDataURL(),Sunny:cloth(id,.5,'Sunny',false).toDataURL(),Windy:cloth(id,.5,'Windy',false).toDataURL()}]));
+        return {checks,unchangedOptions:STYLES.curtains.length-BagseedCurtains.styles.length,catalog:STYLES.curtains,priorRenders};
       } finally {Object.assign(state.room,JSON.parse(before));RoomArt.hits=hits;RoomArt.drawCurtains=original;settings.reduced=true;state.weather='Sunny';}
     },{body,ids:config.ids});
     assert.deepEqual(report.catalog,[['basic','Basic Curtains',0],['none','No Curtains',0],['blackout','Blackout Curtains',20],['floral','Floral Curtains',18],['sheer','Sheer Curtains',14],['pattern','Patterned Curtains',18],['blinds','Blinds',22]]);
@@ -109,10 +109,10 @@ test('curtain batch '+config.batch+': animation, original window behavior, store
       const ratio=await phoneArt.evaluate(cv=>{const r=cv.getBoundingClientRect();return r.width/r.height;});
       assert.ok(Math.abs(ratio-320/272)<.01);await phoneArt.locator('..').screenshot({path:path.join(out,`store-${id}-phone.png`)});
     }
-    const expected=JSON.parse(fs.readFileSync(path.join(root,'review/curtains-batch-02/prior-render-hashes.json')));
+    const expected=JSON.parse(fs.readFileSync(path.join(root,'review/curtains-batch-03/prior-render-hashes.json')));
     const {createHash}=require('node:crypto');
-    for(const [id,uri] of Object.entries(report.priorStill))assert.equal(createHash('sha256').update(uri).digest('hex'),expected.styles[id].still,'Previous static artwork changed: '+id);
-    delete report.priorStill;
+    for(const [id,frames] of Object.entries(report.priorRenders))for(const [mode,uri] of Object.entries(frames))assert.equal(createHash('sha256').update(uri).digest('hex'),expected.styles[id][mode],'Previous curtain rendering changed: '+id+':'+mode);
+    delete report.priorRenders;
     assert.deepEqual(errors,[]);
     fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({...report,purchase:config.price,packageMatchesStore:true,saveReload:true,phone:true,errors},null,2)+'\n');
   } finally {await browser?.close();await new Promise(r=>server.close(r));}

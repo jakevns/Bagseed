@@ -1,6 +1,6 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
-test('all four curtains visibly animate at native resolution in the real game loop, with stronger wind and still reduced motion',async()=>{
+test('all six window treatments visibly animate at native resolution in the real game loop, with stronger wind and still reduced motion',async()=>{
   const {createStaticServer}=await import('../tools/server.mjs'),server=createStaticServer();
   await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
   try {
@@ -27,12 +27,15 @@ test('all four curtains visibly animate at native resolution in the real game lo
         runtime.t=(1.5*Math.PI-.225)/(weather==='Windy'?1.8:1.1);samples=[];last=0;},take(){return samples;},restore(){RoomArt.drawCurtains=original;}};
     });
     const results=[];
-    for(const id of ['basic','blackout','floral','sheer']) {
-      await page.evaluate(id=>curtainMotionFixture.start(id,'Sunny',false),id);await page.waitForTimeout(3050);
+    for(const id of ['basic','blackout','floral','sheer','pattern']) {
+      await page.evaluate(id=>curtainMotionFixture.start(id,'Sunny',false),id);
+      await page.waitForFunction(()=>{const s=curtainMotionFixture.take();return s.length>=20&&s.at(-1).t-s[0].t>3;},null,{timeout:15000});
       const calm=await page.evaluate(()=>curtainMotionFixture.take());
-      await page.evaluate(id=>curtainMotionFixture.start(id,'Windy',false),id);await page.waitForTimeout(2050);
+      await page.evaluate(id=>curtainMotionFixture.start(id,'Windy',false),id);
+      await page.waitForFunction(()=>{const s=curtainMotionFixture.take();return s.length>=15&&s.at(-1).t-s[0].t>2;},null,{timeout:15000});
       const wind=await page.evaluate(()=>curtainMotionFixture.take());
-      await page.evaluate(id=>curtainMotionFixture.start(id,'Windy',true),id);await page.waitForTimeout(400);
+      await page.evaluate(id=>curtainMotionFixture.start(id,'Windy',true),id);
+      await page.waitForFunction(()=>curtainMotionFixture.take().length>=3,null,{timeout:5000});
       const still=await page.evaluate(()=>curtainMotionFixture.take());
       const range=(frames,key)=>Math.max(...frames.map(f=>f[key]))-Math.min(...frames.map(f=>f[key]));
       const upper=range(calm,'upper'),hem=range(calm,'hem'),windUpper=range(wind,'upper'),windHem=range(wind,'hem');
@@ -44,8 +47,11 @@ test('all four curtains visibly animate at native resolution in the real game lo
       assert.ok(still.length>=2);assert.equal(new Set(still.map(f=>f.image)).size,1,id+' reduced motion moves');
       results.push({id,realGameFrames:calm.length+wind.length,nativePixels:{calmUpper:upper,calmHem:hem,windUpper,windHem},fixedRod:true,reducedMotionStill:true});
     }
-    await page.evaluate(()=>curtainMotionFixture.restore());assert.deepEqual(errors,[]);
+    await page.evaluate(()=>curtainMotionFixture.restore());
+    const styles=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../graphics/curtains/batch-03/sources/manifest.json'))).styles;
+    const blinds=await require('../tools/check-curtain-preview-motion.cjs')(page,{blinds:styles.blinds});
+    assert.deepEqual(errors,[]);
     const out=path.resolve(__dirname,'../artifacts/curtain-live-motion');fs.mkdirSync(out,{recursive:true});
-    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({nativeResolution:true,realFrameLoop:true,results,errors},null,2)+'\n');
+    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({nativeResolution:true,realFrameLoop:true,results,blinds,errors},null,2)+'\n');
   } finally {await browser?.close();await new Promise(r=>server.close(r));}
 });

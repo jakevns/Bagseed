@@ -1,5 +1,5 @@
 {
-  "proposalOnly": true,
+  "proposalOnly": false,
   "entryPoint": "public/index.html",
   "checks": [
     {
@@ -42,18 +42,18 @@
       {
         "id": "pattern",
         "type": "cloth",
-        "realFrames": 50,
-        "calmNativePixels": 1.0835510101639123,
-        "windNativePixels": 2.6248490767380233,
+        "realFrames": 47,
+        "calmNativePixels": 1.0718766630056962,
+        "windNativePixels": 2.6269501111762814,
         "fixedHardware": true,
         "reducedMotionStill": true
       },
       {
         "id": "blinds",
         "type": "blinds",
-        "realFrames": 47,
+        "realFrames": 48,
         "calmNativePixels": 2.0682853999685697,
-        "windNativePixels": 4.066472646756793,
+        "windNativePixels": 4.045046928061463,
         "fixedHardware": true,
         "reducedMotionStill": true
       }

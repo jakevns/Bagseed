@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "id": "pattern",
+      "animation": true,
+      "wind": true,
+      "fixedRod": true,
+      "reducedMotion": true,
+      "windowGeometry": true,
+      "light": true
+    },
+    {
+      "id": "blinds",
+      "animation": true,
+      "wind": true,
+      "fixedRod": true,
+      "reducedMotion": true,
+      "windowGeometry": true,
+      "light": true
+    }
+  ],
+  "unchangedOptions": 1,
+  "catalog": [
+    [
+      "basic",
+      "Basic Curtains",
+      0
+    ],
+    [
+      "none",
+      "No Curtains",
+      0
+    ],
+    [
+      "blackout",
+      "Blackout Curtains",
+      20
+    ],
+    [
+      "floral",
+      "Floral Curtains",
+      18
+    ],
+    [
+      "sheer",
+      "Sheer Curtains",
+      14
+    ],
+    [
+      "pattern",
+      "Patterned Curtains",
+      18
+    ],
+    [
+      "blinds",
+      "Blinds",
+      22
+    ]
+  ],
+  "purchase": 40,
+  "packageMatchesStore": true,
+  "saveReload": true,
+  "phone": true,
+  "errors": []
+}

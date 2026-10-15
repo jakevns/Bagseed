@@ -1,6 +1,6 @@
 {
   "revision": "curtains-batch-03",
-  "status": "proposed",
+  "status": "approved",
   "path": "assets/curtains-atlas.png",
   "size": [
     1536,
@@ -47,5 +47,6 @@
       "cordPivot": 0.5,
       "cordLength": 22
     }
-  }
+  },
+  "approval": "Perfect :) go head and push"
 }

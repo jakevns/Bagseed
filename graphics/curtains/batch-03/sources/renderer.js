@@ -1,4 +1,4 @@
-/* Proposed Patterned curtains and raised Blinds, shared by room/store previews. */
+/* Approved Patterned curtains and raised Blinds, shared by room/store previews. */
 (() => {
   'use strict';
   const DATA = __BAGSEED_CURTAIN_DATA__, image = new Image(), sprites = new Map();

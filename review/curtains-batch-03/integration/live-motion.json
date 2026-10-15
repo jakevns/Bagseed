@@ -1,0 +1,82 @@
+{
+  "nativeResolution": true,
+  "realFrameLoop": true,
+  "results": [
+    {
+      "id": "basic",
+      "realGameFrames": 52,
+      "nativePixels": {
+        "calmUpper": 1.1707559019645846,
+        "calmHem": 1.7370316035699478,
+        "windUpper": 2.429779878010324,
+        "windHem": 3.707775390137705
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    },
+    {
+      "id": "blackout",
+      "realGameFrames": 51,
+      "nativePixels": {
+        "calmUpper": 0.9299935348070996,
+        "calmHem": 1.364757737579069,
+        "windUpper": 1.9979613172055668,
+        "windHem": 2.9582422353408937
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    },
+    {
+      "id": "floral",
+      "realGameFrames": 52,
+      "nativePixels": {
+        "calmUpper": 1.119813080700844,
+        "calmHem": 1.7201450778581968,
+        "windUpper": 2.587930572701474,
+        "windHem": 3.704810235511447
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    },
+    {
+      "id": "sheer",
+      "realGameFrames": 52,
+      "nativePixels": {
+        "calmUpper": 1.6275330587903412,
+        "calmHem": 2.441455955294227,
+        "windUpper": 3.573938920507384,
+        "windHem": 5.3566006428452155
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    },
+    {
+      "id": "pattern",
+      "realGameFrames": 52,
+      "nativePixels": {
+        "calmUpper": 1.095225357322132,
+        "calmHem": 1.6921974748191246,
+        "windUpper": 2.680370549130661,
+        "windHem": 3.690954849212634
+      },
+      "fixedRod": true,
+      "reducedMotionStill": true
+    }
+  ],
+  "blinds": {
+    "realGameLoop": true,
+    "nativeResolution": true,
+    "results": [
+      {
+        "id": "blinds",
+        "type": "blinds",
+        "realFrames": 51,
+        "calmNativePixels": 2.066965267955368,
+        "windNativePixels": 4.0657385632861605,
+        "fixedHardware": true,
+        "reducedMotionStill": true
+      }
+    ]
+  },
+  "errors": []
+}

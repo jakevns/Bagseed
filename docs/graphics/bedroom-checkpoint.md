@@ -1,12 +1,12 @@
 # Bedroom update checkpoint
 
-## Curtain batch 03 — pending picture approval
+## Curtain collection complete — batch 03 approved and integrated
 
-The user requested the next set. This is the final TWO-design proposal: Patterned Curtains ($18), muted teal with golden woven diamonds, and Blinds ($22), warm ivory raised slats with a moving wooden pull cord. Original source atlas/crop/hash data and renderer are under `graphics/curtains/batch-03/`. Cloth sway uses the stronger animation from the approved earlier pairs. Blind slats/headrail stay fixed while the cord swings; reduced motion is still.
+The user approved the final pair with “Perfect :) go head and push”: Patterned Curtains ($18), muted teal/gold woven diamonds, and Blinds ($22), ivory raised slats with a moving wooden pull cord. Both production build paths now include all three batches and record `curtains-batch-03` / SIX completed sets. Original No Curtains remains the bare-window choice.
 
-`node tools/preview-curtains.cjs 03` injects this proposed pair into the complete production page for review without changing production HTML, gameplay source, build metadata or the earlier compiled modules. Preview checks passed static/normal/Windy preservation for all five other choices, actual store cards on desktop/phone, and visible native-resolution motion through the real game frame loop. Earlier-render hashes, board, animation, store cards and reports are retained in `review/curtains-batch-03/`.
+The focused final-pair check passed the actual $40 LeafCart checkout, store/package image equality, ownership and applying both styles, saving/reloading, window geometry and light behavior, phone/store proportions, animation and reduced motion. All five preceding options retain their pre-integration still/normal/Windy render hashes. All ten earlier artwork modules and gameplay source are byte-for-byte unchanged. Builds are repeatable; `npm run check` verified the baseline and 88 scripts. The live animation check now covers all five cloth styles plus the blind cord, with fixed mounting hardware and still reduced motion. Final validation: all 27 browser tests passed, with no failures or skips.
 
-Show `approval.png` and `wind-animation.gif` directly in chat and wait for explicit approval before integrating/pushing. Read the batch README for remaining purchase/save/integration checks. After this pair is approved and integrated, all six cloth/blind styles will be complete; No Curtains retains the open window. Keep two sets per batch and push each approved completed increment. Loading-screen work remains deferred.
+Original art/crops/hashes are under `graphics/curtains/batch-03/`; final boards, animations, store cards and integration reports are under `review/curtains-batch-03/`. No further curtain batch remains. The next furniture item has not been chosen; retain the explicit picture approval and separate push for each completed increment. Any web preview must use `public/index.html`; show picture approvals directly in chat. Loading-screen work remains deferred.
 
 ## Curtain batch 02 — approved and integrated; all four animations strengthened
 
