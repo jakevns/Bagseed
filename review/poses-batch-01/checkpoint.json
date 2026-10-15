@@ -1,0 +1,15 @@
+{
+  "release_commit": "984722028ac7d511870f605c3a7a576f31dd1c1f",
+  "original_html": "original-illustrated.html",
+  "sha256": "15b36ecc24dd1a5454c2ac86f386e83e427c33082d8bd8e4d49b6d6dea611a05",
+  "characters": [
+    "Marcus Bell",
+    "Inés Calderón"
+  ],
+  "scope": "User-approved batch integrated for Marcus and Inés only; complete nose-covering sprites and reaction portraits.",
+  "candidate_html": "candidate.html",
+  "candidateSHA256": "6ef03077157518892ad6a5caa5a5af442020d396e42c4352a2520d1b4e42ddb2",
+  "limitations": [
+    "Left profile mirrors right, including hand and book side."
+  ]
+}

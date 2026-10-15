@@ -302,7 +302,8 @@
   function sprite(look,dir='down',frame=0,breath=0,blink=0,act=0,nose=false) {
     if(!loaded)return cv();const L=normalize(look),signature=key(L)+'|'+dir+'|'+[frame,breath,blink,act,nose].join(',');if(cache.has(signature))return cache.get(signature);
     const person=canonical.get(approvalKey(L));let source,rig=true;
-    if(person&&!nose){source=images.get(person.assets[(!person.rig&&frame?`${dir}-${frame%4}`:`${dir}-idle`)]);rig=!!person.rig;}
+    if(person&&nose&&person.actions){source=images.get(person.actions[dir]);rig=false;}
+    else if(person&&!nose){source=images.get(person.assets[(!person.rig&&frame?`${dir}-${frame%4}`:`${dir}-idle`)]);rig=!!person.rig;}
     else {const owner=person||identities.get(identityKey(L));source=generic(L,dir,nose,owner?images.get(owner.assets[dir+'-idle']):null);}
     const out=animate(source,L,dir,frame,breath,blink,act&&!nose,rig&&!nose);
     if(person&&L.expr!=='neutral'&&dir!=='up'&&!nose){const g=out.getContext('2d'),f=faceCoordinates(out,L);g.save();g.translate(f.x-32,f.eyeY-79/3);g.scale(1/3,1/3);faceDetails(g,{...L,eyes:'round',eyeC:'#2b1d14',brows:'thin',mouth:'default',nose:'default',ears:'normal',extras:[],marks:[],pierce:[],glasses:'none',acc:'none'},dir);g.restore();}
@@ -343,6 +344,12 @@
     if(canvas.isConnected&&!canvas.dataset.illustratedDensity){const style=getComputedStyle(canvas);canvas.style.width=style.width;canvas.style.height=style.height;canvas.style.imageRendering='auto';canvas.width*=3;canvas.height*=3;canvas.dataset.illustratedDensity='3';}
     const g=canvas.getContext('2d');g.clearRect(0,0,canvas.width,canvas.height);g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';g.drawImage(portrait(look),0,0,canvas.width,canvas.height);
     if(runtime.curDialog?.smell1151&&Smell1151.active?.dialog===runtime.curDialog&&$('#dialog')?.querySelector('canvas')===canvas){
+      const person=canonical.get(approvalKey(look));
+      if(person?.actions){
+        g.fillStyle=normalize(look).bg||'#eadfc9';g.fillRect(0,0,canvas.width,canvas.height);
+        g.drawImage(images.get(person.actions.portrait),0,0,canvas.width,canvas.height);
+        return;
+      }
       // Isolate the generated raised arm, without pasting a rectangular torso
       // over the portrait. Register fingertips to this portrait's own face.
       const L=normalize(look),pose=body(L,'down',true),arm=cv(),a=arm.getContext('2d');

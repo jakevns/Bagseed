@@ -1,0 +1,97 @@
+{
+  "sourceSHA256": "32af36a631820b21c05b9cb1c4019db7bb90696b54f9851c382b32df0586a61e",
+  "characters": {
+    "marcus": {
+      "down": {
+        "sourceBox": [
+          240,
+          5,
+          540,
+          518
+        ],
+        "alphaBounds": [
+          10,
+          10,
+          280,
+          506
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          680,
+          5,
+          900,
+          518
+        ],
+        "alphaBounds": [
+          12,
+          11,
+          194,
+          507
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          1015,
+          5,
+          1340,
+          518
+        ],
+        "alphaBounds": [
+          13,
+          11,
+          309,
+          507
+        ]
+      }
+    },
+    "ines": {
+      "down": {
+        "sourceBox": [
+          250,
+          520,
+          510,
+          1000
+        ],
+        "alphaBounds": [
+          14,
+          1,
+          250,
+          474
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          670,
+          520,
+          905,
+          1000
+        ],
+        "alphaBounds": [
+          10,
+          5,
+          225,
+          473
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          1055,
+          520,
+          1350,
+          1000
+        ],
+        "alphaBounds": [
+          12,
+          4,
+          277,
+          474
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Left profile mirrors the right profile; raised-hand and carried-book sides mirror with it.",
+    "Only matching canonical outfits receive these poses; custom appearances retain existing renderer."
+  ]
+}

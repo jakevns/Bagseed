@@ -24,6 +24,17 @@ const cast=castManifest.people.map(person=>{
   return {id:person.assetId,name:person.name,look:person.look,age:person.age,kid:!!person.kid,aliases:person.aliases,assets,portraits,rig:true};
 });
 assert.equal(cast.length,67,'Authored roster art is incomplete');
+// Small approved pose batch: retain complete drawings, never composite an arm.
+for(const name of ['marcus','ines']) {
+  const person=cast.find(p=>p.aliases.includes(`collections.neighbors.${name}.look`));
+  assert.ok(person,'Missing pose owner: '+name);
+  person.actions={};
+  for(const view of ['down','right','up','left','portrait']) {
+    const id=`action/batch-01/${name}/${view}`;
+    images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,'actions/batch-01',name,view+'.png')).toString('base64');
+    person.actions[view]=id;
+  }
+}
 const audit=JSON.parse(fs.readFileSync(path.join(root,'docs/graphics/roster-audit.json'))),traits=[];
 function visit(value,location='collections'){
   if(!value||typeof value!=='object')return;
