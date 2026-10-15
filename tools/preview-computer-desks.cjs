@@ -20,6 +20,7 @@ const {chromium}=require('playwright');
       return {equipment:[0,1,2].map(equipment),catalog:JSON.stringify({p:DECOR.sidedesk.p,vars:DECOR.sidedesk.vars,w:DECOR.sidedesk.w,h:DECOR.sidedesk.h,surfY:DECOR.sidedesk.surfY,fp:DECOR.sidedesk.fp}),surfaces:JSON.stringify(DecoZ.surfaces('bedroom'))};
     });
     const integrated=await page.evaluate(()=>!!window.BagseedComputerDesks);
+    if(manifest.status==='approved')assert.ok(integrated,'Approved desks missing from production build');
     if(!integrated){const tag=require('./compile-computer-desks.cjs')();await page.addScriptTag({content:tag.replace(/^<script[^>]*>\n/,'').replace(/<\/script>\n$/,'')});}
     await page.evaluate(()=>BagseedComputerDesks.ready);
     const result=await page.evaluate(({before,manifest})=>{

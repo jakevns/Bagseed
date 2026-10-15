@@ -1,0 +1,66 @@
+{
+  "approval": "Great work! Send it over :)",
+  "mergedRemoteCommit": "5246471",
+  "entryPoint": "public/index.html",
+  "build": {
+    "repeatable": true,
+    "scriptBlocks": 89,
+    "characterRevision": "customization-9",
+    "preservedExistingArtModules": 11
+  },
+  "regression": {
+    "command": "npm test",
+    "passed": 50,
+    "failed": 1,
+    "skipped": 0,
+    "total": 51,
+    "blocked": [
+      {
+        "name": "the standalone local file creates a bald character and retains its saved appearance",
+        "reason": "Chromium returns net::ERR_BLOCKED_BY_ADMINISTRATOR for file:///workspace/Bagseed/public/index.html before game assertions; reproduced in isolation."
+      }
+    ]
+  },
+  "productionPreview": {
+    "proposalOnly": false,
+    "entryPoint": "public/index.html",
+    "desks": 4,
+    "distinctFrames": true,
+    "equipmentUnchanged": true,
+    "computerAndCoffeeInteractions": true,
+    "catalogAndPricesUnchanged": true,
+    "tabletopSupportsUnchanged": true,
+    "storePreviews": 3,
+    "actualStoreCardDesktopAndPhone": true,
+    "errors": []
+  },
+  "deskIntegration": {
+    "money": 913,
+    "records": [
+      {
+        "uid": "sdi9fvr",
+        "id": "sidedesk",
+        "x": 116,
+        "y": 138,
+        "flip": true,
+        "rot": 0,
+        "v": 2
+      },
+      {
+        "uid": "fduog5z",
+        "id": "lavalamp",
+        "x": 128,
+        "y": 124,
+        "flip": false,
+        "rot": 0,
+        "v": 0,
+        "on": "sdi9fvr"
+      }
+    ],
+    "variants": 3,
+    "flipped": true,
+    "packageMatchesStore": true,
+    "saveReload": true,
+    "errors": []
+  }
+}
