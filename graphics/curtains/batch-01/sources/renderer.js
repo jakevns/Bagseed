@@ -10,14 +10,14 @@
     c.save(); c.imageSmoothingEnabled = true; c.imageSmoothingQuality = 'high';
     if (reduced) c.drawImage(sprite, dx, dy, dw, dh);
     else {
-      // Mounting hardware stays fixed. The hem responds more than the tieback.
+      // Mounting hardware stays fixed. Cloth billows above the tieback and sways more freely below it.
       const top = 6, split = sprite.width / 2, sy = sprite.height / dh;
       c.drawImage(sprite, 0, 0, sprite.width, top * sy, dx, dy, dw, top);
-      const windy = weather === 'Windy', speed = windy ? 1.8 : .72;
-      const amp = (windy ? 1.25 : .35) * (id === 'blackout' ? .62 : 1);
+      const windy = weather === 'Windy', speed = windy ? 1.8 : 1.1;
+      const amp = (windy ? 2.5 : 1.15) * (id === 'blackout' ? .8 : 1);
       for (let row = top; row < dh; row++) {
         const height = Math.min(1, dh - row), q = (row - top) / (dh - top);
-        const anchored = q < .58 ? q * .18 : .1044 + Math.pow((q - .58) / .42, 1.5) * .8956;
+        const anchored = q < .5 ? Math.sin(Math.PI * q / .5) * .5 : Math.pow((q - .5) / .5, 1.25);
         for (let side = 0; side < 2; side++) {
           const off = Math.sin(t * speed + side * .65 + q * .9) * amp * anchored;
           c.drawImage(sprite, side * split, row * sy, split, height * sy,

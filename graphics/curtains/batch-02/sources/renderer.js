@@ -1,4 +1,4 @@
-/* Proposed Floral and Sheer curtains. Original cloth art serves room, store and motion. */
+/* Approved Floral and Sheer curtains. Original cloth art serves room, store and motion. */
 (() => {
   'use strict';
   const DATA = __BAGSEED_CURTAIN_DATA__, image = new Image(), sprites = new Map();
@@ -15,11 +15,11 @@
     if (reduced) c.drawImage(sprite,0,top*sy,sprite.width,sprite.height-top*sy,dx,dy+top,dw,dh-top);
     else {
       // Floral print travels with its cloth; airy Sheer has a looser hem.
-      const windy = weather === 'Windy', speed = windy ? 1.8 : .72;
-      const amp = (windy ? 1.25 : .35) * DATA.styles[id].motion;
+      const windy = weather === 'Windy', speed = windy ? 1.8 : 1.1;
+      const amp = (windy ? 2.5 : 1.15) * DATA.styles[id].motion;
       for (let row = top; row < dh; row++) {
         const height = Math.min(1, dh - row), q = (row - top) / (dh - top);
-        const anchored = q < .58 ? q * .18 : .1044 + Math.pow((q - .58) / .42, 1.5) * .8956;
+        const anchored = q < .5 ? Math.sin(Math.PI * q / .5) * .5 : Math.pow((q - .5) / .5, 1.25);
         for (let side = 0; side < 2; side++) {
           const off = Math.sin(t * speed + side * .65 + q * .9) * amp * anchored;
           c.drawImage(sprite, side * split, row * sy, split, height * sy,

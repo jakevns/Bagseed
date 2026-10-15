@@ -1,10 +1,12 @@
 {
-  "browserTests": 24,
-  "passed": 24,
+  "browserTests": 26,
+  "passed": 26,
   "failed": 0,
   "skipped": 0,
-  "parsedScripts": 86,
+  "parsedScripts": 87,
   "baselineChecksumVerified": true,
-  "priorArtworkModulesUnchanged": 8,
+  "unchangedNonCurtainArtworkModules": 8,
+  "originalCurtainStaticHashesVerified": 2,
+  "realFrameLoopStylesVerified": 4,
   "repeatableBuild": true
 }

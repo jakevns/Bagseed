@@ -1,6 +1,6 @@
 {
   "revision": "curtains-batch-02",
-  "status": "proposed",
+  "status": "approved",
   "path": "assets/curtains-atlas.png",
   "size": [
     1536,
@@ -38,5 +38,6 @@
       "motion": 1.45,
       "clothOpacity": 0.62
     }
-  }
+  },
+  "approval": "Approved. Go ahead and push it. Ensure the animation is working on this and on the one you previously pushed its not moving much in my test"
 }

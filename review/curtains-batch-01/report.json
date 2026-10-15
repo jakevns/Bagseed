@@ -31,5 +31,8 @@
     "blinds"
   ],
   "actualStoreCard": true,
+  "actualStoreCards": [
+    "blackout"
+  ],
   "errors": []
 }
