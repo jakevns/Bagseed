@@ -1,0 +1,230 @@
+{
+  "correctedFrontSHA256": "3cf654fd7598ebf8db3493a623944222f2b1a6520ad36da1a81c159b858cd014",
+  "sourceSHA256": "0f161b67ab90900ac2c87a4c5761a2d1319efe941a18eebf97b2a0c3f9ff6a7d",
+  "characters": {
+    "tobias": {
+      "down": {
+        "sourceBox": [
+          100,
+          0,
+          341,
+          329
+        ],
+        "alphaBounds": [
+          64,
+          14,
+          226,
+          324
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          410,
+          0,
+          650,
+          329
+        ],
+        "alphaBounds": [
+          43,
+          15,
+          190,
+          325
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          675,
+          0,
+          940,
+          329
+        ],
+        "alphaBounds": [
+          24,
+          14,
+          187,
+          323
+        ]
+      }
+    },
+    "bev": {
+      "down": {
+        "sourceBox": [
+          100,
+          329,
+          341,
+          640
+        ],
+        "alphaBounds": [
+          174,
+          98,
+          840,
+          1473
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          410,
+          329,
+          650,
+          640
+        ],
+        "alphaBounds": [
+          35,
+          4,
+          189,
+          306
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          675,
+          329,
+          940,
+          640
+        ],
+        "alphaBounds": [
+          29,
+          7,
+          199,
+          305
+        ]
+      }
+    },
+    "kenji": {
+      "down": {
+        "sourceBox": [
+          100,
+          640,
+          341,
+          970
+        ],
+        "alphaBounds": [
+          56,
+          1,
+          233,
+          328
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          410,
+          640,
+          650,
+          970
+        ],
+        "alphaBounds": [
+          34,
+          1,
+          188,
+          329
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          675,
+          640,
+          940,
+          970
+        ],
+        "alphaBounds": [
+          28,
+          1,
+          205,
+          328
+        ]
+      }
+    },
+    "mateo": {
+      "down": {
+        "sourceBox": [
+          100,
+          970,
+          341,
+          1265
+        ],
+        "alphaBounds": [
+          32,
+          1,
+          239,
+          292
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          410,
+          970,
+          650,
+          1265
+        ],
+        "alphaBounds": [
+          22,
+          2,
+          196,
+          293
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          675,
+          970,
+          940,
+          1265
+        ],
+        "alphaBounds": [
+          12,
+          3,
+          218,
+          291
+        ]
+      }
+    },
+    "elena": {
+      "down": {
+        "sourceBox": [
+          100,
+          1265,
+          341,
+          1536
+        ],
+        "alphaBounds": [
+          57,
+          2,
+          214,
+          261
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          410,
+          1265,
+          650,
+          1536
+        ],
+        "alphaBounds": [
+          30,
+          3,
+          187,
+          261
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          675,
+          1265,
+          940,
+          1536
+        ],
+        "alphaBounds": [
+          30,
+          2,
+          195,
+          261
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Left profile mirrors the right profile; raised-hand and carried-book sides mirror with it.",
+    "Only matching canonical outfits receive these poses; custom appearances retain existing renderer."
+  ]
+}
