@@ -1,5 +1,16 @@
 # Bedroom update checkpoint
 
+## Seedling desks completed
+
+The user approved all three workstation designs and their matching store artwork: “Great job!! Send it :)”. This increment updates the included Folding Card Table, Used Writing Desk ($49), and Gardener's Bench ($149). These are the existing `workbench` equipment tiers, separate from the two-variant decorative Potting Bench. Prices, mixing bonuses, save identifiers, nutrient/supply behavior and interaction geometry remain unchanged.
+
+Original approval art, transparent production atlas, hash-verified crop/anchor manifest and shared room/store/package renderer are retained under `graphics/desks/`. Both graphics build paths include the desk compiler. Actual room captures for all three tiers, both paid store/package cards and a phone card are retained under `review/seedling-desks/`.
+
+The focused browser check passed: three distinct room frames and previews, full sprite bounds, store artwork matching the room renderer, original bench/storage/supply-box hits, inventory-sensitive supplies, actual $198 store checkout, both package previews and installations, mixing-panel access, save/reload and phone proportions. The character, room-shell and all four bed-batch script payloads were verified byte-for-byte unchanged against the preceding commit. Future furniture still requires its own artwork approval before implementation and push.
+
+Final integration validation: all 21 browser tests passed with no skips. `npm run check` verified the immutable baseline checksum and parsed all 84 script blocks. Repeating the bedroom build produced identical output.
+
+
 ## Bed collection complete — batch 04
 
 The user approved Rattan Headboard (`cane`, $75) and Tufted Headboard (`tufted`, $95): "Approved. Youve done great work today heres a tip!" The final increment adds 20 combinations and completes all eight existing frames × ten bedding choices, 80 total. Original transparent atlases, approval boards and hashed crop manifests are retained under `graphics/beds/batch-04/`; rendered review and store/package examples are under `review/beds-batch-04/`.
