@@ -1,10 +1,10 @@
 # Bedroom update checkpoint
 
-## Mobile corner details — pending picture approval
+## Mobile corner details — approved for publication
 
-The user rejected the continuous foliage frame: “Instead of forcing an illustration that doesnt fit design one that fits like the reference. It doesnt have to frame it just add details around the corners and seperate hard edges”. The rejected frame was saved only locally and never pushed. The new revision uses six individually registered painted pieces from `graphics/main-menu/assets/mobile-details.png`: two header sprigs, two footer corners and two low flower clusters at the garden/menu seam. All pieces preserve their proportions, with no plant fading masks or full-height border. A shallow irregular clip softens the garden's hard horizontal edges.
+The user rejected the continuous foliage frame: “Instead of forcing an illustration that doesnt fit design one that fits like the reference. It doesnt have to frame it just add details around the corners and seperate hard edges”. The rejected frame was replaced before publication. The new revision uses six individually registered painted pieces from `graphics/main-menu/assets/mobile-details.png`: two header sprigs, two footer corners and two low flower clusters at the garden/menu seam. All pieces preserve their proportions, with no plant fading masks or full-height border. A shallow irregular clip softens the garden's hard horizontal edges.
 
-Show the actual phone picture directly in chat and wait for explicit approval before pushing. Current captures/report: `review/main-menu-mobile-details/`. Earlier `review/main-menu-mobile/` images are REJECTED and must not be used as current previews. Desktop/landscape and gameplay artwork are unchanged. Continue using `public/index.html` for any game preview. The separate loading screen is still deferred.
+The user approved the revised picture and authorized publication with “Great work :) please pushb”. The focused menu test passed all six layouts and menu interactions; `npm run check` verified the baseline and 85 scripts. Desktop/landscape pixels and all seven gameplay artwork payloads match the preceding approved version. Current captures/report: `review/main-menu-mobile-details/`. Earlier `review/main-menu-mobile/` images are REJECTED and must not be used as current previews. Desktop/landscape and gameplay artwork are unchanged. Continue using `public/index.html` for any game preview. The separate loading screen is still deferred.
 
 ## Preview entry point — user preference
 
