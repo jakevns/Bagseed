@@ -1,5 +1,5 @@
 {
-  "revision": "community-menu-2",
+  "revision": "community-menu-3",
   "path": "assets/community-garden.png",
   "size": [
     1536,
@@ -12,8 +12,50 @@
     999,
     1024
   ],
-  "foliage": {
-    "path": "assets/mobile-foliage.png",
-    "sha256": "5da0b518b13f7cae4e245a6c81da5bde95d1127982d58166699094986289496f"
+  "details": {
+    "path": "assets/mobile-details.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "sha256": "47a7d7c3eb77d9a5bad7217bd9894977adf8e06363bb7985582e85927adef728",
+    "tiles": {
+      "upperLeft": [
+        60,
+        50,
+        490,
+        380
+      ],
+      "upperRight": [
+        800,
+        50,
+        410,
+        370
+      ],
+      "lowerLeft": [
+        50,
+        470,
+        520,
+        390
+      ],
+      "lowerRight": [
+        725,
+        500,
+        500,
+        365
+      ],
+      "gardenLeft": [
+        15,
+        955,
+        610,
+        265
+      ],
+      "gardenRight": [
+        650,
+        895,
+        590,
+        325
+      ]
+    }
   }
 }

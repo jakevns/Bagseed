@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const image = document.getElementById('menuArtwork'), canvas = document.getElementById('menuScene');
-  const foliage = document.getElementById('menuFoliage');
+  const details = document.getElementById('menuDetails');
   const DATA = __BAGSEED_MENU_MANIFEST__;
   let loaded = false;
   function imageReady(element) {
@@ -14,10 +14,15 @@
       }
     });
   }
-  const ready = Promise.all([imageReady(image), imageReady(foliage)]).then(() => {
+  const ready = Promise.all([imageReady(image), imageReady(details)]).then(() => {
     const [x,y,w,h] = DATA.phoneCrop;
     canvas.width = w; canvas.height = h;
     canvas.getContext('2d').drawImage(image,x,y,w,h,0,0,w,h);
+    for (const detail of document.querySelectorAll('[data-menu-detail]')) {
+      const [sx,sy,sw,sh] = DATA.details.tiles[detail.dataset.menuDetail];
+      detail.width = sw; detail.height = sh;
+      detail.getContext('2d').drawImage(details,sx,sy,sw,sh,0,0,sw,sh);
+    }
     loaded = true; return { revision: DATA.revision };
   });
   window.BagseedMenu = Object.freeze({ revision: DATA.revision, ready, get loaded() { return loaded; } });

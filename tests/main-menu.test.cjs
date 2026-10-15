@@ -42,11 +42,16 @@ test('community main menu fits desktop/phone layouts and preserves keyboard, set
           const cv=document.getElementById('menuScene');
           if(!cv.getContext('2d').getImageData(0,0,cv.width,cv.height).data.some((v,i)=>i%4===3&&v)) throw Error('Phone scene is blank');
           if(getComputedStyle(cv).objectFit!=='cover') throw Error('Phone scene proportions distorted');
-          const foliage=document.getElementById('menuFoliage');
-          if(!foliage.complete || !foliage.naturalWidth || getComputedStyle(foliage).display==='none') throw Error('Phone foliage missing');
-          if(getComputedStyle(foliage).pointerEvents!=='none') throw Error('Foliage intercepts touches');
-        } else if(getComputedStyle(document.getElementById('menuFoliage')).display!=='none') {
-          throw Error('Mobile foliage changed desktop layout');
+          const details=[...document.querySelectorAll('[data-menu-detail]')];
+          if(details.length!==6) throw Error('Mobile detail pieces missing');
+          for(const detail of details) {
+            const style=getComputedStyle(detail),r=detail.getBoundingClientRect();
+            if(style.display==='none' || style.pointerEvents!=='none') throw Error('Mobile detail hidden or intercepts touches');
+            if(Math.abs(r.width/r.height-detail.width/detail.height)>.01) throw Error('Mobile detail stretched');
+            if(!detail.getContext('2d').getImageData(0,0,detail.width,detail.height).data.some((v,i)=>i%4===3&&v)) throw Error('Mobile detail blank');
+          }
+        } else if([...document.querySelectorAll('[data-menu-detail]')].some(detail=>getComputedStyle(detail).display!=='none')) {
+          throw Error('Mobile details changed desktop layout');
         }
         return {width,height,buttons:buttons.length,art:BagseedMenu.loaded};
       },{width,height}));

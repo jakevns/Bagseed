@@ -508,6 +508,8 @@ body.touch-ui #pauseTag{top:auto;bottom:96px}
       <img id="menuArtwork" class="menu-backdrop" src="__BAGSEED_MENU_IMAGE__" alt="" aria-hidden="true" fetchpriority="high">
       <div class="menu-panel">
         <header class="menu-brand">
+          <canvas class="menu-detail menu-detail-nw" data-menu-detail="upperLeft" aria-hidden="true"></canvas>
+          <canvas class="menu-detail menu-detail-ne" data-menu-detail="upperRight" aria-hidden="true"></canvas>
           <svg class="menu-sprout" viewBox="0 0 72 76" aria-hidden="true"><path d="M36 51C36 35 34 24 25 14" fill="none" stroke="#526838" stroke-width="3"/><path d="M35 37C18 39 9 29 7 17c17-1 27 5 28 20Z" fill="#6e8944" stroke="#344e30" stroke-width="2"/><path d="M35 30C36 12 47 7 65 5c-2 16-12 25-30 25Z" fill="#819c4c" stroke="#344e30" stroke-width="2"/><ellipse cx="36" cy="60" rx="14" ry="12" fill="#947245" stroke="#503d29" stroke-width="2"/><path d="M35 51c-5 5-6 11-3 17" fill="none" stroke="#c5a56d" stroke-width="2"/></svg>
           <h1>Bagseed</h1>
           <p class="menu-tagline">One seed. A whole community.</p>
@@ -519,14 +521,21 @@ body.touch-ui #pauseTag{top:auto;bottom:96px}
           <button class="btn ghost" data-act="importSave">Import save</button>
         </nav>
         <footer class="menu-foot">
+          <canvas class="menu-detail menu-detail-sw" data-menu-detail="lowerLeft" aria-hidden="true"></canvas>
+          <canvas class="menu-detail menu-detail-se" data-menu-detail="lowerRight" aria-hidden="true"></canvas>
           <span class="menu-divider" aria-hidden="true">❧</span>
           <p class="menu-caption">A cozy life sim about growing and belonging.</p>
           <p class="title-foot" id="titleNote" role="status"></p>
           <p class="menu-legal">A fictional world with fictional rules. Nothing here is cultivation, legal or medical advice.</p>
         </footer>
       </div>
-      <canvas id="menuScene" class="menu-scene" width="996" height="1024" role="img" aria-label="Neighbors sharing seedlings in a sunny community garden, with two potted cannabis plants."></canvas>
-      <img id="menuFoliage" class="menu-foliage" src="__BAGSEED_MENU_FOLIAGE__" alt="" aria-hidden="true" draggable="false">
+      <div class="menu-garden">
+        <canvas id="menuScene" class="menu-scene" width="996" height="1024" role="img" aria-label="Neighbors sharing seedlings in a sunny community garden, with two potted cannabis plants."></canvas>
+        <canvas class="menu-detail menu-detail-meadow-left" data-menu-detail="gardenLeft" aria-hidden="true"></canvas>
+        <canvas class="menu-detail menu-detail-meadow-right" data-menu-detail="gardenRight" aria-hidden="true"></canvas>
+      </div>
+      <svg class="menu-clips" width="0" height="0" aria-hidden="true"><defs><clipPath id="menu-garden-edge" clipPathUnits="objectBoundingBox"><path d="M0 .018 C.035 .006 .055 .024 .09 .014 C.13 .003 .15 .026 .2 .015 C.24 .025 .28 .007 .33 .016 C.38 .004 .42 .025 .47 .014 C.52 .024 .55 .007 .6 .017 C.65 .005 .69 .023 .73 .013 C.79 .024 .83 .006 .88 .017 C.93 .007 .96 .022 1 .013 L1 .983 C.95 .995 .92 .974 .87 .987 C.82 .976 .78 .997 .73 .984 C.68 .995 .64 .974 .59 .986 C.54 .974 .49 .998 .44 .985 C.39 .997 .35 .975 .3 .986 C.25 .975 .21 .997 .16 .984 C.1 .996 .06 .976 0 .986Z"/></clipPath></defs></svg>
+      <img id="menuDetails" src="__BAGSEED_MENU_DETAILS__" alt="" hidden aria-hidden="true">
     </div>
   </section>
 

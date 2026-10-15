@@ -1,10 +1,10 @@
 # Bedroom update checkpoint
 
-## Mobile menu foliage — pending picture approval
+## Mobile corner details — pending picture approval
 
-Current user request: make the mobile main menu closer to the approved reference, with more plants. The local revision adds a transparent painted flowering-vine border, fine inner outline and small primary-button leaves; mobile-only masks preserve clear title/footer areas. Desktop and landscape retain the approved layout. Source art, hash and integration are under `graphics/main-menu/`; actual `public/index.html` captures are under `review/main-menu-mobile/`.
+The user rejected the continuous foliage frame: “Instead of forcing an illustration that doesnt fit design one that fits like the reference. It doesnt have to frame it just add details around the corners and seperate hard edges”. The rejected frame was saved only locally and never pushed. The new revision uses six individually registered painted pieces from `graphics/main-menu/assets/mobile-details.png`: two header sprigs, two footer corners and two low flower clusters at the garden/menu seam. All pieces preserve their proportions, with no plant fading masks or full-height border. A shallow irregular clip softens the garden's hard horizontal edges.
 
-Show the phone picture directly in chat and wait for explicit approval before pushing. Do not implement the separately discussed loading screen yet. The focused main-menu browser test covers six viewport sizes, decoration not blocking button taps, keyboard/new-game/settings/import/Continue behavior. `npm run check` verifies the baseline and all 85 scripts. Gameplay art modules are unchanged.
+Show the actual phone picture directly in chat and wait for explicit approval before pushing. Current captures/report: `review/main-menu-mobile-details/`. Earlier `review/main-menu-mobile/` images are REJECTED and must not be used as current previews. Desktop/landscape and gameplay artwork are unchanged. Continue using `public/index.html` for any game preview. The separate loading screen is still deferred.
 
 ## Preview entry point — user preference
 
