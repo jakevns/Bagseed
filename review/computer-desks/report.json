@@ -1,0 +1,13 @@
+{
+  "proposalOnly": true,
+  "entryPoint": "public/index.html",
+  "desks": 4,
+  "distinctFrames": true,
+  "equipmentUnchanged": true,
+  "computerAndCoffeeInteractions": true,
+  "catalogAndPricesUnchanged": true,
+  "tabletopSupportsUnchanged": true,
+  "storePreviews": 3,
+  "actualStoreCardDesktopAndPhone": true,
+  "errors": []
+}
