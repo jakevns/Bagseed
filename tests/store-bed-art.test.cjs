@@ -60,7 +60,7 @@ test('LeafCart cards, search/sort, cart checkout and package previews use the ap
       } finally { Object.assign(state.room, JSON.parse(original)); RoomArt.hits = previousHits; renderPanel(); }
       return { samples, combinations: checked.size, preserved: original === JSON.stringify(state.room) };
     });
-    assert.deepEqual(report, { samples: 104, combinations: 59, preserved: true });
+    assert.deepEqual(report, { samples: 142, combinations: 79, preserved: true });
     const search = page.locator('[data-input115=shopq]');
     await search.fill('Canopy');
     await page.waitForFunction(() => document.querySelectorAll('#panelBody canvas[data-draw^="style:"]').length === 1);
@@ -69,25 +69,34 @@ test('LeafCart cards, search/sort, cart checkout and package previews use the ap
     await card.screenshot({ path: path.join(out, 'canopy-card.png') });
     assert.deepEqual(await card.locator('canvas').evaluate(c => [c.width, c.height]), [252, 240]);
     await card.locator('[data-act=cartAdd115][data-arg="s:bed:fancy"]').click();
+    for (const [name, id] of [['Rattan', 'cane'], ['Tufted', 'tufted']]) {
+      await search.fill(name);
+      await page.waitForFunction(id => !!document.querySelector(`canvas[data-draw="style:bed:${id}"]`), id);
+      const frameCard = page.locator(`canvas[data-draw="style:bed:${id}"]`).locator('..');
+      await frameCard.screenshot({ path: path.join(out, `${id}-card.png`) });
+      await frameCard.locator(`[data-act=cartAdd115][data-arg="s:bed:${id}"]`).click();
+    }
     await page.locator('[data-act=cartCheckout115][data-arg=leafcart]').click();
     const order = await page.evaluate(() => {
       const receipt = state.completion115.receipts.at(-1);
       return { money: state.money, cart: Cart115.S('leafcart').length,
         keys: state.orders.map(o => o.key), total: receipt.total, channel: receipt.channel };
     });
-    assert.deepEqual(order, { money: 780, cart: 0, keys: ['s:bed:fancy'], total: 220, channel: 'leafcart' });
+    assert.deepEqual(order, { money: 610, cart: 0, keys: ['s:bed:fancy', 's:bed:cane', 's:bed:tufted'], total: 390, channel: 'leafcart' });
     await page.screenshot({ path: path.join(out, 'checkout.png') });
-    await page.evaluate(() => {
-      const index = state.orders.findIndex(o => o.key === 's:bed:fancy');
-      state.packages.push(state.orders.splice(index, 1)[0]);
-      Panels.pkg(state.packages.length - 1);
-    });
-    await page.locator('[data-act=pkgOpen115]').click();
-    const packageArt = page.locator('#panelBody canvas[data-draw="style:bed:fancy"]');
-    await packageArt.waitFor();
-    assert.deepEqual(await packageArt.evaluate(c => [c.width, c.height]), [252, 240]);
-    await page.locator('#panelBody').screenshot({ path: path.join(out, 'package-preview.png') });
-    assert.equal(await page.evaluate(() => styleOwned('bed', 'fancy')), true);
+    for (const id of ['fancy', 'cane', 'tufted']) {
+      await page.evaluate(id => {
+        const index = state.orders.findIndex(o => o.key === 's:bed:' + id);
+        state.packages.push(state.orders.splice(index, 1)[0]);
+        Panels.pkg(state.packages.length - 1);
+      }, id);
+      await page.locator('[data-act=pkgOpen115]').click();
+      const packageArt = page.locator(`#panelBody canvas[data-draw="style:bed:${id}"]`);
+      await packageArt.waitFor();
+      assert.deepEqual(await packageArt.evaluate(c => [c.width, c.height]), [252, 240]);
+      await page.locator('#panelBody').screenshot({ path: path.join(out, id === 'fancy' ? 'package-preview.png' : `${id}-package-preview.png`) });
+      assert.equal(await page.evaluate(id => styleOwned('bed', id), id), true);
+    }
     await page.evaluate(() => { closePanel(); runtime.shopQ = ''; Panels.app('leafcart'); });
     await page.locator('[data-act=shopCat][data-arg=decor]').click();
     await page.locator('[data-act=decorCat][data-arg=styles]').click();

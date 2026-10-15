@@ -6,16 +6,9 @@ const { createHash } = require('node:crypto');
 const root = path.resolve(__dirname, '../..');
 
 module.exports = function bedBatchTests(config) {
-test(`${config.batch}: 20 drawings/previews, remaining frames, purchase, save and sleep controls`, async () => {
+test(`${config.batch}: 20 drawings/previews, complete catalog, purchase, save and sleep controls`, async () => {
   const { createStaticServer } = await import('../../tools/server.mjs');
-  const server = createStaticServer(), request = server.listeners('request')[0];
-  server.removeAllListeners('request');
-  server.on('request', (req, res) => {
-    if (req.url === '/baseline.html') {
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(fs.readFileSync(path.join(root, 'baselines/Bagseed_v1.1.5.1_Night_Walker_Flashlights_Update.html')));
-    } else request(req, res);
-  });
+  const server = createStaticServer();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   let browser;
   try {
@@ -40,27 +33,10 @@ test(`${config.batch}: 20 drawings/previews, remaining frames, purchase, save an
       });
       return page;
     }
-    const baseline = await start(base + '/baseline.html'), page = await start(base);
-    const remaining = () => {
-      const old = { ...state.room }, hits = RoomArt.hits;
-      const cv = document.createElement('canvas'); cv.width = 252; cv.height = 240;
-      const g = cv.getContext('2d'); g.scale(3, 3); g.translate(0, -100);
-      const images = {};
-      try {
-        for (const [frame] of STYLES.bed.filter(([id]) => !['starter', 'wooden', 'metal', 'cozy', 'platform', 'fancy'].includes(id))) {
-          state.room.bed = frame;
-          for (const [bedding] of STYLES.bedding) {
-            state.room.bedding = bedding; g.clearRect(0, 100, 84, 80); RoomArt.hits = [];
-            RoomArt.drawBed(g); images[frame + ':' + bedding] = cv.toDataURL();
-          }
-        }
-      } finally { Object.assign(state.room, old); RoomArt.hits = hits; }
-      return images;
-    };
-    const legacy = await baseline.evaluate(remaining);
-    assert.equal(Object.keys(legacy).length, 20);
-    assert.deepEqual(await page.evaluate(remaining), legacy, 'Unapproved frames were redrawn');
-    await baseline.close();
+    const page = await start(base);
+    const catalog = await page.evaluate(() => ({ frames: STYLES.bed.map(x => x[0]).sort(), registered: [...BagseedBeds.frames].sort(), beddings: STYLES.bedding.length }));
+    assert.equal(catalog.frames.length, 8); assert.equal(catalog.beddings, 10);
+    assert.deepEqual(catalog.registered, catalog.frames, 'An existing bed frame is missing from the completed collection');
     const report = await page.evaluate(({ frames }) => {
       const original = JSON.stringify(state.room), previousHits = RoomArt.hits;
       const cv = document.createElement('canvas'); cv.width = 252; cv.height = 240;
@@ -125,7 +101,7 @@ test(`${config.batch}: 20 drawings/previews, remaining frames, purchase, save an
     const board = await browser.newPage({ viewport: { width: 1200, height: 1800 } });
     await board.setContent(`<body style="margin:0;padding:24px;background:#ece8da;color:#304438;font:16px sans-serif"><h1>Bagseed · Approved bed ${config.batch} · Actual game art</h1><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">${report.images.map(x => `<div style="background:#b8bda1;padding:12px"><b>${config.names[config.frames.indexOf(x.frame)]}</b><div>${x.name}</div><img width="252" height="240" src="${x.image}"></div>`).join('')}</div></body>`);
     await board.screenshot({ path: path.join(out, 'all-20.png'), fullPage: true });
-    fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify({ combinations: 20, remainingUnchanged: 20, previousDrawingsVerified: config.hashFile ? 20 : undefined, icons: report.icons, purchase, errors }, null, 2));
+    fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify({ combinations: 20, catalogCombinations: 80, previousDrawingsVerified: config.hashFile ? 20 : undefined, icons: report.icons, purchase, errors }, null, 2));
     assert.deepEqual(errors, []);
   } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); }
 });

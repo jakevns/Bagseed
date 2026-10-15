@@ -1,0 +1,11 @@
+# Bed batch 04 — final 20 combinations
+
+The user approved Rattan Headboard (`cane`, $75) and Tufted Headboard (`tufted`, $95), each with all ten existing bedding choices. This increment adds exactly 20 combinations and completes all eight frames × ten beddings, 80 combinations total. Earlier batches retain their shipped artwork.
+
+`assets/cane-approval.png` and `tufted-approval.png` retain the approved concept boards. `cane.png` and `tufted.png` are original transparent production atlases, ten complete drawings each, generated from those approvals. Rattan has an arched honey-cane headboard, woven center, rounded supports and bound joints. Tufted has a slate-blue padded headboard with diamond buttons, matching rails and walnut feet, distinct from the oatmeal buttonless Cozy bed. Original PNG bytes are retained without image manipulation.
+
+`sources/manifest.json` records source dimensions, hashes and crop rectangles. The unchanged shared renderer is instantiated separately for this batch; original interaction bounds, feet anchors, shadow, depth ordering and logical coordinates are preserved. Save IDs, catalog names/prices, ownership, delivery, switching and sleep behavior are unchanged. The store and package views use the same production drawings and native 252×240 preview dimensions.
+
+`npm run build:bedroom` includes all four batches while retaining the verified character payload; the full graphics builder includes them too. Each batch contains exactly 20 manifest entries, with unique frame IDs across the collection and embedded atlases requiring no external image requests.
+
+Run `npm run check` and `npm test`. Each batch test renders all its 20 combinations and previews, verifies full eight-frame/ten-bedding catalog registration, buys/applies its variants, reloads the save, and checks sleep controls and phone layout. Batches 01–03 are additionally protected by pre-integration rendered hashes for all previous 60 drawings. The store test compares 142 actual card samples across all 79 purchasable combinations, verifies responsive proportions, searches/sorts, checks out Canopy/Rattan/Tufted together, and opens each package to verify its updated image. Starter/Blue Check is free and is not a separate store product.

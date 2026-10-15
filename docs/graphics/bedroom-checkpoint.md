@@ -1,5 +1,17 @@
 # Bedroom update checkpoint
 
+## Bed collection complete — batch 04
+
+The user approved Rattan Headboard (`cane`, $75) and Tufted Headboard (`tufted`, $95): "Approved. Youve done great work today heres a tip!" The final increment adds 20 combinations and completes all eight existing frames × ten bedding choices, 80 total. Original transparent atlases, approval boards and hashed crop manifests are retained under `graphics/beds/batch-04/`; rendered review and store/package examples are under `review/beds-batch-04/`.
+
+Focused Batch 04 and actual-store checks passed. Earlier batches are protected by 60 rendered hashes captured before later integrations. With no legacy bed frames remaining, the shared test verifies complete registration of the eight-frame/ten-bedding catalog rather than comparing an empty legacy set. Every batch still exercises its 20 drawings/previews, interactions, purchases, installation, style switching, save/reload, sleep controls and phone layout.
+
+The store check now covers 142 actual card samples across all 79 purchasable combinations. It checks out Canopy/Rattan/Tufted together at their unchanged prices ($390 total) and opens each package to verify the updated image and ownership. The free Starter/Blue Check pairing is not sold. Store and package canvases retain the corrected 252×240 proportions.
+
+Final integration validation: all 20 browser tests passed with no skips. `npm run check` verified the immutable baseline checksum and parsed all 83 script blocks; rebuilding succeeded. The character, room-shell and all three previous bed-batch payloads are byte-for-byte unchanged from the preceding commit. The full collection's sources, tests and review evidence are retained in Git.
+
+Next furniture item has not been selected or approved. Continue one furniture item at a time: audit all its existing variations, show artwork for explicit approval, then implement room/store/package/inventory artwork as applicable, test and push that approved increment. Keep batches at or below 20 combinations when needed. Previous milestone sections below are historical records of their completion state.
+
 ## Store artwork verification
 
 The user requested verification that the bedroom artwork also appears in the store (called LeafCart in the game). Actual store cards and opened-package previews already used the approved bed renderer, but their legacy 96×48 thumbnails compressed the new beds vertically. The shared style renderer now sets supported bed/bedding preview canvases to their native 252×240 render size, preserving proportions with the existing responsive CSS. Room sprites, prices, ownership and checkout behavior are unchanged.
