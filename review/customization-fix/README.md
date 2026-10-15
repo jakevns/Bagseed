@@ -1,5 +1,7 @@
 # Custom character and leg rendering repair
 
+**Superseded:** the user rejected this visual result. See `../customization-v3/README.md` for the replacement artwork and anatomy rebuild. The results below record the earlier functional checks, not visual approval.
+
 The custom renderer combined undersized independent trousers with trousers and shoes left in the top artwork. This produced thin legs, mismatched ankles and duplicate footwear. Walking also split complete drawings into rectangular leg sections, which broke overlapping profile legs. The repaired compositor registers trousers to torso width, removes the old lower layers and draws the selected footwear once. Generic movement transforms one connected figure instead of cutting the legs apart.
 
 The default player now uses the same modular face/body path as customized players, so outfit changes do not switch between two different illustrated faces. Custom portraits use 39 retained source-resolution components instead of enlarging small world sprites; no source character artwork was regenerated. Colored hair keeps its shading without the previous scattered black interior pixels. Long hair continues behind the shoulders rather than exposing a straight head-crop edge.

@@ -37,7 +37,7 @@ const changedSincePrior=rendererFix&&explicitPrior?new Set():explicitPrior?lates
   const page=await browser.newPage(),snapshots=[],revisions=[],errors=[];page.on('pageerror',e=>errors.push(e.message));
   for(const route of ['/before','/prior-batch','/']){
    await page.goto('http://127.0.0.1:'+server.address().port+route);await page.evaluate(()=>BagseedArt.ready);
-   revisions.push(await page.evaluate(()=>BagseedArt.renderingRevision==='customization-2'));
+   revisions.push(await page.evaluate(()=>BagseedArt.renderingRevision||'legacy'));
    snapshots.push(await page.evaluate(async samples=>{
     const fingerprint=async canvas=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data))).map(v=>v.toString(16).padStart(2,'0')).join('');
     const result={};
@@ -54,11 +54,11 @@ const changedSincePrior=rendererFix&&explicitPrior?new Set():explicitPrior?lates
   }
   const [original,prior,current]=snapshots;assert.equal(Object.keys(current).length,72,'Full cast and original samples were not checked');let comparisons=0,customChanges=0;
   for(const id of Object.keys(current)){
-   for(const [index,old]of [original,prior].entries()){if(!revisions[index]&&id==='player')assert.notEqual(current[id].portrait,old[id].portrait,'Player must use the consistent customizable portrait');else assert.equal(current[id].portrait,old[id].portrait,id+' regular portrait changed');comparisons++;}
+   for(const [index,old]of [original,prior].entries()){if(revisions[index]!==revisions[2]&&id==='player')assert.notEqual(current[id].portrait,old[id].portrait,'Player must use the consistent customizable portrait');else assert.equal(current[id].portrait,old[id].portrait,id+' regular portrait changed');comparisons++;}
    for(const dir of ['down','right','up','left']){
     const now=current[id].views[dir];
     for(const [index,[before,changed]]of [[original,allApproved.has(id)],[prior,changedSincePrior.has(id)]].entries()){
-     const legacy=!revisions[index],was=before[id].views[dir];if(legacy&&id==='player')assert.notEqual(now.standing,was.standing,'Player must use the consistent customizable body');else assert.equal(now.standing,was.standing,id+' standing '+dir);
+     const legacy=revisions[index]!==revisions[2],was=before[id].views[dir];if(legacy&&id==='player')assert.notEqual(now.standing,was.standing,'Player must use the consistent customizable body');else assert.equal(now.standing,was.standing,id+' standing '+dir);
      if(legacy){if(now.custom!==was.custom)customChanges++;}else assert.equal(now.custom,was.custom,id+' custom '+dir);
      if(!(legacy&&!allApproved.has(id)))assert.equal(now.nose!==was.nose,changed,id+' action routing '+dir);comparisons+=3;
     }

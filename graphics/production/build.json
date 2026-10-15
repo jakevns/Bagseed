@@ -1,12 +1,13 @@
 {
   "version": "illustrated-1",
-  "approval": "User response to revised visible samples: results exceeded expectations, You nailed it.",
+  "approval": "Approved cast artwork retained; current customization changes await user visual review.",
+  "customizationReview": "review/customization-v4/README.md",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "updatedSHA": "93d9fb6649c64b2436f4575ef2444b447ef7d6732b6caa008153cf557f6c2576",
-  "bytes": 35896686,
+  "updatedSHA": "f421649c98fabc5623a1f99af3aa0d4e5d633bfcfdb5df674983b25213f42a2f",
+  "bytes": 43627432,
   "modularAssets": 544,
-  "embeddedImages": 1427,
+  "embeddedImages": 1544,
   "approvedIdentities": [
     "player",
     "remy",

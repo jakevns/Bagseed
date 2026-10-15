@@ -50,6 +50,15 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
       const base={skin:'#cf9670',hairC:'#3e9f7a',hairS:'short',facial:'none',shirtC:'#5f9c33',topS:'hoodie',pantsC:'#36405a',bottomS:'jeans',shoesC:'#2b1d14',shoesS:'sneakers',glasses:'none',hat:'none',acc:'none',pres:'neutral',body:'average',eyeC:'#2b1d14',eyes:'dot',brows:'thin',face:'soft',extras:[]};
       const region=(canvas,x,y,w,h)=>Array.from(canvas.getContext('2d').getImageData(x,y,w,h).data).join(',');
       const head=region(BagseedArt.portrait(base),0,0,192,124),mismatches=[],widths={};let footChecks=0;
+      // Check anatomical landmarks and material masks, not just nonblank art.
+      const redTop=charSprite({...base,shirtC:'#c94f4f'},'down').getContext('2d').getImageData(0,0,96,108).data;
+      let waistband=108;
+      for(let y=55;y<85;y++)for(let x=44;x<53;x++){const i=(y*96+x)*4;if(redTop[i+3]>128&&redTop[i+2]>redTop[i]*1.25&&redTop[i+2]>redTop[i+1]*1.1)waistband=Math.min(waistband,y);}
+      if(waistband<66||waistband>71)mismatches.push('Waistband leaves the legs too short: '+waistband);
+      for(const [hairS]of HAIRS){const pixels=BagseedArt.head({...BagseedArt.normalize(base),hairS},'down').getContext('2d').getImageData(0,0,192,192).data;let greenSkin=0;
+        for(let y=107;y<117;y++)for(let x=88;x<106;x++){const i=(y*192+x)*4;if(pixels[i+3]>128&&pixels[i+1]>pixels[i]*1.05)greenSkin++;}
+        if(greenSkin>2)mismatches.push('Hair color leaks onto face: '+hairS+' '+greenSkin);
+      }
       const tops=['tee','tank','hoodie','flannel','sweater','cardigan','overalls','work','crop','jacket','garden','pjs','labcoat','suit','officer'];
       for(const topS of tops)if(region(BagseedArt.portrait({...base,topS}),0,0,192,124)!==head)mismatches.push('face changed with '+topS);
       for(const dir of ['down','right','up','left']){
@@ -68,7 +77,7 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
           for(let y=82;y<105;y++)if(!Array.from({length:96},(_,x)=>moving[(y*96+x)*4+3]).some(a=>a>128))mismatches.push('disconnected lower body '+dir+'/'+frame+'/'+y);
         }
       }
-      return {mismatches,widths,footChecks};
+      return {mismatches,widths,footChecks,waistband};
     });
     fs.writeFileSync(path.join(OUT,'custom-body-regressions.json'),JSON.stringify(report,null,2)+'\n');
     assert.deepEqual(report.mismatches,[]);
@@ -84,10 +93,14 @@ test('a character customized through creator controls renders, plays and survive
     for(const arg of ['body:broad','hairC:#3e9f7a','topS:flannel','bottomS:cargo','shoesS:boots','glasses:round'])await page.locator(`[data-act="cr"][data-arg="${arg}"]`).first().click();
     await page.locator('[data-act=crWalk][data-arg="0"]').click();
     const expected=await page.evaluate(()=>{drawCreatorPreview(0);$('#screen-create').scrollTop=0;return creatorLook(runtime.cr);});
+    assert.equal(await page.locator('#creatorPreview').evaluate(c=>c.width),540);
     await page.screenshot({path:path.join(OUT,'custom-creator.png')});
     await page.locator('[data-act=startGame]').click();await page.waitForFunction(()=>screen==='game');await page.waitForTimeout(2200);
     await page.evaluate(()=>{settings.speed=0;runtime.dialogQ=[];if(runtime.curDialog)ACT.dlg(0);state.tut.on=false;$('#tip').hidden=true;closePanel();});
     const created=await page.evaluate(()=>playerLook());assert.deepEqual(created,expected);
+    await page.evaluate(()=>{ACT.wardrobe();ACT.wardTab('look');CharacterUI115.mirrorDraw();});
+    assert.equal(await page.locator('#panelBody canvas[data-draw="person"]').evaluate(c=>c.width),540);
+    await page.screenshot({path:path.join(OUT,'custom-mirror.png')});
     await page.evaluate(()=>{ACT.wardrobe();ACT.wear('hairS:ponyhi');ACT.wear('extra:freckles');closePanel();Scene.place('street','start');View.snap();if(!SaveSys.now('custom character regression'))throw Error('Save failed');});
     const saved=await page.evaluate(()=>({look:playerLook(),sprites:['down','right','up','left'].map(d=>charSprite(playerLook(),d,1).toDataURL())}));
     await page.screenshot({path:path.join(OUT,'custom-street.png')});

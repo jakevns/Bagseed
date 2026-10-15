@@ -12,6 +12,12 @@ for(const [id,entry]of Object.entries(manifest.assets))add(id,path.join(art,entr
 const customization=JSON.parse(fs.readFileSync(path.join(art,'customization/manifest.json')));
 for(const [source,expected]of Object.entries(customization.sourceSHA256))assert.equal(sha(fs.readFileSync(path.join(art,manifest.sources[source].path))),expected,'Stale customization source: '+source);
 for(const [id,file]of Object.entries(customization.assets))images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,file)).toString('base64');
+const heads=JSON.parse(fs.readFileSync(path.join(art,'customization-v3/manifest.json')));
+for(const [name,source]of Object.entries(heads.sources))assert.equal(sha(fs.readFileSync(path.join(art,'customization-v3/sources',name+'.png'))),source.sha256,'Stale chibi head source: '+name);
+for(const [id,file]of Object.entries(heads.assets))images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,'customization-v3',file)).toString('base64');
+const hats=JSON.parse(fs.readFileSync(path.join(art,'customization-v3/hats-manifest.json')));
+assert.equal(sha(fs.readFileSync(path.join(art,'customization-v3/sources/hats.png'))),hats.sourceSHA256,'Stale isolated hat source');
+for(const [id,file]of Object.entries(hats.assets))images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,'customization-v3',file)).toString('base64');
 const preview=path.join(root,'review/characters-v2'),fixtures=JSON.parse(fs.readFileSync(path.join(preview,'sources/baseline-assets.json')));
 const approved=fixtures.people.map(person=>{
   const assets={},portraits={};
@@ -59,7 +65,7 @@ function visit(value,location='collections'){
   for(const [k,v]of Object.entries(value))if(k!=='look')visit(v,location+'.'+k);
 }
 visit(audit.collections);
-const data={images,approved,cast,traits,haircuts:60,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
+const data={images,approved,cast,traits,headFeatures:heads.features,hatAssets:Object.keys(hats.assets),hatFits:hats.fits,haircuts:60,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
 const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace(/\r\n/g,'\n').replace('__BAGSEED_ART_DATA__',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
 new (require('node:vm').Script)(characterCode,{filename:'illustrated-production-code'});
 const marker='bagseed-illustrated-production-code';
@@ -69,5 +75,5 @@ assert.ok(sha(current)===baselineSHA||sha(current)===priorSHA,'Unexpected edits 
 const html=original.toString().replace('</body></html>',`<script id="${marker}">\n${characterCode}\n</script>\n</body></html>`);
 assert.ok(html.includes(marker),'Could not find baseline insertion point');
 const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging,target);
-const report={version:'illustrated-1',approval:'User response to revised visible samples: results exceeded expectations, You nailed it.',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length};
+const report={version:'illustrated-1',approval:'Approved cast artwork retained; current customization changes await user visual review.',customizationReview:'review/customization-v4/README.md',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length};
 fs.writeFileSync(path.join(art,'build.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

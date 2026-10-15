@@ -1,0 +1,43 @@
+{
+  "status": "Reported defects repaired locally; visual screenshots inspected; awaiting user visual acceptance",
+  "renderingRevision": "customization-4",
+  "gameSHA256": "f421649c98fabc5623a1f99af3aa0d4e5d633bfcfdb5df674983b25213f42a2f",
+  "previousRejectedGameSHA256": "068e4699ff8e2ecbddd7ba3a58c10000f069033d72f47a50da2cf592b2ac3b66",
+  "validation": {
+    "browserTestsPassed": 20,
+    "finalMirrorCreatorAndMobileChecksPassed": 3,
+    "fullRosterComparisons": 1872,
+    "preservedNPCStandingAndPortraitAppearances": 71,
+    "directActionAssetChecks": 260,
+    "preservedSmellPoseSets": 52,
+    "sourceHeadCropsWithNoBoundaryClipping": 240,
+    "previewCanvas": [
+      540,
+      288
+    ],
+    "facialHair": {
+      "views": 2520,
+      "eyes": 3360,
+      "silverLayers": 2520,
+      "backViews": 840,
+      "failures": []
+    },
+    "hairMargins": {
+      "views": 720,
+      "failures": []
+    },
+    "hatFaceScale": {
+      "views": 1440,
+      "failures": []
+    },
+    "animatedBlinks": {
+      "views": 540,
+      "failures": []
+    },
+    "bodyAndDetail": {
+      "outfits": 300,
+      "extraDetail": 5708,
+      "failures": []
+    }
+  }
+}

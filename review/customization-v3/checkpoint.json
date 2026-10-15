@@ -1,0 +1,52 @@
+{
+  "status": "Superseded: user reported visual defects despite functional checks",
+  "renderingRevision": "customization-3",
+  "supersedes": "review/customization-fix/README.md (rejected by user)",
+  "gameSHA256": "068e4699ff8e2ecbddd7ba3a58c10000f069033d72f47a50da2cf592b2ac3b66",
+  "previousRejectedGameSHA256": "93d9fb6649c64b2436f4575ef2444b447ef7d6732b6caa008153cf557f6c2576",
+  "newArtwork": {
+    "hairstyles": 60,
+    "headViews": 240,
+    "hatStyles": 8,
+    "hatViews": 32,
+    "sourceAtlases": 8,
+    "generationTool": "built-in image_gen",
+    "prompts": "graphics/production/customization-v3/sources/prompts.json",
+    "hatPrompt": "graphics/production/customization-v3/sources/hats-prompt.txt"
+  },
+  "validation": {
+    "browserTests": 14,
+    "browserFailures": 0,
+    "fullRosterComparisons": 1872,
+    "preservedNPCStandingAndPortraitAppearances": 71,
+    "customViewsComparedWithPreviousRenderer": 576,
+    "registeredActionAssetChecks": 260,
+    "clothingFootwearCombinations": 1200,
+    "hairMaterialMasksChecked": 60,
+    "bodyGeometry": {
+      "mismatches": [],
+      "widths": {
+        "down": 27.615384615384617,
+        "right": 14.461538461538462,
+        "up": 29.76923076923077,
+        "left": 15.76923076923077
+      },
+      "footChecks": 1200,
+      "waistband": 71
+    },
+    "creatorWardrobeSaveReload": "passed",
+    "sourceChecksumAndGameScriptChecks": "passed",
+    "visualContactSheets": [
+      "characters.png",
+      "hairstyles.png",
+      "options.png",
+      "before-after.png"
+    ]
+  },
+  "poseProgress": {
+    "completed": 52,
+    "remaining": 20
+  },
+  "deployment": "Local only; not pushed or deployed",
+  "supersededBy": "review/customization-v4/README.md"
+}

@@ -9,7 +9,7 @@ manifest = json.loads((root / 'sources/asset-manifest.json').read_text())
 out = root / 'customization'
 report = {'density': 3, 'assets': {}, 'sourceSHA256': {}}
 for key, entry in manifest['assets'].items():
-    if key.split('/')[0] not in ['top', 'nose', 'bottom', 'shoe'] or not key.endswith('/down'):
+    if key.split('/')[0] not in ['top', 'nose', 'bottom', 'shoe']:
         continue
     source = root / manifest['sources'][entry['source']]['path']
     source_sha = hashlib.sha256(source.read_bytes()).hexdigest()
