@@ -1,0 +1,215 @@
+{
+  "revision": "computer-equipment-1",
+  "status": "awaiting approval",
+  "keyboardHeight": 2.8,
+  "atlases": {
+    "hardware": {
+      "path": "assets/hardware-atlas.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "cd970f204f1c476c5bcbbd4b33335e8839085cbe4c6fc2832a585bdf71bd4d33"
+    },
+    "keyboards": {
+      "path": "assets/keyboards-atlas.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "5fd7817d58f4226fa3c8e4d683dd436b992986b148339c7648188073ea77660b"
+    },
+    "mats": {
+      "path": "assets/mats-atlas.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "a9fd63c122caad5ce4225d887bacbc6848b27a634ea6ca5e05b9ac88825068de"
+    },
+    "wallpapers": {
+      "path": "assets/wallpapers-atlas.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "61b73364cdb8300538bdc3cd78a030f6a6605cc2c8ba4d82ce44d426627babb0"
+    }
+  },
+  "assets": {
+    "laptop": {
+      "atlas": "hardware",
+      "rect": [
+        82,
+        43,
+        677,
+        435
+      ],
+      "screen": [
+        0.1536189069423929,
+        0.10114942528735632,
+        0.7031019202363368,
+        0.5195402298850574
+      ]
+    },
+    "crt": {
+      "atlas": "hardware",
+      "rect": [
+        922,
+        28,
+        486,
+        476
+      ],
+      "screen": [
+        0.13786008230452676,
+        0.15126050420168066,
+        0.7263374485596708,
+        0.5147058823529411
+      ],
+      "led": [
+        0.8641975308641975,
+        0.7563025210084033
+      ]
+    },
+    "tower": {
+      "atlas": "hardware",
+      "rect": [
+        259,
+        510,
+        286,
+        478
+      ],
+      "led": [
+        0.8076923076923077,
+        0.8828451882845189
+      ]
+    },
+    "monitor": {
+      "atlas": "hardware",
+      "rect": [
+        798,
+        553,
+        667,
+        422
+      ],
+      "screen": [
+        0.035982008995502246,
+        0.054502369668246446,
+        0.9295352323838081,
+        0.6729857819905213
+      ],
+      "led": [
+        0.9550224887556222,
+        0.7630331753554502
+      ]
+    },
+    "kb:beige": {
+      "atlas": "keyboards",
+      "rect": [
+        34,
+        189,
+        703,
+        213
+      ]
+    },
+    "kb:black": {
+      "atlas": "keyboards",
+      "rect": [
+        792,
+        189,
+        709,
+        213
+      ]
+    },
+    "kb:white": {
+      "atlas": "keyboards",
+      "rect": [
+        34,
+        608,
+        705,
+        214
+      ]
+    },
+    "kb:rgbkb": {
+      "atlas": "keyboards",
+      "rect": [
+        791,
+        609,
+        714,
+        213
+      ]
+    },
+    "mat:green": {
+      "atlas": "mats",
+      "rect": [
+        28,
+        85,
+        1481,
+        240
+      ]
+    },
+    "mat:purple": {
+      "atlas": "mats",
+      "rect": [
+        28,
+        395,
+        1481,
+        243
+      ]
+    },
+    "mat:map": {
+      "atlas": "mats",
+      "rect": [
+        28,
+        701,
+        1481,
+        259
+      ]
+    },
+    "wp:terminal": {
+      "atlas": "wallpapers",
+      "rect": [
+        24,
+        159,
+        474,
+        287
+      ]
+    },
+    "wp:plain": {
+      "atlas": "wallpapers",
+      "rect": [
+        532,
+        159,
+        473,
+        287
+      ]
+    },
+    "wp:sunset": {
+      "atlas": "wallpapers",
+      "rect": [
+        1039,
+        159,
+        474,
+        287
+      ]
+    },
+    "wp:leafwp": {
+      "atlas": "wallpapers",
+      "rect": [
+        90,
+        530,
+        648,
+        366
+      ]
+    },
+    "wp:stars": {
+      "atlas": "wallpapers",
+      "rect": [
+        798,
+        530,
+        648,
+        366
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "proposalOnly": true,
+  "entryPoint": "public/index.html",
+  "tiers": 3,
+  "choices": {
+    "keyboard": 4,
+    "mat": 4,
+    "wallpaper": 5
+  },
+  "combinations": 12,
+  "catalogUnchanged": true,
+  "geometryUnchanged": true,
+  "camerasUnchanged": true,
+  "power": true,
+  "RGBAndScreensAnimate": true,
+  "reducedMotion": true,
+  "liveClimateDashboard": true,
+  "computerInteraction": true,
+  "actualStoreDesktopAndPhone": true,
+  "errors": []
+}
