@@ -1,0 +1,309 @@
+{
+  "method": "Manual traces on the independently generated profile rows; L/R are persistent part identifiers within each row. No left-row mirroring.",
+  "frames": {
+    "right/0": {
+      "keypoints": {
+        "kneeL": [
+          53,
+          121
+        ],
+        "kneeR": [
+          39,
+          122
+        ],
+        "ankleL": [
+          58,
+          133
+        ],
+        "ankleR": [
+          33,
+          132
+        ],
+        "heelL": [
+          52,
+          142
+        ],
+        "heelR": [
+          26,
+          134
+        ],
+        "toeL": [
+          73,
+          134
+        ],
+        "toeR": [
+          44,
+          142
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L"
+    },
+    "right/1": {
+      "keypoints": {
+        "kneeL": [
+          37,
+          122
+        ],
+        "kneeR": [
+          51,
+          123
+        ],
+        "ankleL": [
+          29,
+          131
+        ],
+        "ankleR": [
+          54,
+          135
+        ],
+        "heelL": [
+          22,
+          130
+        ],
+        "heelR": [
+          51,
+          143
+        ],
+        "toeL": [
+          36,
+          143
+        ],
+        "toeR": [
+          71,
+          139
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L"
+    },
+    "right/2": {
+      "keypoints": {
+        "kneeL": [
+          53,
+          122
+        ],
+        "kneeR": [
+          39,
+          123
+        ],
+        "ankleL": [
+          58,
+          132
+        ],
+        "ankleR": [
+          32,
+          132
+        ],
+        "heelL": [
+          54,
+          143
+        ],
+        "heelR": [
+          26,
+          137
+        ],
+        "toeL": [
+          74,
+          136
+        ],
+        "toeR": [
+          45,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L"
+    },
+    "right/3": {
+      "keypoints": {
+        "kneeL": [
+          37,
+          122
+        ],
+        "kneeR": [
+          53,
+          122
+        ],
+        "ankleL": [
+          30,
+          132
+        ],
+        "ankleR": [
+          57,
+          133
+        ],
+        "heelL": [
+          24,
+          134
+        ],
+        "heelR": [
+          54,
+          143
+        ],
+        "toeL": [
+          38,
+          143
+        ],
+        "toeR": [
+          74,
+          136
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L"
+    },
+    "left/0": {
+      "keypoints": {
+        "kneeL": [
+          42,
+          123
+        ],
+        "kneeR": [
+          54,
+          122
+        ],
+        "ankleL": [
+          34,
+          134
+        ],
+        "ankleR": [
+          60,
+          134
+        ],
+        "heelL": [
+          41,
+          143
+        ],
+        "heelR": [
+          69,
+          136
+        ],
+        "toeL": [
+          21,
+          137
+        ],
+        "toeR": [
+          53,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L"
+    },
+    "left/1": {
+      "keypoints": {
+        "kneeL": [
+          58,
+          122
+        ],
+        "kneeR": [
+          43,
+          124
+        ],
+        "ankleL": [
+          65,
+          132
+        ],
+        "ankleR": [
+          32,
+          135
+        ],
+        "heelL": [
+          72,
+          132
+        ],
+        "heelR": [
+          41,
+          143
+        ],
+        "toeL": [
+          59,
+          143
+        ],
+        "toeR": [
+          21,
+          138
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L"
+    },
+    "left/2": {
+      "keypoints": {
+        "kneeL": [
+          42,
+          123
+        ],
+        "kneeR": [
+          56,
+          122
+        ],
+        "ankleL": [
+          33,
+          134
+        ],
+        "ankleR": [
+          62,
+          134
+        ],
+        "heelL": [
+          40,
+          143
+        ],
+        "heelR": [
+          70,
+          136
+        ],
+        "toeL": [
+          21,
+          137
+        ],
+        "toeR": [
+          52,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L"
+    },
+    "left/3": {
+      "keypoints": {
+        "kneeL": [
+          58,
+          122
+        ],
+        "kneeR": [
+          44,
+          123
+        ],
+        "ankleL": [
+          66,
+          132
+        ],
+        "ankleR": [
+          33,
+          135
+        ],
+        "heelL": [
+          72,
+          134
+        ],
+        "heelR": [
+          41,
+          143
+        ],
+        "toeL": [
+          60,
+          143
+        ],
+        "toeR": [
+          21,
+          138
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L"
+    }
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "status": "historical rejected experiment; not current validation",
+  "note": "Retained for provenance only. Use mannequin-validation.json and garment-validation.json for the selected runtime frames.",
+  "historicalResults": [
+    {
+      "frame": "down/0",
+      "master": {
+        "handL": [
+          36.25,
+          108.19
+        ],
+        "handR": [
+          65.82,
+          104.04
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          37.56,
+          112.96
+        ],
+        "handR": [
+          62.62,
+          109.54
+        ]
+      },
+      "handErrors": {
+        "handL": 4.947,
+        "handR": 6.363
+      }
+    },
+    {
+      "frame": "down/1",
+      "master": {
+        "handL": [
+          34.79,
+          107.79
+        ],
+        "handR": [
+          65.86,
+          104.13
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          36.45,
+          112.2
+        ],
+        "handR": [
+          63.06,
+          109.37
+        ]
+      },
+      "handErrors": {
+        "handL": 4.712,
+        "handR": 5.941
+      }
+    },
+    {
+      "frame": "down/2",
+      "master": {
+        "handL": [
+          30.22,
+          104.49
+        ],
+        "handR": [
+          62.41,
+          110.04
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          32.93,
+          109.69
+        ],
+        "handR": [
+          60.71,
+          114.32
+        ]
+      },
+      "handErrors": {
+        "handL": 5.864,
+        "handR": 4.605
+      }
+    },
+    {
+      "frame": "down/3",
+      "master": {
+        "handL": [
+          35.72,
+          103.32
+        ],
+        "handR": [
+          64.01,
+          105.97
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          37.97,
+          108.02
+        ],
+        "handR": [
+          62.41,
+          110.72
+        ]
+      },
+      "handErrors": {
+        "handL": 5.211,
+        "handR": 5.012
+      }
+    },
+    {
+      "frame": "right/0",
+      "master": {
+        "handL": [
+          35.93,
+          110.04
+        ],
+        "handR": [
+          64.32,
+          103.7
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          37.33,
+          113.36
+        ],
+        "handR": [
+          62.36,
+          108.05
+        ]
+      },
+      "handErrors": {
+        "handL": 3.603,
+        "handR": 4.771
+      }
+    },
+    {
+      "frame": "right/1",
+      "master": {
+        "handL": [
+          61.14,
+          106.41
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          60.45,
+          109.43
+        ]
+      },
+      "handErrors": {
+        "handL": 3.098
+      }
+    },
+    {
+      "frame": "right/2",
+      "master": {
+        "handL": [
+          65.79,
+          106.85
+        ],
+        "handR": [
+          32.29,
+          107.05
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          61.41,
+          110.43
+        ],
+        "handR": [
+          31.84,
+          110.88
+        ]
+      },
+      "handErrors": {
+        "handL": 5.657,
+        "handR": 3.856
+      }
+    },
+    {
+      "frame": "right/3",
+      "master": {
+        "handL": [
+          32.77,
+          108.69
+        ],
+        "handR": [
+          66.11,
+          103.83
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          32.91,
+          112.03
+        ],
+        "handR": [
+          63.1,
+          107.65
+        ]
+      },
+      "handErrors": {
+        "handL": 3.343,
+        "handR": 4.863
+      }
+    },
+    {
+      "frame": "up/0",
+      "master": {
+        "handL": [
+          31.55,
+          106.18
+        ],
+        "handR": [
+          64.86,
+          103.13
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          32.82,
+          111.59
+        ],
+        "handR": [
+          61.02,
+          109.73
+        ]
+      },
+      "handErrors": {
+        "handL": 5.557,
+        "handR": 7.636
+      }
+    },
+    {
+      "frame": "up/1",
+      "master": {
+        "handL": [
+          31.81,
+          102.9
+        ],
+        "handR": [
+          64.07,
+          103.18
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          33.97,
+          108.5
+        ],
+        "handR": [
+          61.35,
+          110.16
+        ]
+      },
+      "handErrors": {
+        "handL": 6.002,
+        "handR": 7.491
+      }
+    },
+    {
+      "frame": "up/2",
+      "master": {
+        "handL": [
+          29.92,
+          106.42
+        ],
+        "handR": [
+          65.43,
+          107.55
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          32.24,
+          111.22
+        ],
+        "handR": [
+          62.09,
+          113.1
+        ]
+      },
+      "handErrors": {
+        "handL": 5.331,
+        "handR": 6.478
+      }
+    },
+    {
+      "frame": "up/3",
+      "master": {
+        "handL": [
+          31.2,
+          107.16
+        ],
+        "handR": [
+          65.58,
+          107.3
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          33.85,
+          111.02
+        ],
+        "handR": [
+          63.85,
+          111.67
+        ]
+      },
+      "handErrors": {
+        "handL": 4.682,
+        "handR": 4.7
+      }
+    },
+    {
+      "frame": "left/0",
+      "master": {
+        "handL": [
+          61.32,
+          108.23
+        ],
+        "handR": [
+          31.0,
+          103.65
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          60.72,
+          112.51
+        ],
+        "handR": [
+          34.43,
+          109.45
+        ]
+      },
+      "handErrors": {
+        "handL": 4.322,
+        "handR": 6.738
+      }
+    },
+    {
+      "frame": "left/1",
+      "master": {
+        "handL": [
+          33.92,
+          106.08
+        ],
+        "handR": [
+          63.1,
+          104.63
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          35.57,
+          110.81
+        ]
+      },
+      "handErrors": {
+        "handL": 5.01
+      }
+    },
+    {
+      "frame": "left/2",
+      "master": {
+        "handL": [
+          30.08,
+          106.62
+        ],
+        "handR": [
+          63.48,
+          107.64
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          32.92,
+          112.03
+        ],
+        "handR": [
+          61.86,
+          111.78
+        ]
+      },
+      "handErrors": {
+        "handL": 6.11,
+        "handR": 4.446
+      }
+    },
+    {
+      "frame": "left/3",
+      "master": {
+        "handL": [
+          61.77,
+          107.93
+        ],
+        "handR": [
+          32.09,
+          106.31
+        ]
+      },
+      "mannequin": {
+        "handL": [
+          60.47,
+          111.61
+        ],
+        "handR": [
+          34.21,
+          109.8
+        ]
+      },
+      "handErrors": {
+        "handL": 3.903,
+        "handR": 4.083
+      }
+    }
+  ]
+}

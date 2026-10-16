@@ -1,0 +1,23 @@
+{
+  "id": "shoe-sandals",
+  "version": "focused-3",
+  "frames": [
+    "down/1",
+    "down/3",
+    "up/0",
+    "up/2"
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Use case: precise-object-edit. EDIT THE ATTACHED EXISTING IMAGE. Do not redraw or redesign the bodies. Keep the exact pixel positions, body scale, hands, finger shapes, arm lengths, hip positions, knees, ankle positions and planted/lifted foot positions of reference 1. This is a clothing replacement edit, NOT a fresh figure illustration. Maintain the original canvas layout, FOUR figures in a TWO by TWO portrait grid, same large empty headroom, same body position in every cell. Neck-down only; no heads. True transparent background, no shadow, text or guides. CRITICAL: KEEP EVERY EXISTING HAND AT EXACTLY ITS ORIGINAL POSITION, SIZE AND SHAPE. Do not shorten, thicken or move the arms or hands. Preserve the original soft outlined painted indie-RPG style and line quality. Change ONLY the footwear from closed sneakers to warm brown #2b1d14 leather open-toe sandals, exposing tan #cf9670 individual toes. Roll the pants cuffs up enough to reveal the sandals at the same ankles, without changing leg or ankle geometry. Preserve all the existing green hoodie, arms and hands EXACTLY; their pixels are outside the edit. Sandal soles follow each original sneaker's foot orientation and contact/lifted-foot height; do not enlarge the feet. No shoes under the sandals. Keep feet compact and at the exact original pose. Only the footwear/cuff material changes; anatomy is immutable.",
+  "referenced_image_paths": [
+    "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\shoe-sandals-focused-2-master-reference.png"
+  ],
+  "transparent_background": true,
+  "mode": "built-in image_gen",
+  "source": "graphics/production/walk/assets/shoe-sandals-focused-3.png",
+  "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-82342e36-2d80-469d-ba5a-b508bdaee019.png",
+  "status": "clothing-only edit; awaiting registration"
+}

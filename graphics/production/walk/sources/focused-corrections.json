@@ -1,0 +1,250 @@
+[
+  {
+    "id": "bottom-skirt",
+    "version": "focused-1",
+    "frames": [
+      "up/0",
+      "up/1",
+      "up/2",
+      "up/3"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 is the neutral mannequin; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: up/0, up/1, up/2, up/3. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Dark navy #36405a knee-length soft A-LINE SKIRT, with a clear waistband, lightly pleated natural hem swaying a little behind the stride, no trousers or shorts under the skirt. Show tan #cf9670 bare lower legs in the exact locked knee/ankle poses, not stockings. Companion short fitted key-blue tee tucked in and brown cream-soled SNEAKERS. Keep both legs distinct and physically attached behind the skirt.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-skirt-focused-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-skirt-focused-mannequin-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-skirt-focused-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "bottom-jeans",
+    "version": "focused-1",
+    "frames": [
+      "right/0",
+      "right/1",
+      "right/2",
+      "right/3"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 is the neutral mannequin; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: right/0, right/1, right/2, right/3. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Dark navy #36405a JEANS with natural denim seams, clear waistband, connected knee folds and cuffs following each locked leg pose. Companion short fitted medium key-blue tee tucked into the jeans, short sleeves with tan forearms/hands. Companion brown cream-soled SNEAKERS. Jeans are the item being authored; waistband must remain visible.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-jeans-focused-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-jeans-focused-mannequin-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-jeans-focused-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "top-overalls",
+    "version": "focused-1",
+    "frames": [
+      "down/1",
+      "down/3",
+      "right/0",
+      "up/1"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 is the neutral mannequin; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: down/1, down/3, right/0, up/1. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. FULL-BODY blue DENIM OVERALLS in medium key-blue #5086bf over a warm CREAM short-sleeve tee, brass overall buckles, bib pocket, connected trouser legs in the exact master stride. Tan bare forearms/hands. This is a FULL SUIT: overalls include their OWN trouser legs; don't add another waistband or jeans under them. Brown cream-soled SNEAKERS as fixed companions.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-overalls-focused-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-overalls-focused-mannequin-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-overalls-focused-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "bottom-skirt",
+    "version": "focused-2",
+    "frames": [
+      "up/0",
+      "up/1",
+      "up/2",
+      "up/3"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 shows magenta elbow-to-palm guidelines on the same exact approved body. Position each palm inside its magenta circle, matching forearm length. REMOVE ALL MAGENTA GUIDES from the output; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: up/0, up/1, up/2, up/3. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Dark navy #36405a knee-length soft A-LINE SKIRT, with a clear waistband, lightly pleated natural hem swaying a little behind the stride, no trousers or shorts under the skirt. Show tan #cf9670 bare lower legs in the exact locked knee/ankle poses, not stockings. Companion short fitted key-blue tee tucked in and brown cream-soled SNEAKERS. Keep both legs distinct and physically attached behind the skirt. CRITICAL REAR ARM CORRECTION: previous attempts shortened both forearms, leaving the fists six to seven native pixels too high. Extend the bare forearms DOWNWARD to the exact magenta palm circles. The lowered fist must hang BELOW THE SKIRT WAISTBAND. Copy the approved player pose in reference 1, with the elbow bent at the same height. Do not move waist, hips, skirt, knees, feet or shoulders to accommodate shorter arms.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-skirt-focused-2-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-skirt-focused-2-guides-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-skirt-focused-2-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "bottom-jeans",
+    "version": "focused-2",
+    "frames": [
+      "up/0",
+      "up/0",
+      "up/0",
+      "up/0"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 shows magenta elbow-to-palm guidelines on the same exact approved body. Position each palm inside its magenta circle, matching forearm length. REMOVE ALL MAGENTA GUIDES from the output; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: up/0, up/0, up/0, up/0. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Dark navy #36405a JEANS with natural denim seams, clear waistband, connected knee folds and cuffs following each locked leg pose. Companion short fitted medium key-blue tee tucked into the jeans, short sleeves with tan forearms/hands. Companion brown cream-soled SNEAKERS. Jeans are the item being authored; waistband must remain visible. Some cells intentionally repeat the SAME pose: reproduce the supplied reference cell in that position exactly. These are four isolated pose candidates, no animation interpolation.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-jeans-focused-2-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-jeans-focused-2-guides-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-jeans-focused-2-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "top-overalls",
+    "version": "focused-2",
+    "frames": [
+      "right/2",
+      "right/3",
+      "right/2",
+      "right/3"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 shows magenta elbow-to-palm guidelines on the same exact approved body. Position each palm inside its magenta circle, matching forearm length. REMOVE ALL MAGENTA GUIDES from the output; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: right/2, right/3, right/2, right/3. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. FULL-BODY blue DENIM OVERALLS in medium key-blue #5086bf over a warm CREAM short-sleeve tee, brass overall buckles, bib pocket, connected trouser legs in the exact master stride. Tan bare forearms/hands. This is a FULL SUIT: overalls include their OWN trouser legs; don't add another waistband or jeans under them. Brown cream-soled SNEAKERS as fixed companions. Some cells intentionally repeat the SAME pose: reproduce the supplied reference cell in that position exactly. These are four isolated pose candidates, no animation interpolation.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-overalls-focused-2-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-overalls-focused-2-guides-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-overalls-focused-2-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "shoe-sandals",
+    "version": "focused-2",
+    "frames": [
+      "down/1",
+      "down/3",
+      "up/0",
+      "up/2"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 shows magenta elbow-to-palm guidelines on the same exact approved body. Position each palm inside its magenta circle, matching forearm length. REMOVE ALL MAGENTA GUIDES from the output; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: down/1, down/3, up/0, up/2. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Brown #2b1d14 simple leather strapped SANDALS, natural connected warm tan #cf9670 feet with visible individual toes and heels, brown straps and brown soles; no socks or stockings, no white toes. Lifted sandal bends naturally with the foot; planted sole rests exactly on source contact baseline. Feet/soles retain master proportions, do not enlarge them. Companion fitted medium key-blue short-sleeve tee and dark navy rolled JEANS ending above the ankles. Tan hands.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\shoe-sandals-focused-2-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\shoe-sandals-focused-2-guides-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\shoe-sandals-focused-2-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "shoe-sneakers",
+    "version": "focused-2",
+    "frames": [
+      "left/0",
+      "left/3",
+      "left/0",
+      "left/3"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 shows magenta elbow-to-palm guidelines on the same exact approved body. Position each palm inside its magenta circle, matching forearm length. REMOVE ALL MAGENTA GUIDES from the output; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: left/0, left/3, left/0, left/3. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Brown #2b1d14 low-top SNEAKERS with simple cream/white soles and laces, naturally bent forefoot on the lifted foot and planted sole on the supporting foot, exact original master shoe proportions. Companion fitted medium key-blue short-sleeve tee and dark navy rolled JEANS ending just above the ankle, revealing the full shoe silhouette. Tan hands. Some cells intentionally repeat the SAME pose: reproduce the supplied reference cell in that position exactly. These are four isolated pose candidates, no animation interpolation.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\shoe-sneakers-focused-2-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\shoe-sneakers-focused-2-guides-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\shoe-sneakers-focused-2-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "top-hoodie",
+    "version": "focused-2",
+    "frames": [
+      "right/0",
+      "right/0",
+      "right/0",
+      "right/0"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 shows magenta elbow-to-palm guidelines on the same exact approved body. Position each palm inside its magenta circle, matching forearm length. REMOVE ALL MAGENTA GUIDES from the output; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: right/0, right/0, right/0, right/0. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Cozy pullover HOODIE, medium key-blue #5086bf, long sleeves to the wrists, hood folded naturally behind the neck, two simple drawstrings, kangaroo front pocket, ribbed cuffs/hem, no logo. Hood, strings and hem follow the stride subtly without shifting shoulders/hands. Companion dark-navy JEANS and brown cream-soled SNEAKERS, identical pose master proportions. Some cells intentionally repeat the SAME pose: reproduce the supplied reference cell in that position exactly. These are four isolated pose candidates, no animation interpolation.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-hoodie-focused-2-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-hoodie-focused-2-guides-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-hoodie-focused-2-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "top-tee",
+    "version": "focused-2",
+    "frames": [
+      "up/1",
+      "up/1",
+      "up/1",
+      "up/1"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 shows magenta elbow-to-palm guidelines on the same exact approved body. Position each palm inside its magenta circle, matching forearm length. REMOVE ALL MAGENTA GUIDES from the output; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: up/1, up/1, up/1, up/1. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Plain short-sleeve CREW-NECK T-SHIRT in medium key-blue #5086bf, natural short sleeve hems above elbows, tan exposed forearms and original tan hands at EXACT locked wrist/hand positions. No logo or pattern. Companion dark-navy JEANS and brown cream-soled SNEAKERS. Some cells intentionally repeat the SAME pose: reproduce the supplied reference cell in that position exactly. These are four isolated pose candidates, no animation interpolation.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-tee-focused-2-master-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-tee-focused-2-guides-reference.png",
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-tee-focused-2-design-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "bottom-skirt",
+    "version": "focused-3",
+    "frames": [
+      "up/0",
+      "up/1",
+      "up/2",
+      "up/3"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Use case: precise-object-edit. EDIT THE ATTACHED EXISTING IMAGE. Do not redraw or redesign the bodies. Keep the exact pixel positions, body scale, hands, finger shapes, arm lengths, hip positions, knees, ankle positions and planted/lifted foot positions of reference 1. This is a clothing replacement edit, NOT a fresh figure illustration. Maintain the original canvas layout, FOUR figures in a TWO by TWO portrait grid, same large empty headroom, same body position in every cell. Neck-down only; no heads. True transparent background, no shadow, text or guides. CRITICAL: KEEP EVERY EXISTING HAND AT EXACTLY ITS ORIGINAL POSITION, SIZE AND SHAPE. Do not shorten, thicken or move the arms or hands. Preserve the original soft outlined painted indie-RPG style and line quality. Replace the green hoodies with fitted medium-blue #5086bf SHORT-SLEEVE tees tucked into dark navy #36405a soft pleated knee-length skirts. Replace jeans with those skirts and exposed warm tan #cf9670 lower legs. Remove hoodie sleeves to expose the arms, but keep hands EXACTLY unchanged and draw the bare forearms back to the unchanged hands. Keep all four original brown/cream sneakers and original foot shapes unchanged. The left rear hand on the first figure hangs below the waistband: it must stay there. Preserve the different arm swing of every original figure. Navy skirt hems sway subtly with the original stride. Only clothing material changes; anatomy is immutable.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-skirt-focused-2-master-reference.png"
+    ],
+    "transparent_background": true
+  },
+  {
+    "id": "shoe-sandals",
+    "version": "focused-3",
+    "frames": [
+      "down/1",
+      "down/3",
+      "up/0",
+      "up/2"
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Use case: precise-object-edit. EDIT THE ATTACHED EXISTING IMAGE. Do not redraw or redesign the bodies. Keep the exact pixel positions, body scale, hands, finger shapes, arm lengths, hip positions, knees, ankle positions and planted/lifted foot positions of reference 1. This is a clothing replacement edit, NOT a fresh figure illustration. Maintain the original canvas layout, FOUR figures in a TWO by TWO portrait grid, same large empty headroom, same body position in every cell. Neck-down only; no heads. True transparent background, no shadow, text or guides. CRITICAL: KEEP EVERY EXISTING HAND AT EXACTLY ITS ORIGINAL POSITION, SIZE AND SHAPE. Do not shorten, thicken or move the arms or hands. Preserve the original soft outlined painted indie-RPG style and line quality. Change ONLY the footwear from closed sneakers to warm brown #2b1d14 leather open-toe sandals, exposing tan #cf9670 individual toes. Roll the pants cuffs up enough to reveal the sandals at the same ankles, without changing leg or ankle geometry. Preserve all the existing green hoodie, arms and hands EXACTLY; their pixels are outside the edit. Sandal soles follow each original sneaker's foot orientation and contact/lifted-foot height; do not enlarge the feet. No shoes under the sandals. Keep feet compact and at the exact original pose. Only the footwear/cuff material changes; anatomy is immutable.",
+    "referenced_image_paths": [
+      "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\shoe-sandals-focused-2-master-reference.png"
+    ],
+    "transparent_background": true
+  }
+]

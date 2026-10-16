@@ -1,0 +1,25 @@
+{
+  "id": "top-tee",
+  "version": "focused-2",
+  "frames": [
+    "up/1",
+    "up/1",
+    "up/1",
+    "up/1"
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Focused pose correction for Bagseed. Generate exactly FOUR headless, neck-down figures in a TWO by TWO grid, portrait 2:3 canvas. True transparent alpha, no text or grid. Keep exact source placement and generous transparent headroom. Reference 1 contains the ACTUAL APPROVED PLAYER BODY, with its head masked away. Its hand shapes and positions, shoulders, elbows, waist, knees, ankles and feet are the absolute pose authority: copy that anatomy frame for frame. Do not make the arms shorter, wider or bigger. Reference 2 shows magenta elbow-to-palm guidelines on the same exact approved body. Position each palm inside its magenta circle, matching forearm length. REMOVE ALL MAGENTA GUIDES from the output; reference 3 is the previous garment design, NOT the pose authority. Only change the clothing, using the tiny friendly hand-drawn soft outlined style of reference 1. Cell order, left-to-right then top-to-bottom: up/1, up/1, up/1, up/1. No mirroring. Neck down only, no heads. Redraw the design from reference 3 on the EXACT anatomy of reference 1. Hands hang at exactly the same heights and x positions as reference 1, even in back view. Use tan skin #cf9670, key blue tops #5086bf, navy bottoms #36405a, brown sneakers #2b1d14 with cream soles. Plain short-sleeve CREW-NECK T-SHIRT in medium key-blue #5086bf, natural short sleeve hems above elbows, tan exposed forearms and original tan hands at EXACT locked wrist/hand positions. No logo or pattern. Companion dark-navy JEANS and brown cream-soled SNEAKERS. Some cells intentionally repeat the SAME pose: reproduce the supplied reference cell in that position exactly. These are four isolated pose candidates, no animation interpolation.",
+  "referenced_image_paths": [
+    "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-tee-focused-2-master-reference.png",
+    "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-tee-focused-2-guides-reference.png",
+    "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\top-tee-focused-2-design-reference.png"
+  ],
+  "transparent_background": true,
+  "mode": "built-in image_gen",
+  "source": "graphics/production/walk/assets/top-tee-focused-2.png",
+  "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-d0fe0325-9119-4f87-8911-a3ff97b7a1eb.png",
+  "status": "guided regeneration; awaiting registration"
+}

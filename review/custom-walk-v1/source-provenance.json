@@ -1,0 +1,826 @@
+{
+  "phase": 1,
+  "approval": "pending user visual approval",
+  "originalGeneratedImages": 32,
+  "originalsUnchanged": true,
+  "sources": [
+    {
+      "source": "graphics/production/walk/assets/bottom-jeans-focused-1.png",
+      "sha256": "f06138466099812ceef7ed052070e8b3512283bc7f48bcb452cdcef594813251",
+      "generationRecord": "graphics/production/walk/sources/bottom-jeans-focused-1-generation.json",
+      "promptSHA256": "ab8fbbecc0e7c46d6dd7d24b2c70bdcc9e87b20fc83b0be2fcb8ee2b5aaedd9d",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "bottom-jeans/right/0",
+        "bottom-jeans/right/1",
+        "bottom-jeans/right/2",
+        "bottom-jeans/right/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-jeans-focused-2.png",
+      "sha256": "fc5f3d40469aaeaf6318ddc08994f29b59a29a7a58c420935824d35c665f1d30",
+      "generationRecord": "graphics/production/walk/sources/bottom-jeans-focused-2-generation.json",
+      "promptSHA256": "9e2c24c56357fc79a1e98e6514667980e125d9983a9dc78b99d7ed0202982850",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "bottom-jeans/up/0"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-jeans-v1.png",
+      "sha256": "347b8e50138af13257ce365f9a50508bd73e74cbf42700a2d18742ab266c5fbd",
+      "generationRecord": "graphics/production/walk/sources/bottom-jeans-generation.json",
+      "promptSHA256": "08175610aac0b01fa985c4119b483a67be289e5d840bc6d2b02bf439518e2d63",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "bottom-jeans/down/0",
+        "bottom-jeans/down/1",
+        "bottom-jeans/down/2",
+        "bottom-jeans/down/3",
+        "bottom-jeans/up/1",
+        "bottom-jeans/up/2",
+        "bottom-jeans/up/3",
+        "bottom-jeans/left/0",
+        "bottom-jeans/left/1",
+        "bottom-jeans/left/2",
+        "bottom-jeans/left/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-jeans-v2.png",
+      "sha256": "1805b17c7c4a081fa8131aef1b442ccb386a997086f258b0533a71930a64727c",
+      "generationRecord": "graphics/production/walk/sources/bottom-jeans-v2-generation.json",
+      "promptSHA256": "15862f435113c9b7d7766050c29257fb3c6f8f55a3a6c9b22c6698f52593c4f3",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-skirt-focused-1.png",
+      "sha256": "a8a0fadf7993d4f3ccd12c892616744d509839838affdf5ed8a49f7b75073d09",
+      "generationRecord": "graphics/production/walk/sources/bottom-skirt-focused-1-generation.json",
+      "promptSHA256": "9b0bfad68a0ca7e6444631a4bdf7818ff25cd234afac0c365ccd67ab75408e4b",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-skirt-focused-2.png",
+      "sha256": "b3d4a486219f75a9c91a9269f45737bdcb58c7f8435a3acccba3b81fb34ee829",
+      "generationRecord": "graphics/production/walk/sources/bottom-skirt-focused-2-generation.json",
+      "promptSHA256": "c69a33d3d6be9040d3de25645f87a505b94df9d3591784308f40a39f7479804a",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-skirt-focused-3.png",
+      "sha256": "2904ee14f078b5f4b548eb2c60cac989b29dc8562d4102c2319fba54eb030175",
+      "generationRecord": "graphics/production/walk/sources/bottom-skirt-focused-3-generation.json",
+      "promptSHA256": "eb8ec75e492338c1165bfb3d224ba564210675d3ae60599a7c4bd82e58829512",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "bottom-skirt/up/0",
+        "bottom-skirt/up/1",
+        "bottom-skirt/up/2",
+        "bottom-skirt/up/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-skirt-v1.png",
+      "sha256": "a3f2090027984b248c43fa7ca1088cd23dfa88842b840b2af489b4176b5689e2",
+      "generationRecord": "graphics/production/walk/sources/bottom-skirt-generation.json",
+      "promptSHA256": "c34f71b086a931ad25c3ebdd5276b4b86d26f233532c4dc7ddbe3e50b884b170",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "bottom-skirt/down/0",
+        "bottom-skirt/down/1",
+        "bottom-skirt/down/2",
+        "bottom-skirt/down/3",
+        "bottom-skirt/right/0",
+        "bottom-skirt/right/2",
+        "bottom-skirt/left/0",
+        "bottom-skirt/left/1"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-skirt-v2.png",
+      "sha256": "7bd3b8da65134110fac7c6ebf95024a0ae80d34c7173ff91b06dbff024c2de4f",
+      "generationRecord": "graphics/production/walk/sources/bottom-skirt-v2-generation.json",
+      "promptSHA256": "e0e2b57f76428a06af17026fb080b69b9d5259e1661aab773fdd79b106149e87",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "bottom-skirt/right/1",
+        "bottom-skirt/right/3",
+        "bottom-skirt/left/2",
+        "bottom-skirt/left/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/mannequin-rear-01-v4.png",
+      "sha256": "68c913ff5bd8ad0bf03f1b192b65a5afba3b1479f8da74b41a66901234cfe6e6",
+      "generationRecord": "graphics/production/walk/sources/mannequin-rear-01-v4-generation.json",
+      "promptSHA256": "ffc717cb9073919bd6e13d6d9d0b410b90b54279f9d7d889714ca5aed130b3b9",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "locked mannequin"
+    },
+    {
+      "source": "graphics/production/walk/assets/mannequin-v1.png",
+      "sha256": "bf7147c38d635b871490d850178c86abd334f9c7fd6a04c6f0842d9f89997b0d",
+      "generationRecord": "graphics/production/walk/sources/mannequin-v1-generation.json",
+      "promptSHA256": "ed9852495f8c99c03aa3bf4224ba58eeb154dead10c6f2037b55154236734f7c",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/mannequin-v2.png",
+      "sha256": "cf300af49581cc9ab6b41e0240c204a14756de18447400cdb7f4494520e31029",
+      "generationRecord": "graphics/production/walk/sources/mannequin-v2-generation.json",
+      "promptSHA256": "15dc417f3b5ffcc1dd6cf5d86006c0b928d77031ec51e591016397be87991945",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/mannequin-v3.png",
+      "sha256": "c1a53705f6dc5e2f0ae929476d1434f35ec525b99cf19a065eb9cfbed0ebf807",
+      "generationRecord": "graphics/production/walk/sources/mannequin-v3-generation.json",
+      "promptSHA256": "5fa18f86204b16b225f2915408704ecbb7d31809017f05480b000fb3181b4b7d",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "locked mannequin"
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-sandals-focused-2.png",
+      "sha256": "a279e6ca4856eeda50cc56ccf4524a3efdd0f66d15a17738a76e3f94ee6322f4",
+      "generationRecord": "graphics/production/walk/sources/shoe-sandals-focused-2-generation.json",
+      "promptSHA256": "383f977d0962caf51711ed9d7713955f91a809365a147583b6c0e00dddc24948",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-sandals-focused-3.png",
+      "sha256": "12ac5aeca741103eb1fe72004c1260bc872138d075f4f17b223860d2267e15d6",
+      "generationRecord": "graphics/production/walk/sources/shoe-sandals-focused-3-generation.json",
+      "promptSHA256": "2b8901ade991aadaa9aa203cb16b2e60a2a77abdf6df2ec6a1e8a00b0a01a008",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "shoe-sandals/down/1",
+        "shoe-sandals/down/3",
+        "shoe-sandals/up/0",
+        "shoe-sandals/up/2"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-sandals-v1.png",
+      "sha256": "cc3e25cbc1584a0bc08433e35179cd33f47a94d240a9f50e9b7ad38abf9c4043",
+      "generationRecord": "graphics/production/walk/sources/shoe-sandals-generation.json",
+      "promptSHA256": "15f7c499e5e19485142fe0b006efb180c84203aa93ed678cc953ffcd99255111",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "shoe-sandals/down/0",
+        "shoe-sandals/down/2",
+        "shoe-sandals/right/0",
+        "shoe-sandals/right/1",
+        "shoe-sandals/right/2",
+        "shoe-sandals/right/3",
+        "shoe-sandals/up/1",
+        "shoe-sandals/up/3",
+        "shoe-sandals/left/0",
+        "shoe-sandals/left/1",
+        "shoe-sandals/left/2",
+        "shoe-sandals/left/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-sandals-v2.png",
+      "sha256": "29e304cd5cf05a0886cb9f141a0b7f4551936f3a4a23672c007f67146c218169",
+      "generationRecord": "graphics/production/walk/sources/shoe-sandals-v2-generation.json",
+      "promptSHA256": "b27cf408a30711dd3a1aeeb4c420476c519d41153f03331df2c867943661f85b",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-sneakers-focused-2.png",
+      "sha256": "e9a0d744f1e56e787e41a8b7de329614bf9da5906a10e23396f1600f69a09277",
+      "generationRecord": "graphics/production/walk/sources/shoe-sneakers-focused-2-generation.json",
+      "promptSHA256": "e79dc07d5118ec73e941813dbeac1fbe908c707dddca0173addeeecea123fbc8",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-sneakers-v1.png",
+      "sha256": "0d32c3a47749d99d1d1b4beff2535a41528b4e68d321af320592762096dfef30",
+      "generationRecord": "graphics/production/walk/sources/shoe-sneakers-generation.json",
+      "promptSHA256": "7c5ba7ab827f3c59824e71f24d9a5a426e2d2c03a2c6c80e79575554af1bb3e6",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-sneakers-v2.png",
+      "sha256": "0ad714784856aa313649c6a272f18d3a49c2c630ca0ac48e531b5a9c8ae93370",
+      "generationRecord": "graphics/production/walk/sources/shoe-sneakers-v2-generation.json",
+      "promptSHA256": "1e74578e287ee231fabd0ecaa451306bd7523bcab70d3964cb0135411d1ee2eb",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "shoe-sneakers/right/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-flannel-v1.png",
+      "sha256": "e40e17100c575c316021bd5cca8afa2595e376e997257428b6d0b88f573fc908",
+      "generationRecord": "graphics/production/walk/sources/top-flannel-generation.json",
+      "promptSHA256": "7a353629af858d77a40fde1c9a5acb3faf247f3bd9844ab58e1e74ea11cedf86",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-flannel/down/0",
+        "top-flannel/down/1",
+        "top-flannel/down/2",
+        "top-flannel/down/3",
+        "top-flannel/right/0",
+        "top-flannel/right/1",
+        "top-flannel/right/2",
+        "top-flannel/right/3",
+        "top-flannel/up/0",
+        "top-flannel/up/1",
+        "top-flannel/up/2",
+        "top-flannel/up/3",
+        "top-flannel/left/0",
+        "top-flannel/left/1",
+        "top-flannel/left/2",
+        "top-flannel/left/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-hoodie-focused-2.png",
+      "sha256": "f37498e3a4e6e844ab5f90d9dd6b46f91abd45e2d26fb5e1ae7a8ca7f74108a5",
+      "generationRecord": "graphics/production/walk/sources/top-hoodie-focused-2-generation.json",
+      "promptSHA256": "5164db462374eebdd4060e52f6a44c5627e68f9883153dc894295d4b089f8879",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-hoodie/right/0"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-hoodie-v1.png",
+      "sha256": "c820f31d7fa923a99ec089eaa48684125ca6c2280868a3299b590ad7cf73d2ea",
+      "generationRecord": "graphics/production/walk/sources/top-hoodie-generation.json",
+      "promptSHA256": "b4f968e8e2052e771041fe019ade69e38d3a7a5f716f30ee0f6ec013a0d02514",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-hoodie/down/0",
+        "top-hoodie/down/1",
+        "top-hoodie/down/2",
+        "top-hoodie/down/3",
+        "top-hoodie/right/1",
+        "top-hoodie/right/2",
+        "top-hoodie/right/3",
+        "top-hoodie/up/0",
+        "top-hoodie/up/1",
+        "top-hoodie/up/2",
+        "top-hoodie/up/3",
+        "top-hoodie/left/0",
+        "top-hoodie/left/1",
+        "top-hoodie/left/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-hoodie-v2.png",
+      "sha256": "c1324d20b78b0ed9d0f6a1de12f6636e18881e9d97e403a6cbb8fecc2f7e785e",
+      "generationRecord": "graphics/production/walk/sources/top-hoodie-v2-generation.json",
+      "promptSHA256": "f045090816af93d5a1e0ff335e7f5140bcc0bcec55c2a4c9f8650a15ef478a69",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-hoodie/left/2"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-overalls-focused-1.png",
+      "sha256": "3d6694bde15d5d1de37e3cff65ee7b7e5cb8641feb857259fbc820270a54a356",
+      "generationRecord": "graphics/production/walk/sources/top-overalls-focused-1-generation.json",
+      "promptSHA256": "b80299ff63d6daba33e7620f334fb6910fb3184628699c1b93a894080ac53ef7",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-overalls/down/1",
+        "top-overalls/down/3",
+        "top-overalls/right/0",
+        "top-overalls/up/1"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-overalls-focused-2.png",
+      "sha256": "672d9b8f4ed543936b39e49f4c792aaf64983da4ddf3dff4c4252c3ef549a77e",
+      "generationRecord": "graphics/production/walk/sources/top-overalls-focused-2-generation.json",
+      "promptSHA256": "ef6100d48e851f02d4dbdc2a60f090457bafc37e8db222d1eeda2a6498f94844",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-overalls/right/2",
+        "top-overalls/right/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-overalls-v1.png",
+      "sha256": "aa3ce1bdc4f624fbd6d8ed4b76356f5206d51e30ce3f5f175ad0b186156aac87",
+      "generationRecord": "graphics/production/walk/sources/top-overalls-generation.json",
+      "promptSHA256": "a9d870ab05b4efacc4ddc7218515794788c8301d1b8bbad63ac55ec340f8eff9",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-overalls/right/1",
+        "top-overalls/left/1",
+        "top-overalls/left/2",
+        "top-overalls/left/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-overalls-v2.png",
+      "sha256": "1166c81b53f4cf70ccc66a82f08dcd05ee313d926a36adfc5031477166e2d4b5",
+      "generationRecord": "graphics/production/walk/sources/top-overalls-v2-generation.json",
+      "promptSHA256": "fc4cbc156a5171d9de2a2ff7ad72fd1c9a86462955eca8a931f24712a1d9ff1d",
+      "originalOutputIdentical": null,
+      "selectedFrames": [
+        "top-overalls/down/0",
+        "top-overalls/down/2",
+        "top-overalls/up/0",
+        "top-overalls/up/2",
+        "top-overalls/up/3",
+        "top-overalls/left/0"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-overalls-v3.png",
+      "sha256": "4e893e9056e92bada1552ea2899059133036adec062a7c516b83e138d7515e7d",
+      "generationRecord": "graphics/production/walk/sources/top-overalls-v3-generation.json",
+      "promptSHA256": "f53ffdfb41a961485761224923b7c8a69b434b2e2a82cf9869ce6c40f175cd53",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-tee-focused-2.png",
+      "sha256": "b18939153987ab90aa11b01228b9e2694fcc5c010fc9a3668d9d0a0ea5306d75",
+      "generationRecord": "graphics/production/walk/sources/top-tee-focused-2-generation.json",
+      "promptSHA256": "6d2a02d5d04cdae31ea887b6ff11f652780bfc8aa574c818f467b309a7066803",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-tee/up/1"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-tee-v1.png",
+      "sha256": "cb8edc5d158c77d19248e5042b4971db7f186ffd72d545f2957badc8c496cf35",
+      "generationRecord": "graphics/production/walk/sources/top-tee-generation.json",
+      "promptSHA256": "1ecd9d948f7e3d975df52d9440304cc2d4a86f043363dcd91afc3b88d9c38134",
+      "originalOutputIdentical": true,
+      "selectedFrames": [
+        "top-tee/down/0",
+        "top-tee/down/1",
+        "top-tee/down/2",
+        "top-tee/down/3",
+        "top-tee/right/0",
+        "top-tee/right/1",
+        "top-tee/right/2",
+        "top-tee/right/3",
+        "top-tee/up/0",
+        "top-tee/up/2",
+        "top-tee/up/3",
+        "top-tee/left/0",
+        "top-tee/left/1",
+        "top-tee/left/2",
+        "top-tee/left/3"
+      ],
+      "role": "garment cells"
+    },
+    {
+      "source": "graphics/production/walk/assets/top-tee-v2.png",
+      "sha256": "929d9d595a1bc9c1021247a942fb25a7f9aa13b33a0250c0a598ae315549024b",
+      "generationRecord": "graphics/production/walk/sources/top-tee-v2-generation.json",
+      "promptSHA256": "4987338a2d11d0bff0d30ebd7710c8a18da77d5d9fd4f4d8e14969f277f19434",
+      "originalOutputIdentical": true,
+      "selectedFrames": [],
+      "role": "superseded draft/candidate retained for audit"
+    }
+  ],
+  "approvedSneakerReuse": [
+    "shoe-sneakers/down/0",
+    "shoe-sneakers/down/1",
+    "shoe-sneakers/down/2",
+    "shoe-sneakers/down/3",
+    "shoe-sneakers/right/0",
+    "shoe-sneakers/right/1",
+    "shoe-sneakers/right/2",
+    "shoe-sneakers/up/0",
+    "shoe-sneakers/up/1",
+    "shoe-sneakers/up/2",
+    "shoe-sneakers/up/3",
+    "shoe-sneakers/left/0",
+    "shoe-sneakers/left/1",
+    "shoe-sneakers/left/2",
+    "shoe-sneakers/left/3"
+  ],
+  "protectedRendererBlocksUnchanged": {
+    "head": true,
+    "standingBody": true,
+    "standingFigureAndReactions": true,
+    "portrait": true
+  },
+  "protectedArtChanges": [],
+  "poseMaster": {
+    "canvas": [
+      96,
+      144
+    ],
+    "density": 3,
+    "ground": 143,
+    "source": "review/characters-v2/assets/generated/player-sheet.png",
+    "sourceSHA256": "4c038691bf093bd41e7a87a418417382ab6dd0fa776c5398834140e2a159a16f",
+    "frames": {
+      "down/0": {
+        "sourceCell": [
+          0,
+          0,
+          283,
+          286
+        ],
+        "subjectWithinCell": [
+          123,
+          16,
+          249,
+          286
+        ],
+        "uniformScale": 0.37243947858473,
+        "density": 3,
+        "translation": [
+          76,
+          127
+        ],
+        "file": "graphics\\production\\walk\\master\\down-0.png"
+      },
+      "down/1": {
+        "sourceCell": [
+          283,
+          0,
+          561,
+          286
+        ],
+        "subjectWithinCell": [
+          89,
+          18,
+          216,
+          286
+        ],
+        "uniformScale": 0.37243947858473,
+        "density": 3,
+        "translation": [
+          76,
+          130
+        ],
+        "file": "graphics\\production\\walk\\master\\down-1.png"
+      },
+      "down/2": {
+        "sourceCell": [
+          561,
+          0,
+          841,
+          286
+        ],
+        "subjectWithinCell": [
+          60,
+          16,
+          188,
+          285
+        ],
+        "uniformScale": 0.37243947858473,
+        "density": 3,
+        "translation": [
+          71,
+          128
+        ],
+        "file": "graphics\\production\\walk\\master\\down-2.png"
+      },
+      "down/3": {
+        "sourceCell": [
+          841,
+          0,
+          1122,
+          286
+        ],
+        "subjectWithinCell": [
+          37,
+          17,
+          164,
+          285
+        ],
+        "uniformScale": 0.37243947858473,
+        "density": 3,
+        "translation": [
+          71,
+          130
+        ],
+        "file": "graphics\\production\\walk\\master\\down-3.png"
+      },
+      "right/0": {
+        "sourceCell": [
+          0,
+          286,
+          283,
+          561
+        ],
+        "subjectWithinCell": [
+          119,
+          4,
+          253,
+          271
+        ],
+        "uniformScale": 0.37453183520599254,
+        "density": 3,
+        "translation": [
+          73,
+          129
+        ],
+        "file": "graphics\\production\\walk\\master\\right-0.png"
+      },
+      "right/1": {
+        "sourceCell": [
+          283,
+          286,
+          561,
+          561
+        ],
+        "subjectWithinCell": [
+          83,
+          5,
+          225,
+          271
+        ],
+        "uniformScale": 0.37453183520599254,
+        "density": 3,
+        "translation": [
+          59,
+          130
+        ],
+        "file": "graphics\\production\\walk\\master\\right-1.png"
+      },
+      "right/2": {
+        "sourceCell": [
+          561,
+          286,
+          841,
+          561
+        ],
+        "subjectWithinCell": [
+          54,
+          4,
+          196,
+          271
+        ],
+        "uniformScale": 0.37453183520599254,
+        "density": 3,
+        "translation": [
+          70,
+          129
+        ],
+        "file": "graphics\\production\\walk\\master\\right-2.png"
+      },
+      "right/3": {
+        "sourceCell": [
+          841,
+          286,
+          1122,
+          561
+        ],
+        "subjectWithinCell": [
+          32,
+          3,
+          179,
+          271
+        ],
+        "uniformScale": 0.37453183520599254,
+        "density": 3,
+        "translation": [
+          70,
+          128
+        ],
+        "file": "graphics\\production\\walk\\master\\right-3.png"
+      },
+      "up/0": {
+        "sourceCell": [
+          0,
+          561,
+          283,
+          831
+        ],
+        "subjectWithinCell": [
+          120,
+          3,
+          243,
+          264
+        ],
+        "uniformScale": 0.3838771593090211,
+        "density": 3,
+        "translation": [
+          77,
+          128
+        ],
+        "file": "graphics\\production\\walk\\master\\up-0.png"
+      },
+      "up/1": {
+        "sourceCell": [
+          283,
+          561,
+          561,
+          831
+        ],
+        "subjectWithinCell": [
+          90,
+          3,
+          214,
+          268
+        ],
+        "uniformScale": 0.3838771593090211,
+        "density": 3,
+        "translation": [
+          73,
+          124
+        ],
+        "file": "graphics\\production\\walk\\master\\up-1.png"
+      },
+      "up/2": {
+        "sourceCell": [
+          561,
+          561,
+          841,
+          831
+        ],
+        "subjectWithinCell": [
+          59,
+          3,
+          187,
+          263
+        ],
+        "uniformScale": 0.3838771593090211,
+        "density": 3,
+        "translation": [
+          71,
+          130
+        ],
+        "file": "graphics\\production\\walk\\master\\up-2.png"
+      },
+      "up/3": {
+        "sourceCell": [
+          841,
+          561,
+          1122,
+          831
+        ],
+        "subjectWithinCell": [
+          39,
+          3,
+          162,
+          261
+        ],
+        "uniformScale": 0.3838771593090211,
+        "density": 3,
+        "translation": [
+          71,
+          132
+        ],
+        "file": "graphics\\production\\walk\\master\\up-3.png"
+      },
+      "left/0": {
+        "sourceCell": [
+          0,
+          831,
+          283,
+          1110
+        ],
+        "subjectWithinCell": [
+          108,
+          0,
+          248,
+          267
+        ],
+        "uniformScale": 0.3766478342749529,
+        "density": 3,
+        "translation": [
+          60,
+          127
+        ],
+        "file": "graphics\\production\\walk\\master\\left-0.png"
+      },
+      "left/1": {
+        "sourceCell": [
+          283,
+          831,
+          561,
+          1110
+        ],
+        "subjectWithinCell": [
+          76,
+          3,
+          228,
+          267
+        ],
+        "uniformScale": 0.3766478342749529,
+        "density": 3,
+        "translation": [
+          62,
+          131
+        ],
+        "file": "graphics\\production\\walk\\master\\left-1.png"
+      },
+      "left/2": {
+        "sourceCell": [
+          561,
+          831,
+          841,
+          1110
+        ],
+        "subjectWithinCell": [
+          46,
+          0,
+          187,
+          267
+        ],
+        "uniformScale": 0.3766478342749529,
+        "density": 3,
+        "translation": [
+          59,
+          127
+        ],
+        "file": "graphics\\production\\walk\\master\\left-2.png"
+      },
+      "left/3": {
+        "sourceCell": [
+          841,
+          831,
+          1122,
+          1110
+        ],
+        "subjectWithinCell": [
+          29,
+          5,
+          171,
+          267
+        ],
+        "uniformScale": 0.3766478342749529,
+        "density": 3,
+        "translation": [
+          62,
+          133
+        ],
+        "file": "graphics\\production\\walk\\master\\left-3.png"
+      }
+    }
+  },
+  "referenceIds": [
+    "G03-P14",
+    "G03-P15",
+    "G03-P16",
+    "G03-P17",
+    "G03-P01",
+    "G03-S04",
+    "G04-S03",
+    "G07-S05",
+    "G15-S12",
+    "G17-S03",
+    "G26-S01",
+    "G01-S08",
+    "G02-PN9",
+    "G02-PN10",
+    "G02-PN11",
+    "G02-PN12",
+    "G02-PN13",
+    "G02-PN14",
+    "G02-PN15",
+    "G02-PN16",
+    "G02-PN17",
+    "G02-PN18",
+    "G02-PN19"
+  ],
+  "referenceUse": "Motion/readability principles only. Reference-package pixels are not used in the game assets. Part 12 is truncated."
+}

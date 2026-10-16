@@ -1,0 +1,474 @@
+{
+  "status": "historical rejected experiment; not current validation",
+  "note": "Retained for provenance only. Use mannequin-validation.json and garment-validation.json for the selected runtime frames.",
+  "historicalResults": [
+    {
+      "frame": "down/0",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 12,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "frame": "down/1",
+      "uniformScale": 0.33116455078125,
+      "rotationDegrees": -2.0,
+      "translationAfterInitial": [
+        2.5853868535891995,
+        18.17974395719878
+      ],
+      "initialGroundTranslationPx": 13,
+      "maxKeypointError": 7.449,
+      "errors": {
+        "handL": 7.449,
+        "inferredNeck": 7.449
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "handL": [
+          33.66757741347905,
+          97.21857923497267
+        ],
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "handL": [
+          34.85329018338727,
+          110.3797195253506
+        ],
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "down/2",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 10,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "frame": "down/3",
+      "uniformScale": 0.337064208984375,
+      "rotationDegrees": -2.0,
+      "translationAfterInitial": [
+        2.135153035026359,
+        15.966541849899698
+      ],
+      "initialGroundTranslationPx": 10,
+      "maxKeypointError": 6.431,
+      "errors": {
+        "handL": 6.431,
+        "inferredNeck": 6.431
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "handL": [
+          34.31104651162791,
+          93.82848837209302
+        ],
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "handL": [
+          35.697154471544714,
+          105.60365853658537
+        ],
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "right/0",
+      "uniformScale": 0.3959729003906251,
+      "rotationDegrees": 2.0,
+      "translationAfterInitial": [
+        2.8376107056788853,
+        -10.251884710116997
+      ],
+      "initialGroundTranslationPx": 11,
+      "maxKeypointError": 4.791,
+      "errors": {
+        "handL": 4.791,
+        "inferredNeck": 4.791
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "handL": [
+          34.35760277365032,
+          119.27835562159486
+        ],
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      },
+      "targetLandmarks": {
+        "handL": [
+          35.6957928802589,
+          112.20064724919094
+        ],
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "frame": "right/1",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 11,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "right/2",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 10,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "frame": "right/3",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 11,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "up/0",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 14,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "up/1",
+      "uniformScale": 0.338712158203125,
+      "rotationDegrees": -2.0,
+      "translationAfterInitial": [
+        2.4095205936503827,
+        15.313936973576844
+      ],
+      "initialGroundTranslationPx": 14,
+      "maxKeypointError": 6.117,
+      "errors": {
+        "handL": 6.117,
+        "inferredNeck": 6.117
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "handL": [
+          28.80648769574944,
+          92.16331096196869
+        ],
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "handL": [
+          31.52754820936639,
+          103.71349862258954
+        ],
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "up/2",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 14,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "up/3",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 13,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "left/0",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 55,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "frame": "left/1",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 53,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    },
+    {
+      "frame": "left/2",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 54,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "frame": "left/3",
+      "uniformScale": 0.375,
+      "rotationDegrees": 0.0,
+      "translationAfterInitial": [
+        -1.4342278256305763e-05,
+        0.0
+      ],
+      "initialGroundTranslationPx": 55,
+      "maxKeypointError": 0.0,
+      "errors": {
+        "inferredNeck": 0.0
+      },
+      "groundError": 0.0,
+      "sourceLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "targetLandmarks": {
+        "inferredNeck": [
+          48.0,
+          79.0
+        ]
+      }
+    }
+  ]
+}

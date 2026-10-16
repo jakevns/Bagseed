@@ -2911,7 +2911,7 @@ function visitorLook(who) { return lookFor(who); }
 function idleBlink(t, seed = 0) { const p = 3.7 + (seed % 3) * .6; return ((t + seed * 1.3) % p) < .14; }
 function playerAnim(t) {
   const pl = state.player, act = runtime.actUntil && performance.now() < runtime.actUntil;
-  if (runtime.walking) return { dir: pl.dir || 'down', frame: settings.reduced ? Math.floor(t * 4) % 2 * 2 + 1 : Math.floor(t * 8) % 4 };
+  if (runtime.walking) return { dir: pl.dir || 'down', walk: true, frame: settings.reduced ? Math.floor(t * 4) % 2 * 2 + 1 : Math.floor(t * 8) % 4 };
   return { dir: pl.dir || 'down', frame: 0, breath: settings.reduced ? 0 : Math.floor(t / 1.4) % 2, blink: idleBlink(t), act };
 }
 /* ============================ DECOR ==================================

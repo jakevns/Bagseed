@@ -74,9 +74,14 @@ function visit(value,location='collections'){
 }
 visit(audit.collections);
 const detailLandmarks=JSON.parse(fs.readFileSync(path.join(art,'customization-v5/detail-landmarks.json')));
+const walkRoot=path.join(art,'walk'),walk=JSON.parse(fs.readFileSync(path.join(walkRoot,'manifest.json')));
+walk.rig=JSON.parse(fs.readFileSync(path.join(walkRoot,'rig.json')));
+assert.equal(walk.rigSHA256,sha(fs.readFileSync(path.join(walkRoot,'rig.json'))),'Walk rig changed after registration');
+for(const[file,hash]of Object.entries(walk.sources))assert.equal(hash,sha(fs.readFileSync(path.join(walkRoot,file))),'Walk source changed after registration');
+for(const[id,item]of Object.entries(walk.items))add('walk/'+id,path.join(walkRoot,item.atlas));
 assert.deepEqual(detailLandmarks.canvas,[192,320],'Detail landmarks must use the registered bald-head canvas');
-const data={images,approved,cast,traits,headFeatures:layers.features,detailLandmarks,hatRegistration:layers.hats,hatAssets:Object.keys(layers.hats),layeredHair:true,haircuts:61,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
-const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace(/\r\n/g,'\n').replace('__BAGSEED_DETAIL_RENDERER__',()=>fs.readFileSync(path.join(__dirname,'face-details.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_HAIR_BATCH_01__',()=>fs.readFileSync(path.join(__dirname,'hair-batch-01.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_HAIR_FIT_REST__',()=>fs.readFileSync(path.join(__dirname,'hair-fit-rest.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_ART_DATA__',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
+const data={images,approved,cast,traits,walk,headFeatures:layers.features,detailLandmarks,hatRegistration:layers.hats,hatAssets:Object.keys(layers.hats),layeredHair:true,haircuts:61,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
+const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace(/\r\n/g,'\n').replace('__BAGSEED_WALK_RENDERER__',()=>fs.readFileSync(path.join(walkRoot,'sources/renderer.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_DETAIL_RENDERER__',()=>fs.readFileSync(path.join(__dirname,'face-details.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_HAIR_BATCH_01__',()=>fs.readFileSync(path.join(__dirname,'hair-batch-01.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_HAIR_FIT_REST__',()=>fs.readFileSync(path.join(__dirname,'hair-fit-rest.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_ART_DATA__',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
 new (require('node:vm').Script)(characterCode,{filename:'illustrated-production-code'});
 const marker='bagseed-illustrated-production-code';
 const target=path.join(root,'public/index.html'),current=fs.readFileSync(target);
@@ -87,7 +92,10 @@ assert.ok(html.includes(marker),'Could not find baseline insertion point');
 const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging,target);
 const characterSources=['graphics/production/sources/renderer.js','graphics/production/sources/face-details.js','graphics/production/sources/hair-batch-01.js','graphics/production/sources/hair-fit-rest.js','graphics/production/sources/build.cjs','graphics/production/customization-v5/detail-landmarks.json','graphics/production/customization-v5/manifest.json','graphics/production/customization-v5/hair-fit.json','graphics/production/customization-v5/register.py'];
 const characterSourcesSHA256=Object.fromEntries(characterSources.map(file=>[file,sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'))]));
+for(const file of ['graphics/production/walk/sources/renderer.js','graphics/production/walk/manifest.json','graphics/production/walk/rig.json'])characterSourcesSHA256[file]=sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'));
 const report={version:'illustrated-1',approval:'User requested a universal repair for duplicated head/body necks in custom characters.',customizationReview:'review/neck-v14/README.md',hairFitRevision:hairFit.version,hairRuntimeFitRevision:'scalp-fit-12',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),characterRevision:characterCode.match(/renderingRevision:'([^']+)'/)[1],characterPayloadSHA256:sha(characterCode.trim()),characterSourcesSHA256,bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length,bedroomRevision:'bedroom-shell-1',bedRevision:'beds-batch-04',bedCombinations:80,deskRevision:'seedling-desks-1',deskVariations:3,curtainRevision:'curtains-batch-03',curtainSets:6,menuRevision:JSON.parse(fs.readFileSync(path.join(root,'graphics/main-menu/sources/manifest.json'))).revision};
+Object.assign(report,{approval:'Phase 1 custom walking samples; user requested GitHub publication.',customizationReview:'review/custom-walk-v1/README.md',previousCharacterBytes:101055566,walkBytesIncrease:Buffer.byteLength(html)-101055566,walkReviewStatus:walk.status});
+if(report.walkBytesIncrease>10_000_000)console.warn('Custom walking adds more than 10 MB to the standalone HTML.');
 Object.assign(report, { computerDeskRevision: 'computer-desks-1', computerDeskDesigns: 4 });
 Object.assign(report, { computerEquipmentRevision: 'computer-equipment-1', computerTiers: 3, keyboardOptions: 4, deskMatOptions: 3, monitorWallpapers: 5 });
 Object.assign(report, { cameraRevision: 'cameras-1', cameraTiers: 3, decorativeCameras: 1 });
@@ -97,5 +105,5 @@ Object.assign(report, { underDeskStorageRevision: 'under-desk-storage-1', storag
 Object.assign(report, { loadingRevision: 'loading-bedroom-3' });
 Object.assign(report, { loadingMobileFraming: 'fixed-window' });
 Object.assign(report, { bedroomWindowRevision: 'bedroom-window-1', outdoorArtSharedWithLoading: true });
-Object.assign(report, { starterTentRevision: 'starter-tent-1', starterTentShells: ['budget','standard'] });
+Object.assign(report, { starterTentRevision: 'starter-tent-2', starterTentShells: ['budget','standard'], tent2Revision: 'tent2-1', tent2Shells: ['standard','pro','premium'] });
 const reportPath=path.join(art,'build.json');fs.writeFileSync(reportPath+'.tmp',JSON.stringify(report,null,2)+'\n');fs.renameSync(reportPath+'.tmp',reportPath);console.log(JSON.stringify(report,null,2));

@@ -1,0 +1,185 @@
+{
+  "thresholds": {
+    "maxKeypointError": 2,
+    "minIoU": 0.85,
+    "maxRotationDegrees": 2
+  },
+  "passed": 16,
+  "total": 16,
+  "frames": [
+    {
+      "frame": "down/0",
+      "keypointErrors": {
+        "handL": 1.077,
+        "handR": 1.253,
+        "neck": 0.687,
+        "ground": 0.129
+      },
+      "bodyIoU": 0.9613,
+      "accepted": true
+    },
+    {
+      "frame": "down/1",
+      "keypointErrors": {
+        "handL": 0.849,
+        "handR": 1.106,
+        "neck": 0.473,
+        "ground": 0.184
+      },
+      "bodyIoU": 0.9615,
+      "accepted": true
+    },
+    {
+      "frame": "down/2",
+      "keypointErrors": {
+        "handL": 1.104,
+        "handR": 1.048,
+        "neck": 0.602,
+        "ground": 0.081
+      },
+      "bodyIoU": 0.9544,
+      "accepted": true
+    },
+    {
+      "frame": "down/3",
+      "keypointErrors": {
+        "handL": 1.001,
+        "handR": 0.797,
+        "neck": 0.402,
+        "ground": 0.133
+      },
+      "bodyIoU": 0.9791,
+      "accepted": true
+    },
+    {
+      "frame": "right/0",
+      "keypointErrors": {
+        "handL": 0.679,
+        "handR": 0.693,
+        "neck": 0.584,
+        "ground": 0.408
+      },
+      "bodyIoU": 0.9317,
+      "accepted": true
+    },
+    {
+      "frame": "right/1",
+      "keypointErrors": {
+        "handL": 1.423,
+        "neck": 0.533,
+        "ground": 0.303
+      },
+      "bodyIoU": 0.9284,
+      "accepted": true
+    },
+    {
+      "frame": "right/2",
+      "keypointErrors": {
+        "handL": 0.653,
+        "handR": 0.698,
+        "neck": 0.676,
+        "ground": 0.031
+      },
+      "bodyIoU": 0.9455,
+      "accepted": true
+    },
+    {
+      "frame": "right/3",
+      "keypointErrors": {
+        "handL": 0.759,
+        "handR": 0.514,
+        "neck": 0.736,
+        "ground": 0.393
+      },
+      "bodyIoU": 0.9358,
+      "accepted": true
+    },
+    {
+      "frame": "up/0",
+      "keypointErrors": {
+        "handL": 1.64,
+        "handR": 1.502,
+        "neck": 0.241,
+        "ground": 0.199
+      },
+      "bodyIoU": 0.9566,
+      "accepted": true
+    },
+    {
+      "frame": "up/1",
+      "keypointErrors": {
+        "handL": 1.662,
+        "handR": 1.445,
+        "neck": 0.624,
+        "ground": 0.902
+      },
+      "bodyIoU": 0.9268,
+      "accepted": true
+    },
+    {
+      "frame": "up/2",
+      "keypointErrors": {
+        "handL": 1.636,
+        "handR": 1.624,
+        "neck": 1.213,
+        "ground": 0.121
+      },
+      "bodyIoU": 0.9428,
+      "accepted": true
+    },
+    {
+      "frame": "up/3",
+      "keypointErrors": {
+        "handL": 1.796,
+        "handR": 1.484,
+        "neck": 0.538,
+        "ground": 0.206
+      },
+      "bodyIoU": 0.9571,
+      "accepted": true
+    },
+    {
+      "frame": "left/0",
+      "keypointErrors": {
+        "handL": 0.891,
+        "handR": 1.907,
+        "neck": 1.593,
+        "ground": 1.237
+      },
+      "bodyIoU": 0.9098,
+      "accepted": true
+    },
+    {
+      "frame": "left/1",
+      "keypointErrors": {
+        "handL": 1.529,
+        "neck": 1.128,
+        "ground": 0.623
+      },
+      "bodyIoU": 0.888,
+      "accepted": true
+    },
+    {
+      "frame": "left/2",
+      "keypointErrors": {
+        "handL": 1.698,
+        "handR": 1.248,
+        "neck": 1.51,
+        "ground": 1.178
+      },
+      "bodyIoU": 0.8945,
+      "accepted": true
+    },
+    {
+      "frame": "left/3",
+      "keypointErrors": {
+        "handL": 0.941,
+        "handR": 1.272,
+        "neck": 1.186,
+        "ground": 0.939
+      },
+      "bodyIoU": 0.9159,
+      "accepted": true
+    }
+  ]
+}

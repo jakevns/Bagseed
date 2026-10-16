@@ -1,0 +1,13 @@
+{
+  "id": "mannequin-rear-01-v4",
+  "mode": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. Production sprite corrections, preserve image 1 exactly except a small change to the tan hands and connected sleeve ends. Image 1 is TWO headless rear-view gray underlayer walk frames, side by side, on true transparency. Image 2 shows the approved source poses. Keep the exact SAME 576x432 image layout and empty headroom, body/leg position, scale, silhouette, gray underlayer, feet baseline and all pixels of the torso/legs/feet. No head, hair or faces. In BOTH frames, lift the visible hand on the RIGHT SIDE OF THE IMAGE by about 8 pixels in this 576x432 coordinate system, and shorten/repose the connected sleeve very slightly to keep the wrist anatomically attached. Do not move the hand horizontally. For the left frame, also lift its LEFT-SIDE hand about 4 pixels, keeping the connected sleeve natural; for the right frame leave the LEFT-SIDE hand exactly where it is. Compare source image 2 to match the hand heights: the far/right hand sits higher than the gray draft, up beside the hem, rather than hanging below it. Preserve all limb connections. This is a tiny wrist-height correction, not a new pose or character. True transparent alpha background, no painted background, shadow, text or guide marks. Drawn gray fabric and tan #cf9670 hands retain the input's original hand-illustrated indie-RPG style. Only these two REAR views, never a camera turn.",
+  "transparent_background": true,
+  "source": "graphics/production/walk/assets/mannequin-rear-01-v4.png",
+  "originalOutput": "Generated images are saved to C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67 as C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-005611a2-9c79-4fd8-a7c8-f8c5730eddfa.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "references": [
+    "assets/rear-01-mannequin-reference.png",
+    "assets/rear-01-master-reference.png"
+  ],
+  "status": "used in registered mannequin; see validation report"
+}
