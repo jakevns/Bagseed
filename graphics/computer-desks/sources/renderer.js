@@ -4,6 +4,13 @@
   const DATA = __BAGSEED_COMPUTER_DESKS_DATA__, atlas = new Image();
   const originalDesk = RoomArt.drawDesk, originalSide = DECOR.sidedesk.d, originalIcon = drawDecorIcon;
   let loaded = false;
+  // Separate coffee drawing so its artwork and steam can update independently.
+  RoomArt.drawCoffee = RoomArt.drawCoffee || function(c, t) {
+    if (state.coffeeDay === state.day) return;
+    R(c, 208, 69, 5, 5, '#f1ece0'); R(c, 213, 70, 2, 3, '#f1ece0'); R(c, 209, 70, 3, 1, '#6b3e1f');
+    if (!settings.reduced) R(c, 210 + Math.round(Math.sin(t * 2)), 64 + Math.floor(t * 4 % 4), 1, 2, 'rgba(255,255,255,.5)');
+    this.hit('coffee', 206, 64, 10, 11, 'Coffee mug', null, 'item');
+  };
   function frame(c, index, x, y, w, h) {
     c.save(); c.imageSmoothingEnabled = true; c.imageSmoothingQuality = 'high';
     c.drawImage(atlas, ...DATA.desks[index].rect, x, y, w, h); c.restore();
@@ -14,11 +21,7 @@
     groundShadow(c, 189, 100, 64);
     frame(c, 0, 158, 72, 62, 28);
     Gear.computer(c, 162, 73, tier, t, true);
-    if (state.coffeeDay !== state.day) {
-      R(c, 208, 69, 5, 5, '#f1ece0'); R(c, 213, 70, 2, 3, '#f1ece0'); R(c, 209, 70, 3, 1, '#6b3e1f');
-      if (!settings.reduced) R(c, 210 + Math.round(Math.sin(t * 2)), 64 + Math.floor(t * 4 % 4), 1, 2, 'rgba(255,255,255,.5)');
-      this.hit('coffee', 206, 64, 10, 11, 'Coffee mug', null, 'item');
-    }
+    this.drawCoffee(c, t);
     if (state.gear.camera === 1) Gear.camera(c, 199, 73, 1);
     this.hit('computer', 160, 56, 50, 20, EQ.computer[tier].name, null, 'furniture');
   };

@@ -1,0 +1,31 @@
+{
+  "revision": "coffee-1",
+  "status": "awaiting approval",
+  "path": "assets/mug.png",
+  "size": [
+    1474,
+    1067
+  ],
+  "sha256": "f03464e8c1c27ff610a46467774422773b7606014d4ac77ee741ec968f23f2a1",
+  "rect": [
+    296,
+    115,
+    1000,
+    849
+  ],
+  "world": {
+    "x": 208,
+    "bottom": 74,
+    "width": 7,
+    "surface": [
+      210.65,
+      69.1
+    ]
+  },
+  "steam": {
+    "period": 4,
+    "height": 6.6,
+    "wisps": 3
+  },
+  "scope": "Existing bedroom coffee interaction only; no new store item or purchase."
+}
