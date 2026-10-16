@@ -27766,6 +27766,14 @@ function remainingHairSource(L,dir){
     // Authored wardrobe walking. Standing, reactions and authored NPCs keep
   // their established paths. Every moving pixel comes from a generated frame.
   const walkParts=new Map(),walkFigures=new Map();
+  // Select a complete compatible outfit/rig; never mix eight-pose legs with
+  // four-pose sleeves or shoes from the earlier wardrobe.
+  function customWalkSet(L,dir){
+    return DATA.walk.stride&&['right','left'].includes(dir)&&L.topS==='hoodie'&&L.bottomS==='jeans'&&L.shoesS==='sneakers'?DATA.walk.stride:DATA.walk;
+  }
+  function customWalkFrameCount(look,dir='down'){
+    const L=normalize(look);return isChild(L)?4:customWalkSet(L,dir).frameCounts?.[dir]||4;
+  }
   function walkLocal(p,x,y){
     const a=p.neck,b=p.waist,dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy)||1;
     return [48+((x-a[0])*dy-(y-a[1])*dx)/length,42+((x-a[0])*dx+(y-a[1])*dy)/length];
@@ -27774,12 +27782,12 @@ function remainingHairSource(L,dir){
     const side=name==='nearLeg'?frame.nearLeg:frame.nearLeg==='L'?'R':'L',p=frame.keypoints,a=p['hip'+side],b=p['ankle'+side],dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy)||1;
     return [48+((x-a[0])*dy-(y-a[1])*dx)/length,70+((x-a[0])*dx+(y-a[1])*dy)/length];
   }
-  function walkPart(item,frame,name,L){
-    const entry=DATA.walk.items[item],part=entry.frames[frame].parts[name];if(!part)return null;
-    const sig=JSON.stringify([item,frame,name,L.skin,L.shirtC,L.pantsC,L.shoesC,L.topS,L.bottomS,L.topPat,L.botPat,L.topC2,L.botC2]);
+  function walkPart(item,frame,name,L,walk=DATA.walk){
+    const entry=walk.items[item],part=entry.frames[frame].parts[name];if(!part)return null;
+    const sig=JSON.stringify([walk.imagePrefix||'walk/',item,frame,name,L.skin,L.shirtC,L.pantsC,L.shoesC,L.topS,L.bottomS,L.topPat,L.botPat,L.topC2,L.botC2]);
     if(walkParts.has(sig))return walkParts.get(sig);
-    const [sx,sy,w,h]=part.rect,out=cv(w,h),g=out.getContext('2d',{willReadFrequently:true});g.drawImage(images.get('walk/'+item),sx,sy,w,h,0,0,w,h);
-    const data=g.getImageData(0,0,w,h),a=data.data,p=DATA.walk.rig.frames[frame].keypoints,kind=entry.kind;
+    const [sx,sy,w,h]=part.rect,out=cv(w,h),g=out.getContext('2d',{willReadFrequently:true});g.drawImage(images.get((walk.imagePrefix||'walk/')+item),sx,sy,w,h,0,0,w,h);
+    const data=g.getImageData(0,0,w,h),a=data.data,p=walk.rig.frames[frame].keypoints,kind=entry.kind;
     for(let i=0;i<a.length;i+=4){
       if(a[i+3]<=8){a[i+3]=0;continue;}
       const r=a[i],gg=a[i+1],b=a[i+2],light=lum(r,gg,b),x=((i/4)%w+part.destination[0])/3,y=(Math.floor(i/4/w)+part.destination[1])/3;
@@ -27797,7 +27805,7 @@ function remainingHairSource(L,dir){
       const profileRole=kind==='shoe'?'shoe':kind==='bottom'||entry.fullSuit&&name.endsWith('Leg')?'lower':'upper';
       if(!skin&&kind!=='skin'&&/^(right|left)\//.test(frame)&&entry.profileBases?.[profileRole])base=entry.profileBases[profileRole];
       if(!skin&&kind!=='shoe'&&kind!=='skin'){
-        const [u,v]=name.endsWith('Leg')?walkLegLocal(DATA.walk.rig.frames[frame],name,x,y):walkLocal(p,x,y),pat=kind==='bottom'?L.botPat:L.topPat;
+        const [u,v]=name.endsWith('Leg')?walkLegLocal(walk.rig.frames[frame],name,x,y):walkLocal(p,x,y),pat=kind==='bottom'?L.botPat:L.topPat;
         if(blue&&pattern(pat,u,v)){tone=rgb((kind==='bottom'?L.botC2:L.topC2)||'#ffffff');}
       }
       const mapped=material(tone,light,base);a[i]=mapped[0];a[i+1]=mapped[1];a[i+2]=mapped[2];
@@ -27823,15 +27831,15 @@ function remainingHairSource(L,dir){
     }
   }
   function authoredWalk(L,dir,frame,blink,density=1){
-    const top='top-'+L.topS,bottom='bottom-'+L.bottomS,shoe='shoe-'+L.shoesS,items=DATA.walk?.items;
+    const walk=customWalkSet(L,dir),top='top-'+L.topS,bottom='bottom-'+L.bottomS,shoe='shoe-'+L.shoesS,items=walk?.items;
     if(!items?.[top]?.accepted||!items[shoe]?.accepted||!items[top].fullSuit&&!items[bottom]?.accepted||isChild(L))return null;
-    const f=dir+'/'+(frame%4),sig=key(L)+'|'+f+'|'+blink+'|'+density;
+    const f=dir+'/'+(frame%(walk.frameCounts?.[dir]||4)),sig=(walk.imagePrefix||'walk/')+key(L)+'|'+f+'|'+blink+'|'+density;
     if(walkFigures.has(sig))return walkFigures.get(sig);
     // Join all cropped parts at source density before any build transform or
     // gameplay downsampling. Independent low-resolution resampling leaves
     // antialiased seams along the otherwise perfectly adjacent label edges.
     const out=cv(96*density,144*density),g=out.getContext('2d'),bodyFrame=cv(288,432),b=bodyFrame.getContext('2d');g.scale(density,density);b.scale(3,3);g.imageSmoothingEnabled=true;g.imageSmoothingQuality='low';
-    const p=DATA.walk.rig.frames[f].keypoints,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1),sy=L.short?.9:L.body==='tall'?1.07:1;
+    const p=walk.rig.frames[f].keypoints,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1),sy=L.short?.9:L.body==='tall'?1.07:1;
     const H=head(L,dir,blink,true),joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),nx=48+(p.neck[0]-48)*width,ny=143+(p.neck[1]-143)*sy,hx=nx-32,hy=ny-joinY/3;
     g.drawImage(H.bagseedNeckBridge,hx,hy,64,H.height/3);
     const lower=items[top].fullSuit?top:bottom;
@@ -27841,14 +27849,14 @@ function remainingHairSource(L,dir){
     if(items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
     layers.push([shoe,'nearFoot'],[top,'nearArm']);
     for(const [item,name]of layers){
-      const part=walkPart(item,f,name,L);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
+      const part=walkPart(item,f,name,L,walk);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
     }
     walkAccessories(b,L,dir,p);g.save();g.translate(48,143);g.scale(width,sy);g.drawImage(bodyFrame,-48,-143,96,144);g.restore();
     // Hair, hats and ears retain the approved head renderer and translate as
     // one complete layer, above clothing, without a mesh or row deformation.
     g.drawImage(H,hx,hy,64,H.height/3);
-    const hand=p['hand'+DATA.walk.rig.frames[f].nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
-    out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);out.bagseedAuthoredWalk=f;
+    const hand=p['hand'+walk.rig.frames[f].nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
+    out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);out.bagseedAuthoredWalk=f;out.bagseedWalkProfile=walk.imagePrefix||'walk/';
     if(walkFigures.size>96)walkFigures.clear();walkFigures.set(sig,out);return out;
   }
 
@@ -27927,7 +27935,7 @@ function remainingHairSource(L,dir){
       g.clearRect(x-4,65+offset,12,15);g.save();g.translate(x+2,61+offset);g.rotate(dir==='left'?.35:-.35);g.drawImage(arm,-6,0,12,22);g.restore();
     }
     out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-ground),ground+(y-ground)*(frame%2?.988:1)]:breath?[x,ground+(y-ground)*.99]:[x,y]);
-    out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;
+    out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;out.bagseedWalkProfile=source.bagseedWalkProfile;
     out.bagseedCastWalk=source.bagseedCastWalk;
     if(source.bagseedHand)out.bagseedHand={...source.bagseedHand};
     else if(density===1)out.bagseedHand=hands(out,L,dir);return out;
@@ -28005,13 +28013,19 @@ function remainingHairSource(L,dir){
     const view=Motion116.view;Motion116.view=function(a){const result=view.call(this,a);if(castWalkFrameCount(result.look)===8){const stride=(a.kind==='cast'&&CAST_DEF[a.id].kid?MOT116.KSTRIDE:MOT116.STRIDE)/2;result.walkDistance116=a.dist||0;result.walkStride116=stride;result.frame116=a.moving&&!settings.reduced?Math.floor(result.walkDistance116/stride)%8:a.moving?2:0;}return result;};
   }
 
+  const previousPlayerAnim=playerAnim;
+  playerAnim=function(t){
+    const anim=previousPlayerAnim(t),count=customWalkFrameCount(playerLook(),anim.dir);
+    if(anim.walk&&count===8)anim.frame=settings.reduced?2:Math.floor(t*8)%8;
+    return anim;
+  };
   drawCreatorPreview=function(t){
     const canvas=$('#creatorPreview');if(!canvas||!runtime.cr)return;
     if(!canvas.dataset.illustratedDensity){canvas.width=540;canvas.height=336;canvas.dataset.illustratedDensity='3';canvas.style.imageRendering='auto';canvas.style.aspectRatio='180 / 112';canvas.style.height='auto';}
     const g=canvas.getContext('2d');g.setTransform(3,0,0,3,0,0);
     const W=180,H=112,look=creatorLook(runtime.cr),walk=runtime.crWalk!==false&&!settings.reduced,frame=walk?Math.floor(t*6)%4:0;
     R(g,0,0,W,H,'#2a2230');for(let y=H-16;y<H;y+=4)R(g,0,y,W,2,'#352b3c');
-    [['FRONT','down'],['SIDE','right'],['BACK','up']].forEach(([label,dir],i)=>{const x=30+i*60;groundShadow(g,x,H-10,22);drawPerson(g,x,H-10,look,2,{dir,frame,walk,breath:!walk&&Math.floor(t/1.4)%2,blink:!walk&&idleBlink(t,i)});pxText(g,label,x-pxTextW(label)/2,3,1,'#b3b89c');});
+    [['FRONT','down'],['SIDE','right'],['BACK','up']].forEach(([label,dir],i)=>{const x=30+i*60;groundShadow(g,x,H-10,22);drawPerson(g,x,H-10,look,2,{dir,frame:walk?Math.floor(t*(customWalkFrameCount(look,dir)===8?8:6))%customWalkFrameCount(look,dir):0,walk,breath:!walk&&Math.floor(t/1.4)%2,blink:!walk&&idleBlink(t,i)});pxText(g,label,x-pxTextW(label)/2,3,1,'#b3b89c');});
   };
   CharacterUI115.mirrorDraw=function(){
     const root=$('#panelBody'),canvas=root?.querySelector('canvas[data-draw="person"]');if(!canvas||!root.querySelector('.character-layout115'))return;
@@ -28024,7 +28038,7 @@ function remainingHairSource(L,dir){
     const walk=runtime.mirrorWalk!==false&&!settings.reduced,frame=walk?Math.floor((runtime.t||0)*6)%4:0;
     [...root.querySelector('[data-walk-preview]').children].forEach((b,i)=>{b.classList.toggle('on',walk===(i===0));b.setAttribute('aria-pressed',String(walk===(i===0)));});
     const g=canvas.getContext('2d'),look=playerLook();g.setTransform(3,0,0,3,0,0);R(g,0,0,180,112,'#2a2230');
-    [['FRONT','down'],['SIDE','right'],['BACK','up']].forEach(([label,dir],i)=>{const x=30+i*60;groundShadow(g,x,102,22);drawPerson(g,x,102,look,2,{dir,frame,walk,blink:false,breath:false});pxText(g,label,x-pxTextW(label)/2,3,1,'#b3b89c');});
+    [['FRONT','down'],['SIDE','right'],['BACK','up']].forEach(([label,dir],i)=>{const x=30+i*60;groundShadow(g,x,102,22);drawPerson(g,x,102,look,2,{dir,frame:walk?Math.floor((runtime.t||0)*(customWalkFrameCount(look,dir)===8?8:6))%customWalkFrameCount(look,dir):0,walk,blink:false,breath:false});pxText(g,label,x-pxTextW(label)/2,3,1,'#b3b89c');});
   };
   drawPortrait=function(canvas,look){
     if(!loaded)return originalDrawPortrait(canvas,look);
@@ -28073,7 +28087,7 @@ function remainingHairSource(L,dir){
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-phase-2',walkFrameCount:castWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-approved-stride',walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();
 

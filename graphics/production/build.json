@@ -6,28 +6,29 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "009086178e0e69b71157cc2f02a1a320703e0f0edb7c8b61d67f7b7a5ad926e6",
-  "updatedSHA": "3170b7c597a77a0178c4faa2de03900d29504780af4b4a6147d93a0fde46f612",
-  "characterRevision": "custom-walk-phase-2",
-  "characterPayloadSHA256": "d5e8eaed8de12ae221ff0b2f7ea5b35dcab537057260b274dc302f2beaef897d",
+  "updatedSHA": "6876ed40f7623141df267c13fb51de78d12d978da0013b8c5b92ad74512824a3",
+  "characterRevision": "custom-walk-approved-stride",
+  "characterPayloadSHA256": "59a4e74d8229a5e9352f3807f03023f2ec392a0a80027c6a20e77a681834f65d",
   "characterSourcesSHA256": {
-    "graphics/production/sources/renderer.js": "6ef29507c3078f806e1d09df850f1fb6eb715e26efde5da61836034a8004d0a0",
+    "graphics/production/sources/renderer.js": "fbbf5cd9b781706bed5ee852871d076ad5c3853c86437014036d5d933d778df5",
     "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
     "graphics/production/sources/hair-batch-01.js": "9ecdd8b585399ea4a5c9f11534914f21cb1d8be136839ea9c9ac6d75f8fd8390",
     "graphics/production/sources/hair-fit-rest.js": "57e1ea90c42bac147c83c798c61c8a1ddc195a30556d112ecf112bf8120d9ef3",
-    "graphics/production/sources/build.cjs": "4b5ac93c6f0eb2fd3e240e2b9e810d33ba590496ed621256b6ceb1c7b35886da",
+    "graphics/production/sources/build.cjs": "5ddba1295aba3b67f63f5673876e594213d9659b130b8ea7d8b2cbcee8f38c33",
     "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
     "graphics/production/customization-v5/manifest.json": "3e9a7390cd46d0a433c2e2cec34dfc2a8c04fdb8625a40476ec400d5cb458462",
     "graphics/production/customization-v5/hair-fit.json": "acf4244aab6c7b1733ff0bcfffe51c9e37758a2acc302f20027a34f9a127dc2b",
     "graphics/production/customization-v5/register.py": "f8745407c9ecba6fb0802697f0740acaf72532db0661b089414bf6100b9971ab",
     "graphics/production/cast-walk-v1/manifest.json": "7c7b6fb7c1a4115837caaa817ad21c11c69f56c402257dbe79ba0510c98c04fa",
     "graphics/production/cast-walk-v1/sources/clocks.js": "8cb078c95c1b6408f9888a5ae6bbbb2830f7561bedced21075f56778da6b23bc",
-    "graphics/production/walk/sources/renderer.js": "7000e6f717f220d66a540055204d1712766070415e1f06d4631b7e4f8cc1cb73",
+    "graphics/production/walk/sources/renderer.js": "a7d5e0bece935865c45eb80406f62f63c53b153930a5578ec23cabb5b31c9c14",
     "graphics/production/walk/manifest.json": "5da2a2d9ad06c3abec9301b2975b6cf9962214f0354ad9d4ec14495be67d467a",
-    "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa"
+    "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa",
+    "graphics/production/walk/stride-v4/candidate-manifest.json": "49d9554ce407cfabbe323d0fb7cf18fdac38513c7cd839cf09dbe492188cb0f9"
   },
-  "bytes": 63907327,
+  "bytes": 63908492,
   "modularAssets": 544,
-  "embeddedImages": 1625,
+  "embeddedImages": 1629,
   "approvedIdentities": [
     "player",
     "remy",
@@ -45,12 +46,12 @@
   "curtainSets": 6,
   "menuRevision": "community-menu-3",
   "previousCharacterBytes": 101055566,
-  "walkBytesIncrease": 19784917,
+  "walkBytesIncrease": 21560264,
   "walkReviewStatus": "full wardrobe registered; visual review pending",
   "characterDataFile": "public/character-data.js",
-  "characterDataSHA256": "8f353958313f8f01376a1ffbd433e132814c7a536acbf137f31ebf8b78f65d4b",
-  "characterDataBytes": 56933156,
-  "packageBytes": 120840483,
+  "characterDataSHA256": "7be3667199e01b377c854d3043b3e1b45b360a55a395f2e501e03db67955aba9",
+  "characterDataBytes": 58707338,
+  "packageBytes": 122615830,
   "castWalkRevision": "cast-walk-eight-v1",
   "walkingStandard": "eight-frame-full-stride-v1",
   "castWalkFrameCount": 8,
@@ -92,5 +93,19 @@
     "standard",
     "pro",
     "premium"
-  ]
+  ],
+  "customStrideReview": "review/custom-walk-v4/README.md",
+  "customStrideLive": {
+    "outfit": [
+      "hoodie",
+      "jeans",
+      "sneakers"
+    ],
+    "directions": [
+      "right",
+      "left"
+    ],
+    "frames": 8,
+    "remainingWardrobeFrames": 4
+  }
 }

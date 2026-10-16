@@ -13,3 +13,7 @@ The comparison uses 288 × 432 canvases for standing and custom walking. The ori
 The sample is rendered through the modular wardrobe compositor, including separate hoodie, jeans, sneaker and underlayer atlases. Capture checks require all eight frame keys in both side directions, eight distinct composite images, and zero flashlight attachment error. These are implementation checks, not an independent judgment of movement quality.
 
 Remaining: apply the corrected motion to the other wardrobe garments, update the gameplay/creator/mirror clocks for the completed rollout, check all outfit/build combinations, and review the remaining garments at native resolution. Automatic landmark checks alone cannot approve a walking cycle. This preview does not replace the current game build.
+
+## Live integration
+
+The user-approved sample is now included in the public game for hoodie + jeans + sneakers, with eight side poses in both directions. Gameplay, creator and wardrobe mirror reach all eight poses. Other outfits continue using the original complete four-pose garment set, preventing mismatched limbs. Front/back remain four poses. `live-game-poses.png` captures the actual public game compositor; `live-game-checks.json` checks file startup, live clocks, mirror, creator and flashlight attachment. `live-wardrobe-validation.json` checks all 300 outfit combinations. The historical candidate instructions above describe the original review, before this integration.

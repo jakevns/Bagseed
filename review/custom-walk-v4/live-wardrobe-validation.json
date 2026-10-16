@@ -1,0 +1,3055 @@
+{
+  "outfits": 300,
+  "frames": 4808,
+  "failures": [],
+  "perTop": {
+    "cardigan": [
+      {
+        "topS": "cardigan",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "cardigan",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "crop": [
+      {
+        "topS": "crop",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "crop",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "flannel": [
+      {
+        "topS": "flannel",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "flannel",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "garden": [
+      {
+        "topS": "garden",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "garden",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "hoodie": [
+      {
+        "topS": "hoodie",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 24,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 24
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "hoodie",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "jacket": [
+      {
+        "topS": "jacket",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "jacket",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "labcoat": [
+      {
+        "topS": "labcoat",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "labcoat",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "officer": [
+      {
+        "topS": "officer",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "officer",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "overalls": [
+      {
+        "topS": "overalls",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "overalls",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "pjs": [
+      {
+        "topS": "pjs",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "pjs",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "suit": [
+      {
+        "topS": "suit",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "suit",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "sweater": [
+      {
+        "topS": "sweater",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "sweater",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "tank": [
+      {
+        "topS": "tank",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tank",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "tee": [
+      {
+        "topS": "tee",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "tee",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ],
+    "work": [
+      {
+        "topS": "work",
+        "bottomS": "cargo",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "cargo",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "cargo",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "cargo",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "jeans",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "jeans",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "jeans",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "jeans",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "joggers",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "joggers",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "joggers",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "joggers",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "shorts",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "shorts",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "shorts",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "shorts",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "skirt",
+        "shoesS": "boots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "skirt",
+        "shoesS": "rainboots",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "skirt",
+        "shoesS": "sandals",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      },
+      {
+        "topS": "work",
+        "bottomS": "skirt",
+        "shoesS": "sneakers",
+        "frames": 16,
+        "minBaseline": 142,
+        "maxBaseline": 142,
+        "maxFlashlightError": 0,
+        "handChecks": 16
+      }
+    ]
+  },
+  "landmarkScope": "Visible hand neighborhoods and alpha connection to shoulder; rig-driven flashlight attachment. Hidden anatomical joints are not independently detected.",
+  "variants": {
+    "buildPresentationFrames": 288,
+    "skinTones": 16,
+    "sandalToeVariants": 16,
+    "failures": []
+  },
+  "creator": {
+    "animated": true,
+    "idleStopped": true
+  },
+  "mirror": {
+    "animated": true,
+    "stopped": true
+  },
+  "reducedMotion": true,
+  "saveReload": "passed in disposable browser storage",
+  "browserErrors": []
+}
