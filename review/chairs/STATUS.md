@@ -2,9 +2,11 @@
 
 Status: awaiting user approval. This batch is saved locally and is not integrated into public/index.html or published. Show actual picture previews before publishing.
 
+Revision chairs-2: the user rejected the gaming-chair LEDs as misaligned and requested a rerender. gaming-chair-rerender.png retains the generated replacement. The old manually traced piping paths were removed. LEDs are selected directly from cyan material pixels in the new image, clipped to its alpha, then recolored using the exact chair crop/transform. approval-gaming-led-alignment.png shows three static colors, and gaming-rgb-animation.gif is regenerated. LEDRegistration in report.json records mask coverage and no pixels outside chair alpha; liveMotion verifies animation and still reduced motion in the actual game loop. Five other source crops and the original atlas remain unchanged; the Office Chair finish board is byte-identical to the first proposal.
+
 Scope: all four existing desk-chair styles (Folding included, Office $45, Gaming $120, Wooden $30), plus both finishes for the separate placeable Office Chair ($45 Black Mesh; $8 Teal finish unlock). No Chair remains available. Other seating, house fixtures and dining chairs are outside this workstation batch.
 
-Source atlas: graphics/chairs/assets/chairs-atlas.png. Six retained painted sprites, source dimensions/checksum, technical crops and normalized gaming RGB piping paths are in sources/manifest.json. Rendering preserves aspect ratios in a fixed desk-chair frame (x182/y88, 16×30, feet at y118) and the existing 12×18 placeable-chair bounds. All prices, finish ownership, collision footprints and seat flags are unchanged.
+Sources: graphics/chairs/assets/chairs-atlas.png and gaming-chair-rerender.png. Original dimensions/checksums, technical crops and the LED selection threshold are in sources/manifest.json. Rendering preserves aspect ratios in a fixed desk-chair frame (x182/y88, 16×30, feet at y118) and the existing 12×18 placeable-chair bounds. All prices, finish ownership, collision footprints and seat flags are unchanged.
 
 Pictures: approval-desk-chairs.png, approval-office-finishes.png and gaming-rgb-animation.gif. Store captures are included for desktop/phone. Reproduce with node tools/preview-chairs.cjs; it opens public/index.html and injects only the proposal into the disposable browser. Raw animation frames are ignored under artifacts/chair-preview/frames; GIF uses 4fps with matching 0.25-second simulation steps.
 

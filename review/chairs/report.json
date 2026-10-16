@@ -12,10 +12,17 @@
   "cameraArtworkUnchanged": true,
   "RGBAnimatesAtNativeResolution": true,
   "reducedMotion": true,
+  "LEDRegistration": {
+    "method": "source-pixel-mask",
+    "maskPixels": 3055,
+    "outsideChairPixels": 0,
+    "width": 348,
+    "height": 512
+  },
   "liveMotion": {
     "realGameLoop": true,
     "nativeResolution": true,
-    "movingFrames": 23,
+    "movingFrames": 24,
     "reducedMotionStill": true
   },
   "actualStoreDesktopAndPhone": true,
