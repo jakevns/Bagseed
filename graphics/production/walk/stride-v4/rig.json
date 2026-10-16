@@ -1,0 +1,1379 @@
+{
+  "version": "eight-pose-profiles-v4",
+  "frames": {
+    "right/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "kneeL": [
+          57,
+          124
+        ],
+        "ankleL": [
+          64,
+          139
+        ],
+        "heelL": [
+          57,
+          143
+        ],
+        "toeL": [
+          75,
+          143
+        ],
+        "kneeR": [
+          40,
+          124
+        ],
+        "ankleR": [
+          32,
+          136
+        ],
+        "heelR": [
+          27,
+          137
+        ],
+        "toeR": [
+          44,
+          143
+        ],
+        "handL": [
+          35.295,
+          106.271
+        ],
+        "elbowL": [
+          41.912,
+          96.249
+        ],
+        "handR": [
+          62.983,
+          101.757
+        ],
+        "elbowR": [
+          55.791,
+          93.766
+        ]
+      },
+      "phase": "near heel contact",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "right/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "shoulderL": [
+          50,
+          85
+        ],
+        "shoulderR": [
+          47,
+          85
+        ],
+        "hipL": [
+          50,
+          111
+        ],
+        "hipR": [
+          47,
+          111
+        ],
+        "kneeL": [
+          54,
+          125
+        ],
+        "ankleL": [
+          58,
+          139
+        ],
+        "heelL": [
+          51,
+          143
+        ],
+        "toeL": [
+          69,
+          143
+        ],
+        "kneeR": [
+          39,
+          125
+        ],
+        "ankleR": [
+          35,
+          133
+        ],
+        "heelR": [
+          30,
+          133
+        ],
+        "toeR": [
+          46,
+          139
+        ],
+        "handL": [
+          60.824,
+          102.856
+        ],
+        "elbowL": [
+          55.953,
+          94.821
+        ],
+        "handR": [
+          51.179,
+          105.509
+        ],
+        "elbowR": [
+          49.298,
+          96.28
+        ]
+      },
+      "phase": "near loading / far toe off",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handR",
+        "handL"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "right/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "kneeL": [
+          48,
+          125
+        ],
+        "ankleL": [
+          48,
+          139
+        ],
+        "heelL": [
+          41,
+          143
+        ],
+        "toeL": [
+          59,
+          143
+        ],
+        "kneeR": [
+          53,
+          122
+        ],
+        "ankleR": [
+          43,
+          130
+        ],
+        "heelR": [
+          37,
+          130
+        ],
+        "toeR": [
+          53,
+          135
+        ],
+        "handL": [
+          46.768,
+          106.526
+        ],
+        "elbowL": [
+          48.222,
+          96.389
+        ],
+        "handR": [
+          53.167,
+          102.167
+        ],
+        "elbowR": [
+          50.392,
+          93.992
+        ]
+      },
+      "phase": "near stance / far passing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "right/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "shoulderL": [
+          50,
+          83
+        ],
+        "shoulderR": [
+          47,
+          83
+        ],
+        "hipL": [
+          50,
+          109
+        ],
+        "hipR": [
+          47,
+          109
+        ],
+        "kneeL": [
+          43,
+          124
+        ],
+        "ankleL": [
+          39,
+          138
+        ],
+        "heelL": [
+          32,
+          142
+        ],
+        "toeL": [
+          50,
+          143
+        ],
+        "kneeR": [
+          58,
+          122
+        ],
+        "ankleR": [
+          55,
+          133
+        ],
+        "heelR": [
+          48,
+          137
+        ],
+        "toeR": [
+          66,
+          137
+        ],
+        "handL": [
+          58.975,
+          101.994
+        ],
+        "elbowL": [
+          54.936,
+          93.447
+        ],
+        "handR": [
+          48.167,
+          101.944
+        ],
+        "elbowR": [
+          47.642,
+          93.419
+        ]
+      },
+      "phase": "near push off / far swing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "right/4": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "kneeL": [
+          40,
+          124
+        ],
+        "ankleL": [
+          32,
+          136
+        ],
+        "heelL": [
+          27,
+          137
+        ],
+        "toeL": [
+          44,
+          143
+        ],
+        "kneeR": [
+          57,
+          124
+        ],
+        "ankleR": [
+          64,
+          139
+        ],
+        "heelR": [
+          57,
+          143
+        ],
+        "toeR": [
+          75,
+          143
+        ],
+        "handL": [
+          55.707,
+          103.106
+        ],
+        "elbowL": [
+          53.139,
+          94.508
+        ],
+        "handR": [
+          33.85,
+          103.656
+        ],
+        "elbowR": [
+          39.768,
+          94.811
+        ]
+      },
+      "phase": "far heel contact",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "right/5": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "shoulderL": [
+          50,
+          85
+        ],
+        "shoulderR": [
+          47,
+          85
+        ],
+        "hipL": [
+          50,
+          111
+        ],
+        "hipR": [
+          47,
+          111
+        ],
+        "kneeL": [
+          39,
+          125
+        ],
+        "ankleL": [
+          35,
+          133
+        ],
+        "heelL": [
+          30,
+          133
+        ],
+        "toeL": [
+          46,
+          139
+        ],
+        "kneeR": [
+          54,
+          125
+        ],
+        "ankleR": [
+          58,
+          139
+        ],
+        "heelR": [
+          51,
+          143
+        ],
+        "toeR": [
+          69,
+          143
+        ],
+        "handL": [
+          57.92,
+          103.222
+        ],
+        "elbowL": [
+          54.356,
+          95.022
+        ],
+        "handR": [
+          46.858,
+          102.936
+        ],
+        "elbowR": [
+          46.922,
+          94.865
+        ]
+      },
+      "phase": "far loading / near toe off",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "right/6": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "kneeL": [
+          53,
+          122
+        ],
+        "ankleL": [
+          43,
+          130
+        ],
+        "heelL": [
+          37,
+          130
+        ],
+        "toeL": [
+          53,
+          135
+        ],
+        "kneeR": [
+          48,
+          125
+        ],
+        "ankleR": [
+          48,
+          139
+        ],
+        "heelR": [
+          41,
+          143
+        ],
+        "toeR": [
+          59,
+          143
+        ],
+        "handL": [
+          47.738,
+          106.616
+        ],
+        "elbowL": [
+          48.756,
+          96.439
+        ],
+        "handR": [
+          48,
+          106
+        ],
+        "elbowR": [
+          47.55,
+          96.1
+        ]
+      },
+      "phase": "far stance / near passing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "right/7": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "shoulderL": [
+          50,
+          83
+        ],
+        "shoulderR": [
+          47,
+          83
+        ],
+        "hipL": [
+          50,
+          109
+        ],
+        "hipR": [
+          47,
+          109
+        ],
+        "kneeL": [
+          58,
+          122
+        ],
+        "ankleL": [
+          55,
+          133
+        ],
+        "heelL": [
+          48,
+          137
+        ],
+        "toeL": [
+          66,
+          137
+        ],
+        "kneeR": [
+          43,
+          124
+        ],
+        "ankleR": [
+          39,
+          138
+        ],
+        "heelR": [
+          32,
+          142
+        ],
+        "toeR": [
+          50,
+          143
+        ],
+        "handL": [
+          47.706,
+          100.876
+        ],
+        "elbowL": [
+          48.738,
+          92.832
+        ],
+        "handR": [
+          32.223,
+          103.029
+        ],
+        "elbowR": [
+          38.873,
+          94.016
+        ]
+      },
+      "phase": "far push off / near swing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "left/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          46,
+          84
+        ],
+        "shoulderR": [
+          49,
+          84
+        ],
+        "hipL": [
+          46,
+          110
+        ],
+        "hipR": [
+          49,
+          110
+        ],
+        "kneeL": [
+          39,
+          124
+        ],
+        "ankleL": [
+          32,
+          139
+        ],
+        "heelL": [
+          39,
+          143
+        ],
+        "toeL": [
+          21,
+          143
+        ],
+        "kneeR": [
+          56,
+          124
+        ],
+        "ankleR": [
+          64,
+          136
+        ],
+        "heelR": [
+          69,
+          137
+        ],
+        "toeR": [
+          52,
+          143
+        ],
+        "handL": [
+          60.372,
+          106.271
+        ],
+        "elbowL": [
+          53.905,
+          96.249
+        ],
+        "handR": [
+          32.684,
+          101.757
+        ],
+        "elbowR": [
+          40.026,
+          93.766
+        ]
+      },
+      "phase": "near heel contact",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "left/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "shoulderL": [
+          46,
+          85
+        ],
+        "shoulderR": [
+          49,
+          85
+        ],
+        "hipL": [
+          46,
+          111
+        ],
+        "hipR": [
+          49,
+          111
+        ],
+        "kneeL": [
+          42,
+          125
+        ],
+        "ankleL": [
+          38,
+          139
+        ],
+        "heelL": [
+          45,
+          143
+        ],
+        "toeL": [
+          27,
+          143
+        ],
+        "kneeR": [
+          57,
+          125
+        ],
+        "ankleR": [
+          61,
+          133
+        ],
+        "heelR": [
+          66,
+          133
+        ],
+        "toeR": [
+          50,
+          139
+        ],
+        "handL": [
+          34.843,
+          102.856
+        ],
+        "elbowL": [
+          39.864,
+          94.821
+        ],
+        "handR": [
+          44.488,
+          105.509
+        ],
+        "elbowR": [
+          46.518,
+          96.28
+        ]
+      },
+      "phase": "near loading / far toe off",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handR",
+        "handL"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "left/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          46,
+          84
+        ],
+        "shoulderR": [
+          49,
+          84
+        ],
+        "hipL": [
+          46,
+          110
+        ],
+        "hipR": [
+          49,
+          110
+        ],
+        "kneeL": [
+          48,
+          125
+        ],
+        "ankleL": [
+          48,
+          139
+        ],
+        "heelL": [
+          55,
+          143
+        ],
+        "toeL": [
+          37,
+          143
+        ],
+        "kneeR": [
+          43,
+          122
+        ],
+        "ankleR": [
+          53,
+          130
+        ],
+        "heelR": [
+          59,
+          130
+        ],
+        "toeR": [
+          43,
+          135
+        ],
+        "handL": [
+          48.899,
+          106.526
+        ],
+        "elbowL": [
+          47.594,
+          96.389
+        ],
+        "handR": [
+          42.5,
+          102.167
+        ],
+        "elbowR": [
+          45.425,
+          93.992
+        ]
+      },
+      "phase": "near stance / far passing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "left/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "shoulderL": [
+          46,
+          83
+        ],
+        "shoulderR": [
+          49,
+          83
+        ],
+        "hipL": [
+          46,
+          109
+        ],
+        "hipR": [
+          49,
+          109
+        ],
+        "kneeL": [
+          53,
+          124
+        ],
+        "ankleL": [
+          57,
+          138
+        ],
+        "heelL": [
+          64,
+          142
+        ],
+        "toeL": [
+          46,
+          143
+        ],
+        "kneeR": [
+          38,
+          122
+        ],
+        "ankleR": [
+          41,
+          133
+        ],
+        "heelR": [
+          48,
+          137
+        ],
+        "toeR": [
+          30,
+          137
+        ],
+        "handL": [
+          36.692,
+          101.994
+        ],
+        "elbowL": [
+          40.881,
+          93.447
+        ],
+        "handR": [
+          47.5,
+          101.944
+        ],
+        "elbowR": [
+          48.175,
+          93.419
+        ]
+      },
+      "phase": "near push off / far swing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "left/4": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          46,
+          84
+        ],
+        "shoulderR": [
+          49,
+          84
+        ],
+        "hipL": [
+          46,
+          110
+        ],
+        "hipR": [
+          49,
+          110
+        ],
+        "kneeL": [
+          56,
+          124
+        ],
+        "ankleL": [
+          64,
+          136
+        ],
+        "heelL": [
+          69,
+          137
+        ],
+        "toeL": [
+          52,
+          143
+        ],
+        "kneeR": [
+          39,
+          124
+        ],
+        "ankleR": [
+          32,
+          139
+        ],
+        "heelR": [
+          39,
+          143
+        ],
+        "toeR": [
+          21,
+          143
+        ],
+        "handL": [
+          39.96,
+          103.106
+        ],
+        "elbowL": [
+          42.678,
+          94.508
+        ],
+        "handR": [
+          61.817,
+          103.656
+        ],
+        "elbowR": [
+          56.049,
+          94.811
+        ]
+      },
+      "phase": "far heel contact",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "left/5": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "shoulderL": [
+          46,
+          85
+        ],
+        "shoulderR": [
+          49,
+          85
+        ],
+        "hipL": [
+          46,
+          111
+        ],
+        "hipR": [
+          49,
+          111
+        ],
+        "kneeL": [
+          57,
+          125
+        ],
+        "ankleL": [
+          61,
+          133
+        ],
+        "heelL": [
+          66,
+          133
+        ],
+        "toeL": [
+          50,
+          139
+        ],
+        "kneeR": [
+          42,
+          125
+        ],
+        "ankleR": [
+          38,
+          139
+        ],
+        "heelR": [
+          45,
+          143
+        ],
+        "toeR": [
+          27,
+          143
+        ],
+        "handL": [
+          37.747,
+          103.222
+        ],
+        "elbowL": [
+          41.461,
+          95.022
+        ],
+        "handR": [
+          48.808,
+          102.936
+        ],
+        "elbowR": [
+          48.894,
+          94.865
+        ]
+      },
+      "phase": "far loading / near toe off",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "left/6": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          46,
+          84
+        ],
+        "shoulderR": [
+          49,
+          84
+        ],
+        "hipL": [
+          46,
+          110
+        ],
+        "hipR": [
+          49,
+          110
+        ],
+        "kneeL": [
+          43,
+          122
+        ],
+        "ankleL": [
+          53,
+          130
+        ],
+        "heelL": [
+          59,
+          130
+        ],
+        "toeL": [
+          43,
+          135
+        ],
+        "kneeR": [
+          48,
+          125
+        ],
+        "ankleR": [
+          48,
+          139
+        ],
+        "heelR": [
+          55,
+          143
+        ],
+        "toeR": [
+          37,
+          143
+        ],
+        "handL": [
+          47.929,
+          106.616
+        ],
+        "elbowL": [
+          47.061,
+          96.439
+        ],
+        "handR": [
+          48,
+          106
+        ],
+        "elbowR": [
+          48.45,
+          96.1
+        ]
+      },
+      "phase": "far stance / near passing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handL"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    },
+    "left/7": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "shoulderL": [
+          46,
+          83
+        ],
+        "shoulderR": [
+          49,
+          83
+        ],
+        "hipL": [
+          46,
+          109
+        ],
+        "hipR": [
+          49,
+          109
+        ],
+        "kneeL": [
+          38,
+          122
+        ],
+        "ankleL": [
+          41,
+          133
+        ],
+        "heelL": [
+          48,
+          137
+        ],
+        "toeL": [
+          30,
+          137
+        ],
+        "kneeR": [
+          53,
+          124
+        ],
+        "ankleR": [
+          57,
+          138
+        ],
+        "heelR": [
+          64,
+          142
+        ],
+        "toeR": [
+          46,
+          143
+        ],
+        "handL": [
+          63.443,
+          103.029
+        ],
+        "elbowL": [
+          55.594,
+          94.016
+        ],
+        "handR": [
+          47.961,
+          100.876
+        ],
+        "elbowR": [
+          48.429,
+          92.832
+        ]
+      },
+      "phase": "far push off / near swing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8,
+      "visibleHands": [
+        "handR",
+        "handL"
+      ],
+      "landmarkScope": "Visible palms measured in source; hidden joints inferred from motion guide. Not an independent gait-quality test."
+    }
+  }
+}

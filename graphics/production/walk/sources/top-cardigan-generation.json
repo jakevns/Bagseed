@@ -1,0 +1,14 @@
+{
+  "id": "top-cardigan",
+  "phase": 2,
+  "mode": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. Production clothing replacement edit for Bagseed. EDIT reference 1, the EXACT approved headless player body walk atlas. Reference 2 is the locked neutral mannequin, anatomy authority. Keep the original positions, shapes and scale of EVERY hand, shoulder, elbow, hip, knee, ankle and foot, including lifted feet and arm swings. Do not redraw new poses. Exact FOUR COLUMNS and FOUR ROWS: front/down, right profile, rear/up, left profile, four original poses in each row. Keep original 2:3 portrait aspect, generous transparent headroom in the UPPER HALF of EACH cell, bodies only in the lower half, identical placement and gutters. Preserve original friendly tiny hand-drawn indie-RPG outlines, soft cloth shading and proportions. Neck-down only with a short tan neck stump; no heads, hair, ears, faces. True transparent alpha; no shadow, ground, background, grid, labels or text. Tan exposed skin #cf9670. Clothing material keys: medium-blue #5086bf tops, dark-navy #36405a trousers, brown #2b1d14 shoes, cream soles/undershirts and tiny brass buttons. Shade fabrics with value changes within their hue; keep all other color accents out. ONLY REPLACE CLOTHING; KEEP HANDS AND FEET EXACTLY UNMOVED. Replace hoodie with an OPEN-FRONT medium-blue KNITTED CARDIGAN over a cream crew-neck tee. Long sleeves, ribbed cuffs, narrow placket and tiny buttons, soft open hem at hips. Original hands, navy jeans and sneakers unchanged.",
+  "references": [
+    "C:/Projects/Bagseed/graphics/production/walk/assets/phase2-headless-master-reference.png",
+    "C:/Projects/Bagseed/graphics/production/walk/assets/mannequin-reference.png"
+  ],
+  "transparent_background": true,
+  "source": "graphics/production/walk/assets/top-cardigan-v1.png",
+  "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-f00031d9-8e03-4721-8d67-580d0c94b23e.png",
+  "status": "generated; awaiting registration"
+}

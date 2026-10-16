@@ -1,0 +1,101 @@
+{
+  "status": "candidate for standing-style garment trial",
+  "frames": [
+    {
+      "frame": "right/0",
+      "handL": [
+        35.702,
+        107.004
+      ],
+      "neck": [
+        48,
+        78
+      ],
+      "groundError": 0.0
+    },
+    {
+      "frame": "right/1",
+      "handL": [
+        49.935,
+        107.193
+      ],
+      "neck": [
+        48,
+        77
+      ],
+      "groundError": 0.0
+    },
+    {
+      "frame": "right/2",
+      "handL": [
+        59.387,
+        105.83
+      ],
+      "neck": [
+        48,
+        78
+      ],
+      "groundError": 0.0
+    },
+    {
+      "frame": "right/3",
+      "handL": [
+        49.156,
+        108.077
+      ],
+      "neck": [
+        48,
+        77
+      ],
+      "groundError": 0.0
+    },
+    {
+      "frame": "left/0",
+      "handL": [
+        60.525,
+        106.583
+      ],
+      "neck": [
+        48,
+        78
+      ],
+      "groundError": 0.0
+    },
+    {
+      "frame": "left/1",
+      "handL": [
+        46.831,
+        107.179
+      ],
+      "neck": [
+        48,
+        77
+      ],
+      "groundError": 0.0
+    },
+    {
+      "frame": "left/2",
+      "handL": [
+        35.672,
+        105.198
+      ],
+      "neck": [
+        48,
+        78
+      ],
+      "groundError": 0.0
+    },
+    {
+      "frame": "left/3",
+      "handL": [
+        47.449,
+        107.201
+      ],
+      "neck": [
+        48,
+        77
+      ],
+      "groundError": 0.0
+    }
+  ]
+}

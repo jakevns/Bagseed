@@ -551,6 +551,7 @@
     }
     out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-ground),ground+(y-ground)*(frame%2?.988:1)]:breath?[x,ground+(y-ground)*.99]:[x,y]);
     out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;
+    out.bagseedCastWalk=source.bagseedCastWalk;
     if(source.bagseedHand)out.bagseedHand={...source.bagseedHand};
     else if(density===1)out.bagseedHand=hands(out,L,dir);return out;
   }
@@ -566,7 +567,7 @@
     if(!loaded)return cv();const L=normalize(look),signature=key(L)+'|'+dir+'|'+[frame,breath,blink,act,nose,density,walking].join(',');if(cache.has(signature))return cache.get(signature);
     const person=canonical.get(approvalKey(L));let source,rig=true;
     if(person&&nose&&person.actions){source=images.get(person.actions[dir]);rig=false;}
-    else if(person&&person.id!=='player'&&!nose){source=images.get(person.assets[(!person.rig&&(walking||frame)?`${dir}-${frame%4}`:`${dir}-idle`)]);rig=!!person.rig;}
+    else if(person&&person.id!=='player'&&!nose){source=images.get(person.assets[(!person.rig&&(walking||frame)?`${dir}-${frame%(person.walkFrameCount||4)}`:`${dir}-idle`)]);rig=!!person.rig;if(person.walkFrameCount===8&&(walking||frame))source.bagseedCastWalk={id:person.id,dir,frame:frame%8};}
     else if(!nose&&(walking||frame>0)&&(source=authoredWalk(L,dir,frame,!!blink,density))){rig=false;breath=0;act=0;}
     else source=generic(L,dir,nose,!!blink,density);
     const out=animate(source,L,dir,frame,breath,blink,act&&!nose,rig&&!nose,density);
@@ -597,6 +598,7 @@
   buildNoseSprite1151=(L,dir)=>sprite(L,dir,0,0,0,0,true);
   drawPerson=function(c,x,y,look,scale=1,anim={},face){
     if(typeof anim==='number')anim={frame:anim,dir:face<0?'left':face>0?'right':'down'};
+    if(castWalkDrawing&&canonical.get(approvalKey(normalize(look)))?.id===castWalkDrawing.id)anim={...anim,frame:castWalkDrawing.frame,walk:castWalkDrawing.walk};
     let smell=Smell1151.drawing;
     if(!smell&&Smell1151.active?.kind==='staff'&&Smell1151.active.scene===Smell1151.scene()&&Math.abs(x-Smell1151.active.view.x)<1&&Math.abs(y-Smell1151.active.view.y)<1)smell=Smell1151.active;
     const dir=smell?Smell1151.face({x,y}):anim.dir||'down';
@@ -607,6 +609,7 @@
   };
   Cast115.drawKid=function(c,x,y,look,anim={}){drawPerson(c,x,y,{...look,short:true},1,anim);};
   drawTinyPerson=(c,x,y,look,frame=0,prop)=>drawPerson(c,x,y,{...look,prop},.42,{frame});
+  __BAGSEED_CAST_WALK_CLOCKS__
   drawCreatorPreview=function(t){
     const canvas=$('#creatorPreview');if(!canvas||!runtime.cr)return;
     if(!canvas.dataset.illustratedDensity){canvas.width=540;canvas.height=336;canvas.dataset.illustratedDensity='3';canvas.style.imageRendering='auto';canvas.style.aspectRatio='180 / 112';canvas.style.height='auto';}
@@ -675,6 +678,6 @@
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-phase-1',walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-phase-2',walkFrameCount:castWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();

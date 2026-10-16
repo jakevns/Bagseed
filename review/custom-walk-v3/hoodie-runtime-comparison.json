@@ -1,0 +1,94 @@
+{
+  "status": "candidate; visual comparison required",
+  "measurements": [
+    {
+      "dir": "right",
+      "frame": 0,
+      "hand": {
+        "x": 35.702,
+        "y": 107.004
+      },
+      "authored": "right/0",
+      "width": 288,
+      "height": 432
+    },
+    {
+      "dir": "left",
+      "frame": 0,
+      "hand": {
+        "x": 60.525,
+        "y": 106.583
+      },
+      "authored": "left/0",
+      "width": 288,
+      "height": 432
+    },
+    {
+      "dir": "right",
+      "frame": 1,
+      "hand": {
+        "x": 49.935,
+        "y": 107.193
+      },
+      "authored": "right/1",
+      "width": 288,
+      "height": 432
+    },
+    {
+      "dir": "left",
+      "frame": 1,
+      "hand": {
+        "x": 46.831,
+        "y": 107.179
+      },
+      "authored": "left/1",
+      "width": 288,
+      "height": 432
+    },
+    {
+      "dir": "right",
+      "frame": 2,
+      "hand": {
+        "x": 59.387,
+        "y": 105.83
+      },
+      "authored": "right/2",
+      "width": 288,
+      "height": 432
+    },
+    {
+      "dir": "left",
+      "frame": 2,
+      "hand": {
+        "x": 35.672,
+        "y": 105.198
+      },
+      "authored": "left/2",
+      "width": 288,
+      "height": 432
+    },
+    {
+      "dir": "right",
+      "frame": 3,
+      "hand": {
+        "x": 49.156,
+        "y": 108.077
+      },
+      "authored": "right/3",
+      "width": 288,
+      "height": 432
+    },
+    {
+      "dir": "left",
+      "frame": 3,
+      "hand": {
+        "x": 47.449,
+        "y": 107.201
+      },
+      "authored": "left/3",
+      "width": 288,
+      "height": 432
+    }
+  ],
+  "browserErrors": []
+}

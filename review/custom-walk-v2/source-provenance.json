@@ -1,0 +1,428 @@
+{
+  "phase": 2,
+  "sourceCommit": "73dcebae5d7a137c857093ce588ed20f8be9f183",
+  "generatedOriginals": 20,
+  "originalsUnchanged": true,
+  "sources": [
+    {
+      "source": "graphics/production/walk/assets/bottom-cargo-correction-2-0.png",
+      "sha256": "cc2bca57eacde820624b8200eb7720658b126e5b8faf9d078228e11925c70d2e",
+      "originalOutputIdentical": true,
+      "promptSHA256": "e1d8b35bb35a9c0005e316e831ad485ab61ab55eff63492a558349ebecc8ad15",
+      "generationRecord": "graphics/production/walk/sources/bottom-cargo-correction-2-0-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/bottom-cargo-correction-2-0-master-reference.png": "31d525b85708ef1516e36528908b03e1c485b0590dedbf435bfdcf95e9682306"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-cargo-v1.png",
+      "sha256": "6419d038a580a2dde74701a942878b306b12781c00443cdbad7b17ec63fa5f70",
+      "originalOutputIdentical": true,
+      "promptSHA256": "9d8a5d2949900519a8d080ebae4dfe43a137fd27f3c70adb7c240a1b108bb75f",
+      "generationRecord": "graphics/production/walk/sources/bottom-cargo-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-joggers-v1.png",
+      "sha256": "06170673d7cf00d5c4e1092feb4a10fedc10bfcd24ed949812cce4496c71a4bd",
+      "originalOutputIdentical": true,
+      "promptSHA256": "6dd661f93a433b6990f50af52c522374580ac8f6a884ed5393797ce17550b348",
+      "generationRecord": "graphics/production/walk/sources/bottom-joggers-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/bottom-shorts-v1.png",
+      "sha256": "b10e1b5547e2f5e5b4a4d57f13b4e7c849031813cabb8558c96150d9f73cf5ef",
+      "originalOutputIdentical": true,
+      "promptSHA256": "fea72e75982fe3507477cd971b13a409b9ef7f6403705a96e511d5a2bc9ca747",
+      "generationRecord": "graphics/production/walk/sources/bottom-shorts-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-boots-v1.png",
+      "sha256": "24ecf67805f7381baf2051aac98d2052999883573c3b653bd274ef039c5c5556",
+      "originalOutputIdentical": true,
+      "promptSHA256": "9eb5ee997fdde66dc0c14467f56c5b37a70bd42cabf9652adae3be3af3d1b19b",
+      "generationRecord": "graphics/production/walk/sources/shoe-boots-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/shoe-rainboots-v1.png",
+      "sha256": "86130d6167ae6f1c5fce01d442c0e4010035e5309fc7e7fb4cd1fd0802d3f644",
+      "originalOutputIdentical": true,
+      "promptSHA256": "f04ff6f714e64afb41c36f011fd640fb09e8ccc11acb422629d1c1162522f8d6",
+      "generationRecord": "graphics/production/walk/sources/shoe-rainboots-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-cardigan-v1.png",
+      "sha256": "80d8e3170ea1dfd7db720be5ed216093223ac6b95829ea4fd43ac67abf3868a5",
+      "originalOutputIdentical": true,
+      "promptSHA256": "ac7e70546a13dfd901311cdc680dee724a06022716adeb28911cd85b0a0d2988",
+      "generationRecord": "graphics/production/walk/sources/top-cardigan-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-crop-correction-1-0.png",
+      "sha256": "86b6f7a6f67a90e1b4fc15cdbcae4ea440530fe12902e90eead2718e70f801be",
+      "originalOutputIdentical": true,
+      "promptSHA256": "281de0a5cee8c1b697c2a389fab9dd577f3b5d68c1d519dca554cc8a965d0a7c",
+      "generationRecord": "graphics/production/walk/sources/top-crop-correction-1-0-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/top-crop-correction-1-0-master-reference.png": "4e647a30f796067d836669d2fa0349b10a7ce238a161b36839e0a8b901b7422d"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-crop-v1.png",
+      "sha256": "dfdd2fc6422f90d6867cf8461ec09af52ca677b06ac43d097455c2975c396275",
+      "originalOutputIdentical": true,
+      "promptSHA256": "09cf9fb7f4b2cc1a017c6e980cc97479c7d389c6dfdc373705a4a53df043de25",
+      "generationRecord": "graphics/production/walk/sources/top-crop-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-garden-v1.png",
+      "sha256": "8e22062da8ed265853089aaa62a84cec60a609a69de044ec6e2598c16610ffa0",
+      "originalOutputIdentical": true,
+      "promptSHA256": "3b14a037e7b6464ca36a2112f5a71d9a72baa361fef854935319546bf5380221",
+      "generationRecord": "graphics/production/walk/sources/top-garden-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-jacket-v1.png",
+      "sha256": "a4df6f8875f834d5ca15dda921e0ddd772d997aaf3a5a8585cf045fcd96d7bef",
+      "originalOutputIdentical": true,
+      "promptSHA256": "a6820e13234c5d95983d6685b7dbe4178d4290d82dd394df7d4b85c2b9f2c72c",
+      "generationRecord": "graphics/production/walk/sources/top-jacket-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-labcoat-correction-2-0.png",
+      "sha256": "e67ca0b8d8d41a44f1bd31b601e96c06c76ea60cd14e4e97170cf1533bd70093",
+      "originalOutputIdentical": true,
+      "promptSHA256": "19e18eff511866de5302326f7f227b860b9e388973e2138cf864aba67c4e5df6",
+      "generationRecord": "graphics/production/walk/sources/top-labcoat-correction-2-0-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/top-labcoat-correction-2-0-master-reference.png": "afda7a688c42c88ed9a160876510c6d656e42db35c6ba295f24c220b146de972"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-labcoat-v1.png",
+      "sha256": "e0618b520c9efdfd5da6b4dd3d7171582987f1617a35e5975d10d9ed73fab43b",
+      "originalOutputIdentical": true,
+      "promptSHA256": "31c46440074ec0c97938353c9a191f06854e87cba750ed2227c82c452eef49aa",
+      "generationRecord": "graphics/production/walk/sources/top-labcoat-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-officer-v1.png",
+      "sha256": "eba7e545f6db69900d8c50aa94964c7c943ddee04a213ba8df5e9b6354042f16",
+      "originalOutputIdentical": true,
+      "promptSHA256": "2c82d57ca8b60c8a28f4715ba6937cf5a12042553198a289e4f502224adaa4eb",
+      "generationRecord": "graphics/production/walk/sources/top-officer-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-pjs-v1.png",
+      "sha256": "64457780fb1f5e20adae273ddff015e9be54c04bd02ca8c630348f00bd83b937",
+      "originalOutputIdentical": true,
+      "promptSHA256": "5bbd6912ecde7493fc0f712fe687544a841b82e7216856a05074eec6b014f9e0",
+      "generationRecord": "graphics/production/walk/sources/top-pjs-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-suit-v1.png",
+      "sha256": "b4167b1dab2d0dc09ac205b16980468cfe73de6d0b311def5286f26e8a70be89",
+      "originalOutputIdentical": true,
+      "promptSHA256": "c0d710fa0ef6caae1bc6d4e20df8bd3d502fc7f23e1e62e21e9ebacaa123dd6d",
+      "generationRecord": "graphics/production/walk/sources/top-suit-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-sweater-v1.png",
+      "sha256": "fe79825dbda4d48bd586133377649b3728694d4e30eb6264f1198415e24eb932",
+      "originalOutputIdentical": true,
+      "promptSHA256": "32081384f52b2f6e31fa667c2b796c616045e4d81379418525b4743854e6fe04",
+      "generationRecord": "graphics/production/walk/sources/top-sweater-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-tank-correction-1-0.png",
+      "sha256": "22681861edc05bb1b30d737b1a13be819294fc0b46050112c85b94fd076aea7e",
+      "originalOutputIdentical": true,
+      "promptSHA256": "db9edbe8ffee3081c7128237fed1bf11ef875a4da547f755a37284550dac977f",
+      "generationRecord": "graphics/production/walk/sources/top-tank-correction-1-0-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/top-tank-correction-1-0-master-reference.png": "e15addf5371f4d6bc4a134ad4346f4f26337bcca11739cba5bd1d0779947461d"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-tank-v1.png",
+      "sha256": "826f0cce4bf0ef04ede14568cea20da62ec93493748d643c9a32f411dd79bb6d",
+      "originalOutputIdentical": true,
+      "promptSHA256": "69b5fe9842b550e19fb1d0717a8de2ec22e5cb5c775f2c49461dff891f18c7ac",
+      "generationRecord": "graphics/production/walk/sources/top-tank-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    },
+    {
+      "source": "graphics/production/walk/assets/top-work-v1.png",
+      "sha256": "6f0d7eabd32402e6a6aeabd15821900386057957f087dcd5f12ba244baec0761",
+      "originalOutputIdentical": true,
+      "promptSHA256": "931db1f46afbc3dad5f87e6e34643c52be6a19fe6f0036982d388854d3f22f13",
+      "generationRecord": "graphics/production/walk/sources/top-work-generation.json",
+      "referenceHashes": {
+        "graphics/production/walk/assets/phase2-headless-master-reference.png": "ce428976088e62cbc8321f37816f6cbab3c37d3fdb3c88d2a43e76e309a2f039",
+        "graphics/production/walk/assets/mannequin-reference.png": "1d7c290a3a624eb9af751b0bfe913f2c4d8978cebc32426b4f5b713c8709e2b7"
+      }
+    }
+  ],
+  "lockedPhase1Files": [
+    "graphics/production/walk/atlases/bottom-jeans.png",
+    "graphics/production/walk/atlases/bottom-skirt.png",
+    "graphics/production/walk/atlases/shoe-sandals.png",
+    "graphics/production/walk/atlases/shoe-sneakers.png",
+    "graphics/production/walk/atlases/skin-base.png",
+    "graphics/production/walk/atlases/top-flannel.png",
+    "graphics/production/walk/atlases/top-hoodie.png",
+    "graphics/production/walk/atlases/top-overalls.png",
+    "graphics/production/walk/atlases/top-tee.png",
+    "graphics/production/walk/master/down-0.png",
+    "graphics/production/walk/master/down-1.png",
+    "graphics/production/walk/master/down-2.png",
+    "graphics/production/walk/master/down-3.png",
+    "graphics/production/walk/master/left-0.png",
+    "graphics/production/walk/master/left-1.png",
+    "graphics/production/walk/master/left-2.png",
+    "graphics/production/walk/master/left-3.png",
+    "graphics/production/walk/master/right-0.png",
+    "graphics/production/walk/master/right-1.png",
+    "graphics/production/walk/master/right-2.png",
+    "graphics/production/walk/master/right-3.png",
+    "graphics/production/walk/master/up-0.png",
+    "graphics/production/walk/master/up-1.png",
+    "graphics/production/walk/master/up-2.png",
+    "graphics/production/walk/master/up-3.png",
+    "graphics/production/walk/registered/bottom-jeans/down-0.png",
+    "graphics/production/walk/registered/bottom-jeans/down-1.png",
+    "graphics/production/walk/registered/bottom-jeans/down-2.png",
+    "graphics/production/walk/registered/bottom-jeans/down-3.png",
+    "graphics/production/walk/registered/bottom-jeans/left-0.png",
+    "graphics/production/walk/registered/bottom-jeans/left-1.png",
+    "graphics/production/walk/registered/bottom-jeans/left-2.png",
+    "graphics/production/walk/registered/bottom-jeans/left-3.png",
+    "graphics/production/walk/registered/bottom-jeans/right-0.png",
+    "graphics/production/walk/registered/bottom-jeans/right-1.png",
+    "graphics/production/walk/registered/bottom-jeans/right-2.png",
+    "graphics/production/walk/registered/bottom-jeans/right-3.png",
+    "graphics/production/walk/registered/bottom-jeans/up-0.png",
+    "graphics/production/walk/registered/bottom-jeans/up-1.png",
+    "graphics/production/walk/registered/bottom-jeans/up-2.png",
+    "graphics/production/walk/registered/bottom-jeans/up-3.png",
+    "graphics/production/walk/registered/bottom-skirt/down-0.png",
+    "graphics/production/walk/registered/bottom-skirt/down-1.png",
+    "graphics/production/walk/registered/bottom-skirt/down-2.png",
+    "graphics/production/walk/registered/bottom-skirt/down-3.png",
+    "graphics/production/walk/registered/bottom-skirt/left-0.png",
+    "graphics/production/walk/registered/bottom-skirt/left-1.png",
+    "graphics/production/walk/registered/bottom-skirt/left-2.png",
+    "graphics/production/walk/registered/bottom-skirt/left-3.png",
+    "graphics/production/walk/registered/bottom-skirt/right-0.png",
+    "graphics/production/walk/registered/bottom-skirt/right-1.png",
+    "graphics/production/walk/registered/bottom-skirt/right-2.png",
+    "graphics/production/walk/registered/bottom-skirt/right-3.png",
+    "graphics/production/walk/registered/bottom-skirt/up-0.png",
+    "graphics/production/walk/registered/bottom-skirt/up-1.png",
+    "graphics/production/walk/registered/bottom-skirt/up-2.png",
+    "graphics/production/walk/registered/bottom-skirt/up-3.png",
+    "graphics/production/walk/registered/mannequin/down-0.png",
+    "graphics/production/walk/registered/mannequin/down-1.png",
+    "graphics/production/walk/registered/mannequin/down-2.png",
+    "graphics/production/walk/registered/mannequin/down-3.png",
+    "graphics/production/walk/registered/mannequin/left-0.png",
+    "graphics/production/walk/registered/mannequin/left-1.png",
+    "graphics/production/walk/registered/mannequin/left-2.png",
+    "graphics/production/walk/registered/mannequin/left-3.png",
+    "graphics/production/walk/registered/mannequin/right-0.png",
+    "graphics/production/walk/registered/mannequin/right-1.png",
+    "graphics/production/walk/registered/mannequin/right-2.png",
+    "graphics/production/walk/registered/mannequin/right-3.png",
+    "graphics/production/walk/registered/mannequin/up-0.png",
+    "graphics/production/walk/registered/mannequin/up-1.png",
+    "graphics/production/walk/registered/mannequin/up-2.png",
+    "graphics/production/walk/registered/mannequin/up-3.png",
+    "graphics/production/walk/registered/shoe-sandals/down-0.png",
+    "graphics/production/walk/registered/shoe-sandals/down-1.png",
+    "graphics/production/walk/registered/shoe-sandals/down-2.png",
+    "graphics/production/walk/registered/shoe-sandals/down-3.png",
+    "graphics/production/walk/registered/shoe-sandals/left-0.png",
+    "graphics/production/walk/registered/shoe-sandals/left-1.png",
+    "graphics/production/walk/registered/shoe-sandals/left-2.png",
+    "graphics/production/walk/registered/shoe-sandals/left-3.png",
+    "graphics/production/walk/registered/shoe-sandals/right-0.png",
+    "graphics/production/walk/registered/shoe-sandals/right-1.png",
+    "graphics/production/walk/registered/shoe-sandals/right-2.png",
+    "graphics/production/walk/registered/shoe-sandals/right-3.png",
+    "graphics/production/walk/registered/shoe-sandals/up-0.png",
+    "graphics/production/walk/registered/shoe-sandals/up-1.png",
+    "graphics/production/walk/registered/shoe-sandals/up-2.png",
+    "graphics/production/walk/registered/shoe-sandals/up-3.png",
+    "graphics/production/walk/registered/shoe-sneakers/down-0.png",
+    "graphics/production/walk/registered/shoe-sneakers/down-1.png",
+    "graphics/production/walk/registered/shoe-sneakers/down-2.png",
+    "graphics/production/walk/registered/shoe-sneakers/down-3.png",
+    "graphics/production/walk/registered/shoe-sneakers/left-0.png",
+    "graphics/production/walk/registered/shoe-sneakers/left-1.png",
+    "graphics/production/walk/registered/shoe-sneakers/left-2.png",
+    "graphics/production/walk/registered/shoe-sneakers/left-3.png",
+    "graphics/production/walk/registered/shoe-sneakers/right-0.png",
+    "graphics/production/walk/registered/shoe-sneakers/right-1.png",
+    "graphics/production/walk/registered/shoe-sneakers/right-2.png",
+    "graphics/production/walk/registered/shoe-sneakers/right-3.png",
+    "graphics/production/walk/registered/shoe-sneakers/up-0.png",
+    "graphics/production/walk/registered/shoe-sneakers/up-1.png",
+    "graphics/production/walk/registered/shoe-sneakers/up-2.png",
+    "graphics/production/walk/registered/shoe-sneakers/up-3.png",
+    "graphics/production/walk/registered/skin/down-0.png",
+    "graphics/production/walk/registered/skin/down-1.png",
+    "graphics/production/walk/registered/skin/down-2.png",
+    "graphics/production/walk/registered/skin/down-3.png",
+    "graphics/production/walk/registered/skin/left-0.png",
+    "graphics/production/walk/registered/skin/left-1.png",
+    "graphics/production/walk/registered/skin/left-2.png",
+    "graphics/production/walk/registered/skin/left-3.png",
+    "graphics/production/walk/registered/skin/right-0.png",
+    "graphics/production/walk/registered/skin/right-1.png",
+    "graphics/production/walk/registered/skin/right-2.png",
+    "graphics/production/walk/registered/skin/right-3.png",
+    "graphics/production/walk/registered/skin/up-0.png",
+    "graphics/production/walk/registered/skin/up-1.png",
+    "graphics/production/walk/registered/skin/up-2.png",
+    "graphics/production/walk/registered/skin/up-3.png",
+    "graphics/production/walk/registered/top-flannel/down-0.png",
+    "graphics/production/walk/registered/top-flannel/down-1.png",
+    "graphics/production/walk/registered/top-flannel/down-2.png",
+    "graphics/production/walk/registered/top-flannel/down-3.png",
+    "graphics/production/walk/registered/top-flannel/left-0.png",
+    "graphics/production/walk/registered/top-flannel/left-1.png",
+    "graphics/production/walk/registered/top-flannel/left-2.png",
+    "graphics/production/walk/registered/top-flannel/left-3.png",
+    "graphics/production/walk/registered/top-flannel/right-0.png",
+    "graphics/production/walk/registered/top-flannel/right-1.png",
+    "graphics/production/walk/registered/top-flannel/right-2.png",
+    "graphics/production/walk/registered/top-flannel/right-3.png",
+    "graphics/production/walk/registered/top-flannel/up-0.png",
+    "graphics/production/walk/registered/top-flannel/up-1.png",
+    "graphics/production/walk/registered/top-flannel/up-2.png",
+    "graphics/production/walk/registered/top-flannel/up-3.png",
+    "graphics/production/walk/registered/top-hoodie/down-0.png",
+    "graphics/production/walk/registered/top-hoodie/down-1.png",
+    "graphics/production/walk/registered/top-hoodie/down-2.png",
+    "graphics/production/walk/registered/top-hoodie/down-3.png",
+    "graphics/production/walk/registered/top-hoodie/left-0.png",
+    "graphics/production/walk/registered/top-hoodie/left-1.png",
+    "graphics/production/walk/registered/top-hoodie/left-2.png",
+    "graphics/production/walk/registered/top-hoodie/left-3.png",
+    "graphics/production/walk/registered/top-hoodie/right-0.png",
+    "graphics/production/walk/registered/top-hoodie/right-1.png",
+    "graphics/production/walk/registered/top-hoodie/right-2.png",
+    "graphics/production/walk/registered/top-hoodie/right-3.png",
+    "graphics/production/walk/registered/top-hoodie/up-0.png",
+    "graphics/production/walk/registered/top-hoodie/up-1.png",
+    "graphics/production/walk/registered/top-hoodie/up-2.png",
+    "graphics/production/walk/registered/top-hoodie/up-3.png",
+    "graphics/production/walk/registered/top-overalls/down-0.png",
+    "graphics/production/walk/registered/top-overalls/down-1.png",
+    "graphics/production/walk/registered/top-overalls/down-2.png",
+    "graphics/production/walk/registered/top-overalls/down-3.png",
+    "graphics/production/walk/registered/top-overalls/left-0.png",
+    "graphics/production/walk/registered/top-overalls/left-1.png",
+    "graphics/production/walk/registered/top-overalls/left-2.png",
+    "graphics/production/walk/registered/top-overalls/left-3.png",
+    "graphics/production/walk/registered/top-overalls/right-0.png",
+    "graphics/production/walk/registered/top-overalls/right-1.png",
+    "graphics/production/walk/registered/top-overalls/right-2.png",
+    "graphics/production/walk/registered/top-overalls/right-3.png",
+    "graphics/production/walk/registered/top-overalls/up-0.png",
+    "graphics/production/walk/registered/top-overalls/up-1.png",
+    "graphics/production/walk/registered/top-overalls/up-2.png",
+    "graphics/production/walk/registered/top-overalls/up-3.png",
+    "graphics/production/walk/registered/top-tee/down-0.png",
+    "graphics/production/walk/registered/top-tee/down-1.png",
+    "graphics/production/walk/registered/top-tee/down-2.png",
+    "graphics/production/walk/registered/top-tee/down-3.png",
+    "graphics/production/walk/registered/top-tee/left-0.png",
+    "graphics/production/walk/registered/top-tee/left-1.png",
+    "graphics/production/walk/registered/top-tee/left-2.png",
+    "graphics/production/walk/registered/top-tee/left-3.png",
+    "graphics/production/walk/registered/top-tee/right-0.png",
+    "graphics/production/walk/registered/top-tee/right-1.png",
+    "graphics/production/walk/registered/top-tee/right-2.png",
+    "graphics/production/walk/registered/top-tee/right-3.png",
+    "graphics/production/walk/registered/top-tee/up-0.png",
+    "graphics/production/walk/registered/top-tee/up-1.png",
+    "graphics/production/walk/registered/top-tee/up-2.png",
+    "graphics/production/walk/registered/top-tee/up-3.png",
+    "graphics/production/walk/rig.json"
+  ],
+  "protectedRendererBlocksUnchanged": {
+    "head": true,
+    "standingBody": true,
+    "standingFigureAndReactions": true,
+    "portrait": true
+  },
+  "protectedArtChanges": [],
+  "garmentItems": 24,
+  "garmentFrames": 384,
+  "runtimeCompression": "lossless WebP; encoder verifies decoded RGBA equality against every PNG",
+  "walkWebpBytes": 6617806,
+  "actionPngBytes": 34617915,
+  "actionWebpBytes": 23631014,
+  "layerPngBytes": 10276177,
+  "layerWebpBytes": 6275668,
+  "scope": "Full wardrobe only; no new heads, hair, standing poses, portraits or reactions."
+}

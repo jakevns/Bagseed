@@ -1,0 +1,282 @@
+{
+  "source": "assets/profile-v3-mannequin-v1.png",
+  "frames": [
+    {
+      "frame": "right/0",
+      "sourceCell": [
+        0,
+        0,
+        362,
+        545
+      ],
+      "uniformScale": 0.21065262430939227,
+      "rotationDegrees": -2.0,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          53.666666666666664,
+          57.98393574297189
+        ],
+        "handL": [
+          37.488243430152146,
+          97.77040110650069
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          79.0
+        ],
+        "handL": [
+          39.0,
+          107.5
+        ]
+      },
+      "errors": {
+        "measuredNeck": 3.037,
+        "handL": 2.785
+      },
+      "maxKeypointError": 3.037,
+      "groundError": 0.0,
+      "handLandmarks": 1,
+      "accepted": false,
+      "scope": "measured source neck and visible distal hand markers; unmeasured hidden limbs require visual inspection"
+    },
+    {
+      "frame": "right/1",
+      "sourceCell": [
+        362,
+        0,
+        724,
+        545
+      ],
+      "uniformScale": 0.21065262430939227,
+      "rotationDegrees": -2.0,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          51.666666666666664,
+          55.57627118644067
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          78.0
+        ]
+      },
+      "errors": {
+        "measuredNeck": 4.402
+      },
+      "maxKeypointError": 4.402,
+      "groundError": 0.0,
+      "handLandmarks": 0,
+      "accepted": false,
+      "scope": "measured source neck and visible distal hand markers; unmeasured hidden limbs require visual inspection"
+    },
+    {
+      "frame": "right/2",
+      "sourceCell": [
+        724,
+        0,
+        1086,
+        545
+      ],
+      "uniformScale": 0.21065262430939227,
+      "rotationDegrees": -1.8476562500000004,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          54.0,
+          57.0040650406504
+        ],
+        "handR": [
+          37.242835595776775,
+          96.06184012066365
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          79.0
+        ],
+        "handR": [
+          38.0,
+          107.5
+        ]
+      },
+      "errors": {
+        "measuredNeck": 3.864,
+        "handR": 2.483
+      },
+      "maxKeypointError": 3.864,
+      "groundError": 0.0,
+      "handLandmarks": 1,
+      "accepted": false,
+      "scope": "measured source neck and visible distal hand markers; unmeasured hidden limbs require visual inspection"
+    },
+    {
+      "frame": "right/3",
+      "sourceCell": [
+        1086,
+        0,
+        1448,
+        545
+      ],
+      "uniformScale": 0.21065262430939227,
+      "rotationDegrees": -2.0,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          49.333333333333336,
+          54.91714836223506
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          78.0
+        ]
+      },
+      "errors": {
+        "measuredNeck": 4.768
+      },
+      "maxKeypointError": 4.768,
+      "groundError": 0.0,
+      "handLandmarks": 0,
+      "accepted": false,
+      "scope": "measured source neck and visible distal hand markers; unmeasured hidden limbs require visual inspection"
+    },
+    {
+      "frame": "left/0",
+      "sourceCell": [
+        0,
+        545,
+        362,
+        1086
+      ],
+      "uniformScale": 0.21065262430939227,
+      "rotationDegrees": 2.0,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          49.666666666666664,
+          57.37171717171717
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          79.0
+        ]
+      },
+      "errors": {
+        "measuredNeck": 3.486
+      },
+      "maxKeypointError": 3.486,
+      "groundError": 0.0,
+      "handLandmarks": 0,
+      "accepted": false,
+      "scope": "measured source neck and visible distal hand markers; unmeasured hidden limbs require visual inspection"
+    },
+    {
+      "frame": "left/1",
+      "sourceCell": [
+        362,
+        545,
+        724,
+        1086
+      ],
+      "uniformScale": 0.21065262430939227,
+      "rotationDegrees": 2.0,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          53.0,
+          54.36666666666667
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          78.0
+        ]
+      },
+      "errors": {
+        "measuredNeck": 5.279
+      },
+      "maxKeypointError": 5.279,
+      "groundError": 0.0,
+      "handLandmarks": 0,
+      "accepted": false,
+      "scope": "measured source neck and visible distal hand markers; unmeasured hidden limbs require visual inspection"
+    },
+    {
+      "frame": "left/2",
+      "sourceCell": [
+        724,
+        545,
+        1086,
+        1086
+      ],
+      "uniformScale": 0.21065262430939227,
+      "rotationDegrees": 2.0,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          49.166666666666664,
+          57.04320987654321
+        ],
+        "handL": [
+          32.71003717472119,
+          94.36555142503097
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          79.0
+        ],
+        "handL": [
+          38.0,
+          105.5
+        ]
+      },
+      "errors": {
+        "measuredNeck": 3.773,
+        "handL": 3.773
+      },
+      "maxKeypointError": 3.773,
+      "groundError": 0.0,
+      "handLandmarks": 1,
+      "accepted": false,
+      "scope": "measured source neck and visible distal hand markers; unmeasured hidden limbs require visual inspection"
+    },
+    {
+      "frame": "left/3",
+      "sourceCell": [
+        1086,
+        545,
+        1448,
+        1086
+      ],
+      "uniformScale": 0.21065262430939227,
+      "rotationDegrees": 2.0,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          52.666666666666664,
+          54.044585987261144
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          78.0
+        ]
+      },
+      "errors": {
+        "measuredNeck": 5.516
+      },
+      "maxKeypointError": 5.516,
+      "groundError": 0.0,
+      "handLandmarks": 0,
+      "accepted": false,
+      "scope": "measured source neck and visible distal hand markers; unmeasured hidden limbs require visual inspection"
+    }
+  ],
+  "passed": 0,
+  "total": 8
+}

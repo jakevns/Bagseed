@@ -1,0 +1,45 @@
+{
+  "method": "built-in image_gen",
+  "reason": "Correct weak arm swing in first profile sheets and missing watering can in one Doug pose.",
+  "jobs": [
+    {
+      "id": "remy",
+      "dir": "right",
+      "file": "assets/remy-right-v2.png",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/references/approved-eight-pose-standard.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/remy-sheet.png"
+        ],
+        "prompt": "Edit the FIRST reference into a high-resolution Bagseed walk sheet for the character in SECOND reference. FIRST image is the user-approved eight-pose walking standard. COPY ITS EIGHT DISTINCT BODY/ARM/LEG POSES AND SAME-VIEW CHRONOLOGICAL ORDER EXACTLY, while replacing the character identity and clothes with the second reference's specified person. Do not copy the old source's repeated four-pose leg or arm swing. Four columns, two rows, EIGHT RIGHT-FACING full-body figures; BOTH rows face RIGHT, no turnaround. Remove all text, labels, dark review background and floor lines: result must have fully TRANSPARENT background, isolated drawings, no shadows. Keep same original Bagseed delicate illustrated style, thin outlines, fine hair strands/fabric detail and consistent head/body size. Full figures including hair and shoes, no cropping. PRIMARY MOTION CONSTRAINTS: camera-near arm is BACK in pose1, nearly VERTICAL in pose2 and3, FORWARD in pose4 and5, moving back toward vertical in pose6, VERTICAL in pose7 and BACK in pose8. Near leg goes forward, planted underneath, backward, then raised forward again over full stride. Frame3 and7 MUST be narrow passing poses with one vertical support leg and other visibly BENT raised leg, NOT a wide stride or front kick. TWO DIFFERENT FOOTFALLS, one in pose1 and the opposite one in pose5. Maintain camera-near/far limb identity through the crossings; moving the same leg twice is wrong. ONLY CHARACTER: REMY ALVAREZ: warm tan skin, thick round dark brown curly hair, square brown glasses, mustard yellow short-sleeve T-shirt, charcoal shorts, visible bare lower legs, brown strapped sandals. Preserve the existing face, compact proportions, hair volume and glasses.\nDIRECTION: ALL EIGHT figures face screen RIGHT in strict RIGHT PROFILE. Nose and shoe toes point RIGHT. Both rows face RIGHT. Never mirror or rotate the second half. Use the body-only motion reference's eight distinct side phases."
+      }
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "file": "assets/priya-right-v2.png",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/references/approved-eight-pose-standard.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/priya-sheet.png"
+        ],
+        "prompt": "Edit the FIRST reference into a high-resolution Bagseed walk sheet for the character in SECOND reference. FIRST image is the user-approved eight-pose walking standard. COPY ITS EIGHT DISTINCT BODY/ARM/LEG POSES AND SAME-VIEW CHRONOLOGICAL ORDER EXACTLY, while replacing the character identity and clothes with the second reference's specified person. Do not copy the old source's repeated four-pose leg or arm swing. Four columns, two rows, EIGHT RIGHT-FACING full-body figures; BOTH rows face RIGHT, no turnaround. Remove all text, labels, dark review background and floor lines: result must have fully TRANSPARENT background, isolated drawings, no shadows. Keep same original Bagseed delicate illustrated style, thin outlines, fine hair strands/fabric detail and consistent head/body size. Full figures including hair and shoes, no cropping. PRIMARY MOTION CONSTRAINTS: camera-near arm is BACK in pose1, nearly VERTICAL in pose2 and3, FORWARD in pose4 and5, moving back toward vertical in pose6, VERTICAL in pose7 and BACK in pose8. Near leg goes forward, planted underneath, backward, then raised forward again over full stride. Frame3 and7 MUST be narrow passing poses with one vertical support leg and other visibly BENT raised leg, NOT a wide stride or front kick. TWO DIFFERENT FOOTFALLS, one in pose1 and the opposite one in pose5. Maintain camera-near/far limb identity through the crossings; moving the same leg twice is wrong. ONLY CHARACTER: PRIYA RAMAN: warm medium tan skin, long thick dark brown high ponytail with flowing curls, blue pullover hoodie with cream drawstrings, charcoal trousers, cream-white sneakers. Preserve the original face, ponytail placement, body proportions and outfit.\nDIRECTION: ALL EIGHT figures face screen RIGHT in strict RIGHT PROFILE. Nose and shoe toes point RIGHT. Both rows face RIGHT. Never mirror or rotate the second half. Use the body-only motion reference's eight distinct side phases."
+      }
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "file": "assets/doug-right-v2.png",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/references/approved-eight-pose-standard.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/doug-sheet.png"
+        ],
+        "prompt": "Edit the FIRST reference into a high-resolution Bagseed walk sheet for the character in SECOND reference. FIRST image is the user-approved eight-pose walking standard. COPY ITS EIGHT DISTINCT BODY/ARM/LEG POSES AND SAME-VIEW CHRONOLOGICAL ORDER EXACTLY, while replacing the character identity and clothes with the second reference's specified person. Do not copy the old source's repeated four-pose leg or arm swing. Four columns, two rows, EIGHT RIGHT-FACING full-body figures; BOTH rows face RIGHT, no turnaround. Remove all text, labels, dark review background and floor lines: result must have fully TRANSPARENT background, isolated drawings, no shadows. Keep same original Bagseed delicate illustrated style, thin outlines, fine hair strands/fabric detail and consistent head/body size. Full figures including hair and shoes, no cropping. PRIMARY MOTION CONSTRAINTS: camera-near arm is BACK in pose1, nearly VERTICAL in pose2 and3, FORWARD in pose4 and5, moving back toward vertical in pose6, VERTICAL in pose7 and BACK in pose8. Near leg goes forward, planted underneath, backward, then raised forward again over full stride. Frame3 and7 MUST be narrow passing poses with one vertical support leg and other visibly BENT raised leg, NOT a wide stride or front kick. TWO DIFFERENT FOOTFALLS, one in pose1 and the opposite one in pose5. Maintain camera-near/far limb identity through the crossings; moving the same leg twice is wrong. ONLY CHARACTER: DOUG HASKELL: short stocky older man, bald crown, white side hair and thick white handlebar moustache, cream short sleeve shirt under blue denim overalls, brown work boots, gray metal watering can held in SAME anatomical LEFT hand throughout. Preserve age, short stocky belly, original face, moustache, can handle and spout. The can follows the carrying hand with a gentle small swing; never change hands or vanish.\nDIRECTION: ALL EIGHT figures face screen RIGHT in strict RIGHT PROFILE. Nose and shoe toes point RIGHT. Both rows face RIGHT. Never mirror or rotate the second half. Use the body-only motion reference's eight distinct side phases. Doug carries his watering can in EVERY ONE OF ALL EIGHT CELLS. Keep it held low below waist by anatomical left hand throughout, consistent with original identity sheet. Only the free arm swings widely. Do not lose the can when the other leg lifts; keep can handle, rounded body and long spout visible, and do not switch hands. Preserve his stocky shorter body; do not make him a slim child."
+      }
+    }
+  ]
+}

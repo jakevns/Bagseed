@@ -1,0 +1,54 @@
+{
+  "method": "built-in image_gen",
+  "reason": "Match standing detail to the new high-resolution walking artwork; correct remaining left-view carrying hand.",
+  "jobs": [
+    {
+      "id": "remy",
+      "file": "assets/remy-standing-v1.png",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/assets/remy-right-v2.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/remy-sheet.png"
+        ],
+        "prompt": "Create matching HIGH-RESOLUTION STANDING / IDLE sprites for this exact existing Bagseed character. Match FIRST reference's new high-resolution illustrated line detail, face, proportions, hair shapes, colors, materials and clothes exactly. SECOND reference is original identity/view reference. Four complete full-body drawings on TRANSPARENT background, TWO columns TWO rows: top-left FRONT facing viewer, top-right RIGHT PROFILE nose/toes point right, bottom-left BACK facing away, bottom-right LEFT PROFILE nose/toes point left. One same-sized person in each cell, arms relaxed at sides, BOTH feet flat on shared floor baseline with natural standing stance, not mid-step. No stride, lifted foot, kick, turning between views, text, labels, grid or shadows. Delicate thin illustrated outlines and fine subtle cloth/hair shading exactly like the new walking sheet, NO pixel-grid aliasing, blurry blocks or thick bold cartoon outlines. Do NOT redesign or change identity. Keep full hair, hands, boots and props inside cells with transparent gutters. ONLY CHARACTER: REMY ALVAREZ: warm tan skin, thick round dark brown curly hair, square brown glasses, mustard yellow short-sleeve T-shirt, charcoal shorts, visible bare lower legs, brown strapped sandals. Preserve the existing face, compact proportions, hair volume and glasses.\n"
+      }
+    },
+    {
+      "id": "priya",
+      "file": "assets/priya-standing-v1.png",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/assets/priya-right-v2.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/priya-sheet.png"
+        ],
+        "prompt": "Create matching HIGH-RESOLUTION STANDING / IDLE sprites for this exact existing Bagseed character. Match FIRST reference's new high-resolution illustrated line detail, face, proportions, hair shapes, colors, materials and clothes exactly. SECOND reference is original identity/view reference. Four complete full-body drawings on TRANSPARENT background, TWO columns TWO rows: top-left FRONT facing viewer, top-right RIGHT PROFILE nose/toes point right, bottom-left BACK facing away, bottom-right LEFT PROFILE nose/toes point left. One same-sized person in each cell, arms relaxed at sides, BOTH feet flat on shared floor baseline with natural standing stance, not mid-step. No stride, lifted foot, kick, turning between views, text, labels, grid or shadows. Delicate thin illustrated outlines and fine subtle cloth/hair shading exactly like the new walking sheet, NO pixel-grid aliasing, blurry blocks or thick bold cartoon outlines. Do NOT redesign or change identity. Keep full hair, hands, boots and props inside cells with transparent gutters. ONLY CHARACTER: PRIYA RAMAN: warm medium tan skin, long thick dark brown high ponytail with flowing curls, blue pullover hoodie with cream drawstrings, charcoal trousers, cream-white sneakers. Preserve the original face, ponytail placement, body proportions and outfit.\n"
+      }
+    },
+    {
+      "id": "doug",
+      "file": "assets/doug-standing-v1.png",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/assets/doug-right-v3.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/doug-sheet.png"
+        ],
+        "prompt": "Create matching HIGH-RESOLUTION STANDING / IDLE sprites for this exact existing Bagseed character. Match FIRST reference's new high-resolution illustrated line detail, face, proportions, hair shapes, colors, materials and clothes exactly. SECOND reference is original identity/view reference. Four complete full-body drawings on TRANSPARENT background, TWO columns TWO rows: top-left FRONT facing viewer, top-right RIGHT PROFILE nose/toes point right, bottom-left BACK facing away, bottom-right LEFT PROFILE nose/toes point left. One same-sized person in each cell, arms relaxed at sides, BOTH feet flat on shared floor baseline with natural standing stance, not mid-step. No stride, lifted foot, kick, turning between views, text, labels, grid or shadows. Delicate thin illustrated outlines and fine subtle cloth/hair shading exactly like the new walking sheet, NO pixel-grid aliasing, blurry blocks or thick bold cartoon outlines. Do NOT redesign or change identity. Keep full hair, hands, boots and props inside cells with transparent gutters. ONLY CHARACTER: DOUG HASKELL: short stocky older man, bald crown, white side hair and thick white handlebar moustache, cream short sleeve shirt under blue denim overalls, brown work boots, gray metal watering can held in SAME anatomical LEFT hand throughout. Preserve age, short stocky belly, original face, moustache, can handle and spout. The can follows the carrying hand with a gentle small swing; never change hands or vanish.\n Doug holds his gray watering can in anatomical LEFT hand in ALL FOUR views: FRONT screen right; BACK screen left; RIGHT profile camera-far hand partially visible; LEFT profile camera-near hand hanging down holding can beside outer thigh. Keep his plain brown leather work boots, bald crown/white side hair, white moustache, short stocky body and blue overalls."
+      }
+    },
+    {
+      "id": "doug-left-frame4",
+      "file": "assets/doug-left-frame4-v1.png",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/references/doug-left-frame4-target.png",
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/references/doug-left-carry-reference.png"
+        ],
+        "prompt": "Edit FIRST single Doug sprite. Preserve exact head, face, cream shirt, blue overalls, pose of BOTH LEGS AND BOOTS, and LEFT-facing view. Correct ONLY his arms and watering-can hand: use SECOND reference as the correct camera-near LEFT ARM holding-can pose. In the FIRST sprite REMOVE the near empty forearm/hand currently reaching forward to screen left. Instead draw that same near arm hanging down beside his outside hip, near hand holding the gray metal watering-can handle beside the thigh like SECOND image. REMOVE the old far-hand can behind his back on screen right. Draw the can in NEAR hand at mid thigh with its round body and spout pointing screen LEFT, like SECOND reference. Far empty arm can peek forward on screen left from behind torso. No handoff, duplicate hands or extra cans; only ONE can, held by near anatomical LEFT hand. Keep first image's original leg positions (opposite contact pose), don't copy second image's legs. Same body scale, delicate source linework and transparent background; full body, no labels, shadows or cropping."
+      }
+    }
+  ]
+}

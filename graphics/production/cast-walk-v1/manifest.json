@@ -1,0 +1,2552 @@
+{
+  "version": "cast-walk-eight-v1",
+  "standard": "eight-frame-full-stride-v1",
+  "frameCount": 8,
+  "density": 3,
+  "canvas": [
+    288,
+    324
+  ],
+  "logicalCanvas": [
+    96,
+    108
+  ],
+  "groundBaseline": 107,
+  "frameDurationMs": 125,
+  "sources": {
+    "assets\\remy-down-v1.png": "5db3d3ec1dd7275427979a61bbaca48267cbf0922105ed18cfc339bf6220685c",
+    "assets\\remy-right-v2.png": "9183648be801f43640bfd9ea9776db6fb0ba463195b7b98e2349df58cce8e310",
+    "assets\\remy-up-v1.png": "c128faf5731d2d61bb21f8917b717a43e30add1b9a83cb4d44a7afe2d0c1891e",
+    "assets\\remy-standing-v1.png": "9d1e94a5e2ebe4cd50940b3173e7b19dc65066d0fe9a21048805f6d6df68ab2d",
+    "assets\\priya-down-v1.png": "a385df3c3a2aee8d1f809ca0ee7e9cd5863782073ee636096120f0b646646f29",
+    "assets\\priya-right-v2.png": "73f5560cb2afc8138dcab56a6e438de95cdb81e4f62463f443d6bec980b198b8",
+    "assets\\priya-up-v1.png": "5545d5e354270ae12c993f9e76b6345b67de10cdd94fd2ac61f56b984aff74ee",
+    "assets\\priya-standing-v1.png": "86a134501640be8f94ebd6535e3d5935beb962211d3e95f410ea493d58f9a1fd",
+    "assets\\doug-down-v1.png": "92444e2328e3d3852a76c06a9d2f362f3a00e989668e763a8a41e02a584e98a1",
+    "assets\\doug-right-v3.png": "062f0edb168bba7f96e2bddf69ff23d2f3fd7274050f03e4b51abbdb6d7dddf1",
+    "assets\\doug-up-v2.png": "8cb4fa01253486f90ef722b3a2fcdc936550ca4f28bd2cd759956fbea00a747b",
+    "assets\\doug-left-v2.png": "80ab6adbdb1a00cad679f9842a6e247ebde60e7688ab5986b0d40fd36b9060d0",
+    "assets\\doug-left-frame4-v1.png": "f9ab44d9fe8f0890a43118f7d3d91a9c30dbdb7e9c6e2b83878e30a64b0e01e5",
+    "assets\\doug-standing-v1.png": "11407c75e7ee37b2816a423eaa096260615ef8f71aa44ab48cbeb08a16426147",
+    "original-master": "3f5657af5578ebf9cc3502a0fd39e2631b86513dade40df5a481fd7b6a77a59e"
+  },
+  "people": {
+    "remy": {
+      "frameCount": 8,
+      "walk": {
+        "down": [
+          "registered\\remy\\down-0.png",
+          "registered\\remy\\down-1.png",
+          "registered\\remy\\down-2.png",
+          "registered\\remy\\down-3.png",
+          "registered\\remy\\down-4.png",
+          "registered\\remy\\down-5.png",
+          "registered\\remy\\down-6.png",
+          "registered\\remy\\down-7.png"
+        ],
+        "right": [
+          "registered\\remy\\right-0.png",
+          "registered\\remy\\right-1.png",
+          "registered\\remy\\right-2.png",
+          "registered\\remy\\right-3.png",
+          "registered\\remy\\right-4.png",
+          "registered\\remy\\right-5.png",
+          "registered\\remy\\right-6.png",
+          "registered\\remy\\right-7.png"
+        ],
+        "up": [
+          "registered\\remy\\up-0.png",
+          "registered\\remy\\up-1.png",
+          "registered\\remy\\up-2.png",
+          "registered\\remy\\up-3.png",
+          "registered\\remy\\up-4.png",
+          "registered\\remy\\up-5.png",
+          "registered\\remy\\up-6.png",
+          "registered\\remy\\up-7.png"
+        ],
+        "left": [
+          "registered\\remy\\left-0.png",
+          "registered\\remy\\left-1.png",
+          "registered\\remy\\left-2.png",
+          "registered\\remy\\left-3.png",
+          "registered\\remy\\left-4.png",
+          "registered\\remy\\left-5.png",
+          "registered\\remy\\left-6.png",
+          "registered\\remy\\left-7.png"
+        ]
+      },
+      "idle": {
+        "down": "registered\\remy\\down-idle.png",
+        "right": "registered\\remy\\right-idle.png",
+        "up": "registered\\remy\\up-idle.png",
+        "left": "registered\\remy\\left-idle.png"
+      },
+      "extraction": [
+        {
+          "direction": "down",
+          "frame": 0,
+          "source": "assets\\remy-down-v1.png",
+          "sourceCell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "subjectBounds": [
+            109,
+            36,
+            348,
+            509
+          ],
+          "uniformScale": 0.6342494714587738,
+          "destination": [
+            69,
+            22
+          ],
+          "size": [
+            152,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "f883343345594e7413ca8f93b15ae7e145580d31d230fb2a4e9f421869a5ae5d"
+        },
+        {
+          "direction": "down",
+          "frame": 1,
+          "source": "assets\\remy-down-v1.png",
+          "sourceCell": [
+            384,
+            0,
+            768,
+            512
+          ],
+          "subjectBounds": [
+            90,
+            39,
+            325,
+            510
+          ],
+          "uniformScale": 0.6305732484076433,
+          "destination": [
+            70,
+            25
+          ],
+          "size": [
+            148,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "0aa690acf5c3723b4c083268302a55538f3eea56a89d7f66af2da51ed6500253"
+        },
+        {
+          "direction": "down",
+          "frame": 2,
+          "source": "assets\\remy-down-v1.png",
+          "sourceCell": [
+            768,
+            0,
+            1152,
+            512
+          ],
+          "subjectBounds": [
+            52,
+            38,
+            289,
+            499
+          ],
+          "uniformScale": 0.6507592190889371,
+          "destination": [
+            69,
+            22
+          ],
+          "size": [
+            154,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "14f146f6875792ab19af7793dbe8f895a9fff0d2772d06f64e85e3380b936268"
+        },
+        {
+          "direction": "down",
+          "frame": 3,
+          "source": "assets\\remy-down-v1.png",
+          "sourceCell": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "subjectBounds": [
+            48,
+            37,
+            285,
+            500
+          ],
+          "uniformScale": 0.6544276457883369,
+          "destination": [
+            71,
+            19
+          ],
+          "size": [
+            155,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "305590eb0a7eac6cc16c06e626a680716960a70390909a1e206340c270a61325"
+        },
+        {
+          "direction": "down",
+          "frame": 4,
+          "source": "assets\\remy-down-v1.png",
+          "sourceCell": [
+            0,
+            512,
+            384,
+            1024
+          ],
+          "subjectBounds": [
+            109,
+            7,
+            349,
+            478
+          ],
+          "uniformScale": 0.6369426751592356,
+          "destination": [
+            68,
+            22
+          ],
+          "size": [
+            153,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "5673fb36a4f12aa27b0fd2643d4c2c46a2aab53bfdee0c016e9c747d46782f07"
+        },
+        {
+          "direction": "down",
+          "frame": 5,
+          "source": "assets\\remy-down-v1.png",
+          "sourceCell": [
+            384,
+            512,
+            768,
+            1024
+          ],
+          "subjectBounds": [
+            88,
+            7,
+            326,
+            475
+          ],
+          "uniformScale": 0.6346153846153846,
+          "destination": [
+            67,
+            25
+          ],
+          "size": [
+            151,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "84b6e9d9d4b11a7a7497526a47ce9310f5686f1949b41ba03ec39dad5014cb62"
+        },
+        {
+          "direction": "down",
+          "frame": 6,
+          "source": "assets\\remy-down-v1.png",
+          "sourceCell": [
+            768,
+            512,
+            1152,
+            1024
+          ],
+          "subjectBounds": [
+            53,
+            8,
+            293,
+            467
+          ],
+          "uniformScale": 0.6535947712418301,
+          "destination": [
+            68,
+            22
+          ],
+          "size": [
+            157,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "471f1adeb65959877ed8fd0fd76b38c51be380cdbab1ed3032897216eb44a788"
+        },
+        {
+          "direction": "down",
+          "frame": 7,
+          "source": "assets\\remy-down-v1.png",
+          "sourceCell": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "subjectBounds": [
+            46,
+            7,
+            287,
+            472
+          ],
+          "uniformScale": 0.6516129032258065,
+          "destination": [
+            63,
+            19
+          ],
+          "size": [
+            157,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "4c35a3aa72f669709ac9af4efde6e3c0f2dc13432ce99bcc932e2fae48328fe5"
+        },
+        {
+          "direction": "right",
+          "frame": 0,
+          "source": "assets\\remy-right-v2.png",
+          "sourceCell": [
+            0,
+            0,
+            362,
+            543
+          ],
+          "subjectBounds": [
+            46,
+            41,
+            357,
+            534
+          ],
+          "uniformScale": 0.6085192697768763,
+          "destination": [
+            61,
+            23
+          ],
+          "size": [
+            189,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "d5d38e579251c04ea301641300fff7565df860a35db0c2b972a82cbd91b419a1"
+        },
+        {
+          "direction": "right",
+          "frame": 1,
+          "source": "assets\\remy-right-v2.png",
+          "sourceCell": [
+            362,
+            0,
+            724,
+            543
+          ],
+          "subjectBounds": [
+            79,
+            42,
+            313,
+            538
+          ],
+          "uniformScale": 0.5987903225806451,
+          "destination": [
+            69,
+            25
+          ],
+          "size": [
+            140,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "92d5b3eaba0ddd4cad9912bcdc9d36d6cdd340b50b23b4520b2bea99c8ee7663"
+        },
+        {
+          "direction": "right",
+          "frame": 2,
+          "source": "assets\\remy-right-v2.png",
+          "sourceCell": [
+            724,
+            0,
+            1086,
+            543
+          ],
+          "subjectBounds": [
+            92,
+            44,
+            317,
+            542
+          ],
+          "uniformScale": 0.6024096385542169,
+          "destination": [
+            73,
+            22
+          ],
+          "size": [
+            136,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "594649cbb10be86e84f6dd82fc8d5cdbaed7275d26ca92a928f91c06158e8c48"
+        },
+        {
+          "direction": "right",
+          "frame": 3,
+          "source": "assets\\remy-right-v2.png",
+          "sourceCell": [
+            1086,
+            0,
+            1448,
+            543
+          ],
+          "subjectBounds": [
+            92,
+            41,
+            344,
+            540
+          ],
+          "uniformScale": 0.6072144288577155,
+          "destination": [
+            61,
+            19
+          ],
+          "size": [
+            153,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "1948455966336f6fce2a6a9238158f212f55a7d9f34c08130ff99a66305f32ab"
+        },
+        {
+          "direction": "right",
+          "frame": 4,
+          "source": "assets\\remy-right-v2.png",
+          "sourceCell": [
+            0,
+            543,
+            362,
+            1086
+          ],
+          "subjectBounds": [
+            48,
+            32,
+            362,
+            507
+          ],
+          "uniformScale": 0.631578947368421,
+          "destination": [
+            54,
+            22
+          ],
+          "size": [
+            198,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "aac92ed2b4892c19e746736359460a15bdca19c0786f4d4b7e65b2b009279908"
+        },
+        {
+          "direction": "right",
+          "frame": 5,
+          "source": "assets\\remy-right-v2.png",
+          "sourceCell": [
+            362,
+            543,
+            724,
+            1086
+          ],
+          "subjectBounds": [
+            87,
+            32,
+            323,
+            513
+          ],
+          "uniformScale": 0.6174636174636174,
+          "destination": [
+            67,
+            25
+          ],
+          "size": [
+            146,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "fdedf4456ab89a0ca0ac8acd46ac223efa19adf756e7002ae6c24453aeab6b99"
+        },
+        {
+          "direction": "right",
+          "frame": 6,
+          "source": "assets\\remy-right-v2.png",
+          "sourceCell": [
+            724,
+            543,
+            1086,
+            1086
+          ],
+          "subjectBounds": [
+            78,
+            33,
+            307,
+            513
+          ],
+          "uniformScale": 0.625,
+          "destination": [
+            65,
+            22
+          ],
+          "size": [
+            143,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "4cefbf7ac058737af666603bb585db1217b32d183cd8bf21130cdc46f2f56bd3"
+        },
+        {
+          "direction": "right",
+          "frame": 7,
+          "source": "assets\\remy-right-v2.png",
+          "sourceCell": [
+            1086,
+            543,
+            1448,
+            1086
+          ],
+          "subjectBounds": [
+            91,
+            31,
+            344,
+            512
+          ],
+          "uniformScale": 0.6299376299376299,
+          "destination": [
+            70,
+            19
+          ],
+          "size": [
+            159,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "fedb29e151137e02e004dd481ec920a6cc20fd5bebbcfa36177823d5bee20959"
+        },
+        {
+          "direction": "up",
+          "frame": 0,
+          "source": "assets\\remy-up-v1.png",
+          "sourceCell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "subjectBounds": [
+            120,
+            73,
+            323,
+            502
+          ],
+          "uniformScale": 0.6993006993006993,
+          "destination": [
+            81,
+            23
+          ],
+          "size": [
+            142,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "45a594d5c05a984d657ff64756f6f9051f612d19465179a69cd2cc104188684d"
+        },
+        {
+          "direction": "up",
+          "frame": 1,
+          "source": "assets\\remy-up-v1.png",
+          "sourceCell": [
+            384,
+            0,
+            768,
+            512
+          ],
+          "subjectBounds": [
+            95,
+            67,
+            304,
+            500
+          ],
+          "uniformScale": 0.6859122401847575,
+          "destination": [
+            81,
+            25
+          ],
+          "size": [
+            143,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "af56bd7d6027a8d045d92e90c296910e1f28cbaa4f305e21c5779a8590d67c30"
+        },
+        {
+          "direction": "up",
+          "frame": 2,
+          "source": "assets\\remy-up-v1.png",
+          "sourceCell": [
+            768,
+            0,
+            1152,
+            512
+          ],
+          "subjectBounds": [
+            77,
+            69,
+            278,
+            491
+          ],
+          "uniformScale": 0.7109004739336493,
+          "destination": [
+            81,
+            22
+          ],
+          "size": [
+            143,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "a2dd847343ff0e81c5c46fed458f53c65e2932e61b285f956bbc25c2d4dbf735"
+        },
+        {
+          "direction": "up",
+          "frame": 3,
+          "source": "assets\\remy-up-v1.png",
+          "sourceCell": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "subjectBounds": [
+            59,
+            74,
+            258,
+            502
+          ],
+          "uniformScale": 0.7079439252336449,
+          "destination": [
+            77,
+            20
+          ],
+          "size": [
+            141,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "d211defd227b693f334bbea458bdc2a1e7a6942f6b7d66d2c0f973c95abf3435"
+        },
+        {
+          "direction": "up",
+          "frame": 4,
+          "source": "assets\\remy-up-v1.png",
+          "sourceCell": [
+            0,
+            512,
+            384,
+            1024
+          ],
+          "subjectBounds": [
+            118,
+            36,
+            322,
+            452
+          ],
+          "uniformScale": 0.7211538461538461,
+          "destination": [
+            72,
+            23
+          ],
+          "size": [
+            147,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "4d35972608851f5421972ca1ff5c34744f4503409357e21effdaf7e7759d9e63"
+        },
+        {
+          "direction": "up",
+          "frame": 5,
+          "source": "assets\\remy-up-v1.png",
+          "sourceCell": [
+            384,
+            512,
+            768,
+            1024
+          ],
+          "subjectBounds": [
+            101,
+            37,
+            303,
+            447
+          ],
+          "uniformScale": 0.724390243902439,
+          "destination": [
+            79,
+            25
+          ],
+          "size": [
+            146,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "d67b8522609fe12e728f892031d23c465bca5a2584ce8e804e33ae688bcec084"
+        },
+        {
+          "direction": "up",
+          "frame": 6,
+          "source": "assets\\remy-up-v1.png",
+          "sourceCell": [
+            768,
+            512,
+            1152,
+            1024
+          ],
+          "subjectBounds": [
+            81,
+            35,
+            286,
+            452
+          ],
+          "uniformScale": 0.7194244604316546,
+          "destination": [
+            73,
+            23
+          ],
+          "size": [
+            147,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "93dfc4cfb4627d7ff5540fa50ea1f9728341591a01ab70d67267b0189e3ed9f4"
+        },
+        {
+          "direction": "up",
+          "frame": 7,
+          "source": "assets\\remy-up-v1.png",
+          "sourceCell": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "subjectBounds": [
+            69,
+            36,
+            271,
+            452
+          ],
+          "uniformScale": 0.7283653846153846,
+          "destination": [
+            76,
+            20
+          ],
+          "size": [
+            147,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "048a535607d454abd6efb762e2e0b0c00be94c2a81126e681e75354c221bb8e0"
+        }
+      ],
+      "leftView": "Mirrored right: symmetric clothes/glasses; Priya ponytail stays behind head; no asymmetric hand-held props.",
+      "registeredSHA256": {
+        "registered\\remy\\down-0.png": "f883343345594e7413ca8f93b15ae7e145580d31d230fb2a4e9f421869a5ae5d",
+        "registered\\remy\\down-1.png": "0aa690acf5c3723b4c083268302a55538f3eea56a89d7f66af2da51ed6500253",
+        "registered\\remy\\down-2.png": "14f146f6875792ab19af7793dbe8f895a9fff0d2772d06f64e85e3380b936268",
+        "registered\\remy\\down-3.png": "305590eb0a7eac6cc16c06e626a680716960a70390909a1e206340c270a61325",
+        "registered\\remy\\down-4.png": "5673fb36a4f12aa27b0fd2643d4c2c46a2aab53bfdee0c016e9c747d46782f07",
+        "registered\\remy\\down-5.png": "84b6e9d9d4b11a7a7497526a47ce9310f5686f1949b41ba03ec39dad5014cb62",
+        "registered\\remy\\down-6.png": "471f1adeb65959877ed8fd0fd76b38c51be380cdbab1ed3032897216eb44a788",
+        "registered\\remy\\down-7.png": "4c35a3aa72f669709ac9af4efde6e3c0f2dc13432ce99bcc932e2fae48328fe5",
+        "registered\\remy\\down-idle.png": "854e0f3a995d8577fbcf1b50d45ecb8d87ccca31bd185ca619bb6e7556103b7a",
+        "registered\\remy\\left-0.png": "b4392b307d535f47c2b66b73e4b0420cf4c70e18499b3220ab562e4888a7e712",
+        "registered\\remy\\left-1.png": "de4bbaf240f620c63f6e312872630352ae2ef2c4d72ab60661aeb002051c8b28",
+        "registered\\remy\\left-2.png": "a915cf33e36ccd98651fb6fc0daf1f3d472314e13322140eb6a794c73f162bd8",
+        "registered\\remy\\left-3.png": "6e2876280f2e8797eef15fffc5bae3acdcdab992bcae7b89f546f5924a30cf10",
+        "registered\\remy\\left-4.png": "38ecda8e4e2f0a61bf57d66d2ec56caf02ef72ca726ebb49e7d1a814cccd08fc",
+        "registered\\remy\\left-5.png": "835f33048c609cac6bc0ec3b8d94f9118e4f041f0da63bbd3b9f63022e766612",
+        "registered\\remy\\left-6.png": "92e1931126feef5d786ed44b212111b7ee10e8ded0e036b1fdd6ca4cd69850ff",
+        "registered\\remy\\left-7.png": "5bce52913ae1610670c888676cca4952cc02bd20ea447cb78d5fb5fec39beb1b",
+        "registered\\remy\\left-idle.png": "3d83d70b105549c98b011f46dcbae842ebb202b595556746a51bb089c4a33fe2",
+        "registered\\remy\\right-0.png": "d5d38e579251c04ea301641300fff7565df860a35db0c2b972a82cbd91b419a1",
+        "registered\\remy\\right-1.png": "92d5b3eaba0ddd4cad9912bcdc9d36d6cdd340b50b23b4520b2bea99c8ee7663",
+        "registered\\remy\\right-2.png": "594649cbb10be86e84f6dd82fc8d5cdbaed7275d26ca92a928f91c06158e8c48",
+        "registered\\remy\\right-3.png": "1948455966336f6fce2a6a9238158f212f55a7d9f34c08130ff99a66305f32ab",
+        "registered\\remy\\right-4.png": "aac92ed2b4892c19e746736359460a15bdca19c0786f4d4b7e65b2b009279908",
+        "registered\\remy\\right-5.png": "fdedf4456ab89a0ca0ac8acd46ac223efa19adf756e7002ae6c24453aeab6b99",
+        "registered\\remy\\right-6.png": "4cefbf7ac058737af666603bb585db1217b32d183cd8bf21130cdc46f2f56bd3",
+        "registered\\remy\\right-7.png": "fedb29e151137e02e004dd481ec920a6cc20fd5bebbcfa36177823d5bee20959",
+        "registered\\remy\\right-idle.png": "293e6054ef4baa26c27b0636ef2f2f0a4c1de0a85ce1f40bcbaae0f452c2a1e9",
+        "registered\\remy\\up-0.png": "45a594d5c05a984d657ff64756f6f9051f612d19465179a69cd2cc104188684d",
+        "registered\\remy\\up-1.png": "af56bd7d6027a8d045d92e90c296910e1f28cbaa4f305e21c5779a8590d67c30",
+        "registered\\remy\\up-2.png": "a2dd847343ff0e81c5c46fed458f53c65e2932e61b285f956bbc25c2d4dbf735",
+        "registered\\remy\\up-3.png": "d211defd227b693f334bbea458bdc2a1e7a6942f6b7d66d2c0f973c95abf3435",
+        "registered\\remy\\up-4.png": "4d35972608851f5421972ca1ff5c34744f4503409357e21effdaf7e7759d9e63",
+        "registered\\remy\\up-5.png": "d67b8522609fe12e728f892031d23c465bca5a2584ce8e804e33ae688bcec084",
+        "registered\\remy\\up-6.png": "93dfc4cfb4627d7ff5540fa50ea1f9728341591a01ab70d67267b0189e3ed9f4",
+        "registered\\remy\\up-7.png": "048a535607d454abd6efb762e2e0b0c00be94c2a81126e681e75354c221bb8e0",
+        "registered\\remy\\up-idle.png": "df110f3e225b9f37c8800fe42bbb2c5d4c0c69d8c542eedb1c06b30191c6f8a5"
+      }
+    },
+    "priya": {
+      "frameCount": 8,
+      "walk": {
+        "down": [
+          "registered\\priya\\down-0.png",
+          "registered\\priya\\down-1.png",
+          "registered\\priya\\down-2.png",
+          "registered\\priya\\down-3.png",
+          "registered\\priya\\down-4.png",
+          "registered\\priya\\down-5.png",
+          "registered\\priya\\down-6.png",
+          "registered\\priya\\down-7.png"
+        ],
+        "right": [
+          "registered\\priya\\right-0.png",
+          "registered\\priya\\right-1.png",
+          "registered\\priya\\right-2.png",
+          "registered\\priya\\right-3.png",
+          "registered\\priya\\right-4.png",
+          "registered\\priya\\right-5.png",
+          "registered\\priya\\right-6.png",
+          "registered\\priya\\right-7.png"
+        ],
+        "up": [
+          "registered\\priya\\up-0.png",
+          "registered\\priya\\up-1.png",
+          "registered\\priya\\up-2.png",
+          "registered\\priya\\up-3.png",
+          "registered\\priya\\up-4.png",
+          "registered\\priya\\up-5.png",
+          "registered\\priya\\up-6.png",
+          "registered\\priya\\up-7.png"
+        ],
+        "left": [
+          "registered\\priya\\left-0.png",
+          "registered\\priya\\left-1.png",
+          "registered\\priya\\left-2.png",
+          "registered\\priya\\left-3.png",
+          "registered\\priya\\left-4.png",
+          "registered\\priya\\left-5.png",
+          "registered\\priya\\left-6.png",
+          "registered\\priya\\left-7.png"
+        ]
+      },
+      "idle": {
+        "down": "registered\\priya\\down-idle.png",
+        "right": "registered\\priya\\right-idle.png",
+        "up": "registered\\priya\\up-idle.png",
+        "left": "registered\\priya\\left-idle.png"
+      },
+      "extraction": [
+        {
+          "direction": "down",
+          "frame": 0,
+          "source": "assets\\priya-down-v1.png",
+          "sourceCell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "subjectBounds": [
+            99,
+            33,
+            320,
+            496
+          ],
+          "uniformScale": 0.6479481641468683,
+          "destination": [
+            63,
+            22
+          ],
+          "size": [
+            143,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "f49f8d42348247a291fb173f4dbcabadaf48582253bb490782d99ba25f0f6f2f"
+        },
+        {
+          "direction": "down",
+          "frame": 1,
+          "source": "assets\\priya-down-v1.png",
+          "sourceCell": [
+            384,
+            0,
+            768,
+            512
+          ],
+          "subjectBounds": [
+            87,
+            32,
+            310,
+            494
+          ],
+          "uniformScale": 0.6428571428571429,
+          "destination": [
+            64,
+            25
+          ],
+          "size": [
+            143,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "638330729f5514d5d385b5a0a1e171f4978b8b1fb10275530d24821c0e6833b9"
+        },
+        {
+          "direction": "down",
+          "frame": 2,
+          "source": "assets\\priya-down-v1.png",
+          "sourceCell": [
+            768,
+            0,
+            1152,
+            512
+          ],
+          "subjectBounds": [
+            58,
+            32,
+            280,
+            496
+          ],
+          "uniformScale": 0.646551724137931,
+          "destination": [
+            60,
+            22
+          ],
+          "size": [
+            144,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "b820f14a8e3ea4362c2c89f653c782dea1496c5a55ceeeda9166551942978ac6"
+        },
+        {
+          "direction": "down",
+          "frame": 3,
+          "source": "assets\\priya-down-v1.png",
+          "sourceCell": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "subjectBounds": [
+            33,
+            33,
+            257,
+            497
+          ],
+          "uniformScale": 0.6530172413793104,
+          "destination": [
+            62,
+            19
+          ],
+          "size": [
+            146,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "918ddb9e03b34bf86397eb22e8573a576c106ab8b3ba3e90dd1fbdd87bbc0bff"
+        },
+        {
+          "direction": "down",
+          "frame": 4,
+          "source": "assets\\priya-down-v1.png",
+          "sourceCell": [
+            0,
+            512,
+            384,
+            1024
+          ],
+          "subjectBounds": [
+            101,
+            9,
+            317,
+            466
+          ],
+          "uniformScale": 0.6564551422319475,
+          "destination": [
+            61,
+            22
+          ],
+          "size": [
+            142,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "c1dfc38d05b5648d1cee541dc5a7f53bd9ab220bfc0f027cef0c211ddbd2ca09"
+        },
+        {
+          "direction": "down",
+          "frame": 5,
+          "source": "assets\\priya-down-v1.png",
+          "sourceCell": [
+            384,
+            512,
+            768,
+            1024
+          ],
+          "subjectBounds": [
+            88,
+            9,
+            311,
+            466
+          ],
+          "uniformScale": 0.649890590809628,
+          "destination": [
+            63,
+            25
+          ],
+          "size": [
+            145,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "82492fee78a5d2b52f259d4e331e6028ce4d9bdcdf5d40971cc996b642a82575"
+        },
+        {
+          "direction": "down",
+          "frame": 6,
+          "source": "assets\\priya-down-v1.png",
+          "sourceCell": [
+            768,
+            512,
+            1152,
+            1024
+          ],
+          "subjectBounds": [
+            64,
+            9,
+            282,
+            467
+          ],
+          "uniformScale": 0.6550218340611353,
+          "destination": [
+            63,
+            23
+          ],
+          "size": [
+            143,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "27776a34d4785fb625b3f3e0662115061afc2129fd988762a9549e5323da0ba0"
+        },
+        {
+          "direction": "down",
+          "frame": 7,
+          "source": "assets\\priya-down-v1.png",
+          "sourceCell": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "subjectBounds": [
+            34,
+            8,
+            261,
+            469
+          ],
+          "uniformScale": 0.6572668112798264,
+          "destination": [
+            58,
+            19
+          ],
+          "size": [
+            149,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "d90fddca1f8a0dc581f9736ab64ba192346abf6c34085b570336a098d735e55b"
+        },
+        {
+          "direction": "right",
+          "frame": 0,
+          "source": "assets\\priya-right-v2.png",
+          "sourceCell": [
+            0,
+            0,
+            392,
+            543
+          ],
+          "subjectBounds": [
+            49,
+            41,
+            371,
+            537
+          ],
+          "uniformScale": 0.6048387096774194,
+          "destination": [
+            49,
+            22
+          ],
+          "size": [
+            195,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "8174ad65119770ec3852aff94221ee99434f14b9cf6d9d148295ea8c72e43811"
+        },
+        {
+          "direction": "right",
+          "frame": 1,
+          "source": "assets\\priya-right-v2.png",
+          "sourceCell": [
+            392,
+            0,
+            724,
+            543
+          ],
+          "subjectBounds": [
+            26,
+            40,
+            310,
+            539
+          ],
+          "uniformScale": 0.5951903807615231,
+          "destination": [
+            42,
+            25
+          ],
+          "size": [
+            169,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "24178f6aabfdf23064e74110473c370f0c1e14198d4ca48cbf2496d7f55c774b"
+        },
+        {
+          "direction": "right",
+          "frame": 2,
+          "source": "assets\\priya-right-v2.png",
+          "sourceCell": [
+            724,
+            0,
+            1086,
+            543
+          ],
+          "subjectBounds": [
+            30,
+            37,
+            299,
+            540
+          ],
+          "uniformScale": 0.5964214711729622,
+          "destination": [
+            43,
+            22
+          ],
+          "size": [
+            160,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "11c60fd11a6583ae05ffbb489ea02445dd350bf3e14dfc9c8340fce8737d0730"
+        },
+        {
+          "direction": "right",
+          "frame": 3,
+          "source": "assets\\priya-right-v2.png",
+          "sourceCell": [
+            1086,
+            0,
+            1448,
+            543
+          ],
+          "subjectBounds": [
+            46,
+            40,
+            339,
+            541
+          ],
+          "uniformScale": 0.6047904191616766,
+          "destination": [
+            38,
+            19
+          ],
+          "size": [
+            177,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "a43563d3631a5d6a9c949a8ad06f6893aa305374615837ff491b43b157599077"
+        },
+        {
+          "direction": "right",
+          "frame": 4,
+          "source": "assets\\priya-right-v2.png",
+          "sourceCell": [
+            0,
+            543,
+            392,
+            1086
+          ],
+          "subjectBounds": [
+            44,
+            16,
+            392,
+            508
+          ],
+          "uniformScale": 0.6097560975609756,
+          "destination": [
+            35,
+            22
+          ],
+          "size": [
+            212,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "3c17b6ead5d5f3adf0e7fe12a29882daf6cefe5f897c30a568408bd74297b52d"
+        },
+        {
+          "direction": "right",
+          "frame": 5,
+          "source": "assets\\priya-right-v2.png",
+          "sourceCell": [
+            392,
+            543,
+            724,
+            1086
+          ],
+          "subjectBounds": [
+            30,
+            16,
+            322,
+            507
+          ],
+          "uniformScale": 0.604887983706721,
+          "destination": [
+            40,
+            25
+          ],
+          "size": [
+            177,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "ae795779aa0c45bba035a43ce561f0227db5647860387a201d0b6bf2c5af0dcb"
+        },
+        {
+          "direction": "right",
+          "frame": 6,
+          "source": "assets\\priya-right-v2.png",
+          "sourceCell": [
+            724,
+            543,
+            1086,
+            1086
+          ],
+          "subjectBounds": [
+            45,
+            18,
+            310,
+            512
+          ],
+          "uniformScale": 0.6072874493927125,
+          "destination": [
+            41,
+            22
+          ],
+          "size": [
+            161,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "33e38e8d60bc9a7003331a4ef9c9273e825d314b52c00f3831c616eecd107361"
+        },
+        {
+          "direction": "right",
+          "frame": 7,
+          "source": "assets\\priya-right-v2.png",
+          "sourceCell": [
+            1086,
+            543,
+            1448,
+            1086
+          ],
+          "subjectBounds": [
+            53,
+            22,
+            350,
+            507
+          ],
+          "uniformScale": 0.6247422680412371,
+          "destination": [
+            40,
+            19
+          ],
+          "size": [
+            186,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "3488506f6f56bae8fa98d1469a6c9eb5b9fae5b7a93d9f6e324e837c8c97e1d3"
+        },
+        {
+          "direction": "up",
+          "frame": 0,
+          "source": "assets\\priya-up-v1.png",
+          "sourceCell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "subjectBounds": [
+            112,
+            43,
+            348,
+            499
+          ],
+          "uniformScale": 0.6578947368421053,
+          "destination": [
+            69,
+            23
+          ],
+          "size": [
+            155,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "7fb00724387aaaaf57f7a9a576e4440480cc2b158024ebecb65b7244dc699c8e"
+        },
+        {
+          "direction": "up",
+          "frame": 1,
+          "source": "assets\\priya-up-v1.png",
+          "sourceCell": [
+            384,
+            0,
+            768,
+            512
+          ],
+          "subjectBounds": [
+            90,
+            41,
+            315,
+            499
+          ],
+          "uniformScale": 0.648471615720524,
+          "destination": [
+            77,
+            25
+          ],
+          "size": [
+            146,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "476b660b98cce4b98e1f4ed5e77e5a9d1b196fce90160c2031c5d71ea4d21f0c"
+        },
+        {
+          "direction": "up",
+          "frame": 2,
+          "source": "assets\\priya-up-v1.png",
+          "sourceCell": [
+            768,
+            0,
+            1152,
+            512
+          ],
+          "subjectBounds": [
+            85,
+            42,
+            314,
+            498
+          ],
+          "uniformScale": 0.6578947368421053,
+          "destination": [
+            73,
+            22
+          ],
+          "size": [
+            151,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "244617c8999d0792ad00295317aaeaa37d2708ff9d221a0a82fbf5a51bcf0b53"
+        },
+        {
+          "direction": "up",
+          "frame": 3,
+          "source": "assets\\priya-up-v1.png",
+          "sourceCell": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "subjectBounds": [
+            84,
+            42,
+            312,
+            498
+          ],
+          "uniformScale": 0.6644736842105263,
+          "destination": [
+            74,
+            20
+          ],
+          "size": [
+            152,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "2a8efea9c83f8db146ac439a4f6a5e7a87b373bef90ec338da60a4bb9d432716"
+        },
+        {
+          "direction": "up",
+          "frame": 4,
+          "source": "assets\\priya-up-v1.png",
+          "sourceCell": [
+            0,
+            512,
+            384,
+            1024
+          ],
+          "subjectBounds": [
+            117,
+            12,
+            343,
+            464
+          ],
+          "uniformScale": 0.6637168141592921,
+          "destination": [
+            71,
+            23
+          ],
+          "size": [
+            150,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "348befd1cba9de3a52f7c9a4f7b912655525c76b628589c8b751d16da08dde4f"
+        },
+        {
+          "direction": "up",
+          "frame": 5,
+          "source": "assets\\priya-up-v1.png",
+          "sourceCell": [
+            384,
+            512,
+            768,
+            1024
+          ],
+          "subjectBounds": [
+            98,
+            8,
+            325,
+            450
+          ],
+          "uniformScale": 0.6719457013574661,
+          "destination": [
+            76,
+            26
+          ],
+          "size": [
+            153,
+            297
+          ],
+          "resamplingPasses": 1,
+          "sha256": "9d31274e1a300d22b21ba893be96aff63b9fc8edc41e741372b0365258383848"
+        },
+        {
+          "direction": "up",
+          "frame": 6,
+          "source": "assets\\priya-up-v1.png",
+          "sourceCell": [
+            768,
+            512,
+            1152,
+            1024
+          ],
+          "subjectBounds": [
+            84,
+            12,
+            319,
+            458
+          ],
+          "uniformScale": 0.672645739910314,
+          "destination": [
+            72,
+            23
+          ],
+          "size": [
+            158,
+            300
+          ],
+          "resamplingPasses": 1,
+          "sha256": "6b9bb5ebb1bfe32ff06487d531a59d41e9e449067ffa3487ab48809e20b97fa5"
+        },
+        {
+          "direction": "up",
+          "frame": 7,
+          "source": "assets\\priya-up-v1.png",
+          "sourceCell": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "subjectBounds": [
+            89,
+            12,
+            314,
+            458
+          ],
+          "uniformScale": 0.679372197309417,
+          "destination": [
+            75,
+            19
+          ],
+          "size": [
+            153,
+            303
+          ],
+          "resamplingPasses": 1,
+          "sha256": "9ff32bc0e27b339d0989be1225035973a398d2d3570ddc3955d927576065d10d"
+        }
+      ],
+      "leftView": "Mirrored right: symmetric clothes/glasses; Priya ponytail stays behind head; no asymmetric hand-held props.",
+      "registeredSHA256": {
+        "registered\\priya\\down-0.png": "f49f8d42348247a291fb173f4dbcabadaf48582253bb490782d99ba25f0f6f2f",
+        "registered\\priya\\down-1.png": "638330729f5514d5d385b5a0a1e171f4978b8b1fb10275530d24821c0e6833b9",
+        "registered\\priya\\down-2.png": "b820f14a8e3ea4362c2c89f653c782dea1496c5a55ceeeda9166551942978ac6",
+        "registered\\priya\\down-3.png": "918ddb9e03b34bf86397eb22e8573a576c106ab8b3ba3e90dd1fbdd87bbc0bff",
+        "registered\\priya\\down-4.png": "c1dfc38d05b5648d1cee541dc5a7f53bd9ab220bfc0f027cef0c211ddbd2ca09",
+        "registered\\priya\\down-5.png": "82492fee78a5d2b52f259d4e331e6028ce4d9bdcdf5d40971cc996b642a82575",
+        "registered\\priya\\down-6.png": "27776a34d4785fb625b3f3e0662115061afc2129fd988762a9549e5323da0ba0",
+        "registered\\priya\\down-7.png": "d90fddca1f8a0dc581f9736ab64ba192346abf6c34085b570336a098d735e55b",
+        "registered\\priya\\down-idle.png": "2cfa6ed1b993dcd0a970159712e414d2c29dafa6ba06a50fab322a8eac6eb620",
+        "registered\\priya\\left-0.png": "78dd332128c6bc62af5720b35cda18f25cd1a02b422c4044cbcd43be1d5b3f65",
+        "registered\\priya\\left-1.png": "f1e90934d0ff58ffba7fa8a905476a3fee544065871694ac9bb98f26b16fc403",
+        "registered\\priya\\left-2.png": "41b0aa857c3f30bc04d26306ccbca572f7d73121f3bbff9679a420dc60fceb07",
+        "registered\\priya\\left-3.png": "f5f4b36a76fea165ccba1209595b20415be43cd12f65b4a8d685bfc3a78f9448",
+        "registered\\priya\\left-4.png": "cb55473e09c79d2be7cd512163e7fff096b71a43aaf445834fa0f3aeddfea0e2",
+        "registered\\priya\\left-5.png": "9e46e416a88ba8cd368dc1e19d21478fe7179db8e28f11dc1120a14e1bab2a39",
+        "registered\\priya\\left-6.png": "0598c9de8e2a4c97165d4672c2bf7b7208beb85ca38547d85d76e53d625f4e1d",
+        "registered\\priya\\left-7.png": "ff8613c738a2c2dd8d0e1f72222c7615d9cd9777e4e47d1211f3e41787ad58ac",
+        "registered\\priya\\left-idle.png": "c10faa741c3bb61fbe435394dbda0b8ba2aac67d1e7202d0d71bc7b8dc095c65",
+        "registered\\priya\\right-0.png": "8174ad65119770ec3852aff94221ee99434f14b9cf6d9d148295ea8c72e43811",
+        "registered\\priya\\right-1.png": "24178f6aabfdf23064e74110473c370f0c1e14198d4ca48cbf2496d7f55c774b",
+        "registered\\priya\\right-2.png": "11c60fd11a6583ae05ffbb489ea02445dd350bf3e14dfc9c8340fce8737d0730",
+        "registered\\priya\\right-3.png": "a43563d3631a5d6a9c949a8ad06f6893aa305374615837ff491b43b157599077",
+        "registered\\priya\\right-4.png": "3c17b6ead5d5f3adf0e7fe12a29882daf6cefe5f897c30a568408bd74297b52d",
+        "registered\\priya\\right-5.png": "ae795779aa0c45bba035a43ce561f0227db5647860387a201d0b6bf2c5af0dcb",
+        "registered\\priya\\right-6.png": "33e38e8d60bc9a7003331a4ef9c9273e825d314b52c00f3831c616eecd107361",
+        "registered\\priya\\right-7.png": "3488506f6f56bae8fa98d1469a6c9eb5b9fae5b7a93d9f6e324e837c8c97e1d3",
+        "registered\\priya\\right-idle.png": "6d7599a3b462fdfb05f129c573d114f13e1d8e8eb8f2806312e87522b28d1d6a",
+        "registered\\priya\\up-0.png": "7fb00724387aaaaf57f7a9a576e4440480cc2b158024ebecb65b7244dc699c8e",
+        "registered\\priya\\up-1.png": "476b660b98cce4b98e1f4ed5e77e5a9d1b196fce90160c2031c5d71ea4d21f0c",
+        "registered\\priya\\up-2.png": "244617c8999d0792ad00295317aaeaa37d2708ff9d221a0a82fbf5a51bcf0b53",
+        "registered\\priya\\up-3.png": "2a8efea9c83f8db146ac439a4f6a5e7a87b373bef90ec338da60a4bb9d432716",
+        "registered\\priya\\up-4.png": "348befd1cba9de3a52f7c9a4f7b912655525c76b628589c8b751d16da08dde4f",
+        "registered\\priya\\up-5.png": "9d31274e1a300d22b21ba893be96aff63b9fc8edc41e741372b0365258383848",
+        "registered\\priya\\up-6.png": "6b9bb5ebb1bfe32ff06487d531a59d41e9e449067ffa3487ab48809e20b97fa5",
+        "registered\\priya\\up-7.png": "9ff32bc0e27b339d0989be1225035973a398d2d3570ddc3955d927576065d10d",
+        "registered\\priya\\up-idle.png": "90ee992fc7432460995cd1e394e23fd9819e83c762f4aeb0f7ba38b4cda48be1"
+      }
+    },
+    "doug": {
+      "frameCount": 8,
+      "walk": {
+        "down": [
+          "registered\\doug\\down-0.png",
+          "registered\\doug\\down-1.png",
+          "registered\\doug\\down-2.png",
+          "registered\\doug\\down-3.png",
+          "registered\\doug\\down-4.png",
+          "registered\\doug\\down-5.png",
+          "registered\\doug\\down-6.png",
+          "registered\\doug\\down-7.png"
+        ],
+        "right": [
+          "registered\\doug\\right-0.png",
+          "registered\\doug\\right-1.png",
+          "registered\\doug\\right-2.png",
+          "registered\\doug\\right-3.png",
+          "registered\\doug\\right-4.png",
+          "registered\\doug\\right-5.png",
+          "registered\\doug\\right-6.png",
+          "registered\\doug\\right-7.png"
+        ],
+        "up": [
+          "registered\\doug\\up-0.png",
+          "registered\\doug\\up-1.png",
+          "registered\\doug\\up-2.png",
+          "registered\\doug\\up-3.png",
+          "registered\\doug\\up-4.png",
+          "registered\\doug\\up-5.png",
+          "registered\\doug\\up-6.png",
+          "registered\\doug\\up-7.png"
+        ],
+        "left": [
+          "registered\\doug\\left-0.png",
+          "registered\\doug\\left-1.png",
+          "registered\\doug\\left-2.png",
+          "registered\\doug\\left-3.png",
+          "registered\\doug\\left-4.png",
+          "registered\\doug\\left-5.png",
+          "registered\\doug\\left-6.png",
+          "registered\\doug\\left-7.png"
+        ]
+      },
+      "idle": {
+        "down": "registered\\doug\\down-idle.png",
+        "right": "registered\\doug\\right-idle.png",
+        "up": "registered\\doug\\up-idle.png",
+        "left": "registered\\doug\\left-idle.png"
+      },
+      "extraction": [
+        {
+          "direction": "down",
+          "frame": 0,
+          "source": "assets\\doug-down-v1.png",
+          "sourceCell": [
+            0,
+            0,
+            396,
+            512
+          ],
+          "subjectBounds": [
+            66,
+            83,
+            396,
+            472
+          ],
+          "uniformScale": 0.7403598971722365,
+          "destination": [
+            26,
+            35
+          ],
+          "size": [
+            244,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "9890faf07f5b09de81c2cc68734d8999ee812b0b828cc78898d9580255415cd5"
+        },
+        {
+          "direction": "down",
+          "frame": 1,
+          "source": "assets\\doug-down-v1.png",
+          "sourceCell": [
+            396,
+            0,
+            778,
+            512
+          ],
+          "subjectBounds": [
+            67,
+            84,
+            382,
+            472
+          ],
+          "uniformScale": 0.7345360824742269,
+          "destination": [
+            37,
+            38
+          ],
+          "size": [
+            231,
+            285
+          ],
+          "resamplingPasses": 1,
+          "sha256": "f9896be3f042ebe776f0f805fc1cecf3840813b5b4b4f46d6fd4ad9186987a78"
+        },
+        {
+          "direction": "down",
+          "frame": 2,
+          "source": "assets\\doug-down-v1.png",
+          "sourceCell": [
+            778,
+            0,
+            1152,
+            512
+          ],
+          "subjectBounds": [
+            51,
+            83,
+            365,
+            468
+          ],
+          "uniformScale": 0.7480519480519481,
+          "destination": [
+            35,
+            34
+          ],
+          "size": [
+            235,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "889068105fbfe63e0742fec611377456440e24f7a00f2749a5712fe473c786be"
+        },
+        {
+          "direction": "down",
+          "frame": 3,
+          "source": "assets\\doug-down-v1.png",
+          "sourceCell": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "subjectBounds": [
+            62,
+            83,
+            372,
+            480
+          ],
+          "uniformScale": 0.7329974811083123,
+          "destination": [
+            35,
+            32
+          ],
+          "size": [
+            227,
+            291
+          ],
+          "resamplingPasses": 1,
+          "sha256": "8c39c97dbcba71d8ef56820628e30be6f8576f15259a309db39cf093edfcd698"
+        },
+        {
+          "direction": "down",
+          "frame": 4,
+          "source": "assets\\doug-down-v1.png",
+          "sourceCell": [
+            0,
+            512,
+            396,
+            1024
+          ],
+          "subjectBounds": [
+            62,
+            18,
+            395,
+            417
+          ],
+          "uniformScale": 0.7218045112781954,
+          "destination": [
+            24,
+            34
+          ],
+          "size": [
+            240,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "a6d61a8d9dc85e33413bc0bae283ce317c973d2a5a565f06d81c9cfaeb5fa3eb"
+        },
+        {
+          "direction": "down",
+          "frame": 5,
+          "source": "assets\\doug-down-v1.png",
+          "sourceCell": [
+            396,
+            512,
+            778,
+            1024
+          ],
+          "subjectBounds": [
+            54,
+            18,
+            370,
+            419
+          ],
+          "uniformScale": 0.7107231920199502,
+          "destination": [
+            31,
+            37
+          ],
+          "size": [
+            225,
+            285
+          ],
+          "resamplingPasses": 1,
+          "sha256": "07e7a44702959db009f34ec0dda284ae6fee8c137eb5c504ea8b7b397fe6860e"
+        },
+        {
+          "direction": "down",
+          "frame": 6,
+          "source": "assets\\doug-down-v1.png",
+          "sourceCell": [
+            778,
+            512,
+            1152,
+            1024
+          ],
+          "subjectBounds": [
+            50,
+            18,
+            365,
+            419
+          ],
+          "uniformScale": 0.7182044887780549,
+          "destination": [
+            33,
+            35
+          ],
+          "size": [
+            226,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "470eaf738b4f81cf7bd69100741a59260ad0e86cf56e725b815cae2f1519aea8"
+        },
+        {
+          "direction": "down",
+          "frame": 7,
+          "source": "assets\\doug-down-v1.png",
+          "sourceCell": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "subjectBounds": [
+            57,
+            17,
+            373,
+            418
+          ],
+          "uniformScale": 0.7256857855361596,
+          "destination": [
+            31,
+            31
+          ],
+          "size": [
+            229,
+            291
+          ],
+          "resamplingPasses": 1,
+          "sha256": "5e50003a0e75a2c5260169995af76c49a5328d70add43df0a66d49b1daed4445"
+        },
+        {
+          "direction": "right",
+          "frame": 0,
+          "source": "assets\\doug-right-v3.png",
+          "sourceCell": [
+            0,
+            0,
+            434,
+            512
+          ],
+          "subjectBounds": [
+            51,
+            33,
+            422,
+            495
+          ],
+          "uniformScale": 0.6233766233766234,
+          "destination": [
+            21,
+            34
+          ],
+          "size": [
+            231,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "c6c1a34c28f20f8311bebc7c56feeada9ea5753ff277eeab85b0e6197502e218"
+        },
+        {
+          "direction": "right",
+          "frame": 1,
+          "source": "assets\\doug-right-v3.png",
+          "sourceCell": [
+            434,
+            0,
+            795,
+            512
+          ],
+          "subjectBounds": [
+            35,
+            33,
+            361,
+            495
+          ],
+          "uniformScale": 0.6168831168831169,
+          "destination": [
+            35,
+            37
+          ],
+          "size": [
+            201,
+            285
+          ],
+          "resamplingPasses": 1,
+          "sha256": "6f935721933e84bda1b7bae3a265eb470f81bd0b4a804e870f3e679609ccedf4"
+        },
+        {
+          "direction": "right",
+          "frame": 2,
+          "source": "assets\\doug-right-v3.png",
+          "sourceCell": [
+            795,
+            0,
+            1152,
+            512
+          ],
+          "subjectBounds": [
+            31,
+            34,
+            343,
+            496
+          ],
+          "uniformScale": 0.6233766233766234,
+          "destination": [
+            40,
+            34
+          ],
+          "size": [
+            194,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "75608f1a218a5bf68737aabbc3e920590b08ca23bed131f2b061ce60d0b752cb"
+        },
+        {
+          "direction": "right",
+          "frame": 3,
+          "source": "assets\\doug-right-v3.png",
+          "sourceCell": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "subjectBounds": [
+            29,
+            33,
+            373,
+            497
+          ],
+          "uniformScale": 0.6271551724137931,
+          "destination": [
+            25,
+            32
+          ],
+          "size": [
+            216,
+            291
+          ],
+          "resamplingPasses": 1,
+          "sha256": "818066190ba8594891e19aec6ed82f5c68844ddfd3e34cfb4433de0814405b47"
+        },
+        {
+          "direction": "right",
+          "frame": 4,
+          "source": "assets\\doug-right-v3.png",
+          "sourceCell": [
+            0,
+            512,
+            434,
+            1024
+          ],
+          "subjectBounds": [
+            45,
+            3,
+            434,
+            461
+          ],
+          "uniformScale": 0.62882096069869,
+          "destination": [
+            9,
+            35
+          ],
+          "size": [
+            245,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "fa5a50a513f3ead9cc73ba0cbe90b3feb2875c790d713523487a02e18f20aea0"
+        },
+        {
+          "direction": "right",
+          "frame": 5,
+          "source": "assets\\doug-right-v3.png",
+          "sourceCell": [
+            434,
+            512,
+            795,
+            1024
+          ],
+          "subjectBounds": [
+            22,
+            3,
+            361,
+            465
+          ],
+          "uniformScale": 0.6168831168831169,
+          "destination": [
+            32,
+            37
+          ],
+          "size": [
+            209,
+            285
+          ],
+          "resamplingPasses": 1,
+          "sha256": "a4c382f89f34a7cd7cc692bb046a8b15849970d56c5d752717f8c7f5b880f6ba"
+        },
+        {
+          "direction": "right",
+          "frame": 6,
+          "source": "assets\\doug-right-v3.png",
+          "sourceCell": [
+            795,
+            512,
+            1152,
+            1024
+          ],
+          "subjectBounds": [
+            32,
+            3,
+            351,
+            467
+          ],
+          "uniformScale": 0.6206896551724138,
+          "destination": [
+            40,
+            34
+          ],
+          "size": [
+            198,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "780fc72f8c1443c99fd86cfc42c1b84304ed90f916a7fda807d9f1e350547e4c"
+        },
+        {
+          "direction": "right",
+          "frame": 7,
+          "source": "assets\\doug-right-v3.png",
+          "sourceCell": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "subjectBounds": [
+            16,
+            3,
+            384,
+            462
+          ],
+          "uniformScale": 0.6339869281045751,
+          "destination": [
+            16,
+            31
+          ],
+          "size": [
+            233,
+            291
+          ],
+          "resamplingPasses": 1,
+          "sha256": "1f55f1885e24df8b96eed0b548d9c22b9d23c89d19a641202011855bd676be96"
+        },
+        {
+          "direction": "up",
+          "frame": 0,
+          "source": "assets\\doug-up-v2.png",
+          "sourceCell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "subjectBounds": [
+            18,
+            69,
+            351,
+            493
+          ],
+          "uniformScale": 0.6792452830188679,
+          "destination": [
+            30,
+            35
+          ],
+          "size": [
+            226,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "0832b02cd8177130010ab2fc08186f86b6790eb8121df4b297cfb180663ae969"
+        },
+        {
+          "direction": "up",
+          "frame": 1,
+          "source": "assets\\doug-up-v2.png",
+          "sourceCell": [
+            384,
+            0,
+            768,
+            512
+          ],
+          "subjectBounds": [
+            16,
+            69,
+            355,
+            492
+          ],
+          "uniformScale": 0.6737588652482269,
+          "destination": [
+            24,
+            37
+          ],
+          "size": [
+            228,
+            285
+          ],
+          "resamplingPasses": 1,
+          "sha256": "0a6d0915788ddd975a9fb4c4a52fa010a98024e8245e6e0e56d5afc4b0b17b34"
+        },
+        {
+          "direction": "up",
+          "frame": 2,
+          "source": "assets\\doug-up-v2.png",
+          "sourceCell": [
+            768,
+            0,
+            1152,
+            512
+          ],
+          "subjectBounds": [
+            13,
+            69,
+            351,
+            487
+          ],
+          "uniformScale": 0.6889952153110048,
+          "destination": [
+            23,
+            34
+          ],
+          "size": [
+            233,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "2515fb3899529a79c297dbeaf75329816f0421cd82e62bc929c71b32095e21f5"
+        },
+        {
+          "direction": "up",
+          "frame": 3,
+          "source": "assets\\doug-up-v2.png",
+          "sourceCell": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "subjectBounds": [
+            19,
+            69,
+            356,
+            495
+          ],
+          "uniformScale": 0.6830985915492958,
+          "destination": [
+            24,
+            31
+          ],
+          "size": [
+            230,
+            291
+          ],
+          "resamplingPasses": 1,
+          "sha256": "00d1ef3379ca2bfe55c375725e4acabc4f56ebf83ea6498727f4bf3f9bfe589d"
+        },
+        {
+          "direction": "up",
+          "frame": 4,
+          "source": "assets\\doug-up-v2.png",
+          "sourceCell": [
+            0,
+            512,
+            384,
+            1024
+          ],
+          "subjectBounds": [
+            12,
+            37,
+            351,
+            462
+          ],
+          "uniformScale": 0.6776470588235294,
+          "destination": [
+            29,
+            34
+          ],
+          "size": [
+            230,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "46ed778f6666d07bd7917f40f5e5c47de6cdce9d6b3c794b32d541f2745d40de"
+        },
+        {
+          "direction": "up",
+          "frame": 5,
+          "source": "assets\\doug-up-v2.png",
+          "sourceCell": [
+            384,
+            512,
+            768,
+            1024
+          ],
+          "subjectBounds": [
+            12,
+            37,
+            351,
+            456
+          ],
+          "uniformScale": 0.6801909307875895,
+          "destination": [
+            27,
+            37
+          ],
+          "size": [
+            231,
+            285
+          ],
+          "resamplingPasses": 1,
+          "sha256": "63d5625a656b0c04972ea7a391cf8cd739f87d083ed64e94f3eb53411d26aeef"
+        },
+        {
+          "direction": "up",
+          "frame": 6,
+          "source": "assets\\doug-up-v2.png",
+          "sourceCell": [
+            768,
+            512,
+            1152,
+            1024
+          ],
+          "subjectBounds": [
+            10,
+            37,
+            351,
+            456
+          ],
+          "uniformScale": 0.6873508353221957,
+          "destination": [
+            25,
+            34
+          ],
+          "size": [
+            234,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "22709005ac71bede21654025ad4b8d5391627469be0bcf9411be6396ce0d1c5b"
+        },
+        {
+          "direction": "up",
+          "frame": 7,
+          "source": "assets\\doug-up-v2.png",
+          "sourceCell": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "subjectBounds": [
+            10,
+            37,
+            350,
+            459
+          ],
+          "uniformScale": 0.6895734597156398,
+          "destination": [
+            27,
+            31
+          ],
+          "size": [
+            234,
+            291
+          ],
+          "resamplingPasses": 1,
+          "sha256": "c4c5211f5710eab536e79c7ced8099279b8a936e0c9a4e30577ad4addb4513b4"
+        },
+        {
+          "direction": "left",
+          "frame": 0,
+          "source": "assets\\doug-left-v2.png",
+          "sourceCell": [
+            0,
+            0,
+            443,
+            443
+          ],
+          "subjectBounds": [
+            92,
+            29,
+            421,
+            441
+          ],
+          "uniformScale": 0.6990291262135923,
+          "destination": [
+            31,
+            34
+          ],
+          "size": [
+            230,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "e4df03d2d3d1df7d6d57e00950b91ae30705930d178619a37b35d6806972cff8"
+        },
+        {
+          "direction": "left",
+          "frame": 1,
+          "source": "assets\\doug-left-v2.png",
+          "sourceCell": [
+            443,
+            0,
+            887,
+            443
+          ],
+          "subjectBounds": [
+            126,
+            28,
+            421,
+            440
+          ],
+          "uniformScale": 0.691747572815534,
+          "destination": [
+            53,
+            37
+          ],
+          "size": [
+            204,
+            285
+          ],
+          "resamplingPasses": 1,
+          "sha256": "a536fa38c96626b50bcc7e97805fa40bb48d17b6cddf7cfaf1219a173b0b919a"
+        },
+        {
+          "direction": "left",
+          "frame": 2,
+          "source": "assets\\doug-left-v2.png",
+          "sourceCell": [
+            887,
+            0,
+            1330,
+            443
+          ],
+          "subjectBounds": [
+            118,
+            29,
+            402,
+            440
+          ],
+          "uniformScale": 0.7007299270072993,
+          "destination": [
+            45,
+            35
+          ],
+          "size": [
+            199,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "6471e008f77d553cb17f44969505770e6f00979f3cdbca990252e5999c88b990"
+        },
+        {
+          "direction": "left",
+          "frame": 3,
+          "source": "assets\\doug-left-v2.png",
+          "sourceCell": [
+            1330,
+            0,
+            1774,
+            443
+          ],
+          "subjectBounds": [
+            96,
+            27,
+            413,
+            440
+          ],
+          "uniformScale": 0.7046004842615012,
+          "destination": [
+            27,
+            31
+          ],
+          "size": [
+            223,
+            291
+          ],
+          "resamplingPasses": 1,
+          "sha256": "87edc6224aa4e437d6d349dd677b1cba9fbf9cfb3b64b73eae9de9852f11f616"
+        },
+        {
+          "direction": "left",
+          "frame": 4,
+          "source": "assets\\doug-left-frame4-v1.png",
+          "sourceCell": [
+            0,
+            0,
+            1254,
+            1254
+          ],
+          "subjectBounds": [
+            186,
+            47,
+            1122,
+            1196
+          ],
+          "uniformScale": 0.2506527415143603,
+          "destination": [
+            16,
+            34
+          ],
+          "size": [
+            235,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "83a854674819706378f022087cfe41bef88474068c62dd40734562a66672eb19"
+        },
+        {
+          "direction": "left",
+          "frame": 5,
+          "source": "assets\\doug-left-v2.png",
+          "sourceCell": [
+            443,
+            443,
+            887,
+            887
+          ],
+          "subjectBounds": [
+            130,
+            15,
+            418,
+            423
+          ],
+          "uniformScale": 0.6985294117647058,
+          "destination": [
+            54,
+            38
+          ],
+          "size": [
+            201,
+            285
+          ],
+          "resamplingPasses": 1,
+          "sha256": "eaf3d5e7aa42249749f656d062cc651e7c7c931f8aef032124cd730cc5374ac5"
+        },
+        {
+          "direction": "left",
+          "frame": 6,
+          "source": "assets\\doug-left-v2.png",
+          "sourceCell": [
+            887,
+            443,
+            1330,
+            887
+          ],
+          "subjectBounds": [
+            131,
+            17,
+            408,
+            421
+          ],
+          "uniformScale": 0.7128712871287128,
+          "destination": [
+            50,
+            34
+          ],
+          "size": [
+            197,
+            288
+          ],
+          "resamplingPasses": 1,
+          "sha256": "028d47a480297b947eedefb1ac69516e2d30d70ac03ea10d1531bd7e1550f760"
+        },
+        {
+          "direction": "left",
+          "frame": 7,
+          "source": "assets\\doug-left-v2.png",
+          "sourceCell": [
+            1330,
+            443,
+            1774,
+            887
+          ],
+          "subjectBounds": [
+            89,
+            15,
+            426,
+            420
+          ],
+          "uniformScale": 0.7185185185185186,
+          "destination": [
+            17,
+            31
+          ],
+          "size": [
+            242,
+            291
+          ],
+          "resamplingPasses": 1,
+          "sha256": "f4871d80755af33227db04c1d6c61dc7250c9c49a486a4f3b8289ec84ed7473a"
+        }
+      ],
+      "leftView": "Independently drawn left profile preserves watering-can hand.",
+      "registeredSHA256": {
+        "registered\\doug\\down-0.png": "9890faf07f5b09de81c2cc68734d8999ee812b0b828cc78898d9580255415cd5",
+        "registered\\doug\\down-1.png": "f9896be3f042ebe776f0f805fc1cecf3840813b5b4b4f46d6fd4ad9186987a78",
+        "registered\\doug\\down-2.png": "889068105fbfe63e0742fec611377456440e24f7a00f2749a5712fe473c786be",
+        "registered\\doug\\down-3.png": "8c39c97dbcba71d8ef56820628e30be6f8576f15259a309db39cf093edfcd698",
+        "registered\\doug\\down-4.png": "a6d61a8d9dc85e33413bc0bae283ce317c973d2a5a565f06d81c9cfaeb5fa3eb",
+        "registered\\doug\\down-5.png": "07e7a44702959db009f34ec0dda284ae6fee8c137eb5c504ea8b7b397fe6860e",
+        "registered\\doug\\down-6.png": "470eaf738b4f81cf7bd69100741a59260ad0e86cf56e725b815cae2f1519aea8",
+        "registered\\doug\\down-7.png": "5e50003a0e75a2c5260169995af76c49a5328d70add43df0a66d49b1daed4445",
+        "registered\\doug\\down-idle.png": "2a3a2be745b9826787978df14d40cfe31d95c477b45208a410442f8a94f4e099",
+        "registered\\doug\\left-0.png": "e4df03d2d3d1df7d6d57e00950b91ae30705930d178619a37b35d6806972cff8",
+        "registered\\doug\\left-1.png": "a536fa38c96626b50bcc7e97805fa40bb48d17b6cddf7cfaf1219a173b0b919a",
+        "registered\\doug\\left-2.png": "6471e008f77d553cb17f44969505770e6f00979f3cdbca990252e5999c88b990",
+        "registered\\doug\\left-3.png": "87edc6224aa4e437d6d349dd677b1cba9fbf9cfb3b64b73eae9de9852f11f616",
+        "registered\\doug\\left-4.png": "83a854674819706378f022087cfe41bef88474068c62dd40734562a66672eb19",
+        "registered\\doug\\left-5.png": "eaf3d5e7aa42249749f656d062cc651e7c7c931f8aef032124cd730cc5374ac5",
+        "registered\\doug\\left-6.png": "028d47a480297b947eedefb1ac69516e2d30d70ac03ea10d1531bd7e1550f760",
+        "registered\\doug\\left-7.png": "f4871d80755af33227db04c1d6c61dc7250c9c49a486a4f3b8289ec84ed7473a",
+        "registered\\doug\\left-idle.png": "e3164ed777624fe69a3024b2f609683677aaff0a544c4e75594a8e07a192e09b",
+        "registered\\doug\\right-0.png": "c6c1a34c28f20f8311bebc7c56feeada9ea5753ff277eeab85b0e6197502e218",
+        "registered\\doug\\right-1.png": "6f935721933e84bda1b7bae3a265eb470f81bd0b4a804e870f3e679609ccedf4",
+        "registered\\doug\\right-2.png": "75608f1a218a5bf68737aabbc3e920590b08ca23bed131f2b061ce60d0b752cb",
+        "registered\\doug\\right-3.png": "818066190ba8594891e19aec6ed82f5c68844ddfd3e34cfb4433de0814405b47",
+        "registered\\doug\\right-4.png": "fa5a50a513f3ead9cc73ba0cbe90b3feb2875c790d713523487a02e18f20aea0",
+        "registered\\doug\\right-5.png": "a4c382f89f34a7cd7cc692bb046a8b15849970d56c5d752717f8c7f5b880f6ba",
+        "registered\\doug\\right-6.png": "780fc72f8c1443c99fd86cfc42c1b84304ed90f916a7fda807d9f1e350547e4c",
+        "registered\\doug\\right-7.png": "1f55f1885e24df8b96eed0b548d9c22b9d23c89d19a641202011855bd676be96",
+        "registered\\doug\\right-idle.png": "7e8a8e85a6161b70dc2bde5c4c8602676fc43c536fb91d1ddb94b1021f9606d4",
+        "registered\\doug\\up-0.png": "0832b02cd8177130010ab2fc08186f86b6790eb8121df4b297cfb180663ae969",
+        "registered\\doug\\up-1.png": "0a6d0915788ddd975a9fb4c4a52fa010a98024e8245e6e0e56d5afc4b0b17b34",
+        "registered\\doug\\up-2.png": "2515fb3899529a79c297dbeaf75329816f0421cd82e62bc929c71b32095e21f5",
+        "registered\\doug\\up-3.png": "00d1ef3379ca2bfe55c375725e4acabc4f56ebf83ea6498727f4bf3f9bfe589d",
+        "registered\\doug\\up-4.png": "46ed778f6666d07bd7917f40f5e5c47de6cdce9d6b3c794b32d541f2745d40de",
+        "registered\\doug\\up-5.png": "63d5625a656b0c04972ea7a391cf8cd739f87d083ed64e94f3eb53411d26aeef",
+        "registered\\doug\\up-6.png": "22709005ac71bede21654025ad4b8d5391627469be0bcf9411be6396ce0d1c5b",
+        "registered\\doug\\up-7.png": "c4c5211f5710eab536e79c7ced8099279b8a936e0c9a4e30577ad4addb4513b4",
+        "registered\\doug\\up-idle.png": "a29cca8f2dabcc4dbec639298818eaf67adb6ef2588b73e3b14e2b5da4b61187"
+      }
+    }
+  },
+  "notes": "Eight authored frames per direction. Original identity/outfits retained. Matching high-resolution standing views; portraits and actions unchanged."
+}

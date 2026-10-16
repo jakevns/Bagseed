@@ -1,0 +1,1499 @@
+{
+  "frames": 96,
+  "characters": 3,
+  "directions": 4,
+  "frameCount": 8,
+  "nativeCanvas": [
+    288,
+    324
+  ],
+  "browserErrors": [],
+  "clockChecks": {
+    "timeClocks": [
+      "remy",
+      "priya",
+      "doug"
+    ],
+    "phases": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "roommateDistanceFrames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "reducedMotionFrame": 2,
+    "poppyFrameCount": 4
+  },
+  "gameChecks": {
+    "counts": {
+      "remy": 8,
+      "priya": 8,
+      "doug": 8
+    },
+    "motionDistanceFrames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "checks": [
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "down",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27942
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "down",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 25448
+    },
+    {
+      "id": "doug",
+      "dir": "down",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "down",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 38545
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "down",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26549
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "down",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24292
+    },
+    {
+      "id": "doug",
+      "dir": "down",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "down",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 36790
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "down",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 28372
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "down",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24494
+    },
+    {
+      "id": "doug",
+      "dir": "down",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "down",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 37939
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "down",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27995
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "down",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24363
+    },
+    {
+      "id": "doug",
+      "dir": "down",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "down",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 37507
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "down",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27014
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "down",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 25319
+    },
+    {
+      "id": "doug",
+      "dir": "down",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "down",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 37754
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "down",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26418
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "down",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24673
+    },
+    {
+      "id": "doug",
+      "dir": "down",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "down",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 35100
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "down",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27937
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "down",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24562
+    },
+    {
+      "id": "doug",
+      "dir": "down",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "down",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 36321
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "down",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 28503
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "down",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24689
+    },
+    {
+      "id": "doug",
+      "dir": "down",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "down",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 36868
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "right",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26216
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "right",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29295
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "right",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 35193
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "right",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 22436
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "right",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26311
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "right",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 30336
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "right",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 21327
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "right",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24339
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "right",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29213
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "right",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24018
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "right",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27838
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "right",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 31117
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "right",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26873
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "right",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29659
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "right",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 35618
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "right",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 22584
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "right",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26289
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "right",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29919
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "right",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 22689
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "right",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24821
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "right",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29454
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "right",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 25292
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "right",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29273
+    },
+    {
+      "id": "doug",
+      "dir": "right",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "right",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 34859
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "up",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26357
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "up",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26700
+    },
+    {
+      "id": "doug",
+      "dir": "up",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "up",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 37521
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "up",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26321
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "up",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 25401
+    },
+    {
+      "id": "doug",
+      "dir": "up",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "up",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 37531
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "up",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27765
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "up",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26336
+    },
+    {
+      "id": "doug",
+      "dir": "up",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "up",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 38847
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "up",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26843
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "up",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26014
+    },
+    {
+      "id": "doug",
+      "dir": "up",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "up",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 37251
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "up",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 28585
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "up",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26221
+    },
+    {
+      "id": "doug",
+      "dir": "up",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "up",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 36339
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "up",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 28057
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "up",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26239
+    },
+    {
+      "id": "doug",
+      "dir": "up",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "up",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 37213
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "up",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27328
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "up",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26402
+    },
+    {
+      "id": "doug",
+      "dir": "up",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "up",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 38330
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "up",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27586
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "up",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26337
+    },
+    {
+      "id": "doug",
+      "dir": "up",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "up",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 37552
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "left",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26216
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "left",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29295
+    },
+    {
+      "id": "doug",
+      "dir": "left",
+      "frame": 0,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "left",
+        "frame": 0
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 35313
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "left",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 22436
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "left",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26311
+    },
+    {
+      "id": "doug",
+      "dir": "left",
+      "frame": 1,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "left",
+        "frame": 1
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 32864
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "left",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 21327
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "left",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24339
+    },
+    {
+      "id": "doug",
+      "dir": "left",
+      "frame": 2,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "left",
+        "frame": 2
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 32403
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "left",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24018
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "left",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 27838
+    },
+    {
+      "id": "doug",
+      "dir": "left",
+      "frame": 3,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "left",
+        "frame": 3
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 34950
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "left",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26873
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "left",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29659
+    },
+    {
+      "id": "doug",
+      "dir": "left",
+      "frame": 4,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "left",
+        "frame": 4
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 35940
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "left",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 22584
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "left",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 26289
+    },
+    {
+      "id": "doug",
+      "dir": "left",
+      "frame": 5,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "left",
+        "frame": 5
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 32438
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "left",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 22689
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "left",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 24821
+    },
+    {
+      "id": "doug",
+      "dir": "left",
+      "frame": 6,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "left",
+        "frame": 6
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 32547
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "remy",
+        "dir": "left",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 25292
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "priya",
+        "dir": "left",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 29273
+    },
+    {
+      "id": "doug",
+      "dir": "left",
+      "frame": 7,
+      "width": 288,
+      "height": 324,
+      "authored": {
+        "id": "doug",
+        "dir": "left",
+        "frame": 7
+      },
+      "count": 8,
+      "floor": 320,
+      "opaque": 36721
+    }
+  ]
+}

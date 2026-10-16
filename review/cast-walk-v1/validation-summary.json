@@ -1,0 +1,18 @@
+{
+  "status": "implemented locally and verified",
+  "walkingStandard": "eight-frame-full-stride-v1",
+  "characters": ["remy", "priya", "doug"],
+  "directionsPerCharacter": 4,
+  "framesPerDirection": 8,
+  "walkFramesChecked": 96,
+  "matchingStandingViews": 12,
+  "nativeCanvas": [288, 324],
+  "rendererAndClockTest": "passed",
+  "customWardrobeRegressionTest": "passed, 300 outfits and 4800 frames",
+  "smokeTests": "8 passed, including save/reload, four-direction movement and mobile layouts",
+  "sourceAndBuildFreshness": "passed",
+  "reviewControls": "passed on desktop and mobile",
+  "browserErrors": [],
+  "committedOrPushed": false,
+  "imageGeneration": "Built-in image_gen; original PNGs and exact prompts retained under graphics/production/cast-walk-v1."
+}

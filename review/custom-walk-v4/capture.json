@@ -1,0 +1,173 @@
+{
+  "status": "modular sample motion candidate; remaining wardrobe integration and visual approval pending",
+  "frameCount": 8,
+  "uniqueImages": 8,
+  "browserErrors": [],
+  "standingAndMovingResolution": [
+    288,
+    432
+  ],
+  "existingSourcesUnchanged": true,
+  "checks": [
+    {
+      "dir": "right",
+      "frame": 0,
+      "authored": "right/0",
+      "hand": {
+        "x": 35.295,
+        "y": 106.271
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "left",
+      "frame": 0,
+      "authored": "left/0",
+      "hand": {
+        "x": 60.372,
+        "y": 106.271
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "right",
+      "frame": 1,
+      "authored": "right/1",
+      "hand": {
+        "x": 60.824,
+        "y": 102.856
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "left",
+      "frame": 1,
+      "authored": "left/1",
+      "hand": {
+        "x": 34.843,
+        "y": 102.856
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "right",
+      "frame": 2,
+      "authored": "right/2",
+      "hand": {
+        "x": 46.768,
+        "y": 106.526
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "left",
+      "frame": 2,
+      "authored": "left/2",
+      "hand": {
+        "x": 48.899,
+        "y": 106.526
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "right",
+      "frame": 3,
+      "authored": "right/3",
+      "hand": {
+        "x": 58.975,
+        "y": 101.994
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "left",
+      "frame": 3,
+      "authored": "left/3",
+      "hand": {
+        "x": 36.692,
+        "y": 101.994
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "right",
+      "frame": 4,
+      "authored": "right/4",
+      "hand": {
+        "x": 55.707,
+        "y": 103.106
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "left",
+      "frame": 4,
+      "authored": "left/4",
+      "hand": {
+        "x": 39.96,
+        "y": 103.106
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "right",
+      "frame": 5,
+      "authored": "right/5",
+      "hand": {
+        "x": 57.92,
+        "y": 103.222
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "left",
+      "frame": 5,
+      "authored": "left/5",
+      "hand": {
+        "x": 37.747,
+        "y": 103.222
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "right",
+      "frame": 6,
+      "authored": "right/6",
+      "hand": {
+        "x": 47.738,
+        "y": 106.616
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "left",
+      "frame": 6,
+      "authored": "left/6",
+      "hand": {
+        "x": 47.929,
+        "y": 106.616
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "right",
+      "frame": 7,
+      "authored": "right/7",
+      "hand": {
+        "x": 47.706,
+        "y": 100.876
+      },
+      "flashlightError": 0
+    },
+    {
+      "dir": "left",
+      "frame": 7,
+      "authored": "left/7",
+      "hand": {
+        "x": 63.443,
+        "y": 103.029
+      },
+      "flashlightError": 0
+    }
+  ]
+}

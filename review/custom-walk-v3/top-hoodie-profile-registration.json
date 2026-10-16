@@ -1,0 +1,410 @@
+{
+  "frames": [
+    {
+      "frame": "right/0",
+      "errors": {
+        "measuredNeck": 0.918,
+        "handL": 0.918,
+        "handR": 0.918
+      },
+      "maxKeypointError": 0.918,
+      "visibleHandsMeasured": 2,
+      "limbCoreIoU": 0.9689145149160191,
+      "groundError": 0.0,
+      "uniformScale": 0.20137644120283085,
+      "rotationDegrees": 0.7153320312500002,
+      "finalSourceToCanvasTranslation": [
+        31.4184568627175,
+        90.65584392311285
+      ],
+      "resamplingPasses": 1,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          49.0,
+          78.47492625368731
+        ],
+        "handL": [
+          36.77414330218068,
+          108.18380062305296
+        ],
+        "handR": [
+          63.00690846286701,
+          106.33333333333333
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.333333333333336,
+          78.21774193548387
+        ],
+        "handL": [
+          35.70466321243523,
+          107.8307426597582
+        ],
+        "handR": [
+          60.63128491620112,
+          105.39106145251397
+        ]
+      },
+      "accepted": true,
+      "source": "assets/profile-v3-top-hoodie-v1.png",
+      "sourceCell": [
+        0,
+        0,
+        362,
+        560
+      ]
+    },
+    {
+      "frame": "right/1",
+      "errors": {
+        "measuredNeck": 0.713,
+        "handL": 0.713
+      },
+      "maxKeypointError": 0.713,
+      "visibleHandsMeasured": 1,
+      "limbCoreIoU": 0.9484320557491289,
+      "groundError": 0.0,
+      "uniformScale": 0.20032673853056948,
+      "rotationDegrees": -2.0,
+      "finalSourceToCanvasTranslation": [
+        20.64438024205129,
+        96.54125645181566
+      ],
+      "resamplingPasses": 1,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          48.666666666666664,
+          77.25574712643679
+        ],
+        "handL": [
+          48.25750394944708,
+          107.53870458135862
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          76.98360655737706
+        ],
+        "handL": [
+          49.93596986817326,
+          107.90207156308851
+        ]
+      },
+      "accepted": true,
+      "source": "assets/profile-v3-top-hoodie-v1.png",
+      "sourceCell": [
+        362,
+        0,
+        724,
+        560
+      ]
+    },
+    {
+      "frame": "right/2",
+      "errors": {
+        "measuredNeck": 0.93,
+        "handL": 0.918,
+        "handR": 0.93
+      },
+      "maxKeypointError": 0.93,
+      "visibleHandsMeasured": 2,
+      "limbCoreIoU": 0.9566539923954372,
+      "groundError": 0.0,
+      "uniformScale": 0.1993237132685577,
+      "rotationDegrees": 1.2148437500000002,
+      "finalSourceToCanvasTranslation": [
+        18.611079248113285,
+        91.74873494510189
+      ],
+      "resamplingPasses": 1,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          49.0,
+          78.48377581120944
+        ],
+        "handL": [
+          60.387096774193544,
+          106.94777265745007
+        ],
+        "handR": [
+          35.215873015873015,
+          108.21428571428572
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.333333333333336,
+          78.22314049586777
+        ],
+        "handL": [
+          59.39363484087102,
+          106.13065326633165
+        ],
+        "handR": [
+          35.41621621621622,
+          106.86126126126125
+        ]
+      },
+      "accepted": true,
+      "source": "assets/profile-v3-top-hoodie-v1.png",
+      "sourceCell": [
+        724,
+        0,
+        1086,
+        560
+      ]
+    },
+    {
+      "frame": "right/3",
+      "errors": {
+        "measuredNeck": 0.859,
+        "handL": 0.859
+      },
+      "maxKeypointError": 0.859,
+      "visibleHandsMeasured": 1,
+      "limbCoreIoU": 0.9750492449113591,
+      "groundError": 0.0,
+      "uniformScale": 0.19905211304940165,
+      "rotationDegrees": -1.28515625,
+      "finalSourceToCanvasTranslation": [
+        11.536429256348853,
+        97.72108368331732
+      ],
+      "resamplingPasses": 1,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          48.666666666666664,
+          77.25757575757576
+        ],
+        "handL": [
+          48.2217261904762,
+          107.69940476190476
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          77.01652892561984
+        ],
+        "handL": [
+          49.16042780748663,
+          108.66310160427808
+        ]
+      },
+      "accepted": true,
+      "source": "assets/profile-v3-top-hoodie-v1.png",
+      "sourceCell": [
+        1086,
+        0,
+        1448,
+        560
+      ]
+    },
+    {
+      "frame": "left/0",
+      "errors": {
+        "measuredNeck": 1.045,
+        "handL": 1.045,
+        "handR": 1.045
+      },
+      "maxKeypointError": 1.045,
+      "visibleHandsMeasured": 2,
+      "limbCoreIoU": 0.972306143001007,
+      "groundError": 0.0,
+      "uniformScale": 0.19568766792022063,
+      "rotationDegrees": -1.8662109375000002,
+      "finalSourceToCanvasTranslation": [
+        31.690647336146817,
+        162.07987810144064
+      ],
+      "resamplingPasses": 1,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          47.333333333333336,
+          78.54742547425475
+        ],
+        "handL": [
+          59.11538461538461,
+          107.83974358974359
+        ],
+        "handR": [
+          32.038888888888884,
+          106.26851851851852
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          47.666666666666664,
+          78.26933333333334
+        ],
+        "handL": [
+          60.51578947368421,
+          107.43508771929824
+        ],
+        "handR": [
+          34.92551210428305,
+          105.44320297951583
+        ]
+      },
+      "accepted": true,
+      "source": "assets/profile-v3-top-hoodie-v1.png",
+      "sourceCell": [
+        0,
+        560,
+        362,
+        1086
+      ]
+    },
+    {
+      "frame": "left/1",
+      "errors": {
+        "measuredNeck": 0.191,
+        "handL": 0.191
+      },
+      "maxKeypointError": 0.191,
+      "visibleHandsMeasured": 1,
+      "limbCoreIoU": 0.9900718931872646,
+      "groundError": 0.0,
+      "uniformScale": 0.19602890519462846,
+      "rotationDegrees": 1.0351562499999998,
+      "finalSourceToCanvasTranslation": [
+        24.041948766843838,
+        153.50315655367007
+      ],
+      "resamplingPasses": 1,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          47.666666666666664,
+          77.29411764705883
+        ],
+        "handL": [
+          47.23565891472868,
+          107.56279069767442
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          76.99731182795699
+        ],
+        "handL": [
+          46.81003584229391,
+          107.66666666666667
+        ]
+      },
+      "accepted": true,
+      "source": "assets/profile-v3-top-hoodie-v1.png",
+      "sourceCell": [
+        362,
+        560,
+        724,
+        1086
+      ]
+    },
+    {
+      "frame": "left/2",
+      "errors": {
+        "measuredNeck": 0.471,
+        "handL": 0.471,
+        "handR": 0.364
+      },
+      "maxKeypointError": 0.471,
+      "visibleHandsMeasured": 2,
+      "limbCoreIoU": 0.9752385865359814,
+      "groundError": 0.0,
+      "uniformScale": 0.19584477956838284,
+      "rotationDegrees": 0.28515625,
+      "finalSourceToCanvasTranslation": [
+        22.15622970542639,
+        157.14600488152394
+      ],
+      "resamplingPasses": 1,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          47.0,
+          78.58611111111111
+        ],
+        "handL": [
+          34.818042813455655,
+          106.59021406727828
+        ],
+        "handR": [
+          59.25728155339806,
+          107.57766990291263
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          47.666666666666664,
+          78.256
+        ],
+        "handL": [
+          35.65488215488215,
+          105.64983164983165
+        ],
+        "handR": [
+          60.42105263157895,
+          106.94561403508771
+        ]
+      },
+      "accepted": true,
+      "source": "assets/profile-v3-top-hoodie-v1.png",
+      "sourceCell": [
+        724,
+        560,
+        1086,
+        1086
+      ]
+    },
+    {
+      "frame": "left/3",
+      "errors": {
+        "measuredNeck": 0.111,
+        "handL": 0.111
+      },
+      "maxKeypointError": 0.111,
+      "visibleHandsMeasured": 1,
+      "limbCoreIoU": 0.9914417379855168,
+      "groundError": 0.0,
+      "uniformScale": 0.19549034664991582,
+      "rotationDegrees": 1.78515625,
+      "finalSourceToCanvasTranslation": [
+        20.556314735903513,
+        152.56673821339587
+      ],
+      "resamplingPasses": 1,
+      "sourceLandmarks": {
+        "measuredNeck": [
+          47.333333333333336,
+          77.5748031496063
+        ],
+        "handL": [
+          47.91900311526479,
+          107.90342679127725
+        ]
+      },
+      "targetLandmarks": {
+        "measuredNeck": [
+          48.0,
+          77.18796992481204
+        ],
+        "handL": [
+          47.423280423280424,
+          107.68077601410936
+        ]
+      },
+      "accepted": true,
+      "source": "assets/profile-v3-top-hoodie-v1.png",
+      "sourceCell": [
+        1086,
+        560,
+        1448,
+        1086
+      ]
+    }
+  ],
+  "passed": 8,
+  "total": 8
+}
