@@ -1,0 +1,133 @@
+{
+  "revision": "humidifiers-proposal-1",
+  "status": "awaiting-user-approval",
+  "path": "assets/humidifiers-atlas.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "sha256": "25d303c089147b70fbe7db3ce78141355cb53175b45c2acd6fb39827baaf8adc",
+  "tiers": {
+    "1": {
+      "name": "Mist Disaster 2000",
+      "price": 19.99,
+      "watts": 25,
+      "width": 11.8,
+      "height": 13.0,
+      "on": [
+        75,
+        78,
+        373,
+        410
+      ],
+      "off": [
+        578,
+        79,
+        373,
+        409
+      ],
+      "nozzle": {
+        "on": [
+          261,
+          96
+        ],
+        "off": [
+          765,
+          96
+        ]
+      },
+      "display": null
+    },
+    "2": {
+      "name": "Mist Disaster 2000 + Timer",
+      "price": 44,
+      "watts": 25,
+      "width": 15.3,
+      "height": 13.2,
+      "on": [
+        30,
+        571,
+        470,
+        409
+      ],
+      "off": [
+        541,
+        571,
+        466,
+        409
+      ],
+      "nozzle": {
+        "on": [
+          216,
+          590
+        ],
+        "off": [
+          728,
+          590
+        ]
+      },
+      "display": null
+    },
+    "3": {
+      "name": "Dewpoint Digital",
+      "price": 99,
+      "watts": 30,
+      "width": 12.2,
+      "height": 15.2,
+      "on": [
+        77,
+        1017,
+        365,
+        453
+      ],
+      "off": [
+        583,
+        1018,
+        364,
+        452
+      ],
+      "nozzle": {
+        "on": [
+          260,
+          1038
+        ],
+        "off": [
+          766,
+          1038
+        ]
+      },
+      "display": {
+        "on": [
+          277,
+          1201,
+          112,
+          60
+        ],
+        "off": [
+          784,
+          1201,
+          112,
+          60
+        ]
+      }
+    }
+  },
+  "placements": {
+    "closet": [
+      39.5,
+      81.5
+    ],
+    "tent2": [
+      107,
+      106.7
+    ],
+    "tent4": [
+      60,
+      112
+    ],
+    "tent5": [
+      220,
+      122
+    ]
+  }
+}

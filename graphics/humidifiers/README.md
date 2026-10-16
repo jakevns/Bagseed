@@ -1,0 +1,13 @@
+# Humidifiers — approval samples
+
+Three current Climate items: Mist Disaster 2000 ($19.99, 25W), Mist Disaster 2000 + Timer ($44, 25W), Dewpoint Digital ($99, 30W). This batch does not include dehumidifiers, which follow next. The cream/sage enclosures, aqua reservoirs, brass controls and charcoal bases match the approved indoor equipment. The original generated atlas is unchanged; sources/manifest.json records its hash, component crops, outlet positions, digital display and drawing anchors.
+
+The user requested placement between the two 2×2 plants; between the first and second plants in the 4×4 and 5×5; and at the back right of the starter, under its exhaust and behind the plant. Drawing anchors are starter (39.5, 81.5), 2×2 (107, 106.7), 4×4 (60, 112), 5×5 (220, 122). The 5×5 midpoint uses its approved plant visual offsets (208 and 232). No logical slots, plant coordinates, room collisions or contents change.
+
+For the requested starter arrangement, only drawing is adjusted: the exhaust moves to the right beneath the flap, the circulation fan moves to the left to clear it, and the humidifier sits at the rear right. Their hit targets follow their current artwork. Devices and soft mist draw before the existing foreground plants/pots, tent fabric, zipper and actors; no late device layer paints over plants or players.
+
+sources/proposal.js is injected only into a disposable public/index.html browser. All production files and the remote repository remain unchanged. Soft deterministic mist expands and fades from the actual top outlet. High mode has a denser/taller plume; off and reduced-motion modes omit drifting mist. Native timer gating is preserved, including a stopped mist plume in lights-off periods. The native stuck-on-high failure is reflected visually while powered, and switching power off stops it. The digital model displays its actual target. Store, package and inventory icons share the device art and omit mist.
+
+Run node tools/preview-humidifiers.cjs for the three-tier board, all four requested placements, actual Climate store/phone cards, on/off/high/reduced/target/timer/failure checks, 12 installation targets and a foreground-pot depth probe. python3 tools/animate-humidifiers.py packages 96 actual renderer captures at 60ms per frame. Review output is under review/humidifiers/.
+
+Await user artwork and placement approval before production compilation/startup integration, purchase/delivery/fitting/save checks and publication. The local checkpoint preserves the work without pushing unapproved changes.
