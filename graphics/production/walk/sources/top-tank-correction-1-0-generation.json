@@ -1,0 +1,13 @@
+{
+  "id": "top-tank",
+  "phase": 2,
+  "mode": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. EDIT the attached exact existing four-figure atlas: FOUR FIGURES in a TWO by TWO grid. These are four repeated copies of the SAME pose, not different frames. Preserve the original 2:3 canvas and each figure's exact scale, lower-half placement, generous empty headroom, original outline and body proportions. True transparent background. Keep the EXISTING hands, fingertips, wrists and feet EXACTLY unchanged in shape and pixel position; replace clothing without shortening or moving any arm. No new poses. Neck-down only, no text, no heads, no shadows. Friendly original hand-painted RPG art. Replace green hoodie with medium-blue #5086bf SLEEVELESS TANK TOP. Bare tan #cf9670 shoulders/arms and ORIGINAL hands. Navy jeans and brown/cream sneakers unchanged.",
+  "references": [
+    "C:/Projects/Bagseed/graphics/production/walk/assets/top-tank-correction-1-0-master-reference.png"
+  ],
+  "transparent_background": true,
+  "source": "graphics/production/walk/assets/top-tank-correction-1-0.png",
+  "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-a937b5fb-46de-4db6-9d39-598f11c913ec.png",
+  "status": "generated; awaiting registration"
+}

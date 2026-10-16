@@ -1,0 +1,13 @@
+{
+  "id": "bottom-cargo",
+  "phase": 2,
+  "mode": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. Clothing-only edit of the attached EXACT approved body poses. FOUR neck-down figures in TWO columns and TWO rows, unchanged 2:3 canvas, exact original scale and placement in lower half of each cell, original transparent upper headroom. Actual transparent alpha background, no text, no grid, no shadow, no heads. Trace the original body; do not invent new anatomy. Keep every original HAND, FINGER, wrist and shoe EXACTLY unchanged at its original pixel position. Do not shift, thicken or shorten arms. Keep exact foot/heel/toe contact, limb lengths, knees and hips. Preserve original warm soft-outlined hand-painted indie RPG style. All four cells repeat the SAME left-profile pose; do not change them into different poses. Replace hoodie with fitted medium-blue short-sleeve tee tucked into DARK-NAVY CARGO PANTS: practical stitched side thigh pockets with flaps, straight tapered legs and natural folds. Keep original leg poses, knees, hands and original brown cream-soled sneakers unchanged. Bare tan forearms connect to unchanged hands.",
+  "references": [
+    "C:/Projects/Bagseed/graphics/production/walk/assets/bottom-cargo-correction-2-0-master-reference.png"
+  ],
+  "transparent_background": true,
+  "source": "graphics/production/walk/assets/bottom-cargo-correction-2-0.png",
+  "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-e2149a24-86a6-4fd4-9d5c-736e9608a1f5.png",
+  "status": "generated; awaiting registration"
+}

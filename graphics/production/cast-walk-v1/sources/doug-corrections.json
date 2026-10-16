@@ -1,0 +1,47 @@
+{
+  "method": "built-in image_gen",
+  "jobs": [
+    {
+      "dir": "right",
+      "v": 3,
+      "input": "doug-right-v2.png",
+      "fix": "Keep all eight existing body/arm/leg poses and his watering can exactly as they are. Correct ONLY the footwear: in EVERY cell both feet wear Doug's original plain BROWN LEATHER WORK BOOTS with dark brown leather soles. NO cream-white rubber soles, sneaker toe caps, sneaker stripes or sneaker laces. Same rounded brown work-boot design in all eight poses, including lifted feet. Do not move the legs or feet, do not lose or change the carrying hand or can. Both rows remain facing RIGHT.",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/assets/doug-right-v2.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/doug-sheet.png"
+        ],
+        "prompt": "Precisely edit the supplied EIGHT-FRAME Doug Haskell sprite sheet, preserving existing face, bald head/white side hair and moustache, cream shirt, blue overalls, short stocky proportions, delicate line detail, eight chronological leg poses and four-column/two-row layout. Fully TRANSPARENT background, no shadows or labels. Keep all eight existing body/arm/leg poses and his watering can exactly as they are. Correct ONLY the footwear: in EVERY cell both feet wear Doug's original plain BROWN LEATHER WORK BOOTS with dark brown leather soles. NO cream-white rubber soles, sneaker toe caps, sneaker stripes or sneaker laces. Same rounded brown work-boot design in all eight poses, including lifted feet. Do not move the legs or feet, do not lose or change the carrying hand or can. Both rows remain facing RIGHT. Full isolated bodies within every cell, no cropping hair, boots, can or hands. This is the same existing character, not a redesign."
+      }
+    },
+    {
+      "dir": "up",
+      "v": 2,
+      "input": "doug-up-v1.png",
+      "fix": "Keep the eight back-facing walking poses and original identity/outfit. Correct the WATERING-CAN hand in the BOTTOM ROW: ALL EIGHT must hold can in anatomical LEFT hand, which is SCREEN LEFT in this BACK view. It must NEVER move to screen right. Remove the bottom row right-hand cans and put each can in that same frame's left hand low beside left hip, with gray handle/body/spout matching top row and original source. The RIGHT hand on screen right stays empty, free arm. Both rows face AWAY from viewer, no face or eyes. Same body scale/size in all eight figures, not smaller bottom row.",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/assets/doug-up-v1.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/doug-sheet.png"
+        ],
+        "prompt": "Precisely edit the supplied EIGHT-FRAME Doug Haskell sprite sheet, preserving existing face, bald head/white side hair and moustache, cream shirt, blue overalls, short stocky proportions, delicate line detail, eight chronological leg poses and four-column/two-row layout. Fully TRANSPARENT background, no shadows or labels. Keep the eight back-facing walking poses and original identity/outfit. Correct the WATERING-CAN hand in the BOTTOM ROW: ALL EIGHT must hold can in anatomical LEFT hand, which is SCREEN LEFT in this BACK view. It must NEVER move to screen right. Remove the bottom row right-hand cans and put each can in that same frame's left hand low beside left hip, with gray handle/body/spout matching top row and original source. The RIGHT hand on screen right stays empty, free arm. Both rows face AWAY from viewer, no face or eyes. Same body scale/size in all eight figures, not smaller bottom row. Full isolated bodies within every cell, no cropping hair, boots, can or hands. This is the same existing character, not a redesign."
+      }
+    },
+    {
+      "dir": "left",
+      "v": 2,
+      "input": "doug-left-v1.png",
+      "fix": "Keep all eight LEFT-facing leg poses and character identity. Correct all carrying arms so his watering can remains in the anatomical LEFT hand, which is the CAMERA-NEAR arm in LEFT PROFILE. The near arm should hang down beside the outside hip holding the can handle in EVERY cell; the can stays visible beside that same near thigh, spout points LEFT. The camera-far empty arm may swing opposite legs behind torso. In particular bottom-left pose must not put near hand forward empty and transfer can to far hand behind his back. NO handoff anywhere. Both rows face LEFT, nose and boot toes point LEFT. All eight figures same scale. Keep original plain brown leather boots with dark brown soles, never sneakers.",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "C:/Projects/Bagseed/graphics/production/cast-walk-v1/assets/doug-left-v1.png",
+          "C:/Projects/Bagseed/review/characters-v2/assets/generated/doug-sheet.png"
+        ],
+        "prompt": "Precisely edit the supplied EIGHT-FRAME Doug Haskell sprite sheet, preserving existing face, bald head/white side hair and moustache, cream shirt, blue overalls, short stocky proportions, delicate line detail, eight chronological leg poses and four-column/two-row layout. Fully TRANSPARENT background, no shadows or labels. Keep all eight LEFT-facing leg poses and character identity. Correct all carrying arms so his watering can remains in the anatomical LEFT hand, which is the CAMERA-NEAR arm in LEFT PROFILE. The near arm should hang down beside the outside hip holding the can handle in EVERY cell; the can stays visible beside that same near thigh, spout points LEFT. The camera-far empty arm may swing opposite legs behind torso. In particular bottom-left pose must not put near hand forward empty and transfer can to far hand behind his back. NO handoff anywhere. Both rows face LEFT, nose and boot toes point LEFT. All eight figures same scale. Keep original plain brown leather boots with dark brown soles, never sneakers. Full isolated bodies within every cell, no cropping hair, boots, can or hands. This is the same existing character, not a redesign."
+      }
+    }
+  ]
+}

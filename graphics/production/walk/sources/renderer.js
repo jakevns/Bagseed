@@ -1,4 +1,4 @@
-  // Phase 1 authored walk samples. Standing, reactions and authored NPCs keep
+  // Authored wardrobe walking. Standing, reactions and authored NPCs keep
   // their established paths. Every moving pixel comes from a generated frame.
   const walkParts=new Map(),walkFigures=new Map();
   function walkLocal(p,x,y){
@@ -22,13 +22,15 @@
       const brass=r>120&&gg>85&&gg>b*2.6&&r<gg*1.65;
       const skin=bodySkinPixel(r,gg,b)&&!brass&&(kind!=='shoe'||entry.style==='sandals'&&light>88&&r<gg*1.9&&b>gg*.62);
       let tone,base;
-      if(kind==='skin'){tone=rgb(['overalls','pjs','suit'].includes(L.topS)?L.shirtC:L.bottomS==='skirt'?L.skin:L.pantsC);base=145;}
+      if(kind==='skin'){tone=rgb(['overalls','pjs','suit'].includes(L.topS)?L.shirtC:['skirt','shorts'].includes(L.bottomS)?L.skin:L.pantsC);base=145;}
       else if(skin){tone=rgb(L.skin);base=160;}
       else if(cream||brass)continue;
       else if(kind==='shoe'){tone=rgb(L.shoesC);base=62;}
       else if(!blue&&light<35)continue;
       else if(kind==='bottom'){tone=rgb(L.pantsC);base=70;}
       else{tone=rgb(L.shirtC);base=entry.fullSuit?105:115;}
+      const profileRole=kind==='shoe'?'shoe':kind==='bottom'||entry.fullSuit&&name.endsWith('Leg')?'lower':'upper';
+      if(!skin&&kind!=='skin'&&/^(right|left)\//.test(frame)&&entry.profileBases?.[profileRole])base=entry.profileBases[profileRole];
       if(!skin&&kind!=='shoe'&&kind!=='skin'){
         const [u,v]=name.endsWith('Leg')?walkLegLocal(DATA.walk.rig.frames[frame],name,x,y):walkLocal(p,x,y),pat=kind==='bottom'?L.botPat:L.topPat;
         if(blue&&pattern(pat,u,v)){tone=rgb((kind==='bottom'?L.botC2:L.topC2)||'#ffffff');}
@@ -57,18 +59,23 @@
   }
   function authoredWalk(L,dir,frame,blink,density=1){
     const top='top-'+L.topS,bottom='bottom-'+L.bottomS,shoe='shoe-'+L.shoesS,items=DATA.walk?.items;
-    if(!items?.[top]||!items[shoe]||!items[top].fullSuit&&!items[bottom]||isChild(L))return null;
-    const f=dir+'/'+(frame%4),sig=key(L)+'|'+f+'|'+blink;
+    if(!items?.[top]?.accepted||!items[shoe]?.accepted||!items[top].fullSuit&&!items[bottom]?.accepted||isChild(L))return null;
+    const f=dir+'/'+(frame%4),sig=key(L)+'|'+f+'|'+blink+'|'+density;
     if(walkFigures.has(sig))return walkFigures.get(sig);
     // Join all cropped parts at source density before any build transform or
     // gameplay downsampling. Independent low-resolution resampling leaves
     // antialiased seams along the otherwise perfectly adjacent label edges.
-    const out=cv(288,432),g=out.getContext('2d'),bodyFrame=cv(288,432),b=bodyFrame.getContext('2d');g.scale(3,3);b.scale(3,3);g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';
+    const out=cv(96*density,144*density),g=out.getContext('2d'),bodyFrame=cv(288,432),b=bodyFrame.getContext('2d');g.scale(density,density);b.scale(3,3);g.imageSmoothingEnabled=true;g.imageSmoothingQuality='low';
     const p=DATA.walk.rig.frames[f].keypoints,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1),sy=L.short?.9:L.body==='tall'?1.07:1;
     const H=head(L,dir,blink,true),joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),nx=48+(p.neck[0]-48)*width,ny=143+(p.neck[1]-143)*sy,hx=nx-32,hy=ny-joinY/3;
     g.drawImage(H.bagseedNeckBridge,hx,hy,64,H.height/3);
     const lower=items[top].fullSuit?top:bottom;
-    for(const [item,name]of [[top,'farArm'],['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot'],[top,'torso'],['skin-base','nearLeg'],[lower,'nearLeg'],[shoe,'nearFoot'],[top,'nearArm']]){
+    const layers=[[top,'farArm'],['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot'],[top,'torso'],['skin-base','nearLeg'],[lower,'nearLeg']];
+    // Aprons and coats keep their original painted hem pixels over trousers.
+    // Their leg-labelled hem pieces are additional top layers, not bottoms.
+    if(items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
+    layers.push([shoe,'nearFoot'],[top,'nearArm']);
+    for(const [item,name]of layers){
       const part=walkPart(item,f,name,L);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
     }
     walkAccessories(b,L,dir,p);g.save();g.translate(48,143);g.scale(width,sy);g.drawImage(bodyFrame,-48,-143,96,144);g.restore();

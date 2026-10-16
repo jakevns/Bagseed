@@ -1,0 +1,18 @@
+{
+  "mergedMainCommit": "eac882d",
+  "combinedChecks": { "passed": 14, "failed": 1 },
+  "passed": ["96 high-resolution cast walk frames and eight-phase clocks", "300 custom wardrobe outfits", "local-file startup and save reload", "desktop and mobile smoke checks", "approved exhaust", "approved grow lights", "4x4 tent integration", "5x5 tent integration", "source and build freshness"],
+  "existingFailure": {
+    "test": "tests/fans.test.cjs",
+    "assertion": "Store and delivery fan icon data URLs differ, line 10",
+    "reproducesOnUnmodifiedOriginMain": true,
+    "fanSourceChangedByWalkingBranch": false
+  },
+  "packaging": {
+    "characterDataExactlyEqualToPreMergeBuild": true,
+    "htmlBytes": 63907327,
+    "characterDataScriptBytes": 56933156,
+    "eachFileBelowGitHub100MiBLimit": true,
+    "localFilePlayVerified": true
+  }
+}

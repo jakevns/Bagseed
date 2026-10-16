@@ -1,0 +1,824 @@
+{
+  "version": "standing-style-profiles-v3",
+  "groundBaseline": 143,
+  "canvas": [
+    96,
+    144
+  ],
+  "density": 3,
+  "frames": {
+    "right/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "elbowL": [
+          42.136,
+          96.652
+        ],
+        "handL": [
+          35.702,
+          107.004
+        ],
+        "elbowR": [
+          54.478,
+          95.538
+        ],
+        "handR": [
+          60.597,
+          104.979
+        ],
+        "kneeL": [
+          55,
+          124
+        ],
+        "ankleL": [
+          61,
+          138
+        ],
+        "heelL": [
+          54,
+          143
+        ],
+        "toeL": [
+          73,
+          143
+        ],
+        "kneeR": [
+          40,
+          124
+        ],
+        "ankleR": [
+          34,
+          136
+        ],
+        "heelR": [
+          28,
+          138
+        ],
+        "toeR": [
+          46,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "phase": "contact",
+      "groundBaseline": 143,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "registration": {
+        "source": "assets/profile-v3-mannequin-v1.png",
+        "sourceCell": [
+          0,
+          0,
+          362,
+          545
+        ],
+        "uniformScale": 0.20275661089955108,
+        "translation": [
+          6.968538901223487,
+          32.393452690254605
+        ],
+        "rotationDegrees": 0,
+        "groundError": 0.0,
+        "neckMarkerY": 78.0,
+        "visiblePalmsMeasured": true
+      }
+    },
+    "right/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "shoulderL": [
+          50,
+          83
+        ],
+        "shoulderR": [
+          47,
+          83
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "hipL": [
+          50,
+          109
+        ],
+        "hipR": [
+          47,
+          109
+        ],
+        "elbowL": [
+          49.964,
+          96.306
+        ],
+        "handL": [
+          49.935,
+          107.193
+        ],
+        "elbowR": [
+          48.614,
+          96.306
+        ],
+        "handR": [
+          49.935,
+          107.193
+        ],
+        "kneeL": [
+          47,
+          124
+        ],
+        "ankleL": [
+          47,
+          139
+        ],
+        "heelL": [
+          40,
+          143
+        ],
+        "toeL": [
+          59,
+          143
+        ],
+        "kneeR": [
+          55,
+          121
+        ],
+        "ankleR": [
+          50,
+          129
+        ],
+        "heelR": [
+          43,
+          130
+        ],
+        "toeR": [
+          62,
+          133
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "phase": "passing",
+      "groundBaseline": 143,
+      "visibleHands": [
+        "handL"
+      ],
+      "registration": {
+        "source": "assets/profile-v3-passing-v2.png",
+        "sourceCell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "uniformScale": 0.18274220628076468,
+        "translation": [
+          0.8931201587362144,
+          14.999236845117707
+        ],
+        "rotationDegrees": 0,
+        "groundError": 0.0,
+        "neckMarkerY": 77.0,
+        "visiblePalmsMeasured": true
+      }
+    },
+    "right/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "elbowL": [
+          55.163,
+          96.007
+        ],
+        "handL": [
+          59.387,
+          105.83
+        ],
+        "elbowR": [
+          40.647,
+          96.213
+        ],
+        "handR": [
+          35.449,
+          106.206
+        ],
+        "kneeL": [
+          40,
+          124
+        ],
+        "ankleL": [
+          34,
+          136
+        ],
+        "heelL": [
+          28,
+          138
+        ],
+        "toeL": [
+          46,
+          143
+        ],
+        "kneeR": [
+          55,
+          124
+        ],
+        "ankleR": [
+          61,
+          138
+        ],
+        "heelR": [
+          54,
+          143
+        ],
+        "toeR": [
+          73,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "phase": "contact",
+      "groundBaseline": 143,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "registration": {
+        "source": "assets/profile-v3-mannequin-v1.png",
+        "sourceCell": [
+          724,
+          0,
+          1086,
+          545
+        ],
+        "uniformScale": 0.20044632422360084,
+        "translation": [
+          7.184117229969279,
+          33.65374615930042
+        ],
+        "rotationDegrees": 0,
+        "groundError": 0.0,
+        "neckMarkerY": 78.0,
+        "visiblePalmsMeasured": true
+      }
+    },
+    "right/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "shoulderL": [
+          50,
+          83
+        ],
+        "shoulderR": [
+          47,
+          83
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "hipL": [
+          50,
+          109
+        ],
+        "hipR": [
+          47,
+          109
+        ],
+        "elbowL": [
+          49.536,
+          96.792
+        ],
+        "handL": [
+          49.156,
+          108.077
+        ],
+        "elbowR": [
+          48.186,
+          96.792
+        ],
+        "handR": [
+          49.156,
+          108.077
+        ],
+        "kneeL": [
+          55,
+          121
+        ],
+        "ankleL": [
+          50,
+          129
+        ],
+        "heelL": [
+          43,
+          130
+        ],
+        "toeL": [
+          62,
+          133
+        ],
+        "kneeR": [
+          47,
+          124
+        ],
+        "ankleR": [
+          47,
+          139
+        ],
+        "heelR": [
+          40,
+          143
+        ],
+        "toeR": [
+          59,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "phase": "passing",
+      "groundBaseline": 143,
+      "visibleHands": [
+        "handL"
+      ],
+      "registration": {
+        "source": "assets/profile-v3-passing-v2.png",
+        "sourceCell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "uniformScale": 0.18200620475698037,
+        "translation": [
+          3.6713776858554468,
+          15.514765023555091
+        ],
+        "rotationDegrees": 0,
+        "groundError": 0.0,
+        "neckMarkerY": 77.0,
+        "visiblePalmsMeasured": true
+      }
+    },
+    "left/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          46,
+          84
+        ],
+        "shoulderR": [
+          49,
+          84
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "hipL": [
+          46,
+          110
+        ],
+        "hipR": [
+          49,
+          110
+        ],
+        "elbowL": [
+          53.989,
+          96.421
+        ],
+        "handL": [
+          60.525,
+          106.583
+        ],
+        "elbowR": [
+          41.275,
+          95.583
+        ],
+        "handR": [
+          34.955,
+          105.06
+        ],
+        "kneeL": [
+          41,
+          124
+        ],
+        "ankleL": [
+          35,
+          138
+        ],
+        "heelL": [
+          42,
+          143
+        ],
+        "toeL": [
+          23,
+          143
+        ],
+        "kneeR": [
+          56,
+          124
+        ],
+        "ankleR": [
+          62,
+          136
+        ],
+        "heelR": [
+          68,
+          138
+        ],
+        "toeR": [
+          50,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "phase": "contact",
+      "groundBaseline": 143,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "registration": {
+        "source": "assets/profile-v3-mannequin-v1.png",
+        "sourceCell": [
+          0,
+          545,
+          362,
+          1086
+        ],
+        "uniformScale": 0.2013069571340271,
+        "translation": [
+          10.298282451752934,
+          46.59493700750247
+        ],
+        "rotationDegrees": 0,
+        "groundError": 0.0,
+        "neckMarkerY": 78.0,
+        "visiblePalmsMeasured": true
+      }
+    },
+    "left/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "shoulderL": [
+          46,
+          83
+        ],
+        "shoulderR": [
+          49,
+          83
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "hipL": [
+          46,
+          109
+        ],
+        "hipR": [
+          49,
+          109
+        ],
+        "elbowL": [
+          46.457,
+          96.298
+        ],
+        "handL": [
+          46.831,
+          107.179
+        ],
+        "elbowR": [
+          47.807,
+          96.298
+        ],
+        "handR": [
+          46.831,
+          107.179
+        ],
+        "kneeL": [
+          49,
+          124
+        ],
+        "ankleL": [
+          49,
+          139
+        ],
+        "heelL": [
+          56,
+          143
+        ],
+        "toeL": [
+          37,
+          143
+        ],
+        "kneeR": [
+          41,
+          121
+        ],
+        "ankleR": [
+          46,
+          129
+        ],
+        "heelR": [
+          53,
+          130
+        ],
+        "toeR": [
+          34,
+          133
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "phase": "passing",
+      "groundBaseline": 143,
+      "visibleHands": [
+        "handL"
+      ],
+      "registration": {
+        "source": "assets/profile-v3-passing-v2.png",
+        "sourceCell": [
+          0,
+          768,
+          512,
+          1536
+        ],
+        "uniformScale": 0.17745804403195983,
+        "translation": [
+          2.886221694986214,
+          25.641080213530568
+        ],
+        "rotationDegrees": 0,
+        "groundError": 0.0,
+        "neckMarkerY": 77.0,
+        "visiblePalmsMeasured": true
+      }
+    },
+    "left/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          46,
+          84
+        ],
+        "shoulderR": [
+          49,
+          84
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "hipL": [
+          46,
+          110
+        ],
+        "hipR": [
+          49,
+          110
+        ],
+        "elbowL": [
+          40.32,
+          95.659
+        ],
+        "handL": [
+          35.672,
+          105.198
+        ],
+        "elbowR": [
+          55.283,
+          96.27
+        ],
+        "handR": [
+          60.423,
+          106.309
+        ],
+        "kneeL": [
+          56,
+          124
+        ],
+        "ankleL": [
+          62,
+          136
+        ],
+        "heelL": [
+          68,
+          138
+        ],
+        "toeL": [
+          50,
+          143
+        ],
+        "kneeR": [
+          41,
+          124
+        ],
+        "ankleR": [
+          35,
+          138
+        ],
+        "heelR": [
+          42,
+          143
+        ],
+        "toeR": [
+          23,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "phase": "contact",
+      "groundBaseline": 143,
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "registration": {
+        "source": "assets/profile-v3-mannequin-v1.png",
+        "sourceCell": [
+          724,
+          545,
+          1086,
+          1086
+        ],
+        "uniformScale": 0.2005376077447256,
+        "translation": [
+          10.820466786355476,
+          46.96337522441652
+        ],
+        "rotationDegrees": 0,
+        "groundError": 0.0,
+        "neckMarkerY": 78.0,
+        "visiblePalmsMeasured": true
+      }
+    },
+    "left/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "shoulderL": [
+          46,
+          83
+        ],
+        "shoulderR": [
+          49,
+          83
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "hipL": [
+          46,
+          109
+        ],
+        "hipR": [
+          49,
+          109
+        ],
+        "elbowL": [
+          46.797,
+          96.311
+        ],
+        "handL": [
+          47.449,
+          107.201
+        ],
+        "elbowR": [
+          48.147,
+          96.311
+        ],
+        "handR": [
+          47.449,
+          107.201
+        ],
+        "kneeL": [
+          41,
+          121
+        ],
+        "ankleL": [
+          46,
+          129
+        ],
+        "heelL": [
+          53,
+          130
+        ],
+        "toeL": [
+          34,
+          133
+        ],
+        "kneeR": [
+          49,
+          124
+        ],
+        "ankleR": [
+          49,
+          139
+        ],
+        "heelR": [
+          56,
+          143
+        ],
+        "toeR": [
+          37,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "phase": "passing",
+      "groundBaseline": 143,
+      "visibleHands": [
+        "handL"
+      ],
+      "registration": {
+        "source": "assets/profile-v3-passing-v2.png",
+        "sourceCell": [
+          512,
+          768,
+          1024,
+          1536
+        ],
+        "uniformScale": 0.1769097927671678,
+        "translation": [
+          5.227143437626978,
+          26.003657049979683
+        ],
+        "rotationDegrees": 0,
+        "groundError": 0.0,
+        "neckMarkerY": 77.0,
+        "visiblePalmsMeasured": true
+      }
+    }
+  },
+  "notes": "Neck/floor match the existing standing figure. Visible palms measured after uniform registration; shoulders and hidden joints inferred from the source silhouette. Initial motion-guide point errors are retained separately, not counted as passing."
+}

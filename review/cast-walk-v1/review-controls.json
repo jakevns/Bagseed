@@ -1,0 +1,9 @@
+{
+  "directions": 4,
+  "posesPerDirection": 8,
+  "nativeSize": true,
+  "slowMotion": true,
+  "wrapEightToOne": true,
+  "mobilePageFits": true,
+  "browserErrors": []
+}

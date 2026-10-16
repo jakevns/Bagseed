@@ -1,0 +1,46 @@
+[
+  {
+    "id": "top-tank",
+    "version": "correction-1-0",
+    "frames": [
+      "down/2",
+      "down/2",
+      "down/2",
+      "down/2"
+    ],
+    "source": "assets/top-tank-correction-1-0.png"
+  },
+  {
+    "id": "top-crop",
+    "version": "correction-1-0",
+    "frames": [
+      "right/2",
+      "right/2",
+      "right/2",
+      "right/2"
+    ],
+    "source": "assets/top-crop-correction-1-0.png"
+  },
+  {
+    "id": "top-labcoat",
+    "version": "correction-2-0",
+    "frames": [
+      "right/0",
+      "right/2",
+      "up/0",
+      "up/1"
+    ],
+    "source": "assets/top-labcoat-correction-2-0.png"
+  },
+  {
+    "id": "bottom-cargo",
+    "version": "correction-2-0",
+    "frames": [
+      "left/1",
+      "left/1",
+      "left/1",
+      "left/1"
+    ],
+    "source": "assets/bottom-cargo-correction-2-0.png"
+  }
+]

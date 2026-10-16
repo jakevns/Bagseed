@@ -1,0 +1,47 @@
+{
+  "phase": 2,
+  "status": "Rejected by user: profile motion, line weight and preview rendering require correction",
+  "registration": {
+    "addedGarmentFrames": 256,
+    "accepted": 256,
+    "rejected": 0
+  },
+  "runtime": {
+    "outfits": 300,
+    "frames": 4800,
+    "failures": 0,
+    "buildPresentationFrames": 288,
+    "sandalToeVariants": 16,
+    "creator": {
+      "animated": true,
+      "idleStopped": true
+    },
+    "mirror": {
+      "animated": true,
+      "stopped": true
+    },
+    "saveReload": "passed in disposable browser storage"
+  },
+  "staticChecks": "passed; 100 game script blocks; source/payload and baseline checks verified",
+  "targetedBrowserTest": {
+    "passed": 1,
+    "failed": 0,
+    "durationMs": 51019.3742
+  },
+  "fullRegression": {
+    "total": 88,
+    "passed": 86,
+    "failed": 2,
+    "note": "Historical run before reverting non-walk image encoding. The accepted-hair pixel test now passes after restoring original PNG payloads. Bedroom baseline geometry failure predates profile corrections."
+  },
+  "standaloneBytes": 110375931,
+  "baselineBytes": 101055566,
+  "netIncreaseBytes": 2200115,
+  "phase1StandaloneBytes": 103997382,
+  "initialPhase2BeforeExistingImageCompressionBytes": 110375893,
+  "phonePlaytest": "pending user",
+  "visualApproval": "not approved; being redone in review/custom-walk-v3",
+  "branch": "codex/custom-walk-phase-2",
+  "pushed": false,
+  "deployed": false
+}
