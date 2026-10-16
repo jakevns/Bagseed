@@ -1,0 +1,76 @@
+{
+  "revision": "tent5-proposal-1",
+  "status": "awaiting-art-approval",
+  "path": "assets/tents-atlas.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "sha256": "a2cc4d5032f50c44df83e37189cc7a001643d31521af67f83ec756e6a1ba073e",
+  "bounds": [
+    178,
+    2,
+    182,
+    142
+  ],
+  "tiers": {
+    "standard": {
+      "open": [
+        22,
+        27,
+        484,
+        435
+      ],
+      "closed": [
+        519,
+        27,
+        486,
+        435
+      ],
+      "price": 489,
+      "item": "tent5"
+    },
+    "pro": {
+      "open": [
+        21,
+        513,
+        485,
+        432
+      ],
+      "closed": [
+        518,
+        513,
+        486,
+        432
+      ],
+      "price": 189,
+      "item": "shell_tent5_pro"
+    },
+    "premium": {
+      "open": [
+        22,
+        997,
+        484,
+        438
+      ],
+      "closed": [
+        518,
+        997,
+        486,
+        438
+      ],
+      "price": 339,
+      "item": "shell_tent5_premium"
+    }
+  },
+  "slotVisualOffsetY": -24,
+  "slotVisualOffsetsX": [
+    10,
+    6,
+    2,
+    -2,
+    -6,
+    -10
+  ],
+  "capacity": 6
+}
