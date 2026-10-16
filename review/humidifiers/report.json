@@ -13,10 +13,14 @@
   "starterPlantInFront": true,
   "starterExhaustRight": true,
   "timerAndFailureVisuals": true,
+  "steamAnimation": true,
+  "tankBubbleAnimation": true,
   "effectCases": 3,
   "targets": 12,
   "animationFrames": 96,
   "frameDurationMs": 60,
   "storeAndPhoneArtwork": true,
-  "errors": []
+  "errors": [],
+  "approvedPlacementsUnchanged": true,
+  "originalArtworkUnchanged": true
 }

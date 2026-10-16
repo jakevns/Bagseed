@@ -1,5 +1,5 @@
 {
-  "revision": "humidifiers-proposal-1",
+  "revision": "humidifiers-proposal-2",
   "status": "awaiting-user-approval",
   "path": "assets/humidifiers-atlas.png",
   "size": [
@@ -36,7 +36,21 @@
           96
         ]
       },
-      "display": null
+      "display": null,
+      "water": {
+        "on": [
+          115,
+          220,
+          288,
+          48
+        ],
+        "off": [
+          619,
+          220,
+          288,
+          48
+        ]
+      }
     },
     "2": {
       "name": "Mist Disaster 2000 + Timer",
@@ -66,7 +80,21 @@
           590
         ]
       },
-      "display": null
+      "display": null,
+      "water": {
+        "on": [
+          66,
+          716,
+          296,
+          45
+        ],
+        "off": [
+          578,
+          716,
+          296,
+          45
+        ]
+      }
     },
     "3": {
       "name": "Dewpoint Digital",
@@ -108,6 +136,20 @@
           1201,
           112,
           60
+        ]
+      },
+      "water": {
+        "on": [
+          152,
+          1208,
+          64,
+          143
+        ],
+        "off": [
+          658,
+          1208,
+          64,
+          143
         ]
       }
     }
