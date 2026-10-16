@@ -1,0 +1,19 @@
+{
+  "proposalOnly": true,
+  "entryPoint": "public/index.html",
+  "starterShells": [
+    "budget",
+    "standard"
+  ],
+  "purchasableStarterShell": {
+    "tier": "standard",
+    "price": 35
+  },
+  "unchangedHitboxes": true,
+  "unchangedCatalog": true,
+  "unchangedFootprints": true,
+  "storeArtwork": true,
+  "phoneStore": true,
+  "animationNotFinalized": true,
+  "errors": []
+}
