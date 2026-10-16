@@ -22,17 +22,56 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
     await page.evaluate(async art=>{
       const images={};await Promise.all(Object.entries(art).map(async([tier,a])=>{const im=new Image();im.src=a.image;await im.decode();images[tier]=im;}));
       window.drawStarterSample=(c,closed,x,y,w,h,tier=Shell.of('closet').tier)=>{const a=art[tier]||art.budget;c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(images[tier]||images.budget,...a[closed?'closed':'open'],x,y,w,h);c.restore();};
+      // The opening is a rounded aperture inside the rolled roof and front tray.
+      // Reuse the original artwork for its foreground, rather than painting over gear.
+      window.starterOpening=(p,x,y,w,h)=>{
+        p.moveTo(x+w*.094,y+h*.212);p.lineTo(x+w*.91,y+h*.212);
+        p.lineTo(x+w*.91,y+h*.815);p.quadraticCurveTo(x+w*.91,y+h*.902,x+w*.84,y+h*.902);
+        p.lineTo(x+w*.17,y+h*.902);p.quadraticCurveTo(x+w*.094,y+h*.902,x+w*.094,y+h*.815);p.closePath();
+      };
+      window.drawStarterForeground=(c,x,y,w,h,tier)=>{
+        c.save();const mask=new Path2D();mask.rect(x-1,y-1,w+2,h+2);starterOpening(mask,x,y,w,h);c.clip(mask,'evenodd');drawStarterSample(c,false,x,y,w,h,tier);c.restore();
+      };
+      // Move only the slot's drawing and target back onto the illustrated floor.
+      // Logical growth, saves, plant positions and the room footprint stay intact.
+      window.drawStarterSlots=function(c,t){
+        const hit=this.hit;this.hit=function(id,x,y,w,h,...rest){return hit.call(this,id,x,y-10,w,h,...rest);};
+        c.save();c.translate(0,-10);try{this.drawSlots(c,'closet',t);}finally{c.restore();this.hit=hit;}
+      };
       let source=RoomArt.drawCloset.toString();
       source=source.replace(/  \/\/ a wide, shallow[\s\S]*?(?=  this\.plate)/,"  drawStarterSample(c,false,X,Y,W,H);\n");
-      source=source.replace(/  const fh = Math\.round\(lerp\(5,[\s\S]*?  ShellArt\.trim\(c, 'closet', X, Y, W, H, dp\);/,"  if(dp>=1) drawStarterSample(c,true,X,Y,W,H);\n");
+      source=source.replace('if (dp < 1) {','if (dp < 1) {\n    c.save();const aperture=new Path2D();starterOpening(aperture,X,Y,W,H);c.clip(aperture);\n    try {');
+      source=source.replace("    this.drawSlots(c, 'closet', t);","    drawStarterSlots.call(this,c,t);\n    } finally { c.restore(); }");
+      source=source.replace(/  const fh = Math\.round\(lerp\(5,[\s\S]*?  ShellArt\.trim\(c, 'closet', X, Y, W, H, dp\);/,"  drawStarterForeground(c,X,Y,W,H);\n  if(dp>=1) drawStarterSample(c,true,X,Y,W,H);\n");
       if(source===RoomArt.drawCloset.toString()||source.includes('ShellArt.trim(c, \'closet\''))throw Error('Starter preview patch did not match');
       RoomArt.drawCloset=eval('('+source+')');
       const original=ShellArt.icon;ShellArt.icon=function(c,cv,size,tier){if(size!=='closet'||!['budget','standard'].includes(tier))return original.call(this,c,cv,size,tier);cv.width=320;cv.height=240;c.fillStyle='#1a2420';c.fillRect(0,0,320,240);drawStarterSample(c,true,66,16,188,208,tier);};
     },art);
+    const layering=await page.evaluate(()=>{
+      const light=Gear.light,pot=Gear.pot,L=state.locations.closet,saved={light:L.equip.light,pot:L.equip.pot,tier:Shell.of('closet').tier,door:L.door};
+      const is=(c,x,y,r,g,b)=>{const p=c.getImageData(x,y,1,1).data;return p[0]===r&&p[1]===g&&p[2]===b;};let combinations=0;
+      try{
+        // Deliberate bright probes distinguish occluded edges from visible contents.
+        Gear.light=function(c,x,y,...rest){light.call(this,c,x,y,...rest);c.fillStyle='#ff00ff';c.fillRect(x,y-5,1,1);c.fillStyle='#00ffff';c.fillRect(x,y+2,1,1);};
+        Gear.pot=function(c,x,y,...rest){pot.call(this,c,x,y,...rest);c.fillStyle='#ff0000';c.fillRect(x,y+8,1,1);c.fillStyle='#0000ff';c.fillRect(x,y+2,1,1);};
+        L.door='open';
+        for(const tier of ['budget','standard'])for(const l of [1,2,3,4])for(const p of [1,2,3]){
+          Shell.of('closet').tier=tier;L.equip.light=l;L.equip.pot=p;
+          const cv=document.createElement('canvas');cv.width=120;cv.height=120;const c=cv.getContext('2d');RoomArt.drawCloset(c,0);
+          if(is(c,44,22,255,0,255))throw Error('Light draws over the rolled top');
+          if(!is(c,44,29,0,255,255))throw Error('Light body is hidden inside the opening');
+          if(is(c,44,90,255,0,0))throw Error('Pot draws over the front tray');
+          if(!is(c,44,84,0,0,255))throw Error('Pot body is hidden inside the opening');
+          const hit=RoomArt.hits.findLast(h=>h.id==='plant:closet:0');if(!hit||hit.y+hit.h!==92)throw Error('Plant click target did not move with its drawing');
+          combinations++;
+        }
+        return {combinations,topOccludesLight:true,trayOccludesPots:true,contentsRemainVisible:true,plantTargetAligned:true};
+      }finally{Gear.light=light;Gear.pot=pot;L.equip.light=saved.light;L.equip.pot=saved.pot;L.door=saved.door;Shell.of('closet').tier=saved.tier;}
+    });
     const result=await page.evaluate(before=>{
       const tierBefore=Shell.of('closet').tier;
       const hits={};for(const door of ['open','closed']){state.locations.closet.door=door;RoomArt.hits=[];RoomArt.drawCloset(document.createElement('canvas').getContext('2d'),0);hits[door]=JSON.stringify(RoomArt.hits);}
-      function room(tier,door){Shell.of('closet').tier=tier;state.locations.closet.door=door;const cv=document.createElement('canvas');cv.width=1440;cv.height=540;const c=cv.getContext('2d');c.scale(3,3);RoomArt.draw(c,0);return cv;}
+      function room(tier,door){Shell.of('closet').tier=tier;state.locations.closet.door=door;const cv=document.createElement('canvas');cv.width=1440;cv.height=540;const c=cv.getContext('2d');c.scale(3,3);RoomArt.draw(c,0);drawStarterForeground(c,...STARTER_BOX,tier);return cv;}
       const board=document.createElement('canvas');board.width=1400;board.height=1110;const c=board.getContext('2d');c.fillStyle='#f8f2e5';c.fillRect(0,0,1400,1110);c.fillStyle='#29483a';c.font='bold 34px Georgia';c.fillText('BAGSEED / STARTER TENT',30,49);c.font='20px Georgia';c.fillText('Artwork samples · Existing Budget and Standard shells',30,82);
       const scenes={};for(const [i,tier] of ['budget','standard'].entries()){
         const x=24+i*688,y=112;c.fillStyle='#e7e9db';c.fillRect(x,y,664,910);c.fillStyle='#29483a';c.font='bold 28px Georgia';c.fillText(tier==='budget'?'Budget · Included':'Standard · $35 shell upgrade',x+20,y+40);
@@ -45,13 +84,23 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
       Shell.of('closet').tier=tierBefore;
       return {board:board.toDataURL(),scenes,hits,catalogUnchanged:before.catalog===JSON.stringify(Shop.items('spaces')),footprintUnchanged:before.footprint===JSON.stringify(DecoZ.statics('bedroom'))};
     },before);
-    assert.deepEqual(result.hits,before.hits);assert.ok(result.catalogUnchanged);assert.ok(result.footprintUnchanged);
+    for(const door of ['open','closed']){
+      const hits=JSON.parse(result.hits[door]);for(const hit of hits)if(/^(plant|slot|gslot):closet:/.test(hit.id))hit.y+=10;
+      assert.deepEqual(hits,JSON.parse(before.hits[door]));
+    }
+    assert.ok(result.catalogUnchanged);assert.ok(result.footprintUnchanged);
     fs.writeFileSync(path.join(out,'approval-starter-tent.png'),Buffer.from(result.board.split(',')[1],'base64'));
     for(const [tier,url] of Object.entries(result.scenes))fs.writeFileSync(path.join(out,'bedroom-'+tier+'.png'),Buffer.from(url.split(',')[1],'base64'));
+    const closeup=await page.evaluate(async scenes=>{
+      const board=document.createElement('canvas');board.width=1000;board.height=765;const c=board.getContext('2d');c.fillStyle='#f8f2e5';c.fillRect(0,0,1000,765);c.fillStyle='#29483a';c.font='bold 30px Georgia';c.fillText('STARTER TENT / CORRECTED LAYERS',25,42);c.font='19px Georgia';c.fillText('The plant and equipment sit inside the fabric shell.',25,73);
+      for(const [i,tier] of ['budget','standard'].entries()){const im=new Image();im.src=scenes[tier];await im.decode();const x=25+i*490;c.fillStyle='#29483a';c.font='bold 23px Georgia';c.fillText(tier==='budget'?'Budget · Included':'Standard · $35 shell',x,113);c.imageSmoothingEnabled=false;c.drawImage(im,0,0,285,360,x,130,460,581);}
+      c.font='18px Georgia';c.fillText('Rolled top in front of the light · Front tray in front of the pots',25,744);return board.toDataURL();
+    },result.scenes);
+    fs.writeFileSync(path.join(out,'corrected-layering.png'),Buffer.from(closeup.split(',')[1],'base64'));
     await page.evaluate(()=>{Shell.of('closet').tier='budget';state.locations.closet.door='open';state.money=1000;Panels.app('leafcart');});await page.locator('[data-act=shopCat][data-arg=spaces]').click();
     const store=page.locator('canvas[data-draw="x:shell_closet_standard"]');await store.scrollIntoViewIfNeeded();assert.deepEqual(await store.evaluate(c=>[c.width,c.height]),[320,240]);await store.locator('..').screenshot({path:path.join(out,'store-standard.png')});
     await page.setViewportSize({width:390,height:844});await store.scrollIntoViewIfNeeded();await store.locator('..').screenshot({path:path.join(out,'store-standard-phone.png')});
-    assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({proposalOnly:true,entryPoint:'public/index.html',starterShells:['budget','standard'],purchasableStarterShell:{tier:'standard',price:35},unchangedHitboxes:true,unchangedCatalog:true,unchangedFootprints:true,storeArtwork:true,phoneStore:true,animationNotFinalized:true,errors},null,2)+'\n');
+    assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({proposalOnly:true,entryPoint:'public/index.html',starterShells:['budget','standard'],purchasableStarterShell:{tier:'standard',price:35},unchangedEquipmentAndShellTargets:true,slotDrawingAndTargetOffsetY:-10,layering,unchangedCatalog:true,unchangedFootprints:true,storeArtwork:true,phoneStore:true,animationNotFinalized:true,errors},null,2)+'\n');
     console.log('Starter tent samples saved; catalog, hitboxes, footprints and desktop/mobile store checked.');
   }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
