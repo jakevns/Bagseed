@@ -6,11 +6,11 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "009086178e0e69b71157cc2f02a1a320703e0f0edb7c8b61d67f7b7a5ad926e6",
-  "updatedSHA": "fee51acafd4b05548bcd2d4f1ba03976b96e435e0ff8ac90b050647cf9b7738a",
+  "updatedSHA": "409c2d2246ed28efe81322b6fd5769d3d0c7ae801714b771db59ef24dc541727",
   "characterRevision": "custom-walk-phase-1",
-  "characterPayloadSHA256": "e5c4419ea541c919159dfe6dd605a220e1186b9a8b24a45435e9fa6f727941ef",
+  "characterPayloadSHA256": "e9fb9c3a486b17146e522039c196776e9a2891431fee0c0a9177833aba033e6c",
   "characterSourcesSHA256": {
-    "graphics/production/sources/renderer.js": "24bc53d114c24571c2f6b1c887c05d1f0e85ec414beb297b5cb511ff82c6d4dc",
+    "graphics/production/sources/renderer.js": "123dd52c73356714712a12e2460ad808e76274f8c0633a93568f4b30e1d35ea1",
     "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
     "graphics/production/sources/hair-batch-01.js": "9ecdd8b585399ea4a5c9f11534914f21cb1d8be136839ea9c9ac6d75f8fd8390",
     "graphics/production/sources/hair-fit-rest.js": "57e1ea90c42bac147c83c798c61c8a1ddc195a30556d112ecf112bf8120d9ef3",
@@ -23,7 +23,7 @@
     "graphics/production/walk/manifest.json": "c4cd3cdd76fafb72191d1a28a50f6021abe5cb2c5becf68a37a71d29bdf653e3",
     "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa"
   },
-  "bytes": 104029433,
+  "bytes": 104029720,
   "modularAssets": 544,
   "embeddedImages": 1561,
   "approvedIdentities": [
@@ -43,7 +43,7 @@
   "curtainSets": 6,
   "menuRevision": "community-menu-3",
   "previousCharacterBytes": 101055566,
-  "walkBytesIncrease": 2973867,
+  "walkBytesIncrease": 2974154,
   "walkReviewStatus": "registration review; not approved",
   "computerDeskRevision": "computer-desks-1",
   "computerDeskDesigns": 4,

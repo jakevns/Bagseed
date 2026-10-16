@@ -205,8 +205,9 @@ test('footwear styles keep a consistent footprint across outfits and directions'
   const result=await inspect(()=>{
     const failures=[],measurements=[];
     for(const dir of ['down','right','up','left'])for(const bottomS of ['jeans','shorts','skirt'])for(const shoesS of ['sneakers','boots','sandals','rainboots']){
-      const look=BagseedArt.normalize({bottomS,shoesS,topS:'jacket'}),c=BagseedArt.body(look,dir),a=c.getContext('2d').getImageData(0,99,96,8).data;let left=96,right=-1;
-      for(let y=0;y<8;y++)for(let x=0;x<96;x++)if(a[(y*96+x)*4+3]>100){left=Math.min(left,x);right=Math.max(right,x);}
+      const look=BagseedArt.normalize({bottomS,shoesS,topS:'jacket'}),c=BagseedArt.body(look,dir),a=c.getContext('2d').getImageData(0,103,96,4).data;let left=96,right=-1;
+      // Long trousers now fall over the shoe top (hem <= 103); measure the sole below it.
+      for(let y=0;y<4;y++)for(let x=0;x<96;x++)if(a[(y*96+x)*4+3]>100){left=Math.min(left,x);right=Math.max(right,x);}
       const width=right-left+1,target=dir==='down'||dir==='up'?32:28;measurements.push({dir,bottomS,shoesS,width});if(Math.abs(width-target)>1||Math.abs((left+right)/2-47.5)>1)failures.push({dir,bottomS,shoesS,left,right,width});
     }
     return {measurements,failures};
