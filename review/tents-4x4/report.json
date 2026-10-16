@@ -1,0 +1,17 @@
+{
+  "proposalOnly": false,
+  "entryPoint": "public/index.html",
+  "tiers": 3,
+  "plantSlots": 4,
+  "storeItems": 3,
+  "geometryAndCatalogPreserved": true,
+  "plantsAndEquipmentPreserved": true,
+  "plantTargetsOutsideTent": true,
+  "frontCases": 36,
+  "behindCases": 3,
+  "contentsCases": 36,
+  "zipFramesPerTier": 9,
+  "storeAndPhoneArtwork": true,
+  "productionIntegrationPendingApproval": false,
+  "errors": []
+}

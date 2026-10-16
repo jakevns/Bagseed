@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),{chromium}=require('playwright');
 const root=path.resolve(__dirname,'../../../..'),w=path.join(root,'graphics/production/walk'),out=path.join(root,'review/custom-walk-v4');
 let html=fs.readFileSync(path.join(root,'public/index.html'),'utf8');
-const marker=html.indexOf('<script id="bagseed-illustrated-production-code">'),dataStart=html.indexOf('const DATA = ',marker)+'const DATA = '.length,dataEnd=html.indexOf(';\n  const DIRS',dataStart),data=JSON.parse(html.slice(dataStart,dataEnd));
+const {data,start:dataStart,end:dataEnd}=require('../../../../tools/read-character-data.cjs')(html,root);
 const candidate=JSON.parse(fs.readFileSync(path.join(w,'stride-v4/candidate-manifest.json')));data.walk={...candidate,rig:candidate.candidateRig};delete data.walk.candidateRig;
 for(const[id,item]of Object.entries(candidate.items))if(item.profileRevision==='eight-pose-profiles-v4')data.images['walk/'+id]='data:image/png;base64,'+fs.readFileSync(path.join(w,item.atlas)).toString('base64');
 html=html.slice(0,dataStart)+JSON.stringify(data).replace(/</g,'\\u003c')+html.slice(dataEnd);
@@ -19,6 +19,7 @@ html=html.replace('window.BagseedArt=Object.freeze(',`window.drawStrideCandidate
 };window.BagseedArt=Object.freeze(`);
 (async()=>{
  fs.mkdirSync(out,{recursive:true});const server=http.createServer((req,res)=>{
+  if(req.url==='/character-data.js'){res.writeHead(200,{'Content-Type':'text/javascript'});res.end(fs.readFileSync(path.join(root,'public/character-data.js')));return;}
   const match=/^\/body\/(right|left)\/([0-7])\.png$/.exec(req.url);if(match){res.writeHead(200,{'Content-Type':'image/png'});res.end(fs.readFileSync(path.join(w,'stride-v4',`${match[1]}-${match[2]}.png`)));return;}
   if(req.url==='/favicon.ico'){res.writeHead(204);res.end();return;}res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});res.end(html);
  });await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;

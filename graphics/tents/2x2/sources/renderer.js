@@ -4,7 +4,7 @@
   const DATA=__BAGSEED_TENT2_DATA__,image=new Image(),original=RoomArt.drawTent,icon=ShellArt.icon,extra=drawExtraIcon,locIcon=drawLocIcon;
   const [X,Y,W,H]=T2_BOX,fronts=new Map();let loaded=false;
   const supported=()=>loaded&&!!DATA.tiers[Shell.of('tent2')?.tier];
-  function opening(p,x=0,y=0,w=W,h=H){p.moveTo(x+w*.125,y+h*.26);p.lineTo(x+w*.875,y+h*.26);p.lineTo(x+w*.875,y+h*.81);p.quadraticCurveTo(x+w*.875,y+h*.89,x+w*.8,y+h*.89);p.lineTo(x+w*.2,y+h*.89);p.quadraticCurveTo(x+w*.125,y+h*.89,x+w*.125,y+h*.81);p.closePath();return p;}
+  function opening(p,x=0,y=0,w=W,h=H){p.moveTo(x+w*.125,y+h*BagseedTentPlacement.roof('tent2'));p.lineTo(x+w*.875,y+h*BagseedTentPlacement.roof('tent2'));p.lineTo(x+w*.875,y+h*.81);p.quadraticCurveTo(x+w*.875,y+h*.89,x+w*.8,y+h*.89);p.lineTo(x+w*.2,y+h*.89);p.quadraticCurveTo(x+w*.125,y+h*.89,x+w*.125,y+h*.81);p.closePath();return p;}
   function sprite(c,tier,closed,x,y,w,h){c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...DATA.tiers[tier][closed?'closed':'open'],x,y,w,h);c.restore();}
   function foreground(c,tier,dp){
     const step=Math.round(dp*8),key=tier+':'+step;
@@ -35,8 +35,8 @@
       c.save();c.clip(opening(new Path2D(),X,Y,W,H));
       try{
         RoomArt.diffuseTentLight(c,'tent2',t);
-        Gear.light(c,P.light[0],P.light[1]+DATA.lightVisualOffsetY,e.light,on,t);
         Gear.filter(c,P.exhaust[0],P.exhaust[1],e.exhaust,exMul(L)>0,t);
+        Gear.light(c,P.light[0],P.light[1]+DATA.lightVisualOffsetY,e.light,on,t);
         runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
         Gear.humid(c,P.humid[0],P.humid[1]+DATA.humidVisualOffsetY,e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,'tent2');
         Gear.sensor(c,P.sensor[0],P.sensor[1],e.sensor,env,'tent2');slots(c,t);

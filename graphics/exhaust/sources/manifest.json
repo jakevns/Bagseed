@@ -1,0 +1,119 @@
+{
+  "revision": "exhaust-1",
+  "status": "approved",
+  "path": "assets/exhaust-atlas.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "sha256": "827b32858b302b1b56d6ed113577a8418f8ad4a44fd39962e18b87dcc377ef89",
+  "rotor": {
+    "path": "../fans/assets/fans-atlas.png",
+    "sha256": "8edd5eb7ca480d305d5fa07d212ecf134fa827732cfcb78bd9cdf2e10fee5991",
+    "crop": [
+      388,
+      1103,
+      331,
+      302
+    ],
+    "center": [
+      548,
+      1276
+    ],
+    "runtime": {
+      "path": "../fans/assets/fans-atlas.webp",
+      "sha256": "25dc072679ff12230dbc519876acd63d7fe0ae28188feac6a27718963d8ac9fd",
+      "publicPath": "assets/fans/fans-25dc072679ff.webp"
+    }
+  },
+  "tiers": {
+    "1": {
+      "name": "Stank Sock",
+      "price": 24.99,
+      "watts": 0,
+      "on": [
+        166,
+        6,
+        235,
+        445
+      ],
+      "off": [
+        623,
+        6,
+        235,
+        445
+      ],
+      "width": 9.2,
+      "height": 17.4,
+      "vent": null
+    },
+    "2": {
+      "name": "Charcoal Charlie 4-inch Kit",
+      "price": 129,
+      "watts": 35,
+      "on": [
+        136,
+        462,
+        304,
+        531
+      ],
+      "off": [
+        584,
+        462,
+        305,
+        531
+      ],
+      "width": 14.5,
+      "height": 25.3,
+      "vent": {
+        "on": [
+          287,
+          658,
+          47
+        ],
+        "off": [
+          736,
+          658,
+          47
+        ]
+      }
+    },
+    "3": {
+      "name": "ScrubCore Silent Pro",
+      "price": 259,
+      "watts": 40,
+      "on": [
+        139,
+        1002,
+        305,
+        494
+      ],
+      "off": [
+        582,
+        1001,
+        305,
+        495
+      ],
+      "width": 15.2,
+      "height": 24.6,
+      "vent": {
+        "on": [
+          289,
+          1224,
+          61
+        ],
+        "off": [
+          735,
+          1224,
+          61
+        ]
+      }
+    }
+  },
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/exhaust-atlas.webp",
+    "sha256": "fa9c0eccc8dc87c14abcd3368ea108dc20e2b70dc829684312344efb9f4327cf",
+    "publicPath": "assets/exhaust/exhaust-fa9c0eccc8dc.webp"
+  }
+}

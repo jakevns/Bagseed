@@ -12,6 +12,12 @@ require('./compile-loading-screen.cjs').verify(html);
 if (!html.includes(require('./compile-bedroom-window.cjs')())) throw new Error('The live window renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-starter-tent.cjs')())) throw new Error('The starter tent renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-tent2.cjs')())) throw new Error('The 2x2 tent renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-tent4.cjs')())) throw new Error('The 4x4 tent renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-tent5.cjs')())) throw new Error('The 5x5 tent renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-tent-placement.cjs')())) throw new Error('The tent placement renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-exhaust.cjs')())) throw new Error('The exhaust renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-fans.cjs')())) throw new Error('The fan renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-grow-lights.cjs')())) throw new Error('The grow-light renderer differs from its source. Rebuild before publishing.');
 const sha = value => createHash('sha256').update(value).digest('hex');
 const report = JSON.parse(readFileSync(new URL('../graphics/production/build.json', import.meta.url), 'utf8'));
 if (sha(html) !== report.updatedSHA) throw new Error('The playable game differs from its build report. Rebuild before publishing.');
@@ -24,6 +30,12 @@ for (const file of sources) {
   if (sha(source) !== report.characterSourcesSHA256?.[file]) throw new Error(`Character source changed without rebuilding: ${file}`);
 }
 if (character[1].match(/renderingRevision:'([^']+)'/)?.[1] !== report.characterRevision) throw new Error('The published character revision differs from the build report.');
+if (report.characterDataFile) {
+  const dataScript = readFileSync(new URL('../' + report.characterDataFile, import.meta.url), 'utf8');
+  if (sha(dataScript) !== report.characterDataSHA256) throw new Error('Character data script differs from its build report. Rebuild before publishing.');
+  if (!html.includes('src="character-data.js"')) throw new Error('The game must load its character data before the renderer.');
+  new vm.Script(dataScript, { filename: report.characterDataFile });
+}
 let count = 0;
 for (const match of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script\s*>/gi)) {
   new vm.Script(match[1], { filename: `public/index.html#script-${++count}` });

@@ -1,0 +1,75 @@
+{
+  "revision": "tent4-1",
+  "status": "approved",
+  "path": "assets/tents-atlas.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "sha256": "e08d99598c6c07d4e577ace9ae0b23c0094e773de6cd1d178d1e360e5e667c30",
+  "bounds": [
+    22,
+    6,
+    132,
+    128
+  ],
+  "tiers": {
+    "standard": {
+      "open": [
+        42,
+        12,
+        460,
+        458
+      ],
+      "closed": [
+        520,
+        12,
+        463,
+        458
+      ],
+      "price": 249,
+      "item": "tent4"
+    },
+    "pro": {
+      "open": [
+        37,
+        481,
+        470,
+        459
+      ],
+      "closed": [
+        520,
+        481,
+        468,
+        459
+      ],
+      "price": 119,
+      "item": "shell_tent4_pro"
+    },
+    "premium": {
+      "open": [
+        38,
+        954,
+        467,
+        506
+      ],
+      "closed": [
+        520,
+        954,
+        467,
+        506
+      ],
+      "price": 219,
+      "item": "shell_tent4_premium"
+    }
+  },
+  "slotVisualOffsetY": -24,
+  "capacity": 4,
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/tents-atlas.webp",
+    "sha256": "08ae8b0cc4efa9ab10063861f0db9c4cc92c176dec61f1d5670cb226e3eaea24",
+    "publicPath": "assets/tents/4x4-08ae8b0cc4ef.webp",
+    "lossless": true
+  }
+}

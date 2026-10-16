@@ -7,7 +7,7 @@
   let loaded=false;
   const supported=()=>loaded&&!!DATA.tiers[Shell.of('closet')?.tier];
   function opening(p,x=0,y=0,w=W,h=H){
-    p.moveTo(x+w*.15,y+h*.27);p.lineTo(x+w*.85,y+h*.27);p.lineTo(x+w*.85,y+h*.815);
+    p.moveTo(x+w*.15,y+h*BagseedTentPlacement.roof('closet'));p.lineTo(x+w*.85,y+h*BagseedTentPlacement.roof('closet'));p.lineTo(x+w*.85,y+h*.815);
     p.quadraticCurveTo(x+w*.85,y+h*.902,x+w*.79,y+h*.902);p.lineTo(x+w*.21,y+h*.902);
     p.quadraticCurveTo(x+w*.15,y+h*.902,x+w*.15,y+h*.815);p.closePath();return p;
   }

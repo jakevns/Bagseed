@@ -1,0 +1,11 @@
+# Approved 4×4 tent release
+
+The user approved Standard, Pro and Premium designs and authorized publishing. This release covers the existing $249 GrowHut 4×4 tent with Standard shell, $119 Pro replacement and $219 Premium replacement. Four plant slots, the grow-room location, unlock rules and 132×128 bounds remain unchanged. Sage/charcoal construction follows the starter and 2×2 family; Pro adds moss reinforcement and Premium padded brass details and diamond lining.
+
+The generated PNG is retained unchanged. sources/manifest.json records crops, dimensions, checksums and the pixel-identical lossless WebP. The runtime asset is served from a fingerprinted public/assets/tents URL and verified by tools/compile-tent4.cjs. This keeps it out of the already large HTML. BagseedTent4.ready participates in the loading gate so play waits for the art to decode.
+
+sources/renderer.js draws lining, soft local light, clipped independent equipment and four plants, then foreground roof, side columns, floor tray and zipped flap. Pots are recessed 24 pixels with matching click rectangles and outside walk destinations. The native furniture pass keeps actors in front or behind according to floor position; there is no final fabric overlay after actors. Nine native zip steps, reduced motion, wear/drying indicators and outside controller/climate units are retained. Existing wall-mounted AC handling remains separate.
+
+LeafCart, delivery, unused-shell inventory and grow-space icons use the same artwork. Run npm run build:bedroom to rebuild public/index.html and npm run check to verify build and source integrity. The current character/walking payload is preserved.
+
+node tools/preview-tents-4x4.cjs captures the production game, store cards and nine closing frames per shell with no injected prototype. python tools/animate-tents-4x4.py packages those screenshots into a slowed review GIF. The renderer keeps native 380 ms timing. tests/tent4.test.cjs exercises purchases, delivery artwork, shell fitting, collision bounds and save/reload. Existing starter/player-depth regressions and preview marker checks protect related layers. sources/proposal.js is retained only as the original approved sample implementation.

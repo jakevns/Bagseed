@@ -1,0 +1,15 @@
+{
+  "production": true,
+  "startup": true,
+  "purchases": [
+    249,
+    119,
+    219
+  ],
+  "deliveryArtwork": true,
+  "shellFitting": true,
+  "plantAndGearPreservation": true,
+  "collisionAndPlacement": true,
+  "saveReload": true,
+  "errors": []
+}

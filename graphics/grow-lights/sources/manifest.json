@@ -1,0 +1,127 @@
+{
+  "revision": "grow-lights-2",
+  "status": "approved",
+  "path": "assets/lights-atlas.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "sha256": "ae02e98f36303997b5a670dab19160938360bf6fd4327c0b50d7aad0e8b0e9c2",
+  "tiers": {
+    "1": {
+      "name": "Lumi-Brite PRO ULTRA 9000",
+      "price": 29.99,
+      "on": [
+        60,
+        102,
+        402,
+        227
+      ],
+      "off": [
+        568,
+        102,
+        402,
+        227
+      ],
+      "width": 18,
+      "height": 10,
+      "top": -6,
+      "emitterY": 4,
+      "color": [
+        214,
+        169,
+        239
+      ],
+      "spread": 0.18,
+      "alpha": 0.12
+    },
+    "2": {
+      "name": "SunBlaster 42",
+      "price": 119,
+      "on": [
+        24,
+        464,
+        484,
+        225
+      ],
+      "off": [
+        521,
+        464,
+        484,
+        225
+      ],
+      "width": 26,
+      "height": 12,
+      "top": -7,
+      "emitterY": 5,
+      "color": [
+        225,
+        175,
+        232
+      ],
+      "spread": 0.29,
+      "alpha": 0.14
+    },
+    "3": {
+      "name": "Halcyon Q-Board 150",
+      "price": 239,
+      "on": [
+        15,
+        812,
+        487,
+        239
+      ],
+      "off": [
+        525,
+        812,
+        487,
+        239
+      ],
+      "width": 30,
+      "height": 14,
+      "top": -8,
+      "emitterY": 6,
+      "color": [
+        255,
+        233,
+        180
+      ],
+      "spread": 0.4,
+      "alpha": 0.16
+    },
+    "4": {
+      "name": "Verdant Arc 4-Bar",
+      "price": 449,
+      "on": [
+        18,
+        1145,
+        486,
+        277
+      ],
+      "off": [
+        525,
+        1145,
+        486,
+        277
+      ],
+      "width": 50,
+      "height": 28,
+      "top": -16,
+      "emitterY": 12,
+      "color": [
+        248,
+        244,
+        222
+      ],
+      "spread": 0.45,
+      "alpha": 0.15
+    }
+  },
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/lights-atlas.webp",
+    "sha256": "c7e6300562c5d133e2602c21ee4dd269297363e7f3e60b8445ac2e562cfb0473",
+    "publicPath": "assets/grow-lights/lights-c7e6300562c5.webp",
+    "lossless": true
+  }
+}

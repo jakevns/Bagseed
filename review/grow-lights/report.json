@@ -1,0 +1,22 @@
+{
+  "proposalOnly": false,
+  "entryPoint": "public/index.html",
+  "tiers": 4,
+  "prices": [
+    29.99,
+    119,
+    239,
+    449
+  ],
+  "catalogAndGrowContentsPreserved": true,
+  "geometryPreserved": true,
+  "fieldCases": 16,
+  "playerCases": 32,
+  "targetCases": 16,
+  "occlusionPixels": 1653,
+  "roofSidesTrayClipped": true,
+  "dustFrames": 48,
+  "storeAndPhoneArtwork": true,
+  "productionIntegrationPendingApproval": false,
+  "errors": []
+}

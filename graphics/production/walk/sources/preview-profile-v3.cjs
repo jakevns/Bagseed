@@ -1,12 +1,12 @@
 // Review-only payload injection. Does not write public/index.html or game saves.
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),{chromium}=require('playwright');
 const root=path.resolve(__dirname,'../../../..'),w=path.join(root,'graphics/production/walk'),review=path.join(root,'review/custom-walk-v3');
-const html=fs.readFileSync(path.join(root,'public/index.html'),'utf8'),marker=html.indexOf('<script id="bagseed-illustrated-production-code">'),start=html.indexOf('const DATA = ',marker)+'const DATA = '.length,end=html.indexOf(';\n  const DIRS',start),data=JSON.parse(html.slice(start,end));
+const html=fs.readFileSync(path.join(root,'public/index.html'),'utf8'),{data,start,end}=require('../../../../tools/read-character-data.cjs')(html,root);
 const candidate=JSON.parse(fs.readFileSync(path.join(w,'profile-v3/candidate-manifest.json')));data.walk={...candidate,rig:candidate.candidateRig};delete data.walk.candidateRig;
 for(const[id,item]of Object.entries(candidate.items))if(item.profileRevision==='standing-style-profiles-v3')data.images['walk/'+id]='data:image/png;base64,'+fs.readFileSync(path.join(w,item.atlas)).toString('base64');
 const trial=html.slice(0,start)+JSON.stringify(data).replace(/</g,'\\u003c')+html.slice(end);
 (async()=>{
- const server=http.createServer((req,res)=>{if(req.url==='/favicon.ico'){res.writeHead(204);res.end();return;}res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});res.end(req.url.startsWith('/trial')?trial:html);});await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
+ const server=http.createServer((req,res)=>{if(req.url==='/character-data.js'){res.writeHead(200,{'Content-Type':'text/javascript'});res.end(fs.readFileSync(path.join(root,'public/character-data.js')));return;}if(req.url==='/favicon.ico'){res.writeHead(204);res.end();return;}res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});res.end(req.url.startsWith('/trial')?trial:html);});await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
  try{
   browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH,headless:true,args:['--disable-gpu','--disable-accelerated-2d-canvas']});const errors=[],page=await require('../../../../tests/helpers/art-page.cjs')(browser,{viewport:{width:1280,height:900}});page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:'+server.address().port+'/trial',{timeout:180000});await page.evaluate(()=>BagseedArt.ready);
   const output=await page.evaluate(()=>{

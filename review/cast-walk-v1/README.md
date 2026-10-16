@@ -10,4 +10,4 @@ Registration uses uniform scaling and translation, with one source-to-native res
 
 The canonical sprite selector uses the character's frame count. NPC/visitor/roommate playback reaches all eight frames; movement-driven clocks remain tied to displacement where available. The preview uses 125 ms per frame, with pause, slow motion and individual frame controls. Runtime checks render all 96 poses through the actual game compositor and verify the eight-frame keys, canvas size, nonempty figures and floor baseline. Visual review remains essential for judging gait and likeness.
 
-Local changes only; this work has not been committed, pushed or deployed.
+Publication is recorded in Git history on the walking update branch. The playable GitHub package is `public/index.html` together with `public/character-data.js` and `public/assets/`; keep the folder together when copying it. Character image URLs are identical to the pre-merge build. See `docs/graphics/github-game-package.md` for packaging details.

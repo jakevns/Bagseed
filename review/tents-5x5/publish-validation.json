@@ -1,0 +1,16 @@
+{
+  "production": true,
+  "startup": true,
+  "failedImageKeepsLoadingCover": true,
+  "purchases": [
+    489,
+    189,
+    339
+  ],
+  "deliveryArtwork": true,
+  "shellFitting": true,
+  "plantAndGearPreservation": true,
+  "collisionAndPlacement": true,
+  "saveReload": true,
+  "errors": []
+}
