@@ -15,3 +15,5 @@ sources/scene.js animates light over the fixed room painting; sources/controller
 Rebuild: npm run build:bedroom. Verify: npm run check and node --test --test-concurrency=1 tests/loading-screen.test.cjs tests/main-menu.test.cjs tests/bedroom.test.cjs. Review previews and validation reports are in review/loading-screen.
 
 Mobile framing update (approved on 2026-10-16): portrait phones and short landscape layouts now stay centered on the window throughout the day/night cycle. The camera no longer sweeps across the room. Normal desktop layouts retain the full panorama. CSS handles orientation/size changes, and reduced motion uses the same framing.
+
+First-paint fix (approved on 2026-10-16): unstyled home-menu images are kept out of layout while startup is loading, preventing mobile browsers from enlarging the viewport during the long game download. The controller switches to a covered painting phase before hydrating/resizing the ready game, then reveals it as before. See review/loading-first-paint for the reproduced viewport expansion and corrected startup captures.

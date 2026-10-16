@@ -3,6 +3,8 @@
 <meta name="theme-color" content="#141015"><title>Bagseed — Version 1.1.5</title><style id="bagseed-loading-style">
 html[data-bagseed-loading] { background:#302c24; }
 html[data-bagseed-loading] body > :not(#bagseed-loading):not(script):not(style):not(noscript) { visibility:hidden !important; pointer-events:none !important; }
+/* Unstyled menu images must not stretch the mobile viewport during download. */
+html[data-bagseed-loading="loading"] body > :not(#bagseed-loading):not(script):not(style):not(noscript) { display:none !important; }
 #bagseed-loading,#bagseed-loading * { box-sizing:border-box; }
 #bagseed-loading { position:fixed; inset:0; z-index:2147483647; display:grid; grid-template-rows:auto minmax(0,1fr) auto; gap:16px; width:100%; height:100%; min-height:100svh; overflow:auto; isolation:isolate; padding:max(24px,env(safe-area-inset-top)) 0 max(24px,env(safe-area-inset-bottom)); color:#fff0ce; text-align:center; font:16px/1.4 'Trebuchet MS',sans-serif; background:radial-gradient(ellipse at 50% 10%,#66704c55,transparent 70%),repeating-linear-gradient(0deg,#352a22 0px,#352a22 2px,#3e3025 3px,#3e3025 70px,#2c251e 72px); }
 #bagseed-loading[hidden] { display:none !important; }
@@ -74,6 +76,7 @@ html[data-bagseed-loading] body > :not(#bagseed-loading):not(script):not(style):
     if(phase==='error')return;
     statusText.textContent='Finishing touches…';detail.textContent='';
     // Allow a complete frame behind the cover before making anything visible.
+    root.setAttribute('data-bagseed-loading','painting');
     phase='painting';hydrate(document);if(screen==='game'&&state){View.resize();View.snap();}
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     if(phase==='error')return;

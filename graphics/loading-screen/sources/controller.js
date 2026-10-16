@@ -32,6 +32,7 @@
     if(phase==='error')return;
     statusText.textContent='Finishing touches…';detail.textContent='';
     // Allow a complete frame behind the cover before making anything visible.
+    root.setAttribute('data-bagseed-loading','painting');
     phase='painting';hydrate(document);if(screen==='game'&&state){View.resize();View.snap();}
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     if(phase==='error')return;

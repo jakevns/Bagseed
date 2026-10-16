@@ -1,0 +1,408 @@
+{
+  "entryPoint": "public/index.html",
+  "stagedMobileDownload": true,
+  "results": [
+    {
+      "name": "pixel",
+      "initial": {
+        "label": "loading-shell",
+        "viewport": {
+          "width": 412,
+          "height": 839,
+          "visualWidth": 412,
+          "visualHeight": 839,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 412,
+          "h": 839,
+          "right": 412,
+          "bottom": 839
+        },
+        "canvas": {
+          "x": -590.3378295898438,
+          "y": 122.890625,
+          "w": 1489.40625,
+          "h": 558.53125,
+          "right": 899.0684204101562,
+          "bottom": 681.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 412,
+          "h": 70.890625,
+          "right": 412,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 699.421875,
+          "w": 376,
+          "h": 105.578125,
+          "right": 394,
+          "bottom": 805
+        },
+        "appDisplay": null
+      },
+      "partial": {
+        "label": "unstyled-menu",
+        "viewport": {
+          "width": 412,
+          "height": 839,
+          "visualWidth": 412,
+          "visualHeight": 839,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 412,
+          "h": 839,
+          "right": 412,
+          "bottom": 839
+        },
+        "canvas": {
+          "x": -590.3378295898438,
+          "y": 122.890625,
+          "w": 1489.40625,
+          "h": 558.53125,
+          "right": 899.0684204101562,
+          "bottom": 681.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 412,
+          "h": 70.890625,
+          "right": 412,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 699.421875,
+          "w": 376,
+          "h": 105.578125,
+          "right": 394,
+          "bottom": 805
+        },
+        "appDisplay": "none"
+      },
+      "prepared": {
+        "label": "native-game-and-menu-styles",
+        "viewport": {
+          "width": 412,
+          "height": 839,
+          "visualWidth": 412,
+          "visualHeight": 839,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 412,
+          "h": 839,
+          "right": 412,
+          "bottom": 839
+        },
+        "canvas": {
+          "x": -590.3378295898438,
+          "y": 122.890625,
+          "w": 1489.40625,
+          "h": 558.53125,
+          "right": 899.0684204101562,
+          "bottom": 681.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 412,
+          "h": 70.890625,
+          "right": 412,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 699.421875,
+          "w": 376,
+          "h": 105.578125,
+          "right": 394,
+          "bottom": 805
+        },
+        "appDisplay": "none"
+      },
+      "readyMenu": true,
+      "pageErrors": []
+    },
+    {
+      "name": "iphone",
+      "initial": {
+        "label": "loading-shell",
+        "viewport": {
+          "width": 390,
+          "height": 664,
+          "visualWidth": 390,
+          "visualHeight": 664,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 664,
+          "right": 390,
+          "bottom": 664
+        },
+        "canvas": {
+          "x": -351.8316650390625,
+          "y": 122.890625,
+          "w": 1022.75,
+          "h": 383.53125,
+          "right": 670.9183349609375,
+          "bottom": 506.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 390,
+          "h": 70.890625,
+          "right": 390,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 524.421875,
+          "w": 354,
+          "h": 105.578125,
+          "right": 372,
+          "bottom": 630
+        },
+        "appDisplay": null
+      },
+      "partial": {
+        "label": "unstyled-menu",
+        "viewport": {
+          "width": 390,
+          "height": 664,
+          "visualWidth": 390,
+          "visualHeight": 664,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 664,
+          "right": 390,
+          "bottom": 664
+        },
+        "canvas": {
+          "x": -351.8316650390625,
+          "y": 122.890625,
+          "w": 1022.75,
+          "h": 383.53125,
+          "right": 670.9183349609375,
+          "bottom": 506.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 390,
+          "h": 70.890625,
+          "right": 390,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 524.421875,
+          "w": 354,
+          "h": 105.578125,
+          "right": 372,
+          "bottom": 630
+        },
+        "appDisplay": "none"
+      },
+      "prepared": {
+        "label": "native-game-and-menu-styles",
+        "viewport": {
+          "width": 390,
+          "height": 664,
+          "visualWidth": 390,
+          "visualHeight": 664,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 664,
+          "right": 390,
+          "bottom": 664
+        },
+        "canvas": {
+          "x": -351.8316650390625,
+          "y": 122.890625,
+          "w": 1022.75,
+          "h": 383.53125,
+          "right": 670.9183349609375,
+          "bottom": 506.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 390,
+          "h": 70.890625,
+          "right": 390,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 524.421875,
+          "w": 354,
+          "h": 105.578125,
+          "right": 372,
+          "bottom": 630
+        },
+        "appDisplay": "none"
+      },
+      "readyMenu": false,
+      "pageErrors": []
+    },
+    {
+      "name": "narrow",
+      "initial": {
+        "label": "loading-shell",
+        "viewport": {
+          "width": 320,
+          "height": 568,
+          "visualWidth": 320,
+          "visualHeight": 568,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 320,
+          "h": 568,
+          "right": 320,
+          "bottom": 568
+        },
+        "canvas": {
+          "x": -249.9566650390625,
+          "y": 122.890625,
+          "w": 766.75,
+          "h": 287.53125,
+          "right": 516.7933349609375,
+          "bottom": 410.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 320,
+          "h": 70.890625,
+          "right": 320,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 428.421875,
+          "w": 284,
+          "h": 105.578125,
+          "right": 302,
+          "bottom": 534
+        },
+        "appDisplay": null
+      },
+      "partial": {
+        "label": "unstyled-menu",
+        "viewport": {
+          "width": 320,
+          "height": 568,
+          "visualWidth": 320,
+          "visualHeight": 568,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 320,
+          "h": 568,
+          "right": 320,
+          "bottom": 568
+        },
+        "canvas": {
+          "x": -249.9566650390625,
+          "y": 122.890625,
+          "w": 766.75,
+          "h": 287.53125,
+          "right": 516.7933349609375,
+          "bottom": 410.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 320,
+          "h": 70.890625,
+          "right": 320,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 428.421875,
+          "w": 284,
+          "h": 105.578125,
+          "right": 302,
+          "bottom": 534
+        },
+        "appDisplay": "none"
+      },
+      "prepared": {
+        "label": "native-game-and-menu-styles",
+        "viewport": {
+          "width": 320,
+          "height": 568,
+          "visualWidth": 320,
+          "visualHeight": 568,
+          "scale": 1
+        },
+        "overlay": {
+          "x": 0,
+          "y": 0,
+          "w": 320,
+          "h": 568,
+          "right": 320,
+          "bottom": 568
+        },
+        "canvas": {
+          "x": -249.9566650390625,
+          "y": 122.890625,
+          "w": 766.75,
+          "h": 287.53125,
+          "right": 516.7933349609375,
+          "bottom": 410.421875
+        },
+        "heading": {
+          "x": 0,
+          "y": 34,
+          "w": 320,
+          "h": 70.890625,
+          "right": 320,
+          "bottom": 104.890625
+        },
+        "panel": {
+          "x": 18,
+          "y": 428.421875,
+          "w": 284,
+          "h": 105.578125,
+          "right": 302,
+          "bottom": 534
+        },
+        "appDisplay": "none"
+      },
+      "readyMenu": false,
+      "pageErrors": []
+    }
+  ]
+}
