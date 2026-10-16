@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-15",
+  "revision": "customization-11",
+  "htmlSHA256": "a50643c3c76b552d700d40f7baf9fcfda330315d067cce0d44289db63dc03afd",
+  "scope": [
+    "short",
+    "buzz",
+    "crop",
+    "caesar",
+    "fade"
+  ],
+  "fullSuite": {
+    "tests": 57,
+    "pass": 57,
+    "fail": 0,
+    "skipped": 0,
+    "durationMs": 472561.8916
+  },
+  "earSurfaces": {
+    "views": 2700,
+    "earPixels": 578965,
+    "failures": []
+  },
+  "rearSkull": {
+    "views": 75,
+    "pixels": 15450,
+    "failures": []
+  },
+  "earJewelry": {
+    "views": 1500,
+    "failures": []
+  },
+  "unchangedStyleViews": {
+    "views": 3360,
+    "failures": []
+  },
+  "preservation": {
+    "registrationManifestUnchanged": true,
+    "nonCharacterScripts": 87,
+    "nonCharacterScriptsUnchanged": true
+  },
+  "scriptBlocksParsed": 88,
+  "castComparisons": 1872,
+  "registeredPoseChecks": 260,
+  "browserErrors": [],
+  "visualAcceptance": "Pending user review",
+  "publication": "Local build; no commit or push in this batch"
+}

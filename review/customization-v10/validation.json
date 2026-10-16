@@ -1,0 +1,49 @@
+{
+  "rendererRevision": "customization-10",
+  "fitRevision": "temple-roots-10",
+  "buildSHA256": "d7abbfc2f7bc7f067f15eee4d74bfabf0e0b71eff1f1a3fae97d50e7af129c5e",
+  "styles": 60,
+  "registeredHairViews": 240,
+  "headShapes": 15,
+  "directions": 4,
+  "transparentHairAndBaldViews": 244,
+  "allHairShapeDirectionChecks": 3660,
+  "shortProportionCases": 30,
+  "earOpeningViews": 960,
+  "earPixels": 25920,
+  "referenceBuildFailures": {
+    "proportions": 30,
+    "earSamplePatches": 1095
+  },
+  "currentFailures": {
+    "proportions": 0,
+    "earSamplePatches": 0
+  },
+  "browserTests": {
+    "tests": 52,
+    "passed": 52,
+    "failed": 0,
+    "skipped": 0,
+    "log": "artifacts/hair-fit-v10/full-tests.log"
+  },
+  "browserReviewErrors": [],
+  "creatorMirrorBedroomCaptures": true,
+  "originalTransparentSources": {
+    "count": 21,
+    "unchanged": true
+  },
+  "baldAnatomyUnchanged": true,
+  "headwearUnchanged": true,
+  "facialLandmarksUnchanged": true,
+  "npcChecks": {
+    "fullCastComparisons": 1872,
+    "unchangedNPCStandingAndPortraits": 71,
+    "completeSmellPoseAssetChecks": 260,
+    "unchangedSmellPoseSets": 52,
+    "log": "artifacts/hair-fit-v10/npc-preservation.log"
+  },
+  "nonCharacterScripts": 87,
+  "nonCharacterCodeUnchanged": true,
+  "workingSourceUnchanged": true,
+  "visualAcceptance": "Pending user review"
+}

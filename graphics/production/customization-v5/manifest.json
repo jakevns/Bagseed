@@ -1,5 +1,5 @@
 {
-  "version": "bald-and-hair-5",
+  "version": "bald-and-hair-10",
   "assets": {
     "base/down": "registered\\base\\down.png",
     "base/right": "registered\\base\\right.png",
@@ -3650,17 +3650,24 @@
           206
         ],
         "placement": [
-          37,
-          92
+          46,
+          97
         ],
         "size": [
-          118,
-          81
+          99,
+          69
         ],
-        "score": 1.40511,
+        "sourceRoot": [
+          0.5,
+          0.641975
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           16,
           82,
@@ -3678,17 +3685,24 @@
           231
         ],
         "placement": [
-          44,
-          92
+          46,
+          91
         ],
         "size": [
-          112,
-          96
+          97,
+          82
         ],
-        "score": 0.77703,
+        "sourceRoot": [
+          0.401786,
+          0.635417
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           274,
           81,
@@ -3706,17 +3720,24 @@
           236
         ],
         "placement": [
-          42,
-          95
+          50,
+          97
         ],
         "size": [
-          108,
-          96
+          92,
+          84
         ],
-        "score": 0.83896,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          97
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           525,
           83,
@@ -3734,17 +3755,24 @@
           227
         ],
         "placement": [
-          40,
-          92
+          51,
+          91
         ],
         "size": [
-          112,
-          96
+          97,
+          82
         ],
-        "score": 0.66853,
+        "sourceRoot": [
+          0.589286,
+          0.635417
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           763,
           83,
@@ -3764,17 +3792,24 @@
           177
         ],
         "placement": [
-          40,
-          98
+          43,
+          100
         ],
         "size": [
-          104,
-          67
+          99,
+          64
         ],
-        "score": 0.92099,
+        "sourceRoot": [
+          0.538462,
+          0.686567
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           26,
           393,
@@ -3792,17 +3827,24 @@
           231
         ],
         "placement": [
-          44,
-          98
+          40,
+          94
         ],
         "size": [
-          103,
-          87
+          98,
+          83
         ],
-        "score": 1.19602,
+        "sourceRoot": [
+          0.456311,
+          0.586207
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 185,
+        "fit": "temple-roots-10",
         "sourceBox": [
           273,
           395,
@@ -3820,17 +3862,24 @@
           235
         ],
         "placement": [
-          45,
-          99
+          48,
+          101
         ],
         "size": [
-          102,
-          89
+          97,
+          85
         ],
-        "score": 0.87613,
+        "sourceRoot": [
+          0.5,
+          0.505618
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 185,
+        "fit": "temple-roots-10",
         "sourceBox": [
           526,
           393,
@@ -3848,17 +3897,24 @@
           232
         ],
         "placement": [
-          44,
-          101
+          51,
+          96
         ],
         "size": [
-          103,
-          87
+          98,
+          83
         ],
-        "score": 1.14986,
+        "sourceRoot": [
+          0.582524,
+          0.563218
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 185,
+        "fit": "temple-roots-10",
         "sourceBox": [
           769,
           393,
@@ -3878,17 +3934,24 @@
           253
         ],
         "placement": [
-          34,
-          86
+          39,
+          89
         ],
         "size": [
-          124,
-          103
+          114,
+          98
         ],
-        "score": 3.29466,
+        "sourceRoot": [
+          0.5,
+          0.563107
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           12,
           691,
@@ -3906,17 +3969,24 @@
           242
         ],
         "placement": [
-          39,
-          80
+          41,
+          78
         ],
         "size": [
-          114,
-          116
+          106,
+          110
         ],
-        "score": 1.99541,
+        "sourceRoot": [
+          0.412281,
+          0.594828
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 202,
+        "fit": "temple-roots-10",
         "sourceBox": [
           269,
           700,
@@ -3934,17 +4004,24 @@
           259
         ],
         "placement": [
-          38,
-          86
+          42,
+          89
         ],
         "size": [
-          116,
-          116
+          107,
+          110
         ],
-        "score": 0.29236,
+        "sourceRoot": [
+          0.5,
+          0.5
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 202,
+        "fit": "temple-roots-10",
         "sourceBox": [
           511,
           690,
@@ -3962,17 +4039,24 @@
           241
         ],
         "placement": [
-          39,
-          80
+          46,
+          77
         ],
         "size": [
-          114,
-          116
+          106,
+          110
         ],
-        "score": 2.03958,
+        "sourceRoot": [
+          0.587719,
+          0.603448
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 202,
+        "fit": "temple-roots-10",
         "sourceBox": [
           769,
           700,
@@ -3992,17 +4076,24 @@
           424
         ],
         "placement": [
-          22,
-          92
+          28,
+          95
         ],
         "size": [
-          140,
-          194
+          129,
+          184
         ],
-        "score": 5.26142,
+        "sourceRoot": [
+          0.528571,
+          0.268041
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           6,
           1003,
@@ -4020,17 +4111,24 @@
           436
         ],
         "placement": [
-          24,
+          28,
           89
         ],
         "size": [
-          120,
-          193
+          112,
+          183
         ],
-        "score": 5.92669,
+        "sourceRoot": [
+          0.508333,
+          0.295337
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           270,
           998,
@@ -4048,17 +4146,24 @@
           434
         ],
         "placement": [
-          33,
-          92
+          38,
+          95
         ],
         "size": [
-          126,
-          193
+          116,
+          183
         ],
-        "score": 0.29148,
+        "sourceRoot": [
+          0.5,
+          0.26943
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           501,
           1000,
@@ -4076,17 +4181,24 @@
           436
         ],
         "placement": [
-          48,
+          52,
           89
         ],
         "size": [
-          120,
-          193
+          112,
+          183
         ],
-        "score": 5.732,
+        "sourceRoot": [
+          0.5,
+          0.295337
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           766,
           998,
@@ -4106,17 +4218,24 @@
           252
         ],
         "placement": [
-          34,
-          92
+          39,
+          95
         ],
         "size": [
-          124,
-          98
+          114,
+          93
         ],
-        "score": 4.50212,
+        "sourceRoot": [
+          0.5,
+          0.530612
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           13,
           74,
@@ -4134,17 +4253,24 @@
           246
         ],
         "placement": [
-          32,
-          89
+          36,
+          85
         ],
         "size": [
-          120,
-          106
+          112,
+          101
         ],
-        "score": 3.33255,
+        "sourceRoot": [
+          0.441667,
+          0.575472
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 206,
+        "fit": "temple-roots-10",
         "sourceBox": [
           288,
           77,
@@ -4162,17 +4288,24 @@
           243
         ],
         "placement": [
-          35,
-          92
+          40,
+          95
         ],
         "size": [
-          122,
-          114
+          112,
+          108
         ],
-        "score": 0.29969,
+        "sourceRoot": [
+          0.5,
+          0.45614
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 206,
+        "fit": "temple-roots-10",
         "sourceBox": [
           558,
           79,
@@ -4190,17 +4323,24 @@
           245
         ],
         "placement": [
-          44,
-          89
+          49,
+          81
         ],
         "size": [
-          120,
-          114
+          112,
+          108
         ],
-        "score": 2.01422,
+        "sourceRoot": [
+          0.525,
+          0.570175
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 206,
+        "fit": "temple-roots-10",
         "sourceBox": [
           824,
           80,
@@ -4220,17 +4360,24 @@
           234
         ],
         "placement": [
-          24,
-          92
+          28,
+          95
         ],
         "size": [
-          144,
-          101
+          137,
+          96
         ],
-        "score": 4.16887,
+        "sourceRoot": [
+          0.5,
+          0.514851
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           6,
           384,
@@ -4248,17 +4395,24 @@
           238
         ],
         "placement": [
-          18,
-          86
+          22,
+          82
         ],
         "size": [
-          132,
-          117
+          125,
+          111
         ],
-        "score": 4.36635,
+        "sourceRoot": [
+          0.507576,
+          0.547009
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 209,
+        "fit": "temple-roots-10",
         "sourceBox": [
           293,
           385,
@@ -4276,17 +4430,24 @@
           241
         ],
         "placement": [
-          29,
-          92
+          32,
+          95
         ],
         "size": [
-          134,
-          117
+          127,
+          111
         ],
-        "score": 0.31536,
+        "sourceRoot": [
+          0.5,
+          0.444444
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 209,
+        "fit": "temple-roots-10",
         "sourceBox": [
           549,
           384,
@@ -4304,17 +4465,24 @@
           238
         ],
         "placement": [
-          42,
-          86
+          46,
+          82
         ],
         "size": [
-          132,
-          117
+          125,
+          111
         ],
-        "score": 4.4044,
+        "sourceRoot": [
+          0.5,
+          0.547009
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 209,
+        "fit": "temple-roots-10",
         "sourceBox": [
           833,
           385,
@@ -4334,17 +4502,24 @@
           380
         ],
         "placement": [
-          28,
-          89
+          34,
+          92
         ],
         "size": [
-          136,
-          158
+          125,
+          150
         ],
-        "score": 8.83697,
+        "sourceRoot": [
+          0.5,
+          0.348101
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           11,
           660,
@@ -4362,17 +4537,24 @@
           386
         ],
         "placement": [
-          26,
-          89
+          30,
+          84
         ],
         "size": [
-          124,
-          174
+          115,
+          165
         ],
-        "score": 3.02128,
+        "sourceRoot": [
+          0.475806,
+          0.356322
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 263,
+        "fit": "temple-roots-10",
         "sourceBox": [
           287,
           663,
@@ -4390,17 +4572,24 @@
           389
         ],
         "placement": [
-          33,
-          89
+          38,
+          92
         ],
         "size": [
-          126,
-          174
+          116,
+          165
         ],
-        "score": 0.53285,
+        "sourceRoot": [
+          0.5,
+          0.316092
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 263,
+        "fit": "temple-roots-10",
         "sourceBox": [
           536,
           659,
@@ -4418,17 +4607,24 @@
           388
         ],
         "placement": [
-          38,
-          86
+          44,
+          81
         ],
         "size": [
-          124,
-          174
+          115,
+          165
         ],
-        "score": 2.98233,
+        "sourceRoot": [
+          0.556452,
+          0.373563
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 263,
+        "fit": "temple-roots-10",
         "sourceBox": [
           818,
           663,
@@ -4448,17 +4644,24 @@
           350
         ],
         "placement": [
-          32,
-          56
+          38,
+          60
         ],
         "size": [
-          128,
-          163
+          115,
+          155
         ],
-        "score": 5.60976,
+        "sourceRoot": [
+          0.5,
+          0.539877
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           32,
           1061,
@@ -4477,16 +4680,23 @@
         ],
         "placement": [
           36,
-          59
+          63
         ],
         "size": [
-          120,
-          134
+          110,
+          127
         ],
-        "score": 4.36662,
+        "sourceRoot": [
+          0.45,
+          0.626866
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           297,
           1071,
@@ -4504,17 +4714,24 @@
           333
         ],
         "placement": [
-          35,
-          59
+          41,
+          63
         ],
         "size": [
-          122,
-          142
+          110,
+          135
         ],
-        "score": 5.31234,
+        "sourceRoot": [
+          0.5,
+          0.598592
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           572,
           1063,
@@ -4532,17 +4749,24 @@
           335
         ],
         "placement": [
-          40,
-          59
+          45,
+          63
         ],
         "size": [
-          120,
-          134
+          110,
+          127
         ],
-        "score": 4.25966,
+        "sourceRoot": [
+          0.575,
+          0.626866
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           817,
           1073,
@@ -4562,17 +4786,24 @@
           310
         ],
         "placement": [
-          30,
-          92
+          36,
+          95
         ],
         "size": [
-          132,
-          138
+          119,
+          131
         ],
-        "score": 2.06276,
+        "sourceRoot": [
+          0.5,
+          0.376812
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           28,
           26,
@@ -4590,17 +4821,24 @@
           357
         ],
         "placement": [
-          39,
-          83
+          42,
+          79
         ],
         "size": [
-          130,
-          152
+          120,
+          144
         ],
-        "score": 14.89445,
+        "sourceRoot": [
+          0.361538,
+          0.447368
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           284,
           28,
@@ -4618,17 +4856,24 @@
           352
         ],
         "placement": [
-          34,
-          92
+          40,
+          95
         ],
         "size": [
-          124,
-          160
+          112,
+          152
         ],
-        "score": 0.31291,
+        "sourceRoot": [
+          0.5,
+          0.325
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           571,
           28,
@@ -4646,17 +4891,24 @@
           356
         ],
         "placement": [
-          17,
-          83
+          26,
+          79
         ],
         "size": [
-          134,
-          152
+          123,
+          144
         ],
-        "score": 14.70303,
+        "sourceRoot": [
+          0.664179,
+          0.447368
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           809,
           29,
@@ -4676,17 +4928,24 @@
           384
         ],
         "placement": [
-          26,
-          92
+          32,
+          95
         ],
         "size": [
-          140,
-          184
+          129,
+          175
         ],
-        "score": 2.08421,
+        "sourceRoot": [
+          0.5,
+          0.282609
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           29,
           381,
@@ -4704,17 +4963,24 @@
           384
         ],
         "placement": [
-          24,
-          86
+          27,
+          84
         ],
         "size": [
-          120,
-          185
+          112,
+          176
         ],
-        "score": 9.5619,
+        "sourceRoot": [
+          0.516667,
+          0.335135
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           303,
           380,
@@ -4732,17 +4998,24 @@
           393
         ],
         "placement": [
-          33,
-          95
+          38,
+          98
         ],
         "size": [
-          126,
-          193
+          116,
+          183
         ],
-        "score": 2.35448,
+        "sourceRoot": [
+          0.5,
+          0.253886
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           568,
           381,
@@ -4760,17 +5033,24 @@
           385
         ],
         "placement": [
-          48,
-          83
+          53,
+          81
         ],
         "size": [
-          120,
-          193
+          112,
+          183
         ],
-        "score": 9.28264,
+        "sourceRoot": [
+          0.491667,
+          0.336788
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           815,
           380,
@@ -4790,17 +5070,24 @@
           286
         ],
         "placement": [
-          26,
-          92
+          32,
+          95
         ],
         "size": [
-          140,
-          121
+          129,
+          115
         ],
-        "score": 3.61699,
+        "sourceRoot": [
+          0.5,
+          0.429752
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           4,
           777,
@@ -4818,17 +5105,24 @@
           284
         ],
         "placement": [
-          28,
-          86
+          32,
+          84
         ],
         "size": [
-          128,
-          137
+          119,
+          130
         ],
-        "score": 17.23471,
+        "sourceRoot": [
+          0.445312,
+          0.452555
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 229,
+        "fit": "temple-roots-10",
         "sourceBox": [
           286,
           781,
@@ -4846,17 +5140,24 @@
           295
         ],
         "placement": [
-          33,
-          92
+          38,
+          95
         ],
         "size": [
-          126,
-          137
+          116,
+          130
         ],
-        "score": 0.26471,
+        "sourceRoot": [
+          0.5,
+          0.379562
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 229,
+        "fit": "temple-roots-10",
         "sourceBox": [
           549,
           774,
@@ -4874,17 +5175,24 @@
           282
         ],
         "placement": [
-          36,
-          89
+          42,
+          87
         ],
         "size": [
-          128,
-          129
+          119,
+          123
         ],
-        "score": 16.54438,
+        "sourceRoot": [
+          0.554688,
+          0.457364
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 229,
+        "fit": "temple-roots-10",
         "sourceBox": [
           818,
           782,
@@ -4904,17 +5212,24 @@
           224
         ],
         "placement": [
-          21,
-          62
+          25,
+          66
         ],
         "size": [
-          150,
-          102
+          142,
+          97
         ],
-        "score": 1.80941,
+        "sourceRoot": [
+          0.5,
+          0.803922
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           39,
@@ -4932,17 +5247,24 @@
           245
         ],
         "placement": [
-          13,
-          53
+          17,
+          56
         ],
         "size": [
-          142,
-          142
+          135,
+          135
         ],
-        "score": 7.24829,
+        "sourceRoot": [
+          0.507042,
+          0.647887
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 204,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           352,
@@ -4960,17 +5282,24 @@
           244
         ],
         "placement": [
-          23,
-          62
+          26,
+          66
         ],
         "size": [
-          146,
-          142
+          139,
+          135
         ],
-        "score": 0.23663,
+        "sourceRoot": [
+          0.5,
+          0.577465
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 204,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           638,
@@ -4988,17 +5317,24 @@
           247
         ],
         "placement": [
-          39,
-          65
+          43,
+          67
         ],
         "size": [
-          138,
-          134
+          131,
+          127
         ],
-        "score": 5.29007,
+        "sourceRoot": [
+          0.492754,
+          0.597015
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 204,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           950,
@@ -5018,17 +5354,24 @@
           262
         ],
         "placement": [
-          37,
-          59
+          40,
+          63
         ],
         "size": [
-          118,
-          120
+          112,
+          114
         ],
-        "score": 0.05967,
+        "sourceRoot": [
+          0.5,
+          0.708333
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           49,
           52,
@@ -5046,17 +5389,24 @@
           309
         ],
         "placement": [
-          40,
-          59
+          42,
+          63
         ],
         "size": [
-          120,
-          133
+          114,
+          126
         ],
-        "score": 1.31764,
+        "sourceRoot": [
+          0.375,
+          0.631579
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 192,
+        "fit": "temple-roots-10",
         "sourceBox": [
           304,
           63,
@@ -5074,17 +5424,24 @@
           324
         ],
         "placement": [
-          41,
-          59
+          44,
+          63
         ],
         "size": [
-          110,
-          133
+          104,
+          126
         ],
-        "score": 0.90298,
+        "sourceRoot": [
+          0.5,
+          0.639098
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 192,
+        "fit": "temple-roots-10",
         "sourceBox": [
           572,
           51,
@@ -5102,17 +5459,24 @@
           308
         ],
         "placement": [
-          32,
-          59
+          37,
+          63
         ],
         "size": [
-          120,
-          133
+          114,
+          126
         ],
-        "score": 1.59205,
+        "sourceRoot": [
+          0.625,
+          0.631579
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 192,
+        "fit": "temple-roots-10",
         "sourceBox": [
           826,
           63,
@@ -5132,17 +5496,24 @@
           292
         ],
         "placement": [
-          25,
-          68
+          29,
+          72
         ],
         "size": [
-          118,
-          118
+          112,
+          112
         ],
-        "score": 1.32107,
+        "sourceRoot": [
+          0.601695,
+          0.644068
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           27,
           405,
@@ -5160,17 +5531,24 @@
           282
         ],
         "placement": [
-          32,
-          68
+          35,
+          72
         ],
         "size": [
-          120,
-          124
+          114,
+          118
         ],
-        "score": 0.23248,
+        "sourceRoot": [
+          0.441667,
+          0.604839
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 192,
+        "fit": "temple-roots-10",
         "sourceBox": [
           293,
           412,
@@ -5188,17 +5566,24 @@
           295
         ],
         "placement": [
-          41,
-          68
+          44,
+          72
         ],
         "size": [
-          110,
-          124
+          104,
+          118
         ],
-        "score": 0.21084,
+        "sourceRoot": [
+          0.5,
+          0.612903
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 192,
+        "fit": "temple-roots-10",
         "sourceBox": [
           561,
           411,
@@ -5216,17 +5601,24 @@
           274
         ],
         "placement": [
-          36,
-          68
+          40,
+          72
         ],
         "size": [
-          120,
-          124
+          114,
+          118
         ],
-        "score": 1.54185,
+        "sourceRoot": [
+          0.6,
+          0.604839
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 192,
+        "fit": "temple-roots-10",
         "sourceBox": [
           818,
           412,
@@ -5239,13 +5631,6 @@
     },
     "balding": {
       "down": {
-        "source": "short-thinning.png",
-        "sourceBox": [
-          0,
-          0,
-          543,
-          724
-        ],
         "sourceBounds": [
           31,
           201,
@@ -5253,24 +5638,34 @@
           446
         ],
         "placement": [
-          44,
-          132
+          46,
+          133
         ],
         "size": [
-          104,
-          56
+          99,
+          53
         ],
+        "sourceRoot": [
+          0.5,
+          0.214286
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
+        "fit": "temple-roots-10",
+        "source": "short-thinning.png",
+        "sourceBox": [
+          0,
+          0,
+          543,
+          724
+        ],
         "sourceCropBoundaryPixels": 0
       },
       "right": {
-        "source": "short-thinning.png",
-        "sourceBox": [
-          543,
-          0,
-          1086,
-          724
-        ],
         "sourceBounds": [
           59,
           234,
@@ -5278,24 +5673,34 @@
           559
         ],
         "placement": [
-          48,
-          115
+          50,
+          117
         ],
         "size": [
-          47,
-          74
+          45,
+          70
         ],
+        "sourceRoot": [
+          0.787234,
+          0.378378
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
+        "fit": "temple-roots-10",
+        "source": "short-thinning.png",
+        "sourceBox": [
+          543,
+          0,
+          1086,
+          724
+        ],
         "sourceCropBoundaryPixels": 0
       },
       "up": {
-        "source": "short-thinning.png",
-        "sourceBox": [
-          1086,
-          0,
-          1629,
-          724
-        ],
         "sourceBounds": [
           48,
           272,
@@ -5303,24 +5708,34 @@
           564
         ],
         "placement": [
-          46,
-          131
+          48,
+          132
         ],
         "size": [
-          100,
-          58
+          95,
+          55
         ],
+        "sourceRoot": [
+          0.5,
+          0.224138
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
+        "fit": "temple-roots-10",
+        "source": "short-thinning.png",
+        "sourceBox": [
+          1086,
+          0,
+          1629,
+          724
+        ],
         "sourceCropBoundaryPixels": 0
       },
       "left": {
-        "source": "short-thinning.png",
-        "sourceBox": [
-          1629,
-          0,
-          2172,
-          724
-        ],
         "sourceBounds": [
           302,
           236,
@@ -5329,13 +5744,30 @@
         ],
         "placement": [
           97,
-          115
+          117
         ],
         "size": [
-          47,
-          73
+          45,
+          69
         ],
+        "sourceRoot": [
+          0.234043,
+          0.383562
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
+        "fit": "temple-roots-10",
+        "source": "short-thinning.png",
+        "sourceBox": [
+          1629,
+          0,
+          2172,
+          724
+        ],
         "sourceCropBoundaryPixels": 0
       }
     },
@@ -5348,17 +5780,24 @@
           239
         ],
         "placement": [
-          37,
-          83
+          46,
+          89
         ],
         "size": [
-          118,
-          94
+          99,
+          80
         ],
-        "score": 2.64093,
+        "sourceRoot": [
+          0.5,
+          0.648936
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           20,
           1082,
@@ -5376,17 +5815,24 @@
           249
         ],
         "placement": [
-          40,
-          83
+          43,
+          85
         ],
         "size": [
-          112,
-          105
+          97,
+          89
         ],
-        "score": 0.49271,
+        "sourceRoot": [
+          0.428571,
+          0.647619
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           288,
           1087,
@@ -5404,17 +5850,24 @@
           279
         ],
         "placement": [
-          42,
-          83
+          50,
+          89
         ],
         "size": [
-          108,
-          113
+          92,
+          92
         ],
-        "score": 1.82508,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          89
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           554,
           1082,
@@ -5432,17 +5885,24 @@
           256
         ],
         "placement": [
-          40,
-          83
+          51,
+          84
         ],
         "size": [
-          112,
-          105
+          97,
+          89
         ],
-        "score": 0.71683,
+        "sourceRoot": [
+          0.598214,
+          0.638095
+        ],
+        "targetRoot": [
+          109,
+          141
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           826,
           1085,
@@ -5462,17 +5922,24 @@
           254
         ],
         "placement": [
-          33,
-          86
+          43,
+          90
         ],
         "size": [
-          118,
-          93
+          99,
+          79
         ],
-        "score": 1.85447,
+        "sourceRoot": [
+          0.533898,
+          0.623656
+        ],
+        "targetRoot": [
+          96,
+          139
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           13,
           93,
@@ -5490,17 +5957,24 @@
           273
         ],
         "placement": [
-          40,
-          86
+          41,
+          88
         ],
         "size": [
-          112,
-          102
+          97,
+          87
         ],
-        "score": 0.48312,
+        "sourceRoot": [
+          0.455357,
+          0.637255
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           292,
           89,
@@ -5518,17 +5992,24 @@
           272
         ],
         "placement": [
-          42,
-          89
+          50,
+          92
         ],
         "size": [
-          108,
-          102
+          92,
+          89
         ],
-        "score": 0.96195,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          92
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           550,
           92,
@@ -5546,17 +6027,24 @@
           271
         ],
         "placement": [
-          44,
-          86
+          57,
+          87
         ],
         "size": [
-          112,
-          102
+          97,
+          87
         ],
-        "score": 0.54371,
+        "sourceRoot": [
+          0.553571,
+          0.647059
+        ],
+        "targetRoot": [
+          111,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           809,
           91,
@@ -5576,17 +6064,24 @@
           216
         ],
         "placement": [
-          33,
-          83
+          43,
+          89
         ],
         "size": [
-          118,
-          84
+          99,
+          71
         ],
-        "score": 0.70036,
+        "sourceRoot": [
+          0.533898,
+          0.72619
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           17,
           445,
@@ -5604,17 +6099,24 @@
           254
         ],
         "placement": [
-          44,
-          83
+          45,
+          86
         ],
         "size": [
-          112,
-          105
+          97,
+          89
         ],
-        "score": 0.66729,
+        "sourceRoot": [
+          0.410714,
+          0.638095
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           288,
           445,
@@ -5632,17 +6134,24 @@
           269
         ],
         "placement": [
-          42,
-          86
+          50,
+          89
         ],
         "size": [
-          108,
-          105
+          92,
+          92
         ],
-        "score": 1.11601,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          89
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           555,
           442,
@@ -5660,17 +6169,24 @@
           253
         ],
         "placement": [
-          36,
-          83
+          49,
+          85
         ],
         "size": [
-          112,
-          105
+          97,
+          89
         ],
-        "score": 0.58502,
+        "sourceRoot": [
+          0.607143,
+          0.647619
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           813,
           449,
@@ -5690,17 +6206,24 @@
           222
         ],
         "placement": [
-          33,
-          77
+          43,
+          84
         ],
         "size": [
-          118,
-          86
+          99,
+          73
         ],
-        "score": 0.5761,
+        "sourceRoot": [
+          0.533898,
+          0.77907
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           15,
           778,
@@ -5718,17 +6241,24 @@
           252
         ],
         "placement": [
-          40,
-          74
+          44,
+          79
         ],
         "size": [
-          112,
-          111
+          97,
+          94
         ],
-        "score": 1.00324,
+        "sourceRoot": [
+          0.419643,
+          0.684685
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           282,
           775,
@@ -5746,17 +6276,24 @@
           248
         ],
         "placement": [
-          42,
-          80
+          50,
+          84
         ],
         "size": [
-          108,
-          111
+          92,
+          97
         ],
-        "score": 0.82104,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          84
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           552,
           776,
@@ -5774,17 +6311,24 @@
           252
         ],
         "placement": [
-          36,
-          77
+          49,
+          79
         ],
         "size": [
-          112,
-          111
+          97,
+          94
         ],
-        "score": 0.96453,
+        "sourceRoot": [
+          0.607143,
+          0.675676
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           809,
           778,
@@ -5804,17 +6348,24 @@
           218
         ],
         "placement": [
-          37,
-          89
+          46,
+          94
         ],
         "size": [
-          118,
-          87
+          99,
+          74
         ],
-        "score": 0.71644,
+        "sourceRoot": [
+          0.5,
+          0.632184
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           19,
           1095,
@@ -5832,17 +6383,24 @@
           237
         ],
         "placement": [
-          40,
-          86
+          42,
+          87
         ],
         "size": [
-          112,
-          99
+          97,
+          84
         ],
-        "score": 1.62183,
+        "sourceRoot": [
+          0.446429,
+          0.666667
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           290,
           1099,
@@ -5860,17 +6418,24 @@
           235
         ],
         "placement": [
-          42,
-          92
+          50,
+          94
         ],
         "size": [
-          108,
-          99
+          92,
+          87
         ],
-        "score": 0.58166,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          94
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           562,
           1102,
@@ -5888,17 +6453,24 @@
           239
         ],
         "placement": [
-          40,
-          86
+          48,
+          87
         ],
         "size": [
-          112,
-          99
+          97,
+          84
         ],
-        "score": 1.4229,
+        "sourceRoot": [
+          0.616071,
+          0.666667
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           814,
           1099,
@@ -5918,17 +6490,24 @@
           207
         ],
         "placement": [
-          34,
-          83
+          44,
+          89
         ],
         "size": [
-          124,
-          86
+          104,
+          73
         ],
-        "score": 0.62757,
+        "sourceRoot": [
+          0.5,
+          0.709302
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           20,
           88,
@@ -5946,17 +6525,24 @@
           270
         ],
         "placement": [
-          37,
-          83
+          39,
+          85
         ],
         "size": [
-          118,
-          105
+          103,
+          89
         ],
-        "score": 0.73289,
+        "sourceRoot": [
+          0.449153,
+          0.657143
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           291,
           91,
@@ -5974,17 +6560,24 @@
           278
         ],
         "placement": [
-          39,
-          86
+          48,
+          89
         ],
         "size": [
-          114,
-          105
+          97,
+          92
         ],
-        "score": 1.06881,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          89
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           558,
           89,
@@ -6002,17 +6595,24 @@
           274
         ],
         "placement": [
-          41,
-          83
+          51,
+          85
         ],
         "size": [
-          118,
-          105
+          103,
+          89
         ],
-        "score": 0.83707,
+        "sourceRoot": [
+          0.550847,
+          0.647619
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           814,
           91,
@@ -6032,17 +6632,24 @@
           164
         ],
         "placement": [
-          37,
-          95
+          46,
+          99
         ],
         "size": [
-          118,
-          70
+          99,
+          60
         ],
-        "score": 0.34304,
+        "sourceRoot": [
+          0.5,
+          0.7
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           36,
           438,
@@ -6060,17 +6667,24 @@
           242
         ],
         "placement": [
-          34,
-          95
-        ],
-        "size": [
-          108,
+          35,
           93
         ],
-        "score": 1.8659,
+        "size": [
+          94,
+          79
+        ],
+        "sourceRoot": [
+          0.527778,
+          0.634409
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           298,
           423,
@@ -6088,17 +6702,24 @@
           238
         ],
         "placement": [
-          42,
-          95
+          50,
+          99
         ],
         "size": [
-          108,
-          93
+          92,
+          82
         ],
-        "score": 0.70383,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          99
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           569,
           429,
@@ -6116,17 +6737,24 @@
           238
         ],
         "placement": [
-          48,
-          95
+          56,
+          94
         ],
         "size": [
-          112,
-          93
+          97,
+          79
         ],
-        "score": 1.49521,
+        "sourceRoot": [
+          0.535714,
+          0.623656
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           830,
           425,
@@ -6146,17 +6774,24 @@
           234
         ],
         "placement": [
-          42,
-          74
+          51,
+          81
         ],
         "size": [
-          124,
-          95
+          104,
+          81
         ],
-        "score": 0.87173,
+        "sourceRoot": [
+          0.435484,
+          0.736842
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           20,
           721,
@@ -6174,17 +6809,24 @@
           280
         ],
         "placement": [
-          37,
-          74
+          36,
+          77
         ],
         "size": [
-          118,
-          114
+          103,
+          97
         ],
-        "score": 1.69736,
+        "sourceRoot": [
+          0.474576,
+          0.684211
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           286,
           723,
@@ -6202,17 +6844,24 @@
           295
         ],
         "placement": [
-          39,
-          71
+          48,
+          82
         ],
         "size": [
-          114,
-          122
+          97,
+          99
         ],
-        "score": 1.22396,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          82
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           549,
           719,
@@ -6230,17 +6879,24 @@
           280
         ],
         "placement": [
-          41,
+          52,
           77
         ],
         "size": [
-          118,
-          114
+          103,
+          97
         ],
-        "score": 1.40421,
+        "sourceRoot": [
+          0.542373,
+          0.684211
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           820,
           722,
@@ -6260,17 +6916,24 @@
           217
         ],
         "placement": [
-          38,
-          80
-        ],
-        "size": [
-          124,
+          47,
           87
         ],
-        "score": 1.06658,
+        "size": [
+          104,
+          74
+        ],
+        "sourceRoot": [
+          0.467742,
+          0.735632
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           18,
           1064,
@@ -6288,17 +6951,24 @@
           277
         ],
         "placement": [
-          41,
+          42,
           80
         ],
         "size": [
-          118,
-          108
+          103,
+          92
         ],
-        "score": 0.71133,
+        "sourceRoot": [
+          0.415254,
+          0.685185
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           289,
           1057,
@@ -6316,17 +6986,24 @@
           272
         ],
         "placement": [
-          39,
-          83
+          48,
+          87
         ],
         "size": [
-          114,
-          108
+          97,
+          94
         ],
-        "score": 0.56539,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          87
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           559,
           1067,
@@ -6344,17 +7021,24 @@
           279
         ],
         "placement": [
-          37,
-          80
+          50,
+          79
         ],
         "size": [
-          118,
-          108
+          103,
+          92
         ],
-        "score": 0.60103,
+        "sourceRoot": [
+          0.567797,
+          0.694444
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           810,
           1057,
@@ -6374,17 +7058,24 @@
           230
         ],
         "placement": [
-          37,
-          89
+          48,
+          91
         ],
         "size": [
-          118,
-          96
+          95,
+          70
         ],
-        "score": 1.2024,
+        "sourceRoot": [
+          0.5,
+          0.71875
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           16,
           104,
@@ -6403,16 +7094,23 @@
         ],
         "placement": [
           48,
-          89
+          90
         ],
         "size": [
-          112,
-          99
+          97,
+          84
         ],
-        "score": 0.9488,
+        "sourceRoot": [
+          0.383929,
+          0.636364
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           283,
           102,
@@ -6430,17 +7128,24 @@
           259
         ],
         "placement": [
-          42,
-          92
+          50,
+          94
         ],
         "size": [
-          108,
-          99
+          92,
+          87
         ],
-        "score": 0.63204,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          94
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           551,
           103,
@@ -6458,17 +7163,24 @@
           259
         ],
         "placement": [
-          36,
-          89
+          50,
+          90
         ],
         "size": [
-          112,
-          99
+          97,
+          84
         ],
-        "score": 0.6295,
+        "sourceRoot": [
+          0.633929,
+          0.636364
+        ],
+        "targetRoot": [
+          111,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           801,
           102,
@@ -6488,17 +7200,24 @@
           235
         ],
         "placement": [
-          34,
-          80
+          44,
+          87
         ],
         "size": [
-          124,
-          94
+          104,
+          80
         ],
-        "score": 1.40216,
+        "sourceRoot": [
+          0.5,
+          0.680851
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           18,
           419,
@@ -6516,17 +7235,24 @@
           259
         ],
         "placement": [
-          41,
-          77
+          44,
+          80
         ],
         "size": [
-          118,
-          108
+          103,
+          92
         ],
-        "score": 1.27185,
+        "sourceRoot": [
+          0.398305,
+          0.685185
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           285,
           422,
@@ -6544,17 +7270,24 @@
           266
         ],
         "placement": [
-          39,
-          83
+          48,
+          87
         ],
         "size": [
-          114,
-          108
+          97,
+          94
         ],
-        "score": 0.65954,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          87
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           556,
           419,
@@ -6572,17 +7305,24 @@
           258
         ],
         "placement": [
-          33,
-          77
+          43,
+          80
         ],
         "size": [
-          118,
-          108
+          103,
+          92
         ],
-        "score": 1.46192,
+        "sourceRoot": [
+          0.635593,
+          0.685185
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           808,
           423,
@@ -6602,17 +7342,24 @@
           247
         ],
         "placement": [
-          34,
-          65
+          44,
+          74
         ],
         "size": [
-          124,
-          106
+          104,
+          90
         ],
-        "score": 0.55946,
+        "sourceRoot": [
+          0.5,
+          0.745283
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           32,
           730,
@@ -6631,16 +7378,23 @@
         ],
         "placement": [
           41,
-          65
+          66
         ],
         "size": [
-          118,
-          123
+          103,
+          105
         ],
-        "score": 1.17627,
+        "sourceRoot": [
+          0.423729,
+          0.731707
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           283,
           739,
@@ -6658,17 +7412,24 @@
           288
         ],
         "placement": [
-          39,
-          65
+          48,
+          74
         ],
         "size": [
-          114,
-          123
+          97,
+          107
         ],
-        "score": 0.33817,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          74
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           564,
           731,
@@ -6686,17 +7447,24 @@
           277
         ],
         "placement": [
-          33,
-          65
+          47,
+          66
         ],
         "size": [
-          118,
-          123
+          103,
+          105
         ],
-        "score": 1.09329,
+        "sourceRoot": [
+          0.59322,
+          0.731707
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           805,
           741,
@@ -6716,17 +7484,24 @@
           220
         ],
         "placement": [
-          28,
-          80
+          39,
+          87
         ],
         "size": [
-          120,
-          84
+          101,
+          71
         ],
-        "score": 1.75977,
+        "sourceRoot": [
+          0.566667,
+          0.761905
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           13,
           1100,
@@ -6744,17 +7519,24 @@
           253
         ],
         "placement": [
-          41,
-          80
+          42,
+          77
         ],
         "size": [
-          118,
-          108
+          103,
+          92
         ],
-        "score": 1.07295,
+        "sourceRoot": [
+          0.415254,
+          0.712963
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           284,
           1101,
@@ -6772,17 +7554,24 @@
           251
         ],
         "placement": [
-          39,
-          83
+          48,
+          87
         ],
         "size": [
-          114,
-          108
+          97,
+          94
         ],
-        "score": 0.95708,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          87
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           554,
           1100,
@@ -6800,17 +7589,24 @@
           255
         ],
         "placement": [
-          37,
+          50,
           77
         ],
         "size": [
-          118,
-          108
+          103,
+          92
         ],
-        "score": 0.89605,
+        "sourceRoot": [
+          0.567797,
+          0.712963
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           802,
           1099,
@@ -6830,17 +7626,24 @@
           566
         ],
         "placement": [
-          38,
-          89
+          41,
+          92
         ],
         "size": [
-          124,
-          93
+          118,
+          88
         ],
-        "score": 7.53381,
+        "sourceRoot": [
+          0.467742,
+          0.591398
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "source": "short-twists.png",
         "sourceBox": [
           0,
@@ -6859,16 +7662,23 @@
         ],
         "placement": [
           29,
-          89
+          86
         ],
         "size": [
-          118,
-          99
+          112,
+          94
         ],
-        "score": 1.79263,
+        "sourceRoot": [
+          0.5,
+          0.606061
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "source": "short-twists.png",
         "sourceBox": [
           546,
@@ -6886,17 +7696,24 @@
           582
         ],
         "placement": [
-          39,
-          92
+          42,
+          95
         ],
         "size": [
-          114,
-          99
+          108,
+          94
         ],
-        "score": 0.64339,
+        "sourceRoot": [
+          0.5,
+          0.525253
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "source": "short-twists.png",
         "sourceBox": [
           1093,
@@ -6914,17 +7731,24 @@
           581
         ],
         "placement": [
-          49,
-          89
+          53,
+          87
         ],
         "size": [
-          118,
-          99
+          112,
+          94
         ],
-        "score": 1.75847,
+        "sourceRoot": [
+          0.491525,
+          0.59596
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "source": "short-twists.png",
         "sourceBox": [
           1614,
@@ -6944,17 +7768,24 @@
           204
         ],
         "placement": [
-          39,
-          86
+          48,
+          92
         ],
         "size": [
-          114,
-          81
+          96,
+          69
         ],
-        "score": 1.80158,
+        "sourceRoot": [
+          0.5,
+          0.716049
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           24,
           467,
@@ -6972,17 +7803,24 @@
           220
         ],
         "placement": [
-          32,
-          86
+          35,
+          88
         ],
         "size": [
-          112,
-          102
+          97,
+          87
         ],
-        "score": 0.84639,
+        "sourceRoot": [
+          0.517857,
+          0.637255
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           298,
           466,
@@ -7000,17 +7838,24 @@
           220
         ],
         "placement": [
-          42,
-          86
+          50,
+          92
         ],
         "size": [
-          108,
-          102
+          92,
+          89
         ],
-        "score": 0.38617,
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          92
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           555,
           467,
@@ -7028,17 +7873,24 @@
           222
         ],
         "placement": [
-          48,
-          86
+          60,
+          88
         ],
         "size": [
-          112,
-          102
+          97,
+          87
         ],
-        "score": 1.03267,
+        "sourceRoot": [
+          0.5,
+          0.637255
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 188,
+        "fit": "temple-roots-10",
         "sourceBox": [
           821,
           465,
@@ -7058,17 +7910,24 @@
           248
         ],
         "placement": [
-          34,
-          83
+          39,
+          86
         ],
         "size": [
-          124,
-          102
+          114,
+          97
         ],
-        "score": 5.06712,
+        "sourceRoot": [
+          0.5,
+          0.598039
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           19,
           791,
@@ -7086,17 +7945,24 @@
           241
         ],
         "placement": [
-          33,
-          80
+          37,
+          75
         ],
         "size": [
-          118,
-          118
+          110,
+          112
         ],
-        "score": 1.35086,
+        "sourceRoot": [
+          0.440678,
+          0.610169
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 201,
+        "fit": "temple-roots-10",
         "sourceBox": [
           293,
           798,
@@ -7114,17 +7980,24 @@
           259
         ],
         "placement": [
-          38,
-          83
+          42,
+          86
         ],
         "size": [
-          116,
-          118
+          107,
+          112
         ],
-        "score": 0.23041,
+        "sourceRoot": [
+          0.5,
+          0.516949
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 201,
+        "fit": "temple-roots-10",
         "sourceBox": [
           539,
           786,
@@ -7142,17 +8015,24 @@
           246
         ],
         "placement": [
-          45,
-          80
+          46,
+          75
         ],
         "size": [
-          118,
-          118
+          110,
+          112
         ],
-        "score": 1.96817,
+        "sourceRoot": [
+          0.567797,
+          0.610169
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 201,
+        "fit": "temple-roots-10",
         "sourceBox": [
           814,
           797,
@@ -7172,17 +8052,24 @@
           251
         ],
         "placement": [
-          32,
-          92
+          37,
+          95
         ],
         "size": [
-          128,
-          115
+          118,
+          109
         ],
-        "score": 3.55267,
+        "sourceRoot": [
+          0.5,
+          0.452174
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           28,
           1130,
@@ -7200,17 +8087,24 @@
           255
         ],
         "placement": [
-          26,
-          86
+          33,
+          81
         ],
         "size": [
-          116,
-          116
+          108,
+          110
         ],
-        "score": 8.27502,
+        "sourceRoot": [
+          0.482759,
+          0.560345
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 216,
+        "fit": "temple-roots-10",
         "sourceBox": [
           280,
           1125,
@@ -7228,17 +8122,24 @@
           252
         ],
         "placement": [
-          35,
-          92
+          40,
+          95
         ],
         "size": [
-          122,
-          124
+          112,
+          118
         ],
-        "score": 0.23085,
+        "sourceRoot": [
+          0.5,
+          0.419355
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 216,
+        "fit": "temple-roots-10",
         "sourceBox": [
           552,
           1128,
@@ -7257,16 +8158,23 @@
         ],
         "placement": [
           50,
-          89
+          82
         ],
         "size": [
-          116,
-          116
+          108,
+          110
         ],
-        "score": 7.75745,
+        "sourceRoot": [
+          0.534483,
+          0.551724
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 216,
+        "fit": "temple-roots-10",
         "sourceBox": [
           828,
           1125,
@@ -7286,17 +8194,24 @@
           261
         ],
         "placement": [
-          30,
-          89
+          35,
+          92
         ],
         "size": [
-          124,
-          100
+          114,
+          95
         ],
-        "score": 5.20149,
+        "sourceRoot": [
+          0.532258,
+          0.55
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           8,
           77,
@@ -7314,17 +8229,24 @@
           258
         ],
         "placement": [
-          40,
-          89
+          43,
+          82
         ],
         "size": [
-          120,
-          116
+          112,
+          110
         ],
-        "score": 1.75671,
+        "sourceRoot": [
+          0.375,
+          0.551724
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 205,
+        "fit": "temple-roots-10",
         "sourceBox": [
           295,
           78,
@@ -7342,17 +8264,24 @@
           256
         ],
         "placement": [
-          35,
-          89
+          40,
+          92
         ],
         "size": [
-          122,
-          116
+          112,
+          110
         ],
-        "score": 0.28701,
+        "sourceRoot": [
+          0.5,
+          0.474138
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 205,
+        "fit": "temple-roots-10",
         "sourceBox": [
           560,
           83,
@@ -7370,17 +8299,24 @@
           260
         ],
         "placement": [
-          48,
-          89
+          52,
+          82
         ],
         "size": [
-          120,
-          116
+          112,
+          110
         ],
-        "score": 1.782,
+        "sourceRoot": [
+          0.5,
+          0.551724
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 205,
+        "fit": "temple-roots-10",
         "sourceBox": [
           830,
           78,
@@ -7400,17 +8336,24 @@
           268
         ],
         "placement": [
-          34,
-          92
+          39,
+          94
         ],
         "size": [
-          124,
-          104
+          114,
+          99
         ],
-        "score": 5.94601,
+        "sourceRoot": [
+          0.5,
+          0.5
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           10,
           402,
@@ -7428,17 +8371,24 @@
           272
         ],
         "placement": [
-          34,
-          89
+          38,
+          87
         ],
         "size": [
-          116,
-          112
+          108,
+          106
         ],
-        "score": 3.91647,
+        "sourceRoot": [
+          0.439655,
+          0.526786
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 212,
+        "fit": "temple-roots-10",
         "sourceBox": [
           288,
           402,
@@ -7456,17 +8406,24 @@
           274
         ],
         "placement": [
-          35,
-          92
+          40,
+          95
         ],
         "size": [
-          122,
-          120
+          112,
+          114
         ],
-        "score": 0.27395,
+        "sourceRoot": [
+          0.5,
+          0.433333
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 212,
+        "fit": "temple-roots-10",
         "sourceBox": [
           547,
           400,
@@ -7484,17 +8441,24 @@
           267
         ],
         "placement": [
-          36,
-          89
+          41,
+          87
         ],
         "size": [
-          120,
-          112
+          112,
+          106
         ],
-        "score": 3.21035,
+        "sourceRoot": [
+          0.6,
+          0.526786
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 212,
+        "fit": "temple-roots-10",
         "sourceBox": [
           823,
           406,
@@ -7514,17 +8478,24 @@
           308
         ],
         "placement": [
-          22,
-          92
+          28,
+          95
         ],
         "size": [
-          140,
-          133
+          129,
+          126
         ],
-        "score": 5.92009,
+        "sourceRoot": [
+          0.528571,
+          0.390977
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           7,
           741,
@@ -7542,17 +8513,24 @@
           316
         ],
         "placement": [
-          24,
-          86
+          30,
+          78
         ],
         "size": [
-          120,
-          141
+          112,
+          134
         ],
-        "score": 10.57875,
+        "sourceRoot": [
+          0.491667,
+          0.48227
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 241,
+        "fit": "temple-roots-10",
         "sourceBox": [
           275,
           737,
@@ -7570,17 +8548,24 @@
           310
         ],
         "placement": [
-          33,
-          92
+          38,
+          94
         ],
         "size": [
-          126,
-          149
+          116,
+          142
         ],
-        "score": 0.27793,
+        "sourceRoot": [
+          0.5,
+          0.348993
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 241,
+        "fit": "temple-roots-10",
         "sourceBox": [
           536,
           740,
@@ -7598,17 +8583,24 @@
           318
         ],
         "placement": [
-          48,
-          89
+          47,
+          81
         ],
         "size": [
-          120,
-          149
+          112,
+          142
         ],
-        "score": 8.40587,
+        "sourceRoot": [
+          0.541667,
+          0.436242
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 241,
+        "fit": "temple-roots-10",
         "sourceBox": [
           815,
           735,
@@ -7628,17 +8620,24 @@
           293
         ],
         "placement": [
-          26,
-          80
+          32,
+          83
         ],
         "size": [
-          132,
-          117
+          121,
+          111
         ],
-        "score": 5.50484,
+        "sourceRoot": [
+          0.530303,
+          0.547009
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           7,
           1091,
@@ -7656,17 +8655,24 @@
           301
         ],
         "placement": [
-          26,
-          77
+          30,
+          74
         ],
         "size": [
-          124,
-          133
+          115,
+          126
         ],
-        "score": 4.22325,
+        "sourceRoot": [
+          0.475806,
+          0.548872
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 213,
+        "fit": "temple-roots-10",
         "sourceBox": [
           287,
           1080,
@@ -7684,17 +8690,24 @@
           287
         ],
         "placement": [
-          33,
-          80
+          38,
+          83
         ],
         "size": [
-          126,
-          133
+          116,
+          126
         ],
-        "score": 0.30043,
+        "sourceRoot": [
+          0.5,
+          0.481203
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 213,
+        "fit": "temple-roots-10",
         "sourceBox": [
           557,
           1095,
@@ -7712,17 +8725,24 @@
           281
         ],
         "placement": [
-          42,
-          80
+          47,
+          77
         ],
         "size": [
-          124,
-          133
+          115,
+          126
         ],
-        "score": 3.91511,
+        "sourceRoot": [
+          0.532258,
+          0.526316
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 213,
+        "fit": "temple-roots-10",
         "sourceBox": [
           818,
           1096,
@@ -7742,17 +8762,24 @@
           290
         ],
         "placement": [
-          30,
-          83
+          36,
+          86
         ],
         "size": [
-          132,
-          115
+          121,
+          109
         ],
-        "score": 3.68043,
+        "sourceRoot": [
+          0.5,
+          0.530435
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           6,
           78,
@@ -7771,16 +8798,23 @@
         ],
         "placement": [
           34,
-          80
+          77
         ],
         "size": [
-          124,
-          131
+          115,
+          124
         ],
-        "score": 1.1039,
+        "sourceRoot": [
+          0.443548,
+          0.534351
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 214,
+        "fit": "temple-roots-10",
         "sourceBox": [
           292,
           93,
@@ -7798,17 +8832,24 @@
           289
         ],
         "placement": [
-          33,
-          83
+          38,
+          86
         ],
         "size": [
-          126,
-          131
+          116,
+          124
         ],
-        "score": 0.28374,
+        "sourceRoot": [
+          0.5,
+          0.465649
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 214,
+        "fit": "temple-roots-10",
         "sourceBox": [
           552,
           85,
@@ -7826,17 +8867,24 @@
           279
         ],
         "placement": [
-          38,
-          80
+          47,
+          76
         ],
         "size": [
-          124,
-          131
+          115,
+          124
         ],
-        "score": 1.20999,
+        "sourceRoot": [
+          0.532258,
+          0.541985
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 214,
+        "fit": "temple-roots-10",
         "sourceBox": [
           815,
           93,
@@ -7856,17 +8904,24 @@
           292
         ],
         "placement": [
-          34,
-          83
+          39,
+          86
         ],
         "size": [
-          132,
-          121
+          121,
+          115
         ],
-        "score": 1.22004,
+        "sourceRoot": [
+          0.469697,
+          0.504132
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           17,
           402,
@@ -7884,17 +8939,24 @@
           309
         ],
         "placement": [
-          34,
-          83
+          37,
+          81
         ],
         "size": [
-          124,
-          138
+          115,
+          131
         ],
-        "score": 1.08797,
+        "sourceRoot": [
+          0.419355,
+          0.471014
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 221,
+        "fit": "temple-roots-10",
         "sourceBox": [
           288,
           408,
@@ -7912,17 +8974,24 @@
           317
         ],
         "placement": [
-          33,
-          83
+          38,
+          86
         ],
         "size": [
-          126,
-          138
+          116,
+          131
         ],
-        "score": 0.74302,
+        "sourceRoot": [
+          0.5,
+          0.442029
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 221,
+        "fit": "temple-roots-10",
         "sourceBox": [
           563,
           402,
@@ -7940,17 +9009,24 @@
           311
         ],
         "placement": [
-          34,
+          43,
           80
         ],
         "size": [
-          124,
-          138
+          115,
+          131
         ],
-        "score": 1.16491,
+        "sourceRoot": [
+          0.564516,
+          0.478261
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 221,
+        "fit": "temple-roots-10",
         "sourceBox": [
           808,
           406,
@@ -7970,17 +9046,24 @@
           251
         ],
         "placement": [
-          30,
-          92
+          34,
+          95
         ],
         "size": [
-          132,
-          100
+          125,
+          95
         ],
-        "score": 5.51372,
+        "sourceRoot": [
+          0.5,
+          0.52
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           5,
           750,
@@ -7998,17 +9081,24 @@
           252
         ],
         "placement": [
-          22,
-          89
+          25,
+          84
         ],
         "size": [
-          124,
-          116
+          118,
+          110
         ],
-        "score": 3.52001,
+        "sourceRoot": [
+          0.508065,
+          0.534483
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 208,
+        "fit": "temple-roots-10",
         "sourceBox": [
           289,
           753,
@@ -8026,17 +9116,24 @@
           264
         ],
         "placement": [
-          33,
-          92
+          36,
+          95
         ],
         "size": [
-          126,
-          116
+          120,
+          110
         ],
-        "score": 0.30956,
+        "sourceRoot": [
+          0.5,
+          0.448276
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 208,
+        "fit": "temple-roots-10",
         "sourceBox": [
           545,
           752,
@@ -8054,17 +9151,24 @@
           253
         ],
         "placement": [
-          46,
-          89
+          49,
+          84
         ],
         "size": [
-          124,
-          116
+          118,
+          110
         ],
-        "score": 3.6519,
+        "sourceRoot": [
+          0.5,
+          0.534483
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 208,
+        "fit": "temple-roots-10",
         "sourceBox": [
           818,
           753,
@@ -8084,17 +9188,24 @@
           271
         ],
         "placement": [
-          30,
-          80
+          34,
+          83
         ],
         "size": [
-          132,
-          107
+          125,
+          102
         ],
-        "score": 13.55601,
+        "sourceRoot": [
+          0.5,
+          0.598131
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           6,
           1061,
@@ -8112,17 +9223,24 @@
           258
         ],
         "placement": [
-          24,
-          77
+          27,
+          76
         ],
         "size": [
-          120,
-          115
+          114,
+          109
         ],
-        "score": 13.01752,
+        "sourceRoot": [
+          0.508333,
+          0.617391
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 203,
+        "fit": "temple-roots-10",
         "sourceBox": [
           298,
           1071,
@@ -8140,17 +9258,24 @@
           269
         ],
         "placement": [
-          33,
-          80
+          36,
+          83
         ],
         "size": [
-          126,
-          123
+          120,
+          117
         ],
-        "score": 0.31151,
+        "sourceRoot": [
+          0.5,
+          0.520325
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 203,
+        "fit": "temple-roots-10",
         "sourceBox": [
           547,
           1069,
@@ -8168,17 +9293,24 @@
           260
         ],
         "placement": [
-          48,
-          77
+          51,
+          76
         ],
         "size": [
-          120,
-          115
+          114,
+          109
         ],
-        "score": 11.20626,
+        "sourceRoot": [
+          0.5,
+          0.617391
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 203,
+        "fit": "temple-roots-10",
         "sourceBox": [
           822,
           1070,
@@ -8198,17 +9330,24 @@
           306
         ],
         "placement": [
-          21,
-          41
+          28,
+          46
         ],
         "size": [
-          150,
-          176
+          135,
+          167
         ],
-        "score": 1.20554,
+        "sourceRoot": [
+          0.5,
+          0.585227
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           43,
           45,
@@ -8226,17 +9365,24 @@
           298
         ],
         "placement": [
-          23,
-          38
+          28,
+          43
         ],
         "size": [
-          146,
-          155
+          134,
+          147
         ],
-        "score": 9.13667,
+        "sourceRoot": [
+          0.424658,
+          0.677419
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 204,
+        "fit": "temple-roots-10",
         "sourceBox": [
           311,
           45,
@@ -8254,17 +9400,24 @@
           301
         ],
         "placement": [
-          23,
-          41
+          30,
+          46
         ],
         "size": [
-          146,
-          163
+          131,
+          155
         ],
-        "score": 0.35026,
+        "sourceRoot": [
+          0.5,
+          0.631902
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 204,
+        "fit": "temple-roots-10",
         "sourceBox": [
           564,
           43,
@@ -8282,17 +9435,24 @@
           298
         ],
         "placement": [
-          23,
-          38
+          30,
+          43
         ],
         "size": [
-          146,
-          155
+          134,
+          147
         ],
-        "score": 9.97874,
+        "sourceRoot": [
+          0.582192,
+          0.677419
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 204,
+        "fit": "temple-roots-10",
         "sourceBox": [
           830,
           45,
@@ -8312,17 +9472,24 @@
           231
         ],
         "placement": [
-          21,
-          68
+          29,
+          72
         ],
         "size": [
-          158,
-          113
+          142,
+          107
         ],
-        "score": 1.95247,
+        "sourceRoot": [
+          0.474684,
+          0.672566
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           44,
@@ -8340,17 +9507,24 @@
           247
         ],
         "placement": [
-          20,
-          65
+          25,
+          69
         ],
         "size": [
-          128,
-          129
+          118,
+          123
         ],
-        "score": 25.4392,
+        "sourceRoot": [
+          0.507812,
+          0.604651
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 205,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           377,
@@ -8368,17 +9542,24 @@
           231
         ],
         "placement": [
-          18,
-          68
+          26,
+          72
         ],
         "size": [
-          156,
-          137
+          140,
+          130
         ],
-        "score": 0.56008,
+        "sourceRoot": [
+          0.5,
+          0.554745
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 205,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           632,
@@ -8396,17 +9577,24 @@
           247
         ],
         "placement": [
-          44,
-          65
+          49,
+          69
         ],
         "size": [
-          128,
-          129
+          118,
+          123
         ],
-        "score": 26.13718,
+        "sourceRoot": [
+          0.5,
+          0.604651
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 205,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           961,
@@ -8426,17 +9614,24 @@
           307
         ],
         "placement": [
-          30,
-          53
+          36,
+          57
         ],
         "size": [
-          132,
-          162
+          119,
+          154
         ],
-        "score": 3.35763,
+        "sourceRoot": [
+          0.5,
+          0.561728
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           52,
           647,
@@ -8455,16 +9650,23 @@
         ],
         "placement": [
           32,
-          59
+          63
         ],
         "size": [
-          120,
-          137
+          110,
+          130
         ],
-        "score": 2.97135,
+        "sourceRoot": [
+          0.483333,
+          0.613139
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           321,
           648,
@@ -8482,17 +9684,24 @@
           313
         ],
         "placement": [
-          35,
-          56
+          41,
+          60
         ],
         "size": [
-          122,
-          145
+          110,
+          138
         ],
-        "score": 4.49594,
+        "sourceRoot": [
+          0.5,
+          0.606897
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           574,
           646,
@@ -8510,17 +9719,24 @@
           315
         ],
         "placement": [
-          40,
-          59
+          48,
+          63
         ],
         "size": [
-          120,
-          137
+          110,
+          130
         ],
-        "score": 2.63496,
+        "sourceRoot": [
+          0.541667,
+          0.613139
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           823,
           648,
@@ -8540,17 +9756,24 @@
           438
         ],
         "placement": [
-          28,
-          74
+          34,
+          78
         ],
         "size": [
-          136,
-          179
+          125,
+          170
         ],
-        "score": 8.21925,
+        "sourceRoot": [
+          0.5,
+          0.391061
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           17,
           969,
@@ -8568,17 +9791,24 @@
           434
         ],
         "placement": [
-          25,
-          77
+          29,
+          76
         ],
         "size": [
-          126,
-          178
+          117,
+          169
         ],
-        "score": 4.12904,
+        "sourceRoot": [
+          0.47619,
+          0.398876
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           304,
           983,
@@ -8596,17 +9826,24 @@
           443
         ],
         "placement": [
-          34,
-          74
+          39,
+          78
         ],
         "size": [
-          124,
-          178
+          114,
+          169
         ],
-        "score": 0.52718,
+        "sourceRoot": [
+          0.5,
+          0.393258
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           531,
           974,
@@ -8624,17 +9861,24 @@
           434
         ],
         "placement": [
-          43,
-          77
+          48,
+          76
         ],
         "size": [
-          130,
-          178
+          121,
+          169
         ],
-        "score": 4.44124,
+        "sourceRoot": [
+          0.5,
+          0.398876
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           814,
           983,
@@ -8654,17 +9898,24 @@
           354
         ],
         "placement": [
-          36,
-          62
+          42,
+          66
         ],
         "size": [
-          128,
-          149
+          115,
+          142
         ],
-        "score": 6.56252,
+        "sourceRoot": [
+          0.46875,
+          0.550336
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           22,
           36,
@@ -8682,17 +9933,24 @@
           320
         ],
         "placement": [
-          43,
+          46,
           53
         ],
         "size": [
-          130,
-          182
+          120,
+          173
         ],
-        "score": 16.68358,
+        "sourceRoot": [
+          0.323077,
+          0.521978
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           289,
           66,
@@ -8710,17 +9968,24 @@
           339
         ],
         "placement": [
-          34,
-          62
+          40,
+          66
         ],
         "size": [
-          124,
-          190
+          112,
+          180
         ],
-        "score": 0.32062,
+        "sourceRoot": [
+          0.5,
+          0.431579
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           575,
           64,
@@ -8738,17 +10003,24 @@
           325
         ],
         "placement": [
-          17,
+          24,
           53
         ],
         "size": [
-          134,
-          182
+          123,
+          173
         ],
-        "score": 21.09039,
+        "sourceRoot": [
+          0.679104,
+          0.521978
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           800,
           59,
@@ -8768,17 +10040,24 @@
           348
         ],
         "placement": [
-          38,
-          92
+          44,
+          95
         ],
         "size": [
-          132,
+          119,
+          137
+        ],
+        "sourceRoot": [
+          0.439394,
+          0.361111
+        ],
+        "targetRoot": [
+          96,
           144
         ],
-        "score": 7.0978,
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           16,
           417,
@@ -8796,17 +10075,24 @@
           356
         ],
         "placement": [
-          29,
+          33,
           83
         ],
         "size": [
-          126,
-          160
+          116,
+          152
         ],
-        "score": 6.00303,
+        "sourceRoot": [
+          0.444444,
+          0.39375
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           298,
           417,
@@ -8824,17 +10110,24 @@
           358
         ],
         "placement": [
-          34,
-          92
+          40,
+          95
         ],
         "size": [
-          124,
-          160
+          112,
+          152
         ],
-        "score": 0.34262,
+        "sourceRoot": [
+          0.5,
+          0.325
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           566,
           418,
@@ -8852,17 +10145,24 @@
           357
         ],
         "placement": [
-          41,
+          46,
           89
         ],
         "size": [
-          126,
-          152
+          116,
+          144
         ],
-        "score": 5.96821,
+        "sourceRoot": [
+          0.531746,
+          0.375
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 252,
+        "fit": "temple-roots-10",
         "sourceBox": [
           817,
           416,
@@ -8882,17 +10182,24 @@
           313
         ],
         "placement": [
-          34,
-          80
+          40,
+          83
         ],
         "size": [
-          132,
-          122
+          119,
+          116
         ],
-        "score": 5.27016,
+        "sourceRoot": [
+          0.469697,
+          0.52459
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           10,
           795,
@@ -8910,17 +10217,24 @@
           307
         ],
         "placement": [
-          28,
-          83
+          29,
+          84
         ],
         "size": [
-          120,
-          110
+          110,
+          104
         ],
-        "score": 3.3657,
+        "sourceRoot": [
+          0.508333,
+          0.563636
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           317,
           792,
@@ -8938,17 +10252,24 @@
           292
         ],
         "placement": [
-          35,
-          83
+          41,
+          86
         ],
         "size": [
-          122,
-          118
+          110,
+          112
         ],
-        "score": 6.92338,
+        "sourceRoot": [
+          0.5,
+          0.516949
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           550,
           796,
@@ -8966,17 +10287,24 @@
           311
         ],
         "placement": [
-          44,
-          83
+          49,
+          84
         ],
         "size": [
-          120,
-          110
+          110,
+          104
         ],
-        "score": 3.34027,
+        "sourceRoot": [
+          0.533333,
+          0.563636
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           821,
           793,
@@ -8996,17 +10324,24 @@
           279
         ],
         "placement": [
-          36,
-          80
+          42,
+          83
         ],
         "size": [
-          128,
-          122
+          115,
+          116
         ],
-        "score": 1.41949,
+        "sourceRoot": [
+          0.46875,
+          0.52459
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           24,
           1108,
@@ -9024,17 +10359,24 @@
           278
         ],
         "placement": [
-          32,
-          80
+          36,
+          84
         ],
         "size": [
-          120,
-          110
+          110,
+          104
         ],
-        "score": 0.58165,
+        "sourceRoot": [
+          0.45,
+          0.563636
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           300,
           1109,
@@ -9052,17 +10394,24 @@
           287
         ],
         "placement": [
-          35,
-          80
+          41,
+          83
         ],
         "size": [
-          122,
-          110
+          110,
+          104
         ],
-        "score": 0.44775,
+        "sourceRoot": [
+          0.5,
+          0.581818
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           561,
           1107,
@@ -9080,17 +10429,24 @@
           269
         ],
         "placement": [
-          40,
-          80
+          46,
+          84
         ],
         "size": [
-          120,
-          110
+          110,
+          104
         ],
-        "score": 0.46393,
+        "sourceRoot": [
+          0.566667,
+          0.563636
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           820,
           1115,
@@ -9110,17 +10466,24 @@
           290
         ],
         "placement": [
-          28,
-          80
+          35,
+          83
         ],
         "size": [
-          128,
-          125
+          115,
+          119
         ],
-        "score": 3.82675,
+        "sourceRoot": [
+          0.53125,
+          0.512
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           20,
           28,
@@ -9138,17 +10501,24 @@
           290
         ],
         "placement": [
-          28,
+          33,
           83
         ],
         "size": [
-          120,
-          110
+          110,
+          104
         ],
-        "score": 1.9558,
+        "sourceRoot": [
+          0.475,
+          0.572727
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           277,
           27,
@@ -9166,17 +10536,24 @@
           288
         ],
         "placement": [
-          35,
-          83
+          41,
+          86
         ],
         "size": [
-          122,
-          110
+          110,
+          104
         ],
-        "score": 1.15656,
+        "sourceRoot": [
+          0.5,
+          0.554545
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           555,
           31,
@@ -9194,17 +10571,24 @@
           290
         ],
         "placement": [
-          44,
+          49,
           83
         ],
         "size": [
-          120,
-          110
+          110,
+          104
         ],
-        "score": 1.90312,
+        "sourceRoot": [
+          0.533333,
+          0.572727
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           818,
           27,
@@ -9224,17 +10608,24 @@
           279
         ],
         "placement": [
-          28,
-          89
+          35,
+          92
         ],
         "size": [
-          128,
-          125
+          115,
+          119
         ],
-        "score": 5.57174,
+        "sourceRoot": [
+          0.53125,
+          0.44
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           23,
           342,
@@ -9252,17 +10643,24 @@
           277
         ],
         "placement": [
-          32,
-          92
+          33,
+          91
         ],
         "size": [
-          120,
-          101
+          110,
+          96
         ],
-        "score": 2.19641,
+        "sourceRoot": [
+          0.475,
+          0.544554
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           281,
           344,
@@ -9280,17 +10678,24 @@
           276
         ],
         "placement": [
-          35,
-          95
+          41,
+          97
         ],
         "size": [
-          122,
-          101
+          110,
+          96
         ],
-        "score": 1.79862,
+        "sourceRoot": [
+          0.5,
+          0.485149
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           563,
           345,
@@ -9308,17 +10713,24 @@
           277
         ],
         "placement": [
-          40,
-          92
+          47,
+          91
         ],
         "size": [
-          120,
-          101
+          110,
+          96
         ],
-        "score": 2.13938,
+        "sourceRoot": [
+          0.55,
+          0.544554
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 190,
+        "fit": "temple-roots-10",
         "sourceBox": [
           816,
           344,
@@ -9338,17 +10750,24 @@
           380
         ],
         "placement": [
-          28,
-          89
+          34,
+          92
         ],
         "size": [
-          136,
-          164
+          125,
+          156
         ],
-        "score": 5.27903,
+        "sourceRoot": [
+          0.5,
+          0.335366
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           12,
           639,
@@ -9366,17 +10785,24 @@
           375
         ],
         "placement": [
-          22,
-          86
+          27,
+          82
         ],
         "size": [
-          124,
-          180
+          115,
+          171
         ],
-        "score": 3.65011,
+        "sourceRoot": [
+          0.508065,
+          0.355556
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 269,
+        "fit": "temple-roots-10",
         "sourceBox": [
           286,
           640,
@@ -9394,17 +10820,24 @@
           378
         ],
         "placement": [
-          33,
-          89
+          38,
+          92
         ],
         "size": [
-          126,
-          180
+          116,
+          171
         ],
-        "score": 0.30014,
+        "sourceRoot": [
+          0.5,
+          0.305556
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 269,
+        "fit": "temple-roots-10",
         "sourceBox": [
           533,
           641,
@@ -9422,17 +10855,24 @@
           375
         ],
         "placement": [
-          46,
-          86
+          50,
+          82
         ],
         "size": [
-          124,
-          180
+          115,
+          171
         ],
-        "score": 3.70239,
+        "sourceRoot": [
+          0.5,
+          0.355556
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 269,
+        "fit": "temple-roots-10",
         "sourceBox": [
           812,
           640,
@@ -9452,17 +10892,24 @@
           389
         ],
         "placement": [
-          28,
-          83
+          34,
+          86
         ],
         "size": [
-          136,
-          190
+          125,
+          180
         ],
-        "score": 2.29289,
+        "sourceRoot": [
+          0.5,
+          0.321053
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           10,
           1032,
@@ -9480,17 +10927,24 @@
           390
         ],
         "placement": [
-          24,
-          77
+          28,
+          75
         ],
         "size": [
-          120,
-          202
+          112,
+          192
         ],
-        "score": 9.31374,
+        "sourceRoot": [
+          0.508333,
+          0.356436
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           278,
           1033,
@@ -9508,17 +10962,24 @@
           391
         ],
         "placement": [
-          33,
-          83
+          38,
+          86
         ],
         "size": [
-          126,
-          202
+          116,
+          192
         ],
-        "score": 0.37108,
+        "sourceRoot": [
+          0.5,
+          0.30198
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           525,
           1035,
@@ -9536,17 +10997,24 @@
           391
         ],
         "placement": [
-          48,
-          77
+          52,
+          75
         ],
         "size": [
-          120,
-          202
+          112,
+          192
         ],
-        "score": 7.31825,
+        "sourceRoot": [
+          0.5,
+          0.356436
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 285,
+        "fit": "temple-roots-10",
         "sourceBox": [
           817,
           1032,
@@ -9566,17 +11034,24 @@
           351
         ],
         "placement": [
-          22,
-          98
+          28,
+          100
         ],
         "size": [
-          140,
+          129,
+          137
+        ],
+        "sourceRoot": [
+          0.528571,
+          0.319444
+        ],
+        "targetRoot": [
+          96,
           144
         ],
-        "score": 5.98828,
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           8,
           4,
@@ -9594,17 +11069,24 @@
           350
         ],
         "placement": [
-          22,
-          92
+          27,
+          88
         ],
         "size": [
-          124,
-          160
+          115,
+          152
         ],
-        "score": 4.66857,
+        "sourceRoot": [
+          0.508065,
+          0.3625
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 258,
+        "fit": "temple-roots-10",
         "sourceBox": [
           304,
           5,
@@ -9622,17 +11104,24 @@
           353
         ],
         "placement": [
-          33,
-          96
+          38,
+          98
         ],
         "size": [
-          126,
-          162
+          116,
+          154
         ],
-        "score": 0.42239,
+        "sourceRoot": [
+          0.5,
+          0.296296
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 258,
+        "fit": "temple-roots-10",
         "sourceBox": [
           548,
           4,
@@ -9650,17 +11139,24 @@
           349
         ],
         "placement": [
-          46,
-          92
+          50,
+          88
         ],
         "size": [
-          124,
-          160
+          115,
+          152
         ],
-        "score": 4.41718,
+        "sourceRoot": [
+          0.5,
+          0.3625
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 258,
+        "fit": "temple-roots-10",
         "sourceBox": [
           850,
           6,
@@ -9680,17 +11176,24 @@
           348
         ],
         "placement": [
-          22,
-          98
+          28,
+          100
         ],
         "size": [
-          140,
-          145
+          129,
+          138
         ],
-        "score": 5.32278,
+        "sourceRoot": [
+          0.528571,
+          0.317241
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           9,
           361,
@@ -9708,17 +11211,24 @@
           343
         ],
         "placement": [
-          22,
-          98
+          27,
+          95
         ],
         "size": [
-          124,
-          161
+          115,
+          153
         ],
-        "score": 2.90185,
+        "sourceRoot": [
+          0.508065,
+          0.31677
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 259,
+        "fit": "temple-roots-10",
         "sourceBox": [
           302,
           365,
@@ -9736,17 +11246,24 @@
           350
         ],
         "placement": [
-          33,
-          96
+          38,
+          98
         ],
         "size": [
-          126,
-          163
+          116,
+          155
         ],
-        "score": 0.35669,
+        "sourceRoot": [
+          0.5,
+          0.294479
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 259,
+        "fit": "temple-roots-10",
         "sourceBox": [
           551,
           361,
@@ -9764,17 +11281,24 @@
           343
         ],
         "placement": [
-          48,
-          98
+          52,
+          95
         ],
         "size": [
-          120,
-          161
+          112,
+          153
         ],
-        "score": 3.87403,
+        "sourceRoot": [
+          0.5,
+          0.31677
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 259,
+        "fit": "temple-roots-10",
         "sourceBox": [
           850,
           365,
@@ -9794,17 +11318,24 @@
           361
         ],
         "placement": [
-          30,
-          83
+          36,
+          86
         ],
         "size": [
-          132,
-          170
+          121,
+          162
         ],
-        "score": 9.18307,
+        "sourceRoot": [
+          0.5,
+          0.358824
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           38,
           712,
@@ -9822,17 +11353,24 @@
           357
         ],
         "placement": [
-          26,
+          30,
           83
         ],
         "size": [
-          124,
-          186
+          115,
+          177
         ],
-        "score": 1.83397,
+        "sourceRoot": [
+          0.475806,
+          0.33871
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 269,
+        "fit": "temple-roots-10",
         "sourceBox": [
           322,
           715,
@@ -9850,17 +11388,24 @@
           358
         ],
         "placement": [
-          33,
-          86
+          38,
+          89
         ],
         "size": [
-          126,
-          186
+          116,
+          177
         ],
-        "score": 2.06495,
+        "sourceRoot": [
+          0.5,
+          0.311828
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 269,
+        "fit": "temple-roots-10",
         "sourceBox": [
           582,
           715,
@@ -9878,17 +11423,24 @@
           358
         ],
         "placement": [
-          42,
+          47,
           83
         ],
         "size": [
-          124,
-          186
+          115,
+          177
         ],
-        "score": 1.70526,
+        "sourceRoot": [
+          0.532258,
+          0.33871
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 269,
+        "fit": "temple-roots-10",
         "sourceBox": [
           851,
           715,
@@ -9908,17 +11460,24 @@
           361
         ],
         "placement": [
-          22,
-          101
+          28,
+          103
         ],
         "size": [
-          140,
-          155
+          129,
+          147
         ],
-        "score": 9.76324,
+        "sourceRoot": [
+          0.528571,
+          0.277419
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           13,
           1078,
@@ -9936,17 +11495,24 @@
           361
         ],
         "placement": [
-          32,
-          92
+          36,
+          90
         ],
         "size": [
-          128,
-          171
+          119,
+          162
         ],
-        "score": 6.24709,
+        "sourceRoot": [
+          0.414062,
+          0.327485
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 272,
+        "fit": "temple-roots-10",
         "sourceBox": [
           303,
           1077,
@@ -9964,17 +11530,24 @@
           365
         ],
         "placement": [
-          33,
-          96
+          38,
+          98
         ],
         "size": [
-          126,
-          176
+          116,
+          167
         ],
-        "score": 0.52688,
+        "sourceRoot": [
+          0.5,
+          0.272727
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 272,
+        "fit": "temple-roots-10",
         "sourceBox": [
           553,
           1078,
@@ -9992,17 +11565,24 @@
           360
         ],
         "placement": [
-          32,
-          92
+          37,
+          90
         ],
         "size": [
-          128,
-          171
+          119,
+          162
         ],
-        "score": 6.2206,
+        "sourceRoot": [
+          0.59375,
+          0.327485
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 272,
+        "fit": "temple-roots-10",
         "sourceBox": [
           859,
           1078,
@@ -10022,17 +11602,24 @@
           336
         ],
         "placement": [
-          28,
-          95
+          34,
+          97
         ],
         "size": [
-          136,
+          125,
+          137
+        ],
+        "sourceRoot": [
+          0.5,
+          0.340278
+        ],
+        "targetRoot": [
+          96,
           144
         ],
-        "score": 7.51362,
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           14,
           74,
@@ -10050,17 +11637,24 @@
           354
         ],
         "placement": [
-          26,
-          95
+          30,
+          93
         ],
         "size": [
-          124,
-          160
+          115,
+          152
         ],
-        "score": 3.60023,
+        "sourceRoot": [
+          0.475806,
+          0.33125
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 255,
+        "fit": "temple-roots-10",
         "sourceBox": [
           298,
           68,
@@ -10078,17 +11672,24 @@
           354
         ],
         "placement": [
-          33,
-          95
+          38,
+          97
         ],
         "size": [
-          126,
-          160
+          116,
+          152
         ],
-        "score": 0.98584,
+        "sourceRoot": [
+          0.5,
+          0.30625
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 255,
+        "fit": "temple-roots-10",
         "sourceBox": [
           561,
           66,
@@ -10106,17 +11707,24 @@
           350
         ],
         "placement": [
-          38,
-          95
+          43,
+          93
         ],
         "size": [
-          124,
-          160
+          115,
+          152
         ],
-        "score": 3.32422,
+        "sourceRoot": [
+          0.564516,
+          0.33125
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 255,
+        "fit": "temple-roots-10",
         "sourceBox": [
           841,
           70,
@@ -10136,17 +11744,24 @@
           236
         ],
         "placement": [
-          40,
-          101
+          43,
+          103
         ],
         "size": [
-          104,
-          93
+          99,
+          88
         ],
-        "score": 1.43814,
+        "sourceRoot": [
+          0.538462,
+          0.462366
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           40,
           438,
@@ -10165,16 +11780,23 @@
         ],
         "placement": [
           36,
-          101
+          102
         ],
         "size": [
-          103,
-          84
+          98,
+          80
         ],
-        "score": 1.12308,
+        "sourceRoot": [
+          0.504854,
+          0.511905
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 185,
+        "fit": "temple-roots-10",
         "sourceBox": [
           307,
           436,
@@ -10192,17 +11814,24 @@
           260
         ],
         "placement": [
-          45,
-          96
+          48,
+          98
         ],
         "size": [
-          102,
-          89
+          97,
+          85
         ],
-        "score": 0.88694,
+        "sourceRoot": [
+          0.5,
+          0.539326
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 185,
+        "fit": "temple-roots-10",
         "sourceBox": [
           575,
           436,
@@ -10220,17 +11849,24 @@
           260
         ],
         "placement": [
-          52,
-          101
+          59,
+          102
         ],
         "size": [
-          103,
-          84
+          98,
+          80
         ],
-        "score": 1.10853,
+        "sourceRoot": [
+          0.504854,
+          0.511905
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 185,
+        "fit": "temple-roots-10",
         "sourceBox": [
           845,
           435,
@@ -10250,17 +11886,24 @@
           373
         ],
         "placement": [
-          24,
-          92
+          30,
+          95
         ],
         "size": [
-          136,
-          157
+          125,
+          149
         ],
-        "score": 5.05249,
+        "sourceRoot": [
+          0.529412,
+          0.33121
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "sourceBox": [
           13,
           709,
@@ -10278,17 +11921,24 @@
           366
         ],
         "placement": [
-          22,
-          89
+          27,
+          88
         ],
         "size": [
-          124,
-          173
+          115,
+          164
         ],
-        "score": 2.98795,
+        "sourceRoot": [
+          0.508065,
+          0.33526
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 265,
+        "fit": "temple-roots-10",
         "sourceBox": [
           301,
           715,
@@ -10306,17 +11956,24 @@
           385
         ],
         "placement": [
-          33,
-          92
+          38,
+          95
         ],
         "size": [
-          126,
-          173
+          116,
+          164
         ],
-        "score": 0.34177,
+        "sourceRoot": [
+          0.5,
+          0.300578
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 265,
+        "fit": "temple-roots-10",
         "sourceBox": [
           572,
           710,
@@ -10334,17 +11991,24 @@
           366
         ],
         "placement": [
-          46,
-          89
+          50,
+          88
         ],
         "size": [
-          124,
-          173
+          115,
+          164
         ],
-        "score": 3.22334,
+        "sourceRoot": [
+          0.5,
+          0.33526
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 265,
+        "fit": "temple-roots-10",
         "sourceBox": [
           827,
           715,
@@ -10364,17 +12028,24 @@
           278
         ],
         "placement": [
-          17,
-          47
+          21,
+          52
         ],
         "size": [
-          158,
-          118
+          150,
+          112
         ],
-        "score": 1.91074,
+        "sourceRoot": [
+          0.5,
+          0.822034
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": null,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           14,
@@ -10392,17 +12063,24 @@
           294
         ],
         "placement": [
-          15,
-          41
+          18,
+          43
         ],
         "size": [
-          146,
-          155
+          139,
+          147
         ],
-        "score": 29.49496,
+        "sourceRoot": [
+          0.479452,
+          0.677419
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 210,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           334,
@@ -10420,17 +12098,24 @@
           300
         ],
         "placement": [
-          18,
-          47
+          22,
+          52
         ],
         "size": [
-          156,
-          163
+          148,
+          155
         ],
-        "score": 0.24291,
+        "sourceRoot": [
+          0.5,
+          0.595092
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "root": "scalp-center",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 210,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           628,
@@ -10448,17 +12133,24 @@
           301
         ],
         "placement": [
-          31,
-          41
+          35,
+          43
         ],
         "size": [
-          146,
-          155
+          139,
+          147
         ],
-        "score": 13.65143,
+        "sourceRoot": [
+          0.527397,
+          0.677419
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "root": "ear-opening",
         "material": "neutral-grayscale-alpha",
-        "fit": "skull-roots-7",
-        "targetNape": 210,
+        "fit": "temple-roots-10",
         "source": "rounded-volume.png",
         "sourceBox": [
           933,
@@ -10618,6 +12310,10 @@
         1448
       ]
     }
+  },
+  "fitting": {
+    "version": "temple-roots-10",
+    "sha256": "acf4244aab6c7b1733ff0bcfffe51c9e37758a2acc302f20027a34f9a127dc2b"
   },
   "hats": {
     "headwear/cap/down": {

@@ -1,0 +1,88 @@
+Regression run (61 tests):
+✔ bedroom shell preserves interactions and finishes, with responsive light and phone rendering (14546.7687ms)
+✔ batch-01: 20 drawings/previews, complete catalog, purchase, save and sleep controls (12429.5538ms)
+✔ batch-02: 20 drawings/previews, complete catalog, purchase, save and sleep controls (12192.0765ms)
+✔ batch-03: 20 drawings/previews, complete catalog, purchase, save and sleep controls (14846.1995ms)
+✔ batch-04: 20 drawings/previews, complete catalog, purchase, save and sleep controls (13817.3666ms)
+✔ all six window treatments visibly animate at native resolution in the real game loop, with stronger wind and still reduced motion (42870.9784ms)
+✔ curtain batch 01: animation, original window behavior, store/package purchase and saved choices (13141.6437ms)
+✔ curtain batch 02: animation, original window behavior, store/package purchase and saved choices (15986.055ms)
+✔ curtain batch 03: animation, original window behavior, store/package purchase and saved choices (20453.0139ms)
+✔ facial hair follows the lower face without repainting eyes, crown or back hair (22248.071ms)
+✔ hairstyles retain transparent canvas margins when the face is widened or lengthened (23511.2605ms)
+✔ hats preserve the registered face scale and eye placement (14790.7826ms)
+✔ animated blinks stay inside registered eyes and leave the cheeks and mouth intact (7280.3974ms)
+✔ creator retains source detail and neck, trousers and feet remain connected (5824.2941ms)
+✔ rear neck shading follows skin color rather than the selected hair color (4097.7859ms)
+✔ all hair is a transparent independent material with no retained brown pixels (6227.9801ms)
+✔ changing hair preserves face geometry and gives long and tied styles headroom (16651.8197ms)
+✔ close cuts fit the skull width, stay centered and finish at the nape (4719.7535ms)
+✔ the original opaque fringe strands survive composition over the forehead (5236.0773ms)
+✔ footwear styles keep a consistent footprint across outfits and directions (5548.1055ms)
+✔ desk stacking and the pegboard top remain usable with aligned saved decorations (20243.6587ms)
+✔ all mouth choices replace the native lips on every head shape and never mark the back (9739.7563ms)
+✔ individual ear studs follow the visible lobe for every ear option and head shape (7478.8274ms)
+✔ hidden ears suppress all ear jewelry and facial details stay off the rear skull (4153.0814ms)
+✔ eye colors stay inside the native irises and removing brows leaves clean skin (4356.6264ms)
+✔ iris color follows each eye opening when its height changes (3845.7722ms)
+✔ headphone cups follow the near ears in profile and both ears in front and back (4192.5786ms)
+✔ detail controls create a character and preserve its rendered face through save and reload (12958.1095ms)
+✔ a save created by the original flashlight build loads with appearance and progress intact (16408.3562ms)
+✔ every hairstyle, skin palette, authored clothing design and appearance choice renders (42032.1111ms)
+✔ custom outfits keep a consistent face, joined legs and a single footwear layer (32149.3994ms)
+✔ a character customized through creator controls renders, plays and survives wardrobe changes and reload (14022.5224ms)
+✔ seating, shop counters, scene changes and Next Track remain functional (7032.3282ms)
+✔ flashlights follow illustrated hands and retain obstacle-limited beams (8408.1003ms)
+✔ a live smell encounter renders the pose and dismisses with Escape (9150.6162ms)
+✔ remaining exposed-ear hairstyles preserve selected ears across every head and ear shape (76913.8785ms)
+✔ long and tied hair has a smaller crown while keeping complete loose ends (4011.5005ms)
+✔ full rear caps cover the skull and preserve narrow natural partings (3749.0053ms)
+✔ all remaining cuts work through creator and mirror controls, with a saved long-haired character (21597.5149ms)
+✔ five cuts preserve the selected ear artwork across all head and ear shapes (13544.2623ms)
+✔ rear hair covers the cranial surface down to the nape on every head shape (4049.5915ms)
+✔ the accepted five-cut batch and Bald remain pixel-identical during later hair work (4670.147ms)
+✔ ear jewelry stays on the selected ears, and hidden ears have no floating jewelry (20327.7204ms)
+✔ the five styles work in the creator and mirror and survive save/reload (12121.5621ms)
+✔ short crops stay within measured skull proportions in front and back (5317.6985ms)
+✔ short hair opens around ear cartilage and fade materials do not dye ears (6466.9164ms)
+✔ community main menu fits desktop/phone layouts and preserves keyboard, settings, import, new game and Continue (15873.9785ms)
+✔ all selected mouth silhouettes remain distinct at creator size with expressions enabled (5328.6166ms)
+✔ expressions preserve an explicitly selected mouth and Classic still responds (3672.3104ms)
+✔ moustaches leave ear cartilage intact and all beard styles leave the neck root intact (5334.7202ms)
+✔ new mouth styles and cleaned beards work through creator, wardrobe and save/reload (15559.2821ms)
+✔ all three seedling desks share room/store/package art and preserve purchases, supplies, mixing and saves (16614.449ms)
+✔ title, character creation, and a new playable bedroom (9387.8866ms)
+✔ the standalone local file creates a bald character and retains its saved appearance (8620.1182ms)
+✔ keyboard movement works in all four directions (6664.1157ms)
+✔ wardrobe appearance and progress survive save, reload, and Continue (8775.4648ms)
+✔ authored cast and all haircuts render without changing their appearance data (13868.9058ms)
+✔ indoor and outdoor scenes render in daylight and at night (6716.6967ms)
+✔ mobile portrait creation, gameplay, and viewport layout (5866.5616ms)
+✔ mobile landscape creation, gameplay, and viewport layout (6138.8258ms)
+✔ LeafCart cards, search/sort, cart checkout and package previews use the approved bed art at its proper proportions (15843.8139ms)
+ℹ tests 61
+ℹ suites 0
+ℹ pass 61
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 806188.9304
+
+Additional hair checks: covered ears and portraits passed; the walking mask was corrected to exclude transparent edge strands and its targeted rerun passed.
+✔ loose hair and afros conceal ears and their jewelry for all head and ear shapes (31774.7838ms)
+✔ portraits preserve loose hair over the shoulders without a neckline crop (3270.9341ms)
+✔ complete hair ends remain above garments in figures, walking and nose-covering poses (41421.6249ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42558.2202
+
+64 successful tests in aggregate.
+
+1872 full-cast comparisons passed: 71 NPC standing drawings/portraits preserved; 576 legacy custom views exercise the repaired renderer.
+260 registered-asset checks passed: all 52 characters use their complete drawings in four directions and reaction portraits; no browser errors.

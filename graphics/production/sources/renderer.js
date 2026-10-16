@@ -6,17 +6,18 @@
   'use strict';
   const DATA = __BAGSEED_ART_DATA__;
   const DIRS = ['down','right','up','left'];
-  const HEAD_PAD=64,HEAD_HEIGHT=320,HEAD_NECK=199;
+  const HEAD_PAD=64,HEAD_HEIGHT=320,HEAD_NECK=199,HEAD_JOIN=184,BODY_JOIN=42;
   if(!HAIRS.some(([id])=>id==='bald'))HAIRS.unshift(['bald','Bald']);
   for(const mouth of [['braces','Braces'],['fangs','Fangs'],['cat','Cat smile']])if(!MOUTHS115.some(([id])=>id===mouth[0]))MOUTHS115.push(mouth);
   const images = new Map(), colored = new Map(), heads = new Map(), bodies = new Map();
-  const cache = new Map(), portraits = new Map(), rawPixels = new Map(), faceMasks = new Map();
+  const cache = new Map(), portraits = new Map(), rawPixels = new Map(), faceMasks = new Map(), poseContacts = new Map();
   let loaded = false;
   const cv = (w=96,h=108) => {const c=document.createElement('canvas');c.width=w;c.height=h;return c;};
   const rgb = hex => {let h=String(hex||'#000000').replace('#','');if(h.length===3)h=[...h].map(c=>c+c).join('');return [0,2,4].map(i=>parseInt(h.slice(i,i+2),16)||0);};
   const skinPixel = (r,g,b) => r>g*1.27 && g>b+12 && r>130 && g>68;
   const bodySkinPixel=(r,g,b)=>r>55&&g>25&&r>g*1.15&&g>b+6;
   const lum = (r,g,b) => .2126*r+.7152*g+.0722*b;
+  const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t);};
   const fallback = {skin:'#cf9670',hairC:'#4a2c1a',hairS:'short',facial:'none',shirtC:'#3f7fbf',topS:'tee',pantsC:'#36405a',bottomS:'jeans',shoesC:'#2b1d14',shoesS:'sneakers',pres:'neutral',body:'average',face:'soft',eyes:'dot',brows:'thin',eyeC:'#2b1d14',nose:'default',mouth:'default',expr:'neutral',ears:'normal',hat:'none',glasses:'none',acc:'none',hairHi:'none'};
   function normalize(look={}) {
     const L={...fallback,...look};
@@ -257,7 +258,6 @@
   function facialHair(c,L,dir,features) {
     if(L.facial==='none'||dir==='up')return;
     const f=features||detailGeometry(L,dir),[mouthX,mouthY]=f.mouth,side=dir!=='down',sign=dir==='left'?-1:1;
-    const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t);};
     const result=cv(192,HEAD_HEIGHT),r=result.getContext('2d');
     if(['stubble','scruff'].includes(L.facial)){
       // Faint source stubble was mostly skin shading plus the neck outline.
@@ -321,16 +321,41 @@
     }
     g.putImageData(d,0,0);colored.set(signature,out);return out;
   }
+  const scalpMasks=new Map();
+  function scalpMask(dir){
+    if(scalpMasks.has(dir))return scalpMasks.get(dir);
+    const out=cv(192,HEAD_HEIGHT),g=out.getContext('2d');g.drawImage(images.get('base/'+dir),0,0);
+    // A close-shaved material belongs to the scalp, never the ear or neck.
+    // Follow the painted ear contours with feathered edges; loose strands
+    // and fringes use their original alpha and do not pass through this mask.
+    g.save();g.globalCompositeOperation='destination-out';g.filter='blur(0.65px)';g.fillStyle='#000';
+    for(const e of DATA.detailLandmarks.views[dir].ears){
+      if(e.inset){g.beginPath();g.ellipse(e.center[0],e.center[1],10,14.5,0,0,Math.PI*2);}
+      else earPath(g,e);
+      g.fill();
+    }
+    g.restore();const a=g.getImageData(0,0,192,HEAD_HEIGHT).data;
+    for(let y=175;y<HEAD_HEIGHT;y++)for(let x=0;x<192;x++)a[(y*192+x)*4+3]*=1-smooth(175,186,y);
+    scalpMasks.set(dir,a);return a;
+  }
+  __BAGSEED_HAIR_BATCH_01__
+  __BAGSEED_HAIR_FIT_REST__
   function hairLayer(L,dir){
-    const signature='wig|'+dir+'|'+L.hairS+'|'+L.hairC+'|'+L.hairHi+'|'+L.hat;if(colored.has(signature))return colored.get(signature);
-    const raw=pixels(`wig/${L.hairS}/${dir}`),out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),d=new ImageData(new Uint8ClampedArray(raw.data.data),192,HEAD_HEIGHT),a=d.data,target=rgb(L.hairC),anatomy=L.hairS==='buzz'?pixels('base/'+dir).data.data:null;
+    const signature='wig|'+dir+'|'+L.hairS+'|'+L.hairC+'|'+L.hairHi+'|'+L.hat+'|'+L.ears;if(colored.has(signature))return colored.get(signature);
+    const closeFade=['fade','hightop','flattop','quiff','pomp','fauxhawk','curlytop'].includes(L.hairS);
+    const batchRear=dir==='up'&&(fittedHairCuts.has(L.hairS)||remainingClosedCuts.has(L.hairS)),raw=fittedHairCuts.has(L.hairS)?batchHairSource(L,dir):remainingHairFits[L.hairS]?remainingHairSource(L,dir):pixels(`wig/${L.hairS}/${dir}`),out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),d=new ImageData(new Uint8ClampedArray(raw.data.data),192,HEAD_HEIGHT),a=d.data,target=rgb(L.hairC),anatomy=L.hairS==='buzz'||closeFade?batchScalpMask(L,dir):null;
     for(let n=0;n<a.length;n+=4){if(a[n+3]<10){a[n+3]=0;continue;}const x=n/4%192,y=Math.floor(n/4/192),l=a[n],tone=L.hairHi!=='none'&&l>115&&(x+y*.45)%28<5?rgb(L.hairHi):target,factor=.2+l/180;
       for(let k=0;k<3;k++)a[n+k]=Math.min(255,tone[k]*factor);
       // A buzzcut follows the bald skull, with no projecting fringe. Fade
       // density is alpha, so pale stubble reveals skin rather than a white cap.
-      if(anatomy){a[n+3]=a[n+3]*anatomy[n+3]/255;if(dir==='up'){const scalp=((x-96)/47)**2+((y-144)/44)**2;a[n+3]*=Math.max(0,Math.min(1,(1.025-scalp)*20));}}
-      if(['fade','hightop','flattop','curlytop'].includes(L.hairS)&&dir!=='down'){
-        const ey=DATA.headFeatures['base/down'].eyes[0][1],fade=Math.max(0,Math.min(1,(y-ey+9)/35)),density=Math.max(.05,Math.min(1,1-(l-65)/125));a[n+3]*=1-fade*(1-density);
+      if(L.hairS==='buzz'&&!batchRear)a[n+3]*=anatomy[n+3]/255;
+      if(closeFade&&!batchRear){
+        // The fade reaches skin at the upper ear, not below the lobe. Its
+        // source-painted short stubble follows skull anatomy while the top
+        // keeps every strand and its intended volume.
+        const temple=dir==='up'?1:dir==='right'?1-smooth(95,112,x):dir==='left'?smooth(80,97,x):Math.max(1-smooth(62,77,x),smooth(117,132,x));
+        const fade=smooth(128,153,y)*temple,density=Math.max(.05,Math.min(1,1-(l-65)/125));
+        a[n+3]*=(1-fade+fade*density)*(1-fade+fade*anatomy[n+3]/255);
       }
     }
     if(L.hat!=='none'){
@@ -344,13 +369,25 @@
     }
     g.putImageData(d,0,0);if(colored.size>700)colored.clear();colored.set(signature,out);return out;
   }
-  function head(L,dir,blink=false) {
-    const signature=identityKey(L)+'|'+L.expr+'|'+dir+'|'+blink;if(heads.has(signature))return heads.get(signature);
-    const out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),details=detailGeometry(L,dir);g.drawImage(detailBase(L,dir),0,0);
+  function head(L,dir,blink=false,bodyJoined=false) {
+    const signature=identityKey(L)+'|'+L.expr+'|'+dir+'|'+blink+'|'+bodyJoined;if(heads.has(signature))return heads.get(signature);
+    const coveredEars=earCoveringHairCuts.has(L.hairS),anatomy=coveredEars?{...withoutEarJewelry(L),ears:'hidden'}:L;
+    const out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),details=detailGeometry(anatomy,dir);g.drawImage(detailBase(anatomy,dir),0,0);
+    let neckBridge;
+    if(bodyJoined){
+      // Garments already contain the neck and exposed chest. Remove only the
+      // painted head's neck, following the underside of the jaw/skull. Hair,
+      // beards and ear shapes are composed afterward and are never cropped.
+      const cut=dir==='down'?'M73 181Q96 190 121 181L125 208H70Z':dir==='up'?'M70 178Q96 194 123 178L123 208H70Z':'M70 178Q88 185 110 185L116 208H70Z';
+      const mask=cv(192,HEAD_HEIGHT),m=mask.getContext('2d');if(dir==='left'){m.translate(193,0);m.scale(-1,1);}m.fill(new Path2D(cut));
+      neckBridge=cv(192,HEAD_HEIGHT);const n=neckBridge.getContext('2d');n.drawImage(out,0,0);n.globalCompositeOperation='destination-in';n.drawImage(mask,0,0);
+      g.save();g.globalCompositeOperation='destination-out';g.drawImage(mask,0,0);g.restore();
+    }
     const faceShape=L.face,shape=faceFits[faceShape]||[1,1];
-    faceDetails(g,{...L,_blink:blink},dir,details);
+    faceDetails(g,{...(L.hairS!=='bald'?withoutEarJewelry(anatomy):anatomy),_blink:blink},dir,details);
     facialHair(g,L,dir,details);
     g.drawImage(hairLayer(L,dir),0,0);
+    if(L.hairS!=='bald'&&!coveredEars)foregroundEars(g,L,dir,details);
     // Hair's original transparent opening reveals the face. Never repaint a
     // forehead/face plate over the strands: that sheared every fringe flat.
     if(L.acc==='headphones')detailHeadphones(g,L,dir);
@@ -363,8 +400,10 @@
       const base=cv(192,HEAD_HEIGHT);base.getContext('2d').drawImage(out,0,0);
       const [sx,sy]=shape;
       g.clearRect(0,0,192,HEAD_HEIGHT);g.save();g.translate(96,HEAD_NECK);g.scale(sx,sy);g.drawImage(base,-96,-HEAD_NECK);g.restore();
+      if(neckBridge){const fitted=cv(192,HEAD_HEIGHT),n=fitted.getContext('2d');n.translate(96,HEAD_NECK);n.scale(sx,sy);n.drawImage(neckBridge,-96,-HEAD_NECK);neckBridge=fitted;}
     }
     out.bagseedFeatures=transformedDetails(L,dir);
+    out.bagseedNeckBridge=neckBridge;
     out.bagseedEyes=out.bagseedFeatures.eyes;
     if(heads.size>200)heads.clear();heads.set(signature,out);return out;
   }
@@ -418,21 +457,60 @@
     if(L.topPat==='emblem'&&dir!=='up'){
       const icon=CLPAT.icon[L.emb]||CLPAT.icon.star,cx=dir==='down'?45:48;g.fillStyle=L.topC2||'#efe3c4';icon.forEach((row,y)=>[...row].forEach((v,x)=>{if(v==='x')g.fillRect(cx+x,56+y,1,1);}));
     }
+    if(nose){
+      // Register against the uncolored artwork, so dark skin, blue skin and
+      // clothing colors cannot change where the raised fingers meet the face.
+      if(!poseContacts.has(top)){
+        const source=cv(288,324),s=source.getContext('2d',{willReadFrequently:true});
+        s.drawImage(images.get(top),0,0,96*d,41*d,0,0,288,123);
+        s.drawImage(images.get(top),0,41*d,96*d,(waist-41)*d,0,123,288,84);
+        const a=s.getImageData(0,0,288,324).data;let first=-1,sum=0,count=0;
+        const skin=(x,y)=>{const n=(y*288+x)*4;return a[n+3]>160&&bodySkinPixel(a[n],a[n+1],a[n+2]);};
+        for(let y=90;y<170&&first<0;y++)for(let x=80;x<220;x++)if(skin(x,y)){first=y;break;}
+        if(first>=0)for(let y=first;y<=first+5;y++)for(let x=80;x<220;x++)if(skin(x,y)){sum+=x;count++;}
+        poseContacts.set(top,count?[sum/count/3,first/3+1.5]:[48,45]);
+      }
+      out.bagseedNoseContact=poseContacts.get(top);
+    }
     if(bodies.size>200)bodies.clear();bodies.set(signature,out);return out;
   }
   function generic(L,dir,nose=false,blink=false,density=1) {
-    const out=cv(96*density,144*density),g=out.getContext('2d'),B=body(L,dir,nose,3),H=head(L,dir,blink);g.scale(density,density);
+    const out=cv(96*density,144*density),g=out.getContext('2d'),B=body(L,dir,nose,3);
+    // The reaction artwork turns toward the raised hand. A profile head's
+    // projecting nose cannot meet these front-facing fingers at the collar.
+    const headDir=nose&&dir!=='up'?'down':dir,H=head(L,headDir,blink,true);g.scale(density,density);
     const width={slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1;
     const short=!!L.short,kid=isChild(L),sy=kid?.74:short?.9:L.body==='tall'?1.07:1;
-    const neckY=143-66*sy,headScale=kid?.9:1,headY=neckY-(HEAD_NECK/3-2)*headScale;
+    const neckY=143+(BODY_JOIN-107)*sy,headScale=kid?.9:1;
+    const joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1);let headY=neckY-joinY/3*headScale,headX=48-32*headScale;
     const presentation=L.pres==='masc'?1.045:L.pres==='fem'?.955:1;
-    const drawHead=()=>g.drawImage(H,48-32*headScale,headY,64*headScale,H.height/3*headScale);
-    drawHead();
+    if(nose){
+      const [x,y]=B.bagseedNoseContact,point=H.bagseedFeatures.nose||[96,joinY],target=dir==='up'?[48,y+4]:[x,y];
+      headX=48+(target[0]-48)*width*presentation-point[0]/3*headScale;
+      headY=143+(target[1]-107)*sy-point[1]/3*headScale;
+    }
+    const drawHead=()=>g.drawImage(H,headX,headY,64*headScale,H.height/3*headScale);
+    // The anatomical join is underneath the body, filling gaps in posed art.
+    // Its neck occupies the same span as the body's neck, rather than stacking
+    // above it. Clothing and the body's painted neck own the visible surface.
+    g.drawImage(H.bagseedNeckBridge,headX,headY,64*headScale,H.height/3*headScale);
     g.save();g.translate(48,143);g.scale(width*presentation,sy);g.drawImage(B,-48,-107,96,108);g.restore();
-    g.save();g.beginPath();g.rect(0,0,96,neckY+2);g.clip();drawHead();g.restore();
-    if(nose){g.save();g.beginPath();g.rect(0,0,96,neckY+3);g.clip();g.translate(48,143);g.scale(width*presentation,sy);g.drawImage(B,-48,-107,96,108);g.restore();}
+    // Draw the complete transparent head over clothing. Cropping this pass at
+    // the neck used to put a horizontal shirt edge through every loose length.
+    drawHead();
+    if(nose&&dir!=='up'){
+      // Only the raised forearm crosses the face. Redrawing the whole upper
+      // torso here repainted its neck stump over the jaw, making two necks.
+      const [x,y]=B.bagseedNoseContact,right=dir==='right',slope=dir==='down'?1:.7;
+      g.save();g.translate(48,143);g.scale(width*presentation,sy);g.translate(-48,-107);
+      g.beginPath();g.rect(0,0,96,y+7);g.clip();g.beginPath();g.moveTo(0,0);g.lineTo(96,0);
+      if(right){g.lineTo(96,108);g.lineTo(x-2.5+(108-y)*slope,108);g.lineTo(x-2.5,y);}
+      else{g.lineTo(x+2.5,y);g.lineTo(x+2.5-(108-y)*slope,108);g.lineTo(0,108);}
+      g.closePath();g.clip();g.drawImage(B,0,0,96,108);g.restore();
+    }
     if(L.prop&&!nose&&dir!=='up'){g.save();g.translate(0,36);props(g,L,dir);g.restore();}
-    out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[48+(x-96)*headScale/3,headY+y*headScale/3]);
+    out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[headX+x*headScale/3,headY+y*headScale/3]);
+    out.bagseedNose=H.bagseedFeatures.nose?.map((v,i)=>(i?headY:headX)+v*headScale/3);
     return out;
   }
   function props(g,L,dir) {
@@ -499,11 +577,13 @@
     else{
       const torso=body(L,'down',false,3),d=torso.width/96;
       const width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1);
-      const h=head(L,'down'),p=h.getContext('2d').getImageData(0,0,192,HEAD_HEIGHT).data;let top=HEAD_HEIGHT;
+      const h=head(L,'down',false,true),p=h.getContext('2d').getImageData(0,0,192,HEAD_HEIGHT).data;let top=HEAD_HEIGHT;
       for(let y=0;y<HEAD_HEIGHT&&top===HEAD_HEIGHT;y++)for(let x=0;x<192;x++)if(p[(y*192+x)*4+3]>100){top=y;break;}
-      const fit=Math.min(1,130/(HEAD_NECK-top));g.save();g.translate(96,135);g.scale(fit,fit);g.drawImage(h,-96,-HEAD_NECK);
+      const joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),anchor=joinY-(-11+(BODY_JOIN-40)*3);
+      const fit=Math.min(1,130/(anchor-top));g.save();g.translate(96,135);g.scale(fit,fit);
+      g.drawImage(h.bagseedNeckBridge,-96,-anchor);
       g.save();g.scale(width,1);g.drawImage(torso,0,40*d,96*d,40*d,-144,-11,288,120);g.restore();
-      g.save();g.beginPath();g.rect(-96,-HEAD_NECK,192,HEAD_NECK+1);g.clip();g.drawImage(h,-96,-HEAD_NECK);g.restore();g.restore();
+      g.drawImage(h,-96,-anchor);g.restore();
 
     }
     portraits.set(signature,out);return out;
@@ -584,6 +664,6 @@
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-9',ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'customization-14',ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();

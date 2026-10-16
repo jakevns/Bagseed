@@ -11,7 +11,7 @@ const report = JSON.parse(readFileSync(new URL('../graphics/production/build.jso
 if (sha(html) !== report.updatedSHA) throw new Error('The playable game differs from its build report. Rebuild before publishing.');
 const character = html.match(/<script id="bagseed-illustrated-production-code">([\s\S]*?)<\/script>/);
 if (!character || sha(character[1].replace(/\r\n/g, '\n').trim()) !== report.characterPayloadSHA256) throw new Error('The embedded character release is missing or stale. Run the full character builder.');
-const sources = ['graphics/production/sources/renderer.js', 'graphics/production/sources/face-details.js', 'graphics/production/sources/build.cjs', 'graphics/production/customization-v5/detail-landmarks.json', 'graphics/production/customization-v5/manifest.json'];
+const sources = ['graphics/production/sources/renderer.js', 'graphics/production/sources/face-details.js', 'graphics/production/sources/hair-batch-01.js', 'graphics/production/sources/hair-fit-rest.js', 'graphics/production/sources/build.cjs', 'graphics/production/customization-v5/detail-landmarks.json', 'graphics/production/customization-v5/manifest.json', 'graphics/production/customization-v5/hair-fit.json', 'graphics/production/customization-v5/register.py'];
 for (const file of sources) {
   const source = readFileSync(new URL('../' + file, import.meta.url), 'utf8').replace(/\r\n/g, '\n');
   if (sha(source) !== report.characterSourcesSHA256?.[file]) throw new Error(`Character source changed without rebuilding: ${file}`);
