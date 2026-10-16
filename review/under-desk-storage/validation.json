@@ -1,0 +1,48 @@
+{
+  "approval": "Excellent! Go ahead and push it through 😁",
+  "entryPoint": "public/index.html",
+  "build": "npm run build:bedroom",
+  "integrityCheck": {
+    "command": "npm run check",
+    "passed": true,
+    "scriptBlocks": 94,
+    "characterRevision": "customization-9"
+  },
+  "integratedArtworkChecks": {
+    "proposalOnly": false,
+    "entryPoint": "public/index.html",
+    "storageTiers": 3,
+    "fixedSupplyBox": 1,
+    "workbenchStorageCombinations": 9,
+    "unchangedCatalog": true,
+    "unchangedBenchAndSupplies": true,
+    "unchangedFootprints": true,
+    "unchangedHitboxes": true,
+    "noChangesOutsideUnderDesk": true,
+    "distinctStorageArt": 3,
+    "supplyGuideAnimates": true,
+    "reducedMotion": true,
+    "purchases": 2,
+    "totalPaid": 93.99,
+    "storeAndDeliveryMatch": true,
+    "seedsPreserved": true,
+    "inventoryInteraction": true,
+    "starterSupplyInteraction": true,
+    "saveReload": true,
+    "phoneStore": true,
+    "loadingScreenStillPaused": true,
+    "errors": []
+  },
+  "preservedArtModules": 16,
+  "regressionTests": {
+    "command": "node --test --test-concurrency=1 tests/bedroom.test.cjs tests/seedling-desks.test.cjs tests/desk-tabletop-placement.test.cjs",
+    "passed": 3,
+    "failed": 0
+  },
+  "pausedLoadingScreen": {
+    "includedInBuild": false,
+    "includedInReleaseHistory": false,
+    "preservedOnLocalBranch": "work",
+    "checkpoint": "00e872f"
+  }
+}
