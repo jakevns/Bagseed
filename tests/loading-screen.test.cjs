@@ -55,13 +55,26 @@ test('loading cover paints during download, waits for all art, blocks input, and
       await imageAt(t);const buffer=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=960;c.height=750;c.getContext('2d').drawImage(document.querySelector('#bagseed-loading-room'),718.75,0,250,195.3125,0,0,960,750);return c.toDataURL();});fs.writeFileSync(path.join(out,'window-'+label+'.png'),Buffer.from(buffer.split(',')[1],'base64'));
     }
     await imageAt(0);await page.screenshot({path:path.join(out,'desktop-loading.png')});const layouts=[];
-    for(const [name,width,height]of [['phone',390,844],['phone-landscape',844,390]]){
+    for(const [name,width,height]of [['phone',390,844],['small-phone',375,667],['narrow-phone',320,568],['phone-landscape',844,390]]){
       await page.setViewportSize({width,height});
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-      assert.equal(await page.locator('#bagseed-loading-reload').isVisible(),false);
+      // Long preview capture can legitimately show the 20-second Reload notice.
+      assert.equal(await page.locator('#bagseed-loading').isVisible(),true);
       const bounds=await page.locator('.loading-panel').boundingBox();assert.ok(bounds.x>=0&&bounds.y>=0&&bounds.x+bounds.width<=width&&bounds.y+bounds.height<=height);
+      const framing=[];
+      for(const time of [0,3,6,9,12]){
+        await imageAt(time);
+        framing.push(await page.locator('#bagseed-loading-room').evaluate(el=>{const a=el.getBoundingClientRect(),p=el.parentElement.getBoundingClientRect();return {x:a.x,y:a.y,width:a.width,height:a.height,focus:a.x+a.width*1095/2048,center:p.x+p.width/2};}));
+      }
+      assert.ok(framing.every(f=>Math.abs(f.focus-f.center)<1),'Window is not centered on '+name);
+      assert.ok(framing.every(f=>Math.abs(f.x-framing[0].x)<.1&&Math.abs(f.y-framing[0].y)<.1),'Mobile camera moves during the day/night cycle on '+name);
       await imageAt(3);await page.screenshot({path:path.join(out,name+'-loading.png')});layouts.push(name);
     }
+    const mobileOut=path.join(root,'review/loading-mobile-window'),mobileFrames=path.join(root,'artifacts/loading-mobile-window/frames');fs.mkdirSync(mobileOut,{recursive:true});fs.mkdirSync(mobileFrames,{recursive:true});
+    await page.setViewportSize({width:390,height:844});
+    for(const [label,time]of [['day',0],['sunset',3],['night',6]]){await imageAt(time);await page.screenshot({path:path.join(mobileOut,'phone-'+label+'.png')});}
+    const roomBounds=await page.locator('.loading-room').boundingBox();
+    for(let i=0;i<72;i++){await imageAt(i/6);await page.screenshot({path:path.join(mobileFrames,String(i).padStart(3,'0')+'.png'),clip:roomBounds});}
     await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await imageAt(0),await imageAt(6),'Reduced motion room must be still');assert.equal(await page.locator('.loading-track span').evaluate(el=>getComputedStyle(el).animationName),'none');await page.emulateMedia({reducedMotion:'no-preference'});
     releaseStream();await page.waitForFunction(()=>window.BagseedCoffee&&!BagseedCoffee.loaded&&window.__heldStartupArt.length===1&&document.readyState!=='loading');
     await page.evaluate(()=>Promise.all([BagseedMenu.ready,BagseedArt.ready,BagseedBedroom.ready,BagseedBeds.ready,BagseedDesks.ready,BagseedCurtains.ready,BagseedComputerDesks.ready,BagseedEquipment.ready,BagseedCameras.ready,BagseedChairs.ready,BagseedUnderDeskStorage.ready,BagseedLoadingScene.ready]));
@@ -88,7 +101,7 @@ test('loading cover paints during download, waits for all art, blocks input, and
     assert.equal(await page.evaluate(()=>BagseedLoadingScene.storageTier),2);assert.equal(await page.locator('#bagseed-loading').isVisible(),false);await page.locator('[data-act=continueGame]').click();
     assert.deepEqual(await page.evaluate(()=>({name:state.player.name,money:state.money,look:playerLook()})),{name:saved.name,money:saved.money,look:saved.look});
     assert.deepEqual(errors,[]);assert.ok(expectedErrors.length>0);assert.ok(expectedErrors.every(e=>e.includes('Coffee artwork failed to load')),expectedErrors.join('\n'));
-    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({entryPoint:'public/index.html',firstChunkBytes:cut,visibleBeforeGameHTML:true,waitsForAllArtwork:true,futureArtworkIncluded:true,noOldGraphicsExposed:true,dayNightPeriod:12,paintedOutdoorStates:4,movingCloudPixels:cloudCheck.changed,cloudsContainedInWindow:cloudCheck.escaped===0,actualAnimationFrames:new Set(moving).size,seamlessLoop:true,approvedStorageVariations:3,gameInputBlocked:true,gameTimeHeld:true,readyMenu:true,keyboardNewGame:true,layouts,reducedMotion:true,failedImageKeepsCover:true,reloadRecovery:true,savedProgressPreserved:true,continueGame:true,pageErrors:errors,expectedImageFailure:expectedErrors.length},null,2)+'\n');
+    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({entryPoint:'public/index.html',firstChunkBytes:cut,visibleBeforeGameHTML:true,waitsForAllArtwork:true,futureArtworkIncluded:true,noOldGraphicsExposed:true,dayNightPeriod:12,paintedOutdoorStates:4,movingCloudPixels:cloudCheck.changed,cloudsContainedInWindow:cloudCheck.escaped===0,actualAnimationFrames:new Set(moving).size,seamlessLoop:true,approvedStorageVariations:3,gameInputBlocked:true,gameTimeHeld:true,readyMenu:true,keyboardNewGame:true,layouts,mobileCamera:'fixed on window',windowCenteredAcrossCycle:true,reducedMotion:true,failedImageKeepsCover:true,reloadRecovery:true,savedProgressPreserved:true,continueGame:true,pageErrors:errors,expectedImageFailure:expectedErrors.length},null,2)+'\n');
     await context.close();
   }finally{if(streamResponse&&!streamResponse.writableEnded)streamResponse.destroy();await browser?.close();await new Promise(r=>server.close(r));}
 });
