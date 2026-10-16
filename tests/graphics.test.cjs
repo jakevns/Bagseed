@@ -68,9 +68,9 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
         for(let y=84;y<97;y++){const xs=[];for(let x=0;x<96;x++)if(a[(y*96+x)*4+3]>128)xs.push(x);rows.push(xs.length?xs.at(-1)-xs[0]+1:0);}
         widths[dir]=rows.reduce((a,b)=>a+b,0)/rows.length;
         for(const shoesS of ['sneakers','boots','sandals','rainboots']){
-          const look={...base,shoesS},feet=region(charSprite(look,dir),0,99,96,9);
+          const look={...base,shoesS},feet=region(charSprite(look,dir),0,104,96,4); // below the longest trouser hem
           for(const topS of tops)for(const bottomS of ['jeans','joggers','cargo','shorts','skirt']){
-            if(region(charSprite({...look,topS,bottomS},dir),0,99,96,9)!==feet)mismatches.push([dir,shoesS,topS,bottomS].join('/'));
+            if(region(charSprite({...look,topS,bottomS},dir),0,104,96,4)!==feet)mismatches.push([dir,shoesS,topS,bottomS].join('/'));
             footChecks++;
           }
         }

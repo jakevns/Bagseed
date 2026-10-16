@@ -6,11 +6,11 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "009086178e0e69b71157cc2f02a1a320703e0f0edb7c8b61d67f7b7a5ad926e6",
-  "updatedSHA": "6876ed40f7623141df267c13fb51de78d12d978da0013b8c5b92ad74512824a3",
+  "updatedSHA": "2156a77d2c9ea57f9761009f43be8d34c1e478eff2f2ebbf92741ae932cfe7bf",
   "characterRevision": "custom-walk-approved-stride",
-  "characterPayloadSHA256": "59a4e74d8229a5e9352f3807f03023f2ec392a0a80027c6a20e77a681834f65d",
+  "characterPayloadSHA256": "6b3e083642ed6160f035b11800aec4b2af575d1ca2699801d59ec7d87ded9040",
   "characterSourcesSHA256": {
-    "graphics/production/sources/renderer.js": "fbbf5cd9b781706bed5ee852871d076ad5c3853c86437014036d5d933d778df5",
+    "graphics/production/sources/renderer.js": "7fa1715aa1b075f24638ac10df5c0f19cba52350bf336270cc9e0e08992a01f4",
     "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
     "graphics/production/sources/hair-batch-01.js": "9ecdd8b585399ea4a5c9f11534914f21cb1d8be136839ea9c9ac6d75f8fd8390",
     "graphics/production/sources/hair-fit-rest.js": "57e1ea90c42bac147c83c798c61c8a1ddc195a30556d112ecf112bf8120d9ef3",
@@ -26,7 +26,7 @@
     "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa",
     "graphics/production/walk/stride-v4/candidate-manifest.json": "49d9554ce407cfabbe323d0fb7cf18fdac38513c7cd839cf09dbe492188cb0f9"
   },
-  "bytes": 63908492,
+  "bytes": 63908779,
   "modularAssets": 544,
   "embeddedImages": 1629,
   "approvedIdentities": [
