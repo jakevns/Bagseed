@@ -1,6 +1,6 @@
 {
   "entryPoint": "public/index.html",
-  "firstChunkBytes": 434747,
+  "firstChunkBytes": 436893,
   "visibleBeforeGameHTML": true,
   "waitsForAllArtwork": true,
   "futureArtworkIncluded": true,
@@ -18,8 +18,12 @@
   "keyboardNewGame": true,
   "layouts": [
     "phone",
+    "small-phone",
+    "narrow-phone",
     "phone-landscape"
   ],
+  "mobileCamera": "fixed on window",
+  "windowCenteredAcrossCycle": true,
   "reducedMotion": true,
   "failedImageKeepsCover": true,
   "reloadRecovery": true,

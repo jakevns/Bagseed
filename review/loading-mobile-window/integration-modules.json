@@ -1,0 +1,32 @@
+{
+  "previousPublishedCommit": "eb388d1d74c29de273bd8ee08ba4f6b4efc47658",
+  "unchangedModules": [
+    "bagseed-loading-controller",
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code",
+    "bagseed-coffee-production-code",
+    "bagseed-under-desk-storage-production-code",
+    "bagseed-bedroom-window-production-code"
+  ],
+  "changedModules": [
+    "bagseed-loading-scene-code"
+  ],
+  "onlyLoadingCameraChanged": true,
+  "liveGameWindowUnchanged": true,
+  "desktopPanoramaRetained": true,
+  "publicBytes": 98019197,
+  "publicSHA256": "445ce5caf72bcf18d5882b74cddb3ed228b0a0b0840e24cb95596bc0157cb6a9"
+}
