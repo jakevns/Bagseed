@@ -1,4 +1,4 @@
-# Bedroom chair artwork — awaiting approval
+# Bedroom chair artwork — approved
 
 Four existing desk-chair styles: Folding Chair (included), Office Chair ($45), Gaming Chair ($120), Wooden Chair ($30), plus the preserved No Chair choice. The separate placeable Office Chair ($45) retains its Black Mesh finish and $8 Teal finish unlock. This batch contains six drawings and adds no new catalog options.
 
@@ -6,6 +6,6 @@ The original generated transparent atlas, checksum and crop coordinates are reta
 
 The renderer fits all desk chairs to the same 16×30 frame, feet at y118, while preserving their aspect ratios. The placeable chair retains its 12×18 bounds, footprint, seat flag, variants and flip/rotation behavior. Store and delivery previews share the same artwork.
 
-Use node tools/preview-chairs.cjs to load public/index.html and inject only the proposal in the preview browser. Production HTML and build configuration remain unchanged until the user approves the pictures. Save this work locally and show pictures before pushing.
+Approved by the user after the chairs-2 LED rerender. The shared bedroom builder embeds compile-chairs.cjs in public/index.html. Use node tools/preview-chairs.cjs to check the integrated artwork, room/store previews, LED animation and reduced motion. tests/chairs.test.cjs exercises purchases, delivery, finishes, placement, seating and save/reload.
 
 User queue: finish and publish approved chairs first, then update the coffee cup and steam as a separate batch. Do not include coffee changes in the chair approval.

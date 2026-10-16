@@ -10,7 +10,7 @@ function bedroomScript() {
   const code = fs.readFileSync(path.join(root, 'graphics/bedroom/sources/renderer.js'), 'utf8')
     .replace('__BAGSEED_BEDROOM_IMAGE__', () => JSON.stringify('data:image/png;base64,' + art.toString('base64')));
   new (require('node:vm').Script)(code);
-  return `<script id="${marker}">\n${code}\n</script>\n${require('./compile-beds.cjs')()}${require('./compile-desks.cjs')()}${require('./compile-curtains.cjs')()}${require('./compile-curtains.cjs')('02')}${require('./compile-curtains.cjs')('03')}${require('./compile-computer-desks.cjs')()}${require('./compile-computer-equipment.cjs')()}${require('./compile-cameras.cjs')()}`;
+  return `<script id="${marker}">\n${code}\n</script>\n${require('./compile-beds.cjs')()}${require('./compile-desks.cjs')()}${require('./compile-curtains.cjs')()}${require('./compile-curtains.cjs')('02')}${require('./compile-curtains.cjs')('03')}${require('./compile-computer-desks.cjs')()}${require('./compile-computer-equipment.cjs')()}${require('./compile-cameras.cjs')()}${require('./compile-chairs.cjs')()}`;
 }
 module.exports = bedroomScript;
 if (require.main === module) {
@@ -31,6 +31,7 @@ if (require.main === module) {
   Object.assign(report, { computerDeskRevision: 'computer-desks-1', computerDeskDesigns: 4 });
   Object.assign(report, { computerEquipmentRevision: 'computer-equipment-1', computerTiers: 3, keyboardOptions: 4, deskMatOptions: 3, monitorWallpapers: 5 });
   Object.assign(report, { cameraRevision: 'cameras-1', cameraTiers: 3, decorativeCameras: 1 });
+  Object.assign(report, { chairRevision: 'chairs-2', deskChairDesigns: 4, officeChairFinishes: 2 });
   fs.writeFileSync(reportPath + '.tmp', JSON.stringify(report, null, 2) + '\n'); fs.renameSync(reportPath + '.tmp', reportPath);
   console.log('Rebuilt approved main menu, bedroom, beds, desks and curtains; verified character payload retained unchanged.');
 }

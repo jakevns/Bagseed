@@ -1,5 +1,5 @@
 {
-  "proposalOnly": true,
+  "proposalOnly": false,
   "entryPoint": "public/index.html",
   "deskChairs": 4,
   "officeFinishes": 2,
@@ -22,7 +22,7 @@
   "liveMotion": {
     "realGameLoop": true,
     "nativeResolution": true,
-    "movingFrames": 24,
+    "movingFrames": 23,
     "reducedMotionStill": true
   },
   "actualStoreDesktopAndPhone": true,
