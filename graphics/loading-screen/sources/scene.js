@@ -7,25 +7,10 @@
   function savedTier(){for(const key of ['bagseed.save.v1','bagseed.save.v1.backup'])try{const s=JSON.parse(localStorage.getItem(key));const t=s?.player?s.gear?.storage:null;if(Number.isInteger(t)&&t>=0&&t<=2)return t;}catch{}return 0;}
   const storageTier=savedTier();
   function load(url){return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(Error('Loading room artwork could not be decoded'));im.src=url;});}
-  let room,storage,outside,clouds;
+  __BAGSEED_WINDOW_SCENERY_FACTORY__
+  let room,storage,painter;
   const glass=new Path2D();DATA.outside.glassPaths.forEach(p=>glass.addPath(new Path2D(p)));
-  const sky=new Path2D(DATA.outside.skyPath);
-  function cloudPalette(image){return [null,'#efb69e','#87859d','#61718d'].map(tint=>{const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const g=c.getContext('2d');g.drawImage(image,0,0);if(tint){g.globalCompositeOperation='source-atop';g.globalAlpha=.78;g.fillStyle=tint;g.fillRect(0,0,c.width,c.height);}return c;});}
-  const smooth=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x);};
-  function outdoor(n,cloudTime){
-    // Every state is complete painted scenery, clipped to the actual glass contour.
-    // Opaque base + a single crossfade keeps the room from leaking through.
-    const stops=[0,.5,.85,1];let index=0;while(index<2&&n>stops[index+1])index++;
-    const blend=smooth((n-stops[index])/(stops[index+1]-stops[index]));
-    ctx.save();ctx.clip(glass);ctx.drawImage(outside,...DATA.outside.tiles[index],...DATA.outside.destination);
-    ctx.globalAlpha=blend;ctx.drawImage(outside,...DATA.outside.tiles[index+1],...DATA.outside.destination);ctx.globalAlpha=1;
-    const [x,y,w,h]=DATA.outside.destination;ctx.translate(x,y);ctx.scale(w/768,h/512);ctx.clip(sky);
-    for(let i=0;i<2;i++){
-      const width=i?250:350,height=width*clouds[0].height/clouds[0].width,offset=((cloudTime/3+i*.53)%1+1)%1,px=-width+offset*(768+width),py=i?55:4;
-      ctx.globalAlpha=.72*(1-blend);ctx.drawImage(clouds[index],px,py,width,height);ctx.globalAlpha=.72*blend;ctx.drawImage(clouds[index+1],px,py,width,height);
-    }
-    ctx.restore();
-  }
+  function outdoor(n,cloudTime){ctx.save();ctx.clip(glass);painter.drawBackground(ctx,DATA.outside.destination,n,cloudTime);ctx.restore();}
   function sprite(name,x,y,w,h){const a=DATA.storage.assets[name],[sx,sy,sw,sh]=a.rect,scale=Math.min(w/sw,h/sh),dw=sw*scale,dh=sh*scale;ctx.drawImage(storage,sx,sy,sw,sh,x+(w-dw)/2,y+h-dh,dw,dh);}
   function glow(x,y,rx,ry,color,opacity){ctx.save();ctx.translate(x,y);ctx.scale(rx,ry);const g=ctx.createRadialGradient(0,0,0,0,0,1);g.addColorStop(0,color+opacity+')');g.addColorStop(1,color+'0)');ctx.fillStyle=g;ctx.fillRect(-1,-1,2,2);ctx.restore();}
   function patch(rect,alpha){const [x,y,w,h]=rect;ctx.save();ctx.globalAlpha=alpha;ctx.drawImage(room,x*room.width/2048,y*room.height/768,w*room.width/2048,h*room.height/768,x,y,w,h);ctx.restore();}
@@ -43,6 +28,8 @@
     if(matchMedia('(max-width:600px) and (orientation:portrait)').matches){const excess=Math.max(0,canvas.getBoundingClientRect().width-canvas.parentElement.clientWidth),pan=reduced?.5:(1-Math.cos(phase*2*Math.PI))/2;canvas.style.left=(-excess*pan)+'px';}else canvas.style.left='';
   }
   function tick(time){if(paused||['ready','error'].includes(window.BagseedStartup?.status))return;if(time-lastFrame>=1000/24){render(time/1000);lastFrame=time;}requestAnimationFrame(tick);}
-  const ready=Promise.all([load(DATA.roomURL),load(DATA.storageURL),load(DATA.outsideURL),load(DATA.cloudURL)]).then(images=>{[room,storage,outside]=images;clouds=cloudPalette(images[3]);loaded=true;render(0);requestAnimationFrame(tick);});ready.catch(()=>{});
+  const ready=Promise.all([load(DATA.roomURL),load(DATA.storageURL),load(DATA.outsideURL),load(DATA.cloudURL)]).then(images=>{[room,storage]=images;painter=createWindowScenery(DATA.outside,images[2],images[3]);loaded=true;render(0);requestAnimationFrame(tick);});ready.catch(()=>{});
+  // One decoded atlas/cloud pair serves both startup and live gameplay.
+  window.BagseedWindowScenery=Object.freeze({ready,get loaded(){return loaded;},drawBackground(...args){return painter.drawBackground(...args);},drawForeground(...args){return painter.drawForeground(...args);},timeOfDay(hour){return painter.timeOfDay(hour);}});
   window.BagseedLoadingScene=Object.freeze({revision:DATA.revision,ready,render,storageTier,get loaded(){return loaded;},pause(){paused=true;},resume(){if(paused){paused=false;requestAnimationFrame(tick);}}});
 })();

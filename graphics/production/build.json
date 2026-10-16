@@ -4,7 +4,7 @@
   "customizationReview": "review/customization-v9/README.md",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "80845a46e22f54ece4ff1bf3e0e226d43dd67248339b9d5e8873a83c7d6a129d",
-  "updatedSHA": "94e4de4286bc3a64ba4789a1aa9fa4d6bb0919be1c70be3840e501cbb5f7528d",
+  "updatedSHA": "96ba018843a2edd5516b6c52035c3297b225aa5144f27e7d0b823edf7a40395d",
   "characterRevision": "customization-9",
   "characterPayloadSHA256": "08eedc52ecd089552793907a164d88219a8d03146f3ba1eccf380a9d146dacb0",
   "characterSourcesSHA256": {
@@ -14,7 +14,7 @@
     "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
     "graphics/production/customization-v5/manifest.json": "9ba47c41a45a3475761d593f50ed9dd5478ac7a86a9a0d9af13c4fd0f7691a26"
   },
-  "bytes": 98027250,
+  "bytes": 98031208,
   "modularAssets": 544,
   "embeddedImages": 1552,
   "approvedIdentities": [
@@ -51,5 +51,7 @@
   "underDeskStorageRevision": "under-desk-storage-1",
   "storageTiers": 3,
   "supplyBoxes": 1,
-  "loadingRevision": "loading-bedroom-3"
+  "loadingRevision": "loading-bedroom-3",
+  "bedroomWindowRevision": "bedroom-window-1",
+  "outdoorArtSharedWithLoading": true
 }
