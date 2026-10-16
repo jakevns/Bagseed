@@ -1,12 +1,12 @@
 {
   "version": "illustrated-1",
-  "approval": "Phase 1 custom walking samples; awaiting user art approval.",
+  "approval": "Phase 1 custom walking samples; user requested GitHub publication.",
   "customizationReview": "review/custom-walk-v1/README.md",
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "516453b1fd1e6dd3b29987911e08e5a792aadd526a8d995dae6c6823379a9d35",
-  "updatedSHA": "0858e424312f805fd441e71d5a8dcd1bc4b3137c80bc9a3625df7e2f2afd89c8",
+  "workingSourceSHA": "009086178e0e69b71157cc2f02a1a320703e0f0edb7c8b61d67f7b7a5ad926e6",
+  "updatedSHA": "b3af39d40bc1cf8683e1ab44c15a159ecfb23585869f6ffcca136223c9d3c9da",
   "characterRevision": "custom-walk-phase-1",
   "characterPayloadSHA256": "7892c9534117be48e32c75512d56ceb545f0cb7e6e4fbb4968279f48405c8497",
   "characterSourcesSHA256": {
@@ -14,7 +14,7 @@
     "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
     "graphics/production/sources/hair-batch-01.js": "9ecdd8b585399ea4a5c9f11534914f21cb1d8be136839ea9c9ac6d75f8fd8390",
     "graphics/production/sources/hair-fit-rest.js": "57e1ea90c42bac147c83c798c61c8a1ddc195a30556d112ecf112bf8120d9ef3",
-    "graphics/production/sources/build.cjs": "0004f335d6dfd15bb41c9fa5122a255a4c1b5c9dd707c04341a3550759fa65c5",
+    "graphics/production/sources/build.cjs": "77dbfe2befbbbca4938b4e4c7aa74b9d2a9805717b9cf195a956cdb9bf6dbe0b",
     "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
     "graphics/production/customization-v5/manifest.json": "3e9a7390cd46d0a433c2e2cec34dfc2a8c04fdb8625a40476ec400d5cb458462",
     "graphics/production/customization-v5/hair-fit.json": "acf4244aab6c7b1733ff0bcfffe51c9e37758a2acc302f20027a34f9a127dc2b",
@@ -23,7 +23,7 @@
     "graphics/production/walk/manifest.json": "c4cd3cdd76fafb72191d1a28a50f6021abe5cb2c5becf68a37a71d29bdf653e3",
     "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa"
   },
-  "bytes": 104058375,
+  "bytes": 103997382,
   "modularAssets": 544,
   "embeddedImages": 1561,
   "approvedIdentities": [
@@ -42,7 +42,7 @@
   "curtainRevision": "curtains-batch-03",
   "curtainSets": 6,
   "menuRevision": "community-menu-3",
-  "previousCharacterBytes": 101116559,
+  "previousCharacterBytes": 101055566,
   "walkBytesIncrease": 2941816,
   "walkReviewStatus": "registration review; not approved",
   "computerDeskRevision": "computer-desks-1",
@@ -67,9 +67,15 @@
   "loadingMobileFraming": "fixed-window",
   "bedroomWindowRevision": "bedroom-window-1",
   "outdoorArtSharedWithLoading": true,
-  "starterTentRevision": "starter-tent-1",
+  "starterTentRevision": "starter-tent-2",
   "starterTentShells": [
     "budget",
     "standard"
+  ],
+  "tent2Revision": "tent2-1",
+  "tent2Shells": [
+    "standard",
+    "pro",
+    "premium"
   ]
 }

@@ -1,6 +1,6 @@
 # Custom walking: Phase 1 review
 
-Status: samples ready for visual review. Phase 2 is not implemented. Nothing from this feature has been pushed or deployed.
+Status: samples ready for visual review. Phase 2 is not implemented. GitHub publication was requested for the Phase 1 branch; Phase 2 and deployment remain outside this release.
 
 Open [the interactive review](index.html) to play/pause or step all four poses, switch backgrounds, and compare game size with 3Ã— and 6Ã— nearest-neighbor enlargements. Columns are the default hoodie, slim long-haired skirt look, broad ponytail/overalls look, patterned tee/hat look, Remy and Priya. Rows are front, right, back and left. These are captures of the actual renderer at a 32-pixel world width, with proportional sprite heights.
 
@@ -42,7 +42,7 @@ These checks are narrower than independent anatomical validation. Garment `limbC
 
 Tests ran with the exact Node commands behind `npm run check` and `npm test`, because this machine has Node but no npm executable available. They used disposable browser storage, not the user's save. Mobile browser tests passed; a real phone playtest and visual approval are still required.
 
-The generated standalone build is 104,058,375 bytes, up 2,941,816 bytes from 101,116,559 (approximately 2.81 MiB). This is below the 10 MB review threshold. Atlases use lossless WebP verified against their PNG pixels.
+The generated standalone build is 103,997,382 bytes, up 2,941,816 bytes from the merged GitHub baseline of 101,055,566 (approximately 2.81 MiB). This is below the 10 MB review threshold. Atlases use lossless WebP verified against their PNG pixels.
 
 ## Reproduction
 
@@ -63,3 +63,9 @@ Run from the repository root, using the bundled Python and Node executables wher
 Browser commands require Playwright's module path in `NODE_PATH` and Chrome's executable in `BAGSEED_BROWSER_PATH`. Existing tests regenerate some unrelated review screenshots; those outputs are excluded from this feature's changes. Encoding the existing production assets is a prerequisite on a completely fresh checkout.
 
 Please approve the sample movement and layering, or identify poses to revise, before the full wardrobe phase.
+
+## GitHub integration
+
+The publication branch is `codex/custom-walk-phase-1`. It includes GitHub main through `6edd9d4`, preserving the other worker's approved 2×2 tent, starter proportions and watering layout changes. Generated HTML and the build report were rebuilt from the combined sources rather than choosing one worker's generated output. The new tent compiler now normalizes Windows line endings consistently with the other compilers. Phase 2 has not begun.
+
+Post-merge checks passed with 100 game script blocks and 11/11 targeted browser tests: gameplay smoke, starter tents, tent/player depth and approved 2×2 tents. The earlier complete Phase 1 run passed 86/86 existing tests.

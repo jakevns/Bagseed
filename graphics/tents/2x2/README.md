@@ -1,0 +1,11 @@
+# Approved 2×2 tent release
+
+The user approved Standard, Pro and Premium artwork, the tent width swap, interior plant placement, softer light and watering gear relocation, then authorized publication. The starter is 54×90 at x2/y8; the two-plant 2×2 is 86×112 at x64/y8. Its right edge stays at x150, clear of the computer desk. Standard is included with the $89 tent; replacement Pro/Premium shells remain $49/$95. Plant capacity, catalog and growth behavior are unchanged.
+
+Original generated atlases are retained unchanged. The active wide PNG, crops and checksum are recorded in sources/manifest.json. Its lossless WebP copy is embedded by tools/compile-tent2.cjs; npm run check verifies the production module against source. Standard uses charcoal/sage fabric, Pro adds reinforced moss binding, and Premium adds brass trim, padded fabric and diamond lining. Equipment and plants remain independent live layers.
+
+The renderer draws the lining, softly reflected light, clipped equipment/plants and front fabric in that order, before actors. It uses all nine native zipper steps, honors reduced motion and retains wear/drying indicators. Slots and their click targets are recessed together, while approach points stay outside the tent. LeafCart, delivery, unused shell inventory and grow-space icons share the approved art. Both tent modules are required by the startup loading gate.
+
+Production source geometry includes the resized bounds, equipment/slot anchors, solid floor contact, wall/floor decorating exclusions, access reservations and purchase-time decoration eviction. Existing plant and equipment records retain their identities and slots. The watering can and purchased drip-reservoir replacement move together to x300/y103 beside the seedling desk, with their hit and placement/access metadata.
+
+Run npm run build:bedroom to rebuild public/index.html. Run node tools/preview-tents-2x2.cjs for production screenshots and layering checks in review/tents-2x2/. The helper now uses the shipped build without injected prototypes. tests/tent2.test.cjs exercises actual store purchases, delivery art, shell fitting, collision/placement bounds and save/reload. Starter, player-depth and garden-pot tests cover the related regressions. The original proposal sources remain as review history.

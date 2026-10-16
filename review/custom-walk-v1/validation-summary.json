@@ -8,9 +8,21 @@
     "command": "node --test --test-concurrency=1 tests/*.test.cjs"
   },
   "npmExecutableAvailable": false,
-  "buildBytes": 104058375,
+  "buildBytes": 103997382,
   "increaseBytes": 2941816,
   "visualApproval": "pending",
   "phonePlaytest": "pending",
-  "pushed": false
+  "baselineBytes": 101055566,
+  "githubIntegration": {
+    "branch": "codex/custom-walk-phase-1",
+    "mergedMain": "6edd9d4",
+    "staticChecks": "passed; 100 script blocks; character sources/payload verified",
+    "postMergeTests": {
+      "total": 11,
+      "passed": 11,
+      "failed": 0,
+      "durationMs": 108209.6025
+    }
+  },
+  "githubPublicationRequested": true
 }

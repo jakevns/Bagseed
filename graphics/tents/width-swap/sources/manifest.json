@@ -1,0 +1,48 @@
+{
+  "revision": "narrow-starter-proposal-1",
+  "status": "awaiting-width-approval",
+  "path": "assets/starter-atlas.png",
+  "size": [
+    1374,
+    1145
+  ],
+  "sha256": "5d91af689d7205ee03d4ccab30fb25fa626933561b11ee85a0f6274a491fca95",
+  "tiers": {
+    "budget": {
+      "open": [
+        300,
+        37,
+        320,
+        534
+      ],
+      "closed": [
+        309,
+        583,
+        309,
+        508
+      ],
+      "imagePath": "assets/starter-atlas.png"
+    },
+    "standard": {
+      "open": [
+        751,
+        37,
+        317,
+        534
+      ],
+      "closed": [
+        751,
+        582,
+        315,
+        509
+      ],
+      "imagePath": "assets/starter-atlas.png"
+    }
+  },
+  "bounds": [
+    2,
+    8,
+    54,
+    90
+  ]
+}
