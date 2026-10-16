@@ -22,6 +22,8 @@
   "walkTargetsInFrontOfTent": true,
   "playerCases": 36,
   "internalCases": 36,
+  "starterLayeringCases": 4,
+  "waterGearCases": 4,
   "zipFramesPerTier": 9,
   "storeAndPhoneArtwork": true,
   "productionIntegrationPendingApproval": true,

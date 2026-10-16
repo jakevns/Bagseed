@@ -34,6 +34,7 @@
     if(dp<1){
       c.save();c.clip(opening(new Path2D(),X,Y,W,H));
       try{
+        tentProposalDiffusion(c,'tent2',t);
         Gear.light(c,P.light[0],P.light[1]+DATA.lightVisualOffsetY,e.light,on,t);
         Gear.filter(c,P.exhaust[0],P.exhaust[1],e.exhaust,exMul(L)>0,t);
         runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
@@ -49,7 +50,8 @@
       for(const k of ['light','exhaust','fan','humid','sensor']){const n=e[k];if(!n&&k!=='sensor')continue;const[x,py]=P[k],y=py+(k==='light'?DATA.lightVisualOffsetY:k==='humid'?DATA.humidVisualOffsetY:0),b={light:[-22,-7,44,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];this.hit(k+':tent2',x+b[0],y+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,null,'equip');}
     }
   };
-  RoomArt.growEffectMasks.tent2=function(c,dp){if(!supported())return;c.clip(opening(new Path2D(),X,Y,W,H));if(dp>0){const top=Y+H*(.10+.85*Math.round(dp*8)/8);c.beginPath();c.rect(X,top,W,Math.max(0,Y+H-top));c.clip();}};
+  // The legacy room beam uses fixed old bounds. Local diffusion above replaces it.
+  RoomArt.growEffectMasks.tent2=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};
   ShellArt.icon=function(c,cv,size,tier){if(size!=='tent2'||!loaded||!DATA.tiers[tier])return icon.call(this,c,cv,size,tier);cv.width=320;cv.height=240;c.fillStyle='#1a2420';c.fillRect(0,0,320,240);const h=216,w=h*W/H;sprite(c,tier,true,(320-w)/2,12,w,h);};
   drawExtraIcon=function(c,cv,id){if(id==='tent2'&&loaded)return ShellArt.icon(c,cv,'tent2','standard');return extra.call(this,c,cv,id);};
   drawLocIcon=function(c,cv,id,locked){if(id!=='tent2'||!supported())return locIcon.call(this,c,cv,id,locked);c.fillStyle='#1f2a24';c.fillRect(0,0,cv.width,cv.height);const h=cv.height-8,w=h*W/H;sprite(c,Shell.of('tent2').tier,true,(cv.width-w)/2,4,w,h);};
