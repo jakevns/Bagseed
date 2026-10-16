@@ -1,0 +1,348 @@
+{
+  "canvas": [
+    96,
+    144
+  ],
+  "density": 3,
+  "ground": 143,
+  "source": "review/characters-v2/assets/generated/player-sheet.png",
+  "sourceSHA256": "4c038691bf093bd41e7a87a418417382ab6dd0fa776c5398834140e2a159a16f",
+  "frames": {
+    "down/0": {
+      "sourceCell": [
+        0,
+        0,
+        283,
+        286
+      ],
+      "subjectWithinCell": [
+        123,
+        16,
+        249,
+        286
+      ],
+      "uniformScale": 0.37243947858473,
+      "density": 3,
+      "translation": [
+        76,
+        127
+      ],
+      "file": "graphics\\production\\walk\\master\\down-0.png"
+    },
+    "down/1": {
+      "sourceCell": [
+        283,
+        0,
+        561,
+        286
+      ],
+      "subjectWithinCell": [
+        89,
+        18,
+        216,
+        286
+      ],
+      "uniformScale": 0.37243947858473,
+      "density": 3,
+      "translation": [
+        76,
+        130
+      ],
+      "file": "graphics\\production\\walk\\master\\down-1.png"
+    },
+    "down/2": {
+      "sourceCell": [
+        561,
+        0,
+        841,
+        286
+      ],
+      "subjectWithinCell": [
+        60,
+        16,
+        188,
+        285
+      ],
+      "uniformScale": 0.37243947858473,
+      "density": 3,
+      "translation": [
+        71,
+        128
+      ],
+      "file": "graphics\\production\\walk\\master\\down-2.png"
+    },
+    "down/3": {
+      "sourceCell": [
+        841,
+        0,
+        1122,
+        286
+      ],
+      "subjectWithinCell": [
+        37,
+        17,
+        164,
+        285
+      ],
+      "uniformScale": 0.37243947858473,
+      "density": 3,
+      "translation": [
+        71,
+        130
+      ],
+      "file": "graphics\\production\\walk\\master\\down-3.png"
+    },
+    "right/0": {
+      "sourceCell": [
+        0,
+        286,
+        283,
+        561
+      ],
+      "subjectWithinCell": [
+        119,
+        4,
+        253,
+        271
+      ],
+      "uniformScale": 0.37453183520599254,
+      "density": 3,
+      "translation": [
+        73,
+        129
+      ],
+      "file": "graphics\\production\\walk\\master\\right-0.png"
+    },
+    "right/1": {
+      "sourceCell": [
+        283,
+        286,
+        561,
+        561
+      ],
+      "subjectWithinCell": [
+        83,
+        5,
+        225,
+        271
+      ],
+      "uniformScale": 0.37453183520599254,
+      "density": 3,
+      "translation": [
+        59,
+        130
+      ],
+      "file": "graphics\\production\\walk\\master\\right-1.png"
+    },
+    "right/2": {
+      "sourceCell": [
+        561,
+        286,
+        841,
+        561
+      ],
+      "subjectWithinCell": [
+        54,
+        4,
+        196,
+        271
+      ],
+      "uniformScale": 0.37453183520599254,
+      "density": 3,
+      "translation": [
+        70,
+        129
+      ],
+      "file": "graphics\\production\\walk\\master\\right-2.png"
+    },
+    "right/3": {
+      "sourceCell": [
+        841,
+        286,
+        1122,
+        561
+      ],
+      "subjectWithinCell": [
+        32,
+        3,
+        179,
+        271
+      ],
+      "uniformScale": 0.37453183520599254,
+      "density": 3,
+      "translation": [
+        70,
+        128
+      ],
+      "file": "graphics\\production\\walk\\master\\right-3.png"
+    },
+    "up/0": {
+      "sourceCell": [
+        0,
+        561,
+        283,
+        831
+      ],
+      "subjectWithinCell": [
+        120,
+        3,
+        243,
+        264
+      ],
+      "uniformScale": 0.3838771593090211,
+      "density": 3,
+      "translation": [
+        77,
+        128
+      ],
+      "file": "graphics\\production\\walk\\master\\up-0.png"
+    },
+    "up/1": {
+      "sourceCell": [
+        283,
+        561,
+        561,
+        831
+      ],
+      "subjectWithinCell": [
+        90,
+        3,
+        214,
+        268
+      ],
+      "uniformScale": 0.3838771593090211,
+      "density": 3,
+      "translation": [
+        73,
+        124
+      ],
+      "file": "graphics\\production\\walk\\master\\up-1.png"
+    },
+    "up/2": {
+      "sourceCell": [
+        561,
+        561,
+        841,
+        831
+      ],
+      "subjectWithinCell": [
+        59,
+        3,
+        187,
+        263
+      ],
+      "uniformScale": 0.3838771593090211,
+      "density": 3,
+      "translation": [
+        71,
+        130
+      ],
+      "file": "graphics\\production\\walk\\master\\up-2.png"
+    },
+    "up/3": {
+      "sourceCell": [
+        841,
+        561,
+        1122,
+        831
+      ],
+      "subjectWithinCell": [
+        39,
+        3,
+        162,
+        261
+      ],
+      "uniformScale": 0.3838771593090211,
+      "density": 3,
+      "translation": [
+        71,
+        132
+      ],
+      "file": "graphics\\production\\walk\\master\\up-3.png"
+    },
+    "left/0": {
+      "sourceCell": [
+        0,
+        831,
+        283,
+        1110
+      ],
+      "subjectWithinCell": [
+        108,
+        0,
+        248,
+        267
+      ],
+      "uniformScale": 0.3766478342749529,
+      "density": 3,
+      "translation": [
+        60,
+        127
+      ],
+      "file": "graphics\\production\\walk\\master\\left-0.png"
+    },
+    "left/1": {
+      "sourceCell": [
+        283,
+        831,
+        561,
+        1110
+      ],
+      "subjectWithinCell": [
+        76,
+        3,
+        228,
+        267
+      ],
+      "uniformScale": 0.3766478342749529,
+      "density": 3,
+      "translation": [
+        62,
+        131
+      ],
+      "file": "graphics\\production\\walk\\master\\left-1.png"
+    },
+    "left/2": {
+      "sourceCell": [
+        561,
+        831,
+        841,
+        1110
+      ],
+      "subjectWithinCell": [
+        46,
+        0,
+        187,
+        267
+      ],
+      "uniformScale": 0.3766478342749529,
+      "density": 3,
+      "translation": [
+        59,
+        127
+      ],
+      "file": "graphics\\production\\walk\\master\\left-2.png"
+    },
+    "left/3": {
+      "sourceCell": [
+        841,
+        831,
+        1122,
+        1110
+      ],
+      "subjectWithinCell": [
+        29,
+        5,
+        171,
+        267
+      ],
+      "uniformScale": 0.3766478342749529,
+      "density": 3,
+      "translation": [
+        62,
+        133
+      ],
+      "file": "graphics\\production\\walk\\master\\left-3.png"
+    }
+  }
+}

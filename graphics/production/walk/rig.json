@@ -1,0 +1,1833 @@
+{
+  "version": "custom-walk-phase-1",
+  "status": "draft landmarks; visual approval required",
+  "canvas": [
+    96,
+    144
+  ],
+  "density": 3,
+  "groundBaseline": 143,
+  "headAttach": "jaw underside 184 after face-shape transform; no new head artwork",
+  "partLabels": {
+    "farArm": 1,
+    "torso": 2,
+    "nearArm": 3,
+    "farLeg": 4,
+    "nearLeg": 5,
+    "farFoot": 6,
+    "nearFoot": 7
+  },
+  "frames": {
+    "down/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          80
+        ],
+        "shoulderL": [
+          38,
+          86
+        ],
+        "shoulderR": [
+          57,
+          86
+        ],
+        "elbowL": [
+          32,
+          98
+        ],
+        "elbowR": [
+          65,
+          96
+        ],
+        "handL": [
+          36.245,
+          108.19
+        ],
+        "handR": [
+          65.873,
+          104.04
+        ],
+        "waist": [
+          48,
+          107
+        ],
+        "hipL": [
+          42,
+          111
+        ],
+        "hipR": [
+          54,
+          111
+        ],
+        "kneeL": [
+          40,
+          124
+        ],
+        "kneeR": [
+          54,
+          128
+        ],
+        "ankleL": [
+          40,
+          134
+        ],
+        "ankleR": [
+          53,
+          138
+        ],
+        "heelL": [
+          36,
+          139
+        ],
+        "heelR": [
+          48,
+          142
+        ],
+        "toeL": [
+          46,
+          140
+        ],
+        "toeR": [
+          60,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "R",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "left-contact",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          0,
+          0,
+          256,
+          384
+        ],
+        "scale": 0.35679567244938226,
+        "rotationDegrees": -0.5130789130356754,
+        "translationAfterInitial": [
+          1.2256044661625154,
+          7.420623123620747
+        ],
+        "translation": [
+          1.2199244080286,
+          6.78634513832565
+        ],
+        "initialGroundTranslationPixels": -2,
+        "errors": {
+          "handL": 1.077,
+          "handR": 1.253,
+          "neck": 0.687,
+          "ground": 0.129
+        },
+        "bodyIoU": 0.9612653733992647,
+        "accepted": true
+      }
+    },
+    "down/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          38,
+          85
+        ],
+        "shoulderR": [
+          57,
+          85
+        ],
+        "elbowL": [
+          32,
+          97
+        ],
+        "elbowR": [
+          65,
+          97
+        ],
+        "handL": [
+          34.789,
+          107.792
+        ],
+        "handR": [
+          65.862,
+          104.127
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "hipL": [
+          42,
+          110
+        ],
+        "hipR": [
+          54,
+          110
+        ],
+        "kneeL": [
+          41,
+          120
+        ],
+        "kneeR": [
+          53,
+          127
+        ],
+        "ankleL": [
+          42,
+          130
+        ],
+        "ankleR": [
+          53,
+          138
+        ],
+        "heelL": [
+          37,
+          133
+        ],
+        "heelR": [
+          48,
+          142
+        ],
+        "toeL": [
+          47,
+          134
+        ],
+        "toeR": [
+          60,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "R",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "passing",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          256,
+          0,
+          512,
+          384
+        ],
+        "scale": 0.36171797316530363,
+        "rotationDegrees": -0.31554169030816553,
+        "translationAfterInitial": [
+          1.0402683311449294,
+          5.476708413912665
+        ],
+        "translation": [
+          1.0367268944595354,
+          4.833663991194623
+        ],
+        "initialGroundTranslationPixels": -2,
+        "errors": {
+          "handL": 0.849,
+          "handR": 1.106,
+          "neck": 0.473,
+          "ground": 0.184
+        },
+        "bodyIoU": 0.9614707608057892,
+        "accepted": true
+      }
+    },
+    "down/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          80
+        ],
+        "shoulderL": [
+          38,
+          86
+        ],
+        "shoulderR": [
+          57,
+          86
+        ],
+        "elbowL": [
+          32,
+          96
+        ],
+        "elbowR": [
+          65,
+          98
+        ],
+        "handL": [
+          30.218,
+          104.487
+        ],
+        "handR": [
+          62.415,
+          110.041
+        ],
+        "waist": [
+          48,
+          107
+        ],
+        "hipL": [
+          42,
+          111
+        ],
+        "hipR": [
+          54,
+          111
+        ],
+        "kneeL": [
+          42,
+          128
+        ],
+        "kneeR": [
+          54,
+          122
+        ],
+        "ankleL": [
+          42,
+          138
+        ],
+        "ankleR": [
+          55,
+          132
+        ],
+        "heelL": [
+          36,
+          142
+        ],
+        "heelR": [
+          51,
+          135
+        ],
+        "toeL": [
+          48,
+          143
+        ],
+        "toeR": [
+          60,
+          136
+        ]
+      },
+      "nearArm": "R",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "right-contact",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          512,
+          0,
+          768,
+          384
+        ],
+        "scale": 0.356149815677065,
+        "rotationDegrees": -0.16380445981395705,
+        "translationAfterInitial": [
+          1.9603730135465085,
+          7.368043639252112
+        ],
+        "translation": [
+          1.9585628713392147,
+          6.7348909989158905
+        ],
+        "initialGroundTranslationPixels": -2,
+        "errors": {
+          "handL": 1.104,
+          "handR": 1.048,
+          "neck": 0.602,
+          "ground": 0.081
+        },
+        "bodyIoU": 0.9543940558544709,
+        "accepted": true
+      }
+    },
+    "down/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          38,
+          85
+        ],
+        "shoulderR": [
+          57,
+          85
+        ],
+        "elbowL": [
+          34,
+          96
+        ],
+        "elbowR": [
+          65,
+          97
+        ],
+        "handL": [
+          35.724,
+          103.323
+        ],
+        "handR": [
+          64.012,
+          105.967
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "hipL": [
+          42,
+          110
+        ],
+        "hipR": [
+          54,
+          110
+        ],
+        "kneeL": [
+          42,
+          120
+        ],
+        "kneeR": [
+          53,
+          127
+        ],
+        "ankleL": [
+          42,
+          130
+        ],
+        "ankleR": [
+          53,
+          138
+        ],
+        "heelL": [
+          37,
+          134
+        ],
+        "heelR": [
+          48,
+          142
+        ],
+        "toeL": [
+          47,
+          135
+        ],
+        "toeR": [
+          60,
+          143
+        ]
+      },
+      "nearArm": "R",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "opposite-passing",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          768,
+          0,
+          1024,
+          384
+        ],
+        "scale": 0.3609971009759688,
+        "rotationDegrees": -0.22606390367589219,
+        "translationAfterInitial": [
+          1.187622008611335,
+          5.641122893536793
+        ],
+        "translation": [
+          1.1850898631470015,
+          4.999355264951214
+        ],
+        "initialGroundTranslationPixels": -2,
+        "errors": {
+          "handL": 1.001,
+          "handR": 0.797,
+          "neck": 0.402,
+          "ground": 0.133
+        },
+        "bodyIoU": 0.9790910889782996,
+        "accepted": true
+      }
+    },
+    "right/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          80
+        ],
+        "shoulderL": [
+          46,
+          86
+        ],
+        "shoulderR": [
+          52,
+          86
+        ],
+        "elbowL": [
+          40,
+          99
+        ],
+        "elbowR": [
+          59,
+          98
+        ],
+        "handL": [
+          35.933,
+          110.043
+        ],
+        "handR": [
+          64.321,
+          103.701
+        ],
+        "waist": [
+          48,
+          107
+        ],
+        "hipL": [
+          47,
+          111
+        ],
+        "hipR": [
+          51,
+          111
+        ],
+        "kneeL": [
+          53,
+          121
+        ],
+        "kneeR": [
+          39,
+          122
+        ],
+        "ankleL": [
+          58,
+          133
+        ],
+        "ankleR": [
+          33,
+          132
+        ],
+        "heelL": [
+          52,
+          142
+        ],
+        "heelR": [
+          26,
+          134
+        ],
+        "toeL": [
+          73,
+          134
+        ],
+        "toeR": [
+          44,
+          142
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "left-contact",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          0,
+          384,
+          256,
+          768
+        ],
+        "scale": 0.3741415878310587,
+        "rotationDegrees": -1.5718960960798967,
+        "translationAfterInitial": [
+          -3.5261857160132166,
+          2.009361485013519
+        ],
+        "translation": [
+          -3.206886223188427,
+          13.644941767716055
+        ],
+        "initialGroundTranslationPixels": 35,
+        "errors": {
+          "handL": 0.679,
+          "handR": 0.693,
+          "neck": 0.584,
+          "ground": 0.408
+        },
+        "bodyIoU": 0.9317107448575443,
+        "accepted": true
+      }
+    },
+    "right/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          46,
+          85
+        ],
+        "shoulderR": [
+          52,
+          85
+        ],
+        "elbowL": [
+          53,
+          98
+        ],
+        "elbowR": [
+          42,
+          97
+        ],
+        "handL": [
+          61.143,
+          106.409
+        ],
+        "handR": [
+          36,
+          106
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "hipL": [
+          47,
+          110
+        ],
+        "hipR": [
+          51,
+          110
+        ],
+        "kneeL": [
+          37,
+          122
+        ],
+        "kneeR": [
+          51,
+          123
+        ],
+        "ankleL": [
+          29,
+          131
+        ],
+        "ankleR": [
+          54,
+          135
+        ],
+        "heelL": [
+          22,
+          130
+        ],
+        "heelR": [
+          51,
+          143
+        ],
+        "toeL": [
+          36,
+          143
+        ],
+        "toeR": [
+          71,
+          139
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL"
+      ],
+      "phase": "passing",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          256,
+          384,
+          512,
+          768
+        ],
+        "scale": 0.38108306154609684,
+        "rotationDegrees": -1.5600186266903147,
+        "translationAfterInitial": [
+          -4.662549428739503,
+          -1.235966404971402
+        ],
+        "translation": [
+          -4.339782776254154,
+          10.615556735585418
+        ],
+        "initialGroundTranslationPixels": 35,
+        "errors": {
+          "handL": 1.423,
+          "neck": 0.533,
+          "ground": 0.303
+        },
+        "bodyIoU": 0.9283733513696314,
+        "accepted": true
+      }
+    },
+    "right/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          80
+        ],
+        "shoulderL": [
+          46,
+          86
+        ],
+        "shoulderR": [
+          52,
+          86
+        ],
+        "elbowL": [
+          54,
+          98
+        ],
+        "elbowR": [
+          40,
+          97
+        ],
+        "handL": [
+          65.786,
+          106.849
+        ],
+        "handR": [
+          32.287,
+          107.054
+        ],
+        "waist": [
+          48,
+          107
+        ],
+        "hipL": [
+          47,
+          111
+        ],
+        "hipR": [
+          51,
+          111
+        ],
+        "kneeL": [
+          53,
+          122
+        ],
+        "kneeR": [
+          39,
+          123
+        ],
+        "ankleL": [
+          58,
+          132
+        ],
+        "ankleR": [
+          32,
+          132
+        ],
+        "heelL": [
+          54,
+          143
+        ],
+        "heelR": [
+          26,
+          137
+        ],
+        "toeL": [
+          74,
+          136
+        ],
+        "toeR": [
+          45,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "right-contact",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          512,
+          384,
+          768,
+          768
+        ],
+        "scale": 0.36818593863609916,
+        "rotationDegrees": -0.9006369526085992,
+        "translationAfterInitial": [
+          -1.3579167196750532,
+          3.3469927098606576
+        ],
+        "translation": [
+          -1.1830114729959522,
+          14.473015263313044
+        ],
+        "initialGroundTranslationPixels": 34,
+        "errors": {
+          "handL": 0.653,
+          "handR": 0.698,
+          "neck": 0.676,
+          "ground": 0.031
+        },
+        "bodyIoU": 0.9455481526347668,
+        "accepted": true
+      }
+    },
+    "right/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          46,
+          85
+        ],
+        "shoulderR": [
+          52,
+          85
+        ],
+        "elbowL": [
+          39,
+          99
+        ],
+        "elbowR": [
+          60,
+          98
+        ],
+        "handL": [
+          32.769,
+          108.689
+        ],
+        "handR": [
+          66.11,
+          103.832
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "hipL": [
+          47,
+          110
+        ],
+        "hipR": [
+          51,
+          110
+        ],
+        "kneeL": [
+          37,
+          122
+        ],
+        "kneeR": [
+          53,
+          122
+        ],
+        "ankleL": [
+          30,
+          132
+        ],
+        "ankleR": [
+          57,
+          133
+        ],
+        "heelL": [
+          24,
+          134
+        ],
+        "heelR": [
+          54,
+          143
+        ],
+        "toeL": [
+          38,
+          143
+        ],
+        "toeR": [
+          74,
+          136
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "opposite-passing",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          768,
+          384,
+          1024,
+          768
+        ],
+        "scale": 0.3751460707789363,
+        "rotationDegrees": -1.2885458150698677,
+        "translationAfterInitial": [
+          -3.0634628580989016,
+          1.4196767574577838
+        ],
+        "translation": [
+          -2.8010068332312006,
+          13.08793648902716
+        ],
+        "initialGroundTranslationPixels": 35,
+        "errors": {
+          "handL": 0.759,
+          "handR": 0.514,
+          "neck": 0.736,
+          "ground": 0.393
+        },
+        "bodyIoU": 0.9358006946939753,
+        "accepted": true
+      }
+    },
+    "up/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          38,
+          86
+        ],
+        "shoulderR": [
+          57,
+          86
+        ],
+        "elbowL": [
+          32,
+          98
+        ],
+        "elbowR": [
+          65,
+          96
+        ],
+        "handL": [
+          31.33,
+          105.838
+        ],
+        "handR": [
+          64.855,
+          103.127
+        ],
+        "waist": [
+          48,
+          107
+        ],
+        "hipL": [
+          42,
+          111
+        ],
+        "hipR": [
+          54,
+          111
+        ],
+        "kneeL": [
+          40,
+          124
+        ],
+        "kneeR": [
+          54,
+          128
+        ],
+        "ankleL": [
+          40,
+          134
+        ],
+        "ankleR": [
+          53,
+          138
+        ],
+        "heelL": [
+          36,
+          139
+        ],
+        "heelR": [
+          48,
+          142
+        ],
+        "toeL": [
+          46,
+          140
+        ],
+        "toeR": [
+          60,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "R",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "left-contact",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-rear-01-v4.png",
+        "sourceCell": [
+          0,
+          0,
+          724,
+          1086
+        ],
+        "scale": 0.1346508947972216,
+        "rotationDegrees": -0.0362835920888794,
+        "translationAfterInitial": [
+          -0.9368424184053268,
+          -2.013413366476849
+        ],
+        "translation": [
+          -0.9364136992066683,
+          -1.3364187256045958
+        ],
+        "initialGroundTranslationPixels": 2,
+        "errors": {
+          "handL": 1.64,
+          "handR": 1.502,
+          "neck": 0.241,
+          "ground": 0.199
+        },
+        "bodyIoU": 0.9565674039293216,
+        "accepted": true
+      }
+    },
+    "up/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          38,
+          85
+        ],
+        "shoulderR": [
+          57,
+          85
+        ],
+        "elbowL": [
+          32,
+          97
+        ],
+        "elbowR": [
+          65,
+          97
+        ],
+        "handL": [
+          31.336,
+          100.932
+        ],
+        "handR": [
+          64.073,
+          103.181
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "hipL": [
+          42,
+          110
+        ],
+        "hipR": [
+          54,
+          110
+        ],
+        "kneeL": [
+          41,
+          120
+        ],
+        "kneeR": [
+          53,
+          127
+        ],
+        "ankleL": [
+          42,
+          130
+        ],
+        "ankleR": [
+          53,
+          138
+        ],
+        "heelL": [
+          37,
+          133
+        ],
+        "heelR": [
+          48,
+          142
+        ],
+        "toeL": [
+          47,
+          134
+        ],
+        "toeR": [
+          60,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "R",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "passing",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-rear-01-v4.png",
+        "sourceCell": [
+          724,
+          0,
+          1448,
+          1086
+        ],
+        "scale": 0.13426219423895006,
+        "rotationDegrees": 1.3439694248311855,
+        "translationAfterInitial": [
+          1.9345156176727514,
+          -3.1272641563242587
+        ],
+        "translation": [
+          1.9265992355653196,
+          -2.7898367683529557
+        ],
+        "initialGroundTranslationPixels": 1,
+        "errors": {
+          "handL": 1.662,
+          "handR": 1.445,
+          "neck": 0.624,
+          "ground": 0.902
+        },
+        "bodyIoU": 0.9267881460346281,
+        "accepted": true
+      }
+    },
+    "up/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          38,
+          86
+        ],
+        "shoulderR": [
+          57,
+          86
+        ],
+        "elbowL": [
+          32,
+          96
+        ],
+        "elbowR": [
+          65,
+          98
+        ],
+        "handL": [
+          29.922,
+          106.424
+        ],
+        "handR": [
+          65.962,
+          107.772
+        ],
+        "waist": [
+          48,
+          107
+        ],
+        "hipL": [
+          42,
+          111
+        ],
+        "hipR": [
+          54,
+          111
+        ],
+        "kneeL": [
+          42,
+          128
+        ],
+        "kneeR": [
+          54,
+          122
+        ],
+        "ankleL": [
+          42,
+          138
+        ],
+        "ankleR": [
+          55,
+          132
+        ],
+        "heelL": [
+          36,
+          142
+        ],
+        "heelR": [
+          51,
+          135
+        ],
+        "toeL": [
+          48,
+          143
+        ],
+        "toeR": [
+          60,
+          136
+        ]
+      },
+      "nearArm": "R",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "right-contact",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          512,
+          768,
+          768,
+          1152
+        ],
+        "scale": 0.3537642602670068,
+        "rotationDegrees": -0.0711129156251675,
+        "translationAfterInitial": [
+          2.56220545293084,
+          8.033999634416253
+        ],
+        "translation": [
+          2.5754753052946424,
+          18.725533487516124
+        ],
+        "initialGroundTranslationPixels": 34,
+        "errors": {
+          "handL": 1.636,
+          "handR": 1.624,
+          "neck": 1.213,
+          "ground": 0.121
+        },
+        "bodyIoU": 0.9427727524460033,
+        "accepted": true
+      }
+    },
+    "up/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          38,
+          85
+        ],
+        "shoulderR": [
+          57,
+          85
+        ],
+        "elbowL": [
+          34,
+          96
+        ],
+        "elbowR": [
+          65,
+          97
+        ],
+        "handL": [
+          31.204,
+          107.159
+        ],
+        "handR": [
+          65.588,
+          107.296
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "hipL": [
+          42,
+          110
+        ],
+        "hipR": [
+          54,
+          110
+        ],
+        "kneeL": [
+          42,
+          120
+        ],
+        "kneeR": [
+          53,
+          127
+        ],
+        "ankleL": [
+          42,
+          130
+        ],
+        "ankleR": [
+          53,
+          138
+        ],
+        "heelL": [
+          37,
+          134
+        ],
+        "heelR": [
+          48,
+          142
+        ],
+        "toeL": [
+          47,
+          135
+        ],
+        "toeR": [
+          60,
+          143
+        ]
+      },
+      "nearArm": "R",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "opposite-passing",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          768,
+          768,
+          1024,
+          1152
+        ],
+        "scale": 0.35084151686555776,
+        "rotationDegrees": 0.20457510309287397,
+        "translationAfterInitial": [
+          3.368002079685205,
+          9.089324117922198
+        ],
+        "translation": [
+          3.3301433011295076,
+          19.69246681778582
+        ],
+        "initialGroundTranslationPixels": 34,
+        "errors": {
+          "handL": 1.796,
+          "handR": 1.484,
+          "neck": 0.538,
+          "ground": 0.206
+        },
+        "bodyIoU": 0.9571181413741967,
+        "accepted": true
+      }
+    },
+    "left/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          80
+        ],
+        "shoulderL": [
+          50,
+          86
+        ],
+        "shoulderR": [
+          44,
+          86
+        ],
+        "elbowL": [
+          56,
+          99
+        ],
+        "elbowR": [
+          37,
+          98
+        ],
+        "handL": [
+          61.322,
+          108.229
+        ],
+        "handR": [
+          30.996,
+          103.652
+        ],
+        "waist": [
+          48,
+          107
+        ],
+        "hipL": [
+          49,
+          111
+        ],
+        "hipR": [
+          45,
+          111
+        ],
+        "kneeL": [
+          42,
+          123
+        ],
+        "kneeR": [
+          54,
+          122
+        ],
+        "ankleL": [
+          34,
+          134
+        ],
+        "ankleR": [
+          60,
+          134
+        ],
+        "heelL": [
+          41,
+          143
+        ],
+        "heelR": [
+          69,
+          136
+        ],
+        "toeL": [
+          21,
+          137
+        ],
+        "toeR": [
+          53,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "left-contact",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          0,
+          1152,
+          256,
+          1536
+        ],
+        "scale": 0.3741778598810183,
+        "rotationDegrees": 2.0,
+        "translationAfterInitial": [
+          4.062088292427468,
+          -1.921860398766185
+        ],
+        "translation": [
+          3.249551999898888,
+          21.346134675643444
+        ],
+        "initialGroundTranslationPixels": 70,
+        "errors": {
+          "handL": 0.891,
+          "handR": 1.907,
+          "neck": 1.593,
+          "ground": 1.237
+        },
+        "bodyIoU": 0.9097930182267532,
+        "accepted": true
+      }
+    },
+    "left/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          50,
+          85
+        ],
+        "shoulderR": [
+          44,
+          85
+        ],
+        "elbowL": [
+          43,
+          98
+        ],
+        "elbowR": [
+          54,
+          97
+        ],
+        "handL": [
+          33.924,
+          106.079
+        ],
+        "handR": [
+          63.12,
+          104.578
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "hipL": [
+          49,
+          110
+        ],
+        "hipR": [
+          45,
+          110
+        ],
+        "kneeL": [
+          58,
+          122
+        ],
+        "kneeR": [
+          43,
+          124
+        ],
+        "ankleL": [
+          65,
+          132
+        ],
+        "ankleR": [
+          32,
+          135
+        ],
+        "heelL": [
+          72,
+          132
+        ],
+        "heelR": [
+          41,
+          143
+        ],
+        "toeL": [
+          59,
+          143
+        ],
+        "toeR": [
+          21,
+          138
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "passing",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          256,
+          1152,
+          512,
+          1536
+        ],
+        "scale": 0.3834242654697899,
+        "rotationDegrees": 1.883314736519221,
+        "translationAfterInitial": [
+          3.243175957724482,
+          -5.104656621159701
+        ],
+        "translation": [
+          2.4703205907398824,
+          18.39932862265371
+        ],
+        "initialGroundTranslationPixels": 69,
+        "errors": {
+          "handL": 1.529,
+          "neck": 1.128,
+          "ground": 0.623
+        },
+        "bodyIoU": 0.8879655278547245,
+        "accepted": true
+      }
+    },
+    "left/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          80
+        ],
+        "shoulderL": [
+          50,
+          86
+        ],
+        "shoulderR": [
+          44,
+          86
+        ],
+        "elbowL": [
+          42,
+          98
+        ],
+        "elbowR": [
+          56,
+          97
+        ],
+        "handL": [
+          30.08,
+          106.621
+        ],
+        "handR": [
+          63.478,
+          107.642
+        ],
+        "waist": [
+          48,
+          107
+        ],
+        "hipL": [
+          49,
+          111
+        ],
+        "hipR": [
+          45,
+          111
+        ],
+        "kneeL": [
+          42,
+          123
+        ],
+        "kneeR": [
+          56,
+          122
+        ],
+        "ankleL": [
+          33,
+          134
+        ],
+        "ankleR": [
+          62,
+          134
+        ],
+        "heelL": [
+          40,
+          143
+        ],
+        "heelR": [
+          70,
+          136
+        ],
+        "toeL": [
+          21,
+          137
+        ],
+        "toeR": [
+          52,
+          143
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "right-contact",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          512,
+          1152,
+          768,
+          1536
+        ],
+        "scale": 0.3739270497604661,
+        "rotationDegrees": 1.7628735797297415,
+        "translationAfterInitial": [
+          3.378273862922754,
+          -0.8411727191839116
+        ],
+        "translation": [
+          2.672747146894533,
+          22.08216500505068
+        ],
+        "initialGroundTranslationPixels": 69,
+        "errors": {
+          "handL": 1.698,
+          "handR": 1.248,
+          "neck": 1.51,
+          "ground": 1.178
+        },
+        "bodyIoU": 0.8944755898154637,
+        "accepted": true
+      }
+    },
+    "left/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "shoulderL": [
+          50,
+          85
+        ],
+        "shoulderR": [
+          44,
+          85
+        ],
+        "elbowL": [
+          57,
+          99
+        ],
+        "elbowR": [
+          36,
+          98
+        ],
+        "handL": [
+          61.768,
+          107.929
+        ],
+        "handR": [
+          32.089,
+          106.311
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "hipL": [
+          49,
+          110
+        ],
+        "hipR": [
+          45,
+          110
+        ],
+        "kneeL": [
+          58,
+          122
+        ],
+        "kneeR": [
+          44,
+          123
+        ],
+        "ankleL": [
+          66,
+          132
+        ],
+        "ankleR": [
+          33,
+          135
+        ],
+        "heelL": [
+          72,
+          134
+        ],
+        "heelR": [
+          41,
+          143
+        ],
+        "toeL": [
+          60,
+          143
+        ],
+        "toeR": [
+          21,
+          138
+        ]
+      },
+      "nearArm": "L",
+      "nearLeg": "L",
+      "visibleHands": [
+        "handL",
+        "handR"
+      ],
+      "phase": "opposite-passing",
+      "ground": 143,
+      "mannequinRegistration": {
+        "method": "similarity fit: original detected hand centers, collar, ground",
+        "source": "assets/mannequin-v3.png",
+        "sourceCell": [
+          768,
+          1152,
+          1024,
+          1536
+        ],
+        "scale": 0.37356892668777014,
+        "rotationDegrees": 1.7822390762568874,
+        "translationAfterInitial": [
+          3.756537927113719,
+          -0.5457477441872338
+        ],
+        "translation": [
+          3.0439464823203632,
+          22.355395952268374
+        ],
+        "initialGroundTranslationPixels": 69,
+        "errors": {
+          "handL": 0.941,
+          "handR": 1.272,
+          "neck": 1.186,
+          "ground": 0.939
+        },
+        "bodyIoU": 0.9159393376663572,
+        "accepted": true
+      }
+    }
+  },
+  "landmarkNotes": {
+    "profiles": "Each left and right row traced independently; no mirrored profile landmarks.",
+    "neck": "Rear anatomical attachment inferred underneath the approved hood/hair at y=79.",
+    "hands": "Visible hand centroids detected in the original long-sleeved master; hidden hands retain inferred anatomical coordinates.",
+    "status": "Manual joints plus measured visible hands; not all joints can be independently detected through clothing."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "top": [
+    "cardigan",
+    "crop",
+    "flannel",
+    "garden",
+    "hoodie",
+    "jacket",
+    "labcoat",
+    "officer",
+    "overalls",
+    "pjs",
+    "suit",
+    "sweater",
+    "tank",
+    "tee",
+    "work"
+  ],
+  "bottom": [
+    "cargo",
+    "jeans",
+    "joggers",
+    "shorts",
+    "skirt"
+  ],
+  "shoe": [
+    "boots",
+    "rainboots",
+    "sandals",
+    "sneakers"
+  ],
+  "sourceManifestSHA256": "2c8dca43d21dce9a3523268472b8fe04fa9f703b31e9809b4928110e4f8565bd"
+}

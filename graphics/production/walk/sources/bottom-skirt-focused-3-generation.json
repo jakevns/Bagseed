@@ -1,0 +1,23 @@
+{
+  "id": "bottom-skirt",
+  "version": "focused-3",
+  "frames": [
+    "up/0",
+    "up/1",
+    "up/2",
+    "up/3"
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Use case: precise-object-edit. EDIT THE ATTACHED EXISTING IMAGE. Do not redraw or redesign the bodies. Keep the exact pixel positions, body scale, hands, finger shapes, arm lengths, hip positions, knees, ankle positions and planted/lifted foot positions of reference 1. This is a clothing replacement edit, NOT a fresh figure illustration. Maintain the original canvas layout, FOUR figures in a TWO by TWO portrait grid, same large empty headroom, same body position in every cell. Neck-down only; no heads. True transparent background, no shadow, text or guides. CRITICAL: KEEP EVERY EXISTING HAND AT EXACTLY ITS ORIGINAL POSITION, SIZE AND SHAPE. Do not shorten, thicken or move the arms or hands. Preserve the original soft outlined painted indie-RPG style and line quality. Replace the green hoodies with fitted medium-blue #5086bf SHORT-SLEEVE tees tucked into dark navy #36405a soft pleated knee-length skirts. Replace jeans with those skirts and exposed warm tan #cf9670 lower legs. Remove hoodie sleeves to expose the arms, but keep hands EXACTLY unchanged and draw the bare forearms back to the unchanged hands. Keep all four original brown/cream sneakers and original foot shapes unchanged. The left rear hand on the first figure hangs below the waistband: it must stay there. Preserve the different arm swing of every original figure. Navy skirt hems sway subtly with the original stride. Only clothing material changes; anatomy is immutable.",
+  "referenced_image_paths": [
+    "C:\\Projects\\Bagseed\\graphics\\production\\walk\\assets\\bottom-skirt-focused-2-master-reference.png"
+  ],
+  "transparent_background": true,
+  "mode": "built-in image_gen",
+  "source": "graphics/production/walk/assets/bottom-skirt-focused-3.png",
+  "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-cce3e28b-6265-48d5-96cd-d6ecf8674023.png",
+  "status": "clothing-only edit; awaiting registration"
+}

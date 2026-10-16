@@ -1,0 +1,11 @@
+{
+  "id": "mannequin-v1",
+  "mode": "built-in image_gen",
+  "prompt": "Use case: identity-preserve. Asset type: production modular walking mannequin sprite atlas for Bagseed. Reference image 1 is the EXACT approved pose master and illustrated drawing style. Generate a new NECK-DOWN ONLY mannequin for the same young-adult average-build body, retaining the reference's body proportions, individual hands, shoes/foot scale, natural organic illustrated cloth and soft restrained shading. No head, face, hair or hats anywhere. No portraits. EXACTLY FOUR equal-width COLUMNS and FOUR equal-height ROWS, 16 isolated figures on true transparent alpha, no text, labels, borders, grid or ground/shadows. Row 1 FRONT/down, row 2 RIGHT PROFILE, row 3 BACK/up, row 4 LEFT PROFILE. The first 4 rows of the attachment are the pose guide, copy the body/arm/leg pose of each corresponding cell EXACTLY, same scale and orientation within each row. Preserve the opposing arm/leg swing, bent knees, distinct front/back legs, connected wrists. Do not copy the fifth portrait row. Mannequin wears a plain fitted neutral cool-gray short-sleeve tee and fitted neutral cool-gray knee-length shorts (recolorable neutral underlayer), with tan #cf9670 neck stump, exposed arms/hands, lower legs, bare feet with anatomically connected toes. Neck stump emerges naturally from shirt, no extra neck segment. No anatomical explicitness. Keep a consistent short friendly young-adult body, NOT realistic long legs. Foot contact baseline, hip height, shoulder positions and hand positions MUST match corresponding reference cell. Do not pose every frame identically. Frame sequence left contact, passing, right contact, opposite passing consistent with reference. Figures centered horizontally in generous uniform transparent gutters; no isolated body parts outside figures. Aim for a portrait 4x4 atlas, detailed raster artwork suitable for extracting transparent layers. No vector shapes, no 3D, no rectangular limb patches. Retain detailed hand-drawn illustrated indie-RPG finish. Output only this single transparent mannequin atlas.",
+  "references": [
+    "review/characters-v2/assets/generated/player-sheet.png"
+  ],
+  "transparent_background": true,
+  "source": "graphics/production/walk/assets/mannequin-v1.png",
+  "status": "Rejected initial pose draft; retained unchanged for provenance."
+}

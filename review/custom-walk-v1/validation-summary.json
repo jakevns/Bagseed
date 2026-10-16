@@ -1,0 +1,16 @@
+{
+  "staticChecks": "passed: approved baseline checksum; 99 script blocks; source/payload consistency",
+  "existingBrowserTests": {
+    "total": 86,
+    "passed": 86,
+    "failed": 0,
+    "durationMs": 934400.1048,
+    "command": "node --test --test-concurrency=1 tests/*.test.cjs"
+  },
+  "npmExecutableAvailable": false,
+  "buildBytes": 104058375,
+  "increaseBytes": 2941816,
+  "visualApproval": "pending",
+  "phonePlaytest": "pending",
+  "pushed": false
+}

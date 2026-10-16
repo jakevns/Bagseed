@@ -1,0 +1,2477 @@
+{
+  "measurements": [
+    {
+      "id": "default",
+      "dir": "down",
+      "frame": 0,
+      "authored": "down/0",
+      "hand": {
+        "x": 36.245,
+        "y": 108.19
+      },
+      "bottom": 142,
+      "opaquePixels": 2804
+    },
+    {
+      "id": "long-skirt",
+      "dir": "down",
+      "frame": 0,
+      "authored": "down/0",
+      "hand": {
+        "x": 38.570139,
+        "y": 108.19
+      },
+      "bottom": 142,
+      "opaquePixels": 2588
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "down",
+      "frame": 0,
+      "authored": "down/0",
+      "hand": {
+        "x": 33.87342875,
+        "y": 108.19
+      },
+      "bottom": 142,
+      "opaquePixels": 3565
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "down",
+      "frame": 0,
+      "authored": "down/0",
+      "hand": {
+        "x": 36.245,
+        "y": 108.19
+      },
+      "bottom": 142,
+      "opaquePixels": 3203
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 0,
+      "authored": null,
+      "hand": {
+        "x": 52.5,
+        "y": 73.375
+      },
+      "bottom": 106,
+      "opaquePixels": 3206
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 0,
+      "authored": null,
+      "hand": {
+        "x": 32.125,
+        "y": 70.125
+      },
+      "bottom": 106,
+      "opaquePixels": 2982
+    },
+    {
+      "id": "default",
+      "dir": "right",
+      "frame": 0,
+      "authored": "right/0",
+      "hand": {
+        "x": 35.933,
+        "y": 110.043
+      },
+      "bottom": 142,
+      "opaquePixels": 2777
+    },
+    {
+      "id": "long-skirt",
+      "dir": "right",
+      "frame": 0,
+      "authored": "right/0",
+      "hand": {
+        "x": 38.319852600000004,
+        "y": 110.043
+      },
+      "bottom": 142,
+      "opaquePixels": 2672
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "right",
+      "frame": 0,
+      "authored": "right/0",
+      "hand": {
+        "x": 33.49848275,
+        "y": 110.043
+      },
+      "bottom": 142,
+      "opaquePixels": 3293
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "right",
+      "frame": 0,
+      "authored": "right/0",
+      "hand": {
+        "x": 35.933,
+        "y": 110.043
+      },
+      "bottom": 142,
+      "opaquePixels": 3077
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 0,
+      "authored": null,
+      "hand": {
+        "x": 41,
+        "y": 69.375
+      },
+      "bottom": 106,
+      "opaquePixels": 3343
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 0,
+      "authored": null,
+      "hand": {
+        "x": 38.125,
+        "y": 71.75
+      },
+      "bottom": 106,
+      "opaquePixels": 3513
+    },
+    {
+      "id": "default",
+      "dir": "up",
+      "frame": 0,
+      "authored": "up/0",
+      "hand": {
+        "x": 31.33,
+        "y": 105.838
+      },
+      "bottom": 142,
+      "opaquePixels": 2802
+    },
+    {
+      "id": "long-skirt",
+      "dir": "up",
+      "frame": 0,
+      "authored": "up/0",
+      "hand": {
+        "x": 34.627326,
+        "y": 105.838
+      },
+      "bottom": 142,
+      "opaquePixels": 2460
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "up",
+      "frame": 0,
+      "authored": "up/0",
+      "hand": {
+        "x": 27.9668275,
+        "y": 105.838
+      },
+      "bottom": 142,
+      "opaquePixels": 3518
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "up",
+      "frame": 0,
+      "authored": "up/0",
+      "hand": {
+        "x": 31.33,
+        "y": 105.838
+      },
+      "bottom": 142,
+      "opaquePixels": 3249
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 0,
+      "authored": null,
+      "hand": {
+        "x": 41.125,
+        "y": 75.25
+      },
+      "bottom": 106,
+      "opaquePixels": 3182
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 0,
+      "authored": null,
+      "hand": {
+        "x": 27.5,
+        "y": 69.125
+      },
+      "bottom": 106,
+      "opaquePixels": 3132
+    },
+    {
+      "id": "default",
+      "dir": "left",
+      "frame": 0,
+      "authored": "left/0",
+      "hand": {
+        "x": 61.322,
+        "y": 108.229
+      },
+      "bottom": 142,
+      "opaquePixels": 2941
+    },
+    {
+      "id": "long-skirt",
+      "dir": "left",
+      "frame": 0,
+      "authored": "left/0",
+      "hand": {
+        "x": 58.6869084,
+        "y": 108.229
+      },
+      "bottom": 142,
+      "opaquePixels": 2669
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "left",
+      "frame": 0,
+      "authored": "left/0",
+      "hand": {
+        "x": 64.0097135,
+        "y": 108.229
+      },
+      "bottom": 142,
+      "opaquePixels": 3606
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "left",
+      "frame": 0,
+      "authored": "left/0",
+      "hand": {
+        "x": 61.322,
+        "y": 108.229
+      },
+      "bottom": 142,
+      "opaquePixels": 3189
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 0,
+      "authored": null,
+      "hand": {
+        "x": 47.375,
+        "y": 74.25
+      },
+      "bottom": 106,
+      "opaquePixels": 3239
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 0,
+      "authored": null,
+      "hand": {
+        "x": 55.625,
+        "y": 72.625
+      },
+      "bottom": 106,
+      "opaquePixels": 3454
+    },
+    {
+      "id": "default",
+      "dir": "down",
+      "frame": 1,
+      "authored": "down/1",
+      "hand": {
+        "x": 34.789,
+        "y": 107.792
+      },
+      "bottom": 142,
+      "opaquePixels": 2740
+    },
+    {
+      "id": "long-skirt",
+      "dir": "down",
+      "frame": 1,
+      "authored": "down/1",
+      "hand": {
+        "x": 37.4021358,
+        "y": 107.792
+      },
+      "bottom": 142,
+      "opaquePixels": 2570
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "down",
+      "frame": 1,
+      "authored": "down/1",
+      "hand": {
+        "x": 32.123680750000005,
+        "y": 107.792
+      },
+      "bottom": 142,
+      "opaquePixels": 3450
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "down",
+      "frame": 1,
+      "authored": "down/1",
+      "hand": {
+        "x": 34.789,
+        "y": 107.792
+      },
+      "bottom": 142,
+      "opaquePixels": 3162
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 1,
+      "authored": null,
+      "hand": {
+        "x": 32.25,
+        "y": 67.5
+      },
+      "bottom": 106,
+      "opaquePixels": 3186
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 1,
+      "authored": null,
+      "hand": {
+        "x": 30.875,
+        "y": 69.125
+      },
+      "bottom": 106,
+      "opaquePixels": 2817
+    },
+    {
+      "id": "default",
+      "dir": "right",
+      "frame": 1,
+      "authored": "right/1",
+      "hand": {
+        "x": 61.143,
+        "y": 106.409
+      },
+      "bottom": 142,
+      "opaquePixels": 2797
+    },
+    {
+      "id": "long-skirt",
+      "dir": "right",
+      "frame": 1,
+      "authored": "right/1",
+      "hand": {
+        "x": 58.5433146,
+        "y": 106.409
+      },
+      "bottom": 142,
+      "opaquePixels": 2606
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "right",
+      "frame": 1,
+      "authored": "right/1",
+      "hand": {
+        "x": 63.79460025,
+        "y": 106.409
+      },
+      "bottom": 142,
+      "opaquePixels": 3531
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "right",
+      "frame": 1,
+      "authored": "right/1",
+      "hand": {
+        "x": 61.143,
+        "y": 106.409
+      },
+      "bottom": 142,
+      "opaquePixels": 2968
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 1,
+      "authored": null,
+      "hand": {
+        "x": 52.75,
+        "y": 68.125
+      },
+      "bottom": 106,
+      "opaquePixels": 3198
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 1,
+      "authored": null,
+      "hand": {
+        "x": 41,
+        "y": 72
+      },
+      "bottom": 106,
+      "opaquePixels": 3401
+    },
+    {
+      "id": "default",
+      "dir": "up",
+      "frame": 1,
+      "authored": "up/1",
+      "hand": {
+        "x": 31.336,
+        "y": 100.932
+      },
+      "bottom": 142,
+      "opaquePixels": 2725
+    },
+    {
+      "id": "long-skirt",
+      "dir": "up",
+      "frame": 1,
+      "authored": "up/1",
+      "hand": {
+        "x": 34.6321392,
+        "y": 100.932
+      },
+      "bottom": 142,
+      "opaquePixels": 2401
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "up",
+      "frame": 1,
+      "authored": "up/1",
+      "hand": {
+        "x": 27.974038,
+        "y": 100.932
+      },
+      "bottom": 142,
+      "opaquePixels": 3331
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "up",
+      "frame": 1,
+      "authored": "up/1",
+      "hand": {
+        "x": 31.336,
+        "y": 100.932
+      },
+      "bottom": 142,
+      "opaquePixels": 3276
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 1,
+      "authored": null,
+      "hand": {
+        "x": 34.625,
+        "y": 62.75
+      },
+      "bottom": 106,
+      "opaquePixels": 3154
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 1,
+      "authored": null,
+      "hand": {
+        "x": 27.875,
+        "y": 69.5
+      },
+      "bottom": 106,
+      "opaquePixels": 3074
+    },
+    {
+      "id": "default",
+      "dir": "left",
+      "frame": 1,
+      "authored": "left/1",
+      "hand": {
+        "x": 33.924,
+        "y": 106.079
+      },
+      "bottom": 142,
+      "opaquePixels": 2959
+    },
+    {
+      "id": "long-skirt",
+      "dir": "left",
+      "frame": 1,
+      "authored": "left/1",
+      "hand": {
+        "x": 36.708232800000005,
+        "y": 106.079
+      },
+      "bottom": 142,
+      "opaquePixels": 2646
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "left",
+      "frame": 1,
+      "authored": "left/1",
+      "hand": {
+        "x": 31.084167,
+        "y": 106.079
+      },
+      "bottom": 142,
+      "opaquePixels": 3548
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "left",
+      "frame": 1,
+      "authored": "left/1",
+      "hand": {
+        "x": 33.924,
+        "y": 106.079
+      },
+      "bottom": 142,
+      "opaquePixels": 3191
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 1,
+      "authored": null,
+      "hand": {
+        "x": 43.625,
+        "y": 68.5
+      },
+      "bottom": 106,
+      "opaquePixels": 3305
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 1,
+      "authored": null,
+      "hand": {
+        "x": 57.375,
+        "y": 71.625
+      },
+      "bottom": 106,
+      "opaquePixels": 3465
+    },
+    {
+      "id": "default",
+      "dir": "down",
+      "frame": 2,
+      "authored": "down/2",
+      "hand": {
+        "x": 62.415,
+        "y": 110.041
+      },
+      "bottom": 142,
+      "opaquePixels": 2764
+    },
+    {
+      "id": "long-skirt",
+      "dir": "down",
+      "frame": 2,
+      "authored": "down/2",
+      "hand": {
+        "x": 59.563713,
+        "y": 110.041
+      },
+      "bottom": 142,
+      "opaquePixels": 2554
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "down",
+      "frame": 2,
+      "authored": "down/2",
+      "hand": {
+        "x": 65.32322625,
+        "y": 110.041
+      },
+      "bottom": 142,
+      "opaquePixels": 3457
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "down",
+      "frame": 2,
+      "authored": "down/2",
+      "hand": {
+        "x": 62.415,
+        "y": 110.041
+      },
+      "bottom": 142,
+      "opaquePixels": 3168
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 2,
+      "authored": null,
+      "hand": {
+        "x": 31.375,
+        "y": 67.75
+      },
+      "bottom": 106,
+      "opaquePixels": 3143
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 2,
+      "authored": null,
+      "hand": {
+        "x": 31.125,
+        "y": 72
+      },
+      "bottom": 106,
+      "opaquePixels": 2932
+    },
+    {
+      "id": "default",
+      "dir": "right",
+      "frame": 2,
+      "authored": "right/2",
+      "hand": {
+        "x": 65.786,
+        "y": 106.849
+      },
+      "bottom": 142,
+      "opaquePixels": 2915
+    },
+    {
+      "id": "long-skirt",
+      "dir": "right",
+      "frame": 2,
+      "authored": "right/2",
+      "hand": {
+        "x": 62.2679292,
+        "y": 106.849
+      },
+      "bottom": 142,
+      "opaquePixels": 2695
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "right",
+      "frame": 2,
+      "authored": "right/2",
+      "hand": {
+        "x": 69.3743255,
+        "y": 106.849
+      },
+      "bottom": 142,
+      "opaquePixels": 3403
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "right",
+      "frame": 2,
+      "authored": "right/2",
+      "hand": {
+        "x": 65.786,
+        "y": 106.849
+      },
+      "bottom": 142,
+      "opaquePixels": 3135
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 2,
+      "authored": null,
+      "hand": {
+        "x": 41.75,
+        "y": 72.125
+      },
+      "bottom": 106,
+      "opaquePixels": 3314
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 2,
+      "authored": null,
+      "hand": {
+        "x": 37.5,
+        "y": 71.5
+      },
+      "bottom": 106,
+      "opaquePixels": 3478
+    },
+    {
+      "id": "default",
+      "dir": "up",
+      "frame": 2,
+      "authored": "up/2",
+      "hand": {
+        "x": 65.962,
+        "y": 107.772
+      },
+      "bottom": 142,
+      "opaquePixels": 2880
+    },
+    {
+      "id": "long-skirt",
+      "dir": "up",
+      "frame": 2,
+      "authored": "up/2",
+      "hand": {
+        "x": 62.4091164,
+        "y": 107.772
+      },
+      "bottom": 142,
+      "opaquePixels": 2492
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "up",
+      "frame": 2,
+      "authored": "up/2",
+      "hand": {
+        "x": 69.5858335,
+        "y": 107.772
+      },
+      "bottom": 142,
+      "opaquePixels": 3531
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "up",
+      "frame": 2,
+      "authored": "up/2",
+      "hand": {
+        "x": 65.962,
+        "y": 107.772
+      },
+      "bottom": 142,
+      "opaquePixels": 3359
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 2,
+      "authored": null,
+      "hand": {
+        "x": 42.375,
+        "y": 71.375
+      },
+      "bottom": 106,
+      "opaquePixels": 3201
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 2,
+      "authored": null,
+      "hand": {
+        "x": 28.25,
+        "y": 71.125
+      },
+      "bottom": 106,
+      "opaquePixels": 3183
+    },
+    {
+      "id": "default",
+      "dir": "left",
+      "frame": 2,
+      "authored": "left/2",
+      "hand": {
+        "x": 30.08,
+        "y": 106.621
+      },
+      "bottom": 142,
+      "opaquePixels": 3125
+    },
+    {
+      "id": "long-skirt",
+      "dir": "left",
+      "frame": 2,
+      "authored": "left/2",
+      "hand": {
+        "x": 33.624576,
+        "y": 106.621
+      },
+      "bottom": 142,
+      "opaquePixels": 2717
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "left",
+      "frame": 2,
+      "authored": "left/2",
+      "hand": {
+        "x": 26.46464,
+        "y": 106.621
+      },
+      "bottom": 142,
+      "opaquePixels": 3680
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "left",
+      "frame": 2,
+      "authored": "left/2",
+      "hand": {
+        "x": 30.08,
+        "y": 106.621
+      },
+      "bottom": 142,
+      "opaquePixels": 3293
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 2,
+      "authored": null,
+      "hand": {
+        "x": 48.125,
+        "y": 70.25
+      },
+      "bottom": 105,
+      "opaquePixels": 3315
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 2,
+      "authored": null,
+      "hand": {
+        "x": 55.375,
+        "y": 73.25
+      },
+      "bottom": 106,
+      "opaquePixels": 3463
+    },
+    {
+      "id": "default",
+      "dir": "down",
+      "frame": 3,
+      "authored": "down/3",
+      "hand": {
+        "x": 64.012,
+        "y": 105.967
+      },
+      "bottom": 142,
+      "opaquePixels": 2722
+    },
+    {
+      "id": "long-skirt",
+      "dir": "down",
+      "frame": 3,
+      "authored": "down/3",
+      "hand": {
+        "x": 60.8448264,
+        "y": 105.967
+      },
+      "bottom": 142,
+      "opaquePixels": 2554
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "down",
+      "frame": 3,
+      "authored": "down/3",
+      "hand": {
+        "x": 67.24242100000001,
+        "y": 105.967
+      },
+      "bottom": 142,
+      "opaquePixels": 3415
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "down",
+      "frame": 3,
+      "authored": "down/3",
+      "hand": {
+        "x": 64.012,
+        "y": 105.967
+      },
+      "bottom": 142,
+      "opaquePixels": 3148
+    },
+    {
+      "id": "remy",
+      "dir": "down",
+      "frame": 3,
+      "authored": null,
+      "hand": {
+        "x": 44.375,
+        "y": 71
+      },
+      "bottom": 106,
+      "opaquePixels": 2991
+    },
+    {
+      "id": "priya",
+      "dir": "down",
+      "frame": 3,
+      "authored": null,
+      "hand": {
+        "x": 29.75,
+        "y": 69.875
+      },
+      "bottom": 106,
+      "opaquePixels": 2869
+    },
+    {
+      "id": "default",
+      "dir": "right",
+      "frame": 3,
+      "authored": "right/3",
+      "hand": {
+        "x": 32.769,
+        "y": 108.689
+      },
+      "bottom": 142,
+      "opaquePixels": 2959
+    },
+    {
+      "id": "long-skirt",
+      "dir": "right",
+      "frame": 3,
+      "authored": "right/3",
+      "hand": {
+        "x": 35.781691800000004,
+        "y": 108.689
+      },
+      "bottom": 142,
+      "opaquePixels": 2732
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "right",
+      "frame": 3,
+      "authored": "right/3",
+      "hand": {
+        "x": 29.69614575,
+        "y": 108.689
+      },
+      "bottom": 142,
+      "opaquePixels": 3540
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "right",
+      "frame": 3,
+      "authored": "right/3",
+      "hand": {
+        "x": 32.769,
+        "y": 108.689
+      },
+      "bottom": 142,
+      "opaquePixels": 3131
+    },
+    {
+      "id": "remy",
+      "dir": "right",
+      "frame": 3,
+      "authored": null,
+      "hand": {
+        "x": 53.625,
+        "y": 65.875
+      },
+      "bottom": 106,
+      "opaquePixels": 3209
+    },
+    {
+      "id": "priya",
+      "dir": "right",
+      "frame": 3,
+      "authored": null,
+      "hand": {
+        "x": 40,
+        "y": 72
+      },
+      "bottom": 106,
+      "opaquePixels": 3454
+    },
+    {
+      "id": "default",
+      "dir": "up",
+      "frame": 3,
+      "authored": "up/3",
+      "hand": {
+        "x": 65.588,
+        "y": 107.296
+      },
+      "bottom": 142,
+      "opaquePixels": 2879
+    },
+    {
+      "id": "long-skirt",
+      "dir": "up",
+      "frame": 3,
+      "authored": "up/3",
+      "hand": {
+        "x": 62.109093599999994,
+        "y": 107.296
+      },
+      "bottom": 142,
+      "opaquePixels": 2509
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "up",
+      "frame": 3,
+      "authored": "up/3",
+      "hand": {
+        "x": 69.13637899999999,
+        "y": 107.296
+      },
+      "bottom": 142,
+      "opaquePixels": 3597
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "up",
+      "frame": 3,
+      "authored": "up/3",
+      "hand": {
+        "x": 65.588,
+        "y": 107.296
+      },
+      "bottom": 142,
+      "opaquePixels": 3335
+    },
+    {
+      "id": "remy",
+      "dir": "up",
+      "frame": 3,
+      "authored": null,
+      "hand": {
+        "x": 41.5,
+        "y": 79.25
+      },
+      "bottom": 106,
+      "opaquePixels": 3276
+    },
+    {
+      "id": "priya",
+      "dir": "up",
+      "frame": 3,
+      "authored": null,
+      "hand": {
+        "x": 28.75,
+        "y": 70
+      },
+      "bottom": 106,
+      "opaquePixels": 2964
+    },
+    {
+      "id": "default",
+      "dir": "left",
+      "frame": 3,
+      "authored": "left/3",
+      "hand": {
+        "x": 61.768,
+        "y": 107.929
+      },
+      "bottom": 142,
+      "opaquePixels": 2992
+    },
+    {
+      "id": "long-skirt",
+      "dir": "left",
+      "frame": 3,
+      "authored": "left/3",
+      "hand": {
+        "x": 59.0446896,
+        "y": 107.929
+      },
+      "bottom": 142,
+      "opaquePixels": 2689
+    },
+    {
+      "id": "pony-overalls",
+      "dir": "left",
+      "frame": 3,
+      "authored": "left/3",
+      "hand": {
+        "x": 64.545694,
+        "y": 107.929
+      },
+      "bottom": 142,
+      "opaquePixels": 3526
+    },
+    {
+      "id": "hat-plaid",
+      "dir": "left",
+      "frame": 3,
+      "authored": "left/3",
+      "hand": {
+        "x": 61.768,
+        "y": 107.929
+      },
+      "bottom": 142,
+      "opaquePixels": 3218
+    },
+    {
+      "id": "remy",
+      "dir": "left",
+      "frame": 3,
+      "authored": null,
+      "hand": {
+        "x": 40.625,
+        "y": 66.25
+      },
+      "bottom": 105,
+      "opaquePixels": 3156
+    },
+    {
+      "id": "priya",
+      "dir": "left",
+      "frame": 3,
+      "authored": null,
+      "hand": {
+        "x": 56,
+        "y": 72
+      },
+      "bottom": 106,
+      "opaquePixels": 3435
+    }
+  ],
+  "errors": [],
+  "looks": [
+    {
+      "id": "default",
+      "name": "Default · hoodie",
+      "look": {
+        "skin": "#cf9670",
+        "hairC": "#4a2c1a",
+        "hairS": "short",
+        "facial": "none",
+        "shirtC": "#5f9c33",
+        "topS": "hoodie",
+        "pantsC": "#36405a",
+        "bottomS": "jeans",
+        "shoesC": "#2b1d14",
+        "shoesS": "sneakers",
+        "glasses": "none",
+        "hat": "none",
+        "acc": "none",
+        "pres": "neutral",
+        "body": "average",
+        "eyeC": "#2b1d14",
+        "eyes": "dot",
+        "brows": "thin",
+        "face": "soft",
+        "extras": []
+      }
+    },
+    {
+      "id": "long-skirt",
+      "name": "Slim · flannel/skirt",
+      "look": {
+        "skin": "#6b3f2e",
+        "hairC": "#d5b66a",
+        "hairS": "long",
+        "facial": "none",
+        "shirtC": "#945b8a",
+        "topS": "flannel",
+        "pantsC": "#678d69",
+        "bottomS": "skirt",
+        "shoesC": "#2b1d14",
+        "shoesS": "sandals",
+        "glasses": "none",
+        "hat": "none",
+        "acc": "necklace",
+        "pres": "fem",
+        "body": "slim",
+        "eyeC": "#2b1d14",
+        "eyes": "dot",
+        "brows": "thin",
+        "face": "oval",
+        "extras": []
+      }
+    },
+    {
+      "id": "pony-overalls",
+      "name": "Broad · overalls",
+      "look": {
+        "skin": "#e3b7a0",
+        "hairC": "#a95238",
+        "hairS": "ponytail",
+        "facial": "none",
+        "shirtC": "#528eb0",
+        "topS": "overalls",
+        "pantsC": "#36405a",
+        "bottomS": "jeans",
+        "shoesC": "#2b1d14",
+        "shoesS": "sneakers",
+        "glasses": "none",
+        "hat": "none",
+        "acc": "bag",
+        "pres": "masc",
+        "body": "broad",
+        "eyeC": "#2b1d14",
+        "eyes": "dot",
+        "brows": "thin",
+        "face": "square",
+        "extras": []
+      }
+    },
+    {
+      "id": "hat-plaid",
+      "name": "Hat · patterned tee",
+      "look": {
+        "skin": "#b87950",
+        "hairC": "#dfdfdb",
+        "hairS": "bun",
+        "facial": "none",
+        "shirtC": "#8d6950",
+        "topS": "tee",
+        "pantsC": "#36405a",
+        "bottomS": "jeans",
+        "shoesC": "#2b1d14",
+        "shoesS": "sandals",
+        "glasses": "none",
+        "hat": "cap",
+        "acc": "belt",
+        "pres": "neutral",
+        "body": "average",
+        "eyeC": "#2b1d14",
+        "eyes": "dot",
+        "brows": "thin",
+        "face": "soft",
+        "extras": [],
+        "topPat": "plaid",
+        "topC2": "#e0bda0",
+        "hatC": "#687d9e"
+      }
+    },
+    {
+      "id": "remy",
+      "name": "Remy · approved",
+      "look": {
+        "skin": "#cf9670",
+        "hairC": "#3e2a1e",
+        "hairS": "curly",
+        "topS": "tee",
+        "shirtC": "#e0a33a",
+        "pantsC": "#3a3a44",
+        "bottomS": "shorts",
+        "body": "average",
+        "pres": "neutral",
+        "face": "soft",
+        "eyes": "round",
+        "brows": "thick",
+        "glasses": "square",
+        "bg": "#f2e6cc",
+        "shoesS": "sandals"
+      }
+    },
+    {
+      "id": "priya",
+      "name": "Priya · approved",
+      "look": {
+        "skin": "#a8704c",
+        "hairC": "#1d1612",
+        "hairS": "ponytail",
+        "topS": "hoodie",
+        "shirtC": "#3f7fbf",
+        "pantsC": "#2b2b33",
+        "bottomS": "joggers",
+        "body": "slim",
+        "pres": "fem",
+        "face": "soft",
+        "eyes": "round",
+        "brows": "arched",
+        "shoesS": "sneakers",
+        "shoesC": "#e9e2d4",
+        "bg": "#dfe9f2"
+      }
+    }
+  ],
+  "revision": "custom-walk-phase-1",
+  "creator": {
+    "animated": true
+  },
+  "interaction": {
+    "mirror": {
+      "animated": true,
+      "stopped": true
+    },
+    "builds": [
+      {
+        "body": "slim",
+        "dir": "down",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "down",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "down",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "down",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "right",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "right",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "right",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "right",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "up",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "up",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "up",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "up",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "left",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "left",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "left",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "slim",
+        "dir": "left",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "down",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "down",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "down",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "down",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "right",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "right",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "right",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "right",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "up",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "up",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "up",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "up",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "left",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "left",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "left",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "average",
+        "dir": "left",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "down",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "down",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "down",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "down",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "right",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "right",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "right",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "right",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "up",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "up",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "up",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "up",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "left",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "left",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "left",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "broad",
+        "dir": "left",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "down",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "down",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "down",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "down",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "right",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "right",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "right",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "right",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "up",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "up",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "up",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "up",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "left",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "left",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "left",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "curvy",
+        "dir": "left",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "down",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "down",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "down",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "down",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "right",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "right",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "right",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "right",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "up",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "up",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "up",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "up",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "left",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "left",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "left",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "stocky",
+        "dir": "left",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "down",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "down",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "down",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "down",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "right",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "right",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "right",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "right",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "up",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "up",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "up",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "up",
+        "frame": 3,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "left",
+        "frame": 0,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "left",
+        "frame": 1,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "left",
+        "frame": 2,
+        "bottom": 142
+      },
+      {
+        "body": "tall",
+        "dir": "left",
+        "frame": 3,
+        "bottom": 142
+      }
+    ],
+    "hands": [
+      {
+        "body": "slim",
+        "dir": "down",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "down",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "down",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "down",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "right",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "right",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "right",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "right",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "up",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "up",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "up",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "up",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "left",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "left",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "left",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "slim",
+        "dir": "left",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "down",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "down",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "down",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "down",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "right",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "right",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "right",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "right",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "up",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "up",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "up",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "up",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "left",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "left",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "left",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "average",
+        "dir": "left",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "down",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "down",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "down",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "down",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "right",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "right",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "right",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "right",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "up",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "up",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "up",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "up",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "left",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "left",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "left",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "broad",
+        "dir": "left",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "down",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "down",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "down",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "down",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "right",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "right",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "right",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "right",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "up",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "up",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "up",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "up",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "left",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "left",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "left",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "curvy",
+        "dir": "left",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "down",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "down",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "down",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "down",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "right",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "right",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "right",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "right",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "up",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "up",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "up",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "up",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "left",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "left",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "left",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "stocky",
+        "dir": "left",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "down",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "down",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "down",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "down",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "right",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "right",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "right",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "right",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "up",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "up",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "up",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "up",
+        "frame": 3,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "left",
+        "frame": 0,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "left",
+        "frame": 1,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "left",
+        "frame": 2,
+        "error": 0
+      },
+      {
+        "body": "tall",
+        "dir": "left",
+        "frame": 3,
+        "error": 0
+      }
+    ],
+    "sandalToeSkinVariants": 16,
+    "storage": "disposable new browser context only"
+  },
+  "browserErrors": []
+}
