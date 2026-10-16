@@ -2,6 +2,9 @@
 (()=>{
   'use strict';
   const DATA=__BAGSEED_LOADING_SCENE__,canvas=document.getElementById('bagseed-loading-room'),ctx=canvas.getContext('2d'),overlay=document.getElementById('bagseed-loading');
+  // Keep the outdoor view centered in mobile crops at every hour and on resize.
+  const [windowX,,windowWidth]=DATA.outside.destination;
+  canvas.style.setProperty('--bagseed-loading-window-center',((windowX+windowWidth/2)/DATA.coordinateSize[0]*100)+'%');
   const media=matchMedia('(prefers-reduced-motion: reduce)');
   let loaded=false,paused=false,lastFrame=-Infinity;
   function savedTier(){for(const key of ['bagseed.save.v1','bagseed.save.v1.backup'])try{const s=JSON.parse(localStorage.getItem(key));const t=s?.player?s.gear?.storage:null;if(Number.isInteger(t)&&t>=0&&t<=2)return t;}catch{}return 0;}
@@ -24,8 +27,6 @@
     ctx.save();ctx.filter='blur(7px)';ctx.fillStyle=`rgba(255,228,156,${(1-n)*.22})`;for(let r=0;r<2;r++)for(let c=0;c<2;c++){const px=1030+c*120+r*60,py=450+r*100;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+100,py);ctx.lineTo(px+275,py+78);ctx.lineTo(px+175,py+78);ctx.closePath();ctx.fill();}ctx.restore();
     outdoor(n,reduced?0:cloudSeconds);
     glow(754,257,120,90,'rgba(142,216,158,',n*.19);patch(DATA.monitor,n*.9);glow(...DATA.growLight,160,200,'rgba(184,128,232,',n*.2);
-    // Sweep the same wide room on portrait phones instead of shrinking it.
-    if(matchMedia('(max-width:600px) and (orientation:portrait)').matches){const excess=Math.max(0,canvas.getBoundingClientRect().width-canvas.parentElement.clientWidth),pan=reduced?.5:(1-Math.cos(phase*2*Math.PI))/2;canvas.style.left=(-excess*pan)+'px';}else canvas.style.left='';
   }
   function tick(time){if(paused||['ready','error'].includes(window.BagseedStartup?.status))return;if(time-lastFrame>=1000/24){render(time/1000);lastFrame=time;}requestAnimationFrame(tick);}
   const ready=Promise.all([load(DATA.roomURL),load(DATA.storageURL),load(DATA.outsideURL),load(DATA.cloudURL)]).then(images=>{[room,storage]=images;painter=createWindowScenery(DATA.outside,images[2],images[3]);loaded=true;render(0);requestAnimationFrame(tick);});ready.catch(()=>{});

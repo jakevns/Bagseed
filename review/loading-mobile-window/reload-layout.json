@@ -1,0 +1,37 @@
+{
+  "layouts": [
+    {
+      "width": 390,
+      "height": 844,
+      "reloadVisible": true,
+      "reloadFits": true,
+      "windowCentered": true,
+      "cameraFixed": true
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "reloadVisible": true,
+      "reloadFits": true,
+      "windowCentered": true,
+      "cameraFixed": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "reloadVisible": true,
+      "reloadFits": true,
+      "windowCentered": true,
+      "cameraFixed": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "reloadVisible": true,
+      "reloadFits": true,
+      "windowCentered": true,
+      "cameraFixed": true
+    }
+  ],
+  "pageErrors": []
+}

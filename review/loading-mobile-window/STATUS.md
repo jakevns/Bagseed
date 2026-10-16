@@ -1,0 +1,13 @@
+# Mobile loading camera — approved for publication
+
+User request: keep the loading screen focused on the window on mobile and remove the camera sweep while time changes.
+
+The mobile canvas now stays centered on the painted window. Its focal point is derived from the existing window coordinates; CSS keeps that point centered in portrait and short landscape layouts. The day/sunset/twilight/night cycle and clouds still animate, and the reduced-motion view uses the same framing. Normal desktop layouts retain their full-room panorama. The live gameplay window is unchanged.
+
+Previews: phone-day.png, phone-sunset.png, phone-night.png, and fixed-window.gif. Captured from the early loading shell of public/index.html while the rest of the game download was deliberately held.
+
+Validation: npm run check passed. The loading integration test passed, checking centered and unchanged camera bounds at 0/3/6/9/12 seconds on 390×844, 375×667, 320×568, and 844×390 layouts. It also checked animated lighting/clouds, seamless cycle, reduced motion, readiness/input gating, error/reload recovery, and saved-game Continue. See report.json.
+
+The user approved pushing and merging this framing change on 2026-10-16. Origin/main was fetched and the approved artifact passed npm run check before publication.
+
+Merge validation: preserved the newer grow-tent garden-planting update from origin/main (d83551e). Rebuilt the generated game from that source plus the approved camera change. Grow-pot gardening, loading readiness/error/reload/save behavior, and a targeted slow-download layout check all passed. On the smallest phones, the room can shrink slightly to keep Reload within the viewport while the window stays centered.

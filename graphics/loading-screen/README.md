@@ -13,3 +13,5 @@ Outdoor atlas original: /workspace/generated_images/exec-72300ccb-dae2-4885-bb56
 sources/scene.js animates light over the fixed room painting; sources/controller.js guards startup. The compiler validates artwork hashes and embeds all four compressed assets early in index.html, before game scripts. Runtime waits for image readiness, not a minimum loop duration. The only compiled game-loop change holds its first frame until all art promises settle successfully.
 
 Rebuild: npm run build:bedroom. Verify: npm run check and node --test --test-concurrency=1 tests/loading-screen.test.cjs tests/main-menu.test.cjs tests/bedroom.test.cjs. Review previews and validation reports are in review/loading-screen.
+
+Mobile framing update (approved on 2026-10-16): portrait phones and short landscape layouts now stay centered on the window throughout the day/night cycle. The camera no longer sweeps across the room. Normal desktop layouts retain the full panorama. CSS handles orientation/size changes, and reduced motion uses the same framing.
