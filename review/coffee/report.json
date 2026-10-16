@@ -1,5 +1,5 @@
 {
-  "proposalOnly": true,
+  "proposalOnly": false,
   "entryPoint": "public/index.html",
   "computerCameraCombinations": 9,
   "artOutsideCoffeeUnchanged": true,
@@ -13,7 +13,7 @@
   "liveMotion": {
     "realGameLoop": true,
     "nativeResolution": true,
-    "movingFrames": 22,
+    "movingFrames": 19,
     "reducedMotionStill": true
   },
   "phoneGame": true,

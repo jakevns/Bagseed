@@ -1,0 +1,42 @@
+{
+  "approval": "User requested publication: can you please sent it",
+  "entryPoint": "public/index.html",
+  "build": "npm run build:bedroom",
+  "integrity": {
+    "command": "npm run check",
+    "passed": true,
+    "scriptBlocks": 93,
+    "characterRevision": "customization-9"
+  },
+  "coffeeChecks": {
+    "proposalOnly": false,
+    "entryPoint": "public/index.html",
+    "computerCameraCombinations": 9,
+    "artOutsideCoffeeUnchanged": true,
+    "hitboxesUnchanged": true,
+    "catalogUnchanged": true,
+    "steamAnimatedAtNativeResolution": true,
+    "seamlessFourSecondLoop": true,
+    "reducedMotion": true,
+    "consumedMugAndSteamHidden": true,
+    "nextDayReturns": true,
+    "liveMotion": {
+      "realGameLoop": true,
+      "nativeResolution": true,
+      "movingFrames": 19,
+      "reducedMotionStill": true
+    },
+    "phoneGame": true,
+    "actualDrinkInteraction": true,
+    "consumptionSaveReload": true,
+    "errors": []
+  },
+  "priorArtModulesPreserved": 14,
+  "intentionallyChangedModule": "bagseed-computer-desks-production-code",
+  "focusedTests": {
+    "command": "node --test --test-concurrency=1 tests/bedroom.test.cjs tests/cameras.test.cjs tests/computer-desks.test.cjs tests/desk-tabletop-placement.test.cjs",
+    "passed": 4,
+    "failed": 0
+  },
+  "nextArtwork": "Bedroom grow tents and purchasable shell variants; artwork approval required before publication"
+}
