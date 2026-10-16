@@ -10,7 +10,7 @@ function bedroomScript() {
   const code = fs.readFileSync(path.join(root, 'graphics/bedroom/sources/renderer.js'), 'utf8')
     .replace('__BAGSEED_BEDROOM_IMAGE__', () => JSON.stringify('data:image/png;base64,' + art.toString('base64')));
   new (require('node:vm').Script)(code);
-  return `<script id="${marker}">\n${code}\n</script>\n${require('./compile-beds.cjs')()}${require('./compile-desks.cjs')()}${require('./compile-curtains.cjs')()}${require('./compile-curtains.cjs')('02')}${require('./compile-curtains.cjs')('03')}${require('./compile-computer-desks.cjs')()}${require('./compile-computer-equipment.cjs')()}${require('./compile-cameras.cjs')()}${require('./compile-chairs.cjs')()}${require('./compile-coffee.cjs')()}${require('./compile-under-desk-storage.cjs')()}`;
+  return `<script id="${marker}">\n${code}\n</script>\n${require('./compile-beds.cjs')()}${require('./compile-desks.cjs')()}${require('./compile-curtains.cjs')()}${require('./compile-curtains.cjs')('02')}${require('./compile-curtains.cjs')('03')}${require('./compile-computer-desks.cjs')()}${require('./compile-computer-equipment.cjs')()}${require('./compile-cameras.cjs')()}${require('./compile-chairs.cjs')()}${require('./compile-coffee.cjs')()}${require('./compile-under-desk-storage.cjs')()}${require('./compile-bedroom-window.cjs')()}`;
 }
 module.exports = bedroomScript;
 if (require.main === module) {
@@ -35,6 +35,7 @@ if (require.main === module) {
   Object.assign(report, { coffeeRevision: 'coffee-1', coffeeSteamPeriod: 4 });
   Object.assign(report, { underDeskStorageRevision: 'under-desk-storage-1', storageTiers: 3, supplyBoxes: 1 });
   Object.assign(report, { loadingRevision: 'loading-bedroom-3' });
+  Object.assign(report, { bedroomWindowRevision: 'bedroom-window-1', outdoorArtSharedWithLoading: true });
   fs.writeFileSync(reportPath + '.tmp', JSON.stringify(report, null, 2) + '\n'); fs.renameSync(reportPath + '.tmp', reportPath);
   console.log('Rebuilt approved main menu, bedroom, beds, desks and curtains; verified character payload retained unchanged.');
 }

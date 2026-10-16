@@ -1,0 +1,40 @@
+{
+  "timeSamples": [
+    1,
+    0.85,
+    0.5,
+    0,
+    0,
+    0,
+    0.5,
+    0.85,
+    1,
+    1
+  ],
+  "gameClock": true,
+  "cloudMotion": true,
+  "reducedMotion": true,
+  "neighborVisiblePixels": 10734,
+  "foregroundOcclusion": true,
+  "walkersFilteredBySceneAndRoute": true,
+  "doug": true,
+  "cat": true,
+  "tomatoGift": true,
+  "weatherVariants": 9,
+  "curtains": [
+    "basic",
+    "none",
+    "blackout",
+    "floral",
+    "sheer",
+    "pattern",
+    "blinds"
+  ],
+  "nativeSchedule": true,
+  "entryPoint": "public/index.html",
+  "sharedApprovedArtwork": true,
+  "windowActions": true,
+  "saveReload": true,
+  "mobile": true,
+  "pageErrors": []
+}

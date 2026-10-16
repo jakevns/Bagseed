@@ -95,25 +95,48 @@ html[data-bagseed-loading] body > :not(#bagseed-loading):not(script):not(style):
   function savedTier(){for(const key of ['bagseed.save.v1','bagseed.save.v1.backup'])try{const s=JSON.parse(localStorage.getItem(key));const t=s?.player?s.gear?.storage:null;if(Number.isInteger(t)&&t>=0&&t<=2)return t;}catch{}return 0;}
   const storageTier=savedTier();
   function load(url){return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(Error('Loading room artwork could not be decoded'));im.src=url;});}
-  let room,storage,outside,clouds;
-  const glass=new Path2D();DATA.outside.glassPaths.forEach(p=>glass.addPath(new Path2D(p)));
-  const sky=new Path2D(DATA.outside.skyPath);
-  function cloudPalette(image){return [null,'#efb69e','#87859d','#61718d'].map(tint=>{const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const g=c.getContext('2d');g.drawImage(image,0,0);if(tint){g.globalCompositeOperation='source-atop';g.globalAlpha=.78;g.fillStyle=tint;g.fillRect(0,0,c.width,c.height);}return c;});}
+  /* Shared painter: the loading room and live bedroom use the same decoded art. */
+function createWindowScenery(DATA,outside,cloudImage){
+  const sky=new Path2D(DATA.skyPath),foreground=new Path2D();
   const smooth=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x);};
-  function outdoor(n,cloudTime){
-    // Every state is complete painted scenery, clipped to the actual glass contour.
-    // Opaque base + a single crossfade keeps the room from leaking through.
-    const stops=[0,.5,.85,1];let index=0;while(index<2&&n>stops[index+1])index++;
-    const blend=smooth((n-stops[index])/(stops[index+1]-stops[index]));
-    ctx.save();ctx.clip(glass);ctx.drawImage(outside,...DATA.outside.tiles[index],...DATA.outside.destination);
-    ctx.globalAlpha=blend;ctx.drawImage(outside,...DATA.outside.tiles[index+1],...DATA.outside.destination);ctx.globalAlpha=1;
-    const [x,y,w,h]=DATA.outside.destination;ctx.translate(x,y);ctx.scale(w/768,h/512);ctx.clip(sky);
+  const clouds=[null,'#efb69e','#87859d','#61718d'].map(tint=>{
+    const c=document.createElement('canvas');c.width=cloudImage.width;c.height=cloudImage.height;
+    const g=c.getContext('2d');g.drawImage(cloudImage,0,0);
+    if(tint){g.globalCompositeOperation='source-atop';g.globalAlpha=.78;g.fillStyle=tint;g.fillRect(0,0,c.width,c.height);}return c;
+  });
+  // Trace only the near pickets, rails and shrubs. Gaps stay open to actors.
+  foreground.addPath(new Path2D('M0 338 L24 330 L42 345 L67 341 L88 366 L125 365 L139 385 L177 381 L196 400 L230 404 L250 427 L304 421 L320 447 L323 512 L0 512 Z'));
+  foreground.addPath(new Path2D('M768 310 L768 512 L504 512 L528 473 L537 443 L569 428 L578 403 L608 397 L628 374 L654 379 L676 354 L701 359 L725 335 L744 326 Z'));
+  foreground.rect(0,344,768,13);foreground.rect(0,384,768,12);
+  // The near garden lies in front of the walking lane, hiding feet below the
+  // fence while the upper gaps still reveal the neighbors behind its pickets.
+  foreground.rect(0,376,768,136);
+  for(let x=27;x<790;x+=53.3)foreground.addPath(new Path2D(`M${x} 307 L${x+14} 321 L${x+14} 404 L${x-14} 404 L${x-14} 321 Z`));
+  function weights(n){const stops=[0,.5,.85,1];let index=0;while(index<2&&n>stops[index+1])index++;return [index,smooth((n-stops[index])/(stops[index+1]-stops[index]))];}
+  function tiles(c,dest,n){const [index,blend]=weights(n),alpha=c.globalAlpha;c.drawImage(outside,...DATA.tiles[index],...dest);c.globalAlpha=alpha*blend;c.drawImage(outside,...DATA.tiles[index+1],...dest);c.globalAlpha=alpha;return [index,blend];}
+  function drawBackground(c,dest,n,cloudTime){
+    c.save();const [x,y,w,h]=dest;c.beginPath();c.rect(x,y,w,h);c.clip();
+    const [index,blend]=tiles(c,dest,n),alpha=c.globalAlpha;c.translate(x,y);c.scale(w/768,h/512);c.clip(sky);
     for(let i=0;i<2;i++){
       const width=i?250:350,height=width*clouds[0].height/clouds[0].width,offset=((cloudTime/3+i*.53)%1+1)%1,px=-width+offset*(768+width),py=i?55:4;
-      ctx.globalAlpha=.72*(1-blend);ctx.drawImage(clouds[index],px,py,width,height);ctx.globalAlpha=.72*blend;ctx.drawImage(clouds[index+1],px,py,width,height);
-    }
-    ctx.restore();
+      c.globalAlpha=alpha*.72*(1-blend);c.drawImage(clouds[index],px,py,width,height);c.globalAlpha=alpha*.72*blend;c.drawImage(clouds[index+1],px,py,width,height);
+    }c.restore();
   }
+  function drawForeground(c,dest,n){
+    c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';const [x,y,w,h]=dest;
+    c.translate(x,y);c.scale(w/768,h/512);c.clip(foreground);tiles(c,[0,0,768,512],n);c.restore();
+  }
+  function timeOfDay(hour){
+    hour=((hour%24)+24)%24;
+    const keys=[[0,1],[5,1],[5.75,.85],[6.5,.5],[8,0],[17,0],[18.75,.5],[20,.85],[21,1],[24,1]];
+    for(let i=1;i<keys.length;i++)if(hour<=keys[i][0]){const [a,n]=keys[i-1],[b,m]=keys[i];return n+(m-n)*(hour-a)/(b-a);}return 1;
+  }
+  return Object.freeze({drawBackground,drawForeground,timeOfDay});
+}
+
+  let room,storage,painter;
+  const glass=new Path2D();DATA.outside.glassPaths.forEach(p=>glass.addPath(new Path2D(p)));
+  function outdoor(n,cloudTime){ctx.save();ctx.clip(glass);painter.drawBackground(ctx,DATA.outside.destination,n,cloudTime);ctx.restore();}
   function sprite(name,x,y,w,h){const a=DATA.storage.assets[name],[sx,sy,sw,sh]=a.rect,scale=Math.min(w/sw,h/sh),dw=sw*scale,dh=sh*scale;ctx.drawImage(storage,sx,sy,sw,sh,x+(w-dw)/2,y+h-dh,dw,dh);}
   function glow(x,y,rx,ry,color,opacity){ctx.save();ctx.translate(x,y);ctx.scale(rx,ry);const g=ctx.createRadialGradient(0,0,0,0,0,1);g.addColorStop(0,color+opacity+')');g.addColorStop(1,color+'0)');ctx.fillStyle=g;ctx.fillRect(-1,-1,2,2);ctx.restore();}
   function patch(rect,alpha){const [x,y,w,h]=rect;ctx.save();ctx.globalAlpha=alpha;ctx.drawImage(room,x*room.width/2048,y*room.height/768,w*room.width/2048,h*room.height/768,x,y,w,h);ctx.restore();}
@@ -131,7 +154,9 @@ html[data-bagseed-loading] body > :not(#bagseed-loading):not(script):not(style):
     if(matchMedia('(max-width:600px) and (orientation:portrait)').matches){const excess=Math.max(0,canvas.getBoundingClientRect().width-canvas.parentElement.clientWidth),pan=reduced?.5:(1-Math.cos(phase*2*Math.PI))/2;canvas.style.left=(-excess*pan)+'px';}else canvas.style.left='';
   }
   function tick(time){if(paused||['ready','error'].includes(window.BagseedStartup?.status))return;if(time-lastFrame>=1000/24){render(time/1000);lastFrame=time;}requestAnimationFrame(tick);}
-  const ready=Promise.all([load(DATA.roomURL),load(DATA.storageURL),load(DATA.outsideURL),load(DATA.cloudURL)]).then(images=>{[room,storage,outside]=images;clouds=cloudPalette(images[3]);loaded=true;render(0);requestAnimationFrame(tick);});ready.catch(()=>{});
+  const ready=Promise.all([load(DATA.roomURL),load(DATA.storageURL),load(DATA.outsideURL),load(DATA.cloudURL)]).then(images=>{[room,storage]=images;painter=createWindowScenery(DATA.outside,images[2],images[3]);loaded=true;render(0);requestAnimationFrame(tick);});ready.catch(()=>{});
+  // One decoded atlas/cloud pair serves both startup and live gameplay.
+  window.BagseedWindowScenery=Object.freeze({ready,get loaded(){return loaded;},drawBackground(...args){return painter.drawBackground(...args);},drawForeground(...args){return painter.drawForeground(...args);},timeOfDay(hour){return painter.timeOfDay(hour);}});
   window.BagseedLoadingScene=Object.freeze({revision:DATA.revision,ready,render,storageTier,get loaded(){return loaded;},pause(){paused=true;},resume(){if(paused){paused=false;requestAnimationFrame(tick);}}});
 })();
 
@@ -28390,6 +28415,35 @@ function faceDetails(c,L,dir,features=null){
   };
   const ready=new Promise((resolve,reject)=>{atlas.onload=()=>{loaded=true;if(screen==='game'){hydrate(document);View.snap();}resolve({storageTiers:3,supplyBoxes:1});};atlas.onerror=()=>reject(Error('Under-desk storage artwork failed to load'));atlas.src=DATA.image;});
   window.BagseedUnderDeskStorage=Object.freeze({revision:DATA.revision,ready,drawSupplyBox,get loaded(){return loaded;}});ready.catch(e=>console.error(e));
+})();
+
+</script>
+<script id="bagseed-bedroom-window-production-code">
+/* Approved outdoor paintings, native neighbor schedules and glass/sill effects. */
+(()=>{
+  'use strict';
+  const previous=HouseWing115c.yard,walkers=Hood.drawWindowWalkers;
+  let loaded=false;
+  function yard(c,x,y,w,h,t){
+    if(!loaded)return previous.call(this,c,x,y,w,h,t);
+    const art=BagseedWindowScenery,n=art.timeOfDay(state.minute/60),dest=[x,y,w,h];
+    const motion=settings.reduced?0:t,cloudSpeed=state.weather==='Windy'?.3:state.weather==='Storm'?.35:.15;
+    c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.beginPath();c.rect(x,y,w,h);c.clip();art.drawBackground(c,dest,n,motion*cloudSpeed);
+    // The watering neighbor and scheduled passers-by stand behind the near fence.
+    if(Neighbor.inYard())drawTinyPerson(c,x+10+Math.round(Math.sin(motion*.4)*3),y+h*.76,lookFor('doug'),settings.reduced?0:Math.floor(t*2),'can');
+    walkers.call(Hood,c,x,y,w,h*.87,t);
+    art.drawForeground(c,dest,n);
+    // Keep storm/cloud cover consistent across scenery and people. Native rain,
+    // frost, fog, heat shimmer, frame, curtains, tomato gift and cat draw afterward.
+    const cover={Cloudy:.18,Rain:.25,Storm:.4,Muggy:.12}[state.weather]||0;
+    if(cover){c.fillStyle=`rgba(98,116,137,${cover})`;c.fillRect(x,y,w,h);}
+    if(state.weather==='Heat Wave'||state.weather==='Dry Spell'){c.fillStyle=state.weather==='Heat Wave'?'rgba(221,151,65,.12)':'rgba(185,151,83,.12)';c.fillRect(x,y,w,h);}
+    if(state.weather==='Cold Snap'){const snow=c.createLinearGradient(0,y+h*.65,0,y+h);snow.addColorStop(0,'#e8eff400');snow.addColorStop(1,'#e8eff466');c.fillStyle=snow;c.fillRect(x,y,w,h);}
+    c.restore();
+  }
+  HouseWing115c.yard=yard;
+  const ready=BagseedWindowScenery.ready.then(()=>{loaded=true;});ready.catch(error=>console.error(error));
+  window.BagseedBedroomWindow=Object.freeze({revision:'bedroom-window-1',ready,get loaded(){return loaded;}});
 })();
 
 </script>
