@@ -13,6 +13,7 @@ Evidence images are in `docs/graphics/character-audit/`:
 
 | File | Shows |
 |---|---|
+| `style-tiers.png` | Reference style vs. off-style vs. drifted characters, at native size. |
 | `worst-offenders-zoom.png` | Marcus, Mateo, Nico, Jun, Hugo, Theo and Marisol. Columns: idle front, walk side, nose front, nose side. |
 | `all-characters-idle-walk-nose.png` | Every character in the same four columns. Red line = adult head height. |
 | `prop-stripped-fallbacks.png` | Each character, plus (right) how it renders after its `prop` is removed. Only Doug, Inés, Bev, Owen, Officer and Rosalind (knit) change. |
@@ -21,11 +22,62 @@ Evidence images are in `docs/graphics/character-audit/`:
 
 ## Summary
 
-Idle and walking art for all NPCs is consistent: same style, same anchor and correct heights. All in-world draws use scale 1. The problems come from three places:
+All in-world draws use scale 1, and idle and walk heights are consistent. The problems come from four places:
+
+0. **Art style drift (the core of the Marcus critique).** 15 characters, mostly the broad and stocky adult men, are drawn in a semi-realistic style: small heads, blocky muscular torsos, dot eyes and textured beards. They look like they belong to a different game than the approved Remy, Priya and Doug. 6 more have drifted part of the way. See "Art style" below.
 
 1. **Missing or bad "holding nose" pose art (biggest problem).** 20 characters never got an authored smell-reaction pose. 2 more got bad ones. When the smell mechanic triggers, these characters switch to the procedural `generic()` renderer, which draws a chibi big-head, small-body figure in another style, often with a different hairstyle or outfit. Several authored poses are also scaled wrong. **This is the "Marcus is big" problem:** his nose pose is drawn noticeably bulkier and wider than his idle sprite (see the zoom image).
 2. **Prop-stripping breaks the authored-art lookup.** The renderer matches characters by exact look, *including `prop`*. Any game code that sets `prop: null` or `undefined` makes the lookup miss, and the NPC is drawn by the procedural renderer instead. **Owen Brooks is broken all the time in the world because of this.**
 3. **Duplicate or conflicting identities and small size offsets.** Rosalind, Theo and Marisol each have two different looks. The player is drawn about 6% shorter than adult NPCs.
+
+---
+
+## P0: Art style. Some characters look like they're from a different game
+
+Evidence: `docs/graphics/character-audit/style-tiers.png` (all at native 96×108, front idle). The other characters are in `all-characters-idle-walk-nose.png`.
+
+### The target style
+The style is defined by the user-approved Study 02 characters: **Remy, Priya, Doug and Poppy**. In those:
+- **Head:** large, about ⅓ of the figure's height. Round, soft face. Head width close to shoulder width.
+- **Eyes:** big and dark, each with a **white highlight dot**. Simple brows. Small, friendly mouth.
+- **Body:** soft and rounded, with short limbs and small mitten hands. No visible muscles. A heavy build is a **round, soft belly** (Doug), not broad, square shoulders.
+- **Lines and colour:** warm dark-brown outline, 2–3 tone cel shading, warm saturated palette.
+- **Hair and beards:** solid stylised shapes, not textured stubble or noise.
+
+### Tier C: looks like a different game. Redraw (15)
+These read as a semi-realistic adult art style: smaller square heads, about 4–4.5 heads tall. They have **broad rectangular torsos with wide shoulders and long straight arms**, and **small dot or squint eyes without highlights**. They also use darker, desaturated palettes and **textured stubble or beard noise**. Almost all are the `broad` or `stocky` adult men. That body type is where the generated art drifted to realism.
+
+| Character | asset | Main problems |
+|---|---|---|
+| **Marcus Bell** | cast-01-marcus | Muscular blocky torso, small head, tiny eyes, textured beard. The clearest example. |
+| Kenji Mori | cast-05-kenji | Lanky realistic adult, small head, flat grey palette |
+| Mateo Market | cast-06-mateo | Realistic heavy body and face, small eyes |
+| Ronan Watts | cast-16-ronan | Very wide, small head, stubble noise, realistic face |
+| Hugo Serrano | cast-24-hugo | Realistic beard texture, square torso |
+| Theo Park (patient look) | cast-38-theo | Realistic gym build, small head |
+| The Soil Shed | cast-41-shed | Realistic full-beard texture, broad torso |
+| Cure Corner | cast-48-cure | Muscular arms, small head, grim face |
+| Dez | cast-52-hardwarePT | Realistic face, wide hoodie block |
+| Business representative | cast-58-suit | Blocky, small head, realistic |
+| Theo Park (NPC look) | cast-66-theo | Realistic face with goatee, boxy hoodie |
+| Dev Imani | cast-28-dev | Tall, dark, realistic face |
+| (also pose-only) Nico, Hugo, Anika, etc. | — | See the P0 nose-pose list below |
+
+### Tier B: drifted. Soften the face and proportions (6)
+Close to the target, but the heads and eyes are a little small and the faces more realistic. Enlarge the head by about 10–15%, add eye highlights, and round the shoulders.
+Owen Brooks (cast-14), Arthur Dunn (cast-21), Enzo Park (cast-26), Dev (guest, cast-34-1), Wes (cast-51-gardenPT), Jun Cho (cast-19).
+
+### Tier A: matches (the rest)
+Inés, Tobias, Bev, Elena, Rosa, Leo, Mara, Eli, Nico (idle only), Alma, Amina, Leila, Cass, Rosie, Nadia, Miles, Anika, Sasha Reed, Ari Bell, Sam Bell, Talia, Luz, Jules, Sasha, Ari, both Rosalinds, both Marisols, Vale, Patchwork, Canopy, Pheno, Fern, Tinkerbench, Netted & Neat, Lumen, Ana, June, Kai, Volunteer desk, Night desk, Officer, Dr. Amani, Grandma Green, Pixel Seeds, Moon, AutoPilot, Swamp Wizard.
+
+### The player is a third style
+The customizable player is drawn by the modular `generic()` renderer, not authored art. It ends up more chibi than everyone else: the biggest head ratio, shortest figure (P1-6) and the simplest portrait (P1-7). In the user's screenshots, a custom hairstyle (purple afro) renders as a **noisy speckled texture** rather than solid stylised hair shapes. When the player stands next to Tier C characters, the gap between the two is extreme.
+
+### Recommended fix
+1. Redraw the 15 Tier C characters (front, side, back and portraits, plus nose poses) using **Doug as the reference for heavy builds** and **Remy or Priya for average builds**. Keep each character's identity (skin, hair, clothes, accessories), but use the target head size, eyes, soft silhouette and palette.
+2. Do a lighter pass on the 6 Tier B characters.
+3. Fix player hair rendering: replace per-pixel noise or texture with solid shapes plus 2–3 tone shading, to match the authored hair.
+4. Add a style-check step to the art pipeline. Before registering new art, place it next to Remy, Priya and Doug at native size, and reject any figure that fails: head about ⅓ of height, highlighted eyes, warm outline, no texture noise.
 
 ---
 
@@ -129,10 +181,11 @@ Marcus is `broad`, 51 px wide from the front but 33 px from the side. Ronan, Hug
 
 ---
 
-## Characters with no problems found
-Idle and walk art for all 73 appearances is consistent in style and height. These characters also have correct, on-style smell poses: Remy, Doug, Priya, Poppy, Rosa, Leo, Alma, Owen (art only; see P0-1), Amina, Ronan, Leila, Cass, Rosie, Arthur, Nadia, Dev Imani, Ari Bell, Sam Bell, Talia, Luz, Jules, Dev, Sasha, Ari, Rosalind (both), Theo (cast-66), Marisol (cast-67), Cure Corner, Lumen & Loam, Ana, Wes, Dez, Business rep, Dr. Amani, Grandma Green, Pixel Seeds, Moon Medicine, AutoPilot, Swamp Wizard.
+## Characters with correct smell poses
+Idle and walk *height* is consistent for all 73 appearances. For art *style*, see the tier lists above. These characters have smell poses that match their idle art: Remy, Doug, Priya, Poppy, Rosa, Leo, Alma, Owen (art only; see P0-1), Amina, Ronan, Leila, Cass, Rosie, Arthur, Nadia, Dev Imani, Ari Bell, Sam Bell, Talia, Luz, Jules, Dev, Sasha, Ari, Rosalind (both), Theo (cast-66), Marisol (cast-67), Cure Corner, Lumen & Loam, Ana, Wes, Dez, Business rep, Dr. Amani, Grandma Green, Pixel Seeds, Moon Medicine, AutoPilot, Swamp Wizard.
 
 ## Suggested order for Codex
+0. Art style: redraw the 15 Tier C characters (Marcus first) and soften the 6 Tier B characters (see "Art style" above).
 1. Exclude `prop` from the canonical key and fix `drawTinyPerson` (fixes Owen and all prop owners, small change).
 2. Add the no-fallback guard: never use `generic()` for an NPC with authored idle art. Use the idle sprite plus an overlay instead. This removes every chibi pose immediately.
 3. Re-register the Marcus, Mateo, Inés, Mara, Eli and Jun poses to idle size, and redraw Nico's pose.
