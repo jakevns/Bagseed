@@ -13,6 +13,7 @@ if (!html.includes(require('./compile-bedroom-window.cjs')())) throw new Error('
 if (!html.includes(require('./compile-starter-tent.cjs')())) throw new Error('The starter tent renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-tent2.cjs')())) throw new Error('The 2x2 tent renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-tent4.cjs')())) throw new Error('The 4x4 tent renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-tent5.cjs')())) throw new Error('The 5x5 tent renderer differs from its source. Rebuild before publishing.');
 const sha = value => createHash('sha256').update(value).digest('hex');
 const report = JSON.parse(readFileSync(new URL('../graphics/production/build.json', import.meta.url), 'utf8'));
 if (sha(html) !== report.updatedSHA) throw new Error('The playable game differs from its build report. Rebuild before publishing.');

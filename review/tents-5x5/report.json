@@ -1,5 +1,5 @@
 {
-  "proposalOnly": true,
+  "proposalOnly": false,
   "entryPoint": "public/index.html",
   "tiers": 3,
   "plantSlots": 6,
@@ -12,8 +12,6 @@
   "contentsCases": 36,
   "zipFramesPerTier": 9,
   "storeAndPhoneArtwork": true,
-  "productionIntegrationPendingApproval": true,
-  "errors": [],
-  "reviewGifFrames": 16,
-  "reviewGifSlowed": true
+  "productionIntegrationPendingApproval": false,
+  "errors": []
 }

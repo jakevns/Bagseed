@@ -1,6 +1,6 @@
 {
-  "revision": "tent5-proposal-1",
-  "status": "awaiting-art-approval",
+  "revision": "tent5-1",
+  "status": "approved",
   "path": "assets/tents-atlas.png",
   "size": [
     1024,
@@ -72,5 +72,12 @@
     -6,
     -10
   ],
-  "capacity": 6
+  "capacity": 6,
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/tents-atlas.webp",
+    "sha256": "03d11cc67bd512a330560b1fcec6e7b9fd046a61bd004017d5939b4185402d6a",
+    "publicPath": "assets/tents/5x5-03d11cc67bd5.webp",
+    "lossless": true
+  }
 }

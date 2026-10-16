@@ -1,9 +1,9 @@
-# 5×5 tent artwork — awaiting approval
+# Approved 5×5 tent — production integration
 
-The user asked to begin 5×5 after publishing the approved 4×4. The 4×4 release is on main at cbe673e. This local proposal includes Standard, Pro and Premium 5×5 shells, open/closed views, six live plants, two independent light fixtures, matching store cards and native zip steps. Existing prices are $489 for the base tent, $189 Pro shell and $339 Premium shell.
+The user approved Standard, Pro and Premium and authorized publishing. The production build contains all three 5×5 shells with six independent live plants, twin lights, matching store/delivery/inventory icons and native zip steps. Existing prices are $489 for the base tent, $189 Pro and $339 Premium. Bounds, unlocks, catalog names and capacity are unchanged. The 4×4 and current character/walking update are preserved.
 
-approval-5x5.png is the sample board; growroom-*.png shows it alongside the published 4×4. store-*.png includes the base and both upgrades plus a phone capture. zip-animation.gif packages actual runtime captures, slowed for inspection. The runtime keeps the native 380 ms door animation.
+approval-5x5.png and growroom-*.png are rendered directly from public/index.html, alongside the published 4×4. store-*.png includes the base and both upgrades with a phone capture. zip-animation.gif combines native captures, slowed for review; runtime keeps 380 ms timing.
 
-The six pots are recessed with visible liner in front and pulled inward to keep both outer plants behind the tent sides. Roof, columns and tray are independent front layers; the player remains in front when approaching and behind when standing inside the footprint. report.json records marker, interaction and catalog/content preservation checks.
+report.json records 36 shell/light/pot combinations, 36 front-player approaches, three behind-player cases, six accessible plant targets, nine zip steps per tier, three store cards, a phone card and preserved content/geometry/catalog. publish-validation.json records actual $489/$189/$339 purchases, delivery artwork, shell fitting, saved progress, collision/approach bounds and loading cover behavior when the external atlas is deliberately blocked.
 
-Production HTML/source, the build, published 4×4 and remote repository are unchanged by this proposal. Local sources and original artwork are retained for approval and later integration.
+The original PNG is unchanged. The lossless WebP matches every decoded RGBA channel, has a fingerprinted URL, and is required by the startup gate. Build/source checks validate the embedded renderer and published image. A successful push to main triggers the Pages workflow; it is distinct from verification of a completed live deployment.

@@ -1,19 +1,19 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{createHash}=require('node:crypto'),{chromium}=require('playwright');
 (async()=>{
  const root=path.resolve(__dirname,'..'),dir=path.join(root,'graphics/tents/5x5'),out=path.join(root,'review/tents-5x5'),data=JSON.parse(fs.readFileSync(path.join(dir,'sources/manifest.json'))),bytes=fs.readFileSync(path.join(dir,data.path));assert.equal(createHash('sha256').update(bytes).digest('hex'),data.sha256);
- const code=fs.readFileSync(path.join(dir,'sources/proposal.js'),'utf8').replace('__TENT5_PROPOSAL__',()=>JSON.stringify({...data,image:'data:image/png;base64,'+bytes.toString('base64')}));
+ assert.ok(fs.readFileSync(path.join(root,'public/index.html'),'utf8').includes('id="bagseed-tent5-production-code"'),'Build the approved tents first');
  const {createStaticServer}=await import('./server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
  try{
   browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});const page=await require('../tests/helpers/art-page.cjs')(browser,{viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('http://127.0.0.1:'+server.address().port+'/index.html',{timeout:120000});await page.evaluate(()=>BagseedStartup.ready);await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Five by Five');await page.locator('[data-act=startGame]').click();await page.waitForFunction(()=>screen==='game'&&!!state.player);
   const before=await page.evaluate(()=>{
-   settings.speed=0;settings.reduced=true;state.tut.on=false;state.scene='growroom';state.flags.growroom=true;state.minute=720;state.weather='Sunny';state.mess=[];state.hints.box=1;runtime.pauseHelpShown=true;ACT.tipOff();runtime.dialogQ=[];if(runtime.curDialog)ACT.dlg(0);closePanel();
+   settings.speed=0;settings.reduced=true;state.tut.on=false;state.scene='growroom';state.flags.growroom=true;state.stats.harvests=4;state.minute=720;state.weather='Sunny';state.mess=[];state.hints.box=1;runtime.pauseHelpShown=true;ACT.tipOff();runtime.dialogQ=[];if(runtime.curDialog)ACT.dlg(0);closePanel();
    state.locations.tent4.owned=true;const L=state.locations.tent5;L.owned=true;L.door='open';Object.assign(L.equip,{light:3,pot:2,fan:1,sensor:1});state.player.x=269;state.player.y=156;
    for(let i=0;i<6;i++){const p=createPlant('porchlight','tent5',i);Object.assign(p,{stage:4,height:6+i*1.5,nodes:4,water:60,health:92});}
    RoomArt.hits=[];TentArt.draw(document.createElement('canvas').getContext('2d'),'tent5',178,2,182,142,0);
    return {contents:JSON.stringify(L),geometry:JSON.stringify([SLOT_POS.tent5,locRect('tent5'),SCENES.growroom.solids()]),hits:RoomArt.hits,catalog:JSON.stringify(Shop.items('spaces'))};
   });
-  await page.addScriptTag({content:code});await page.evaluate(()=>BagseedTent5Proposal.ready);
+  await page.evaluate(()=>{window.BagseedTent5Proposal=BagseedTent5;return BagseedTent5.ready;});
   const result=await page.evaluate(before=>{
    const L=state.locations.tent5,check=(ok,m)=>{if(!ok)throw Error(m);};RoomArt.hits=[];TentArt.draw(document.createElement('canvas').getContext('2d'),'tent5',178,2,182,142,0);
    const hits=RoomArt.hits,plants=hits.filter(h=>/^(plant|slot|gslot):tent5:/.test(h.id));check(plants.length===6,'Six plant targets required');check(plants.every(h=>h.walk[1]>144),'Plant approach must remain outside');check(before.hits.every(h=>hits.some(n=>n.id===h.id&&n.label===h.label)),'Existing interaction missing');
@@ -51,6 +51,6 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   await page.evaluate(()=>Panels.app('leafcart'));await page.locator('[data-act=shopCat][data-arg=spaces]').click();
   for(const [tier,id] of [['standard','tent5'],['pro','shell_tent5_pro'],['premium','shell_tent5_premium']]){const cv=page.locator('canvas[data-draw="x:'+id+'"]');await cv.scrollIntoViewIfNeeded();assert.deepEqual(await cv.evaluate(c=>[c.width,c.height]),[320,240]);await cv.locator('..').screenshot({path:path.join(out,'store-'+tier+'.png')});}
   await page.setViewportSize({width:390,height:844});const cv=page.locator('canvas[data-draw="x:shell_tent5_premium"]');await cv.scrollIntoViewIfNeeded();await cv.locator('..').screenshot({path:path.join(out,'store-premium-phone.png')});assert.deepEqual(errors,[]);
-  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({proposalOnly:true,entryPoint:'public/index.html',tiers:3,plantSlots:6,storeItems:3,geometryAndCatalogPreserved:true,plantsAndEquipmentPreserved:true,plantTargetsOutsideTent:true,...coverage,zipFramesPerTier:9,storeAndPhoneArtwork:true,productionIntegrationPendingApproval:true,errors},null,2)+'\n');console.log('5×5 samples: three shells, six live plants, store art, animation and depth checks passed.');
+  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({proposalOnly:false,entryPoint:'public/index.html',tiers:3,plantSlots:6,storeItems:3,geometryAndCatalogPreserved:true,plantsAndEquipmentPreserved:true,plantTargetsOutsideTent:true,...coverage,zipFramesPerTier:9,storeAndPhoneArtwork:true,productionIntegrationPendingApproval:false,errors},null,2)+'\n');console.log('5×5 samples: three shells, six live plants, store art, animation and depth checks passed.');
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
