@@ -1,3 +1,4 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 
@@ -5,8 +6,8 @@ test('computer purchases, job upgrades, all desktop style purchases, package art
   const {createStaticServer}=await import('../tools/server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
   const out=path.join(__dirname,'../artifacts/computer-equipment');fs.mkdirSync(out,{recursive:true});
   try{
-    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});
-    const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
+    const page=await artPage(browser,{viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');await page.evaluate(()=>BagseedEquipment.ready);
     await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Equipment Fixture');await page.locator('[data-act=startGame]').click();await page.waitForTimeout(2400);
     await page.evaluate(()=>{settings.speed=0;settings.reduced=true;state.tut.on=false;runtime.pauseHelpShown=true;ACT.tipOff();runtime.dialogQ=[];if(runtime.curDialog)ACT.dlg(0);closePanel();state.money=2000;state.sale.day=-1;state.jobs.rep=0;Panels.app('leafcart');});

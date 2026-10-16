@@ -1,12 +1,14 @@
 # Bagseed
 
+Latest character change: [v14 neck and reaction attachment review](review/neck-v14/README.md). It records the rejected initial result, the revised rendered poses, and targeted checks. The user accepted this checkpoint for now and requested publishing it.
+
 The approved main menu uses a sunny community-garden illustration with familiar neighbors, two cannabis plants, and responsive desktop/phone controls. See [menu artwork and build notes](graphics/main-menu/README.md).
 
 The supplied **v1.1.5.1 Night Walker Flashlights** game, updated with the user-approved illustrated character direction. Open [public/index.html](public/index.html) for the complete standalone game, or serve `public/` with any static host. Use this `index.html` for **Web Preview / Open in ChatGPT**; `src/game.html` is source-only and does not include the appended illustrated graphics.
 
 The update includes the five approved identities, 67 additional authored appearance variants, matching portraits, all 60 hairstyles and the existing customization choices. The [final review](review/final/index.html) contains comparisons, motion previews, a complete appearance roster, screenshots and validation notes. [Study 02](review/characters-v2/index.html) records the approved samples and reference evidence. Study 01 was rejected and is excluded from this release.
 
-The latest local custom-character repair adds distinct mouth silhouettes, braces, fangs and a cat smile, and keeps selected mouths visible when expressions change. Facial hair uses clean transparent edges without recolored ear/neck outlines or rectangular cheek cuts. Current screenshots and checks are in the [customization v9 review](review/customization-v9/README.md). The [v8 detail alignment](review/customization-v8/README.md) and [v7 hair fitting](review/customization-v7/README.md) are retained across all 15 head shapes.
+The latest local custom-character repair draws complete hair over clothing in figures and portraits. Loose hairstyles and afros conceal covered ears and earrings; short cuts and updos retain visible ears. Individual scalp fits, complete hair lengths and the accepted first five cuts are retained. See the [v13 hair layer review](review/hair-layer-v13/README.md) for before/after figures, all head shapes and actual creator/wardrobe captures. The earlier [v12 fits](review/hair-all-v12/README.md) and [five-cut review](review/hair-batch-01/README.md) are retained as history. The distinct mouths and clean beard edges from [v9](review/customization-v9/README.md) and the [v8 detail alignment](review/customization-v8/README.md) are retained.
 
 Players who would rather not grow cannabis can grow garden plants in the starter tent and grow-tent pots instead. Clicking an empty pot lists cannabis seeds alongside garden seeds from Fern & Forge. Herbs, greens, peppers, flowers and houseplants grow there under the grow light in any season. Plants that need a whole garden bed or a trellis stay outdoors. Each pot holds either cannabis or a garden plant, never both. These plants are watered, fed, harvested and sold the same way as other garden plants.
 

@@ -1,3 +1,4 @@
+const artPage=require('./art-page.cjs');
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs'), path = require('node:path');
@@ -18,7 +19,7 @@ test(`${config.batch}: 20 drawings/previews, complete catalog, purchase, save an
     const errors = [], base = `http://127.0.0.1:${server.address().port}`;
     const out = path.join(root, 'artifacts/beds-' + config.batch); fs.mkdirSync(out, { recursive: true });
     async function start(url) {
-      const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+      const page = await artPage(browser,{ viewport: { width: 1280, height: 800 } });
       page.on('pageerror', e => errors.push(e.message));
       await page.goto(url);
       await page.evaluate(async () => {
@@ -100,7 +101,7 @@ test(`${config.batch}: 20 drawings/previews, complete catalog, purchase, save an
     await page.setViewportSize({ width: 390, height: 844 });
     await page.waitForTimeout(100); await page.screenshot({ path: path.join(out, 'phone.png') });
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-    const board = await browser.newPage({ viewport: { width: 1200, height: 1800 } });
+    const board = await artPage(browser,{ viewport: { width: 1200, height: 1800 } });
     await board.setContent(`<body style="margin:0;padding:24px;background:#ece8da;color:#304438;font:16px sans-serif"><h1>Bagseed · Approved bed ${config.batch} · Actual game art</h1><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">${report.images.map(x => `<div style="background:#b8bda1;padding:12px"><b>${config.names[config.frames.indexOf(x.frame)]}</b><div>${x.name}</div><img width="252" height="240" src="${x.image}"></div>`).join('')}</div></body>`);
     await board.screenshot({ path: path.join(out, 'all-20.png'), fullPage: true });
     fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify({ combinations: 20, catalogCombinations: 80, previousDrawingsVerified: config.hashFile ? 20 : undefined, icons: report.icons, purchase, errors }, null, 2));

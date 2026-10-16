@@ -1,5 +1,15 @@
 # Character, menu and furniture merge
 
+## October 16, 2026 publication
+
+Character checkpoint `937401b` (`customization-14`) is combined with incoming GitHub `07744d1`: desks, computer equipment, cameras, chairs, coffee, under-desk storage, the illustrated loading screen and mobile framing fixes, live bedroom window, grow-pot gardening, starter tents and the tent/player depth correction. The complete local hair registrations, scalp fits, ear concealment, mouth/beard work, single-neck attachment and hand-to-nose registration are retained. Local walking/pet planning briefs are included as preparation only.
+
+The generated game was rebuilt from combined sources. Its character payload exactly matches the accepted local build; 96 of 99 scripts match the incoming build after line-ending normalization. The other two are the shared garden scripts: the merged implementation keeps rotation, horizontal/vertical flips, in-place turning, collision/save behavior and the incoming rotation entry points. The original PNG sources and authored NPC action sets are retained. Windows compiler checks normalize line endings before comparing embedded artwork.
+
+The final checks cover 36 distinct tests: 19 character, 8 garden/placement, 8 incoming-artwork/loading and 1 tent/player depth test. Startup animations remain fully tested; unrelated software-canvas artwork fixtures pause the decorative startup animation to prevent it starving HTML parsing. See `publish-validation.json` for exact payload/build checksums and validation details. Local and incoming pre-merge game files and logs are preserved in ignored `artifacts/publish-v14/`.
+
+## Earlier publication
+
 The user requested merging and pushing all current character work after reviewing the mouth and beard updates. Character checkpoint `2072741` (renderer `customization-9`) is combined with incoming `origin/main` at `7ddc178`: the community-garden menu, all six curtain styles and live motion, centered desk supplies, tabletop/pegboard placement, all 80 beds and all three seedling desks.
 
 The merge keeps the current transparent bald anatomy and hair loader, facial landmarks, 18 mouth choices and cleaned facial hair. The generated game was rebuilt from the combined sources rather than taking either worker's HTML wholesale. The embedded character script exactly matches the local checkpoint, and all 87 non-character script blocks exactly match the incoming build after line-ending normalization. Character source/assets match `2072741`; incoming menu, curtain, desk and gameplay sources match `7ddc178`. Current checks are recorded in `publish-validation.json`.

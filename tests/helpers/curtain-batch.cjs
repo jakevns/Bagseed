@@ -1,3 +1,4 @@
+const artPage=require('./art-page.cjs');
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require('playwright');
@@ -11,7 +12,7 @@ test('curtain batch '+config.batch+': animation, original window behavior, store
   try {
     // Software canvas keeps exact art hashes consistent across GPU drivers.
     browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
-    const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];
+    const page=await artPage(browser,{viewport:{width:1280,height:900}}),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');
     await page.evaluate(()=>BagseedCurtains.ready);

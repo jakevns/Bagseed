@@ -1,0 +1,18 @@
+# Scalp and temple hair fitting
+
+The user reported oversized and off-center hair and asked for short cuts to attach at the upper ears. This local repair uses per-cut scalp/temple registration in place of the old preferred-width and ear-avoidance score. All 60 original transparent hairstyles are refitted in all four directions. The 15 head-shape transforms remain shared by anatomy and hair roots. Original painted sources, NPC drawings, mouth/beard fixes, menu and furniture are preserved. Visual acceptance is pending.
+
+- [Before and after: green textured crop](hair-root-comparison.png).
+- Actual [creator](creator-crop-after.png), [wardrobe](mirror-crop-after.png) and [bedroom](bedroom-crop-after.png), captured in disposable storage.
+- [Short cuts as figures](short-cut-figures-after.png); [previous figures](short-cut-figures-before.png).
+- Enlarged contact sheets [1](cuts-01-after.png), [2](cuts-02-after.png), [3](cuts-03-after.png), [4](cuts-04-after.png), [5](cuts-05-after.png), [6](cuts-06-after.png), [7](cuts-07-after.png), [8](cuts-08-after.png), [9](cuts-09-after.png), [10](cuts-10-after.png), [11](cuts-11-after.png) cover all 61 choices including Bald, in front, right, back and left views. Matching `*-before.png` files retain the v9 comparison.
+- Shape sheets [1](shapes-1-after.png), [2](shapes-2-after.png), [3](shapes-3-after.png) show crop, flat-top and side-swept pixie on all 15 head shapes.
+- Full-silhouette sheets [1](full-styles-1-after.png), [2](full-styles-2-after.png), [3](full-styles-3-after.png), [4](full-styles-4-after.png), [5](full-styles-5-after.png), [6](full-styles-6-after.png) include complete buns, puffs and long ends. The enlarged sheets above zoom into the head attachment area.
+
+`graphics/production/customization-v5/hair-fit.json` records normalized source roots, destination roots and individual dimensions for all 240 layers. Profile roots attach around the upper ear. Hair volume is allowed to be asymmetric for swept styles; it no longer determines head position or size. Full source silhouettes are resized with premultiplied alpha and registered without cropping the fringe or painting skin over strands. Slicked-back and side-swept cuts have individual corrections rather than another global ear workaround.
+
+Buzz and faded scalp material use feathered bald anatomy support, excluding ear cartilage and the neck. Fade density reaches skin at the upper ear rather than below the lobe. Loose fringe strands retain their original transparency and are not passed through that scalp mask. Saved hair/style IDs and colors stay compatible.
+
+Reproduce the registration with Python/Pillow/NumPy: `python graphics/production/customization-v5/register.py`, then `node graphics/production/sources/build.cjs`. The builder verifies every cut's roots and dimensions against the manifest, and the fit file's checksum, preventing a partial registration from passing a full build. `node tools/review-hair-roots.cjs` recreates the review sheets using the prior build in ignored `artifacts/hair-fit-v10/before.html`.
+
+`tests/hair-roots.test.cjs` compares 30 front/rear short-cut proportions and tests 960 cut/shape/direction combinations at 25,920 ear pixels. The retained v9 build fails all 30 proportion cases and has 1,095 obstructed ear sample patches; v10 passes both checks. Existing checks exercise all 3,660 hair/shape/direction combinations, hair color silhouettes, transparent margins, original fringe preservation, hats, blinks, neck/waist/foot joins and creator/save/reload. `validation.json` records final checks and NPC preservation. The user's live browser storage is not used by these tools.

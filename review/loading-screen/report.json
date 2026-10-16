@@ -1,6 +1,6 @@
 {
   "entryPoint": "public/index.html",
-  "firstChunkBytes": 436889,
+  "firstChunkBytes": 437182,
   "visibleBeforeGameHTML": true,
   "waitsForAllArtwork": true,
   "futureArtworkIncluded": true,

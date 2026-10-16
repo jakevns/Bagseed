@@ -1,0 +1,1561 @@
+{
+  "date": "2026-10-15",
+  "revision": "customization-12",
+  "hairRuntimeFitRevision": "scalp-fit-12",
+  "htmlSHA256": "0b2749788ecff7c325625c36a0c268671fd5e2182ea4e2983202d354b8e030fe",
+  "remainingStyles": 55,
+  "totalHairstylesWithForegroundEars": 60,
+  "fullSuite": {
+    "tests": 61,
+    "pass": 61,
+    "fail": 0,
+    "skipped": 0,
+    "testRuns": [
+      {
+        "name": "character",
+        "tests": 20,
+        "pass": 20,
+        "fail": 0,
+        "skipped": 0,
+        "durationMs": 248839.2103
+      },
+      {
+        "name": "remaining",
+        "tests": 41,
+        "pass": 41,
+        "fail": 0,
+        "skipped": 0,
+        "durationMs": 422821.1727
+      }
+    ]
+  },
+  "remainingEarSurfaces": {
+    "views": 29700,
+    "earPixels": 6368615,
+    "failures": []
+  },
+  "totalEarCasesIncludingAcceptedBatch": 32400,
+  "sizeAndLength": {
+    "views": 120,
+    "measurements": [
+      {
+        "hairS": "long",
+        "dir": "down",
+        "width": 113,
+        "crown": 3072,
+        "oldWidth": 129,
+        "oldCrown": 3493,
+        "bottom": 278,
+        "oldBottom": 278
+      },
+      {
+        "hairS": "long",
+        "dir": "right",
+        "width": 96,
+        "crown": 3225,
+        "oldWidth": 112,
+        "oldCrown": 4571,
+        "bottom": 269,
+        "oldBottom": 270
+      },
+      {
+        "hairS": "long",
+        "dir": "up",
+        "width": 106,
+        "crown": 3119,
+        "oldWidth": 116,
+        "oldCrown": 3317,
+        "bottom": 277,
+        "oldBottom": 277
+      },
+      {
+        "hairS": "long",
+        "dir": "left",
+        "width": 96,
+        "crown": 3092,
+        "oldWidth": 112,
+        "oldCrown": 4381,
+        "bottom": 268,
+        "oldBottom": 269
+      },
+      {
+        "hairS": "bob",
+        "dir": "down",
+        "width": 102,
+        "crown": 3043,
+        "oldWidth": 114,
+        "oldCrown": 3446,
+        "bottom": 187,
+        "oldBottom": 187
+      },
+      {
+        "hairS": "bob",
+        "dir": "right",
+        "width": 97,
+        "crown": 3708,
+        "oldWidth": 112,
+        "oldCrown": 5064,
+        "bottom": 185,
+        "oldBottom": 185
+      },
+      {
+        "hairS": "bob",
+        "dir": "up",
+        "width": 102,
+        "crown": 3330,
+        "oldWidth": 112,
+        "oldCrown": 3653,
+        "bottom": 202,
+        "oldBottom": 202
+      },
+      {
+        "hairS": "bob",
+        "dir": "left",
+        "width": 97,
+        "crown": 3913,
+        "oldWidth": 112,
+        "oldCrown": 5339,
+        "bottom": 188,
+        "oldBottom": 188
+      },
+      {
+        "hairS": "curly",
+        "dir": "down",
+        "width": 122,
+        "crown": 3540,
+        "oldWidth": 137,
+        "oldCrown": 4046,
+        "bottom": 190,
+        "oldBottom": 190
+      },
+      {
+        "hairS": "curly",
+        "dir": "right",
+        "width": 107,
+        "crown": 4213,
+        "oldWidth": 125,
+        "oldCrown": 5683,
+        "bottom": 192,
+        "oldBottom": 192
+      },
+      {
+        "hairS": "curly",
+        "dir": "up",
+        "width": 114,
+        "crown": 3496,
+        "oldWidth": 127,
+        "oldCrown": 3959,
+        "bottom": 205,
+        "oldBottom": 205
+      },
+      {
+        "hairS": "curly",
+        "dir": "left",
+        "width": 107,
+        "crown": 4115,
+        "oldWidth": 125,
+        "oldCrown": 5560,
+        "bottom": 192,
+        "oldBottom": 192
+      },
+      {
+        "hairS": "wavy",
+        "dir": "down",
+        "width": 112,
+        "crown": 2772,
+        "oldWidth": 124,
+        "oldCrown": 3060,
+        "bottom": 241,
+        "oldBottom": 241
+      },
+      {
+        "hairS": "wavy",
+        "dir": "right",
+        "width": 99,
+        "crown": 3572,
+        "oldWidth": 115,
+        "oldCrown": 4926,
+        "bottom": 248,
+        "oldBottom": 248
+      },
+      {
+        "hairS": "wavy",
+        "dir": "up",
+        "width": 110,
+        "crown": 3098,
+        "oldWidth": 116,
+        "oldCrown": 3086,
+        "bottom": 256,
+        "oldBottom": 256
+      },
+      {
+        "hairS": "wavy",
+        "dir": "left",
+        "width": 99,
+        "crown": 3561,
+        "oldWidth": 115,
+        "oldCrown": 4903,
+        "bottom": 245,
+        "oldBottom": 245
+      },
+      {
+        "hairS": "bun",
+        "dir": "down",
+        "width": 99,
+        "crown": 4973,
+        "oldWidth": 115,
+        "oldCrown": 6391,
+        "bottom": 213,
+        "oldBottom": 213
+      },
+      {
+        "hairS": "bun",
+        "dir": "right",
+        "width": 92,
+        "crown": 4663,
+        "oldWidth": 110,
+        "oldCrown": 6228,
+        "bottom": 188,
+        "oldBottom": 188
+      },
+      {
+        "hairS": "bun",
+        "dir": "up",
+        "width": 95,
+        "crown": 5326,
+        "oldWidth": 110,
+        "oldCrown": 6712,
+        "bottom": 196,
+        "oldBottom": 196
+      },
+      {
+        "hairS": "bun",
+        "dir": "left",
+        "width": 92,
+        "crown": 4649,
+        "oldWidth": 110,
+        "oldCrown": 6211,
+        "bottom": 188,
+        "oldBottom": 188
+      },
+      {
+        "hairS": "ponytail",
+        "dir": "down",
+        "width": 105,
+        "crown": 3282,
+        "oldWidth": 119,
+        "oldCrown": 3795,
+        "bottom": 223,
+        "oldBottom": 223
+      },
+      {
+        "hairS": "ponytail",
+        "dir": "right",
+        "width": 98,
+        "crown": 3838,
+        "oldWidth": 120,
+        "oldCrown": 5563,
+        "bottom": 222,
+        "oldBottom": 222
+      },
+      {
+        "hairS": "ponytail",
+        "dir": "up",
+        "width": 100,
+        "crown": 3419,
+        "oldWidth": 112,
+        "oldCrown": 3830,
+        "bottom": 246,
+        "oldBottom": 246
+      },
+      {
+        "hairS": "ponytail",
+        "dir": "left",
+        "width": 100,
+        "crown": 4080,
+        "oldWidth": 123,
+        "oldCrown": 5896,
+        "bottom": 222,
+        "oldBottom": 222
+      },
+      {
+        "hairS": "braids",
+        "dir": "down",
+        "width": 111,
+        "crown": 3409,
+        "oldWidth": 129,
+        "oldCrown": 3960,
+        "bottom": 269,
+        "oldBottom": 269
+      },
+      {
+        "hairS": "braids",
+        "dir": "right",
+        "width": 93,
+        "crown": 3500,
+        "oldWidth": 112,
+        "oldCrown": 5130,
+        "bottom": 259,
+        "oldBottom": 259
+      },
+      {
+        "hairS": "braids",
+        "dir": "up",
+        "width": 104,
+        "crown": 3667,
+        "oldWidth": 116,
+        "oldCrown": 3983,
+        "bottom": 280,
+        "oldBottom": 280
+      },
+      {
+        "hairS": "braids",
+        "dir": "left",
+        "width": 93,
+        "crown": 3663,
+        "oldWidth": 112,
+        "oldCrown": 5372,
+        "bottom": 263,
+        "oldBottom": 263
+      },
+      {
+        "hairS": "locs",
+        "dir": "down",
+        "width": 116,
+        "crown": 3459,
+        "oldWidth": 129,
+        "oldCrown": 3826,
+        "bottom": 209,
+        "oldBottom": 209
+      },
+      {
+        "hairS": "locs",
+        "dir": "right",
+        "width": 103,
+        "crown": 3848,
+        "oldWidth": 119,
+        "oldCrown": 5198,
+        "bottom": 213,
+        "oldBottom": 213
+      },
+      {
+        "hairS": "locs",
+        "dir": "up",
+        "width": 109,
+        "crown": 3469,
+        "oldWidth": 116,
+        "oldCrown": 3689,
+        "bottom": 224,
+        "oldBottom": 224
+      },
+      {
+        "hairS": "locs",
+        "dir": "left",
+        "width": 102,
+        "crown": 3583,
+        "oldWidth": 119,
+        "oldCrown": 4837,
+        "bottom": 209,
+        "oldBottom": 209
+      },
+      {
+        "hairS": "angledbob",
+        "dir": "down",
+        "width": 106,
+        "crown": 3172,
+        "oldWidth": 118,
+        "oldCrown": 3590,
+        "bottom": 203,
+        "oldBottom": 203
+      },
+      {
+        "hairS": "angledbob",
+        "dir": "right",
+        "width": 93,
+        "crown": 3612,
+        "oldWidth": 108,
+        "oldCrown": 4999,
+        "bottom": 190,
+        "oldBottom": 190
+      },
+      {
+        "hairS": "angledbob",
+        "dir": "up",
+        "width": 102,
+        "crown": 3228,
+        "oldWidth": 112,
+        "oldCrown": 3534,
+        "bottom": 212,
+        "oldBottom": 212
+      },
+      {
+        "hairS": "angledbob",
+        "dir": "left",
+        "width": 93,
+        "crown": 3617,
+        "oldWidth": 108,
+        "oldCrown": 4997,
+        "bottom": 190,
+        "oldBottom": 191
+      },
+      {
+        "hairS": "asymbob",
+        "dir": "down",
+        "width": 104,
+        "crown": 3467,
+        "oldWidth": 113,
+        "oldCrown": 3844,
+        "bottom": 186,
+        "oldBottom": 186
+      },
+      {
+        "hairS": "asymbob",
+        "dir": "right",
+        "width": 98,
+        "crown": 3617,
+        "oldWidth": 112,
+        "oldCrown": 4953,
+        "bottom": 189,
+        "oldBottom": 190
+      },
+      {
+        "hairS": "asymbob",
+        "dir": "up",
+        "width": 105,
+        "crown": 3847,
+        "oldWidth": 111,
+        "oldCrown": 4132,
+        "bottom": 201,
+        "oldBottom": 201
+      },
+      {
+        "hairS": "asymbob",
+        "dir": "left",
+        "width": 98,
+        "crown": 3492,
+        "oldWidth": 112,
+        "oldCrown": 4756,
+        "bottom": 191,
+        "oldBottom": 191
+      },
+      {
+        "hairS": "braidbob",
+        "dir": "down",
+        "width": 106,
+        "crown": 3139,
+        "oldWidth": 114,
+        "oldCrown": 3511,
+        "bottom": 192,
+        "oldBottom": 192
+      },
+      {
+        "hairS": "braidbob",
+        "dir": "right",
+        "width": 95,
+        "crown": 3441,
+        "oldWidth": 108,
+        "oldCrown": 4543,
+        "bottom": 192,
+        "oldBottom": 192
+      },
+      {
+        "hairS": "braidbob",
+        "dir": "up",
+        "width": 104,
+        "crown": 3306,
+        "oldWidth": 111,
+        "oldCrown": 3561,
+        "bottom": 208,
+        "oldBottom": 208
+      },
+      {
+        "hairS": "braidbob",
+        "dir": "left",
+        "width": 98,
+        "crown": 3424,
+        "oldWidth": 111,
+        "oldCrown": 4506,
+        "bottom": 192,
+        "oldBottom": 192
+      },
+      {
+        "hairS": "lob",
+        "dir": "down",
+        "width": 110,
+        "crown": 3211,
+        "oldWidth": 126,
+        "oldCrown": 3697,
+        "bottom": 220,
+        "oldBottom": 220
+      },
+      {
+        "hairS": "lob",
+        "dir": "right",
+        "width": 93,
+        "crown": 3689,
+        "oldWidth": 111,
+        "oldCrown": 5346,
+        "bottom": 211,
+        "oldBottom": 211
+      },
+      {
+        "hairS": "lob",
+        "dir": "up",
+        "width": 106,
+        "crown": 3149,
+        "oldWidth": 116,
+        "oldCrown": 3455,
+        "bottom": 235,
+        "oldBottom": 235
+      },
+      {
+        "hairS": "lob",
+        "dir": "left",
+        "width": 94,
+        "crown": 3424,
+        "oldWidth": 112,
+        "oldCrown": 4961,
+        "bottom": 222,
+        "oldBottom": 222
+      },
+      {
+        "hairS": "curlybob",
+        "dir": "down",
+        "width": 113,
+        "crown": 3137,
+        "oldWidth": 125,
+        "oldCrown": 3444,
+        "bottom": 189,
+        "oldBottom": 189
+      },
+      {
+        "hairS": "curlybob",
+        "dir": "right",
+        "width": 102,
+        "crown": 3709,
+        "oldWidth": 118,
+        "oldCrown": 5062,
+        "bottom": 193,
+        "oldBottom": 193
+      },
+      {
+        "hairS": "curlybob",
+        "dir": "up",
+        "width": 112,
+        "crown": 3480,
+        "oldWidth": 120,
+        "oldCrown": 3733,
+        "bottom": 204,
+        "oldBottom": 204
+      },
+      {
+        "hairS": "curlybob",
+        "dir": "left",
+        "width": 102,
+        "crown": 3737,
+        "oldWidth": 118,
+        "oldCrown": 5090,
+        "bottom": 193,
+        "oldBottom": 193
+      },
+      {
+        "hairS": "halfup",
+        "dir": "down",
+        "width": 113,
+        "crown": 2930,
+        "oldWidth": 125,
+        "oldCrown": 3399,
+        "bottom": 247,
+        "oldBottom": 247
+      },
+      {
+        "hairS": "halfup",
+        "dir": "right",
+        "width": 99,
+        "crown": 3142,
+        "oldWidth": 117,
+        "oldCrown": 4281,
+        "bottom": 243,
+        "oldBottom": 243
+      },
+      {
+        "hairS": "halfup",
+        "dir": "up",
+        "width": 107,
+        "crown": 3580,
+        "oldWidth": 111,
+        "oldCrown": 3391,
+        "bottom": 246,
+        "oldBottom": 246
+      },
+      {
+        "hairS": "halfup",
+        "dir": "left",
+        "width": 103,
+        "crown": 3242,
+        "oldWidth": 121,
+        "oldCrown": 4415,
+        "bottom": 243,
+        "oldBottom": 243
+      },
+      {
+        "hairS": "ponyhi",
+        "dir": "down",
+        "width": 102,
+        "crown": 4410,
+        "oldWidth": 115,
+        "oldCrown": 5566,
+        "bottom": 205,
+        "oldBottom": 205
+      },
+      {
+        "hairS": "ponyhi",
+        "dir": "right",
+        "width": 98,
+        "crown": 5309,
+        "oldWidth": 120,
+        "oldCrown": 7524,
+        "bottom": 225,
+        "oldBottom": 225
+      },
+      {
+        "hairS": "ponyhi",
+        "dir": "up",
+        "width": 100,
+        "crown": 5261,
+        "oldWidth": 112,
+        "oldCrown": 6216,
+        "bottom": 245,
+        "oldBottom": 245
+      },
+      {
+        "hairS": "ponyhi",
+        "dir": "left",
+        "width": 100,
+        "crown": 5114,
+        "oldWidth": 122,
+        "oldCrown": 7241,
+        "bottom": 225,
+        "oldBottom": 225
+      },
+      {
+        "hairS": "sidepony",
+        "dir": "down",
+        "width": 107,
+        "crown": 2871,
+        "oldWidth": 119,
+        "oldCrown": 3243,
+        "bottom": 231,
+        "oldBottom": 231
+      },
+      {
+        "hairS": "sidepony",
+        "dir": "right",
+        "width": 98,
+        "crown": 3975,
+        "oldWidth": 116,
+        "oldCrown": 5414,
+        "bottom": 234,
+        "oldBottom": 234
+      },
+      {
+        "hairS": "sidepony",
+        "dir": "up",
+        "width": 104,
+        "crown": 3650,
+        "oldWidth": 112,
+        "oldCrown": 3955,
+        "bottom": 245,
+        "oldBottom": 245
+      },
+      {
+        "hairS": "sidepony",
+        "dir": "left",
+        "width": 99,
+        "crown": 3553,
+        "oldWidth": 116,
+        "oldCrown": 4861,
+        "bottom": 232,
+        "oldBottom": 232
+      },
+      {
+        "hairS": "spacebuns",
+        "dir": "down",
+        "width": 106,
+        "crown": 4290,
+        "oldWidth": 119,
+        "oldCrown": 5124,
+        "bottom": 197,
+        "oldBottom": 197
+      },
+      {
+        "hairS": "spacebuns",
+        "dir": "right",
+        "width": 94,
+        "crown": 3581,
+        "oldWidth": 110,
+        "oldCrown": 4611,
+        "bottom": 187,
+        "oldBottom": 187
+      },
+      {
+        "hairS": "spacebuns",
+        "dir": "up",
+        "width": 98,
+        "crown": 4269,
+        "oldWidth": 110,
+        "oldCrown": 4890,
+        "bottom": 194,
+        "oldBottom": 195
+      },
+      {
+        "hairS": "spacebuns",
+        "dir": "left",
+        "width": 95,
+        "crown": 3504,
+        "oldWidth": 110,
+        "oldCrown": 4471,
+        "bottom": 187,
+        "oldBottom": 187
+      },
+      {
+        "hairS": "topknot",
+        "dir": "down",
+        "width": 103,
+        "crown": 5029,
+        "oldWidth": 119,
+        "oldCrown": 6483,
+        "bottom": 207,
+        "oldBottom": 207
+      },
+      {
+        "hairS": "topknot",
+        "dir": "right",
+        "width": 93,
+        "crown": 4122,
+        "oldWidth": 110,
+        "oldCrown": 5542,
+        "bottom": 191,
+        "oldBottom": 191
+      },
+      {
+        "hairS": "topknot",
+        "dir": "up",
+        "width": 96,
+        "crown": 4786,
+        "oldWidth": 110,
+        "oldCrown": 5899,
+        "bottom": 195,
+        "oldBottom": 196
+      },
+      {
+        "hairS": "topknot",
+        "dir": "left",
+        "width": 92,
+        "crown": 4052,
+        "oldWidth": 110,
+        "oldCrown": 5450,
+        "bottom": 191,
+        "oldBottom": 191
+      },
+      {
+        "hairS": "puff",
+        "dir": "down",
+        "width": 115,
+        "crown": 7693,
+        "oldWidth": 135,
+        "oldCrown": 9928,
+        "bottom": 211,
+        "oldBottom": 211
+      },
+      {
+        "hairS": "puff",
+        "dir": "right",
+        "width": 112,
+        "crown": 6933,
+        "oldWidth": 134,
+        "oldCrown": 9366,
+        "bottom": 188,
+        "oldBottom": 189
+      },
+      {
+        "hairS": "puff",
+        "dir": "up",
+        "width": 113,
+        "crown": 7967,
+        "oldWidth": 131,
+        "oldCrown": 9940,
+        "bottom": 198,
+        "oldBottom": 199
+      },
+      {
+        "hairS": "puff",
+        "dir": "left",
+        "width": 112,
+        "crown": 6793,
+        "oldWidth": 134,
+        "oldCrown": 9173,
+        "bottom": 188,
+        "oldBottom": 188
+      },
+      {
+        "hairS": "puffs",
+        "dir": "down",
+        "width": 128,
+        "crown": 6293,
+        "oldWidth": 142,
+        "oldCrown": 7574,
+        "bottom": 178,
+        "oldBottom": 178
+      },
+      {
+        "hairS": "puffs",
+        "dir": "right",
+        "width": 104,
+        "crown": 5487,
+        "oldWidth": 118,
+        "oldCrown": 6932,
+        "bottom": 191,
+        "oldBottom": 191
+      },
+      {
+        "hairS": "puffs",
+        "dir": "up",
+        "width": 126,
+        "crown": 6646,
+        "oldWidth": 140,
+        "oldCrown": 7845,
+        "bottom": 201,
+        "oldBottom": 201
+      },
+      {
+        "hairS": "puffs",
+        "dir": "left",
+        "width": 104,
+        "crown": 5468,
+        "oldWidth": 118,
+        "oldCrown": 6896,
+        "bottom": 191,
+        "oldBottom": 191
+      },
+      {
+        "hairS": "crownbraid",
+        "dir": "down",
+        "width": 105,
+        "crown": 4470,
+        "oldWidth": 115,
+        "oldCrown": 5111,
+        "bottom": 200,
+        "oldBottom": 201
+      },
+      {
+        "hairS": "crownbraid",
+        "dir": "right",
+        "width": 96,
+        "crown": 3726,
+        "oldWidth": 110,
+        "oldCrown": 4855,
+        "bottom": 185,
+        "oldBottom": 185
+      },
+      {
+        "hairS": "crownbraid",
+        "dir": "up",
+        "width": 104,
+        "crown": 4723,
+        "oldWidth": 110,
+        "oldCrown": 5067,
+        "bottom": 187,
+        "oldBottom": 188
+      },
+      {
+        "hairS": "crownbraid",
+        "dir": "left",
+        "width": 95,
+        "crown": 3769,
+        "oldWidth": 110,
+        "oldCrown": 4899,
+        "bottom": 185,
+        "oldBottom": 185
+      },
+      {
+        "hairS": "lowbun",
+        "dir": "down",
+        "width": 103,
+        "crown": 3476,
+        "oldWidth": 115,
+        "oldCrown": 3944,
+        "bottom": 209,
+        "oldBottom": 209
+      },
+      {
+        "hairS": "lowbun",
+        "dir": "right",
+        "width": 93,
+        "crown": 3111,
+        "oldWidth": 110,
+        "oldCrown": 4141,
+        "bottom": 185,
+        "oldBottom": 185
+      },
+      {
+        "hairS": "lowbun",
+        "dir": "up",
+        "width": 102,
+        "crown": 3732,
+        "oldWidth": 110,
+        "oldCrown": 3970,
+        "bottom": 191,
+        "oldBottom": 191
+      },
+      {
+        "hairS": "lowbun",
+        "dir": "left",
+        "width": 94,
+        "crown": 3119,
+        "oldWidth": 110,
+        "oldCrown": 4154,
+        "bottom": 185,
+        "oldBottom": 185
+      },
+      {
+        "hairS": "layered",
+        "dir": "down",
+        "width": 109,
+        "crown": 3395,
+        "oldWidth": 123,
+        "oldCrown": 3847,
+        "bottom": 247,
+        "oldBottom": 247
+      },
+      {
+        "hairS": "layered",
+        "dir": "right",
+        "width": 99,
+        "crown": 3824,
+        "oldWidth": 115,
+        "oldCrown": 5220,
+        "bottom": 252,
+        "oldBottom": 252
+      },
+      {
+        "hairS": "layered",
+        "dir": "up",
+        "width": 108,
+        "crown": 3293,
+        "oldWidth": 114,
+        "oldCrown": 3495,
+        "bottom": 262,
+        "oldBottom": 262
+      },
+      {
+        "hairS": "layered",
+        "dir": "left",
+        "width": 99,
+        "crown": 3830,
+        "oldWidth": 115,
+        "oldCrown": 5218,
+        "bottom": 252,
+        "oldBottom": 252
+      },
+      {
+        "hairS": "bluntlong",
+        "dir": "down",
+        "width": 110,
+        "crown": 3816,
+        "oldWidth": 125,
+        "oldCrown": 4604,
+        "bottom": 265,
+        "oldBottom": 265
+      },
+      {
+        "hairS": "bluntlong",
+        "dir": "right",
+        "width": 96,
+        "crown": 3998,
+        "oldWidth": 112,
+        "oldCrown": 5458,
+        "bottom": 266,
+        "oldBottom": 266
+      },
+      {
+        "hairS": "bluntlong",
+        "dir": "up",
+        "width": 112,
+        "crown": 3560,
+        "oldWidth": 116,
+        "oldCrown": 3724,
+        "bottom": 276,
+        "oldBottom": 276
+      },
+      {
+        "hairS": "bluntlong",
+        "dir": "left",
+        "width": 96,
+        "crown": 3994,
+        "oldWidth": 112,
+        "oldCrown": 5459,
+        "bottom": 266,
+        "oldBottom": 266
+      },
+      {
+        "hairS": "beachwaves",
+        "dir": "down",
+        "width": 116,
+        "crown": 2583,
+        "oldWidth": 129,
+        "oldCrown": 2674,
+        "bottom": 236,
+        "oldBottom": 236
+      },
+      {
+        "hairS": "beachwaves",
+        "dir": "right",
+        "width": 97,
+        "crown": 3009,
+        "oldWidth": 115,
+        "oldCrown": 4223,
+        "bottom": 239,
+        "oldBottom": 239
+      },
+      {
+        "hairS": "beachwaves",
+        "dir": "up",
+        "width": 109,
+        "crown": 2817,
+        "oldWidth": 116,
+        "oldCrown": 2736,
+        "bottom": 251,
+        "oldBottom": 251
+      },
+      {
+        "hairS": "beachwaves",
+        "dir": "left",
+        "width": 97,
+        "crown": 3067,
+        "oldWidth": 115,
+        "oldCrown": 4285,
+        "bottom": 239,
+        "oldBottom": 239
+      },
+      {
+        "hairS": "longcurls",
+        "dir": "down",
+        "width": 114,
+        "crown": 2919,
+        "oldWidth": 129,
+        "oldCrown": 3058,
+        "bottom": 237,
+        "oldBottom": 237
+      },
+      {
+        "hairS": "longcurls",
+        "dir": "right",
+        "width": 97,
+        "crown": 2836,
+        "oldWidth": 115,
+        "oldCrown": 3722,
+        "bottom": 247,
+        "oldBottom": 247
+      },
+      {
+        "hairS": "longcurls",
+        "dir": "up",
+        "width": 110,
+        "crown": 2882,
+        "oldWidth": 116,
+        "oldCrown": 2923,
+        "bottom": 251,
+        "oldBottom": 251
+      },
+      {
+        "hairS": "longcurls",
+        "dir": "left",
+        "width": 96,
+        "crown": 2768,
+        "oldWidth": 112,
+        "oldCrown": 3623,
+        "bottom": 247,
+        "oldBottom": 247
+      },
+      {
+        "hairS": "twinbraids",
+        "dir": "down",
+        "width": 109,
+        "crown": 3857,
+        "oldWidth": 121,
+        "oldCrown": 4279,
+        "bottom": 247,
+        "oldBottom": 247
+      },
+      {
+        "hairS": "twinbraids",
+        "dir": "right",
+        "width": 98,
+        "crown": 3745,
+        "oldWidth": 115,
+        "oldCrown": 5241,
+        "bottom": 259,
+        "oldBottom": 259
+      },
+      {
+        "hairS": "twinbraids",
+        "dir": "up",
+        "width": 106,
+        "crown": 4266,
+        "oldWidth": 116,
+        "oldCrown": 4636,
+        "bottom": 265,
+        "oldBottom": 265
+      },
+      {
+        "hairS": "twinbraids",
+        "dir": "left",
+        "width": 98,
+        "crown": 3739,
+        "oldWidth": 115,
+        "oldCrown": 5220,
+        "bottom": 259,
+        "oldBottom": 259
+      },
+      {
+        "hairS": "boxbraids",
+        "dir": "down",
+        "width": 108,
+        "crown": 2347,
+        "oldWidth": 129,
+        "oldCrown": 2416,
+        "bottom": 248,
+        "oldBottom": 248
+      },
+      {
+        "hairS": "boxbraids",
+        "dir": "right",
+        "width": 102,
+        "crown": 3182,
+        "oldWidth": 119,
+        "oldCrown": 4197,
+        "bottom": 250,
+        "oldBottom": 250
+      },
+      {
+        "hairS": "boxbraids",
+        "dir": "up",
+        "width": 112,
+        "crown": 2847,
+        "oldWidth": 116,
+        "oldCrown": 2734,
+        "bottom": 263,
+        "oldBottom": 263
+      },
+      {
+        "hairS": "boxbraids",
+        "dir": "left",
+        "width": 102,
+        "crown": 3193,
+        "oldWidth": 119,
+        "oldCrown": 4217,
+        "bottom": 250,
+        "oldBottom": 250
+      },
+      {
+        "hairS": "longtwists",
+        "dir": "down",
+        "width": 113,
+        "crown": 2857,
+        "oldWidth": 125,
+        "oldCrown": 3137,
+        "bottom": 233,
+        "oldBottom": 233
+      },
+      {
+        "hairS": "longtwists",
+        "dir": "right",
+        "width": 100,
+        "crown": 2947,
+        "oldWidth": 115,
+        "oldCrown": 3925,
+        "bottom": 244,
+        "oldBottom": 244
+      },
+      {
+        "hairS": "longtwists",
+        "dir": "up",
+        "width": 110,
+        "crown": 3289,
+        "oldWidth": 116,
+        "oldCrown": 3457,
+        "bottom": 248,
+        "oldBottom": 248
+      },
+      {
+        "hairS": "longtwists",
+        "dir": "left",
+        "width": 100,
+        "crown": 2967,
+        "oldWidth": 115,
+        "oldCrown": 3943,
+        "bottom": 244,
+        "oldBottom": 244
+      },
+      {
+        "hairS": "loosebraid",
+        "dir": "down",
+        "width": 112,
+        "crown": 3050,
+        "oldWidth": 125,
+        "oldCrown": 3378,
+        "bottom": 243,
+        "oldBottom": 243
+      },
+      {
+        "hairS": "loosebraid",
+        "dir": "right",
+        "width": 97,
+        "crown": 3549,
+        "oldWidth": 115,
+        "oldCrown": 4780,
+        "bottom": 251,
+        "oldBottom": 251
+      },
+      {
+        "hairS": "loosebraid",
+        "dir": "up",
+        "width": 108,
+        "crown": 3585,
+        "oldWidth": 116,
+        "oldCrown": 3810,
+        "bottom": 258,
+        "oldBottom": 258
+      },
+      {
+        "hairS": "loosebraid",
+        "dir": "left",
+        "width": 97,
+        "crown": 3436,
+        "oldWidth": 115,
+        "oldCrown": 4638,
+        "bottom": 251,
+        "oldBottom": 251
+      }
+    ],
+    "failures": []
+  },
+  "rearCoverage": {
+    "views": 56,
+    "measurements": [
+      {
+        "hairS": "short",
+        "samples": 4291,
+        "exposed": 2
+      },
+      {
+        "hairS": "buzz",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "medium",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "long",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "bob",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "curly",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "wavy",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "bun",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "ponytail",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "braids",
+        "samples": 4291,
+        "exposed": 8
+      },
+      {
+        "hairS": "locs",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "afro",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "pixie",
+        "samples": 4291,
+        "exposed": 2
+      },
+      {
+        "hairS": "sidepixie",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "crop",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "caesar",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "fade",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "hightop",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "flattop",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "quiff",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "pomp",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "slick",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "spikes",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "fauxhawk",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "curlytop",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "twistsS",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "bowl",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "curtains",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "angledbob",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "asymbob",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "braidbob",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "lob",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "shag",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "wolf",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "mullet",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "curlybob",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "twistout",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "puff",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "puffs",
+        "samples": 4291,
+        "exposed": 41
+      },
+      {
+        "hairS": "topknot",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "halfup",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "ponyhi",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "sidepony",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "spacebuns",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "bantu",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "crownbraid",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "lowbun",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "layered",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "bluntlong",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "beachwaves",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "longcurls",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "twinbraids",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "boxbraids",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "longtwists",
+        "samples": 4291,
+        "exposed": 23
+      },
+      {
+        "hairS": "loosebraid",
+        "samples": 4291,
+        "exposed": 0
+      },
+      {
+        "hairS": "bigafro",
+        "samples": 4291,
+        "exposed": 0
+      }
+    ],
+    "failures": []
+  },
+  "creatorMirrorSave": {
+    "creator": {
+      "views": 55,
+      "unique": 55,
+      "failures": []
+    },
+    "mirrored": {
+      "views": 55,
+      "unique": 55,
+      "failures": []
+    },
+    "saveReloadIdentical": true,
+    "browserErrors": []
+  },
+  "acceptedBatchPreserved": {
+    "views": 360,
+    "failures": []
+  },
+  "preservation": {
+    "nonCharacterScripts": 87,
+    "nonCharacterScriptsUnchanged": true,
+    "embeddedArtworkAndManifestUnchanged": true,
+    "registrationManifestUnchanged": true,
+    "workingGameSourceUnchanged": true
+  },
+  "scriptBlocksParsed": 88,
+  "castComparisons": 1872,
+  "registeredPoseChecks": 260,
+  "browserErrors": [],
+  "visualAcceptance": "Pending user review",
+  "publication": "Local build; no commit or push in this pass"
+}

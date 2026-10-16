@@ -1,0 +1,3730 @@
+{
+  "version": "temple-roots-10",
+  "canvas": [
+    192,
+    320
+  ],
+  "description": "Per-cut source scalp/temple landmarks and reviewed natural volume. Source coordinates are fractions of the complete transparent silhouette. Front roots use the center of the forehead at ear-top level; profile roots use the ear opening apex. Face-shape transforms are applied to anatomy and roots together. No ear-avoidance scoring, fringe clipping or face plates.",
+  "styles": {
+    "short": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.641975
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          99,
+          69
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.401786,
+          0.635417
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          97,
+          82
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          97
+        ],
+        "size": [
+          92,
+          84
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.589286,
+          0.635417
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          97,
+          82
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "buzz": {
+      "down": {
+        "sourceRoot": [
+          0.538462,
+          0.686567
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          99,
+          64
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.456311,
+          0.586207
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          98,
+          83
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.505618
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          97,
+          85
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.582524,
+          0.563218
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          98,
+          83
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "medium": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.563107
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          114,
+          98
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.412281,
+          0.594828
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          106,
+          110
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.5
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          107,
+          110
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.587719,
+          0.603448
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          106,
+          110
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "long": {
+      "down": {
+        "sourceRoot": [
+          0.528571,
+          0.268041
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          129,
+          184
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508333,
+          0.295337
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          112,
+          183
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.26943
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          183
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.295337
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          183
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "bob": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.530612
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          114,
+          93
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.441667,
+          0.575472
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          112,
+          101
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.45614
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          108
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.525,
+          0.570175
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          108
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "curly": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.514851
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          137,
+          96
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.507576,
+          0.547009
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          125,
+          111
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.444444
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          127,
+          111
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.547009
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          125,
+          111
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "wavy": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.348101
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          125,
+          150
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.475806,
+          0.356322
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          165
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.316092
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          165
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.556452,
+          0.373563
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          165
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "bun": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.539877
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          115,
+          155
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.45,
+          0.626866
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          110,
+          127
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.598592
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          110,
+          135
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.575,
+          0.626866
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          110,
+          127
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "ponytail": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.376812
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          119,
+          131
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.361538,
+          0.447368
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          120,
+          144
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.325
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          152
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.664179,
+          0.447368
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          123,
+          144
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "braids": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.282609
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          129,
+          175
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.516667,
+          0.335135
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          112,
+          176
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.253886
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          183
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.491667,
+          0.336788
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          183
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "locs": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.429752
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          129,
+          115
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.445312,
+          0.452555
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          119,
+          130
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.379562
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          130
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.554688,
+          0.457364
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          119,
+          123
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "afro": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.803922
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          142,
+          97
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.507042,
+          0.647887
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          135,
+          135
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.577465
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          139,
+          135
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.492754,
+          0.597015
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          131,
+          127
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "mohawk": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.708333
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          114
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.375,
+          0.631579
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          114,
+          126
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.639098
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          104,
+          126
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.625,
+          0.631579
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          114,
+          126
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "sidecut": {
+      "down": {
+        "sourceRoot": [
+          0.601695,
+          0.644068
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          112
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.441667,
+          0.604839
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          114,
+          118
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.612903
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          104,
+          118
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.6,
+          0.604839
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          114,
+          118
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "balding": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.214286
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          99,
+          53
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.787234,
+          0.378378
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          45,
+          70
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.224138
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          95,
+          55
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.234043,
+          0.383562
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          45,
+          69
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "pixie": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.648936
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          99,
+          80
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.428571,
+          0.647619
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          97,
+          89
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          89
+        ],
+        "size": [
+          92,
+          92
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.598214,
+          0.638095
+        ],
+        "targetRoot": [
+          109,
+          141
+        ],
+        "size": [
+          97,
+          89
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "sidepixie": {
+      "down": {
+        "sourceRoot": [
+          0.533898,
+          0.623656
+        ],
+        "targetRoot": [
+          96,
+          139
+        ],
+        "size": [
+          99,
+          79
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.455357,
+          0.637255
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          97,
+          87
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          92
+        ],
+        "size": [
+          92,
+          89
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.553571,
+          0.647059
+        ],
+        "targetRoot": [
+          111,
+          143
+        ],
+        "size": [
+          97,
+          87
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "crop": {
+      "down": {
+        "sourceRoot": [
+          0.533898,
+          0.72619
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          99,
+          71
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.410714,
+          0.638095
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          97,
+          89
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          89
+        ],
+        "size": [
+          92,
+          92
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.607143,
+          0.647619
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          97,
+          89
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "caesar": {
+      "down": {
+        "sourceRoot": [
+          0.533898,
+          0.77907
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          99,
+          73
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.419643,
+          0.684685
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          97,
+          94
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          84
+        ],
+        "size": [
+          92,
+          97
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.607143,
+          0.675676
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          97,
+          94
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "fade": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.632184
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          99,
+          74
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.446429,
+          0.666667
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          97,
+          84
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          94
+        ],
+        "size": [
+          92,
+          87
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.616071,
+          0.666667
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          97,
+          84
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "hightop": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.709302
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          104,
+          73
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.449153,
+          0.657143
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          103,
+          89
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          89
+        ],
+        "size": [
+          97,
+          92
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.550847,
+          0.647619
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          103,
+          89
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "flattop": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.7
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          99,
+          60
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.527778,
+          0.634409
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          94,
+          79
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          99
+        ],
+        "size": [
+          92,
+          82
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.535714,
+          0.623656
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          97,
+          79
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "quiff": {
+      "down": {
+        "sourceRoot": [
+          0.435484,
+          0.736842
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          104,
+          81
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.474576,
+          0.684211
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          103,
+          97
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          82
+        ],
+        "size": [
+          97,
+          99
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.542373,
+          0.684211
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          103,
+          97
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "pomp": {
+      "down": {
+        "sourceRoot": [
+          0.467742,
+          0.735632
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          104,
+          74
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.415254,
+          0.685185
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          103,
+          92
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          87
+        ],
+        "size": [
+          97,
+          94
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.567797,
+          0.694444
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          103,
+          92
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "slick": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.71875
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          95,
+          70
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.383929,
+          0.636364
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          97,
+          84
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          94
+        ],
+        "size": [
+          92,
+          87
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.633929,
+          0.636364
+        ],
+        "targetRoot": [
+          111,
+          143
+        ],
+        "size": [
+          97,
+          84
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "spikes": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.680851
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          104,
+          80
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.398305,
+          0.685185
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          103,
+          92
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          87
+        ],
+        "size": [
+          97,
+          94
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.635593,
+          0.685185
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          103,
+          92
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "fauxhawk": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.745283
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          104,
+          90
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.423729,
+          0.731707
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          103,
+          105
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          74
+        ],
+        "size": [
+          97,
+          107
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.59322,
+          0.731707
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          103,
+          105
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "curlytop": {
+      "down": {
+        "sourceRoot": [
+          0.566667,
+          0.761905
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          101,
+          71
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.415254,
+          0.712963
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          103,
+          92
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          87
+        ],
+        "size": [
+          97,
+          94
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.567797,
+          0.712963
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          103,
+          92
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "twistsS": {
+      "down": {
+        "sourceRoot": [
+          0.467742,
+          0.591398
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          118,
+          88
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.5,
+          0.606061
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          112,
+          94
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.525253
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          108,
+          94
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.491525,
+          0.59596
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          94
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "bowl": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.716049
+        ],
+        "targetRoot": [
+          96,
+          141
+        ],
+        "size": [
+          96,
+          69
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.517857,
+          0.637255
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          97,
+          87
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.0
+        ],
+        "targetRoot": [
+          96,
+          92
+        ],
+        "size": [
+          92,
+          89
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.637255
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          97,
+          87
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "curtains": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.598039
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          114,
+          97
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.440678,
+          0.610169
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          110,
+          112
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.516949
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          107,
+          112
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.567797,
+          0.610169
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          110,
+          112
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "angledbob": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.452174
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          118,
+          109
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.482759,
+          0.560345
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          108,
+          110
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.419355
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          118
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.534483,
+          0.551724
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          108,
+          110
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "asymbob": {
+      "down": {
+        "sourceRoot": [
+          0.532258,
+          0.55
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          114,
+          95
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.375,
+          0.551724
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          112,
+          110
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.474138
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          110
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.551724
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          110
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "braidbob": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.5
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          114,
+          99
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.439655,
+          0.526786
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          108,
+          106
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.433333
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          114
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.6,
+          0.526786
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          106
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "lob": {
+      "down": {
+        "sourceRoot": [
+          0.528571,
+          0.390977
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          129,
+          126
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.491667,
+          0.48227
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          112,
+          134
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.348993
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          142
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.541667,
+          0.436242
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          142
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "shag": {
+      "down": {
+        "sourceRoot": [
+          0.530303,
+          0.547009
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          121,
+          111
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.475806,
+          0.548872
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          126
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.481203
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          126
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.532258,
+          0.526316
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          126
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "wolf": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.530435
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          121,
+          109
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.443548,
+          0.534351
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          124
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.465649
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          124
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.532258,
+          0.541985
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          124
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "mullet": {
+      "down": {
+        "sourceRoot": [
+          0.469697,
+          0.504132
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          121,
+          115
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.419355,
+          0.471014
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          131
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.442029
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          131
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.564516,
+          0.478261
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          131
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "curlybob": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.52
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          125,
+          95
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508065,
+          0.534483
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          118,
+          110
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.448276
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          120,
+          110
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.534483
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          118,
+          110
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "twistout": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.598131
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          125,
+          102
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508333,
+          0.617391
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          114,
+          109
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.520325
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          120,
+          117
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.617391
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          114,
+          109
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "puff": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.585227
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          135,
+          167
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.424658,
+          0.677419
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          134,
+          147
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.631902
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          131,
+          155
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.582192,
+          0.677419
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          134,
+          147
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "puffs": {
+      "down": {
+        "sourceRoot": [
+          0.474684,
+          0.672566
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          142,
+          107
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.507812,
+          0.604651
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          118,
+          123
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.554745
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          140,
+          130
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.604651
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          118,
+          123
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "topknot": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.561728
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          119,
+          154
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.483333,
+          0.613139
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          110,
+          130
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.606897
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          110,
+          138
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.541667,
+          0.613139
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          110,
+          130
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "halfup": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.391061
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          125,
+          170
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.47619,
+          0.398876
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          117,
+          169
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.393258
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          114,
+          169
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.398876
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          121,
+          169
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "ponyhi": {
+      "down": {
+        "sourceRoot": [
+          0.46875,
+          0.550336
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          115,
+          142
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.323077,
+          0.521978
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          120,
+          173
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.431579
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          180
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.679104,
+          0.521978
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          123,
+          173
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "sidepony": {
+      "down": {
+        "sourceRoot": [
+          0.439394,
+          0.361111
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          119,
+          137
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.444444,
+          0.39375
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          116,
+          152
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.325
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          112,
+          152
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.531746,
+          0.375
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          116,
+          144
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "spacebuns": {
+      "down": {
+        "sourceRoot": [
+          0.469697,
+          0.52459
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          119,
+          116
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508333,
+          0.563636
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          110,
+          104
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.516949
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          110,
+          112
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.533333,
+          0.563636
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          110,
+          104
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "bantu": {
+      "down": {
+        "sourceRoot": [
+          0.46875,
+          0.52459
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          115,
+          116
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.45,
+          0.563636
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          110,
+          104
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.581818
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          110,
+          104
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.566667,
+          0.563636
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          110,
+          104
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "crownbraid": {
+      "down": {
+        "sourceRoot": [
+          0.53125,
+          0.512
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          115,
+          119
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.475,
+          0.572727
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          110,
+          104
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.554545
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          110,
+          104
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.533333,
+          0.572727
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          110,
+          104
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "lowbun": {
+      "down": {
+        "sourceRoot": [
+          0.53125,
+          0.44
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          115,
+          119
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.475,
+          0.544554
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          110,
+          96
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.485149
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          110,
+          96
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.55,
+          0.544554
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          110,
+          96
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "layered": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.335366
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          125,
+          156
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508065,
+          0.355556
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          171
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.305556
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          171
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.355556
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          171
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "bluntlong": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.321053
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          125,
+          180
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508333,
+          0.356436
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          112,
+          192
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.30198
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          192
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.356436
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          192
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "beachwaves": {
+      "down": {
+        "sourceRoot": [
+          0.528571,
+          0.319444
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          129,
+          137
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508065,
+          0.3625
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          152
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.296296
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          154
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.3625
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          152
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "longcurls": {
+      "down": {
+        "sourceRoot": [
+          0.528571,
+          0.317241
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          129,
+          138
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508065,
+          0.31677
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          153
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.294479
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          155
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.31677
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          112,
+          153
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "twinbraids": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.358824
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          121,
+          162
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.475806,
+          0.33871
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          177
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.311828
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          177
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.532258,
+          0.33871
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          177
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "boxbraids": {
+      "down": {
+        "sourceRoot": [
+          0.528571,
+          0.277419
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          129,
+          147
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.414062,
+          0.327485
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          119,
+          162
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.272727
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          167
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.59375,
+          0.327485
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          119,
+          162
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "longtwists": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.340278
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          125,
+          137
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.475806,
+          0.33125
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          152
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.30625
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          152
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.564516,
+          0.33125
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          152
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "cornrows": {
+      "down": {
+        "sourceRoot": [
+          0.538462,
+          0.462366
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          99,
+          88
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.504854,
+          0.511905
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          98,
+          80
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.539326
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          97,
+          85
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.504854,
+          0.511905
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          98,
+          80
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "loosebraid": {
+      "down": {
+        "sourceRoot": [
+          0.529412,
+          0.33121
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          125,
+          149
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.508065,
+          0.33526
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          115,
+          164
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.300578
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          116,
+          164
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.5,
+          0.33526
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          115,
+          164
+        ],
+        "root": "ear-opening"
+      }
+    },
+    "bigafro": {
+      "down": {
+        "sourceRoot": [
+          0.5,
+          0.822034
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          150,
+          112
+        ],
+        "root": "scalp-center"
+      },
+      "right": {
+        "sourceRoot": [
+          0.479452,
+          0.677419
+        ],
+        "targetRoot": [
+          85,
+          143
+        ],
+        "size": [
+          139,
+          147
+        ],
+        "root": "ear-opening"
+      },
+      "up": {
+        "sourceRoot": [
+          0.5,
+          0.595092
+        ],
+        "targetRoot": [
+          96,
+          144
+        ],
+        "size": [
+          148,
+          155
+        ],
+        "root": "scalp-center"
+      },
+      "left": {
+        "sourceRoot": [
+          0.527397,
+          0.677419
+        ],
+        "targetRoot": [
+          108,
+          143
+        ],
+        "size": [
+          139,
+          147
+        ],
+        "root": "ear-opening"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "revision": "customization-14",
+  "htmlSHA256": "a2b50befd75f82e7e8e02ed30de2f72b1ae974fe768dea0ce2d5004e06b9c363",
+  "localBuild": true,
+  "visualAcceptance": "accepted for now; user requested publication",
+  "targetedTests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "npcChecks": {
+    "comparisons": 1872,
+    "assetChecks": 260
+  },
+  "preservation": {
+    "embeddedArtPayloadUnchanged": true,
+    "otherScriptsUnchanged": 85,
+    "gardenScriptsMatchCurrentSource": true
+  },
+  "browserErrors": [],
+  "publicationValidation": "../../docs/graphics/publish-validation.json"
+}

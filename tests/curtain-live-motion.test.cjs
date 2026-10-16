@@ -1,3 +1,4 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 test('all six window treatments visibly animate at native resolution in the real game loop, with stronger wind and still reduced motion',async()=>{
@@ -5,7 +6,7 @@ test('all six window treatments visibly animate at native resolution in the real
   await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
   try {
     browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
-    const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+    const page=await artPage(browser,{viewport:{width:1280,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');await page.evaluate(()=>BagseedCurtains.ready);
     await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Curtain Motion');
     await page.locator('[data-act=startGame]').click();await page.waitForTimeout(2400);

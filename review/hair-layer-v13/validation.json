@@ -1,0 +1,72 @@
+{
+  "revision": "customization-13",
+  "htmlSHA256": "90385eaa626db739818013c0b15384917b705b2b1038f7b4d798e3172f7437e5",
+  "localBuild": true,
+  "embeddedImages": 1552,
+  "preservation": {
+    "embeddedArtPayloadUnchanged": true,
+    "otherScriptsUnchanged": 87,
+    "gameSourceSHA": "7bc2d76b527c4b717d3f86947a7eb31d5711c87dd2dd12489730e73167a179e4"
+  },
+  "testResults": {
+    "regression": {
+      "passed": 61,
+      "failed": 0
+    },
+    "newHairChecks": {
+      "passed": 3,
+      "failed": 0,
+      "runs": "Covered-ear and portrait checks passed in the initial run; corrected walking alpha selection passed its targeted rerun."
+    },
+    "totalPassed": 64
+  },
+  "coveredEars": {
+    "views": 12960,
+    "failures": [],
+    "selectionUnchanged": true,
+    "revealsWithUpdo": true
+  },
+  "figureLayers": {
+    "views": 6480,
+    "pixels": 8521920,
+    "failures": []
+  },
+  "portraitLayers": {
+    "views": 30,
+    "pixels": 52093,
+    "failures": []
+  },
+  "baselineProof": [
+    {
+      "route": "/before",
+      "tailSamples": 4510,
+      "tailMismatches": 4457,
+      "afroEarsConcealed": false
+    },
+    {
+      "route": "/after",
+      "tailSamples": 4510,
+      "tailMismatches": 0,
+      "afroEarsConcealed": true
+    }
+  ],
+  "npcVerification": {
+    "fullCastComparisons": 1872,
+    "standingAndPortraitIdentitiesPreserved": 71,
+    "completePoseAssetChecks": 260,
+    "poseSetsPreserved": 52
+  },
+  "browserErrors": [],
+  "visualInspection": [
+    "before-after.png",
+    "all-styles-1-after.png",
+    "all-styles-5-after.png",
+    "all-styles-6-after.png",
+    "all-styles-8-after.png",
+    "animation-after.png",
+    "portraits-after.png",
+    "mirror-long.png",
+    "mirror-afro.png"
+  ],
+  "userVisualAcceptance": "pending"
+}

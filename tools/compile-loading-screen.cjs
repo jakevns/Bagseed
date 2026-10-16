@@ -18,5 +18,5 @@ function compile(source){
   const {style,shell}=parts();
   return source.replace('<html lang="en">','<html lang="en" data-bagseed-loading="loading">').replace('</head>',style+'\n</head>').replace('<body>','<body>\n'+shell+'\n').replace(frame,frame+'\n  if (window.BagseedStartup && !BagseedStartup.canRender) { last = ts; return; }');
 }
-compile.verify=html=>{const {style,shell}=parts();assert.ok(html.includes(style)&&html.includes(shell),'Loading screen differs from its sources; rebuild');assert.ok(html.includes('if (window.BagseedStartup && !BagseedStartup.canRender) { last = ts; return; }'),'Startup frame gate missing');};
+compile.verify=html=>{let {style,shell}=parts();style=style.replace(/\r\n/g,'\n');shell=shell.replace(/\r\n/g,'\n');assert.ok(html.includes(style)&&html.includes(shell),'Loading screen differs from its sources; rebuild');assert.ok(html.includes('if (window.BagseedStartup && !BagseedStartup.canRender) { last = ts; return; }'),'Startup frame gate missing');};
 module.exports=compile;

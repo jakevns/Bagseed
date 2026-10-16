@@ -1,3 +1,4 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 test('painted live window follows game time, layers scheduled neighbors, preserves weather, sill, curtains, interactions and saves',async()=>{
@@ -5,7 +6,7 @@ test('painted live window follows game time, layers scheduled neighbors, preserv
   const root=path.resolve(__dirname,'..'),out=path.join(root,'review/bedroom-window'),frames=path.join(root,'artifacts/bedroom-window/frames');fs.mkdirSync(out,{recursive:true});fs.mkdirSync(frames,{recursive:true});
   try{
     browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
-    const page=await browser.newPage({viewport:{width:1440,height:960}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+    const page=await artPage(browser,{viewport:{width:1440,height:960}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html');await page.evaluate(()=>BagseedStartup.ready);
     assert.equal(await page.evaluate(()=>BagseedBedroomWindow.loaded&&BagseedWindowScenery.loaded),true);
     await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Window Gardener');await page.locator('[data-act=startGame]').click();await page.waitForTimeout(2400);

@@ -1,3 +1,4 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test,before,after}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
@@ -13,7 +14,7 @@ before(async()=>{
 });
 after(async()=>{await browser?.close();if(server)await new Promise(resolve=>server.close(resolve));});
 async function inspect(fn){
-  const page=await browser.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));
+  const page=await artPage(browser,),errors=[];page.on('pageerror',error=>errors.push(error.message));
   try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const result=await page.evaluate(fn,registration);assert.deepEqual(errors,[]);return result;}finally{await page.close();}
 }
 
@@ -183,13 +184,17 @@ test('close cuts fit the skull width, stay centered and finish at the nape',asyn
 });
 
 test('the original opaque fringe strands survive composition over the forehead',async()=>{
-  const result=await inspect(()=>{
+  const result=await inspect(registration=>{
     const failures=[];let strands=0,views=0;
     for(const [hairS]of HAIRS)for(const dir of ['down','right','left']){
       const look=BagseedArt.normalize({hairS,hairC:'#e9e2d4',hat:'none',facial:'none',face:'soft',acc:'none'}),layer=BagseedArt.hairLayer(look,dir),hair=layer.getContext('2d').getImageData(0,0,192,320).data,head=BagseedArt.head(look,dir).getContext('2d').getImageData(0,0,192,320).data;
       const expected=document.createElement('canvas');expected.width=192;expected.height=320;const g=expected.getContext('2d');g.drawImage(BagseedArt.baldBase(look,dir),0,0);g.drawImage(layer,0,0);const composed=g.getImageData(0,0,192,320).data;
       let erased=0;
-      for(let y=110;y<185;y++)for(let x=35;x<157;x++){const n=(y*192+x)*4;if(hair[n+3]>80){strands++;if([0,1,2,3].some(k=>Math.abs(head[n+k]-composed[n+k])>1))erased++;}}
+      // These cuts deliberately put real ears above hair. The forehead
+      // and fringe must still retain every strand outside the ear anatomy.
+      const foreground=hairS!=='bald';
+      const bounds=({down:[[49,144,74,178],[119,144,146,178]],right:[[70,143,99,177]],left:[[94,143,123,177]]})[dir];
+      for(let y=110;y<185;y++)for(let x=35;x<157;x++){if(foreground&&bounds.some(([l,t,r,b])=>x>=l-1&&x<=r+1&&y>=t-1&&y<=b+1))continue;const n=(y*192+x)*4;if(hair[n+3]>80){strands++;if([0,1,2,3].some(k=>Math.abs(head[n+k]-composed[n+k])>1))erased++;}}
       if(erased)failures.push({hairS,dir,erased});views++;
     }
     return {views,strands,failures};

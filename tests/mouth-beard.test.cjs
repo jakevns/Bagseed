@@ -1,8 +1,9 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test,before,after}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const ROOT=path.resolve(__dirname,'..'),OUT=path.join(ROOT,'artifacts/custom-beards-v9');let browser,server,url;
 before(async()=>{fs.mkdirSync(OUT,{recursive:true});const{createStaticServer}=await import('../tools/server.mjs');server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));url='http://127.0.0.1:'+server.address().port;browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});});
 after(async()=>{await browser?.close();if(server)await new Promise(r=>server.close(r));});
-async function inspect(name,fn){const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const report=await page.evaluate(fn);fs.writeFileSync(path.join(OUT,name+'.json'),JSON.stringify(report,null,2)+'\n');assert.deepEqual(report.failures,[]);assert.deepEqual(errors,[]);return report;}finally{await page.close();}}
+async function inspect(name,fn){const page=await artPage(browser,),errors=[];page.on('pageerror',e=>errors.push(e.message));try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const report=await page.evaluate(fn);fs.writeFileSync(path.join(OUT,name+'.json'),JSON.stringify(report,null,2)+'\n');assert.deepEqual(report.failures,[]);assert.deepEqual(errors,[]);return report;}finally{await page.close();}}
 
 test('all selected mouth silhouettes remain distinct at creator size with expressions enabled',async()=>{
  const r=await inspect('mouth-readability',()=>{const failures=[];let views=0;const counts=[];
@@ -33,7 +34,7 @@ test('moustaches leave ear cartilage intact and all beard styles leave the neck 
 });
 
 test('new mouth styles and cleaned beards work through creator, wardrobe and save/reload',async()=>{
- const page=await browser.newPage({viewport:{width:1280,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const page=await artPage(browser,{viewport:{width:1280,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  try{
   await page.goto(url);await page.evaluate(()=>BagseedArt.ready);await page.locator('[data-act=newGame]').click();
   for(const arg of ['mouth:braces','expr:happy','facial:beard'])await page.locator('[data-act=cr][data-arg="'+arg+'"]').click();

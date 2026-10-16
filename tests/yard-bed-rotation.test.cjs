@@ -39,7 +39,7 @@ test('backyard planters rotate while placing and moving, and keep their plants',
       const I = GP.inv(); I.beds.BED008 = 1; state.player.energy = 100;
       state.player.x = 240; state.player.y = 120; state.player.dir = 'down';
       Yard115.start('bed', 'BED008');
-      const rotateShown = !$('#place115 [data-act="yardRotate"]').hidden;
+      const rotateShown = !$('#place115 [data-act="yardTurn"][data-arg="rot"]').hidden;
       const before = Yard115.ghost();
       ACT.yardRotate();
       const after = Yard115.ghost();

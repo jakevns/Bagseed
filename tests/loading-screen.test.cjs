@@ -11,10 +11,13 @@ test('loading cover paints during download, waits for all art, blocks input, and
     streamResponse=res;res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});res.write(html.subarray(0,cut));releaseStream=()=>res.end(html.subarray(cut));
   }else app.emit('request',req,res);});await new Promise(r=>server.listen(0,'127.0.0.1',r));
   try{
-    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});
+    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
     const context=await browser.newContext({viewport:{width:1440,height:960}}),page=await context.newPage(),errors=[],expectedErrors=[];
     page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')expectedErrors.push(m.text());});
     await context.addInitScript(({prefix})=>{
+      // Animation is tested during the initial streamed download. Pause only the
+      // later save/error reloads to keep software-canvas startup deterministic.
+      if(sessionStorage.getItem('startup-test-mode')){const watch=new MutationObserver(()=>{if(window.BagseedLoadingScene){BagseedLoadingScene.pause();watch.disconnect();}});watch.observe(document,{childList:true,subtree:true});}
       // The outgoing page performs its normal unload autosave before this runs.
       window.__startupSaveAtEntry=localStorage.getItem('bagseed.save.v1');
       const Native=Image;window.__heldStartupArt=[];
@@ -37,7 +40,7 @@ test('loading cover paints during download, waits for all art, blocks input, and
     await page.evaluate(()=>BagseedLoadingScene.ready);
     const moving=[];for(let i=0;i<6;i++){moving.push(await page.evaluate(()=>document.querySelector('#bagseed-loading-room').toDataURL()));await page.waitForTimeout(150);}assert.ok(new Set(moving).size>4,'Room did not animate');
     await page.evaluate(()=>BagseedLoadingScene.pause());
-    const imageAt=async(t,tier=0)=>page.evaluate(([t,tier])=>{BagseedLoadingScene.render(t,tier);return document.querySelector('#bagseed-loading-room').toDataURL();},[t,tier]);
+    const imageAt=async(t,tier=0,cloudTime=t)=>page.evaluate(([t,tier,cloudTime])=>{BagseedLoadingScene.render(t,tier,cloudTime);return document.querySelector('#bagseed-loading-room').toDataURL();},[t,tier,cloudTime]);
     const cloudCheck=await page.evaluate(()=>{
       const cv=document.querySelector('#bagseed-loading-room'),g=cv.getContext('2d');
       BagseedLoadingScene.render(3,0,0);const a=g.getImageData(0,0,cv.width,cv.height).data;
@@ -46,7 +49,7 @@ test('loading cover paints during download, waits for all art, blocks input, and
         const i=(y*cv.width+x)*4;if(Math.abs(a[i]-b[i])+Math.abs(a[i+1]-b[i+1])+Math.abs(a[i+2]-b[i+2])>3){changed++;const lx=x*2048/cv.width,ly=y*768/cv.height;if(lx<979||lx>1211||ly<59||ly>223)escaped++;}
       }return {changed,escaped};
     });assert.ok(cloudCheck.changed>100,'Clouds did not move across the sky');assert.equal(cloudCheck.escaped,0,'Clouds escaped the window');
-    const day=await imageAt(0),night=await imageAt(6);assert.notEqual(day,night);assert.equal(day,await imageAt(12),'Loop must return to identical daylight');
+    const day=await imageAt(0),night=await imageAt(6);assert.notEqual(day,night);assert.equal(day,await imageAt(12,0,0),'Lighting must return to identical daylight with the cloud position held constant');
     const variants=await Promise.all([0,1,2].map(tier=>imageAt(0,tier)));assert.equal(new Set(variants).size,3);
     const frames=path.join(root,'artifacts/loading-bedroom/frames');fs.mkdirSync(frames,{recursive:true});
     for(let i=0;i<72;i++){const data=await imageAt(i/6);fs.writeFileSync(path.join(frames,String(i).padStart(3,'0')+'.png'),Buffer.from(data.split(',')[1],'base64'));}

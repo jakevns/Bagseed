@@ -17521,6 +17521,29 @@ const GPArt = {
     else if (type === 'trellis') { r(x, y, w, h, '#5a3a20'); soil(x + 1, y + 1, w - 2, 2); r(x, y + 3, w, h - 3, '#8a5a32'); for (let yy = y - 22; yy < y; yy += 4) r(x + 2, yy, w - 4, 1, '#c9a35a'); for (let xx = x + 2; xx < x + w - 1; xx += 5) r(xx, y - 22, 1, 22, '#c9a35a'); }
     else if (type === 'barrel') { r(x, y, w, h, '#4a2e18'); soil(x + 1, y + 1, w - 2, 2); r(x + 1, y + 3, w - 2, h - 3, '#8a5a32'); r(x, y + 4, w, 1, '#5a5a5a'); r(x, y + h - 3, w, 1, '#5a5a5a'); for (let xx = x + 3; xx < x + w; xx += 4) r(xx, y + 3, 1, h - 3, '#6b4426'); }
   },
+  /* a bed in any orientation: x, y = footprint top-left. The original art draws unchanged when unturned. */
+  bedO(c, B, x, y, o, t) {
+    const [W, H] = GP.bedDims(B, o), style = B.style;
+    if (style === 'corner') return !o.rot && !o.flip ? this.bed(c, style, x, y, W, H, t) : this.cornerO(c, B, x, y, o);
+    if (!(o.rot & 1) || ['wood', 'cedar', 'metal', 'stone'].includes(style)) return this.bed(c, style, x, y, W, H, t);
+    // box planters turned side-on: a deeper soil top above the same front face
+    const r = this.kit(c).r, top = H - B.h, rim = { terracotta: '#9a4a2a', trough: '#5a5a5a', barrel: '#4a2e18' }[style] || '#5a3a20';
+    r(x, y, W, top + 3, rim); this.soilPx(r, x + 1, y + 1, W - 2, top + 1);
+    c.save(); c.beginPath(); c.rect(x, y + top + 1, W, B.h); c.clip(); this.bed(c, style, x, y + top, W, B.h, t); c.restore();
+    if (style === 'trellis') { for (let yy = y - 22; yy < y; yy += 4) r(x + 2, yy, W - 4, 1, '#c9a35a'); for (let xx = x + 2; xx < x + W - 1; xx += 5) r(xx, y - 22, 1, 22, '#c9a35a'); }
+  },
+  soilPx(r, x0, y0, ww, hh) { r(x0, y0, ww, hh, '#4a3020'); for (let i = 0; i < ww * hh / 12; i++) r(x0 + (i * 7 % ww), y0 + (i * 5 % hh), 1, 1, '#6b4a30'); },
+  /* the L-shaped bed turned or mirrored: each arm keeps its front face at the bottom */
+  cornerO(c, B, x, y, o) {
+    const r = this.kit(c).r, arms = [[0, 0, B.w, 10], [0, 0, 12, B.h]].map(a => GP.bedRect(B, o, a)).sort((p, q) => p[1] + p[3] - (q[1] + q[3]));
+    for (const a of arms) r(x + a[0], y + a[1], a[2], a[3], '#5a3a20');
+    for (const a of arms) this.soilPx(r, x + a[0] + 2, y + a[1] + 1, a[2] - 4, a[3] - 4);
+    arms.forEach((a, i) => {
+      const q = arms[1 - i], bot = a[1] + a[3]; let segs = [[a[0], a[0] + a[2]]];
+      if (q[1] < bot && q[1] + q[3] > bot) segs = [[a[0], Math.max(a[0], q[0] + 2)], [Math.min(a[0] + a[2], q[0] + q[2] - 2), a[0] + a[2]]];
+      for (const [x0, x1] of segs) if (x1 > x0) { r(x + x0, y + bot - 3, x1 - x0, 3, '#a8703f'); r(x + x0, y + bot - 3, x1 - x0, 1, '#c9965c'); }
+    });
+  },
   bedIcon(cv, id) {
     const B = GP.bed(id); if (!B) return; const c = cv.getContext('2d'); c.imageSmoothingEnabled = false; R(c, 0, 0, cv.width, cv.height, '#141c18'); R(c, 0, Math.round(cv.height * .8), cv.width, cv.height, '#5f8a3a');
     const s = Math.max(1, Math.floor(Math.min(cv.width / (B.w + 12), cv.height / (B.h + 26)))); c.save(); c.translate(Math.round(cv.width / 2 - B.w * s / 2), Math.round(cv.height - (B.h + 6) * s)); c.scale(s, s);
@@ -17624,6 +17647,29 @@ const GP = {
     if (B.style === 'stone') { const pts = [[B.w / 2, B.h / 2 - 1], [B.w / 2 - 7, B.h / 2 + 2], [B.w / 2 + 7, B.h / 2 + 2], [B.w / 2, B.h / 2 + 4]]; return pts[i] || pts[0]; }
     const rows = n >= 6 ? 2 : 1, per = Math.ceil(n / rows), r = Math.floor(i / per), k = i % per;
     return [Math.round((k + .5) * B.w / per), rows === 2 ? (r === 0 ? Math.round(B.h * .35) + 1 : Math.round(B.h * .75)) : Math.round(B.h * .55)];
+  },
+  /* placed-bed orientation: rot = quarter turns clockwise, flip = mirrored left-right before turning.
+     Saves from before orientation existed have neither field: no turn, no mirror. */
+  bedOri(b) { return { rot: ((b && b.rot) | 0) & 3, flip: !!(b && b.flip) }; },
+  setBedOri(b, o) { b.rot = o.rot || 0; if (o.flip) b.flip = true; else delete b.flip; },
+  turnOri(o, how) { return how === 'rot' ? { rot: (o.rot + 1) & 3, flip: o.flip } : how === 'h' ? { rot: (4 - o.rot) & 3, flip: !o.flip } : { rot: (6 - o.rot) & 3, flip: !o.flip }; },
+  bedDims(B, o) { return o.rot & 1 ? [B.h, B.w] : [B.w, B.h]; },
+  bedPt(B, o, x, y) { if (o.flip) x = B.w - x; return o.rot === 1 ? [B.h - y, x] : o.rot === 2 ? [B.w - x, B.h - y] : o.rot === 3 ? [y, B.w - x] : [x, y]; },
+  bedRect(B, o, [x, y, w, h]) { const a = this.bedPt(B, o, x, y), b = this.bedPt(B, o, x + w, y + h); return [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.abs(a[0] - b[0]), Math.abs(a[1] - b[1])]; },
+  /* slot ground position for an oriented bed (relative to its footprint's top-left). Box beds keep their
+     front face toward the viewer, so their slots are laid out for the turned footprint; the L bed and the
+     round bed turn geometrically. big = a two-slot plant starting at slot i. */
+  slotPosO(B, o, i, big) {
+    if (!o.rot && !o.flip) { const p = this.slotPos(B, i); return big ? [p[0] + Math.round(B.w / B.cap / 2), p[1]] : p; }
+    if (big && i + 1 < B.cap) { const a = this.slotPosO(B, o, i), b = this.slotPosO(B, o, i + 1); return [Math.round((a[0] + b[0]) / 2), Math.round((a[1] + b[1]) / 2)]; }
+    if (B.style === 'corner' || B.style === 'stone') { const p = this.slotPos(B, i), q = this.bedPt(B, o, p[0], p[1]); return [Math.round(q[0]), Math.round(q[1])]; }
+    const n = B.cap, rows = n >= 6 ? 2 : 1, per = Math.ceil(n / rows), r = Math.floor(i / per), k = i % per;
+    if (!(o.rot & 1)) { const kk = (o.rot === 2) !== o.flip ? per - 1 - k : k, rr = o.rot === 2 ? rows - 1 - r : r; return this.slotPos(B, Math.min(n - 1, rr * per + kk)); }
+    const [W, H] = this.bedDims(B, o), kk = (o.rot === 3) !== o.flip ? per - 1 - k : k;
+    const yA = 3, yB = ['wood', 'cedar', 'metal'].includes(B.style) ? H - 6 : H - B.h + Math.round(B.h * .55);
+    const y = per === 1 ? yB : Math.round(yA + kk * (yB - yA) / (per - 1));
+    const x = rows === 2 ? Math.round(W * ((o.rot === 1) === (r === 0) ? .7 : .3)) : Math.round(W / 2);
+    return [x, y];
   },
   /* ---------------- saved state ---------------- */
   S() { const V = V115S(); V.gp = V.gp || { seq: 0, list: {} }; return V.gp; },
@@ -17824,17 +17870,11 @@ INV_EXTRA115.decor = () => {
    BACKYARD: plantable beds and trees placed like furniture
    ===================================================================== */
 const Yard115 = {
-  /* beds turn in quarter steps (rot 0–3, clockwise); odd turns swap the footprint */
-  dims(type, rot) { const B = GP.bed(type); return (rot || 0) % 2 ? [B.h, B.w] : [B.w, B.h]; },
-  foot(b) { const [w, h] = this.dims(b.type, b.rot); return [b.x, b.y, w, h]; },
-  /* draw a bed's art turned to its rotation, mapping whole pixels so the pixel art stays crisp */
-  drawBed(c, b, t) {
-    const B = GP.bed(b.type), r = (b.rot || 0) % 4; if (!r) { GPArt.bed(c, B.style, b.x, b.y, B.w, B.h, t); return; }
-    c.save(); if (r === 1) c.translate(b.x + B.h, b.y); else if (r === 2) c.translate(b.x + B.w, b.y + B.h); else c.translate(b.x, b.y + B.w);
-    c.rotate(r * Math.PI / 2); GPArt.bed(c, B.style, 0, 0, B.w, B.h, t); c.restore();
-  },
-  slotXY(b, i) { const B = GP.bed(b.type), [sx, sy] = GP.slotPos(B, i), r = (b.rot || 0) % 4; return r === 1 ? [B.h - sy, sx] : r === 2 ? [B.w - sx, B.h - sy] : r === 3 ? [sy, B.w - sx] : [sx, sy]; },
-  rotate() { const P = runtime.place115; if (!P || P.kind !== 'bed') return; P.rot = ((P.rot || 0) + 1) % 4; Sfx.tone(700, .05, 'square', .02); },
+  foot(b) { const [w, h] = this.dims(b); return [b.x, b.y, w, h]; },
+  dims(b, rot) { return typeof b === 'string' ? GP.bedDims(GP.bed(b), { rot: rot || 0 }) : GP.bedDims(GP.bed(b.type), GP.bedOri(b)); },
+  rotate() { this.turn('rot'); },
+  slotXY(b, i) { return GP.slotPosO(GP.bed(b.type), GP.bedOri(b), i); },
+  drawBed(c, b, t) { GPArt.bedO(c, GP.bed(b.type), b.x, b.y, GP.bedOri(b), t); },
   trunk(t) { return [t.x - 3, t.y - 3, 6, 4]; },
   solids() { const Y = GP.yard(); return Y.beds.map(b => this.foot(b)).concat(Y.trees.map(t => this.trunk(t))); },
   treeStage(t) { const T = GP.tree(t.sp), a = t.age || 0; return a >= T.days ? 3 : a >= T.days * .55 ? 2 : a >= T.days * .2 ? 1 : 0; },
@@ -17853,12 +17893,14 @@ const Yard115 = {
   start(kind, id, ref) {
     if (state.scene !== 'backyard') { toast('Go out to the backyard to place it.', 'warn'); return; }
     if (kind === 'tree' && !ref && !GP.inv().tools.SUP002) { toast('You need a garden spade to plant a tree (Fern & Forge › Garden tools).', 'warn'); return; }
-    closePanel(); runtime.place115 = { kind, id, ref, rot: kind === 'bed' && ref ? ((GP.yard().beds.find(b => b.bid === ref) || {}).rot || 0) : 0 };
-    this.ensureBar(); think(kind === 'tree' ? 'Walk to where the tree should grow. The ring shows its mature canopy.' : 'Walk to a spot for the bed, press Rotate (or R) to turn it, then Place here.', 4200);
+    const moving = kind === 'bed' && ref && GP.yard().beds.find(b => b.bid === ref);
+    closePanel(); runtime.place115 = { kind, id, ref, ori: kind !== 'bed' ? null : moving ? GP.bedOri(moving) : Object.assign({ rot: 0, flip: false }, runtime.bedOri115) };
+    if (kind === 'bed') runtime.place115.rot = runtime.place115.ori.rot;
+    this.ensureBar(); think(kind === 'tree' ? 'Walk to where the tree should grow. The ring shows its mature canopy.' : 'Walk to a spot for the bed, then press Place here.', 4200);
   },
   ghost() {
     const P = runtime.place115; if (!P) return null; const p = state.player, d = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] }[p.dir || 'down'];
-    if (P.kind === 'bed') { const [w, h] = this.dims(P.id, P.rot); const cx = Math.round(p.x + d[0] * (w / 2 + 10)), cy = Math.round(p.y + d[1] * (h / 2 + 10)) - (d[1] < 0 ? 6 : 0); return [Math.round(cx - w / 2), Math.round(cy - h / 2), w, h]; }
+    if (P.kind === 'bed') { const [w, h] = GP.bedDims(GP.bed(P.id), P.ori); const cx = Math.round(p.x + d[0] * (w / 2 + 10)), cy = Math.round(p.y + d[1] * (h / 2 + 10)) - (d[1] < 0 ? 6 : 0); return [Math.round(cx - w / 2), Math.round(cy - h / 2), w, h]; }
     const cx = Math.round(p.x + d[0] * 16), cy = Math.round(p.y + d[1] * 14 + (d[1] === 0 ? -2 : 0)); return [cx - 3, cy - 3, 6, 4];
   },
   ignoreKey() { const P = runtime.place115; return P && P.ref ? P.ref : null; },
@@ -17866,8 +17908,8 @@ const Yard115 = {
     const P = runtime.place115; if (!P) return; const g = this.ghost(), chk = this.check(g, this.ignoreKey()); if (!chk.ok) { toast(esc(chk.why), 'warn'); Sfx.bad(); return; }
     const Y = GP.yard(), I = GP.inv();
     if (P.kind === 'bed') {
-      if (P.ref) { const b = Y.beds.find(x => x.bid === P.ref); if (b) { b.x = g[0]; b.y = g[1]; b.rot = P.rot || 0; toast('Bed moved. Everything planted in it came along.', 'social'); } }
-      else { if (!(I.beds[P.id] > 0)) { this.cancel(); return; } I.beds[P.id]--; Y.seq = (Y.seq || 0) + 1; Y.beds.push({ bid: 'yb' + Y.seq, type: P.id, x: g[0], y: g[1], rot: P.rot || 0, slots: new Array(GP.bed(P.id).cap).fill(null), weeds: 0 }); toast(`${esc(GP.bed(P.id).name)} placed. Walk up to it to plant.`, 'social'); }
+      if (P.ref) { const b = Y.beds.find(x => x.bid === P.ref); if (b) { b.x = g[0]; b.y = g[1]; GP.setBedOri(b, P.ori); toast('Bed moved. Everything planted in it came along.', 'social'); } }
+      else { if (!(I.beds[P.id] > 0)) { this.cancel(); return; } I.beds[P.id]--; Y.seq = (Y.seq || 0) + 1; const nb = { bid: 'yb' + Y.seq, type: P.id, x: g[0], y: g[1], slots: new Array(GP.bed(P.id).cap).fill(null), weeds: 0 }; GP.setBedOri(nb, P.ori); Y.beds.push(nb); toast(`${esc(GP.bed(P.id).name)} placed. Walk up to it to plant.`, 'social'); }
     } else {
       const tx = g[0] + 3, ty = g[1] + 3;
       if (P.ref) { const t = Y.trees.find(x => x.tid === P.ref); if (t) { if (!spend(GP.choreE(8), 30)) return; t.x = tx; t.y = ty; toast('Tree transplanted. It kept its age.', 'social'); } }
@@ -17877,22 +17919,45 @@ const Yard115 = {
   },
   cancel() { runtime.place115 = null; const b = $('#place115'); if (b) b.hidden = true; },
   ensureBar() {
-    let b = $('#place115'); if (!b) { b = document.createElement('div'); b.id = 'place115'; b.innerHTML = '<span class="msg"></span><button class="btn sm" data-act="yardRotate" title="Rotate (R)">⟳ Rotate</button><button class="btn sm primary" data-act="yardPlace">Place here</button><button class="btn sm" data-act="yardCancel">Cancel</button>'; ($('#stage') || document.body).appendChild(b); }
-    b.hidden = false; const rb = b.querySelector('[data-act="yardRotate"]'); if (rb) rb.hidden = !(runtime.place115 && runtime.place115.kind === 'bed'); return b;
+    let b = $('#place115'); if (!b) { b = document.createElement('div'); b.id = 'place115'; b.innerHTML = '<span class="msg"></span><button class="btn sm primary" data-act="yardPlace">Place here</button><span class="ori115"><button class="btn sm" data-act="yardTurn" data-arg="rot" title="Rotate 90° (R)" aria-label="Rotate 90 degrees">⟳ Rotate</button><button class="btn sm" data-act="yardTurn" data-arg="h" title="Mirror left-right (F)" aria-label="Mirror left to right">⇋ Flip</button><button class="btn sm" data-act="yardTurn" data-arg="v" title="Mirror top-bottom (V)" aria-label="Mirror top to bottom">⇅ Flip</button></span><button class="btn sm" data-act="yardCancel">Cancel</button>'; ($('#stage') || document.body).appendChild(b); }
+    const P = runtime.place115; b.querySelector('.ori115').hidden = !(P && P.kind === 'bed');
+    b.hidden = false; return b;
+  },
+  /* rotate / mirror the bed being placed or moved */
+  turn(how) {
+    const P = runtime.place115; if (!P || P.kind !== 'bed') return;
+    P.ori = GP.turnOri(P.ori, how); P.rot = P.ori.rot; runtime.bedOri115 = Object.assign({}, P.ori); Sfx.click();
+  },
+  /* rotate / mirror a bed where it stands; turns keep its center, plants keep their slots */
+  turnPlaced(bid, how) {
+    const b = GP.yard().beds.find(x => x.bid === bid); if (!b) return false;
+    if (state.scene !== 'backyard') { toast('Go out to the backyard to turn it.', 'warn'); return false; }
+    const B = GP.bed(b.type), o = GP.bedOri(b), no = GP.turnOri(o, how), [w, h] = GP.bedDims(B, o), [w2, h2] = GP.bedDims(B, no);
+    const rect = [Math.round(b.x + w / 2 - w2 / 2), Math.round(b.y + h / 2 - h2 / 2), w2, h2];
+    if (w2 !== w) {
+      const chk = this.check(rect, bid); if (!chk.ok) { toast(`It won't turn here: ${esc(chk.why.replace(/\.$/, '').toLowerCase())}. Try Move to turn it somewhere roomier.`, 'warn'); Sfx.bad(); return false; }
+      const p = state.player; if (p.x + 3 > rect[0] && p.x - 3 < rect[0] + w2 && p.y > rect[1] && p.y - 2 < rect[1] + h2) { toast('Step back a little so it has room to turn.', 'warn'); Sfx.bad(); return false; }
+    }
+    b.x = rect[0]; b.y = rect[1]; GP.setBedOri(b, no); Sfx.click(); SaveSys.request('yard'); return true;
   },
   tickBar() { const P = runtime.place115, b = $('#place115'); if (!b) return; if (!P || state.scene !== 'backyard' || runtime.overlay) { if (!P || state.scene !== 'backyard') b.hidden = true; return; } b.hidden = false; const g = this.ghost(), chk = this.check(g, this.ignoreKey()); const m = b.querySelector('.msg'), txt = (chk.ok ? '✓ ' : '✕ ') + chk.why; if (m.textContent !== txt) { m.textContent = txt; m.style.color = chk.ok ? '#a6e05a' : '#ff9a8a'; } runtime.placeOK = chk.ok; },
   drawGhost(c, t) {
     const P = runtime.place115; if (!P) return; const g = this.ghost(); if (!g) return; const ok = runtime.placeOK;
     c.save(); c.globalAlpha = .7;
-    if (P.kind === 'bed') { this.drawBed(c, { type: P.id, x: g[0], y: g[1], rot: P.rot }, t); if (P.ref) { const b = GP.yard().beds.find(x => x.bid === P.ref); if (b) this.drawPlants(c, Object.assign({}, b, { x: g[0], y: g[1], rot: P.rot }), t); } }
+    if (P.kind === 'bed') { const B = GP.bed(P.id); GPArt.bedO(c, B, g[0], g[1], P.ori, t); if (P.ref) { const b = GP.yard().beds.find(x => x.bid === P.ref); if (b) this.drawPlants(c, Object.assign({}, b, { x: g[0], y: g[1], rot: P.ori.rot, flip: P.ori.flip }), t); } }
     else { const T = GP.tree(P.id), cx = g[0] + 3, cy = g[1] + 3; GPArt.tree(c, P.id, P.ref ? this.treeStage(GP.yard().trees.find(x => x.tid === P.ref) || { age: 0 }) : 0, cx, cy, t); c.strokeStyle = ok ? 'rgba(166,224,90,.8)' : 'rgba(255,122,99,.8)'; c.setLineDash([2, 2]); c.beginPath(); c.ellipse(cx, cy - T.H * .6, T.canopy / 2, T.canopy / 2.4, 0, 0, Math.PI * 2); c.stroke(); }
     c.restore();
     c.fillStyle = ok ? 'rgba(166,224,90,.9)' : 'rgba(255,122,99,.9)'; const x = g[0], y = g[1], w = g[2], h = g[3]; c.fillRect(x - 1, y - 1, w + 2, 1); c.fillRect(x - 1, y + h, w + 2, 1); c.fillRect(x - 1, y, 1, h); c.fillRect(x + w, y, 1, h);
   },
-  drawPlants(c, b, t) { const B = GP.bed(b.type), seen = new Set(); b.slots.forEach((gid, i) => { if (!gid || seen.has(gid)) return; seen.add(gid); const p = GP.plant(gid); if (!p) return; const sp = GP.sp(p.sp), big = GP.large(sp) && b.slots[i + 1] === gid, [sx, sy] = this.slotXY(b, i), [ex, ey] = big ? this.slotXY(b, i + 1) : [sx, sy]; GPArt.draw(c, p.sp, GP.stageOf(p), b.x + Math.round((sx + ex) / 2), b.y + Math.max(sy, ey), t, big ? 1.15 : 1); }); },
+  drawPlants(c, b, t) {
+    const B = GP.bed(b.type), o = GP.bedOri(b), seen = new Set(), list = [];
+    b.slots.forEach((gid, i) => { if (!gid || seen.has(gid)) return; seen.add(gid); const p = GP.plant(gid); if (!p) return; const sp = GP.sp(p.sp), big = GP.large(sp) && b.slots[i + 1] === gid, [sx, sy] = GP.slotPosO(B, o, i, big); list.push({ p, big, x: b.x + sx, y: b.y + sy }); });
+    list.sort((a, q) => a.y - q.y);   // back rows first once a bed is turned
+    for (const { p, big, x, y } of list) GPArt.draw(c, p.sp, GP.stageOf(p), x, y, t, big ? 1.15 : 1);
+  },
   addTo(items, c, t) {
     const Y = GP.yard();
-    for (const b of Y.beds) { if (runtime.place115 && runtime.place115.ref === b.bid) continue; const B = GP.bed(b.type), [fw, fh] = this.dims(b.type, b.rot); items.push({ y: b.y + fh, d: () => { this.drawBed(c, b, t); if (b.trellis && B.style !== 'trellis') { for (let yy = b.y - 18; yy < b.y; yy += 4) R(c, b.x + 2, yy, fw - 4, 1, '#c9a35a'); for (let xx = b.x + 2; xx < b.x + fw - 1; xx += 6) R(c, xx, b.y - 18, 1, 18, '#c9a35a'); } if (b.weeds > 40) for (let i = 0; i < Math.floor(b.weeds / 15); i++) R(c, b.x + 2 + (i * 7) % Math.max(1, fw - 4), b.y + 1 + (i % 2), 1, 2, '#7a8a3a'); this.drawPlants(c, b, t); const ready = b.slots.some(g => g && GP.plant(g) && GP.stageOf(GP.plant(g)) >= 3); RoomArt.hit('gbed:' + b.bid, b.x - 2, b.y - 14, fw + 4, fh + 14, `${B.name}${ready ? ' · ready to harvest' : ''}`, [b.x + fw / 2, b.y + fh + 6], 'item'); } }); }
+    for (const b of Y.beds) { if (runtime.place115 && runtime.place115.ref === b.bid) continue; const B = GP.bed(b.type), o = GP.bedOri(b), [W, H] = GP.bedDims(B, o); items.push({ y: b.y + H, d: () => { GPArt.bedO(c, B, b.x, b.y, o, t); if (b.trellis && B.style !== 'trellis') { for (let yy = b.y - 18; yy < b.y; yy += 4) R(c, b.x + 2, yy, W - 4, 1, '#c9a35a'); for (let xx = b.x + 2; xx < b.x + W - 1; xx += 6) R(c, xx, b.y - 18, 1, 18, '#c9a35a'); } if (b.weeds > 40) for (let i = 0; i < Math.floor(b.weeds / 15); i++) R(c, b.x + 2 + (i * 7) % (W - 4), b.y + 1 + (i % 2), 1, 2, '#7a8a3a'); this.drawPlants(c, b, t); const ready = b.slots.some(g => g && GP.plant(g) && GP.stageOf(GP.plant(g)) >= 3); RoomArt.hit('gbed:' + b.bid, b.x - 2, b.y - 14, W + 4, H + 14, `${B.name}${ready ? ' · ready to harvest' : ''}`, [b.x + W / 2, b.y + H + 6], 'item'); } }); }
     for (const tr of Y.trees) { if (runtime.place115 && runtime.place115.ref === tr.tid) continue; const st = this.treeStage(tr), T = GP.tree(tr.sp), fruit = st >= 3 && T.fruitP && T.bloomSeason === Seasons.name() && tr.lastFruit !== this.fruitKey(); items.push({ y: tr.y + .5, d: () => { groundShadow(c, tr.x, tr.y, 6 + st * 4); GPArt.tree(c, tr.sp, st, tr.x, tr.y, t, { fruit }); RoomArt.hit('gtree:' + tr.tid, tr.x - 8, tr.y - Math.max(10, T.H * [.25, .45, .72, 1][st]), 16, Math.max(12, T.H * [.25, .45, .72, 1][st]), `${T.name} · ${['starter', 'young', 'developing', 'mature'][st]}${fruit ? ' · fruit ready' : ''}`, [tr.x, tr.y + 8], 'item'); } }); }
     if (runtime.place115) items.push({ y: 999, d: () => this.drawGhost(c, t) });
     // the garden sign: plan your yard
@@ -17905,9 +17970,19 @@ SCENES.backyard.solids = function () { const s = yardSolids115.call(this); if (s
 const addTo115y = Actors.addTo.bind(Actors);
 Actors.addTo = function (items, c, t, scene) { addTo115y(items, c, t, scene); if (scene === 'backyard' && state.v115) safeRun('yard115', () => Yard115.addTo(items, c, t)); };
 TICKS115.push(() => safeRun('placebar', () => Yard115.tickBar()));
-Object.assign(ACT, { yardRotate() { Yard115.rotate(); }, yardPlace() { Yard115.confirm(); }, yardCancel() { Yard115.cancel(); }, yardPlan() { Panels.yardPlan(); }, yardStart(a) { const [k, id, ref] = String(a).split(':'); Yard115.start(k, id, ref || null); } });
-document.addEventListener('keydown', e => { if (!runtime.place115 || !state || runtime.overlay || runtime.dialogOpen) return; const k = e.key.toLowerCase(); if (k === 'e' || k === 'enter') { e.preventDefault(); e.stopImmediatePropagation(); Yard115.confirm(); } if (k === 'escape') { e.preventDefault(); Yard115.cancel(); } if (k === 'r' && runtime.place115.kind === 'bed') { e.preventDefault(); e.stopImmediatePropagation(); Yard115.rotate(); } }, true);
-addCSS115(`#place115{position:absolute;left:50%;top:54px;transform:translateX(-50%);z-index:31;display:flex;gap:8px;align-items:center;background:rgba(20,16,21,.9);padding:6px 10px;border-radius:8px;box-shadow:0 2px 0 rgba(0,0,0,.4)}#place115 .msg{font-size:.85em;max-width:260px}`);
+Object.assign(ACT, { yardRotate() { Yard115.rotate(); }, yardPlace() { Yard115.confirm(); }, yardCancel() { Yard115.cancel(); }, yardPlan() { Panels.yardPlan(); }, yardStart(a) { const [k, id, ref] = String(a).split(':'); Yard115.start(k, id, ref || null); }, yardTurn(how) { Yard115.turn(how); }, yardTurnBed(a) { const [bid, how] = String(a).split(':'); if (Yard115.turnPlaced(bid, how)) renderPanel(); } });
+const TURN_KEYS115 = { r: 'rot', f: 'h', v: 'v' };
+document.addEventListener('keydown', e => {
+  if (!state || runtime.dialogOpen || e.ctrlKey || e.metaKey || e.altKey || /^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '')) return;
+  const k = e.key.toLowerCase();
+  // R / F / V turn the bed whose panel is open
+  if (runtime.overlay && runtime.overlay.opts && runtime.overlay.opts.gspot && runtime.gSpot && runtime.gSpot.kind === 'bed' && TURN_KEYS115[k] && !e.repeat) { e.preventDefault(); e.stopImmediatePropagation(); if (Yard115.turnPlaced(runtime.gSpot.ref, TURN_KEYS115[k])) renderPanel(); return; }
+  if (!runtime.place115 || runtime.overlay) return;
+  if (k === 'e' || k === 'enter') { e.preventDefault(); e.stopImmediatePropagation(); Yard115.confirm(); }
+  if (k === 'escape') { e.preventDefault(); Yard115.cancel(); }
+  if (TURN_KEYS115[k] && runtime.place115.kind === 'bed') { e.preventDefault(); e.stopImmediatePropagation(); if (!e.repeat) Yard115.turn(TURN_KEYS115[k]); }
+}, true);
+addCSS115(`#place115{position:absolute;left:50%;top:54px;transform:translateX(-50%);z-index:31;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-items:center;background:rgba(20,16,21,.9);padding:6px 10px;border-radius:8px;box-shadow:0 2px 0 rgba(0,0,0,.4);max-width:calc(100% - 16px);box-sizing:border-box}#place115 .msg{font-size:.85em;max-width:260px}#place115 .ori115{display:flex;gap:6px}#place115 .ori115[hidden]{display:none}#place115 .btn{touch-action:manipulation}`);
 Panels.yardPlan = function () {
   openPanel('Garden plan', () => {
     const I = GP.inv(), Y = GP.yard(), beds = Object.entries(I.beds).filter(([, n]) => n > 0), trees = Object.entries(I.trees).filter(([, n]) => n > 0);
@@ -17924,7 +17999,7 @@ ACT.yardStore = bid => { const Y = GP.yard(), i = Y.beds.findIndex(b => b.bid ==
 const GSpot = {
   /* a spot = { kind, ref, arr (slot array), cap, title } */
   of(kind, ref) {
-    if (kind === 'bed') { const b = GP.yard().beds.find(x => x.bid === ref); if (!b) return null; const B = GP.bed(b.type); return { kind, ref, arr: b.slots, cap: B.cap, title: B.name, obj: b, near: () => { const f = Yard115.foot(b); return state.scene === 'backyard' && Math.hypot(state.player.x - (f[0] + f[2] / 2), state.player.y - (f[1] + f[3])) < 44; } }; }
+    if (kind === 'bed') { const b = GP.yard().beds.find(x => x.bid === ref); if (!b) return null; const B = GP.bed(b.type); return { kind, ref, arr: b.slots, cap: B.cap, title: B.name, obj: b, near: () => { const [w, h] = Yard115.dims(b); return state.scene === 'backyard' && Math.hypot(state.player.x - (b.x + w / 2), state.player.y - (b.y + h)) < 44 + Math.max(0, h - w) / 2; } }; }
     if (kind === 'pot') { const arr = GP.pots()[ref]; if (!arr) return null; return { kind, ref, arr, cap: arr.length, title: `${locName(ref)} companion pots`, near: () => Access.atLoc(ref) }; }
     if (kind === 'plot') { const CG = CGarden.S(); return { kind, ref: 'me', arr: CG.plot, cap: CGarden.slots(), title: 'Your community plot', obj: CG, near: () => state.scene === 'cgarden' && CGarden.atPlot() }; }
     return null;
@@ -17957,14 +18032,16 @@ const GSpot = {
     if (kind === 'bed') h += `<button class="btn sm" data-act="gWeed" data-arg="bed:${ref}" ${near && (spot.obj.weeds || 0) > 5 ? '' : 'disabled'}>Pull weeds (${Math.round(spot.obj.weeds || 0)}%)</button>`;
     for (const [sid, lab] of [['SUP012', 'Fertilize'], ['SUP010', 'Add compost'], ['SUP011', 'Mulch'], ['SUP009', 'Fresh potting mix']]) if (I.sup[sid] > 0 && kind !== 'pot' || (kind === 'pot' && sid === 'SUP012' && I.sup[sid] > 0)) h += `<button class="btn sm ghost" data-act="gSupply" data-arg="${kind}:${ref}:${sid}" ${near ? '' : 'disabled'}>${lab} (×${I.sup[sid]})</button>`;
     if (kind === 'bed' && I.sup.SUP014 > 0 && !spot.obj.trellis && spot.obj.type !== 'BED009') h += `<button class="btn sm ghost" data-act="gTrellis" data-arg="${ref}" ${near ? '' : 'disabled'}>Install trellis</button>`;
-    h += `</div>`; return h;
+    h += `</div>`;
+    if (kind === 'bed') { const here = state.scene === 'backyard', o = GP.bedOri(spot.obj), dis = here ? '' : 'disabled'; h += `<div class="actions ori115"><span class="small muted">Layout${o.rot ? ' · turned ' + o.rot * 90 + '°' : ''}${o.flip ? ' · mirrored' : ''}</span><button class="btn sm" data-act="yardTurnBed" data-arg="${ref}:rot" title="Rotate 90° (R)" ${dis}>⟳ Rotate</button><button class="btn sm" data-act="yardTurnBed" data-arg="${ref}:h" title="Mirror left-right (F)" ${dis}>⇋ Flip</button><button class="btn sm" data-act="yardTurnBed" data-arg="${ref}:v" title="Mirror top-bottom (V)" ${dis}>⇅ Flip</button></div>`; }
+    return h;
   }
 };
 const hydrate115gs = hydrate;
 hydrate = function (root) { hydrate115gs(root); root.querySelectorAll('canvas[data-draw^="gpstage:"]').forEach(cv => { const [, id, st] = cv.dataset.draw.split(':'); const c = cv.getContext('2d'); c.imageSmoothingEnabled = false; R(c, 0, 0, cv.width, cv.height, '#1a2420'); R(c, 0, cv.height - 8, cv.width, 8, '#4a3020'); safeRun('gpst', () => { c.save(); c.scale(2, 2); GPArt.draw(c, id, +st, cv.width / 4, cv.height / 2 - 4, runtime.t, 1); c.restore(); }); }); };
 Panels.gspot = function (kind, ref) {
   runtime.gPick = null; runtime.gSpot = { kind, ref };
-  openPanel(() => { const s = GSpot.of(runtime.gSpot.kind, runtime.gSpot.ref); return s ? s.title : 'Garden'; }, () => { const S1 = runtime.gSpot; return GSpot.html(S1.kind, S1.ref) + GSpot.care(S1.kind, S1.ref) + (S1.kind === 'plot' ? CGarden.plotFooter() : S1.kind === 'pot' ? Companion.potFooter(S1.ref) : ''); });
+  openPanel(() => { const s = GSpot.of(runtime.gSpot.kind, runtime.gSpot.ref); return s ? s.title : 'Garden'; }, () => { const S1 = runtime.gSpot; return GSpot.html(S1.kind, S1.ref) + GSpot.care(S1.kind, S1.ref) + (S1.kind === 'plot' ? CGarden.plotFooter() : S1.kind === 'pot' ? Companion.potFooter(S1.ref) : ''); }, { gspot: true });
 };
 const gArgs = a => { const p = String(a).split(':'); return { kind: p[0], ref: p[1], x: p[2], y: p[3] }; };
 Object.assign(ACT, {
@@ -18041,7 +18118,7 @@ const Companion = {
   },
   outdoorBonus(p) {
     const Y = GP.yard(); let flowers = 0;
-    for (const b of Y.beds) { const f = Yard115.foot(b), cx = f[0] + f[2] / 2, cy = f[1] + f[3] / 2; const near = SLOT_POS.outdoor.some(([x, y]) => Math.hypot(x - cx, y - cy) < 90); if (!near) continue; for (const g of new Set(b.slots.filter(Boolean))) { const q = GP.plant(g); if (q && GP.stageOf(q) >= 3 && GP.has(GP.sp(q.sp), 'c')) flowers++; } }
+    for (const b of Y.beds) { const [bw, bh] = Yard115.dims(b), cx = b.x + bw / 2, cy = b.y + bh / 2; const near = SLOT_POS.outdoor.some(([x, y]) => Math.hypot(x - cx, y - cy) < 90); if (!near) continue; for (const g of new Set(b.slots.filter(Boolean))) { const q = GP.plant(g); if (q && GP.stageOf(q) >= 3 && GP.has(GP.sp(q.sp), 'c')) flowers++; } }
     if (!flowers) return 0; const g = (typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)), vul = clamp(1 - (g.pestRes ?? .6), .1, .9); return Math.min(.05, flowers * .012 * (vul * 1.6));
   },
   daily() {
