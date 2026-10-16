@@ -1,6 +1,6 @@
 {
-  "revision": "fans-proposal-1",
-  "status": "awaiting-user-approval",
+  "revision": "fans-1",
+  "status": "approved",
   "path": "assets/fans-atlas.png",
   "size": [
     1024,
@@ -101,5 +101,11 @@
       ],
       "width": 11.5
     }
+  },
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/fans-atlas.webp",
+    "sha256": "25dc072679ff12230dbc519876acd63d7fe0ae28188feac6a27718963d8ac9fd",
+    "publicPath": "assets/fans/fans-25dc072679ff.webp"
   }
 }
