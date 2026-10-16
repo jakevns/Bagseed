@@ -2313,12 +2313,12 @@ const pr = (k = 'sub') => (PRONOUNS[(state && state.player.pronouns) || 'they'] 
    per frame and y-sorted. Interaction hitboxes are registered separately
    from draw order (with layers) so tall plants never block equipment.   */
 const ROOM = { W: 384, H: 180, floorY: 97 };   // v1.1.2: the bedroom gained a real (normal) closet on the right
-const SLOT_POS = { closet: [[44, 92]], tent2: [[108, 114], [136, 114]] };
+const SLOT_POS = { closet: [[29, 92]], tent2: [[87, 114], [127, 114]] };
 const HIT_RANK = { equip: 5, item: 4, plant: 4, player: 3, furniture: 2, structure: 1 };
 /* where each grow-space device is drawn, per space */
 const DEV_POS = {
-  closet: { light: [44, 27], exhaust: [66, 22], fan: [72, 48], humid: [22, 96], sensor: [61, 62], dehum: [80, 100], heater: [12, 101], ac: [13, 13], hvac: [13, 13], ctrl: [12, 46] },
-  tent2: { light: [122, 16], exhaust: [103, 26], fan: [142, 50], humid: [101, 116], sensor: [132, 66], dehum: [172, 102], heater: [157, 104], ac: [156, 40], hvac: [156, 40], ctrl: [158, 26] }
+  closet: { light: [29, 34], exhaust: [42, 22], fan: [45, 48], humid: [15, 96], sensor: [35, 62], dehum: [57, 100], heater: [5, 101], ac: [13, 13], hvac: [13, 13], ctrl: [7, 46] },
+  tent2: { light: [107, 39], exhaust: [81, 26], fan: [132, 50], humid: [86, 108], sensor: [122, 66], dehum: [172, 102], heater: [157, 104], ac: [156, 40], hvac: [156, 40], ctrl: [158, 26] }
 };
 function doorProg(loc) {
   const L = state.locations[loc], a = runtime.doorAnim && runtime.doorAnim[loc], target = L.door === 'closed' ? 1 : 0;
@@ -2558,6 +2558,22 @@ const RoomArt = {
   // Tent renderers register apertures here instead of repainting fabric over actors.
   growEffectMasks: Object.create(null),
   clipGrowEffects(c, loc, dp) { this.growEffectMasks[loc]?.(c, dp); },
+  diffuseTentLight(c,loc,t){
+    const L=state.locations[loc],n=L.equip.light;
+    if(!n||!isLightOn(loc)||(state.fail.flicker&&!settings.reduced&&Math.sin(t*23)>.6))return;
+    const [x,y]=DEV_POS[loc].light,box=loc==='closet'?STARTER_BOX:T2_BOX,bottom=box[1]+box[3]*.9;
+    const rgb=Gear.glowColor(n).slice(1).match(/../g).map(v=>parseInt(v,16)),a=n>=3?.11:.17;
+    const key=loc+':'+n,cache=this.tentLightCache||(this.tentLightCache=new Map());
+    if(cache.has(key)){c.drawImage(cache.get(key),box[0],box[1],box[2],box[3]);return;}
+    const cv=document.createElement('canvas');cv.width=box[2]*3;cv.height=box[3]*3;
+    const g=cv.getContext('2d');g.scale(3,3);g.translate(-box[0],-box[1]);
+    const top=y-6,glow=g.createLinearGradient(0,top,0,bottom);
+    glow.addColorStop(0,`rgba(${rgb.join(',')},0)`);glow.addColorStop(.2,`rgba(${rgb.join(',')},${a})`);glow.addColorStop(.65,`rgba(${rgb.join(',')},${a*.55})`);glow.addColorStop(1,`rgba(${rgb.join(',')},0)`);
+    g.fillStyle=glow;g.fillRect(box[0],top,box[2],bottom-top);
+    g.globalCompositeOperation='destination-in';const sides=g.createLinearGradient(box[0],0,box[0]+box[2],0);
+    sides.addColorStop(0,'transparent');sides.addColorStop(.5,'#fff');sides.addColorStop(1,'transparent');g.fillStyle=sides;g.fillRect(box[0],box[1],box[2],box[3]);
+    cache.set(key,cv);c.drawImage(cv,box[0],box[1],box[2],box[3]);
+  },
   hit(id, x, y, w, h, label, walk, layer = 'furniture') {
     // v1.1.2: default walk anchor is clamped to the CURRENT scene's walkable box (it used to be clamped to the
     // 320px bedroom, so targets on wide scenes like Willow Lane got an anchor far away from where they really were)
@@ -2610,7 +2626,7 @@ const RoomArt = {
       if (L.equip.dehum) items.push({ y: P.dehum[1] + 16, d: () => { groundShadow(c, P.dehum[0] + 6, P.dehum[1] + 16, 14); Gear.dehum(c, P.dehum[0], P.dehum[1], L.equip.dehum, L.dehumOn || L.equip.dehum === 2, t); this.hit('dehum:' + loc, P.dehum[0] - 1, P.dehum[1] - 1, 14, 18, EQ.dehum[L.equip.dehum].name, null, 'equip'); } });
       if (L.equip.heater) items.push({ y: P.heater[1] + 12, d: () => { const on = envFor(loc).hvac.units.some(u => u.dir > 0); runtime.drawLoc = loc; groundShadow(c, P.heater[0] + 6, P.heater[1] + 12, 14); Gear.heater(c, P.heater[0], P.heater[1], L.equip.heater, on, t); this.hit('heater:' + loc, P.heater[0] - 1, P.heater[1] - 3, 14, 16, EQ.heater[L.equip.heater].name, null, 'equip'); } });
     }
-    items.push({ y: 113, d: () => { Gear.can(c, 62, 103, state.gear.water); this.hit('can', 60, 98, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
+    items.push({ y: 113, d: () => { Gear.can(c, 300, 103, state.gear.water); this.hit('can', 298, 98, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
     if (state.gear.camera === 2) items.push({ y: 118, d: () => Gear.camera(c, 206, 100, 2) });
     Actors.pushPlayer(items, c, t); Actors.addTo(items, c, t, 'bedroom');
     if (runtime.visitor) items.push({ y: 100, d: () => { groundShadow(c, 306, 100, 12); drawPerson(c, 306, 100, lookFor(runtime.visitor), 1, { dir: 'left', frame: runtime.visitor === 'rosalind' && !settings.reduced ? Math.floor(t * 2) % 2 * 2 : 0, breath: Math.floor(t / 1.6) % 2, blink: idleBlink(t, 3) }); } });
@@ -5278,7 +5294,7 @@ const SCENES = {
   bedroom: {
     name: 'Bedroom', w: 384, h: 180, indoor: true,
     walk: [10, 106, 376, 176],
-    solids() { const s = [[4, 132, 76, 48]]; if (state.locations.tent2.owned) s.push([90, 104, 64, 18]); return s; },
+    solids() { const s = [[4, 132, 76, 48]]; if (state.locations.tent2.owned) s.push([64, 104, 86, 18]); return s; },
     spawns: { door: [306, 114, 'down'], bed: [92, 152, 'down'], start: [190, 150, 'down'] },
     exits: [{ r: [294, 104, 24, 6], to: 'hallway', spawn: 'bedroomDoor', need: 'up' }],
     draw(c, t) { RoomArt.draw(c, t); }
@@ -11188,8 +11204,8 @@ const DecoZ = {
   /* fixed furniture footprints per zone (floor contact only, NOT sprite height) */
   statics(zone) {
     if (zone === 'bedroom') {
-      const s = [[2, 128, 80, 50, 'the bed'], [6, 92, 76, 8, 'the starter tent'], [158, 94, 62, 6, 'the desk'], [224, 95, 68, 7, 'the workbench'], [324, 92, 58, 8, 'the closet'], [290, 96, 30, 4, 'the doorway'], [60, 104, 18, 10, 'the watering can']];
-      if (state.locations.tent2.owned) s.push([90, 104, 64, 18, 'the tent']);
+      const s = [[2, 128, 80, 50, 'the bed'], [2, 92, 54, 8, 'the starter tent'], [158, 94, 62, 6, 'the desk'], [224, 95, 68, 7, 'the workbench'], [324, 92, 58, 8, 'the closet'], [290, 96, 30, 4, 'the doorway'], [298, 104, 18, 10, 'the watering can']];
+      if (state.locations.tent2.owned) s.push([64, 104, 86, 18, 'the tent']);
       if (state.room.chair !== 'none') s.push([182, 112, 16, 6, 'the desk chair']);
       for (const loc of ['closet', 'tent2']) { const L = state.locations[loc]; if (!L || (loc === 'tent2' && !L.owned)) continue; const P = DEV_POS[loc]; if (L.equip.dehum) s.push([P.dehum[0], P.dehum[1] + 12, 12, 5, 'a dehumidifier']); if (L.equip.heater) s.push([P.heater[0], P.heater[1] + 8, 12, 5, 'a heater']); }
       if (state.gear.camera === 2) s.push([204, 114, 8, 5, 'the camera tripod']);
@@ -11201,7 +11217,7 @@ const DecoZ = {
   },
   access(zone) {
     // [x, y, name, kind, clearance rect that must stay free of footprints (the spot you stand on + a sightline to the opening)]
-    if (zone === 'bedroom') { const a = [[306, 114, 'the door', 'entrance', [288, 98, 36, 34]], [44, 108, 'the starter tent opening', 'access', [22, 98, 46, 22]], [352, 112, 'the closet', 'access', [334, 98, 38, 20]], [86, 160, 'the bed', 'access', [80, 146, 14, 22]], [185, 112, 'the desk', 'access', [174, 100, 22, 18]], [258, 110, 'the workbench', 'access', [244, 100, 30, 14]], [70, 118, 'the watering can', 'access', [62, 112, 16, 10]]]; if (state.locations.tent2.owned) a.push([122, 128, 'the tent opening', 'access', [100, 120, 44, 16]]); return a; }
+    if (zone === 'bedroom') { const a = [[306, 114, 'the door', 'entrance', [288, 98, 36, 34]], [29, 112, 'the starter tent opening', 'access', [14, 100, 30, 22]], [352, 112, 'the closet', 'access', [334, 98, 38, 20]], [86, 160, 'the bed', 'access', [80, 146, 14, 22]], [185, 112, 'the desk', 'access', [174, 100, 22, 18]], [258, 110, 'the workbench', 'access', [244, 100, 30, 14]], [308, 118, 'the watering can', 'access', [300, 112, 16, 10]]]; if (state.locations.tent2.owned) a.push([107, 132, 'the tent opening', 'access', [72, 122, 70, 16]]); return a; }
     if (zone === 'house') return [[248, 284, 'the front door', 'entrance', [228, 268, 40, 28]], [45, 66, 'the back door', 'entrance', [30, 56, 30, 22]], [446, 180, 'your bedroom door', 'entrance', [430, 168, 32, 22]], [366, 178, 'the den door', 'entrance', [350, 168, 32, 22]], [416, 192, 'Remy\'s door', 'entrance', [398, 182, 36, 20]], [238, 76, 'the bathroom', 'access'], [20, 82, 'the fridge', 'access'], [96, 78, 'the coffee maker', 'access'], [326, 234, 'the washer', 'access'], [318, 178, 'the breaker panel', 'access'], [280, 252, 'the house plan', 'access'], [86, 258, 'the couch', 'access']];
     if (zone === 'yard') { const a = [[109, 78, 'the back door', 'entrance'], [246, 86, 'the hose', 'access'], [300, 268, 'the back gate', 'entrance'], [272, 104, 'the compost', 'access']]; for (let i = 0; i < 6; i++) { const [x, y] = SLOT_POS.outdoor[i]; a.push([x, y + 12, 'a garden bed', 'access']); } return a; }
     return [];
@@ -11280,7 +11296,7 @@ const DecoZ = {
   }
 };
 /* the widened bedroom draws the door 46px and the closet 96px further right (see the ROOM.W=480 layout) */
-const WALL_BLOCK113 = () => { const b = [[4, 0, 82, 100, 'the starter tent'], [214, 4, 78, 62, 'the window'], [332, 18, 38, 82, 'the door'], [418, 6, 62, 92, 'the closet'], [158, 52, 58, 24, 'the computer']]; if (state.locations.tent2.owned) b.push([86, 0, 72, 128, 'the tent']); if (state.gear.workbench === 2) b.push([220, 50, 76, 32, 'the pegboard']); return b; };
+const WALL_BLOCK113 = () => { const b = [[2, 0, 54, 100, 'the starter tent'], [214, 4, 78, 62, 'the window'], [332, 18, 38, 82, 'the door'], [418, 6, 62, 92, 'the closet'], [158, 52, 58, 24, 'the computer']]; if (state.locations.tent2.owned) b.push([64, 0, 86, 120, 'the tent']); if (state.gear.workbench === 2) b.push([220, 50, 76, 32, 'the pegboard']); return b; };
 const HOUSE_WALL_KEEP = [[30, 20, 30, 40, 'the back door'], [94, 24, 46, 22, 'the kitchen window'], [222, 24, 30, 46, 'the bathroom mirror'], [300, 130, 34, 36, 'the breaker panel'], [348, 126, 36, 44, 'the den door'], [428, 126, 36, 44, 'your bedroom door'], [262, 206, 34, 30, 'the house plan'], [200, 208, 34, 26, 'the coat hooks'], [306, 210, 40, 20, 'the laundry shelf']];
 /* the old bedroom-only snap keeps working for anything still calling it */
 snapDecor = function (id, px, py, ignoreUid) { const r = DecoZ.check(id, px, py, ignoreUid, runtime.deco && runtime.deco.hold); return r ? { x: r.x, y: r.y, ok: r.ok, why: r.why, on: r.on } : null; };
@@ -11430,8 +11446,8 @@ document.addEventListener('keydown', e => {
 });
 /* tent arrives: only move decor whose FOOTPRINT is in the tent's footprint (not everything below its sprite) */
 evictTentZone = function () {
-  const keep = [], moved = [], tf = [90, 104, 64, 18];
-  for (const d of state.room.placed) { const D = decorDef(d.id); if (!D) { keep.push(d); continue; } const f = D.k === 'floor' ? DecoZ.foot(Object.assign({ zone: 'bedroom' }, d), D) : null; const wallHit = D.k === 'wall' && hitRect([d.x, d.y, D.w, D.h], [86, 0, 72, 128]); if ((f && hitRect(f, tf)) || wallHit) moved.push(D.n); else keep.push(d); }
+  const keep = [], moved = [], tf = [64, 104, 86, 18];
+  for (const d of state.room.placed) { const D = decorDef(d.id); if (!D) { keep.push(d); continue; } const f = D.k === 'floor' ? DecoZ.foot(Object.assign({ zone: 'bedroom' }, d), D) : null; const wallHit = D.k === 'wall' && hitRect([d.x, d.y, D.w, D.h], [64, 0, 86, 120]); if ((f && hitRect(f, tf)) || wallHit) moved.push(D.n); else keep.push(d); }
   state.room.placed = keep; if (moved.length) toast(`Moved ${moved.length} decoration(s) out of the tent's spot. They're back in your collection.`);
 };
 
@@ -12779,7 +12795,7 @@ const ACCESS_PAD = { plant: 36, plantOut: 32, space: 28 };
 /* where each grow space physically is (scene + floor rect), independent of what was drawn last frame */
 function locRect(loc) {
   if (loc === 'closet') return [6, 8, 76, 90];
-  if (loc === 'tent2') return [90, 8, 64, 112];
+  if (loc === 'tent2') return [64, 8, 86, 112];
   if (loc === 'tent4') return [22, 6, 132, 128];
   if (loc === 'tent5') return [178, 2, 182, 142];
   if (loc === 'outdoor') { const n = state.outdoor ? state.outdoor.beds : 2, P = SLOT_POS.outdoor.slice(0, Math.max(1, n)); const xs = P.map(p => p[0]), ys = P.map(p => p[1]); return [Math.min(...xs) - 22, Math.min(...ys) - 14, Math.max(...xs) - Math.min(...xs) + 44, Math.max(...ys) - Math.min(...ys) + 26]; }
@@ -16258,8 +16274,8 @@ const drawExtraIcon115s = drawExtraIcon;
 drawExtraIcon = function (ctx, cv, id) { const m = /^shell_(\w+?)_(\w+)$/.exec(id); if (m) { withTier(() => ShellArt.icon(ctx, cv, m[1], m[2]), m[1], m[2]); return; } return drawExtraIcon115s(ctx, cv, id); };
 
 /* ----------------------------------------------- TENT02: the bedroom shells */
-DEV_POS.tent2.humid = [105, 116];
-const STARTER_BOX = [2, 8, 86, 90], T2_BOX = [96, 8, 54, 112];
+DEV_POS.tent2.humid = [86, 108];
+const STARTER_BOX = [2, 8, 54, 90], T2_BOX = [64, 8, 86, 112];
 RoomArt.drawCloset = function (c, t) {
   const L = state.locations.closet, dp = doorProg('closet'), P = DEV_POS.closet, [X, Y, W, H] = STARTER_BOX;
   runtime.drawLoc = 'closet';
@@ -16327,7 +16343,7 @@ DecoZ.check = function (id, px, py, ignoreUid, hold) {
   const r = decoCheck115t(id, px, py, ignoreUid, hold); if (!r || !r.ok) return r;
   const D = decorDef(id), zone = runtime.deco ? runtime.deco.zone : 'bedroom'; if (zone !== 'bedroom' || !D) return r;
   const [w, h] = DecoZ.dims({ id, zone }, D), box = [r.x, r.y, w, h];
-  if (D.k === 'wall') { if (hitRect(box, [0, 0, 90, 100])) return Object.assign(r, { ok: false, why: '✕ Overlaps the starter tent.' }); for (const m of ACMount.rects('bedroom')) if (hitRect(box, m)) return Object.assign(r, { ok: false, why: '✕ Overlaps the wall AC.' }); }
+  if (D.k === 'wall') { if (hitRect(box, [2, 0, 54, 100])) return Object.assign(r, { ok: false, why: '✕ Overlaps the starter tent.' }); for (const m of ACMount.rects('bedroom')) if (hitRect(box, m)) return Object.assign(r, { ok: false, why: '✕ Overlaps the wall AC.' }); }
   return r;
 };
 /* tent 4/5 shell trims: drawn by wrapping the generic tent art */

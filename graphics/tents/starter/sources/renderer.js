@@ -7,9 +7,9 @@
   let loaded=false;
   const supported=()=>loaded&&!!DATA.tiers[Shell.of('closet')?.tier];
   function opening(p,x=0,y=0,w=W,h=H){
-    p.moveTo(x+w*.094,y+h*.212);p.lineTo(x+w*.91,y+h*.212);p.lineTo(x+w*.91,y+h*.815);
-    p.quadraticCurveTo(x+w*.91,y+h*.902,x+w*.84,y+h*.902);p.lineTo(x+w*.17,y+h*.902);
-    p.quadraticCurveTo(x+w*.094,y+h*.902,x+w*.094,y+h*.815);p.closePath();return p;
+    p.moveTo(x+w*.15,y+h*.27);p.lineTo(x+w*.85,y+h*.27);p.lineTo(x+w*.85,y+h*.815);
+    p.quadraticCurveTo(x+w*.85,y+h*.902,x+w*.79,y+h*.902);p.lineTo(x+w*.21,y+h*.902);
+    p.quadraticCurveTo(x+w*.15,y+h*.902,x+w*.15,y+h*.815);p.closePath();return p;
   }
   function sprite(c,tier,closed,x,y,w,h){
     c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
@@ -21,7 +21,7 @@
     if(step===8)sprite(c,tier,true,0,0,W,H);
     else{
       sprite(c,tier,false,0,0,W,H);c.save();c.globalCompositeOperation='destination-out';c.fill(opening(new Path2D()));c.restore();
-      if(step){c.save();c.beginPath();c.rect(0,H*.125,W,H*.845*step/8);c.clip();sprite(c,tier,true,0,0,W,H);c.restore();}
+      if(step){c.save();c.beginPath();c.rect(0,H*.125,W,H*.795*step/8);c.clip();sprite(c,tier,true,0,0,W,H);c.restore();}
     }
     fronts.set(key,cv);return cv;
   }
@@ -36,8 +36,13 @@
     if(dp>=1){const dry=plantsIn('closet').find(p=>p.stage===S.drying);if(dry)RoomArt.dryTag(c,X+W/2-8,38,dry,'closet');}
   }
   function slots(c,t){
-    const hit=this.hit;c.save();c.translate(0,-10);
-    this.hit=function(id,x,y,w,h,...rest){return hit.call(this,id,x,y-10,w,h,...rest);};
+    // Seat the pot on the rear half of the liner, leaving visible floor in front.
+    const hit=this.hit,scale=DATA.slotVisualScale,cx=SLOT_POS.closet[0][0],anchor=SLOT_POS.closet[0][1],base=DATA.slotVisualBaseY;
+    c.save();c.translate(cx,base);c.scale(scale,scale);c.translate(-cx,-anchor);
+    this.hit=function(id,x,y,w,h,label,walk,layer){
+      if(!walk){const a=curScene().walk;walk=[cx,clamp(STARTER_BOX[1]+STARTER_BOX[3]+14,a[1],a[3])];}
+      return hit.call(this,id,cx+(x-cx)*scale,base+(y-anchor)*scale,w*scale,h*scale,label,walk,layer);
+    };
     try{this.drawSlots(c,'closet',t);}finally{this.hit=hit;c.restore();}
   }
   RoomArt.drawCloset=function(c,t){
@@ -48,7 +53,7 @@
       c.save();c.clip(opening(new Path2D(),X,Y,W,H));
       try{
         const env=envFor('closet'),on=isLightOn('closet'),e=L.equip;
-        Gear.filter(c,P.exhaust[0],P.exhaust[1],e.exhaust,exMul(L)>0,t);
+        RoomArt.diffuseTentLight(c,'closet',t);Gear.filter(c,P.exhaust[0],P.exhaust[1],e.exhaust,exMul(L)>0,t);
         Gear.light(c,P.light[0],P.light[1],e.light,on,t);
         runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;
         try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
@@ -70,13 +75,10 @@
   };
   // Keep lighting inside the current opening. Fabric is drawn only in its normal
   // scene position, before players/NPCs, never as a final room-wide repaint.
-  RoomArt.growEffectMasks.closet=function(c,dp){
-    if(!supported())return;c.clip(opening(new Path2D(),X,Y,W,H));
-    if(dp>0){const top=Y+H*(.125+.845*Math.round(dp*8)/8);c.beginPath();c.rect(X,top,W,Math.max(0,Y+H-top));c.clip();}
-  };
+  RoomArt.growEffectMasks.closet=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};
   ShellArt.icon=function(c,cv,size,tier){
     if(size!=='closet'||!loaded||!DATA.tiers[tier])return originalIcon.call(this,c,cv,size,tier);
-    cv.width=320;cv.height=240;c.fillStyle='#1a2420';c.fillRect(0,0,320,240);sprite(c,tier,true,66,16,188,208);
+    cv.width=320;cv.height=240;c.fillStyle='#1a2420';c.fillRect(0,0,320,240);sprite(c,tier,true,98,16,125,208);
   };
   drawLocIcon=function(c,cv,id,locked){
     if(id!=='closet'||!supported())return originalLocIcon.call(this,c,cv,id,locked);

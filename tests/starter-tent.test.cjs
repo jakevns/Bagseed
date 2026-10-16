@@ -17,18 +17,18 @@ test('starter shells layer live contents, animate, share store/package art, fit 
       function tent(){const cv=document.createElement('canvas');cv.width=120;cv.height=120;RoomArt.drawCloset(cv.getContext('2d'),0);return cv;}
       let targetCases=0;
       for(const tier of ['budget','standard'])for(const stage of [3,5,S.drying])for(const door of ['open','closed']){
-        Shell.of('closet').tier=tier;L.door=door;p.stage=stage;RoomArt.hits=[];nativeDraw.call(RoomArt,document.createElement('canvas').getContext('2d'),0);const before=JSON.stringify(RoomArt.hits);
-        RoomArt.hits=[];tent();const hits=RoomArt.hits.map(h=>({...h}));for(const h of hits)if(/^(plant|slot|gslot):closet:/.test(h.id))h.y+=10;
+        Shell.of('closet').tier=tier;L.door=door;p.stage=stage;RoomArt.hits=[];nativeDraw.call(RoomArt,document.createElement('canvas').getContext('2d'),0);const before=JSON.stringify(RoomArt.hits.map(h=>/^(plant|slot|gslot):closet:/.test(h.id)?{...h,x:29+(h.x-29)*.86,y:74+(h.y-92)*.86,w:h.w*.86,h:h.h*.86,walk:[29,112]}:h));
+        RoomArt.hits=[];tent();const hits=RoomArt.hits.map(h=>({...h}));
         check(JSON.stringify(hits)===before,'Native interaction changed beyond the slot drawing offset');targetCases++;
       }
       p.stage=5;L.door='open';const light=Gear.light,pot=Gear.pot;
       const is=(c,x,y,r,g,b)=>{const a=c.getImageData(x,y,1,1).data;return a[0]===r&&a[1]===g&&a[2]===b;};let layeringCases=0;
       try{
         Gear.light=function(c,x,y,...r){light.call(this,c,x,y,...r);c.fillStyle='#ff00ff';c.fillRect(x,y-5,1,1);c.fillStyle='#00ffff';c.fillRect(x,y+2,1,1);};
-        Gear.pot=function(c,x,y,...r){pot.call(this,c,x,y,...r);c.fillStyle='#ff0000';c.fillRect(x,y+8,1,1);c.fillStyle='#0000ff';c.fillRect(x,y+2,1,1);};
+        Gear.pot=function(c,x,y,...r){pot.call(this,c,x,y,...r);c.fillStyle='#ff0000';c.fillRect(x-1,y+22,3,3);c.fillStyle='#0000ff';c.fillRect(x-1,y+2,3,3);};
         for(const tier of ['budget','standard'])for(const l of [1,2,3,4])for(const n of [1,2,3]){
           Shell.of('closet').tier=tier;L.equip.light=l;L.equip.pot=n;const c=tent().getContext('2d');
-          check(!is(c,44,22,255,0,255),'Light crosses the top');check(is(c,44,29,0,255,255),'Light body hidden');check(!is(c,44,90,255,0,0),'Pot crosses tray');check(is(c,44,84,0,0,255),'Pot body hidden');layeringCases++;
+          check(!is(c,29,29,255,0,255),'Light crosses the top');check(is(c,29,36,0,255,255),'Light body hidden');check(!is(c,29,94,255,0,0),'Pot crosses tray');check(is(c,29,76,0,0,255),'Pot body hidden');layeringCases++;
         }
       }finally{Gear.light=light;Gear.pot=pot;L.equip.light=1;L.equip.pot=1;}
       const masks=[];for(const tier of ['budget','standard'])for(const minute of [720,1380]){
@@ -36,7 +36,7 @@ test('starter shells layer live contents, animate, share store/package art, fit 
         for(const[col,a,op]of RoomArt.tint()){ic.globalCompositeOperation=op;ic.globalAlpha=a;ic.fillStyle=col;ic.fillRect(0,0,120,120);}ic.globalAlpha=1;
         const full=document.createElement('canvas');full.width=480;full.height=180;RoomArt.draw(full.getContext('2d'),0);
         // Downsampling the 3x mask before/after tint can round channels by up to 4 levels.
-        for(const[x,y]of [[44,12],[44,94]]){const a=ic.getImageData(x,y,1,1).data,b=full.getContext('2d').getImageData(x,y,1,1).data;check(a.every((v,i)=>Math.abs(v-b[i])<=4),'Late effects/tint overwrote the fabric mask '+tier+':'+minute+':'+x+','+y+' '+String(a)+' / '+String(b));}masks.push(tier+':'+minute);
+        for(const[x,y]of [[29,12],[29,94]]){const a=ic.getImageData(x,y,1,1).data,b=full.getContext('2d').getImageData(x,y,1,1).data;check(a.every((v,i)=>Math.abs(v-b[i])<=4),'Late effects/tint overwrote the fabric mask '+tier+':'+minute+':'+x+','+y+' '+String(a)+' / '+String(b));}masks.push(tier+':'+minute);
       }
       state.minute=720;Shell.of('closet').tier='budget';settings.reduced=false;L.door='open';runtime.doorAnim={};setDoor('closet','closed');const animation=[];
       for(const dp of [0,.125,.25,.375,.5,.625,.75,.875,1]){const k=dp<.5?Math.sqrt(dp/2):1-Math.sqrt((1-dp)/2);runtime.doorAnim.closet={from:0,t0:performance.now()-380*k};const progress=doorProg('closet');animation.push({progress,image:tent().toDataURL()});}
@@ -60,7 +60,7 @@ test('starter shells layer live contents, animate, share store/package art, fit 
     const saved=await page.evaluate(()=>{
       closePanel();const H=Shell.S(),sh=H.inv.find(s=>s.size==='closet'&&s.tier==='standard');if(!sh)throw Error('Unused shell absent');
       const cv=document.createElement('canvas');withTier(()=>ShellArt.icon(cv.getContext('2d'),cv,'closet','standard'),'closet','standard');const inventoryArt=cv.toDataURL();
-      const before=JSON.stringify({plants:state.plants,slots:state.locations.closet.slots,equip:state.locations.closet.equip});state.player.x=44;state.player.y=112;Shell.swap(sh.sid,'closet');
+      const before=JSON.stringify({plants:state.plants,slots:state.locations.closet.slots,equip:state.locations.closet.equip});state.player.x=29;state.player.y=112;Shell.swap(sh.sid,'closet');
       if(Shell.of('closet').tier!=='standard')throw Error('Shell fitting failed');if(JSON.stringify({plants:state.plants,slots:state.locations.closet.slots,equip:state.locations.closet.equip})!==before)throw Error('Fitting changed grow contents');
       closePanel();SaveSys.now('Starter tent fixture');return {inventoryArt,contents:before,tier:Shell.of('closet').tier,money:state.money};
     });assert.equal(saved.inventoryArt,storeArt);assert.equal(saved.money,965);

@@ -10,7 +10,7 @@ function bedroomScript() {
   const code = fs.readFileSync(path.join(root, 'graphics/bedroom/sources/renderer.js'), 'utf8')
     .replace('__BAGSEED_BEDROOM_IMAGE__', () => JSON.stringify('data:image/png;base64,' + art.toString('base64')));
   new (require('node:vm').Script)(code);
-  return `<script id="${marker}">\n${code}\n</script>\n${require('./compile-beds.cjs')()}${require('./compile-desks.cjs')()}${require('./compile-curtains.cjs')()}${require('./compile-curtains.cjs')('02')}${require('./compile-curtains.cjs')('03')}${require('./compile-computer-desks.cjs')()}${require('./compile-computer-equipment.cjs')()}${require('./compile-cameras.cjs')()}${require('./compile-chairs.cjs')()}${require('./compile-coffee.cjs')()}${require('./compile-under-desk-storage.cjs')()}${require('./compile-bedroom-window.cjs')()}${require('./compile-starter-tent.cjs')()}`;
+  return `<script id="${marker}">\n${code}\n</script>\n${require('./compile-beds.cjs')()}${require('./compile-desks.cjs')()}${require('./compile-curtains.cjs')()}${require('./compile-curtains.cjs')('02')}${require('./compile-curtains.cjs')('03')}${require('./compile-computer-desks.cjs')()}${require('./compile-computer-equipment.cjs')()}${require('./compile-cameras.cjs')()}${require('./compile-chairs.cjs')()}${require('./compile-coffee.cjs')()}${require('./compile-under-desk-storage.cjs')()}${require('./compile-bedroom-window.cjs')()}${require('./compile-starter-tent.cjs')()}${require('./compile-tent2.cjs')()}`;
 }
 module.exports = bedroomScript;
 if (require.main === module) {
@@ -37,7 +37,7 @@ if (require.main === module) {
   Object.assign(report, { loadingRevision: 'loading-bedroom-3' });
   Object.assign(report, { loadingMobileFraming: 'fixed-window' });
   Object.assign(report, { bedroomWindowRevision: 'bedroom-window-1', outdoorArtSharedWithLoading: true });
-  Object.assign(report, { starterTentRevision: 'starter-tent-1', starterTentShells: ['budget','standard'] });
+  Object.assign(report, { starterTentRevision: 'starter-tent-2', tent2Revision: 'tent2-1', tent2Shells: ['standard','pro','premium'], starterTentShells: ['budget','standard'] });
   fs.writeFileSync(reportPath + '.tmp', JSON.stringify(report, null, 2) + '\n'); fs.renameSync(reportPath + '.tmp', reportPath);
   console.log('Rebuilt approved main menu, bedroom, beds, desks and curtains; verified character payload retained unchanged.');
 }

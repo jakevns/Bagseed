@@ -1,6 +1,6 @@
 {
-  "revision": "tent-2x2-wide-proposal-2",
-  "status": "designs-approved-width-revision-pending",
+  "revision": "tent2-1",
+  "status": "approved",
   "baseCommit": "07744d1906d84e8e42b4316e428fb5cc669ff52e",
   "path": "assets/tents-wide-atlas.png",
   "size": [
@@ -85,5 +85,11 @@
       86,
       112
     ]
+  },
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/tents-wide-atlas.webp",
+    "sha256": "0292aaa9f4040f45b3c0441a8bd4d056927226ab57fba355b37be66eec7f562c",
+    "lossless": true
   }
 }

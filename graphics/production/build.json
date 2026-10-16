@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "b157fcef8c53639e46da110d2636bed4d19aac804f2048cdb1d7b94142e5c731",
-  "updatedSHA": "c088c0e4af41360fc838c30b912bebd24cbc13d93456a7834f21c2851158ae27",
+  "workingSourceSHA": "cb93f81d9045a34468849a675699b31685e89e9313d109e94bc35433a4a520c0",
+  "updatedSHA": "fc783060e077fa40e2e25b971ac043d86948aa8ed782eff5633a2e761d9f4e2a",
   "characterRevision": "customization-14",
   "characterPayloadSHA256": "d2a047304f2a95735698bcb3645a12a28b7fe74c898fa3815d093c2ecdaee532",
   "characterSourcesSHA256": {
@@ -20,7 +20,7 @@
     "graphics/production/customization-v5/hair-fit.json": "acf4244aab6c7b1733ff0bcfffe51c9e37758a2acc302f20027a34f9a127dc2b",
     "graphics/production/customization-v5/register.py": "f8745407c9ecba6fb0802697f0740acaf72532db0661b089414bf6100b9971ab"
   },
-  "bytes": 101116559,
+  "bytes": 101055566,
   "modularAssets": 544,
   "embeddedImages": 1552,
   "approvedIdentities": [
@@ -61,9 +61,15 @@
   "loadingMobileFraming": "fixed-window",
   "bedroomWindowRevision": "bedroom-window-1",
   "outdoorArtSharedWithLoading": true,
-  "starterTentRevision": "starter-tent-1",
+  "starterTentRevision": "starter-tent-2",
   "starterTentShells": [
     "budget",
     "standard"
+  ],
+  "tent2Revision": "tent2-1",
+  "tent2Shells": [
+    "standard",
+    "pro",
+    "premium"
   ]
 }

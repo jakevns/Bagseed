@@ -1,73 +1,77 @@
 {
-  "revision": "starter-tent-1",
+  "revision": "starter-tent-2",
   "status": "approved",
-  "baseCommit": "18bb555d8d76b23c2fda58fe3429f8226ea8cb8b",
+  "path": "assets/narrow-atlas.png",
+  "size": [
+    1374,
+    1145
+  ],
+  "sha256": "5d91af689d7205ee03d4ccab30fb25fa626933561b11ee85a0f6274a491fca95",
   "tiers": {
     "budget": {
-      "path": "assets/budget-atlas.png",
-      "size": [
-        1620,
-        971
-      ],
-      "sha256": "74041ca0a80c282dd19d6f1a5ecb59601ad01792dcfb4a82acf56da95db85bf3",
       "open": [
-        48,
-        27,
-        729,
-        904
+        300,
+        37,
+        320,
+        534
       ],
       "closed": [
-        842,
-        27,
-        730,
-        905
+        309,
+        583,
+        309,
+        508
       ],
-      "price": 0,
+      "path": "assets/narrow-atlas.png",
+      "size": [
+        1374,
+        1145
+      ],
+      "sha256": "5d91af689d7205ee03d4ccab30fb25fa626933561b11ee85a0f6274a491fca95",
       "runtime": {
-        "path": "assets/budget-atlas.webp",
-        "sha256": "765a14f00557d62add6500ed49bc8678c942b7fa134288c724e8dd3a593c28c4",
+        "path": "assets/narrow-atlas.webp",
+        "sha256": "eb7c12643cd3ed672c277fa394912db8c5e313bc1f0e1ddee560f8b1adf97180",
         "lossless": true
       }
     },
     "standard": {
-      "path": "assets/standard-atlas.png",
-      "size": [
-        1619,
-        971
-      ],
-      "sha256": "ad8a13bcf5ebe45d0e21758ef9ee9a55029f65e3f4b79fd64571365c6e02564d",
       "open": [
-        49,
-        29,
-        727,
-        900
+        751,
+        37,
+        317,
+        534
       ],
       "closed": [
-        843,
-        29,
-        726,
-        900
+        751,
+        582,
+        315,
+        509
       ],
-      "price": 35,
+      "path": "assets/narrow-atlas.png",
+      "size": [
+        1374,
+        1145
+      ],
+      "sha256": "5d91af689d7205ee03d4ccab30fb25fa626933561b11ee85a0f6274a491fca95",
       "runtime": {
-        "path": "assets/standard-atlas.webp",
-        "sha256": "72cd7f01a00cb4a3982c51550df2f7bcde9d66e81546ea9032df32f35c36f5c7",
+        "path": "assets/narrow-atlas.webp",
+        "sha256": "eb7c12643cd3ed672c277fa394912db8c5e313bc1f0e1ddee560f8b1adf97180",
         "lossless": true
       }
     }
   },
+  "bounds": [
+    2,
+    8,
+    54,
+    90
+  ],
+  "approvedDate": "2026-10-16",
   "nativeBounds": [
     2,
     8,
-    86,
+    54,
     90
   ],
-  "researchAnchors": [
-    "Approved bedroom sage/cream/oak palette",
-    "Approved under-desk storage hand-painted prop rendering",
-    "Supplied Fields of Mistria reference G03-S14: legible edges and quiet surface values"
-  ],
-  "scope": "Starter pop-up only: Budget included and Standard $35 shell. No new tiers or items.",
-  "approvedDate": "2026-10-16",
-  "slotVisualOffsetY": -10
+  "slotVisualScale": 0.86,
+  "slotVisualBaseY": 74
 }

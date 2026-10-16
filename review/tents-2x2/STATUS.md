@@ -1,21 +1,9 @@
-# 2×2 designs and width swap — awaiting revised sample approval
+# Approved tent update — production integration
 
-The user approved the three 2×2 designs, then asked to swap the starter and 2×2 widths because the two-plant tent should be wider. The current preview has a 54-wide starter and an 86-wide 2×2. Original heights remain, and the 2×2 shifts left into the space freed by the starter so its right edge remains clear of the desk. The two existing starter shells also have narrower artwork.
+The user approved these corrected samples and authorized publishing. The production build contains all three 2×2 shells, the narrower starter shells, recessed starter plant/pot, soft tent illumination and watering gear moved to the seedling desk’s right side. width-comparison.png and watering-placement.png are generated from public/index.html. approval-2x2.png shows all three shells and matching store images.
 
-width-comparison.png shows both tents at the same game scale with one and two live plants and the player in front. approval-2x2.png shows Standard, Pro and Premium open/closed artwork, room placement and matching store art. Existing prices are $89 for the Standard-equipped tent, $49 for the Pro shell and $95 for the Premium shell.
+The starter is 54×90; the 2×2 is 86×112. Heights and capacities remain unchanged. The starter pot’s soil anchor is y74 at .86 scale, leaving visible liner in front of its base. Plant click rectangles follow that transform, while walk destinations stay outside. Front fabric covers the roof/sides/floor edges. The 2×2 has two independent live plants at recessed anchors. No final fabric pass paints over players.
 
-The isolated browser preview uses public/index.html. The helper verifies live grow contents, aligned visual targets and retained walk destinations, 36 equipment/pot/shell layering combinations, 36 player approach cases across open/closed and day/night, nine zip frames per shell, all three store cards and a mobile card. Detailed results: report.json.
+report.json records production visual, target and layering checks: 36 2×2 equipment/pot cases, 36 player approach cases, four starter fabric cases, six starter floor-depth/pot cases, four watering tiers, nine zip frames per shell, three store cards and a phone card. publish-validation.json records real $89/$49/$95 purchases, delivery art, shell fitting, preserved plant identities/equipment, collision/placement and save/reload.
 
-No production files are changed or pushed. The proposal sources, original images, crops and preview helper are saved locally for review and later integration. Comprehensive production collision/placement/save integration will follow approval of these revised proportions.
-
-## Follow-up corrections
-
-The narrowed starter now uses its own opening proportions (.15–.85 of the width, ceiling at .27 of the height), so plant contents stay behind the front fabric. Both tents use soft reflected illumination within their local opening instead of the old room beam with fixed bounds. This keeps the wider 2×2 free of a clipped purple wedge; the local glow respects light power, flicker and the foreground/zip layers.
-
-The bedroom watering can and its purchased drip-reservoir replacement move from x62 to x300 at the same floor depth, to the right of the seedling desk. Their shared click target, placement footprint and access reservation move with them. All four watering tiers are checked. watering-placement.png shows the ordinary can and upgraded tank separately; width-comparison.png shows the corrected tent contents and lighting.
-
-The preview checks now also cover both starter shells open/closed with marker content hidden by the roof, sides and bottom fabric. No production files changed; these revisions are saved locally pending sample approval.
-
-### Starter depth correction after further review
-
-The previous aperture correction still left the starter pot at the opening's front lip. The follow-up seats its soil anchor at y74 rather than y82 and renders the plant/pot group at .86 scale, leaving roughly seven logical pixels of liner in front of the pot base. Visual hit rectangles use the same transform while the walk destination remains outside the tent. Both starter shells and all three pot tiers now have a specific floor-depth check, in addition to fabric occlusion checks. The updated width-comparison.png shows the actual room render with this placement.
+Source modules, original image checksums, lossless runtime assets and the rebuilt game are included in this release. The current character release from origin/main is preserved. Publishing this commit to main triggers the existing GitHub Pages workflow; deployment completion must be distinguished from a successful Git push.

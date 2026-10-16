@@ -1,5 +1,5 @@
 {
-  "proposalOnly": true,
+  "proposalOnly": false,
   "entryPoint": "public/index.html",
   "tiers": 3,
   "storeItems": 3,
@@ -27,6 +27,6 @@
   "waterGearCases": 4,
   "zipFramesPerTier": 9,
   "storeAndPhoneArtwork": true,
-  "productionIntegrationPendingApproval": true,
+  "productionIntegrationPendingApproval": false,
   "errors": []
 }
