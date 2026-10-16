@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "009086178e0e69b71157cc2f02a1a320703e0f0edb7c8b61d67f7b7a5ad926e6",
-  "updatedSHA": "54d26756ba99c89bb23d0e926b91a7955ab3510143376a2a5588f4ab5b987527",
+  "updatedSHA": "8d0e44ecb3e79503c77eaeba92c7c621278a688e9ffadae8a7510414efe20154",
   "characterRevision": "custom-walk-phase-1",
   "characterPayloadSHA256": "7892c9534117be48e32c75512d56ceb545f0cb7e6e4fbb4968279f48405c8497",
   "characterSourcesSHA256": {
@@ -23,7 +23,7 @@
     "graphics/production/walk/manifest.json": "c4cd3cdd76fafb72191d1a28a50f6021abe5cb2c5becf68a37a71d29bdf653e3",
     "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa"
   },
-  "bytes": 104011628,
+  "bytes": 104022078,
   "modularAssets": 544,
   "embeddedImages": 1561,
   "approvedIdentities": [
@@ -89,5 +89,7 @@
     "standard",
     "pro",
     "premium"
-  ]
+  ],
+  "growLightsRevision": "grow-lights-1",
+  "growLightTiers": 4
 }

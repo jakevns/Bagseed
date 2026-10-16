@@ -19,7 +19,9 @@ test('starter shells layer live contents, animate, share store/package art, fit 
       for(const tier of ['budget','standard'])for(const stage of [3,5,S.drying])for(const door of ['open','closed']){
         Shell.of('closet').tier=tier;L.door=door;p.stage=stage;RoomArt.hits=[];nativeDraw.call(RoomArt,document.createElement('canvas').getContext('2d'),0);const before=JSON.stringify(RoomArt.hits.map(h=>/^(plant|slot|gslot):closet:/.test(h.id)?{...h,x:29+(h.x-29)*.86,y:74+(h.y-92)*.86,w:h.w*.86,h:h.h*.86,walk:[29,112]}:h));
         RoomArt.hits=[];tent();const hits=RoomArt.hits.map(h=>({...h}));
-        check(JSON.stringify(hits)===before,'Native interaction changed beyond the slot drawing offset');targetCases++;
+        // Light geometry follows its approved housing; preview-grow-lights checks
+        // all 16 fixture targets. Keep identity and every other native hit exact.
+        check(JSON.stringify(hits.map(h=>h.id==='light:closet'?{id:h.id,label:h.label,layer:h.layer}:h))===JSON.stringify(JSON.parse(before).map(h=>h.id==='light:closet'?{id:h.id,label:h.label,layer:h.layer}:h)),'Native interactions changed outside the illustrated plant/light bounds');targetCases++;
       }
       p.stage=5;L.door='open';const light=Gear.light,pot=Gear.pot;
       const is=(c,x,y,r,g,b)=>{const a=c.getImageData(x,y,1,1).data;return a[0]===r&&a[1]===g&&a[2]===b;};let layeringCases=0;

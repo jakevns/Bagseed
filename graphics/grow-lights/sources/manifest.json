@@ -1,6 +1,6 @@
 {
-  "revision": "grow-lights-proposal-1",
-  "status": "awaiting-approval",
+  "revision": "grow-lights-1",
+  "status": "approved",
   "path": "assets/lights-atlas.png",
   "size": [
     1024,
@@ -116,5 +116,12 @@
       "spread": 0.45,
       "alpha": 0.15
     }
+  },
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/lights-atlas.webp",
+    "sha256": "c7e6300562c5d133e2602c21ee4dd269297363e7f3e60b8445ac2e562cfb0473",
+    "publicPath": "assets/grow-lights/lights-c7e6300562c5.webp",
+    "lossless": true
   }
 }

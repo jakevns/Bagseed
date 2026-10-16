@@ -1,5 +1,5 @@
 {
-  "proposalOnly": true,
+  "proposalOnly": false,
   "entryPoint": "public/index.html",
   "tiers": 4,
   "prices": [
@@ -17,8 +17,6 @@
   "roofSidesTrayClipped": true,
   "dustFrames": 48,
   "storeAndPhoneArtwork": true,
-  "productionIntegrationPendingApproval": true,
-  "errors": [],
-  "animationGifFrames": 48,
-  "animationFrameDurationMs": 160
+  "productionIntegrationPendingApproval": false,
+  "errors": []
 }

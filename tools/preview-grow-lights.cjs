@@ -1,8 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{createHash}=require('node:crypto'),{chromium}=require('playwright');
 (async()=>{
  const root=path.resolve(__dirname,'..'),out=path.join(root,'review/grow-lights'),dir=path.join(root,'graphics/grow-lights'),data=JSON.parse(fs.readFileSync(path.join(dir,'sources/manifest.json'))),bytes=fs.readFileSync(path.join(dir,data.path));assert.equal(createHash('sha256').update(bytes).digest('hex'),data.sha256);
- const code=fs.readFileSync(path.join(dir,'sources/proposal.js'),'utf8').replace('__GROW_LIGHTS_PROPOSAL__',()=>JSON.stringify({...data,image:'data:image/png;base64,'+bytes.toString('base64')}));
- const tentCodes=[4,5].map(n=>{const r=path.join(root,'graphics/tents',n+'x'+n),m=JSON.parse(fs.readFileSync(path.join(r,'sources/manifest.json')));let s=fs.readFileSync(path.join(r,'sources/renderer.js'),'utf8');const a=s.indexOf(' function diffusion(c,n,on,t){'),b=s.indexOf('\n function slots(',a);s=s.slice(0,a)+` function diffusion(c,n,on,t){BagseedLightingProposal.field(c,'tent${n}',n,on,t);}\n`+s.slice(b);return s.replace('__BAGSEED_TENT'+n+'_DATA__',()=>JSON.stringify({...m,image:m.runtime.publicPath})).replace('window.BagseedTent'+n+'=','window.BagseedLightingTent'+n+'=');});
+ assert.ok(fs.readFileSync(path.join(root,'public/index.html'),'utf8').includes('id="bagseed-grow-lights-production-code"'),'Build approved lights first');
  const {createStaticServer}=await import('./server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
  try{
   browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});const page=await require('../tests/helpers/art-page.cjs')(browser,{viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:'+server.address().port+'/index.html',{timeout:120000});await page.evaluate(()=>BagseedStartup.ready);await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Light samples');await page.locator('[data-act=startGame]').click();await page.waitForFunction(()=>screen==='game'&&!!state.player);
@@ -12,7 +11,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
    state.scene='bedroom';state.player.x=107;state.player.y=132;
    return {catalog:JSON.stringify(EQ.light),contents:JSON.stringify([state.plants,Object.fromEntries(['closet','tent2','tent4','tent5'].map(loc=>[loc,state.locations[loc]]))]),geometry:JSON.stringify([SLOT_POS,STARTER_BOX,T2_BOX])};
   });
-  await page.addScriptTag({content:code});await page.evaluate(()=>BagseedLightingProposal.ready);for(const content of tentCodes)await page.addScriptTag({content});await page.evaluate(()=>Promise.all([BagseedLightingTent4.ready,BagseedLightingTent5.ready]));await page.evaluate(()=>BagseedLightingProposal.bind());
+  await page.evaluate(()=>{window.BagseedLightingProposal=BagseedGrowLights;return BagseedGrowLights.ready;});
   const result=await page.evaluate(({before,data})=>{
    const check=(ok,m)=>{if(!ok)throw Error(m);};
    for(const loc of ['closet','tent2','tent4','tent5']){const c=document.createElement('canvas').getContext('2d');if(loc==='closet')RoomArt.drawCloset(c,0);else if(loc==='tent2')RoomArt.drawTent(c,0);else TentArt.draw(c,loc,...(loc==='tent4'?[22,6,132,128]:[178,2,182,142]),0);}
@@ -53,6 +52,6 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   await page.evaluate(()=>Panels.app('leafcart'));await page.locator('[data-act=shopCat][data-arg=lighting]').click();
   for(let n=1;n<=4;n++){const cv=page.locator('canvas[data-draw="gear:light:'+n+'"]');await cv.scrollIntoViewIfNeeded();assert.deepEqual(await cv.evaluate(c=>[c.width,c.height]),[320,240]);await cv.locator('..').screenshot({path:path.join(out,'store-tier-'+n+'.png')});}
   await page.setViewportSize({width:390,height:844});const cv=page.locator('canvas[data-draw="gear:light:4"]');await cv.scrollIntoViewIfNeeded();await cv.locator('..').screenshot({path:path.join(out,'store-tier-4-phone.png')});assert.deepEqual(errors,[]);
-  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({proposalOnly:true,entryPoint:'public/index.html',tiers:4,prices:[29.99,119,239,449],catalogAndGrowContentsPreserved:true,geometryPreserved:true,...coverage,dustFrames:result.frames.length,storeAndPhoneArtwork:true,productionIntegrationPendingApproval:true,errors},null,2)+'\n');console.log('Four grow-light samples, falloff/dust, on/off/flicker/reduced motion, player layers and store artwork passed.');
+  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({proposalOnly:false,entryPoint:'public/index.html',tiers:4,prices:[29.99,119,239,449],catalogAndGrowContentsPreserved:true,geometryPreserved:true,...coverage,dustFrames:result.frames.length,storeAndPhoneArtwork:true,productionIntegrationPendingApproval:false,errors},null,2)+'\n');console.log('Four grow-light samples, falloff/dust, on/off/flicker/reduced motion, player layers and store artwork passed.');
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

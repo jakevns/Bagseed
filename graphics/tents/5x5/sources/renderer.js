@@ -16,6 +16,7 @@
   c.save();c.imageSmoothingEnabled=true;c.drawImage(fronts.get(key),X,Y,W,H);c.restore();
  }
  function diffusion(c,n,on,t){
+  if(window.BagseedGrowLights?.loaded){BagseedGrowLights.field(c,'tent5',n,on,t);return;}
   if(!n||!on||(state.fail.flicker&&!settings.reduced&&Math.sin(t*23)>.6))return;
   if(!glows.has(n)){const cv=document.createElement('canvas');cv.width=W*3;cv.height=H*3;const g=cv.getContext('2d');g.scale(3,3);const rgb=hexRGB(Gear.glowColor(n)).join(','),a=n>=3?.11:.17,grad=g.createLinearGradient(0,32,0,H*.91);grad.addColorStop(0,`rgba(${rgb},0)`);grad.addColorStop(.2,`rgba(${rgb},${a})`);grad.addColorStop(.65,`rgba(${rgb},${a*.55})`);grad.addColorStop(1,`rgba(${rgb},0)`);g.fillStyle=grad;g.fillRect(0,0,W,H);g.globalCompositeOperation='destination-in';const side=g.createLinearGradient(0,0,W,0);side.addColorStop(0,'transparent');side.addColorStop(.28,'#fff');side.addColorStop(.5,'rgba(255,255,255,.65)');side.addColorStop(.72,'#fff');side.addColorStop(1,'transparent');g.fillStyle=side;g.fillRect(0,0,W,H);glows.set(n,cv);}
   c.drawImage(glows.get(n),X,Y,W,H);
