@@ -1,0 +1,67 @@
+{
+  "approval": "Great work I say push it :)",
+  "entryPoint": "public/index.html",
+  "scriptBlocks": 90,
+  "repeatableBuild": true,
+  "preservedArtworkModules": 12,
+  "characterRevision": "customization-9",
+  "targetedRegression": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "files": [
+      "computer-equipment",
+      "computer-desks",
+      "bedroom",
+      "desk-tabletop-placement",
+      "seedling-desks"
+    ]
+  },
+  "hostedSmoke": {
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "checks": [
+      "title, character creation, and a new playable bedroom",
+      "indoor and outdoor scenes render in daylight and at night"
+    ]
+  },
+  "equipmentIntegration": {
+    "computerPurchases": 2,
+    "stylePurchases": 9,
+    "totalPaid": 685,
+    "final": {
+      "computer": 2,
+      "keyboard": "rgbkb",
+      "mat": "map",
+      "wallpaper": "stars",
+      "money": 1315
+    },
+    "packageMatchesStore": true,
+    "saveReload": true,
+    "nativeLoopMotion": true,
+    "reducedMotion": true,
+    "errors": []
+  },
+  "productionPreview": {
+    "proposalOnly": false,
+    "entryPoint": "public/index.html",
+    "tiers": 3,
+    "choices": {
+      "keyboard": 4,
+      "mat": 4,
+      "wallpaper": 5
+    },
+    "combinations": 12,
+    "catalogUnchanged": true,
+    "geometryUnchanged": true,
+    "camerasUnchanged": true,
+    "power": true,
+    "RGBAndScreensAnimate": true,
+    "reducedMotion": true,
+    "liveClimateDashboard": true,
+    "computerInteraction": true,
+    "actualStoreDesktopAndPhone": true,
+    "errors": []
+  }
+}

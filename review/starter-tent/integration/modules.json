@@ -1,0 +1,36 @@
+{
+  "previousPublishedCommit": "2f53525ff8480fcf4104d60417778828c0c32fdd",
+  "preservedBackyardPlanterRotation": true,
+  "unchangedModules": [
+    "bagseed-loading-scene-code",
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code",
+    "bagseed-coffee-production-code",
+    "bagseed-under-desk-storage-production-code",
+    "bagseed-bedroom-window-production-code"
+  ],
+  "changedModules": [
+    "bagseed-loading-controller"
+  ],
+  "addedModules": [
+    "bagseed-starter-tent-production-code"
+  ],
+  "sourceGameUnchanged": true,
+  "approvedOriginalPNGsUnchanged": true,
+  "runtimeAtlasesLossless": true,
+  "publicBytes": 101921659,
+  "publicSHA256": "0b7e84884c4e34b0604f917f64eb7ebc27c238d61d9dceb56747f92bc25db7ef"
+}

@@ -1,0 +1,22 @@
+{
+  "previousPublishedCommit": "376c476",
+  "preservedModules": [
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code"
+  ],
+  "preservedCount": 14,
+  "addedModule": "bagseed-chairs-production-code",
+  "newPayloadSHA256": "7a023b81d3233b31c9a61cabc8cbbd874b2db4829fa2ddd16c76696803b225f2"
+}

@@ -1,3 +1,4 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test,before,after}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const ROOT=path.resolve(__dirname,'..'),OUT=path.join(ROOT,'artifacts/hair-batch-01');let browser,server,url;
 before(async()=>{
@@ -6,7 +7,7 @@ before(async()=>{
  browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
 });
 after(async()=>{await browser?.close();if(server)await new Promise(r=>server.close(r));});
-async function inspect(name,fn){const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const result=await page.evaluate(fn);fs.writeFileSync(path.join(OUT,name+'.json'),JSON.stringify(result,null,2)+'\n');assert.deepEqual(errors,[]);return result;}finally{await page.close();}}
+async function inspect(name,fn){const page=await artPage(browser,),errors=[];page.on('pageerror',e=>errors.push(e.message));try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const result=await page.evaluate(fn);fs.writeFileSync(path.join(OUT,name+'.json'),JSON.stringify(result,null,2)+'\n');assert.deepEqual(errors,[]);return result;}finally{await page.close();}}
 
 test('five cuts preserve the selected ear artwork across all head and ear shapes',async()=>{
  const r=await inspect('ear-surfaces',()=>{
@@ -51,7 +52,7 @@ test('rear hair covers the cranial surface down to the nape on every head shape'
 });
 
 test('the accepted five-cut batch and Bald remain pixel-identical during later hair work',async()=>{
- const page=await browser.newPage();try{
+ const page=await artPage(browser,);try{
   const fixture=JSON.parse(fs.readFileSync(path.join(ROOT,'tests/fixtures/hair-all-v11.json')));
   await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const current=await page.evaluate(async()=>{
    const hashes={},selected=new Set(['bald','short','buzz','crop','caesar','fade']);let views=0;
@@ -77,7 +78,7 @@ test('ear jewelry stays on the selected ears, and hidden ears have no floating j
 });
 
 test('the five styles work in the creator and mirror and survive save/reload',async()=>{
- const page=await browser.newPage({viewport:{width:1280,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const page=await artPage(browser,{viewport:{width:1280,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  try{
   await page.goto(url);await page.evaluate(()=>BagseedArt.ready);await page.locator('[data-act=newGame]').click();
   const creator=await page.evaluate(()=>{

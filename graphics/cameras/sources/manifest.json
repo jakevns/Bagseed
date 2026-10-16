@@ -1,0 +1,69 @@
+{
+  "revision": "cameras-1",
+  "status": "approved",
+  "approval": "Send it!!",
+  "path": "assets/cameras-atlas.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "d060b2d8dc88156e25de4462f2b239a486f3c6c0e16702d6610d73a53cd218c2",
+  "assets": {
+    "phone": {
+      "rect": [
+        111,
+        8,
+        221,
+        409
+      ]
+    },
+    "compact": {
+      "rect": [
+        489,
+        133,
+        429,
+        269
+      ]
+    },
+    "vintage": {
+      "rect": [
+        1012,
+        114,
+        490,
+        316
+      ]
+    },
+    "dslr": {
+      "rect": [
+        129,
+        426,
+        374,
+        584
+      ]
+    },
+    "phoneFlat": {
+      "rect": [
+        692,
+        606,
+        799,
+        211
+      ]
+    },
+    "dslrBody": {
+      "rect": [
+        129,
+        426,
+        374,
+        283
+      ]
+    },
+    "tripod": {
+      "rect": [
+        187,
+        703,
+        260,
+        307
+      ]
+    }
+  }
+}

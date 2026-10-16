@@ -1,0 +1,23 @@
+{
+  "proposalOnly": false,
+  "entryPoint": "public/index.html",
+  "computerCameraCombinations": 9,
+  "artOutsideCoffeeUnchanged": true,
+  "hitboxesUnchanged": true,
+  "catalogUnchanged": true,
+  "steamAnimatedAtNativeResolution": true,
+  "seamlessFourSecondLoop": true,
+  "reducedMotion": true,
+  "consumedMugAndSteamHidden": true,
+  "nextDayReturns": true,
+  "liveMotion": {
+    "realGameLoop": true,
+    "nativeResolution": true,
+    "movingFrames": 19,
+    "reducedMotionStill": true
+  },
+  "phoneGame": true,
+  "actualDrinkInteraction": true,
+  "consumptionSaveReload": true,
+  "errors": []
+}

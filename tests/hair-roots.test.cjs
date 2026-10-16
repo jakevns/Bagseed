@@ -1,3 +1,4 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test,before,after}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http'),{chromium}=require('playwright');
 const ROOT=path.resolve(__dirname,'..'),OUT=path.join(ROOT,'artifacts/hair-fit-v10');let browser,server,url;
 before(async()=>{
@@ -7,7 +8,7 @@ before(async()=>{
  browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
 });
 after(async()=>{await browser?.close();if(server)await new Promise(r=>server.close(r));});
-async function inspect(name,fn){const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const result=await page.evaluate(fn);fs.writeFileSync(path.join(OUT,name+(process.env.BAGSEED_HAIR_BEFORE==='1'?'-before':'')+'.json'),JSON.stringify(result,null,2)+'\n');assert.deepEqual(errors,[]);return result;}finally{await page.close();}}
+async function inspect(name,fn){const page=await artPage(browser,),errors=[];page.on('pageerror',e=>errors.push(e.message));try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const result=await page.evaluate(fn);fs.writeFileSync(path.join(OUT,name+(process.env.BAGSEED_HAIR_BEFORE==='1'?'-before':'')+'.json'),JSON.stringify(result,null,2)+'\n');assert.deepEqual(errors,[]);return result;}finally{await page.close();}}
 
 test('short crops stay within measured skull proportions in front and back',async()=>{
  const r=await inspect('short-proportions',()=>{

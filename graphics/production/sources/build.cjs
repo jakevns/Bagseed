@@ -88,4 +88,14 @@ const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging
 const characterSources=['graphics/production/sources/renderer.js','graphics/production/sources/face-details.js','graphics/production/sources/hair-batch-01.js','graphics/production/sources/hair-fit-rest.js','graphics/production/sources/build.cjs','graphics/production/customization-v5/detail-landmarks.json','graphics/production/customization-v5/manifest.json','graphics/production/customization-v5/hair-fit.json','graphics/production/customization-v5/register.py'];
 const characterSourcesSHA256=Object.fromEntries(characterSources.map(file=>[file,sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'))]));
 const report={version:'illustrated-1',approval:'User requested a universal repair for duplicated head/body necks in custom characters.',customizationReview:'review/neck-v14/README.md',hairFitRevision:hairFit.version,hairRuntimeFitRevision:'scalp-fit-12',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),characterRevision:characterCode.match(/renderingRevision:'([^']+)'/)[1],characterPayloadSHA256:sha(characterCode.trim()),characterSourcesSHA256,bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length,bedroomRevision:'bedroom-shell-1',bedRevision:'beds-batch-04',bedCombinations:80,deskRevision:'seedling-desks-1',deskVariations:3,curtainRevision:'curtains-batch-03',curtainSets:6,menuRevision:JSON.parse(fs.readFileSync(path.join(root,'graphics/main-menu/sources/manifest.json'))).revision};
+Object.assign(report, { computerDeskRevision: 'computer-desks-1', computerDeskDesigns: 4 });
+Object.assign(report, { computerEquipmentRevision: 'computer-equipment-1', computerTiers: 3, keyboardOptions: 4, deskMatOptions: 3, monitorWallpapers: 5 });
+Object.assign(report, { cameraRevision: 'cameras-1', cameraTiers: 3, decorativeCameras: 1 });
+Object.assign(report, { chairRevision: 'chairs-2', deskChairDesigns: 4, officeChairFinishes: 2 });
+Object.assign(report, { coffeeRevision: 'coffee-1', coffeeSteamPeriod: 4 });
+Object.assign(report, { underDeskStorageRevision: 'under-desk-storage-1', storageTiers: 3, supplyBoxes: 1 });
+Object.assign(report, { loadingRevision: 'loading-bedroom-3' });
+Object.assign(report, { loadingMobileFraming: 'fixed-window' });
+Object.assign(report, { bedroomWindowRevision: 'bedroom-window-1', outdoorArtSharedWithLoading: true });
+Object.assign(report, { starterTentRevision: 'starter-tent-1', starterTentShells: ['budget','standard'] });
 const reportPath=path.join(art,'build.json');fs.writeFileSync(reportPath+'.tmp',JSON.stringify(report,null,2)+'\n');fs.renameSync(reportPath+'.tmp',reportPath);console.log(JSON.stringify(report,null,2));

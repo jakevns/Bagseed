@@ -1,0 +1,25 @@
+{
+  "previousPublishedCommit": "21420c4",
+  "preservedModules": [
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code",
+    "bagseed-coffee-production-code"
+  ],
+  "preservedCount": 16,
+  "addedModule": "bagseed-under-desk-storage-production-code",
+  "pausedLoadingScreenIncluded": false,
+  "nativeGameAndMenuHooksUnchanged": true
+}

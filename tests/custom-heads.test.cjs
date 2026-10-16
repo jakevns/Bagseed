@@ -1,3 +1,4 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test,before,after}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
@@ -13,7 +14,7 @@ before(async()=>{
 });
 after(async()=>{await browser?.close();if(server)await new Promise(resolve=>server.close(resolve));});
 async function inspect(fn){
-  const page=await browser.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));
+  const page=await artPage(browser,),errors=[];page.on('pageerror',error=>errors.push(error.message));
   try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const result=await page.evaluate(fn,registration);assert.deepEqual(errors,[]);return result;}finally{await page.close();}
 }
 

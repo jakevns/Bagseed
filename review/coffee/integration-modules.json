@@ -1,0 +1,24 @@
+{
+  "previousPublishedCommit": "a58877e",
+  "preservedCount": 14,
+  "preservedModules": [
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code"
+  ],
+  "intentionallyChangedModule": "bagseed-computer-desks-production-code",
+  "reason": "Extract legacy coffee block to RoomArt.drawCoffee hook; approved coffee module replaces only that hook",
+  "addedModule": "bagseed-coffee-production-code",
+  "coffeePayloadSHA256": "1c6ecd4f77ea7016742813a2fc2cfd280d1366d7285294b22987c54f6559d958"
+}

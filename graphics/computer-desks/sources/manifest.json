@@ -1,0 +1,59 @@
+{
+  "revision": "computer-desks-1",
+  "status": "approved",
+  "approval": "Great work! Send it over :)",
+  "path": "assets/desks-atlas.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "0281b282589e8c46e5b10ea9d5fa982472a5d313aba0cf3d8517947f4b555956",
+  "desks": [
+    {
+      "id": "base",
+      "name": "Base Computer Desk",
+      "rect": [
+        48,
+        144,
+        705,
+        307
+      ],
+      "price": 0
+    },
+    {
+      "id": "birch",
+      "name": "Birch Side Desk",
+      "rect": [
+        844,
+        133,
+        645,
+        318
+      ],
+      "price": 50
+    },
+    {
+      "id": "steel",
+      "name": "Steel & Oak Side Desk",
+      "rect": [
+        58,
+        544,
+        683,
+        353
+      ],
+      "price": 50,
+      "finishPrice": 12
+    },
+    {
+      "id": "standing",
+      "name": "Standing Desk",
+      "rect": [
+        819,
+        540,
+        677,
+        365
+      ],
+      "price": 50,
+      "finishPrice": 25
+    }
+  ]
+}

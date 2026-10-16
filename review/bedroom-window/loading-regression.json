@@ -1,0 +1,30 @@
+{
+  "entryPoint": "public/index.html",
+  "firstChunkBytes": 436634,
+  "visibleBeforeGameHTML": true,
+  "waitsForAllArtwork": true,
+  "futureArtworkIncluded": true,
+  "noOldGraphicsExposed": true,
+  "dayNightPeriod": 12,
+  "paintedOutdoorStates": 4,
+  "movingCloudPixels": 604,
+  "cloudsContainedInWindow": true,
+  "actualAnimationFrames": 6,
+  "seamlessLoop": true,
+  "approvedStorageVariations": 3,
+  "gameInputBlocked": true,
+  "gameTimeHeld": true,
+  "readyMenu": true,
+  "keyboardNewGame": true,
+  "layouts": [
+    "phone",
+    "phone-landscape"
+  ],
+  "reducedMotion": true,
+  "failedImageKeepsCover": true,
+  "reloadRecovery": true,
+  "savedProgressPreserved": true,
+  "continueGame": true,
+  "pageErrors": [],
+  "expectedImageFailure": 1
+}

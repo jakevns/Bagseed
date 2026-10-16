@@ -1,0 +1,43 @@
+{
+  "previousPublishedCommit": "0cbf21e516257e1a12fd21a1b375bf4de4d785d3",
+  "preservedModules": [
+    "bagseed-loading-controller",
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code",
+    "bagseed-coffee-production-code",
+    "bagseed-under-desk-storage-production-code"
+  ],
+  "refactoredModule": "bagseed-loading-scene-code",
+  "addedModule": "bagseed-bedroom-window-production-code",
+  "sourceGameHTMLUnchanged": true,
+  "singleDecodedOutdoorAtlas": true,
+  "singleDecodedCloudSprite": true,
+  "loadingReferenceFramesIdentical": [
+    "day",
+    "sunset",
+    "night"
+  ],
+  "regressions": {
+    "bedroom": "passed",
+    "curtainsBatch03": "passed",
+    "startupLoading": "passed",
+    "liveWindow": "passed"
+  },
+  "publicBytes": 98019069,
+  "publicSHA256": "2c6a6b22fd86aae65ecea049fce88ab9b86ed78d85705cab9a395113e3bbe949",
+  "status": "approved",
+  "approvedDate": "2026-10-16"
+}

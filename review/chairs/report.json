@@ -1,0 +1,30 @@
+{
+  "proposalOnly": false,
+  "entryPoint": "public/index.html",
+  "deskChairs": 4,
+  "officeFinishes": 2,
+  "noChairPreserved": true,
+  "distinctDrawings": 6,
+  "catalogUnchanged": true,
+  "footprintsUnchanged": true,
+  "seatFlagUnchanged": true,
+  "coffeeAndSteamUnchanged": true,
+  "cameraArtworkUnchanged": true,
+  "RGBAnimatesAtNativeResolution": true,
+  "reducedMotion": true,
+  "LEDRegistration": {
+    "method": "source-pixel-mask",
+    "maskPixels": 3055,
+    "outsideChairPixels": 0,
+    "width": 348,
+    "height": 512
+  },
+  "liveMotion": {
+    "realGameLoop": true,
+    "nativeResolution": true,
+    "movingFrames": 23,
+    "reducedMotionStill": true
+  },
+  "actualStoreDesktopAndPhone": true,
+  "errors": []
+}

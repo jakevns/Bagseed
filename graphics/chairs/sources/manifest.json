@@ -1,0 +1,71 @@
+{
+  "revision": "chairs-2",
+  "status": "approved",
+  "path": "assets/chairs-atlas.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "c097cda113cb73ce5b65ef8d1fa9c8bd3a895a044008b673c5b5fe1ec5ef97a0",
+  "assets": {
+    "folding": {
+      "rect": [
+        150,
+        108,
+        247,
+        393
+      ]
+    },
+    "office": {
+      "rect": [
+        613,
+        61,
+        312,
+        451
+      ]
+    },
+    "gaming": {
+      "rect": [
+        29,
+        41,
+        967,
+        1425
+      ],
+      "source": "gaming"
+    },
+    "wood": {
+      "rect": [
+        146,
+        551,
+        259,
+        437
+      ]
+    },
+    "mesh": {
+      "rect": [
+        601,
+        541,
+        336,
+        448
+      ]
+    },
+    "teal": {
+      "rect": [
+        1117,
+        541,
+        335,
+        448
+      ]
+    }
+  },
+  "gaming": {
+    "path": "assets/gaming-chair-rerender.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "4235bf08cc969e322221b404ade540fa2fcc5f35cfbbbf8dda0e89b391f4751b",
+    "cyanThreshold": 24,
+    "registration": "LED mask is derived from cyan material pixels in the gaming-chair image; same crop and transform as the chair."
+  }
+}

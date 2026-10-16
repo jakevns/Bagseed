@@ -1,0 +1,27 @@
+{
+  "proposalOnly": true,
+  "entryPoint": "public/index.html",
+  "starterShells": [
+    "budget",
+    "standard"
+  ],
+  "purchasableStarterShell": {
+    "tier": "standard",
+    "price": 35
+  },
+  "unchangedEquipmentAndShellTargets": true,
+  "slotDrawingAndTargetOffsetY": -10,
+  "layering": {
+    "combinations": 24,
+    "topOccludesLight": true,
+    "trayOccludesPots": true,
+    "contentsRemainVisible": true,
+    "plantTargetAligned": true
+  },
+  "unchangedCatalog": true,
+  "unchangedFootprints": true,
+  "storeArtwork": true,
+  "phoneStore": true,
+  "animationNotFinalized": true,
+  "errors": []
+}

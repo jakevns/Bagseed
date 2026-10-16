@@ -1,0 +1,42 @@
+{
+  "previousPublishedCommit": "71e4e05b411f4a6e147d052bcce599090c8f3774",
+  "unchangedModules": [
+    "bagseed-loading-scene-code",
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code",
+    "bagseed-coffee-production-code",
+    "bagseed-under-desk-storage-production-code",
+    "bagseed-bedroom-window-production-code"
+  ],
+  "changedModules": [
+    "bagseed-loading-controller"
+  ],
+  "sourceGameHTMLUnchanged": true,
+  "loadingStylesChanged": true,
+  "loadingArtUnchanged": true,
+  "publicBytes": 98031712,
+  "publicSHA256": "029e2099b7c6ac1c241dfd7942cd2ec094f83b9716ab782c34a23a086fe4f167",
+  "validation": {
+    "stagedMobileFirstPaint": "passed",
+    "mobileReloadLayout": "passed",
+    "mainMenu": "passed",
+    "loadingRecoveryAndSaves": "passed",
+    "integrity": "passed"
+  },
+  "status": "approved",
+  "approvedDate": "2026-10-16",
+  "preservedBedroomWallFix": true
+}

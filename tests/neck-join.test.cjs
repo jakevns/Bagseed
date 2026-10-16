@@ -1,8 +1,9 @@
+const artPage=require('./helpers/art-page.cjs');
 const {test,before,after}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const ROOT=path.resolve(__dirname,'..'),OUT=path.join(ROOT,'artifacts/neck-v14');let browser,server,url;
 before(async()=>{fs.mkdirSync(OUT,{recursive:true});const{createStaticServer}=await import('../tools/server.mjs');server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));url='http://127.0.0.1:'+server.address().port;browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--disable-accelerated-2d-canvas']});});
 after(async()=>{await browser?.close();if(server)await new Promise(r=>server.close(r));});
-async function inspect(name,fn,arg){const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const r=await page.evaluate(fn,arg);fs.writeFileSync(path.join(OUT,name+'.json'),JSON.stringify(r,null,2)+'\n');assert.deepEqual(errors,[]);return r;}finally{await page.close();}}
+async function inspect(name,fn,arg){const page=await artPage(browser,),errors=[];page.on('pageerror',e=>errors.push(e.message));try{await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const r=await page.evaluate(fn,arg);fs.writeFileSync(path.join(OUT,name+'.json'),JSON.stringify(r,null,2)+'\n');assert.deepEqual(errors,[]);return r;}finally{await page.close();}}
 
 test('attached heads omit their painted neck while preserving the face, jaw and hair',async()=>{
  const r=await inspect('head-neck-ownership',()=>{

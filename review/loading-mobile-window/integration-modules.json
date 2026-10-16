@@ -1,0 +1,41 @@
+{
+  "previousPublishedCommit": "d83551e70f27c0a2ab22ccf88286561e0c085da6",
+  "unchangedModules": [
+    "bagseed-loading-controller",
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code",
+    "bagseed-coffee-production-code",
+    "bagseed-under-desk-storage-production-code",
+    "bagseed-bedroom-window-production-code"
+  ],
+  "changedModules": [
+    "bagseed-loading-scene-code"
+  ],
+  "onlyLoadingCameraChanged": true,
+  "liveGameWindowUnchanged": true,
+  "desktopPanoramaRetained": true,
+  "publicBytes": 98031332,
+  "publicSHA256": "b4c07959daef11d9767bc8b79cd90ab04de452d29b8c6df66c544cea1282afeb",
+  "status": "approved",
+  "approvedDate": "2026-10-16",
+  "mergedGardenPlantingUpdate": true,
+  "gameSourceMatchesOriginMain": true,
+  "validation": {
+    "growPotGarden": "passed",
+    "loadingScreen": "passed",
+    "slowDownloadMobileLayout": "passed"
+  }
+}

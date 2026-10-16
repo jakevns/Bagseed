@@ -1,0 +1,41 @@
+{
+  "previousPublishedCommit": "7b8ca6fde47f0daa1d0eba92460b2d96755825a0",
+  "preservedModules": [
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code",
+    "bagseed-coffee-production-code",
+    "bagseed-under-desk-storage-production-code"
+  ],
+  "preservedCount": 17,
+  "addedModules": [
+    "bagseed-loading-controller",
+    "bagseed-loading-scene-code"
+  ],
+  "sourceGameHTMLUnchanged": true,
+  "gameLoopChange": "Hold frameInner and refresh last timestamp until startup artwork is ready.",
+  "sharedBuildPath": "compile-main-menu.cjs is called by both the character builder and bedroom builder",
+  "regressionTests": {
+    "mainMenu": "passed",
+    "bedroom": "passed"
+  },
+  "publicBytes": 98015111,
+  "publicSHA256": "413912e4bc3f0d50876efebd798105fdf017def95e7a98c99263f1b520ea1937",
+  "loadingRevision": "loading-bedroom-3",
+  "paintedOutdoorStates": 4,
+  "cloudMotion": "Three-second sky crossings; cloud colors follow time of day; clipped behind scenery and glass.",
+  "status": "approved",
+  "approvedDate": "2026-10-16"
+}

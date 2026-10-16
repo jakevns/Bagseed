@@ -10,6 +10,8 @@ The update includes the five approved identities, 67 additional authored appeara
 
 The latest local custom-character repair draws complete hair over clothing in figures and portraits. Loose hairstyles and afros conceal covered ears and earrings; short cuts and updos retain visible ears. Individual scalp fits, complete hair lengths and the accepted first five cuts are retained. See the [v13 hair layer review](review/hair-layer-v13/README.md) for before/after figures, all head shapes and actual creator/wardrobe captures. The earlier [v12 fits](review/hair-all-v12/README.md) and [five-cut review](review/hair-batch-01/README.md) are retained as history. The distinct mouths and clean beard edges from [v9](review/customization-v9/README.md) and the [v8 detail alignment](review/customization-v8/README.md) are retained.
 
+Players who would rather not grow cannabis can grow garden plants in the starter tent and grow-tent pots instead. Clicking an empty pot lists cannabis seeds alongside garden seeds from Fern & Forge. Herbs, greens, peppers, flowers and houseplants grow there under the grow light in any season. Plants that need a whole garden bed or a trellis stay outdoors. Each pot holds either cannabis or a garden plant, never both. These plants are watered, fed, harvested and sold the same way as other garden plants.
+
 The [combined release checkpoint](docs/graphics/merge-checkpoint.md) records the merge with the latest menu, curtains and desk work. Publishing checks require the generated game, embedded character payload and character source checksums to agree, preventing a stale character release from passing deployment validation.
 
 ## Develop and verify

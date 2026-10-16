@@ -1,0 +1,87 @@
+{
+  "approval": "User approved chairs-2 LED rerender and requested publication",
+  "entryPoint": "public/index.html",
+  "build": "npm run build:bedroom",
+  "integrityCheck": {
+    "command": "npm run check",
+    "passed": true,
+    "scriptBlocks": 92,
+    "characterRevision": "customization-9"
+  },
+  "preview": {
+    "proposalOnly": false,
+    "entryPoint": "public/index.html",
+    "deskChairs": 4,
+    "officeFinishes": 2,
+    "noChairPreserved": true,
+    "distinctDrawings": 6,
+    "catalogUnchanged": true,
+    "footprintsUnchanged": true,
+    "seatFlagUnchanged": true,
+    "coffeeAndSteamUnchanged": true,
+    "cameraArtworkUnchanged": true,
+    "RGBAnimatesAtNativeResolution": true,
+    "reducedMotion": true,
+    "LEDRegistration": {
+      "method": "source-pixel-mask",
+      "maskPixels": 3055,
+      "outsideChairPixels": 0,
+      "width": 348,
+      "height": 512
+    },
+    "liveMotion": {
+      "realGameLoop": true,
+      "nativeResolution": true,
+      "movingFrames": 23,
+      "reducedMotionStill": true
+    },
+    "actualStoreDesktopAndPhone": true,
+    "errors": []
+  },
+  "integration": {
+    "stylePurchases": 3,
+    "officeChairPurchase": 1,
+    "tealUnlock": 8,
+    "totalPaid": 248,
+    "styleSwitches": 5,
+    "packageMatchesStore": true,
+    "placementAndFlip": true,
+    "seatAndDailyLimit": true,
+    "saveReload": true,
+    "phoneStore": true,
+    "final": {
+      "chair": "wood",
+      "money": 752,
+      "placed": [
+        {
+          "uid": "je711qd",
+          "id": "officechair",
+          "x": 110,
+          "y": 136,
+          "flip": true,
+          "rot": 0,
+          "v": 1
+        }
+      ],
+      "owned": 1,
+      "teal": 1
+    },
+    "errors": []
+  },
+  "priorArtModulesPreserved": 14,
+  "focusedTests": {
+    "files": [
+      "tests/chairs.test.cjs",
+      "tests/bedroom.test.cjs",
+      "tests/cameras.test.cjs",
+      "tests/computer-desks.test.cjs",
+      "tests/computer-equipment.test.cjs",
+      "tests/desk-tabletop-placement.test.cjs"
+    ],
+    "passed": 6,
+    "failed": 0,
+    "execution": "Five regression tests passed in the combined run; chair test passed separately after correcting the fixture to check out each store subcategory before switching.",
+    "initialFixtureFailure": "Mixed room-style and office-decor checkout was rolled back by the existing category-dependent catalog lookup; no application code changed."
+  },
+  "coffeeAndSteam": "Queued as a separate artwork batch; unchanged in this release"
+}

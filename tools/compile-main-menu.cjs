@@ -19,5 +19,5 @@ module.exports = function compileMainMenu(source) {
   const css = fs.readFileSync(path.join(root, 'sources/style.css'), 'utf8');
   const code = fs.readFileSync(path.join(root, 'sources/renderer.js'), 'utf8').replace('__BAGSEED_MENU_MANIFEST__', () => JSON.stringify(manifest));
   new (require('node:vm').Script)(code);
-  return source.replace('</body></html>', `<style id="bagseed-main-menu-style">\n${css}\n</style>\n<script id="bagseed-main-menu-production-code">\n${code}\n</script>\n</body></html>`);
+  return require('./compile-loading-screen.cjs')(source.replace('</body></html>', `<style id="bagseed-main-menu-style">\n${css}\n</style>\n<script id="bagseed-main-menu-production-code">\n${code}\n</script>\n</body></html>`));
 };

@@ -1,0 +1,18 @@
+{
+  "revision": "chairs-2",
+  "registration": {
+    "method": "source-pixel-mask",
+    "maskPixels": 3055,
+    "outsideChairPixels": 0,
+    "width": 348,
+    "height": 512
+  },
+  "realLoop": {
+    "realGameLoop": true,
+    "nativeResolution": true,
+    "movingFrames": 24,
+    "reducedMotionStill": true
+  },
+  "otherChairSourcesUnchanged": 5,
+  "officeFinishPreviewByteIdentical": true
+}

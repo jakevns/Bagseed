@@ -1,0 +1,14 @@
+{
+  "proposalOnly": false,
+  "entryPoint": "public/index.html",
+  "cameraTiers": 3,
+  "decorativeCamera": 1,
+  "distinctStoreArt": true,
+  "computerArtUnchanged": true,
+  "photoOutputsUnchanged": 5,
+  "catalogUnchanged": true,
+  "tripodCollisionUnchanged": true,
+  "phoneYieldsToPlacedDecor": true,
+  "actualStoreDesktopAndPhone": true,
+  "errors": []
+}

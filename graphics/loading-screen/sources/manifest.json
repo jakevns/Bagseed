@@ -1,0 +1,149 @@
+{
+  "revision": "loading-bedroom-3",
+  "status": "approved",
+  "period": 12,
+  "art": {
+    "path": "assets/bedroom.webp",
+    "sha256": "f5e41739927b9bf3166ea067382e3463c932c4117b39f735f9e887f050b6bd2c",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  "source": {
+    "path": "assets/bedroom-illustration-base.png",
+    "sha256": "826012636d07d31f5450ffec724357a432ce8331db18d5eb15593085bcca847c",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  "storage": {
+    "path": "assets/storage.webp",
+    "sha256": "6cd6e12732f5a1553cf8b73d235fb5b0d2a23a5d5b6ccc22d9337fd48c825d8d",
+    "approvedAtlasSHA256": "9225386b6e8f01c238cf3d6912380d8406f2a17658443b4420121f1c415b156c",
+    "assets": {
+      "drawer": {
+        "rect": [
+          125,
+          127,
+          606,
+          369
+        ],
+        "width": 18,
+        "height": 13
+      },
+      "organizer": {
+        "rect": [
+          890,
+          160,
+          526,
+          336
+        ],
+        "width": 18,
+        "height": 12
+      },
+      "fridge": {
+        "rect": [
+          190,
+          580,
+          464,
+          365
+        ],
+        "width": 20,
+        "height": 18
+      },
+      "box": {
+        "rect": [
+          896,
+          611,
+          509,
+          322
+        ],
+        "width": 18,
+        "height": 12
+      }
+    },
+    "anchor": [
+      990,
+      431
+    ],
+    "scale": 4.444444444444445,
+    "box": [
+      1172,
+      379,
+      80,
+      52
+    ]
+  },
+  "monitor": [
+    715,
+    227,
+    77,
+    53
+  ],
+  "growLight": [
+    185,
+    247
+  ],
+  "coordinateSize": [
+    2048,
+    768
+  ],
+  "outside": {
+    "path": "assets/outdoor-times.webp",
+    "sha256": "e125c4baf814269171f725c20987ec15bc36cee34cd4835e14da5478009e5eb7",
+    "size": [
+      768,
+      512
+    ],
+    "tiles": [
+      [
+        0,
+        0,
+        384,
+        256
+      ],
+      [
+        384,
+        0,
+        384,
+        256
+      ],
+      [
+        0,
+        256,
+        384,
+        256
+      ],
+      [
+        384,
+        256,
+        384,
+        256
+      ]
+    ],
+    "destination": [
+      980,
+      60,
+      230,
+      162
+    ],
+    "glassPaths": [
+      "M1004 60 L1094 60 L1094 154 L980 154 Q998 117 1004 60 Z",
+      "M1105 60 L1186 60 Q1190 118 1210 154 L1105 154 Z",
+      "M980 164 L1094 164 L1094 222 L988 222 Q986 182 980 164 Z",
+      "M1105 164 L1210 164 Q1200 187 1207 222 L1105 222 Z"
+    ],
+    "skyPath": "M0 0 L586 0 L587 36 L616 43 L596 65 L561 76 L539 101 L519 116 L539 144 L503 167 L474 155 L452 164 L435 163 L419 197 L399 210 L384 235 L359 233 L336 246 L310 250 L239 250 L239 181 L220 125 L0 125 Z"
+  },
+  "cloud": {
+    "path": "assets/cloud.webp",
+    "sha256": "3a1b7671d229a37efc3551f4a3d81d7eedf7ff436f1cd32b0745c565afab3d35",
+    "size": [
+      512,
+      171
+    ]
+  },
+  "approvedDate": "2026-10-16"
+}
