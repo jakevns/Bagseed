@@ -1,19 +1,17 @@
-/* Approved illustrated grow lights, soft falloff, emission and drifting dust. */
+/* Approved light mounting, falloff and dust aligned to each rolled flap. */
 (()=>{
  'use strict';
  const DATA=__BAGSEED_GROW_LIGHTS_DATA__,image=new Image(),original=Gear.light,oldIcon=drawGearIcon,hit=RoomArt.hit,fields=new Map(),fixtures=new Map();let loaded=false,activeLoc=null,bound=false;
  const smooth=(a,b,x)=>{const k=clamp((x-a)/(b-a),0,1);return k*k*(3-2*k);};
+ function fixtureY(loc,n){const a=DATA.tiers[n];return BagseedTentPlacement.roofY(loc)-.75-a.top-a.height*({1:93/227,2:90/225,3:84/239,4:88/277}[n]);}
  function layout(loc){
-  if(loc==='closet'||loc==='tent2')return {box:(loc==='closet'?STARTER_BOX:T2_BOX).slice(),sources:[DEV_POS[loc].light.slice()]};
-  if(loc==='tent4')return {box:[22,6,132,128],sources:[[88,44]]};
-  if(loc==='tent5')return {box:[178,2,182,142],sources:[[229,45],[309,45]]};
-  return null;
+  const box=BagseedTentPlacement.bounds(loc);if(!box)return null;const n=state?.locations?.[loc]?.equip.light||1,y=fixtureY(loc,n),xs=loc==='closet'||loc==='tent2'?[DEV_POS[loc].light[0]]:loc==='tent4'?[88]:[229,309];return {box:box.slice(),sources:xs.map(x=>[x,y])};
  }
  function lit(on,t){return !!on&&!(state?.fail.flicker&&!settings.reduced&&Math.sin(t*23)>.6);}
  function sprite(c,x,y,tier,on,scale=1){const a=DATA.tiers[tier];if(!a)return;c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...a[on?'on':'off'],x-a.width*scale/2,y+a.top*scale,a.width*scale,a.height*scale);c.restore();}
  Gear.light=function(c,x,y,tier,on,t){
   if(!loaded||!DATA.tiers[tier])return original.call(this,c,x,y,tier,on,t);
-  sprite(c,x,y,tier,lit(on,t));if(activeLoc){const list=fixtures.get(activeLoc)||[];list.push([x,y,tier]);fixtures.set(activeLoc,list);}
+  if(activeLoc)y=fixtureY(activeLoc,tier);sprite(c,x,y,tier,lit(on,t));if(activeLoc){const list=fixtures.get(activeLoc)||[];list.push([x,y,tier]);fixtures.set(activeLoc,list);}
  };
  function fieldImage(loc,n){
   const geo=layout(loc),a=DATA.tiers[n],key=JSON.stringify([loc,n,geo]);if(fields.has(key))return fields.get(key);
@@ -52,7 +50,7 @@
  }
  function clipOpening(c,loc){
   const [x,y,w,h]=layout(loc).box,p=new Path2D();
-  if(loc==='closet'){p.moveTo(x+w*.15,y+h*.27);p.lineTo(x+w*.85,y+h*.27);p.lineTo(x+w*.85,y+h*.815);p.quadraticCurveTo(x+w*.85,y+h*.902,x+w*.79,y+h*.902);p.lineTo(x+w*.21,y+h*.902);p.quadraticCurveTo(x+w*.15,y+h*.902,x+w*.15,y+h*.815);p.closePath();}
+  if(loc==='closet'){p.moveTo(x+w*.15,y+h*BagseedTentPlacement.roof('closet'));p.lineTo(x+w*.85,y+h*BagseedTentPlacement.roof('closet'));p.lineTo(x+w*.85,y+h*.815);p.quadraticCurveTo(x+w*.85,y+h*.902,x+w*.79,y+h*.902);p.lineTo(x+w*.21,y+h*.902);p.quadraticCurveTo(x+w*.15,y+h*.902,x+w*.15,y+h*.815);p.closePath();}
   else if(loc==='tent2')BagseedTent2.opening(p,x,y,w,h);
   else (loc==='tent4'?BagseedTent4:BagseedTent5).opening(p,x,y,w,h);
   c.clip(p);const dp=doorProg(loc);if(dp>0){const top=y+h*((loc==='closet'?.125:.1)+(loc==='closet'?.845:.85)*Math.round(dp*8)/8);c.beginPath();c.rect(x,top,w,Math.max(0,y+h-top));c.clip();}
@@ -77,7 +75,7 @@
  RoomArt.diffuseTentLight=function(c,loc,t){const L=state.locations[loc];field(c,loc,L.equip.light,isLightOn(loc),t);};
  RoomArt.hit=function(id,x,y,w,h,label,walk,layer){
   const match=/^light:(closet|tent2|tent4|tent5)$/.exec(id),list=match&&fixtures.get(match[1]);
-  if(loaded&&list?.length){const geo=layout(match[1]),boxes=list.map(([px,py,tier])=>{const a=DATA.tiers[tier];return [px-a.width/2,Math.max(py+a.top,geo.box[1]+geo.box[3]*.27),px+a.width/2,py+a.top+a.height];});x=Math.min(...boxes.map(b=>b[0]));y=Math.min(...boxes.map(b=>b[1]));w=Math.max(...boxes.map(b=>b[2]))-x;h=Math.max(8,Math.max(...boxes.map(b=>b[3]))-y);if(!walk)walk=[geo.box[0]+geo.box[2]/2,Math.max(geo.box[1]+geo.box[3]+12,curScene().walk[1]+6)];}
+  if(loaded&&list?.length){const geo=layout(match[1]),boxes=list.map(([px,py,tier])=>{const a=DATA.tiers[tier];return [px-a.width/2,Math.max(py+a.top,BagseedTentPlacement.roofY(match[1])),px+a.width/2,py+a.top+a.height];});x=Math.min(...boxes.map(b=>b[0]));y=Math.min(...boxes.map(b=>b[1]));w=Math.max(...boxes.map(b=>b[2]))-x;h=Math.max(8,Math.max(...boxes.map(b=>b[3]))-y);if(!walk)walk=[geo.box[0]+geo.box[2]/2,Math.max(geo.box[1]+geo.box[3]+12,curScene().walk[1]+6)];}
   return hit.call(this,id,x,y,w,h,label,walk,layer);
  };
  drawGearIcon=function(c,cv,slot,tier,museum){
@@ -91,5 +89,5 @@
   const draw=TentArt.draw;TentArt.draw=function(c,loc,...args){const previous=activeLoc;activeLoc=layout(loc)?loc:null;if(activeLoc)fixtures.set(loc,[]);try{return draw.call(this,c,loc,...args);}finally{activeLoc=previous;}};
  }
  const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;bind();resolve();};image.onerror=()=>reject(Error('Grow-light artwork failed'));image.src=DATA.image;});
- window.BagseedGrowLights=Object.freeze({ready,bind,field,particles,layout,sprite,fieldImage,fixtures,effectSurfaces:surfaces,get lastActors(){return lastActors;},get loaded(){return loaded;}});
+ window.BagseedGrowLights=Object.freeze({ready,bind,field,particles,layout,fixtureY,sprite,fieldImage,fixtures,effectSurfaces:surfaces,get lastActors(){return lastActors;},get loaded(){return loaded;}});
 })();

@@ -1,6 +1,6 @@
 {
-  "revision": "exhaust-proposal-1",
-  "status": "awaiting-user-approval",
+  "revision": "exhaust-1",
+  "status": "approved",
   "path": "assets/exhaust-atlas.png",
   "size": [
     1024,
@@ -19,7 +19,12 @@
     "center": [
       548,
       1276
-    ]
+    ],
+    "runtime": {
+      "path": "../fans/assets/fans-atlas.webp",
+      "sha256": "25dc072679ff12230dbc519876acd63d7fe0ae28188feac6a27718963d8ac9fd",
+      "publicPath": "assets/fans/fans-25dc072679ff.webp"
+    }
   },
   "tiers": {
     "1": {
@@ -104,5 +109,11 @@
         ]
       }
     }
+  },
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/exhaust-atlas.webp",
+    "sha256": "fa9c0eccc8dc87c14abcd3368ea108dc20e2b70dc829684312344efb9f4327cf",
+    "publicPath": "assets/exhaust/exhaust-fa9c0eccc8dc.webp"
   }
 }

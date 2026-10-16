@@ -4,7 +4,7 @@
  const DATA=__BAGSEED_TENT5_DATA__,image=new Image(),original=TentArt.draw,icon=ShellArt.icon,extra=drawExtraIcon,locIcon=drawLocIcon;
  const [X,Y,W,H]=DATA.bounds,fronts=new Map(),glows=new Map();let loaded=false;
  const supported=()=>loaded&&!!DATA.tiers[Shell.of('tent5')?.tier];
- function opening(p,x=0,y=0,w=W,h=H){p.moveTo(x+w*.105,y+h*.27);p.lineTo(x+w*.895,y+h*.27);p.lineTo(x+w*.895,y+h*.81);p.quadraticCurveTo(x+w*.895,y+h*.90,x+w*.81,y+h*.90);p.lineTo(x+w*.19,y+h*.90);p.quadraticCurveTo(x+w*.105,y+h*.90,x+w*.105,y+h*.81);p.closePath();return p;}
+ function opening(p,x=0,y=0,w=W,h=H){p.moveTo(x+w*.105,y+h*BagseedTentPlacement.roof('tent5'));p.lineTo(x+w*.895,y+h*BagseedTentPlacement.roof('tent5'));p.lineTo(x+w*.895,y+h*.81);p.quadraticCurveTo(x+w*.895,y+h*.90,x+w*.81,y+h*.90);p.lineTo(x+w*.19,y+h*.90);p.quadraticCurveTo(x+w*.105,y+h*.90,x+w*.105,y+h*.81);p.closePath();return p;}
  function sprite(c,tier,closed,x,y,w,h){c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...DATA.tiers[tier][closed?'closed':'open'],x,y,w,h);c.restore();}
  function foreground(c,tier,dp){
   const step=Math.round(dp*8),key=tier+':'+step;
@@ -35,7 +35,7 @@
   if(e.heater){Gear.heater(c,...P.heater,e.heater,env.hvac.units.some(u=>u.dir>0),t);RoomArt.hit('heater:'+loc,P.heater[0]-1,P.heater[1]-3,14,16,EQ.heater[e.heater].name,null,'equip');}
   if(e.ctrl){Gear.ctrl(c,...P.ctrl,e.ctrl,true,t,false);RoomArt.hit('ctrl:'+loc,P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');}
   if(dp<1){c.save();c.clip(opening(new Path2D(),X,Y,W,H));try{
-   diffusion(c,e.light,on,t);for(const lx of [cx-40,cx+40])Gear.light(c,lx,P.light[1],e.light,on,t);Gear.filter(c,...P.exhaust,e.exhaust,exMul(L)>0,t);
+   diffusion(c,e.light,on,t);Gear.filter(c,...P.exhaust,e.exhaust,exMul(L)>0,t);for(const lx of [cx-40,cx+40])Gear.light(c,lx,P.light[1],e.light,on,t);
    runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;try{Gear.fan(c,...P.fan,e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
    Gear.humid(c,...P.humid,e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,loc);Gear.sensor(c,...P.sensor,e.sensor,env,loc);slots(c,t);
   }finally{c.restore();}}
