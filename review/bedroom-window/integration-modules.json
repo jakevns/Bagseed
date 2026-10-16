@@ -37,5 +37,7 @@
     "liveWindow": "passed"
   },
   "publicBytes": 98019069,
-  "publicSHA256": "2c6a6b22fd86aae65ecea049fce88ab9b86ed78d85705cab9a395113e3bbe949"
+  "publicSHA256": "2c6a6b22fd86aae65ecea049fce88ab9b86ed78d85705cab9a395113e3bbe949",
+  "status": "approved",
+  "approvedDate": "2026-10-16"
 }

@@ -1,4 +1,4 @@
-# Live bedroom window — awaiting artwork approval
+# Live bedroom window — approved
 
 Reuses the four approved outdoor paintings and transparent cloud sprite from the loading-screen release 0cbf21e. No new image files or duplicated embedded outdoor assets are needed. The original images and their hashes remain under graphics/loading-screen. The reusable painter is now sources/scenery.js; both startup and gameplay use the same decoded atlas/cloud pair through BagseedWindowScenery.
 
@@ -15,4 +15,4 @@ Integration overrides HouseWing115c.yard only. The previously installed HouseWin
 
 The shared readiness promise participates in startup gating, and a late BagseedBedroomWindow promise is also discovered by the loader. Both build paths use tools/build-bedroom.cjs. tools/check.mjs verifies the live renderer and the shared loading payload against their sources, along with the immutable baseline and character payload.
 
-Review previews: review/bedroom-window. Tests: bedroom-window.test.cjs, bedroom.test.cjs, loading-screen.test.cjs, and curtains-batch-03.test.cjs. No publishing until this batch is approved.
+Review previews: review/bedroom-window. Tests: bedroom-window.test.cjs, bedroom.test.cjs, loading-screen.test.cjs, and curtains-batch-03.test.cjs. Approved by the user on 2026-10-16 for publication.

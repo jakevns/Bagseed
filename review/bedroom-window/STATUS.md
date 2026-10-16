@@ -1,4 +1,4 @@
-# Live bedroom window — awaiting approval
+# Live bedroom window — approved for publication
 
 User request: reuse the new outdoor art in the actual game, preserve neighbors appearing in the window, and add sensible layers. This batch updates the bedroom's live outdoor view. The existing room/furniture art is retained.
 
@@ -12,4 +12,4 @@ Previews are captured from public/index.html:
 
 Validation and preservation evidence: report.json, loading-regression.json, integration-modules.json. Native bedroom and curtain batch 03 tests passed, including store/package and save choices. The loading startup/error/reload test also passed after extracting the shared scenery painter. Final deterministic day/sunset/night loading frames were checked pixel-for-pixel against the approved release; they are identical.
 
-Local preview branch: artwork/bedroom-window. Do not push until the user approves. Before publishing, fetch origin/main and reconcile any newer changes, rebuild/check, then publish this batch alone.
+The user approved publication on 2026-10-16. Origin/main was fetched and had no newer changes. The checked public/index.html matches the approved preview; this batch is being published alone from artwork/bedroom-window.
