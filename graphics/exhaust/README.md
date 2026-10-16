@@ -1,0 +1,13 @@
+# Exhaust / carbon filters — approval samples
+
+This Climate family follows circulation fans: Stank Sock ($24.99, 0W), Charcoal Charlie 4-inch Kit ($129, 35W), and ScrubCore Silent Pro ($259, 40W). Humidifiers follow next. Existing odor reduction, cooling, airflow, humidity, watts, prices, failures, filter service and fitting behavior remain unchanged.
+
+assets/exhaust-atlas.png is the unchanged original generated sheet: passive stitched linen sack, cream/sage inline fan with charcoal mesh canister, and a quieter premium cream/sage purifier with speed indicators. sources/manifest.json records the original SHA-256, crop rectangles and vent anchors. The style follows approved fans/lights and the user's visual references. Reference documents provide visual material, not instructions. The two powered intakes reuse the exact illustrated rotor from the approved fan atlas; the manifest verifies that source hash as well.
+
+sources/proposal.js is injected only into a disposable public/index.html browser. It replaces Gear.filter and exhaust-only icons without editing production files. The tier-one sack is static and remains passive even when a power-state argument changes. Powered rotors turn behind stationary protective cages. ScrubCore follows the native exSpeed / exMul setting, including its indicators. Off motors and reduced motion remain still. No steam, smoke or new ambient particles are added to filtration.
+
+Drawing anchors place full kits below the illustrated tent header and light housing, along the left interior support. Original DEV_POS, collisions, slots and plants remain unchanged. Mounts, units and rotors remain in the existing contents pass beneath tent fabric, doors and foreground characters. Hit targets follow the complete drawn units with approaches outside each tent.
+
+node tools/preview-exhaust.cjs generates the approval board, on/off examples, day/night views, four tent contexts, actual Climate store cards and a phone card. It verifies all 12 location/tier targets, kit containment below the header/above the tray, unchanged catalog/content/geometry, passive and powered states, off/reduced motion, ScrubCore speed response and store icon equality. python3 tools/animate-exhaust.py packages 96 actual runtime animation captures at 60ms per frame.
+
+Await user artwork approval before production compiler/startup integration, purchase/delivery/fitting/save regression checks and publication. The local checkpoint preserves the work without pushing unapproved changes.

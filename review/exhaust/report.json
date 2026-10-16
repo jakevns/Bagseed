@@ -1,0 +1,19 @@
+{
+  "proposalOnly": true,
+  "entryPoint": "public/index.html",
+  "tiers": 3,
+  "prices": [
+    24.99,
+    129,
+    259
+  ],
+  "catalogAndContentsPreserved": true,
+  "geometryPreserved": true,
+  "passiveTierRemainsPassive": true,
+  "effectCases": 3,
+  "targets": 12,
+  "animationFrames": 96,
+  "frameDurationMs": 60,
+  "storeAndPhoneArtwork": true,
+  "errors": []
+}
