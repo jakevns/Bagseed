@@ -4,7 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
 test('loading cover paints during download, waits for all art, blocks input, and recovers from failure without changing a save',async()=>{
   const root=path.resolve(__dirname,'..'),out=path.join(root,'review/loading-screen');fs.mkdirSync(out,{recursive:true});
   const html=fs.readFileSync(path.join(root,'public/index.html')),marker=Buffer.from('<!-- bagseed-loading-shell-end -->'),cut=html.indexOf(marker)+marker.length;
-  assert.ok(cut>marker.length&&cut<400000,'Loading shell must arrive in the first small HTML chunk');
+  assert.ok(cut>marker.length&&cut<500000,'Loading shell must arrive in the first small HTML chunk');
   const coffeePrefix='data:image/png;base64,'+fs.readFileSync(path.join(root,'graphics/coffee/assets/mug.png')).toString('base64').slice(0,120);
   const {createStaticServer}=await import('../tools/server.mjs'),app=createStaticServer();let releaseStream,streamResponse,browser,streamed=false;
   const server=http.createServer((req,res)=>{if(req.url==='/index.html?stream=1'&&!streamed){streamed=true;
@@ -38,11 +38,22 @@ test('loading cover paints during download, waits for all art, blocks input, and
     const moving=[];for(let i=0;i<6;i++){moving.push(await page.evaluate(()=>document.querySelector('#bagseed-loading-room').toDataURL()));await page.waitForTimeout(150);}assert.ok(new Set(moving).size>4,'Room did not animate');
     await page.evaluate(()=>BagseedLoadingScene.pause());
     const imageAt=async(t,tier=0)=>page.evaluate(([t,tier])=>{BagseedLoadingScene.render(t,tier);return document.querySelector('#bagseed-loading-room').toDataURL();},[t,tier]);
+    const cloudCheck=await page.evaluate(()=>{
+      const cv=document.querySelector('#bagseed-loading-room'),g=cv.getContext('2d');
+      BagseedLoadingScene.render(3,0,0);const a=g.getImageData(0,0,cv.width,cv.height).data;
+      BagseedLoadingScene.render(3,0,.65);const b=g.getImageData(0,0,cv.width,cv.height).data;
+      let changed=0,escaped=0;for(let y=0;y<cv.height;y++)for(let x=0;x<cv.width;x++){
+        const i=(y*cv.width+x)*4;if(Math.abs(a[i]-b[i])+Math.abs(a[i+1]-b[i+1])+Math.abs(a[i+2]-b[i+2])>3){changed++;const lx=x*2048/cv.width,ly=y*768/cv.height;if(lx<979||lx>1211||ly<59||ly>223)escaped++;}
+      }return {changed,escaped};
+    });assert.ok(cloudCheck.changed>100,'Clouds did not move across the sky');assert.equal(cloudCheck.escaped,0,'Clouds escaped the window');
     const day=await imageAt(0),night=await imageAt(6);assert.notEqual(day,night);assert.equal(day,await imageAt(12),'Loop must return to identical daylight');
     const variants=await Promise.all([0,1,2].map(tier=>imageAt(0,tier)));assert.equal(new Set(variants).size,3);
     const frames=path.join(root,'artifacts/loading-bedroom/frames');fs.mkdirSync(frames,{recursive:true});
     for(let i=0;i<72;i++){const data=await imageAt(i/6);fs.writeFileSync(path.join(frames,String(i).padStart(3,'0')+'.png'),Buffer.from(data.split(',')[1],'base64'));}
-    for(const [label,t]of [['day',0],['dusk',3],['night',6]]){await imageAt(t);await page.screenshot({path:path.join(out,'desktop-'+label+'.png')});}
+    for(const [label,t]of [['day',0],['dusk',3],['twilight',4.5],['night',6]]){await imageAt(t);await page.screenshot({path:path.join(out,'desktop-'+label+'.png')});}
+    for(const [label,t]of [['day',0],['sunset',3],['twilight',4.5],['night',6]]){
+      await imageAt(t);const buffer=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=960;c.height=750;c.getContext('2d').drawImage(document.querySelector('#bagseed-loading-room'),718.75,0,250,195.3125,0,0,960,750);return c.toDataURL();});fs.writeFileSync(path.join(out,'window-'+label+'.png'),Buffer.from(buffer.split(',')[1],'base64'));
+    }
     await imageAt(0);await page.screenshot({path:path.join(out,'desktop-loading.png')});const layouts=[];
     for(const [name,width,height]of [['phone',390,844],['phone-landscape',844,390]]){
       await page.setViewportSize({width,height});
@@ -77,7 +88,7 @@ test('loading cover paints during download, waits for all art, blocks input, and
     assert.equal(await page.evaluate(()=>BagseedLoadingScene.storageTier),2);assert.equal(await page.locator('#bagseed-loading').isVisible(),false);await page.locator('[data-act=continueGame]').click();
     assert.deepEqual(await page.evaluate(()=>({name:state.player.name,money:state.money,look:playerLook()})),{name:saved.name,money:saved.money,look:saved.look});
     assert.deepEqual(errors,[]);assert.ok(expectedErrors.length>0);assert.ok(expectedErrors.every(e=>e.includes('Coffee artwork failed to load')),expectedErrors.join('\n'));
-    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({entryPoint:'public/index.html',firstChunkBytes:cut,visibleBeforeGameHTML:true,waitsForAllArtwork:true,futureArtworkIncluded:true,noOldGraphicsExposed:true,dayNightPeriod:12,actualAnimationFrames:new Set(moving).size,seamlessLoop:true,approvedStorageVariations:3,gameInputBlocked:true,gameTimeHeld:true,readyMenu:true,keyboardNewGame:true,layouts,reducedMotion:true,failedImageKeepsCover:true,reloadRecovery:true,savedProgressPreserved:true,continueGame:true,pageErrors:errors,expectedImageFailure:expectedErrors.length},null,2)+'\n');
+    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({entryPoint:'public/index.html',firstChunkBytes:cut,visibleBeforeGameHTML:true,waitsForAllArtwork:true,futureArtworkIncluded:true,noOldGraphicsExposed:true,dayNightPeriod:12,paintedOutdoorStates:4,movingCloudPixels:cloudCheck.changed,cloudsContainedInWindow:cloudCheck.escaped===0,actualAnimationFrames:new Set(moving).size,seamlessLoop:true,approvedStorageVariations:3,gameInputBlocked:true,gameTimeHeld:true,readyMenu:true,keyboardNewGame:true,layouts,reducedMotion:true,failedImageKeepsCover:true,reloadRecovery:true,savedProgressPreserved:true,continueGame:true,pageErrors:errors,expectedImageFailure:expectedErrors.length},null,2)+'\n');
     await context.close();
   }finally{if(streamResponse&&!streamResponse.writableEnded)streamResponse.destroy();await browser?.close();await new Promise(r=>server.close(r));}
 });

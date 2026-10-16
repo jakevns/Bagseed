@@ -4,7 +4,7 @@ function parts(){
   const css=fs.readFileSync(path.join(root,'style.css'),'utf8'),screen=fs.readFileSync(path.join(root,'screen.html'),'utf8'),code=fs.readFileSync(path.join(root,'controller.js'),'utf8');
   const manifest=JSON.parse(fs.readFileSync(path.join(root,'manifest.json'))),sha=bytes=>require('node:crypto').createHash('sha256').update(bytes).digest('hex');
   function url(asset){const bytes=fs.readFileSync(path.resolve(root,'..',asset.path));assert.equal(sha(bytes),asset.sha256,'Loading artwork changed');return 'data:image/webp;base64,'+bytes.toString('base64');}
-  const scene=fs.readFileSync(path.join(root,'scene.js'),'utf8').replace('__BAGSEED_LOADING_SCENE__',()=>JSON.stringify({...manifest,roomURL:url(manifest.art),storageURL:url(manifest.storage)}));
+  const scene=fs.readFileSync(path.join(root,'scene.js'),'utf8').replace('__BAGSEED_LOADING_SCENE__',()=>JSON.stringify({...manifest,roomURL:url(manifest.art),storageURL:url(manifest.storage),outsideURL:url(manifest.outside),cloudURL:url(manifest.cloud)}));
   assert.equal(sha(fs.readFileSync(path.resolve(root,'..',manifest.source.path))),manifest.source.sha256,'Loading illustration source changed');
   assert.equal(sha(fs.readFileSync(path.resolve(root,'../../under-desk-storage/assets/storage-atlas.png'))),manifest.storage.approvedAtlasSHA256,'Loading storage differs from approved artwork');
   new vm.Script(code);new vm.Script(scene);

@@ -39,6 +39,6 @@
     root.removeAttribute('data-bagseed-loading');overlay.setAttribute('aria-busy','false');overlay.hidden=true;
     guarded.forEach(type=>document.removeEventListener(type,guard,true));resolveReady({artworkGroups:names.length});
   }
-  window.BagseedStartup=Object.freeze({revision:'loading-bedroom-2',ready,get status(){return phase;},get canRender(){return phase==='painting'||phase==='ready';}});
+  window.BagseedStartup=Object.freeze({revision:'loading-bedroom-3',ready,get status(){return phase;},get canRender(){return phase==='painting'||phase==='ready';}});
   document.addEventListener('DOMContentLoaded',()=>{finish().catch(fail);},{once:true});
 })();
