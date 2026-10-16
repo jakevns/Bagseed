@@ -1,4 +1,4 @@
-# Mobile loading zoom fix — awaiting approval
+# Mobile loading zoom fix — approved for publication
 
 User report: the room window appears hugely zoomed in when the page first opens, before the normal loading menu appears.
 
@@ -14,4 +14,4 @@ Validation:
 
 Preview: mobile-corrected.png. Detailed staged-download measurements: report.json. Published-version reproduction: before-layout.json. Artwork/module preservation: integration-modules.json.
 
-Saved locally. Await user approval before pushing this fix.
+The user approved publishing this fix on 2026-10-16. The current repository was checked before publication.
