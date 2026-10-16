@@ -1,0 +1,74 @@
+{
+  "revision": "under-desk-storage-1",
+  "status": "awaiting approval",
+  "path": "assets/storage-atlas.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "9225386b6e8f01c238cf3d6912380d8406f2a17658443b4420121f1c415b156c",
+  "assets": {
+    "drawer": {
+      "rect": [
+        125,
+        127,
+        606,
+        369
+      ],
+      "width": 18,
+      "height": 13
+    },
+    "organizer": {
+      "rect": [
+        890,
+        160,
+        526,
+        336
+      ],
+      "width": 18,
+      "height": 12
+    },
+    "fridge": {
+      "rect": [
+        190,
+        580,
+        464,
+        365
+      ],
+      "width": 20,
+      "height": 18
+    },
+    "box": {
+      "rect": [
+        896,
+        611,
+        509,
+        322
+      ],
+      "width": 18,
+      "height": 12
+    }
+  },
+  "tiers": [
+    {
+      "id": "drawer",
+      "name": "Random Drawer",
+      "price": 0
+    },
+    {
+      "id": "organizer",
+      "name": "Plastic Organizer",
+      "price": 14.99
+    },
+    {
+      "id": "fridge",
+      "name": "Seed Mini-Fridge",
+      "price": 79
+    }
+  ],
+  "box": {
+    "name": "Supply Box",
+    "purchase": false
+  },
+  "registration": "Preserve original storage anchor and bottom at y+12; aspect-fit within existing bounds. Supply box retains [268,89,18,12] footprint and original guidance cue."
+}
