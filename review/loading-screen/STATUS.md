@@ -1,6 +1,6 @@
-# Illustrated bedroom loading screen — awaiting approval
+# Illustrated bedroom loading screen — approved for publication
 
-The user resumed this feature after publishing the under-desk storage release 7b8ca6f. This branch adds a preview implementation to public/index.html. Do not push until the user approves these visuals.
+The user resumed this feature after publishing the under-desk storage release 7b8ca6f. The user approved the revised sunset/night scenery and moving clouds on 2026-10-16. This release integrates the approved loading screen into public/index.html.
 
 The room uses the actual bedroom layout: starter grow tent and bed on the left, computer desk, rust-curtain window and green potting bench in the middle, door and wardrobe on the right. The previous sparse/corporate proposal and standalone potting nook were superseded. Uploaded documents were treated as visual references, not task instructions.
 
@@ -20,4 +20,4 @@ Validation: npm run check passed (96 script blocks, immutable baseline and chara
 
 Shared integration lives in compile-main-menu.cjs, used by both release builders. The startup frame gate modifies compiled output only. src/game.html is unchanged. The public artifact is approximately 93.5 MiB. All artwork remains embedded for the existing standalone artifact format.
 
-Next step: user review. If approved, fetch origin, reconcile any newer main changes, rebuild and validate, then publish this batch alone. Grow tents remain queued after the loading screen unless the user changes priorities.
+Publication: origin/main was fetched and had no newer changes; the approved release was rebuilt and checked before publishing this batch alone. Grow tents remain queued after the loading screen unless the user changes priorities.

@@ -1,6 +1,6 @@
 # Bedroom loading artwork
 
-Revision: loading-bedroom-3. Status: awaiting user approval.
+Revision: loading-bedroom-3. Status: approved by the user on 2026-10-16.
 
 The faithful room illustration was generated from actual bedroom captures and the previous bedroom illustration. The new base removes the obsolete under-bench containers so the approved sprites can be drawn separately. Original generated edit: /workspace/generated_images/exec-c0850a79-41cc-4ef2-8dcc-de10f262cc26.png. Its unchanged copy is assets/bedroom-illustration-base.png; assets/bedroom.webp is its 1600×600 WebP encoding. Older reference/illustration PNGs document the prior concept.
 

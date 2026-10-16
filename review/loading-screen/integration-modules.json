@@ -31,9 +31,11 @@
     "mainMenu": "passed",
     "bedroom": "passed"
   },
-  "publicBytes": 98015092,
-  "publicSHA256": "037dc51e05172198a7b393ebc5d351a5bb82f31ce00bf9f0379d21dd4eba2ae7",
+  "publicBytes": 98015111,
+  "publicSHA256": "413912e4bc3f0d50876efebd798105fdf017def95e7a98c99263f1b520ea1937",
   "loadingRevision": "loading-bedroom-3",
   "paintedOutdoorStates": 4,
-  "cloudMotion": "Three-second sky crossings; cloud colors follow time of day; clipped behind scenery and glass."
+  "cloudMotion": "Three-second sky crossings; cloud colors follow time of day; clipped behind scenery and glass.",
+  "status": "approved",
+  "approvedDate": "2026-10-16"
 }

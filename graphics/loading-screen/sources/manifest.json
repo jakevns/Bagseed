@@ -1,6 +1,6 @@
 {
   "revision": "loading-bedroom-3",
-  "status": "awaiting approval",
+  "status": "approved",
   "period": 12,
   "art": {
     "path": "assets/bedroom.webp",
@@ -144,5 +144,6 @@
       512,
       171
     ]
-  }
+  },
+  "approvedDate": "2026-10-16"
 }
