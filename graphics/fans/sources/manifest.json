@@ -1,0 +1,105 @@
+{
+  "revision": "fans-proposal-1",
+  "status": "awaiting-user-approval",
+  "path": "assets/fans-atlas.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "sha256": "8edd5eb7ca480d305d5fa07d212ecf134fa827732cfcb78bd9cdf2e10fee5991",
+  "tiers": {
+    "1": {
+      "name": "Breeze Boy Mini",
+      "price": 12.99,
+      "head": [
+        11,
+        122,
+        359,
+        336
+      ],
+      "headCenter": [
+        192,
+        309
+      ],
+      "rotor": [
+        390,
+        159,
+        307,
+        283
+      ],
+      "rotorCenter": [
+        539,
+        314
+      ],
+      "mount": [
+        742,
+        165,
+        259,
+        269
+      ],
+      "width": 10.5
+    },
+    "2": {
+      "name": "Gustav Oscillator",
+      "price": 39,
+      "head": [
+        11,
+        591,
+        363,
+        338
+      ],
+      "headCenter": [
+        192,
+        777
+      ],
+      "rotor": [
+        391,
+        623,
+        317,
+        292
+      ],
+      "rotorCenter": [
+        543,
+        783
+      ],
+      "mount": [
+        728,
+        547,
+        279,
+        435
+      ],
+      "width": 13
+    },
+    "3": {
+      "name": "Zephyr Twin Clip",
+      "price": 79,
+      "head": [
+        7,
+        1066,
+        377,
+        347
+      ],
+      "headCenter": [
+        196,
+        1253
+      ],
+      "rotor": [
+        388,
+        1103,
+        331,
+        302
+      ],
+      "rotorCenter": [
+        548,
+        1276
+      ],
+      "mount": [
+        740,
+        1094,
+        265,
+        320
+      ],
+      "width": 11.5
+    }
+  }
+}
