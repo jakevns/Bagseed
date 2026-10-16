@@ -1,0 +1,23 @@
+{
+  "proposalOnly": true,
+  "entryPoint": "public/index.html",
+  "deskChairs": 4,
+  "officeFinishes": 2,
+  "noChairPreserved": true,
+  "distinctDrawings": 6,
+  "catalogUnchanged": true,
+  "footprintsUnchanged": true,
+  "seatFlagUnchanged": true,
+  "coffeeAndSteamUnchanged": true,
+  "cameraArtworkUnchanged": true,
+  "RGBAnimatesAtNativeResolution": true,
+  "reducedMotion": true,
+  "liveMotion": {
+    "realGameLoop": true,
+    "nativeResolution": true,
+    "movingFrames": 23,
+    "reducedMotionStill": true
+  },
+  "actualStoreDesktopAndPhone": true,
+  "errors": []
+}
