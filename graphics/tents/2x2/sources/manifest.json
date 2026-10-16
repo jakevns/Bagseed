@@ -1,0 +1,89 @@
+{
+  "revision": "tent-2x2-wide-proposal-2",
+  "status": "designs-approved-width-revision-pending",
+  "baseCommit": "07744d1906d84e8e42b4316e428fb5cc669ff52e",
+  "path": "assets/tents-wide-atlas.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "sha256": "4cc27c36fe5ff0080624730c9d7168f4798b8402345a28dd668d144089ae1072",
+  "tiers": {
+    "standard": {
+      "open": [
+        149,
+        10,
+        327,
+        476
+      ],
+      "closed": [
+        548,
+        10,
+        328,
+        476
+      ],
+      "price": 89,
+      "item": "tent2"
+    },
+    "pro": {
+      "open": [
+        140,
+        501,
+        342,
+        484
+      ],
+      "closed": [
+        542,
+        501,
+        343,
+        485
+      ],
+      "price": 49,
+      "item": "shell_tent2_pro"
+    },
+    "premium": {
+      "open": [
+        133,
+        998,
+        354,
+        496
+      ],
+      "closed": [
+        537,
+        998,
+        355,
+        496
+      ],
+      "price": 95,
+      "item": "shell_tent2_premium"
+    }
+  },
+  "bounds": [
+    64,
+    8,
+    86,
+    112
+  ],
+  "lightVisualOffsetY": 0,
+  "humidVisualOffsetY": 0,
+  "slotVisualOffsetY": -12,
+  "slotVisualOffsetsX": [
+    0,
+    0
+  ],
+  "scope": "Standard/Pro/Premium 2x2 art plus the user-requested width swap with the starter tent. Same catalog and plant counts.",
+  "widthSwap": {
+    "starter": [
+      2,
+      8,
+      54,
+      90
+    ],
+    "tent2": [
+      64,
+      8,
+      86,
+      112
+    ]
+  }
+}

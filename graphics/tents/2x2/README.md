@@ -1,0 +1,13 @@
+# 2×2 tent — approved designs, revised widths awaiting review
+
+The user approved the Standard, Pro and Premium designs, then requested swapping the starter and 2×2 widths. The revision narrows the starter to 54 logical units and widens the 2×2 to 86. Heights remain 90 and 112. In the prototype, the starter stays at x2 and the 2×2 moves left to x64 so its right edge stays at x150, clear of the computer desk at x158.
+
+Existing choices/prices are preserved: the $89 GrowHut 2×2 includes its Standard shell; Pro is a $49 replacement shell and Premium is a $95 replacement shell. There are still two plant slots. The originally approved narrow atlas is retained as a reference; the active wider atlas is tents-wide-atlas.png. Source hashes/crops and the new dimensions are recorded in sources/manifest.json. Both atlases are original generated images retained unchanged.
+
+Standard uses charcoal cloth/sage seams and silver lining. Pro adds heavier moss reinforcement, double seams, a covered zip and rivets. Premium adds muted brass piping, armored corners, a padded flap and diamond lining. No equipment or plants are baked into the shell images.
+
+Run `node tools/preview-tents-2x2.cjs` to open public/index.html and inject the width/layout and art proposals into an isolated browser. Production HTML, source game and compilers are untouched. The helper produces a shared-scale starter/2×2 comparison, three-tier approval board, actual bedroom views, store cards and a phone store card under review/tents-2x2/. It checks live content/target alignment, retained approach points in front of the tent, 36 shell/light/pot combinations, 36 player approach cases, nine zipper frames per shell, native logical geometry restoration after rendering, catalog consistency and browser errors.
+
+Fabric is drawn before actors, with a registered grow-effect aperture; there is no final room repaint. Slot art is recessed into the tent and click targets follow it while walk destinations stay outside the tent. The layout proposal sets the new equipment anchors before rendering so native light effects share the same position as their fixtures. The narrower starter uses the existing renderer with its revised atlas/bounds/ceiling and proportional store art.
+
+This is an approval prototype. After width approval, integrate the new layout into the source geometry consistently: all collision/placement/access regions, wall-decor exclusion areas, starter and 2×2 art and icons, startup readiness, build integrity and save/purchase/fitting regressions. The current preview updates physical bounds and representative floor/placement footprints; it does not claim that all production layout code has already been migrated.
