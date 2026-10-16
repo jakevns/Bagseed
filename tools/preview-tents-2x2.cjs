@@ -6,6 +6,16 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   const swapDir=path.join(root,'graphics/tents/width-swap'),starter=JSON.parse(fs.readFileSync(path.join(swapDir,'sources/manifest.json'))),starterBytes=fs.readFileSync(path.join(swapDir,starter.path));assert.equal(createHash('sha256').update(starterBytes).digest('hex'),starter.sha256);
   const starterData={...starter,tiers:Object.fromEntries(Object.entries(starter.tiers).map(([k,v])=>[k,{...v,image:'data:image/png;base64,'+starterBytes.toString('base64')}]))};
   const starterCode=fs.readFileSync(path.join(root,'graphics/tents/starter/sources/renderer.js'),'utf8').replace('__BAGSEED_STARTER_TENT_DATA__',()=>JSON.stringify(starterData)).replace('window.BagseedStarterTent=','window.BagseedStarterTentWidthProposal=').replace('sprite(c,tier,true,66,16,188,208)','sprite(c,tier,true,98,16,125,208)').replaceAll('*.212','*.27').replaceAll('*.094','*.15').replaceAll('*.91','*.85').replaceAll('*.84','*.79').replaceAll('*.17','*.21')
+    .replace(/  function slots\(c,t\)\{[\s\S]*?\n  \}/, `  function slots(c,t){
+    // Seat the pot on the rear half of the liner, leaving visible floor in front.
+    const hit=this.hit,scale=.86,cx=SLOT_POS.closet[0][0],anchor=SLOT_POS.closet[0][1],base=74;
+    c.save();c.translate(cx,base);c.scale(scale,scale);c.translate(-cx,-anchor);
+    this.hit=function(id,x,y,w,h,label,walk,layer){
+      if(!walk){const a=curScene().walk;walk=[cx,clamp(STARTER_BOX[1]+STARTER_BOX[3]+14,a[1],a[3])];}
+      return hit.call(this,id,cx+(x-cx)*scale,base+(y-anchor)*scale,w*scale,h*scale,label,walk,layer);
+    };
+    try{this.drawSlots(c,'closet',t);}finally{this.hit=hit;c.restore();}
+  }`)
     .replace('Gear.filter(c,P.exhaust',"tentProposalDiffusion(c,'closet',t);Gear.filter(c,P.exhaust")
     .replace(/RoomArt\.growEffectMasks\.closet=function\(c,dp\)\{[\s\S]*?\n  \};/, 'RoomArt.growEffectMasks.closet=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};');
   const {createStaticServer}=await import('./server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
@@ -79,6 +89,18 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
         return cases;
       }finally{RoomArt.drawSlots=slots;Shell.of('closet').tier='budget';L.door='open';}
     });
+    const starterFloorCases=await page.evaluate(()=>{
+      const original=Gear.pot,L=state.locations.closet;let calls=[],cases=0;
+      try{
+        Gear.pot=function(c,x,y,...args){if(runtime.drawLoc==='closet'){const m=c.getTransform();calls.push({bottom:m.transformPoint(new DOMPoint(x,y+10)).y,scale:m.a});}return original.call(this,c,x,y,...args);};
+        for(const tier of ['budget','standard'])for(const pot of [1,2,3]){
+          calls=[];Shell.of('closet').tier=tier;L.equip.pot=pot;L.door='open';RoomArt.hits=[];const cv=document.createElement('canvas');cv.width=80;cv.height=120;RoomArt.drawCloset(cv.getContext('2d'),0);
+          if(calls.length!==1||calls[0].bottom<80||calls[0].bottom>84||Math.abs(calls[0].scale-.86)>1e-6)throw Error('Starter pot is not recessed onto the liner: '+JSON.stringify(calls));
+          const h=RoomArt.hits.find(h=>h.id.startsWith('plant:closet:'));if(!h||h.walk[1]<=98)throw Error('Recessed plant approach is inside tent');cases++;
+        }
+        return cases;
+      }finally{Gear.pot=original;L.equip.pot=1;Shell.of('closet').tier='budget';}
+    });
     const water=await page.evaluate(()=>{
       const images=[],old=state.gear.water;let cases=0;
       state.minute=720;state.player.x=322;state.player.y=129;
@@ -103,6 +125,6 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
     await page.evaluate(()=>{state.minute=720;Panels.app('leafcart');});await page.locator('[data-act=shopCat][data-arg=spaces]').click();
     for(const[tier,id]of [['standard','tent2'],['pro','shell_tent2_pro'],['premium','shell_tent2_premium']]){const cv=page.locator('canvas[data-draw="x:'+id+'"]');await cv.scrollIntoViewIfNeeded();assert.deepEqual(await cv.evaluate(c=>[c.width,c.height]),[320,240]);await cv.locator('..').screenshot({path:path.join(out,'store-'+tier+'.png')});}
     await page.setViewportSize({width:390,height:844});const premium=page.locator('canvas[data-draw="x:shell_tent2_premium"]');await premium.scrollIntoViewIfNeeded();await premium.locator('..').screenshot({path:path.join(out,'store-premium-phone.png')});
-    assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({proposalOnly:true,entryPoint:'public/index.html',tiers:3,storeItems:3,widthSwap:{starter:[2,8,54,90],tent2:[64,8,86,112]},growContentsPreserved:true,visualTargetsAligned:true,walkTargetsInFrontOfTent:true,...layering,starterLayeringCases:starterLayering,waterGearCases:water.cases,zipFramesPerTier:9,storeAndPhoneArtwork:true,productionIntegrationPendingApproval:true,errors},null,2)+'\n');console.log('Three 2x2 tent proposals, revised widths, store pictures, layering and player-depth checks passed.');
+    assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({proposalOnly:true,entryPoint:'public/index.html',tiers:3,storeItems:3,widthSwap:{starter:[2,8,54,90],tent2:[64,8,86,112]},growContentsPreserved:true,visualTargetsAligned:true,walkTargetsInFrontOfTent:true,...layering,starterLayeringCases:starterLayering,starterFloorCases,waterGearCases:water.cases,zipFramesPerTier:9,storeAndPhoneArtwork:true,productionIntegrationPendingApproval:true,errors},null,2)+'\n');console.log('Three 2x2 tent proposals, revised widths, store pictures, layering and player-depth checks passed.');
   }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

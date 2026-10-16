@@ -15,3 +15,7 @@ The narrowed starter now uses its own opening proportions (.15–.85 of the widt
 The bedroom watering can and its purchased drip-reservoir replacement move from x62 to x300 at the same floor depth, to the right of the seedling desk. Their shared click target, placement footprint and access reservation move with them. All four watering tiers are checked. watering-placement.png shows the ordinary can and upgraded tank separately; width-comparison.png shows the corrected tent contents and lighting.
 
 The preview checks now also cover both starter shells open/closed with marker content hidden by the roof, sides and bottom fabric. No production files changed; these revisions are saved locally pending sample approval.
+
+### Starter depth correction after further review
+
+The previous aperture correction still left the starter pot at the opening's front lip. The follow-up seats its soil anchor at y74 rather than y82 and renders the plant/pot group at .86 scale, leaving roughly seven logical pixels of liner in front of the pot base. Visual hit rectangles use the same transform while the walk destination remains outside the tent. Both starter shells and all three pot tiers now have a specific floor-depth check, in addition to fabric occlusion checks. The updated width-comparison.png shows the actual room render with this placement.
