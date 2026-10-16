@@ -1,6 +1,6 @@
 {
-  "revision": "tent4-proposal-1",
-  "status": "awaiting-art-approval",
+  "revision": "tent4-1",
+  "status": "approved",
   "path": "assets/tents-atlas.png",
   "size": [
     1024,
@@ -64,5 +64,12 @@
     }
   },
   "slotVisualOffsetY": -24,
-  "capacity": 4
+  "capacity": 4,
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/tents-atlas.webp",
+    "sha256": "08ae8b0cc4efa9ab10063861f0db9c4cc92c176dec61f1d5670cb226e3eaea24",
+    "publicPath": "assets/tents/4x4-08ae8b0cc4ef.webp",
+    "lossless": true
+  }
 }
