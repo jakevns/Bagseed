@@ -28,5 +28,7 @@
   "liveGameWindowUnchanged": true,
   "desktopPanoramaRetained": true,
   "publicBytes": 98019197,
-  "publicSHA256": "445ce5caf72bcf18d5882b74cddb3ed228b0a0b0840e24cb95596bc0157cb6a9"
+  "publicSHA256": "445ce5caf72bcf18d5882b74cddb3ed228b0a0b0840e24cb95596bc0157cb6a9",
+  "status": "approved",
+  "approvedDate": "2026-10-16"
 }
