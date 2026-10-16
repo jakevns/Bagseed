@@ -1,6 +1,14 @@
   // Authored wardrobe walking. Standing, reactions and authored NPCs keep
   // their established paths. Every moving pixel comes from a generated frame.
   const walkParts=new Map(),walkFigures=new Map();
+  // Select a complete compatible outfit/rig; never mix eight-pose legs with
+  // four-pose sleeves or shoes from the earlier wardrobe.
+  function customWalkSet(L,dir){
+    return DATA.walk.stride&&['right','left'].includes(dir)&&L.topS==='hoodie'&&L.bottomS==='jeans'&&L.shoesS==='sneakers'?DATA.walk.stride:DATA.walk;
+  }
+  function customWalkFrameCount(look,dir='down'){
+    const L=normalize(look);return isChild(L)?4:customWalkSet(L,dir).frameCounts?.[dir]||4;
+  }
   function walkLocal(p,x,y){
     const a=p.neck,b=p.waist,dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy)||1;
     return [48+((x-a[0])*dy-(y-a[1])*dx)/length,42+((x-a[0])*dx+(y-a[1])*dy)/length];
@@ -9,12 +17,12 @@
     const side=name==='nearLeg'?frame.nearLeg:frame.nearLeg==='L'?'R':'L',p=frame.keypoints,a=p['hip'+side],b=p['ankle'+side],dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy)||1;
     return [48+((x-a[0])*dy-(y-a[1])*dx)/length,70+((x-a[0])*dx+(y-a[1])*dy)/length];
   }
-  function walkPart(item,frame,name,L){
-    const entry=DATA.walk.items[item],part=entry.frames[frame].parts[name];if(!part)return null;
-    const sig=JSON.stringify([item,frame,name,L.skin,L.shirtC,L.pantsC,L.shoesC,L.topS,L.bottomS,L.topPat,L.botPat,L.topC2,L.botC2]);
+  function walkPart(item,frame,name,L,walk=DATA.walk){
+    const entry=walk.items[item],part=entry.frames[frame].parts[name];if(!part)return null;
+    const sig=JSON.stringify([walk.imagePrefix||'walk/',item,frame,name,L.skin,L.shirtC,L.pantsC,L.shoesC,L.topS,L.bottomS,L.topPat,L.botPat,L.topC2,L.botC2]);
     if(walkParts.has(sig))return walkParts.get(sig);
-    const [sx,sy,w,h]=part.rect,out=cv(w,h),g=out.getContext('2d',{willReadFrequently:true});g.drawImage(images.get('walk/'+item),sx,sy,w,h,0,0,w,h);
-    const data=g.getImageData(0,0,w,h),a=data.data,p=DATA.walk.rig.frames[frame].keypoints,kind=entry.kind;
+    const [sx,sy,w,h]=part.rect,out=cv(w,h),g=out.getContext('2d',{willReadFrequently:true});g.drawImage(images.get((walk.imagePrefix||'walk/')+item),sx,sy,w,h,0,0,w,h);
+    const data=g.getImageData(0,0,w,h),a=data.data,p=walk.rig.frames[frame].keypoints,kind=entry.kind;
     for(let i=0;i<a.length;i+=4){
       if(a[i+3]<=8){a[i+3]=0;continue;}
       const r=a[i],gg=a[i+1],b=a[i+2],light=lum(r,gg,b),x=((i/4)%w+part.destination[0])/3,y=(Math.floor(i/4/w)+part.destination[1])/3;
@@ -32,7 +40,7 @@
       const profileRole=kind==='shoe'?'shoe':kind==='bottom'||entry.fullSuit&&name.endsWith('Leg')?'lower':'upper';
       if(!skin&&kind!=='skin'&&/^(right|left)\//.test(frame)&&entry.profileBases?.[profileRole])base=entry.profileBases[profileRole];
       if(!skin&&kind!=='shoe'&&kind!=='skin'){
-        const [u,v]=name.endsWith('Leg')?walkLegLocal(DATA.walk.rig.frames[frame],name,x,y):walkLocal(p,x,y),pat=kind==='bottom'?L.botPat:L.topPat;
+        const [u,v]=name.endsWith('Leg')?walkLegLocal(walk.rig.frames[frame],name,x,y):walkLocal(p,x,y),pat=kind==='bottom'?L.botPat:L.topPat;
         if(blue&&pattern(pat,u,v)){tone=rgb((kind==='bottom'?L.botC2:L.topC2)||'#ffffff');}
       }
       const mapped=material(tone,light,base);a[i]=mapped[0];a[i+1]=mapped[1];a[i+2]=mapped[2];
@@ -58,15 +66,15 @@
     }
   }
   function authoredWalk(L,dir,frame,blink,density=1){
-    const top='top-'+L.topS,bottom='bottom-'+L.bottomS,shoe='shoe-'+L.shoesS,items=DATA.walk?.items;
+    const walk=customWalkSet(L,dir),top='top-'+L.topS,bottom='bottom-'+L.bottomS,shoe='shoe-'+L.shoesS,items=walk?.items;
     if(!items?.[top]?.accepted||!items[shoe]?.accepted||!items[top].fullSuit&&!items[bottom]?.accepted||isChild(L))return null;
-    const f=dir+'/'+(frame%4),sig=key(L)+'|'+f+'|'+blink+'|'+density;
+    const f=dir+'/'+(frame%(walk.frameCounts?.[dir]||4)),sig=(walk.imagePrefix||'walk/')+key(L)+'|'+f+'|'+blink+'|'+density;
     if(walkFigures.has(sig))return walkFigures.get(sig);
     // Join all cropped parts at source density before any build transform or
     // gameplay downsampling. Independent low-resolution resampling leaves
     // antialiased seams along the otherwise perfectly adjacent label edges.
     const out=cv(96*density,144*density),g=out.getContext('2d'),bodyFrame=cv(288,432),b=bodyFrame.getContext('2d');g.scale(density,density);b.scale(3,3);g.imageSmoothingEnabled=true;g.imageSmoothingQuality='low';
-    const p=DATA.walk.rig.frames[f].keypoints,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1),sy=L.short?.9:L.body==='tall'?1.07:1;
+    const p=walk.rig.frames[f].keypoints,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1),sy=L.short?.9:L.body==='tall'?1.07:1;
     const H=head(L,dir,blink,true),joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),nx=48+(p.neck[0]-48)*width,ny=143+(p.neck[1]-143)*sy,hx=nx-32,hy=ny-joinY/3;
     g.drawImage(H.bagseedNeckBridge,hx,hy,64,H.height/3);
     const lower=items[top].fullSuit?top:bottom;
@@ -76,13 +84,13 @@
     if(items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
     layers.push([shoe,'nearFoot'],[top,'nearArm']);
     for(const [item,name]of layers){
-      const part=walkPart(item,f,name,L);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
+      const part=walkPart(item,f,name,L,walk);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
     }
     walkAccessories(b,L,dir,p);g.save();g.translate(48,143);g.scale(width,sy);g.drawImage(bodyFrame,-48,-143,96,144);g.restore();
     // Hair, hats and ears retain the approved head renderer and translate as
     // one complete layer, above clothing, without a mesh or row deformation.
     g.drawImage(H,hx,hy,64,H.height/3);
-    const hand=p['hand'+DATA.walk.rig.frames[f].nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
-    out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);out.bagseedAuthoredWalk=f;
+    const hand=p['hand'+walk.rig.frames[f].nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
+    out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);out.bagseedAuthoredWalk=f;out.bagseedWalkProfile=walk.imagePrefix||'walk/';
     if(walkFigures.size>96)walkFigures.clear();walkFigures.set(sig,out);return out;
   }
