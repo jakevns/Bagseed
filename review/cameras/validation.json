@@ -1,0 +1,62 @@
+{
+  "approval": "Send it!!",
+  "entryPoint": "public/index.html",
+  "scriptBlocks": 91,
+  "repeatableBuild": true,
+  "preservedArtworkModules": 13,
+  "characterRevision": "customization-9",
+  "targetedRegression": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "files": [
+      "bedroom",
+      "cameras",
+      "computer-desks",
+      "computer-equipment",
+      "desk-tabletop-placement"
+    ]
+  },
+  "cameraIntegration": {
+    "cameraPurchases": 2,
+    "decorativeCameraPurchase": 1,
+    "totalPaid": 458,
+    "allTierUnlocks": true,
+    "renderedPhotoModes": 3,
+    "packageMatchesStore": true,
+    "placementAndFlip": true,
+    "saveReload": true,
+    "phoneStore": true,
+    "final": {
+      "gear": 2,
+      "money": 542,
+      "placed": [
+        {
+          "uid": "jdudngy",
+          "id": "camdisplay",
+          "x": 196,
+          "y": 66,
+          "flip": true,
+          "rot": 0,
+          "v": 0
+        }
+      ],
+      "owned": 1
+    },
+    "errors": []
+  },
+  "productionPreview": {
+    "proposalOnly": false,
+    "entryPoint": "public/index.html",
+    "cameraTiers": 3,
+    "decorativeCamera": 1,
+    "distinctStoreArt": true,
+    "computerArtUnchanged": true,
+    "photoOutputsUnchanged": 5,
+    "catalogUnchanged": true,
+    "tripodCollisionUnchanged": true,
+    "phoneYieldsToPlacedDecor": true,
+    "actualStoreDesktopAndPhone": true,
+    "errors": []
+  }
+}

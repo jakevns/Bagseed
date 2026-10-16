@@ -1,0 +1,19 @@
+{
+  "preservedModules": 13,
+  "modules": {
+    "bagseed-main-menu-production-code": "1f4931243fc5b375efe962efe5f70ece3e9fa2533aea18a9cb3f8e58c871bb3b",
+    "bagseed-illustrated-production-code": "69071366847d1cbfe7f832b3849501c68bc2d6ff80e466545cf199938b559ba9",
+    "bagseed-bedroom-production-code": "21558856184c076e3f6aa7db8b3ca522e2e05893ccc5188a949807f101abbc9f",
+    "bagseed-beds-batch-01": "1142b65364b3e1f02f1f89a54faa7d8ad6d3d7d4732b7ad1c8b3617bdeb36811",
+    "bagseed-beds-batch-02": "85caa67fab92cff92193fb969eb3a4d52e8713d5eaf9416a961d87f813d8646b",
+    "bagseed-beds-batch-03": "a1e1aa8d4d312f92f814513e82a875dd08f52f7e907ef56809db530b4b946b4a",
+    "bagseed-beds-batch-04": "e9230cab49f35d9a97467278840c757492b7f8bbb882c7ab22e27c409d2f20b9",
+    "bagseed-desks-production-code": "7adc9de40c7f0d1320035b5b13c00a259046e27f8aff75f56736c06b932f3e1b",
+    "bagseed-curtains-batch-01-production-code": "413caccb39a9db18acce518ac2b19b17deaee998226a0bcfd11ce2cf3a3939fa",
+    "bagseed-curtains-batch-02-production-code": "4e09244e2a46da7503946e52680223baf49b8d0a5ad424ab4b946a9ee02e8cf8",
+    "bagseed-curtains-batch-03-production-code": "94c29ce0e8222756b01a3d715f5546feb73852f6c78fe2e6bc718c148c8a130c",
+    "bagseed-computer-desks-production-code": "a87930a58d061bf98a29bca4599d32f57c5a1b38a1eb7ba384247962cab2ecd8",
+    "bagseed-computer-equipment-production-code": "b0d40fb21a2a7c3823b23885ee701eaa90ac4d31befb947cbbcf569c39ab3cf0"
+  },
+  "added": "bagseed-cameras-production-code"
+}

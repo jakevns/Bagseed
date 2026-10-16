@@ -1,5 +1,5 @@
 {
-  "proposalOnly": true,
+  "proposalOnly": false,
   "entryPoint": "public/index.html",
   "cameraTiers": 3,
   "decorativeCamera": 1,
