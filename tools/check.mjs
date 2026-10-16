@@ -1,11 +1,13 @@
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import vm from 'node:vm';
+import { createRequire } from 'node:module';
 
 const baseline = new URL('../baselines/Bagseed_v1.1.5.1_Night_Walker_Flashlights_Update.html', import.meta.url);
 const expected = '4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164';
 if (createHash('sha256').update(readFileSync(baseline)).digest('hex') !== expected) throw new Error('The approved baseline has changed. Restore the untouched uploaded file.');
 const html = readFileSync(new URL('../public/index.html', import.meta.url), 'utf8');
+createRequire(import.meta.url)('./compile-loading-screen.cjs').verify(html);
 const sha = value => createHash('sha256').update(value).digest('hex');
 const report = JSON.parse(readFileSync(new URL('../graphics/production/build.json', import.meta.url), 'utf8'));
 if (sha(html) !== report.updatedSHA) throw new Error('The playable game differs from its build report. Rebuild before publishing.');

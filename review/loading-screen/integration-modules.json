@@ -1,0 +1,36 @@
+{
+  "previousPublishedCommit": "7b8ca6fde47f0daa1d0eba92460b2d96755825a0",
+  "preservedModules": [
+    "bagseed-main-menu-production-code",
+    "bagseed-illustrated-production-code",
+    "bagseed-bedroom-production-code",
+    "bagseed-beds-batch-01",
+    "bagseed-beds-batch-02",
+    "bagseed-beds-batch-03",
+    "bagseed-beds-batch-04",
+    "bagseed-desks-production-code",
+    "bagseed-curtains-batch-01-production-code",
+    "bagseed-curtains-batch-02-production-code",
+    "bagseed-curtains-batch-03-production-code",
+    "bagseed-computer-desks-production-code",
+    "bagseed-computer-equipment-production-code",
+    "bagseed-cameras-production-code",
+    "bagseed-chairs-production-code",
+    "bagseed-coffee-production-code",
+    "bagseed-under-desk-storage-production-code"
+  ],
+  "preservedCount": 17,
+  "addedModules": [
+    "bagseed-loading-controller",
+    "bagseed-loading-scene-code"
+  ],
+  "sourceGameHTMLUnchanged": true,
+  "gameLoopChange": "Hold frameInner and refresh last timestamp until startup artwork is ready.",
+  "sharedBuildPath": "compile-main-menu.cjs is called by both the character builder and bedroom builder",
+  "regressionTests": {
+    "mainMenu": "passed",
+    "bedroom": "passed"
+  },
+  "publicBytes": 97893762,
+  "publicSHA256": "fc9342cf58d5ba19cdeee7a8e7f835fae9e2aeae706106695042bc747526d8a1"
+}

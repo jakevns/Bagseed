@@ -34,6 +34,7 @@ if (require.main === module) {
   Object.assign(report, { chairRevision: 'chairs-2', deskChairDesigns: 4, officeChairFinishes: 2 });
   Object.assign(report, { coffeeRevision: 'coffee-1', coffeeSteamPeriod: 4 });
   Object.assign(report, { underDeskStorageRevision: 'under-desk-storage-1', storageTiers: 3, supplyBoxes: 1 });
+  Object.assign(report, { loadingRevision: 'loading-bedroom-2' });
   fs.writeFileSync(reportPath + '.tmp', JSON.stringify(report, null, 2) + '\n'); fs.renameSync(reportPath + '.tmp', reportPath);
   console.log('Rebuilt approved main menu, bedroom, beds, desks and curtains; verified character payload retained unchanged.');
 }

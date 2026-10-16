@@ -1,0 +1,119 @@
+{
+  "revision": "loading-bedroom-2",
+  "status": "awaiting approval",
+  "period": 12,
+  "art": {
+    "path": "assets/bedroom.webp",
+    "sha256": "f5e41739927b9bf3166ea067382e3463c932c4117b39f735f9e887f050b6bd2c",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  "source": {
+    "path": "assets/bedroom-illustration-base.png",
+    "sha256": "826012636d07d31f5450ffec724357a432ce8331db18d5eb15593085bcca847c",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  "storage": {
+    "path": "assets/storage.webp",
+    "sha256": "6cd6e12732f5a1553cf8b73d235fb5b0d2a23a5d5b6ccc22d9337fd48c825d8d",
+    "approvedAtlasSHA256": "9225386b6e8f01c238cf3d6912380d8406f2a17658443b4420121f1c415b156c",
+    "assets": {
+      "drawer": {
+        "rect": [
+          125,
+          127,
+          606,
+          369
+        ],
+        "width": 18,
+        "height": 13
+      },
+      "organizer": {
+        "rect": [
+          890,
+          160,
+          526,
+          336
+        ],
+        "width": 18,
+        "height": 12
+      },
+      "fridge": {
+        "rect": [
+          190,
+          580,
+          464,
+          365
+        ],
+        "width": 20,
+        "height": 18
+      },
+      "box": {
+        "rect": [
+          896,
+          611,
+          509,
+          322
+        ],
+        "width": 18,
+        "height": 12
+      }
+    },
+    "anchor": [
+      990,
+      431
+    ],
+    "scale": 4.444444444444445,
+    "box": [
+      1172,
+      379,
+      80,
+      52
+    ]
+  },
+  "windowPanes": [
+    [
+      1004,
+      61,
+      86,
+      91
+    ],
+    [
+      1108,
+      61,
+      81,
+      91
+    ],
+    [
+      1003,
+      170,
+      87,
+      48
+    ],
+    [
+      1108,
+      170,
+      86,
+      48
+    ]
+  ],
+  "monitor": [
+    715,
+    227,
+    77,
+    53
+  ],
+  "growLight": [
+    185,
+    247
+  ],
+  "coordinateSize": [
+    2048,
+    768
+  ]
+}

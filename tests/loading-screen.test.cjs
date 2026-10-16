@@ -1,0 +1,83 @@
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),{chromium}=require('playwright');
+
+test('loading cover paints during download, waits for all art, blocks input, and recovers from failure without changing a save',async()=>{
+  const root=path.resolve(__dirname,'..'),out=path.join(root,'review/loading-screen');fs.mkdirSync(out,{recursive:true});
+  const html=fs.readFileSync(path.join(root,'public/index.html')),marker=Buffer.from('<!-- bagseed-loading-shell-end -->'),cut=html.indexOf(marker)+marker.length;
+  assert.ok(cut>marker.length&&cut<400000,'Loading shell must arrive in the first small HTML chunk');
+  const coffeePrefix='data:image/png;base64,'+fs.readFileSync(path.join(root,'graphics/coffee/assets/mug.png')).toString('base64').slice(0,120);
+  const {createStaticServer}=await import('../tools/server.mjs'),app=createStaticServer();let releaseStream,streamResponse,browser,streamed=false;
+  const server=http.createServer((req,res)=>{if(req.url==='/index.html?stream=1'&&!streamed){streamed=true;
+    streamResponse=res;res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});res.write(html.subarray(0,cut));releaseStream=()=>res.end(html.subarray(cut));
+  }else app.emit('request',req,res);});await new Promise(r=>server.listen(0,'127.0.0.1',r));
+  try{
+    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});
+    const context=await browser.newContext({viewport:{width:1440,height:960}}),page=await context.newPage(),errors=[],expectedErrors=[];
+    page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')expectedErrors.push(m.text());});
+    await context.addInitScript(({prefix})=>{
+      // The outgoing page performs its normal unload autosave before this runs.
+      window.__startupSaveAtEntry=localStorage.getItem('bagseed.save.v1');
+      const Native=Image;window.__heldStartupArt=[];
+      window.Image=new Proxy(Native,{construct(Target,args){
+        const im=Reflect.construct(Target,args);let callback;
+        Object.defineProperty(im,'onload',{configurable:true,get:()=>callback,set:fn=>{callback=fn;}});
+        im.addEventListener('load',event=>{
+          const run=()=>callback?.call(im,event),mode=sessionStorage.getItem('startup-test-mode')||'hold';
+          if(!im.src.startsWith(prefix)||mode==='pass')return run();
+          if(mode==='reject')return im.onerror?.call(im,new Event('error'));
+          window.__heldStartupArt.push(run);
+        });return im;
+      }});
+      // Future art modules with ready promises must participate automatically.
+      if((sessionStorage.getItem('startup-test-mode')||'hold')==='hold')window.BagseedFutureFixture={ready:new Promise(resolve=>{window.__releaseFutureArt=resolve;})};
+    },{prefix:coffeePrefix});
+    await page.goto('http://127.0.0.1:'+server.address().port+'/index.html?stream=1',{waitUntil:'commit'});
+    await page.locator('#bagseed-loading').waitFor({state:'visible'});
+    assert.equal(await page.evaluate(()=>document.readyState),'loading');assert.equal(await page.locator('#screen-title').count(),0);
+    await page.evaluate(()=>BagseedLoadingScene.ready);
+    const moving=[];for(let i=0;i<6;i++){moving.push(await page.evaluate(()=>document.querySelector('#bagseed-loading-room').toDataURL()));await page.waitForTimeout(150);}assert.ok(new Set(moving).size>4,'Room did not animate');
+    await page.evaluate(()=>BagseedLoadingScene.pause());
+    const imageAt=async(t,tier=0)=>page.evaluate(([t,tier])=>{BagseedLoadingScene.render(t,tier);return document.querySelector('#bagseed-loading-room').toDataURL();},[t,tier]);
+    const day=await imageAt(0),night=await imageAt(6);assert.notEqual(day,night);assert.equal(day,await imageAt(12),'Loop must return to identical daylight');
+    const variants=await Promise.all([0,1,2].map(tier=>imageAt(0,tier)));assert.equal(new Set(variants).size,3);
+    const frames=path.join(root,'artifacts/loading-bedroom/frames');fs.mkdirSync(frames,{recursive:true});
+    for(let i=0;i<72;i++){const data=await imageAt(i/6);fs.writeFileSync(path.join(frames,String(i).padStart(3,'0')+'.png'),Buffer.from(data.split(',')[1],'base64'));}
+    for(const [label,t]of [['day',0],['dusk',3],['night',6]]){await imageAt(t);await page.screenshot({path:path.join(out,'desktop-'+label+'.png')});}
+    await imageAt(0);await page.screenshot({path:path.join(out,'desktop-loading.png')});const layouts=[];
+    for(const [name,width,height]of [['phone',390,844],['phone-landscape',844,390]]){
+      await page.setViewportSize({width,height});
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+      assert.equal(await page.locator('#bagseed-loading-reload').isVisible(),false);
+      const bounds=await page.locator('.loading-panel').boundingBox();assert.ok(bounds.x>=0&&bounds.y>=0&&bounds.x+bounds.width<=width&&bounds.y+bounds.height<=height);
+      await imageAt(3);await page.screenshot({path:path.join(out,name+'-loading.png')});layouts.push(name);
+    }
+    await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await imageAt(0),await imageAt(6),'Reduced motion room must be still');assert.equal(await page.locator('.loading-track span').evaluate(el=>getComputedStyle(el).animationName),'none');await page.emulateMedia({reducedMotion:'no-preference'});
+    releaseStream();await page.waitForFunction(()=>window.BagseedCoffee&&!BagseedCoffee.loaded&&window.__heldStartupArt.length===1&&document.readyState!=='loading');
+    await page.evaluate(()=>Promise.all([BagseedMenu.ready,BagseedArt.ready,BagseedBedroom.ready,BagseedBeds.ready,BagseedDesks.ready,BagseedCurtains.ready,BagseedComputerDesks.ready,BagseedEquipment.ready,BagseedCameras.ready,BagseedChairs.ready,BagseedUnderDeskStorage.ready,BagseedLoadingScene.ready]));
+    assert.equal(await page.evaluate(()=>BagseedStartup.status),'loading');assert.equal(await page.locator('#screen-title').isVisible(),false);
+    assert.equal(await page.locator('#screen-title').evaluate(el=>!!el.closest('[inert]')),true);
+    await page.evaluate(()=>document.querySelector('[data-act=newGame]').click());await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>screen),'title');
+    const t=await page.evaluate(()=>runtime.t);await page.waitForTimeout(200);assert.equal(await page.evaluate(()=>runtime.t),t,'Game time advanced beneath the loader');
+    await page.evaluate(()=>window.__heldStartupArt.splice(0).forEach(run=>run()));await page.evaluate(()=>BagseedCoffee.ready);
+    assert.equal(await page.evaluate(()=>BagseedStartup.status),'loading','Future artwork was ignored');
+    await page.evaluate(()=>window.__releaseFutureArt());await page.evaluate(()=>BagseedStartup.ready);
+    assert.equal(await page.locator('#bagseed-loading').isVisible(),false);assert.equal(await page.locator('#screen-title').isVisible(),true);
+    assert.equal(await page.locator('#screen-title').evaluate(el=>!!el.closest('[inert]')),false);
+    assert.equal(await page.evaluate(()=>['BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedLoadingScene'].every(k=>window[k].loaded)),true);
+    await page.setViewportSize({width:1440,height:960});await page.screenshot({path:path.join(out,'ready-menu.png')});
+    await page.locator('[data-act=newGame]').focus();await page.keyboard.press('Enter');await page.locator('#crName').fill('Loading Gardener');await page.locator('[data-act=startGame]').click();await page.waitForTimeout(2400);
+    const saved=await page.evaluate(()=>{settings.speed=0;state.tut.on=false;runtime.pauseHelpShown=true;ACT.tipOff();runtime.dialogQ=[];if(runtime.curDialog)ACT.dlg(0);closePanel();state.money=837;state.gear.storage=2;SaveSys.now('Loading screen save fixture');sessionStorage.setItem('startup-test-mode','reject');return {key:SAVE_KEYS.main,raw:localStorage.getItem(SAVE_KEYS.main),name:state.player.name,money:state.money,look:playerLook()};});
+    await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(()=>BagseedStartup.status==='error');
+    assert.equal(await page.locator('#screen-title').isVisible(),false);assert.equal(await page.locator('#bagseed-loading-reload').isVisible(),true);
+    assert.equal(await page.evaluate(()=>document.activeElement.id),'bagseed-loading-reload');
+    assert.equal(await page.evaluate(key=>localStorage.getItem(key)===window.__startupSaveAtEntry,saved.key),true,'Failed artwork load modified the saved game');
+    await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(out,'phone-load-error.png')});
+    await page.evaluate(()=>sessionStorage.setItem('startup-test-mode','pass'));
+    await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.locator('#bagseed-loading-reload').click()]);await page.evaluate(()=>BagseedStartup.ready);
+    assert.equal(await page.evaluate(()=>BagseedLoadingScene.storageTier),2);assert.equal(await page.locator('#bagseed-loading').isVisible(),false);await page.locator('[data-act=continueGame]').click();
+    assert.deepEqual(await page.evaluate(()=>({name:state.player.name,money:state.money,look:playerLook()})),{name:saved.name,money:saved.money,look:saved.look});
+    assert.deepEqual(errors,[]);assert.ok(expectedErrors.length>0);assert.ok(expectedErrors.every(e=>e.includes('Coffee artwork failed to load')),expectedErrors.join('\n'));
+    fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({entryPoint:'public/index.html',firstChunkBytes:cut,visibleBeforeGameHTML:true,waitsForAllArtwork:true,futureArtworkIncluded:true,noOldGraphicsExposed:true,dayNightPeriod:12,actualAnimationFrames:new Set(moving).size,seamlessLoop:true,approvedStorageVariations:3,gameInputBlocked:true,gameTimeHeld:true,readyMenu:true,keyboardNewGame:true,layouts,reducedMotion:true,failedImageKeepsCover:true,reloadRecovery:true,savedProgressPreserved:true,continueGame:true,pageErrors:errors,expectedImageFailure:expectedErrors.length},null,2)+'\n');
+    await context.close();
+  }finally{if(streamResponse&&!streamResponse.writableEnded)streamResponse.destroy();await browser?.close();await new Promise(r=>server.close(r));}
+});
