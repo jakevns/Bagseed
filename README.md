@@ -8,6 +8,8 @@ The update includes the five approved identities, 67 additional authored appeara
 
 The latest local custom-character repair adds distinct mouth silhouettes, braces, fangs and a cat smile, and keeps selected mouths visible when expressions change. Facial hair uses clean transparent edges without recolored ear/neck outlines or rectangular cheek cuts. Current screenshots and checks are in the [customization v9 review](review/customization-v9/README.md). The [v8 detail alignment](review/customization-v8/README.md) and [v7 hair fitting](review/customization-v7/README.md) are retained across all 15 head shapes.
 
+Players who would rather not grow cannabis can grow garden plants in the starter tent and grow-tent pots instead. Clicking an empty pot lists cannabis seeds alongside garden seeds from Fern & Forge. Herbs, greens, peppers, flowers and houseplants grow there under the grow light in any season. Plants that need a whole garden bed or a trellis stay outdoors. Each pot holds either cannabis or a garden plant, never both. These plants are watered, fed, harvested and sold the same way as other garden plants.
+
 The [combined release checkpoint](docs/graphics/merge-checkpoint.md) records the merge with the latest menu, curtains and desk work. Publishing checks require the generated game, embedded character payload and character source checksums to agree, preventing a stale character release from passing deployment validation.
 
 ## Develop and verify

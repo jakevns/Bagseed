@@ -26434,6 +26434,154 @@ lightTint=(previous=>function(c,W,H,outdoor){
 })(lightTint);
 
 </script>
+<script id="grow-pot-garden1151-code">
+'use strict';
+/* =====================================================================
+   GARDEN PLANTS IN GROW POTS · v1.1.5.1
+   Any empty starter-tent or tent pot can grow a garden plant (herbs,
+   greens, peppers, flowers, foliage…) instead of cannabis, so players
+   who only want to garden can use their tents. Uses the shared garden
+   registry (GP): same seeds, growth, watering, harvests and selling.
+   Saved as state.v115.mpots[loc][slot] = garden plant id; a grow pot
+   holds either a cannabis plant or a garden plant, never both.
+   ===================================================================== */
+const GrowPotGarden = {
+  ok(loc) { const D = LOC_DEF[loc]; return !!D && ['closet', 'tent'].includes(D.kind) && !!state.locations[loc]; },
+  arr(loc) {
+    const V = V115S(); V.mpots = V.mpots || {}; const L = state.locations[loc], n = Math.max(slotCount(loc) || 0, (L && L.slots || []).length);
+    const a = Array.isArray(V.mpots[loc]) ? V.mpots[loc] : (V.mpots[loc] = []);
+    while (a.length < n) a.push(null);
+    for (let i = 0; i < a.length; i++) if (a[i] && !GP.plant(a[i])) a[i] = null;
+    return a;
+  },
+  at(loc, i) { if (!state || !state.v115 || !this.ok(loc)) return null; const a = (state.v115.mpots || {})[loc], g = a && a[i]; return (g && GP.plant(g)) || null; },
+  hasSeeds() { return GP.seedsFor({ kind: 'slot', ref: 'closet' }).length > 0; },
+  pickHTML(loc, slot) {
+    const list = GP.seedsFor({ kind: 'slot', ref: loc }).sort((a, b) => (b.rule.ok - a.rule.ok) || a.sp.name.localeCompare(b.sp.name));
+    return `<div class="card" style="margin-top:10px"><h3>Garden plants</h3><div class="small muted" style="margin-bottom:6px">Not growing cannabis? Herbs, greens, peppers, flowers and houseplants grow in this pot under the grow light in any season. Water them from the pot's panel (or a reservoir), then harvest to eat or sell.</div>${list.length ? `<div class="list115">${list.map(({ sp, n, rule }) => `<div class="li"><canvas class="px" width="48" height="24" data-draw="gpi:${sp.id}" style="width:64px"></canvas><div class="grow"><b>${esc(sp.name)}</b> ×${n} ${rule.ok ? UI115.pill('OK', 'good') : UI115.pill('Not here', 'bad')}<div class="small muted">${esc(rule.why)} Ready in ~${sp.days} days.</div></div><button class="btn sm primary" data-act="gSowPot" data-arg="${loc}:${slot}:${sp.id}" ${rule.ok ? '' : 'disabled'}>Plant (10 min)</button></div>`).join('')}</div>` : '<div class="small muted">No garden seeds, bulbs or starters yet. Fern & Forge Garden Shop in town sells them.</div>'}</div>`;
+  },
+  html(loc) {
+    const L = state.locations[loc], arr = this.arr(loc), near = Access.atLoc(loc), at = { kind: 'slot', ref: loc };
+    let h = near ? '' : '<div class="access-note">Walk up to the tent to plant, water or harvest.</div>';
+    h += '<div class="g115">';
+    for (let i = 0; i < arr.length; i++) {
+      const pid = L.slots[i], cp = pid && state.plants[pid], p = arr[i] && GP.plant(arr[i]);
+      if (cp) h += `<div class="card"><div style="height:48px;display:flex;align-items:center;justify-content:center" class="small muted">Pot ${i + 1}: ${esc(cp.name)}</div><button class="btn sm" data-act="openPlant" data-arg="${cp.id}">Open</button></div>`;
+      else if (p) { const sp = GP.sp(p.sp), st = GP.stageOf(p); h += `<div class="card"><canvas class="px" width="64" height="48" data-draw="gpstage:${p.sp}:${st}" style="width:96px;margin:auto"></canvas><h3>${esc(sp.name)}</h3><div class="small">Pot ${i + 1} · ${['Sprouting', 'Young', 'Growing', GP_KIND[sp.grp] === 'flower' ? 'In bloom' : 'Ready'][st]} · day ${Math.floor(p.age)} of ${sp.days}</div><div class="small muted">Water ${Math.round(p.water)}% · quality ${Math.round(p.q * 100)}%${p.harvests ? ' · harvested ' + p.harvests + '×' : ''}${L.equip.light ? '' : ' · no grow light: growing very slowly'}</div>${st >= 3 ? `<button class="btn sm primary" data-act="gHarvest" data-arg="slot:${loc}:${p.gid}" ${near ? '' : 'disabled'}>Harvest${GP.has(sp, 'p') || GP.has(sp, 'r') ? ' (regrows)' : ''}</button>` : ''}<button class="btn sm ghost" data-act="gPull" data-arg="slot:${loc}:${p.gid}" ${near ? '' : 'disabled'}>${GP.has(sp, 'p') ? 'Dig up' : 'Pull'}</button></div>`; }
+      else if (i < slotCount(loc) && L.equip.pot) h += `<div class="card"><div style="height:48px;display:flex;align-items:center;justify-content:center" class="small muted">Empty pot ${i + 1}</div><button class="btn sm ${near ? 'primary' : ''}" data-act="gPick" data-arg="slot:${loc}:${i}" ${near ? '' : 'disabled'}>Plant…</button></div>`;
+    }
+    h += '</div>';
+    const pick = runtime.gPick;
+    if (pick && pick.kind === 'slot' && pick.ref === loc) h += this.pickHTML(loc, pick.i).replace('<h3>Garden plants</h3>', `<h3>Plant in pot ${pick.i + 1}</h3>`) + '<button class="btn sm" data-act="gPickCancel">Cancel</button>';
+    const I = GP.inv(), planted = arr.some(Boolean);
+    h += `<div class="actions"><button class="btn sm" data-act="gWater" data-arg="slot:${loc}" ${near && planted ? '' : 'disabled'}>Water (${GP.choreE(2)}⚡ · 5 min)</button>`;
+    for (const [sid, lab] of [['SUP012', 'Fertilize'], ['SUP010', 'Add compost']]) if (I.sup[sid] > 0) h += `<button class="btn sm ghost" data-act="gSupply" data-arg="slot:${loc}:${sid}" ${near && planted ? '' : 'disabled'}>${lab} (×${I.sup[sid]})</button>`;
+    return h + '</div>';
+  },
+  /* tents that were lost (or never owned) can't hold garden plants */
+  tidy() {
+    const M = (state.v115 && state.v115.mpots) || {};
+    for (const loc of Object.keys(M)) { if (this.ok(loc) && locOwned(loc)) continue; for (const g of (M[loc] || []).filter(Boolean)) GP.remove(g); delete M[loc]; }
+  }
+};
+/* ---- rules: a full-size grow pot under a grow light, any season ---- */
+GP.canPlant = (prev => function (sp, at) {
+  if (!at || at.kind !== 'slot') return prev.call(this, sp, at);
+  if (!sp) return { ok: false, why: 'Unknown plant.' };
+  if (this.large(sp)) return { ok: false, why: `${sp.name} needs a garden bed: it's too big for one grow pot.` };
+  if (this.has(sp, 't')) return { ok: false, why: `${sp.name} climbs: grow it on a trellis in a garden bed or the community plot.` };
+  const L = state.locations[at.ref];
+  return { ok: true, why: L && L.equip.light ? 'Grows under your grow light in any season.' : 'No grow light here yet: it will barely grow until you add one.' };
+})(GP.canPlant);
+GP.where = (prev => function (at) { return at && at.kind === 'slot' ? `${locShort(at.ref)} grow pot` : prev.call(this, at); })(GP.where);
+/* daily growth: grow-pot plants follow the indoor (companion pot) rules for light and water */
+GP.daily = (prev => function () {
+  safeRun('gpgTidy', () => GrowPotGarden.tidy());
+  const moved = this.plants().filter(p => p.at && p.at.kind === 'slot');
+  for (const p of moved) p.at.kind = 'pot';
+  try { return prev.call(this); } finally { for (const p of moved) p.at.kind = 'slot'; }
+})(GP.daily);
+GP.remove = (prev => function (gid) {
+  const p = this.plant(gid);
+  if (p && p.at && p.at.kind === 'slot') { const a = ((state.v115 && state.v115.mpots) || {})[p.at.ref] || []; for (let i = 0; i < a.length; i++) if (a[i] === gid) a[i] = null; }
+  return prev.call(this, gid);
+})(GP.remove);
+/* ---- the shared garden panel learns the 'slot' spot kind ---- */
+GSpot.of = (prev => function (kind, ref) {
+  if (kind !== 'slot') return prev.call(this, kind, ref);
+  if (!GrowPotGarden.ok(ref)) return null;
+  return { kind, ref, arr: GrowPotGarden.arr(ref), cap: slotCount(ref), title: `${locName(ref)} · grow pots`, near: () => Access.atLoc(ref) };
+})(GSpot.of);
+GSpot.html = (prev => function (kind, ref) { return kind === 'slot' ? (GSpot.of(kind, ref) ? GrowPotGarden.html(ref) : '<p>Gone.</p>') : prev.call(this, kind, ref); })(GSpot.html);
+GSpot.care = (prev => function (kind, ref) { return kind === 'slot' ? '' : prev.call(this, kind, ref); })(GSpot.care);
+/* never sow a garden plant over a cannabis plant */
+ACT.gSow = (prev => function (a) {
+  const g = gArgs(a);
+  if (g.kind === 'slot') { const L = state.locations[g.ref]; if (!L || L.slots[+g.x]) { toast('That pot is already in use.', 'warn'); return; } if (!L.equip.pot) { toast('There is no pot there yet.', 'warn'); return; } }
+  return prev.call(ACT, a);
+})(ACT.gSow);
+ACT.gSowPot = arg => {
+  const [loc, slot, spId] = String(arg).split(':'), i = +slot, L = state.locations[loc];
+  if (!GrowPotGarden.ok(loc) || !L || !L.equip.pot || !(i >= 0 && i < slotCount(loc))) return;
+  if (L.slots[i] || GrowPotGarden.at(loc, i)) { toast('That pot is already in use.', 'warn'); return; }
+  const sp = GP.sp(spId); if (!sp) return;
+  const slots = [i]; slots.arr = GrowPotGarden.arr(loc);
+  const p = GP.sow(spId, { kind: 'slot', ref: loc }, slots);
+  if (p) { closePanel(); think(`${sp.name} is in the grow pot. ${GP.canPlant(sp, { kind: 'slot', ref: loc }).why}`, 4000); }
+};
+/* cannabis sowing, moving and harvest relocation skip pots that hold garden plants */
+ACT.sow = (prev => function (arg) {
+  const [loc, slot] = String(arg).split(':');
+  if (GrowPotGarden.at(loc, +slot)) { toast('A garden plant is growing in that pot. Harvest or pull it first.', 'warn'); return; }
+  return prev.call(ACT, arg);
+})(ACT.sow);
+Mover.targets = (prev => function (p) {
+  return prev.call(this, p).map(x => {
+    if (!GrowPotGarden.at(x.loc, x.slot)) return x;
+    const L = state.locations[x.loc], cap = slotCount(x.loc);
+    for (let i = 0; i < cap; i++) if (!L.slots[i] && !GrowPotGarden.at(x.loc, i)) return Object.assign({}, x, { slot: i });
+    return null;
+  }).filter(Boolean);
+})(Mover.targets);
+HarvestMove1151.target = (prev => function (p, loc) {
+  const r = prev.call(this, p, loc);
+  if (r.ok && (((state.v115 && state.v115.mpots) || {})[loc] || []).some(g => g && GP.plant(g))) return { ok: false, why: 'Contains garden plants. Choose a tent with no other crops.' };
+  return r;
+})(HarvestMove1151.target);
+/* ---- planting panel: cannabis seeds and garden plants side by side ---- */
+Panels.plantSeed = (prev => function (loc, slot) {
+  prev.call(Panels, loc, slot);
+  if (!GrowPotGarden.ok(loc)) return;
+  const o = runtime.overlay; if (!o) return; const fn = o.fn;
+  o.fn = () => `<h3 style="margin:0 0 6px">Cannabis seeds</h3>${fn()}${GrowPotGarden.pickHTML(loc, slot)}`;
+  renderPanel();
+})(Panels.plantSeed);
+Scene.interact = (prev => function (k, a, b, id) {
+  if (k === 'gslot') { Panels.gspot('slot', a); return true; }
+  if (k === 'slot' && GrowPotGarden.ok(a) && state.v115) {
+    if (GrowPotGarden.at(a, +b)) { Panels.gspot('slot', a); return true; }
+    if (state.inv.seeds.length || GrowPotGarden.hasSeeds()) { Panels.plantSeed(a, +b); return true; }
+    think('No seeds in storage. GeneVault on LeafCart sells cannabis seeds; Fern & Forge in town sells herb, veggie and flower seeds for your grow pots.', 5000); return true;
+  }
+  return prev.call(Scene, k, a, b, id);
+})(Scene.interact);
+/* ---- drawing: garden plants stand in the tent pots ---- */
+RoomArt.drawSlots = (prev => function (c, loc, t) {
+  if (!state.v115 || !GrowPotGarden.ok(loc)) return prev.call(this, c, loc, t);
+  const self = this, hit = self.hit, L = state.locations[loc], pos = SLOT_POS[loc] || [], tall = {};
+  pos.forEach(([x, y], i) => {
+    if (L.slots[i]) return; const p = GrowPotGarden.at(loc, i); if (!p) return;
+    const sp = GP.sp(p.sp), st = GP.stageOf(p); tall[i] = Math.round(sp.h * 1.4) + 6;
+    safeRun('gpgDraw', () => GPArt.draw(c, p.sp, st, x, y + 1, t, 1.4));
+  });
+  self.hit = function (hid, x, y, w, h, label, ...rest) {
+    const m = /^slot:([^:]+):(\d+)$/.exec(hid);
+    if (m && m[1] === loc) { const i = +m[2], p = GrowPotGarden.at(loc, i); if (p) { const sp = GP.sp(p.sp), st = GP.stageOf(p), xy = pos[i], H = tall[i] || 20; return hit.call(this, 'gslot:' + loc + ':' + i, xy[0] - 12, xy[1] - H, 24, H + 10, `${sp.name} · ${['Sprouting', 'Young', 'Growing', GP_KIND[sp.grp] === 'flower' ? 'In bloom' : 'Ready to harvest'][st]}`, ...rest); } }
+    return hit.call(this, hid, x, y, w, h, label, ...rest);
+  };
+  try { return prev.call(this, c, loc, t); } finally { self.hit = hit; }
+})(RoomArt.drawSlots);
+</script>
 <style id="bagseed-main-menu-style">
 /* Approved community-garden title screen; all rules stay inside this screen. */
 body:has(#screen-title.menu-home:not([hidden])) { background: #e4e8d7; }
