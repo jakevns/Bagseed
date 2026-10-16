@@ -418,16 +418,39 @@
     const lowerScale=side?1.9:1.8;
     const fullSuit=['overalls','pjs','suit'].includes(L.topS);
     const waist={tee:73,tank:73,hoodie:75,flannel:76,sweater:75,cardigan:76,work:75,crop:71,jacket:74,garden:75,pjs:75,labcoat:75,suit:75,officer:75}[L.topS]||75;
+    // Long trousers keep their own hem. It sits just above the bottom sheet's
+    // baked shoes, so clip there rather than at a shared line that cut it off.
+    const bottomSource=pixels(bottomId);
+    if(bottomSource.hemY==null){
+      const p=bottomSource.data.data,w=bottomSource.data.width,h=bottomSource.data.height,bd=w/96;let last=-1;
+      for(let y=0;y<h;y++)for(let x=0;x<w;x++){const i=(y*w+x)*4;if(p[i+3]>100&&p[i+2]>p[i]+12){last=y;break;}}
+      bottomSource.hemY=last<0?100:68+((last+1)/bd-76)*39/31;
+    }
+    const longPants=!fullSuit&&bottomSource.hemY>=99,pantsHem=longPants?Math.max(100,Math.min(103,bottomSource.hemY)):100;
     if(!fullSuit){
-      g.save();g.beginPath();g.rect(0,68,96,32);g.clip();g.translate(48,0);g.scale(lowerScale,1);const lower=paint(bottomId,L,'bottom'),ld=lower.width/96;g.drawImage(lower,0,76*ld,96*ld,31*ld,-48,68,96,39);g.restore();
+      g.save();g.beginPath();g.rect(0,68,96,pantsHem-68);g.clip();g.translate(48,0);g.scale(lowerScale,1);const lower=paint(bottomId,L,'bottom'),ld=lower.width/96;g.drawImage(lower,0,76*ld,96*ld,31*ld,-48,68,96,39);g.restore();
     }
     const overlay=cv(full.width,full.height),o=overlay.getContext('2d',{willReadFrequently:true});o.drawImage(full,0,0);
-    const a=o.getImageData(0,0,full.width,full.height),raw=pixels(top).data.data,d=full.width/96;
-    for(let yy=0;yy<full.height;yy++)for(let xx=0;xx<full.width;xx++){
-      const i=(yy*full.width+xx)*4,y=yy/d,x=xx/d;
-      const hand=y<88&&(x<37||x>59)&&bodySkinPixel(raw[i],raw[i+1],raw[i+2]);
+    const a=o.getImageData(0,0,full.width,full.height),raw=pixels(top).data.data,d=full.width/96,W=full.width,Hh=full.height;
+    // Hands hang below the hem over the companion trousers. Seed them from
+    // skin pixels, then keep their dark outline and shading around the seed.
+    // Profile hands hang over the hip, so they are not limited to the sides.
+    const seeds=new Uint8Array(W*Hh),keep=new Uint8Array(W*Hh),reach=Math.round(1.2*d);
+    for(let yy=0;yy<Hh;yy++)for(let xx=0;xx<W;xx++){
+      const n=yy*W+xx,i=n*4,y=yy/d,x=xx/d;
+      if(raw[i+3]>100&&y>=Math.max(waist,74)&&y<92&&(side||x<37||x>59)&&bodySkinPixel(raw[i],raw[i+1],raw[i+2]))seeds[n]=1;
+    }
+    for(let yy=0;yy<Hh;yy++)for(let xx=0;xx<W;xx++){
+      if(!seeds[yy*W+xx])continue;
+      for(let dy=-reach;dy<=reach;dy++)for(let dx=-reach;dx<=reach;dx++){
+        const X=xx+dx,Y=yy+dy;if(X<0||Y<0||X>=W||Y>=Hh||dx*dx+dy*dy>reach*reach)continue;
+        const i=(Y*W+X)*4;if(bodySkinPixel(raw[i],raw[i+1],raw[i+2])||lum(raw[i],raw[i+1],raw[i+2])<48)keep[Y*W+X]=1;
+      }
+    }
+    for(let yy=0;yy<Hh;yy++)for(let xx=0;xx<W;xx++){
+      const n=yy*W+xx,i=n*4,y=yy/d;
       const hem=L.topS==='labcoat'?y<94:L.topS==='garden'?y<83:y<waist;
-      if(y>=100||(!fullSuit&&!hem&&!hand))a.data[i+3]=0;
+      if(y>=100||(!fullSuit&&!hem&&!keep[n]))a.data[i+3]=0;
     }
     o.putImageData(a,0,0);
     // A shared neck/waist/ankle skeleton is used by every garment. The old
@@ -444,8 +467,11 @@
     // Source sheets were fitted to equal height, making taller boots much
     // narrower than sneakers. Register every pair by its actual footprint.
     const shoeScale=(side?28:32)/((shoeRight-shoeLeft+1)/sd),shoeCenter=(shoeLeft+shoeRight+1)/(2*sd);
-    g.clearRect(0,shoeTop,96,108-shoeTop);
-    g.save();g.beginPath();g.rect(0,shoeTop,96,108-shoeTop);g.clip();g.translate(48,0);g.scale(shoeScale,1);g.drawImage(shoe,-shoeCenter,0,96,108);g.restore();
+    // Long trousers fall over the shoe: keep everything above their hem and
+    // slide the shoe in behind it. Shorts and skirts show the shoe's ankle.
+    const overShoe=longPants;
+    g.clearRect(0,overShoe?pantsHem:shoeTop,96,108-(overShoe?pantsHem:shoeTop));
+    const shoeClip=overShoe?pantsHem-2.5:shoeTop;g.save();g.beginPath();g.rect(0,shoeClip,96,108-shoeClip);g.clip();if(overShoe)g.globalCompositeOperation='destination-over';g.translate(48,0);g.scale(shoeScale,1);g.drawImage(shoe,-shoeCenter,0,96,108);g.restore();
     if(L.acc==='bandana'||L.acc==='scarf'){
       const color=L.accC||(L.acc==='bandana'?'#c94f4f':'#d26aa0');path(g,color,3,[39,43,48,46,57,43]);path(g,color,4,L.acc==='scarf'?[54,46,57,58]:[44,46,48,51,52,46]);
     }
