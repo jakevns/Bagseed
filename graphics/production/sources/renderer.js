@@ -471,7 +471,9 @@
     // slide the shoe in behind it. Shorts and skirts show the shoe's ankle.
     const overShoe=longPants;
     g.clearRect(0,overShoe?pantsHem:shoeTop,96,108-(overShoe?pantsHem:shoeTop));
-    const shoeClip=overShoe?pantsHem-2.5:shoeTop;g.save();g.beginPath();g.rect(0,shoeClip,96,108-shoeClip);g.clip();if(overShoe)g.globalCompositeOperation='destination-over';g.translate(48,0);g.scale(shoeScale,1);g.drawImage(shoe,-shoeCenter,0,96,108);g.restore();
+    // Resample the shoe once, identically for every outfit, then place it 1:1.
+    const feet=cv(96*density,108*density),f=feet.getContext('2d');f.scale(density,density);f.beginPath();f.rect(0,shoeTop,96,108-shoeTop);f.clip();f.translate(48,0);f.scale(shoeScale,1);f.drawImage(shoe,-shoeCenter,0,96,108);
+    const shoeClip=overShoe?Math.floor((pantsHem-2.5)*density)/density:shoeTop;g.save();g.beginPath();g.rect(0,shoeClip,96,108-shoeClip);g.clip();if(overShoe)g.globalCompositeOperation='destination-over';g.drawImage(feet,0,0,96,108);g.restore();
     if(L.acc==='bandana'||L.acc==='scarf'){
       const color=L.accC||(L.acc==='bandana'?'#c94f4f':'#d26aa0');path(g,color,3,[39,43,48,46,57,43]);path(g,color,4,L.acc==='scarf'?[54,46,57,58]:[44,46,48,51,52,46]);
     }
