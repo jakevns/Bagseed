@@ -1,6 +1,9 @@
 // Approval samples only: inject into public/index.html in an isolated browser.
 // This tool never rebuilds or changes the production game.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{chromium}=require('playwright');
+if(fs.readFileSync(path.resolve(__dirname,'../public/index.html'),'utf8').includes('id="bagseed-starter-tent-production-code"')){
+  require('../tests/starter-tent.test.cjs');
+}else{
 (async()=>{
   const root=path.resolve(__dirname,'..'),out=path.join(root,'review/starter-tent');
   fs.mkdirSync(out,{recursive:true});
@@ -104,3 +107,4 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
     console.log('Starter tent samples saved; catalog, hitboxes, footprints and desktop/mobile store checked.');
   }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
+}
