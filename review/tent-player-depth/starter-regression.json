@@ -1,0 +1,25 @@
+{
+  "entryPoint": "public/index.html",
+  "integrated": true,
+  "startupWaitsForTent": true,
+  "layeringCombinations": 24,
+  "interactionCases": 12,
+  "dayNightMasks": [
+    "budget:720",
+    "budget:1380",
+    "standard:720",
+    "standard:1380"
+  ],
+  "zipFrames": 9,
+  "openingAnimation": true,
+  "reducedMotion": true,
+  "wearWarning": true,
+  "dryingTag": true,
+  "storeDeliveryInventoryMatch": true,
+  "desktopAndPhoneStore": true,
+  "purchase": 35,
+  "fittingEnergy": 4,
+  "plantsAndGearPreserved": true,
+  "saveReload": true,
+  "errors": []
+}

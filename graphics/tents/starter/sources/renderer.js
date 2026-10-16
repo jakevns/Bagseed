@@ -1,8 +1,8 @@
 /* Starter tent only. Contents, fabric foreground and door remain independent. */
 (() => {
   'use strict';
-  const DATA=__BAGSEED_STARTER_TENT_DATA__, images={},fronts=new Map(),tinted=new Map();
-  const originalCloset=RoomArt.drawCloset,originalRoom=RoomArt.draw,originalIcon=ShellArt.icon,originalLocIcon=drawLocIcon;
+  const DATA=__BAGSEED_STARTER_TENT_DATA__, images={},fronts=new Map();
+  const originalCloset=RoomArt.drawCloset,originalIcon=ShellArt.icon,originalLocIcon=drawLocIcon;
   const [X,Y,W,H]=STARTER_BOX,SCALE=3;
   let loaded=false;
   const supported=()=>loaded&&!!DATA.tiers[Shell.of('closet')?.tier];
@@ -25,24 +25,8 @@
     }
     fronts.set(key,cv);return cv;
   }
-  function roomTints(){
-    const a=RoomArt.tint().map(([col,alpha,op])=>[col,+alpha.toFixed(3),op]);
-    if(state.weather==='Heat Wave')a.push(['#ff8a40',.14,'soft-light']);
-    if(state.weather==='Cold Snap')a.push(['#6ab0ff',.16,'soft-light']);return a;
-  }
-  function facade(c,tier,dp,ambient=false){
-    let layer=front(tier,dp);const tones=ambient?roomTints():[];
-    if(tones.length){
-      const key=tier+':'+Math.round(dp*8)+':'+JSON.stringify(tones);
-      if(!tinted.has(key)){
-        const cv=document.createElement('canvas');cv.width=layer.width;cv.height=layer.height;const g=cv.getContext('2d');g.drawImage(layer,0,0);
-        for(const [color,alpha,op]of tones){g.globalCompositeOperation=op;g.globalAlpha=alpha;g.fillStyle=color;g.fillRect(0,0,cv.width,cv.height);}
-        g.globalCompositeOperation='destination-in';g.globalAlpha=1;g.drawImage(layer,0,0);
-        if(tinted.size>=32)tinted.delete(tinted.keys().next().value);tinted.set(key,cv);
-      }
-      layer=tinted.get(key);
-    }
-    c.save();c.imageSmoothingEnabled=true;c.drawImage(layer,X,Y,W,H);c.restore();
+  function facade(c,tier,dp){
+    c.save();c.imageSmoothingEnabled=true;c.drawImage(front(tier,dp),X,Y,W,H);c.restore();
   }
   function indicators(c,dp){
     const shell=Shell.of('closet');if(dp>.9){
@@ -84,11 +68,11 @@
       }
     }
   };
-  // The native room adds beams and plant effects after drawing the tents.
-  // Reapply only the fabric mask, with the same room tint, over those effects.
-  RoomArt.draw=function(c,t){
-    const result=originalRoom.call(this,c,t);
-    if(supported()){const dp=doorProg('closet');facade(c,Shell.of('closet').tier,dp,true);indicators(c,dp);}return result;
+  // Keep lighting inside the current opening. Fabric is drawn only in its normal
+  // scene position, before players/NPCs, never as a final room-wide repaint.
+  RoomArt.growEffectMasks.closet=function(c,dp){
+    if(!supported())return;c.clip(opening(new Path2D(),X,Y,W,H));
+    if(dp>0){const top=Y+H*(.125+.845*Math.round(dp*8)/8);c.beginPath();c.rect(X,top,W,Math.max(0,Y+H-top));c.clip();}
   };
   ShellArt.icon=function(c,cv,size,tier){
     if(size!=='closet'||!loaded||!DATA.tiers[tier])return originalIcon.call(this,c,cv,size,tier);

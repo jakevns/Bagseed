@@ -3,8 +3,8 @@
   "approval": "User requested publishing the latest character fixes together with the incoming menu and furniture work.",
   "customizationReview": "review/customization-v9/README.md",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "6b89f4a6f41af382fc85de85ca6c0f3599041b29414ef60d2d598efbde15fde0",
-  "updatedSHA": "0b7e84884c4e34b0604f917f64eb7ebc27c238d61d9dceb56747f92bc25db7ef",
+  "workingSourceSHA": "a6c9cae8f57e336178f631e9eebcc3ffe5b99b155f3fa455bab1706c3af94c36",
+  "updatedSHA": "462d00f1f77e35359c8a7554a64d191b1526e328ee59c037edc3b3bcd11d9202",
   "characterRevision": "customization-9",
   "characterPayloadSHA256": "08eedc52ecd089552793907a164d88219a8d03146f3ba1eccf380a9d146dacb0",
   "characterSourcesSHA256": {
@@ -14,7 +14,7 @@
     "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
     "graphics/production/customization-v5/manifest.json": "9ba47c41a45a3475761d593f50ed9dd5478ac7a86a9a0d9af13c4fd0f7691a26"
   },
-  "bytes": 101921659,
+  "bytes": 101921067,
   "modularAssets": 544,
   "embeddedImages": 1552,
   "approvedIdentities": [
