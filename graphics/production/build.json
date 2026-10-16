@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "c52fff9fbb7899d3fafb7e6bb4a9a8ef6435b78e2794cf09882afa2fc78fd1c3",
-  "updatedSHA": "e1b0c6654ef2db5cdb2f50eaa1555b73022d72d7d41e9e8f267cbe417838e8c3",
+  "workingSourceSHA": "b157fcef8c53639e46da110d2636bed4d19aac804f2048cdb1d7b94142e5c731",
+  "updatedSHA": "c088c0e4af41360fc838c30b912bebd24cbc13d93456a7834f21c2851158ae27",
   "characterRevision": "customization-14",
   "characterPayloadSHA256": "d2a047304f2a95735698bcb3645a12a28b7fe74c898fa3815d093c2ecdaee532",
   "characterSourcesSHA256": {
@@ -20,7 +20,7 @@
     "graphics/production/customization-v5/hair-fit.json": "acf4244aab6c7b1733ff0bcfffe51c9e37758a2acc302f20027a34f9a127dc2b",
     "graphics/production/customization-v5/register.py": "f8745407c9ecba6fb0802697f0740acaf72532db0661b089414bf6100b9971ab"
   },
-  "bytes": 101117151,
+  "bytes": 101116559,
   "modularAssets": 544,
   "embeddedImages": 1552,
   "approvedIdentities": [

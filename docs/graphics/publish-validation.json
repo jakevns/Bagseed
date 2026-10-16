@@ -1,76 +1,93 @@
 {
-  "incomingCommit": "7ddc178c3bed29ac755d9f9434668aebd391b5c9",
-  "characterCommit": "2072741607c25e6ac32d7675e02c1ae2872bf7c7",
-  "buildSHA256": "d39e7e220cb1f0f86f84e33c7153f3f3e7886d6620b9d67e73f639c2d385917b",
-  "characterScriptSHA256": "69071366847d1cbfe7f832b3849501c68bc2d6ff80e466545cf199938b559ba9",
+  "date": "2026-10-16",
+  "incomingCommit": "07744d1906d84e8e42b4316e428fb5cc669ff52e",
+  "characterCommit": "937401baa9cebd7e212924971984bd259ac4311d",
+  "buildSHA256": "c088c0e4af41360fc838c30b912bebd24cbc13d93456a7834f21c2851158ae27",
+  "bytes": 101116559,
+  "characterRevision": "customization-14",
+  "characterPayloadSHA256": "d2a047304f2a95735698bcb3645a12a28b7fe74c898fa3815d093c2ecdaee532",
   "localCharacterPayloadExact": true,
-  "incomingNonCharacterScriptsExact": 87,
-  "scriptCount": 88,
-  "characterSourcesPreserved": true,
-  "incomingSourcesPreserved": true,
-  "bytes": 73154526,
-  "bedCombinations": 80,
-  "seedlingDesks": 3,
-  "curtainSets": 6,
-  "menuRevision": "community-menu-3",
-  "characterRevision": "customization-9",
-  "characterPayloadSHA256": "08eedc52ecd089552793907a164d88219a8d03146f3ba1eccf380a9d146dacb0",
+  "incomingNonCharacterScriptsExact": 96,
+  "scriptCount": 99,
+  "mergedGardenScripts": 2,
   "sourceChecksums": {
-    "graphics/production/sources/renderer.js": "5cb97c7d6d228cdbd173b77c6ec3bb25b4e3130bdc25f188b8cf81c228f43b5c",
+    "graphics/production/sources/renderer.js": "f7a73dbdd9f9477c07102ada1203a45245a68f69eecb4324b873b33e5d4adb78",
     "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
-    "graphics/production/sources/build.cjs": "99e7c5636c996112273a528ea8e909fee50242eb5e540d79286328ac6eabc5ad",
+    "graphics/production/sources/hair-batch-01.js": "9ecdd8b585399ea4a5c9f11534914f21cb1d8be136839ea9c9ac6d75f8fd8390",
+    "graphics/production/sources/hair-fit-rest.js": "57e1ea90c42bac147c83c798c61c8a1ddc195a30556d112ecf112bf8120d9ef3",
+    "graphics/production/sources/build.cjs": "48fc96cfbb9f7e96ab80ba1a28b4a8f2a2764af10d8711d7af9e160f32d70c25",
     "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
-    "graphics/production/customization-v5/manifest.json": "9ba47c41a45a3475761d593f50ed9dd5478ac7a86a9a0d9af13c4fd0f7691a26"
+    "graphics/production/customization-v5/manifest.json": "3e9a7390cd46d0a433c2e2cec34dfc2a8c04fdb8625a40476ec400d5cb458462",
+    "graphics/production/customization-v5/hair-fit.json": "acf4244aab6c7b1733ff0bcfffe51c9e37758a2acc302f20027a34f9a127dc2b",
+    "graphics/production/customization-v5/register.py": "f8745407c9ecba6fb0802697f0740acaf72532db0661b089414bf6100b9971ab"
   },
   "validation": {
-    "initialFullRun": {
-      "tests": 50,
-      "passed": 46,
-      "failed": 4,
-      "log": "artifacts/publish-merged-tests.log"
+    "characterTests": {
+      "passed": 19,
+      "failed": 0
     },
-    "resolvedFailures": "Windows accelerated canvas differed from reference hashes and varied fixed-hardware pixels. All four curtain tests pass with software canvas, preserving all expected hashes and renderer source artwork.",
-    "finalCurtainRun": {
-      "passed": 4,
-      "failed": 0,
-      "log": "artifacts/publish-curtain-software.log"
+    "gardenAndPlacementTests": {
+      "passed": 8,
+      "failed": 0
     },
-    "distinctTestsVerified": 50,
+    "incomingArtworkTests": {
+      "passed": 8,
+      "failed": 0
+    },
+    "tentPlayerDepthTests": {
+      "passed": 1,
+      "failed": 0
+    },
+    "distinctTestsVerified": 36,
     "unresolvedFailures": 0,
-    "parsedScripts": 88,
-    "stagedPages": {
-      "subpath": "/Bagseed/",
-      "playableBedroom": true,
-      "versionMetadataMatchesRuntime": true,
-      "browserErrors": []
-    },
-    "publishingGate": {
-      "results": [
-        {
-          "fixture": "stale source",
-          "rejected": true,
-          "message": "Character source changed without rebuilding: graphics/production/sources/renderer.js"
-        },
-        {
-          "fixture": "changed game",
-          "rejected": true,
-          "message": "The playable game differs from its build report. Rebuild before publishing."
-        },
-        {
-          "fixture": "wrong character payload",
-          "rejected": true,
-          "message": "The embedded character release is missing or stale. Run the full character builder."
-        }
-      ]
-    },
-    "lineEndingVerification": "Canonical HTML is byte-identical to the committed game; character and other scripts retain their verified content."
+    "note": "Initial software-canvas startup timeouts were resolved by pausing only the unrelated loading animation in artwork fixtures. Exact canvas comparisons use software rendering; the lighting loop comparison holds the separately tested moving clouds constant."
   },
-  "backupDirectory": "artifacts/publish-backup-2026-10-15T22-27-25-888Z",
-  "targetBranch": "main",
-  "userRequestedPush": true,
-  "canonicalLineEndings": "LF",
-  "buildIntegrationAdjustments": [
-    "Normalize generated HTML to LF before hashing and writing",
-    "Atomically replace build reports"
-  ]
+  "preservation": {
+    "localCharacterCommit": "937401baa9cebd7e212924971984bd259ac4311d",
+    "incomingCommit": "07744d1906d84e8e42b4316e428fb5cc669ff52e",
+    "characterPayloadExact": true,
+    "characterPayloadSHA256": "d2a047304f2a95735698bcb3645a12a28b7fe74c898fa3815d093c2ecdaee532",
+    "scriptCount": 99,
+    "incomingScriptsExact": 96,
+    "differingScripts": [
+      {
+        "index": 34,
+        "section": "\n/* ==== 06b_gpart.js ==== */\n'use strict';\n/* =====================================================================\n   GARDEN PLANT ART · v"
+      },
+      {
+        "index": 35,
+        "section": "\n/* ==== 06c_garden.js ==== */\n'use strict';\n/* =====================================================================\n   GARDEN PLANTS · BAC"
+      },
+      {
+        "index": 81,
+        "section": "\n/* Bagseed illustrated production renderer. Artwork is generated PNG material,\n * registered by extract.py; saved appearance objects remain"
+      }
+    ]
+  },
+  "releaseModules": {
+    "hairFitRevision": "temple-roots-10",
+    "hairRuntimeFitRevision": "scalp-fit-12",
+    "characterRevision": "customization-14",
+    "bedroomRevision": "bedroom-shell-1",
+    "bedRevision": "beds-batch-04",
+    "bedCombinations": 80,
+    "deskRevision": "seedling-desks-1",
+    "curtainRevision": "curtains-batch-03",
+    "curtainSets": 6,
+    "menuRevision": "community-menu-3",
+    "computerDeskRevision": "computer-desks-1",
+    "computerDeskDesigns": 4,
+    "computerEquipmentRevision": "computer-equipment-1",
+    "computerTiers": 3,
+    "cameraRevision": "cameras-1",
+    "cameraTiers": 3,
+    "chairRevision": "chairs-2",
+    "deskChairDesigns": 4,
+    "coffeeRevision": "coffee-1",
+    "underDeskStorageRevision": "under-desk-storage-1",
+    "storageTiers": 3,
+    "loadingRevision": "loading-bedroom-3",
+    "bedroomWindowRevision": "bedroom-window-1",
+    "starterTentRevision": "starter-tent-1"
+  }
 }

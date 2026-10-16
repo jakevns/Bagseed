@@ -11,10 +11,13 @@ test('loading cover paints during download, waits for all art, blocks input, and
     streamResponse=res;res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});res.write(html.subarray(0,cut));releaseStream=()=>res.end(html.subarray(cut));
   }else app.emit('request',req,res);});await new Promise(r=>server.listen(0,'127.0.0.1',r));
   try{
-    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});
+    browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium',args:['--disable-accelerated-2d-canvas']});
     const context=await browser.newContext({viewport:{width:1440,height:960}}),page=await context.newPage(),errors=[],expectedErrors=[];
     page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')expectedErrors.push(m.text());});
     await context.addInitScript(({prefix})=>{
+      // Animation is tested during the initial streamed download. Pause only the
+      // later save/error reloads to keep software-canvas startup deterministic.
+      if(sessionStorage.getItem('startup-test-mode')){const watch=new MutationObserver(()=>{if(window.BagseedLoadingScene){BagseedLoadingScene.pause();watch.disconnect();}});watch.observe(document,{childList:true,subtree:true});}
       // The outgoing page performs its normal unload autosave before this runs.
       window.__startupSaveAtEntry=localStorage.getItem('bagseed.save.v1');
       const Native=Image;window.__heldStartupArt=[];

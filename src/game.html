@@ -2555,6 +2555,9 @@ function drawBackground(c) {
 
 const RoomArt = {
   hits: [],
+  // Tent renderers register apertures here instead of repainting fabric over actors.
+  growEffectMasks: Object.create(null),
+  clipGrowEffects(c, loc, dp) { this.growEffectMasks[loc]?.(c, dp); },
   hit(id, x, y, w, h, label, walk, layer = 'furniture') {
     // v1.1.2: default walk anchor is clamped to the CURRENT scene's walkable box (it used to be clamped to the
     // 320px bedroom, so targets on wide scenes like Willow Lane got an anchor far away from where they really were)
@@ -2627,6 +2630,7 @@ const RoomArt = {
       if (isLightOn(loc) && !(state.fail.flicker && !settings.reduced && Math.sin(t * 23) > .6)) {
         const [lx, ly] = DEV_POS[loc].light, col = Gear.glowColor(L.equip.light), [r, g, b] = hexRGB(col), dp = doorProg(loc);
         const open = 1 - dp, a = (dark ? .22 : .1) * (L.equip.light >= 3 ? .45 : 1);
+        c.save(); this.clipGrowEffects(c, loc, dp);
         c.save(); c.beginPath(); c.rect(...(loc === 'closet' ? [10, 12, 68, 86] : [98, 10, 48, 109])); c.clip();
         if (open > 0) for (let band = 0; band < 3; band++) { c.fillStyle = `rgba(${r},${g},${b},${(a * open * (1 - band * .3)).toFixed(3)})`; for (let y = ly + 3; y < ly + 72; y += 2) { const k = (y - ly) / 70, w = Math.round((6 + k * (loc === 'closet' ? 26 : 34)) * (1 - band * .25)); c.fillRect(lx - w, y, w * 2, 2); } }
         else { c.fillStyle = `rgba(${r},${g},${b},${dark ? .18 : .07})`; c.fillRect(loc === 'closet' ? 12 : 94, loc === 'closet' ? 18 : 22, loc === 'closet' ? 64 : 56, 2); }
@@ -2634,6 +2638,7 @@ const RoomArt = {
         if (dark && open > 0) stepGlow(c, lx, ly + 50, 46, col, .1 * open * (L.equip.light >= 3 ? .55 : 1));
         // dust motes in the beam
         if (open > .5 && !settings.reduced) for (let i = 0; i < 5; i++) { const ph = (t * .05 + i * .21) % 1; R(c, lx - 14 + ((i * 11) % 28) + Math.sin(t * .6 + i) * 2, ly + 8 + ph * 50, 1, 1, 'rgba(255,255,255,.35)'); }
+        c.restore();
       }
     }
     if (dark) {
@@ -5514,7 +5519,12 @@ const SceneArt = {
     items.sort((a, b) => a.y - b.y).forEach(i => i.d());
     lightTint(c, 448, 200, false);
     // grow lights glow through open tents (lighter blend)
-    for (const loc of ['tent4', 'tent5']) if (locOwned(loc) && isLightOn(loc)) { const g = TentArt.geo[loc]; if (g) glowAt(c, g.cx, g.y + 60, 50, Gear.glowColor(state.locations[loc].equip.light), .08 * (1 - doorProg(loc))); }
+    for (const loc of ['tent4', 'tent5']) if (locOwned(loc) && isLightOn(loc)) {
+      const g = TentArt.geo[loc]; if (!g) continue;
+      c.save(); RoomArt.clipGrowEffects(c, loc, doorProg(loc));
+      glowAt(c, g.cx, g.y + 60, 50, Gear.glowColor(state.locations[loc].equip.light), .08 * (1 - doorProg(loc)));
+      c.restore();
+    }
   },
   tape(c, x, y, w, h, label) { for (let i = 0; i < w; i += 4) { R(c, x + i, y, 2, 1, '#e3c06a'); R(c, x + i, y + h, 2, 1, '#e3c06a'); } for (let j = 0; j < h; j += 4) { R(c, x, y + j, 1, 2, '#e3c06a'); R(c, x + w, y + j, 1, 2, '#e3c06a'); } pxText(c, label, x + w / 2 - pxTextW(label) / 2, y + h / 2 - 3, 1, 'rgba(227,192,106,.8)'); }
 };

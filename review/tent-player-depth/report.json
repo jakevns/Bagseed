@@ -1,0 +1,14 @@
+{
+  "cases": 132,
+  "tents": [
+    "closet",
+    "tent2",
+    "tent4",
+    "tent5"
+  ],
+  "shellsOpenClosedDayNight": true,
+  "leftCenterRightApproaches": true,
+  "behindTentCases": 2,
+  "entryPoint": "public/index.html",
+  "errors": []
+}
