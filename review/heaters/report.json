@@ -9,13 +9,13 @@
     {
       "tier": 1,
       "maxRedGain": 144,
-      "floorRedGain": 49,
+      "floorRedGain": 50,
       "playerPixelsProtected": 556
     },
     {
       "tier": 2,
       "maxRedGain": 188,
-      "floorRedGain": 82,
+      "floorRedGain": 84,
       "playerPixelsProtected": 556
     }
   ],

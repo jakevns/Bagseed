@@ -17,5 +17,11 @@
   "nightHeaterEmissionSurvivesRoomTint": true,
   "nightHeaterEmissionPlayerOcclusion": "passed both tiers",
   "daytimeLightingPreserved": true,
-  "poweredOffEmissionAbsent": true
+  "poweredOffEmissionAbsent": true,
+  "windowStationOrder": [
+    "watering jug",
+    "air conditioner",
+    "heater"
+  ],
+  "windowStationSideBySide": true
 }

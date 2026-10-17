@@ -2627,7 +2627,7 @@ const RoomArt = {
       const heater = window.BagseedRoomClimate?.heaterPlacement(loc) || P.heater;
       if (L.equip.heater) items.push({ y: heater[1] + 12, d: () => { const on = envFor(loc).hvac.units.some(u => u.dir > 0); runtime.drawLoc = loc; groundShadow(c, heater[0] + 6, heater[1] + 12, 14); Gear.heater(c, heater[0], heater[1], L.equip.heater, on, t); this.hit('heater:' + loc, heater[0] - 1, heater[1] - 3, 14, 16, EQ.heater[L.equip.heater].name, null, 'equip'); } });
     }
-    items.push({ y: 113, d: () => { Gear.can(c, 300, 103, state.gear.water); this.hit('can', 298, 98, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
+    items.push({ y: 113, d: () => { const [canX, canY] = window.BagseedRoomClimate?.waterPlacement() || [300, 103]; Gear.can(c, canX, canY, state.gear.water); this.hit('can', canX - 2, canY - 5, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
     if (state.gear.camera === 2) items.push({ y: 118, d: () => Gear.camera(c, 206, 100, 2) });
     Actors.pushPlayer(items, c, t); Actors.addTo(items, c, t, 'bedroom');
     if (runtime.visitor) items.push({ y: 100, d: () => { groundShadow(c, 306, 100, 12); drawPerson(c, 306, 100, lookFor(runtime.visitor), 1, { dir: 'left', frame: runtime.visitor === 'rosalind' && !settings.reduced ? Math.floor(t * 2) % 2 * 2 : 0, breath: Math.floor(t / 1.6) % 2, blink: idleBlink(t, 3) }); } });
