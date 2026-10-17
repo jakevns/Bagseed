@@ -13,5 +13,9 @@
   "bedroomWindowStation": true,
   "nearbyControlsAndSaveReload": "passed",
   "doorwayClear": true,
-  "unrelatedTentAccessPreserved": true
+  "unrelatedTentAccessPreserved": true,
+  "nightHeaterEmissionSurvivesRoomTint": true,
+  "nightHeaterEmissionPlayerOcclusion": "passed both tiers",
+  "daytimeLightingPreserved": true,
+  "poweredOffEmissionAbsent": true
 }

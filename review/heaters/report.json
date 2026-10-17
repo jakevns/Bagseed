@@ -5,6 +5,20 @@
   "heaterTargets": 8,
   "warmthAnimation": true,
   "nightFloorGlow": true,
+  "nightEmissionChecks": [
+    {
+      "tier": 1,
+      "maxRedGain": 144,
+      "floorRedGain": 49,
+      "playerPixelsProtected": 556
+    },
+    {
+      "tier": 2,
+      "maxRedGain": 188,
+      "floorRedGain": 82,
+      "playerPixelsProtected": 556
+    }
+  ],
   "existingButtonGlowFamilies": [
     "exhaust-indicator",
     "humidifier-indicator",
@@ -30,8 +44,8 @@
   "heaterOffTripAndOutage": true,
   "otherHeaterDoesNotLightIdleUnit": true,
   "reducedMotion": true,
-  "matchingStoreAndPhoneArtwork": true,
-  "errors": [],
   "originalCatalogAndLogicalAnchorsPreserved": true,
-  "bedroomWindowStation": true
+  "bedroomWindowStation": true,
+  "matchingStoreAndPhoneArtwork": true,
+  "errors": []
 }
