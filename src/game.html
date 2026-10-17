@@ -26561,7 +26561,7 @@ RoomArt.drawSlots = (prev => function (c, loc, t) {
   const self = this, hit = self.hit, L = state.locations[loc], pos = SLOT_POS[loc] || [], tall = {};
   pos.forEach(([x, y], i) => {
     if (L.slots[i]) return; const p = GrowPotGarden.at(loc, i); if (!p) return;
-    const sp = GP.sp(p.sp); tall[i] = Math.round(sp.h * 1.4) + 6;
+    const sp = GP.sp(p.sp); tall[i] = Math.round(sp.h * 1.4) + 6 + (window.BagseedWaterPots?.loaded ? BagseedWaterPots.gardenLift(p.sp, GP.stageOf(p)) : 0);
     // Draw each garden plant with its own pot below, in slot order.
   });
   self.hit = function (hid, x, y, w, h, label, ...rest) {
