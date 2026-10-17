@@ -1,6 +1,6 @@
 # Frog Prince connected component prototype
 
-Status: artwork samples awaiting approval. New kit after the approved Halfmoon / Zoomies / Cruise Control batch. Full painted-renderer replacement remains pending.
+Status: artwork and growth samples approved on 2026-10-17. New kit after the approved Halfmoon / Zoomies / Cruise Control batch. Full painted-renderer replacement remains pending.
 
 The native catalog lists `frogprince` (Lily Pad × ???) as a autoflower experimental line. The new organ sheet supplies broad lime-green leaves and compact grape-purple flowers with gold pistils; the shared renderer applies purple senescence rather than painting dying colors into healthy fan components. See `sources/profile.json` for the exact review phenotype and captions.
 
@@ -14,4 +14,4 @@ This representative genotype is receptive to the existing cool-night system. The
 
 Samples are in `review/frogprince-components/`: seed through harvest-ready, mature flower, same-scale 50/90-inch studies, natural/cool-night color, and 120 frames / 10 seconds of growth and wind. The physical-scale figures are controlled review inputs; they do not override native size limits or autoflower growth timing. Full topping/LST/SCROG, diagnostic-state, drying-organ and native camera/depth integration remain pending.
 
-Reproduce: `python3 tools/compile-plant-components.py frogprince`, `node tools/preview-plant-components.cjs frogprince`, `python3 tools/verify-plant-wind.py frogprince`. Tests: `tests/plant-batch-four.test.cjs` with the shared growth/identity/color suites. `npm run check` verifies the existing production entry and character payload. No push before user approval.
+Reproduce: `python3 tools/compile-plant-components.py frogprince`, `node tools/preview-plant-components.cjs frogprince`, `python3 tools/verify-plant-wind.py frogprince`. Tests: `tests/plant-batch-four.test.cjs` with the shared growth/identity/color suites. `npm run check` verifies the existing production entry and character payload. User approved this batch on 2026-10-17.

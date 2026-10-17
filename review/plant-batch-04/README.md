@@ -1,6 +1,6 @@
 # Bog Lantern / Frog Prince / Night Shift
 
-Status: artwork samples awaiting approval. Saved locally; not pushed.
+Status: artwork, growth cycles, color shifts and wind samples approved on 2026-10-17.
 
 ![Late-flower comparison](next-three-late-flower.png)
 

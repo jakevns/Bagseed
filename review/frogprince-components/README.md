@@ -1,6 +1,6 @@
 # Frog Prince review samples
 
-Status: awaiting user approval.
+Status: artwork, growth cycles and wind samples approved on 2026-10-17.
 
 - `frogprince-growth-and-flower.png`: seed through harvest-ready and natural senescence.
 - `frogprince-late-flower-senescence.png`: mature flower portrait.
