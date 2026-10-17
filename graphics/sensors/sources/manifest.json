@@ -17,7 +17,7 @@
       "name": "The Back of Your Hand",
       "price": 0,
       "width": 9,
-      "height": 8,
+      "height": 8.816326530612244,
       "crop": [
         206,
         71,
@@ -29,7 +29,7 @@
       "name": "Probably-A-Thermometer",
       "price": 6.99,
       "width": 9,
-      "height": 9,
+      "height": 8.26875,
       "crop": [
         819,
         70,
@@ -52,7 +52,7 @@
       "name": "TrueRead Hygrometer",
       "price": 24.99,
       "width": 14,
-      "height": 10,
+      "height": 9.66612641815235,
       "crop": [
         82,
         572,
@@ -70,7 +70,7 @@
       "name": "Canopy Sentinel",
       "price": 89,
       "width": 18,
-      "height": 14,
+      "height": 12.816455696202532,
       "crop": [
         765,
         554,
@@ -95,5 +95,6 @@
         15
       ]
     }
-  }
+  },
+  "mountScale": 0.72
 }

@@ -1,4 +1,4 @@
-/* Thermometer samples. Reuse the approved exterior mounts and exact footprints. */
+/* Thermometer samples. Fixed physical sizes and original artwork proportions at the approved exterior mounts. */
 (()=>{
  'use strict';
  const DATA=__BAGSEED_SENSORS_DATA__,image=new Image(),original=Gear.sensor,icon=drawGearIcon;let loaded=false;
@@ -11,5 +11,5 @@
  }
  Gear.sensor=function(c,x,y,n,env,loc){if(!loaded||!DATA.tiers[n])return original.apply(this,arguments);sprite(c,x,y,n,env,state?.locations?.[loc]?.log||[],!!state?.fail.sensor);};
  drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='sensor'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],scale=Math.min(178/a.height,244/a.width);c.save();c.translate((320-a.width*scale)/2,(240-a.height*scale)/2);c.scale(scale,scale);sprite(c,0,0,n,{temp:74,hum:55},[]);c.restore();};
- const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Thermometer artwork failed'));image.src=DATA.image;});window.BagseedSensors=Object.freeze({ready,sprite,project,history,get loaded(){return loaded;}});
+ const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Thermometer artwork failed'));image.src=DATA.image;});window.BagseedSensors=Object.freeze({ready,sprite,project,history,dimensions:n=>[DATA.tiers[n].width,DATA.tiers[n].height],get loaded(){return loaded;}});
 })();

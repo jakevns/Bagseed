@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "875973488b0d76f7a5af6395e1820ec4a21aa868a32a7e260120589a26a55d15",
-  "updatedSHA": "a02eaf9af3a81a0f5eaac424e4b254d72d7a739e042b55e093d407a760efcdee",
+  "updatedSHA": "ca86ccfb18edd72cd6960aa7b759f5b64ccf00c4a7c3e001134b9348be1d0932",
   "characterRevision": "custom-walk-wardrobe-eight-side-v5",
   "characterPayloadSHA256": "c3d5d4f7b966ca3bf4d5e458de0ca7edc6d54c8c151b246e5170bcb9b4407f0f",
   "characterSourcesSHA256": {
@@ -26,7 +26,7 @@
     "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa",
     "graphics/production/walk/wardrobe-v5/manifest.json": "c7b9aec41c0343309fb59e0fee99d0293d881009c383cf77c0b4d6b0e8d35d7d"
   },
-  "bytes": 63926820,
+  "bytes": 63927099,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [
