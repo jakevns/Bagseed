@@ -1,0 +1,13 @@
+{
+  "status": "local samples awaiting artwork approval",
+  "entryPoint": "public/index.html",
+  "buildAndSourceChecks": "passed",
+  "combinedPurchasesReplacementAndMigration": "passed",
+  "standaloneACPurchasesAndSaveReload": "passed",
+  "heaterPurchasesAndSaveReload": "passed",
+  "windowStationControlsAndAccess": "passed",
+  "artworkPlacements": 8,
+  "characterRevisionPreserved": "custom-walk-arm-layer-v6",
+  "originalSourceArtPreserved": true,
+  "losslessRGBAIdentical": true
+}

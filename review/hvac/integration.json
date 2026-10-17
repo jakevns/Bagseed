@@ -1,0 +1,16 @@
+{
+  "purchases": 2,
+  "matchingDelivery": true,
+  "roomWideReplacement": true,
+  "idsAndConditionPreserved": true,
+  "otherRoomsUntouched": true,
+  "upgradeReturnsOldHVAC": true,
+  "legacySaveCleanupIdempotent": true,
+  "nearbyTemperatureControls": true,
+  "heatCoolIdleOff": true,
+  "noSeparatePowerDraw": true,
+  "saveReload": true,
+  "canReuseSparesAfterRemovingCombined": true,
+  "missingArtBlocksStartup": true,
+  "errors": []
+}

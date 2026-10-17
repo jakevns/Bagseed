@@ -49,7 +49,7 @@ html[data-bagseed-loading="loading"] body > :not(#bagseed-loading):not(script):n
   const statusText=document.getElementById('bagseed-loading-status'),detail=document.getElementById('bagseed-loading-detail'),reload=document.getElementById('bagseed-loading-reload');
   let savedReduced=false;try{savedReduced=!!JSON.parse(localStorage.getItem('bagseed.settings.v1'))?.reduced;}catch{}
   overlay.dataset.reduced=String(matchMedia('(prefers-reduced-motion: reduce)').matches||savedReduced);
-  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners'];
+  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners','BagseedHVAC'];
   let phase='loading',resolveReady,rejectReady;
   const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});ready.catch(()=>{});
   const guarded=['click','pointerdown','touchstart','keydown','wheel'];
@@ -1062,8 +1062,8 @@ EQ.ac = [{ name: 'No air conditioner', price: 0, watts: 0 },
 { name: 'Rattlebox Compact AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'A rattly little floor cooler with LOW and HIGH settings. Cools the whole room (and every tent in it). Loud, dependable, and a little drippy.', review: [3, 'Loud. Cold. Loud.'] },
 { name: 'Polar Pal Digital AC', brand: 'Polar Pal', price: 289, watts: 250, maxD: 16, thermo: true, eff: .82, fail: .012, desc: 'Portable AC with a thermostat and a hose you will trip over.', review: [5, 'Heat wave? What heat wave.'] }];
 EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
-{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools to a set point automatically.', review: [5, 'Paid for itself the first heat wave.'] },
-{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Barely sips power.', review: [5, 'It knew a cold snap was coming before I did.'] }];
+{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools automatically. Replaces separate heaters and ACs in this room, moving them to Unused gear.', review: [5, 'Paid for itself the first heat wave.'] },
+{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Replaces separate room heaters and ACs, moving them to Unused gear.', review: [5, 'It knew a cold snap was coming before I did.'] }];
 EQ.ctrl = [{ name: 'No controller', price: 0, watts: 0 },
 { name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Sets digital heaters, ACs, humidifiers and dehumidifiers to each stage automatically, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
 LOC_SLOTS.push('heater', 'ac', 'hvac', 'ctrl');
@@ -15964,7 +15964,22 @@ const Gear115 = {
     }
     // instances that claim a location which no longer has that piece (stolen, removed by an event): they're gone
     for (const it of this.all()) if (it.at && !seen.has(it.iid)) { G.log.push({ day: state.day, iid: it.iid, name: this.name(it), what: 'lost' }); delete G.items[it.iid]; }
+    // Existing saves also retain redundant room heaters/ACs as owned unused gear.
+    for (const loc of ownedLocs()) if (state.locations[loc].equip.hvac) this.parkClimate(loc);
     if (G.log.length > 60) G.log.splice(0, G.log.length - 60);
+  },
+  climatePeers(loc) {
+    const room = lungRoomOf(loc);
+    return room ? ownedLocs().filter(other => lungRoomOf(other) === room) : [loc];
+  },
+  parkClimate(loc) {
+    const parked = [];
+    for (const other of this.climatePeers(loc)) for (const slot of ['heater', 'ac']) {
+      const L = state.locations[other], tier = L?.equip[slot]; if (!tier) continue;
+      const it = this.at(other, slot) || this.create(slot, tier, { at: other, src: 'migrated', cond: L.cond?.[slot] });
+      it.at = null; this.clear(slot, other); if (L.on) L.on[slot] = false; parked.push(it);
+    }
+    return parked;
   },
   /* where can this go? */
   targets(it) {
@@ -15977,6 +15992,10 @@ const Gear115 = {
     if (this.isGlobal(it.slot)) return { ok: true };
     if (!LOC_DEF[loc] || !locOwned(loc)) return { ok: false, why: 'You don\'t have that grow space.' };
     if (!locAccepts(loc, it.slot)) return { ok: false, why: `${locName(loc)} has no spot for a ${SLOT_NAME[it.slot].toLowerCase()}.` };
+    if (['heater', 'ac'].includes(it.slot)) {
+      const combined = this.climatePeers(loc).find(other => state.locations[other]?.equip.hvac);
+      if (combined) return { ok: false, why: `${EQ.hvac[state.locations[combined].equip.hvac].name} already heats and cools this whole room. Remove it before installing a separate heater or AC.` };
+    }
     if (EQ[it.slot][it.tier].tentOnly && LOC_DEF[loc].kind === 'closet') return { ok: false, why: `${this.name(it)} is too big for the starter tent. It needs a real tent.` };
     if (it.slot === 'pot' && LOC_DEF[loc].kind !== 'closet' && LOC_DEF[loc].kind !== 'tent') return { ok: false, why: 'Outdoor beds and the greenhouse have built-in containers.' };
     return { ok: true };
@@ -16008,10 +16027,11 @@ const Gear115 = {
       if (cur) { const r = this.canRemove(cur); if (!r.ok) { toast(esc(r.why), 'warn'); return false; } cur.at = null; }
       const firstLight = it.slot === 'light' && (state.story === 'wait' || state.story === 'light');
       this.apply(it.slot, it.tier, loc, it.cond); it.at = loc;
+      const parked = it.slot === 'hvac' ? this.parkClimate(loc) : [];
       state.stats.upgrades++; state.rep.equipment += .3; runtime.flash = .8;
       if (firstLight) { setStory(state.locations.closet.equip.pot ? 'plant' : 'container'); think(it.tier === 1 ? 'It\'s... purple. Very purple. The box says PROFESSIONAL six times.' : 'Oh, that\'s a real light.', 4500); }
       Sfx.good(); safeRun('ach', checkAch); updateHUD(); bgCache.clear();
-      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}`, 'social');
+      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}${parked.length ? ` ${parked.map(item => esc(this.name(item))).join(' and ')} moved to <b>Unused gear</b>; this unit heats and cools the whole room.` : ''}`, 'social');
       SaveSys.request('gear-install'); return true;
     } finally { runtime.gearBusy = false; }
   },
@@ -30041,6 +30061,24 @@ function remainingHairSource(L,dir){
  RoomArt.hit=function(id,x,y,w,h,label,walk,layer){const m=/^ac:(.+)$/.exec(id),f=m&&fixtures.get(m[1]);if(f){const a=DATA.tiers[f.tier];x=f.x-a.width/2-1;y=f.y-a.height-1;w=a.width+2;h=a.height+2;}return hit.call(this,id,x,y,w,h,label,walk,layer);};
  drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='ac'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],s=Math.min(181/a.height,239/a.width);c.save();c.translate(160,120);c.scale(s,s);sprite(c,0,a.height/2,n,true,0,true,80,1,false);c.restore();};
  const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Air conditioner artwork failed'));image.src=DATA.image;});window.BagseedAirConditioners=Object.freeze({ready,sprite,phase,air,fixtures,get loaded(){return loaded;}});
+})();
+
+</script>
+<script id="bagseed-hvac-production-code">
+/* Combined room heat pumps: fixed wall artwork, native heating and cooling. */
+(()=>{
+ 'use strict';
+ const DATA={"revision":"hvac-1","status":"proposal","path":"assets/hvac-atlas.png","sha256":"53a7c40ecde236d95cdddeba5f17a6eace6ba675680ff6e8f4a42046a48a3141","size":[1774,887],"runtime":{"path":"assets/hvac-atlas.webp","sha256":"36ed38284d06d6e8af524a7efd672357775b07889c22ca29a7ef1df41023fee4","publicPath":"assets/hvac/hvac-36ed38284d06.webp"},"tiers":{"1":{"name":"Breeze Bridge Mini-Split","price":549,"watts":220,"crop":[152,59,1471,368],"width":26,"height":6.504418762746431,"vent":[285,328,1208,53],"display":[1265,241,89,35],"indicator":[1409,260],"buttons":[[1478,260]]},"2":{"name":"Canopy Climate Smart HVAC","price":849,"watts":210,"crop":[54,472,1664,353],"width":26,"height":5.515625,"vent":[148,722,1466,57],"display":[1350,594,160,70],"indicator":[1616,604],"buttons":[[1567,601],[1567,651]]}},"image":"assets/hvac/hvac-36ed38284d06.webp"},image=new Image(),original=Gear.hvac,icon=drawGearIcon,hit=RoomArt.hit,fixtures=new Map();let loaded=false;
+ function phase(loc,n,fallback=true){const L=state?.locations?.[loc];if(!L)return {powered:true,mode:fallback?'cool':'idle',heat:68,cool:78};const powered=locOn(L,'hvac')&&!state.fail.outage&&!roomTripped(lungRoomOf(loc)||LOC_DEF[loc]?.room),unit=powered&&envFor(loc).hvac.units.find(u=>(u.loc===undefined||u.loc===loc)&&u.name===EQ.hvac[n].name);return {powered,mode:unit?(unit.dir>0?'heat':'cool'):'idle',heat:L.heatTo||68,cool:L.coolTo||80};}
+ function project(a,r){return[(r[0]-a.crop[0])*a.width/a.crop[2],(r[1]-a.crop[1])*a.height/a.crop[3],(r[2]||0)*a.width/a.crop[2],(r[3]||0)*a.height/a.crop[3]];}
+ function air(t,mode){if(!['heat','cool'].includes(mode)||settings.reduced)return [];return Array.from({length:3},(_,i)=>{const p=(t*.32+i/3)%1;return {x:(i-1)*4,y:p*(mode==='heat'?-3:4),a:Math.sin(Math.PI*p)*.12};});}
+ function sprite(c,x,y,n,s={powered:true,mode:'cool',heat:68,cool:78},t=0,animate=true){const a=DATA.tiers[n];if(!loaded||!a)return;c.save();c.translate(x,y);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...a.crop,0,0,a.width,a.height);const color=s.mode==='heat'?'#f1b76e':'#a8e6d3',[dx,dy,dw,dh]=project(a,a.display);c.fillStyle='#19342e';c.fillRect(dx,dy,dw,dh);if(s.powered){c.save();c.beginPath();c.rect(dx,dy,dw,dh);c.clip();c.fillStyle=color;c.textAlign='center';c.textBaseline='middle';if(s.mode==='idle'){c.font=dh*.42+'px monospace';c.fillText(s.heat+'°',dx+dw/2,dy+dh*.27,dw*.94);c.fillText(s.cool+'°',dx+dw/2,dy+dh*.76,dw*.94);}else{c.font=dh*.76+'px monospace';c.fillText((s.mode==='heat'?s.heat:s.cool)+'°',dx+dw/2,dy+dh*.53,dw*.95);}c.restore();}window.BagseedEquipmentGlow?.display(c,dx,dy,dw,dh,color,s.powered,.8,'hvac-display');const[ix,iy]=project(a,a.indicator);c.fillStyle=s.powered?(s.mode==='idle'?'#91a58c':color):'#26362f';c.beginPath();c.arc(ix,iy,.20,0,Math.PI*2);c.fill();window.BagseedEquipmentGlow?.point(c,ix,iy,1.2,color,s.powered,.9,'hvac-indicator');for(const p of a.buttons){const[bx,by]=project(a,p);window.BagseedEquipmentGlow?.point(c,bx,by,.85,'#e9d3a1',s.powered,.32,'hvac-button');}
+  if(animate){const[vx,vy,vw,vh]=project(a,a.vent);for(const p of air(t,s.mode)){const xx=vx+vw/2+p.x,yy=vy+vh+p.y,dir=s.mode==='heat'?-1:1;c.strokeStyle=s.mode==='heat'?`rgba(245,191,122,${p.a})`:`rgba(179,229,224,${p.a})`;c.lineWidth=.13;c.lineCap='round';c.beginPath();c.moveTo(xx,yy);c.bezierCurveTo(xx+.7,yy+dir*.6,xx-.7,yy+dir*1.3,xx,yy+dir*2);c.stroke();}}c.restore();
+ }
+ Gear.hvac=function(c,x,y,n,on,t=0){if(!loaded||!DATA.tiers[n])return original.apply(this,arguments);const loc=runtime.drawLoc,s=phase(loc,n,on);sprite(c,x,y,n,s,t);if(state?.locations?.[loc])fixtures.set(loc,{x,y,tier:n,...s});};
+ RoomArt.hit=function(id,x,y,w,h,label,walk,layer){const m=/^hvac:(.+)$/.exec(id),f=m&&fixtures.get(m[1]);if(f){const a=DATA.tiers[f.tier];x=f.x-1;y=f.y-1;w=a.width+2;h=a.height+2;}return hit.call(this,id,x,y,w,h,label,walk,layer);};
+ drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='hvac'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],s=Math.min(178/a.height,258/a.width);c.save();c.translate(160-a.width*s/2,120-a.height*s/2);c.scale(s,s);sprite(c,0,0,n,{powered:true,mode:'cool',heat:68,cool:78},0,false);c.restore();};
+ const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Combined climate artwork failed'));image.src=DATA.image;});window.BagseedHVAC=Object.freeze({ready,sprite,phase,air,fixtures,get loaded(){return loaded;}});
 })();
 
 </script>

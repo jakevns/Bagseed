@@ -895,8 +895,8 @@ EQ.ac = [{ name: 'No air conditioner', price: 0, watts: 0 },
 { name: 'Rattlebox Compact AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'A rattly little floor cooler with LOW and HIGH settings. Cools the whole room (and every tent in it). Loud, dependable, and a little drippy.', review: [3, 'Loud. Cold. Loud.'] },
 { name: 'Polar Pal Digital AC', brand: 'Polar Pal', price: 289, watts: 250, maxD: 16, thermo: true, eff: .82, fail: .012, desc: 'Portable AC with a thermostat and a hose you will trip over.', review: [5, 'Heat wave? What heat wave.'] }];
 EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
-{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools to a set point automatically.', review: [5, 'Paid for itself the first heat wave.'] },
-{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Barely sips power.', review: [5, 'It knew a cold snap was coming before I did.'] }];
+{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools automatically. Replaces separate heaters and ACs in this room, moving them to Unused gear.', review: [5, 'Paid for itself the first heat wave.'] },
+{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Replaces separate room heaters and ACs, moving them to Unused gear.', review: [5, 'It knew a cold snap was coming before I did.'] }];
 EQ.ctrl = [{ name: 'No controller', price: 0, watts: 0 },
 { name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Sets digital heaters, ACs, humidifiers and dehumidifiers to each stage automatically, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
 LOC_SLOTS.push('heater', 'ac', 'hvac', 'ctrl');
@@ -15796,7 +15796,22 @@ const Gear115 = {
     }
     // instances that claim a location which no longer has that piece (stolen, removed by an event): they're gone
     for (const it of this.all()) if (it.at && !seen.has(it.iid)) { G.log.push({ day: state.day, iid: it.iid, name: this.name(it), what: 'lost' }); delete G.items[it.iid]; }
+    // Existing saves also retain redundant room heaters/ACs as owned unused gear.
+    for (const loc of ownedLocs()) if (state.locations[loc].equip.hvac) this.parkClimate(loc);
     if (G.log.length > 60) G.log.splice(0, G.log.length - 60);
+  },
+  climatePeers(loc) {
+    const room = lungRoomOf(loc);
+    return room ? ownedLocs().filter(other => lungRoomOf(other) === room) : [loc];
+  },
+  parkClimate(loc) {
+    const parked = [];
+    for (const other of this.climatePeers(loc)) for (const slot of ['heater', 'ac']) {
+      const L = state.locations[other], tier = L?.equip[slot]; if (!tier) continue;
+      const it = this.at(other, slot) || this.create(slot, tier, { at: other, src: 'migrated', cond: L.cond?.[slot] });
+      it.at = null; this.clear(slot, other); if (L.on) L.on[slot] = false; parked.push(it);
+    }
+    return parked;
   },
   /* where can this go? */
   targets(it) {
@@ -15809,6 +15824,10 @@ const Gear115 = {
     if (this.isGlobal(it.slot)) return { ok: true };
     if (!LOC_DEF[loc] || !locOwned(loc)) return { ok: false, why: 'You don\'t have that grow space.' };
     if (!locAccepts(loc, it.slot)) return { ok: false, why: `${locName(loc)} has no spot for a ${SLOT_NAME[it.slot].toLowerCase()}.` };
+    if (['heater', 'ac'].includes(it.slot)) {
+      const combined = this.climatePeers(loc).find(other => state.locations[other]?.equip.hvac);
+      if (combined) return { ok: false, why: `${EQ.hvac[state.locations[combined].equip.hvac].name} already heats and cools this whole room. Remove it before installing a separate heater or AC.` };
+    }
     if (EQ[it.slot][it.tier].tentOnly && LOC_DEF[loc].kind === 'closet') return { ok: false, why: `${this.name(it)} is too big for the starter tent. It needs a real tent.` };
     if (it.slot === 'pot' && LOC_DEF[loc].kind !== 'closet' && LOC_DEF[loc].kind !== 'tent') return { ok: false, why: 'Outdoor beds and the greenhouse have built-in containers.' };
     return { ok: true };
@@ -15840,10 +15859,11 @@ const Gear115 = {
       if (cur) { const r = this.canRemove(cur); if (!r.ok) { toast(esc(r.why), 'warn'); return false; } cur.at = null; }
       const firstLight = it.slot === 'light' && (state.story === 'wait' || state.story === 'light');
       this.apply(it.slot, it.tier, loc, it.cond); it.at = loc;
+      const parked = it.slot === 'hvac' ? this.parkClimate(loc) : [];
       state.stats.upgrades++; state.rep.equipment += .3; runtime.flash = .8;
       if (firstLight) { setStory(state.locations.closet.equip.pot ? 'plant' : 'container'); think(it.tier === 1 ? 'It\'s... purple. Very purple. The box says PROFESSIONAL six times.' : 'Oh, that\'s a real light.', 4500); }
       Sfx.good(); safeRun('ach', checkAch); updateHUD(); bgCache.clear();
-      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}`, 'social');
+      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}${parked.length ? ` ${parked.map(item => esc(this.name(item))).join(' and ')} moved to <b>Unused gear</b>; this unit heats and cools the whole room.` : ''}`, 'social');
       SaveSys.request('gear-install'); return true;
     } finally { runtime.gearBusy = false; }
   },
