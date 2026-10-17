@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "b67423ea45a5e46894ca258bb551a5acf14cd8c21aa6a33f9e93c76293a50f88",
-  "updatedSHA": "f8972b1b17097598fbfba61b02cbe2de80e3d81a0668c755e8ee65b47dd92eb8",
+  "workingSourceSHA": "f45906e19fdbc2cd43576ae68c8c4343118c6f17c36dea6eef6f9b622b95aa92",
+  "updatedSHA": "fe41c84c50098e65b72cbe031214d55de5fe2109dd579a9a48166274afc52618",
   "characterRevision": "character-audit-cel-v1",
   "characterPayloadSHA256": "948302e1abc76482aa633dd322d1c00279cd1696a99956ceb80c5d065dbe5fcb",
   "characterSourcesSHA256": {
@@ -32,7 +32,7 @@
     "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 64066973,
+  "bytes": 64087302,
   "modularAssets": 544,
   "embeddedImages": 1812,
   "approvedIdentities": [
@@ -110,5 +110,44 @@
     ],
     "frames": 8,
     "frontBackFrames": 4
-  }
+  },
+  "nightColorsRevision": "night-temperature-colors-1",
+  "growLightsRevision": "grow-lights-2",
+  "tentPlacementRevision": "tent-flap-1",
+  "exhaustRevision": "exhaust-1",
+  "exhaustTiers": 3,
+  "roomClimatePlacementRevision": "window-station-1",
+  "waterPotsRevision": "water-and-pots-1",
+  "waterPotsDesigns": 9,
+  "tentDetailsRevision": "tent-details-1",
+  "hvacRevision": "hvac-1",
+  "hvacTiers": 2,
+  "airConditionersRevision": "air-conditioners-1",
+  "airConditionerTiers": 2,
+  "heatersRevision": "heaters-1",
+  "heaterTiers": 2,
+  "equipmentGlowRevision": "equipment-glow-1",
+  "sensorsRevision": "sensors-1",
+  "sensorDesigns": 4,
+  "dehumidifiersRevision": "dehumidifiers-1",
+  "dehumidifierTiers": 2,
+  "exteriorTentSensors": true,
+  "dualFanLayout": "opposite-sides",
+  "humidifiersRevision": "humidifiers-1",
+  "humidifierTiers": 3,
+  "growLightTiers": 4,
+  "fansRevision": "fans-1",
+  "fanTiers": 3,
+  "tent5Revision": "tent5-1",
+  "tent5Shells": [
+    "standard",
+    "pro",
+    "premium"
+  ],
+  "tent4Revision": "tent4-1",
+  "tent4Shells": [
+    "standard",
+    "pro",
+    "premium"
+  ]
 }
