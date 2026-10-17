@@ -8,6 +8,44 @@
   "storeCards": 7,
   "freeStarterArtwork": true,
   "plantLayerCases": 6,
+  "smartPotLED": [
+    {
+      "minute": 720,
+      "wet": 20,
+      "rgb": [
+        255,
+        101,
+        87
+      ]
+    },
+    {
+      "minute": 720,
+      "wet": 60,
+      "rgb": [
+        119,
+        241,
+        134
+      ]
+    },
+    {
+      "minute": 0,
+      "wet": 20,
+      "rgb": [
+        133,
+        51,
+        54
+      ]
+    },
+    {
+      "minute": 0,
+      "wet": 60,
+      "rgb": [
+        58,
+        132,
+        90
+      ]
+    }
+  ],
   "liveWaterGauges": true,
   "fixedAspectRatios": true,
   "readOnlyDrawing": true,

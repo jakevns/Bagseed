@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "136bf1110de5b11f8d2768bbcc7f20df6a4f45777872c83f375435d36f961cdf",
-  "updatedSHA": "23a9a1a4305f27447a21165bf54aec93d6c3daada296f4f8b041cf78620717f6",
+  "updatedSHA": "f215eec2edd740f914a5a70e8be7d9df1a0f9a70f93f13a58e1c42f7b0c4dbe3",
   "characterRevision": "custom-walk-arm-layer-v6",
   "characterPayloadSHA256": "89065e804b89c94d7c2cb8218d619a37d6918d5e42107b78e4a6797b578c5f35",
   "characterSourcesSHA256": {
@@ -30,7 +30,7 @@
     "graphics/production/walk/sources/profile_v3.py": "df86ab08bb691ebcc14fb61e90c423ebb78bfcab2dd3b95e4f4a7642d5d1993c",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 64003261,
+  "bytes": 64003714,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [
