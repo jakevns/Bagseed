@@ -46,4 +46,4 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 
 ## Third strain review kit
 
-`pixelpunch@1` adds the hybrid Pixel Punch component family, with new blue-green fans and purple flowers. Growth, wind, natural senescence, cool-night pigmentation and Sprout color appeal reuse the same shared systems. Native catalog traits and review captions are data in `pixelpunch/sources/profile.json`; the existing Porchlight/Velvet profiles remain available and pinned. Samples await approval under `review/pixelpunch-components/`; full painted-renderer integration remains pending.
+`pixelpunch@1` adds the hybrid Pixel Punch component family, with new blue-green fans and purple flowers. Growth, wind, natural senescence, cool-night pigmentation and Sprout color appeal reuse the same shared systems. Native catalog traits and review captions are data in `pixelpunch/sources/profile.json`; the existing Porchlight/Velvet profiles remain available and pinned. Samples are approved as a prototype checkpoint under `review/pixelpunch-components/`; full painted-renderer integration remains pending.

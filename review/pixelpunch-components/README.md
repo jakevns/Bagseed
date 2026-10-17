@@ -1,6 +1,6 @@
 # Pixel Punch artwork review
 
-Status: awaiting user approval; saved locally as a prototype, not installed as the live plant renderer.
+Status: approved for publication as a prototype checkpoint; full painted-renderer integration remains pending.
 
 - `pixelpunch-growth-and-flower.png`: seed through harvest-ready, including natural purple senescence. Stage panels are independently magnified.
 - `pixelpunch-late-flower-senescence.png`: full-size mature portrait.

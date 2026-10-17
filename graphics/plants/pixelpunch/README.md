@@ -1,6 +1,6 @@
 # Pixel Punch connected component prototype
 
-Status: awaiting artwork approval. This is the third organ kit after Porchlight and Velvet Underbrush. The live painted-renderer integration remains pending; no native game or save code changes are made by this kit.
+Status: artwork, growth, flowering, purple senescence, cool-night color samples and wind animation approved by the user. This is the third organ kit after Porchlight and Velvet Underbrush. The live painted-renderer integration remains pending; no native game or save code changes are made by this kit.
 
 ## Strain identity
 
