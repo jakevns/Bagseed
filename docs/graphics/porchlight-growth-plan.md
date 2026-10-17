@@ -73,3 +73,13 @@ Canopy density also regrows as a gameplay value. Rendering should use that as a 
 ## Saved study material
 
 `graphics/strains/batch-01/` retains three generated whole-cycle sheets and the experimental fixed-stage renderer. `review/strains-batch-01/` retains the still/animated concept samples. They are archived studies, not production assets in use. `tools/preview-strain-concepts.cjs` injects that draft only into a disposable preview page. Production `public/index.html` and its character/art release remain unchanged from the last pushed update.
+
+## Future genetics and expanding the plant-part library
+
+The user has added a long-term requirement: future phenotypes and strains should reuse these organs, and the library should accept additional art and traits over time. The renderer-independent foundation now lives in `graphics/plants/`; it is not installed in the live game.
+
+Existing `Individual115` genome IDs and `PlantTraits115.for` expression are the source of truth. New visual identities select compatible versioned parts from expressed traits, remain stable across saving and cloning, and give offspring their own deterministic variation seed. Do not breed artwork IDs independently of the actual plant's inherited traits.
+
+Inherited appearance and temporary condition are distinct. Broad/narrow leaflet shape and inherited foliage/flower colors belong to the phenotype. Yellowing, water stress, pruning, canopy cleanup, training and stakes alter the current expression of the same plant. Historical removed organs require the separate visual-state record described above.
+
+The initial library registers Porchlight's 15 draft organ roles and validates part compatibility, asset-approval metadata, profile references and attachment requirements. Additional inherited trait descriptors can be registered through data; extending the game's actual inheritance still requires an explicit genetics adapter. New profiles and assets use new revision IDs; old saved plants and clones retain their pinned selections. All seven foundation checks pass. The next artwork milestone remains one complete Porchlight organ kit and growth rig—not another set of whole-plant strain sheets.

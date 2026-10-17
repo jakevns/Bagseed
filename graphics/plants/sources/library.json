@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "revision": "plant-parts-library-1",
+  "parts": {
+    "porchlight.seed@1": {
+      "id": "porchlight.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "seed-center",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.radicle@1": {
+      "id": "porchlight.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "radicle-tip",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.cotyledon@1": {
+      "id": "porchlight.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "stem-base",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.singleLeaf@1": {
+      "id": "porchlight.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "petiole-base",
+      "attach": null,
+      "when": {
+        "leafShape": "broad"
+      }
+    },
+    "porchlight.threeLeaf@1": {
+      "id": "porchlight.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "petiole-base",
+      "attach": null,
+      "when": {
+        "leafShape": "broad"
+      }
+    },
+    "porchlight.fiveLeaf@1": {
+      "id": "porchlight.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "petiole-base",
+      "attach": null,
+      "when": {
+        "leafShape": "broad"
+      }
+    },
+    "porchlight.sevenLeaf@1": {
+      "id": "porchlight.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "petiole-base",
+      "attach": null,
+      "when": {
+        "leafShape": "broad"
+      }
+    },
+    "porchlight.sugarLeaf@1": {
+      "id": "porchlight.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "petiole-base",
+      "attach": null,
+      "when": {
+        "leafShape": "broad"
+      }
+    },
+    "porchlight.stem@1": {
+      "id": "porchlight.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "lower-node",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.node@1": {
+      "id": "porchlight.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "branch-junction",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.femaleEarly@1": {
+      "id": "porchlight.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "flower-base",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.femaleMid@1": {
+      "id": "porchlight.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "flower-base",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.femaleLate@1": {
+      "id": "porchlight.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "flower-base",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.maleClosed@1": {
+      "id": "porchlight.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "pedicel-base",
+      "attach": null,
+      "when": {}
+    },
+    "porchlight.maleOpen@1": {
+      "id": "porchlight.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": null,
+      "attachmentType": "pedicel-base",
+      "attach": null,
+      "when": {}
+    }
+  },
+  "profiles": {
+    "porchlight@1": {
+      "id": "porchlight@1",
+      "name": "Porchlight",
+      "roles": {
+        "seed": [
+          "porchlight.seed@1"
+        ],
+        "radicle": [
+          "porchlight.radicle@1"
+        ],
+        "cotyledon": [
+          "porchlight.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "porchlight.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "porchlight.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "porchlight.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "porchlight.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "porchlight.sugarLeaf@1"
+        ],
+        "stem": [
+          "porchlight.stem@1"
+        ],
+        "node": [
+          "porchlight.node@1"
+        ],
+        "femaleEarly": [
+          "porchlight.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "porchlight.femaleMid@1"
+        ],
+        "femaleLate": [
+          "porchlight.femaleLate@1"
+        ],
+        "maleClosed": [
+          "porchlight.maleClosed@1"
+        ],
+        "maleOpen": [
+          "porchlight.maleOpen@1"
+        ]
+      }
+    }
+  },
+  "strains": {
+    "porchlight": "porchlight@1"
+  },
+  "inheritedTraits": {
+    "leafShape": {
+      "type": "string",
+      "source": "PlantTraits115.for"
+    },
+    "leafKey": {
+      "type": "string",
+      "source": "PlantTraits115.for"
+    },
+    "colorName": {
+      "type": "string",
+      "source": "PlantTraits115.for"
+    }
+  }
+}
