@@ -1,0 +1,48 @@
+{
+  "errors": {
+    "measuredNeck": 0.766,
+    "handL": 0.766
+  },
+  "maxKeypointError": 0.766,
+  "visibleHandsMeasured": 1,
+  "limbCoreIoU": 0.8832946036664084,
+  "groundError": 0.0,
+  "uniformScale": 0.09378060757402411,
+  "rotationDegrees": 1.9101562500000004,
+  "finalSourceToCanvasTranslation": [
+    9.018451466731475,
+    -0.9776619968131861
+  ],
+  "resamplingPasses": 1,
+  "sourceLandmarks": {
+    "measuredNeck": [
+      48.666666666666664,
+      78.24358974358974
+    ],
+    "handL": [
+      56.98924731182796,
+      104.89247311827957
+    ]
+  },
+  "targetLandmarks": {
+    "measuredNeck": [
+      48.666666666666664,
+      78.24
+    ],
+    "handL": [
+      55.8014705882353,
+      103.80514705882354
+    ]
+  },
+  "accepted": true,
+  "source": "wardrobe-v5/arm-v7/assets/top-sweater-contact.png",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "frame": 4,
+  "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+  "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+}

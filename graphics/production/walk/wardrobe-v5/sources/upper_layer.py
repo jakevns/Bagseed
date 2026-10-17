@@ -1,10 +1,11 @@
 """Keep painted shirt/arm pixels together; never synthesize or move limb pixels."""
 from register_samples import *
 
-def attach_upper_layers(folder,manifest):
- report={}
+def attach_upper_layers(folder,manifest,only=None):
+ audit=folder/'sources/upper-layer-audit.json'
+ report=json.loads(audit.read_text())if audit.exists()else{}
  for item,entry in manifest['items'].items():
-  if entry['kind']!='top' or entry['style'] in ['crop','tank']:continue
+  if entry['kind']!='top' or entry['style'] in ['crop','tank'] or only is not None and item not in only:continue
   source=Image.open(W/entry['atlas']).convert('RGBA')
   for frame in entry['frames'].values():frame['parts'].pop('wholeUpper',None)
   baseheight=max(p['rect'][1]+p['rect'][3]for f in entry['frames'].values()for p in f['parts'].values())+2
@@ -12,7 +13,7 @@ def attach_upper_layers(folder,manifest):
   for di in ['right','left']:
    for f in range(8):
     key=f'{di}/{f}';frame=manifest['rig']['frames'][key];registered=folder/'registered'/item/f'right-{f}.png'
-    if item=='top-hoodie':im=Image.open(W/f'stride-v4/{di}-{f}.png').convert('RGBA')
+    if item=='top-hoodie' and not registered.exists():im=Image.open(W/f'stride-v4/{di}-{f}.png').convert('RGBA')
     else:
      im=Image.open(registered).convert('RGBA')
      if di=='left':im=im.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
@@ -40,4 +41,4 @@ def attach_upper_layers(folder,manifest):
   for key,dest,im,x,y in placed:
    atlas.alpha_composite(im,(x,y));entry['frames'][key]['parts']['wholeUpper']={'rect':[x,y,im.width,im.height],'destination':dest}
   target=W/entry['atlas'];staging=target.with_suffix('.png.tmp');atlas.save(staging,format='PNG');staging.replace(target);entry['upperComposite']='intact-painted-upper-v6';report[item]=checks
- (folder/'sources/upper-layer-audit.json').write_text(json.dumps(report,indent=2)+'\n')
+ staging=audit.with_suffix('.json.tmp');staging.write_text(json.dumps(report,indent=2)+'\n');staging.replace(audit)

@@ -51,7 +51,6 @@ for item in ids:
  print(item,'accepted',sum(p['accepted']for p in report),'/8','errors',[p['maxKeypointError']for p in report],'IoUs',[round(p['limbCoreIoU'],2)for p in report],flush=True)
 (V/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 
-
 # Repartition the untouched approved hoodie against corrected near/far arm labels.
 frames={f'{di}/{f}':(Image.open(W/f'stride-v4/{di}-{f}.png').convert('RGBA'),{'accepted':True,'source':'approved stride-v4 registered source'})for di in ['right','left']for f in range(8)}
 entry=packing.pack('top-hoodie',old['items']['top-hoodie'],frames,'top','hoodie');entry['atlas']=entry['atlas'].replace('profile-v3/','wardrobe-v5/');entry['profileRevision']='wardrobe-eight-side-v5';manifest['items']['top-hoodie']=entry
@@ -61,3 +60,13 @@ from upper_layer import attach_upper_layers
 attach_upper_layers(V,manifest)
 for item in manifest['items'].values():item['atlasSHA256']=hashlib.sha256((W/item['atlas']).read_bytes()).hexdigest()
 (V/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+
+# The base pass must finish before the approved per-top contact overrides.
+if (V/'arm-v7/assets').exists():
+ import subprocess
+ for replacement in sorted((V/'arm-v7/assets').glob('top-*-contact.png')):
+  style=replacement.stem.removeprefix('top-').removesuffix('-contact')
+  subprocess.run([sys.executable,str(V/'sources/repair_one.py'),style],check=True)
+
+import subprocess
+subprocess.run([sys.executable,str(V/'sources/repack_lower.py')],check=True)

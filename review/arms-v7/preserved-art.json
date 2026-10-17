@@ -1,0 +1,24 @@
+{
+  "baseline": "c6864e5",
+  "approvedAtlasesUnchanged": {
+    "cardigan": true,
+    "crop": true,
+    "tank": true
+  },
+  "unchangedParts": 1402,
+  "changedTops": [
+    "top-hoodie",
+    "top-tee",
+    "top-work",
+    "top-sweater",
+    "top-flannel",
+    "top-jacket",
+    "top-officer",
+    "top-garden",
+    "top-labcoat",
+    "top-overalls",
+    "top-pjs",
+    "top-suit"
+  ],
+  "failures": []
+}

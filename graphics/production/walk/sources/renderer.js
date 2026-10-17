@@ -30,7 +30,7 @@
       const brass=r>120&&gg>85&&gg>b*2.6&&r<gg*1.65;
       const skin=bodySkinPixel(r,gg,b)&&!brass&&(kind!=='shoe'||entry.style==='sandals'&&light>88&&r<gg*1.9&&b>gg*.62);
       let tone,base;
-      if(kind==='skin'){tone=rgb(['overalls','pjs','suit'].includes(L.topS)?L.shirtC:['skirt','shorts'].includes(L.bottomS)?L.skin:L.pantsC);base=145;}
+      if(kind==='skin'){tone=rgb(['overalls','pjs','suit'].includes(L.topS)?L.shirtC:name==='pelvis'?L.pantsC:['skirt','shorts'].includes(L.bottomS)?L.skin:L.pantsC);base=145;}
       else if(skin){tone=rgb(L.skin);base=160;}
       else if(cream||brass)continue;
       else if(kind==='shoe'){tone=rgb(L.shoesC);base=62;}
@@ -38,7 +38,8 @@
       else if(kind==='bottom'){tone=rgb(L.pantsC);base=70;}
       else{tone=rgb(L.shirtC);base=entry.fullSuit?105:115;}
       const profileRole=kind==='shoe'?'shoe':kind==='bottom'||entry.fullSuit&&name.endsWith('Leg')?'lower':'upper';
-      if(!skin&&kind!=='skin'&&/^(right|left)\//.test(frame)&&entry.profileBases?.[profileRole])base=entry.profileBases[profileRole];
+      const profileBase=entry.frames[frame].profileBases?.[profileRole]||entry.profileBases?.[profileRole];
+      if(!skin&&kind!=='skin'&&/^(right|left)\//.test(frame)&&profileBase)base=profileBase;
       if(!skin&&kind!=='shoe'&&kind!=='skin'){
         const [u,v]=name.endsWith('Leg')?walkLegLocal(walk.rig.frames[frame],name,x,y):walkLocal(p,x,y),pat=kind==='bottom'?L.botPat:L.topPat;
         if(blue&&pattern(pat,u,v)){tone=rgb((kind==='bottom'?L.botC2:L.topC2)||'#ffffff');}
@@ -81,6 +82,7 @@
     // Side shirts retain their complete painted shoulder/arm silhouette.
     // Re-slicing sleeves around inferred wrists hid cuffs behind trousers.
     const intact=items[top].frames[f].parts.wholeUpper,layers=[];
+    layers.push(['skin-base','pelvis']);
     if(!intact)layers.push([top,'farArm']);
     layers.push(['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot']);
     if(!intact)layers.push([top,'torso']);

@@ -8,8 +8,10 @@
   "allTentPlayerDepth": "passed",
   "originalSourceArtPreserved": true,
   "twoLosslessRGBAMatches": true,
-  "characterRevisionPreserved": "custom-walk-arm-layer-v6",
+  "characterRevisionPreserved": "custom-walk-waist-coverage-v9",
   "nightLEDNotDimmed": "passed",
   "foregroundIllustrationOccludesLED": "passed",
-  "rearRimBehindPlant": "passed"
+  "rearRimBehindPlant": "passed",
+  "gardenCropLayering": "passed",
+  "roundedHeadSoilAlignment": "passed"
 }

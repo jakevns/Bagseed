@@ -51,6 +51,11 @@ def pack(item,old,side_frames,kind,style,skin=False):
   if kind=='bottom'and style in ['shorts','skirt']:leg_material|=warm(a)&(light>88)
   reclaim=np.isin(lab,[6,7])&leg_material
   lab[reclaim]=np.where(legs[near]<=legs[far],5,4)[reclaim]
+  if kind=='bottom':
+   # The rig's waist cut lies below the painted waistband. Preserve that
+   # fabric as pelvis/leg pixels instead of discarding it as shirt torso.
+   pelvis=(lab==2)&(Y>=p['waist'][1]-3)&(Y<p['waist'][1]+1)
+   lab[pelvis]=np.where(legs[near]<=legs[far],5,4)[pelvis]
   upper=np.isin(lab,[1,2,3]);lower=np.isin(lab,[4,5])
   if skin:keep=lower
   elif kind=='top':
@@ -59,7 +64,7 @@ def pack(item,old,side_frames,kind,style,skin=False):
    if style in ['labcoat','garden']:
     end=(p['kneeL'][1]+p['kneeR'][1])/2+(2 if style=='labcoat'else-2);hem=blue&(light>82)&(Y>p['waist'][1]-3)&(Y<end);hem=np.array(Image.fromarray((hem*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(7)))>0;keep|=hem&lower&(Y<end+1);info['longHem']=True
   elif kind=='bottom':
-   adjacent=np.array(Image.fromarray((blue*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(5)))>0;keep=lower&(blue|((light<45)&adjacent)|(warm(a)if style in ['shorts','skirt']else False))
+   adjacent=np.array(Image.fromarray((blue*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(5)))>0;keep=lower&(blue|((light<45)&adjacent)|(warm(a)if style in ['shorts','skirt']else False)|pelvis)
   else:
    # Preserve complete shoe silhouettes, including shafts and partially hidden
    # raised feet, rather than slicing them with the other leg's ankle plane.
