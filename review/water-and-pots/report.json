@@ -31,21 +31,23 @@
       "minute": 0,
       "wet": 20,
       "rgb": [
-        133,
-        51,
-        54
+        255,
+        92,
+        75
       ]
     },
     {
       "minute": 0,
       "wet": 60,
       "rgb": [
-        58,
-        132,
-        90
+        110,
+        240,
+        125
       ]
     }
   ],
+  "nightLEDNotDimmed": true,
+  "foregroundIllustrationOccludesLED": true,
   "liveWaterGauges": true,
   "fixedAspectRatios": true,
   "readOnlyDrawing": true,
