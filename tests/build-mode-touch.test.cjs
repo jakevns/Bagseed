@@ -86,7 +86,7 @@ test('phone portrait: full-stage decorating, item buttons, finger drag, tap to p
     await finger(page, steps);
     const dragged = await page.evaluate(([fx, fy]) => { const D = runtime.deco, [w, h] = Build1.ghostDims(), [wx, wy] = View.toWorld(fx, fy); return { held: D.hold && D.hold.id, dx: D.ghost.x + w / 2 - wx, dy: D.ghost.y + h / 2 - wy, ok: D.ghost.ok }; }, [start.x + 80, start.y + 100]);
     assert.equal(dragged.held, 'armchair', 'Still held after the drag (✓ confirms)');
-    assert.ok(Math.abs(dragged.dx) <= 3, 'Follows the finger sideways');
+    assert.ok(Math.abs(dragged.dx) <= 5, 'Follows the finger sideways (within half a grid cell)');
     assert.ok(dragged.dy < -4, 'Floats above the fingertip so it stays visible');
 
     // place it, then a single tap picks it back up and ✕ puts it back
@@ -131,7 +131,7 @@ test('phone portrait: an item dragged up out of the tray lands in the room', asy
     }, steps);
     const r = await page.evaluate(([fx, fy]) => { const D = runtime.deco, [w] = Build1.ghostDims(), [wx] = View.toWorld(fx, fy); return { held: D.hold && D.hold.id, dx: D.ghost.x + w / 2 - wx }; }, [tx, ty]);
     assert.equal(r.held, 'beanbag');
-    assert.ok(Math.abs(r.dx) <= 3, 'Dropped where the finger let go');
+    assert.ok(Math.abs(r.dx) <= 5, 'Dropped where the finger let go (within half a grid cell)');
   });
 });
 

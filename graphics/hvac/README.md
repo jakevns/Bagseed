@@ -1,6 +1,6 @@
 # Combined heating/cooling samples
 
-Awaiting artwork approval. Both store tiers are illustrated: Breeze Bridge Mini-Split ($549, 220W) and Canopy Climate Smart HVAC ($849, 210W). Existing wall anchors remain beside the window; no other furniture moves. Each crop keeps its original aspect ratio and width 26 across locations. The source PNG is unchanged, and its fingerprinted WebP decodes to identical RGBA pixels. Compilers verify all checksums. Startup waits for the artwork, with a retry/error state when unavailable.
+Approved by the user, including both combined units and automatic return of separate room heaters/ACs to Unused gear. Both store tiers are illustrated: Breeze Bridge Mini-Split ($549, 220W) and Canopy Climate Smart HVAC ($849, 210W). Existing wall anchors remain beside the window; no other furniture moves. Each crop keeps its original aspect ratio and width 26 across locations. The source PNG is unchanged, and its fingerprinted WebP decodes to identical RGBA pixels. Compilers verify all checksums. Startup waits for the artwork, with a retry/error state when unavailable.
 
 The native individual HVAC activity determines heating, cooling and standby. Warm air uses amber lines/status; cool air uses mint lines/status. Both target temperatures remain visible in powered standby. Powered-off units have no airflow. Reduced motion keeps static artwork and indicators without air movement. Matching fixed store, inventory and delivery icons never inherit world animation.
 
