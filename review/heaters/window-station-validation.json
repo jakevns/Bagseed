@@ -1,0 +1,11 @@
+{
+  "sharedClimatePreserved": true,
+  "windowStationPositions": true,
+  "nearbyHeaterAndCoolerControls": true,
+  "temperatureSliders": true,
+  "doorwayClear": true,
+  "unrelatedTentAndPlantAccessBlocked": true,
+  "otherRoomAndStalePanelBlocked": true,
+  "saveReload": true,
+  "errors": []
+}

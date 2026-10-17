@@ -892,7 +892,7 @@ EQ.heater = [{ name: 'No heater', price: 0, watts: 0 },
 { name: 'Old Space Heater', brand: 'Toastwell', price: 24.99, watts: 420, maxD: 10, manual: true, fail: .06, desc: 'Two settings: LOW and HIGH. Smells like burning dust for the first hour. Every time.', review: [2, 'Kept my toes warm and my closet warmer. Tripped the breaker twice.'] },
 { name: 'Thermo-Cube Digital Heater', brand: 'Thermo-Cube', price: 79, watts: 330, maxD: 14, thermo: true, eff: .85, fail: .012, desc: 'Set a temperature. It holds it. Tip-over switch and everything.', review: [5, 'My closet has a thermostat now. My apartment does not.'] }];
 EQ.ac = [{ name: 'No air conditioner', price: 0, watts: 0 },
-{ name: 'Rattlebox Window AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'Wedged in the bedroom window with cardboard. Cools the whole room (and every tent in it). LOW and HIGH. Drips on everything.', review: [3, 'Loud. Cold. Loud.'] },
+{ name: 'Rattlebox Compact AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'A rattly little floor cooler with LOW and HIGH settings. Cools the whole room (and every tent in it). Loud, dependable, and a little drippy.', review: [3, 'Loud. Cold. Loud.'] },
 { name: 'Polar Pal Digital AC', brand: 'Polar Pal', price: 289, watts: 250, maxD: 16, thermo: true, eff: .82, fail: .012, desc: 'Portable AC with a thermostat and a hose you will trip over.', review: [5, 'Heat wave? What heat wave.'] }];
 EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
 { name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools to a set point automatically.', review: [5, 'Paid for itself the first heat wave.'] },
@@ -2624,9 +2624,10 @@ const RoomArt = {
     for (const loc of ['closet', 'tent2']) {
       const L = state.locations[loc]; if (loc === 'tent2' && !L.owned) continue; const P = DEV_POS[loc];
       if (L.equip.dehum && !window.BagseedDehumidifiers?.handles(loc)) items.push({ y: P.dehum[1] + 16, d: () => { groundShadow(c, P.dehum[0] + 6, P.dehum[1] + 16, 14); Gear.dehum(c, P.dehum[0], P.dehum[1], L.equip.dehum, L.dehumOn || L.equip.dehum === 2, t); this.hit('dehum:' + loc, P.dehum[0] - 1, P.dehum[1] - 1, 14, 18, EQ.dehum[L.equip.dehum].name, null, 'equip'); } });
-      if (L.equip.heater) items.push({ y: P.heater[1] + 12, d: () => { const on = envFor(loc).hvac.units.some(u => u.dir > 0); runtime.drawLoc = loc; groundShadow(c, P.heater[0] + 6, P.heater[1] + 12, 14); Gear.heater(c, P.heater[0], P.heater[1], L.equip.heater, on, t); this.hit('heater:' + loc, P.heater[0] - 1, P.heater[1] - 3, 14, 16, EQ.heater[L.equip.heater].name, null, 'equip'); } });
+      const heater = window.BagseedRoomClimate?.heaterPlacement(loc) || P.heater;
+      if (L.equip.heater) items.push({ y: heater[1] + 12, d: () => { const on = envFor(loc).hvac.units.some(u => u.dir > 0); runtime.drawLoc = loc; groundShadow(c, heater[0] + 6, heater[1] + 12, 14); Gear.heater(c, heater[0], heater[1], L.equip.heater, on, t); this.hit('heater:' + loc, heater[0] - 1, heater[1] - 3, 14, 16, EQ.heater[L.equip.heater].name, null, 'equip'); } });
     }
-    items.push({ y: 113, d: () => { Gear.can(c, 300, 103, state.gear.water); this.hit('can', 298, 98, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
+    items.push({ y: 113, d: () => { const [canX, canY] = window.BagseedRoomClimate?.waterPlacement() || [300, 103]; Gear.can(c, canX, canY, state.gear.water); this.hit('can', canX - 2, canY - 5, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
     if (state.gear.camera === 2) items.push({ y: 118, d: () => Gear.camera(c, 206, 100, 2) });
     Actors.pushPlayer(items, c, t); Actors.addTo(items, c, t, 'bedroom');
     if (runtime.visitor) items.push({ y: 100, d: () => { groundShadow(c, 306, 100, 12); drawPerson(c, 306, 100, lookFor(runtime.visitor), 1, { dir: 'left', frame: runtime.visitor === 'rosalind' && !settings.reduced ? Math.floor(t * 2) % 2 * 2 : 0, breath: Math.floor(t / 1.6) % 2, blink: idleBlink(t, 3) }); } });
@@ -3395,7 +3396,7 @@ const Events = {
       if (e.sensor && !F.sensor && chance((EQ.sensor[e.sensor].fail || 0) * hm)) { F.sensor = true; queue({ t: 'note', text: 'Your sensor reads 112°F. Probably not true. Click it to reset.', kind: 'warn' }); }
       if (e.humid && e.humid < 3 && !F.humStuck && chance((EQ.humid[e.humid].fail || 0) * hm)) { F.humStuck = true; queue({ t: 'note', text: 'The humidifier is stuck on HIGH. It\'s raining in the tent. Click it.', kind: 'bad' }); }
       if (e.heater === 1 && locOn(L, 'heater') && !F.heatTrip && chance(.06 * hm * q('heater'))) { F.heatTrip = true; queue({ t: 'note', text: 'The old space heater tripped the breaker and smells like burnt dust. Reset it in Grow Space Controls.', kind: 'bad' }); }
-      if (e.ac === 1 && locOn(L, 'ac') && !F.acIce && chance(.05 * hm * q('ac') * (state.outTemp > 90 ? 1.8 : 1))) { F.acIce = true; queue({ t: 'note', text: 'The window AC iced over and stopped cooling. Let it thaw in Grow Space Controls.', kind: 'warn' }); }
+      if (e.ac === 1 && locOn(L, 'ac') && !F.acIce && chance(.05 * hm * q('ac') * (state.outTemp > 90 ? 1.8 : 1))) { F.acIce = true; queue({ t: 'note', text: 'The compact AC iced over and stopped cooling. Let it thaw in Grow Space Controls.', kind: 'warn' }); }
       if (e.light && chance(.025 * hm) && plantsIn(loc).length) { F.timer = true; queue({ t: 'note', text: 'The light timer failed overnight. The light stayed on all night.', kind: 'warn' }); for (const p of plantsIn(loc)) p.stress += 8; }
     }
     if (fOn && chance(.022 * hm) && state.day > 4) { F.outage = 6; queue({ t: 'note', text: 'Power outage! Lights are off for a few hours.', kind: 'bad' }); }
@@ -12958,13 +12959,13 @@ Panels.space = function (loc) {
 };
 Object.assign(ACT, { camInstall(loc) { GrowCam.install(loc); }, camRemove(loc) { GrowCam.remove(loc); }, remoteView(loc) { Panels.spaceRemote(loc); } });
 const equipPanel114 = Panels.equip;
-Panels.equip = function (slot, loc) { if (!Access.atLoc(loc)) { Access.denyLoc(loc); return Panels.spaceRemote(loc); } return equipPanel114.call(Panels, slot, loc); };
+Panels.equip = function (slot, loc) { if (!Access.atLoc(loc) && !window.BagseedRoomClimate?.canControl(slot, loc)) { Access.denyLoc(loc); return Panels.spaceRemote(loc); } return equipPanel114.call(Panels, slot, loc); };
 
 /* ---------------- action guards: re-checked at the moment an action runs ---------------- */
 const LOC_ACTS = { door: a => a, sched: a => a.split(':')[0], humid: a => a.split(':')[0], humidTimer: a => a, dehum: a => a, dehumB: a => a.split(':')[0], fanSpd: a => a.split(':')[0], exSpd: a => a.split(':')[0], heatMode: a => a.split(':')[0], acMode: a => a.split(':')[0], pwr: a => a.split(':')[0], pwrSet: a => a.split(':')[0], pwrB: a => a.split(':')[0], filterReplace: a => a, filterInspect: a => a, ghSched: () => 'gh', spaceTab: a => a };
 for (const [k, toLoc] of Object.entries(LOC_ACTS)) {
   const f = ACT[k]; if (!f) continue;
-  ACT[k] = function (arg) { const loc = safeRun('acc', () => toLoc(String(arg))); if (loc && LOC_DEF[loc] && !Access.atLoc(loc)) { Access.denyLoc(loc); if (k === 'spaceTab') Panels.spaceRemote(loc); return; } return f.call(ACT, arg); };
+  ACT[k] = function (arg) { const loc = safeRun('acc', () => toLoc(String(arg))); if (loc && LOC_DEF[loc] && !Access.atLoc(loc) && !window.BagseedRoomClimate?.canAct(k, arg)) { Access.denyLoc(loc); if (k === 'spaceTab') Panels.spaceRemote(loc); return; } return f.call(ACT, arg); };
 }
 const PLANT_ACTS = { care: () => curPlant(), train: () => curPlant(), inspect: a => state.plants[a], movePlant: a => state.plants[String(a).split(':')[0]], hardenPlant: a => state.plants[a], collectPollen: a => state.plants[a], pollinateWith: a => state.plants[String(a).split(':')[0]], plantTab: () => curPlant() };
 for (const [k, toP] of Object.entries(PLANT_ACTS)) {
@@ -12981,7 +12982,7 @@ doInspect = function (pid) { const p = state.plants[pid]; if (p && !Access.atPla
 const moverMove114 = Mover.move.bind(Mover);
 Mover.move = function (pid, loc, slot, confirmed) { const p = state.plants[pid]; if (p && !Access.atPlant(p)) { Access.denyPlant(p); return; } return moverMove114(pid, loc, slot, confirmed); };
 /* range sliders (humidity / temperature targets) are per-tent settings too */
-document.addEventListener('input', e => { const el = e.target, k = el.dataset && el.dataset.input; if (!k || !el.dataset.loc || !['humidTarget', 'dehumTarget', 'heatTo', 'coolTo'].includes(k)) return; if (!Access.atLoc(el.dataset.loc)) { e.stopImmediatePropagation(); Access.denyLoc(el.dataset.loc); renderPanel(); } }, true);
+document.addEventListener('input', e => { const el = e.target, k = el.dataset && el.dataset.input; if (!k || !el.dataset.loc || !['humidTarget', 'dehumTarget', 'heatTo', 'coolTo'].includes(k)) return; if (!Access.atLoc(el.dataset.loc) && !window.BagseedRoomClimate?.canInput(k, el.dataset.loc)) { e.stopImmediatePropagation(); Access.denyLoc(el.dataset.loc); renderPanel(); } }, true);
 ACT.openSpace = loc => Panels.space(loc || undefined);
 
 /* =====================================================================

@@ -1,0 +1,18 @@
+/* Illustrated AC samples; native room cooling and station positions remain intact. */
+(()=>{
+ 'use strict';
+ const DATA=__BAGSEED_AC_DATA__,image=new Image(),original=Gear.ac,icon=drawGearIcon,hit=RoomArt.hit,fixtures=new Map();let loaded=false;
+ function phase(loc,n,fallback=true){const L=state?.locations?.[loc];if(!L)return {powered:true,cooling:!!fallback,target:80,level:1};const powered=locOn(L,'ac')&&!state.fail.acIce&&!state.fail.outage&&!roomTripped(lungRoomOf(loc)||LOC_DEF[loc]?.room);return {powered,cooling:powered&&envFor(loc).hvac.units.some(u=>(u.loc===undefined||u.loc===loc)&&u.name===EQ.ac[n].name&&u.dir<0),target:L.coolTo||80,level:n===1&&L.acMode!==2?.55:1};}
+ function project(a,r){return [(r[0]-a.crop[0])*a.width/a.crop[2],(r[1]-a.crop[1])*a.height/a.crop[3],(r[2]||0)*a.width/a.crop[2],(r[3]||0)*a.height/a.crop[3]];}
+ function air(t,on,level=1){if(!on||settings.reduced)return [];return Array.from({length:3},(_,i)=>{const p=(t*(.32+level*.12)+i/3)%1;return {x:(i-1)*2,y:-p*4,alpha:Math.sin(Math.PI*p)*(.09+level*.05)};});}
+ function sprite(c,x,bottom,n,cooling=true,t=0,powered=true,target=80,level=1,animate=true){const a=DATA.tiers[n];if(!loaded||!a)return;c.save();c.translate(x-a.width/2,bottom-a.height);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...a.crop,0,0,a.width,a.height);
+  if(a.display){const[dx,dy,dw,dh]=project(a,a.display);c.save();c.beginPath();c.rect(dx,dy,dw,dh);c.clip();c.fillStyle='#183b37';c.fillRect(dx,dy,dw,dh);if(powered){c.fillStyle='#bae6d8';c.font=dh*.76+'px monospace';c.textAlign='center';c.textBaseline='middle';c.fillText(String(target)+'°',dx+dw/2,dy+dh/2,dw*.96);}c.restore();window.BagseedEquipmentGlow?.display(c,dx,dy,dw,dh,'#b8ebd8',powered,.65,'ac-display');}
+  const[ix,iy]=project(a,a.indicator);c.fillStyle=powered?(cooling?'#8ce2d1':'#a4b79c'):'#263b35';c.beginPath();c.arc(ix,iy,.24,0,Math.PI*2);c.fill();window.BagseedEquipmentGlow?.point(c,ix,iy,1.25,'#9ee6d0',powered,.8,'ac-indicator');for(const p of a.buttons){const[bx,by]=project(a,p);window.BagseedEquipmentGlow?.point(c,bx,by,.9,'#d9d3a1',powered,.28,'ac-button');}
+  if(animate){const[vx,vy,vw]=project(a,a.vent);for(const p of air(t,cooling,level)){const xx=vx+vw/2+p.x,yy=vy+p.y;c.strokeStyle=`rgba(180,230,226,${p.alpha})`;c.lineWidth=.13;c.lineCap='round';c.beginPath();c.moveTo(xx,yy);c.bezierCurveTo(xx+.7,yy-.5,xx-.7,yy-1.2,xx,yy-1.8);c.stroke();}}
+  c.restore();
+ }
+ Gear.ac=function(c,x,y,n,on,t=0){if(!loaded||!DATA.tiers[n])return original.apply(this,arguments);const loc=runtime.drawLoc,s=phase(loc,n,on),cx=x+8,bottom=y+(n===1?9:12);sprite(c,cx,bottom,n,s.cooling,t,s.powered,s.target,s.level);if(state?.locations?.[loc])fixtures.set(loc,{x:cx,y:bottom,tier:n,...s});};
+ RoomArt.hit=function(id,x,y,w,h,label,walk,layer){const m=/^ac:(.+)$/.exec(id),f=m&&fixtures.get(m[1]);if(f){const a=DATA.tiers[f.tier];x=f.x-a.width/2-1;y=f.y-a.height-1;w=a.width+2;h=a.height+2;}return hit.call(this,id,x,y,w,h,label,walk,layer);};
+ drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='ac'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],s=Math.min(181/a.height,239/a.width);c.save();c.translate(160,120);c.scale(s,s);sprite(c,0,a.height/2,n,true,0,true,80,1,false);c.restore();};
+ const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Air conditioner artwork failed'));image.src=DATA.image;});window.BagseedAirConditioners=Object.freeze({ready,sprite,phase,air,fixtures,get loaded(){return loaded;}});
+})();
