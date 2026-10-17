@@ -53,7 +53,7 @@ const inside = (r, w, h) => r && r.x >= 0 && r.y >= 0 && r.x + r.width <= w + 0.
 test('phone: tabs follow what things are, and every item says where it goes', async () => {
   await withPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true }, async page => {
     await startDecorating(page);
-    const chips = await page.locator('#deco .b1-cats .chip').allTextContents();
+    const chips = await page.locator('#deco .b1-cats .chip:not(.b5-chip)').allTextContents()   // the Phase 5 ♥ chip leads the row;
     // a new game already owns a few things (calendar, crate, nightstand); tabs are exactly the categories of what you own, in catalogue order
     const expected = await page.evaluate(() => { const ids = Object.keys(state.room.own).filter(k => decorDef(k) && decorZones(decorDef(k)).includes('bedroom')), have = new Set(ids.map(k => decorDef(k).cat)); return DECOR_CATS.filter(([k]) => have.has(k)).map(c => c[1]); });
     assert.deepEqual(chips.map(s => s.trim()), ['🛒 Shop', 'All', ...expected]);

@@ -27318,6 +27318,380 @@ body.deco-on.touch-ui #toasts{top:calc(env(safe-area-inset-top) + 8px)!important
   document.head.appendChild(st);
 })();
 </script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 4 · power tools
+   Redo beside Undo. ⧉ places the held item and picks up another copy.
+   Select mode (in ⋯) lets you tap items, or drag a box with a mouse, to
+   pick several, then drag any one of them to move the whole group or
+   store them all. Things sitting on a picked table come along. Pack up
+   room puts everything away in one go (Undo brings it back). Layouts
+   saves up to three arrangements per room and lays one back out from
+   your collection, reporting anything missing or that no longer fits.
+   ===================================================================== */
+const Build4 = {
+  SLOTS: 3,
+  /* placement checks round to even pixels; keep an exact saved spot when that rounding is the only difference */
+  keep(checked, wanted) { return Math.abs(checked - wanted) <= 1 ? wanted : checked; },
+  g: null,   // the active select-mode gesture
+  list() { return DecoZ.list(runtime.deco.zone); },
+  dims(d) { return DecoZ.dims(Object.assign({ zone: runtime.deco.zone }, d), decorDef(d.id)); },
+  sel() { const D = runtime.deco; D.sel = D.sel || new Set(); return D.sel; },
+  /* selecting a table brings what sits on it */
+  addSel(d) { const S = this.sel(); S.add(d.uid); for (const k of this.list()) if (k.on === d.uid) S.add(k.uid); },
+  toggleSel(d) { const S = this.sel(); if (S.has(d.uid)) { S.delete(d.uid); for (const k of this.list()) if (k.on === d.uid) S.delete(k.uid); } else this.addSel(d); },
+  picked() { const S = this.sel(); return this.list().filter(d => S.has(d.uid)); },
+  setSelect(on) {
+    const D = runtime.deco; if (!D) return; if (on && D.hold) Deco.cancel();
+    D.select = !!on; this.sel().clear(); this.g = null; D.group = null; D.band = null; D.more = false; Deco.render();
+  },
+  /* ---------- redo ---------- */
+  redo() {
+    const D = runtime.deco; if (!D || !(D.redo && D.redo.length)) { toast('Nothing to redo.'); return; }
+    D.undo.push(JSON.stringify({ placed: DecoZ.list(D.zone), own: state.room.own }));
+    const s = JSON.parse(D.redo.pop()); DecoZ.setList(D.zone, s.placed); state.room.own = s.own;
+    D.hold = null; D.ghost = null; this.sel().clear(); Deco.render(); Sfx.click();
+  },
+  /* ---------- place another ---------- */
+  spare(H) { return decorFree(H.id) - (H.fromUid ? 0 : 1); },
+  another() {
+    const D = runtime.deco, H = D && D.hold; if (!H) return; const id = H.id, g = D.ghost && { x: D.ghost.x, y: D.ghost.y };
+    if (!Deco.place()) return;
+    if (decorFree(id) <= 0) { toast(`That was your last ${esc(decorDef(id).n.toLowerCase())}. Buy more in 🛒 Shop.`); return; }
+    Deco.pick(id);
+    if (g) { const [w, h] = Build2.dims(D.hold, D.zone); Build2.user(); Deco.move(g.x + w + w / 2 + 2, g.y + h / 2); Build2.userUntil = 0; Deco.render(); }
+  },
+  /* ---------- store / pack ---------- */
+  storeSelected() {
+    const D = runtime.deco, S = this.sel(); if (!S.size) return; Deco.snapshot();
+    const n = S.size; DecoZ.setList(D.zone, this.list().filter(d => !S.has(d.uid))); S.clear();
+    SaveSys.important('decor-store'); Sfx.click(); toast(`Stored ${n} item${n === 1 ? '' : 's'}. They're back in your collection.`); Deco.render();
+  },
+  packUp() {
+    const D = runtime.deco, n = this.list().length; if (!n) { toast('Nothing placed here to pack up.'); return; }
+    if (D.hold) Deco.cancel(); Deco.snapshot(); DecoZ.setList(D.zone, []); this.sel().clear(); D.more = false;
+    SaveSys.important('decor-store'); Sfx.click(); toast(`Packed up ${n} item${n === 1 ? '' : 's'}. ↶ Undo puts them back.`); Deco.render();
+  },
+  /* ---------- group moves ---------- */
+  /* would every picked item fit after moving by (dx, dy)? furniture goes first so tabletop items land on it */
+  groupCheck(items, dx, dy) {
+    const list = this.list(), added = [], res = [], ids = new Set(items.map(d => d.uid));
+    const order = items.slice().sort((a, b) => (decorDef(a.id).k === 'desk') - (decorDef(b.id).k === 'desk'));
+    try {
+      for (const d of order) {
+        const Df = decorDef(d.id), [w, h] = this.dims(d), r = DecoZ.check(d.id, d.x + dx + w / 2, d.y + dy + h / 2, null, { id: d.id, rot: d.rot || 0, flip: d.flip, v: d.v });
+        const rec = Object.assign({}, d, r ? { x: Build4.keep(r.x, d.x + dx), y: Build4.keep(r.y, d.y + dy) } : { x: d.x + dx, y: d.y + dy });
+        if (r && r.on) rec.on = r.on; else if (Df.k !== 'desk' || !(d.on && ids.has(d.on))) delete rec.on;
+        res.push({ d, rec, ok: !!(r && r.ok), why: r ? r.why : '' });
+        if (r && r.ok) { list.push(rec); added.push(rec); }
+      }
+    } finally { for (const a of added) { const i = list.indexOf(a); if (i >= 0) list.splice(i, 1); } }
+    return { res, ok: res.every(x => x.ok), why: (res.find(x => !x.ok) || {}).why };
+  },
+  beginGroup() {
+    const D = runtime.deco, items = this.picked(); if (!items.length) return false; const S = this.sel();
+    DecoZ.setList(D.zone, this.list().filter(d => !S.has(d.uid)));
+    D.group = { items, dx: 0, dy: 0, chk: { res: items.map(d => ({ d, rec: d, ok: true })), ok: true } }; Build2.sound('lift'); return true;
+  },
+  dragGroup(dx, dy) {
+    const D = runtime.deco, G = D.group; if (!G) return;
+    if (Build2.on() && !Build2.shift) { dx = Math.round(dx / Build2.G) * Build2.G; dy = Math.round(dy / Build2.G) * Build2.G; }
+    if (dx === G.dx && dy === G.dy) return; const was = G.chk.ok; G.dx = dx; G.dy = dy; G.chk = this.groupCheck(G.items, dx, dy);
+    if (G.chk.ok && !was) Build1.buzz(5); this.status();
+  },
+  endGroup() {
+    const D = runtime.deco, G = D.group; if (!G) return; D.group = null; const list = this.list();
+    if (G.chk.ok && (G.dx || G.dy)) {
+      list.push(...G.items);                     // the snapshot must hold the old positions
+      Deco.snapshot(); const S = this.sel();
+      DecoZ.setList(D.zone, list.filter(d => !S.has(d.uid)).concat(G.chk.res.map(x => x.rec)));
+      SaveSys.important('decor-place'); Build2.sound('place', G.items[0].id); for (const x of G.chk.res) Build2.land(x.rec); Build1.buzz(12);
+    } else { list.push(...G.items); if (G.dx || G.dy) { toast(esc(G.chk.why || 'Something is in the way.'), 'warn'); Sfx.bad(); Build1.buzz([8, 40, 8]); } }
+    Deco.render();
+  },
+  /* ---------- select-mode pointer handling (finger and mouse) ---------- */
+  down(e) {
+    const D = runtime.deco; e.preventDefault(); e.stopImmediatePropagation(); Sfx.init();
+    try { View.cv.setPointerCapture(e.pointerId); } catch (_) { }
+    // a mouse pointer is precise: no finger-sized grab margin, so a box can start right beside an item
+    const [x, y] = View.toWorld(e.clientX, e.clientY), pad = Build1.PAD; if (e.pointerType === 'mouse') Build1.PAD = 0; let hit; try { hit = Build1.hitPlaced(x, y); } finally { Build1.PAD = pad; } const S = this.sel();
+    this.g = { id: e.pointerId, sx: e.clientX, sy: e.clientY, lx: e.clientX, ly: e.clientY, wx: x, wy: y, hit, mouse: e.pointerType === 'mouse', mode: hit ? (S.has(hit.uid) ? 'group?' : 'toggle?') : 'empty?' };
+  },
+  move(e) {
+    const G = this.g, D = runtime.deco; if (!G || e.pointerId !== G.id) return; e.preventDefault(); e.stopImmediatePropagation();
+    Build2.shift = !!e.shiftKey;
+    if (G.mode.endsWith('?')) {
+      if (Math.hypot(e.clientX - G.sx, e.clientY - G.sy) < Build1.SLOP) return;
+      if (G.mode === 'toggle?') { this.addSel(G.hit); G.mode = 'group?'; }
+      if (G.mode === 'group?') G.mode = this.beginGroup() ? 'group' : 'none';
+      else G.mode = G.mouse ? 'band' : 'pan';
+    }
+    const [x, y] = View.toWorld(e.clientX, e.clientY);
+    if (G.mode === 'group') this.dragGroup(x - G.wx, y - G.wy);
+    else if (G.mode === 'pan') Build1.pan(-Build1.w(e.clientX - G.lx), -Build1.w(e.clientY - G.ly));
+    else if (G.mode === 'band') D.band = [Math.min(G.wx, x), Math.min(G.wy, y), Math.abs(x - G.wx), Math.abs(y - G.wy)];
+    G.lx = e.clientX; G.ly = e.clientY;
+  },
+  up(e) {
+    const G = this.g, D = runtime.deco; if (!G || e.pointerId !== G.id) return; this.g = null; e.preventDefault(); e.stopImmediatePropagation(); Build1.eat('room');
+    if (e.type === 'pointercancel') { if (D.group) { D.group.chk.ok = false; D.group.dx = D.group.dy = 0; this.endGroup(); } D.band = null; return; }
+    if (G.mode === 'group') { this.endGroup(); return; }
+    if (G.mode === 'band') {
+      const b = D.band; D.band = null;
+      if (b) for (const d of this.list()) { const [w, h] = this.dims(d); if (hitRect(b, [d.x, d.y, w, h])) this.addSel(d); }
+      Deco.render(); return;
+    }
+    if (G.mode === 'toggle?' || G.mode === 'group?') { this.toggleSel(G.hit); Sfx.click(); Build1.buzz(6); Deco.render(); }
+  },
+  status() {
+    const el = $('#deco .b4-selbar .b4-n'), D = runtime.deco; if (!el || !D) return; const n = this.sel().size, G = D.group;
+    el.textContent = G ? (G.chk.ok ? '✓ Fits here' : G.chk.why) : n ? `${n} selected` : (D.touchUI ? 'Tap things to select them' : 'Click things, or drag a box, to select');
+    el.className = 'b4-n' + (G ? (G.chk.ok ? ' ok' : ' bad') : '');
+  },
+  /* ---------- layouts ---------- */
+  slots(zone) { state.decoLayouts = state.decoLayouts || {}; const L = state.decoLayouts[zone] = state.decoLayouts[zone] || []; while (L.length < this.SLOTS) L.push(null); return L; },
+  save(i) {
+    const D = runtime.deco, items = this.list(); if (!items.length) { toast('Place a few things first, then save the layout.'); return; }
+    const L = this.slots(D.zone); L[i] = { name: `Layout ${i + 1}`, day: state.day, items: items.map(d => Object.assign({}, d)) };
+    SaveSys.important('decor-layout'); Sfx.good && Sfx.good(); toast(`Saved <b>Layout ${i + 1}</b> · ${items.length} item${items.length === 1 ? '' : 's'}.`); Deco.render();
+  },
+  load(i) {
+    const D = runtime.deco, saved = this.slots(D.zone)[i]; if (!saved) return;
+    if (D.hold) Deco.cancel(); Deco.snapshot(); DecoZ.setList(D.zone, []); this.sel().clear();
+    const list = this.list(), missing = {}, blocked = [], ids = new Set(saved.items.map(d => d.uid));
+    const order = saved.items.slice().sort((a, b) => (decorDef(a.id) || {}).k === 'desk' ? 1 : (decorDef(b.id) || {}).k === 'desk' ? -1 : 0);
+    let placed = 0;
+    for (const d of order) {
+      const Df = decorDef(d.id); if (!Df) continue;
+      if (decorFree(d.id) <= 0) { missing[Df.n] = (missing[Df.n] || 0) + 1; continue; }
+      const [w, h] = this.dims(d), r = DecoZ.check(d.id, d.x + w / 2, d.y + h / 2, null, { id: d.id, rot: d.rot || 0, flip: d.flip, v: d.v });
+      if (!r || !r.ok) { blocked.push(Df.n); continue; }
+      const rec = Object.assign({}, d, { x: this.keep(r.x, d.x), y: this.keep(r.y, d.y) }); if (r.on) rec.on = r.on; else if (!(d.on && ids.has(d.on) && list.some(x => x.uid === d.on))) delete rec.on;
+      list.push(rec); placed++;
+    }
+    const miss = Object.entries(missing).map(([n, c]) => `${n}${c > 1 ? ' ×' + c : ''}`);
+    toast(`<b>${esc(saved.name)}</b>: placed ${placed} of ${saved.items.length}.${miss.length ? ` Missing: ${esc(miss.join(', '))} (🛒 Shop).` : ''}${blocked.length ? ` No room now for: ${esc(blocked.join(', '))}.` : ''}`, miss.length || blocked.length ? 'warn' : '');
+    SaveSys.important('decor-layout'); Build2.sound('place', (order[0] || {}).id || 'crate'); D.view = null; Deco.render();
+  },
+  clear(i) { const L = this.slots(runtime.deco.zone); L[i] = null; SaveSys.important('decor-layout'); Deco.render(); },
+  layoutsHTML() {
+    const D = runtime.deco, L = this.slots(D.zone), here = this.list().length;
+    return `<div class="b4-layouts"><div class="b4-lh"><b>Layouts for this room</b><button class="btn sm" data-act="b4View" data-arg="">✕ Close</button></div>`
+      + L.map((s, i) => `<div class="b4-slot"><div class="b4-sn"><b>Layout ${i + 1}</b><span>${s ? `${s.items.length} item${s.items.length === 1 ? '' : 's'} · saved day ${s.day}` : 'Empty'}</span></div>`
+        + (s ? `<button class="btn sm primary" data-act="b4Load" data-arg="${i}">Lay out</button>` : '')
+        + `<button class="btn sm" data-act="b4Save" data-arg="${i}" ${here ? '' : 'disabled'}>${s ? 'Save over' : 'Save here'}</button>`
+        + (s ? `<button class="btn sm ghost" data-act="b4Clear" data-arg="${i}" aria-label="Delete layout ${i + 1}">✕</button>` : '') + `</div>`).join('')
+      + `<div class="b4-note">Laying out puts away what's here first, then places each saved item from your collection. ↶ Undo goes back.</div></div>`;
+  },
+  /* ---------- the extra controls, added after the Phase 3 tray renders ---------- */
+  decorate() {
+    const D = runtime.deco, el = $('#deco'); if (!D || !el || D.tab === 'styles') return;
+    const undo = el.querySelector('[data-act="decoUndo"]');
+    if (undo && !el.querySelector('[data-act="b4Redo"]')) { const b = document.createElement('button'); b.className = 'btn sm'; b.dataset.act = 'b4Redo'; b.textContent = '↷'; b.setAttribute('aria-label', 'Redo'); if (!(D.redo && D.redo.length)) b.disabled = true; if (D.touchUI) b.classList.add('b4-redo-touch'); undo.after(b); }
+    const more = el.querySelector('.b1-more');
+    if (more && !more.querySelector('[data-act="b4Select"]')) more.insertAdjacentHTML('beforeend', `<button class="btn sm ${D.select ? 'on' : ''}" data-act="b4Select" aria-pressed="${!!D.select}">${D.select ? '☑ Selecting' : '☐ Select items'}</button><button class="btn sm" data-act="b4Pack">📦 Pack up room</button><button class="btn sm" data-act="b4View" data-arg="layouts">💾 Layouts</button>`);
+    if (D.view === 'layouts') { const t = el.querySelector('.b1-tray'); if (t) { t.outerHTML = this.layoutsHTML(); } const cb = el.querySelector('.b3-catbar'), nt = el.querySelector('.b3-note'); if (cb) cb.hidden = true; if (nt) nt.hidden = true; }
+    if (D.select) {
+      const n = this.sel().size, bar = `<div class="b4-selbar"><span class="b4-n"></span><span style="flex:1"></span><button class="btn sm danger" data-act="b4StoreSel" ${n ? '' : 'disabled'}>Store${n ? ' ' + n : ''}</button><button class="btn sm" data-act="b4ClearSel" ${n ? '' : 'disabled'}>Clear</button><button class="btn sm primary" data-act="b4Select">Done selecting</button></div>`;
+      const msg = el.querySelector('.b1-msg'); if (msg) msg.insertAdjacentHTML('beforebegin', bar); else el.insertAdjacentHTML('beforeend', bar);
+      this.status();
+    }
+    // the placing hint doesn't apply while selecting or choosing a layout
+    const hint = el.querySelector('.b1-msg'); if (hint && (D.select || D.view === 'layouts')) hint.hidden = true;
+    const row = el.querySelector('.b3-mouse'), H = D.hold;
+    if (row && H && this.spare(H) > 0 && !row.querySelector('[data-act="b4Another"]')) row.querySelector('[data-act="decoPlace"]').insertAdjacentHTML('afterend', `<button class="btn sm" data-act="b4Another" ${D.ghost && D.ghost.ok ? '' : 'disabled'}>⧉ Place + another</button>`);
+  }
+};
+
+/* undo/redo history: a new change clears redo; undo saves the present for redo */
+Deco.snapshot = (prev => function () { prev.call(this); const D = runtime.deco; if (D) D.redo = []; })(Deco.snapshot);
+Deco.undo = (prev => function () {
+  const D = runtime.deco; if (D && D.undo.length) { const now = JSON.stringify({ placed: DecoZ.list(D.zone), own: state.room.own }); D.redo = D.redo || []; D.redo.push(now); if (D.redo.length > 25) D.redo.shift(); }
+  prev.call(this); if (D) Build4.sel().clear();
+})(Deco.undo);
+Build3.render = (prev => function () { prev.call(this); Build4.decorate(); })(Build3.render);
+Build1.fabHTML = (prev => function () {
+  const D = runtime.deco, H = D.hold; let html = prev.call(this);
+  if (H && Build4.spare(H) > 0) html = html.replace('<button data-act="decoRot"', '<button data-act="b4Another" aria-label="Place it and take another">⧉</button><button data-act="decoRot"');
+  return html;
+})(Build1.fabHTML);
+/* select mode takes over the room's pointer input for finger and mouse alike (Build1's canvas listeners see every pointer) */
+for (const k of ['down', 'move', 'up']) Build1[k] = (prev => function (e) {
+  const D = runtime.deco;
+  if (D && D.select) { Build1.ptrs.clear(); return Build4[k](e); }
+  return prev.call(this, e);
+})(Build1[k]);
+Deco.click = (prev => function (x, y) { const D = runtime.deco; if (D && D.select) return; return prev.call(this, x, y); })(Deco.click);
+/* picking something from the tray leaves select mode */
+Deco.pick = (prev => function (id) { const D = runtime.deco; if (D && D.select) { D.select = false; Build4.sel().clear(); } return prev.call(this, id); })(Deco.pick);
+Deco.close = (prev => function () {
+  const D = runtime.deco; if (D && D.group) { D.group.chk.ok = false; D.group.dx = D.group.dy = 0; Build4.endGroup(); }
+  if (D) { D.select = false; D.band = null; } Build4.g = null; return prev.call(this);
+})(Deco.close);
+/* drawing: picked items get an amber outline; a moving group draws at its new spot */
+Deco.overlay = (prev => function (c, t) {
+  prev.call(this, c, t); const D = runtime.deco; if (!D) return;
+  const box = (x, y, w, h, col, dash) => { c.fillStyle = col; for (let i = -1; i <= w; i++) if (!dash || (i & 2)) { c.fillRect(x + i, y - 1, 1, 1); c.fillRect(x + i, y + h, 1, 1); } for (let j = 0; j < h; j++) if (!dash || (j & 2)) { c.fillRect(x - 1, y + j, 1, 1); c.fillRect(x + w, y + j, 1, 1); } };
+  if (D.select && !D.group) for (const d of Build4.picked()) { const [w, h] = Build4.dims(d); box(d.x, d.y, w, h, '#ffc15a', false); c.fillStyle = 'rgba(255,193,90,.18)'; c.fillRect(d.x, d.y, w, h); }
+  if (D.group) for (const x of D.group.chk.res) {
+    const [w, h] = Build4.dims(x.rec); c.save(); c.globalAlpha = x.ok ? .9 : .5; drawDecor(c, Object.assign({ zone: D.zone }, x.rec, { y: x.rec.y - 3 }), t); c.restore();
+    box(x.rec.x, x.rec.y - 3, w, h, x.ok ? '#7cf05a' : '#ff5a4f', !x.ok);
+  }
+  if (D.band) { const [x, y, w, h] = D.band; c.fillStyle = 'rgba(255,193,90,.12)'; c.fillRect(x, y, w, h); box(Math.round(x), Math.round(y), Math.round(w), Math.round(h), '#ffc15a', true); }
+})(Deco.overlay);
+Object.assign(ACT, {
+  b4Redo() { Build4.redo(); },
+  b4Another() { Build4.another(); },
+  b4Select() { Build4.setSelect(!runtime.deco.select); },
+  b4StoreSel() { Build4.storeSelected(); },
+  b4ClearSel() { Build4.sel().clear(); Deco.render(); },
+  b4Pack() { Build4.packUp(); },
+  b4View(v) { const D = runtime.deco; D.view = v || null; D.more = false; if (v && D.hold) Deco.cancel(); Deco.render(); },
+  b4Save(i) { Build4.save(+i); },
+  b4Load(i) { Build4.load(+i); },
+  b4Clear(i) { Build4.clear(+i); }
+});
+(() => {
+  const st = document.createElement('style'); st.id = 'build4-css';
+  st.textContent = `
+.b4-selbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;background:#fff6dd;border:1px solid #e5c76b;border-radius:6px;padding:4px 6px}
+.b4-n{font:700 12px var(--f-ui);color:#6b5414}.b4-n.ok{color:#2f7d32}.b4-n.bad{color:#b23a2b}
+.b4-layouts{display:flex;flex-direction:column;gap:6px;overflow-y:auto;min-height:0}
+.b4-lh{display:flex;align-items:center;justify-content:space-between;font:700 13px var(--f-ui)}
+.b4-slot{display:flex;gap:6px;align-items:center;background:#e2e9d5;border:1px solid #b7cba4;border-radius:5px;padding:6px}
+.b4-sn{display:flex;flex-direction:column;flex:1;min-width:0;font:600 12px var(--f-ui)}.b4-sn span{opacity:.7;font-weight:500}
+.b4-slot .btn{min-height:38px}
+.b4-note{font:500 11px/1.3 var(--f-ui);opacity:.7}
+body.deco-on.touch-ui #deco .b4-redo-touch:disabled{display:none}
+body.deco-on #tip{display:none!important}
+body.deco-on:not(.touch-ui) #deco>.b4-selbar,body.deco-on:not(.touch-ui) #deco>.b4-layouts{flex:1 1 100%}
+@media (orientation:landscape) and (max-height:540px){.b4-selbar{order:3}.b4-layouts{order:4;flex:1 1 auto}}`;
+  document.head.appendChild(st);
+})();
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 5 · a reason to decorate (a new bedroom starts near 2 hearts; 5 takes walls, plants, lights and room styles)
+   Every decoratable space gets a Cozy score (0-100, one to five hearts)
+   from what's placed in it: something on the walls, a seat, a rug,
+   lights that glow at night, plants, tabletop touches, variety, pieces
+   that share a material and, in the bedroom, room styles. The ♥ chip in
+   Decorate mode opens a breakdown with a tip for each missing piece.
+   Rewards stay small: a cozy bedroom makes the first few energy you
+   spend each day free ("well rested"), and each space pays a one-time
+   housewarming gift the first time it reaches 3, 4 and 5 hearts.
+   ===================================================================== */
+const Cozy = {
+  TIERS: [[0, 'Bare'], [20, 'Settling in'], [40, 'Homey'], [60, 'Cozy'], [80, 'Dreamy']],
+  REST: [0, 0, 4, 8, 12, 16],              // free energy each morning by bedroom hearts
+  GIFT: { 3: 15, 4: 30, 5: 60 },           // one-time housewarming gifts per space
+  ZONES: { bedroom: 'bedroom', house: 'house', yard: 'backyard patio' },
+  S() { state.cozy = state.cozy || { best: {}, paid: {}, rest: 0, restDay: 0 }; state.cozy.best = state.cozy.best || {}; state.cozy.paid = state.cozy.paid || {}; return state.cozy; },
+  stars(score) { let s = 1; for (let i = 0; i < this.TIERS.length; i++) if (score >= this.TIERS[i][0]) s = i + 1; return s; },
+  tier(score) { return this.TIERS[this.stars(score) - 1][1]; },
+  /* the rules, each worth some points, with a tip when not met */
+  rules(zone) {
+    const items = DecoZ.list(zone).map(d => ({ d, D: decorDef(d.id) })).filter(x => x.D), n = f => items.filter(f).length;
+    const wall = n(x => x.D.k === 'wall'), seat = n(x => x.D.cat === 'seating' || x.D.seat), rug = n(x => x.D.k === 'rug'), glow = n(x => x.D.glow);
+    const plant = n(x => x.D.cat === 'plants'), table = n(x => x.D.k === 'desk'), kinds = new Set(items.map(x => x.d.id)).size;
+    const mats = {}; for (const x of items) { const m = Build2.material(x.d.id); mats[m] = (mats[m] || 0) + 1; }
+    const topMat = Object.entries(mats).sort((a, b) => b[1] - a[1])[0], dupes = Object.values(items.reduce((o, x) => (o[x.d.id] = (o[x.d.id] || 0) + 1, o), {})).reduce((s, c) => s + Math.max(0, c - 3), 0);
+    const step = (c, pts) => pts[Math.min(c, pts.length - 1)];
+    const R = [];
+    if (zone !== 'yard') R.push({ key: 'wall', name: 'Something on the walls', max: 14, got: step(wall, [0, 4, 7, 10, 12, 14]), tip: wall ? 'More wall pieces (posters, art, a clock) fill it out.' : 'Hang something on the wall: a poster, art or a clock.' });
+    R.push({ key: 'seat', name: 'Somewhere to sit', max: 10, got: seat ? 10 : 0, tip: 'Add a seat: a beanbag, stool, armchair or floor cushion.' });
+    R.push({ key: 'rug', name: zone === 'yard' ? 'Something underfoot' : 'A rug', max: 10, got: rug ? 10 : 0, tip: zone === 'yard' ? 'Lay an outdoor rug or stepping stones.' : 'Lay down a rug.' });
+    R.push({ key: 'glow', name: 'Warm light at night', max: 14, got: step(glow, [0, 7, 10, 12, 14]), tip: glow ? 'More glowing lights (up to four) make evenings warmer.' : 'Add a lamp or string lights that glow at night.' });
+    R.push({ key: 'plant', name: 'Plants', max: 14, got: step(plant, [0, 4, 7, 10, 12, 14]), tip: plant ? 'Another houseplant or two brings it to life.' : 'Add a houseplant (🛒 Shop › Houseplants).' });
+    R.push({ key: 'table', name: 'Little touches', max: 10, got: step(table, [0, 3, 5, 7, 9, 10]), tip: 'Put small things on tables and shelves: books, a lamp, a figurine.' });
+    R.push({ key: 'variety', name: 'Variety', max: 16, got: Math.min(16, Math.floor(kinds * 1.5)), tip: 'Mix in different pieces. Each new kind of item adds a little (about eleven kinds fills this).' });
+    R.push({ key: 'harmony', name: 'Pieces that go together', max: 6, got: !topMat ? 0 : topMat[1] >= 4 ? 6 : topMat[1] >= 3 ? 3 : 0, tip: 'Four or more pieces in one material (wood, soft, metal, plants, paper) tie the room together.' });
+    if (zone === 'bedroom') {
+      const styled = ['wall', 'floor', 'bedding', 'curtains'].filter(s => STYLES[s] && state.room[s] && state.room[s] !== STYLES[s][0][0]).length;
+      R.push({ key: 'style', name: 'Your own style', max: 6, got: Math.min(6, styled * 2), tip: 'Change the walls, flooring, bedding or curtains in Room styles (⋯).' });
+    } else R.push({ key: 'style', name: 'Furnished', max: 6, got: n(x => x.D.k === 'floor') >= 3 ? 6 : 0, tip: 'A few more pieces of furniture make it feel lived in.' });
+    if (dupes) R.push({ key: 'dupes', name: 'Too many of the same thing', max: 0, got: -3 * dupes, tip: 'More than three of one item starts to feel like storage.' });
+    return R;
+  },
+  score(zone) {
+    const R = this.rules(zone), max = R.reduce((s, r) => s + r.max, 0), got = R.reduce((s, r) => s + r.got, 0);
+    const score = clamp(Math.round(got / max * 100), 0, 100); return { score, stars: this.stars(score), tier: this.tier(score), rules: R };
+  },
+  hearts(n) { return '♥'.repeat(n) + '♡'.repeat(5 - n); },
+  /* after any change while decorating: celebrate new hearts and pay first-time gifts (quiet = first look this session: no fanfare, but rooms decorated before this update still get their gifts) */
+  check(zone, quiet) {
+    const S = this.S(), c = this.score(zone), was = S.best[zone] || 0;
+    if (c.stars > was) {
+      S.best[zone] = c.stars;
+      if (!quiet && was) { toast(`<b>${this.hearts(c.stars)}</b> Your ${this.ZONES[zone]} feels <b>${c.tier}</b> now.`, 'social'); Sfx.good(); }
+      for (let s = 3; s <= c.stars; s++) { const k = zone + ':' + s; if (!S.paid[k]) { S.paid[k] = 1; earn(this.GIFT[s], `Housewarming gift · ${this.ZONES[zone]} reached ${s} hearts`); } }
+    }
+    return c;
+  },
+  /* the ♥ panel */
+  html(zone) {
+    const c = this.score(zone), next = this.TIERS[c.stars] || null, S = this.S();
+    const toNext = next ? `${next[0] - c.score} more to <b>${next[1]}</b>` : 'As cozy as it gets.';
+    const rest = zone === 'bedroom' ? `<div class="b5-reward">Sleeping here: the first <b>${this.REST[c.stars]}</b> energy you spend each day is free${c.stars < 5 ? ` (${this.REST[Math.min(5, c.stars + 1)]} at ${c.stars + 1} hearts)` : ''}.</div>` : '';
+    const gifts = [3, 4, 5].map(s => `<span class="${S.paid[zone + ':' + s] ? 'got' : ''}">${s}♥ ${money(this.GIFT[s])}${S.paid[zone + ':' + s] ? ' ✓' : ''}</span>`).join('');
+    return `<div class="b5-cozy"><div class="b4-lh"><b>Cozy · ${esc(this.ZONES[zone])}</b><button class="btn sm" data-act="b4View" data-arg="">✕ Close</button></div>`
+      + `<div class="b5-top"><span class="b5-hearts" aria-label="${c.stars} of 5 hearts">${this.hearts(c.stars)}</span><span class="b5-score">${c.score}</span><span class="b5-tier">${c.tier}</span></div>`
+      + `<div class="b5-bar" role="progressbar" aria-valuenow="${c.score}" aria-valuemin="0" aria-valuemax="100"><i style="width:${c.score}%"></i></div><div class="b5-next">${toNext}</div>`
+      + rest + `<div class="b5-gifts">Housewarming gifts: ${gifts}</div>`
+      + `<div class="b5-rules">${c.rules.map(r => { const done = r.max ? r.got >= r.max : false, bad = r.got < 0; return `<div class="b5-rule ${done ? 'done' : ''} ${bad ? 'bad' : ''}"><span class="b5-mark">${bad ? '!' : done ? '✓' : r.got > 0 ? '◐' : '○'}</span><span class="b5-rn"><b>${esc(r.name)}</b>${done ? '' : `<span>${esc(r.tip)}</span>`}</span><span class="b5-pts">${r.max ? `${r.got}/${r.max}` : r.got}</span></div>`; }).join('')}</div></div>`;
+  }
+};
+
+/* well rested: a cozy bedroom's free energy, set each morning */
+MORNING115.push(() => {
+  const S = Cozy.S(), c = Cozy.score('bedroom'); S.rest = Cozy.REST[c.stars]; S.restDay = state.day;
+  if (S.rest) toast(`<b>Well rested</b> · ${Cozy.hearts(c.stars)} bedroom. The first ${S.rest} energy you spend today is free.`, 'social');
+});
+spend = (prev => function (energy, mins) {
+  const S = Cozy.S(), free = S.restDay === state.day ? Math.min(S.rest || 0, energy) : 0;
+  const ok = prev.call(this, energy - free, mins);
+  if (ok && free) S.rest -= free;
+  return ok;
+})(spend);
+
+/* Decorate mode: the ♥ chip, the panel, and a check after every change */
+Build3.render = (prev => function () {
+  prev.call(this); const D = runtime.deco, el = $('#deco'); if (!D || !el) return;
+  const c = Cozy.check(D.zone, !D.cozySeen); D.cozySeen = true;
+  const cats = el.querySelector('.b1-cats');
+  if (cats && !cats.querySelector('[data-act="b5View"]')) cats.insertAdjacentHTML('afterbegin', `<button class="chip b5-chip ${D.view === 'cozy' ? 'on' : ''}" data-act="b5View" aria-label="Cozy score ${c.score}, ${c.stars} of 5 hearts">♥ ${c.score} <small>${c.tier}</small></button>`);
+  if (D.view === 'cozy') {
+    const t = el.querySelector('.b1-tray'); if (t) t.outerHTML = Cozy.html(D.zone);
+    for (const s of ['.b3-catbar', '.b3-note', '.b1-msg']) { const x = el.querySelector(s); if (x) x.hidden = true; }
+  }
+})(Build3.render);
+Object.assign(ACT, { b5View() { const D = runtime.deco; D.view = D.view === 'cozy' ? null : 'cozy'; D.more = false; if (D.view && D.hold) Deco.cancel(); Deco.render(); } });
+(() => {
+  const st = document.createElement('style'); st.id = 'build5-css';
+  st.textContent = `
+.b5-chip{color:#a33a4a;font-weight:800}.b5-chip small{font-weight:600;opacity:.75;margin-left:2px}
+.b5-chip.on{background:#a33a4a;color:#fff}
+.b5-cozy{display:flex;flex-direction:column;gap:6px;overflow-y:auto;min-height:0;max-height:46vh}
+.b5-top{display:flex;align-items:baseline;gap:8px}
+.b5-hearts{font-size:20px;color:#c4475a;letter-spacing:1px}
+.b5-score{font:800 22px var(--f-ui)}.b5-tier{font:700 13px var(--f-ui);opacity:.75}
+.b5-bar{height:8px;border-radius:4px;background:#d9dfcd;overflow:hidden}.b5-bar i{display:block;height:100%;background:linear-gradient(90deg,#e59aa6,#c4475a)}
+.b5-next,.b5-gifts{font:600 11px var(--f-ui);opacity:.8}
+.b5-gifts span{margin-left:6px;opacity:.6}.b5-gifts span.got{opacity:1;color:#2f7d32}
+.b5-reward{font:600 12px/1.3 var(--f-ui);background:#fff2f4;border:1px solid #efc2ca;border-radius:5px;padding:5px 7px}
+.b5-rules{display:flex;flex-direction:column;gap:4px}
+.b5-rule{display:flex;gap:6px;align-items:flex-start;background:#e2e9d5;border:1px solid #b7cba4;border-radius:5px;padding:5px 6px;font:500 12px/1.25 var(--f-ui)}
+.b5-rule.done{opacity:.7}.b5-rule.bad{background:#fbe3df;border-color:#e3a79c}
+.b5-mark{flex:0 0 14px;font-weight:800;text-align:center}.b5-rule.done .b5-mark{color:#2f7d32}
+.b5-rn{flex:1;display:flex;flex-direction:column}.b5-rn span{opacity:.75}
+.b5-pts{font:700 11px var(--f-mono);opacity:.75}
+body.deco-on:not(.touch-ui) #deco>.b5-cozy{flex:1 1 100%;max-height:none}
+@media (orientation:landscape) and (max-height:540px){.b5-cozy{order:4;flex:1 1 auto;max-height:none}}`;
+  document.head.appendChild(st);
+})();
+</script>
 <style id="bagseed-main-menu-style">
 /* Approved community-garden title screen; all rules stay inside this screen. */
 body:has(#screen-title.menu-home:not([hidden])) { background: #e4e8d7; }
