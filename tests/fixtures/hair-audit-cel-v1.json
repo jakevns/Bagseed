@@ -1,0 +1,11 @@
+{
+  "revision": "character-audit-cel-v1",
+  "hashes": {
+    "bald": "fa7428ff2c61f213115bd69f76814800d153eb3b673092217e70c5baf57a1a8a",
+    "short": "601f3c50352b8f1bd7d55cff5c09226e3cf49f75734c3069b90b809cf9286c9f",
+    "buzz": "0a784e95e3edcf7f5a3d3018a7d9c658421a11cbf089662bc93668c6651c8b08",
+    "crop": "b7ff6fee85025af1fad034f5a757f3e8f3f5dbdb0807d735d264e068400761bb",
+    "caesar": "df361d6317b972b131486ec8e0df79b489abed983d3cfb8da551a62005a81b90",
+    "fade": "b9a2519e148a6e071f4e66c8b046693f51e80a5e43937194f44dfa5b65209f84"
+  }
+}

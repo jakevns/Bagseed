@@ -2305,13 +2305,21 @@ const NPC_LOOK = {
   theo: { skin: '#e8b48f', hairC: '#1d1612', hairS: 'buzz', topS: 'garden', shirtC: '#2b2b33', pantsC: '#3a3a44', bottomS: 'joggers', body: 'stocky', pres: 'masc', face: 'round', eyes: 'round', facial: 'goatee', bg: '#f2e4d0', shoesC: '#e9e2d4' },
   marisol: { skin: '#cf9670', hairC: '#4a2c1a', hairS: 'wavy', topS: 'overalls', shirtC: '#e0a33a', glasses: 'square', body: 'slim', pres: 'fem', face: 'soft', eyes: 'lashed', extras: ['freckles'], hat: 'bucket', hatC: '#5fa04a', bg: '#f2e4d0' }
 };
+// One identity is shared by visits, dialogue, and every in-world appearance.
+for(const id of ['marisol','theo','rosalind'])PATIENTS[id].look=NPC_LOOK[id];
+const UNKNOWN_NPC_LOOK=Object.freeze({skin:'#cf9670',hairS:'bald',hairC:'#4a2c1a',facial:'none',topS:'tee',shirtC:'#777d80',pantsC:'#5c6050',body:'average',pres:'neutral',hat:'none',prop:null});
+const unknownNpcWarnings=new Set();
+function unknownNpcLook(id){
+  if(!unknownNpcWarnings.has(id)){console.warn('Unknown NPC id:',id);unknownNpcWarnings.add(id);}
+  return UNKNOWN_NPC_LOOK;
+}
 function playerLook() {
   const p = state.player;
   return { skin: p.skin, hairC: p.hairC, hairS: p.hairS, facial: p.facial, shirtC: p.shirtC, topS: p.topS || p.shirtS, pantsC: p.pantsC, bottomS: p.bottomS, shoesC: p.shoesC, shoesS: p.shoesS, glasses: p.glasses, hat: p.hat, acc: p.acc, pres: p.pres, body: p.body, eyeC: p.eyeC, eyes: p.eyes, brows: p.brows, face: p.face, extras: p.extras };
 }
 function lookFor(who) {
   if (who === 'you' || who === 'player') return Object.assign(playerLook(), { bg: '#e6d9f2' });
-  return NPC_LOOK[who] || NPC_LOOK.doug;
+  return NPC_LOOK[who] || unknownNpcLook(who);
 }
 const pr = (k = 'sub') => (PRONOUNS[(state && state.player.pronouns) || 'they'] || PRONOUNS.they)[k];
 </script>
@@ -6439,7 +6447,7 @@ function lookFor(who) {
   if (NB_DEF[who] && NB_DEF[who].look) return NB_DEF[who].look;
   if (who && who.startsWith('ch_') && CHANNELS[who.slice(3)]) return CHANNELS[who.slice(3)].look;
   if (who === 'cat') return { skin: '#e0a33a', hairC: '#e0a33a', hairS: 'buzz', pres: 'neutral', bg: '#f2e4c4', topS: 'tee', shirtC: '#e0a33a' };
-  return NPC_LOOK[who] || NPC_LOOK.doug;
+  return NPC_LOOK[who] || unknownNpcLook(who);
 }
 const nbLook = id => id === 'doug' ? NPC_LOOK.doug : NB_DEF[id].look;
 

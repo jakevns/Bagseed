@@ -1,0 +1,72 @@
+{
+  "people": {
+    "cast-01-marcus": {
+      "source": "assets/cast-01-marcus.png",
+      "tier": "C"
+    },
+    "cast-05-kenji": {
+      "source": "assets/cast-05-kenji.png",
+      "tier": "C"
+    },
+    "cast-06-mateo": {
+      "source": "assets/cast-06-mateo.png",
+      "tier": "C"
+    },
+    "cast-16-ronan": {
+      "source": "assets/cast-16-ronan.png",
+      "tier": "C"
+    },
+    "cast-24-hugo": {
+      "source": "assets/cast-24-hugo.png",
+      "tier": "C"
+    },
+    "cast-41-shed": {
+      "source": "assets/cast-41-shed.png",
+      "tier": "C"
+    },
+    "cast-48-cure": {
+      "source": "assets/cast-48-cure.png",
+      "tier": "C"
+    },
+    "cast-52-hardwarePT": {
+      "source": "assets/cast-52-hardwarePT.png",
+      "tier": "C"
+    },
+    "cast-58-suit": {
+      "source": "assets/cast-58-suit.png",
+      "tier": "C"
+    },
+    "cast-66-theo": {
+      "source": "assets/cast-66-theo.png",
+      "tier": "C"
+    },
+    "cast-28-dev": {
+      "source": "assets/cast-28-dev.png",
+      "tier": "C"
+    },
+    "cast-14-owen": {
+      "source": "assets/cast-14-owen.png",
+      "tier": "B"
+    },
+    "cast-21-arthur": {
+      "source": "assets/cast-21-arthur.png",
+      "tier": "B"
+    },
+    "cast-26-enzo": {
+      "source": "assets/cast-26-enzo.png",
+      "tier": "B"
+    },
+    "cast-34-1": {
+      "source": "assets/cast-34-1.png",
+      "tier": "B"
+    },
+    "cast-51-gardenPT": {
+      "source": "assets/cast-51-gardenPT.png",
+      "tier": "B"
+    },
+    "cast-19-jun": {
+      "source": "assets/cast-19-jun.png",
+      "tier": "B"
+    }
+  }
+}

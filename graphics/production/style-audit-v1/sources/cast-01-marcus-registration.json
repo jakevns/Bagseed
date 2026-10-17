@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "7b5b929ebb5e1a92404c11c11c40e8ba05d16849110f676d13dda0d3a215a1c2",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        493
+      ],
+      "subject": [
+        154,
+        32,
+        384,
+        493
+      ],
+      "scale": 0.21691973969631237,
+      "output": "cast/registered/cast-01-marcus/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        493
+      ],
+      "subject": [
+        119,
+        36,
+        322,
+        493
+      ],
+      "scale": 0.2188183807439825,
+      "output": "cast/registered/cast-01-marcus/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        493
+      ],
+      "subject": [
+        33,
+        31,
+        264,
+        492
+      ],
+      "scale": 0.21691973969631237,
+      "output": "cast/registered/cast-01-marcus/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        493,
+        418,
+        830
+      ],
+      "subject": [
+        105,
+        25,
+        404,
+        327
+      ],
+      "scale": 0.609271523178808,
+      "output": "cast/registered/cast-01-marcus/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        493,
+        836,
+        830
+      ],
+      "subject": [
+        57,
+        23,
+        359,
+        327
+      ],
+      "scale": 0.6052631578947368,
+      "output": "cast/registered/cast-01-marcus/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        493,
+        1254,
+        830
+      ],
+      "subject": [
+        11,
+        25,
+        312,
+        327
+      ],
+      "scale": 0.609271523178808,
+      "output": "cast/registered/cast-01-marcus/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        830,
+        418,
+        1254
+      ],
+      "subject": [
+        162,
+        2,
+        363,
+        394
+      ],
+      "scale": 0.25510204081632654,
+      "output": "style-audit-v1/actions/cast-01-marcus/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        830,
+        836,
+        1254
+      ],
+      "subject": [
+        132,
+        1,
+        313,
+        394
+      ],
+      "scale": 0.2544529262086514,
+      "output": "style-audit-v1/actions/cast-01-marcus/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        830,
+        1254,
+        1254
+      ],
+      "subject": [
+        54,
+        2,
+        262,
+        394
+      ],
+      "scale": 0.25510204081632654,
+      "output": "style-audit-v1/actions/cast-01-marcus/up.png"
+    }
+  ]
+}

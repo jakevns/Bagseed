@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "16041798b07bec8f93651d0c438f176102bf1014e56599a8778663412614c36e",
+  "height": 104,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        479
+      ],
+      "subject": [
+        109,
+        10,
+        360,
+        479
+      ],
+      "scale": 0.22174840085287847,
+      "output": "cast/registered/cast-21-arthur/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        479
+      ],
+      "subject": [
+        115,
+        10,
+        310,
+        479
+      ],
+      "scale": 0.22174840085287847,
+      "output": "cast/registered/cast-21-arthur/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        479
+      ],
+      "subject": [
+        59,
+        13,
+        299,
+        479
+      ],
+      "scale": 0.22317596566523606,
+      "output": "cast/registered/cast-21-arthur/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        479,
+        418,
+        800
+      ],
+      "subject": [
+        74,
+        14,
+        388,
+        312
+      ],
+      "scale": 0.5859872611464968,
+      "output": "cast/registered/cast-21-arthur/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        479,
+        836,
+        800
+      ],
+      "subject": [
+        56,
+        15,
+        357,
+        312
+      ],
+      "scale": 0.6112956810631229,
+      "output": "cast/registered/cast-21-arthur/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        479,
+        1254,
+        800
+      ],
+      "subject": [
+        30,
+        15,
+        338,
+        312
+      ],
+      "scale": 0.5974025974025974,
+      "output": "cast/registered/cast-21-arthur/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        800,
+        418,
+        1254
+      ],
+      "subject": [
+        127,
+        3,
+        357,
+        436
+      ],
+      "scale": 0.24018475750577367,
+      "output": "style-audit-v1/actions/cast-21-arthur/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        800,
+        836,
+        1254
+      ],
+      "subject": [
+        115,
+        1,
+        329,
+        437
+      ],
+      "scale": 0.23853211009174313,
+      "output": "style-audit-v1/actions/cast-21-arthur/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        800,
+        1254,
+        1254
+      ],
+      "subject": [
+        61,
+        1,
+        305,
+        436
+      ],
+      "scale": 0.23908045977011494,
+      "output": "style-audit-v1/actions/cast-21-arthur/up.png"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ assert.equal(sha(archived),baselineSHA,'The archived baseline changed');
 const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'asset-manifest.json')));
 const encoded=JSON.parse(fs.readFileSync(path.join(art,'encoded/manifest.json')));
 assert.equal(encoded.decodedRGBAEqual,true,'Lossless encoding has not been verified');
-const images={},add=(id,file)=>{const entry=encoded.files[path.relative(root,file)];assert.ok(entry,'Missing encoded image: '+file);assert.equal(sha(fs.readFileSync(file)),entry.sourceSHA256,'Stale encoded asset');const bytes=fs.readFileSync(path.join(root,entry.encoded));assert.equal(sha(bytes),entry.encodedSHA256,'Encoded image checksum differs');images[id]='data:image/webp;base64,'+bytes.toString('base64');return id;};
+const images={},add=(id,file)=>{const entry=encoded.files[path.relative(root,file).replace(/\\/g,'/')];assert.ok(entry,'Missing encoded image: '+file);assert.equal(sha(fs.readFileSync(file)),entry.sourceSHA256,'Stale encoded asset');const bytes=fs.readFileSync(path.join(root,entry.encoded));assert.equal(sha(bytes),entry.encodedSHA256,'Encoded image checksum differs');images[id]='data:image/webp;base64,'+bytes.toString('base64');return id;};
 for(const [id,entry]of Object.entries(manifest.assets))if(!id.startsWith('hair/')&&!id.startsWith('hat/'))add(id,path.join(art,entry.path));
 const customization=JSON.parse(fs.readFileSync(path.join(art,'customization/manifest.json')));
 for(const [source,expected]of Object.entries(customization.sourceSHA256))assert.equal(sha(fs.readFileSync(path.join(art,manifest.sources[source].path))),expected,'Stale customization source: '+source);
@@ -44,7 +44,9 @@ const cast=castManifest.people.map(person=>{
   for(const expression of ['neutral','friendly','concerned'])portraits[expression]=add('cast/'+person.assetId+'/portrait-'+expression,path.join(castRoot,person.portraits[expression]));
   return {id:person.assetId,name:person.name,look:person.look,age:person.age,kid:!!person.kid,aliases:person.aliases,assets,portraits,rig:true};
 });
-assert.equal(cast.length,67,'Authored roster art is incomplete');
+const retiredIdentities=JSON.parse(fs.readFileSync(path.join(castRoot,'sources/retired-identities.json')));
+const activeRoster=JSON.parse(fs.readFileSync(path.join(castRoot,'sources/cast-roster.json'))).people;
+assert.deepEqual(new Set(cast.map(p=>p.id)),new Set(activeRoster.map(p=>p.assetId)),'Authored roster art is incomplete');
 // Small approved pose batch: retain complete drawings, never composite an arm.
 for(const [batch,names] of Object.entries({
   'batch-01':['marcus','ines'],
@@ -57,10 +59,15 @@ for(const [batch,names] of Object.entries({
   'batch-08':['auto','swamp','rosalind','theo','marisol'],
   'batch-09':['cure','lumen','cafePT','gardenPT','hardwarePT'],
   'batch-10':['player','remy','doug','priya','poppy'],
-  'batch-11':['dev','ari','sam','talia','luz']
+  'batch-11':['dev','ari','sam','talia','luz'],
+  ...Object.fromEntries(['12','13','14','15','16','17'].map(n=>{
+    const batch='batch-'+n,sheet=JSON.parse(fs.readFileSync(path.join(art,'actions',batch,'sheet.json')));
+    return [batch,Object.keys(sheet.assetIds)];
+  }))
 })) for(const name of names) {
   const configPath=path.join(art,'actions',batch,'sheet.json');
   const assetId=fs.existsSync(configPath)?JSON.parse(fs.readFileSync(configPath)).assetIds[name]:null;
+  if(retiredIdentities[assetId])continue;
   const person=[...approved,...cast].find(p=>assetId?p.id===assetId:p.id.endsWith('-'+name));
   assert.ok(person,'Missing pose owner: '+name);
   person.actions={};
@@ -69,6 +76,15 @@ for(const [batch,names] of Object.entries({
     images[id]='data:image/png;base64,'+fs.readFileSync(path.join(art,'actions',batch,name,view+'.png')).toString('base64');
     person.actions[view]=id;
   }
+}
+const styleRoot=path.join(art,'style-audit-v1'),styleManifestPath=path.join(styleRoot,'manifest.json');
+if(fs.existsSync(styleManifestPath))for(const[id,spec]of Object.entries(JSON.parse(fs.readFileSync(styleManifestPath)).people)){
+ const person=cast.find(p=>p.id===id);assert.ok(person,'Missing redraw owner: '+id);
+ const registration=JSON.parse(fs.readFileSync(path.join(styleRoot,'sources',id+'-registration.json')));
+ assert.equal(sha(fs.readFileSync(path.join(styleRoot,spec.source))),registration.sourceSHA256,'Stale redraw: '+id);
+ person.actions={};for(const dir of ['down','right','up','left']){
+  const image='action/style-audit/'+id+'/'+dir;images[image]='data:image/png;base64,'+fs.readFileSync(path.join(styleRoot,'actions',id,dir+'.png')).toString('base64');person.actions[dir]=image;
+ }
 }
 const audit=JSON.parse(fs.readFileSync(path.join(root,'docs/graphics/roster-audit.json'))),traits=[];
 function visit(value,location='collections'){
@@ -114,7 +130,7 @@ replaceIfChanged(target,html);
 const characterSources=['graphics/production/sources/renderer.js','graphics/production/sources/face-details.js','graphics/production/sources/hair-batch-01.js','graphics/production/sources/hair-fit-rest.js','graphics/production/sources/build.cjs','graphics/production/customization-v5/detail-landmarks.json','graphics/production/customization-v5/manifest.json','graphics/production/customization-v5/hair-fit.json','graphics/production/customization-v5/register.py'];
 const characterSourcesSHA256=Object.fromEntries(characterSources.map(file=>[file,sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'))]));
 for(const file of ['graphics/production/cast-walk-v1/manifest.json','graphics/production/cast-walk-v1/sources/clocks.js','graphics/production/walk/sources/renderer.js','graphics/production/walk/manifest.json','graphics/production/walk/rig.json','graphics/production/walk/wardrobe-v5/manifest.json','graphics/production/walk/wardrobe-v5/sources/register.py','graphics/production/walk/wardrobe-v5/sources/upper_layer.py','graphics/production/walk/wardrobe-v5/sources/repair_one.py','graphics/production/walk/wardrobe-v5/sources/repack_lower.py','graphics/production/walk/sources/profile_v3.py','graphics/production/walk/sources/affine_footprint.py'])characterSourcesSHA256[file]=sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'));
-const report={...(fs.existsSync(priorReport)?JSON.parse(fs.readFileSync(priorReport)):{}),version:'illustrated-1',approval:'User requested a universal repair for duplicated head/body necks in custom characters.',customizationReview:'review/neck-v14/README.md',hairFitRevision:hairFit.version,hairRuntimeFitRevision:'scalp-fit-12',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),characterRevision:characterCode.match(/renderingRevision:'([^']+)'/)[1],characterPayloadSHA256:sha(characterCode.trim()),characterSourcesSHA256,bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length,bedroomRevision:'bedroom-shell-1',bedRevision:'beds-batch-04',bedCombinations:80,deskRevision:'seedling-desks-1',deskVariations:3,curtainRevision:'curtains-batch-03',curtainSets:6,menuRevision:JSON.parse(fs.readFileSync(path.join(root,'graphics/main-menu/sources/manifest.json'))).revision};
+const report={...(fs.existsSync(priorReport)?JSON.parse(fs.readFileSync(priorReport)):{}),version:'illustrated-1',approval:'User requested character audit repairs merged with the latest game and wardrobe updates.',customizationReview:'docs/graphics/character-audit-results.md',hairFitRevision:hairFit.version,hairRuntimeFitRevision:'scalp-fit-12',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),characterRevision:characterCode.match(/renderingRevision:'([^']+)'/)[1],characterPayloadSHA256:sha(characterCode.trim()),characterSourcesSHA256,bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length,bedroomRevision:'bedroom-shell-1',bedRevision:'beds-batch-04',bedCombinations:80,deskRevision:'seedling-desks-1',deskVariations:3,curtainRevision:'curtains-batch-03',curtainSets:6,menuRevision:JSON.parse(fs.readFileSync(path.join(root,'graphics/main-menu/sources/manifest.json'))).revision};
 Object.assign(report,{approval:'User requested Phase 2 custom wardrobe walking; visual review pending.',customizationReview:'review/custom-walk-v2/README.md',previousCharacterBytes:101055566,walkBytesIncrease:Buffer.byteLength(html)-101055566,walkReviewStatus:walk.status});
 Object.assign(report,{characterDataFile:'public/character-data.js',characterDataSHA256:sha(characterDataScript),characterDataBytes:Buffer.byteLength(characterDataScript)});
 report.packageBytes=Buffer.byteLength(html)+Buffer.byteLength(characterDataScript);

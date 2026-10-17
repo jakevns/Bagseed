@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "ab0c445c5cde630feed60d0195d22305951af752e2e04b1938c208afdcebf871",
+  "height": 104,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        489
+      ],
+      "subject": [
+        152,
+        14,
+        365,
+        489
+      ],
+      "scale": 0.21894736842105264,
+      "output": "cast/registered/cast-05-kenji/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        489
+      ],
+      "subject": [
+        114,
+        20,
+        295,
+        489
+      ],
+      "scale": 0.22174840085287847,
+      "output": "cast/registered/cast-05-kenji/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        489
+      ],
+      "subject": [
+        58,
+        16,
+        260,
+        487
+      ],
+      "scale": 0.2208067940552017,
+      "output": "cast/registered/cast-05-kenji/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        489,
+        418,
+        813
+      ],
+      "subject": [
+        101,
+        16,
+        386,
+        319
+      ],
+      "scale": 0.6072607260726073,
+      "output": "cast/registered/cast-05-kenji/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        489,
+        836,
+        813
+      ],
+      "subject": [
+        65,
+        21,
+        356,
+        320
+      ],
+      "scale": 0.6153846153846154,
+      "output": "cast/registered/cast-05-kenji/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        489,
+        1254,
+        813
+      ],
+      "subject": [
+        32,
+        16,
+        311,
+        319
+      ],
+      "scale": 0.6072607260726073,
+      "output": "cast/registered/cast-05-kenji/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        813,
+        418,
+        1254
+      ],
+      "subject": [
+        150,
+        1,
+        344,
+        427
+      ],
+      "scale": 0.24413145539906103,
+      "output": "style-audit-v1/actions/cast-05-kenji/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        813,
+        836,
+        1254
+      ],
+      "subject": [
+        110,
+        9,
+        304,
+        428
+      ],
+      "scale": 0.24821002386634844,
+      "output": "style-audit-v1/actions/cast-05-kenji/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        813,
+        1254,
+        1254
+      ],
+      "subject": [
+        67,
+        6,
+        271,
+        426
+      ],
+      "scale": 0.24761904761904763,
+      "output": "style-audit-v1/actions/cast-05-kenji/up.png"
+    }
+  ]
+}

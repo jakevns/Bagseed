@@ -1,0 +1,23 @@
+{
+  "ids": [
+    "cast-53-threadsPT",
+    "cast-54-marketPT",
+    "cast-55-communityPT",
+    "cast-56-labPT",
+    "cast-57-officer"
+  ],
+  "prompt": "Create ONE transparent PNG atlas with exactly 5 rows and THREE columns. The FIRST reference is an identity chart: each row is ONE different character shown front/right/back in idle. Preserve each row's exact face, hair silhouette, skin, outfit, age, build, accessories and head/body proportions. NOW DRAW EACH SAME CHARACTER HOLDING THEIR NOSE with thumb and forefinger, mild unpleasant smell reaction. Column 1 front, column 2 right-facing true profile, column 3 back. Static upright planted feet, no crouching or walking. Other hand at side; shoulders and belly remain same size as idle. Same entire figure height and head size as that character's idle identity. Keep kid a child. Do not replace faces, hair or outfits. Clear generous transparent gutters between ALL cells, no text/labels/borders/background/shadows/glow. Fill canvas with clearly separated whole figures. Rows must be evenly spaced. Use second reference for approved Bagseed style: large rounded head ~one-third figure, large dark eyes with white glints, warm dark-brown thin contours, soft rounded short limbs, two or three flat cel tones, solid simplified hair/beards, NO texture noise. Heavy bodies have soft round belly, never square broad shoulders. This is final production game art, not pixel art. Every cell complete head to soles. No head exaggeration compared with first reference. Rows top-to-bottom: June (long blonde curls, pink cardigan, cream tee, black pants), Kai (short brown waves, green tee, navy jeans), Volunteer (short white hair, blue sweatshirt, charcoal pants), Night desk (brown short wavy hair, glasses, navy blazer, white shirt), Officer (woman, brown low bun, navy police cap with gold badge, navy short-sleeve uniform with patches, duty belt, boots; clipboard in other hand).",
+  "source": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-faf8d9a0-87ad-4ce5-9968-e86a7e9fc810.png",
+  "refs": [
+    "C:/Projects/Bagseed/.cache/nose-batch-15-references.png",
+    "C:/Projects/Bagseed/review/characters-v2/assets/master-cast.png"
+  ],
+  "correction": {
+    "prompt": "Edit the FIRST 5x3 atlas, retain transparent background, same dimensions, every position/outfit/body/face/hand pose. Change ONLY hairstyles of ROW TWO green T-shirt man and ROW FOUR glasses navy blazer man across all three columns. Match their short compact gently waved parted hair silhouette from rows two/four of SECOND reference idle chart. They have straight/loose wavy SHORT hair, NOT ringlets, NOT afro, NOT huge fluffy curly hair. Reduce width to hug skull with a few smooth locks; side view exposes ear, back is compact short haircut hugging skull. No other characters or anatomy changed. Keep exact transparent gutters. No texture grain; clean warm outline, 2-3 tone cel shading.",
+    "refs": [
+      "C:/Projects/Bagseed/graphics/production/actions/batch-15/source.png",
+      "C:/Projects/Bagseed/.cache/nose-batch-15-references.png"
+    ],
+    "source": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-6a94bebb-0643-4f01-8870-d8a1fbd16fdd.png"
+  }
+}

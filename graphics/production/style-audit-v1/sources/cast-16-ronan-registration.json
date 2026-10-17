@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "595758fd906aa2a9296d2200acfdc6ae8378536635db912404f1a46b9ee5142c",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        466
+      ],
+      "subject": [
+        117,
+        27,
+        372,
+        465
+      ],
+      "scale": 0.228310502283105,
+      "output": "cast/registered/cast-16-ronan/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        466
+      ],
+      "subject": [
+        121,
+        29,
+        292,
+        466
+      ],
+      "scale": 0.2288329519450801,
+      "output": "cast/registered/cast-16-ronan/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        466
+      ],
+      "subject": [
+        50,
+        29,
+        307,
+        466
+      ],
+      "scale": 0.2288329519450801,
+      "output": "cast/registered/cast-16-ronan/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        466,
+        418,
+        806
+      ],
+      "subject": [
+        55,
+        27,
+        403,
+        321
+      ],
+      "scale": 0.5287356321839081,
+      "output": "cast/registered/cast-16-ronan/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        466,
+        836,
+        806
+      ],
+      "subject": [
+        35,
+        26,
+        374,
+        321
+      ],
+      "scale": 0.5427728613569321,
+      "output": "cast/registered/cast-16-ronan/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        466,
+        1254,
+        806
+      ],
+      "subject": [
+        17,
+        33,
+        361,
+        321
+      ],
+      "scale": 0.5348837209302325,
+      "output": "cast/registered/cast-16-ronan/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        806,
+        418,
+        1254
+      ],
+      "subject": [
+        116,
+        1,
+        363,
+        428
+      ],
+      "scale": 0.234192037470726,
+      "output": "style-audit-v1/actions/cast-16-ronan/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        806,
+        836,
+        1254
+      ],
+      "subject": [
+        124,
+        3,
+        335,
+        429
+      ],
+      "scale": 0.2347417840375587,
+      "output": "style-audit-v1/actions/cast-16-ronan/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        806,
+        1254,
+        1254
+      ],
+      "subject": [
+        50,
+        3,
+        319,
+        424
+      ],
+      "scale": 0.2375296912114014,
+      "output": "style-audit-v1/actions/cast-16-ronan/up.png"
+    }
+  ]
+}

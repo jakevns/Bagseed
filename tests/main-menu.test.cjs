@@ -13,7 +13,7 @@ test('community main menu fits desktop/phone layouts and preserves keyboard, set
     const page=await browser.newPage({viewport:{width:1440,height:960}}),errors=[];
     page.on('pageerror',e=>errors.push(e.message));
     await page.goto(`http://127.0.0.1:${server.address().port}`);
-    await page.evaluate(()=>Promise.all([BagseedMenu.ready,BagseedArt.ready,BagseedBedroom.ready,BagseedBeds.ready,BagseedDesks.ready]));
+    await page.evaluate(()=>BagseedStartup.ready);
     assert.equal(await page.locator('#btnContinue').isDisabled(),true);
     assert.equal(await page.locator('#titleCanvas').isVisible(),false);
     assert.equal(await page.locator('#screen-title h1').innerText(),'Bagseed');
