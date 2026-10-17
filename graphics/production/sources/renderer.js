@@ -599,13 +599,27 @@
   }
   function sprite(look,dir='down',frame=0,breath=0,blink=0,act=0,nose=false,density=1,walking=false) {
     if(!loaded)return cv();const L=normalize(look),signature=key(L)+'|'+dir+'|'+[frame,breath,blink,act,nose,density,walking].join(',');if(cache.has(signature))return cache.get(signature);
-    const person=authoredPerson(L);let source,rig=true;
-    if(person&&nose&&person.actions){source=images.get(person.actions[dir]);rig=false;}
-    else if(person&&person.id!=='player'&&!nose){source=images.get(person.assets[(!person.rig&&(walking||frame)?`${dir}-${frame%(person.walkFrameCount||4)}`:`${dir}-idle`)]);rig=!!person.rig;if(person.walkFrameCount===8&&(walking||frame))source.bagseedCastWalk={id:person.id,dir,frame:frame%8};}
+    const person=authoredPerson(L);let source,rig=true,sniff=false;
+    if(person&&nose&&person.actions?.[dir]){source=images.get(person.actions[dir]);rig=false;}
+    else if(person&&person.id!=='player'){
+      const moving=!nose&&(walking||frame);
+      source=images.get(person.assets[(!person.rig&&moving?`${dir}-${frame%(person.walkFrameCount||4)}`:`${dir}-idle`)]);
+      if(!source)throw new Error('Missing authored NPC idle art: '+person.id+'/'+dir);
+      rig=!!person.rig;sniff=!!nose;
+      if(person.walkFrameCount===8&&moving)source.bagseedCastWalk={id:person.id,dir,frame:frame%8};
+    }
     else if(!nose&&(walking||frame>0)&&(source=authoredWalk(L,dir,frame,!!blink,density))){rig=false;breath=0;act=0;}
     else source=generic(L,dir,nose,!!blink,density);
     const out=animate(source,L,dir,frame,breath,blink,act&&!nose,rig&&!nose,density);
     out.bagseedAuthoredId=person&&person.id!=='player'?person.id:null;
+    if(sniff){
+      // A small sniff emote preserves the complete idle drawing and its size.
+      const probe=cv();probe.getContext('2d').drawImage(out,0,0,96,108);
+      const face=faceCoordinates(probe,L),g=out.getContext('2d');g.save();g.scale(density,density);g.strokeStyle='#62432d';g.lineWidth=.7;g.lineCap='round';
+      const x=face.x+(dir==='left'?-7:7),y=face.mouthY-2;
+      for(let i=0;i<2;i++){g.beginPath();g.moveTo(x+i*2,y+2);g.quadraticCurveTo(x+i*2+1.5,y,x+i*2,y-2);g.stroke();}g.restore();
+      out.bagseedAuthoredNoseFallback=true;
+    }
     if(person&&person.id!=='player'&&L.expr!=='neutral'&&dir!=='up'&&!nose){const g=out.getContext('2d'),f=faceCoordinates(out,L);g.save();g.translate(f.x-32,f.eyeY-79/3);g.scale(1/3,1/3);faceDetails(g,{...L,eyes:'round',eyeC:'#2b1d14',brows:'thin',mouth:'default',nose:'default',ears:'normal',extras:[],marks:[],pierce:[],glasses:'none',acc:'none'},dir);g.restore();}
     if(cache.size>600)cache.delete(cache.keys().next().value);cache.set(signature,out);return out;
   }
