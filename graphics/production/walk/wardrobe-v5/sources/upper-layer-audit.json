@@ -26,7 +26,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 8,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -74,7 +74,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 8,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -124,7 +124,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 3,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -172,7 +172,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 3,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -222,7 +222,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 7,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -270,7 +270,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 7,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -418,7 +418,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 4,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -466,7 +466,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 4,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -516,7 +516,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 10,
+      "restoredSkinPixels": 3,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -564,7 +564,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 10,
+      "restoredSkinPixels": 3,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -614,7 +614,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 6,
+      "restoredSkinPixels": 18,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -662,7 +662,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 6,
+      "restoredSkinPixels": 18,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -712,7 +712,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 10,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -760,7 +760,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 0,
+      "restoredSkinPixels": 10,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -810,7 +810,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 1126,
+      "restoredSkinPixels": 1154,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -858,7 +858,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 1126,
+      "restoredSkinPixels": 1154,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -908,7 +908,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 21,
+      "restoredSkinPixels": 1,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -956,7 +956,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 21,
+      "restoredSkinPixels": 1,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -1104,7 +1104,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 16,
+      "restoredSkinPixels": 12,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -1152,7 +1152,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 16,
+      "restoredSkinPixels": 12,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -1202,7 +1202,7 @@
     },
     {
       "frame": "right/4",
-      "restoredSkinPixels": 57,
+      "restoredSkinPixels": 10,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },
@@ -1250,7 +1250,7 @@
     },
     {
       "frame": "left/4",
-      "restoredSkinPixels": 57,
+      "restoredSkinPixels": 10,
       "missingSkinPixels": 0,
       "sourcePixelsUnchanged": true
     },

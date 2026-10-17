@@ -1,0 +1,48 @@
+{
+  "errors": {
+    "measuredNeck": 1.23,
+    "handL": 1.23
+  },
+  "maxKeypointError": 1.23,
+  "visibleHandsMeasured": 1,
+  "limbCoreIoU": 0.8786470436354248,
+  "groundError": 0.0,
+  "uniformScale": 0.0827171180905348,
+  "rotationDegrees": 2.0,
+  "finalSourceToCanvasTranslation": [
+    17.51533872513574,
+    69.28570265997661
+  ],
+  "resamplingPasses": 1,
+  "sourceLandmarks": {
+    "measuredNeck": [
+      49.0,
+      78.34210526315789
+    ],
+    "handL": [
+      58.69583333333333,
+      105.19166666666666
+    ]
+  },
+  "targetLandmarks": {
+    "measuredNeck": [
+      48.666666666666664,
+      78.24
+    ],
+    "handL": [
+      55.8014705882353,
+      103.80514705882354
+    ]
+  },
+  "accepted": true,
+  "source": "wardrobe-v5/arm-v7/assets/top-hoodie-contact.png",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "frame": 4,
+  "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+  "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+}

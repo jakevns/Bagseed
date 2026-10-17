@@ -1,0 +1,48 @@
+{
+  "errors": {
+    "measuredNeck": 1.293,
+    "handL": 1.293
+  },
+  "maxKeypointError": 1.293,
+  "visibleHandsMeasured": 1,
+  "limbCoreIoU": 0.8597986057319907,
+  "groundError": 0.0,
+  "uniformScale": 0.07898477649641374,
+  "rotationDegrees": 2.0,
+  "finalSourceToCanvasTranslation": [
+    23.077280301734916,
+    71.08205499282619
+  ],
+  "resamplingPasses": 1,
+  "sourceLandmarks": {
+    "measuredNeck": [
+      49.0,
+      78.44067796610169
+    ],
+    "handL": [
+      59.26744186046511,
+      104.85142118863048
+    ]
+  },
+  "targetLandmarks": {
+    "measuredNeck": [
+      48.666666666666664,
+      78.24
+    ],
+    "handL": [
+      55.8014705882353,
+      103.80514705882354
+    ]
+  },
+  "accepted": true,
+  "source": "wardrobe-v5/arm-v7/assets/top-pjs-contact.png",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "frame": 4,
+  "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+  "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+}
