@@ -1,0 +1,30 @@
+{
+  "status": "approved; final merged validation passed",
+  "entryPoint": "public/index.html",
+  "buildAndSourceChecks": "passed",
+  "heaterPurchaseDeliveryControlsSaveReload": "passed",
+  "starterTentLayeringZipperSaveReload": "passed",
+  "allTentPlayerDepth": "passed",
+  "nativeRoomClimateAndHeaterControlsUnchanged": true,
+  "originalSourceArtPreserved": true,
+  "losslessRGBAIdentical": true,
+  "characterRevisionPreserved": "custom-walk-arm-layer-v6",
+  "nightButtonGlowsPaintBeforeOccluders": true,
+  "bedroomWindowStation": true,
+  "nearbyControlsAndSaveReload": "passed",
+  "doorwayClear": true,
+  "unrelatedTentAccessPreserved": true,
+  "nightHeaterEmissionSurvivesRoomTint": true,
+  "nightHeaterEmissionPlayerOcclusion": "passed both tiers",
+  "daytimeLightingPreserved": true,
+  "poweredOffEmissionAbsent": true,
+  "windowStationOrder": [
+    "watering jug",
+    "air conditioner",
+    "heater"
+  ],
+  "windowStationSideBySide": true,
+  "mergedMain": "27515f9",
+  "finalMergedTests": 8,
+  "phoneDecoratingPreserved": true
+}

@@ -892,11 +892,11 @@ EQ.heater = [{ name: 'No heater', price: 0, watts: 0 },
 { name: 'Old Space Heater', brand: 'Toastwell', price: 24.99, watts: 420, maxD: 10, manual: true, fail: .06, desc: 'Two settings: LOW and HIGH. Smells like burning dust for the first hour. Every time.', review: [2, 'Kept my toes warm and my closet warmer. Tripped the breaker twice.'] },
 { name: 'Thermo-Cube Digital Heater', brand: 'Thermo-Cube', price: 79, watts: 330, maxD: 14, thermo: true, eff: .85, fail: .012, desc: 'Set a temperature. It holds it. Tip-over switch and everything.', review: [5, 'My closet has a thermostat now. My apartment does not.'] }];
 EQ.ac = [{ name: 'No air conditioner', price: 0, watts: 0 },
-{ name: 'Rattlebox Window AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'Wedged in the bedroom window with cardboard. Cools the whole room (and every tent in it). LOW and HIGH. Drips on everything.', review: [3, 'Loud. Cold. Loud.'] },
+{ name: 'Rattlebox Compact AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'A rattly little floor cooler with LOW and HIGH settings. Cools the whole room (and every tent in it). Loud, dependable, and a little drippy.', review: [3, 'Loud. Cold. Loud.'] },
 { name: 'Polar Pal Digital AC', brand: 'Polar Pal', price: 289, watts: 250, maxD: 16, thermo: true, eff: .82, fail: .012, desc: 'Portable AC with a thermostat and a hose you will trip over.', review: [5, 'Heat wave? What heat wave.'] }];
 EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
-{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools to a set point automatically.', review: [5, 'Paid for itself the first heat wave.'] },
-{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Barely sips power.', review: [5, 'It knew a cold snap was coming before I did.'] }];
+{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools automatically. Replaces separate heaters and ACs in this room, moving them to Unused gear.', review: [5, 'Paid for itself the first heat wave.'] },
+{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Replaces separate room heaters and ACs, moving them to Unused gear.', review: [5, 'It knew a cold snap was coming before I did.'] }];
 EQ.ctrl = [{ name: 'No controller', price: 0, watts: 0 },
 { name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Sets digital heaters, ACs, humidifiers and dehumidifiers to each stage automatically, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
 LOC_SLOTS.push('heater', 'ac', 'hvac', 'ctrl');
@@ -2631,10 +2631,11 @@ const RoomArt = {
     state.packages.forEach((pk, i) => { const x = 276 - i * 15, y = 112 + (i % 2) * 6, b = settings.reduced ? 0 : Math.round(Math.max(0, Math.sin(t * 5 + i) * 1.5)); items.push({ y: y + 10, d: () => { groundShadow(c, x + 6, y + 10, 14); R(c, x, y - b, 13, 10, '#b98a52'); R(c, x, y - b, 13, 2, '#cfa06a'); R(c, x + 12, y - b, 1, 10, '#8a6436'); R(c, x + 5, y - b, 3, 10, '#e8d7a8'); R(c, x + 1, y + 4 - b, 3, 2, '#fff'); this.hit('pkg:' + i, x - 1, y - 3, 15, 14, 'Package!', null, 'item'); } }); });
     for (const loc of ['closet', 'tent2']) {
       const L = state.locations[loc]; if (loc === 'tent2' && !L.owned) continue; const P = DEV_POS[loc];
-      if (L.equip.dehum) items.push({ y: P.dehum[1] + 16, d: () => { groundShadow(c, P.dehum[0] + 6, P.dehum[1] + 16, 14); Gear.dehum(c, P.dehum[0], P.dehum[1], L.equip.dehum, L.dehumOn || L.equip.dehum === 2, t); this.hit('dehum:' + loc, P.dehum[0] - 1, P.dehum[1] - 1, 14, 18, EQ.dehum[L.equip.dehum].name, null, 'equip'); } });
-      if (L.equip.heater) items.push({ y: P.heater[1] + 12, d: () => { const on = envFor(loc).hvac.units.some(u => u.dir > 0); runtime.drawLoc = loc; groundShadow(c, P.heater[0] + 6, P.heater[1] + 12, 14); Gear.heater(c, P.heater[0], P.heater[1], L.equip.heater, on, t); this.hit('heater:' + loc, P.heater[0] - 1, P.heater[1] - 3, 14, 16, EQ.heater[L.equip.heater].name, null, 'equip'); } });
+      if (L.equip.dehum && !window.BagseedDehumidifiers?.handles(loc)) items.push({ y: P.dehum[1] + 16, d: () => { groundShadow(c, P.dehum[0] + 6, P.dehum[1] + 16, 14); Gear.dehum(c, P.dehum[0], P.dehum[1], L.equip.dehum, L.dehumOn || L.equip.dehum === 2, t); this.hit('dehum:' + loc, P.dehum[0] - 1, P.dehum[1] - 1, 14, 18, EQ.dehum[L.equip.dehum].name, null, 'equip'); } });
+      const heater = window.BagseedRoomClimate?.heaterPlacement(loc) || P.heater;
+      if (L.equip.heater) items.push({ y: heater[1] + 12, d: () => { const on = envFor(loc).hvac.units.some(u => u.dir > 0); runtime.drawLoc = loc; groundShadow(c, heater[0] + 6, heater[1] + 12, 14); Gear.heater(c, heater[0], heater[1], L.equip.heater, on, t); this.hit('heater:' + loc, heater[0] - 1, heater[1] - 3, 14, 16, EQ.heater[L.equip.heater].name, null, 'equip'); } });
     }
-    items.push({ y: 113, d: () => { Gear.can(c, 300, 103, state.gear.water); this.hit('can', 298, 98, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
+    items.push({ y: 113, d: () => { const [canX, canY] = window.BagseedRoomClimate?.waterPlacement() || [300, 103]; Gear.can(c, canX, canY, state.gear.water); this.hit('can', canX - 2, canY - 5, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
     if (state.gear.camera === 2) items.push({ y: 118, d: () => Gear.camera(c, 206, 100, 2) });
     Actors.pushPlayer(items, c, t); Actors.addTo(items, c, t, 'bedroom');
     if (runtime.visitor) items.push({ y: 100, d: () => { groundShadow(c, 306, 100, 12); drawPerson(c, 306, 100, lookFor(runtime.visitor), 1, { dir: 'left', frame: runtime.visitor === 'rosalind' && !settings.reduced ? Math.floor(t * 2) % 2 * 2 : 0, breath: Math.floor(t / 1.6) % 2, blink: idleBlink(t, 3) }); } });
@@ -3403,7 +3404,7 @@ const Events = {
       if (e.sensor && !F.sensor && chance((EQ.sensor[e.sensor].fail || 0) * hm)) { F.sensor = true; queue({ t: 'note', text: 'Your sensor reads 112°F. Probably not true. Click it to reset.', kind: 'warn' }); }
       if (e.humid && e.humid < 3 && !F.humStuck && chance((EQ.humid[e.humid].fail || 0) * hm)) { F.humStuck = true; queue({ t: 'note', text: 'The humidifier is stuck on HIGH. It\'s raining in the tent. Click it.', kind: 'bad' }); }
       if (e.heater === 1 && locOn(L, 'heater') && !F.heatTrip && chance(.06 * hm * q('heater'))) { F.heatTrip = true; queue({ t: 'note', text: 'The old space heater tripped the breaker and smells like burnt dust. Reset it in Grow Space Controls.', kind: 'bad' }); }
-      if (e.ac === 1 && locOn(L, 'ac') && !F.acIce && chance(.05 * hm * q('ac') * (state.outTemp > 90 ? 1.8 : 1))) { F.acIce = true; queue({ t: 'note', text: 'The window AC iced over and stopped cooling. Let it thaw in Grow Space Controls.', kind: 'warn' }); }
+      if (e.ac === 1 && locOn(L, 'ac') && !F.acIce && chance(.05 * hm * q('ac') * (state.outTemp > 90 ? 1.8 : 1))) { F.acIce = true; queue({ t: 'note', text: 'The compact AC iced over and stopped cooling. Let it thaw in Grow Space Controls.', kind: 'warn' }); }
       if (e.light && chance(.025 * hm) && plantsIn(loc).length) { F.timer = true; queue({ t: 'note', text: 'The light timer failed overnight. The light stayed on all night.', kind: 'warn' }); for (const p of plantsIn(loc)) p.stress += 8; }
     }
     if (fOn && chance(.022 * hm) && state.day > 4) { F.outage = 6; queue({ t: 'note', text: 'Power outage! Lights are off for a few hours.', kind: 'bad' }); }
@@ -5696,7 +5697,7 @@ Object.assign(SceneArt, {
     const L = state.locations[loc], pid = L.slots[i], p = pid && state.plants[pid];
     if (!unlocked) { this.hit('bedplot:' + i, x - 22, y - 10, 44, 18, 'Raised bed (outdoor planting is locked)', [x, y + 12], 'plant'); return; }
     if (p && (p.stage === S.drying || p.stage === S.finished && p.dry)) {
-      R(c, x - 1, y - 12, 2, 4, '#7d6a3c'); R(c, x - 6, y - 22, 14, 9, '#f2e4c4'); R(c, x - 6, y - 22, 14, 1, '#ffffff'); pxTextTiny(c, p.stage === S.drying ? Math.round((p.dry ? p.dry.prog : 0) * 100) + '%' : 'OK', x - 4, y - 20, '#2b1d14');
+      RoomArt.dryTag(c, x - 8, y - 26, p, loc);
       this.hit('plant:' + loc + ':' + i, x - 20, y - 26, 40, 30, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (dry · ready to jar)'), [x, y + 12], 'plant'); return;
     }
     if (p) {
@@ -7495,7 +7496,7 @@ const Greenhouse = {
   },
   slot(c, i, x, y, t) {
     const L = state.locations.gh, pid = L.slots[i], p = pid && state.plants[pid], walk = [ghLayout().box[0] + ghLayout().box[2] / 2, ghLayout().box[1] + ghLayout().box[3] + 14];
-    if (p && (p.stage === S.drying || (p.stage === S.finished && p.dry))) { R(c, x - 1, y - 4, 2, 4, '#7d6a3c'); R(c, x - 6, y - 14, 14, 9, '#f2e4c4'); pxTextTiny(c, p.stage === S.drying ? Math.round((p.dry ? p.dry.prog : 0) * 100) + '%' : 'OK', x - 4, y - 12, '#2b1d14'); RoomArt.hit('plant:gh:' + i, x - 16, y - 18, 32, 22, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (ready to jar)'), walk, 'plant'); return; }
+    if (p && (p.stage === S.drying || (p.stage === S.finished && p.dry))) { RoomArt.dryTag(c, x - 8, y - 18, p, 'gh'); RoomArt.hit('plant:gh:' + i, x - 16, y - 18, 32, 22, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (ready to jar)'), walk, 'plant'); return; }
     if (p) { const s = PlantArt.draw(c, p, x, y, 1, t, .6); Gear.pot(c, x, y, L.equip.pot || 2, p.water); const hgt = Math.min(s.h, 110); RoomArt.hit('plant:gh:' + i, x - 16, y - hgt, 32, hgt + 10, p.name + ' · ' + STAGES[p.stage].name, walk, 'plant'); }
     else { Gear.pot(c, x, y, L.equip.pot || 2, 0); RoomArt.hit('slot:gh:' + i, x - 9, y - 6, 18, 16, 'Empty greenhouse pot', walk, 'plant'); }
   }
@@ -12745,8 +12746,7 @@ const growroomArt114w = SceneArt.growroom.bind(SceneArt);
 SceneArt.growroom = function (c, t) {
   growroomArt114w(c, t);
   const T = Water.S().tanks.growroom;
-  if (T.has) { drawTank(c, 384, 132, T.level / WATER.tankDays, T.level); RoomArt.hit('tank:growroom', 382, 128, 28, 36, `Grow-room drip tank · ${T.level}/${WATER.tankDays} days`, [396, 176], 'item'); }
-  else RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
+  if (!T.has) RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
 };
 const grSolids114w = SCENES.growroom.solids;
 SCENES.growroom.solids = function () { const s = grSolids114w.call(this); if (Water.S().tanks.growroom.has) s.push([384, 154, 22, 10]); return s; };
@@ -12765,6 +12765,13 @@ INIT114.push((st) => {
   }
 });
 
+function drawRainBarrel(c, x, y, frac, t = 0) {
+  c.save(); c.translate(x - 210, y - 50);
+    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
+    const f = clamp(frac, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
+    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+  c.restore();
+}
 /* backyard rain barrel art (under the downspout, between the AC unit and the hose reel) */
 const yardAddTo114w = Actors.addTo.bind(Actors);
 Actors.addTo = function (items, c, t, scene) {
@@ -12774,9 +12781,7 @@ Actors.addTo = function (items, c, t, scene) {
   items.push({ y: 72, d: () => {
     R(c, 214, 8, 3, 46, '#8a9aa6'); R(c, 214, 8, 1, 46, '#aab8c2');                     // downspout
     if (!B.has) { RoomArt.hit('barrelspot', 204, 46, 30, 26, 'Spot for a rain barrel (LeafCart › Water & Pots)', [219, 84], 'structure'); return; }
-    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
-    const f = clamp(B.level / WATER.barrelCap, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
-    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+    drawRainBarrel(c, 210, 50, B.level / WATER.barrelCap, t);
     if ((WATER.rainHr[state.weather] || 0) && !settings.reduced) R(c, 215, 46 + Math.floor(t * 8) % 6, 1, 2, '#bfe6ff');
     RoomArt.hit('barrel', 206, 46, 28, 28, `Rain barrel · ${Math.round(B.level)}/${WATER.barrelCap} gal`, [219, 84], 'item');
   } });
@@ -12888,7 +12893,7 @@ function plantCamArt(cv, loc) {
   const ps = plantsIn(loc), n = Math.max(1, slotCount(loc)), lightOn = isLightOn(loc);
   if (!out && lightOn) { c.fillStyle = 'rgba(255,240,200,.16)'; c.fillRect(0, 0, W, H); }
   if (!out && !lightOn) { c.fillStyle = 'rgba(10,10,30,.55)'; c.fillRect(0, 0, W, H); }
-  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6; try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } R(c, x - 6, base, 12, 5, '#7a4e2a'); });
+  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6, potTier = state.locations[loc].equip.pot || (loc === 'gh' ? 2 : 1), newPot = loc !== 'outdoor' && window.BagseedWaterPots?.loaded; if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water); try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water, true); else R(c, x - 6, base, 12, 5, '#7a4e2a'); });
   // camera overlay: timestamp + REC dot, scanlines
   for (let y = 0; y < H; y += 3) { c.fillStyle = 'rgba(0,0,0,.08)'; c.fillRect(0, y, W, 1); }
   R(c, 3, 3, 3, 3, Math.floor(performance.now() / 600) % 2 ? '#ff5a4f' : '#7a2c22'); pxText(c, clock(state.minute), 9, 3, 1, '#e8ffd0');
@@ -12966,13 +12971,13 @@ Panels.space = function (loc) {
 };
 Object.assign(ACT, { camInstall(loc) { GrowCam.install(loc); }, camRemove(loc) { GrowCam.remove(loc); }, remoteView(loc) { Panels.spaceRemote(loc); } });
 const equipPanel114 = Panels.equip;
-Panels.equip = function (slot, loc) { if (!Access.atLoc(loc)) { Access.denyLoc(loc); return Panels.spaceRemote(loc); } return equipPanel114.call(Panels, slot, loc); };
+Panels.equip = function (slot, loc) { if (!Access.atLoc(loc) && !window.BagseedRoomClimate?.canControl(slot, loc)) { Access.denyLoc(loc); return Panels.spaceRemote(loc); } return equipPanel114.call(Panels, slot, loc); };
 
 /* ---------------- action guards: re-checked at the moment an action runs ---------------- */
 const LOC_ACTS = { door: a => a, sched: a => a.split(':')[0], humid: a => a.split(':')[0], humidTimer: a => a, dehum: a => a, dehumB: a => a.split(':')[0], fanSpd: a => a.split(':')[0], exSpd: a => a.split(':')[0], heatMode: a => a.split(':')[0], acMode: a => a.split(':')[0], pwr: a => a.split(':')[0], pwrSet: a => a.split(':')[0], pwrB: a => a.split(':')[0], filterReplace: a => a, filterInspect: a => a, ghSched: () => 'gh', spaceTab: a => a };
 for (const [k, toLoc] of Object.entries(LOC_ACTS)) {
   const f = ACT[k]; if (!f) continue;
-  ACT[k] = function (arg) { const loc = safeRun('acc', () => toLoc(String(arg))); if (loc && LOC_DEF[loc] && !Access.atLoc(loc)) { Access.denyLoc(loc); if (k === 'spaceTab') Panels.spaceRemote(loc); return; } return f.call(ACT, arg); };
+  ACT[k] = function (arg) { const loc = safeRun('acc', () => toLoc(String(arg))); if (loc && LOC_DEF[loc] && !Access.atLoc(loc) && !window.BagseedRoomClimate?.canAct(k, arg)) { Access.denyLoc(loc); if (k === 'spaceTab') Panels.spaceRemote(loc); return; } return f.call(ACT, arg); };
 }
 const PLANT_ACTS = { care: () => curPlant(), train: () => curPlant(), inspect: a => state.plants[a], movePlant: a => state.plants[String(a).split(':')[0]], hardenPlant: a => state.plants[a], collectPollen: a => state.plants[a], pollinateWith: a => state.plants[String(a).split(':')[0]], plantTab: () => curPlant() };
 for (const [k, toP] of Object.entries(PLANT_ACTS)) {
@@ -12989,7 +12994,7 @@ doInspect = function (pid) { const p = state.plants[pid]; if (p && !Access.atPla
 const moverMove114 = Mover.move.bind(Mover);
 Mover.move = function (pid, loc, slot, confirmed) { const p = state.plants[pid]; if (p && !Access.atPlant(p)) { Access.denyPlant(p); return; } return moverMove114(pid, loc, slot, confirmed); };
 /* range sliders (humidity / temperature targets) are per-tent settings too */
-document.addEventListener('input', e => { const el = e.target, k = el.dataset && el.dataset.input; if (!k || !el.dataset.loc || !['humidTarget', 'dehumTarget', 'heatTo', 'coolTo'].includes(k)) return; if (!Access.atLoc(el.dataset.loc)) { e.stopImmediatePropagation(); Access.denyLoc(el.dataset.loc); renderPanel(); } }, true);
+document.addEventListener('input', e => { const el = e.target, k = el.dataset && el.dataset.input; if (!k || !el.dataset.loc || !['humidTarget', 'dehumTarget', 'heatTo', 'coolTo'].includes(k)) return; if (!Access.atLoc(el.dataset.loc) && !window.BagseedRoomClimate?.canInput(k, el.dataset.loc)) { e.stopImmediatePropagation(); Access.denyLoc(el.dataset.loc); renderPanel(); } }, true);
 ACT.openSpace = loc => Panels.space(loc || undefined);
 
 /* =====================================================================
@@ -15803,7 +15808,22 @@ const Gear115 = {
     }
     // instances that claim a location which no longer has that piece (stolen, removed by an event): they're gone
     for (const it of this.all()) if (it.at && !seen.has(it.iid)) { G.log.push({ day: state.day, iid: it.iid, name: this.name(it), what: 'lost' }); delete G.items[it.iid]; }
+    // Existing saves also retain redundant room heaters/ACs as owned unused gear.
+    for (const loc of ownedLocs()) if (state.locations[loc].equip.hvac) this.parkClimate(loc);
     if (G.log.length > 60) G.log.splice(0, G.log.length - 60);
+  },
+  climatePeers(loc) {
+    const room = lungRoomOf(loc);
+    return room ? ownedLocs().filter(other => lungRoomOf(other) === room) : [loc];
+  },
+  parkClimate(loc) {
+    const parked = [];
+    for (const other of this.climatePeers(loc)) for (const slot of ['heater', 'ac']) {
+      const L = state.locations[other], tier = L?.equip[slot]; if (!tier) continue;
+      const it = this.at(other, slot) || this.create(slot, tier, { at: other, src: 'migrated', cond: L.cond?.[slot] });
+      it.at = null; this.clear(slot, other); if (L.on) L.on[slot] = false; parked.push(it);
+    }
+    return parked;
   },
   /* where can this go? */
   targets(it) {
@@ -15816,6 +15836,10 @@ const Gear115 = {
     if (this.isGlobal(it.slot)) return { ok: true };
     if (!LOC_DEF[loc] || !locOwned(loc)) return { ok: false, why: 'You don\'t have that grow space.' };
     if (!locAccepts(loc, it.slot)) return { ok: false, why: `${locName(loc)} has no spot for a ${SLOT_NAME[it.slot].toLowerCase()}.` };
+    if (['heater', 'ac'].includes(it.slot)) {
+      const combined = this.climatePeers(loc).find(other => state.locations[other]?.equip.hvac);
+      if (combined) return { ok: false, why: `${EQ.hvac[state.locations[combined].equip.hvac].name} already heats and cools this whole room. Remove it before installing a separate heater or AC.` };
+    }
     if (EQ[it.slot][it.tier].tentOnly && LOC_DEF[loc].kind === 'closet') return { ok: false, why: `${this.name(it)} is too big for the starter tent. It needs a real tent.` };
     if (it.slot === 'pot' && LOC_DEF[loc].kind !== 'closet' && LOC_DEF[loc].kind !== 'tent') return { ok: false, why: 'Outdoor beds and the greenhouse have built-in containers.' };
     return { ok: true };
@@ -15847,10 +15871,11 @@ const Gear115 = {
       if (cur) { const r = this.canRemove(cur); if (!r.ok) { toast(esc(r.why), 'warn'); return false; } cur.at = null; }
       const firstLight = it.slot === 'light' && (state.story === 'wait' || state.story === 'light');
       this.apply(it.slot, it.tier, loc, it.cond); it.at = loc;
+      const parked = it.slot === 'hvac' ? this.parkClimate(loc) : [];
       state.stats.upgrades++; state.rep.equipment += .3; runtime.flash = .8;
       if (firstLight) { setStory(state.locations.closet.equip.pot ? 'plant' : 'container'); think(it.tier === 1 ? 'It\'s... purple. Very purple. The box says PROFESSIONAL six times.' : 'Oh, that\'s a real light.', 4500); }
       Sfx.good(); safeRun('ach', checkAch); updateHUD(); bgCache.clear();
-      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}`, 'social');
+      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}${parked.length ? ` ${parked.map(item => esc(this.name(item))).join(' and ')} moved to <b>Unused gear</b>; this unit heats and cools the whole room.` : ''}`, 'social');
       SaveSys.request('gear-install'); return true;
     } finally { runtime.gearBusy = false; }
   },
@@ -17080,17 +17105,6 @@ drawExtraIcon = function (ctx, cv, id) {
 };
 const drawDecorIcon115a = drawDecorIcon;
 drawDecorIcon = function (ctx, cv, id) { if (PROD_ART[id]) { PROD_ART[id](cv); return; } return drawDecorIcon115a(ctx, cv, id); };
-
-/* ART02: the installed room reservoir in the grow room matches its icon: lid, fill cap, level window, drip lines to the tents */
-const growroomArt115 = SceneArt.growroom.bind(SceneArt);
-SceneArt.growroom = function (c, t) {
-  growroomArt115(c, t);
-  const T = Water.S().tanks.growroom; if (!T.has) return;
-  const x = 384, y = 132;
-  R(c, x + 7, y - 4, 8, 2, '#7fd4ff');                                         // fill cap
-  R(c, x + 27, y + 26, 1, 4, '#2b2b33'); R(c, x + 27, y + 29, 16, 1, '#2b2b33'); // drip line toward the tents
-  for (const loc of ['tent4', 'tent5']) if (locOwned(loc)) { const g = TentArt.geo[loc]; if (g) { R(c, g.x + g.w - 4, g.y + g.h - 6, 1, 4, '#2b2b33'); R(c, g.x + g.w - 6, g.y + g.h - 3, 4, 1, '#2b2b33'); } }
-};
 
 /* ---------------- ART04: seed packets ---------------- */
 const PKT_MOTIF = {
@@ -26555,15 +26569,967 @@ RoomArt.drawSlots = (prev => function (c, loc, t) {
   const self = this, hit = self.hit, L = state.locations[loc], pos = SLOT_POS[loc] || [], tall = {};
   pos.forEach(([x, y], i) => {
     if (L.slots[i]) return; const p = GrowPotGarden.at(loc, i); if (!p) return;
-    const sp = GP.sp(p.sp), st = GP.stageOf(p); tall[i] = Math.round(sp.h * 1.4) + 6;
-    safeRun('gpgDraw', () => GPArt.draw(c, p.sp, st, x, y + 1, t, 1.4));
+    const sp = GP.sp(p.sp); tall[i] = Math.round(sp.h * 1.4) + 6 + (window.BagseedWaterPots?.loaded ? BagseedWaterPots.gardenLift(p.sp, GP.stageOf(p)) : 0);
+    // Draw each garden plant with its own pot below, in slot order.
   });
   self.hit = function (hid, x, y, w, h, label, ...rest) {
     const m = /^slot:([^:]+):(\d+)$/.exec(hid);
     if (m && m[1] === loc) { const i = +m[2], p = GrowPotGarden.at(loc, i); if (p) { const sp = GP.sp(p.sp), st = GP.stageOf(p), xy = pos[i], H = tall[i] || 20; return hit.call(this, 'gslot:' + loc + ':' + i, xy[0] - 12, xy[1] - H, 24, H + 10, `${sp.name} · ${['Sprouting', 'Young', 'Growing', GP_KIND[sp.grp] === 'flower' ? 'In bloom' : 'Ready to harvest'][st]}`, ...rest); } }
     return hit.call(this, hid, x, y, w, h, label, ...rest);
   };
-  try { return prev.call(this, c, loc, t); } finally { self.hit = hit; }
+  const pot = Gear.pot;
+  Gear.pot = function (ctx, x, y, n, wet, ...rest) {
+    const i = pos.findIndex(xy => xy[0] === x && xy[1] === y), p = i >= 0 && !L.slots[i] && GrowPotGarden.at(loc, i);
+    if (ctx === c && p) {
+      const art = window.BagseedWaterPots;
+      if (art?.loaded) return art.gardenPot(ctx, p, x, y, n, t);
+      safeRun('gpgDraw', () => GPArt.draw(ctx, p.sp, GP.stageOf(p), x, y + 1, t, 1.4));
+      wet = p.water;
+    }
+    return pot.call(this, ctx, x, y, n, wet, ...rest);
+  };
+  try { return prev.call(this, c, loc, t); } finally { self.hit = hit; Gear.pot = pot; }
 })(RoomArt.drawSlots);
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 1 · phones first
+   On touch screens Decorate mode takes the whole stage: the HUD, goal,
+   joystick and camera button step aside and a slim tray sits at the
+   bottom. The held item carries its own ✓ ⟳ ✕ buttons. Drag an item with
+   a finger (it floats above the finger so it stays visible), drag one up
+   out of the tray, drag empty floor to look around, pinch or ＋/－ to
+   zoom. Mouse play keeps the existing panel and click-to-place.
+   ===================================================================== */
+const Build1 = {
+  LIFT: 44,   // css px the held item floats above the finger
+  SLOP: 8,    // css px before a press becomes a drag
+  PAD: 10,    // css px of extra grab area around placed items
+  EDGE: 28,   // css px from the stage edge that scrolls the view while dragging
+  g: null,    // the active canvas gesture
+  tr: null,   // the active drag out of the tray
+  ptrs: new Map(),
+  eatUntil: 0,
+  on() { const D = runtime.deco; return !!(D && D.touchUI); },
+  buzz(p) { try { if (navigator.vibrate && !settings.reduced) navigator.vibrate(p); } catch (_) { } },
+  w(px) { return px * View.dpr / View.zoom; },
+  relayout() { Layout.update(); View.resize(); },
+  eat(where) { this.eatUntil = performance.now() + 450; this.eatWhere = where; },   // swallow the click that follows a gesture, only where it happened
+  stageRect() { return $('#stage').getBoundingClientRect(); },
+  overStage(cx, cy) { const r = this.stageRect(); return cx >= r.left && cx <= r.right && cy >= r.top && cy <= r.bottom; },
+  /* keep the view inside the scene so a pan never runs into a dead zone */
+  clampCam() {
+    const D = runtime.deco; if (!D || !D.cam) return; const S = curScene(), hw = View.vw / 2, hh = View.vh / 2;
+    D.cam.x = S.w > View.vw ? clamp(D.cam.x, hw, S.w - hw) : S.w / 2;
+    const cy = S.h > View.vh ? clamp(D.cam.y + 16, hh, S.h - hh) : S.h / 2; D.cam.y = cy - 16;
+  },
+  pan(dx, dy) { const D = runtime.deco; if (!D || !D.cam) return; D.cam.x += dx; D.cam.y += dy; this.clampCam(); View.update(0, true); },
+  zoom(on, wx, wy) {
+    const D = runtime.deco; if (!D || !!D.zoomIn === !!on) return; D.zoomIn = !!on;
+    if (wx !== undefined && D.cam) { D.cam.x = wx; D.cam.y = wy - 16; }
+    View.computeZoom(); this.clampCam(); View.update(0, true); Deco.render(); this.buzz(6);
+  },
+  ghostDims() { const D = runtime.deco, H = D && D.hold; if (!H) return null; return DecoZ.dims({ id: H.id, zone: D.zone, rot: H.rot }, decorDef(H.id)); },
+  inGhost(x, y) { const D = runtime.deco, g = D && D.ghost, wh = this.ghostDims(); if (!g || !wh) return false; const p = this.w(this.PAD); return x >= g.x - p && x <= g.x + wh[0] + p && y >= g.y - p && y <= g.y + wh[1] + p; },
+  /* nearest placed item under a fingertip: tabletop items first, then the smallest */
+  hitPlaced(x, y) {
+    const D = runtime.deco, p = this.w(this.PAD); let best = null;
+    for (const d of DecoZ.list(D.zone)) {
+      const Df = decorDef(d.id); if (!Df) continue; const [w, h] = DecoZ.dims(Object.assign({ zone: D.zone }, d), Df);
+      if (x < d.x - p || x > d.x + w + p || y < d.y - p || y > d.y + h + p) continue;
+      const inside = x >= d.x && x <= d.x + w && y >= d.y && y <= d.y + h;
+      const score = (Df.k === 'desk' ? 0 : 1e6) + (inside ? 0 : 5e5) + w * h;
+      if (!best || score < best.s) best = { d, s: score };
+    }
+    return best && best.d;
+  },
+  /* drag the held item so its center sits at the finger plus an offset */
+  dragTo(cx, cy, off) {
+    const D = runtime.deco; if (!D || !D.hold) return; const [x, y] = View.toWorld(cx, cy), was = D.ghost && D.ghost.ok;
+    Deco.move(x + off[0], y + off[1]); const now = D.ghost && D.ghost.ok;
+    if (now && !was) this.buzz(5); this.status();
+  },
+  status() {
+    const D = runtime.deco, el = $('#deco .b1-msg'); if (!D || !el) return; const g = D.ghost, H = D.hold;
+    let txt, cls = '';
+    if (H && g) { txt = g.ok ? '✓ ' + g.why : g.why; cls = g.ok ? 'ok' : 'bad'; }
+    else if (H) txt = 'Drag it into place, or tap the room.';
+    else txt = 'Tap something to move it, or drag an item from the tray into the room. Drag the floor to look around.';
+    if (el.textContent !== txt) el.textContent = txt; el.className = 'b1-msg ' + cls;
+  },
+  /* ---------- the held item's own buttons ---------- */
+  fab() {
+    let b = $('#b1Fab'); if (b) return b;
+    b = document.createElement('div'); b.id = 'b1Fab'; b.hidden = true; $('#stage').appendChild(b); return b;
+  },
+  fabHTML() {
+    const D = runtime.deco, H = D.hold, Df = decorDef(H.id), g = D.ghost, ok = !!(g && g.ok);
+    const V = Df.vars ? Df.vars[H.v || 0] : null;
+    return `<button class="ok ${ok ? '' : 'bad'}" data-act="decoPlace" aria-label="Place here">✓</button>`
+      + `<button data-act="decoRot" aria-label="${D.zone === 'bedroom' ? 'Turn to face the other way' : 'Rotate'}">${D.zone === 'bedroom' ? '⇋' : '⟳'}</button>`
+      + (V ? `<button data-act="decoVar" aria-label="Change finish">◐</button>` : '')
+      + `<button data-act="decoRemove" aria-label="Put away in your collection">Store</button>`
+      + `<button class="x" data-act="decoCancel" aria-label="Cancel">✕</button>`;
+  },
+  tick() {
+    const D = runtime.deco, b = $('#b1Fab');
+    if (!D || !D.touchUI) { if (b) b.hidden = true; this.loop = null; return; }
+    this.loop = requestAnimationFrame(() => this.tick());
+    // scroll the view while a drag rests near the stage edge
+    const drag = (this.g && this.g.mode === 'drag' && this.g) || (this.tr && this.tr.started && this.tr.over && this.tr);
+    if (drag && D.cam) {
+      const r = this.stageRect(), e = this.EDGE, s = this.w(5);
+      const dx = drag.cx < r.left + e ? -s : drag.cx > r.right - e ? s : 0, dy = drag.cy < r.top + e ? -s : drag.cy > r.bottom - e ? s : 0;
+      if (dx || dy) { this.pan(dx, dy); this.dragTo(drag.cx, drag.cy, drag.off); }
+    }
+    const f = this.fab();
+    if (!D.hold || !D.ghost) { if (!f.hidden) f.hidden = true; return; }
+    const html = this.fabHTML(); if (f.dataset.k !== html) { f.innerHTML = html; f.dataset.k = html; }
+    f.hidden = false;
+    const [w, h] = this.ghostDims(), g = D.ghost, cv = View.cv, sr = this.stageRect(), cr = cv.getBoundingClientRect();
+    const [x0, y0] = View.toCSS(g.x, g.y), [x1, y1] = View.toCSS(g.x + w, g.y + h), ox = cr.left - sr.left, oy = cr.top - sr.top;
+    const fw = f.offsetWidth, fh = f.offsetHeight, pad = 6;
+    let left = ox + (x0 + x1) / 2 - fw / 2, top = oy + y1 + 8;
+    if (top + fh > sr.height - pad) top = oy + y0 - fh - 8;           // no room below: sit above the item
+    left = clamp(left, pad, sr.width - fw - pad); top = clamp(top, pad, sr.height - fh - pad);
+    f.style.left = Math.round(left) + 'px'; f.style.top = Math.round(top) + 'px';
+  },
+  /* ---------- canvas gestures ---------- */
+  down(e) {
+    if (!this.on() || e.pointerType === 'mouse') return; e.preventDefault(); e.stopImmediatePropagation(); Sfx.init();
+    this.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    try { View.cv.setPointerCapture(e.pointerId); } catch (_) { }
+    if (this.ptrs.size === 2) { const [a, b] = [...this.ptrs.values()]; this.g = { mode: 'pinch', d0: Math.hypot(a.x - b.x, a.y - b.y), done: false }; return; }
+    if (this.ptrs.size > 2) return;
+    const D = runtime.deco, [x, y] = View.toWorld(e.clientX, e.clientY);
+    const G = { id: e.pointerId, sx: e.clientX, sy: e.clientY, cx: e.clientX, cy: e.clientY, mode: 'pan?', lx: e.clientX, ly: e.clientY };
+    if (D.hold && this.inGhost(x, y)) { const [w, h] = this.ghostDims(); G.mode = 'item?'; G.off = [D.ghost.x + w / 2 - x, -this.w(this.LIFT)]; void h; }
+    else { const d = this.hitPlaced(x, y); if (d) { G.mode = 'lift?'; G.d = d; } }
+    this.g = G;
+  },
+  move(e) {
+    if (!this.on() || e.pointerType === 'mouse' || !this.ptrs.has(e.pointerId)) return; e.preventDefault(); e.stopImmediatePropagation();
+    this.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    const G = this.g; if (!G) return;
+    if (G.mode === 'pinch') {
+      if (this.ptrs.size < 2 || G.done) return; const [a, b] = [...this.ptrs.values()], r = Math.hypot(a.x - b.x, a.y - b.y) / Math.max(1, G.d0);
+      if (r > 1.25 || r < .8) { const [wx, wy] = View.toWorld((a.x + b.x) / 2, (a.y + b.y) / 2); this.zoom(r > 1, wx, wy); G.done = true; }
+      return;
+    }
+    if (e.pointerId !== G.id) return; G.cx = e.clientX; G.cy = e.clientY;
+    if (G.mode.endsWith('?')) {
+      if (Math.hypot(e.clientX - G.sx, e.clientY - G.sy) < this.SLOP) return;
+      if (G.mode === 'item?') G.mode = 'drag';
+      else if (G.mode === 'lift?') {
+        Deco.pickPlaced(G.d); const D = runtime.deco, [w] = this.ghostDims(), [x] = View.toWorld(G.sx, G.sy);
+        G.off = [D.ghost.x + w / 2 - x, -this.w(this.LIFT)]; G.mode = 'drag'; this.buzz(8);
+      } else G.mode = 'pan';
+    }
+    if (G.mode === 'drag') this.dragTo(e.clientX, e.clientY, G.off);
+    else if (G.mode === 'pan') { this.pan(-this.w(e.clientX - G.lx), -this.w(e.clientY - G.ly)); }
+    G.lx = e.clientX; G.ly = e.clientY;
+  },
+  up(e) {
+    if (!this.ptrs.has(e.pointerId)) return; this.ptrs.delete(e.pointerId);
+    if (!this.on() || e.pointerType === 'mouse') return; e.preventDefault(); e.stopImmediatePropagation(); this.eat('room');
+    const G = this.g; if (!G) return;
+    if (G.mode === 'pinch') { if (!this.ptrs.size) this.g = null; return; }
+    if (e.pointerId !== G.id) return; this.g = null;
+    if (e.type === 'pointercancel') return;
+    const D = runtime.deco, [x, y] = View.toWorld(e.clientX, e.clientY);
+    if (G.mode === 'drag') { this.buzz(D.ghost && D.ghost.ok ? 10 : [8, 40, 8]); Deco.render(); return; }
+    if (G.mode === 'pan') return;
+    // a tap
+    if (D.hold) { if (!this.inGhost(x, y)) { Deco.move(x, y); Deco.render(); } return; }
+    if (G.d) { Deco.pickPlaced(G.d); this.buzz(8); }
+  },
+  /* ---------- dragging an item up out of the tray ---------- */
+  trayDown(e) {
+    if (!this.on() || e.pointerType === 'mouse') return; const it = e.target.closest && e.target.closest('#deco .b1-tray .it[data-b1]'); if (!it || it.disabled) return;
+    const sr = this.stageRect(), dr = $('#deco').getBoundingClientRect();
+    this.tr = { id: e.pointerId, item: it.dataset.b1, sx: e.clientX, sy: e.clientY, cx: e.clientX, cy: e.clientY, started: false, dir: dr.left >= sr.right - 4 ? 'left' : 'up', off: [0, -this.w(this.LIFT)] };
+  },
+  trayMove(e) {
+    const T = this.tr; if (!T || e.pointerId !== T.id) return; T.cx = e.clientX; T.cy = e.clientY;
+    if (!T.started) {
+      const dx = e.clientX - T.sx, dy = e.clientY - T.sy, out = T.dir === 'up' ? -dy : -dx, side = T.dir === 'up' ? Math.abs(dx) : Math.abs(dy);
+      if (out < this.SLOP || out < side) { if (side > this.SLOP * 2) this.tr = null; return; }
+      T.started = true; this.eat('tray'); runtime.deco.trayOpen = false; Deco.pick(T.item); this.buzz(8);
+    }
+    e.preventDefault(); T.over = this.overStage(e.clientX, e.clientY);
+    if (T.over) this.dragTo(e.clientX, e.clientY, T.off);
+  },
+  trayUp(e) {
+    const T = this.tr; if (!T || e.pointerId !== T.id) return; this.tr = null;
+    if (T.started) { this.eat('tray'); const D = runtime.deco; if (D && D.ghost) this.buzz(D.ghost.ok ? 10 : [8, 40, 8]); Deco.render(); }
+  },
+  /* ---------- the touch tray ---------- */
+  CATS: [['all', 'All'], ['floor', 'Furniture'], ['wall', 'Wall'], ['rug', 'Rugs'], ['desk', 'Tabletop']],
+  render() {
+    const D = runtime.deco, el = $('#deco'), zone = D.zone, H = D.hold;
+    const sv = el.querySelector('.b1-tray'), keep = sv ? [sv.scrollLeft, sv.scrollTop] : [0, 0];
+    const own = Object.keys(state.room.own).filter(k => !k.startsWith('s:') && !k.startsWith('v:') && decorDef(k) && decorZones(decorDef(k)).includes(zone));
+    const kinds = new Set(own.map(k => decorDef(k).k)), cats = this.CATS.filter(([k]) => k === 'all' || kinds.has(k));
+    if (!cats.some(([k]) => k === D.cat)) D.cat = 'all';
+    const shown = own.filter(k => (D.cat === 'all' || decorDef(k).k === D.cat) && (decorFree(k) > 0 || (H && H.id === k)));
+    const zname = { bedroom: 'Bedroom', house: 'House', yard: 'Backyard' }[zone];
+    const head = `<div class="b1-head"><span class="b1-zone">${zname} · paused</span><span class="b1-money">${money(state.money)}</span><span style="flex:1"></span>`
+      + `<button class="btn sm" data-act="b1Zoom" aria-label="${D.zoomIn ? 'Zoom out' : 'Zoom in'}">${D.zoomIn ? '－' : '＋'}</button>`
+      + `<button class="btn sm" data-act="decoUndo" ${D.undo.length ? '' : 'disabled'} aria-label="Undo">↶</button>`
+      + `<button class="btn sm ${D.more ? 'on' : ''}" data-act="b1More" aria-label="More options" aria-expanded="${!!D.more}">⋯</button>`
+      + `<button class="btn sm primary" data-act="decoDone">Done</button></div>`;
+    const more = D.more ? `<div class="b1-more">${zone === 'bedroom' ? '<button class="btn sm" data-act="decoTab" data-arg="styles">Room styles</button>' : ''}<button class="btn sm" data-act="decoShop">Shop decor</button><button class="btn sm amber" data-act="homeUpOpen">Home upgrades</button></div>` : '';
+    const catRow = `<div class="b1-cats">${cats.map(([k, n]) => `<button class="chip ${D.cat === k ? 'on' : ''}" data-act="b1Cat" data-arg="${k}">${n}</button>`).join('')}<span style="flex:1"></span><button class="chip" data-act="b1Tray" aria-label="${D.trayOpen ? 'Show fewer' : 'Show all items'}">${D.trayOpen ? '▾ Less' : '▴ All'}</button></div>`;
+    const tray = `<div class="b1-tray ${D.trayOpen ? 'open' : ''}">${shown.map(k => { const Df = decorDef(k), free = decorFree(k); return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="decoPick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="n">${free}</span></button>`; }).join('') || `<span class="hint">${own.length ? 'Everything here is already placed. Tap an item in the room to move it.' : 'Nothing for this space yet. Shop decor on LeafCart (⋯).'}</span>`}</div>`;
+    el.innerHTML = head + more + catRow + tray + '<div class="b1-msg" role="status" aria-live="polite"></div>'; hydrate(el);
+    const nt = el.querySelector('.b1-tray'); if (nt) { nt.scrollLeft = keep[0]; nt.scrollTop = keep[1]; }
+    this.status();
+  }
+};
+
+/* ---------- hooks into Decorate mode ---------- */
+Deco.open = (prev => function () {
+  prev.call(this); const D = runtime.deco; if (!D) return;
+  document.body.classList.add('deco-on');
+  if (!document.body.classList.contains('touch-ui')) return;
+  Object.assign(D, { touchUI: true, camLock: true, cat: 'all', trayOpen: false, more: false, zoomIn: true });   // start close enough to grab things; － shows the whole room
+  if (!D.cam) D.cam = { x: state.player.x, y: state.player.y - 16 };
+  hidePicker(); Build1.relayout(); Build1.clampCam(); View.update(0, true); this.render();
+  if (!Build1.loop) Build1.tick();
+})(Deco.open);
+Deco.close = (prev => function () {
+  const D = runtime.deco; if (!D) return prev.call(this); const zoomed = D.zoomIn;
+  Build1.g = null; Build1.tr = null; Build1.ptrs.clear();
+  prev.call(this); document.body.classList.remove('deco-on');
+  const f = $('#b1Fab'); if (f) f.hidden = true;
+  if (D.touchUI) { Build1.relayout(); if (zoomed) { View.computeZoom(); View.update(0, true); } }
+})(Deco.close);
+Deco.render = (prev => function () {
+  const D = runtime.deco; if (!D || !D.touchUI || D.tab === 'styles') return prev.call(this);
+  Build1.render();
+})(Deco.render);
+/* touch: a new item appears in the middle of what you're looking at */
+Deco.pick = (prev => function (id) {
+  prev.call(this, id); const D = runtime.deco; if (!D || !D.touchUI || !D.hold || D.hold.fromUid) return;
+  const Df = decorDef(id), cx = View.cam.x + View.vw / 2, cy = View.cam.y + View.vh / 2;
+  const y = D.zone === 'bedroom' ? (Df.k === 'wall' ? 40 : Df.k === 'desk' ? 70 : clamp(cy, 120, 160)) : cy;
+  D.ghost = DecoZ.check(id, cx, y, null, D.hold); this.render();
+})(Deco.pick);
+Deco.place = (prev => function () {
+  const ok = prev.call(this); if (runtime.deco && runtime.deco.touchUI) Build1.buzz(ok ? 15 : [10, 40, 10]); return ok;
+})(Deco.place);
+/* while touch-decorating the camera follows the view you pan, not the held item (a dragged item would drag the camera with it) */
+View.update = (prev => function (dt, snap) {
+  const D = runtime.deco; if (!D || !D.camLock || !D.ghost) return prev.call(this, dt, snap);
+  const g = D.ghost; D.ghost = null; try { return prev.call(this, dt, snap); } finally { D.ghost = g; }
+})(View.update);
+View.computeZoom = (prev => function () {
+  prev.call(this); const D = runtime.deco;
+  // close-up: at least one step closer, and tall enough that the room fills the stage
+  if (D && D.touchUI && D.zoomIn) { this.zoom = Math.max(this.zoom + 1, Math.ceil(this.devH / curScene().h)); this.vw = this.devW / this.zoom; this.vh = this.devH / this.zoom; }
+})(View.computeZoom);
+Object.assign(ACT, {
+  b1Zoom() { Build1.zoom(!runtime.deco.zoomIn); },
+  b1More() { runtime.deco.more = !runtime.deco.more; Deco.render(); },
+  b1Cat(k) { runtime.deco.cat = k; Deco.render(); },
+  b1Tray() { runtime.deco.trayOpen = !runtime.deco.trayOpen; Deco.render(); },
+  b1Pick(id) { const D = runtime.deco; if (!D) return; D.trayOpen = false; Deco.pick(id); Build1.buzz(8); }
+});
+(() => {
+  const cv = $('#room');
+  cv.addEventListener('pointerdown', e => Build1.down(e), true);
+  cv.addEventListener('pointermove', e => Build1.move(e), true);
+  cv.addEventListener('pointerup', e => Build1.up(e), true);
+  cv.addEventListener('pointercancel', e => Build1.up(e), true);
+  // a drag must not also count as a tap on the room or on a tray button
+  const eatClick = e => { if (performance.now() >= Build1.eatUntil) return; const hit = Build1.eatWhere === 'room' ? e.target === cv : !!(e.target.closest && e.target.closest('#deco .b1-tray')); if (hit) { e.preventDefault(); e.stopImmediatePropagation(); } };
+  document.addEventListener('click', eatClick, true);
+  document.addEventListener('pointerdown', e => Build1.trayDown(e), true);
+  document.addEventListener('pointermove', e => Build1.trayMove(e), { capture: true, passive: false });
+  document.addEventListener('pointerup', e => Build1.trayUp(e), true);
+  document.addEventListener('pointercancel', e => { if (Build1.tr && Build1.tr.id === e.pointerId) Build1.trayUp(e); }, true);
+  const st = document.createElement('style'); st.id = 'build1-css';
+  st.textContent = `
+body.deco-on.touch-ui #hud,body.deco-on.touch-ui #objective,body.deco-on.touch-ui #touch,body.deco-on.touch-ui #stageTools,body.deco-on.touch-ui #nowPlaying,body.deco-on.touch-ui #alertChip,body.deco-on.touch-ui #tooltip,body.deco-on.touch-ui #tip,body.deco-on.touch-ui #pauseTag{display:none!important}
+body.deco-on.touch-ui #deco{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:5px;max-height:none;overflow:visible;padding:6px 8px}
+body.deco-on.touch-ui #deco[hidden]{display:none}
+.b1-head{display:flex;gap:6px;align-items:center}
+.b1-head .btn{min-width:44px;min-height:40px}
+.b1-zone{font:700 11px var(--f-ui);text-transform:uppercase;letter-spacing:.04em;opacity:.7}
+.b1-money{font:700 12px var(--f-ui)}
+.b1-more{display:flex;gap:6px;flex-wrap:wrap}
+.b1-cats{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;align-items:center}
+.b1-cats::-webkit-scrollbar{display:none}
+.b1-cats .chip{flex:0 0 auto;min-height:32px}
+.b1-tray{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;padding:2px 0;touch-action:pan-x;scrollbar-width:none}
+.b1-tray::-webkit-scrollbar{display:none}
+body.deco-on.touch-ui #deco .b1-tray .it{flex:0 0 auto;width:76px;min-height:70px;scroll-snap-align:start;touch-action:pan-x;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.b1-tray .it .nm{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.15;text-align:center;max-width:100%}
+.b1-tray.open{flex-wrap:wrap;overflow-x:hidden;overflow-y:auto;max-height:36vh;touch-action:pan-y}
+body.deco-on.touch-ui #deco .b1-tray.open .it{touch-action:pan-y}
+.b1-msg{font:600 12px/1.3 var(--f-ui);min-height:16px;color:#4b5d4d}
+.b1-msg.ok{color:#2f7d32}.b1-msg.bad{color:#b23a2b}
+#b1Fab{position:absolute;z-index:30;display:flex;gap:6px;left:0;top:0}
+#b1Fab[hidden]{display:none}
+#b1Fab button{min-width:44px;height:44px;border-radius:22px;border:1px solid #78916b;font:700 15px var(--f-ui);box-shadow:0 3px 10px #0006;background:#f6f3e6;color:#283e2e;padding:0 12px;touch-action:manipulation;cursor:pointer}
+#b1Fab button.ok{background:#3c7a3f;border-color:#2c5e2f;color:#fff;font-size:20px}
+#b1Fab button.ok.bad{background:#9a9a8e;border-color:#7d7d73}
+#b1Fab button.x{color:#a33}
+@media (orientation:landscape) and (max-height:540px){
+body.deco-on.touch-ui #deco{width:38vw;max-width:38vw;overflow:hidden}
+.b1-head{flex-wrap:wrap;gap:4px}.b1-head .btn{min-width:40px}.b1-zone{display:none}
+.b1-msg{order:3}
+.b1-tray,.b1-tray.open{order:4;flex:1 1 auto;min-height:0;flex-wrap:wrap;overflow-x:hidden;overflow-y:auto;max-height:none;touch-action:pan-y;align-content:flex-start}
+body.deco-on.touch-ui #deco .b1-tray .it{touch-action:pan-y;width:70px}
+.b1-cats [data-act="b1Tray"]{display:none}
+}`;
+  document.head.appendChild(st);
+})();
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 2 · feel and clarity
+   Items you move by hand snap to the 8px grid the overlay draws (▦ Grid
+   / ✥ Free toggles it; Shift with a mouse places freely for that move).
+   The held item lifts with a shadow, shows its floor footprint as
+   green or red tiles, and lands with a little squash, a puff of dust
+   and a sound that matches what it is made of.
+   Scripted moves (saves, tests, Deco.move from code) are never snapped.
+   ===================================================================== */
+const Build2 = {
+  G: 8,
+  userUntil: 0, shift: false, lastCell: '',
+  anims: new Map(),   // uid -> landing time
+  puffs: [],
+  on() { return settings.decoGrid !== false; },
+  snapping() { return this.on() && !this.shift && performance.now() < this.userUntil; },
+  user() { this.userUntil = performance.now() + 40; },
+  dims(H, zone) { return DecoZ.dims({ id: H.id, zone, rot: H.rot }, decorDef(H.id)); },
+  /* the center that puts the item's top-left on a grid corner */
+  snap(px, py, w, h) { const G = this.G; return [Math.round((px - w / 2) / G) * G + w / 2, Math.round((py - h / 2) / G) * G + h / 2]; },
+  toggle() { settings.decoGrid = !this.on(); saveSettings(); Deco.render(); toast(this.on() ? 'Grid snap on: things line up with the dots.' : 'Free placement: move things a pixel at a time.'); Sfx.click(); },
+  dragging() { return !!((Build1.g && Build1.g.mode === 'drag') || (Build1.tr && Build1.tr.started)); },
+  material(id) {
+    const s = (id + ' ' + (decorDef(id) || {}).n).toLowerCase();
+    if (/plant|fern|cactus|palm|succulent|bonsai|planter|vine/.test(s)) return 'plant';
+    if (/rug|mat\b|beanbag|cushion|couch|sofa|loveseat|armchair|ottoman|basket|hamper|towel|stones/.test(s)) return 'soft';
+    if (/poster|print|painting|calendar|catalog|art\b|plaque|certificate|photo|frame|notebook|book/.test(s)) return 'paper';
+    if (/lamp|lantern|metal|fridge|stove|microwave|kettle|toolbox|clock|speaker|camera|tv\b|record|lights|sign|post|bins|dish|duck|trophy|candle/.test(s)) return 'metal';
+    return 'wood';
+  },
+  sound(kind, id) {
+    const S = Sfx;
+    if (kind === 'lift') { S.tone(392, .06, 'sine', .035, 0, 140); return; }
+    const m = this.material(id);
+    if (m === 'soft') { S.noise(.12, .05, 500); S.tone(170, .09, 'sine', .045); }
+    else if (m === 'plant') { S.noise(.07, .03, 900); S.tone(523, .06, 'sine', .035, .03); S.tone(659, .08, 'sine', .03, .08); }
+    else if (m === 'paper') { S.noise(.05, .035, 3200); S.tone(620, .04, 'triangle', .025, .03); }
+    else if (m === 'metal') { S.tone(880, .1, 'triangle', .03); S.tone(1320, .16, 'sine', .018, .02); S.noise(.03, .02, 2400); }
+    else { S.tone(300, .05, 'triangle', .06, 0, -60); S.noise(.04, .035, 1600); S.tone(210, .06, 'triangle', .035, .05); }
+  },
+  /* ---------- the held item ---------- */
+  drawGhost(c, t) {
+    const D = runtime.deco, H = D.hold, g = D.ghost, Df = decorDef(H.id), [w, h] = this.dims(H, D.zone), ok = g.ok, G = this.G, now = performance.now();
+    const foot = Df.k === 'floor' ? DecoZ.foot({ id: H.id, zone: D.zone, rot: H.rot, x: g.x, y: g.y }, Df) : Df.k === 'rug' ? [g.x, g.y, w, h] : null;
+    // a local grid around the item while snapping is on
+    if (this.on()) {
+      const x0 = Math.floor((g.x - G * 2) / G) * G, x1 = g.x + w + G * 2, y0 = Math.floor((g.y - G * 2) / G) * G, y1 = g.y + h + G * 2;
+      c.fillStyle = 'rgba(255,255,255,.16)';
+      for (let x = x0; x <= x1; x += G) c.fillRect(x, y0, 1, y1 - y0);
+      for (let y = y0; y <= y1; y += G) c.fillRect(x0, y, x1 - x0, 1);
+    }
+    // footprint tiles: the floor this item will take up
+    if (foot) {
+      const cx0 = Math.floor(foot[0] / G) * G, cy0 = Math.floor(foot[1] / G) * G;
+      for (let y = cy0; y < foot[1] + foot[3]; y += G) for (let x = cx0; x < foot[0] + foot[2]; x += G) {
+        c.fillStyle = ok ? 'rgba(124,240,90,.30)' : 'rgba(255,90,79,.34)'; c.fillRect(x + 1, y + 1, G - 1, G - 1);
+        c.fillStyle = ok ? 'rgba(60,150,40,.55)' : 'rgba(170,40,30,.6)'; c.fillRect(x, y, G, 1); c.fillRect(x, y, 1, G);
+      }
+    }
+    // lifted: higher while dragging, a slow bob while resting
+    const lift = this.dragging() ? 4 : 2 + Math.sin(now / 260) * .8, ly = Math.round(g.y - lift);
+    c.save(); c.globalAlpha = .28; c.fillStyle = '#000';
+    if (Df.k === 'wall') c.fillRect(g.x + 2, g.y + 2, w, h);
+    else if (Df.k !== 'rug') { c.beginPath(); c.ellipse(g.x + w / 2, g.y + h - 1, Math.max(4, w * .45), Math.max(2, Math.min(5, h * .12)), 0, 0, Math.PI * 2); c.fill(); }
+    c.restore();
+    c.save(); c.globalAlpha = ok ? .92 : .55; drawDecor(c, { id: H.id, x: g.x, y: Df.k === 'rug' ? g.y : ly, flip: H.flip, rot: H.rot, v: H.v, zone: D.zone }, t); c.restore();
+    // outline: solid when it fits, dashed when it doesn't (shape, not just color)
+    const oy = Df.k === 'rug' ? g.y : ly; c.fillStyle = ok ? '#7cf05a' : '#ff5a4f';
+    for (let i = -1; i <= w; i++) if (ok || (i & 2)) { c.fillRect(g.x + i, oy - 1, 1, 1); c.fillRect(g.x + i, oy + h, 1, 1); }
+    for (let j = 0; j < h; j++) if (ok || (j & 2)) { c.fillRect(g.x - 1, oy + j, 1, 1); c.fillRect(g.x + w, oy + j, 1, 1); }
+    const sx = g.x + w + 2, sy = oy - 7; R(c, sx - 1, sy - 1, 7, 7, '#1a1a1a');
+    if (ok) { c.fillStyle = '#7cf05a'; for (const [a, b] of [[0, 3], [1, 4], [2, 3], [3, 2], [4, 1]]) c.fillRect(sx + a, sy + b, 1, 1); }
+    else { c.fillStyle = '#ff5a4f'; for (let k = 0; k < 5; k++) { c.fillRect(sx + k, sy + k, 1, 1); c.fillRect(sx + 4 - k, sy + k, 1, 1); } }
+  },
+  drawPuffs(c) {
+    const now = performance.now(); this.puffs = this.puffs.filter(p => now - p.t0 < 420);
+    for (const p of this.puffs) { const k = (now - p.t0) / 420, r = 1 + k * 3; c.fillStyle = `rgba(235,225,205,${(.55 * (1 - k)).toFixed(3)})`; c.beginPath(); c.arc(p.x + p.vx * k * 10, p.y - k * 4, r, 0, Math.PI * 2); c.fill(); }
+  },
+  land(rec) {
+    const now = performance.now(), Df = decorDef(rec.id), [w, h] = DecoZ.dims(Object.assign({ zone: runtime.deco.zone }, rec), Df);
+    this.anims.set(rec.uid, now);
+    if (Df.k === 'wall' || settings.reduced) return;
+    const by = rec.y + h - 1; for (let i = 0; i < 6; i++) this.puffs.push({ x: rec.x + (i < 3 ? 1 : w - 1), y: by, vx: (i < 3 ? -1 : 1) * (.4 + (i % 3) * .3), t0: now + i * 15 });
+  }
+};
+
+/* hand-driven input marks the next move as "snap it" (window capture runs before every other listener) */
+for (const type of ['pointerdown', 'pointermove', 'pointerup', 'click'])
+  window.addEventListener(type, e => { if (!runtime.deco) return; Build2.shift = !!e.shiftKey; if (e.target === View.cv || (Build1.tr && Build1.tr.started) || (e.target.closest && e.target.closest('#deco .b1-tray'))) Build2.user(); }, true);
+window.addEventListener('keydown', e => { if (runtime.deco && e.key.startsWith('Arrow')) Build2.user(); }, true);
+
+Deco.move = (prev => function (x, y) {
+  const D = runtime.deco; if (!D || !D.hold) return prev.call(this, x, y);
+  if (Build2.snapping()) { const [w, h] = Build2.dims(D.hold, D.zone); [x, y] = Build2.snap(x, y, w, h); }
+  prev.call(this, x, y);
+  const g = D.ghost, cell = g ? g.x + ':' + g.y : '';
+  if (cell && cell !== Build2.lastCell && Build2.snapping() && D.touchUI) Build1.buzz(3);   // a tick per grid step under a finger
+  Build2.lastCell = cell;
+})(Deco.move);
+/* arrows and ←→↑↓ buttons step a whole grid cell while snapping */
+Deco.nudge = (prev => function (dx, dy) {
+  const D = runtime.deco; if (!D || !D.hold || !Build2.on()) return prev.call(this, dx, dy);
+  const [w, h] = Build2.dims(D.hold, D.zone), g = D.ghost || { x: (D.cam ? D.cam.x : 160) - w / 2, y: (D.cam ? D.cam.y : 120) - h / 2 };
+  Build2.user(); this.move(g.x + w / 2 + Math.sign(dx) * Build2.G, g.y + h / 2 + Math.sign(dy) * Build2.G); this.render();
+})(Deco.nudge);
+/* a freshly picked item starts on the grid too */
+Deco.pick = (prev => function (id) {
+  prev.call(this, id); const D = runtime.deco; if (!D || !D.hold || D.hold.fromUid || !D.ghost || !Build2.on()) return;
+  const [w, h] = Build2.dims(D.hold, D.zone); Build2.user(); this.move(D.ghost.x + w / 2, D.ghost.y + h / 2); Build2.userUntil = 0; this.render();
+})(Deco.pick);
+Deco.pickPlaced = (prev => function (d) { const tone = Sfx.tone; Sfx.tone = () => { }; try { prev.call(this, d); } finally { Sfx.tone = tone; } Build2.sound('lift'); })(Deco.pickPlaced);
+/* landing: matching sound, squash and dust (the old two-beep chime is replaced) */
+Deco.place = (prev => function () {
+  const D = runtime.deco, H = D && D.hold, tone = Sfx.tone; let ok;
+  Sfx.tone = () => { }; try { ok = prev.call(this); } finally { Sfx.tone = tone; }
+  if (!ok) { Sfx.bad(); return ok; }
+  const list = DecoZ.list(D.zone), rec = H && (list.find(x => x.uid === H.fromUid) || list[list.length - 1 - ((H.kids || []).length)]);
+  if (rec) { Build2.sound('place', rec.id); Build2.land(rec); }
+  return ok;
+})(Deco.place);
+/* the held item is drawn here instead of by the base overlay, lifted and tiled */
+Deco.overlay = (prev => function (c, t) {
+  const D = runtime.deco; if (!D) return; const g = D.ghost, held = D.hold && g;
+  if (held) D.ghost = null; try { prev.call(this, c, t); } finally { D.ghost = g; }
+  Build2.drawPuffs(c);
+  if (held) Build2.drawGhost(c, t);
+})(Deco.overlay);
+/* a just-placed item squashes and settles */
+drawDecor = (prev => function (c, d, t) {
+  const t0 = d.uid && Build2.anims.get(d.uid); if (!t0) return prev.call(this, c, d, t);
+  const p = (performance.now() - t0) / 300; if (p >= 1 || p < 0 || settings.reduced) { if (p >= 1) Build2.anims.delete(d.uid); return prev.call(this, c, d, t); }
+  const Df = decorDef(d.id); if (!Df) return prev.call(this, c, d, t);
+  const [w, h] = DecoZ.dims(Object.assign({ zone: 'bedroom' }, d), Df), e = Math.sin(p * Math.PI * 2) * (1 - p), cx = d.x + w / 2, by = d.y + h;
+  c.save(); c.translate(cx, by); c.scale(1 + e * .1, 1 - e * .14); c.translate(-cx, -by);
+  try { return prev.call(this, c, d, t); } finally { c.restore(); }
+})(drawDecor);
+/* ▦ Grid / ✥ Free beside Undo, on phones and with a mouse */
+Deco.render = (prev => function () {
+  prev.call(this); const D = runtime.deco, el = $('#deco'); if (!D || !el || el.querySelector('[data-act="b2Grid"]')) return;
+  const undo = el.querySelector('[data-act="decoUndo"]'); if (!undo) return;
+  const b = document.createElement('button'); b.className = 'btn sm' + (Build2.on() ? ' on' : ''); b.dataset.act = 'b2Grid';
+  b.textContent = D.touchUI ? (Build2.on() ? '▦' : '✥') : (Build2.on() ? '▦ Grid' : '✥ Free'); b.setAttribute('aria-label', Build2.on() ? 'Grid snap on' : 'Free placement'); b.title = Build2.on() ? 'Snapping to the grid. Tap for free placement (or hold Shift).' : 'Free placement. Tap to snap to the grid.';
+  b.setAttribute('aria-pressed', String(Build2.on())); undo.before(b);
+})(Deco.render);
+Object.assign(ACT, { b2Grid() { Build2.toggle(); } });
+/* narrow phones: the header drops the room label so Done always fits beside the grid toggle */
+(() => { const st = document.createElement('style'); st.id = 'build2-css'; st.textContent = '@media (max-width:440px){.b1-zone{display:none}.b1-head{gap:4px}.b1-head .btn{min-width:42px;padding-left:8px;padding-right:8px}}'; document.head.appendChild(st); })();
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 3 · the tray and shopping
+   One tray for phones and mouse play: tabs by what things are (Rugs,
+   Lighting, Houseplants…), a line under each item saying where it goes,
+   and a Shop tab so buying never leaves Decorate mode. Each item can be
+   ordered at the normal price (arrives tomorrow, like any LeafCart
+   order) or bought now for 25% more and placed straight away.
+   With a mouse the old Rotate/nudge/Place row stays under the tray.
+   ===================================================================== */
+const Build3 = {
+  RUSH: 1.25,
+  WHERE: { wall: 'Wall', floor: 'Floor', rug: 'Rug', desk: 'Tabletop' },
+  nowPrice(D) { return Math.ceil(D.p * this.RUSH); },
+  catName(k) { const c = DECOR_CATS.find(x => x[0] === k); return c ? c[1] : 'Other'; },
+  pending(id) { return state.orders.filter(o => o.key === 'd:' + id).length + state.packages.filter(o => o.key === 'd:' + id).length; },
+  forSale(zone) { return Object.keys(DECOR).filter(k => { const D = decorDef(k); return D && D.p && decorZones(D).includes(zone); }); },
+  owned(zone) { return Object.keys(state.room.own).filter(k => !k.startsWith('s:') && !k.startsWith('v:') && decorDef(k) && decorZones(decorDef(k)).includes(zone)); },
+  /* tabs in catalogue order, only those with something in them */
+  cats(ids) { const have = new Set(ids.map(k => decorDef(k).cat || 'other')); return DECOR_CATS.filter(([k]) => have.has(k)).concat(have.has('other') ? [['other', 'Other']] : []); },
+  buyNow(id) {
+    const D = decorDef(id); if (!D || !D.p || !runtime.deco) return;
+    const price = this.nowPrice(D); if (!pay(price)) return;
+    state.room.own[id] = (state.room.own[id] || 0) + 1; Sfx.coin();
+    toast(`<b>${esc(D.n)}</b> · ${money(price)} · it's in your hands. Place it anywhere it fits.`);
+    SaveSys.now('purchase'); runtime.deco.trayOpen = false; Deco.pick(id); Build1.buzz && Build1.buzz(8);
+  },
+  order(id) {
+    if (!runtime.deco) return;
+    if (Shop.order('d:' + id, false)) { SaveSys.now('purchase'); Deco.render(); }
+  },
+  card(k, H) {
+    const Df = decorDef(k), free = decorFree(k), where = this.WHERE[Df.k] || '';
+    return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="decoPick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)} · ${where}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="wh">${where}</span><span class="n">${free}</span></button>`;
+  },
+  shopCard(k) {
+    const Df = decorDef(k), own = decorFree(k), placed = (state.room.own[k] || 0) - own, pend = this.pending(k), where = this.WHERE[Df.k] || '';
+    const have = [own ? own + ' to place' : '', placed > 0 ? placed + ' placed' : '', pend ? pend + ' arriving' : ''].filter(Boolean).join(' · ');
+    return `<div class="it b3-shop" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="wh">${where}${Df.glow ? ' · glows' : ''}</span>${have ? `<span class="b3-have">${have}</span>` : ''}`
+      + `<button class="btn sm primary" data-act="b3Now" data-arg="${esc(k)}" aria-label="Buy ${esc(Df.n)} now for ${money(this.nowPrice(Df))} and place it">Now ${money(this.nowPrice(Df))}</button>`
+      + `<button class="btn sm" data-act="b3Order" data-arg="${esc(k)}" aria-label="Order ${esc(Df.n)} for ${money(Df.p)}, arriving tomorrow">${money(Df.p)} · tomorrow</button></div>`;
+  },
+  /* the old mouse controls, kept under the tray */
+  mouseRow() {
+    const D = runtime.deco, H = D.hold, hd = H && decorDef(H.id), V = H && hd && hd.vars ? hd.vars[H.v || 0] : null, dis = H ? '' : 'disabled';
+    const pan = D.zone !== 'bedroom' ? `<span class="hint">View:</span><button class="btn sm" data-act="decoPan" data-arg="-40:0" aria-label="Look left">◀</button><button class="btn sm" data-act="decoPan" data-arg="40:0" aria-label="Look right">▶</button><button class="btn sm" data-act="decoPan" data-arg="0:-40" aria-label="Look up">▲</button><button class="btn sm" data-act="decoPan" data-arg="0:40" aria-label="Look down">▼</button>` : '';
+    return `<div class="b3-mouse"><button class="btn sm" data-act="decoRot" ${dis}>${D.zone === 'bedroom' ? '⇋ Face' : '⟳ Rotate'}</button>${H && hd.vars ? `<button class="btn sm" data-act="decoVar">◐ ${esc(V.n)}${V.p && !state.room.own['v:' + H.id + ':' + (H.v || 0)] ? ' · ' + money(V.p) : ''}</button>` : ''}`
+      + `<button class="btn sm" data-act="decoNudge" data-arg="-2:0" ${dis} aria-label="Nudge left">←</button><button class="btn sm" data-act="decoNudge" data-arg="2:0" ${dis} aria-label="Nudge right">→</button><button class="btn sm" data-act="decoNudge" data-arg="0:-2" ${dis} aria-label="Nudge up">↑</button><button class="btn sm" data-act="decoNudge" data-arg="0:2" ${dis} aria-label="Nudge down">↓</button>`
+      + `<button class="btn sm primary" data-act="decoPlace" ${H && D.ghost && D.ghost.ok ? '' : 'disabled'}>✓ Place</button><button class="btn sm danger" data-act="decoRemove" ${dis}>Store</button><button class="btn sm ghost" data-act="decoCancel" ${dis}>✕ Cancel</button>${pan}</div>`;
+  },
+  render() {
+    const D = runtime.deco, el = $('#deco'), zone = D.zone, H = D.hold, touch = !!D.touchUI;
+    const sv = el.querySelector('.b1-tray'), keep = sv ? [sv.scrollLeft, sv.scrollTop] : [0, 0], cv = el.querySelector('.b1-cats'), keepC = cv ? cv.scrollLeft : 0;
+    const shop = D.cat === 'shop', own = this.owned(zone), pool = shop ? this.forSale(zone) : own;
+    const cats = this.cats(pool);
+    if (D.cat !== 'all' && !shop && !cats.some(([k]) => k === D.cat)) D.cat = 'all';
+    if (D.sub && !cats.some(([k]) => k === D.sub)) D.sub = null;
+    const inCat = k => { const c = decorDef(k).cat || 'other'; return shop ? (!D.sub || c === D.sub) : (D.cat === 'all' || c === D.cat); };
+    const shown = pool.filter(k => inCat(k) && (shop || decorFree(k) > 0 || (H && H.id === k)))
+      .sort((a, b) => shop ? decorDef(a).p - decorDef(b).p : 0);
+    const zname = { bedroom: 'Bedroom', house: 'House', yard: 'Backyard' }[zone];
+    const head = `<div class="b1-head"><span class="b1-zone">${zname} · paused</span><span class="b1-money">${money(state.money)}</span><span style="flex:1"></span>`
+      + (touch ? `<button class="btn sm" data-act="b1Zoom" aria-label="${D.zoomIn ? 'Zoom out' : 'Zoom in'}">${D.zoomIn ? '－' : '＋'}</button>` : '')
+      + `<button class="btn sm" data-act="decoUndo" ${D.undo.length ? '' : 'disabled'} aria-label="Undo">↶</button>`
+      + (touch ? `<button class="btn sm ${D.more ? 'on' : ''}" data-act="b1More" aria-label="More options" aria-expanded="${!!D.more}">⋯</button>` : '')
+      + `<button class="btn sm primary" data-act="decoDone">Done</button></div>`;
+    const more = D.more || !touch ? `<div class="b1-more">${zone === 'bedroom' ? '<button class="btn sm" data-act="decoTab" data-arg="styles">Room styles</button>' : ''}<button class="btn sm" data-act="decoShop">Open LeafCart</button><button class="btn sm amber" data-act="homeUpOpen">Home upgrades</button></div>` : '';
+    const chip = (act, k, n, on) => `<button class="chip ${on ? 'on' : ''}" data-act="${act}" data-arg="${k}">${n}</button>`;
+    const catRow = `<div class="b1-cats">${chip('b1Cat', 'shop', '🛒 Shop', shop)}${shop ? chip('b3Sub', '', 'Everything', !D.sub) + cats.map(([k, n]) => chip('b3Sub', k, n, D.sub === k)).join('')
+      : chip('b1Cat', 'all', 'All', D.cat === 'all') + cats.map(([k, n]) => chip('b1Cat', k, n, D.cat === k)).join('')}</div>`;
+    const grow = touch ? `<button class="chip b3-grow" data-act="b1Tray" aria-label="${D.trayOpen ? 'Show fewer' : 'Show all items'}">${D.trayOpen ? '▾ Less' : '▴ More'}</button>` : '';
+    const empty = shop ? 'Nothing for sale for this space.' : own.length ? 'Everything here is already placed. Tap an item in the room to move it, or open 🛒 Shop.' : 'Nothing to place yet. Open 🛒 Shop to buy something for this space.';
+    const tray = `<div class="b1-tray ${D.trayOpen || !touch ? 'open' : ''} ${shop ? 'b3-shopping' : ''}">${shown.map(k => shop ? this.shopCard(k) : this.card(k, H)).join('') || `<span class="hint">${empty}</span>`}</div>`;
+    const note = shop ? `<div class="b3-note">Ordering costs the normal price and arrives tomorrow. <b>Now</b> costs 25% more and goes straight into your hands.</div>` : '';
+    el.innerHTML = head + more + `<div class="b3-catbar">${catRow}${grow}</div>` + note + tray + '<div class="b1-msg" role="status" aria-live="polite"></div>' + (touch ? '' : this.mouseRow());
+    hydrate(el);
+    const nt = el.querySelector('.b1-tray'); if (nt) { nt.scrollLeft = keep[0]; nt.scrollTop = keep[1]; }
+    const nc = el.querySelector('.b1-cats'); if (nc) nc.scrollLeft = keepC;
+    Build1.status();
+  }
+};
+Build1.render = function () { Build3.render(); };
+/* while browsing the shop with nothing in hand, the placing hint just gets in the way */
+Build1.status = (prev => function () { prev.call(this); const D = runtime.deco, el = $('#deco .b1-msg'); if (D && el && D.cat === 'shop' && !D.hold) el.textContent = ''; })(Build1.status);
+/* mouse play gets the same tray (the styles tab keeps its own page) */
+Deco.render = (prev => function () {
+  const D = runtime.deco;
+  if (D && !D.touchUI && D.tab !== 'styles') { if (D.cat === undefined) Object.assign(D, { cat: 'all', trayOpen: true, more: false }); Build1.render(); Build3.gridBtn(); return; }
+  prev.call(this);
+})(Deco.render);
+/* the Phase 2 grid toggle wraps Deco.render from outside, so the mouse path above adds it itself */
+Build3.gridBtn = () => { const el = $('#deco'), D = runtime.deco; if (!el || !D || el.querySelector('[data-act="b2Grid"]')) return; const undo = el.querySelector('[data-act="decoUndo"]'); if (!undo) return; const b = document.createElement('button'); b.className = 'btn sm' + (Build2.on() ? ' on' : ''); b.dataset.act = 'b2Grid'; b.textContent = Build2.on() ? '▦ Grid' : '✥ Free'; b.title = Build2.on() ? 'Snapping to the grid. Click for free placement (or hold Shift).' : 'Free placement. Click to snap to the grid.'; b.setAttribute('aria-pressed', String(Build2.on())); undo.before(b); };
+Object.assign(ACT, {
+  // tray items keep the original action name, so older code and tests that click decoPick still work
+  decoPick(id) { const D = runtime.deco; if (!D) return; if (D.touchUI) { D.trayOpen = false; Build1.buzz(8); } Deco.pick(id); },
+  b3Now(id) { Build3.buyNow(id); },
+  b3Order(id) { Build3.order(id); },
+  b3Sub(k) { runtime.deco.sub = k || null; Deco.render(); },
+  b1Cat(k) { const D = runtime.deco; D.cat = k; if (k === 'shop') { D.sub = null; } Deco.render(); }
+});
+(() => {
+  const st = document.createElement('style'); st.id = 'build3-css';
+  st.textContent = `
+.b3-catbar{display:flex;gap:5px;align-items:center;min-width:0}
+.b3-catbar .b1-cats{flex:1 1 auto;min-width:0}
+.b3-grow{flex:0 0 auto}
+#deco .it .wh{font-size:.85em;opacity:.65;line-height:1.1}
+#deco .b3-shop{width:132px!important;cursor:default;gap:3px;padding-bottom:6px}
+#deco .b3-shop .btn{width:100%;min-height:34px;padding:2px 4px;font-size:11px}
+#deco .b3-have{font-size:.85em;color:#36522e;font-weight:700;text-align:center}
+.b3-note{font:600 11px/1.3 var(--f-ui);opacity:.75}
+body.deco-on:not(.touch-ui) #deco>.b1-head,body.deco-on:not(.touch-ui) #deco>.b1-more,body.deco-on:not(.touch-ui) #deco>.b3-catbar,body.deco-on:not(.touch-ui) #deco>.b3-note,body.deco-on:not(.touch-ui) #deco>.b1-tray,body.deco-on:not(.touch-ui) #deco>.b1-msg,body.deco-on:not(.touch-ui) #deco>.b3-mouse{flex:1 1 100%}
+body.deco-on:not(.touch-ui) #deco .b1-tray{max-height:none;overflow:visible}
+.b3-mouse{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+@media (orientation:landscape) and (max-height:540px){.b3-grow{display:none}}
+body.deco-on.touch-ui #toasts{top:calc(env(safe-area-inset-top) + 8px)!important;bottom:auto!important}
+.b3-shopping~.b1-msg:empty{display:none}`;
+  document.head.appendChild(st);
+})();
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 4 · power tools
+   Redo beside Undo. ⧉ places the held item and picks up another copy.
+   Select mode (in ⋯) lets you tap items, or drag a box with a mouse, to
+   pick several, then drag any one of them to move the whole group or
+   store them all. Things sitting on a picked table come along. Pack up
+   room puts everything away in one go (Undo brings it back). Layouts
+   saves up to three arrangements per room and lays one back out from
+   your collection, reporting anything missing or that no longer fits.
+   ===================================================================== */
+const Build4 = {
+  SLOTS: 3,
+  /* placement checks round to even pixels; keep an exact saved spot when that rounding is the only difference */
+  keep(checked, wanted) { return Math.abs(checked - wanted) <= 1 ? wanted : checked; },
+  g: null,   // the active select-mode gesture
+  list() { return DecoZ.list(runtime.deco.zone); },
+  dims(d) { return DecoZ.dims(Object.assign({ zone: runtime.deco.zone }, d), decorDef(d.id)); },
+  sel() { const D = runtime.deco; D.sel = D.sel || new Set(); return D.sel; },
+  /* selecting a table brings what sits on it */
+  addSel(d) { const S = this.sel(); S.add(d.uid); for (const k of this.list()) if (k.on === d.uid) S.add(k.uid); },
+  toggleSel(d) { const S = this.sel(); if (S.has(d.uid)) { S.delete(d.uid); for (const k of this.list()) if (k.on === d.uid) S.delete(k.uid); } else this.addSel(d); },
+  picked() { const S = this.sel(); return this.list().filter(d => S.has(d.uid)); },
+  setSelect(on) {
+    const D = runtime.deco; if (!D) return; if (on && D.hold) Deco.cancel();
+    D.select = !!on; this.sel().clear(); this.g = null; D.group = null; D.band = null; D.more = false; Deco.render();
+  },
+  /* ---------- redo ---------- */
+  redo() {
+    const D = runtime.deco; if (!D || !(D.redo && D.redo.length)) { toast('Nothing to redo.'); return; }
+    D.undo.push(JSON.stringify({ placed: DecoZ.list(D.zone), own: state.room.own }));
+    const s = JSON.parse(D.redo.pop()); DecoZ.setList(D.zone, s.placed); state.room.own = s.own;
+    D.hold = null; D.ghost = null; this.sel().clear(); Deco.render(); Sfx.click();
+  },
+  /* ---------- place another ---------- */
+  spare(H) { return decorFree(H.id) - (H.fromUid ? 0 : 1); },
+  another() {
+    const D = runtime.deco, H = D && D.hold; if (!H) return; const id = H.id, g = D.ghost && { x: D.ghost.x, y: D.ghost.y };
+    if (!Deco.place()) return;
+    if (decorFree(id) <= 0) { toast(`That was your last ${esc(decorDef(id).n.toLowerCase())}. Buy more in 🛒 Shop.`); return; }
+    Deco.pick(id);
+    if (g) { const [w, h] = Build2.dims(D.hold, D.zone); Build2.user(); Deco.move(g.x + w + w / 2 + 2, g.y + h / 2); Build2.userUntil = 0; Deco.render(); }
+  },
+  /* ---------- store / pack ---------- */
+  storeSelected() {
+    const D = runtime.deco, S = this.sel(); if (!S.size) return; Deco.snapshot();
+    const n = S.size; DecoZ.setList(D.zone, this.list().filter(d => !S.has(d.uid))); S.clear();
+    SaveSys.important('decor-store'); Sfx.click(); toast(`Stored ${n} item${n === 1 ? '' : 's'}. They're back in your collection.`); Deco.render();
+  },
+  packUp() {
+    const D = runtime.deco, n = this.list().length; if (!n) { toast('Nothing placed here to pack up.'); return; }
+    if (D.hold) Deco.cancel(); Deco.snapshot(); DecoZ.setList(D.zone, []); this.sel().clear(); D.more = false;
+    SaveSys.important('decor-store'); Sfx.click(); toast(`Packed up ${n} item${n === 1 ? '' : 's'}. ↶ Undo puts them back.`); Deco.render();
+  },
+  /* ---------- group moves ---------- */
+  /* would every picked item fit after moving by (dx, dy)? furniture goes first so tabletop items land on it */
+  groupCheck(items, dx, dy) {
+    const list = this.list(), added = [], res = [], ids = new Set(items.map(d => d.uid));
+    const order = items.slice().sort((a, b) => (decorDef(a.id).k === 'desk') - (decorDef(b.id).k === 'desk'));
+    try {
+      for (const d of order) {
+        const Df = decorDef(d.id), [w, h] = this.dims(d), r = DecoZ.check(d.id, d.x + dx + w / 2, d.y + dy + h / 2, null, { id: d.id, rot: d.rot || 0, flip: d.flip, v: d.v });
+        const rec = Object.assign({}, d, r ? { x: Build4.keep(r.x, d.x + dx), y: Build4.keep(r.y, d.y + dy) } : { x: d.x + dx, y: d.y + dy });
+        if (r && r.on) rec.on = r.on; else if (Df.k !== 'desk' || !(d.on && ids.has(d.on))) delete rec.on;
+        res.push({ d, rec, ok: !!(r && r.ok), why: r ? r.why : '' });
+        if (r && r.ok) { list.push(rec); added.push(rec); }
+      }
+    } finally { for (const a of added) { const i = list.indexOf(a); if (i >= 0) list.splice(i, 1); } }
+    return { res, ok: res.every(x => x.ok), why: (res.find(x => !x.ok) || {}).why };
+  },
+  beginGroup() {
+    const D = runtime.deco, items = this.picked(); if (!items.length) return false; const S = this.sel();
+    DecoZ.setList(D.zone, this.list().filter(d => !S.has(d.uid)));
+    D.group = { items, dx: 0, dy: 0, chk: { res: items.map(d => ({ d, rec: d, ok: true })), ok: true } }; Build2.sound('lift'); return true;
+  },
+  dragGroup(dx, dy) {
+    const D = runtime.deco, G = D.group; if (!G) return;
+    if (Build2.on() && !Build2.shift) { dx = Math.round(dx / Build2.G) * Build2.G; dy = Math.round(dy / Build2.G) * Build2.G; }
+    if (dx === G.dx && dy === G.dy) return; const was = G.chk.ok; G.dx = dx; G.dy = dy; G.chk = this.groupCheck(G.items, dx, dy);
+    if (G.chk.ok && !was) Build1.buzz(5); this.status();
+  },
+  endGroup() {
+    const D = runtime.deco, G = D.group; if (!G) return; D.group = null; const list = this.list();
+    if (G.chk.ok && (G.dx || G.dy)) {
+      list.push(...G.items);                     // the snapshot must hold the old positions
+      Deco.snapshot(); const S = this.sel();
+      DecoZ.setList(D.zone, list.filter(d => !S.has(d.uid)).concat(G.chk.res.map(x => x.rec)));
+      SaveSys.important('decor-place'); Build2.sound('place', G.items[0].id); for (const x of G.chk.res) Build2.land(x.rec); Build1.buzz(12);
+    } else { list.push(...G.items); if (G.dx || G.dy) { toast(esc(G.chk.why || 'Something is in the way.'), 'warn'); Sfx.bad(); Build1.buzz([8, 40, 8]); } }
+    Deco.render();
+  },
+  /* ---------- select-mode pointer handling (finger and mouse) ---------- */
+  down(e) {
+    const D = runtime.deco; e.preventDefault(); e.stopImmediatePropagation(); Sfx.init();
+    try { View.cv.setPointerCapture(e.pointerId); } catch (_) { }
+    // a mouse pointer is precise: no finger-sized grab margin, so a box can start right beside an item
+    const [x, y] = View.toWorld(e.clientX, e.clientY), pad = Build1.PAD; if (e.pointerType === 'mouse') Build1.PAD = 0; let hit; try { hit = Build1.hitPlaced(x, y); } finally { Build1.PAD = pad; } const S = this.sel();
+    this.g = { id: e.pointerId, sx: e.clientX, sy: e.clientY, lx: e.clientX, ly: e.clientY, wx: x, wy: y, hit, mouse: e.pointerType === 'mouse', mode: hit ? (S.has(hit.uid) ? 'group?' : 'toggle?') : 'empty?' };
+  },
+  move(e) {
+    const G = this.g, D = runtime.deco; if (!G || e.pointerId !== G.id) return; e.preventDefault(); e.stopImmediatePropagation();
+    Build2.shift = !!e.shiftKey;
+    if (G.mode.endsWith('?')) {
+      if (Math.hypot(e.clientX - G.sx, e.clientY - G.sy) < Build1.SLOP) return;
+      if (G.mode === 'toggle?') { this.addSel(G.hit); G.mode = 'group?'; }
+      if (G.mode === 'group?') G.mode = this.beginGroup() ? 'group' : 'none';
+      else G.mode = G.mouse ? 'band' : 'pan';
+    }
+    const [x, y] = View.toWorld(e.clientX, e.clientY);
+    if (G.mode === 'group') this.dragGroup(x - G.wx, y - G.wy);
+    else if (G.mode === 'pan') Build1.pan(-Build1.w(e.clientX - G.lx), -Build1.w(e.clientY - G.ly));
+    else if (G.mode === 'band') D.band = [Math.min(G.wx, x), Math.min(G.wy, y), Math.abs(x - G.wx), Math.abs(y - G.wy)];
+    G.lx = e.clientX; G.ly = e.clientY;
+  },
+  up(e) {
+    const G = this.g, D = runtime.deco; if (!G || e.pointerId !== G.id) return; this.g = null; e.preventDefault(); e.stopImmediatePropagation(); Build1.eat('room');
+    if (e.type === 'pointercancel') { if (D.group) { D.group.chk.ok = false; D.group.dx = D.group.dy = 0; this.endGroup(); } D.band = null; return; }
+    if (G.mode === 'group') { this.endGroup(); return; }
+    if (G.mode === 'band') {
+      const b = D.band; D.band = null;
+      if (b) for (const d of this.list()) { const [w, h] = this.dims(d); if (hitRect(b, [d.x, d.y, w, h])) this.addSel(d); }
+      Deco.render(); return;
+    }
+    if (G.mode === 'toggle?' || G.mode === 'group?') { this.toggleSel(G.hit); Sfx.click(); Build1.buzz(6); Deco.render(); }
+  },
+  status() {
+    const el = $('#deco .b4-selbar .b4-n'), D = runtime.deco; if (!el || !D) return; const n = this.sel().size, G = D.group;
+    el.textContent = G ? (G.chk.ok ? '✓ Fits here' : G.chk.why) : n ? `${n} selected` : (D.touchUI ? 'Tap things to select them' : 'Click things, or drag a box, to select');
+    el.className = 'b4-n' + (G ? (G.chk.ok ? ' ok' : ' bad') : '');
+  },
+  /* ---------- layouts ---------- */
+  slots(zone) { state.decoLayouts = state.decoLayouts || {}; const L = state.decoLayouts[zone] = state.decoLayouts[zone] || []; while (L.length < this.SLOTS) L.push(null); return L; },
+  save(i) {
+    const D = runtime.deco, items = this.list(); if (!items.length) { toast('Place a few things first, then save the layout.'); return; }
+    const L = this.slots(D.zone); L[i] = { name: `Layout ${i + 1}`, day: state.day, items: items.map(d => Object.assign({}, d)) };
+    SaveSys.important('decor-layout'); Sfx.good && Sfx.good(); toast(`Saved <b>Layout ${i + 1}</b> · ${items.length} item${items.length === 1 ? '' : 's'}.`); Deco.render();
+  },
+  load(i) {
+    const D = runtime.deco, saved = this.slots(D.zone)[i]; if (!saved) return;
+    if (D.hold) Deco.cancel(); Deco.snapshot(); DecoZ.setList(D.zone, []); this.sel().clear();
+    const list = this.list(), missing = {}, blocked = [], ids = new Set(saved.items.map(d => d.uid));
+    const order = saved.items.slice().sort((a, b) => (decorDef(a.id) || {}).k === 'desk' ? 1 : (decorDef(b.id) || {}).k === 'desk' ? -1 : 0);
+    let placed = 0;
+    for (const d of order) {
+      const Df = decorDef(d.id); if (!Df) continue;
+      if (decorFree(d.id) <= 0) { missing[Df.n] = (missing[Df.n] || 0) + 1; continue; }
+      const [w, h] = this.dims(d), r = DecoZ.check(d.id, d.x + w / 2, d.y + h / 2, null, { id: d.id, rot: d.rot || 0, flip: d.flip, v: d.v });
+      if (!r || !r.ok) { blocked.push(Df.n); continue; }
+      const rec = Object.assign({}, d, { x: this.keep(r.x, d.x), y: this.keep(r.y, d.y) }); if (r.on) rec.on = r.on; else if (!(d.on && ids.has(d.on) && list.some(x => x.uid === d.on))) delete rec.on;
+      list.push(rec); placed++;
+    }
+    const miss = Object.entries(missing).map(([n, c]) => `${n}${c > 1 ? ' ×' + c : ''}`);
+    toast(`<b>${esc(saved.name)}</b>: placed ${placed} of ${saved.items.length}.${miss.length ? ` Missing: ${esc(miss.join(', '))} (🛒 Shop).` : ''}${blocked.length ? ` No room now for: ${esc(blocked.join(', '))}.` : ''}`, miss.length || blocked.length ? 'warn' : '');
+    SaveSys.important('decor-layout'); Build2.sound('place', (order[0] || {}).id || 'crate'); D.view = null; Deco.render();
+  },
+  clear(i) { const L = this.slots(runtime.deco.zone); L[i] = null; SaveSys.important('decor-layout'); Deco.render(); },
+  layoutsHTML() {
+    const D = runtime.deco, L = this.slots(D.zone), here = this.list().length;
+    return `<div class="b4-layouts"><div class="b4-lh"><b>Layouts for this room</b><button class="btn sm" data-act="b4View" data-arg="">✕ Close</button></div>`
+      + L.map((s, i) => `<div class="b4-slot"><div class="b4-sn"><b>Layout ${i + 1}</b><span>${s ? `${s.items.length} item${s.items.length === 1 ? '' : 's'} · saved day ${s.day}` : 'Empty'}</span></div>`
+        + (s ? `<button class="btn sm primary" data-act="b4Load" data-arg="${i}">Lay out</button>` : '')
+        + `<button class="btn sm" data-act="b4Save" data-arg="${i}" ${here ? '' : 'disabled'}>${s ? 'Save over' : 'Save here'}</button>`
+        + (s ? `<button class="btn sm ghost" data-act="b4Clear" data-arg="${i}" aria-label="Delete layout ${i + 1}">✕</button>` : '') + `</div>`).join('')
+      + `<div class="b4-note">Laying out puts away what's here first, then places each saved item from your collection. ↶ Undo goes back.</div></div>`;
+  },
+  /* ---------- the extra controls, added after the Phase 3 tray renders ---------- */
+  decorate() {
+    const D = runtime.deco, el = $('#deco'); if (!D || !el || D.tab === 'styles') return;
+    const undo = el.querySelector('[data-act="decoUndo"]');
+    if (undo && !el.querySelector('[data-act="b4Redo"]')) { const b = document.createElement('button'); b.className = 'btn sm'; b.dataset.act = 'b4Redo'; b.textContent = '↷'; b.setAttribute('aria-label', 'Redo'); if (!(D.redo && D.redo.length)) b.disabled = true; if (D.touchUI) b.classList.add('b4-redo-touch'); undo.after(b); }
+    const more = el.querySelector('.b1-more');
+    if (more && !more.querySelector('[data-act="b4Select"]')) more.insertAdjacentHTML('beforeend', `<button class="btn sm ${D.select ? 'on' : ''}" data-act="b4Select" aria-pressed="${!!D.select}">${D.select ? '☑ Selecting' : '☐ Select items'}</button><button class="btn sm" data-act="b4Pack">📦 Pack up room</button><button class="btn sm" data-act="b4View" data-arg="layouts">💾 Layouts</button>`);
+    if (D.view === 'layouts') { const t = el.querySelector('.b1-tray'); if (t) { t.outerHTML = this.layoutsHTML(); } const cb = el.querySelector('.b3-catbar'), nt = el.querySelector('.b3-note'); if (cb) cb.hidden = true; if (nt) nt.hidden = true; }
+    if (D.select) {
+      const n = this.sel().size, bar = `<div class="b4-selbar"><span class="b4-n"></span><span style="flex:1"></span><button class="btn sm danger" data-act="b4StoreSel" ${n ? '' : 'disabled'}>Store${n ? ' ' + n : ''}</button><button class="btn sm" data-act="b4ClearSel" ${n ? '' : 'disabled'}>Clear</button><button class="btn sm primary" data-act="b4Select">Done selecting</button></div>`;
+      const msg = el.querySelector('.b1-msg'); if (msg) msg.insertAdjacentHTML('beforebegin', bar); else el.insertAdjacentHTML('beforeend', bar);
+      this.status();
+    }
+    // the placing hint doesn't apply while selecting or choosing a layout
+    const hint = el.querySelector('.b1-msg'); if (hint && (D.select || D.view === 'layouts')) hint.hidden = true;
+    const row = el.querySelector('.b3-mouse'), H = D.hold;
+    if (row && H && this.spare(H) > 0 && !row.querySelector('[data-act="b4Another"]')) row.querySelector('[data-act="decoPlace"]').insertAdjacentHTML('afterend', `<button class="btn sm" data-act="b4Another" ${D.ghost && D.ghost.ok ? '' : 'disabled'}>⧉ Place + another</button>`);
+  }
+};
+
+/* undo/redo history: a new change clears redo; undo saves the present for redo */
+Deco.snapshot = (prev => function () { prev.call(this); const D = runtime.deco; if (D) D.redo = []; })(Deco.snapshot);
+Deco.undo = (prev => function () {
+  const D = runtime.deco; if (D && D.undo.length) { const now = JSON.stringify({ placed: DecoZ.list(D.zone), own: state.room.own }); D.redo = D.redo || []; D.redo.push(now); if (D.redo.length > 25) D.redo.shift(); }
+  prev.call(this); if (D) Build4.sel().clear();
+})(Deco.undo);
+Build3.render = (prev => function () { prev.call(this); Build4.decorate(); })(Build3.render);
+Build1.fabHTML = (prev => function () {
+  const D = runtime.deco, H = D.hold; let html = prev.call(this);
+  if (H && Build4.spare(H) > 0) html = html.replace('<button data-act="decoRot"', '<button data-act="b4Another" aria-label="Place it and take another">⧉</button><button data-act="decoRot"');
+  return html;
+})(Build1.fabHTML);
+/* select mode takes over the room's pointer input for finger and mouse alike (Build1's canvas listeners see every pointer) */
+for (const k of ['down', 'move', 'up']) Build1[k] = (prev => function (e) {
+  const D = runtime.deco;
+  if (D && D.select) { Build1.ptrs.clear(); return Build4[k](e); }
+  return prev.call(this, e);
+})(Build1[k]);
+Deco.click = (prev => function (x, y) { const D = runtime.deco; if (D && D.select) return; return prev.call(this, x, y); })(Deco.click);
+/* picking something from the tray leaves select mode */
+Deco.pick = (prev => function (id) { const D = runtime.deco; if (D && D.select) { D.select = false; Build4.sel().clear(); } return prev.call(this, id); })(Deco.pick);
+Deco.close = (prev => function () {
+  const D = runtime.deco; if (D && D.group) { D.group.chk.ok = false; D.group.dx = D.group.dy = 0; Build4.endGroup(); }
+  if (D) { D.select = false; D.band = null; } Build4.g = null; return prev.call(this);
+})(Deco.close);
+/* drawing: picked items get an amber outline; a moving group draws at its new spot */
+Deco.overlay = (prev => function (c, t) {
+  prev.call(this, c, t); const D = runtime.deco; if (!D) return;
+  const box = (x, y, w, h, col, dash) => { c.fillStyle = col; for (let i = -1; i <= w; i++) if (!dash || (i & 2)) { c.fillRect(x + i, y - 1, 1, 1); c.fillRect(x + i, y + h, 1, 1); } for (let j = 0; j < h; j++) if (!dash || (j & 2)) { c.fillRect(x - 1, y + j, 1, 1); c.fillRect(x + w, y + j, 1, 1); } };
+  if (D.select && !D.group) for (const d of Build4.picked()) { const [w, h] = Build4.dims(d); box(d.x, d.y, w, h, '#ffc15a', false); c.fillStyle = 'rgba(255,193,90,.18)'; c.fillRect(d.x, d.y, w, h); }
+  if (D.group) for (const x of D.group.chk.res) {
+    const [w, h] = Build4.dims(x.rec); c.save(); c.globalAlpha = x.ok ? .9 : .5; drawDecor(c, Object.assign({ zone: D.zone }, x.rec, { y: x.rec.y - 3 }), t); c.restore();
+    box(x.rec.x, x.rec.y - 3, w, h, x.ok ? '#7cf05a' : '#ff5a4f', !x.ok);
+  }
+  if (D.band) { const [x, y, w, h] = D.band; c.fillStyle = 'rgba(255,193,90,.12)'; c.fillRect(x, y, w, h); box(Math.round(x), Math.round(y), Math.round(w), Math.round(h), '#ffc15a', true); }
+})(Deco.overlay);
+Object.assign(ACT, {
+  b4Redo() { Build4.redo(); },
+  b4Another() { Build4.another(); },
+  b4Select() { Build4.setSelect(!runtime.deco.select); },
+  b4StoreSel() { Build4.storeSelected(); },
+  b4ClearSel() { Build4.sel().clear(); Deco.render(); },
+  b4Pack() { Build4.packUp(); },
+  b4View(v) { const D = runtime.deco; D.view = v || null; D.more = false; if (v && D.hold) Deco.cancel(); Deco.render(); },
+  b4Save(i) { Build4.save(+i); },
+  b4Load(i) { Build4.load(+i); },
+  b4Clear(i) { Build4.clear(+i); }
+});
+(() => {
+  const st = document.createElement('style'); st.id = 'build4-css';
+  st.textContent = `
+.b4-selbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;background:#fff6dd;border:1px solid #e5c76b;border-radius:6px;padding:4px 6px}
+.b4-n{font:700 12px var(--f-ui);color:#6b5414}.b4-n.ok{color:#2f7d32}.b4-n.bad{color:#b23a2b}
+.b4-layouts{display:flex;flex-direction:column;gap:6px;overflow-y:auto;min-height:0}
+.b4-lh{display:flex;align-items:center;justify-content:space-between;font:700 13px var(--f-ui)}
+.b4-slot{display:flex;gap:6px;align-items:center;background:#e2e9d5;border:1px solid #b7cba4;border-radius:5px;padding:6px}
+.b4-sn{display:flex;flex-direction:column;flex:1;min-width:0;font:600 12px var(--f-ui)}.b4-sn span{opacity:.7;font-weight:500}
+.b4-slot .btn{min-height:38px}
+.b4-note{font:500 11px/1.3 var(--f-ui);opacity:.7}
+body.deco-on.touch-ui #deco .b4-redo-touch:disabled{display:none}
+body.deco-on #tip{display:none!important}
+body.deco-on:not(.touch-ui) #deco>.b4-selbar,body.deco-on:not(.touch-ui) #deco>.b4-layouts{flex:1 1 100%}
+@media (orientation:landscape) and (max-height:540px){.b4-selbar{order:3}.b4-layouts{order:4;flex:1 1 auto}}`;
+  document.head.appendChild(st);
+})();
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 5 · a reason to decorate (a new bedroom starts near 2 hearts; 5 takes walls, plants, lights and room styles)
+   Every decoratable space gets a Cozy score (0-100, one to five hearts)
+   from what's placed in it: something on the walls, a seat, a rug,
+   lights that glow at night, plants, tabletop touches, variety, pieces
+   that share a material and, in the bedroom, room styles. The ♥ chip in
+   Decorate mode opens a breakdown with a tip for each missing piece.
+   Rewards stay small: a cozy bedroom makes the first few energy you
+   spend each day free ("well rested"), and each space pays a one-time
+   housewarming gift the first time it reaches 3, 4 and 5 hearts.
+   ===================================================================== */
+const Cozy = {
+  TIERS: [[0, 'Bare'], [20, 'Settling in'], [40, 'Homey'], [60, 'Cozy'], [80, 'Dreamy']],
+  REST: [0, 0, 4, 8, 12, 16],              // free energy each morning by bedroom hearts
+  GIFT: { 3: 15, 4: 30, 5: 60 },           // one-time housewarming gifts per space
+  ZONES: { bedroom: 'bedroom', house: 'house', yard: 'backyard patio' },
+  S() { state.cozy = state.cozy || { best: {}, paid: {}, rest: 0, restDay: 0 }; state.cozy.best = state.cozy.best || {}; state.cozy.paid = state.cozy.paid || {}; return state.cozy; },
+  stars(score) { let s = 1; for (let i = 0; i < this.TIERS.length; i++) if (score >= this.TIERS[i][0]) s = i + 1; return s; },
+  tier(score) { return this.TIERS[this.stars(score) - 1][1]; },
+  /* the rules, each worth some points, with a tip when not met */
+  rules(zone) {
+    const items = DecoZ.list(zone).map(d => ({ d, D: decorDef(d.id) })).filter(x => x.D), n = f => items.filter(f).length;
+    const wall = n(x => x.D.k === 'wall'), seat = n(x => x.D.cat === 'seating' || x.D.seat), rug = n(x => x.D.k === 'rug'), glow = n(x => x.D.glow);
+    const plant = n(x => x.D.cat === 'plants'), table = n(x => x.D.k === 'desk'), kinds = new Set(items.map(x => x.d.id)).size;
+    const mats = {}; for (const x of items) { const m = Build2.material(x.d.id); mats[m] = (mats[m] || 0) + 1; }
+    const topMat = Object.entries(mats).sort((a, b) => b[1] - a[1])[0], dupes = Object.values(items.reduce((o, x) => (o[x.d.id] = (o[x.d.id] || 0) + 1, o), {})).reduce((s, c) => s + Math.max(0, c - 3), 0);
+    const step = (c, pts) => pts[Math.min(c, pts.length - 1)];
+    const R = [];
+    if (zone !== 'yard') R.push({ key: 'wall', name: 'Something on the walls', max: 14, got: step(wall, [0, 4, 7, 10, 12, 14]), tip: wall ? 'More wall pieces (posters, art, a clock) fill it out.' : 'Hang something on the wall: a poster, art or a clock.' });
+    R.push({ key: 'seat', name: 'Somewhere to sit', max: 10, got: seat ? 10 : 0, tip: 'Add a seat: a beanbag, stool, armchair or floor cushion.' });
+    R.push({ key: 'rug', name: zone === 'yard' ? 'Something underfoot' : 'A rug', max: 10, got: rug ? 10 : 0, tip: zone === 'yard' ? 'Lay an outdoor rug or stepping stones.' : 'Lay down a rug.' });
+    R.push({ key: 'glow', name: 'Warm light at night', max: 14, got: step(glow, [0, 7, 10, 12, 14]), tip: glow ? 'More glowing lights (up to four) make evenings warmer.' : 'Add a lamp or string lights that glow at night.' });
+    R.push({ key: 'plant', name: 'Plants', max: 14, got: step(plant, [0, 4, 7, 10, 12, 14]), tip: plant ? 'Another houseplant or two brings it to life.' : 'Add a houseplant (🛒 Shop › Houseplants).' });
+    R.push({ key: 'table', name: 'Little touches', max: 10, got: step(table, [0, 3, 5, 7, 9, 10]), tip: 'Put small things on tables and shelves: books, a lamp, a figurine.' });
+    R.push({ key: 'variety', name: 'Variety', max: 16, got: Math.min(16, Math.floor(kinds * 1.5)), tip: 'Mix in different pieces. Each new kind of item adds a little (about eleven kinds fills this).' });
+    R.push({ key: 'harmony', name: 'Pieces that go together', max: 6, got: !topMat ? 0 : topMat[1] >= 4 ? 6 : topMat[1] >= 3 ? 3 : 0, tip: 'Four or more pieces in one material (wood, soft, metal, plants, paper) tie the room together.' });
+    if (zone === 'bedroom') {
+      const styled = ['wall', 'floor', 'bedding', 'curtains'].filter(s => STYLES[s] && state.room[s] && state.room[s] !== STYLES[s][0][0]).length;
+      R.push({ key: 'style', name: 'Your own style', max: 6, got: Math.min(6, styled * 2), tip: 'Change the walls, flooring, bedding or curtains in Room styles (⋯).' });
+    } else R.push({ key: 'style', name: 'Furnished', max: 6, got: n(x => x.D.k === 'floor') >= 3 ? 6 : 0, tip: 'A few more pieces of furniture make it feel lived in.' });
+    if (dupes) R.push({ key: 'dupes', name: 'Too many of the same thing', max: 0, got: -3 * dupes, tip: 'More than three of one item starts to feel like storage.' });
+    return R;
+  },
+  score(zone) {
+    const R = this.rules(zone), max = R.reduce((s, r) => s + r.max, 0), got = R.reduce((s, r) => s + r.got, 0);
+    const score = clamp(Math.round(got / max * 100), 0, 100); return { score, stars: this.stars(score), tier: this.tier(score), rules: R };
+  },
+  hearts(n) { return '♥'.repeat(n) + '♡'.repeat(5 - n); },
+  /* after any change while decorating: celebrate new hearts and pay first-time gifts (quiet = first look this session: no fanfare, but rooms decorated before this update still get their gifts) */
+  check(zone, quiet) {
+    const S = this.S(), c = this.score(zone), was = S.best[zone] || 0;
+    if (c.stars > was) {
+      S.best[zone] = c.stars;
+      if (!quiet && was) { toast(`<b>${this.hearts(c.stars)}</b> Your ${this.ZONES[zone]} feels <b>${c.tier}</b> now.`, 'social'); Sfx.good(); }
+      for (let s = 3; s <= c.stars; s++) { const k = zone + ':' + s; if (!S.paid[k]) { S.paid[k] = 1; earn(this.GIFT[s], `Housewarming gift · ${this.ZONES[zone]} reached ${s} hearts`); } }
+    }
+    return c;
+  },
+  /* the ♥ panel */
+  html(zone) {
+    const c = this.score(zone), next = this.TIERS[c.stars] || null, S = this.S();
+    const toNext = next ? `${next[0] - c.score} more to <b>${next[1]}</b>` : 'As cozy as it gets.';
+    const rest = zone === 'bedroom' ? `<div class="b5-reward">Sleeping here: the first <b>${this.REST[c.stars]}</b> energy you spend each day is free${c.stars < 5 ? ` (${this.REST[Math.min(5, c.stars + 1)]} at ${c.stars + 1} hearts)` : ''}.</div>` : '';
+    const gifts = [3, 4, 5].map(s => `<span class="${S.paid[zone + ':' + s] ? 'got' : ''}">${s}♥ ${money(this.GIFT[s])}${S.paid[zone + ':' + s] ? ' ✓' : ''}</span>`).join('');
+    return `<div class="b5-cozy"><div class="b4-lh"><b>Cozy · ${esc(this.ZONES[zone])}</b><button class="btn sm" data-act="b4View" data-arg="">✕ Close</button></div>`
+      + `<div class="b5-top"><span class="b5-hearts" aria-label="${c.stars} of 5 hearts">${this.hearts(c.stars)}</span><span class="b5-score">${c.score}</span><span class="b5-tier">${c.tier}</span></div>`
+      + `<div class="b5-bar" role="progressbar" aria-valuenow="${c.score}" aria-valuemin="0" aria-valuemax="100"><i style="width:${c.score}%"></i></div><div class="b5-next">${toNext}</div>`
+      + rest + `<div class="b5-gifts">Housewarming gifts: ${gifts}</div>`
+      + `<div class="b5-rules">${c.rules.map(r => { const done = r.max ? r.got >= r.max : false, bad = r.got < 0; return `<div class="b5-rule ${done ? 'done' : ''} ${bad ? 'bad' : ''}"><span class="b5-mark">${bad ? '!' : done ? '✓' : r.got > 0 ? '◐' : '○'}</span><span class="b5-rn"><b>${esc(r.name)}</b>${done ? '' : `<span>${esc(r.tip)}</span>`}</span><span class="b5-pts">${r.max ? `${r.got}/${r.max}` : r.got}</span></div>`; }).join('')}</div></div>`;
+  }
+};
+
+/* well rested: a cozy bedroom's free energy, set each morning */
+MORNING115.push(() => {
+  const S = Cozy.S(), c = Cozy.score('bedroom'); S.rest = Cozy.REST[c.stars]; S.restDay = state.day;
+  if (S.rest) toast(`<b>Well rested</b> · ${Cozy.hearts(c.stars)} bedroom. The first ${S.rest} energy you spend today is free.`, 'social');
+});
+spend = (prev => function (energy, mins) {
+  const S = Cozy.S(), free = S.restDay === state.day ? Math.min(S.rest || 0, energy) : 0;
+  const ok = prev.call(this, energy - free, mins);
+  if (ok && free) S.rest -= free;
+  return ok;
+})(spend);
+
+/* Decorate mode: the ♥ chip, the panel, and a check after every change */
+Build3.render = (prev => function () {
+  prev.call(this); const D = runtime.deco, el = $('#deco'); if (!D || !el) return;
+  const c = Cozy.check(D.zone, !D.cozySeen); D.cozySeen = true;
+  const cats = el.querySelector('.b1-cats');
+  if (cats && !cats.querySelector('[data-act="b5View"]')) cats.insertAdjacentHTML('afterbegin', `<button class="chip b5-chip ${D.view === 'cozy' ? 'on' : ''}" data-act="b5View" aria-label="Cozy score ${c.score}, ${c.stars} of 5 hearts">♥ ${c.score} <small>${c.tier}</small></button>`);
+  if (D.view === 'cozy') {
+    const t = el.querySelector('.b1-tray'); if (t) t.outerHTML = Cozy.html(D.zone);
+    for (const s of ['.b3-catbar', '.b3-note', '.b1-msg']) { const x = el.querySelector(s); if (x) x.hidden = true; }
+  }
+})(Build3.render);
+Object.assign(ACT, { b5View() { const D = runtime.deco; D.view = D.view === 'cozy' ? null : 'cozy'; D.more = false; if (D.view && D.hold) Deco.cancel(); Deco.render(); } });
+(() => {
+  const st = document.createElement('style'); st.id = 'build5-css';
+  st.textContent = `
+.b5-chip{color:#a33a4a;font-weight:800}.b5-chip small{font-weight:600;opacity:.75;margin-left:2px}
+.b5-chip.on{background:#a33a4a;color:#fff}
+.b5-cozy{display:flex;flex-direction:column;gap:6px;overflow-y:auto;min-height:0;max-height:46vh}
+.b5-top{display:flex;align-items:baseline;gap:8px}
+.b5-hearts{font-size:20px;color:#c4475a;letter-spacing:1px}
+.b5-score{font:800 22px var(--f-ui)}.b5-tier{font:700 13px var(--f-ui);opacity:.75}
+.b5-bar{height:8px;border-radius:4px;background:#d9dfcd;overflow:hidden}.b5-bar i{display:block;height:100%;background:linear-gradient(90deg,#e59aa6,#c4475a)}
+.b5-next,.b5-gifts{font:600 11px var(--f-ui);opacity:.8}
+.b5-gifts span{margin-left:6px;opacity:.6}.b5-gifts span.got{opacity:1;color:#2f7d32}
+.b5-reward{font:600 12px/1.3 var(--f-ui);background:#fff2f4;border:1px solid #efc2ca;border-radius:5px;padding:5px 7px}
+.b5-rules{display:flex;flex-direction:column;gap:4px}
+.b5-rule{display:flex;gap:6px;align-items:flex-start;background:#e2e9d5;border:1px solid #b7cba4;border-radius:5px;padding:5px 6px;font:500 12px/1.25 var(--f-ui)}
+.b5-rule.done{opacity:.7}.b5-rule.bad{background:#fbe3df;border-color:#e3a79c}
+.b5-mark{flex:0 0 14px;font-weight:800;text-align:center}.b5-rule.done .b5-mark{color:#2f7d32}
+.b5-rn{flex:1;display:flex;flex-direction:column}.b5-rn span{opacity:.75}
+.b5-pts{font:700 11px var(--f-mono);opacity:.75}
+body.deco-on:not(.touch-ui) #deco>.b5-cozy{flex:1 1 100%;max-height:none}
+@media (orientation:landscape) and (max-height:540px){.b5-cozy{order:4;flex:1 1 auto;max-height:none}}`;
+  document.head.appendChild(st);
+})();
 </script>
 </body></html>

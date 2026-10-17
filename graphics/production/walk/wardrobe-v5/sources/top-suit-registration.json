@@ -1,0 +1,371 @@
+[
+  {
+    "errors": {
+      "measuredNeck": 0.58,
+      "handL": 0.58
+    },
+    "maxKeypointError": 0.58,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9923664122137404,
+    "groundError": 0.0,
+    "uniformScale": 0.20935947657904852,
+    "rotationDegrees": -1.78515625,
+    "finalSourceToCanvasTranslation": [
+      23.844528811499476,
+      132.5532604248412
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.31645569620254
+      ],
+      "handL": [
+        33.58500669344043,
+        107.86746987951807
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.24038461538461
+      ],
+      "handL": [
+        35.00925925925926,
+        107.32671957671958
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-suit.png",
+    "sourceCell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "frame": 0
+  },
+  {
+    "errors": {
+      "measuredNeck": 1.002,
+      "handL": 1.002
+    },
+    "maxKeypointError": 1.002,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9859271523178808,
+    "groundError": 0.0,
+    "uniformScale": 0.20963032136116755,
+    "rotationDegrees": 0.18359374999999992,
+    "finalSourceToCanvasTranslation": [
+      24.009263173545186,
+      128.8709482221931
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.29523809523809
+      ],
+      "handL": [
+        50.91460055096419,
+        108.08126721763085
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.21806853582554
+      ],
+      "handL": [
+        51.37692307692308,
+        106.52307692307693
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-suit.png",
+    "sourceCell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "frame": 1
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.473,
+      "handL": 0.473
+    },
+    "maxKeypointError": 0.473,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9619732785200411,
+    "groundError": 0.0,
+    "uniformScale": 0.20870544265568255,
+    "rotationDegrees": 0.21484374999999992,
+    "finalSourceToCanvasTranslation": [
+      11.07626981477447,
+      128.58964667387437
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.31944444444444
+      ],
+      "handL": [
+        46.585978835978835,
+        108.05820105820106
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.19551282051282
+      ],
+      "handL": [
+        46.71391076115486,
+        107.39370078740158
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-suit.png",
+    "sourceCell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "frame": 2
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.204,
+      "handL": 0.204
+    },
+    "maxKeypointError": 0.204,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.8267340634653187,
+    "groundError": 0.0,
+    "uniformScale": 0.20867993715982072,
+    "rotationDegrees": 1.2851562500000002,
+    "finalSourceToCanvasTranslation": [
+      22.696139972229343,
+      124.48426007484093
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.26940639269407
+      ],
+      "handL": [
+        59.895747599451305,
+        102.48559670781894
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.21100917431193
+      ],
+      "handL": [
+        59.04705882352942,
+        102.5529411764706
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-suit.png",
+    "sourceCell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "frame": 3,
+    "manualReview": "Native compositor board checked: tailoring changes the limb-core overlap while neck, near palm, support foot and complete stride align."
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.975,
+      "handL": 0.975
+    },
+    "maxKeypointError": 0.975,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9955947136563876,
+    "groundError": 0.0,
+    "uniformScale": 0.2089714535454358,
+    "rotationDegrees": -1.94140625,
+    "finalSourceToCanvasTranslation": [
+      14.699324003272148,
+      162.81776623242718
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.32510288065843
+      ],
+      "handL": [
+        56.04705882352942,
+        105.50326797385621
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.20711974110033
+      ],
+      "handL": [
+        55.76734693877551,
+        103.79183673469389
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-suit.png",
+    "sourceCell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "frame": 4
+  },
+  {
+    "errors": {
+      "measuredNeck": 1.777,
+      "handL": 1.777
+    },
+    "maxKeypointError": 1.777,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9568590937306021,
+    "groundError": 0.0,
+    "uniformScale": 0.2097690115801283,
+    "rotationDegrees": 0.28515625,
+    "finalSourceToCanvasTranslation": [
+      12.938170276318731,
+      158.39032979330446
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.166666666666664,
+        79.35135135135135
+      ],
+      "handL": [
+        59.45641025641026,
+        106.58076923076923
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.20666666666666
+      ],
+      "handL": [
+        57.95430107526882,
+        103.86155913978494
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-suit.png",
+    "sourceCell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "frame": 5
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.594,
+      "handL": 0.594
+    },
+    "maxKeypointError": 0.594,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9592529711375212,
+    "groundError": 0.0,
+    "uniformScale": 0.20711200687293674,
+    "rotationDegrees": 1.80078125,
+    "finalSourceToCanvasTranslation": [
+      15.366297560286085,
+      156.40176193518406
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.26160337552743
+      ],
+      "handL": [
+        48.936446173800256,
+        108.71076523994812
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.833333333333336,
+        78.18627450980392
+      ],
+      "handL": [
+        47.715415019762844,
+        107.65876152832675
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-suit.png",
+    "sourceCell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "frame": 6
+  },
+  {
+    "errors": {
+      "measuredNeck": 1.304,
+      "handL": 1.304
+    },
+    "maxKeypointError": 1.304,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9380938669737978,
+    "groundError": 0.0,
+    "uniformScale": 0.21112841429208706,
+    "rotationDegrees": -0.9121093750000001,
+    "finalSourceToCanvasTranslation": [
+      9.737491474743495,
+      156.7104597450509
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.333333333333336,
+        76.98630136986301
+      ],
+      "handL": [
+        30.984189723320156,
+        105.50197628458498
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.0,
+        76.87908496732025
+      ],
+      "handL": [
+        32.141496598639456,
+        103.83265306122449
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-suit.png",
+    "sourceCell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "frame": 7
+  }
+]

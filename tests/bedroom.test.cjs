@@ -49,9 +49,9 @@ test('bedroom shell preserves interactions and finishes, with responsive light a
     assert.ok(currentGeometry.hits.some(h => h.id === 'door') && currentGeometry.hits.some(h => h.id === 'window'));
     const expectedGeometry=await old.evaluate(geometry);
     fs.writeFileSync(path.join(out,'interaction-geometry.json'),JSON.stringify({current:currentGeometry,baseline:expectedGeometry},null,2));
-    // The approved room layout moved the watering can away from the bed.
+    // Water & Pots replaces the can art and fits its hitbox to the new sprite.
     // Every other archived interaction and saved finish must still match.
-    expectedGeometry.hits=expectedGeometry.hits.map(hit=>hit.id==='can'?{...hit,x:298,walk:[307,119]}:hit);
+    expectedGeometry.hits=expectedGeometry.hits.map(hit=>hit.id==='can'?{...hit,x:290,y:102.99212598425197,w:15,h:11.007874015748031,walk:[297.5,120]}:hit);
     assert.deepEqual(currentGeometry, expectedGeometry, 'Existing furniture/save choices and approved interaction geometry changed');
     await old.close();
     const result = await page.evaluate(() => {

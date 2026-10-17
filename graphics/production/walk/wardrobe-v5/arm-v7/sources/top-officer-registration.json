@@ -1,0 +1,48 @@
+{
+  "errors": {
+    "measuredNeck": 0.31,
+    "handL": 0.31
+  },
+  "maxKeypointError": 0.31,
+  "visibleHandsMeasured": 1,
+  "limbCoreIoU": 0.9078694817658349,
+  "groundError": 0.0,
+  "uniformScale": 0.09004464131394407,
+  "rotationDegrees": 0.5351562499999999,
+  "finalSourceToCanvasTranslation": [
+    2.1672443507980734,
+    36.39394773232544
+  ],
+  "resamplingPasses": 1,
+  "sourceLandmarks": {
+    "measuredNeck": [
+      48.0,
+      77.44837758112094
+    ],
+    "handL": [
+      57.11191335740072,
+      104.17930204572804
+    ]
+  },
+  "targetLandmarks": {
+    "measuredNeck": [
+      47.666666666666664,
+      77.34435261707989
+    ],
+    "handL": [
+      56.22306717363751,
+      104.59822560202788
+    ]
+  },
+  "accepted": true,
+  "source": "wardrobe-v5/arm-v7/assets/top-officer-contact.png",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "frame": 4,
+  "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+  "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+}

@@ -1,0 +1,370 @@
+[
+  {
+    "errors": {
+      "measuredNeck": 0.674,
+      "handL": 0.674
+    },
+    "maxKeypointError": 0.674,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 1.0,
+    "groundError": 0.0,
+    "uniformScale": 0.2142444654635347,
+    "rotationDegrees": -1.71484375,
+    "finalSourceToCanvasTranslation": [
+      13.474235434260702,
+      126.57735492236597
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.31231231231232
+      ],
+      "handL": [
+        35.079561042524006,
+        106.2002743484225
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.24038461538461
+      ],
+      "handL": [
+        35.00925925925926,
+        107.32671957671958
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/bottom-skirt.png",
+    "sourceCell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "frame": 0
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.748,
+      "handL": 0.748
+    },
+    "maxKeypointError": 0.748,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9552947750768371,
+    "groundError": 0.0,
+    "uniformScale": 0.21253651049121133,
+    "rotationDegrees": 1.78515625,
+    "finalSourceToCanvasTranslation": [
+      17.983293970876666,
+      120.68750504392519
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.31531531531532
+      ],
+      "handL": [
+        53.039591315453386,
+        105.5197956577267
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.21806853582554
+      ],
+      "handL": [
+        51.37692307692308,
+        106.52307692307693
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/bottom-skirt.png",
+    "sourceCell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "frame": 1
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.958,
+      "handL": 0.958
+    },
+    "maxKeypointError": 0.958,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9707746478873239,
+    "groundError": 0.0,
+    "uniformScale": 0.21253440190491138,
+    "rotationDegrees": 0.49609374999999983,
+    "finalSourceToCanvasTranslation": [
+      20.370751224520923,
+      123.93032540095442
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.25507246376812
+      ],
+      "handL": [
+        47.57282913165266,
+        105.9873949579832
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.19551282051282
+      ],
+      "handL": [
+        46.71391076115486,
+        107.39370078740158
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/bottom-skirt.png",
+    "sourceCell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "frame": 2
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.677,
+      "handL": 0.677
+    },
+    "maxKeypointError": 0.677,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9361221028829847,
+    "groundError": 0.0,
+    "uniformScale": 0.21322687287041078,
+    "rotationDegrees": 1.8242187499999998,
+    "finalSourceToCanvasTranslation": [
+      31.007262758599555,
+      119.12185389966768
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        77.33040935672516
+      ],
+      "handL": [
+        59.393055555555556,
+        101.38472222222221
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.21100917431193
+      ],
+      "handL": [
+        59.04705882352942,
+        102.5529411764706
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/bottom-skirt.png",
+    "sourceCell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "frame": 3
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.091,
+      "handL": 0.091
+    },
+    "maxKeypointError": 0.091,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9927573719606829,
+    "groundError": 0.0,
+    "uniformScale": 0.21684310134971777,
+    "rotationDegrees": 0.5351562499999999,
+    "finalSourceToCanvasTranslation": [
+      17.216335660186942,
+      123.04323175217763
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.333333333333336,
+        78.34795321637426
+      ],
+      "handL": [
+        56.798787878787884,
+        103.85454545454546
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.20711974110033
+      ],
+      "handL": [
+        55.76734693877551,
+        103.79183673469389
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/bottom-skirt.png",
+    "sourceCell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "frame": 4
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.22,
+      "handL": 0.22
+    },
+    "maxKeypointError": 0.22,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9434836318715256,
+    "groundError": 0.0,
+    "uniformScale": 0.2157357216681879,
+    "rotationDegrees": 1.30859375,
+    "finalSourceToCanvasTranslation": [
+      16.73247153724811,
+      123.22708034212579
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.33333333333333
+      ],
+      "handL": [
+        58.78544061302682,
+        104.19795657726694
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.20666666666666
+      ],
+      "handL": [
+        57.95430107526882,
+        103.86155913978494
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/bottom-skirt.png",
+    "sourceCell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "frame": 5
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.443,
+      "handL": 0.443
+    },
+    "maxKeypointError": 0.443,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9332396345748419,
+    "groundError": 0.0,
+    "uniformScale": 0.21430372875490675,
+    "rotationDegrees": -0.7148437500000001,
+    "finalSourceToCanvasTranslation": [
+      16.699647544114036,
+      128.5956938926218
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.333333333333336,
+        78.25438596491229
+      ],
+      "handL": [
+        48.352130325814535,
+        107.07518796992481
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.833333333333336,
+        78.18627450980392
+      ],
+      "handL": [
+        47.715415019762844,
+        107.65876152832675
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/bottom-skirt.png",
+    "sourceCell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "frame": 6
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.024,
+      "handL": 0.024
+    },
+    "maxKeypointError": 0.024,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9245175936435869,
+    "groundError": 0.0,
+    "uniformScale": 0.2151868161680488,
+    "rotationDegrees": -0.09765624999999999,
+    "finalSourceToCanvasTranslation": [
+      23.603417575038257,
+      124.876890701988
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.333333333333336,
+        76.96130952380953
+      ],
+      "handL": [
+        32.40948813982522,
+        103.88389513108615
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.0,
+        76.87908496732025
+      ],
+      "handL": [
+        32.141496598639456,
+        103.83265306122449
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/bottom-skirt.png",
+    "sourceCell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "frame": 7
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "purchases": 7,
+  "deliveryMatchesStore": true,
+  "nativeRoomScopedIrrigation": true,
+  "rainCollectionAndRefill": true,
+  "plantEntersSoilWithFrontRimOcclusion": true,
+  "allThreePotMasks": [
+    true,
+    true,
+    true
+  ],
+  "readOnlyRendering": true,
+  "liveMoistureProbe": true,
+  "liveWaterWindows": true,
+  "foregroundPlayerPixelsProtected": 176,
+  "remoteFeedReadOnly": true,
+  "potRemovalGuardPreserved": true,
+  "saveReload": true,
+  "missingArtworkBlocksStartup": true,
+  "errors": []
+}

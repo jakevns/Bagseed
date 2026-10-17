@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "corrections": [
+    {
+      "prompt": "Bagseed production garment correction, one transparent neck-down RIGHT-FACING walking sprite. Reference 1 supplies the exact anatomy and pose: camera-NEAR arm swings FORWARD to screen RIGHT, with elbow in front of torso and hand at front waist. Camera-FAR arm swings BACK to screen LEFT, connected anatomically to its far shoulder behind the torso; show a continuous sleeve/forearm on the left rear silhouette, not a disconnected hand emerging from the waist. Reference 2 supplies garment design ONLY: replace tank top with OPEN medium-blue KNIT CARDIGAN, cream crew-neck undershirt, buttons/placket, long sleeves and ribbed cuffs. Do not copy reference2 arm pose. Preserve reference1 exact neck, torso size, hip, both leg poses, knee/ankle positions, dark navy jeans and brown cream-soled sneakers. Only TWO arms and TWO hands. Near arm clearly forward, far clearly backward, opposite the first contact pose. Fine delicate existing illustrated linework and folds, no bold outline or blur. Short neck stump only, no head or face, no text, floor, shadow or backdrop. Full complete sprite, generous transparent margins.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-b335ca9a-fd06-443c-a068-d35b829d1db9.png",
+      "source": "assets/arm-v6-cardigan-contact.png"
+    },
+    {
+      "prompt": "Remove ONLY the colored glow/halo/background around this sprite. Keep the exact opaque illustrated figure, arm pose, clothing detail, hands, jeans and shoes completely unchanged. The entire area outside the inked silhouette must have ZERO alpha, genuinely transparent. No soft glow, vignette, haze, floor shadow, ground or replacement backdrop. Preserve fine antialiased ink edges only immediately against the figure. This is a production transparent game sprite cutout, not a poster. Return the same complete headless right-facing cardigan walking pose and same framing, untouched foreground.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-a63fb425-8c5e-4109-9b1e-696b099e82c3.png",
+      "source": "assets/arm-v6-cardigan-contact-clean.png"
+    }
+  ],
+  "registrationBackgroundExclusion": "Use the standard largest alpha-greater-than-40 foreground component with its original antialias fringe during registration. No repainted foreground."
+}

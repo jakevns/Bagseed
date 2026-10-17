@@ -5,30 +5,36 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "08b75c3ba5b4811f589b667f56acf0b5006c331f686607cffd46c92325900cf5",
-  "updatedSHA": "809901293046c2ea0512f55600a32ae070de069e1bc0612125ea928059dd5a66",
+  "workingSourceSHA": "c4135d5db084f43fa2b5cf0ca482e8d2dea968250af1c4370a4260de752e3a4d",
+  "updatedSHA": "feadc227426ac4c08878113d03cfdb9b55b323fb22a19ec22c3088fc22762ae7",
   "characterRevision": "character-audit-cel-v1",
-  "characterPayloadSHA256": "2eb4c3061caf65b0ec7f0ac974ab05cda9cb5fb8b377279c73b3d92e813bcc2a",
+  "characterPayloadSHA256": "948302e1abc76482aa633dd322d1c00279cd1696a99956ceb80c5d065dbe5fcb",
   "characterSourcesSHA256": {
     "graphics/production/sources/renderer.js": "04f641348b9c1df3aa94638652569a9cd78a59b23b34df1c739500e2f58ec6c2",
     "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
     "graphics/production/sources/hair-batch-01.js": "9ecdd8b585399ea4a5c9f11534914f21cb1d8be136839ea9c9ac6d75f8fd8390",
     "graphics/production/sources/hair-fit-rest.js": "57e1ea90c42bac147c83c798c61c8a1ddc195a30556d112ecf112bf8120d9ef3",
-    "graphics/production/sources/build.cjs": "d40cda46affe302907236352175379389f37454a9d23ae8b4effa993537fa1ae",
+    "graphics/production/sources/build.cjs": "e2edd16499848d58e2a7c3ae0f443437214b0578f12cd9b258d443b1b2a7cf4e",
     "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
     "graphics/production/customization-v5/manifest.json": "a2717a7134fd34139976335732742558b307917f0646f50ebfa89212edebeb32",
     "graphics/production/customization-v5/hair-fit.json": "acf4244aab6c7b1733ff0bcfffe51c9e37758a2acc302f20027a34f9a127dc2b",
     "graphics/production/customization-v5/register.py": "902b0963954211c145c442d3ff458e4aa554f3f6727ec7af4f4c52527e83f636",
     "graphics/production/cast-walk-v1/manifest.json": "ccb56f9bafcb586332832238c4dc4f43068c53b641ab804326f0e9caca6946a0",
     "graphics/production/cast-walk-v1/sources/clocks.js": "8cb078c95c1b6408f9888a5ae6bbbb2830f7561bedced21075f56778da6b23bc",
-    "graphics/production/walk/sources/renderer.js": "f8cc454dfec4be17d8f78443fa21a4233d001048522dc93eda647e2c86beb802",
-    "graphics/production/walk/manifest.json": "5da2a2d9ad06c3abec9301b2975b6cf9962214f0354ad9d4ec14495be67d467a",
+    "graphics/production/walk/sources/renderer.js": "8af78b22f0074209b1654295f78e3a865b54c8735f24052eb0dcaa09430d92db",
+    "graphics/production/walk/manifest.json": "9d49fd24d49dc591d83948ba7b693b96d963fb930e8b3d0f5f6c7e1a38f99206",
     "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa",
-    "graphics/production/walk/stride-v4/candidate-manifest.json": "49d9554ce407cfabbe323d0fb7cf18fdac38513c7cd839cf09dbe492188cb0f9"
+    "graphics/production/walk/wardrobe-v5/manifest.json": "99d7daf644a1b0279bf90601bb8d1e24a269f605dbf9fb61344e9b9f11f9764a",
+    "graphics/production/walk/wardrobe-v5/sources/register.py": "3f3848f47ba738bd9d2390c41c44b9b0dabbb7086b317f1d6ba25cc21dea0cc6",
+    "graphics/production/walk/wardrobe-v5/sources/upper_layer.py": "b8dc5c0da648fd507fa653e90d389ca6e52f2c04ae16701bef1664ec62bd111c",
+    "graphics/production/walk/wardrobe-v5/sources/repair_one.py": "47ed61ab0fb732ad75f7e4ecb43c44afdd156bff68612d6f9cc895bd4e6502aa",
+    "graphics/production/walk/wardrobe-v5/sources/repack_lower.py": "5ad89b5072c67ade5ba9e1bd181b52e5c1c6e6e64f6861eac741052ae7c12bbd",
+    "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
+    "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 63913729,
+  "bytes": 64054896,
   "modularAssets": 544,
-  "embeddedImages": 1791,
+  "embeddedImages": 1812,
   "approvedIdentities": [
     "player",
     "remy",
@@ -46,12 +52,12 @@
   "curtainSets": 6,
   "menuRevision": "community-menu-3",
   "previousCharacterBytes": 101055566,
-  "walkBytesIncrease": 25500337,
+  "walkBytesIncrease": 43794819,
   "walkReviewStatus": "full wardrobe registered; visual review pending",
   "characterDataFile": "public/character-data.js",
-  "characterDataSHA256": "d817c6c680a1f6d162b4c1507f64bbc7fd7f945732da67b4ab7466fc39de1d96",
-  "characterDataBytes": 62642174,
-  "packageBytes": 126555903,
+  "characterDataSHA256": "fe0b1d7f58d91e2f1072083f1c62f1a1013dbd60b381fc64d93bbce5f8fd705e",
+  "characterDataBytes": 80795489,
+  "packageBytes": 144850385,
   "castWalkRevision": "cast-walk-eight-v1",
   "walkingStandard": "eight-frame-full-stride-v1",
   "castWalkFrameCount": 8,
@@ -94,18 +100,15 @@
     "pro",
     "premium"
   ],
-  "customStrideReview": "review/custom-walk-v4/README.md",
+  "customStrideReview": "review/custom-walk-v5/README.md",
   "customStrideLive": {
-    "outfit": [
-      "hoodie",
-      "jeans",
-      "sneakers"
-    ],
+    "outfits": 300,
+    "garments": 24,
     "directions": [
       "right",
       "left"
     ],
     "frames": 8,
-    "remainingWardrobeFrames": 4
+    "frontBackFrames": 4
   }
 }

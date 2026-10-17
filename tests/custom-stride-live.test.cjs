@@ -1,10 +1,12 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{pathToFileURL}=require('node:url'),{chromium}=require('playwright');
-test('approved custom side stride is live in file game, creator and mirror',{timeout:180000},async()=>{
- const root=path.resolve(__dirname,'..');let browser;
+const httpMode=process.env.BAGSEED_TEST_HTTP==='1';
+test('approved custom side stride is live in '+(httpMode?'served':'file')+' game, creator and mirror',{timeout:180000},async()=>{
+ const root=path.resolve(__dirname,'..');let browser,server;let entry=pathToFileURL(path.join(root,'public/index.html')).href;
  try{
+  if(httpMode){const {createStaticServer}=await import('../tools/server.mjs');server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));entry='http://127.0.0.1:'+server.address().port+'/index.html';}
   browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH,headless:true,args:['--disable-gpu','--disable-accelerated-2d-canvas']});
   const page=await require('./helpers/art-page.cjs')(browser,{viewport:{width:1280,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(pathToFileURL(path.join(root,'public/index.html')).href,{timeout:120000});await page.evaluate(()=>BagseedArt.ready);
+  await page.goto(entry,{timeout:120000});await page.evaluate(()=>BagseedArt.ready);
   await page.locator('[data-act=newGame]').click();
   const creator=await page.evaluate(()=>{
    Object.assign(runtime.cr,{topS:'hoodie',bottomS:'jeans',shoesS:'sneakers',hairS:'short',acc:'none'});runtime.crWalk=true;
@@ -30,8 +32,9 @@ test('approved custom side stride is live in file game, creator and mirror',{tim
   });
   assert.deepEqual(result.checks.map(c=>c.frame),[0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7]);
   for(const c of result.checks){assert.equal(c.authored,c.dir+'/'+c.frame);assert.equal(c.profile,'stride/');assert.ok(c.error<.001);}
-  assert.equal(result.fallback,4);assert.equal(result.front,4);assert.equal(result.reduced,2);assert.equal(result.mirror,8);assert.deepEqual(errors,[]);
-  const out=path.join(root,'review/custom-walk-v4');fs.writeFileSync(path.join(out,'live-game-poses.png'),Buffer.from(result.board.split(',')[1],'base64'));delete result.board;
-  fs.writeFileSync(path.join(out,'live-game-checks.json'),JSON.stringify({...result,creator,browserErrors:errors},null,2)+'\n');
- }finally{await browser?.close();}
+  assert.equal(result.fallback,8);assert.equal(result.front,4);assert.equal(result.reduced,2);assert.equal(result.mirror,8);assert.deepEqual(errors,[]);
+  const out=path.join(root,'review/custom-walk-v5');fs.writeFileSync(path.join(out,'live-game-poses.png'),Buffer.from(result.board.split(',')[1],'base64'));delete result.board;
+  fs.writeFileSync(path.join(out,'live-game-checks.json'),JSON.stringify({...result,creator,browserErrors:errors,transport:httpMode?'http':'file'},null,2)+'\n');
+ }finally{await browser?.close();if(server)await new Promise(r=>server.close(r));}
+
 });

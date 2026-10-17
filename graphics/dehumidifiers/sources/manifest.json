@@ -1,0 +1,112 @@
+{
+  "revision": "dehumidifiers-1",
+  "status": "approved",
+  "path": "assets/dehumidifiers-atlas.png",
+  "sha256": "d79bf76ab796b667a7491681375649c47f8c36975141e23fc6cfc408a43844b9",
+  "size": [
+    1230,
+    1278
+  ],
+  "runtime": {
+    "path": "assets/dehumidifiers-atlas.webp",
+    "sha256": "07a1d0663d943283ead9f38d736c09b316d05c65482878adaf4a4d3e08032e8a",
+    "publicPath": "assets/dehumidifiers/dehumidifiers-07a1d0663d94.webp"
+  },
+  "tiers": {
+    "1": {
+      "name": "DryGuy Junior",
+      "price": 59,
+      "watts": 120,
+      "width": 11.8,
+      "height": 12.1,
+      "on": [
+        127,
+        56,
+        421,
+        431
+      ],
+      "off": [
+        682,
+        56,
+        422,
+        431
+      ],
+      "indicator": [
+        325,
+        323
+      ],
+      "buttons": [
+        [
+          431,
+          330
+        ]
+      ]
+    },
+    "2": {
+      "name": "Arid Andy Smart",
+      "price": 189,
+      "watts": 180,
+      "width": 12.2,
+      "height": 16,
+      "on": [
+        75,
+        535,
+        519,
+        676
+      ],
+      "off": [
+        644,
+        535,
+        519,
+        676
+      ],
+      "display": {
+        "on": [
+          365,
+          837,
+          114,
+          52
+        ],
+        "off": [
+          935,
+          837,
+          114,
+          52
+        ]
+      },
+      "indicator": [
+        298,
+        856
+      ],
+      "buttons": [
+        [
+          389,
+          935
+        ],
+        [
+          460,
+          935
+        ]
+      ]
+    }
+  },
+  "placements": {
+    "closet": [
+      17.5,
+      82
+    ],
+    "tent2": [
+      128,
+      96
+    ],
+    "tent4": [
+      116,
+      112
+    ],
+    "tent5": [
+      316,
+      122
+    ]
+  },
+  "approvedDate": "2026-10-17"
+}

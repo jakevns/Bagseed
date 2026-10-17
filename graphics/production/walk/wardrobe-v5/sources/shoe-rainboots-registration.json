@@ -1,0 +1,370 @@
+[
+  {
+    "errors": {
+      "measuredNeck": 0.619,
+      "handL": 0.619
+    },
+    "maxKeypointError": 0.619,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9967988180251169,
+    "groundError": 0.0,
+    "uniformScale": 0.22359337735449467,
+    "rotationDegrees": -2.0,
+    "finalSourceToCanvasTranslation": [
+      12.254692831656417,
+      123.91736561598793
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.3638888888889
+      ],
+      "handL": [
+        35.19972451790634,
+        105.95592286501376
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.24038461538461
+      ],
+      "handL": [
+        35.00925925925926,
+        107.32671957671958
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-rainboots.png",
+    "sourceCell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "frame": 0
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.583,
+      "handL": 0.583
+    },
+    "maxKeypointError": 0.583,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.961151481274455,
+    "groundError": 0.0,
+    "uniformScale": 0.2167480600810763,
+    "rotationDegrees": 1.73046875,
+    "finalSourceToCanvasTranslation": [
+      18.077033059204386,
+      121.45540065702107
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.3669467787115
+      ],
+      "handL": [
+        52.13492063492063,
+        105.82407407407408
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.21806853582554
+      ],
+      "handL": [
+        51.37692307692308,
+        106.52307692307693
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-rainboots.png",
+    "sourceCell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "frame": 1
+  },
+  {
+    "errors": {
+      "measuredNeck": 1.06,
+      "handL": 1.06
+    },
+    "maxKeypointError": 1.06,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9880281690140845,
+    "groundError": 0.0,
+    "uniformScale": 0.21792128488473092,
+    "rotationDegrees": -0.00390625,
+    "finalSourceToCanvasTranslation": [
+      18.932571601044096,
+      124.14210789049825
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.27966101694915
+      ],
+      "handL": [
+        47.20945083014049,
+        105.77905491698596
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.19551282051282
+      ],
+      "handL": [
+        46.71391076115486,
+        107.39370078740158
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-rainboots.png",
+    "sourceCell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "frame": 2
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.76,
+      "handL": 0.76
+    },
+    "maxKeypointError": 0.76,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9428241409182789,
+    "groundError": 0.0,
+    "uniformScale": 0.2211714026755738,
+    "rotationDegrees": 1.2148437500000002,
+    "finalSourceToCanvasTranslation": [
+      20.042321736606347,
+      117.06245006431661
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        77.29885057471265
+      ],
+      "handL": [
+        58.85241730279898,
+        101.49872773536896
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.21100917431193
+      ],
+      "handL": [
+        59.04705882352942,
+        102.5529411764706
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-rainboots.png",
+    "sourceCell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "frame": 3
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.177,
+      "handL": 0.177
+    },
+    "maxKeypointError": 0.177,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9608808290155441,
+    "groundError": 0.0,
+    "uniformScale": 0.22062218650089746,
+    "rotationDegrees": 1.1835937500000002,
+    "finalSourceToCanvasTranslation": [
+      20.194002921554162,
+      122.786541424744
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.31967213114754
+      ],
+      "handL": [
+        56.52196382428941,
+        104.0813953488372
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.20711974110033
+      ],
+      "handL": [
+        55.76734693877551,
+        103.79183673469389
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-rainboots.png",
+    "sourceCell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "frame": 4
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.24,
+      "handL": 0.24
+    },
+    "maxKeypointError": 0.24,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9392523364485982,
+    "groundError": 0.0,
+    "uniformScale": 0.218998623998638,
+    "rotationDegrees": 1.4648437499999998,
+    "finalSourceToCanvasTranslation": [
+      14.612604831118341,
+      124.44784227190502
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.30645161290322
+      ],
+      "handL": [
+        58.64721141374838,
+        103.44617380025942
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.20666666666666
+      ],
+      "handL": [
+        57.95430107526882,
+        103.86155913978494
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-rainboots.png",
+    "sourceCell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "frame": 5
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.648,
+      "handL": 0.648
+    },
+    "maxKeypointError": 0.648,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9810260014054814,
+    "groundError": 0.0,
+    "uniformScale": 0.2164092147492399,
+    "rotationDegrees": -1.2148437500000002,
+    "finalSourceToCanvasTranslation": [
+      16.727312116585583,
+      132.6173476515177
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.333333333333336,
+        78.31733333333334
+      ],
+      "handL": [
+        48.26838235294118,
+        106.77696078431372
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.833333333333336,
+        78.18627450980392
+      ],
+      "handL": [
+        47.715415019762844,
+        107.65876152832675
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-rainboots.png",
+    "sourceCell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "frame": 6
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.019,
+      "handL": 0.019
+    },
+    "maxKeypointError": 0.019,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9511560693641619,
+    "groundError": 0.0,
+    "uniformScale": 0.21896649634036566,
+    "rotationDegrees": -0.619140625,
+    "finalSourceToCanvasTranslation": [
+      12.280842810271857,
+      127.06734227797727
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.333333333333336,
+        77.00262467191601
+      ],
+      "handL": [
+        32.17127799736495,
+        103.80237154150198
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.0,
+        76.87908496732025
+      ],
+      "handL": [
+        32.141496598639456,
+        103.83265306122449
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-rainboots.png",
+    "sourceCell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "frame": 7
+  }
+]

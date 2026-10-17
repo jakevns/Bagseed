@@ -1,0 +1,370 @@
+[
+  {
+    "errors": {
+      "measuredNeck": 0.713,
+      "handL": 0.713
+    },
+    "maxKeypointError": 0.713,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.987934006402364,
+    "groundError": 0.0,
+    "uniformScale": 0.2105869303245664,
+    "rotationDegrees": -2.0,
+    "finalSourceToCanvasTranslation": [
+      21.039454661868866,
+      139.64266921854096
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.3170731707317
+      ],
+      "handL": [
+        32.798639455782315,
+        107.14013605442176
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.24038461538461
+      ],
+      "handL": [
+        35.00925925925926,
+        107.32671957671958
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-officer.png",
+    "sourceCell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "frame": 0
+  },
+  {
+    "errors": {
+      "measuredNeck": 1.158,
+      "handL": 1.157
+    },
+    "maxKeypointError": 1.158,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.982495137538205,
+    "groundError": 0.0,
+    "uniformScale": 0.21016727105603605,
+    "rotationDegrees": -2.0,
+    "finalSourceToCanvasTranslation": [
+      29.292731613236157,
+      141.67833649340685
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.32911392405063
+      ],
+      "handL": [
+        48.50735294117647,
+        106.17279411764706
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.21806853582554
+      ],
+      "handL": [
+        51.37692307692308,
+        106.52307692307693
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-officer.png",
+    "sourceCell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "frame": 1
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.631,
+      "handL": 0.631
+    },
+    "maxKeypointError": 0.631,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.998240675580577,
+    "groundError": 0.0,
+    "uniformScale": 0.21046148270040788,
+    "rotationDegrees": -1.9648437499999998,
+    "finalSourceToCanvasTranslation": [
+      17.22185561082581,
+      140.7092471677275
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.3170731707317
+      ],
+      "handL": [
+        46.40074906367041,
+        106.40324594257179
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.19551282051282
+      ],
+      "handL": [
+        46.71391076115486,
+        107.39370078740158
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-officer.png",
+    "sourceCell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "frame": 2
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.922,
+      "handL": 0.922
+    },
+    "maxKeypointError": 0.922,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9606345475910694,
+    "groundError": 0.0,
+    "uniformScale": 0.21080096577276988,
+    "rotationDegrees": -1.71484375,
+    "finalSourceToCanvasTranslation": [
+      18.990653554725654,
+      138.04646836913312
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        77.27715355805243
+      ],
+      "handL": [
+        57.84642857142857,
+        101.6452380952381
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.21100917431193
+      ],
+      "handL": [
+        59.04705882352942,
+        102.5529411764706
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-officer.png",
+    "sourceCell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "frame": 3
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.238,
+      "handL": 0.238
+    },
+    "maxKeypointError": 0.238,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9369019912076545,
+    "groundError": 0.0,
+    "uniformScale": 0.2111406139579883,
+    "rotationDegrees": 1.78515625,
+    "finalSourceToCanvasTranslation": [
+      26.324891684223967,
+      143.90471344257207
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.35249042145594
+      ],
+      "handL": [
+        57.1953125,
+        103.45572916666667
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.20711974110033
+      ],
+      "handL": [
+        55.76734693877551,
+        103.79183673469389
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-officer.png",
+    "sourceCell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "frame": 4
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.117,
+      "handL": 0.117
+    },
+    "maxKeypointError": 0.117,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9212403100775194,
+    "groundError": 0.0,
+    "uniformScale": 0.20899235648561762,
+    "rotationDegrees": 0.4648437499999999,
+    "finalSourceToCanvasTranslation": [
+      24.51123214096849,
+      149.49234719363704
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.37179487179488
+      ],
+      "handL": [
+        58.368,
+        104.10133333333333
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.20666666666666
+      ],
+      "handL": [
+        57.95430107526882,
+        103.86155913978494
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-officer.png",
+    "sourceCell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "frame": 5
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.689,
+      "handL": 0.689
+    },
+    "maxKeypointError": 0.689,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9944095038434662,
+    "groundError": 0.0,
+    "uniformScale": 0.20805503824021868,
+    "rotationDegrees": -2.0,
+    "finalSourceToCanvasTranslation": [
+      17.569994809840892,
+      156.92203906800103
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.27777777777779
+      ],
+      "handL": [
+        46.01767676767677,
+        106.71843434343434
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.833333333333336,
+        78.18627450980392
+      ],
+      "handL": [
+        47.715415019762844,
+        107.65876152832675
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-officer.png",
+    "sourceCell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "frame": 6
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.503,
+      "handL": 0.503
+    },
+    "maxKeypointError": 0.503,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9541630403249203,
+    "groundError": 0.0,
+    "uniformScale": 0.2111753174560933,
+    "rotationDegrees": -2.0,
+    "finalSourceToCanvasTranslation": [
+      14.38941928037873,
+      150.6224374819472
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.5,
+        77.01626016260163
+      ],
+      "handL": [
+        30.66916354556804,
+        103.187265917603
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.0,
+        76.87908496732025
+      ],
+      "handL": [
+        32.141496598639456,
+        103.83265306122449
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-officer.png",
+    "sourceCell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "frame": 7
+  }
+]

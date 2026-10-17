@@ -1,0 +1,54 @@
+{
+  "errors": {
+    "measuredNeck": 0.226,
+    "handL": 0.226
+  },
+  "maxKeypointError": 0.226,
+  "visibleHandsMeasured": 1,
+  "limbCoreIoU": 0.8403105073468257,
+  "groundError": 0.0,
+  "uniformScale": 0.05931186817341997,
+  "rotationDegrees": 2.0,
+  "finalSourceToCanvasTranslation": [
+    48.16171309398827,
+    181.52991244991802
+  ],
+  "resamplingPasses": 1,
+  "sourceLandmarks": {
+    "measuredNeck": [
+      47.666666666666664,
+      77.96402877697842
+    ],
+    "handL": [
+      58.023809523809526,
+      104.7367724867725
+    ]
+  },
+  "targetLandmarks": {
+    "measuredNeck": [
+      47.333333333333336,
+      77.56386292834891
+    ],
+    "handL": [
+      56.410062893081765,
+      104.44779874213837
+    ]
+  },
+  "accepted": true,
+  "visibleLimbCoreIoU": 0.9110541727672035,
+  "occludedParts": [
+    "farShoulder",
+    "farSleeve",
+    "farUpperArm"
+  ],
+  "source": "wardrobe-v5/arm-v7/assets/top-tee-contact.png",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "frame": 4,
+  "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+  "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+}

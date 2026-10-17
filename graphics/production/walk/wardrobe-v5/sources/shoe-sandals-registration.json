@@ -1,0 +1,370 @@
+[
+  {
+    "errors": {
+      "measuredNeck": 0.102,
+      "handL": 0.102
+    },
+    "maxKeypointError": 0.102,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 1.0,
+    "groundError": 0.0,
+    "uniformScale": 0.22169932734277795,
+    "rotationDegrees": -0.5351562499999999,
+    "finalSourceToCanvasTranslation": [
+      16.19335551325535,
+      118.01903091016675
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.32716049382717
+      ],
+      "handL": [
+        34.97609561752988,
+        107.43691899070386
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.24038461538461
+      ],
+      "handL": [
+        35.00925925925926,
+        107.32671957671958
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-sandals.png",
+    "sourceCell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "frame": 0
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.089,
+      "handL": 0.089
+    },
+    "maxKeypointError": 0.089,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9883817427385893,
+    "groundError": 0.0,
+    "uniformScale": 0.21997225496657669,
+    "rotationDegrees": 0.5546874999999999,
+    "finalSourceToCanvasTranslation": [
+      13.537050959806482,
+      117.84036977835608
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.29565217391304
+      ],
+      "handL": [
+        51.92259675405743,
+        106.74282147315854
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.21806853582554
+      ],
+      "handL": [
+        51.37692307692308,
+        106.52307692307693
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-sandals.png",
+    "sourceCell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "frame": 1
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.048,
+      "handL": 0.048
+    },
+    "maxKeypointError": 0.048,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9947460595446584,
+    "groundError": 0.0,
+    "uniformScale": 0.2210691120367668,
+    "rotationDegrees": 0.8828125000000003,
+    "finalSourceToCanvasTranslation": [
+      15.16845804558396,
+      116.3787856281237
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.33606557377048
+      ],
+      "handL": [
+        47.457393483709275,
+        107.63784461152882
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.19551282051282
+      ],
+      "handL": [
+        46.71391076115486,
+        107.39370078740158
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-sandals.png",
+    "sourceCell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "frame": 2
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.166,
+      "handL": 0.166
+    },
+    "maxKeypointError": 0.166,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9774826789838337,
+    "groundError": 0.0,
+    "uniformScale": 0.2214910713811914,
+    "rotationDegrees": 0.0039062499999999566,
+    "finalSourceToCanvasTranslation": [
+      4.810297219021742,
+      116.62403734701587
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.833333333333336,
+        77.26023391812866
+      ],
+      "handL": [
+        59.40659340659341,
+        102.7875457875458
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.21100917431193
+      ],
+      "handL": [
+        59.04705882352942,
+        102.5529411764706
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-sandals.png",
+    "sourceCell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "frame": 3
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.245,
+      "handL": 0.245
+    },
+    "maxKeypointError": 0.245,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9922520661157025,
+    "groundError": 0.0,
+    "uniformScale": 0.21586743196816982,
+    "rotationDegrees": 1.7226562499999996,
+    "finalSourceToCanvasTranslation": [
+      23.41677786368233,
+      136.01056599606375
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.33033033033033
+      ],
+      "handL": [
+        57.06690561529271,
+        104.14934289127838
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.20711974110033
+      ],
+      "handL": [
+        55.76734693877551,
+        103.79183673469389
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-sandals.png",
+    "sourceCell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "frame": 4
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.634,
+      "handL": 0.634
+    },
+    "maxKeypointError": 0.634,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.942450495049505,
+    "groundError": 0.0,
+    "uniformScale": 0.2151769266766581,
+    "rotationDegrees": 1.88671875,
+    "finalSourceToCanvasTranslation": [
+      17.390826155447435,
+      137.62302574196215
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.30886850152905
+      ],
+      "handL": [
+        59.175438596491226,
+        104.8107769423559
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.20666666666666
+      ],
+      "handL": [
+        57.95430107526882,
+        103.86155913978494
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-sandals.png",
+    "sourceCell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "frame": 5
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.255,
+      "handL": 0.255
+    },
+    "maxKeypointError": 0.255,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9944095038434662,
+    "groundError": 0.0,
+    "uniformScale": 0.21683894664218803,
+    "rotationDegrees": 0.4648437499999999,
+    "finalSourceToCanvasTranslation": [
+      15.442677939994557,
+      139.83342745688057
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.333333333333336,
+        78.30277777777778
+      ],
+      "handL": [
+        48.17824074074074,
+        108.10532407407408
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.833333333333336,
+        78.18627450980392
+      ],
+      "handL": [
+        47.715415019762844,
+        107.65876152832675
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-sandals.png",
+    "sourceCell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "frame": 6
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.599,
+      "handL": 0.599
+    },
+    "maxKeypointError": 0.599,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9656152315998864,
+    "groundError": 0.0,
+    "uniformScale": 0.21819653758085,
+    "rotationDegrees": 1.2148437500000002,
+    "finalSourceToCanvasTranslation": [
+      11.664289993909225,
+      135.17424038912975
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.333333333333336,
+        76.95156695156696
+      ],
+      "handL": [
+        32.25063613231552,
+        104.79516539440203
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.0,
+        76.87908496732025
+      ],
+      "handL": [
+        32.141496598639456,
+        103.83265306122449
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/shoe-sandals.png",
+    "sourceCell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "frame": 7
+  }
+]

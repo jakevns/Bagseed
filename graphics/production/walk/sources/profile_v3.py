@@ -7,6 +7,9 @@ def neck_marker(a):
  mask=warm(a)&(Y<96);yy,xx=np.nonzero(mask);top=yy.min();yy,xx=np.nonzero(mask&(YY<top+9));return np.array([np.median(xx)/3,yy.mean()/3])
 
 def affine(im,M,t):
+ if np.sqrt(abs(np.linalg.det(M)))<.35:
+  from affine_footprint import affine_lanczos
+  return affine_lanczos(im,M,t)
  inv=np.linalg.inv(M);off=-inv@t
  return im.convert('RGBa').transform((288,432),Image.Transform.AFFINE,(inv[0,0],inv[0,1],off[0],inv[1,0],inv[1,1],off[1]),Image.Resampling.BICUBIC).convert('RGBA')
 
@@ -48,6 +51,11 @@ def pack(item,old,side_frames,kind,style,skin=False):
   if kind=='bottom'and style in ['shorts','skirt']:leg_material|=warm(a)&(light>88)
   reclaim=np.isin(lab,[6,7])&leg_material
   lab[reclaim]=np.where(legs[near]<=legs[far],5,4)[reclaim]
+  if kind=='bottom':
+   # The rig's waist cut lies below the painted waistband. Preserve that
+   # fabric as pelvis/leg pixels instead of discarding it as shirt torso.
+   pelvis=(lab==2)&(Y>=p['waist'][1]-3)&(Y<p['waist'][1]+1)
+   lab[pelvis]=np.where(legs[near]<=legs[far],5,4)[pelvis]
   upper=np.isin(lab,[1,2,3]);lower=np.isin(lab,[4,5])
   if skin:keep=lower
   elif kind=='top':
@@ -56,7 +64,7 @@ def pack(item,old,side_frames,kind,style,skin=False):
    if style in ['labcoat','garden']:
     end=(p['kneeL'][1]+p['kneeR'][1])/2+(2 if style=='labcoat'else-2);hem=blue&(light>82)&(Y>p['waist'][1]-3)&(Y<end);hem=np.array(Image.fromarray((hem*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(7)))>0;keep|=hem&lower&(Y<end+1);info['longHem']=True
   elif kind=='bottom':
-   adjacent=np.array(Image.fromarray((blue*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(5)))>0;keep=lower&(blue|((light<45)&adjacent)|(warm(a)if style in ['shorts','skirt']else False))
+   adjacent=np.array(Image.fromarray((blue*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(5)))>0;keep=lower&(blue|((light<45)&adjacent)|(warm(a)if style in ['shorts','skirt']else False)|pelvis)
   else:
    # Preserve complete shoe silhouettes, including shafts and partially hidden
    # raised feet, rather than slicing them with the other leg's ankle plane.
@@ -76,7 +84,7 @@ def pack(item,old,side_frames,kind,style,skin=False):
   placed.append((key,name,pos,im,x,y));x+=im.width+2;rowh=max(rowh,im.height)
  atlas=Image.new('RGBA',(width,y+rowh+2))
  for key,name,pos,im,x,y in placed:atlas.alpha_composite(im,(x,y));info['frames'][key]['parts'][name]={'rect':[x,y,im.width,im.height],'destination':pos}
- folder=P3/'atlases';folder.mkdir(exist_ok=True);atlas.save(folder/(item+'.png'));info['atlas']='profile-v3/atlases/'+item+'.png';info['accepted']=all(v[1]['accepted']for v in side_frames.values());info['profileRevision']='standing-style-profiles-v3'
+ folder=P3/'atlases';folder.mkdir(exist_ok=True);target=folder/(item+'.png');staging=target.with_suffix('.png.tmp');atlas.save(staging,format='PNG');staging.replace(target);info['atlas']='profile-v3/atlases/'+item+'.png';info['accepted']=all(v[1]['accepted']for v in side_frames.values());info['profileRevision']='standing-style-profiles-v3'
  if not skin:
   reference=np.array(Image.open(W/f'assets/{item}-standing-style-reference.png').convert('RGBA'))[:432];ref_y=np.indices(reference.shape[:2])[0]/3
   def values(arr,yy,role):

@@ -15,6 +15,16 @@ if (!html.includes(require('./compile-tent2.cjs')())) throw new Error('The 2x2 t
 if (!html.includes(require('./compile-tent4.cjs')())) throw new Error('The 4x4 tent renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-tent5.cjs')())) throw new Error('The 5x5 tent renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-tent-placement.cjs')())) throw new Error('The tent placement renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-room-climate.cjs')())) throw new Error('The room climate placement differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-water-and-pots.cjs')())) throw new Error('The Water & Pots renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-tent-details.cjs')())) throw new Error('The tent detail renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-hvac.cjs')())) throw new Error('The HVAC renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-air-conditioners.cjs')())) throw new Error('The air conditioner renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-heaters.cjs')())) throw new Error('The heater renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-equipment-glow.cjs')())) throw new Error('The equipment glow differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-sensors.cjs')())) throw new Error('The thermometer renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-dehumidifiers.cjs')())) throw new Error('The dehumidifier renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-humidifiers.cjs')())) throw new Error('The humidifier renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-exhaust.cjs')())) throw new Error('The exhaust renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-fans.cjs')())) throw new Error('The fan renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-grow-lights.cjs')())) throw new Error('The grow-light renderer differs from its source. Rebuild before publishing.');
@@ -24,7 +34,7 @@ if (sha(html) !== report.updatedSHA) throw new Error('The playable game differs 
 const character = html.match(/<script id="bagseed-illustrated-production-code">([\s\S]*?)<\/script>/);
 if (!character || sha(character[1].replace(/\r\n/g, '\n').trim()) !== report.characterPayloadSHA256) throw new Error('The embedded character release is missing or stale. Run the full character builder.');
 const sources = ['graphics/production/sources/renderer.js', 'graphics/production/sources/face-details.js', 'graphics/production/sources/hair-batch-01.js', 'graphics/production/sources/hair-fit-rest.js', 'graphics/production/sources/build.cjs', 'graphics/production/customization-v5/detail-landmarks.json', 'graphics/production/customization-v5/manifest.json', 'graphics/production/customization-v5/hair-fit.json', 'graphics/production/customization-v5/register.py'];
-sources.push('graphics/production/cast-walk-v1/manifest.json', 'graphics/production/cast-walk-v1/sources/clocks.js', 'graphics/production/walk/sources/renderer.js', 'graphics/production/walk/manifest.json', 'graphics/production/walk/rig.json', 'graphics/production/walk/stride-v4/candidate-manifest.json');
+sources.push('graphics/production/cast-walk-v1/manifest.json', 'graphics/production/cast-walk-v1/sources/clocks.js', 'graphics/production/walk/sources/renderer.js', 'graphics/production/walk/manifest.json', 'graphics/production/walk/rig.json', 'graphics/production/walk/wardrobe-v5/manifest.json','graphics/production/walk/wardrobe-v5/sources/register.py','graphics/production/walk/wardrobe-v5/sources/upper_layer.py','graphics/production/walk/wardrobe-v5/sources/repair_one.py','graphics/production/walk/wardrobe-v5/sources/repack_lower.py','graphics/production/walk/sources/profile_v3.py','graphics/production/walk/sources/affine_footprint.py');
 for (const file of sources) {
   const source = readFileSync(new URL('../' + file, import.meta.url), 'utf8').replace(/\r\n/g, '\n');
   if (sha(source) !== report.characterSourcesSHA256?.[file]) throw new Error(`Character source changed without rebuilding: ${file}`);
