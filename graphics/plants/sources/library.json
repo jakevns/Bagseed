@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "plant-parts-library-4",
+  "revision": "plant-parts-library-5",
   "parts": {
     "porchlight.seed@1": {
       "id": "porchlight.seed@1",
@@ -1121,6 +1121,286 @@
         239,
         269
       ]
+    },
+    "moonberry.seed@1": {
+      "id": "moonberry.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        105,
+        138,
+        119,
+        118
+      ]
+    },
+    "moonberry.radicle@1": {
+      "id": "moonberry.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.964286,
+        0.985294
+      ],
+      "when": {},
+      "crop": [
+        401,
+        96,
+        168,
+        204
+      ]
+    },
+    "moonberry.cotyledon@1": {
+      "id": "moonberry.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.477444,
+        0.980263
+      ],
+      "when": {},
+      "crop": [
+        683,
+        113,
+        266,
+        152
+      ]
+    },
+    "moonberry.singleLeaf@1": {
+      "id": "moonberry.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.485437,
+        0.987654
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1063,
+        53,
+        103,
+        243
+      ]
+    },
+    "moonberry.threeLeaf@1": {
+      "id": "moonberry.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.497992,
+        0.987705
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        46,
+        356,
+        249,
+        244
+      ]
+    },
+    "moonberry.fiveLeaf@1": {
+      "id": "moonberry.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.498008,
+        0.988372
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        359,
+        342,
+        251,
+        258
+      ]
+    },
+    "moonberry.sevenLeaf@1": {
+      "id": "moonberry.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.504762,
+        0.989011
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        647,
+        338,
+        315,
+        273
+      ]
+    },
+    "moonberry.sugarLeaf@1": {
+      "id": "moonberry.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.508333,
+        0.986547
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        992,
+        375,
+        240,
+        223
+      ]
+    },
+    "moonberry.stem@1": {
+      "id": "moonberry.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.492754,
+        0.986364
+      ],
+      "when": {},
+      "crop": [
+        132,
+        646,
+        69,
+        220
+      ]
+    },
+    "moonberry.node@1": {
+      "id": "moonberry.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.490566,
+        0.985366
+      ],
+      "when": {},
+      "crop": [
+        377,
+        665,
+        212,
+        205
+      ]
+    },
+    "moonberry.femaleEarly@1": {
+      "id": "moonberry.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.477778,
+        0.987705
+      ],
+      "when": {},
+      "crop": [
+        663,
+        650,
+        270,
+        244
+      ]
+    },
+    "moonberry.femaleMid@1": {
+      "id": "moonberry.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.520755,
+        0.987854
+      ],
+      "when": {},
+      "crop": [
+        975,
+        645,
+        265,
+        247
+      ]
+    },
+    "moonberry.femaleLate@1": {
+      "id": "moonberry.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.480769,
+        0.990291
+      ],
+      "when": {},
+      "crop": [
+        25,
+        897,
+        312,
+        309
+      ]
+    },
+    "moonberry.maleClosed@1": {
+      "id": "moonberry.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.522989,
+        0.008
+      ],
+      "when": {},
+      "crop": [
+        407,
+        935,
+        174,
+        250
+      ]
+    },
+    "moonberry.maleOpen@1": {
+      "id": "moonberry.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.461883,
+        0.00738
+      ],
+      "when": {},
+      "crop": [
+        690,
+        936,
+        223,
+        271
+      ]
     }
   },
   "profiles": {
@@ -1327,13 +1607,65 @@
           "cottoncandy.maleOpen@1"
         ]
       }
+    },
+    "moonberry@1": {
+      "id": "moonberry@1",
+      "name": "Moonberry",
+      "roles": {
+        "seed": [
+          "moonberry.seed@1"
+        ],
+        "radicle": [
+          "moonberry.radicle@1"
+        ],
+        "cotyledon": [
+          "moonberry.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "moonberry.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "moonberry.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "moonberry.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "moonberry.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "moonberry.sugarLeaf@1"
+        ],
+        "stem": [
+          "moonberry.stem@1"
+        ],
+        "node": [
+          "moonberry.node@1"
+        ],
+        "femaleEarly": [
+          "moonberry.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "moonberry.femaleMid@1"
+        ],
+        "femaleLate": [
+          "moonberry.femaleLate@1"
+        ],
+        "maleClosed": [
+          "moonberry.maleClosed@1"
+        ],
+        "maleOpen": [
+          "moonberry.maleOpen@1"
+        ]
+      }
     }
   },
   "strains": {
     "porchlight": "porchlight@1",
     "velvet": "velvet@1",
     "pixelpunch": "pixelpunch@1",
-    "cottoncandy": "cottoncandy@1"
+    "cottoncandy": "cottoncandy@1",
+    "moonberry": "moonberry@1"
   },
   "inheritedTraits": {
     "leafShape": {

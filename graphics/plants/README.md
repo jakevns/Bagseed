@@ -51,3 +51,7 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 ## Fourth strain review kit
 
 `cottoncandy@1` adds Cotton Candy CRT's hybrid organ family: lime-green healthy leaves, blush flowers, rose-pink senescence and its existing genotype's cool-night response. It uses the same connected growth, wind, climate and Sprout color systems; earlier profiles remain pinned. Review samples are approved as a prototype checkpoint in `review/cottoncandy-components/`. Painted-renderer integration remains pending.
+
+## Fifth strain review kit
+
+`moonberry@1` adds Moonberry's hybrid organ family: sage-blue healthy fans, pale lilac flowers, lavender senescence and its existing genotype's cool-night response. It reuses the shared growth, wind, climate and Sprout color systems, keeping earlier appearance profiles pinned. Review samples await approval in `review/moonberry-components/`; full painted-renderer integration remains pending.
