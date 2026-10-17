@@ -1,0 +1,21 @@
+{
+  "status": "awaiting-artwork-approval",
+  "entryPoint": "public/index.html",
+  "tiers": 2,
+  "placements": 8,
+  "fixedProportions": true,
+  "stationOrder": [
+    "jug",
+    "AC",
+    "heater"
+  ],
+  "nativeCoolingAndStandby": true,
+  "offIceAndOutage": true,
+  "otherUnitDoesNotAnimateIdleAC": true,
+  "liveTarget": true,
+  "coolingAirflow": true,
+  "reducedMotion": true,
+  "matchingStoreAndDeliveryArtwork": true,
+  "catalogAndSimulationPreserved": true,
+  "errors": []
+}

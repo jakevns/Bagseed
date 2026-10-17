@@ -49,7 +49,7 @@ html[data-bagseed-loading="loading"] body > :not(#bagseed-loading):not(script):n
   const statusText=document.getElementById('bagseed-loading-status'),detail=document.getElementById('bagseed-loading-detail'),reload=document.getElementById('bagseed-loading-reload');
   let savedReduced=false;try{savedReduced=!!JSON.parse(localStorage.getItem('bagseed.settings.v1'))?.reduced;}catch{}
   overlay.dataset.reduced=String(matchMedia('(prefers-reduced-motion: reduce)').matches||savedReduced);
-  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters'];
+  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners'];
   let phase='loading',resolveReady,rejectReady;
   const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});ready.catch(()=>{});
   const guarded=['click','pointerdown','touchstart','keydown','wheel'];
@@ -30020,6 +30020,27 @@ function remainingHairSource(L,dir){
  function canAct(action,arg){const[loc,slot]=String(arg).split(':');return action==='heatMode'?canControl('heater',loc):action==='acMode'?canControl('ac',loc):['pwr','pwrSet','pwrB'].includes(action)&&canControl(slot,loc);}
  function canInput(key,loc){return key==='heatTo'&&(canControl('heater',loc)||canControl('hvac',loc))||key==='coolTo'&&(canControl('ac',loc)||canControl('hvac',loc));}
  window.BagseedRoomClimate=Object.freeze({floorUnits,wallUnits,waterPlacement,heaterPlacement,canControl,canAct,canInput});
+})();
+
+</script>
+<script id="bagseed-air-conditioners-production-code">
+/* Illustrated AC samples; native room cooling and station positions remain intact. */
+(()=>{
+ 'use strict';
+ const DATA={"revision":"air-conditioners-1","status":"proposal","path":"assets/air-conditioners-atlas.png","sha256":"f19e444f947e1eef7996921185cbf1f1854043118192003e9c9e712ec89a8acf","size":[1873,840],"runtime":{"path":"assets/air-conditioners-atlas.webp","sha256":"a20e56aa8d567dcdafec29f7c8267387ed0e6bd384386e04a908db00c76cb73d","publicPath":"assets/air-conditioners/air-conditioners-a20e56aa8d56.webp"},"tiers":{"1":{"name":"Rattlebox Window AC","price":139,"watts":300,"crop":[76,263,1001,554],"width":16,"height":8.855144855144855,"vent":[185,399,791,145],"indicator":[856,601],"buttons":[[796,671],[920,671]],"display":null},"2":{"name":"Polar Pal Digital AC","price":289,"watts":250,"crop":[1148,16,690,806],"width":14,"height":16.3536231884058,"vent":[1275,165,393,154],"indicator":[1370,494],"buttons":[[1468,494],[1557,494]],"display":[1395,377,155,59]}},"image":"assets/air-conditioners/air-conditioners-a20e56aa8d56.webp"},image=new Image(),original=Gear.ac,icon=drawGearIcon,hit=RoomArt.hit,fixtures=new Map();let loaded=false;
+ function phase(loc,n,fallback=true){const L=state?.locations?.[loc];if(!L)return {powered:true,cooling:!!fallback,target:80,level:1};const powered=locOn(L,'ac')&&!state.fail.acIce&&!state.fail.outage&&!roomTripped(lungRoomOf(loc)||LOC_DEF[loc]?.room);return {powered,cooling:powered&&envFor(loc).hvac.units.some(u=>(u.loc===undefined||u.loc===loc)&&u.name===EQ.ac[n].name&&u.dir<0),target:L.coolTo||80,level:n===1&&L.acMode!==2?.55:1};}
+ function project(a,r){return [(r[0]-a.crop[0])*a.width/a.crop[2],(r[1]-a.crop[1])*a.height/a.crop[3],(r[2]||0)*a.width/a.crop[2],(r[3]||0)*a.height/a.crop[3]];}
+ function air(t,on,level=1){if(!on||settings.reduced)return [];return Array.from({length:3},(_,i)=>{const p=(t*(.32+level*.12)+i/3)%1;return {x:(i-1)*2,y:-p*4,alpha:Math.sin(Math.PI*p)*(.09+level*.05)};});}
+ function sprite(c,x,bottom,n,cooling=true,t=0,powered=true,target=80,level=1,animate=true){const a=DATA.tiers[n];if(!loaded||!a)return;c.save();c.translate(x-a.width/2,bottom-a.height);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...a.crop,0,0,a.width,a.height);
+  if(a.display){const[dx,dy,dw,dh]=project(a,a.display);c.save();c.beginPath();c.rect(dx,dy,dw,dh);c.clip();c.fillStyle='#183b37';c.fillRect(dx,dy,dw,dh);if(powered){c.fillStyle='#bae6d8';c.font=dh*.76+'px monospace';c.textAlign='center';c.textBaseline='middle';c.fillText(String(target)+'°',dx+dw/2,dy+dh/2,dw*.96);}c.restore();window.BagseedEquipmentGlow?.display(c,dx,dy,dw,dh,'#b8ebd8',powered,.65,'ac-display');}
+  const[ix,iy]=project(a,a.indicator);c.fillStyle=powered?(cooling?'#8ce2d1':'#a4b79c'):'#263b35';c.beginPath();c.arc(ix,iy,.24,0,Math.PI*2);c.fill();window.BagseedEquipmentGlow?.point(c,ix,iy,1.25,'#9ee6d0',powered,.8,'ac-indicator');for(const p of a.buttons){const[bx,by]=project(a,p);window.BagseedEquipmentGlow?.point(c,bx,by,.9,'#d9d3a1',powered,.28,'ac-button');}
+  if(animate){const[vx,vy,vw]=project(a,a.vent);for(const p of air(t,cooling,level)){const xx=vx+vw/2+p.x,yy=vy+p.y;c.strokeStyle=`rgba(180,230,226,${p.alpha})`;c.lineWidth=.13;c.lineCap='round';c.beginPath();c.moveTo(xx,yy);c.bezierCurveTo(xx+.7,yy-.5,xx-.7,yy-1.2,xx,yy-1.8);c.stroke();}}
+  c.restore();
+ }
+ Gear.ac=function(c,x,y,n,on,t=0){if(!loaded||!DATA.tiers[n])return original.apply(this,arguments);const loc=runtime.drawLoc,s=phase(loc,n,on),cx=x+8,bottom=y+(n===1?9:12);sprite(c,cx,bottom,n,s.cooling,t,s.powered,s.target,s.level);if(state?.locations?.[loc])fixtures.set(loc,{x:cx,y:bottom,tier:n,...s});};
+ RoomArt.hit=function(id,x,y,w,h,label,walk,layer){const m=/^ac:(.+)$/.exec(id),f=m&&fixtures.get(m[1]);if(f){const a=DATA.tiers[f.tier];x=f.x-a.width/2-1;y=f.y-a.height-1;w=a.width+2;h=a.height+2;}return hit.call(this,id,x,y,w,h,label,walk,layer);};
+ drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='ac'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],s=Math.min(181/a.height,239/a.width);c.save();c.translate(160,120);c.scale(s,s);sprite(c,0,a.height/2,n,true,0,true,80,1,false);c.restore();};
+ const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Air conditioner artwork failed'));image.src=DATA.image;});window.BagseedAirConditioners=Object.freeze({ready,sprite,phase,air,fixtures,get loaded(){return loaded;}});
 })();
 
 </script>

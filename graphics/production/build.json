@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "71b14306cbc1507fe4fc4ef8062bbf966e6b1308c9f5d11e2967bf6efcd56cf3",
-  "updatedSHA": "aa7fae6e8c56201fef41b1472ff7e12b82da966ffd8ab638fba22d82a1acca64",
+  "updatedSHA": "faca48cab1f9e31bc492d40d15a8764016b3ba114a7e5f63559965871b641c78",
   "characterRevision": "custom-walk-arm-layer-v6",
   "characterPayloadSHA256": "89065e804b89c94d7c2cb8218d619a37d6918d5e42107b78e4a6797b578c5f35",
   "characterSourcesSHA256": {
@@ -30,7 +30,7 @@
     "graphics/production/walk/sources/profile_v3.py": "df86ab08bb691ebcc14fb61e90c423ebb78bfcab2dd3b95e4f4a7642d5d1993c",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 63965291,
+  "bytes": 63969959,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [
@@ -139,5 +139,7 @@
   "roomClimatePlacementRevision": "window-station-1",
   "heatersRevision": "heaters-1",
   "heaterTiers": 2,
-  "equipmentGlowRevision": "equipment-glow-1"
+  "equipmentGlowRevision": "equipment-glow-1",
+  "airConditionersRevision": "air-conditioners-1",
+  "airConditionerTiers": 2
 }
