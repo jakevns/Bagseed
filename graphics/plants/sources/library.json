@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "plant-parts-library-1",
+  "revision": "plant-parts-library-2",
   "parts": {
     "porchlight.seed@1": {
       "id": "porchlight.seed@1",
@@ -281,6 +281,286 @@
         214,
         278
       ]
+    },
+    "velvet.seed@1": {
+      "id": "velvet.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        93,
+        116,
+        140,
+        142
+      ]
+    },
+    "velvet.radicle@1": {
+      "id": "velvet.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.905213,
+        0.987013
+      ],
+      "when": {},
+      "crop": [
+        383,
+        68,
+        211,
+        231
+      ]
+    },
+    "velvet.cotyledon@1": {
+      "id": "velvet.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.48265,
+        0.984772
+      ],
+      "when": {},
+      "crop": [
+        651,
+        93,
+        317,
+        197
+      ]
+    },
+    "velvet.singleLeaf@1": {
+      "id": "velvet.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.989796
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1059,
+        16,
+        122,
+        294
+      ]
+    },
+    "velvet.threeLeaf@1": {
+      "id": "velvet.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.48505,
+        0.989933
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        23,
+        320,
+        301,
+        298
+      ]
+    },
+    "velvet.fiveLeaf@1": {
+      "id": "velvet.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.508532,
+        0.990654
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        339,
+        302,
+        293,
+        321
+      ]
+    },
+    "velvet.sevenLeaf@1": {
+      "id": "velvet.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.491979,
+        0.990769
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        626,
+        300,
+        374,
+        325
+      ]
+    },
+    "velvet.sugarLeaf@1": {
+      "id": "velvet.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.49187,
+        0.988636
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        999,
+        348,
+        246,
+        264
+      ]
+    },
+    "velvet.stem@1": {
+      "id": "velvet.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.474576,
+        0.988679
+      ],
+      "when": {},
+      "crop": [
+        141,
+        633,
+        59,
+        265
+      ]
+    },
+    "velvet.node@1": {
+      "id": "velvet.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.514423,
+        0.986547
+      ],
+      "when": {},
+      "crop": [
+        376,
+        677,
+        208,
+        223
+      ]
+    },
+    "velvet.femaleEarly@1": {
+      "id": "velvet.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.556391,
+        0.988848
+      ],
+      "when": {},
+      "crop": [
+        653,
+        644,
+        266,
+        269
+      ]
+    },
+    "velvet.femaleMid@1": {
+      "id": "velvet.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.535971,
+        0.989933
+      ],
+      "when": {},
+      "crop": [
+        968,
+        625,
+        278,
+        298
+      ]
+    },
+    "velvet.femaleLate@1": {
+      "id": "velvet.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.478548,
+        0.990769
+      ],
+      "when": {},
+      "crop": [
+        26,
+        904,
+        303,
+        325
+      ]
+    },
+    "velvet.maleClosed@1": {
+      "id": "velvet.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.505208,
+        0.007018
+      ],
+      "when": {},
+      "crop": [
+        383,
+        923,
+        192,
+        285
+      ]
+    },
+    "velvet.maleOpen@1": {
+      "id": "velvet.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.495798,
+        0.006689
+      ],
+      "when": {},
+      "crop": [
+        677,
+        922,
+        238,
+        299
+      ]
     }
   },
   "profiles": {
@@ -334,10 +614,62 @@
           "porchlight.maleOpen@1"
         ]
       }
+    },
+    "velvet@1": {
+      "id": "velvet@1",
+      "name": "Velvet Underbrush",
+      "roles": {
+        "seed": [
+          "velvet.seed@1"
+        ],
+        "radicle": [
+          "velvet.radicle@1"
+        ],
+        "cotyledon": [
+          "velvet.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "velvet.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "velvet.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "velvet.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "velvet.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "velvet.sugarLeaf@1"
+        ],
+        "stem": [
+          "velvet.stem@1"
+        ],
+        "node": [
+          "velvet.node@1"
+        ],
+        "femaleEarly": [
+          "velvet.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "velvet.femaleMid@1"
+        ],
+        "femaleLate": [
+          "velvet.femaleLate@1"
+        ],
+        "maleClosed": [
+          "velvet.maleClosed@1"
+        ],
+        "maleOpen": [
+          "velvet.maleOpen@1"
+        ]
+      }
     }
   },
   "strains": {
-    "porchlight": "porchlight@1"
+    "porchlight": "porchlight@1",
+    "velvet": "velvet@1"
   },
   "inheritedTraits": {
     "leafShape": {
@@ -350,6 +682,10 @@
     },
     "colorName": {
       "type": "string",
+      "source": "PlantTraits115.for"
+    },
+    "branching": {
+      "type": "number",
       "source": "PlantTraits115.for"
     }
   }

@@ -35,7 +35,11 @@ const library = require('./sources/library.json');
 const identity = api.createIdentity(plant, expressedTraits, library);
 // Persist once at a successful lifecycle event; not during rendering.
 const status = api.readiness(identity, library);
-// Currently false: Porchlight organ artwork has not been commissioned/approved.
+// Currently false: full care/training integration is unfinished; library entries remain drafts.
 ```
 
 Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-only behavior, clone and save stability, offspring identities, library extensions, incompatible art, approval requirements and newly registered phenotype traits.
+
+## Second strain review kit
+
+`velvet@1` adds Velvet Underbrush using new painted organ assets and the same connected model, wind and phenotype-aware senescence renderer. The expressed `branching` trait is optional and does not change existing pinned identities. Porchlight approval remains recorded separately; Velvet samples await review in `review/velvet-components/`. Neither kit replaces the native game renderer yet.
