@@ -87,3 +87,7 @@ The initial library registers Porchlight's 15 draft organ roles and validates pa
 ## First component/growth milestone
 
 The first Porchlight organ sheet and attached growth prototype now live in `graphics/plants/porchlight/`. A local comparison uses the same phenotype at 50 inches and 90 inches, at the same physical scale. The growth animation adds lateral shoots and leaves while preserving main-node IDs and the native 11-node limit. This is a review-only natural vegetative growth milestone; the full training/care/drying coverage above is still required before a game replacement can ship. Prototype outputs and measured height checks are in `review/porchlight-growth/`. The live game remains unchanged.
+
+## Approved prototype checkpoint
+
+The user approved the Porchlight component artwork and continuous 50/90-inch growth sample. Preserve this milestone separately from production integration: training, care-state handling and native render adapters remain unfinished. The live plant renderer remains unchanged.

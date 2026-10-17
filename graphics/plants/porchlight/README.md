@@ -1,10 +1,10 @@
 # Porchlight components and continuous-growth prototype
 
-Status: local growth sample awaiting user review. This renderer is injected only into the disposable preview browser; the production game, growth rates, existing saves and native renderer are unchanged.
+Status: component artwork and 50/90-inch growth prototype approved by the user; saved as a checkpoint. This renderer is injected only into the disposable preview browser; the production game, growth rates, existing saves and native renderer are unchanged.
 
 ## Artwork
 
-`assets/components.png` is the unchanged generated component sheet. `components.webp` is a lossless RGBA-equivalent runtime encoding; the manifest records both checksums, crop rectangles and real attachment points. Sixteen parts cover seed/radicle, cotyledons, one/three/five/seven-leaflet leaves, sugar leaf, stem, junction, three female flower maturities, closed/open male flowers and bamboo/tie. The shared phenotype library records these as **draft** parts until approval, with actual asset and attachment metadata.
+`assets/components.png` is the unchanged generated component sheet. `components.webp` is a lossless RGBA-equivalent runtime encoding; the manifest records both checksums, crop rectangles and real attachment points. Sixteen parts cover seed/radicle, cotyledons, one/three/five/seven-leaflet leaves, sugar leaf, stem, junction, three female flower maturities, closed/open male flowers and bamboo/tie. The component artwork is approved for this prototype. Shared phenotype library entries retain **draft** integration status until the training and care renderer is complete; their asset and attachment metadata is present.
 
 The outlines in the manifest are measured from the existing alpha channel; they allow the assembled model's canopy to meet its physical height label. They do not change source artwork pixels. Juvenile fans retain their leaflet count as later nodes develop. A seedling uses cotyledons and its first pair of single true leaves.
 
