@@ -904,6 +904,42 @@
           1659
         ]
       ]
+    },
+    "style-audit/cast-01-marcus": {
+      "sha256": "7b5b929ebb5e1a92404c11c11c40e8ba05d16849110f676d13dda0d3a215a1c2"
+    },
+    "style-audit/cast-05-kenji": {
+      "sha256": "ab0c445c5cde630feed60d0195d22305951af752e2e04b1938c208afdcebf871"
+    },
+    "style-audit/cast-06-mateo": {
+      "sha256": "e567ba0890ac26dd5f43db1d4bdba476e1f49d0cc4cea8e8b823d4f9d22c4a51"
+    },
+    "style-audit/cast-16-ronan": {
+      "sha256": "595758fd906aa2a9296d2200acfdc6ae8378536635db912404f1a46b9ee5142c"
+    },
+    "style-audit/cast-24-hugo": {
+      "sha256": "a02fcdfc1358ace3f422989b943a4ab5dab446f5317f7c1ca2f1feb0acf08a9a"
+    },
+    "style-audit/cast-38-theo": {
+      "sha256": "a48790ea509456647c720b06090ca11c586bbfd5b899e84907316e9a2aba5d1c"
+    },
+    "style-audit/cast-41-shed": {
+      "sha256": "417d5e5199ad63196ac4a726c913cf04724f06ac7d803e64f038a2804fc983a0"
+    },
+    "style-audit/cast-48-cure": {
+      "sha256": "3998abbc62b5c2c4b40b495939ce324d1d3e8833c7d9a9b9493d5bf705484398"
+    },
+    "style-audit/cast-52-hardwarePT": {
+      "sha256": "ced8fcda85d1748a9ab779c20725d7ea75cdb176eb900ca676edea9331d1a441"
+    },
+    "style-audit/cast-58-suit": {
+      "sha256": "5a8308bb5305b6bb459a3097a9b2ea273007915ba0a0277d60e67a80c88ecd75"
+    },
+    "style-audit/cast-66-theo": {
+      "sha256": "793130079d54e14b96342ba1928711dba17c0a3ecab037bb4ff62b846b726479"
+    },
+    "style-audit/cast-28-dev": {
+      "sha256": "69e5219236d4109ac88f8e9ee6632865ec33c676eb6f8a91f9ee4e31a8ef3c9f"
     }
   },
   "people": [
@@ -1082,7 +1118,13 @@
           ],
           "scale": 0.49261083743842365
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-01-marcus.png",
+        "sha256": "7b5b929ebb5e1a92404c11c11c40e8ba05d16849110f676d13dda0d3a215a1c2",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.neighbors.ines.look",
@@ -1791,7 +1833,13 @@
           ],
           "scale": 0.4727272727272727
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-05-kenji.png",
+        "sha256": "ab0c445c5cde630feed60d0195d22305951af752e2e04b1938c208afdcebf871",
+        "height": 104,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.mateo.look",
@@ -1967,7 +2015,13 @@
           ],
           "scale": 0.45662100456621
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-06-mateo.png",
+        "sha256": "e567ba0890ac26dd5f43db1d4bdba476e1f49d0cc4cea8e8b823d4f9d22c4a51",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.elena.look",
@@ -3733,7 +3787,13 @@
           ],
           "scale": 0.4608294930875576
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-16-ronan.png",
+        "sha256": "595758fd906aa2a9296d2200acfdc6ae8378536635db912404f1a46b9ee5142c",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.leila.look",
@@ -5151,7 +5211,13 @@
           ],
           "scale": 0.46511627906976744
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-24-hugo.png",
+        "sha256": "a02fcdfc1358ace3f422989b943a4ab5dab446f5317f7c1ca2f1feb0acf08a9a",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.anika.look",
@@ -5855,7 +5921,13 @@
           ],
           "scale": 0.4388185654008439
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-28-dev.png",
+        "sha256": "69e5219236d4109ac88f8e9ee6632865ec33c676eb6f8a91f9ee4e31a8ef3c9f",
+        "height": 104,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.ari.look",
@@ -7621,7 +7693,13 @@
           ],
           "scale": 0.5376344086021505
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-38-theo.png",
+        "sha256": "a48790ea509456647c720b06090ca11c586bbfd5b899e84907316e9a2aba5d1c",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.patients.marisol.look",
@@ -8152,7 +8230,13 @@
           ],
           "scale": 0.46511627906976744
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-41-shed.png",
+        "sha256": "417d5e5199ad63196ac4a726c913cf04724f06ac7d803e64f038a2804fc983a0",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.channels.patchwork.look",
@@ -9385,7 +9469,13 @@
           ],
           "scale": 0.4830917874396135
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-48-cure.png",
+        "sha256": "3998abbc62b5c2c4b40b495939ce324d1d3e8833c7d9a9b9493d5bf705484398",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.channels.lumen.look",
@@ -10089,7 +10179,13 @@
           ],
           "scale": 0.5
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-52-hardwarePT.png",
+        "sha256": "ced8fcda85d1748a9ab779c20725d7ea75cdb176eb900ca676edea9331d1a441",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.shopStaff.threads.ptLook",
@@ -11141,7 +11237,13 @@
           ],
           "scale": 0.4878048780487805
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-58-suit.png",
+        "sha256": "5a8308bb5305b6bb459a3097a9b2ea273007915ba0a0277d60e67a80c88ecd75",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "id": "amani",
@@ -12534,7 +12636,13 @@
           ],
           "scale": 0.23094688221709006
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-66-theo.png",
+        "sha256": "793130079d54e14b96342ba1928711dba17c0a3ecab037bb4ff62b846b726479",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "id": "marisol",

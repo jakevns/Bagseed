@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "a48790ea509456647c720b06090ca11c586bbfd5b899e84907316e9a2aba5d1c",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        464
+      ],
+      "subject": [
+        131,
+        16,
+        347,
+        464
+      ],
+      "scale": 0.22321428571428573,
+      "output": "cast/registered/cast-38-theo/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        464
+      ],
+      "subject": [
+        123,
+        16,
+        288,
+        464
+      ],
+      "scale": 0.22321428571428573,
+      "output": "cast/registered/cast-38-theo/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        464
+      ],
+      "subject": [
+        72,
+        16,
+        279,
+        463
+      ],
+      "scale": 0.22371364653243847,
+      "output": "cast/registered/cast-38-theo/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        464,
+        418,
+        801
+      ],
+      "subject": [
+        81,
+        26,
+        385,
+        330
+      ],
+      "scale": 0.6052631578947368,
+      "output": "cast/registered/cast-38-theo/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        464,
+        836,
+        801
+      ],
+      "subject": [
+        58,
+        25,
+        363,
+        330
+      ],
+      "scale": 0.6032786885245902,
+      "output": "cast/registered/cast-38-theo/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        464,
+        1254,
+        801
+      ],
+      "subject": [
+        33,
+        25,
+        336,
+        330
+      ],
+      "scale": 0.6032786885245902,
+      "output": "cast/registered/cast-38-theo/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        801,
+        418,
+        1254
+      ],
+      "subject": [
+        132,
+        1,
+        345,
+        433
+      ],
+      "scale": 0.23148148148148148,
+      "output": "style-audit-v1/actions/cast-38-theo/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        801,
+        836,
+        1254
+      ],
+      "subject": [
+        122,
+        1,
+        310,
+        433
+      ],
+      "scale": 0.23148148148148148,
+      "output": "style-audit-v1/actions/cast-38-theo/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        801,
+        1254,
+        1254
+      ],
+      "subject": [
+        72,
+        2,
+        292,
+        432
+      ],
+      "scale": 0.23255813953488372,
+      "output": "style-audit-v1/actions/cast-38-theo/up.png"
+    }
+  ]
+}

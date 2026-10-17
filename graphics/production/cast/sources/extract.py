@@ -99,3 +99,9 @@ for group in roster['groups']:
     print(group,len(record['people']),'complete illustrated identities registered')
 (ROOT/'sources/asset-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(len(manifest['people']),'authored appearances registered, with four views and three portraits each.')
+
+# Reapply retained, reviewed style redraws after extracting the original atlas.
+redraw=ROOT.parent/'style-audit-v1/register.py'
+if (redraw.parent/'manifest.json').exists():
+    import subprocess,sys
+    subprocess.run([sys.executable,str(redraw),'--cast-only'],check=True)

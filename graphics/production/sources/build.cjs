@@ -70,6 +70,15 @@ for(const [batch,names] of Object.entries({
     person.actions[view]=id;
   }
 }
+const styleRoot=path.join(art,'style-audit-v1'),styleManifestPath=path.join(styleRoot,'manifest.json');
+if(fs.existsSync(styleManifestPath))for(const[id,spec]of Object.entries(JSON.parse(fs.readFileSync(styleManifestPath)).people)){
+ const person=cast.find(p=>p.id===id);assert.ok(person,'Missing redraw owner: '+id);
+ const registration=JSON.parse(fs.readFileSync(path.join(styleRoot,'sources',id+'-registration.json')));
+ assert.equal(sha(fs.readFileSync(path.join(styleRoot,spec.source))),registration.sourceSHA256,'Stale redraw: '+id);
+ person.actions={};for(const dir of ['down','right','up','left']){
+  const image='action/style-audit/'+id+'/'+dir;images[image]='data:image/png;base64,'+fs.readFileSync(path.join(styleRoot,'actions',id,dir+'.png')).toString('base64');person.actions[dir]=image;
+ }
+}
 const audit=JSON.parse(fs.readFileSync(path.join(root,'docs/graphics/roster-audit.json'))),traits=[];
 function visit(value,location='collections'){
   if(!value||typeof value!=='object')return;
