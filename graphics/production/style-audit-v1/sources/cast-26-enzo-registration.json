@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "bfcd4345bf63f3a190078b5e222bfa73ca136fa7ee3e09e3d084c4f312b4478b",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        474
+      ],
+      "subject": [
+        154,
+        36,
+        360,
+        473
+      ],
+      "scale": 0.2288329519450801,
+      "output": "cast/registered/cast-26-enzo/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        474
+      ],
+      "subject": [
+        106,
+        40,
+        309,
+        474
+      ],
+      "scale": 0.2304147465437788,
+      "output": "cast/registered/cast-26-enzo/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        474
+      ],
+      "subject": [
+        53,
+        34,
+        256,
+        473
+      ],
+      "scale": 0.22779043280182232,
+      "output": "cast/registered/cast-26-enzo/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        474,
+        418,
+        820
+      ],
+      "subject": [
+        100,
+        21,
+        404,
+        335
+      ],
+      "scale": 0.5859872611464968,
+      "output": "cast/registered/cast-26-enzo/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        474,
+        836,
+        820
+      ],
+      "subject": [
+        61,
+        22,
+        359,
+        335
+      ],
+      "scale": 0.5878594249201278,
+      "output": "cast/registered/cast-26-enzo/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        474,
+        1254,
+        820
+      ],
+      "subject": [
+        22,
+        28,
+        324,
+        335
+      ],
+      "scale": 0.5993485342019544,
+      "output": "cast/registered/cast-26-enzo/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        820,
+        418,
+        1254
+      ],
+      "subject": [
+        156,
+        1,
+        360,
+        410
+      ],
+      "scale": 0.24449877750611246,
+      "output": "style-audit-v1/actions/cast-26-enzo/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        820,
+        836,
+        1254
+      ],
+      "subject": [
+        106,
+        2,
+        308,
+        411
+      ],
+      "scale": 0.24449877750611246,
+      "output": "style-audit-v1/actions/cast-26-enzo/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        820,
+        1254,
+        1254
+      ],
+      "subject": [
+        61,
+        2,
+        265,
+        409
+      ],
+      "scale": 0.2457002457002457,
+      "output": "style-audit-v1/actions/cast-26-enzo/up.png"
+    }
+  ]
+}

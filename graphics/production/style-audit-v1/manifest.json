@@ -47,6 +47,30 @@
     "cast-28-dev": {
       "source": "assets/cast-28-dev.png",
       "tier": "C"
+    },
+    "cast-14-owen": {
+      "source": "assets/cast-14-owen.png",
+      "tier": "B"
+    },
+    "cast-21-arthur": {
+      "source": "assets/cast-21-arthur.png",
+      "tier": "B"
+    },
+    "cast-26-enzo": {
+      "source": "assets/cast-26-enzo.png",
+      "tier": "B"
+    },
+    "cast-34-1": {
+      "source": "assets/cast-34-1.png",
+      "tier": "B"
+    },
+    "cast-51-gardenPT": {
+      "source": "assets/cast-51-gardenPT.png",
+      "tier": "B"
+    },
+    "cast-19-jun": {
+      "source": "assets/cast-19-jun.png",
+      "tier": "B"
     }
   }
 }

@@ -940,6 +940,24 @@
     },
     "style-audit/cast-28-dev": {
       "sha256": "69e5219236d4109ac88f8e9ee6632865ec33c676eb6f8a91f9ee4e31a8ef3c9f"
+    },
+    "style-audit/cast-14-owen": {
+      "sha256": "67323446b4481d60bae7ae29730150ca5b294b2f4f2bc860c6400b05f88dc25d"
+    },
+    "style-audit/cast-21-arthur": {
+      "sha256": "16041798b07bec8f93651d0c438f176102bf1014e56599a8778663412614c36e"
+    },
+    "style-audit/cast-26-enzo": {
+      "sha256": "bfcd4345bf63f3a190078b5e222bfa73ca136fa7ee3e09e3d084c4f312b4478b"
+    },
+    "style-audit/cast-34-1": {
+      "sha256": "e69d83a5ce7adb57e659226db7d14cd9c4115edefe219f79cf1de2075a7708ee"
+    },
+    "style-audit/cast-51-gardenPT": {
+      "sha256": "086a17b57bf2914f6954e88df22de51cf498ee0ca0bcb5aefd8d5ae998036a51"
+    },
+    "style-audit/cast-19-jun": {
+      "sha256": "6d33d9abe1dd4ee788073448379c17b2da787a500c4d3f370e2a5acfe1eae8ef"
     }
   },
   "people": [
@@ -3435,7 +3453,13 @@
           ],
           "scale": 0.48372093023255813
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-14-owen.png",
+        "sha256": "67323446b4481d60bae7ae29730150ca5b294b2f4f2bc860c6400b05f88dc25d",
+        "height": 104,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.amina.look",
@@ -4324,7 +4348,13 @@
           ],
           "scale": 0.4975124378109453
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-19-jun.png",
+        "sha256": "6d33d9abe1dd4ee788073448379c17b2da787a500c4d3f370e2a5acfe1eae8ef",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.rosie.look",
@@ -4680,7 +4710,13 @@
           ],
           "scale": 0.4928909952606635
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-21-arthur.png",
+        "sha256": "16041798b07bec8f93651d0c438f176102bf1014e56599a8778663412614c36e",
+        "height": 104,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.nadia.look",
@@ -5569,7 +5605,13 @@
           ],
           "scale": 0.45454545454545453
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-26-enzo.png",
+        "sha256": "bfcd4345bf63f3a190078b5e222bfa73ca136fa7ee3e09e3d084c4f312b4478b",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.sasha.look",
@@ -6985,7 +7027,13 @@
           ],
           "scale": 0.38461538461538464
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-34-1.png",
+        "sha256": "e69d83a5ce7adb57e659226db7d14cd9c4115edefe219f79cf1de2075a7708ee",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.guests.2.look",
@@ -10003,7 +10051,13 @@
           ],
           "scale": 0.49019607843137253
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-51-gardenPT.png",
+        "sha256": "086a17b57bf2914f6954e88df22de51cf498ee0ca0bcb5aefd8d5ae998036a51",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.shopStaff.hardware.ptLook",
