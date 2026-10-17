@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {chromium}=require('playwright');
 const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
 (async()=>{
- const strain=process.argv[2]||'velvet';assert.ok(['velvet','pixelpunch','cottoncandy','moonberry','halfmoon','zoomies','cruise','boglantern','frogprince','nightshift'].includes(strain),'Unknown component review kit');
+ const strain=process.argv[2]||'velvet';assert.ok(['velvet','pixelpunch','cottoncandy','moonberry','halfmoon','zoomies','cruise','boglantern','frogprince','nightshift','gasstation','boglantern-lavender','frogprince-red'].includes(strain),'Unknown component review kit');
  const root=path.resolve(__dirname,'..'),read=name=>fs.readFileSync(path.join(root,name),'utf8');
  const manifest=JSON.parse(read('graphics/plants/'+strain+'/sources/manifest.json'));
  const library=JSON.parse(read('graphics/plants/sources/library.json'));
@@ -11,7 +11,7 @@ const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
  const profilePath=path.join(root,'graphics/plants',strain,'sources/profile.json');
  const spec=fs.existsSync(profilePath)?JSON.parse(fs.readFileSync(profilePath)): {id:'velvet',name:'Velvet Underbrush',shortName:'Velvet',traits:{leafShape:'broad',leafKey:'forest',colorName:'Red accents',branching:1},growthSubtitle:'One connected phenotype · Forest-green broad leaves → wine-red autumn fade',finishSubtitle:'Final-week color study · Red phenotype senescence',finishCaption:'Wine-red fan leaves · Copper pistils · Mature, frosty flowers',finishPalette:'red',windCaption:'Late flower / red autumn fade'};
  const traits=spec.traits;
- const identity=identityAPI.createIdentity({id:strain+'-review',lineId:strain,genome115:{id:strain+'-phenotype-study'}},traits,library);
+ const identity=identityAPI.createIdentity({id:strain+'-review',lineId:spec.lineId||strain,genome115:{id:strain+'-phenotype-study'}},traits,library,{profile:strain+'@1'});
  const model=read('graphics/plants/porchlight/sources/model.cjs');
  const renderer=read('graphics/plants/porchlight/sources/renderer.js').replace('__PORCHLIGHT_COMPONENT_DATA__',()=>JSON.stringify(manifest));
  const {createStaticServer}=await import('./server.mjs'),server=createStaticServer();
@@ -25,7 +25,7 @@ const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
   await page.evaluate(name=>window[name].ready,manifest.apiName);
   const result=await page.evaluate(async({manifest,identity,spec,makeFrames})=>{
    const api=window[manifest.apiName],files={},frames=[],measurements=[],coolStudies=[];
-   const plant=(height,stage=5)=>({id:spec.id+'-review',lineId:spec.id,artIdentity:identity,height,nodes:Math.min(11,1+height*.24),stage,loc:height>50?'outdoor':'tent5',training:'natural',density:.82,water:60,nutr:60,health:92,stress:0,sex:'F',pheno:{b:1},...(stage>=9?{visualState:{senescence:stage===9?.82:1}}:{})});
+   const plant=(height,stage=5)=>({id:spec.id+'-review',lineId:spec.lineId||spec.id,artIdentity:identity,height,nodes:Math.min(11,1+height*.24),stage,loc:height>50?'outdoor':'tent5',training:'natural',density:.82,water:60,nutr:60,health:92,stress:0,sex:'F',pheno:{b:1},...(stage>=9?{visualState:{senescence:stage===9?.82:1}}:{})});
    function board(w,h,title,sub){const cv=document.createElement('canvas');cv.width=w;cv.height=h;const c=cv.getContext('2d');c.fillStyle='#f5efdf';c.fillRect(0,0,w,h);c.fillStyle='#29483a';c.font='bold 29px Georgia';c.fillText(title,28,45);c.font='19px Georgia';c.fillText(sub,28,80);return[cv,c];}
    function pot(c,x,y,ppi,front=false){c.save();c.translate(x,y);c.scale(ppi,ppi);BagseedWaterPots.potSprite(c,0,0,2,60,false,front);c.restore();}
    function ground(c,x,y,ppi){c.fillStyle='#807351';c.beginPath();c.ellipse(x,y+ppi*.6,ppi*15,ppi*1.5,0,0,Math.PI*2);c.fill();}
