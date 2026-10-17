@@ -1,5 +1,5 @@
 {
-  "status": "awaiting-artwork-approval",
+  "status": "approved",
   "entryPoint": "public/index.html",
   "tiers": 2,
   "heaterTargets": 8,

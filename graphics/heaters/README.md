@@ -1,6 +1,6 @@
 # Heater artwork samples
 
-Awaiting user artwork approval. Includes Old Space Heater ($24.99, 420W) and Thermo-Cube Digital Heater ($79, 330W), with matching store/inventory/delivery icons. Prices, purchases, installation, heater controls, failures, room heating, power calculations are unchanged. Bedroom heaters now sit beside the window watering station; grow-room anchors remain unchanged.
+Approved by the user, including the window station arrangement and corrected nighttime emission. Includes Old Space Heater ($24.99, 420W) and Thermo-Cube Digital Heater ($79, 330W), with matching store/inventory/delivery icons. Prices, purchases, installation, heater controls, failures, room heating, power calculations are unchanged. Bedroom heaters now sit beside the window watering station; grow-room anchors remain unchanged.
 
 The unchanged generated PNG is retained in assets. Its fingerprinted runtime WebP decodes to identical RGBA pixels. The compiler verifies source/runtime/public hashes, crops and fixed aspect ratios; readiness is included in the startup gate.
 

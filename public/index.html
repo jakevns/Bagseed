@@ -26727,6 +26727,302 @@ RoomArt.drawSlots = (prev => function (c, loc, t) {
   try { return prev.call(this, c, loc, t); } finally { self.hit = hit; }
 })(RoomArt.drawSlots);
 </script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 1 · phones first
+   On touch screens Decorate mode takes the whole stage: the HUD, goal,
+   joystick and camera button step aside and a slim tray sits at the
+   bottom. The held item carries its own ✓ ⟳ ✕ buttons. Drag an item with
+   a finger (it floats above the finger so it stays visible), drag one up
+   out of the tray, drag empty floor to look around, pinch or ＋/－ to
+   zoom. Mouse play keeps the existing panel and click-to-place.
+   ===================================================================== */
+const Build1 = {
+  LIFT: 44,   // css px the held item floats above the finger
+  SLOP: 8,    // css px before a press becomes a drag
+  PAD: 10,    // css px of extra grab area around placed items
+  EDGE: 28,   // css px from the stage edge that scrolls the view while dragging
+  g: null,    // the active canvas gesture
+  tr: null,   // the active drag out of the tray
+  ptrs: new Map(),
+  eatUntil: 0,
+  on() { const D = runtime.deco; return !!(D && D.touchUI); },
+  buzz(p) { try { if (navigator.vibrate && !settings.reduced) navigator.vibrate(p); } catch (_) { } },
+  w(px) { return px * View.dpr / View.zoom; },
+  relayout() { Layout.update(); View.resize(); },
+  eat(where) { this.eatUntil = performance.now() + 450; this.eatWhere = where; },   // swallow the click that follows a gesture, only where it happened
+  stageRect() { return $('#stage').getBoundingClientRect(); },
+  overStage(cx, cy) { const r = this.stageRect(); return cx >= r.left && cx <= r.right && cy >= r.top && cy <= r.bottom; },
+  /* keep the view inside the scene so a pan never runs into a dead zone */
+  clampCam() {
+    const D = runtime.deco; if (!D || !D.cam) return; const S = curScene(), hw = View.vw / 2, hh = View.vh / 2;
+    D.cam.x = S.w > View.vw ? clamp(D.cam.x, hw, S.w - hw) : S.w / 2;
+    const cy = S.h > View.vh ? clamp(D.cam.y + 16, hh, S.h - hh) : S.h / 2; D.cam.y = cy - 16;
+  },
+  pan(dx, dy) { const D = runtime.deco; if (!D || !D.cam) return; D.cam.x += dx; D.cam.y += dy; this.clampCam(); View.update(0, true); },
+  zoom(on, wx, wy) {
+    const D = runtime.deco; if (!D || !!D.zoomIn === !!on) return; D.zoomIn = !!on;
+    if (wx !== undefined && D.cam) { D.cam.x = wx; D.cam.y = wy - 16; }
+    View.computeZoom(); this.clampCam(); View.update(0, true); Deco.render(); this.buzz(6);
+  },
+  ghostDims() { const D = runtime.deco, H = D && D.hold; if (!H) return null; return DecoZ.dims({ id: H.id, zone: D.zone, rot: H.rot }, decorDef(H.id)); },
+  inGhost(x, y) { const D = runtime.deco, g = D && D.ghost, wh = this.ghostDims(); if (!g || !wh) return false; const p = this.w(this.PAD); return x >= g.x - p && x <= g.x + wh[0] + p && y >= g.y - p && y <= g.y + wh[1] + p; },
+  /* nearest placed item under a fingertip: tabletop items first, then the smallest */
+  hitPlaced(x, y) {
+    const D = runtime.deco, p = this.w(this.PAD); let best = null;
+    for (const d of DecoZ.list(D.zone)) {
+      const Df = decorDef(d.id); if (!Df) continue; const [w, h] = DecoZ.dims(Object.assign({ zone: D.zone }, d), Df);
+      if (x < d.x - p || x > d.x + w + p || y < d.y - p || y > d.y + h + p) continue;
+      const inside = x >= d.x && x <= d.x + w && y >= d.y && y <= d.y + h;
+      const score = (Df.k === 'desk' ? 0 : 1e6) + (inside ? 0 : 5e5) + w * h;
+      if (!best || score < best.s) best = { d, s: score };
+    }
+    return best && best.d;
+  },
+  /* drag the held item so its center sits at the finger plus an offset */
+  dragTo(cx, cy, off) {
+    const D = runtime.deco; if (!D || !D.hold) return; const [x, y] = View.toWorld(cx, cy), was = D.ghost && D.ghost.ok;
+    Deco.move(x + off[0], y + off[1]); const now = D.ghost && D.ghost.ok;
+    if (now && !was) this.buzz(5); this.status();
+  },
+  status() {
+    const D = runtime.deco, el = $('#deco .b1-msg'); if (!D || !el) return; const g = D.ghost, H = D.hold;
+    let txt, cls = '';
+    if (H && g) { txt = g.ok ? '✓ ' + g.why : g.why; cls = g.ok ? 'ok' : 'bad'; }
+    else if (H) txt = 'Drag it into place, or tap the room.';
+    else txt = 'Tap something to move it, or drag an item from the tray into the room. Drag the floor to look around.';
+    if (el.textContent !== txt) el.textContent = txt; el.className = 'b1-msg ' + cls;
+  },
+  /* ---------- the held item's own buttons ---------- */
+  fab() {
+    let b = $('#b1Fab'); if (b) return b;
+    b = document.createElement('div'); b.id = 'b1Fab'; b.hidden = true; $('#stage').appendChild(b); return b;
+  },
+  fabHTML() {
+    const D = runtime.deco, H = D.hold, Df = decorDef(H.id), g = D.ghost, ok = !!(g && g.ok);
+    const V = Df.vars ? Df.vars[H.v || 0] : null;
+    return `<button class="ok ${ok ? '' : 'bad'}" data-act="decoPlace" aria-label="Place here">✓</button>`
+      + `<button data-act="decoRot" aria-label="${D.zone === 'bedroom' ? 'Turn to face the other way' : 'Rotate'}">${D.zone === 'bedroom' ? '⇋' : '⟳'}</button>`
+      + (V ? `<button data-act="decoVar" aria-label="Change finish">◐</button>` : '')
+      + `<button data-act="decoRemove" aria-label="Put away in your collection">Store</button>`
+      + `<button class="x" data-act="decoCancel" aria-label="Cancel">✕</button>`;
+  },
+  tick() {
+    const D = runtime.deco, b = $('#b1Fab');
+    if (!D || !D.touchUI) { if (b) b.hidden = true; this.loop = null; return; }
+    this.loop = requestAnimationFrame(() => this.tick());
+    // scroll the view while a drag rests near the stage edge
+    const drag = (this.g && this.g.mode === 'drag' && this.g) || (this.tr && this.tr.started && this.tr.over && this.tr);
+    if (drag && D.cam) {
+      const r = this.stageRect(), e = this.EDGE, s = this.w(5);
+      const dx = drag.cx < r.left + e ? -s : drag.cx > r.right - e ? s : 0, dy = drag.cy < r.top + e ? -s : drag.cy > r.bottom - e ? s : 0;
+      if (dx || dy) { this.pan(dx, dy); this.dragTo(drag.cx, drag.cy, drag.off); }
+    }
+    const f = this.fab();
+    if (!D.hold || !D.ghost) { if (!f.hidden) f.hidden = true; return; }
+    const html = this.fabHTML(); if (f.dataset.k !== html) { f.innerHTML = html; f.dataset.k = html; }
+    f.hidden = false;
+    const [w, h] = this.ghostDims(), g = D.ghost, cv = View.cv, sr = this.stageRect(), cr = cv.getBoundingClientRect();
+    const [x0, y0] = View.toCSS(g.x, g.y), [x1, y1] = View.toCSS(g.x + w, g.y + h), ox = cr.left - sr.left, oy = cr.top - sr.top;
+    const fw = f.offsetWidth, fh = f.offsetHeight, pad = 6;
+    let left = ox + (x0 + x1) / 2 - fw / 2, top = oy + y1 + 8;
+    if (top + fh > sr.height - pad) top = oy + y0 - fh - 8;           // no room below: sit above the item
+    left = clamp(left, pad, sr.width - fw - pad); top = clamp(top, pad, sr.height - fh - pad);
+    f.style.left = Math.round(left) + 'px'; f.style.top = Math.round(top) + 'px';
+  },
+  /* ---------- canvas gestures ---------- */
+  down(e) {
+    if (!this.on() || e.pointerType === 'mouse') return; e.preventDefault(); e.stopImmediatePropagation(); Sfx.init();
+    this.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    try { View.cv.setPointerCapture(e.pointerId); } catch (_) { }
+    if (this.ptrs.size === 2) { const [a, b] = [...this.ptrs.values()]; this.g = { mode: 'pinch', d0: Math.hypot(a.x - b.x, a.y - b.y), done: false }; return; }
+    if (this.ptrs.size > 2) return;
+    const D = runtime.deco, [x, y] = View.toWorld(e.clientX, e.clientY);
+    const G = { id: e.pointerId, sx: e.clientX, sy: e.clientY, cx: e.clientX, cy: e.clientY, mode: 'pan?', lx: e.clientX, ly: e.clientY };
+    if (D.hold && this.inGhost(x, y)) { const [w, h] = this.ghostDims(); G.mode = 'item?'; G.off = [D.ghost.x + w / 2 - x, -this.w(this.LIFT)]; void h; }
+    else { const d = this.hitPlaced(x, y); if (d) { G.mode = 'lift?'; G.d = d; } }
+    this.g = G;
+  },
+  move(e) {
+    if (!this.on() || e.pointerType === 'mouse' || !this.ptrs.has(e.pointerId)) return; e.preventDefault(); e.stopImmediatePropagation();
+    this.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    const G = this.g; if (!G) return;
+    if (G.mode === 'pinch') {
+      if (this.ptrs.size < 2 || G.done) return; const [a, b] = [...this.ptrs.values()], r = Math.hypot(a.x - b.x, a.y - b.y) / Math.max(1, G.d0);
+      if (r > 1.25 || r < .8) { const [wx, wy] = View.toWorld((a.x + b.x) / 2, (a.y + b.y) / 2); this.zoom(r > 1, wx, wy); G.done = true; }
+      return;
+    }
+    if (e.pointerId !== G.id) return; G.cx = e.clientX; G.cy = e.clientY;
+    if (G.mode.endsWith('?')) {
+      if (Math.hypot(e.clientX - G.sx, e.clientY - G.sy) < this.SLOP) return;
+      if (G.mode === 'item?') G.mode = 'drag';
+      else if (G.mode === 'lift?') {
+        Deco.pickPlaced(G.d); const D = runtime.deco, [w] = this.ghostDims(), [x] = View.toWorld(G.sx, G.sy);
+        G.off = [D.ghost.x + w / 2 - x, -this.w(this.LIFT)]; G.mode = 'drag'; this.buzz(8);
+      } else G.mode = 'pan';
+    }
+    if (G.mode === 'drag') this.dragTo(e.clientX, e.clientY, G.off);
+    else if (G.mode === 'pan') { this.pan(-this.w(e.clientX - G.lx), -this.w(e.clientY - G.ly)); }
+    G.lx = e.clientX; G.ly = e.clientY;
+  },
+  up(e) {
+    if (!this.ptrs.has(e.pointerId)) return; this.ptrs.delete(e.pointerId);
+    if (!this.on() || e.pointerType === 'mouse') return; e.preventDefault(); e.stopImmediatePropagation(); this.eat('room');
+    const G = this.g; if (!G) return;
+    if (G.mode === 'pinch') { if (!this.ptrs.size) this.g = null; return; }
+    if (e.pointerId !== G.id) return; this.g = null;
+    if (e.type === 'pointercancel') return;
+    const D = runtime.deco, [x, y] = View.toWorld(e.clientX, e.clientY);
+    if (G.mode === 'drag') { this.buzz(D.ghost && D.ghost.ok ? 10 : [8, 40, 8]); Deco.render(); return; }
+    if (G.mode === 'pan') return;
+    // a tap
+    if (D.hold) { if (!this.inGhost(x, y)) { Deco.move(x, y); Deco.render(); } return; }
+    if (G.d) { Deco.pickPlaced(G.d); this.buzz(8); }
+  },
+  /* ---------- dragging an item up out of the tray ---------- */
+  trayDown(e) {
+    if (!this.on() || e.pointerType === 'mouse') return; const it = e.target.closest && e.target.closest('#deco .b1-tray .it[data-b1]'); if (!it || it.disabled) return;
+    const sr = this.stageRect(), dr = $('#deco').getBoundingClientRect();
+    this.tr = { id: e.pointerId, item: it.dataset.b1, sx: e.clientX, sy: e.clientY, cx: e.clientX, cy: e.clientY, started: false, dir: dr.left >= sr.right - 4 ? 'left' : 'up', off: [0, -this.w(this.LIFT)] };
+  },
+  trayMove(e) {
+    const T = this.tr; if (!T || e.pointerId !== T.id) return; T.cx = e.clientX; T.cy = e.clientY;
+    if (!T.started) {
+      const dx = e.clientX - T.sx, dy = e.clientY - T.sy, out = T.dir === 'up' ? -dy : -dx, side = T.dir === 'up' ? Math.abs(dx) : Math.abs(dy);
+      if (out < this.SLOP || out < side) { if (side > this.SLOP * 2) this.tr = null; return; }
+      T.started = true; this.eat('tray'); runtime.deco.trayOpen = false; Deco.pick(T.item); this.buzz(8);
+    }
+    e.preventDefault(); T.over = this.overStage(e.clientX, e.clientY);
+    if (T.over) this.dragTo(e.clientX, e.clientY, T.off);
+  },
+  trayUp(e) {
+    const T = this.tr; if (!T || e.pointerId !== T.id) return; this.tr = null;
+    if (T.started) { this.eat('tray'); const D = runtime.deco; if (D && D.ghost) this.buzz(D.ghost.ok ? 10 : [8, 40, 8]); Deco.render(); }
+  },
+  /* ---------- the touch tray ---------- */
+  CATS: [['all', 'All'], ['floor', 'Furniture'], ['wall', 'Wall'], ['rug', 'Rugs'], ['desk', 'Tabletop']],
+  render() {
+    const D = runtime.deco, el = $('#deco'), zone = D.zone, H = D.hold;
+    const sv = el.querySelector('.b1-tray'), keep = sv ? [sv.scrollLeft, sv.scrollTop] : [0, 0];
+    const own = Object.keys(state.room.own).filter(k => !k.startsWith('s:') && !k.startsWith('v:') && decorDef(k) && decorZones(decorDef(k)).includes(zone));
+    const kinds = new Set(own.map(k => decorDef(k).k)), cats = this.CATS.filter(([k]) => k === 'all' || kinds.has(k));
+    if (!cats.some(([k]) => k === D.cat)) D.cat = 'all';
+    const shown = own.filter(k => (D.cat === 'all' || decorDef(k).k === D.cat) && (decorFree(k) > 0 || (H && H.id === k)));
+    const zname = { bedroom: 'Bedroom', house: 'House', yard: 'Backyard' }[zone];
+    const head = `<div class="b1-head"><span class="b1-zone">${zname} · paused</span><span class="b1-money">${money(state.money)}</span><span style="flex:1"></span>`
+      + `<button class="btn sm" data-act="b1Zoom" aria-label="${D.zoomIn ? 'Zoom out' : 'Zoom in'}">${D.zoomIn ? '－' : '＋'}</button>`
+      + `<button class="btn sm" data-act="decoUndo" ${D.undo.length ? '' : 'disabled'} aria-label="Undo">↶</button>`
+      + `<button class="btn sm ${D.more ? 'on' : ''}" data-act="b1More" aria-label="More options" aria-expanded="${!!D.more}">⋯</button>`
+      + `<button class="btn sm primary" data-act="decoDone">Done</button></div>`;
+    const more = D.more ? `<div class="b1-more">${zone === 'bedroom' ? '<button class="btn sm" data-act="decoTab" data-arg="styles">Room styles</button>' : ''}<button class="btn sm" data-act="decoShop">Shop decor</button><button class="btn sm amber" data-act="homeUpOpen">Home upgrades</button></div>` : '';
+    const catRow = `<div class="b1-cats">${cats.map(([k, n]) => `<button class="chip ${D.cat === k ? 'on' : ''}" data-act="b1Cat" data-arg="${k}">${n}</button>`).join('')}<span style="flex:1"></span><button class="chip" data-act="b1Tray" aria-label="${D.trayOpen ? 'Show fewer' : 'Show all items'}">${D.trayOpen ? '▾ Less' : '▴ All'}</button></div>`;
+    const tray = `<div class="b1-tray ${D.trayOpen ? 'open' : ''}">${shown.map(k => { const Df = decorDef(k), free = decorFree(k); return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="b1Pick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="n">${free}</span></button>`; }).join('') || `<span class="hint">${own.length ? 'Everything here is already placed. Tap an item in the room to move it.' : 'Nothing for this space yet. Shop decor on LeafCart (⋯).'}</span>`}</div>`;
+    el.innerHTML = head + more + catRow + tray + '<div class="b1-msg" role="status" aria-live="polite"></div>'; hydrate(el);
+    const nt = el.querySelector('.b1-tray'); if (nt) { nt.scrollLeft = keep[0]; nt.scrollTop = keep[1]; }
+    this.status();
+  }
+};
+
+/* ---------- hooks into Decorate mode ---------- */
+Deco.open = (prev => function () {
+  prev.call(this); const D = runtime.deco; if (!D) return;
+  document.body.classList.add('deco-on');
+  if (!document.body.classList.contains('touch-ui')) return;
+  Object.assign(D, { touchUI: true, camLock: true, cat: 'all', trayOpen: false, more: false, zoomIn: true });   // start close enough to grab things; － shows the whole room
+  if (!D.cam) D.cam = { x: state.player.x, y: state.player.y - 16 };
+  hidePicker(); Build1.relayout(); Build1.clampCam(); View.update(0, true); this.render();
+  if (!Build1.loop) Build1.tick();
+})(Deco.open);
+Deco.close = (prev => function () {
+  const D = runtime.deco; if (!D) return prev.call(this); const zoomed = D.zoomIn;
+  Build1.g = null; Build1.tr = null; Build1.ptrs.clear();
+  prev.call(this); document.body.classList.remove('deco-on');
+  const f = $('#b1Fab'); if (f) f.hidden = true;
+  if (D.touchUI) { Build1.relayout(); if (zoomed) { View.computeZoom(); View.update(0, true); } }
+})(Deco.close);
+Deco.render = (prev => function () {
+  const D = runtime.deco; if (!D || !D.touchUI || D.tab === 'styles') return prev.call(this);
+  Build1.render();
+})(Deco.render);
+/* touch: a new item appears in the middle of what you're looking at */
+Deco.pick = (prev => function (id) {
+  prev.call(this, id); const D = runtime.deco; if (!D || !D.touchUI || !D.hold || D.hold.fromUid) return;
+  const Df = decorDef(id), cx = View.cam.x + View.vw / 2, cy = View.cam.y + View.vh / 2;
+  const y = D.zone === 'bedroom' ? (Df.k === 'wall' ? 40 : Df.k === 'desk' ? 70 : clamp(cy, 120, 160)) : cy;
+  D.ghost = DecoZ.check(id, cx, y, null, D.hold); this.render();
+})(Deco.pick);
+Deco.place = (prev => function () {
+  const ok = prev.call(this); if (runtime.deco && runtime.deco.touchUI) Build1.buzz(ok ? 15 : [10, 40, 10]); return ok;
+})(Deco.place);
+/* while touch-decorating the camera follows the view you pan, not the held item (a dragged item would drag the camera with it) */
+View.update = (prev => function (dt, snap) {
+  const D = runtime.deco; if (!D || !D.camLock || !D.ghost) return prev.call(this, dt, snap);
+  const g = D.ghost; D.ghost = null; try { return prev.call(this, dt, snap); } finally { D.ghost = g; }
+})(View.update);
+View.computeZoom = (prev => function () {
+  prev.call(this); const D = runtime.deco;
+  // close-up: at least one step closer, and tall enough that the room fills the stage
+  if (D && D.touchUI && D.zoomIn) { this.zoom = Math.max(this.zoom + 1, Math.ceil(this.devH / curScene().h)); this.vw = this.devW / this.zoom; this.vh = this.devH / this.zoom; }
+})(View.computeZoom);
+Object.assign(ACT, {
+  b1Zoom() { Build1.zoom(!runtime.deco.zoomIn); },
+  b1More() { runtime.deco.more = !runtime.deco.more; Deco.render(); },
+  b1Cat(k) { runtime.deco.cat = k; Deco.render(); },
+  b1Tray() { runtime.deco.trayOpen = !runtime.deco.trayOpen; Deco.render(); },
+  b1Pick(id) { const D = runtime.deco; if (!D) return; D.trayOpen = false; Deco.pick(id); Build1.buzz(8); }
+});
+(() => {
+  const cv = $('#room');
+  cv.addEventListener('pointerdown', e => Build1.down(e), true);
+  cv.addEventListener('pointermove', e => Build1.move(e), true);
+  cv.addEventListener('pointerup', e => Build1.up(e), true);
+  cv.addEventListener('pointercancel', e => Build1.up(e), true);
+  // a drag must not also count as a tap on the room or on a tray button
+  const eatClick = e => { if (performance.now() >= Build1.eatUntil) return; const hit = Build1.eatWhere === 'room' ? e.target === cv : !!(e.target.closest && e.target.closest('#deco .b1-tray')); if (hit) { e.preventDefault(); e.stopImmediatePropagation(); } };
+  document.addEventListener('click', eatClick, true);
+  document.addEventListener('pointerdown', e => Build1.trayDown(e), true);
+  document.addEventListener('pointermove', e => Build1.trayMove(e), { capture: true, passive: false });
+  document.addEventListener('pointerup', e => Build1.trayUp(e), true);
+  document.addEventListener('pointercancel', e => { if (Build1.tr && Build1.tr.id === e.pointerId) Build1.trayUp(e); }, true);
+  const st = document.createElement('style'); st.id = 'build1-css';
+  st.textContent = `
+body.deco-on.touch-ui #hud,body.deco-on.touch-ui #objective,body.deco-on.touch-ui #touch,body.deco-on.touch-ui #stageTools,body.deco-on.touch-ui #nowPlaying,body.deco-on.touch-ui #alertChip,body.deco-on.touch-ui #tooltip,body.deco-on.touch-ui #tip,body.deco-on.touch-ui #pauseTag{display:none!important}
+body.deco-on.touch-ui #deco{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:5px;max-height:none;overflow:visible;padding:6px 8px}
+body.deco-on.touch-ui #deco[hidden]{display:none}
+.b1-head{display:flex;gap:6px;align-items:center}
+.b1-head .btn{min-width:44px;min-height:40px}
+.b1-zone{font:700 11px var(--f-ui);text-transform:uppercase;letter-spacing:.04em;opacity:.7}
+.b1-money{font:700 12px var(--f-ui)}
+.b1-more{display:flex;gap:6px;flex-wrap:wrap}
+.b1-cats{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;align-items:center}
+.b1-cats::-webkit-scrollbar{display:none}
+.b1-cats .chip{flex:0 0 auto;min-height:32px}
+.b1-tray{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;padding:2px 0;touch-action:pan-x;scrollbar-width:none}
+.b1-tray::-webkit-scrollbar{display:none}
+body.deco-on.touch-ui #deco .b1-tray .it{flex:0 0 auto;width:76px;min-height:70px;scroll-snap-align:start;touch-action:pan-x;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.b1-tray .it .nm{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.15;text-align:center;max-width:100%}
+.b1-tray.open{flex-wrap:wrap;overflow-x:hidden;overflow-y:auto;max-height:36vh;touch-action:pan-y}
+body.deco-on.touch-ui #deco .b1-tray.open .it{touch-action:pan-y}
+.b1-msg{font:600 12px/1.3 var(--f-ui);min-height:16px;color:#4b5d4d}
+.b1-msg.ok{color:#2f7d32}.b1-msg.bad{color:#b23a2b}
+#b1Fab{position:absolute;z-index:30;display:flex;gap:6px;left:0;top:0}
+#b1Fab[hidden]{display:none}
+#b1Fab button{min-width:44px;height:44px;border-radius:22px;border:1px solid #78916b;font:700 15px var(--f-ui);box-shadow:0 3px 10px #0006;background:#f6f3e6;color:#283e2e;padding:0 12px;touch-action:manipulation;cursor:pointer}
+#b1Fab button.ok{background:#3c7a3f;border-color:#2c5e2f;color:#fff;font-size:20px}
+#b1Fab button.ok.bad{background:#9a9a8e;border-color:#7d7d73}
+#b1Fab button.x{color:#a33}
+@media (orientation:landscape) and (max-height:540px){
+body.deco-on.touch-ui #deco{width:38vw;max-width:38vw;overflow:hidden}
+.b1-head{flex-wrap:wrap;gap:4px}.b1-head .btn{min-width:40px}.b1-zone{display:none}
+.b1-msg{order:3}
+.b1-tray,.b1-tray.open{order:4;flex:1 1 auto;min-height:0;flex-wrap:wrap;overflow-x:hidden;overflow-y:auto;max-height:none;touch-action:pan-y;align-content:flex-start}
+body.deco-on.touch-ui #deco .b1-tray .it{touch-action:pan-y;width:70px}
+.b1-cats [data-act="b1Tray"]{display:none}
+}`;
+  document.head.appendChild(st);
+})();
+</script>
 <style id="bagseed-main-menu-style">
 /* Approved community-garden title screen; all rules stay inside this screen. */
 body:has(#screen-title.menu-home:not([hidden])) { background: #e4e8d7; }
@@ -29655,7 +29951,7 @@ function remainingHairSource(L,dir){
 /* Heater samples. Native room heating is preserved; emission survives room tint. */
 (()=>{
  'use strict';
- const DATA={"revision":"heaters-1","status":"proposal","path":"assets/heaters-atlas.png","sha256":"b8f081e769448772a48838aaed1a8a20fc1722132a76cdac880a8ce076d632df","size":[1312,1199],"runtime":{"path":"assets/heaters-atlas.webp","sha256":"a03380c3116532fa964069154263ecd7e047526c70e9b4a79a6fa944df29655b","publicPath":"assets/heaters/heaters-a03380c31165.webp"},"tiers":{"1":{"name":"Old Space Heater","price":24.99,"watts":420,"width":13,"height":13.165254237288135,"on":[156,43,472,478],"off":[685,43,472,478],"heat":[226,209,330,94],"indicator":[376,374],"buttons":[[489,378]],"display":null},"2":{"name":"Thermo-Cube Digital Heater","price":79,"watts":330,"width":12.4,"height":15.820689655172414,"on":[145,523,493,629],"off":[675,523,493,629],"heat":[236,870,313,128],"indicator":[307,791],"buttons":[[379,790],[452,790]],"display":{"on":[335,684,119,51],"off":[865,684,119,51]}}},"image":"assets/heaters/heaters-a03380c31165.webp"},image=new Image(),original=Gear.heater,icon=drawGearIcon,hit=RoomArt.hit,fixtures=new Map(),coils=new Map();let loaded=false;
+ const DATA={"revision":"heaters-1","status":"approved","path":"assets/heaters-atlas.png","sha256":"b8f081e769448772a48838aaed1a8a20fc1722132a76cdac880a8ce076d632df","size":[1312,1199],"runtime":{"path":"assets/heaters-atlas.webp","sha256":"a03380c3116532fa964069154263ecd7e047526c70e9b4a79a6fa944df29655b","publicPath":"assets/heaters/heaters-a03380c31165.webp"},"tiers":{"1":{"name":"Old Space Heater","price":24.99,"watts":420,"width":13,"height":13.165254237288135,"on":[156,43,472,478],"off":[685,43,472,478],"heat":[226,209,330,94],"indicator":[376,374],"buttons":[[489,378]],"display":null},"2":{"name":"Thermo-Cube Digital Heater","price":79,"watts":330,"width":12.4,"height":15.820689655172414,"on":[145,523,493,629],"off":[675,523,493,629],"heat":[236,870,313,128],"indicator":[307,791],"buttons":[[379,790],[452,790]],"display":{"on":[335,684,119,51],"off":[865,684,119,51]}}},"image":"assets/heaters/heaters-a03380c31165.webp"},image=new Image(),original=Gear.heater,icon=drawGearIcon,hit=RoomArt.hit,fixtures=new Map(),coils=new Map();let loaded=false;
  function phase(loc,n,fallback=true){const L=state?.locations?.[loc];if(!L)return {powered:true,heating:!!fallback,target:68,level:1};const powered=locOn(L,'heater')&&!state.fail.heatTrip&&!state.fail.outage&&!roomTripped(lungRoomOf(loc)||LOC_DEF[loc]?.room);return {powered,heating:powered&&envFor(loc).hvac.units.some(u=>(u.loc===undefined||u.loc===loc)&&u.name===EQ.heater[n].name&&u.dir>0),target:L.heatTo||68,level:n===1&&L.heatMode!==2?.55:1};}
  function project(a,p){const[x,y,w,h]=a.on;return [(p[0]-x)*a.width/w,(p[1]-y)*a.height/h,(p[2]||0)*a.width/w,(p[3]||0)*a.height/h];}
  function coilImage(n){if(coils.has(n))return coils.get(n);const a=DATA.tiers[n],cv=document.createElement('canvas');cv.width=a.on[2];cv.height=a.on[3];const g=cv.getContext('2d');g.drawImage(image,...a.on,0,0,cv.width,cv.height);const p=g.getImageData(0,0,cv.width,cv.height),d=p.data;for(let y=0;y<cv.height;y++)for(let x=0;x<cv.width;x++){const i=(y*cv.width+x)*4,inside=x+a.on[0]>=a.heat[0]&&x+a.on[0]<a.heat[0]+a.heat[2]&&y+a.on[1]>=a.heat[1]&&y+a.on[1]<a.heat[1]+a.heat[3];d[i+3]=inside&&d[i]>d[i+1]*1.2&&d[i]>d[i+2]*1.4?d[i+3]:0;}g.putImageData(p,0,0);coils.set(n,cv);return cv;}

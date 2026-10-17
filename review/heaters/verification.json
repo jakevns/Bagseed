@@ -1,5 +1,5 @@
 {
-  "status": "local samples awaiting artwork approval",
+  "status": "approved; final merged validation passed",
   "entryPoint": "public/index.html",
   "buildAndSourceChecks": "passed",
   "heaterPurchaseDeliveryControlsSaveReload": "passed",
@@ -23,5 +23,8 @@
     "air conditioner",
     "heater"
   ],
-  "windowStationSideBySide": true
+  "windowStationSideBySide": true,
+  "mergedMain": "27515f9",
+  "finalMergedTests": 8,
+  "phoneDecoratingPreserved": true
 }
