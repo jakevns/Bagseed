@@ -904,6 +904,57 @@
           1659
         ]
       ]
+    },
+    "style-audit/cast-01-marcus": {
+      "sha256": "7b5b929ebb5e1a92404c11c11c40e8ba05d16849110f676d13dda0d3a215a1c2"
+    },
+    "style-audit/cast-05-kenji": {
+      "sha256": "ab0c445c5cde630feed60d0195d22305951af752e2e04b1938c208afdcebf871"
+    },
+    "style-audit/cast-06-mateo": {
+      "sha256": "e567ba0890ac26dd5f43db1d4bdba476e1f49d0cc4cea8e8b823d4f9d22c4a51"
+    },
+    "style-audit/cast-16-ronan": {
+      "sha256": "595758fd906aa2a9296d2200acfdc6ae8378536635db912404f1a46b9ee5142c"
+    },
+    "style-audit/cast-24-hugo": {
+      "sha256": "a02fcdfc1358ace3f422989b943a4ab5dab446f5317f7c1ca2f1feb0acf08a9a"
+    },
+    "style-audit/cast-41-shed": {
+      "sha256": "417d5e5199ad63196ac4a726c913cf04724f06ac7d803e64f038a2804fc983a0"
+    },
+    "style-audit/cast-48-cure": {
+      "sha256": "3998abbc62b5c2c4b40b495939ce324d1d3e8833c7d9a9b9493d5bf705484398"
+    },
+    "style-audit/cast-52-hardwarePT": {
+      "sha256": "ced8fcda85d1748a9ab779c20725d7ea75cdb176eb900ca676edea9331d1a441"
+    },
+    "style-audit/cast-58-suit": {
+      "sha256": "5a8308bb5305b6bb459a3097a9b2ea273007915ba0a0277d60e67a80c88ecd75"
+    },
+    "style-audit/cast-66-theo": {
+      "sha256": "793130079d54e14b96342ba1928711dba17c0a3ecab037bb4ff62b846b726479"
+    },
+    "style-audit/cast-28-dev": {
+      "sha256": "69e5219236d4109ac88f8e9ee6632865ec33c676eb6f8a91f9ee4e31a8ef3c9f"
+    },
+    "style-audit/cast-14-owen": {
+      "sha256": "67323446b4481d60bae7ae29730150ca5b294b2f4f2bc860c6400b05f88dc25d"
+    },
+    "style-audit/cast-21-arthur": {
+      "sha256": "16041798b07bec8f93651d0c438f176102bf1014e56599a8778663412614c36e"
+    },
+    "style-audit/cast-26-enzo": {
+      "sha256": "bfcd4345bf63f3a190078b5e222bfa73ca136fa7ee3e09e3d084c4f312b4478b"
+    },
+    "style-audit/cast-34-1": {
+      "sha256": "e69d83a5ce7adb57e659226db7d14cd9c4115edefe219f79cf1de2075a7708ee"
+    },
+    "style-audit/cast-51-gardenPT": {
+      "sha256": "086a17b57bf2914f6954e88df22de51cf498ee0ca0bcb5aefd8d5ae998036a51"
+    },
+    "style-audit/cast-19-jun": {
+      "sha256": "6d33d9abe1dd4ee788073448379c17b2da787a500c4d3f370e2a5acfe1eae8ef"
     }
   },
   "people": [
@@ -1082,7 +1133,13 @@
           ],
           "scale": 0.49261083743842365
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-01-marcus.png",
+        "sha256": "7b5b929ebb5e1a92404c11c11c40e8ba05d16849110f676d13dda0d3a215a1c2",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.neighbors.ines.look",
@@ -1791,7 +1848,13 @@
           ],
           "scale": 0.4727272727272727
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-05-kenji.png",
+        "sha256": "ab0c445c5cde630feed60d0195d22305951af752e2e04b1938c208afdcebf871",
+        "height": 104,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.mateo.look",
@@ -1967,7 +2030,13 @@
           ],
           "scale": 0.45662100456621
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-06-mateo.png",
+        "sha256": "e567ba0890ac26dd5f43db1d4bdba476e1f49d0cc4cea8e8b823d4f9d22c4a51",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.elena.look",
@@ -3381,7 +3450,13 @@
           ],
           "scale": 0.48372093023255813
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-14-owen.png",
+        "sha256": "67323446b4481d60bae7ae29730150ca5b294b2f4f2bc860c6400b05f88dc25d",
+        "height": 104,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.amina.look",
@@ -3733,7 +3808,13 @@
           ],
           "scale": 0.4608294930875576
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-16-ronan.png",
+        "sha256": "595758fd906aa2a9296d2200acfdc6ae8378536635db912404f1a46b9ee5142c",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.leila.look",
@@ -4264,7 +4345,13 @@
           ],
           "scale": 0.4975124378109453
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-19-jun.png",
+        "sha256": "6d33d9abe1dd4ee788073448379c17b2da787a500c4d3f370e2a5acfe1eae8ef",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.rosie.look",
@@ -4620,7 +4707,13 @@
           ],
           "scale": 0.4928909952606635
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-21-arthur.png",
+        "sha256": "16041798b07bec8f93651d0c438f176102bf1014e56599a8778663412614c36e",
+        "height": 104,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.nadia.look",
@@ -5151,7 +5244,13 @@
           ],
           "scale": 0.46511627906976744
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-24-hugo.png",
+        "sha256": "a02fcdfc1358ace3f422989b943a4ab5dab446f5317f7c1ca2f1feb0acf08a9a",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.anika.look",
@@ -5503,7 +5602,13 @@
           ],
           "scale": 0.45454545454545453
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-26-enzo.png",
+        "sha256": "bfcd4345bf63f3a190078b5e222bfa73ca136fa7ee3e09e3d084c4f312b4478b",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.sasha.look",
@@ -5855,7 +5960,13 @@
           ],
           "scale": 0.4388185654008439
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-28-dev.png",
+        "sha256": "69e5219236d4109ac88f8e9ee6632865ec33c676eb6f8a91f9ee4e31a8ef3c9f",
+        "height": 104,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.residents.ari.look",
@@ -6913,7 +7024,13 @@
           ],
           "scale": 0.38461538461538464
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-34-1.png",
+        "sha256": "e69d83a5ce7adb57e659226db7d14cd9c4115edefe219f79cf1de2075a7708ee",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.guests.2.look",
@@ -7268,540 +7385,6 @@
       ]
     },
     {
-      "source": "collections.patients.rosalind.look",
-      "id": "rosalind",
-      "name": "Rosalind Ortega",
-      "age": null,
-      "role": "Retired chemistry teacher",
-      "kid": false,
-      "look": {
-        "skin": "#a8704c",
-        "hairC": "#e9e2d4",
-        "hairS": "bun",
-        "facial": "none",
-        "shirtC": "#8a5a8f",
-        "topS": "tee",
-        "pantsC": "#36405a",
-        "bottomS": "jeans",
-        "shoesC": "#2b1d14",
-        "shoesS": "sneakers",
-        "pres": "neutral",
-        "body": "average",
-        "face": "soft",
-        "eyes": "dot",
-        "brows": "thin",
-        "eyeC": "#2b1d14",
-        "nose": "default",
-        "mouth": "default",
-        "expr": "neutral",
-        "ears": "normal",
-        "hat": "none",
-        "glasses": "round",
-        "acc": "none",
-        "hairHi": "none",
-        "hair": "#e9e2d4",
-        "style": "bun",
-        "shirt": "#8a5a8f",
-        "extras": [],
-        "pierce": [],
-        "marks": []
-      },
-      "aliases": [
-        "collections.patients.rosalind.look"
-      ],
-      "signature": "[[\"#a8704c\",\"#e9e2d4\",\"bun\",\"none\",\"#8a5a8f\",\"tee\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"neutral\",\"average\",\"soft\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"round\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
-      "assetId": "cast-37-rosalind",
-      "group": "cast-08",
-      "views": {
-        "down": "registered/cast-37-rosalind/down-idle.png",
-        "right": "registered/cast-37-rosalind/right-idle.png",
-        "up": "registered/cast-37-rosalind/up-idle.png",
-        "left": "registered/cast-37-rosalind/left-idle.png"
-      },
-      "portraits": {
-        "neutral": "registered/cast-37-rosalind/portrait-neutral.png",
-        "friendly": "registered/cast-37-rosalind/portrait-friendly.png",
-        "concerned": "registered/cast-37-rosalind/portrait-concerned.png"
-      },
-      "extraction": [
-        {
-          "kind": "portrait",
-          "name": "neutral",
-          "cell": [
-            0,
-            219,
-            267,
-            436
-          ],
-          "subject": [
-            36,
-            2,
-            262,
-            217
-          ],
-          "scale": 0.8141592920353983
-        },
-        {
-          "kind": "portrait",
-          "name": "friendly",
-          "cell": [
-            267,
-            219,
-            535,
-            436
-          ],
-          "subject": [
-            29,
-            4,
-            258,
-            217
-          ],
-          "scale": 0.8034934497816594
-        },
-        {
-          "kind": "portrait",
-          "name": "concerned",
-          "cell": [
-            535,
-            219,
-            802,
-            436
-          ],
-          "subject": [
-            14,
-            3,
-            228,
-            217
-          ],
-          "scale": 0.8598130841121495
-        },
-        {
-          "kind": "body",
-          "name": "down",
-          "cell": [
-            765,
-            227,
-            1008,
-            439
-          ],
-          "subject": [
-            79,
-            6,
-            164,
-            212
-          ],
-          "scale": 0.4854368932038835
-        },
-        {
-          "kind": "body",
-          "name": "right",
-          "cell": [
-            934,
-            227,
-            1165,
-            439
-          ],
-          "subject": [
-            80,
-            7,
-            146,
-            212
-          ],
-          "scale": 0.4878048780487805
-        },
-        {
-          "kind": "body",
-          "name": "up",
-          "cell": [
-            1091,
-            227,
-            1345,
-            439
-          ],
-          "subject": [
-            87,
-            6,
-            174,
-            212
-          ],
-          "scale": 0.4854368932038835
-        },
-        {
-          "kind": "body",
-          "name": "left",
-          "cell": [
-            1271,
-            227,
-            1484,
-            439
-          ],
-          "subject": [
-            81,
-            7,
-            150,
-            212
-          ],
-          "scale": 0.4878048780487805
-        }
-      ]
-    },
-    {
-      "source": "collections.patients.theo.look",
-      "id": "theo",
-      "name": "Theo Park",
-      "age": null,
-      "role": "Line cook",
-      "kid": false,
-      "look": {
-        "skin": "#e8b48f",
-        "hairC": "#1d1612",
-        "hairS": "buzz",
-        "facial": "none",
-        "shirtC": "#2b2b33",
-        "topS": "tee",
-        "pantsC": "#36405a",
-        "bottomS": "jeans",
-        "shoesC": "#2b1d14",
-        "shoesS": "sneakers",
-        "pres": "neutral",
-        "body": "average",
-        "face": "soft",
-        "eyes": "dot",
-        "brows": "thin",
-        "eyeC": "#2b1d14",
-        "nose": "default",
-        "mouth": "default",
-        "expr": "neutral",
-        "ears": "normal",
-        "hat": "none",
-        "glasses": "none",
-        "acc": "none",
-        "hairHi": "none",
-        "hair": "#1d1612",
-        "style": "buzz",
-        "shirt": "#2b2b33",
-        "extras": [],
-        "pierce": [],
-        "marks": []
-      },
-      "aliases": [
-        "collections.patients.theo.look"
-      ],
-      "signature": "[[\"#e8b48f\",\"#1d1612\",\"buzz\",\"none\",\"#2b2b33\",\"tee\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"neutral\",\"average\",\"soft\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"none\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
-      "assetId": "cast-38-theo",
-      "group": "cast-08",
-      "views": {
-        "down": "registered/cast-38-theo/down-idle.png",
-        "right": "registered/cast-38-theo/right-idle.png",
-        "up": "registered/cast-38-theo/up-idle.png",
-        "left": "registered/cast-38-theo/left-idle.png"
-      },
-      "portraits": {
-        "neutral": "registered/cast-38-theo/portrait-neutral.png",
-        "friendly": "registered/cast-38-theo/portrait-friendly.png",
-        "concerned": "registered/cast-38-theo/portrait-concerned.png"
-      },
-      "extraction": [
-        {
-          "kind": "portrait",
-          "name": "neutral",
-          "cell": [
-            0,
-            436,
-            267,
-            632
-          ],
-          "subject": [
-            30,
-            4,
-            262,
-            196
-          ],
-          "scale": 0.7931034482758621
-        },
-        {
-          "kind": "portrait",
-          "name": "friendly",
-          "cell": [
-            267,
-            436,
-            535,
-            632
-          ],
-          "subject": [
-            13,
-            5,
-            250,
-            196
-          ],
-          "scale": 0.7763713080168776
-        },
-        {
-          "kind": "portrait",
-          "name": "concerned",
-          "cell": [
-            535,
-            436,
-            802,
-            633
-          ],
-          "subject": [
-            2,
-            5,
-            226,
-            196
-          ],
-          "scale": 0.8214285714285714
-        },
-        {
-          "kind": "body",
-          "name": "down",
-          "cell": [
-            765,
-            439,
-            1017,
-            636
-          ],
-          "subject": [
-            80,
-            11,
-            169,
-            197
-          ],
-          "scale": 0.5376344086021505
-        },
-        {
-          "kind": "body",
-          "name": "right",
-          "cell": [
-            943,
-            439,
-            1167,
-            636
-          ],
-          "subject": [
-            84,
-            11,
-            142,
-            197
-          ],
-          "scale": 0.5376344086021505
-        },
-        {
-          "kind": "body",
-          "name": "up",
-          "cell": [
-            1093,
-            439,
-            1347,
-            636
-          ],
-          "subject": [
-            84,
-            11,
-            176,
-            197
-          ],
-          "scale": 0.5376344086021505
-        },
-        {
-          "kind": "body",
-          "name": "left",
-          "cell": [
-            1273,
-            439,
-            1484,
-            636
-          ],
-          "subject": [
-            79,
-            11,
-            139,
-            197
-          ],
-          "scale": 0.5376344086021505
-        }
-      ]
-    },
-    {
-      "source": "collections.patients.marisol.look",
-      "id": "marisol",
-      "name": "Marisol Vega",
-      "age": null,
-      "role": "Muralist",
-      "kid": false,
-      "look": {
-        "skin": "#cf9670",
-        "hairC": "#4a2c1a",
-        "hairS": "long",
-        "facial": "none",
-        "shirtC": "#e0a33a",
-        "topS": "tee",
-        "pantsC": "#36405a",
-        "bottomS": "jeans",
-        "shoesC": "#2b1d14",
-        "shoesS": "sneakers",
-        "pres": "neutral",
-        "body": "average",
-        "face": "soft",
-        "eyes": "dot",
-        "brows": "thin",
-        "eyeC": "#2b1d14",
-        "nose": "default",
-        "mouth": "default",
-        "expr": "neutral",
-        "ears": "normal",
-        "hat": "none",
-        "glasses": "square",
-        "acc": "none",
-        "hairHi": "none",
-        "hair": "#4a2c1a",
-        "style": "long",
-        "shirt": "#e0a33a",
-        "extras": [],
-        "pierce": [],
-        "marks": []
-      },
-      "aliases": [
-        "collections.patients.marisol.look"
-      ],
-      "signature": "[[\"#cf9670\",\"#4a2c1a\",\"long\",\"none\",\"#e0a33a\",\"tee\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"neutral\",\"average\",\"soft\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"square\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
-      "assetId": "cast-39-marisol",
-      "group": "cast-08",
-      "views": {
-        "down": "registered/cast-39-marisol/down-idle.png",
-        "right": "registered/cast-39-marisol/right-idle.png",
-        "up": "registered/cast-39-marisol/up-idle.png",
-        "left": "registered/cast-39-marisol/left-idle.png"
-      },
-      "portraits": {
-        "neutral": "registered/cast-39-marisol/portrait-neutral.png",
-        "friendly": "registered/cast-39-marisol/portrait-friendly.png",
-        "concerned": "registered/cast-39-marisol/portrait-concerned.png"
-      },
-      "extraction": [
-        {
-          "kind": "portrait",
-          "name": "neutral",
-          "cell": [
-            0,
-            632,
-            267,
-            826
-          ],
-          "subject": [
-            33,
-            0,
-            267,
-            190
-          ],
-          "scale": 0.7863247863247863
-        },
-        {
-          "kind": "portrait",
-          "name": "friendly",
-          "cell": [
-            267,
-            632,
-            535,
-            827
-          ],
-          "subject": [
-            16,
-            0,
-            256,
-            190
-          ],
-          "scale": 0.7666666666666667
-        },
-        {
-          "kind": "portrait",
-          "name": "concerned",
-          "cell": [
-            535,
-            633,
-            802,
-            828
-          ],
-          "subject": [
-            5,
-            1,
-            238,
-            189
-          ],
-          "scale": 0.7896995708154506
-        },
-        {
-          "kind": "body",
-          "name": "down",
-          "cell": [
-            765,
-            636,
-            1004,
-            841
-          ],
-          "subject": [
-            68,
-            6,
-            170,
-            198
-          ],
-          "scale": 0.5208333333333334
-        },
-        {
-          "kind": "body",
-          "name": "right",
-          "cell": [
-            930,
-            636,
-            1167,
-            843
-          ],
-          "subject": [
-            70,
-            10,
-            152,
-            198
-          ],
-          "scale": 0.5319148936170213
-        },
-        {
-          "kind": "body",
-          "name": "up",
-          "cell": [
-            1093,
-            636,
-            1347,
-            840
-          ],
-          "subject": [
-            86,
-            7,
-            172,
-            198
-          ],
-          "scale": 0.5235602094240838
-        },
-        {
-          "kind": "body",
-          "name": "left",
-          "cell": [
-            1273,
-            636,
-            1484,
-            840
-          ],
-          "subject": [
-            82,
-            8,
-            166,
-            198
-          ],
-          "scale": 0.5263157894736842
-        }
-      ]
-    },
-    {
       "source": "collections.channels.vale.look",
       "id": "vale",
       "name": "Dr. Juniper Vale",
@@ -8152,7 +7735,13 @@
           ],
           "scale": 0.46511627906976744
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-41-shed.png",
+        "sha256": "417d5e5199ad63196ac4a726c913cf04724f06ac7d803e64f038a2804fc983a0",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.channels.patchwork.look",
@@ -9385,7 +8974,13 @@
           ],
           "scale": 0.4830917874396135
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-48-cure.png",
+        "sha256": "3998abbc62b5c2c4b40b495939ce324d1d3e8833c7d9a9b9493d5bf705484398",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.channels.lumen.look",
@@ -9913,7 +9508,13 @@
           ],
           "scale": 0.49019607843137253
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-51-gardenPT.png",
+        "sha256": "086a17b57bf2914f6954e88df22de51cf498ee0ca0bcb5aefd8d5ae998036a51",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.shopStaff.hardware.ptLook",
@@ -10089,7 +9690,13 @@
           ],
           "scale": 0.5
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-52-hardwarePT.png",
+        "sha256": "ced8fcda85d1748a9ab779c20725d7ea75cdb176eb900ca676edea9331d1a441",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "source": "collections.shopStaff.threads.ptLook",
@@ -11141,7 +10748,13 @@
           ],
           "scale": 0.4878048780487805
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-58-suit.png",
+        "sha256": "5a8308bb5305b6bb459a3097a9b2ea273007915ba0a0277d60e67a80c88ecd75",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "id": "amani",
@@ -12225,7 +11838,8 @@
         "marks": []
       },
       "aliases": [
-        "collections.NPCs.rosalind"
+        "collections.NPCs.rosalind",
+        "collections.patients.rosalind.look"
       ],
       "signature": "[[\"#a8704c\",\"#e9e2d4\",\"bun\",\"none\",\"#8a5a8f\",\"cardigan\",\"#6b5a3a\",\"skirt\",\"#2b1d14\",\"boots\",\"fem\",\"curvy\",\"round\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"round\",\"scarf\",\"none\",true,null,null,null,null,null,null,null,null,\"knit\"],[],[],[]]",
       "assetId": "cast-65-rosalind",
@@ -12398,7 +12012,8 @@
         "marks": []
       },
       "aliases": [
-        "collections.NPCs.theo"
+        "collections.NPCs.theo",
+        "collections.patients.theo.look"
       ],
       "signature": "[[\"#e8b48f\",\"#1d1612\",\"buzz\",\"goatee\",\"#2b2b33\",\"garden\",\"#3a3a44\",\"joggers\",\"#e9e2d4\",\"sneakers\",\"masc\",\"stocky\",\"round\",\"round\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"none\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
       "assetId": "cast-66-theo",
@@ -12534,7 +12149,13 @@
           ],
           "scale": 0.23094688221709006
         }
-      ]
+      ],
+      "styleRedraw": {
+        "source": "style-audit-v1/assets/cast-66-theo.png",
+        "sha256": "793130079d54e14b96342ba1928711dba17c0a3ecab037bb4ff62b846b726479",
+        "height": 100,
+        "approvedStyle": "Remy/Priya/Doug/Poppy"
+      }
     },
     {
       "id": "marisol",
@@ -12574,7 +12195,8 @@
         "marks": []
       },
       "aliases": [
-        "collections.NPCs.marisol"
+        "collections.NPCs.marisol",
+        "collections.patients.marisol.look"
       ],
       "signature": "[[\"#cf9670\",\"#4a2c1a\",\"wavy\",\"none\",\"#e0a33a\",\"overalls\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"fem\",\"slim\",\"soft\",\"lashed\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"bucket\",\"square\",\"none\",\"none\",null,\"#5fa04a\",null,null,null,null,null,null,null,null],[\"freckles\"],[],[]]",
       "assetId": "cast-67-marisol",

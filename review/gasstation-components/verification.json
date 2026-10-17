@@ -1,0 +1,104 @@
+{
+  "status": "approved-component-prototype",
+  "identity": {
+    "schemaVersion": 1,
+    "profile": "gasstation@1",
+    "libraryRevision": "plant-parts-library-14",
+    "seed": "gasstation-phenotype-study",
+    "traits": {
+      "leafShape": "narrow",
+      "leafKey": "blue",
+      "colorName": "Blue-green",
+      "branching": 0.9
+    },
+    "parts": {
+      "seed": "gasstation.seed@1",
+      "radicle": "gasstation.radicle@1",
+      "cotyledon": "gasstation.cotyledon@1",
+      "singleLeaf": "gasstation.singleLeaf@1",
+      "threeLeaf": "gasstation.threeLeaf@1",
+      "fiveLeaf": "gasstation.fiveLeaf@1",
+      "sevenLeaf": "gasstation.sevenLeaf@1",
+      "sugarLeaf": "gasstation.sugarLeaf@1",
+      "stem": "gasstation.stem@1",
+      "node": "gasstation.node@1",
+      "femaleEarly": "gasstation.femaleEarly@1",
+      "femaleMid": "gasstation.femaleMid@1",
+      "femaleLate": "gasstation.femaleLate@1",
+      "maleClosed": "gasstation.maleClosed@1",
+      "maleOpen": "gasstation.maleOpen@1"
+    }
+  },
+  "measurements": [
+    {
+      "heightInches": 50,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 48,
+        "leaves": 125,
+        "flowers": 0
+      },
+      "measuredHeightInches": 49.75
+    },
+    {
+      "heightInches": 90,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 124,
+        "leaves": 230,
+        "flowers": 0
+      },
+      "measuredHeightInches": 89.875
+    }
+  ],
+  "finish": {
+    "amount": 1,
+    "palette": "ochre",
+    "rgb": [
+      204,
+      166,
+      77
+    ]
+  },
+  "coolStudies": [
+    {
+      "dayTemp": 78,
+      "nightTemp": 70,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "blue violet",
+        "hex": "#425b8b",
+        "rgb": [
+          66,
+          91,
+          139
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "dayTemp": 78,
+      "nightTemp": 68,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "blue violet",
+        "hex": "#425b8b",
+        "rgb": [
+          66,
+          91,
+          139
+        ]
+      },
+      "sproutBonus": 0.08
+    }
+  ],
+  "animationFrames": 120,
+  "errors": [],
+  "productionRendererUnchanged": true
+}

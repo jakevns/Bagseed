@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "417d5e5199ad63196ac4a726c913cf04724f06ac7d803e64f038a2804fc983a0",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        448
+      ],
+      "subject": [
+        126,
+        20,
+        364,
+        447
+      ],
+      "scale": 0.234192037470726,
+      "output": "cast/registered/cast-41-shed/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        448
+      ],
+      "subject": [
+        108,
+        21,
+        319,
+        448
+      ],
+      "scale": 0.234192037470726,
+      "output": "cast/registered/cast-41-shed/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        448
+      ],
+      "subject": [
+        46,
+        18,
+        279,
+        448
+      ],
+      "scale": 0.23255813953488372,
+      "output": "cast/registered/cast-41-shed/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        448,
+        418,
+        809
+      ],
+      "subject": [
+        63,
+        23,
+        393,
+        353
+      ],
+      "scale": 0.5575757575757576,
+      "output": "cast/registered/cast-41-shed/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        448,
+        836,
+        809
+      ],
+      "subject": [
+        47,
+        24,
+        372,
+        353
+      ],
+      "scale": 0.5592705167173252,
+      "output": "cast/registered/cast-41-shed/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        448,
+        1254,
+        809
+      ],
+      "subject": [
+        15,
+        27,
+        347,
+        352
+      ],
+      "scale": 0.5542168674698795,
+      "output": "cast/registered/cast-41-shed/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        809,
+        418,
+        1254
+      ],
+      "subject": [
+        121,
+        4,
+        355,
+        413
+      ],
+      "scale": 0.24449877750611246,
+      "output": "style-audit-v1/actions/cast-41-shed/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        809,
+        836,
+        1254
+      ],
+      "subject": [
+        107,
+        2,
+        319,
+        413
+      ],
+      "scale": 0.24330900243309003,
+      "output": "style-audit-v1/actions/cast-41-shed/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        809,
+        1254,
+        1254
+      ],
+      "subject": [
+        72,
+        1,
+        296,
+        413
+      ],
+      "scale": 0.24271844660194175,
+      "output": "style-audit-v1/actions/cast-41-shed/up.png"
+    }
+  ]
+}

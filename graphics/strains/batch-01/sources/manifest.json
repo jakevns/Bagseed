@@ -1,0 +1,630 @@
+{
+  "revision": "strains-batch-01",
+  "status": "proposal",
+  "strains": {
+    "porchlight": {
+      "name": "Porchlight",
+      "source": "assets/porchlight-atlas.png",
+      "sourceSHA256": "e871318f85578cf01127c359f6828ab75dee7a9adf059b9e32f70eab926c13f0",
+      "size": [
+        1619,
+        971
+      ],
+      "runtime": "assets/strains/batch-01/porchlight-9447bca821a1.webp",
+      "runtimeSHA256": "9447bca821a11e6f1b8a0da64d05b2d9869a25c0b1c98ab7bd6ab1dd3cf54fd3",
+      "frames": [
+        {
+          "crop": [
+            107,
+            113,
+            124,
+            125
+          ],
+          "anchor": [
+            62.0,
+            124
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            397,
+            96,
+            167,
+            206
+          ],
+          "anchor": [
+            83.5,
+            205
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            658,
+            57,
+            279,
+            253
+          ],
+          "anchor": [
+            135.0,
+            252
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            970,
+            18,
+            309,
+            290
+          ],
+          "anchor": [
+            162.0,
+            289
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1292,
+            11,
+            316,
+            299
+          ],
+          "anchor": [
+            161.0,
+            298
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            10,
+            309,
+            336,
+            321
+          ],
+          "anchor": [
+            169.0,
+            320
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            343,
+            311,
+            303,
+            318
+          ],
+          "anchor": [
+            150.0,
+            317
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            659,
+            314,
+            313,
+            316
+          ],
+          "anchor": [
+            148.0,
+            315
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            974,
+            315,
+            321,
+            316
+          ],
+          "anchor": [
+            160.0,
+            315
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1286,
+            314,
+            324,
+            313
+          ],
+          "anchor": [
+            167.0,
+            312
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            11,
+            629,
+            331,
+            324
+          ],
+          "anchor": [
+            169.0,
+            323
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            362,
+            630,
+            277,
+            324
+          ],
+          "anchor": [
+            132.0,
+            0
+          ],
+          "hang": true
+        },
+        {
+          "crop": [
+            700,
+            651,
+            219,
+            290
+          ],
+          "anchor": [
+            109.5,
+            289
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            970,
+            631,
+            309,
+            323
+          ],
+          "anchor": [
+            165.0,
+            322
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1303,
+            637,
+            292,
+            317
+          ],
+          "anchor": [
+            149.0,
+            316
+          ],
+          "hang": false
+        }
+      ]
+    },
+    "velvet": {
+      "name": "Velvet Underbrush",
+      "source": "assets/velvet-atlas.png",
+      "sourceSHA256": "2faece936714f92023c8fcfccf11b505f1e2adbf18ec401f9316a1fd81a2cfca",
+      "size": [
+        1536,
+        1024
+      ],
+      "runtime": "assets/strains/batch-01/velvet-fcb11605be75.webp",
+      "runtimeSHA256": "fcb11605be75fbcccd03e820379ae0de4b65b8450b239d2b99d1eff7390182cb",
+      "frames": [
+        {
+          "crop": [
+            99,
+            126,
+            96,
+            101
+          ],
+          "anchor": [
+            48.0,
+            100
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            393,
+            114,
+            126,
+            184
+          ],
+          "anchor": [
+            63.0,
+            183
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            654,
+            67,
+            209,
+            220
+          ],
+          "anchor": [
+            99.0,
+            219
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            939,
+            28,
+            245,
+            261
+          ],
+          "anchor": [
+            120.0,
+            260
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1220,
+            9,
+            311,
+            295
+          ],
+          "anchor": [
+            155.5,
+            294
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            6,
+            301,
+            316,
+            329
+          ],
+          "anchor": [
+            188.0,
+            328
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            322,
+            314,
+            313,
+            320
+          ],
+          "anchor": [
+            186.0,
+            319
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            629,
+            307,
+            303,
+            331
+          ],
+          "anchor": [
+            138.0,
+            330
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            927,
+            311,
+            304,
+            327
+          ],
+          "anchor": [
+            133.0,
+            326
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1220,
+            309,
+            314,
+            329
+          ],
+          "anchor": [
+            148.0,
+            328
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            4,
+            636,
+            332,
+            365
+          ],
+          "anchor": [
+            170.0,
+            364
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            335,
+            640,
+            292,
+            355
+          ],
+          "anchor": [
+            150.0,
+            0
+          ],
+          "hang": true
+        },
+        {
+          "crop": [
+            650,
+            694,
+            235,
+            293
+          ],
+          "anchor": [
+            117.5,
+            292
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            935,
+            647,
+            279,
+            353
+          ],
+          "anchor": [
+            132.0,
+            352
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1235,
+            645,
+            284,
+            360
+          ],
+          "anchor": [
+            178.5,
+            359
+          ],
+          "hang": false
+        }
+      ]
+    },
+    "pixelpunch": {
+      "name": "Pixel Punch",
+      "source": "assets/pixelpunch-atlas.png",
+      "sourceSHA256": "0f8d10a45a2e895d41ad043a75e37d31aba790adb69cd49e651c499ea65d7eea",
+      "size": [
+        1599,
+        984
+      ],
+      "runtime": "assets/strains/batch-01/pixelpunch-88148ac5d0cc.webp",
+      "runtimeSHA256": "88148ac5d0cc0cba34b54eedde5c7839398fa56af382e58c4832452c1498e1e1",
+      "frames": [
+        {
+          "crop": [
+            122,
+            143,
+            83,
+            104
+          ],
+          "anchor": [
+            41.5,
+            103
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            393,
+            103,
+            126,
+            204
+          ],
+          "anchor": [
+            63.0,
+            203
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            667,
+            75,
+            254,
+            202
+          ],
+          "anchor": [
+            122.0,
+            201
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            985,
+            17,
+            294,
+            284
+          ],
+          "anchor": [
+            133.0,
+            283
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1277,
+            4,
+            311,
+            304
+          ],
+          "anchor": [
+            152.0,
+            303
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            4,
+            312,
+            335,
+            319
+          ],
+          "anchor": [
+            162.0,
+            318
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            344,
+            318,
+            309,
+            317
+          ],
+          "anchor": [
+            146.0,
+            316
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            654,
+            314,
+            307,
+            313
+          ],
+          "anchor": [
+            144.0,
+            312
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            965,
+            314,
+            319,
+            320
+          ],
+          "anchor": [
+            152.0,
+            319
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1281,
+            309,
+            315,
+            325
+          ],
+          "anchor": [
+            160.0,
+            324
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            4,
+            635,
+            340,
+            333
+          ],
+          "anchor": [
+            165.0,
+            332
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            356,
+            635,
+            276,
+            332
+          ],
+          "anchor": [
+            136.0,
+            0
+          ],
+          "hang": true
+        },
+        {
+          "crop": [
+            675,
+            684,
+            253,
+            264
+          ],
+          "anchor": [
+            126.5,
+            263
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            970,
+            636,
+            309,
+            334
+          ],
+          "anchor": [
+            146.0,
+            333
+          ],
+          "hang": false
+        },
+        {
+          "crop": [
+            1280,
+            636,
+            302,
+            333
+          ],
+          "anchor": [
+            163.0,
+            332
+          ],
+          "hang": false
+        }
+      ]
+    }
+  }
+}

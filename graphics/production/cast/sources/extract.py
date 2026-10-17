@@ -3,6 +3,9 @@
 Only technical cropping, alpha cleanup, resampling and anchor registration.
 """
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'sources'))
+from retained_png import save_png, save_text
 import json,hashlib
 import numpy as np
 from PIL import Image,ImageFilter
@@ -10,7 +13,7 @@ from collections import deque
 
 ROOT=Path(__file__).resolve().parents[1]
 DIRS=['down','right','up','left']
-roster=json.loads((ROOT/'sources/cast-roster.json').read_text())
+roster=json.loads((ROOT/'sources/cast-roster.json').read_text(encoding='utf-8-sig'))
 
 def resize(im,size):return im.convert('RGBa').resize(size,Image.Resampling.LANCZOS).convert('RGBA')
 def box(mask):
@@ -57,16 +60,18 @@ def isolate_body(cell):
     data[keep==0]=0
     return Image.fromarray(data)
 
+retired=json.loads((ROOT/'sources/retired-identities.json').read_text(encoding='utf-8-sig'))
 manifest={'sources':{},'people':[],'limits':'New roster walks use the illustrated standing drawing with a limb rig; five originally approved identities retain their generated walk sheets.'}
 for group in roster['groups']:
     source=ROOT/'assets'/f'{group}.png'
     if not source.exists():raise FileNotFoundError(source)
-    record=json.loads((ROOT/'sources'/f'{group}-generation.json').read_text())
+    record=json.loads((ROOT/'sources'/f'{group}-generation.json').read_text(encoding='utf-8-sig'))
     data=np.array(Image.open(source).convert('RGBA'));data[data[:,:,3]<=8]=0;im=Image.fromarray(data);mask=data[:,:,3]>80
     rows=split_rows(mask.sum(axis=1),len(record['people']))
     row_columns=[split_columns(mask[rows[k]:rows[k+1]].sum(axis=0)) for k in range(len(record['people']))]
     manifest['sources'][group]={'sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'size':list(im.size),'rows':rows,'columnsByRow':row_columns}
     for row,person in enumerate(record['people']):
+        if person['assetId'] in retired:continue
         cols=row_columns[row]
         result={**person,'group':group,'views':{},'portraits':{},'extraction':[]}
         for column in range(7):
@@ -84,7 +89,7 @@ for group in roster['groups']:
             if column<3:
                 scale=min(184/crop.width,184/crop.height);art=resize(crop,(round(crop.width*scale),round(crop.height*scale)))
                 out=Image.new('RGBA',(192,192));out.alpha_composite(art,((192-art.width)//2,192-art.height))
-                name=['neutral','friendly','concerned'][column];path=target/f'portrait-{name}.png';result['portraits'][name]=str(path.relative_to(ROOT))
+                name=['neutral','friendly','concerned'][column];path=target/f'portrait-{name}.png';result['portraits'][name]=path.relative_to(ROOT).as_posix()
             else:
                 yy,xx=np.nonzero(np.array(crop)[round(crop.height*.48):round(crop.height*.72),:,3]>80)
                 anchor=float(np.median(xx))if len(xx)else crop.width/2
@@ -93,9 +98,18 @@ for group in roster['groups']:
                 art=resize(crop,(round(crop.width*scale),round(crop.height*scale)));out=Image.new('RGBA',(96,108))
                 x=round(48-anchor*scale);y=107-art.height
                 if x<1 or x+art.width>95 or y<1:raise ValueError(f'Character crop exceeds registered canvas: {person["assetId"]} {column}')
-                out.alpha_composite(art,(x,y));name=DIRS[column-3];path=target/f'{name}-idle.png';result['views'][name]=str(path.relative_to(ROOT))
-            out.save(path);result['extraction'].append({'kind':kind,'name':name,'cell':cell_bounds,'subject':list(subject),'scale':scale})
+                out.alpha_composite(art,(x,y));name=DIRS[column-3];path=target/f'{name}-idle.png';result['views'][name]=path.relative_to(ROOT).as_posix()
+            save_png(out,path);result['extraction'].append({'kind':kind,'name':name,'cell':cell_bounds,'subject':list(subject),'scale':scale})
+        for old,current in retired.items():
+            if current==person['assetId']:
+                result['aliases']=list(dict.fromkeys(result.get('aliases',[])+['collections.patients.'+person['id']+'.look']))
         manifest['people'].append(result)
     print(group,len(record['people']),'complete illustrated identities registered')
-(ROOT/'sources/asset-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+save_text(json.dumps(manifest,indent=2)+'\n',ROOT/'sources/asset-manifest.json')
 print(len(manifest['people']),'authored appearances registered, with four views and three portraits each.')
+
+# Reapply retained, reviewed style redraws after extracting the original atlas.
+redraw=ROOT.parent/'style-audit-v1/register.py'
+if (redraw.parent/'manifest.json').exists():
+    import subprocess,sys
+    subprocess.run([sys.executable,str(redraw),'--cast-only'],check=True)

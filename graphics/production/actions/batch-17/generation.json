@@ -1,0 +1,12 @@
+{
+  "prompt": "Draw this exact three-row three-column reference chart again, but each person pinches their nose with thumb and forefinger in all views. ONE transparent 3x3 sheet, full figures in clean separate rows. Row1 green T-shirt Kai, row2 navy blazer glasses Night desk, row3 denim jacket glasses Eli. Column1 front, column2 right profile, column3 back. Preserve precise identity, haircut, skull/head width, outfit, limb lengths from reference. ALL THREE have SHORT, STRAIGHT, SIDE-PARTED hair with broad SMOOTH overlapping pointed locks and low compact volume touching skull; ears visible. Absolutely no ringlets, curls, rounded puff, afro, locs or shaggy mane. Hair must be smooth simple cel-shaded solid shapes, matching reference modest straight locks. Dark brown Kai/Night hair, black Eli hair. Keep exact outfit colors and full planted feet. Preserve reference body-head proportions, no giant head expansion. Large dark eyes with white highlights, warm brown fine outlines, soft rounded bodies, 2-3 cel tones, illustrated Bagseed style, no pixel art, no text, no shadows, no background. Gesture does not change height or torso shape.",
+  "references": [
+    "C:/Projects/Bagseed/.cache/nose-short-hair-reference.png"
+  ],
+  "source": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-b2641297-e59d-48e2-ba5c-7879afc25a8f.png",
+  "assetIds": [
+    "cast-54-marketPT",
+    "cast-56-labPT",
+    "cast-11-eli"
+  ]
+}

@@ -98,5 +98,6 @@
     g.drawImage(H,hx,hy,64,H.height/3);
     const hand=p['hand'+walk.rig.frames[f].nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
     out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);out.bagseedAuthoredWalk=f;out.bagseedWalkProfile=walk.imagePrefix||'walk/';
-    if(walkFigures.size>96)walkFigures.clear();walkFigures.set(sig,out);return out;
+    const registered=scalePlayerFigure(out,PLAYER_FIGURE_SCALE);
+    if(walkFigures.size>96)walkFigures.clear();walkFigures.set(sig,registered);return registered;
   }

@@ -1,0 +1,10 @@
+{
+  "frames": 120,
+  "durationSeconds": 10,
+  "changedCanopyPixels": {
+    "giantCanopy": 158101,
+    "flowerCanopy": 87947
+  },
+  "fixedSoilLandmark": true,
+  "rootFixedByModelTests": true
+}

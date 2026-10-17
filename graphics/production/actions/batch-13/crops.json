@@ -1,0 +1,71 @@
+{
+  "_isolateComponents": true,
+  "_assetIds": {
+    "cast-38-theo": "cast-38-theo",
+    "cast-39-marisol": "cast-39-marisol",
+    "cast-40-vale": "cast-40-vale",
+    "cast-41-shed": "cast-41-shed",
+    "cast-42-patchwork": "cast-42-patchwork"
+  },
+  "_source": "source.png",
+  "cast-40-vale": [
+    [
+      0,
+      624,
+      341,
+      949
+    ],
+    [
+      341,
+      624,
+      683,
+      949
+    ],
+    [
+      683,
+      624,
+      1024,
+      949
+    ]
+  ],
+  "cast-41-shed": [
+    [
+      0,
+      949,
+      341,
+      1241
+    ],
+    [
+      341,
+      949,
+      683,
+      1241
+    ],
+    [
+      683,
+      949,
+      1024,
+      1241
+    ]
+  ],
+  "cast-42-patchwork": [
+    [
+      0,
+      1241,
+      341,
+      1536
+    ],
+    [
+      341,
+      1241,
+      683,
+      1536
+    ],
+    [
+      683,
+      1241,
+      1024,
+      1536
+    ]
+  ]
+}

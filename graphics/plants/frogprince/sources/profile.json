@@ -1,0 +1,24 @@
+{
+  "id": "frogprince",
+  "name": "Frog Prince",
+  "shortName": "Frog Prince",
+  "apiName": "BagseedFrogprinceGrowth",
+  "revision": "frogprince-components-1",
+  "libraryRevision": "plant-parts-library-10",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "lime",
+    "colorName": "Purple",
+    "branching": 1.05
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Broad lime-green fans \u2192 grape-purple autumn fade",
+  "finishSubtitle": "Final-week color study \u00b7 purple phenotype senescence",
+  "finishCaption": "Purple fan leaves \u00b7 Grape calyces \u00b7 Silvery frost and gold pistils",
+  "finishPalette": "purple",
+  "windCaption": "Late flower / purple autumn fade",
+  "coolNights": true,
+  "coolPalette": "purple",
+  "coolColorLabel": "purple",
+  "experimental": true,
+  "phenotypeNote": "Representative expressed phenotype; experimental native traits remain rolled per save. This kit does not freeze or overwrite them."
+}

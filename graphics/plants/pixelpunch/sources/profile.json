@@ -1,0 +1,20 @@
+{
+  "id": "pixelpunch",
+  "name": "Pixel Punch",
+  "shortName": "Pixel Punch",
+  "apiName": "BagseedPixelPunchGrowth",
+  "revision": "pixelpunch-components-1",
+  "libraryRevision": "plant-parts-library-3",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "blue",
+    "colorName": "Purple",
+    "branching": 1.1
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Blue-green hybrid leaves \u2192 purple autumn fade",
+  "finishSubtitle": "Final-week color study \u00b7 Purple phenotype senescence",
+  "finishCaption": "Purple fan leaves \u00b7 Copper pistils \u00b7 Frosty lavender flowers",
+  "finishPalette": "purple",
+  "windCaption": "Late flower / purple autumn fade",
+  "coolNights": true
+}

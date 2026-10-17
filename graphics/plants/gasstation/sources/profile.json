@@ -1,0 +1,25 @@
+{
+  "id": "gasstation",
+  "lineId": "gasstation",
+  "name": "Gas Station Sushi",
+  "shortName": "Gas Station Sushi",
+  "apiName": "BagseedGasstationGrowth",
+  "revision": "gasstation-components-1",
+  "libraryRevision": "plant-parts-library-12",
+  "traits": {
+    "leafShape": "narrow",
+    "leafKey": "blue",
+    "colorName": "Blue-green",
+    "branching": 0.9
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Narrow blue-green fans \u2192 ochre senescence and cool-night blues",
+  "finishSubtitle": "Final-week color study \u00b7 ochre phenotype senescence",
+  "finishCaption": "Ochre narrow fans \u00b7 Mint-blue flower spears \u00b7 Amber pistils",
+  "finishPalette": "ochre",
+  "windCaption": "Late flower / ochre autumn fade",
+  "coolNights": true,
+  "coolPalette": "blue violet",
+  "coolColorLabel": "blue",
+  "experimental": false,
+  "registerAsDefault": true
+}

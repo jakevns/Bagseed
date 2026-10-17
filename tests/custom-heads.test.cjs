@@ -138,12 +138,18 @@ test('rear neck shading follows skin color rather than the selected hair color',
   });assert.deepEqual(result.failures,[]);assert.equal(result.pixels,9);
 });
 
-test('all hair is a transparent independent material with no retained brown pixels',async()=>{
+test('all hair is transparent and recolorable, with only the reviewed warm outline ink',async()=>{
   const result=await inspect(()=>{
     const failures=[];let layers=0,pixels=0;
     for(const [hairS]of HAIRS)for(const dir of ['down','right','up','left']){
       const look=BagseedArt.normalize({hairS,hat:'none',hairHi:'none',hairC:'#ffffff'}),image=BagseedArt.hairLayer(look,dir),a=image.getContext('2d').getImageData(0,0,192,320).data;
-      for(let n=0;n<a.length;n+=4)if(a[n+3]){pixels++;if(a[n]!==a[n+1]||a[n]!==a[n+2]){failures.push(`${hairS}/${dir}: retained source hue`);break;}}
+      for(let n=0;n<a.length;n+=4)if(a[n+3]){
+        pixels++;
+        // White hair has neutral cel tones. The only intentional fixed hue is
+        // the approved warm-brown outline; allow canvas alpha quantization.
+        const tolerance=Math.ceil(255/a[n+3]),ink=[58,38,28].every((v,k)=>Math.abs(a[n+k]-v)<=tolerance);
+        if(!ink&&(a[n]!==a[n+1]||a[n]!==a[n+2])){failures.push(`${hairS}/${dir}: retained source hue`);break;}
+      }
       for(const hairC of ['#1d1612','#3e9f7a','#e48ab8']){const b=BagseedArt.hairLayer({...look,hairC},dir).getContext('2d').getImageData(0,0,192,320).data;for(let n=3;n<a.length;n+=4)if(a[n]!==b[n]){failures.push(`${hairS}/${dir}/${hairC}: color changed the silhouette`);break;}}
       if(hairS==='bald'&&a.some((v,n)=>n%4===3&&v))failures.push('Bald contains hair');layers++;
     }

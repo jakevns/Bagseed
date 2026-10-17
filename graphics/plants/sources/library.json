@@ -1,0 +1,4725 @@
+{
+  "schemaVersion": 1,
+  "revision": "plant-parts-library-14",
+  "parts": {
+    "porchlight.seed@1": {
+      "id": "porchlight.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        97,
+        111,
+        132,
+        135
+      ]
+    },
+    "porchlight.radicle@1": {
+      "id": "porchlight.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.941799,
+        0.990909
+      ],
+      "when": {},
+      "crop": [
+        382,
+        68,
+        189,
+        220
+      ]
+    },
+    "porchlight.cotyledon@1": {
+      "id": "porchlight.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.510791,
+        0.989796
+      ],
+      "when": {},
+      "crop": [
+        648,
+        90,
+        278,
+        196
+      ]
+    },
+    "porchlight.singleLeaf@1": {
+      "id": "porchlight.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.504673,
+        0.992857
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1047,
+        22,
+        107,
+        280
+      ]
+    },
+    "porchlight.threeLeaf@1": {
+      "id": "porchlight.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.486989,
+        0.993127
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        37,
+        319,
+        269,
+        291
+      ]
+    },
+    "porchlight.fiveLeaf@1": {
+      "id": "porchlight.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.51341,
+        0.993103
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        345,
+        318,
+        261,
+        290
+      ]
+    },
+    "porchlight.sevenLeaf@1": {
+      "id": "porchlight.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.498442,
+        0.993197
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        629,
+        315,
+        321,
+        294
+      ]
+    },
+    "porchlight.sugarLeaf@1": {
+      "id": "porchlight.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.509009,
+        0.991935
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        988,
+        352,
+        222,
+        248
+      ]
+    },
+    "porchlight.stem@1": {
+      "id": "porchlight.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.490566,
+        0.992424
+      ],
+      "when": {},
+      "crop": [
+        140,
+        642,
+        53,
+        264
+      ]
+    },
+    "porchlight.node@1": {
+      "id": "porchlight.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.510417,
+        0.991031
+      ],
+      "when": {},
+      "crop": [
+        378,
+        671,
+        192,
+        223
+      ]
+    },
+    "porchlight.femaleEarly@1": {
+      "id": "porchlight.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.529148,
+        0.992188
+      ],
+      "when": {},
+      "crop": [
+        673,
+        648,
+        223,
+        256
+      ]
+    },
+    "porchlight.femaleMid@1": {
+      "id": "porchlight.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.49789,
+        0.992982
+      ],
+      "when": {},
+      "crop": [
+        979,
+        625,
+        237,
+        285
+      ]
+    },
+    "porchlight.femaleLate@1": {
+      "id": "porchlight.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.49004,
+        0.993377
+      ],
+      "when": {},
+      "crop": [
+        52,
+        922,
+        251,
+        302
+      ]
+    },
+    "porchlight.maleClosed@1": {
+      "id": "porchlight.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.531792,
+        0.0
+      ],
+      "when": {},
+      "crop": [
+        396,
+        933,
+        173,
+        269
+      ]
+    },
+    "porchlight.maleOpen@1": {
+      "id": "porchlight.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/porchlight/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.490654,
+        0.0
+      ],
+      "when": {},
+      "crop": [
+        674,
+        931,
+        214,
+        278
+      ]
+    },
+    "velvet.seed@1": {
+      "id": "velvet.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        93,
+        116,
+        140,
+        142
+      ]
+    },
+    "velvet.radicle@1": {
+      "id": "velvet.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.905213,
+        0.987013
+      ],
+      "when": {},
+      "crop": [
+        383,
+        68,
+        211,
+        231
+      ]
+    },
+    "velvet.cotyledon@1": {
+      "id": "velvet.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.48265,
+        0.984772
+      ],
+      "when": {},
+      "crop": [
+        651,
+        93,
+        317,
+        197
+      ]
+    },
+    "velvet.singleLeaf@1": {
+      "id": "velvet.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.989796
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1059,
+        16,
+        122,
+        294
+      ]
+    },
+    "velvet.threeLeaf@1": {
+      "id": "velvet.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.48505,
+        0.989933
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        23,
+        320,
+        301,
+        298
+      ]
+    },
+    "velvet.fiveLeaf@1": {
+      "id": "velvet.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.508532,
+        0.990654
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        339,
+        302,
+        293,
+        321
+      ]
+    },
+    "velvet.sevenLeaf@1": {
+      "id": "velvet.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.491979,
+        0.990769
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        626,
+        300,
+        374,
+        325
+      ]
+    },
+    "velvet.sugarLeaf@1": {
+      "id": "velvet.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.49187,
+        0.988636
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        999,
+        348,
+        246,
+        264
+      ]
+    },
+    "velvet.stem@1": {
+      "id": "velvet.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.474576,
+        0.988679
+      ],
+      "when": {},
+      "crop": [
+        141,
+        633,
+        59,
+        265
+      ]
+    },
+    "velvet.node@1": {
+      "id": "velvet.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.514423,
+        0.986547
+      ],
+      "when": {},
+      "crop": [
+        376,
+        677,
+        208,
+        223
+      ]
+    },
+    "velvet.femaleEarly@1": {
+      "id": "velvet.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.556391,
+        0.988848
+      ],
+      "when": {},
+      "crop": [
+        653,
+        644,
+        266,
+        269
+      ]
+    },
+    "velvet.femaleMid@1": {
+      "id": "velvet.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.535971,
+        0.989933
+      ],
+      "when": {},
+      "crop": [
+        968,
+        625,
+        278,
+        298
+      ]
+    },
+    "velvet.femaleLate@1": {
+      "id": "velvet.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.478548,
+        0.990769
+      ],
+      "when": {},
+      "crop": [
+        26,
+        904,
+        303,
+        325
+      ]
+    },
+    "velvet.maleClosed@1": {
+      "id": "velvet.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.505208,
+        0.007018
+      ],
+      "when": {},
+      "crop": [
+        383,
+        923,
+        192,
+        285
+      ]
+    },
+    "velvet.maleOpen@1": {
+      "id": "velvet.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/velvet/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.495798,
+        0.006689
+      ],
+      "when": {},
+      "crop": [
+        677,
+        922,
+        238,
+        299
+      ]
+    },
+    "pixelpunch.seed@1": {
+      "id": "pixelpunch.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        115,
+        145,
+        104,
+        102
+      ]
+    },
+    "pixelpunch.radicle@1": {
+      "id": "pixelpunch.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.951049,
+        0.982036
+      ],
+      "when": {},
+      "crop": [
+        413,
+        110,
+        143,
+        167
+      ]
+    },
+    "pixelpunch.cotyledon@1": {
+      "id": "pixelpunch.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.476496,
+        0.977941
+      ],
+      "when": {},
+      "crop": [
+        686,
+        119,
+        234,
+        136
+      ]
+    },
+    "pixelpunch.singleLeaf@1": {
+      "id": "pixelpunch.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.520408,
+        0.986047
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1058,
+        63,
+        98,
+        215
+      ]
+    },
+    "pixelpunch.threeLeaf@1": {
+      "id": "pixelpunch.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.483871,
+        0.985577
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        61,
+        378,
+        217,
+        208
+      ]
+    },
+    "pixelpunch.fiveLeaf@1": {
+      "id": "pixelpunch.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.502283,
+        0.986425
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        372,
+        365,
+        219,
+        221
+      ]
+    },
+    "pixelpunch.sevenLeaf@1": {
+      "id": "pixelpunch.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.494624,
+        0.987603
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        659,
+        349,
+        279,
+        242
+      ]
+    },
+    "pixelpunch.sugarLeaf@1": {
+      "id": "pixelpunch.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.985149
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1006,
+        379,
+        208,
+        202
+      ]
+    },
+    "pixelpunch.stem@1": {
+      "id": "pixelpunch.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.474576,
+        0.985849
+      ],
+      "when": {},
+      "crop": [
+        136,
+        651,
+        59,
+        212
+      ]
+    },
+    "pixelpunch.node@1": {
+      "id": "pixelpunch.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.489362,
+        0.982659
+      ],
+      "when": {},
+      "crop": [
+        391,
+        690,
+        188,
+        173
+      ]
+    },
+    "pixelpunch.femaleEarly@1": {
+      "id": "pixelpunch.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.53271,
+        0.985577
+      ],
+      "when": {},
+      "crop": [
+        679,
+        669,
+        214,
+        208
+      ]
+    },
+    "pixelpunch.femaleMid@1": {
+      "id": "pixelpunch.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.524444,
+        0.986486
+      ],
+      "when": {},
+      "crop": [
+        994,
+        655,
+        225,
+        222
+      ]
+    },
+    "pixelpunch.femaleLate@1": {
+      "id": "pixelpunch.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.490196,
+        0.988806
+      ],
+      "when": {},
+      "crop": [
+        43,
+        920,
+        255,
+        268
+      ]
+    },
+    "pixelpunch.maleClosed@1": {
+      "id": "pixelpunch.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.534722,
+        0.009174
+      ],
+      "when": {},
+      "crop": [
+        409,
+        949,
+        144,
+        218
+      ]
+    },
+    "pixelpunch.maleOpen@1": {
+      "id": "pixelpunch.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.505291,
+        0.008658
+      ],
+      "when": {},
+      "crop": [
+        693,
+        951,
+        189,
+        231
+      ]
+    },
+    "cottoncandy.seed@1": {
+      "id": "cottoncandy.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        107,
+        138,
+        121,
+        115
+      ]
+    },
+    "cottoncandy.radicle@1": {
+      "id": "cottoncandy.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.970238,
+        0.984127
+      ],
+      "when": {},
+      "crop": [
+        408,
+        103,
+        168,
+        189
+      ]
+    },
+    "cottoncandy.cotyledon@1": {
+      "id": "cottoncandy.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.473881,
+        0.980392
+      ],
+      "when": {},
+      "crop": [
+        673,
+        114,
+        268,
+        153
+      ]
+    },
+    "cottoncandy.singleLeaf@1": {
+      "id": "cottoncandy.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.509259,
+        0.987395
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1053,
+        56,
+        108,
+        238
+      ]
+    },
+    "cottoncandy.threeLeaf@1": {
+      "id": "cottoncandy.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.492,
+        0.987069
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        44,
+        366,
+        250,
+        232
+      ]
+    },
+    "cottoncandy.fiveLeaf@1": {
+      "id": "cottoncandy.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.489796,
+        0.987903
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        364,
+        350,
+        245,
+        248
+      ]
+    },
+    "cottoncandy.sevenLeaf@1": {
+      "id": "cottoncandy.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.491909,
+        0.989011
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        651,
+        330,
+        309,
+        273
+      ]
+    },
+    "cottoncandy.sugarLeaf@1": {
+      "id": "cottoncandy.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.506122,
+        0.986726
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        983,
+        370,
+        245,
+        226
+      ]
+    },
+    "cottoncandy.stem@1": {
+      "id": "cottoncandy.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.477612,
+        0.986425
+      ],
+      "when": {},
+      "crop": [
+        132,
+        652,
+        67,
+        221
+      ]
+    },
+    "cottoncandy.node@1": {
+      "id": "cottoncandy.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.490741,
+        0.984694
+      ],
+      "when": {},
+      "crop": [
+        380,
+        679,
+        216,
+        196
+      ]
+    },
+    "cottoncandy.femaleEarly@1": {
+      "id": "cottoncandy.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.501992,
+        0.9869
+      ],
+      "when": {},
+      "crop": [
+        664,
+        662,
+        251,
+        229
+      ]
+    },
+    "cottoncandy.femaleMid@1": {
+      "id": "cottoncandy.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.696581,
+        0.988142
+      ],
+      "when": {},
+      "crop": [
+        990,
+        647,
+        234,
+        253
+      ]
+    },
+    "cottoncandy.femaleLate@1": {
+      "id": "cottoncandy.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.516484,
+        0.990132
+      ],
+      "when": {},
+      "crop": [
+        37,
+        903,
+        273,
+        304
+      ]
+    },
+    "cottoncandy.maleClosed@1": {
+      "id": "cottoncandy.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.533742,
+        0.008032
+      ],
+      "when": {},
+      "crop": [
+        402,
+        940,
+        163,
+        249
+      ]
+    },
+    "cottoncandy.maleOpen@1": {
+      "id": "cottoncandy.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/cottoncandy/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.497908,
+        0.007435
+      ],
+      "when": {},
+      "crop": [
+        674,
+        946,
+        239,
+        269
+      ]
+    },
+    "moonberry.seed@1": {
+      "id": "moonberry.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        105,
+        138,
+        119,
+        118
+      ]
+    },
+    "moonberry.radicle@1": {
+      "id": "moonberry.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.964286,
+        0.985294
+      ],
+      "when": {},
+      "crop": [
+        401,
+        96,
+        168,
+        204
+      ]
+    },
+    "moonberry.cotyledon@1": {
+      "id": "moonberry.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.477444,
+        0.980263
+      ],
+      "when": {},
+      "crop": [
+        683,
+        113,
+        266,
+        152
+      ]
+    },
+    "moonberry.singleLeaf@1": {
+      "id": "moonberry.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.485437,
+        0.987654
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1063,
+        53,
+        103,
+        243
+      ]
+    },
+    "moonberry.threeLeaf@1": {
+      "id": "moonberry.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.497992,
+        0.987705
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        46,
+        356,
+        249,
+        244
+      ]
+    },
+    "moonberry.fiveLeaf@1": {
+      "id": "moonberry.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.498008,
+        0.988372
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        359,
+        342,
+        251,
+        258
+      ]
+    },
+    "moonberry.sevenLeaf@1": {
+      "id": "moonberry.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.504762,
+        0.989011
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        647,
+        338,
+        315,
+        273
+      ]
+    },
+    "moonberry.sugarLeaf@1": {
+      "id": "moonberry.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.508333,
+        0.986547
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        992,
+        375,
+        240,
+        223
+      ]
+    },
+    "moonberry.stem@1": {
+      "id": "moonberry.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.492754,
+        0.986364
+      ],
+      "when": {},
+      "crop": [
+        132,
+        646,
+        69,
+        220
+      ]
+    },
+    "moonberry.node@1": {
+      "id": "moonberry.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.490566,
+        0.985366
+      ],
+      "when": {},
+      "crop": [
+        377,
+        665,
+        212,
+        205
+      ]
+    },
+    "moonberry.femaleEarly@1": {
+      "id": "moonberry.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.477778,
+        0.987705
+      ],
+      "when": {},
+      "crop": [
+        663,
+        650,
+        270,
+        244
+      ]
+    },
+    "moonberry.femaleMid@1": {
+      "id": "moonberry.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.520755,
+        0.987854
+      ],
+      "when": {},
+      "crop": [
+        975,
+        645,
+        265,
+        247
+      ]
+    },
+    "moonberry.femaleLate@1": {
+      "id": "moonberry.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.480769,
+        0.990291
+      ],
+      "when": {},
+      "crop": [
+        25,
+        897,
+        312,
+        309
+      ]
+    },
+    "moonberry.maleClosed@1": {
+      "id": "moonberry.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.522989,
+        0.008
+      ],
+      "when": {},
+      "crop": [
+        407,
+        935,
+        174,
+        250
+      ]
+    },
+    "moonberry.maleOpen@1": {
+      "id": "moonberry.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/moonberry/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.461883,
+        0.00738
+      ],
+      "when": {},
+      "crop": [
+        690,
+        936,
+        223,
+        271
+      ]
+    },
+    "halfmoon.seed@1": {
+      "id": "halfmoon.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        103,
+        127,
+        121,
+        125
+      ]
+    },
+    "halfmoon.radicle@1": {
+      "id": "halfmoon.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.966851,
+        0.985577
+      ],
+      "when": {},
+      "crop": [
+        391,
+        94,
+        181,
+        208
+      ]
+    },
+    "halfmoon.cotyledon@1": {
+      "id": "halfmoon.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.501946,
+        0.979167
+      ],
+      "when": {},
+      "crop": [
+        680,
+        122,
+        257,
+        144
+      ]
+    },
+    "halfmoon.singleLeaf@1": {
+      "id": "halfmoon.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.506667,
+        0.989247
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1081,
+        18,
+        75,
+        279
+      ]
+    },
+    "halfmoon.threeLeaf@1": {
+      "id": "halfmoon.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.511029,
+        0.988722
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        31,
+        337,
+        272,
+        266
+      ]
+    },
+    "halfmoon.fiveLeaf@1": {
+      "id": "halfmoon.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.512456,
+        0.98917
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        341,
+        325,
+        281,
+        277
+      ]
+    },
+    "halfmoon.sevenLeaf@1": {
+      "id": "halfmoon.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.496933,
+        0.989474
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        646,
+        320,
+        326,
+        285
+      ]
+    },
+    "halfmoon.sugarLeaf@1": {
+      "id": "halfmoon.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.501992,
+        0.987552
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        989,
+        359,
+        251,
+        241
+      ]
+    },
+    "halfmoon.stem@1": {
+      "id": "halfmoon.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.5,
+        0.987124
+      ],
+      "when": {},
+      "crop": [
+        135,
+        638,
+        62,
+        233
+      ]
+    },
+    "halfmoon.node@1": {
+      "id": "halfmoon.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.502203,
+        0.985849
+      ],
+      "when": {},
+      "crop": [
+        371,
+        656,
+        227,
+        212
+      ]
+    },
+    "halfmoon.femaleEarly@1": {
+      "id": "halfmoon.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.470395,
+        0.98855
+      ],
+      "when": {},
+      "crop": [
+        652,
+        630,
+        304,
+        262
+      ]
+    },
+    "halfmoon.femaleMid@1": {
+      "id": "halfmoon.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.492806,
+        0.988636
+      ],
+      "when": {},
+      "crop": [
+        972,
+        636,
+        278,
+        264
+      ]
+    },
+    "halfmoon.femaleLate@1": {
+      "id": "halfmoon.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.491071,
+        0.990881
+      ],
+      "when": {},
+      "crop": [
+        16,
+        886,
+        336,
+        329
+      ]
+    },
+    "halfmoon.maleClosed@1": {
+      "id": "halfmoon.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.512821,
+        0.007326
+      ],
+      "when": {},
+      "crop": [
+        406,
+        925,
+        195,
+        273
+      ]
+    },
+    "halfmoon.maleOpen@1": {
+      "id": "halfmoon.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/halfmoon/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.480519,
+        0.006849
+      ],
+      "when": {},
+      "crop": [
+        690,
+        924,
+        231,
+        292
+      ]
+    },
+    "zoomies.seed@1": {
+      "id": "zoomies.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        89,
+        130,
+        140,
+        136
+      ]
+    },
+    "zoomies.radicle@1": {
+      "id": "zoomies.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.942935,
+        0.986175
+      ],
+      "when": {},
+      "crop": [
+        401,
+        92,
+        184,
+        217
+      ]
+    },
+    "zoomies.cotyledon@1": {
+      "id": "zoomies.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.482877,
+        0.980892
+      ],
+      "when": {},
+      "crop": [
+        670,
+        117,
+        292,
+        157
+      ]
+    },
+    "zoomies.singleLeaf@1": {
+      "id": "zoomies.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.48,
+        0.989399
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1054,
+        33,
+        125,
+        283
+      ]
+    },
+    "zoomies.threeLeaf@1": {
+      "id": "zoomies.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.485915,
+        0.98917
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        31,
+        331,
+        284,
+        277
+      ]
+    },
+    "zoomies.fiveLeaf@1": {
+      "id": "zoomies.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.503759,
+        0.989209
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        352,
+        334,
+        266,
+        278
+      ]
+    },
+    "zoomies.sevenLeaf@1": {
+      "id": "zoomies.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.498462,
+        0.990099
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        651,
+        316,
+        325,
+        303
+      ]
+    },
+    "zoomies.sugarLeaf@1": {
+      "id": "zoomies.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.504274,
+        0.987805
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        995,
+        362,
+        234,
+        246
+      ]
+    },
+    "zoomies.stem@1": {
+      "id": "zoomies.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.5,
+        0.986607
+      ],
+      "when": {},
+      "crop": [
+        133,
+        641,
+        66,
+        224
+      ]
+    },
+    "zoomies.node@1": {
+      "id": "zoomies.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.497925,
+        0.985915
+      ],
+      "when": {},
+      "crop": [
+        363,
+        664,
+        241,
+        213
+      ]
+    },
+    "zoomies.femaleEarly@1": {
+      "id": "zoomies.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.491409,
+        0.988142
+      ],
+      "when": {},
+      "crop": [
+        653,
+        646,
+        291,
+        253
+      ]
+    },
+    "zoomies.femaleMid@1": {
+      "id": "zoomies.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.512635,
+        0.988848
+      ],
+      "when": {},
+      "crop": [
+        969,
+        638,
+        277,
+        269
+      ]
+    },
+    "zoomies.femaleLate@1": {
+      "id": "zoomies.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.465046,
+        0.991176
+      ],
+      "when": {},
+      "crop": [
+        19,
+        879,
+        329,
+        340
+      ]
+    },
+    "zoomies.maleClosed@1": {
+      "id": "zoomies.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.506849,
+        0.007246
+      ],
+      "when": {},
+      "crop": [
+        388,
+        920,
+        219,
+        276
+      ]
+    },
+    "zoomies.maleOpen@1": {
+      "id": "zoomies.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/zoomies/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.494382,
+        0.006873
+      ],
+      "when": {},
+      "crop": [
+        678,
+        920,
+        267,
+        291
+      ]
+    },
+    "cruise.seed@1": {
+      "id": "cruise.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        100,
+        111,
+        136,
+        140
+      ]
+    },
+    "cruise.radicle@1": {
+      "id": "cruise.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.93956,
+        0.987179
+      ],
+      "when": {},
+      "crop": [
+        398,
+        86,
+        182,
+        234
+      ]
+    },
+    "cruise.cotyledon@1": {
+      "id": "cruise.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.483553,
+        0.981013
+      ],
+      "when": {},
+      "crop": [
+        661,
+        110,
+        304,
+        158
+      ]
+    },
+    "cruise.singleLeaf@1": {
+      "id": "cruise.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.469565,
+        0.989691
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1062,
+        20,
+        115,
+        291
+      ]
+    },
+    "cruise.threeLeaf@1": {
+      "id": "cruise.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.498208,
+        0.989286
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        32,
+        333,
+        279,
+        280
+      ]
+    },
+    "cruise.fiveLeaf@1": {
+      "id": "cruise.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.988971
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        353,
+        341,
+        264,
+        272
+      ]
+    },
+    "cruise.sevenLeaf@1": {
+      "id": "cruise.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.770588,
+        0.990164
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        642,
+        325,
+        340,
+        305
+      ]
+    },
+    "cruise.sugarLeaf@1": {
+      "id": "cruise.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.491525,
+        0.987705
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1000,
+        372,
+        236,
+        244
+      ]
+    },
+    "cruise.stem@1": {
+      "id": "cruise.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.5,
+        0.987069
+      ],
+      "when": {},
+      "crop": [
+        129,
+        637,
+        74,
+        232
+      ]
+    },
+    "cruise.node@1": {
+      "id": "cruise.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.488889,
+        0.986364
+      ],
+      "when": {},
+      "crop": [
+        374,
+        660,
+        225,
+        220
+      ]
+    },
+    "cruise.femaleEarly@1": {
+      "id": "cruise.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.510972,
+        0.988506
+      ],
+      "when": {},
+      "crop": [
+        641,
+        642,
+        319,
+        261
+      ]
+    },
+    "cruise.femaleMid@1": {
+      "id": "cruise.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.507246,
+        0.98855
+      ],
+      "when": {},
+      "crop": [
+        976,
+        641,
+        276,
+        262
+      ]
+    },
+    "cruise.femaleLate@1": {
+      "id": "cruise.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.469914,
+        0.991202
+      ],
+      "when": {},
+      "crop": [
+        16,
+        879,
+        349,
+        341
+      ]
+    },
+    "cruise.maleClosed@1": {
+      "id": "cruise.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.54,
+        0.007194
+      ],
+      "when": {},
+      "crop": [
+        394,
+        928,
+        200,
+        278
+      ]
+    },
+    "cruise.maleOpen@1": {
+      "id": "cruise.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/cruise/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.476562,
+        0.006757
+      ],
+      "when": {},
+      "crop": [
+        681,
+        920,
+        256,
+        296
+      ]
+    },
+    "frogprince.seed@1": {
+      "id": "frogprince.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        103,
+        136,
+        124,
+        122
+      ]
+    },
+    "frogprince.radicle@1": {
+      "id": "frogprince.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.94382,
+        0.986425
+      ],
+      "when": {},
+      "crop": [
+        396,
+        89,
+        178,
+        221
+      ]
+    },
+    "frogprince.cotyledon@1": {
+      "id": "frogprince.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.49635,
+        0.981481
+      ],
+      "when": {},
+      "crop": [
+        677,
+        110,
+        274,
+        162
+      ]
+    },
+    "frogprince.singleLeaf@1": {
+      "id": "frogprince.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.512605,
+        0.98855
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "lime"
+      },
+      "crop": [
+        1054,
+        39,
+        119,
+        262
+      ]
+    },
+    "frogprince.threeLeaf@1": {
+      "id": "frogprince.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.488971,
+        0.98855
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "lime"
+      },
+      "crop": [
+        36,
+        346,
+        272,
+        262
+      ]
+    },
+    "frogprince.fiveLeaf@1": {
+      "id": "frogprince.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.512545,
+        0.989324
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "lime"
+      },
+      "crop": [
+        346,
+        326,
+        279,
+        281
+      ]
+    },
+    "frogprince.sevenLeaf@1": {
+      "id": "frogprince.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.376877,
+        0.989547
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "lime"
+      },
+      "crop": [
+        630,
+        329,
+        333,
+        287
+      ]
+    },
+    "frogprince.sugarLeaf@1": {
+      "id": "frogprince.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.987013
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "lime",
+        "colorName": "Purple"
+      },
+      "crop": [
+        993,
+        374,
+        242,
+        231
+      ]
+    },
+    "frogprince.stem@1": {
+      "id": "frogprince.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.47619,
+        0.9869
+      ],
+      "when": {},
+      "crop": [
+        134,
+        640,
+        63,
+        229
+      ]
+    },
+    "frogprince.node@1": {
+      "id": "frogprince.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.48,
+        0.986425
+      ],
+      "when": {},
+      "crop": [
+        375,
+        652,
+        225,
+        221
+      ]
+    },
+    "frogprince.femaleEarly@1": {
+      "id": "frogprince.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.501754,
+        0.988417
+      ],
+      "when": {
+        "colorName": "Purple"
+      },
+      "crop": [
+        648,
+        636,
+        285,
+        259
+      ]
+    },
+    "frogprince.femaleMid@1": {
+      "id": "frogprince.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.514388,
+        0.988679
+      ],
+      "when": {
+        "colorName": "Purple"
+      },
+      "crop": [
+        965,
+        634,
+        278,
+        265
+      ]
+    },
+    "frogprince.femaleLate@1": {
+      "id": "frogprince.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.486765,
+        0.990798
+      ],
+      "when": {
+        "colorName": "Purple"
+      },
+      "crop": [
+        19,
+        883,
+        340,
+        326
+      ]
+    },
+    "frogprince.maleClosed@1": {
+      "id": "frogprince.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.515464,
+        0.007299
+      ],
+      "when": {},
+      "crop": [
+        403,
+        922,
+        194,
+        274
+      ]
+    },
+    "frogprince.maleOpen@1": {
+      "id": "frogprince.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.469466,
+        0.006993
+      ],
+      "when": {},
+      "crop": [
+        670,
+        925,
+        262,
+        286
+      ]
+    },
+    "boglantern.seed@1": {
+      "id": "boglantern.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        113,
+        145,
+        118,
+        111
+      ]
+    },
+    "boglantern.radicle@1": {
+      "id": "boglantern.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.923077,
+        0.984456
+      ],
+      "when": {},
+      "crop": [
+        406,
+        109,
+        156,
+        193
+      ]
+    },
+    "boglantern.cotyledon@1": {
+      "id": "boglantern.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.478927,
+        0.978571
+      ],
+      "when": {},
+      "crop": [
+        676,
+        129,
+        261,
+        140
+      ]
+    },
+    "boglantern.singleLeaf@1": {
+      "id": "boglantern.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.473684,
+        0.988417
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest"
+      },
+      "crop": [
+        1070,
+        45,
+        95,
+        259
+      ]
+    },
+    "boglantern.threeLeaf@1": {
+      "id": "boglantern.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.501976,
+        0.988281
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest"
+      },
+      "crop": [
+        40,
+        341,
+        253,
+        256
+      ]
+    },
+    "boglantern.fiveLeaf@1": {
+      "id": "boglantern.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.496154,
+        0.988636
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest"
+      },
+      "crop": [
+        352,
+        329,
+        260,
+        264
+      ]
+    },
+    "boglantern.sevenLeaf@1": {
+      "id": "boglantern.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.780822,
+        0.988971
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest"
+      },
+      "crop": [
+        657,
+        334,
+        292,
+        272
+      ]
+    },
+    "boglantern.sugarLeaf@1": {
+      "id": "boglantern.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.511013,
+        0.9875
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest",
+        "colorName": "Red accents"
+      },
+      "crop": [
+        1000,
+        364,
+        227,
+        240
+      ]
+    },
+    "boglantern.stem@1": {
+      "id": "boglantern.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.5,
+        0.986667
+      ],
+      "when": {},
+      "crop": [
+        125,
+        646,
+        70,
+        225
+      ]
+    },
+    "boglantern.node@1": {
+      "id": "boglantern.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.495283,
+        0.985222
+      ],
+      "when": {},
+      "crop": [
+        374,
+        665,
+        212,
+        203
+      ]
+    },
+    "boglantern.femaleEarly@1": {
+      "id": "boglantern.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.492424,
+        0.987903
+      ],
+      "when": {
+        "colorName": "Red accents"
+      },
+      "crop": [
+        658,
+        641,
+        264,
+        248
+      ]
+    },
+    "boglantern.femaleMid@1": {
+      "id": "boglantern.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.536585,
+        0.988048
+      ],
+      "when": {
+        "colorName": "Red accents"
+      },
+      "crop": [
+        981,
+        643,
+        246,
+        251
+      ]
+    },
+    "boglantern.femaleLate@1": {
+      "id": "boglantern.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.466667,
+        0.990099
+      ],
+      "when": {
+        "colorName": "Red accents"
+      },
+      "crop": [
+        36,
+        899,
+        300,
+        303
+      ]
+    },
+    "boglantern.maleClosed@1": {
+      "id": "boglantern.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.537234,
+        0.007905
+      ],
+      "when": {},
+      "crop": [
+        393,
+        937,
+        188,
+        253
+      ]
+    },
+    "boglantern.maleOpen@1": {
+      "id": "boglantern.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.486957,
+        0.007519
+      ],
+      "when": {},
+      "crop": [
+        674,
+        939,
+        230,
+        266
+      ]
+    },
+    "nightshift.seed@1": {
+      "id": "nightshift.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        101,
+        133,
+        128,
+        126
+      ]
+    },
+    "nightshift.radicle@1": {
+      "id": "nightshift.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.943503,
+        0.985849
+      ],
+      "when": {},
+      "crop": [
+        395,
+        94,
+        177,
+        212
+      ]
+    },
+    "nightshift.cotyledon@1": {
+      "id": "nightshift.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.474638,
+        0.980645
+      ],
+      "when": {},
+      "crop": [
+        679,
+        112,
+        276,
+        155
+      ]
+    },
+    "nightshift.singleLeaf@1": {
+      "id": "nightshift.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.49569,
+        0.988327
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1058,
+        44,
+        116,
+        257
+      ]
+    },
+    "nightshift.threeLeaf@1": {
+      "id": "nightshift.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.494545,
+        0.988235
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        33,
+        346,
+        275,
+        255
+      ]
+    },
+    "nightshift.fiveLeaf@1": {
+      "id": "nightshift.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.501792,
+        0.988971
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        343,
+        327,
+        279,
+        272
+      ]
+    },
+    "nightshift.sevenLeaf@1": {
+      "id": "nightshift.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.761194,
+        0.989655
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        635,
+        327,
+        335,
+        290
+      ]
+    },
+    "nightshift.sugarLeaf@1": {
+      "id": "nightshift.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.507843,
+        0.986842
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        984,
+        369,
+        255,
+        228
+      ]
+    },
+    "nightshift.stem@1": {
+      "id": "nightshift.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.461538,
+        0.986607
+      ],
+      "when": {},
+      "crop": [
+        136,
+        643,
+        65,
+        224
+      ]
+    },
+    "nightshift.node@1": {
+      "id": "nightshift.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.487069,
+        0.985915
+      ],
+      "when": {},
+      "crop": [
+        367,
+        658,
+        232,
+        213
+      ]
+    },
+    "nightshift.femaleEarly@1": {
+      "id": "nightshift.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.503378,
+        0.988506
+      ],
+      "when": {},
+      "crop": [
+        643,
+        637,
+        296,
+        261
+      ]
+    },
+    "nightshift.femaleMid@1": {
+      "id": "nightshift.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.522337,
+        0.989051
+      ],
+      "when": {},
+      "crop": [
+        959,
+        626,
+        291,
+        274
+      ]
+    },
+    "nightshift.femaleLate@1": {
+      "id": "nightshift.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.468657,
+        0.991071
+      ],
+      "when": {},
+      "crop": [
+        18,
+        878,
+        335,
+        336
+      ]
+    },
+    "nightshift.maleClosed@1": {
+      "id": "nightshift.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.513228,
+        0.007435
+      ],
+      "when": {},
+      "crop": [
+        406,
+        928,
+        189,
+        269
+      ]
+    },
+    "nightshift.maleOpen@1": {
+      "id": "nightshift.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/nightshift/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.493776,
+        0.007018
+      ],
+      "when": {},
+      "crop": [
+        681,
+        930,
+        241,
+        285
+      ]
+    },
+    "gasstation.seed@1": {
+      "id": "gasstation.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        108,
+        131,
+        114,
+        121
+      ]
+    },
+    "gasstation.radicle@1": {
+      "id": "gasstation.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.953488,
+        0.985646
+      ],
+      "when": {},
+      "crop": [
+        402,
+        90,
+        172,
+        209
+      ]
+    },
+    "gasstation.cotyledon@1": {
+      "id": "gasstation.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.492453,
+        0.978571
+      ],
+      "when": {},
+      "crop": [
+        690,
+        115,
+        265,
+        140
+      ]
+    },
+    "gasstation.singleLeaf@1": {
+      "id": "gasstation.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.522727,
+        0.989286
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1088,
+        24,
+        88,
+        280
+      ]
+    },
+    "gasstation.threeLeaf@1": {
+      "id": "gasstation.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.496678,
+        0.989362
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        21,
+        327,
+        301,
+        282
+      ]
+    },
+    "gasstation.fiveLeaf@1": {
+      "id": "gasstation.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.512635,
+        0.989899
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        351,
+        313,
+        277,
+        297
+      ]
+    },
+    "gasstation.sevenLeaf@1": {
+      "id": "gasstation.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.49537,
+        0.990476
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        658,
+        308,
+        324,
+        315
+      ]
+    },
+    "gasstation.sugarLeaf@1": {
+      "id": "gasstation.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.497992,
+        0.987448
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1000,
+        369,
+        249,
+        239
+      ]
+    },
+    "gasstation.stem@1": {
+      "id": "gasstation.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.483871,
+        0.986486
+      ],
+      "when": {},
+      "crop": [
+        136,
+        644,
+        62,
+        222
+      ]
+    },
+    "gasstation.node@1": {
+      "id": "gasstation.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.477679,
+        0.986364
+      ],
+      "when": {},
+      "crop": [
+        375,
+        652,
+        224,
+        220
+      ]
+    },
+    "gasstation.femaleEarly@1": {
+      "id": "gasstation.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.508475,
+        0.988462
+      ],
+      "when": {},
+      "crop": [
+        652,
+        637,
+        295,
+        260
+      ]
+    },
+    "gasstation.femaleMid@1": {
+      "id": "gasstation.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.52963,
+        0.988764
+      ],
+      "when": {},
+      "crop": [
+        971,
+        631,
+        270,
+        267
+      ]
+    },
+    "gasstation.femaleLate@1": {
+      "id": "gasstation.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.489489,
+        0.990909
+      ],
+      "when": {},
+      "crop": [
+        24,
+        881,
+        333,
+        330
+      ]
+    },
+    "gasstation.maleClosed@1": {
+      "id": "gasstation.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.505682,
+        0.007407
+      ],
+      "when": {},
+      "crop": [
+        411,
+        929,
+        176,
+        270
+      ]
+    },
+    "gasstation.maleOpen@1": {
+      "id": "gasstation.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/gasstation/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.485597,
+        0.006944
+      ],
+      "when": {},
+      "crop": [
+        682,
+        933,
+        243,
+        288
+      ]
+    },
+    "boglantern-lavender.seed@1": {
+      "id": "boglantern-lavender.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        90,
+        131,
+        139,
+        134
+      ]
+    },
+    "boglantern-lavender.radicle@1": {
+      "id": "boglantern-lavender.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.940217,
+        0.986842
+      ],
+      "when": {},
+      "crop": [
+        393,
+        89,
+        184,
+        228
+      ]
+    },
+    "boglantern-lavender.cotyledon@1": {
+      "id": "boglantern-lavender.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.481605,
+        0.982456
+      ],
+      "when": {},
+      "crop": [
+        666,
+        111,
+        299,
+        171
+      ]
+    },
+    "boglantern-lavender.singleLeaf@1": {
+      "id": "boglantern-lavender.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.487603,
+        0.988636
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "blue"
+      },
+      "crop": [
+        1057,
+        43,
+        121,
+        264
+      ]
+    },
+    "boglantern-lavender.threeLeaf@1": {
+      "id": "boglantern-lavender.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.489209,
+        0.988417
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "blue"
+      },
+      "crop": [
+        32,
+        358,
+        278,
+        259
+      ]
+    },
+    "boglantern-lavender.fiveLeaf@1": {
+      "id": "boglantern-lavender.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.493056,
+        0.989796
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "blue"
+      },
+      "crop": [
+        343,
+        325,
+        288,
+        294
+      ]
+    },
+    "boglantern-lavender.sevenLeaf@1": {
+      "id": "boglantern-lavender.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.228097,
+        0.990099
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "blue"
+      },
+      "crop": [
+        649,
+        325,
+        331,
+        303
+      ]
+    },
+    "boglantern-lavender.sugarLeaf@1": {
+      "id": "boglantern-lavender.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.503937,
+        0.987124
+      ],
+      "when": {
+        "leafShape": "broad",
+        "leafKey": "blue",
+        "colorName": "Lavender"
+      },
+      "crop": [
+        988,
+        386,
+        254,
+        233
+      ]
+    },
+    "boglantern-lavender.stem@1": {
+      "id": "boglantern-lavender.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.484848,
+        0.987069
+      ],
+      "when": {},
+      "crop": [
+        132,
+        641,
+        66,
+        232
+      ]
+    },
+    "boglantern-lavender.node@1": {
+      "id": "boglantern-lavender.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.493827,
+        0.986301
+      ],
+      "when": {},
+      "crop": [
+        362,
+        661,
+        243,
+        219
+      ]
+    },
+    "boglantern-lavender.femaleEarly@1": {
+      "id": "boglantern-lavender.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.496599,
+        0.988048
+      ],
+      "when": {
+        "colorName": "Lavender"
+      },
+      "crop": [
+        645,
+        647,
+        294,
+        251
+      ]
+    },
+    "boglantern-lavender.femaleMid@1": {
+      "id": "boglantern-lavender.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.678201,
+        0.988764
+      ],
+      "when": {
+        "colorName": "Lavender"
+      },
+      "crop": [
+        965,
+        641,
+        289,
+        267
+      ]
+    },
+    "boglantern-lavender.femaleLate@1": {
+      "id": "boglantern-lavender.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.466667,
+        0.990536
+      ],
+      "when": {
+        "colorName": "Lavender"
+      },
+      "crop": [
+        18,
+        889,
+        330,
+        317
+      ]
+    },
+    "boglantern-lavender.maleClosed@1": {
+      "id": "boglantern-lavender.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.507772,
+        0.007435
+      ],
+      "when": {},
+      "crop": [
+        400,
+        923,
+        193,
+        269
+      ]
+    },
+    "boglantern-lavender.maleOpen@1": {
+      "id": "boglantern-lavender.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/boglantern-lavender/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.484733,
+        0.007018
+      ],
+      "when": {},
+      "crop": [
+        668,
+        923,
+        262,
+        285
+      ]
+    },
+    "frogprince-red.seed@1": {
+      "id": "frogprince-red.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        107,
+        135,
+        125,
+        124
+      ]
+    },
+    "frogprince-red.radicle@1": {
+      "id": "frogprince-red.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.951087,
+        0.986607
+      ],
+      "when": {},
+      "crop": [
+        400,
+        88,
+        184,
+        224
+      ]
+    },
+    "frogprince-red.cotyledon@1": {
+      "id": "frogprince-red.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.482143,
+        0.981928
+      ],
+      "when": {},
+      "crop": [
+        674,
+        107,
+        280,
+        166
+      ]
+    },
+    "frogprince-red.singleLeaf@1": {
+      "id": "frogprince-red.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.476471,
+        0.988764
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest"
+      },
+      "crop": [
+        1075,
+        38,
+        85,
+        267
+      ]
+    },
+    "frogprince-red.threeLeaf@1": {
+      "id": "frogprince-red.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.48,
+        0.988189
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest"
+      },
+      "crop": [
+        35,
+        348,
+        275,
+        254
+      ]
+    },
+    "frogprince-red.fiveLeaf@1": {
+      "id": "frogprince-red.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.48855,
+        0.989051
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest"
+      },
+      "crop": [
+        357,
+        329,
+        262,
+        274
+      ]
+    },
+    "frogprince-red.sevenLeaf@1": {
+      "id": "frogprince-red.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.626506,
+        0.989865
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest"
+      },
+      "crop": [
+        641,
+        319,
+        332,
+        296
+      ]
+    },
+    "frogprince-red.sugarLeaf@1": {
+      "id": "frogprince-red.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.51046,
+        0.987654
+      ],
+      "when": {
+        "leafShape": "narrow",
+        "leafKey": "forest",
+        "colorName": "Red accents"
+      },
+      "crop": [
+        991,
+        367,
+        239,
+        243
+      ]
+    },
+    "frogprince-red.stem@1": {
+      "id": "frogprince-red.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.5,
+        0.986175
+      ],
+      "when": {},
+      "crop": [
+        138,
+        646,
+        60,
+        217
+      ]
+    },
+    "frogprince-red.node@1": {
+      "id": "frogprince-red.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.497706,
+        0.986047
+      ],
+      "when": {},
+      "crop": [
+        376,
+        652,
+        218,
+        215
+      ]
+    },
+    "frogprince-red.femaleEarly@1": {
+      "id": "frogprince-red.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.523973,
+        0.988142
+      ],
+      "when": {
+        "colorName": "Red accents"
+      },
+      "crop": [
+        643,
+        642,
+        292,
+        253
+      ]
+    },
+    "frogprince-red.femaleMid@1": {
+      "id": "frogprince-red.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.512456,
+        0.98855
+      ],
+      "when": {
+        "colorName": "Red accents"
+      },
+      "crop": [
+        970,
+        636,
+        281,
+        262
+      ]
+    },
+    "frogprince-red.femaleLate@1": {
+      "id": "frogprince-red.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.698462,
+        0.990741
+      ],
+      "when": {
+        "colorName": "Red accents"
+      },
+      "crop": [
+        20,
+        891,
+        325,
+        324
+      ]
+    },
+    "frogprince-red.maleClosed@1": {
+      "id": "frogprince-red.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.495146,
+        0.007435
+      ],
+      "when": {},
+      "crop": [
+        400,
+        924,
+        206,
+        269
+      ]
+    },
+    "frogprince-red.maleOpen@1": {
+      "id": "frogprince-red.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/frogprince-red/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.479675,
+        0.007092
+      ],
+      "when": {},
+      "crop": [
+        680,
+        928,
+        246,
+        282
+      ]
+    }
+  },
+  "profiles": {
+    "porchlight@1": {
+      "id": "porchlight@1",
+      "name": "Porchlight",
+      "roles": {
+        "seed": [
+          "porchlight.seed@1"
+        ],
+        "radicle": [
+          "porchlight.radicle@1"
+        ],
+        "cotyledon": [
+          "porchlight.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "porchlight.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "porchlight.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "porchlight.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "porchlight.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "porchlight.sugarLeaf@1"
+        ],
+        "stem": [
+          "porchlight.stem@1"
+        ],
+        "node": [
+          "porchlight.node@1"
+        ],
+        "femaleEarly": [
+          "porchlight.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "porchlight.femaleMid@1"
+        ],
+        "femaleLate": [
+          "porchlight.femaleLate@1"
+        ],
+        "maleClosed": [
+          "porchlight.maleClosed@1"
+        ],
+        "maleOpen": [
+          "porchlight.maleOpen@1"
+        ]
+      }
+    },
+    "velvet@1": {
+      "id": "velvet@1",
+      "name": "Velvet Underbrush",
+      "roles": {
+        "seed": [
+          "velvet.seed@1"
+        ],
+        "radicle": [
+          "velvet.radicle@1"
+        ],
+        "cotyledon": [
+          "velvet.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "velvet.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "velvet.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "velvet.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "velvet.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "velvet.sugarLeaf@1"
+        ],
+        "stem": [
+          "velvet.stem@1"
+        ],
+        "node": [
+          "velvet.node@1"
+        ],
+        "femaleEarly": [
+          "velvet.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "velvet.femaleMid@1"
+        ],
+        "femaleLate": [
+          "velvet.femaleLate@1"
+        ],
+        "maleClosed": [
+          "velvet.maleClosed@1"
+        ],
+        "maleOpen": [
+          "velvet.maleOpen@1"
+        ]
+      }
+    },
+    "pixelpunch@1": {
+      "id": "pixelpunch@1",
+      "name": "Pixel Punch",
+      "roles": {
+        "seed": [
+          "pixelpunch.seed@1"
+        ],
+        "radicle": [
+          "pixelpunch.radicle@1"
+        ],
+        "cotyledon": [
+          "pixelpunch.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "pixelpunch.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "pixelpunch.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "pixelpunch.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "pixelpunch.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "pixelpunch.sugarLeaf@1"
+        ],
+        "stem": [
+          "pixelpunch.stem@1"
+        ],
+        "node": [
+          "pixelpunch.node@1"
+        ],
+        "femaleEarly": [
+          "pixelpunch.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "pixelpunch.femaleMid@1"
+        ],
+        "femaleLate": [
+          "pixelpunch.femaleLate@1"
+        ],
+        "maleClosed": [
+          "pixelpunch.maleClosed@1"
+        ],
+        "maleOpen": [
+          "pixelpunch.maleOpen@1"
+        ]
+      }
+    },
+    "cottoncandy@1": {
+      "id": "cottoncandy@1",
+      "name": "Cotton Candy CRT",
+      "roles": {
+        "seed": [
+          "cottoncandy.seed@1"
+        ],
+        "radicle": [
+          "cottoncandy.radicle@1"
+        ],
+        "cotyledon": [
+          "cottoncandy.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "cottoncandy.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "cottoncandy.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "cottoncandy.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "cottoncandy.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "cottoncandy.sugarLeaf@1"
+        ],
+        "stem": [
+          "cottoncandy.stem@1"
+        ],
+        "node": [
+          "cottoncandy.node@1"
+        ],
+        "femaleEarly": [
+          "cottoncandy.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "cottoncandy.femaleMid@1"
+        ],
+        "femaleLate": [
+          "cottoncandy.femaleLate@1"
+        ],
+        "maleClosed": [
+          "cottoncandy.maleClosed@1"
+        ],
+        "maleOpen": [
+          "cottoncandy.maleOpen@1"
+        ]
+      }
+    },
+    "moonberry@1": {
+      "id": "moonberry@1",
+      "name": "Moonberry",
+      "roles": {
+        "seed": [
+          "moonberry.seed@1"
+        ],
+        "radicle": [
+          "moonberry.radicle@1"
+        ],
+        "cotyledon": [
+          "moonberry.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "moonberry.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "moonberry.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "moonberry.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "moonberry.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "moonberry.sugarLeaf@1"
+        ],
+        "stem": [
+          "moonberry.stem@1"
+        ],
+        "node": [
+          "moonberry.node@1"
+        ],
+        "femaleEarly": [
+          "moonberry.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "moonberry.femaleMid@1"
+        ],
+        "femaleLate": [
+          "moonberry.femaleLate@1"
+        ],
+        "maleClosed": [
+          "moonberry.maleClosed@1"
+        ],
+        "maleOpen": [
+          "moonberry.maleOpen@1"
+        ]
+      }
+    },
+    "halfmoon@1": {
+      "id": "halfmoon@1",
+      "name": "Halfmoon CBD",
+      "roles": {
+        "seed": [
+          "halfmoon.seed@1"
+        ],
+        "radicle": [
+          "halfmoon.radicle@1"
+        ],
+        "cotyledon": [
+          "halfmoon.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "halfmoon.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "halfmoon.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "halfmoon.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "halfmoon.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "halfmoon.sugarLeaf@1"
+        ],
+        "stem": [
+          "halfmoon.stem@1"
+        ],
+        "node": [
+          "halfmoon.node@1"
+        ],
+        "femaleEarly": [
+          "halfmoon.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "halfmoon.femaleMid@1"
+        ],
+        "femaleLate": [
+          "halfmoon.femaleLate@1"
+        ],
+        "maleClosed": [
+          "halfmoon.maleClosed@1"
+        ],
+        "maleOpen": [
+          "halfmoon.maleOpen@1"
+        ]
+      }
+    },
+    "zoomies@1": {
+      "id": "zoomies@1",
+      "name": "Zoomies Auto",
+      "roles": {
+        "seed": [
+          "zoomies.seed@1"
+        ],
+        "radicle": [
+          "zoomies.radicle@1"
+        ],
+        "cotyledon": [
+          "zoomies.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "zoomies.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "zoomies.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "zoomies.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "zoomies.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "zoomies.sugarLeaf@1"
+        ],
+        "stem": [
+          "zoomies.stem@1"
+        ],
+        "node": [
+          "zoomies.node@1"
+        ],
+        "femaleEarly": [
+          "zoomies.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "zoomies.femaleMid@1"
+        ],
+        "femaleLate": [
+          "zoomies.femaleLate@1"
+        ],
+        "maleClosed": [
+          "zoomies.maleClosed@1"
+        ],
+        "maleOpen": [
+          "zoomies.maleOpen@1"
+        ]
+      }
+    },
+    "cruise@1": {
+      "id": "cruise@1",
+      "name": "Cruise Control Auto",
+      "roles": {
+        "seed": [
+          "cruise.seed@1"
+        ],
+        "radicle": [
+          "cruise.radicle@1"
+        ],
+        "cotyledon": [
+          "cruise.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "cruise.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "cruise.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "cruise.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "cruise.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "cruise.sugarLeaf@1"
+        ],
+        "stem": [
+          "cruise.stem@1"
+        ],
+        "node": [
+          "cruise.node@1"
+        ],
+        "femaleEarly": [
+          "cruise.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "cruise.femaleMid@1"
+        ],
+        "femaleLate": [
+          "cruise.femaleLate@1"
+        ],
+        "maleClosed": [
+          "cruise.maleClosed@1"
+        ],
+        "maleOpen": [
+          "cruise.maleOpen@1"
+        ]
+      }
+    },
+    "frogprince@1": {
+      "id": "frogprince@1",
+      "name": "Frog Prince",
+      "roles": {
+        "seed": [
+          "frogprince.seed@1"
+        ],
+        "radicle": [
+          "frogprince.radicle@1"
+        ],
+        "cotyledon": [
+          "frogprince.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "frogprince.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "frogprince.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "frogprince.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "frogprince.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "frogprince.sugarLeaf@1"
+        ],
+        "stem": [
+          "frogprince.stem@1"
+        ],
+        "node": [
+          "frogprince.node@1"
+        ],
+        "femaleEarly": [
+          "frogprince.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "frogprince.femaleMid@1"
+        ],
+        "femaleLate": [
+          "frogprince.femaleLate@1"
+        ],
+        "maleClosed": [
+          "frogprince.maleClosed@1"
+        ],
+        "maleOpen": [
+          "frogprince.maleOpen@1"
+        ]
+      }
+    },
+    "boglantern@1": {
+      "id": "boglantern@1",
+      "name": "Bog Lantern",
+      "roles": {
+        "seed": [
+          "boglantern.seed@1"
+        ],
+        "radicle": [
+          "boglantern.radicle@1"
+        ],
+        "cotyledon": [
+          "boglantern.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "boglantern.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "boglantern.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "boglantern.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "boglantern.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "boglantern.sugarLeaf@1"
+        ],
+        "stem": [
+          "boglantern.stem@1"
+        ],
+        "node": [
+          "boglantern.node@1"
+        ],
+        "femaleEarly": [
+          "boglantern.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "boglantern.femaleMid@1"
+        ],
+        "femaleLate": [
+          "boglantern.femaleLate@1"
+        ],
+        "maleClosed": [
+          "boglantern.maleClosed@1"
+        ],
+        "maleOpen": [
+          "boglantern.maleOpen@1"
+        ]
+      }
+    },
+    "nightshift@1": {
+      "id": "nightshift@1",
+      "name": "Night Shift",
+      "roles": {
+        "seed": [
+          "nightshift.seed@1"
+        ],
+        "radicle": [
+          "nightshift.radicle@1"
+        ],
+        "cotyledon": [
+          "nightshift.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "nightshift.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "nightshift.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "nightshift.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "nightshift.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "nightshift.sugarLeaf@1"
+        ],
+        "stem": [
+          "nightshift.stem@1"
+        ],
+        "node": [
+          "nightshift.node@1"
+        ],
+        "femaleEarly": [
+          "nightshift.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "nightshift.femaleMid@1"
+        ],
+        "femaleLate": [
+          "nightshift.femaleLate@1"
+        ],
+        "maleClosed": [
+          "nightshift.maleClosed@1"
+        ],
+        "maleOpen": [
+          "nightshift.maleOpen@1"
+        ]
+      }
+    },
+    "gasstation@1": {
+      "id": "gasstation@1",
+      "name": "Gas Station Sushi",
+      "roles": {
+        "seed": [
+          "gasstation.seed@1"
+        ],
+        "radicle": [
+          "gasstation.radicle@1"
+        ],
+        "cotyledon": [
+          "gasstation.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "gasstation.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "gasstation.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "gasstation.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "gasstation.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "gasstation.sugarLeaf@1"
+        ],
+        "stem": [
+          "gasstation.stem@1"
+        ],
+        "node": [
+          "gasstation.node@1"
+        ],
+        "femaleEarly": [
+          "gasstation.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "gasstation.femaleMid@1"
+        ],
+        "femaleLate": [
+          "gasstation.femaleLate@1"
+        ],
+        "maleClosed": [
+          "gasstation.maleClosed@1"
+        ],
+        "maleOpen": [
+          "gasstation.maleOpen@1"
+        ]
+      },
+      "lineId": "gasstation"
+    },
+    "boglantern-lavender@1": {
+      "id": "boglantern-lavender@1",
+      "name": "Bog Lantern \u2014 Lavender Marsh",
+      "roles": {
+        "seed": [
+          "boglantern-lavender.seed@1"
+        ],
+        "radicle": [
+          "boglantern-lavender.radicle@1"
+        ],
+        "cotyledon": [
+          "boglantern-lavender.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "boglantern-lavender.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "boglantern-lavender.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "boglantern-lavender.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "boglantern-lavender.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "boglantern-lavender.sugarLeaf@1"
+        ],
+        "stem": [
+          "boglantern-lavender.stem@1"
+        ],
+        "node": [
+          "boglantern-lavender.node@1"
+        ],
+        "femaleEarly": [
+          "boglantern-lavender.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "boglantern-lavender.femaleMid@1"
+        ],
+        "femaleLate": [
+          "boglantern-lavender.femaleLate@1"
+        ],
+        "maleClosed": [
+          "boglantern-lavender.maleClosed@1"
+        ],
+        "maleOpen": [
+          "boglantern-lavender.maleOpen@1"
+        ]
+      },
+      "lineId": "boglantern"
+    },
+    "frogprince-red@1": {
+      "id": "frogprince-red@1",
+      "name": "Frog Prince \u2014 Copper Reed",
+      "roles": {
+        "seed": [
+          "frogprince-red.seed@1"
+        ],
+        "radicle": [
+          "frogprince-red.radicle@1"
+        ],
+        "cotyledon": [
+          "frogprince-red.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "frogprince-red.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "frogprince-red.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "frogprince-red.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "frogprince-red.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "frogprince-red.sugarLeaf@1"
+        ],
+        "stem": [
+          "frogprince-red.stem@1"
+        ],
+        "node": [
+          "frogprince-red.node@1"
+        ],
+        "femaleEarly": [
+          "frogprince-red.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "frogprince-red.femaleMid@1"
+        ],
+        "femaleLate": [
+          "frogprince-red.femaleLate@1"
+        ],
+        "maleClosed": [
+          "frogprince-red.maleClosed@1"
+        ],
+        "maleOpen": [
+          "frogprince-red.maleOpen@1"
+        ]
+      },
+      "lineId": "frogprince"
+    }
+  },
+  "strains": {
+    "porchlight": "porchlight@1",
+    "velvet": "velvet@1",
+    "pixelpunch": "pixelpunch@1",
+    "cottoncandy": "cottoncandy@1",
+    "moonberry": "moonberry@1",
+    "halfmoon": "halfmoon@1",
+    "zoomies": "zoomies@1",
+    "cruise": "cruise@1",
+    "frogprince": "frogprince@1",
+    "boglantern": "boglantern@1",
+    "nightshift": "nightshift@1",
+    "gasstation": "gasstation@1"
+  },
+  "inheritedTraits": {
+    "leafShape": {
+      "type": "string",
+      "source": "PlantTraits115.for"
+    },
+    "leafKey": {
+      "type": "string",
+      "source": "PlantTraits115.for"
+    },
+    "colorName": {
+      "type": "string",
+      "source": "PlantTraits115.for"
+    },
+    "branching": {
+      "type": "number",
+      "source": "PlantTraits115.for"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "counts": [
+    {
+      "strain": "halfmoon",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 52,
+      "leaves": 146,
+      "flowers": 91
+    },
+    {
+      "strain": "zoomies",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 48,
+      "leaves": 126,
+      "flowers": 91
+    },
+    {
+      "strain": "cruise",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 52,
+      "leaves": 125,
+      "flowers": 91
+    },
+    {
+      "treatment": "natural",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 52,
+      "leaves": 146,
+      "flowers": 91
+    },
+    {
+      "treatment": "shaped",
+      "joints": 13,
+      "primaryBranches": 12,
+      "secondaryBranches": 20,
+      "leaves": 73,
+      "flowers": 49
+    }
+  ],
+  "errors": []
+}

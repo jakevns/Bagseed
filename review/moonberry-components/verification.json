@@ -1,0 +1,104 @@
+{
+  "status": "sample-awaiting-approval",
+  "identity": {
+    "schemaVersion": 1,
+    "profile": "moonberry@1",
+    "libraryRevision": "plant-parts-library-5",
+    "seed": "moonberry-phenotype-study",
+    "traits": {
+      "leafShape": "hybrid",
+      "leafKey": "blue",
+      "colorName": "Lavender",
+      "branching": 1.05
+    },
+    "parts": {
+      "seed": "moonberry.seed@1",
+      "radicle": "moonberry.radicle@1",
+      "cotyledon": "moonberry.cotyledon@1",
+      "singleLeaf": "moonberry.singleLeaf@1",
+      "threeLeaf": "moonberry.threeLeaf@1",
+      "fiveLeaf": "moonberry.fiveLeaf@1",
+      "sevenLeaf": "moonberry.sevenLeaf@1",
+      "sugarLeaf": "moonberry.sugarLeaf@1",
+      "stem": "moonberry.stem@1",
+      "node": "moonberry.node@1",
+      "femaleEarly": "moonberry.femaleEarly@1",
+      "femaleMid": "moonberry.femaleMid@1",
+      "femaleLate": "moonberry.femaleLate@1",
+      "maleClosed": "moonberry.maleClosed@1",
+      "maleOpen": "moonberry.maleOpen@1"
+    }
+  },
+  "measurements": [
+    {
+      "heightInches": 50,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 58,
+        "leaves": 149,
+        "flowers": 0
+      },
+      "measuredHeightInches": 49.875
+    },
+    {
+      "heightInches": 90,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 148,
+        "leaves": 271,
+        "flowers": 0
+      },
+      "measuredHeightInches": 89.875
+    }
+  ],
+  "finish": {
+    "amount": 1,
+    "palette": "lavender",
+    "rgb": [
+      158,
+      116,
+      183
+    ]
+  },
+  "coolStudies": [
+    {
+      "dayTemp": 78,
+      "nightTemp": 70,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "lavender",
+        "hex": "#8262ac",
+        "rgb": [
+          130,
+          98,
+          172
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "dayTemp": 78,
+      "nightTemp": 68,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "lavender",
+        "hex": "#8262ac",
+        "rgb": [
+          130,
+          98,
+          172
+        ]
+      },
+      "sproutBonus": 0.08
+    }
+  ],
+  "animationFrames": 120,
+  "errors": [],
+  "productionRendererUnchanged": true
+}

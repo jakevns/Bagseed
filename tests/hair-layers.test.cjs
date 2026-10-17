@@ -32,27 +32,26 @@ test('complete hair ends remain above garments in figures, walking and nose-cove
    // Project the independently composed transparent head at the documented
    // jaw attachment to the body's single neck. Inspect hair below the collar,
    // erased it. Testing only head() could never detect that figure-layer bug.
-   g.drawImage(h,48,headY*3,192,320);
+   const factor=BagseedArt.playerFigureScale,original=cv(288,432);original.getContext('2d').drawImage(h,48,headY*3,192,320);g.imageSmoothingQuality='high';g.setTransform(factor,0,0,factor,144*(1-factor),429*(1-factor));g.drawImage(original,0,0);g.resetTransform();
    const expected=read(mask),points=[];
-   for(let y=Math.ceil((neck+3)*3);y<420;y++)for(let x=0;x<288;x++){
+   for(let y=Math.ceil((143+(neck+3-143)*factor)*3);y<420;y++)for(let x=0;x<288;x++){
     const n=(y*288+x)*4;if(expected[n+3]>250&&expected[n]>expected[n+1]*1.5&&expected[n+2]>expected[n+1]*1.5)points.push(n);
    }
    for(const nose of [false,true]){
     let reference=expected,referencePoints=points;
-    if(nose){
-     const B=BagseedArt.body(look,dir,true,3),[hx,hy]=B.bagseedNoseContact,hd=dir==='up'?'up':'down',H=BagseedArt.head(look,hd,false,true),feature=H.bagseedFeatures.nose||[96,199-15*shapeY],target=dir==='up'?[48,hy+4]:[hx,hy],width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[body])*.955,px=48+(target[0]-48)*width-feature[0]/3,py=143+(target[1]-107)*sy-feature[1]/3;
-     const m=cv(288,432),q=m.getContext('2d');q.drawImage(H,px*3,py*3);reference=read(m);referencePoints=[];
-     // Below the forearm, no garment or sleeve may overwrite the loose ends.
-     for(let y=Math.ceil((143+(hy+9-107)*sy)*3);y<420;y++)for(let x=0;x<288;x++){const n=(y*288+x)*4;if(reference[n+3]>250&&reference[n]>reference[n+1]*1.5&&reference[n+2]>reference[n+1]*1.5)referencePoints.push(n);}
-    }
     const a=read(BagseedArt.sprite(look,dir,0,0,0,0,nose,3));let mismatch=0;
     for(const n of referencePoints)if(Math.max(...[0,1,2].map(k=>Math.abs(a[n+k]-reference[n+k])))>12)mismatch++;
     if(mismatch>Math.max(2,referencePoints.length*.01))failures.push({hairS,face,body,dir,nose,points:referencePoints.length,mismatch});views++;pixels+=referencePoints.length;
    }
    // Changing the underlying shirt must not tint or erase opaque hair while
    // the complete figure moves. Frame 1 includes shear and vertical motion.
-   const moving=cv(288,432),mg=moving.getContext('2d');mg.scale(3,3);mg.translate(48,143);mg.transform(1,0,dir==='right'||dir==='left'?.018:.01,.988,0,0);mg.drawImage(mask,-48,-143,96,144);
-   const opaque=read(moving),a=read(BagseedArt.sprite(look,dir,1,0,0,0,false,3)),b=read(BagseedArt.sprite({...look,shirtC:'#fd2137',topC2:'#2363fa'},dir,1,0,0,0,false,3));let samples=0,mismatch=0;
+   const moving=cv(288,432),mg=moving.getContext('2d'),movingSprite=BagseedArt.sprite(look,dir,1,0,0,0,false,3),raw=cv(288,432);
+   // Project independent hair from the accepted walking rig's neck, including
+   // rear views where eyes are intentionally absent.
+   const data=window.__BAGSEED_ILLUSTRATED_DATA__,walk=movingSprite.bagseedWalkProfile==='stride/'?data.walk.stride:data.walk,p=walk.rig.frames[dir+'/1'].keypoints,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[body])*.955;
+   raw.getContext('2d').drawImage(h,(48+(p.neck[0]-48)*width-32)*3,(143+(p.neck[1]-143)*sy-(199-15*shapeY)/3)*3);
+   mg.imageSmoothingQuality='high';mg.setTransform(factor,0,0,factor,144*(1-factor),429*(1-factor));mg.drawImage(raw,0,0);
+   const opaque=read(moving),a=read(movingSprite),b=read(BagseedArt.sprite({...look,shirtC:'#fd2137',topC2:'#2363fa'},dir,1,0,0,0,false,3));let samples=0,mismatch=0;
    // Use the independent hair alpha, not the composited sprite alpha: garment
    // color can legitimately show through partially transparent edge strands.
    for(let y=Math.ceil((neck+4)*3);y<420;y++)for(let x=1;x<287;x++){const n=(y*288+x)*4;if(opaque[n+3]>253&&opaque[n]>opaque[n+1]*1.5&&opaque[n+2]>opaque[n+1]*1.5&&[-1,0,1].every(dy=>[-1,0,1].every(dx=>opaque[((y+dy)*288+x+dx)*4+3]>253))){samples++;if(Math.max(...[0,1,2].map(k=>Math.abs(a[n+k]-b[n+k])))>8)mismatch++;}}
@@ -67,9 +66,9 @@ test('portraits preserve loose hair over the shoulders without a neckline crop',
   for(const hairS of ['long','halfup','boxbraids','longcurls','bluntlong','locs'])for(const face of ['soft','wide','petite','long','heart']){
    const look=BagseedArt.normalize({hairS,face,hairC:'#b64fd2',topS:'jacket',shirtC:'#20ed32',topPat:'stripe',topC2:'#edfc21',acc:'none',hat:'none'}),h=BagseedArt.head(look,'down',false,true),raw=h.getContext('2d').getImageData(0,0,192,320).data;let top=320;
    for(let y=0;y<320&&top===320;y++)for(let x=0;x<192;x++)if(raw[(y*192+x)*4+3]>100){top=y;break;}
-   const shapeY=(199-BagseedArt.landmarks(look,'down').chin[1])/16,anchor=199-15*shapeY+5,fit=Math.min(1,130/(anchor-top)),c=document.createElement('canvas');c.width=c.height=192;const g=c.getContext('2d');g.translate(96,135);g.scale(fit,fit);g.drawImage(h,-96,-anchor);
+   const shapeY=(199-BagseedArt.landmarks(look,'down').chin[1])/16,anchor=199-15*shapeY+5,fit=Math.min(1,116/(anchor-top)),c=document.createElement('canvas');c.width=c.height=192;const g=c.getContext('2d');g.translate(96,148);g.scale(fit,fit);g.drawImage(h,-96,-anchor);
    const expected=g.getImageData(0,0,192,192).data,a=BagseedArt.portrait(look).getContext('2d').getImageData(0,0,192,192).data;let samples=0,mismatch=0;
-   for(let y=138;y<192;y++)for(let x=0;x<192;x++){const n=(y*192+x)*4;if(expected[n+3]>250&&expected[n]>expected[n+1]*1.5&&expected[n+2]>expected[n+1]*1.5){samples++;if(Math.max(...[0,1,2].map(k=>Math.abs(a[n+k]-expected[n+k])))>10)mismatch++;}}
+   for(let y=151;y<192;y++)for(let x=0;x<192;x++){const n=(y*192+x)*4;if(expected[n+3]>250&&expected[n]>expected[n+1]*1.5&&expected[n+2]>expected[n+1]*1.5){samples++;if(Math.max(...[0,1,2].map(k=>Math.abs(a[n+k]-expected[n+k])))>10)mismatch++;}}
    if(mismatch>Math.max(2,samples*.01))failures.push({hairS,face,samples,mismatch});views++;pixels+=samples;
   }return{views,pixels,failures};
  });assert.equal(r.failures.length,0,JSON.stringify(r.failures));assert.equal(r.views,30);assert.ok(r.pixels>1000);

@@ -1,0 +1,61 @@
+{
+  "counts": [
+    {
+      "strain": "porchlight",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 58,
+      "leaves": 133,
+      "flowers": 91
+    },
+    {
+      "strain": "velvet",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 58,
+      "leaves": 136,
+      "flowers": 91
+    },
+    {
+      "strain": "pixelpunch",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 58,
+      "leaves": 136,
+      "flowers": 91
+    },
+    {
+      "strain": "cottoncandy",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 58,
+      "leaves": 141,
+      "flowers": 91
+    },
+    {
+      "strain": "moonberry",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 58,
+      "leaves": 149,
+      "flowers": 91
+    },
+    {
+      "treatment": "natural",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 58,
+      "leaves": 133,
+      "flowers": 91
+    },
+    {
+      "treatment": "shaped",
+      "joints": 13,
+      "primaryBranches": 12,
+      "secondaryBranches": 22,
+      "leaves": 63,
+      "flowers": 49
+    }
+  ],
+  "errors": []
+}

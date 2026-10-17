@@ -1,0 +1,20 @@
+{
+  "id": "halfmoon",
+  "name": "Halfmoon CBD",
+  "shortName": "Halfmoon",
+  "apiName": "BagseedHalfmoonGrowth",
+  "revision": "halfmoon-components-1",
+  "libraryRevision": "plant-parts-library-6",
+  "traits": {
+    "leafShape": "narrow",
+    "leafKey": "lime",
+    "colorName": "Lime green",
+    "branching": 0.95
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Slender lime-green foliage \u2192 honey-gold finishing leaves",
+  "finishSubtitle": "Final-week color study \u00b7 Natural gold senescence",
+  "finishCaption": "Golden narrow fans \u00b7 Creamy citrus-green flowers \u00b7 Amber pistils",
+  "finishPalette": "gold",
+  "windCaption": "Late flower / gold autumn fade",
+  "coolNights": false
+}

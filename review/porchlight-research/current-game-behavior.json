@@ -1,0 +1,30 @@
+{
+  "comparisons": {
+    "defoliationChangesSprite": false,
+    "lowerPruningChangesSprite": true,
+    "bambooChangesSprite": true,
+    "lstChangesSprite": true,
+    "toppingChangesSprite": true,
+    "scrogChangesSprite": true,
+    "lowNutritionChangesSprite": true,
+    "drySoilChangesSprite": true,
+    "wetSoilChangesSprite": true,
+    "stressChangesSprite": true,
+    "growthChangesSprite": true,
+    "densityInCacheKey": false,
+    "defoliationTimeInCacheKey": false
+  },
+  "before": {
+    "height": 14,
+    "nodes": 5,
+    "density": 0.1,
+    "stage": 5
+  },
+  "after": {
+    "height": 16.299188379875567,
+    "nodes": 5.849344,
+    "density": 0.16570384624596882,
+    "stage": 5
+  },
+  "nativePlantArtActive": true
+}

@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "086a17b57bf2914f6954e88df22de51cf498ee0ca0bcb5aefd8d5ae998036a51",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        490
+      ],
+      "subject": [
+        123,
+        16,
+        349,
+        490
+      ],
+      "scale": 0.2109704641350211,
+      "output": "cast/registered/cast-51-gardenPT/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        490
+      ],
+      "subject": [
+        118,
+        13,
+        311,
+        490
+      ],
+      "scale": 0.20964360587002095,
+      "output": "cast/registered/cast-51-gardenPT/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        490
+      ],
+      "subject": [
+        66,
+        15,
+        291,
+        487
+      ],
+      "scale": 0.211864406779661,
+      "output": "cast/registered/cast-51-gardenPT/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        490,
+        418,
+        814
+      ],
+      "subject": [
+        85,
+        19,
+        378,
+        318
+      ],
+      "scale": 0.6153846153846154,
+      "output": "cast/registered/cast-51-gardenPT/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        490,
+        836,
+        814
+      ],
+      "subject": [
+        59,
+        18,
+        356,
+        318
+      ],
+      "scale": 0.6133333333333333,
+      "output": "cast/registered/cast-51-gardenPT/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        490,
+        1254,
+        814
+      ],
+      "subject": [
+        38,
+        18,
+        329,
+        318
+      ],
+      "scale": 0.6133333333333333,
+      "output": "cast/registered/cast-51-gardenPT/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        814,
+        418,
+        1254
+      ],
+      "subject": [
+        142,
+        1,
+        336,
+        423
+      ],
+      "scale": 0.23696682464454977,
+      "output": "style-audit-v1/actions/cast-51-gardenPT/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        814,
+        836,
+        1254
+      ],
+      "subject": [
+        124,
+        5,
+        306,
+        423
+      ],
+      "scale": 0.23923444976076555,
+      "output": "style-audit-v1/actions/cast-51-gardenPT/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        814,
+        1254,
+        1254
+      ],
+      "subject": [
+        82,
+        4,
+        295,
+        421
+      ],
+      "scale": 0.23980815347721823,
+      "output": "style-audit-v1/actions/cast-51-gardenPT/up.png"
+    }
+  ]
+}
