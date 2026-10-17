@@ -1,6 +1,6 @@
 # Air conditioner artwork samples
 
-Awaiting user approval. Includes both existing AC tiers: Rattlebox Compact AC ($139, 300W), and Polar Pal Digital AC ($289, 250W). Cream enamel, sage panels and brass controls match the approved heater family. Mini-splits remain a separate item family.
+Approved by the user, including the Rattlebox Compact AC name and existing window station placement. Includes both existing AC tiers: Rattlebox Compact AC ($139, 300W), and Polar Pal Digital AC ($289, 250W). Cream enamel, sage panels and brass controls match the approved heater family. Mini-splits remain a separate item family.
 
 The original generated transparent PNG is retained unchanged. The fingerprinted WebP decodes to identical RGBA pixels; compile-time checks verify source, runtime and public asset checksums. Crop proportions stay fixed at all locations. Both remain in the approved bedroom station between the jug and heater; grow-room mount anchors remain native. Store, delivery and inventory use matching fixed icons. Startup waits for the new artwork, including a useful error state if it cannot load.
 
