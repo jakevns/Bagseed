@@ -59,7 +59,7 @@
         try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
         Gear.ctrl(c,P.ctrl[0],P.ctrl[1],e.ctrl,true,t,false);
         Gear.humid(c,P.humid[0],P.humid[1],e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,'closet');
-        Gear.sensor(c,P.sensor[0],P.sensor[1],e.sensor,env,'closet');slots.call(this,c,t);
+        if(window.BagseedDehumidifiers?.handles('closet'))BagseedDehumidifiers.drawInside(c,'closet',t);else Gear.sensor(c,P.sensor[0],P.sensor[1],e.sensor,env,'closet');slots.call(this,c,t);
       }finally{c.restore();}
     }
     facade(c,tier,dp);indicators(c,dp);
@@ -67,11 +67,12 @@
     else{
       this.hit('space:closet',X,Y,W,H,'Starter tent · Grow space controls',null,'structure');
       for(const k of ['light','exhaust','fan','humid','sensor','ctrl']){
-        const n=L.equip[k];if(!n&&k!=='sensor')continue;const[x,y]=P[k];
+        if(k==='sensor'&&window.BagseedDehumidifiers?.handles('closet'))continue;const n=L.equip[k];if(!n&&k!=='sensor')continue;const[x,y]=P[k];
         const box={light:[-14,-7,28,12],exhaust:[-8,-12,16,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,L.equip.sensor===3?20:14,14],ctrl:[-1,-1,11,13]}[k];
         this.hit(k+':closet',x+box[0],y+box[1],box[2],box[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,null,'equip');
       }
     }
+    window.BagseedDehumidifiers?.drawSensor(c,'closet');
   };
   // Keep lighting inside the current opening. Fabric is drawn only in its normal
   // scene position, before players/NPCs, never as a final room-wide repaint.

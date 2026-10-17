@@ -1,0 +1,13 @@
+{
+  "status": "awaiting-artwork-approval",
+  "entryPoint": "public/index.html",
+  "tiers": 2,
+  "targets": 8,
+  "closedSensorCases": 4,
+  "sensorTierCases": 12,
+  "perTentClimatePreserved": true,
+  "splitFanAnimation": true,
+  "plantsAndGeometryPreserved": true,
+  "storeAndPhoneArtwork": true,
+  "errors": []
+}

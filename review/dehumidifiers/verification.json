@@ -1,0 +1,14 @@
+{
+  "entryPoint": "public/index.html",
+  "buildAndSourceChecks": "passed",
+  "dehumidifierPurchaseDeliverySaveReload": "passed",
+  "starterTentLayeringZipperStoreSaveReload": "passed",
+  "allTentPlayerDepth": "passed",
+  "fanPurchaseDeliveryControlsSaveReload": "passed",
+  "humidifierSteamBubblesControlsSaveReload": "passed",
+  "placementPreview": "passed: both dehumidifier tiers across all four tents",
+  "closedSensorPreview": "passed: all four tents and all three purchased sensor tiers",
+  "fanClearanceAndSeparateClickTargets": "passed",
+  "originalCharacterDataPreserved": "custom-walk-approved-stride",
+  "publication": "local samples only; awaiting user artwork approval"
+}

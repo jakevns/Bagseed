@@ -21,7 +21,10 @@ test('starter shells layer live contents, animate, share store/package art, fit 
         RoomArt.hits=[];tent();const hits=RoomArt.hits.map(h=>({...h}));
         // Light geometry follows its approved housing; preview-grow-lights checks
         // all 16 fixture targets. Keep identity and every other native hit exact.
-        check(JSON.stringify(hits.map(h=>h.id==='light:closet'?{id:h.id,label:h.label,layer:h.layer}:h))===JSON.stringify(JSON.parse(before).map(h=>h.id==='light:closet'?{id:h.id,label:h.label,layer:h.layer}:h)),'Native interactions changed outside the illustrated plant/light bounds');targetCases++;
+        // Sensors intentionally moved from the contents to the exterior header.
+        const withoutSensor=hs=>hs.filter(h=>h.id!=='sensor:closet').map(h=>h.id==='light:closet'?{id:h.id,label:h.label,layer:h.layer}:h);
+        check(JSON.stringify(withoutSensor(hits))===JSON.stringify(withoutSensor(JSON.parse(before))),'Native interactions changed outside the illustrated plant/light/sensor bounds');
+        const sensor=hits.find(h=>h.id==='sensor:closet'),mount=BagseedDehumidifiers.sensors.get('closet');check(sensor&&mount&&sensor.y+sensor.h<BagseedTentPlacement.roofY('closet'),'Exterior sensor missing above the door');targetCases++;
       }
       p.stage=5;L.door='open';const light=Gear.light,pot=Gear.pot;
       const is=(c,x,y,r,g,b)=>{const a=c.getImageData(x,y,1,1).data;return a[0]===r&&a[1]===g&&a[2]===b;};let layeringCases=0;

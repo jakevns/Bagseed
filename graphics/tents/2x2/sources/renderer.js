@@ -39,7 +39,7 @@
         Gear.light(c,P.light[0],P.light[1]+DATA.lightVisualOffsetY,e.light,on,t);
         runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
         Gear.humid(c,P.humid[0],P.humid[1]+DATA.humidVisualOffsetY,e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,'tent2');
-        Gear.sensor(c,P.sensor[0],P.sensor[1],e.sensor,env,'tent2');slots(c,t);
+        if(window.BagseedDehumidifiers?.handles('tent2'))BagseedDehumidifiers.drawInside(c,'tent2',t);else Gear.sensor(c,P.sensor[0],P.sensor[1],e.sensor,env,'tent2');slots(c,t);
       }finally{c.restore();}
     }
     foreground(c,tier,dp);
@@ -47,8 +47,9 @@
     if(dp>=1)this.hit('space:tent2',X+2,Y+2,W-4,H-4,'2x2 tent (zipped) · Grow space controls',null,'furniture');
     else{
       this.hit('space:tent2',X,Y,W,H,'2x2 tent · Grow space controls',null,'structure');
-      for(const k of ['light','exhaust','fan','humid','sensor']){const n=e[k];if(!n&&k!=='sensor')continue;const[x,py]=P[k],y=py+(k==='light'?DATA.lightVisualOffsetY:k==='humid'?DATA.humidVisualOffsetY:0),b={light:[-22,-7,44,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];this.hit(k+':tent2',x+b[0],y+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,null,'equip');}
+      for(const k of ['light','exhaust','fan','humid','sensor']){if(k==='sensor'&&window.BagseedDehumidifiers?.handles('tent2'))continue;const n=e[k];if(!n&&k!=='sensor')continue;const[x,py]=P[k],y=py+(k==='light'?DATA.lightVisualOffsetY:k==='humid'?DATA.humidVisualOffsetY:0),b={light:[-22,-7,44,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];this.hit(k+':tent2',x+b[0],y+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,null,'equip');}
     }
+    window.BagseedDehumidifiers?.drawSensor(c,'tent2');
   };
   // The legacy room beam uses fixed old bounds. Local diffusion above replaces it.
   RoomArt.growEffectMasks.tent2=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};
