@@ -892,7 +892,7 @@ EQ.heater = [{ name: 'No heater', price: 0, watts: 0 },
 { name: 'Old Space Heater', brand: 'Toastwell', price: 24.99, watts: 420, maxD: 10, manual: true, fail: .06, desc: 'Two settings: LOW and HIGH. Smells like burning dust for the first hour. Every time.', review: [2, 'Kept my toes warm and my closet warmer. Tripped the breaker twice.'] },
 { name: 'Thermo-Cube Digital Heater', brand: 'Thermo-Cube', price: 79, watts: 330, maxD: 14, thermo: true, eff: .85, fail: .012, desc: 'Set a temperature. It holds it. Tip-over switch and everything.', review: [5, 'My closet has a thermostat now. My apartment does not.'] }];
 EQ.ac = [{ name: 'No air conditioner', price: 0, watts: 0 },
-{ name: 'Rattlebox Window AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'Wedged in the bedroom window with cardboard. Cools the whole room (and every tent in it). LOW and HIGH. Drips on everything.', review: [3, 'Loud. Cold. Loud.'] },
+{ name: 'Rattlebox Compact AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'A rattly little floor cooler with LOW and HIGH settings. Cools the whole room (and every tent in it). Loud, dependable, and a little drippy.', review: [3, 'Loud. Cold. Loud.'] },
 { name: 'Polar Pal Digital AC', brand: 'Polar Pal', price: 289, watts: 250, maxD: 16, thermo: true, eff: .82, fail: .012, desc: 'Portable AC with a thermostat and a hose you will trip over.', review: [5, 'Heat wave? What heat wave.'] }];
 EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
 { name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools to a set point automatically.', review: [5, 'Paid for itself the first heat wave.'] },
@@ -3396,7 +3396,7 @@ const Events = {
       if (e.sensor && !F.sensor && chance((EQ.sensor[e.sensor].fail || 0) * hm)) { F.sensor = true; queue({ t: 'note', text: 'Your sensor reads 112°F. Probably not true. Click it to reset.', kind: 'warn' }); }
       if (e.humid && e.humid < 3 && !F.humStuck && chance((EQ.humid[e.humid].fail || 0) * hm)) { F.humStuck = true; queue({ t: 'note', text: 'The humidifier is stuck on HIGH. It\'s raining in the tent. Click it.', kind: 'bad' }); }
       if (e.heater === 1 && locOn(L, 'heater') && !F.heatTrip && chance(.06 * hm * q('heater'))) { F.heatTrip = true; queue({ t: 'note', text: 'The old space heater tripped the breaker and smells like burnt dust. Reset it in Grow Space Controls.', kind: 'bad' }); }
-      if (e.ac === 1 && locOn(L, 'ac') && !F.acIce && chance(.05 * hm * q('ac') * (state.outTemp > 90 ? 1.8 : 1))) { F.acIce = true; queue({ t: 'note', text: 'The window AC iced over and stopped cooling. Let it thaw in Grow Space Controls.', kind: 'warn' }); }
+      if (e.ac === 1 && locOn(L, 'ac') && !F.acIce && chance(.05 * hm * q('ac') * (state.outTemp > 90 ? 1.8 : 1))) { F.acIce = true; queue({ t: 'note', text: 'The compact AC iced over and stopped cooling. Let it thaw in Grow Space Controls.', kind: 'warn' }); }
       if (e.light && chance(.025 * hm) && plantsIn(loc).length) { F.timer = true; queue({ t: 'note', text: 'The light timer failed overnight. The light stayed on all night.', kind: 'warn' }); for (const p of plantsIn(loc)) p.stress += 8; }
     }
     if (fOn && chance(.022 * hm) && state.day > 4) { F.outage = 6; queue({ t: 'note', text: 'Power outage! Lights are off for a few hours.', kind: 'bad' }); }
