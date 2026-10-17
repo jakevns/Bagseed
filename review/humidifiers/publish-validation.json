@@ -11,6 +11,8 @@
   "errors": [],
   "mergedCharacterReleasePreserved": true,
   "characterDataCompanionPreserved": true,
-  "characterRevision": "custom-walk-phase-2",
-  "castWalkFrameChecks": 96
+  "characterRevision": "custom-walk-approved-stride",
+  "castWalkFrameChecks": 96,
+  "liveStrideCreatorMirrorChecks": true,
+  "liveStrideTransport": "http"
 }
