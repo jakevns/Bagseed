@@ -1,6 +1,6 @@
 # Reusable plant parts and phenotype identities
 
-Status: tested foundation, not connected to the live game. Porchlight is the first planned organ kit. Its 15 registered part roles are drafts with no asset paths or attachment coordinates yet; `readiness()` explicitly reports them as pending. Whole-plant concept sheets are not treated as usable organ art.
+Status: tested foundation, not connected to the live game. Porchlight is the first planned organ kit. Its 15 registered part roles are drafts; the first Porchlight component sheet now supplies asset paths and attachment coordinates for review; `readiness()` explicitly reports them as pending. Whole-plant concept sheets are not treated as usable organ art. The first attached growth prototype and the 50/90-inch samples are documented in `porchlight/README.md`.
 
 ## Data model
 

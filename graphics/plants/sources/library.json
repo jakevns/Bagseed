@@ -6,146 +6,281 @@
       "id": "porchlight.seed@1",
       "role": "seed",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "seed-center",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        97,
+        111,
+        132,
+        135
+      ]
     },
     "porchlight.radicle@1": {
       "id": "porchlight.radicle@1",
       "role": "radicle",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "radicle-tip",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.941799,
+        0.990909
+      ],
+      "when": {},
+      "crop": [
+        382,
+        68,
+        189,
+        220
+      ]
     },
     "porchlight.cotyledon@1": {
       "id": "porchlight.cotyledon@1",
       "role": "cotyledon",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "stem-base",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.510791,
+        0.989796
+      ],
+      "when": {},
+      "crop": [
+        648,
+        90,
+        278,
+        196
+      ]
     },
     "porchlight.singleLeaf@1": {
       "id": "porchlight.singleLeaf@1",
       "role": "singleLeaf",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "petiole-base",
-      "attach": null,
+      "attach": [
+        0.504673,
+        0.992857
+      ],
       "when": {
         "leafShape": "broad"
-      }
+      },
+      "crop": [
+        1047,
+        22,
+        107,
+        280
+      ]
     },
     "porchlight.threeLeaf@1": {
       "id": "porchlight.threeLeaf@1",
       "role": "threeLeaf",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "petiole-base",
-      "attach": null,
+      "attach": [
+        0.486989,
+        0.993127
+      ],
       "when": {
         "leafShape": "broad"
-      }
+      },
+      "crop": [
+        37,
+        319,
+        269,
+        291
+      ]
     },
     "porchlight.fiveLeaf@1": {
       "id": "porchlight.fiveLeaf@1",
       "role": "fiveLeaf",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "petiole-base",
-      "attach": null,
+      "attach": [
+        0.51341,
+        0.993103
+      ],
       "when": {
         "leafShape": "broad"
-      }
+      },
+      "crop": [
+        345,
+        318,
+        261,
+        290
+      ]
     },
     "porchlight.sevenLeaf@1": {
       "id": "porchlight.sevenLeaf@1",
       "role": "sevenLeaf",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "petiole-base",
-      "attach": null,
+      "attach": [
+        0.498442,
+        0.993197
+      ],
       "when": {
         "leafShape": "broad"
-      }
+      },
+      "crop": [
+        629,
+        315,
+        321,
+        294
+      ]
     },
     "porchlight.sugarLeaf@1": {
       "id": "porchlight.sugarLeaf@1",
       "role": "sugarLeaf",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "petiole-base",
-      "attach": null,
+      "attach": [
+        0.509009,
+        0.991935
+      ],
       "when": {
         "leafShape": "broad"
-      }
+      },
+      "crop": [
+        988,
+        352,
+        222,
+        248
+      ]
     },
     "porchlight.stem@1": {
       "id": "porchlight.stem@1",
       "role": "stem",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "lower-node",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.490566,
+        0.992424
+      ],
+      "when": {},
+      "crop": [
+        140,
+        642,
+        53,
+        264
+      ]
     },
     "porchlight.node@1": {
       "id": "porchlight.node@1",
       "role": "node",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "branch-junction",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.510417,
+        0.991031
+      ],
+      "when": {},
+      "crop": [
+        378,
+        671,
+        192,
+        223
+      ]
     },
     "porchlight.femaleEarly@1": {
       "id": "porchlight.femaleEarly@1",
       "role": "femaleEarly",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "flower-base",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.529148,
+        0.992188
+      ],
+      "when": {},
+      "crop": [
+        673,
+        648,
+        223,
+        256
+      ]
     },
     "porchlight.femaleMid@1": {
       "id": "porchlight.femaleMid@1",
       "role": "femaleMid",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "flower-base",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.49789,
+        0.992982
+      ],
+      "when": {},
+      "crop": [
+        979,
+        625,
+        237,
+        285
+      ]
     },
     "porchlight.femaleLate@1": {
       "id": "porchlight.femaleLate@1",
       "role": "femaleLate",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "flower-base",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.49004,
+        0.993377
+      ],
+      "when": {},
+      "crop": [
+        52,
+        922,
+        251,
+        302
+      ]
     },
     "porchlight.maleClosed@1": {
       "id": "porchlight.maleClosed@1",
       "role": "maleClosed",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "pedicel-base",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.531792,
+        0.0
+      ],
+      "when": {},
+      "crop": [
+        396,
+        933,
+        173,
+        269
+      ]
     },
     "porchlight.maleOpen@1": {
       "id": "porchlight.maleOpen@1",
       "role": "maleOpen",
       "status": "draft",
-      "asset": null,
+      "asset": "graphics/plants/porchlight/assets/components.webp",
       "attachmentType": "pedicel-base",
-      "attach": null,
-      "when": {}
+      "attach": [
+        0.490654,
+        0.0
+      ],
+      "when": {},
+      "crop": [
+        674,
+        931,
+        214,
+        278
+      ]
     }
   },
   "profiles": {

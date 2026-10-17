@@ -1,0 +1,30 @@
+{
+  "status": "sample-awaiting-approval",
+  "samePixelsPerInch": 7.35,
+  "physicalHeights": [
+    50,
+    90
+  ],
+  "nativeNodeCap": 11,
+  "measuredHeights": [
+    49.93197278911565,
+    89.93197278911565
+  ],
+  "counts50": {
+    "joints": 13,
+    "primaryBranches": 18,
+    "secondaryBranches": 62,
+    "leaves": 140,
+    "flowers": 0
+  },
+  "counts90": {
+    "joints": 13,
+    "primaryBranches": 18,
+    "secondaryBranches": 150,
+    "leaves": 254,
+    "flowers": 0
+  },
+  "animationFrames": 120,
+  "nativeGameUnchanged": true,
+  "errors": []
+}

@@ -20,7 +20,7 @@ test('incompatible leaf families, missing saved parts and unregistered strains a
  assert.throws(()=>api.createIdentity(plant,{...traits,leafShape:'narrow'},catalog),/compatible artwork/);assert.throws(()=>api.createIdentity({...plant,lineId:'unreviewed'},traits,catalog),/No artwork profile/);const saved=api.createIdentity(plant,traits,catalog),broken=clone(catalog);delete broken.parts[saved.parts.sevenLeaf];assert.throws(()=>api.validateLibrary(broken),/incompatible part/);const changed=clone(saved);changed.parts.sevenLeaf='missing@1';assert.throws(()=>api.validateIdentity(changed,catalog),/missing or changed/);
 });
 test('approved parts need real asset references and anchors; transient conditions are not inherited selectors',()=>{
- const library=clone(catalog),id=Object.keys(library.parts)[0];library.parts[id].status='approved';assert.throws(()=>api.validateLibrary(library),/asset and normalized attachment/);library.parts[id].status='draft';library.parts[id].when={stress:50};assert.throws(()=>api.validateLibrary(library),/Temporary conditions/);
+ const library=clone(catalog),id=Object.keys(library.parts)[0];library.parts[id].status='approved';library.parts[id].asset=null;assert.throws(()=>api.validateLibrary(library),/asset and normalized attachment/);library.parts[id].status='draft';library.parts[id].when={stress:50};assert.throws(()=>api.validateLibrary(library),/Temporary conditions/);
 });
 
 test('a newly registered phenotype trait can select new compatible artwork without rewriting the resolver',()=>{
