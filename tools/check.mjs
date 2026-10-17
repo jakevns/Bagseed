@@ -17,6 +17,7 @@ if (!html.includes(require('./compile-tent5.cjs')())) throw new Error('The 5x5 t
 if (!html.includes(require('./compile-tent-placement.cjs')())) throw new Error('The tent placement renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-room-climate.cjs')())) throw new Error('The room climate placement differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-water-and-pots.cjs')())) throw new Error('The Water & Pots renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-person-scale.cjs')())) throw new Error('The person scale renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-tent-details.cjs')())) throw new Error('The tent detail renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-hvac.cjs')())) throw new Error('The HVAC renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-air-conditioners.cjs')())) throw new Error('The air conditioner renderer differs from its source. Rebuild before publishing.');

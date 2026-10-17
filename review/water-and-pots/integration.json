@@ -12,7 +12,7 @@
   "readOnlyRendering": true,
   "liveMoistureProbe": true,
   "liveWaterWindows": true,
-  "foregroundPlayerPixelsProtected": 176,
+  "foregroundPlayerPixelsProtected": 1258,
   "remoteFeedReadOnly": true,
   "potRemovalGuardPreserved": true,
   "saveReload": true,
