@@ -25,11 +25,18 @@ if (sha(html) !== report.updatedSHA) throw new Error('The playable game differs 
 const character = html.match(/<script id="bagseed-illustrated-production-code">([\s\S]*?)<\/script>/);
 if (!character || sha(character[1].replace(/\r\n/g, '\n').trim()) !== report.characterPayloadSHA256) throw new Error('The embedded character release is missing or stale. Run the full character builder.');
 const sources = ['graphics/production/sources/renderer.js', 'graphics/production/sources/face-details.js', 'graphics/production/sources/hair-batch-01.js', 'graphics/production/sources/hair-fit-rest.js', 'graphics/production/sources/build.cjs', 'graphics/production/customization-v5/detail-landmarks.json', 'graphics/production/customization-v5/manifest.json', 'graphics/production/customization-v5/hair-fit.json', 'graphics/production/customization-v5/register.py'];
+sources.push('graphics/production/cast-walk-v1/manifest.json', 'graphics/production/cast-walk-v1/sources/clocks.js', 'graphics/production/walk/sources/renderer.js', 'graphics/production/walk/manifest.json', 'graphics/production/walk/rig.json');
 for (const file of sources) {
   const source = readFileSync(new URL('../' + file, import.meta.url), 'utf8').replace(/\r\n/g, '\n');
   if (sha(source) !== report.characterSourcesSHA256?.[file]) throw new Error(`Character source changed without rebuilding: ${file}`);
 }
 if (character[1].match(/renderingRevision:'([^']+)'/)?.[1] !== report.characterRevision) throw new Error('The published character revision differs from the build report.');
+if (report.characterDataFile) {
+  const dataScript = readFileSync(new URL('../' + report.characterDataFile, import.meta.url), 'utf8');
+  if (sha(dataScript) !== report.characterDataSHA256) throw new Error('Character data script differs from its build report. Rebuild before publishing.');
+  if (!html.includes('src="character-data.js"')) throw new Error('The game must load its character data before the renderer.');
+  new vm.Script(dataScript, { filename: report.characterDataFile });
+}
 let count = 0;
 for (const match of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script\s*>/gi)) {
   new vm.Script(match[1], { filename: `public/index.html#script-${++count}` });

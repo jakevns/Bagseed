@@ -1,0 +1,653 @@
+{
+  "status": "motion specification, not artwork approval",
+  "frames": {
+    "right/0": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "kneeL": [
+          57,
+          124
+        ],
+        "ankleL": [
+          64,
+          139
+        ],
+        "heelL": [
+          57,
+          143
+        ],
+        "toeL": [
+          75,
+          143
+        ],
+        "kneeR": [
+          40,
+          124
+        ],
+        "ankleR": [
+          32,
+          136
+        ],
+        "heelR": [
+          27,
+          137
+        ],
+        "toeR": [
+          44,
+          143
+        ],
+        "handL": [
+          39,
+          106
+        ],
+        "elbowL": [
+          44.5,
+          96
+        ],
+        "handR": [
+          57,
+          106
+        ],
+        "elbowR": [
+          52.0,
+          96
+        ]
+      },
+      "phase": "near heel contact",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8
+    },
+    "right/1": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "shoulderL": [
+          50,
+          85
+        ],
+        "shoulderR": [
+          47,
+          85
+        ],
+        "hipL": [
+          50,
+          111
+        ],
+        "hipR": [
+          47,
+          111
+        ],
+        "kneeL": [
+          54,
+          125
+        ],
+        "ankleL": [
+          58,
+          139
+        ],
+        "heelL": [
+          51,
+          143
+        ],
+        "toeL": [
+          69,
+          143
+        ],
+        "kneeR": [
+          39,
+          125
+        ],
+        "ankleR": [
+          35,
+          133
+        ],
+        "heelR": [
+          30,
+          133
+        ],
+        "toeR": [
+          46,
+          139
+        ],
+        "handL": [
+          42,
+          107
+        ],
+        "elbowL": [
+          46.0,
+          97
+        ],
+        "handR": [
+          54,
+          107
+        ],
+        "elbowR": [
+          50.5,
+          97
+        ]
+      },
+      "phase": "near loading / far toe off",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8
+    },
+    "right/2": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "kneeL": [
+          48,
+          125
+        ],
+        "ankleL": [
+          48,
+          139
+        ],
+        "heelL": [
+          41,
+          143
+        ],
+        "toeL": [
+          59,
+          143
+        ],
+        "kneeR": [
+          53,
+          122
+        ],
+        "ankleR": [
+          43,
+          130
+        ],
+        "heelR": [
+          37,
+          130
+        ],
+        "toeR": [
+          53,
+          135
+        ],
+        "handL": [
+          48,
+          106
+        ],
+        "elbowL": [
+          49.0,
+          96
+        ],
+        "handR": [
+          48,
+          106
+        ],
+        "elbowR": [
+          47.5,
+          96
+        ]
+      },
+      "phase": "near stance / far passing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8
+    },
+    "right/3": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "shoulderL": [
+          50,
+          83
+        ],
+        "shoulderR": [
+          47,
+          83
+        ],
+        "hipL": [
+          50,
+          109
+        ],
+        "hipR": [
+          47,
+          109
+        ],
+        "kneeL": [
+          43,
+          124
+        ],
+        "ankleL": [
+          39,
+          138
+        ],
+        "heelL": [
+          32,
+          142
+        ],
+        "toeL": [
+          50,
+          143
+        ],
+        "kneeR": [
+          58,
+          122
+        ],
+        "ankleR": [
+          55,
+          133
+        ],
+        "heelR": [
+          48,
+          137
+        ],
+        "toeR": [
+          66,
+          137
+        ],
+        "handL": [
+          55,
+          105
+        ],
+        "elbowL": [
+          52.5,
+          95
+        ],
+        "handR": [
+          41,
+          105
+        ],
+        "elbowR": [
+          44.0,
+          95
+        ]
+      },
+      "phase": "near push off / far swing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8
+    },
+    "right/4": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "kneeL": [
+          40,
+          124
+        ],
+        "ankleL": [
+          32,
+          136
+        ],
+        "heelL": [
+          27,
+          137
+        ],
+        "toeL": [
+          44,
+          143
+        ],
+        "kneeR": [
+          57,
+          124
+        ],
+        "ankleR": [
+          64,
+          139
+        ],
+        "heelR": [
+          57,
+          143
+        ],
+        "toeR": [
+          75,
+          143
+        ],
+        "handL": [
+          58,
+          106
+        ],
+        "elbowL": [
+          54.0,
+          96
+        ],
+        "handR": [
+          38,
+          106
+        ],
+        "elbowR": [
+          42.5,
+          96
+        ]
+      },
+      "phase": "far heel contact",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8
+    },
+    "right/5": {
+      "keypoints": {
+        "neck": [
+          48,
+          79
+        ],
+        "waist": [
+          48,
+          106
+        ],
+        "shoulderL": [
+          50,
+          85
+        ],
+        "shoulderR": [
+          47,
+          85
+        ],
+        "hipL": [
+          50,
+          111
+        ],
+        "hipR": [
+          47,
+          111
+        ],
+        "kneeL": [
+          39,
+          125
+        ],
+        "ankleL": [
+          35,
+          133
+        ],
+        "heelL": [
+          30,
+          133
+        ],
+        "toeL": [
+          46,
+          139
+        ],
+        "kneeR": [
+          54,
+          125
+        ],
+        "ankleR": [
+          58,
+          139
+        ],
+        "heelR": [
+          51,
+          143
+        ],
+        "toeR": [
+          69,
+          143
+        ],
+        "handL": [
+          55,
+          107
+        ],
+        "elbowL": [
+          52.5,
+          97
+        ],
+        "handR": [
+          41,
+          107
+        ],
+        "elbowR": [
+          44.0,
+          97
+        ]
+      },
+      "phase": "far loading / near toe off",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8
+    },
+    "right/6": {
+      "keypoints": {
+        "neck": [
+          48,
+          78
+        ],
+        "waist": [
+          48,
+          105
+        ],
+        "shoulderL": [
+          50,
+          84
+        ],
+        "shoulderR": [
+          47,
+          84
+        ],
+        "hipL": [
+          50,
+          110
+        ],
+        "hipR": [
+          47,
+          110
+        ],
+        "kneeL": [
+          53,
+          122
+        ],
+        "ankleL": [
+          43,
+          130
+        ],
+        "heelL": [
+          37,
+          130
+        ],
+        "toeL": [
+          53,
+          135
+        ],
+        "kneeR": [
+          48,
+          125
+        ],
+        "ankleR": [
+          48,
+          139
+        ],
+        "heelR": [
+          41,
+          143
+        ],
+        "toeR": [
+          59,
+          143
+        ],
+        "handL": [
+          48,
+          106
+        ],
+        "elbowL": [
+          49.0,
+          96
+        ],
+        "handR": [
+          48,
+          106
+        ],
+        "elbowR": [
+          47.5,
+          96
+        ]
+      },
+      "phase": "far stance / near passing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8
+    },
+    "right/7": {
+      "keypoints": {
+        "neck": [
+          48,
+          77
+        ],
+        "waist": [
+          48,
+          104
+        ],
+        "shoulderL": [
+          50,
+          83
+        ],
+        "shoulderR": [
+          47,
+          83
+        ],
+        "hipL": [
+          50,
+          109
+        ],
+        "hipR": [
+          47,
+          109
+        ],
+        "kneeL": [
+          58,
+          122
+        ],
+        "ankleL": [
+          55,
+          133
+        ],
+        "heelL": [
+          48,
+          137
+        ],
+        "toeL": [
+          66,
+          137
+        ],
+        "kneeR": [
+          43,
+          124
+        ],
+        "ankleR": [
+          39,
+          138
+        ],
+        "heelR": [
+          32,
+          142
+        ],
+        "toeR": [
+          50,
+          143
+        ],
+        "handL": [
+          42,
+          105
+        ],
+        "elbowL": [
+          46.0,
+          95
+        ],
+        "handR": [
+          54,
+          105
+        ],
+        "elbowR": [
+          50.5,
+          95
+        ]
+      },
+      "phase": "far push off / near swing",
+      "nearLeg": "L",
+      "nearArm": "L",
+      "groundBaseline": 143,
+      "cycleLength": 8
+    }
+  }
+}

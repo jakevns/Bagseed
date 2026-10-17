@@ -1,0 +1,190 @@
+{
+  "frameCount": 8,
+  "source": "assets/stride-v4-hoodie-right-v2.png",
+  "frames": [
+    {
+      "frame": 0,
+      "phase": "near heel contact",
+      "source": "assets/stride-v4-hoodie-right-v2.png",
+      "sourceCell": [
+        0,
+        0,
+        373,
+        543
+      ],
+      "uniformScale": 0.4985534548879768,
+      "translation": [
+        52.76471775550024,
+        168.7550965484761
+      ],
+      "neck": [
+        48,
+        78
+      ],
+      "groundError": 0.0,
+      "resamplingPasses": 1,
+      "status": "visual gait inspection required; no automatic artwork approval"
+    },
+    {
+      "frame": 1,
+      "phase": "near loading / far toe off",
+      "source": "assets/stride-v4-hoodie-right-v2.png",
+      "sourceCell": [
+        373,
+        0,
+        724,
+        543
+      ],
+      "uniformScale": 0.4883103753317326,
+      "translation": [
+        56.59244281561986,
+        173.1253633261721
+      ],
+      "neck": [
+        48,
+        79
+      ],
+      "groundError": 0.0,
+      "resamplingPasses": 1,
+      "status": "visual gait inspection required; no automatic artwork approval"
+    },
+    {
+      "frame": 2,
+      "phase": "near stance / far passing",
+      "source": "assets/stride-v4-hoodie-right-v2.png",
+      "sourceCell": [
+        724,
+        0,
+        1086,
+        543
+      ],
+      "uniformScale": 0.48953111176644054,
+      "translation": [
+        57.35299321734003,
+        170.03804187555295
+      ],
+      "neck": [
+        48,
+        78
+      ],
+      "groundError": 0.0,
+      "resamplingPasses": 1,
+      "status": "visual gait inspection required; no automatic artwork approval"
+    },
+    {
+      "frame": 3,
+      "phase": "near push off / far swing",
+      "source": "assets/stride-v4-hoodie-right-v2.png",
+      "sourceCell": [
+        1086,
+        0,
+        1448,
+        543
+      ],
+      "uniformScale": 0.5007045073639559,
+      "translation": [
+        54.3738931818519,
+        165.12872461919522
+      ],
+      "neck": [
+        48,
+        77
+      ],
+      "groundError": 0.0,
+      "resamplingPasses": 1,
+      "status": "visual gait inspection required; no automatic artwork approval"
+    },
+    {
+      "frame": 4,
+      "phase": "far heel contact",
+      "source": "assets/stride-v4-hoodie-right-v2.png",
+      "sourceCell": [
+        0,
+        543,
+        373,
+        1086
+      ],
+      "uniformScale": 0.5044772880903303,
+      "translation": [
+        48.149315262837234,
+        180.29269697146714
+      ],
+      "neck": [
+        48,
+        78
+      ],
+      "groundError": 0.0,
+      "resamplingPasses": 1,
+      "status": "visual gait inspection required; no automatic artwork approval"
+    },
+    {
+      "frame": 5,
+      "phase": "far loading / near toe off",
+      "source": "assets/stride-v4-hoodie-right-v2.png",
+      "sourceCell": [
+        373,
+        543,
+        724,
+        1086
+      ],
+      "uniformScale": 0.49431281974867136,
+      "translation": [
+        52.05781552674712,
+        184.31515422440768
+      ],
+      "neck": [
+        48,
+        79
+      ],
+      "groundError": 0.0,
+      "resamplingPasses": 1,
+      "status": "visual gait inspection required; no automatic artwork approval"
+    },
+    {
+      "frame": 6,
+      "phase": "far stance / near passing",
+      "source": "assets/stride-v4-hoodie-right-v2.png",
+      "sourceCell": [
+        724,
+        543,
+        1086,
+        1086
+      ],
+      "uniformScale": 0.4957092218178373,
+      "translation": [
+        56.259467738242805,
+        182.13680753471704
+      ],
+      "neck": [
+        48,
+        78
+      ],
+      "groundError": 0.0,
+      "resamplingPasses": 1,
+      "status": "visual gait inspection required; no automatic artwork approval"
+    },
+    {
+      "frame": 7,
+      "phase": "far push off / near swing",
+      "source": "assets/stride-v4-final-arm.png",
+      "sourceCell": [
+        0,
+        0,
+        1024,
+        1536
+      ],
+      "uniformScale": 0.28285366760823893,
+      "translation": [
+        -1.9524924858512804,
+        -2.6346967701726385
+      ],
+      "neck": [
+        48,
+        77
+      ],
+      "groundError": 0.0,
+      "resamplingPasses": 1,
+      "status": "visual gait inspection required; no automatic artwork approval"
+    }
+  ]
+}

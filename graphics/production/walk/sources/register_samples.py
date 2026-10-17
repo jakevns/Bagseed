@@ -77,7 +77,7 @@ def register(raw,frame,master):
  return Image.fromarray(arr),transform
 
 def main():
- manifest={'version':'custom-walk-phase-1','status':'registration review; not approved','canvas':[96,144],'density':3,'rig':'rig.json','rigSHA256':hashlib.sha256((W/'rig.json').read_bytes()).hexdigest(),'items':{},'sources':{},'thresholds':{'maxKeypointError':2,'limbCoreIoU':.85,'rotationDegrees':2,'groundPixels':1/3}}
+ manifest={'version':'custom-walk-phase-1','status':'registration review; not approved','canvas':[96,144],'density':3,'rig':'rig.json','rigSHA256':hashlib.sha256((W/'rig.json').read_text().encode()).hexdigest(),'items':{},'sources':{},'thresholds':{'maxKeypointError':2,'limbCoreIoU':.85,'rotationDegrees':2,'groundPixels':1/3}}
  allreports=[]
  for file in sorted((W/'assets').glob('*-v1.png')):
   item=file.stem[:-3]

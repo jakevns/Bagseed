@@ -1,0 +1,9 @@
+{
+  "eightPoseButtons": true,
+  "poseEightSelectable": true,
+  "pauseHolds": true,
+  "nativeSizeAvailable": true,
+  "slowMotionAvailable": true,
+  "wrapEightToOne": true,
+  "browserErrors": []
+}

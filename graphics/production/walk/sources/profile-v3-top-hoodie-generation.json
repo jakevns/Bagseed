@@ -1,0 +1,13 @@
+{
+  "id": "profile-v3-top-hoodie",
+  "mode": "built-in image_gen",
+  "prompt": "Use case: identity-preserve. Clothing-only production edit. Image 1 is the ACTUAL EXISTING STANDING HOODIE BODY from Bagseed: match its fine restrained line weight, sharp painted fabric detail, torso width, collar/hood proportions, pocket, cuffs, jeans cut and sneaker shape EXACTLY. Image 2 is the corrected locked EIGHT-POSE SIDE WALK mannequin: its body size, neck position, shoulders, visible hands, hips, knees, ankles, every heel/toe and foot baseline are the exact pose authority, frame for frame. Make image 1's existing outfit move on image 2's body, without changing its art style. Exactly FOUR columns by TWO rows, landscape 4:3 canvas. Top row true RIGHT PROFILE; bottom row true LEFT PROFILE. Contact, passing with legs under the pelvis and one knee raised, opposite contact, opposite passing. PRESERVE the new passing poses, with ONE visible hand hanging nearly vertically at the center of the upper thigh; far hand hidden, NOT arms spread in a wide swing. Preserve each contact pose's opposite arm/leg swing. Bodies stay in the lower half of every cell, upper half transparent headroom. No head, hair, face, ears. Replace neutral gray clothing with medium-blue #5086bf pullover HOODIE with original hood/drawstrings/kangaroo pocket, dark-navy #36405a JEANS, original-style brown #2b1d14 cream-soled SNEAKERS. Tan #cf9670 small natural hands. Keep original standing body slim in profile: no bulky torso, puffy sleeves, giant fists, thick black outline or exaggerated huge footwear. Thin warm dark contours and crisp subtle folds at exactly the standing art's detail level. No blurred airbrush finish or new cartoon design. No logos or patterns. True transparent alpha, no background/glow/shadows/text/grid. Neck-down only. Only fabric changes; keep the mannequin's complete anatomy and footprint unmoved. Do not turn passing cells into wide-stride poses.",
+  "references": [
+    "C:/Projects/Bagseed/graphics/production/walk/assets/top-hoodie-standing-style-reference.png",
+    "C:/Projects/Bagseed/graphics/production/walk/assets/profile-v3-locked-reference.png"
+  ],
+  "source": "graphics/production/walk/assets/profile-v3-top-hoodie-v1.png",
+  "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-1b70f452-0d69-49da-80cf-0a8fc3cd8f67.png",
+  "transparent_background": true,
+  "status": "candidate; not approved"
+}

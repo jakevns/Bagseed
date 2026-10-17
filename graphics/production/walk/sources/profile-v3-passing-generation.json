@@ -1,0 +1,13 @@
+{
+  "id": "profile-v3-passing",
+  "mode": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. Edit ONLY the arms of the four existing headless gray figures in image 1. Keep the exact torso, neck, hips, legs, knees and feet in their original pixel positions. Same thin clean illustrated linework, same sharpness and body width, same canvas. These are WALK PASSING POSES: arms must hang nearly VERTICALLY DOWN beside the torso, palms together near the CENTER of the upper thighs, not spread out front/back. Image 2 marks the desired visible near hand with a magenta circle in each cell. Put the center of the one visible tan hand inside that circle. The shoulder-elbow-wrist line should be nearly vertical, elbow gently bent. The far arm/hand is mostly hidden BEHIND the torso, not another exposed hand on the opposite side. Both hands should not spread apart. Maintain full long gray sleeves ending at wrists. Do not lengthen hands or arms, do not add limbs or alter the leg poses. Top two figures face right, bottom two face left. Small hands with naturally indicated fingers, NO mittens or big fists. True transparent background, no text/grid/shadow/magenta guides. Preserve the exact original lower-half figure placement and empty transparent headroom of the four cells. No heads, hair or faces. Clothing remains a fitted gray long-sleeved underlayer and gray fitted pants/feet. Final result must be the SAME reference image with ONLY the arm positions relaxed to the passing position, not a new redraw of the whole figures.",
+  "references": [
+    "C:/Projects/Bagseed/graphics/production/walk/assets/profile-v3-passing-arms-edit-reference.png",
+    "C:/Projects/Bagseed/graphics/production/walk/assets/profile-v3-passing-arm-guides.png"
+  ],
+  "source": "graphics/production/walk/assets/profile-v3-passing-v2.png",
+  "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-4457635d-af65-409f-b1de-6db226eeea11.png",
+  "transparent_background": true,
+  "status": "candidate; not approved"
+}

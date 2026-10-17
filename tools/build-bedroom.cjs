@@ -22,8 +22,10 @@ if (require.main === module) {
   const source = fs.readFileSync(path.join(root, 'src/game.html'), 'utf8');
   const character = current.toString().match(/<script id="bagseed-illustrated-production-code">[\s\S]*?<\/script>/g);
   assert.equal(character?.length, 1, 'Expected exactly one verified character renderer');
+  const characterData = current.toString().match(/<script id="bagseed-illustrated-character-data" src="character-data.js"><\/script>/g) || [];
+  assert.equal(characterData.length, report.characterDataFile ? 1 : 0, 'Preserve the character data companion before rebuilding');
   assert.ok(source.endsWith('</body></html>\n') || source.endsWith('</body></html>'), 'Missing insertion point');
-  const html = require('./compile-main-menu.cjs')(source).replace('</body></html>', `${character[0]}\n${bedroomScript()}</body></html>`).replace(/\r\n/g, '\n');
+  const html = require('./compile-main-menu.cjs')(source).replace('</body></html>', `${characterData[0] || ''}${character[0]}\n${bedroomScript()}</body></html>`).replace(/\r\n/g, '\n');
   assert.equal(sha(fs.readFileSync(path.join(root, 'baselines/Bagseed_v1.1.5.1_Night_Walker_Flashlights_Update.html'))), report.baselineSHA);
   fs.writeFileSync(output + '.tmp', html); fs.renameSync(output + '.tmp', output);
   Object.assign(report, { workingSourceSHA: sha(source), updatedSHA: sha(html), bytes: Buffer.byteLength(html), bedroomRevision: 'bedroom-shell-1', bedRevision: 'beds-batch-04', bedCombinations: 80, deskRevision: 'seedling-desks-1', deskVariations: 3, menuRevision: JSON.parse(fs.readFileSync(path.join(root, 'graphics/main-menu/sources/manifest.json'))).revision });

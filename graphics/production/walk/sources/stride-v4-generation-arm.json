@@ -1,0 +1,8 @@
+{
+  "method": "built-in image_gen",
+  "transparent_background": true,
+  "referenced_image_paths": [
+    "C:/Projects/Bagseed/graphics/production/walk/stride-v4/right-7.png"
+  ],
+  "prompt": "Edit this single existing Bagseed neck-down right-facing walking sprite. Keep EXACTLY the existing jeans and both leg and shoe positions, torso proportions, blue hoodie design, neck, thin delicate source outlines, colors and all other pixels as close as possible. Change ONLY the camera-near sleeve/arm/hand swing: the near knee is reaching FORWARD to screen right, so the NEAR ARM MUST SWING BACK to screen LEFT. Start its sleeve at same visible shoulder, extend arm diagonally DOWN AND BACK to screen left, with tan hand just behind the left/back hip, rather than the current hand in front on right. The near shoulder is x about146 y250 on the supplied 288x432 reference; hand should be at x about120 y318. Opposite far arm may peek forward on screen right but stay behind torso, with at most two hands total. No extra hand left at old front position. Do not move or redraw either leg or shoe. Do not turn the body. This is the final up/swing pose before near-foot heel contact in a full walk cycle, near arm back opposite near leg front. Preserve transparent background and the same generous transparent margins, neck at same height and feet at same floor. NO HEAD or face, no text, no background, no heavy outlines or blur."
+}

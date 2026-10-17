@@ -1,0 +1,8 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{createHash}=require('node:crypto'),{spawnSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..'),folder=path.join(root,'graphics/production/cast-walk-v1');
+test('Remy, Priya and Doug have 96 distinct high-resolution walk assets and working eight-phase game clocks',{timeout:240000},()=>{
+ const m=JSON.parse(fs.readFileSync(path.join(folder,'manifest.json')));assert.deepEqual(Object.keys(m.people).sort(),['doug','priya','remy']);let total=0;
+ for(const[id,p]of Object.entries(m.people))for(const dir of ['down','right','up','left']){assert.equal(p.walk[dir].length,8);const hashes=[];for(const relative of p.walk[dir]){const b=fs.readFileSync(path.join(folder,relative.replaceAll('\\','/'))),hash=createHash('sha256').update(b).digest('hex');assert.equal(b.readUInt32BE(16),288);assert.equal(b.readUInt32BE(20),324);assert.equal(hash,p.registeredSHA256[relative]);hashes.push(hash);total++;}assert.equal(new Set(hashes).size,8,id+'/'+dir+' repeats a pose');}assert.equal(total,96);
+ const run=spawnSync(process.execPath,[path.join(folder,'sources/capture.cjs')],{cwd:root,env:process.env,encoding:'utf8',timeout:210000});assert.equal(run.status,0,run.stdout+'\n'+run.stderr);
+ const result=JSON.parse(fs.readFileSync(path.join(root,'review/cast-walk-v1/runtime-checks.json')));assert.equal(result.frames,96);assert.deepEqual(result.browserErrors,[]);assert.deepEqual(result.clockChecks.roommateDistanceFrames,[0,1,2,3,4,5,6,7]);assert.equal(result.clockChecks.poppyFrameCount,4);
+});
