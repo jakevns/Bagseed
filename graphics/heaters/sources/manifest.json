@@ -1,0 +1,106 @@
+{
+  "revision": "heaters-1",
+  "status": "proposal",
+  "path": "assets/heaters-atlas.png",
+  "sha256": "b8f081e769448772a48838aaed1a8a20fc1722132a76cdac880a8ce076d632df",
+  "size": [
+    1312,
+    1199
+  ],
+  "runtime": {
+    "path": "assets/heaters-atlas.webp",
+    "sha256": "a03380c3116532fa964069154263ecd7e047526c70e9b4a79a6fa944df29655b",
+    "publicPath": "assets/heaters/heaters-a03380c31165.webp"
+  },
+  "tiers": {
+    "1": {
+      "name": "Old Space Heater",
+      "price": 24.99,
+      "watts": 420,
+      "width": 13,
+      "height": 13.165254237288135,
+      "on": [
+        156,
+        43,
+        472,
+        478
+      ],
+      "off": [
+        685,
+        43,
+        472,
+        478
+      ],
+      "heat": [
+        226,
+        209,
+        330,
+        94
+      ],
+      "indicator": [
+        376,
+        374
+      ],
+      "buttons": [
+        [
+          489,
+          378
+        ]
+      ],
+      "display": null
+    },
+    "2": {
+      "name": "Thermo-Cube Digital Heater",
+      "price": 79,
+      "watts": 330,
+      "width": 12.4,
+      "height": 15.820689655172414,
+      "on": [
+        145,
+        523,
+        493,
+        629
+      ],
+      "off": [
+        675,
+        523,
+        493,
+        629
+      ],
+      "heat": [
+        236,
+        870,
+        313,
+        128
+      ],
+      "indicator": [
+        307,
+        791
+      ],
+      "buttons": [
+        [
+          379,
+          790
+        ],
+        [
+          452,
+          790
+        ]
+      ],
+      "display": {
+        "on": [
+          335,
+          684,
+          119,
+          51
+        ],
+        "off": [
+          865,
+          684,
+          119,
+          51
+        ]
+      }
+    }
+  }
+}

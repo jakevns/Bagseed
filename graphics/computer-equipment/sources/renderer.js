@@ -45,7 +45,7 @@
   function device(c,id,x,base,w,wp,t,on,dashboard=false){
     const a=DATA.assets[id],h=w*a.rect[3]/a.rect[2],box=sprite(c,id,x,base-h,w,h);
     if(a.screen)display(c,box,id,wp,t,on,dashboard);
-    if(a.led){c.save();c.fillStyle=on?'#addb86':'#5b6258';c.beginPath();c.arc(box.x+box.w*a.led[0],box.y+box.h*a.led[1],box.w*.018,0,Math.PI*2);c.fill();c.restore();}
+    if(a.led){c.save();c.fillStyle=on?'#addb86':'#5b6258';c.beginPath();c.arc(box.x+box.w*a.led[0],box.y+box.h*a.led[1],box.w*.018,0,Math.PI*2);c.fill();c.restore();window.BagseedEquipmentGlow?.point(c,box.x+box.w*a.led[0],box.y+box.h*a.led[1],box.w*.07,'#bddb94',on,.7,'computer-indicator');}
     return box;
   }
   function keyboard(c,id,x,y,w,t,height=w/23*DATA.keyboardHeight){

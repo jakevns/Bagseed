@@ -1,0 +1,9 @@
+# Heater artwork samples
+
+Awaiting user artwork approval. Includes Old Space Heater ($24.99, 420W) and Thermo-Cube Digital Heater ($79, 330W), with matching store/inventory/delivery icons. Prices, purchases, installation, heater controls, failures, room heating, power calculations and original floor anchors are unchanged.
+
+The unchanged generated PNG is retained in assets. Its fingerprinted runtime WebP decodes to identical RGBA pixels. The compiler verifies source/runtime/public hashes, crops and fixed aspect ratios; readiness is included in the startup gate.
+
+Heater rendering follows native heating activity for the installed heater, power switch, thermostat, breaker, outage and heat-trip state. The digital target remains visible in powered standby, while coils and rising heat stop. LOW/HIGH affect warmth strength. A gentle coil pulse and three fine warm air trails animate only while heating. Reduced motion keeps a steady active coil with no moving trails. A restrained nighttime floor wash stays in the ordinary object layer before actors. Existing placement anchors remain unchanged across the four tents; click areas match the new silhouette.
+
+Rebuild with `npm run build:bedroom`, verify with `npm run check`, capture the actual public/index.html with `node tools/preview-heaters.cjs`, then package its frames with `python3 tools/animate-heaters.py`. The preview checks both tiers in all four locations, manual/thermostat/off/trip/outage behavior, native room sharing, live targets, motion settings, night/day button lighting and store cards on desktop and phone. `node --test --test-concurrency=1 tests/heaters.test.cjs tests/starter-tent.test.cjs tests/tent-player-depth.test.cjs` checks real purchases, delivery, fitting, controls after reload, missing-art handling and existing tent/player layering.
