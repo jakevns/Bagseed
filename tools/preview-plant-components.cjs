@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {chromium}=require('playwright');
 const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
 (async()=>{
- const strain=process.argv[2]||'velvet';assert.ok(['velvet','pixelpunch','cottoncandy','moonberry','halfmoon','zoomies','cruise'].includes(strain),'Unknown component review kit');
+ const strain=process.argv[2]||'velvet';assert.ok(['velvet','pixelpunch','cottoncandy','moonberry','halfmoon','zoomies','cruise','boglantern','frogprince','nightshift'].includes(strain),'Unknown component review kit');
  const root=path.resolve(__dirname,'..'),read=name=>fs.readFileSync(path.join(root,name),'utf8');
  const manifest=JSON.parse(read('graphics/plants/'+strain+'/sources/manifest.json'));
  const library=JSON.parse(read('graphics/plants/sources/library.json'));

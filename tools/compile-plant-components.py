@@ -69,6 +69,11 @@ for role,choices in catalog['profiles']['porchlight@1']['roles'].items():
     original=catalog['parts'][choices[0]]; pid=f'{strain}.{role}@1'; p=json.loads(json.dumps(original))
     a=parts[role]; p.update(id=pid,status='draft',asset=f'graphics/plants/{strain}/assets/components.webp',crop=a['crop'],attach=[round(a['attach'][0]/a['crop'][2],6),round(a['attach'][1]/a['crop'][3],6)])
     if 'leafShape' in p['when']: p['when']['leafShape']=spec['traits']['leafShape']
+    # Experimental lines roll their expressed traits per save. Do not silently
+    # assign this representative sheet to an incompatible rolled palette.
+    if spec.get('experimental'):
+        if role.endswith('Leaf'): p['when']['leafKey']=spec['traits']['leafKey']
+        if role.startswith('female') or role=='sugarLeaf': p['when']['colorName']=spec['traits']['colorName']
     if pid in catalog['parts']:
         p['status']=catalog['parts'][pid]['status']
         assert catalog['parts'][pid]==p, 'Never rewrite a published part ID'

@@ -1,0 +1,104 @@
+{
+  "status": "sample-awaiting-approval",
+  "identity": {
+    "schemaVersion": 1,
+    "profile": "boglantern@1",
+    "libraryRevision": "plant-parts-library-11",
+    "seed": "boglantern-phenotype-study",
+    "traits": {
+      "leafShape": "narrow",
+      "leafKey": "forest",
+      "colorName": "Red accents",
+      "branching": 1.15
+    },
+    "parts": {
+      "seed": "boglantern.seed@1",
+      "radicle": "boglantern.radicle@1",
+      "cotyledon": "boglantern.cotyledon@1",
+      "singleLeaf": "boglantern.singleLeaf@1",
+      "threeLeaf": "boglantern.threeLeaf@1",
+      "fiveLeaf": "boglantern.fiveLeaf@1",
+      "sevenLeaf": "boglantern.sevenLeaf@1",
+      "sugarLeaf": "boglantern.sugarLeaf@1",
+      "stem": "boglantern.stem@1",
+      "node": "boglantern.node@1",
+      "femaleEarly": "boglantern.femaleEarly@1",
+      "femaleMid": "boglantern.femaleMid@1",
+      "femaleLate": "boglantern.femaleLate@1",
+      "maleClosed": "boglantern.maleClosed@1",
+      "maleOpen": "boglantern.maleOpen@1"
+    }
+  },
+  "measurements": [
+    {
+      "heightInches": 50,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 64,
+        "leaves": 155,
+        "flowers": 0
+      },
+      "measuredHeightInches": 49.875
+    },
+    {
+      "heightInches": 90,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 156,
+        "leaves": 289,
+        "flowers": 0
+      },
+      "measuredHeightInches": 89.875
+    }
+  ],
+  "finish": {
+    "amount": 1,
+    "palette": "red",
+    "rgb": [
+      174,
+      68,
+      48
+    ]
+  },
+  "coolStudies": [
+    {
+      "dayTemp": 78,
+      "nightTemp": 70,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "wine red",
+        "hex": "#792c45",
+        "rgb": [
+          121,
+          44,
+          69
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "dayTemp": 78,
+      "nightTemp": 68,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "wine red",
+        "hex": "#792c45",
+        "rgb": [
+          121,
+          44,
+          69
+        ]
+      },
+      "sproutBonus": 0.08
+    }
+  ],
+  "animationFrames": 120,
+  "errors": [],
+  "productionRendererUnchanged": true
+}
