@@ -147,11 +147,11 @@ test('phone landscape: the side panel keeps Done and the status line on screen',
   });
 });
 
-test('mouse play keeps the existing decorate panel', async () => {
+test('mouse play keeps its click-to-place controls under the shared tray', async () => {
   await withPage({ viewport: { width: 1280, height: 800 } }, async page => {
     await startDecorating(page);
     const r = await page.evaluate(() => { Deco.pick('armchair'); return { tray: !!$('#deco .b1-tray'), place: !!$('#deco [data-act="decoPlace"]'), fab: !$('#b1Fab') || $('#b1Fab').hidden, hud: getComputedStyle($('#hud')).display }; });
-    assert.deepEqual(r, { tray: false, place: true, fab: true, hud: r.hud });
+    assert.deepEqual(r, { tray: true, place: true, fab: true, hud: r.hud });   // Phase 3: same tray, mouse keeps its Place row and HUD
     assert.notEqual(r.hud, 'none');
   });
 });
