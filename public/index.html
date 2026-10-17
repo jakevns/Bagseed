@@ -27570,6 +27570,128 @@ body.deco-on:not(.touch-ui) #deco>.b4-selbar,body.deco-on:not(.touch-ui) #deco>.
   document.head.appendChild(st);
 })();
 </script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 5 · a reason to decorate (a new bedroom starts near 2 hearts; 5 takes walls, plants, lights and room styles)
+   Every decoratable space gets a Cozy score (0-100, one to five hearts)
+   from what's placed in it: something on the walls, a seat, a rug,
+   lights that glow at night, plants, tabletop touches, variety, pieces
+   that share a material and, in the bedroom, room styles. The ♥ chip in
+   Decorate mode opens a breakdown with a tip for each missing piece.
+   Rewards stay small: a cozy bedroom makes the first few energy you
+   spend each day free ("well rested"), and each space pays a one-time
+   housewarming gift the first time it reaches 3, 4 and 5 hearts.
+   ===================================================================== */
+const Cozy = {
+  TIERS: [[0, 'Bare'], [20, 'Settling in'], [40, 'Homey'], [60, 'Cozy'], [80, 'Dreamy']],
+  REST: [0, 0, 4, 8, 12, 16],              // free energy each morning by bedroom hearts
+  GIFT: { 3: 15, 4: 30, 5: 60 },           // one-time housewarming gifts per space
+  ZONES: { bedroom: 'bedroom', house: 'house', yard: 'backyard patio' },
+  S() { state.cozy = state.cozy || { best: {}, paid: {}, rest: 0, restDay: 0 }; state.cozy.best = state.cozy.best || {}; state.cozy.paid = state.cozy.paid || {}; return state.cozy; },
+  stars(score) { let s = 1; for (let i = 0; i < this.TIERS.length; i++) if (score >= this.TIERS[i][0]) s = i + 1; return s; },
+  tier(score) { return this.TIERS[this.stars(score) - 1][1]; },
+  /* the rules, each worth some points, with a tip when not met */
+  rules(zone) {
+    const items = DecoZ.list(zone).map(d => ({ d, D: decorDef(d.id) })).filter(x => x.D), n = f => items.filter(f).length;
+    const wall = n(x => x.D.k === 'wall'), seat = n(x => x.D.cat === 'seating' || x.D.seat), rug = n(x => x.D.k === 'rug'), glow = n(x => x.D.glow);
+    const plant = n(x => x.D.cat === 'plants'), table = n(x => x.D.k === 'desk'), kinds = new Set(items.map(x => x.d.id)).size;
+    const mats = {}; for (const x of items) { const m = Build2.material(x.d.id); mats[m] = (mats[m] || 0) + 1; }
+    const topMat = Object.entries(mats).sort((a, b) => b[1] - a[1])[0], dupes = Object.values(items.reduce((o, x) => (o[x.d.id] = (o[x.d.id] || 0) + 1, o), {})).reduce((s, c) => s + Math.max(0, c - 3), 0);
+    const step = (c, pts) => pts[Math.min(c, pts.length - 1)];
+    const R = [];
+    if (zone !== 'yard') R.push({ key: 'wall', name: 'Something on the walls', max: 14, got: step(wall, [0, 4, 7, 10, 12, 14]), tip: wall ? 'More wall pieces (posters, art, a clock) fill it out.' : 'Hang something on the wall: a poster, art or a clock.' });
+    R.push({ key: 'seat', name: 'Somewhere to sit', max: 10, got: seat ? 10 : 0, tip: 'Add a seat: a beanbag, stool, armchair or floor cushion.' });
+    R.push({ key: 'rug', name: zone === 'yard' ? 'Something underfoot' : 'A rug', max: 10, got: rug ? 10 : 0, tip: zone === 'yard' ? 'Lay an outdoor rug or stepping stones.' : 'Lay down a rug.' });
+    R.push({ key: 'glow', name: 'Warm light at night', max: 14, got: step(glow, [0, 7, 10, 12, 14]), tip: glow ? 'More glowing lights (up to four) make evenings warmer.' : 'Add a lamp or string lights that glow at night.' });
+    R.push({ key: 'plant', name: 'Plants', max: 14, got: step(plant, [0, 4, 7, 10, 12, 14]), tip: plant ? 'Another houseplant or two brings it to life.' : 'Add a houseplant (🛒 Shop › Houseplants).' });
+    R.push({ key: 'table', name: 'Little touches', max: 10, got: step(table, [0, 3, 5, 7, 9, 10]), tip: 'Put small things on tables and shelves: books, a lamp, a figurine.' });
+    R.push({ key: 'variety', name: 'Variety', max: 16, got: Math.min(16, Math.floor(kinds * 1.5)), tip: 'Mix in different pieces. Each new kind of item adds a little (about eleven kinds fills this).' });
+    R.push({ key: 'harmony', name: 'Pieces that go together', max: 6, got: !topMat ? 0 : topMat[1] >= 4 ? 6 : topMat[1] >= 3 ? 3 : 0, tip: 'Four or more pieces in one material (wood, soft, metal, plants, paper) tie the room together.' });
+    if (zone === 'bedroom') {
+      const styled = ['wall', 'floor', 'bedding', 'curtains'].filter(s => STYLES[s] && state.room[s] && state.room[s] !== STYLES[s][0][0]).length;
+      R.push({ key: 'style', name: 'Your own style', max: 6, got: Math.min(6, styled * 2), tip: 'Change the walls, flooring, bedding or curtains in Room styles (⋯).' });
+    } else R.push({ key: 'style', name: 'Furnished', max: 6, got: n(x => x.D.k === 'floor') >= 3 ? 6 : 0, tip: 'A few more pieces of furniture make it feel lived in.' });
+    if (dupes) R.push({ key: 'dupes', name: 'Too many of the same thing', max: 0, got: -3 * dupes, tip: 'More than three of one item starts to feel like storage.' });
+    return R;
+  },
+  score(zone) {
+    const R = this.rules(zone), max = R.reduce((s, r) => s + r.max, 0), got = R.reduce((s, r) => s + r.got, 0);
+    const score = clamp(Math.round(got / max * 100), 0, 100); return { score, stars: this.stars(score), tier: this.tier(score), rules: R };
+  },
+  hearts(n) { return '♥'.repeat(n) + '♡'.repeat(5 - n); },
+  /* after any change while decorating: celebrate new hearts and pay first-time gifts (quiet = first look this session: no fanfare, but rooms decorated before this update still get their gifts) */
+  check(zone, quiet) {
+    const S = this.S(), c = this.score(zone), was = S.best[zone] || 0;
+    if (c.stars > was) {
+      S.best[zone] = c.stars;
+      if (!quiet && was) { toast(`<b>${this.hearts(c.stars)}</b> Your ${this.ZONES[zone]} feels <b>${c.tier}</b> now.`, 'social'); Sfx.good(); }
+      for (let s = 3; s <= c.stars; s++) { const k = zone + ':' + s; if (!S.paid[k]) { S.paid[k] = 1; earn(this.GIFT[s], `Housewarming gift · ${this.ZONES[zone]} reached ${s} hearts`); } }
+    }
+    return c;
+  },
+  /* the ♥ panel */
+  html(zone) {
+    const c = this.score(zone), next = this.TIERS[c.stars] || null, S = this.S();
+    const toNext = next ? `${next[0] - c.score} more to <b>${next[1]}</b>` : 'As cozy as it gets.';
+    const rest = zone === 'bedroom' ? `<div class="b5-reward">Sleeping here: the first <b>${this.REST[c.stars]}</b> energy you spend each day is free${c.stars < 5 ? ` (${this.REST[Math.min(5, c.stars + 1)]} at ${c.stars + 1} hearts)` : ''}.</div>` : '';
+    const gifts = [3, 4, 5].map(s => `<span class="${S.paid[zone + ':' + s] ? 'got' : ''}">${s}♥ ${money(this.GIFT[s])}${S.paid[zone + ':' + s] ? ' ✓' : ''}</span>`).join('');
+    return `<div class="b5-cozy"><div class="b4-lh"><b>Cozy · ${esc(this.ZONES[zone])}</b><button class="btn sm" data-act="b4View" data-arg="">✕ Close</button></div>`
+      + `<div class="b5-top"><span class="b5-hearts" aria-label="${c.stars} of 5 hearts">${this.hearts(c.stars)}</span><span class="b5-score">${c.score}</span><span class="b5-tier">${c.tier}</span></div>`
+      + `<div class="b5-bar" role="progressbar" aria-valuenow="${c.score}" aria-valuemin="0" aria-valuemax="100"><i style="width:${c.score}%"></i></div><div class="b5-next">${toNext}</div>`
+      + rest + `<div class="b5-gifts">Housewarming gifts: ${gifts}</div>`
+      + `<div class="b5-rules">${c.rules.map(r => { const done = r.max ? r.got >= r.max : false, bad = r.got < 0; return `<div class="b5-rule ${done ? 'done' : ''} ${bad ? 'bad' : ''}"><span class="b5-mark">${bad ? '!' : done ? '✓' : r.got > 0 ? '◐' : '○'}</span><span class="b5-rn"><b>${esc(r.name)}</b>${done ? '' : `<span>${esc(r.tip)}</span>`}</span><span class="b5-pts">${r.max ? `${r.got}/${r.max}` : r.got}</span></div>`; }).join('')}</div></div>`;
+  }
+};
+
+/* well rested: a cozy bedroom's free energy, set each morning */
+MORNING115.push(() => {
+  const S = Cozy.S(), c = Cozy.score('bedroom'); S.rest = Cozy.REST[c.stars]; S.restDay = state.day;
+  if (S.rest) toast(`<b>Well rested</b> · ${Cozy.hearts(c.stars)} bedroom. The first ${S.rest} energy you spend today is free.`, 'social');
+});
+spend = (prev => function (energy, mins) {
+  const S = Cozy.S(), free = S.restDay === state.day ? Math.min(S.rest || 0, energy) : 0;
+  const ok = prev.call(this, energy - free, mins);
+  if (ok && free) S.rest -= free;
+  return ok;
+})(spend);
+
+/* Decorate mode: the ♥ chip, the panel, and a check after every change */
+Build3.render = (prev => function () {
+  prev.call(this); const D = runtime.deco, el = $('#deco'); if (!D || !el) return;
+  const c = Cozy.check(D.zone, !D.cozySeen); D.cozySeen = true;
+  const cats = el.querySelector('.b1-cats');
+  if (cats && !cats.querySelector('[data-act="b5View"]')) cats.insertAdjacentHTML('afterbegin', `<button class="chip b5-chip ${D.view === 'cozy' ? 'on' : ''}" data-act="b5View" aria-label="Cozy score ${c.score}, ${c.stars} of 5 hearts">♥ ${c.score} <small>${c.tier}</small></button>`);
+  if (D.view === 'cozy') {
+    const t = el.querySelector('.b1-tray'); if (t) t.outerHTML = Cozy.html(D.zone);
+    for (const s of ['.b3-catbar', '.b3-note', '.b1-msg']) { const x = el.querySelector(s); if (x) x.hidden = true; }
+  }
+})(Build3.render);
+Object.assign(ACT, { b5View() { const D = runtime.deco; D.view = D.view === 'cozy' ? null : 'cozy'; D.more = false; if (D.view && D.hold) Deco.cancel(); Deco.render(); } });
+(() => {
+  const st = document.createElement('style'); st.id = 'build5-css';
+  st.textContent = `
+.b5-chip{color:#a33a4a;font-weight:800}.b5-chip small{font-weight:600;opacity:.75;margin-left:2px}
+.b5-chip.on{background:#a33a4a;color:#fff}
+.b5-cozy{display:flex;flex-direction:column;gap:6px;overflow-y:auto;min-height:0;max-height:46vh}
+.b5-top{display:flex;align-items:baseline;gap:8px}
+.b5-hearts{font-size:20px;color:#c4475a;letter-spacing:1px}
+.b5-score{font:800 22px var(--f-ui)}.b5-tier{font:700 13px var(--f-ui);opacity:.75}
+.b5-bar{height:8px;border-radius:4px;background:#d9dfcd;overflow:hidden}.b5-bar i{display:block;height:100%;background:linear-gradient(90deg,#e59aa6,#c4475a)}
+.b5-next,.b5-gifts{font:600 11px var(--f-ui);opacity:.8}
+.b5-gifts span{margin-left:6px;opacity:.6}.b5-gifts span.got{opacity:1;color:#2f7d32}
+.b5-reward{font:600 12px/1.3 var(--f-ui);background:#fff2f4;border:1px solid #efc2ca;border-radius:5px;padding:5px 7px}
+.b5-rules{display:flex;flex-direction:column;gap:4px}
+.b5-rule{display:flex;gap:6px;align-items:flex-start;background:#e2e9d5;border:1px solid #b7cba4;border-radius:5px;padding:5px 6px;font:500 12px/1.25 var(--f-ui)}
+.b5-rule.done{opacity:.7}.b5-rule.bad{background:#fbe3df;border-color:#e3a79c}
+.b5-mark{flex:0 0 14px;font-weight:800;text-align:center}.b5-rule.done .b5-mark{color:#2f7d32}
+.b5-rn{flex:1;display:flex;flex-direction:column}.b5-rn span{opacity:.75}
+.b5-pts{font:700 11px var(--f-mono);opacity:.75}
+body.deco-on:not(.touch-ui) #deco>.b5-cozy{flex:1 1 100%;max-height:none}
+@media (orientation:landscape) and (max-height:540px){.b5-cozy{order:4;flex:1 1 auto;max-height:none}}`;
+  document.head.appendChild(st);
+})();
+</script>
 <style id="bagseed-main-menu-style">
 /* Approved community-garden title screen; all rules stay inside this screen. */
 body:has(#screen-title.menu-home:not([hidden])) { background: #e4e8d7; }
