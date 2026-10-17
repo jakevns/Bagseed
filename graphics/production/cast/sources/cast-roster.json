@@ -5,7 +5,7 @@
       "id": "marcus",
       "name": "Marcus Bell",
       "age": 46,
-      "role": "Middle-school PE teacher · dad of twins",
+      "role": "Middle-school PE teacher \u00c2\u00b7 dad of twins",
       "kid": false,
       "look": {
         "skin": "#5a3624",
@@ -47,9 +47,9 @@
     {
       "source": "collections.neighbors.ines.look",
       "id": "ines",
-      "name": "Inés Calderón",
+      "name": "In\u00c3\u00a9s Calder\u00c3\u00b3n",
       "age": 67,
-      "role": "Retired librarian · rose whisperer",
+      "role": "Retired librarian \u00c2\u00b7 rose whisperer",
       "kid": false,
       "look": {
         "skin": "#cf9670",
@@ -94,7 +94,7 @@
       "id": "tobias",
       "name": "Tobias Nguyen",
       "age": 24,
-      "role": "Barista · bedroom music producer",
+      "role": "Barista \u00c2\u00b7 bedroom music producer",
       "kid": false,
       "look": {
         "skin": "#e8b48f",
@@ -139,7 +139,7 @@
       "id": "bev",
       "name": "Beverly Sloane",
       "age": 58,
-      "role": "Real estate agent · neighborhood watch captain",
+      "role": "Real estate agent \u00c2\u00b7 neighborhood watch captain",
       "kid": false,
       "look": {
         "skin": "#f6d3b3",
@@ -183,7 +183,7 @@
       "id": "kenji",
       "name": "Kenji Mori",
       "age": 41,
-      "role": "Remote software engineer · chili nerd",
+      "role": "Remote software engineer \u00c2\u00b7 chili nerd",
       "kid": false,
       "look": {
         "skin": "#e8b48f",
@@ -749,7 +749,7 @@
       "id": "cass",
       "name": "Cass Mercer",
       "age": "29",
-      "role": "Manager, the café",
+      "role": "Manager, the caf\u00c3\u00a9",
       "kid": false,
       "look": {
         "skin": "#f6d3b3",
@@ -1362,7 +1362,7 @@
       "id": "luz",
       "name": "Luz",
       "age": "young adult",
-      "role": "Inés's granddaughter, botany student (visiting)",
+      "role": "In\u00c3\u00a9s's granddaughter, botany student (visiting)",
       "kid": false,
       "look": {
         "skin": "#cf9670",
@@ -1571,141 +1571,6 @@
       ],
       "signature": "[[\"#cf9670\",\"#3e9f7a\",\"short\",\"none\",\"#e0a33a\",\"tee\",\"#2b2b33\",\"cargo\",\"#2b1d14\",\"sneakers\",\"neutral\",\"tall\",\"soft\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"round\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
       "assetId": "cast-36-3"
-    },
-    {
-      "source": "collections.patients.rosalind.look",
-      "id": "rosalind",
-      "name": "Rosalind Ortega",
-      "age": null,
-      "role": "Retired chemistry teacher",
-      "kid": false,
-      "look": {
-        "skin": "#a8704c",
-        "hairC": "#e9e2d4",
-        "hairS": "bun",
-        "facial": "none",
-        "shirtC": "#8a5a8f",
-        "topS": "tee",
-        "pantsC": "#36405a",
-        "bottomS": "jeans",
-        "shoesC": "#2b1d14",
-        "shoesS": "sneakers",
-        "pres": "neutral",
-        "body": "average",
-        "face": "soft",
-        "eyes": "dot",
-        "brows": "thin",
-        "eyeC": "#2b1d14",
-        "nose": "default",
-        "mouth": "default",
-        "expr": "neutral",
-        "ears": "normal",
-        "hat": "none",
-        "glasses": "round",
-        "acc": "none",
-        "hairHi": "none",
-        "hair": "#e9e2d4",
-        "style": "bun",
-        "shirt": "#8a5a8f",
-        "extras": [],
-        "pierce": [],
-        "marks": []
-      },
-      "aliases": [
-        "collections.patients.rosalind.look"
-      ],
-      "signature": "[[\"#a8704c\",\"#e9e2d4\",\"bun\",\"none\",\"#8a5a8f\",\"tee\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"neutral\",\"average\",\"soft\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"round\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
-      "assetId": "cast-37-rosalind"
-    },
-    {
-      "source": "collections.patients.theo.look",
-      "id": "theo",
-      "name": "Theo Park",
-      "age": null,
-      "role": "Line cook",
-      "kid": false,
-      "look": {
-        "skin": "#e8b48f",
-        "hairC": "#1d1612",
-        "hairS": "buzz",
-        "facial": "none",
-        "shirtC": "#2b2b33",
-        "topS": "tee",
-        "pantsC": "#36405a",
-        "bottomS": "jeans",
-        "shoesC": "#2b1d14",
-        "shoesS": "sneakers",
-        "pres": "neutral",
-        "body": "average",
-        "face": "soft",
-        "eyes": "dot",
-        "brows": "thin",
-        "eyeC": "#2b1d14",
-        "nose": "default",
-        "mouth": "default",
-        "expr": "neutral",
-        "ears": "normal",
-        "hat": "none",
-        "glasses": "none",
-        "acc": "none",
-        "hairHi": "none",
-        "hair": "#1d1612",
-        "style": "buzz",
-        "shirt": "#2b2b33",
-        "extras": [],
-        "pierce": [],
-        "marks": []
-      },
-      "aliases": [
-        "collections.patients.theo.look"
-      ],
-      "signature": "[[\"#e8b48f\",\"#1d1612\",\"buzz\",\"none\",\"#2b2b33\",\"tee\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"neutral\",\"average\",\"soft\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"none\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
-      "assetId": "cast-38-theo"
-    },
-    {
-      "source": "collections.patients.marisol.look",
-      "id": "marisol",
-      "name": "Marisol Vega",
-      "age": null,
-      "role": "Muralist",
-      "kid": false,
-      "look": {
-        "skin": "#cf9670",
-        "hairC": "#4a2c1a",
-        "hairS": "long",
-        "facial": "none",
-        "shirtC": "#e0a33a",
-        "topS": "tee",
-        "pantsC": "#36405a",
-        "bottomS": "jeans",
-        "shoesC": "#2b1d14",
-        "shoesS": "sneakers",
-        "pres": "neutral",
-        "body": "average",
-        "face": "soft",
-        "eyes": "dot",
-        "brows": "thin",
-        "eyeC": "#2b1d14",
-        "nose": "default",
-        "mouth": "default",
-        "expr": "neutral",
-        "ears": "normal",
-        "hat": "none",
-        "glasses": "square",
-        "acc": "none",
-        "hairHi": "none",
-        "hair": "#4a2c1a",
-        "style": "long",
-        "shirt": "#e0a33a",
-        "extras": [],
-        "pierce": [],
-        "marks": []
-      },
-      "aliases": [
-        "collections.patients.marisol.look"
-      ],
-      "signature": "[[\"#cf9670\",\"#4a2c1a\",\"long\",\"none\",\"#e0a33a\",\"tee\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"neutral\",\"average\",\"soft\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"square\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
-      "assetId": "cast-39-marisol"
     },
     {
       "source": "collections.channels.vale.look",
@@ -2806,7 +2671,8 @@
         "marks": []
       },
       "aliases": [
-        "collections.NPCs.rosalind"
+        "collections.NPCs.rosalind",
+        "collections.patients.rosalind.look"
       ],
       "signature": "[[\"#a8704c\",\"#e9e2d4\",\"bun\",\"none\",\"#8a5a8f\",\"cardigan\",\"#6b5a3a\",\"skirt\",\"#2b1d14\",\"boots\",\"fem\",\"curvy\",\"round\",\"dot\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"round\",\"scarf\",\"none\",true,null,null,null,null,null,null,null,null,\"knit\"],[],[],[]]",
       "assetId": "cast-65-rosalind"
@@ -2846,7 +2712,8 @@
         "marks": []
       },
       "aliases": [
-        "collections.NPCs.theo"
+        "collections.NPCs.theo",
+        "collections.patients.theo.look"
       ],
       "signature": "[[\"#e8b48f\",\"#1d1612\",\"buzz\",\"goatee\",\"#2b2b33\",\"garden\",\"#3a3a44\",\"joggers\",\"#e9e2d4\",\"sneakers\",\"masc\",\"stocky\",\"round\",\"round\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"none\",\"none\",\"none\",\"none\",null,null,null,null,null,null,null,null,null,null],[],[],[]]",
       "assetId": "cast-66-theo"
@@ -2889,7 +2756,8 @@
         "marks": []
       },
       "aliases": [
-        "collections.NPCs.marisol"
+        "collections.NPCs.marisol",
+        "collections.patients.marisol.look"
       ],
       "signature": "[[\"#cf9670\",\"#4a2c1a\",\"wavy\",\"none\",\"#e0a33a\",\"overalls\",\"#36405a\",\"jeans\",\"#2b1d14\",\"sneakers\",\"fem\",\"slim\",\"soft\",\"lashed\",\"thin\",\"#2b1d14\",\"default\",\"default\",\"neutral\",\"normal\",\"bucket\",\"square\",\"none\",\"none\",null,\"#5fa04a\",null,null,null,null,null,null,null,null],[\"freckles\"],[],[]]",
       "assetId": "cast-67-marisol"

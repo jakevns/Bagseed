@@ -33,7 +33,7 @@
       "doug": {
         "name": "Doug Haskell",
         "age": 71,
-        "role": "Retired machinist · tomato guy",
+        "role": "Retired machinist \u00c2\u00b7 tomato guy",
         "persona": "Widower. Grows Brandywines in the bed his late wife Ruth started. Gruff, fair, notices everything.",
         "look": {
           "skin": "#e8b48f",
@@ -78,7 +78,7 @@
       "marcus": {
         "name": "Marcus Bell",
         "age": 46,
-        "role": "Middle-school PE teacher · dad of twins",
+        "role": "Middle-school PE teacher \u00c2\u00b7 dad of twins",
         "persona": "Coaches the school track team. Big laugh, bigger rulebook. Protective of his kids and the block.",
         "look": {
           "skin": "#5a3624",
@@ -101,9 +101,9 @@
         }
       },
       "ines": {
-        "name": "Inés Calderón",
+        "name": "In\u00c3\u00a9s Calder\u00c3\u00b3n",
         "age": 67,
-        "role": "Retired librarian · rose whisperer",
+        "role": "Retired librarian \u00c2\u00b7 rose whisperer",
         "persona": "Ran the Willowbrook library for 30 years. Reads on her porch every afternoon. Her late brother used registry medicine.",
         "look": {
           "skin": "#cf9670",
@@ -127,7 +127,7 @@
       "tobias": {
         "name": "Tobias Nguyen",
         "age": 24,
-        "role": "Barista · bedroom music producer",
+        "role": "Barista \u00c2\u00b7 bedroom music producer",
         "persona": "Makes lo-fi beats at 2 AM and pulls espresso at 7. Speaks fluent sarcasm. Skates everywhere.",
         "look": {
           "skin": "#e8b48f",
@@ -152,7 +152,7 @@
       "bev": {
         "name": "Beverly Sloane",
         "age": 58,
-        "role": "Real estate agent · neighborhood watch captain",
+        "role": "Real estate agent \u00c2\u00b7 neighborhood watch captain",
         "persona": "Sells houses, runs the watch group chat, power-walks twice a day. Thinks property values are a love language.",
         "look": {
           "skin": "#f6d3b3",
@@ -177,7 +177,7 @@
       "kenji": {
         "name": "Kenji Mori",
         "age": 41,
-        "role": "Remote software engineer · chili nerd",
+        "role": "Remote software engineer \u00c2\u00b7 chili nerd",
         "persona": "Quiet, deadpan, extremely online. Grows forty kinds of chili peppers on his porch and rates them in a spreadsheet.",
         "look": {
           "skin": "#e8b48f",
@@ -202,7 +202,7 @@
       "remy": {
         "name": "Remy Alvarez",
         "first": "Remy",
-        "role": "Your roommate · graphic designer",
+        "role": "Your roommate \u00c2\u00b7 graphic designer",
         "look": {
           "skin": "#cf9670",
           "hairC": "#3e2a1e",
@@ -750,7 +750,7 @@
         "name": "Cass Mercer",
         "first": "Cass",
         "age": "29",
-        "role": "Manager, the café",
+        "role": "Manager, the caf\u00c3\u00a9",
         "pron": "she",
         "look": {
           "skin": "#f6d3b3",
@@ -769,9 +769,9 @@
           "bg": "#f4e4d4"
         },
         "hist": [
-          "Cass started as the café's weekend barista and now runs the place.",
+          "Cass started as the caf\u00c3\u00a9's weekend barista and now runs the place.",
           "Her mug shelf at home has one mug from every regular who ever gave her one.",
-          "She wants the café to host a seed swap every spring."
+          "She wants the caf\u00c3\u00a9 to host a seed swap every spring."
         ],
         "plants": "mint (in its own pot!) and strawberries",
         "likes": [
@@ -780,8 +780,8 @@
         ],
         "gift": {
           "k": "cafeprint",
-          "n": "Café print",
-          "t": "A little print of the café window Cass drew on a napkin and then redid properly."
+          "n": "Caf\u00c3\u00a9 print",
+          "t": "A little print of the caf\u00c3\u00a9 window Cass drew on a napkin and then redid properly."
         },
         "lines": [
           "Mint goes in its own pot. Trust me. I've seen things.",
@@ -1401,7 +1401,7 @@
         "name": "Luz",
         "first": "Luz",
         "age": "young adult",
-        "role": "Inés's granddaughter, botany student (visiting)",
+        "role": "In\u00c3\u00a9s's granddaughter, botany student (visiting)",
         "pron": "she",
         "look": {
           "skin": "#cf9670",
@@ -1727,10 +1727,21 @@
         "budget": 140,
         "look": {
           "skin": "#a8704c",
-          "hair": "#e9e2d4",
-          "style": "bun",
-          "shirt": "#8a5a8f",
-          "glasses": "round"
+          "hairC": "#e9e2d4",
+          "hairS": "bun",
+          "topS": "cardigan",
+          "shirtC": "#8a5a8f",
+          "pantsC": "#6b5a3a",
+          "bottomS": "skirt",
+          "glasses": "round",
+          "acc": "scarf",
+          "body": "curvy",
+          "pres": "fem",
+          "face": "round",
+          "short": true,
+          "bg": "#f2e4d0",
+          "prop": "knit",
+          "shoesS": "boots"
         }
       },
       "theo": {
@@ -1751,10 +1762,19 @@
         "budget": 120,
         "look": {
           "skin": "#e8b48f",
-          "hair": "#1d1612",
-          "style": "buzz",
-          "shirt": "#2b2b33",
-          "glasses": "none"
+          "hairC": "#1d1612",
+          "hairS": "buzz",
+          "topS": "garden",
+          "shirtC": "#2b2b33",
+          "pantsC": "#3a3a44",
+          "bottomS": "joggers",
+          "body": "stocky",
+          "pres": "masc",
+          "face": "round",
+          "eyes": "round",
+          "facial": "goatee",
+          "bg": "#f2e4d0",
+          "shoesC": "#e9e2d4"
         }
       },
       "marisol": {
@@ -1775,10 +1795,21 @@
         "budget": 160,
         "look": {
           "skin": "#cf9670",
-          "hair": "#4a2c1a",
-          "style": "long",
-          "shirt": "#e0a33a",
-          "glasses": "square"
+          "hairC": "#4a2c1a",
+          "hairS": "wavy",
+          "topS": "overalls",
+          "shirtC": "#e0a33a",
+          "glasses": "square",
+          "body": "slim",
+          "pres": "fem",
+          "face": "soft",
+          "eyes": "lashed",
+          "extras": [
+            "freckles"
+          ],
+          "hat": "bucket",
+          "hatC": "#5fa04a",
+          "bg": "#f2e4d0"
         }
       },
       "doug": {
@@ -1820,7 +1851,7 @@
         "neighbor": true
       },
       "ines": {
-        "name": "Inés Calderón",
+        "name": "In\u00c3\u00a9s Calder\u00c3\u00b3n",
         "role": "Retired librarian",
         "persona": "Ran the Willowbrook library for 30 years. Reads on her porch every afternoon. Her late brother used registry medicine.",
         "goal": "easing sleep trouble tied to chronic back pain, with guidance from her physician",
@@ -2033,7 +2064,7 @@
           "blunt"
         ],
         "posts": [
-          "Sunday plant care with tea and rain sounds ☕",
+          "Sunday plant care with tea and rain sounds \u00e2\u02dc\u2022",
           "my houseplants are jealous of the tent. drama.",
           "little leaf, big dreams"
         ]
@@ -2141,7 +2172,7 @@
         ],
         "dislikes": [],
         "posts": [
-          "all closet growers are clowns 🤡",
+          "all closet growers are clowns \u00f0\u0178\u00a4\u00a1",
           "imagine paying for a filter lol",
           "your plant is mid and so are you"
         ]
@@ -2372,7 +2403,7 @@
       [
         "remy",
         "Remy Alvarez",
-        "Roommate · graphic designer",
+        "Roommate \u00c2\u00b7 graphic designer",
         "Learned layout making flyers for small shows, trading an evening's work for a record or a meal. A steady agency job pays the rent but eats evenings with revisions. The den boxes hold an abandoned neighborhood poster series. Remy wants to finish one project that needs nobody's approval.",
         "nb",
         "remy"
@@ -2380,7 +2411,7 @@
       [
         "doug",
         "Doug Haskell",
-        "Retired machinist · tomatoes",
+        "Retired machinist \u00c2\u00b7 tomatoes",
         "Made exact machine parts, and imperfect household fixes for friends. Ruth convinced him a garden wasn't another production schedule; he started stamping little labels for her tomatoes. After she died, keeping her bed going kept an ordinary shared habit alive. He would like to pass on his making skills without admitting he wants company.",
         "nb",
         "doug"
@@ -2388,7 +2419,7 @@
       [
         "priya",
         "Priya Raman",
-        "Night-shift nurse · Biscuit's person",
+        "Night-shift nurse \u00c2\u00b7 Biscuit's person",
         "Used to treat rest as a chore she could postpone. She fostered Biscuit \"for one weekend\" while adjusting to nights; his cautious first days slowed her down, and their walks became the hour she owes nobody. She wants one weekend that isn't planned around shifts.",
         "nb",
         "priya"
@@ -2396,31 +2427,31 @@
       [
         "marcus",
         "Marcus Bell",
-        "PE teacher & track coach · dad of twins",
+        "PE teacher & track coach \u00c2\u00b7 dad of twins",
         "A diligent school runner who didn't always win; a coach noticed him helping others finish. That attention is why he teaches. His proudest mementos are notes from kids who found a place on the team. He wants beginners to feel as welcome as the fast runners.",
         "nb",
         "marcus"
       ],
       [
         "ines",
-        "Inés Calderón",
-        "Retired librarian · roses",
-        "Kept a notebook of who recommended which book, and over decades it became a portrait of the town. Her rose labels keep family jokes the same way. Raúl's dry recommendations sit beside books she rereads on hard evenings. She hopes the library always feels like a place anyone belongs.",
+        "In\u00c3\u00a9s Calder\u00c3\u00b3n",
+        "Retired librarian \u00c2\u00b7 roses",
+        "Kept a notebook of who recommended which book, and over decades it became a portrait of the town. Her rose labels keep family jokes the same way. Ra\u00c3\u00bal's dry recommendations sit beside books she rereads on hard evenings. She hopes the library always feels like a place anyone belongs.",
         "nb",
         "ines"
       ],
       [
         "tobias",
         "Tobias Nguyen",
-        "Barista · bedroom producer",
-        "Began recording everyday noise on borrowed headphones after café shifts; an espresso machine's hiss became his first kept rhythm. A label's polite \"no\" hurt more than he admits, but neighbors hearing themselves in his tracks makes the work real. He wants to finish a collection about the block.",
+        "Barista \u00c2\u00b7 bedroom producer",
+        "Began recording everyday noise on borrowed headphones after caf\u00c3\u00a9 shifts; an espresso machine's hiss became his first kept rhythm. A label's polite \"no\" hurt more than he admits, but neighbors hearing themselves in his tracks makes the work real. He wants to finish a collection about the block.",
         "nb",
         "tobias"
       ],
       [
         "bev",
         "Beverly \"Bev\" Sloane",
-        "Realtor · watch captain",
+        "Realtor \u00c2\u00b7 watch captain",
         "Learned to make rooms welcoming while selling homes people had loved. Presentation became her way of feeling useful. Since Carl moved out, the formal room stays immaculate and the watch chat keeps her company; upstairs is softer, with her son's crooked craft house. She wants the block to need her for more than complaints.",
         "nb",
         "bev"
@@ -2428,7 +2459,7 @@
       [
         "kenji",
         "Kenji Mori",
-        "Remote developer · hot sauce",
+        "Remote developer \u00c2\u00b7 hot sauce",
         "One balcony pepper survived a hard first remote-work year when everything else died, so he started tracking it. Now it's forty varieties and an absurd flavor scale. Exact language helps him say what he means and invite people to stay, disguised as a taste test. He'd like to host one meal where nobody asks him to fix the Wi-Fi.",
         "nb",
         "kenji"
@@ -2692,7 +2723,7 @@
     ],
     "shopStaff": {
       "cafe": {
-        "n": "Bean There Café",
+        "n": "Bean There Caf\u00c3\u00a9",
         "h": [
           420,
           1260

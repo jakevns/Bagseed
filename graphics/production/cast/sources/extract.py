@@ -57,6 +57,7 @@ def isolate_body(cell):
     data[keep==0]=0
     return Image.fromarray(data)
 
+retired=json.loads((ROOT/'sources/retired-identities.json').read_text())
 manifest={'sources':{},'people':[],'limits':'New roster walks use the illustrated standing drawing with a limb rig; five originally approved identities retain their generated walk sheets.'}
 for group in roster['groups']:
     source=ROOT/'assets'/f'{group}.png'
@@ -67,6 +68,7 @@ for group in roster['groups']:
     row_columns=[split_columns(mask[rows[k]:rows[k+1]].sum(axis=0)) for k in range(len(record['people']))]
     manifest['sources'][group]={'sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'size':list(im.size),'rows':rows,'columnsByRow':row_columns}
     for row,person in enumerate(record['people']):
+        if person['assetId'] in retired:continue
         cols=row_columns[row]
         result={**person,'group':group,'views':{},'portraits':{},'extraction':[]}
         for column in range(7):
@@ -95,6 +97,9 @@ for group in roster['groups']:
                 if x<1 or x+art.width>95 or y<1:raise ValueError(f'Character crop exceeds registered canvas: {person["assetId"]} {column}')
                 out.alpha_composite(art,(x,y));name=DIRS[column-3];path=target/f'{name}-idle.png';result['views'][name]=str(path.relative_to(ROOT))
             out.save(path);result['extraction'].append({'kind':kind,'name':name,'cell':cell_bounds,'subject':list(subject),'scale':scale})
+        for old,current in retired.items():
+            if current==person['assetId']:
+                result['aliases']=list(dict.fromkeys(result.get('aliases',[])+['collections.patients.'+person['id']+'.look']))
         manifest['people'].append(result)
     print(group,len(record['people']),'complete illustrated identities registered')
 (ROOT/'sources/asset-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

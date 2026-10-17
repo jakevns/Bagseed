@@ -44,7 +44,9 @@ const cast=castManifest.people.map(person=>{
   for(const expression of ['neutral','friendly','concerned'])portraits[expression]=add('cast/'+person.assetId+'/portrait-'+expression,path.join(castRoot,person.portraits[expression]));
   return {id:person.assetId,name:person.name,look:person.look,age:person.age,kid:!!person.kid,aliases:person.aliases,assets,portraits,rig:true};
 });
-assert.equal(cast.length,67,'Authored roster art is incomplete');
+const retiredIdentities=JSON.parse(fs.readFileSync(path.join(castRoot,'sources/retired-identities.json')));
+const activeRoster=JSON.parse(fs.readFileSync(path.join(castRoot,'sources/cast-roster.json'))).people;
+assert.deepEqual(new Set(cast.map(p=>p.id)),new Set(activeRoster.map(p=>p.assetId)),'Authored roster art is incomplete');
 // Small approved pose batch: retain complete drawings, never composite an arm.
 for(const [batch,names] of Object.entries({
   'batch-01':['marcus','ines'],
@@ -65,6 +67,7 @@ for(const [batch,names] of Object.entries({
 })) for(const name of names) {
   const configPath=path.join(art,'actions',batch,'sheet.json');
   const assetId=fs.existsSync(configPath)?JSON.parse(fs.readFileSync(configPath)).assetIds[name]:null;
+  if(retiredIdentities[assetId])continue;
   const person=[...approved,...cast].find(p=>assetId?p.id===assetId:p.id.endsWith('-'+name));
   assert.ok(person,'Missing pose owner: '+name);
   person.actions={};

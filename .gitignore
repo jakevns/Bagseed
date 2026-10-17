@@ -5,6 +5,7 @@ artifacts/
 .env.*
 *.log
 .DS_Store
+__pycache__/
 review/*.zip
 
 graphics/production/encoded/
