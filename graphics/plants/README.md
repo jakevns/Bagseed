@@ -50,4 +50,4 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 
 ## Fourth strain review kit
 
-`cottoncandy@1` adds Cotton Candy CRT's hybrid organ family: lime-green healthy leaves, blush flowers, rose-pink senescence and its existing genotype's cool-night response. It uses the same connected growth, wind, climate and Sprout color systems; earlier profiles remain pinned. Review samples await approval in `review/cottoncandy-components/`. Painted-renderer integration remains pending.
+`cottoncandy@1` adds Cotton Candy CRT's hybrid organ family: lime-green healthy leaves, blush flowers, rose-pink senescence and its existing genotype's cool-night response. It uses the same connected growth, wind, climate and Sprout color systems; earlier profiles remain pinned. Review samples are approved as a prototype checkpoint in `review/cottoncandy-components/`. Painted-renderer integration remains pending.

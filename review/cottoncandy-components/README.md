@@ -1,6 +1,6 @@
 # Cotton Candy CRT artwork review
 
-Status: awaiting user approval; saved locally as a component prototype, not installed as the live plant renderer.
+Status: approved for publication as a component prototype checkpoint; full painted-renderer integration remains pending.
 
 - `cottoncandy-growth-and-flower.png`: seed through harvest-ready, with green vegetation and rose-pink senescence.
 - `cottoncandy-late-flower-senescence.png`: larger mature portrait.

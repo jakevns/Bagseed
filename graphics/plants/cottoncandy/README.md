@@ -1,6 +1,6 @@
 # Cotton Candy CRT connected component prototype
 
-Status: awaiting artwork approval. This is the fourth kit, after Porchlight, Velvet Underbrush and Pixel Punch. The painted rigs remain review prototypes pending full care/training and native renderer integration.
+Status: component artwork, growth, flowering, pink senescence, cool-night colors and wind animation approved by the user. This is the fourth kit, after Porchlight, Velvet Underbrush and Pixel Punch. The painted rigs remain review prototypes pending full care/training and native renderer integration.
 
 ## Identity and artwork
 

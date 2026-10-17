@@ -1,6 +1,6 @@
 {
   "revision": "cottoncandy-components-1",
-  "status": "sample-awaiting-approval",
+  "status": "approved-component-prototype",
   "name": "Cotton Candy CRT",
   "apiName": "BagseedCottonCandyGrowth",
   "source": "assets/components.png",
