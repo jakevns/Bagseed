@@ -1,0 +1,14 @@
+{
+  "status": "approved for publication",
+  "entryPoint": "public/index.html",
+  "tiers": 2,
+  "fixedSizePlacements": 8,
+  "heatingAndCoolingAnimation": true,
+  "reducedMotion": true,
+  "idleAndOffStill": true,
+  "liveTargets": true,
+  "matchingStoreAndDeliveryArtwork": true,
+  "nativeModelUntouchedByDrawing": true,
+  "returnedDevicesVisibleInUnused": true,
+  "errors": []
+}

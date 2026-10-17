@@ -1,0 +1,55 @@
+{
+  "status": "approved",
+  "entryPoint": "public/index.html",
+  "designs": 9,
+  "waterTools": 4,
+  "pots": 3,
+  "reservoirAndRainBarrel": 2,
+  "storeCards": 7,
+  "freeStarterArtwork": true,
+  "plantLayerCases": 6,
+  "smartPotLED": [
+    {
+      "minute": 720,
+      "wet": 20,
+      "rgb": [
+        255,
+        101,
+        87
+      ]
+    },
+    {
+      "minute": 720,
+      "wet": 60,
+      "rgb": [
+        119,
+        241,
+        134
+      ]
+    },
+    {
+      "minute": 0,
+      "wet": 20,
+      "rgb": [
+        255,
+        92,
+        75
+      ]
+    },
+    {
+      "minute": 0,
+      "wet": 60,
+      "rgb": [
+        110,
+        240,
+        125
+      ]
+    }
+  ],
+  "nightLEDNotDimmed": true,
+  "foregroundIllustrationOccludesLED": true,
+  "liveWaterGauges": true,
+  "fixedAspectRatios": true,
+  "readOnlyDrawing": true,
+  "errors": []
+}

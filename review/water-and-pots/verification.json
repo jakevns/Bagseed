@@ -1,0 +1,15 @@
+{
+  "status": "approved",
+  "entryPoint": "public/index.html",
+  "designs": 9,
+  "buildAndSourceChecks": "passed",
+  "sevenPurchasesIrrigationLayeringAndSaveReload": "passed",
+  "starterTentRegression": "passed",
+  "allTentPlayerDepth": "passed",
+  "originalSourceArtPreserved": true,
+  "twoLosslessRGBAMatches": true,
+  "characterRevisionPreserved": "custom-walk-arm-layer-v6",
+  "nightLEDNotDimmed": "passed",
+  "foregroundIllustrationOccludesLED": "passed",
+  "rearRimBehindPlant": "passed"
+}

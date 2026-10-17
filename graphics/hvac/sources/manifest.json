@@ -1,0 +1,91 @@
+{
+  "revision": "hvac-1",
+  "status": "approved",
+  "path": "assets/hvac-atlas.png",
+  "sha256": "53a7c40ecde236d95cdddeba5f17a6eace6ba675680ff6e8f4a42046a48a3141",
+  "size": [
+    1774,
+    887
+  ],
+  "runtime": {
+    "path": "assets/hvac-atlas.webp",
+    "sha256": "36ed38284d06d6e8af524a7efd672357775b07889c22ca29a7ef1df41023fee4",
+    "publicPath": "assets/hvac/hvac-36ed38284d06.webp"
+  },
+  "tiers": {
+    "1": {
+      "name": "Breeze Bridge Mini-Split",
+      "price": 549,
+      "watts": 220,
+      "crop": [
+        152,
+        59,
+        1471,
+        368
+      ],
+      "width": 26,
+      "height": 6.504418762746431,
+      "vent": [
+        285,
+        328,
+        1208,
+        53
+      ],
+      "display": [
+        1265,
+        241,
+        89,
+        35
+      ],
+      "indicator": [
+        1409,
+        260
+      ],
+      "buttons": [
+        [
+          1478,
+          260
+        ]
+      ]
+    },
+    "2": {
+      "name": "Canopy Climate Smart HVAC",
+      "price": 849,
+      "watts": 210,
+      "crop": [
+        54,
+        472,
+        1664,
+        353
+      ],
+      "width": 26,
+      "height": 5.515625,
+      "vent": [
+        148,
+        722,
+        1466,
+        57
+      ],
+      "display": [
+        1350,
+        594,
+        160,
+        70
+      ],
+      "indicator": [
+        1616,
+        604
+      ],
+      "buttons": [
+        [
+          1567,
+          601
+        ],
+        [
+          1567,
+          651
+        ]
+      ]
+    }
+  }
+}

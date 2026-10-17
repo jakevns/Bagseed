@@ -1,0 +1,90 @@
+{
+  "revision": "tent-details-1",
+  "status": "approved",
+  "path": "assets/tent-details-atlas.png",
+  "sha256": "47d02e89f999e719b81c1d18b3bc2a0cde4eb91478daf43b5dad7cc0a2581ff2",
+  "size": [
+    2061,
+    763
+  ],
+  "runtime": {
+    "path": "assets/tent-details-atlas.webp",
+    "sha256": "dcc12fc893aa0f8c252318a047bd9b5fb766201e156e019c2357c23d91876a98",
+    "publicPath": "assets/tent-details/tent-details-dcc12fc893aa.webp"
+  },
+  "items": {
+    "controller": {
+      "name": "Canopy Brain Controller",
+      "crop": [
+        34,
+        75,
+        633,
+        618
+      ],
+      "width": 9,
+      "height": 11,
+      "display": [
+        181,
+        222,
+        345,
+        146
+      ],
+      "buttons": [
+        [
+          186,
+          478
+        ],
+        [
+          281,
+          478
+        ],
+        [
+          377,
+          478
+        ]
+      ],
+      "indicator": [
+        457,
+        478
+      ]
+    },
+    "camera": {
+      "name": "PeekLeaf Mini Grow Cam",
+      "crop": [
+        734,
+        53,
+        447,
+        654
+      ],
+      "width": 9,
+      "height": 13.167785234899329
+    },
+    "drying": {
+      "name": "Drying status tag",
+      "crop": [
+        1247,
+        39,
+        788,
+        627
+      ],
+      "width": 16,
+      "height": 14,
+      "reading": [
+        1530,
+        260,
+        430,
+        205
+      ],
+      "progress": [
+        1322,
+        514,
+        647,
+        70
+      ],
+      "warning": [
+        1976,
+        246
+      ]
+    }
+  }
+}

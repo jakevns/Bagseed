@@ -895,8 +895,8 @@ EQ.ac = [{ name: 'No air conditioner', price: 0, watts: 0 },
 { name: 'Rattlebox Compact AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'A rattly little floor cooler with LOW and HIGH settings. Cools the whole room (and every tent in it). Loud, dependable, and a little drippy.', review: [3, 'Loud. Cold. Loud.'] },
 { name: 'Polar Pal Digital AC', brand: 'Polar Pal', price: 289, watts: 250, maxD: 16, thermo: true, eff: .82, fail: .012, desc: 'Portable AC with a thermostat and a hose you will trip over.', review: [5, 'Heat wave? What heat wave.'] }];
 EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
-{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools to a set point automatically.', review: [5, 'Paid for itself the first heat wave.'] },
-{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Barely sips power.', review: [5, 'It knew a cold snap was coming before I did.'] }];
+{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools automatically. Replaces separate heaters and ACs in this room, moving them to Unused gear.', review: [5, 'Paid for itself the first heat wave.'] },
+{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Replaces separate room heaters and ACs, moving them to Unused gear.', review: [5, 'It knew a cold snap was coming before I did.'] }];
 EQ.ctrl = [{ name: 'No controller', price: 0, watts: 0 },
 { name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Sets digital heaters, ACs, humidifiers and dehumidifiers to each stage automatically, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
 LOC_SLOTS.push('heater', 'ac', 'hvac', 'ctrl');
@@ -5689,7 +5689,7 @@ Object.assign(SceneArt, {
     const L = state.locations[loc], pid = L.slots[i], p = pid && state.plants[pid];
     if (!unlocked) { this.hit('bedplot:' + i, x - 22, y - 10, 44, 18, 'Raised bed (outdoor planting is locked)', [x, y + 12], 'plant'); return; }
     if (p && (p.stage === S.drying || p.stage === S.finished && p.dry)) {
-      R(c, x - 1, y - 12, 2, 4, '#7d6a3c'); R(c, x - 6, y - 22, 14, 9, '#f2e4c4'); R(c, x - 6, y - 22, 14, 1, '#ffffff'); pxTextTiny(c, p.stage === S.drying ? Math.round((p.dry ? p.dry.prog : 0) * 100) + '%' : 'OK', x - 4, y - 20, '#2b1d14');
+      RoomArt.dryTag(c, x - 8, y - 26, p, loc);
       this.hit('plant:' + loc + ':' + i, x - 20, y - 26, 40, 30, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (dry · ready to jar)'), [x, y + 12], 'plant'); return;
     }
     if (p) {
@@ -7488,7 +7488,7 @@ const Greenhouse = {
   },
   slot(c, i, x, y, t) {
     const L = state.locations.gh, pid = L.slots[i], p = pid && state.plants[pid], walk = [ghLayout().box[0] + ghLayout().box[2] / 2, ghLayout().box[1] + ghLayout().box[3] + 14];
-    if (p && (p.stage === S.drying || (p.stage === S.finished && p.dry))) { R(c, x - 1, y - 4, 2, 4, '#7d6a3c'); R(c, x - 6, y - 14, 14, 9, '#f2e4c4'); pxTextTiny(c, p.stage === S.drying ? Math.round((p.dry ? p.dry.prog : 0) * 100) + '%' : 'OK', x - 4, y - 12, '#2b1d14'); RoomArt.hit('plant:gh:' + i, x - 16, y - 18, 32, 22, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (ready to jar)'), walk, 'plant'); return; }
+    if (p && (p.stage === S.drying || (p.stage === S.finished && p.dry))) { RoomArt.dryTag(c, x - 8, y - 18, p, 'gh'); RoomArt.hit('plant:gh:' + i, x - 16, y - 18, 32, 22, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (ready to jar)'), walk, 'plant'); return; }
     if (p) { const s = PlantArt.draw(c, p, x, y, 1, t, .6); Gear.pot(c, x, y, L.equip.pot || 2, p.water); const hgt = Math.min(s.h, 110); RoomArt.hit('plant:gh:' + i, x - 16, y - hgt, 32, hgt + 10, p.name + ' · ' + STAGES[p.stage].name, walk, 'plant'); }
     else { Gear.pot(c, x, y, L.equip.pot || 2, 0); RoomArt.hit('slot:gh:' + i, x - 9, y - 6, 18, 16, 'Empty greenhouse pot', walk, 'plant'); }
   }
@@ -12738,8 +12738,7 @@ const growroomArt114w = SceneArt.growroom.bind(SceneArt);
 SceneArt.growroom = function (c, t) {
   growroomArt114w(c, t);
   const T = Water.S().tanks.growroom;
-  if (T.has) { drawTank(c, 384, 132, T.level / WATER.tankDays, T.level); RoomArt.hit('tank:growroom', 382, 128, 28, 36, `Grow-room drip tank · ${T.level}/${WATER.tankDays} days`, [396, 176], 'item'); }
-  else RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
+  if (!T.has) RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
 };
 const grSolids114w = SCENES.growroom.solids;
 SCENES.growroom.solids = function () { const s = grSolids114w.call(this); if (Water.S().tanks.growroom.has) s.push([384, 154, 22, 10]); return s; };
@@ -12758,6 +12757,13 @@ INIT114.push((st) => {
   }
 });
 
+function drawRainBarrel(c, x, y, frac, t = 0) {
+  c.save(); c.translate(x - 210, y - 50);
+    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
+    const f = clamp(frac, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
+    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+  c.restore();
+}
 /* backyard rain barrel art (under the downspout, between the AC unit and the hose reel) */
 const yardAddTo114w = Actors.addTo.bind(Actors);
 Actors.addTo = function (items, c, t, scene) {
@@ -12767,9 +12773,7 @@ Actors.addTo = function (items, c, t, scene) {
   items.push({ y: 72, d: () => {
     R(c, 214, 8, 3, 46, '#8a9aa6'); R(c, 214, 8, 1, 46, '#aab8c2');                     // downspout
     if (!B.has) { RoomArt.hit('barrelspot', 204, 46, 30, 26, 'Spot for a rain barrel (LeafCart › Water & Pots)', [219, 84], 'structure'); return; }
-    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
-    const f = clamp(B.level / WATER.barrelCap, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
-    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+    drawRainBarrel(c, 210, 50, B.level / WATER.barrelCap, t);
     if ((WATER.rainHr[state.weather] || 0) && !settings.reduced) R(c, 215, 46 + Math.floor(t * 8) % 6, 1, 2, '#bfe6ff');
     RoomArt.hit('barrel', 206, 46, 28, 28, `Rain barrel · ${Math.round(B.level)}/${WATER.barrelCap} gal`, [219, 84], 'item');
   } });
@@ -12881,7 +12885,7 @@ function plantCamArt(cv, loc) {
   const ps = plantsIn(loc), n = Math.max(1, slotCount(loc)), lightOn = isLightOn(loc);
   if (!out && lightOn) { c.fillStyle = 'rgba(255,240,200,.16)'; c.fillRect(0, 0, W, H); }
   if (!out && !lightOn) { c.fillStyle = 'rgba(10,10,30,.55)'; c.fillRect(0, 0, W, H); }
-  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6; try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } R(c, x - 6, base, 12, 5, '#7a4e2a'); });
+  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6, potTier = state.locations[loc].equip.pot || (loc === 'gh' ? 2 : 1), newPot = loc !== 'outdoor' && window.BagseedWaterPots?.loaded; if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water); try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water, true); else R(c, x - 6, base, 12, 5, '#7a4e2a'); });
   // camera overlay: timestamp + REC dot, scanlines
   for (let y = 0; y < H; y += 3) { c.fillStyle = 'rgba(0,0,0,.08)'; c.fillRect(0, y, W, 1); }
   R(c, 3, 3, 3, 3, Math.floor(performance.now() / 600) % 2 ? '#ff5a4f' : '#7a2c22'); pxText(c, clock(state.minute), 9, 3, 1, '#e8ffd0');
@@ -15796,7 +15800,22 @@ const Gear115 = {
     }
     // instances that claim a location which no longer has that piece (stolen, removed by an event): they're gone
     for (const it of this.all()) if (it.at && !seen.has(it.iid)) { G.log.push({ day: state.day, iid: it.iid, name: this.name(it), what: 'lost' }); delete G.items[it.iid]; }
+    // Existing saves also retain redundant room heaters/ACs as owned unused gear.
+    for (const loc of ownedLocs()) if (state.locations[loc].equip.hvac) this.parkClimate(loc);
     if (G.log.length > 60) G.log.splice(0, G.log.length - 60);
+  },
+  climatePeers(loc) {
+    const room = lungRoomOf(loc);
+    return room ? ownedLocs().filter(other => lungRoomOf(other) === room) : [loc];
+  },
+  parkClimate(loc) {
+    const parked = [];
+    for (const other of this.climatePeers(loc)) for (const slot of ['heater', 'ac']) {
+      const L = state.locations[other], tier = L?.equip[slot]; if (!tier) continue;
+      const it = this.at(other, slot) || this.create(slot, tier, { at: other, src: 'migrated', cond: L.cond?.[slot] });
+      it.at = null; this.clear(slot, other); if (L.on) L.on[slot] = false; parked.push(it);
+    }
+    return parked;
   },
   /* where can this go? */
   targets(it) {
@@ -15809,6 +15828,10 @@ const Gear115 = {
     if (this.isGlobal(it.slot)) return { ok: true };
     if (!LOC_DEF[loc] || !locOwned(loc)) return { ok: false, why: 'You don\'t have that grow space.' };
     if (!locAccepts(loc, it.slot)) return { ok: false, why: `${locName(loc)} has no spot for a ${SLOT_NAME[it.slot].toLowerCase()}.` };
+    if (['heater', 'ac'].includes(it.slot)) {
+      const combined = this.climatePeers(loc).find(other => state.locations[other]?.equip.hvac);
+      if (combined) return { ok: false, why: `${EQ.hvac[state.locations[combined].equip.hvac].name} already heats and cools this whole room. Remove it before installing a separate heater or AC.` };
+    }
     if (EQ[it.slot][it.tier].tentOnly && LOC_DEF[loc].kind === 'closet') return { ok: false, why: `${this.name(it)} is too big for the starter tent. It needs a real tent.` };
     if (it.slot === 'pot' && LOC_DEF[loc].kind !== 'closet' && LOC_DEF[loc].kind !== 'tent') return { ok: false, why: 'Outdoor beds and the greenhouse have built-in containers.' };
     return { ok: true };
@@ -15840,10 +15863,11 @@ const Gear115 = {
       if (cur) { const r = this.canRemove(cur); if (!r.ok) { toast(esc(r.why), 'warn'); return false; } cur.at = null; }
       const firstLight = it.slot === 'light' && (state.story === 'wait' || state.story === 'light');
       this.apply(it.slot, it.tier, loc, it.cond); it.at = loc;
+      const parked = it.slot === 'hvac' ? this.parkClimate(loc) : [];
       state.stats.upgrades++; state.rep.equipment += .3; runtime.flash = .8;
       if (firstLight) { setStory(state.locations.closet.equip.pot ? 'plant' : 'container'); think(it.tier === 1 ? 'It\'s... purple. Very purple. The box says PROFESSIONAL six times.' : 'Oh, that\'s a real light.', 4500); }
       Sfx.good(); safeRun('ach', checkAch); updateHUD(); bgCache.clear();
-      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}`, 'social');
+      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}${parked.length ? ` ${parked.map(item => esc(this.name(item))).join(' and ')} moved to <b>Unused gear</b>; this unit heats and cools the whole room.` : ''}`, 'social');
       SaveSys.request('gear-install'); return true;
     } finally { runtime.gearBusy = false; }
   },
@@ -17073,17 +17097,6 @@ drawExtraIcon = function (ctx, cv, id) {
 };
 const drawDecorIcon115a = drawDecorIcon;
 drawDecorIcon = function (ctx, cv, id) { if (PROD_ART[id]) { PROD_ART[id](cv); return; } return drawDecorIcon115a(ctx, cv, id); };
-
-/* ART02: the installed room reservoir in the grow room matches its icon: lid, fill cap, level window, drip lines to the tents */
-const growroomArt115 = SceneArt.growroom.bind(SceneArt);
-SceneArt.growroom = function (c, t) {
-  growroomArt115(c, t);
-  const T = Water.S().tanks.growroom; if (!T.has) return;
-  const x = 384, y = 132;
-  R(c, x + 7, y - 4, 8, 2, '#7fd4ff');                                         // fill cap
-  R(c, x + 27, y + 26, 1, 4, '#2b2b33'); R(c, x + 27, y + 29, 16, 1, '#2b2b33'); // drip line toward the tents
-  for (const loc of ['tent4', 'tent5']) if (locOwned(loc)) { const g = TentArt.geo[loc]; if (g) { R(c, g.x + g.w - 4, g.y + g.h - 6, 1, 4, '#2b2b33'); R(c, g.x + g.w - 6, g.y + g.h - 3, 4, 1, '#2b2b33'); } }
-};
 
 /* ---------------- ART04: seed packets ---------------- */
 const PKT_MOTIF = {
@@ -26749,7 +26762,7 @@ const Build1 = {
       + `<button class="btn sm primary" data-act="decoDone">Done</button></div>`;
     const more = D.more ? `<div class="b1-more">${zone === 'bedroom' ? '<button class="btn sm" data-act="decoTab" data-arg="styles">Room styles</button>' : ''}<button class="btn sm" data-act="decoShop">Shop decor</button><button class="btn sm amber" data-act="homeUpOpen">Home upgrades</button></div>` : '';
     const catRow = `<div class="b1-cats">${cats.map(([k, n]) => `<button class="chip ${D.cat === k ? 'on' : ''}" data-act="b1Cat" data-arg="${k}">${n}</button>`).join('')}<span style="flex:1"></span><button class="chip" data-act="b1Tray" aria-label="${D.trayOpen ? 'Show fewer' : 'Show all items'}">${D.trayOpen ? '▾ Less' : '▴ All'}</button></div>`;
-    const tray = `<div class="b1-tray ${D.trayOpen ? 'open' : ''}">${shown.map(k => { const Df = decorDef(k), free = decorFree(k); return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="b1Pick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="n">${free}</span></button>`; }).join('') || `<span class="hint">${own.length ? 'Everything here is already placed. Tap an item in the room to move it.' : 'Nothing for this space yet. Shop decor on LeafCart (⋯).'}</span>`}</div>`;
+    const tray = `<div class="b1-tray ${D.trayOpen ? 'open' : ''}">${shown.map(k => { const Df = decorDef(k), free = decorFree(k); return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="decoPick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="n">${free}</span></button>`; }).join('') || `<span class="hint">${own.length ? 'Everything here is already placed. Tap an item in the room to move it.' : 'Nothing for this space yet. Shop decor on LeafCart (⋯).'}</span>`}</div>`;
     el.innerHTML = head + more + catRow + tray + '<div class="b1-msg" role="status" aria-live="polite"></div>'; hydrate(el);
     const nt = el.querySelector('.b1-tray'); if (nt) { nt.scrollLeft = keep[0]; nt.scrollTop = keep[1]; }
     this.status();
@@ -27004,5 +27017,126 @@ Deco.render = (prev => function () {
 Object.assign(ACT, { b2Grid() { Build2.toggle(); } });
 /* narrow phones: the header drops the room label so Done always fits beside the grid toggle */
 (() => { const st = document.createElement('style'); st.id = 'build2-css'; st.textContent = '@media (max-width:440px){.b1-zone{display:none}.b1-head{gap:4px}.b1-head .btn{min-width:42px;padding-left:8px;padding-right:8px}}'; document.head.appendChild(st); })();
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 3 · the tray and shopping
+   One tray for phones and mouse play: tabs by what things are (Rugs,
+   Lighting, Houseplants…), a line under each item saying where it goes,
+   and a Shop tab so buying never leaves Decorate mode. Each item can be
+   ordered at the normal price (arrives tomorrow, like any LeafCart
+   order) or bought now for 25% more and placed straight away.
+   With a mouse the old Rotate/nudge/Place row stays under the tray.
+   ===================================================================== */
+const Build3 = {
+  RUSH: 1.25,
+  WHERE: { wall: 'Wall', floor: 'Floor', rug: 'Rug', desk: 'Tabletop' },
+  nowPrice(D) { return Math.ceil(D.p * this.RUSH); },
+  catName(k) { const c = DECOR_CATS.find(x => x[0] === k); return c ? c[1] : 'Other'; },
+  pending(id) { return state.orders.filter(o => o.key === 'd:' + id).length + state.packages.filter(o => o.key === 'd:' + id).length; },
+  forSale(zone) { return Object.keys(DECOR).filter(k => { const D = decorDef(k); return D && D.p && decorZones(D).includes(zone); }); },
+  owned(zone) { return Object.keys(state.room.own).filter(k => !k.startsWith('s:') && !k.startsWith('v:') && decorDef(k) && decorZones(decorDef(k)).includes(zone)); },
+  /* tabs in catalogue order, only those with something in them */
+  cats(ids) { const have = new Set(ids.map(k => decorDef(k).cat || 'other')); return DECOR_CATS.filter(([k]) => have.has(k)).concat(have.has('other') ? [['other', 'Other']] : []); },
+  buyNow(id) {
+    const D = decorDef(id); if (!D || !D.p || !runtime.deco) return;
+    const price = this.nowPrice(D); if (!pay(price)) return;
+    state.room.own[id] = (state.room.own[id] || 0) + 1; Sfx.coin();
+    toast(`<b>${esc(D.n)}</b> · ${money(price)} · it's in your hands. Place it anywhere it fits.`);
+    SaveSys.now('purchase'); runtime.deco.trayOpen = false; Deco.pick(id); Build1.buzz && Build1.buzz(8);
+  },
+  order(id) {
+    if (!runtime.deco) return;
+    if (Shop.order('d:' + id, false)) { SaveSys.now('purchase'); Deco.render(); }
+  },
+  card(k, H) {
+    const Df = decorDef(k), free = decorFree(k), where = this.WHERE[Df.k] || '';
+    return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="decoPick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)} · ${where}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="wh">${where}</span><span class="n">${free}</span></button>`;
+  },
+  shopCard(k) {
+    const Df = decorDef(k), own = decorFree(k), placed = (state.room.own[k] || 0) - own, pend = this.pending(k), where = this.WHERE[Df.k] || '';
+    const have = [own ? own + ' to place' : '', placed > 0 ? placed + ' placed' : '', pend ? pend + ' arriving' : ''].filter(Boolean).join(' · ');
+    return `<div class="it b3-shop" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="wh">${where}${Df.glow ? ' · glows' : ''}</span>${have ? `<span class="b3-have">${have}</span>` : ''}`
+      + `<button class="btn sm primary" data-act="b3Now" data-arg="${esc(k)}" aria-label="Buy ${esc(Df.n)} now for ${money(this.nowPrice(Df))} and place it">Now ${money(this.nowPrice(Df))}</button>`
+      + `<button class="btn sm" data-act="b3Order" data-arg="${esc(k)}" aria-label="Order ${esc(Df.n)} for ${money(Df.p)}, arriving tomorrow">${money(Df.p)} · tomorrow</button></div>`;
+  },
+  /* the old mouse controls, kept under the tray */
+  mouseRow() {
+    const D = runtime.deco, H = D.hold, hd = H && decorDef(H.id), V = H && hd && hd.vars ? hd.vars[H.v || 0] : null, dis = H ? '' : 'disabled';
+    const pan = D.zone !== 'bedroom' ? `<span class="hint">View:</span><button class="btn sm" data-act="decoPan" data-arg="-40:0" aria-label="Look left">◀</button><button class="btn sm" data-act="decoPan" data-arg="40:0" aria-label="Look right">▶</button><button class="btn sm" data-act="decoPan" data-arg="0:-40" aria-label="Look up">▲</button><button class="btn sm" data-act="decoPan" data-arg="0:40" aria-label="Look down">▼</button>` : '';
+    return `<div class="b3-mouse"><button class="btn sm" data-act="decoRot" ${dis}>${D.zone === 'bedroom' ? '⇋ Face' : '⟳ Rotate'}</button>${H && hd.vars ? `<button class="btn sm" data-act="decoVar">◐ ${esc(V.n)}${V.p && !state.room.own['v:' + H.id + ':' + (H.v || 0)] ? ' · ' + money(V.p) : ''}</button>` : ''}`
+      + `<button class="btn sm" data-act="decoNudge" data-arg="-2:0" ${dis} aria-label="Nudge left">←</button><button class="btn sm" data-act="decoNudge" data-arg="2:0" ${dis} aria-label="Nudge right">→</button><button class="btn sm" data-act="decoNudge" data-arg="0:-2" ${dis} aria-label="Nudge up">↑</button><button class="btn sm" data-act="decoNudge" data-arg="0:2" ${dis} aria-label="Nudge down">↓</button>`
+      + `<button class="btn sm primary" data-act="decoPlace" ${H && D.ghost && D.ghost.ok ? '' : 'disabled'}>✓ Place</button><button class="btn sm danger" data-act="decoRemove" ${dis}>Store</button><button class="btn sm ghost" data-act="decoCancel" ${dis}>✕ Cancel</button>${pan}</div>`;
+  },
+  render() {
+    const D = runtime.deco, el = $('#deco'), zone = D.zone, H = D.hold, touch = !!D.touchUI;
+    const sv = el.querySelector('.b1-tray'), keep = sv ? [sv.scrollLeft, sv.scrollTop] : [0, 0], cv = el.querySelector('.b1-cats'), keepC = cv ? cv.scrollLeft : 0;
+    const shop = D.cat === 'shop', own = this.owned(zone), pool = shop ? this.forSale(zone) : own;
+    const cats = this.cats(pool);
+    if (D.cat !== 'all' && !shop && !cats.some(([k]) => k === D.cat)) D.cat = 'all';
+    if (D.sub && !cats.some(([k]) => k === D.sub)) D.sub = null;
+    const inCat = k => { const c = decorDef(k).cat || 'other'; return shop ? (!D.sub || c === D.sub) : (D.cat === 'all' || c === D.cat); };
+    const shown = pool.filter(k => inCat(k) && (shop || decorFree(k) > 0 || (H && H.id === k)))
+      .sort((a, b) => shop ? decorDef(a).p - decorDef(b).p : 0);
+    const zname = { bedroom: 'Bedroom', house: 'House', yard: 'Backyard' }[zone];
+    const head = `<div class="b1-head"><span class="b1-zone">${zname} · paused</span><span class="b1-money">${money(state.money)}</span><span style="flex:1"></span>`
+      + (touch ? `<button class="btn sm" data-act="b1Zoom" aria-label="${D.zoomIn ? 'Zoom out' : 'Zoom in'}">${D.zoomIn ? '－' : '＋'}</button>` : '')
+      + `<button class="btn sm" data-act="decoUndo" ${D.undo.length ? '' : 'disabled'} aria-label="Undo">↶</button>`
+      + (touch ? `<button class="btn sm ${D.more ? 'on' : ''}" data-act="b1More" aria-label="More options" aria-expanded="${!!D.more}">⋯</button>` : '')
+      + `<button class="btn sm primary" data-act="decoDone">Done</button></div>`;
+    const more = D.more || !touch ? `<div class="b1-more">${zone === 'bedroom' ? '<button class="btn sm" data-act="decoTab" data-arg="styles">Room styles</button>' : ''}<button class="btn sm" data-act="decoShop">Open LeafCart</button><button class="btn sm amber" data-act="homeUpOpen">Home upgrades</button></div>` : '';
+    const chip = (act, k, n, on) => `<button class="chip ${on ? 'on' : ''}" data-act="${act}" data-arg="${k}">${n}</button>`;
+    const catRow = `<div class="b1-cats">${chip('b1Cat', 'shop', '🛒 Shop', shop)}${shop ? chip('b3Sub', '', 'Everything', !D.sub) + cats.map(([k, n]) => chip('b3Sub', k, n, D.sub === k)).join('')
+      : chip('b1Cat', 'all', 'All', D.cat === 'all') + cats.map(([k, n]) => chip('b1Cat', k, n, D.cat === k)).join('')}</div>`;
+    const grow = touch ? `<button class="chip b3-grow" data-act="b1Tray" aria-label="${D.trayOpen ? 'Show fewer' : 'Show all items'}">${D.trayOpen ? '▾ Less' : '▴ More'}</button>` : '';
+    const empty = shop ? 'Nothing for sale for this space.' : own.length ? 'Everything here is already placed. Tap an item in the room to move it, or open 🛒 Shop.' : 'Nothing to place yet. Open 🛒 Shop to buy something for this space.';
+    const tray = `<div class="b1-tray ${D.trayOpen || !touch ? 'open' : ''} ${shop ? 'b3-shopping' : ''}">${shown.map(k => shop ? this.shopCard(k) : this.card(k, H)).join('') || `<span class="hint">${empty}</span>`}</div>`;
+    const note = shop ? `<div class="b3-note">Ordering costs the normal price and arrives tomorrow. <b>Now</b> costs 25% more and goes straight into your hands.</div>` : '';
+    el.innerHTML = head + more + `<div class="b3-catbar">${catRow}${grow}</div>` + note + tray + '<div class="b1-msg" role="status" aria-live="polite"></div>' + (touch ? '' : this.mouseRow());
+    hydrate(el);
+    const nt = el.querySelector('.b1-tray'); if (nt) { nt.scrollLeft = keep[0]; nt.scrollTop = keep[1]; }
+    const nc = el.querySelector('.b1-cats'); if (nc) nc.scrollLeft = keepC;
+    Build1.status();
+  }
+};
+Build1.render = function () { Build3.render(); };
+/* while browsing the shop with nothing in hand, the placing hint just gets in the way */
+Build1.status = (prev => function () { prev.call(this); const D = runtime.deco, el = $('#deco .b1-msg'); if (D && el && D.cat === 'shop' && !D.hold) el.textContent = ''; })(Build1.status);
+/* mouse play gets the same tray (the styles tab keeps its own page) */
+Deco.render = (prev => function () {
+  const D = runtime.deco;
+  if (D && !D.touchUI && D.tab !== 'styles') { if (D.cat === undefined) Object.assign(D, { cat: 'all', trayOpen: true, more: false }); Build1.render(); Build3.gridBtn(); return; }
+  prev.call(this);
+})(Deco.render);
+/* the Phase 2 grid toggle wraps Deco.render from outside, so the mouse path above adds it itself */
+Build3.gridBtn = () => { const el = $('#deco'), D = runtime.deco; if (!el || !D || el.querySelector('[data-act="b2Grid"]')) return; const undo = el.querySelector('[data-act="decoUndo"]'); if (!undo) return; const b = document.createElement('button'); b.className = 'btn sm' + (Build2.on() ? ' on' : ''); b.dataset.act = 'b2Grid'; b.textContent = Build2.on() ? '▦ Grid' : '✥ Free'; b.title = Build2.on() ? 'Snapping to the grid. Click for free placement (or hold Shift).' : 'Free placement. Click to snap to the grid.'; b.setAttribute('aria-pressed', String(Build2.on())); undo.before(b); };
+Object.assign(ACT, {
+  // tray items keep the original action name, so older code and tests that click decoPick still work
+  decoPick(id) { const D = runtime.deco; if (!D) return; if (D.touchUI) { D.trayOpen = false; Build1.buzz(8); } Deco.pick(id); },
+  b3Now(id) { Build3.buyNow(id); },
+  b3Order(id) { Build3.order(id); },
+  b3Sub(k) { runtime.deco.sub = k || null; Deco.render(); },
+  b1Cat(k) { const D = runtime.deco; D.cat = k; if (k === 'shop') { D.sub = null; } Deco.render(); }
+});
+(() => {
+  const st = document.createElement('style'); st.id = 'build3-css';
+  st.textContent = `
+.b3-catbar{display:flex;gap:5px;align-items:center;min-width:0}
+.b3-catbar .b1-cats{flex:1 1 auto;min-width:0}
+.b3-grow{flex:0 0 auto}
+#deco .it .wh{font-size:.85em;opacity:.65;line-height:1.1}
+#deco .b3-shop{width:132px!important;cursor:default;gap:3px;padding-bottom:6px}
+#deco .b3-shop .btn{width:100%;min-height:34px;padding:2px 4px;font-size:11px}
+#deco .b3-have{font-size:.85em;color:#36522e;font-weight:700;text-align:center}
+.b3-note{font:600 11px/1.3 var(--f-ui);opacity:.75}
+body.deco-on:not(.touch-ui) #deco>.b1-head,body.deco-on:not(.touch-ui) #deco>.b1-more,body.deco-on:not(.touch-ui) #deco>.b3-catbar,body.deco-on:not(.touch-ui) #deco>.b3-note,body.deco-on:not(.touch-ui) #deco>.b1-tray,body.deco-on:not(.touch-ui) #deco>.b1-msg,body.deco-on:not(.touch-ui) #deco>.b3-mouse{flex:1 1 100%}
+body.deco-on:not(.touch-ui) #deco .b1-tray{max-height:none;overflow:visible}
+.b3-mouse{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+@media (orientation:landscape) and (max-height:540px){.b3-grow{display:none}}
+body.deco-on.touch-ui #toasts{top:calc(env(safe-area-inset-top) + 8px)!important;bottom:auto!important}
+.b3-shopping~.b1-msg:empty{display:none}`;
+  document.head.appendChild(st);
+})();
 </script>
 </body></html>

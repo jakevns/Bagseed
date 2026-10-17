@@ -1,0 +1,15 @@
+{
+  "purchases": 2,
+  "deliveryMatchesStore": true,
+  "cameraMenuMatchesStore": true,
+  "cameraMountAndUnclip": true,
+  "remoteFeedRemainsViewOnly": true,
+  "nativeControllerDryingAutomation": true,
+  "controllerOffAndOutage": true,
+  "readOnlyDrawing": true,
+  "liveDryingProgressWarningReady": true,
+  "outdoorAndGreenhouseTags": true,
+  "saveReload": true,
+  "missingArtBlocksStartup": true,
+  "errors": []
+}

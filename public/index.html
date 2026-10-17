@@ -49,7 +49,7 @@ html[data-bagseed-loading="loading"] body > :not(#bagseed-loading):not(script):n
   const statusText=document.getElementById('bagseed-loading-status'),detail=document.getElementById('bagseed-loading-detail'),reload=document.getElementById('bagseed-loading-reload');
   let savedReduced=false;try{savedReduced=!!JSON.parse(localStorage.getItem('bagseed.settings.v1'))?.reduced;}catch{}
   overlay.dataset.reduced=String(matchMedia('(prefers-reduced-motion: reduce)').matches||savedReduced);
-  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners'];
+  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners','BagseedHVAC','BagseedTentDetails','BagseedWaterPots'];
   let phase='loading',resolveReady,rejectReady;
   const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});ready.catch(()=>{});
   const guarded=['click','pointerdown','touchstart','keydown','wheel'];
@@ -1062,8 +1062,8 @@ EQ.ac = [{ name: 'No air conditioner', price: 0, watts: 0 },
 { name: 'Rattlebox Compact AC', brand: 'Rattlebox', price: 139, watts: 300, maxD: 12, manual: true, fail: .05, desc: 'A rattly little floor cooler with LOW and HIGH settings. Cools the whole room (and every tent in it). Loud, dependable, and a little drippy.', review: [3, 'Loud. Cold. Loud.'] },
 { name: 'Polar Pal Digital AC', brand: 'Polar Pal', price: 289, watts: 250, maxD: 16, thermo: true, eff: .82, fail: .012, desc: 'Portable AC with a thermostat and a hose you will trip over.', review: [5, 'Heat wave? What heat wave.'] }];
 EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
-{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools to a set point automatically.', review: [5, 'Paid for itself the first heat wave.'] },
-{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Barely sips power.', review: [5, 'It knew a cold snap was coming before I did.'] }];
+{ name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools automatically. Replaces separate heaters and ACs in this room, moving them to Unused gear.', review: [5, 'Paid for itself the first heat wave.'] },
+{ name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Replaces separate room heaters and ACs, moving them to Unused gear.', review: [5, 'It knew a cold snap was coming before I did.'] }];
 EQ.ctrl = [{ name: 'No controller', price: 0, watts: 0 },
 { name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Sets digital heaters, ACs, humidifiers and dehumidifiers to each stage automatically, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
 LOC_SLOTS.push('heater', 'ac', 'hvac', 'ctrl');
@@ -5856,7 +5856,7 @@ Object.assign(SceneArt, {
     const L = state.locations[loc], pid = L.slots[i], p = pid && state.plants[pid];
     if (!unlocked) { this.hit('bedplot:' + i, x - 22, y - 10, 44, 18, 'Raised bed (outdoor planting is locked)', [x, y + 12], 'plant'); return; }
     if (p && (p.stage === S.drying || p.stage === S.finished && p.dry)) {
-      R(c, x - 1, y - 12, 2, 4, '#7d6a3c'); R(c, x - 6, y - 22, 14, 9, '#f2e4c4'); R(c, x - 6, y - 22, 14, 1, '#ffffff'); pxTextTiny(c, p.stage === S.drying ? Math.round((p.dry ? p.dry.prog : 0) * 100) + '%' : 'OK', x - 4, y - 20, '#2b1d14');
+      RoomArt.dryTag(c, x - 8, y - 26, p, loc);
       this.hit('plant:' + loc + ':' + i, x - 20, y - 26, 40, 30, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (dry · ready to jar)'), [x, y + 12], 'plant'); return;
     }
     if (p) {
@@ -7655,7 +7655,7 @@ const Greenhouse = {
   },
   slot(c, i, x, y, t) {
     const L = state.locations.gh, pid = L.slots[i], p = pid && state.plants[pid], walk = [ghLayout().box[0] + ghLayout().box[2] / 2, ghLayout().box[1] + ghLayout().box[3] + 14];
-    if (p && (p.stage === S.drying || (p.stage === S.finished && p.dry))) { R(c, x - 1, y - 4, 2, 4, '#7d6a3c'); R(c, x - 6, y - 14, 14, 9, '#f2e4c4'); pxTextTiny(c, p.stage === S.drying ? Math.round((p.dry ? p.dry.prog : 0) * 100) + '%' : 'OK', x - 4, y - 12, '#2b1d14'); RoomArt.hit('plant:gh:' + i, x - 16, y - 18, 32, 22, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (ready to jar)'), walk, 'plant'); return; }
+    if (p && (p.stage === S.drying || (p.stage === S.finished && p.dry))) { RoomArt.dryTag(c, x - 8, y - 18, p, 'gh'); RoomArt.hit('plant:gh:' + i, x - 16, y - 18, 32, 22, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (ready to jar)'), walk, 'plant'); return; }
     if (p) { const s = PlantArt.draw(c, p, x, y, 1, t, .6); Gear.pot(c, x, y, L.equip.pot || 2, p.water); const hgt = Math.min(s.h, 110); RoomArt.hit('plant:gh:' + i, x - 16, y - hgt, 32, hgt + 10, p.name + ' · ' + STAGES[p.stage].name, walk, 'plant'); }
     else { Gear.pot(c, x, y, L.equip.pot || 2, 0); RoomArt.hit('slot:gh:' + i, x - 9, y - 6, 18, 16, 'Empty greenhouse pot', walk, 'plant'); }
   }
@@ -12905,8 +12905,7 @@ const growroomArt114w = SceneArt.growroom.bind(SceneArt);
 SceneArt.growroom = function (c, t) {
   growroomArt114w(c, t);
   const T = Water.S().tanks.growroom;
-  if (T.has) { drawTank(c, 384, 132, T.level / WATER.tankDays, T.level); RoomArt.hit('tank:growroom', 382, 128, 28, 36, `Grow-room drip tank · ${T.level}/${WATER.tankDays} days`, [396, 176], 'item'); }
-  else RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
+  if (!T.has) RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
 };
 const grSolids114w = SCENES.growroom.solids;
 SCENES.growroom.solids = function () { const s = grSolids114w.call(this); if (Water.S().tanks.growroom.has) s.push([384, 154, 22, 10]); return s; };
@@ -12925,6 +12924,13 @@ INIT114.push((st) => {
   }
 });
 
+function drawRainBarrel(c, x, y, frac, t = 0) {
+  c.save(); c.translate(x - 210, y - 50);
+    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
+    const f = clamp(frac, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
+    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+  c.restore();
+}
 /* backyard rain barrel art (under the downspout, between the AC unit and the hose reel) */
 const yardAddTo114w = Actors.addTo.bind(Actors);
 Actors.addTo = function (items, c, t, scene) {
@@ -12934,9 +12940,7 @@ Actors.addTo = function (items, c, t, scene) {
   items.push({ y: 72, d: () => {
     R(c, 214, 8, 3, 46, '#8a9aa6'); R(c, 214, 8, 1, 46, '#aab8c2');                     // downspout
     if (!B.has) { RoomArt.hit('barrelspot', 204, 46, 30, 26, 'Spot for a rain barrel (LeafCart › Water & Pots)', [219, 84], 'structure'); return; }
-    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
-    const f = clamp(B.level / WATER.barrelCap, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
-    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+    drawRainBarrel(c, 210, 50, B.level / WATER.barrelCap, t);
     if ((WATER.rainHr[state.weather] || 0) && !settings.reduced) R(c, 215, 46 + Math.floor(t * 8) % 6, 1, 2, '#bfe6ff');
     RoomArt.hit('barrel', 206, 46, 28, 28, `Rain barrel · ${Math.round(B.level)}/${WATER.barrelCap} gal`, [219, 84], 'item');
   } });
@@ -13048,7 +13052,7 @@ function plantCamArt(cv, loc) {
   const ps = plantsIn(loc), n = Math.max(1, slotCount(loc)), lightOn = isLightOn(loc);
   if (!out && lightOn) { c.fillStyle = 'rgba(255,240,200,.16)'; c.fillRect(0, 0, W, H); }
   if (!out && !lightOn) { c.fillStyle = 'rgba(10,10,30,.55)'; c.fillRect(0, 0, W, H); }
-  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6; try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } R(c, x - 6, base, 12, 5, '#7a4e2a'); });
+  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6, potTier = state.locations[loc].equip.pot || (loc === 'gh' ? 2 : 1), newPot = loc !== 'outdoor' && window.BagseedWaterPots?.loaded; if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water); try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water, true); else R(c, x - 6, base, 12, 5, '#7a4e2a'); });
   // camera overlay: timestamp + REC dot, scanlines
   for (let y = 0; y < H; y += 3) { c.fillStyle = 'rgba(0,0,0,.08)'; c.fillRect(0, y, W, 1); }
   R(c, 3, 3, 3, 3, Math.floor(performance.now() / 600) % 2 ? '#ff5a4f' : '#7a2c22'); pxText(c, clock(state.minute), 9, 3, 1, '#e8ffd0');
@@ -15964,7 +15968,22 @@ const Gear115 = {
     }
     // instances that claim a location which no longer has that piece (stolen, removed by an event): they're gone
     for (const it of this.all()) if (it.at && !seen.has(it.iid)) { G.log.push({ day: state.day, iid: it.iid, name: this.name(it), what: 'lost' }); delete G.items[it.iid]; }
+    // Existing saves also retain redundant room heaters/ACs as owned unused gear.
+    for (const loc of ownedLocs()) if (state.locations[loc].equip.hvac) this.parkClimate(loc);
     if (G.log.length > 60) G.log.splice(0, G.log.length - 60);
+  },
+  climatePeers(loc) {
+    const room = lungRoomOf(loc);
+    return room ? ownedLocs().filter(other => lungRoomOf(other) === room) : [loc];
+  },
+  parkClimate(loc) {
+    const parked = [];
+    for (const other of this.climatePeers(loc)) for (const slot of ['heater', 'ac']) {
+      const L = state.locations[other], tier = L?.equip[slot]; if (!tier) continue;
+      const it = this.at(other, slot) || this.create(slot, tier, { at: other, src: 'migrated', cond: L.cond?.[slot] });
+      it.at = null; this.clear(slot, other); if (L.on) L.on[slot] = false; parked.push(it);
+    }
+    return parked;
   },
   /* where can this go? */
   targets(it) {
@@ -15977,6 +15996,10 @@ const Gear115 = {
     if (this.isGlobal(it.slot)) return { ok: true };
     if (!LOC_DEF[loc] || !locOwned(loc)) return { ok: false, why: 'You don\'t have that grow space.' };
     if (!locAccepts(loc, it.slot)) return { ok: false, why: `${locName(loc)} has no spot for a ${SLOT_NAME[it.slot].toLowerCase()}.` };
+    if (['heater', 'ac'].includes(it.slot)) {
+      const combined = this.climatePeers(loc).find(other => state.locations[other]?.equip.hvac);
+      if (combined) return { ok: false, why: `${EQ.hvac[state.locations[combined].equip.hvac].name} already heats and cools this whole room. Remove it before installing a separate heater or AC.` };
+    }
     if (EQ[it.slot][it.tier].tentOnly && LOC_DEF[loc].kind === 'closet') return { ok: false, why: `${this.name(it)} is too big for the starter tent. It needs a real tent.` };
     if (it.slot === 'pot' && LOC_DEF[loc].kind !== 'closet' && LOC_DEF[loc].kind !== 'tent') return { ok: false, why: 'Outdoor beds and the greenhouse have built-in containers.' };
     return { ok: true };
@@ -16008,10 +16031,11 @@ const Gear115 = {
       if (cur) { const r = this.canRemove(cur); if (!r.ok) { toast(esc(r.why), 'warn'); return false; } cur.at = null; }
       const firstLight = it.slot === 'light' && (state.story === 'wait' || state.story === 'light');
       this.apply(it.slot, it.tier, loc, it.cond); it.at = loc;
+      const parked = it.slot === 'hvac' ? this.parkClimate(loc) : [];
       state.stats.upgrades++; state.rep.equipment += .3; runtime.flash = .8;
       if (firstLight) { setStory(state.locations.closet.equip.pot ? 'plant' : 'container'); think(it.tier === 1 ? 'It\'s... purple. Very purple. The box says PROFESSIONAL six times.' : 'Oh, that\'s a real light.', 4500); }
       Sfx.good(); safeRun('ach', checkAch); updateHUD(); bgCache.clear();
-      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}`, 'social');
+      if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}${parked.length ? ` ${parked.map(item => esc(this.name(item))).join(' and ')} moved to <b>Unused gear</b>; this unit heats and cools the whole room.` : ''}`, 'social');
       SaveSys.request('gear-install'); return true;
     } finally { runtime.gearBusy = false; }
   },
@@ -17241,17 +17265,6 @@ drawExtraIcon = function (ctx, cv, id) {
 };
 const drawDecorIcon115a = drawDecorIcon;
 drawDecorIcon = function (ctx, cv, id) { if (PROD_ART[id]) { PROD_ART[id](cv); return; } return drawDecorIcon115a(ctx, cv, id); };
-
-/* ART02: the installed room reservoir in the grow room matches its icon: lid, fill cap, level window, drip lines to the tents */
-const growroomArt115 = SceneArt.growroom.bind(SceneArt);
-SceneArt.growroom = function (c, t) {
-  growroomArt115(c, t);
-  const T = Water.S().tanks.growroom; if (!T.has) return;
-  const x = 384, y = 132;
-  R(c, x + 7, y - 4, 8, 2, '#7fd4ff');                                         // fill cap
-  R(c, x + 27, y + 26, 1, 4, '#2b2b33'); R(c, x + 27, y + 29, 16, 1, '#2b2b33'); // drip line toward the tents
-  for (const loc of ['tent4', 'tent5']) if (locOwned(loc)) { const g = TentArt.geo[loc]; if (g) { R(c, g.x + g.w - 4, g.y + g.h - 6, 1, 4, '#2b2b33'); R(c, g.x + g.w - 6, g.y + g.h - 3, 4, 1, '#2b2b33'); } }
-};
 
 /* ---------------- ART04: seed packets ---------------- */
 const PKT_MOTIF = {
@@ -26917,7 +26930,7 @@ const Build1 = {
       + `<button class="btn sm primary" data-act="decoDone">Done</button></div>`;
     const more = D.more ? `<div class="b1-more">${zone === 'bedroom' ? '<button class="btn sm" data-act="decoTab" data-arg="styles">Room styles</button>' : ''}<button class="btn sm" data-act="decoShop">Shop decor</button><button class="btn sm amber" data-act="homeUpOpen">Home upgrades</button></div>` : '';
     const catRow = `<div class="b1-cats">${cats.map(([k, n]) => `<button class="chip ${D.cat === k ? 'on' : ''}" data-act="b1Cat" data-arg="${k}">${n}</button>`).join('')}<span style="flex:1"></span><button class="chip" data-act="b1Tray" aria-label="${D.trayOpen ? 'Show fewer' : 'Show all items'}">${D.trayOpen ? '▾ Less' : '▴ All'}</button></div>`;
-    const tray = `<div class="b1-tray ${D.trayOpen ? 'open' : ''}">${shown.map(k => { const Df = decorDef(k), free = decorFree(k); return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="b1Pick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="n">${free}</span></button>`; }).join('') || `<span class="hint">${own.length ? 'Everything here is already placed. Tap an item in the room to move it.' : 'Nothing for this space yet. Shop decor on LeafCart (⋯).'}</span>`}</div>`;
+    const tray = `<div class="b1-tray ${D.trayOpen ? 'open' : ''}">${shown.map(k => { const Df = decorDef(k), free = decorFree(k); return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="decoPick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="n">${free}</span></button>`; }).join('') || `<span class="hint">${own.length ? 'Everything here is already placed. Tap an item in the room to move it.' : 'Nothing for this space yet. Shop decor on LeafCart (⋯).'}</span>`}</div>`;
     el.innerHTML = head + more + catRow + tray + '<div class="b1-msg" role="status" aria-live="polite"></div>'; hydrate(el);
     const nt = el.querySelector('.b1-tray'); if (nt) { nt.scrollLeft = keep[0]; nt.scrollTop = keep[1]; }
     this.status();
@@ -27172,6 +27185,127 @@ Deco.render = (prev => function () {
 Object.assign(ACT, { b2Grid() { Build2.toggle(); } });
 /* narrow phones: the header drops the room label so Done always fits beside the grid toggle */
 (() => { const st = document.createElement('style'); st.id = 'build2-css'; st.textContent = '@media (max-width:440px){.b1-zone{display:none}.b1-head{gap:4px}.b1-head .btn{min-width:42px;padding-left:8px;padding-right:8px}}'; document.head.appendChild(st); })();
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 3 · the tray and shopping
+   One tray for phones and mouse play: tabs by what things are (Rugs,
+   Lighting, Houseplants…), a line under each item saying where it goes,
+   and a Shop tab so buying never leaves Decorate mode. Each item can be
+   ordered at the normal price (arrives tomorrow, like any LeafCart
+   order) or bought now for 25% more and placed straight away.
+   With a mouse the old Rotate/nudge/Place row stays under the tray.
+   ===================================================================== */
+const Build3 = {
+  RUSH: 1.25,
+  WHERE: { wall: 'Wall', floor: 'Floor', rug: 'Rug', desk: 'Tabletop' },
+  nowPrice(D) { return Math.ceil(D.p * this.RUSH); },
+  catName(k) { const c = DECOR_CATS.find(x => x[0] === k); return c ? c[1] : 'Other'; },
+  pending(id) { return state.orders.filter(o => o.key === 'd:' + id).length + state.packages.filter(o => o.key === 'd:' + id).length; },
+  forSale(zone) { return Object.keys(DECOR).filter(k => { const D = decorDef(k); return D && D.p && decorZones(D).includes(zone); }); },
+  owned(zone) { return Object.keys(state.room.own).filter(k => !k.startsWith('s:') && !k.startsWith('v:') && decorDef(k) && decorZones(decorDef(k)).includes(zone)); },
+  /* tabs in catalogue order, only those with something in them */
+  cats(ids) { const have = new Set(ids.map(k => decorDef(k).cat || 'other')); return DECOR_CATS.filter(([k]) => have.has(k)).concat(have.has('other') ? [['other', 'Other']] : []); },
+  buyNow(id) {
+    const D = decorDef(id); if (!D || !D.p || !runtime.deco) return;
+    const price = this.nowPrice(D); if (!pay(price)) return;
+    state.room.own[id] = (state.room.own[id] || 0) + 1; Sfx.coin();
+    toast(`<b>${esc(D.n)}</b> · ${money(price)} · it's in your hands. Place it anywhere it fits.`);
+    SaveSys.now('purchase'); runtime.deco.trayOpen = false; Deco.pick(id); Build1.buzz && Build1.buzz(8);
+  },
+  order(id) {
+    if (!runtime.deco) return;
+    if (Shop.order('d:' + id, false)) { SaveSys.now('purchase'); Deco.render(); }
+  },
+  card(k, H) {
+    const Df = decorDef(k), free = decorFree(k), where = this.WHERE[Df.k] || '';
+    return `<button class="it ${H && H.id === k && !H.fromUid ? 'on' : ''}" data-act="decoPick" data-arg="${esc(k)}" data-b1="${esc(k)}" title="${esc(Df.n)} · ${where}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="wh">${where}</span><span class="n">${free}</span></button>`;
+  },
+  shopCard(k) {
+    const Df = decorDef(k), own = decorFree(k), placed = (state.room.own[k] || 0) - own, pend = this.pending(k), where = this.WHERE[Df.k] || '';
+    const have = [own ? own + ' to place' : '', placed > 0 ? placed + ' placed' : '', pend ? pend + ' arriving' : ''].filter(Boolean).join(' · ');
+    return `<div class="it b3-shop" title="${esc(Df.n)}"><canvas class="px" width="40" height="30" data-draw="decor:${esc(k)}"></canvas><span class="nm">${esc(Df.n)}</span><span class="wh">${where}${Df.glow ? ' · glows' : ''}</span>${have ? `<span class="b3-have">${have}</span>` : ''}`
+      + `<button class="btn sm primary" data-act="b3Now" data-arg="${esc(k)}" aria-label="Buy ${esc(Df.n)} now for ${money(this.nowPrice(Df))} and place it">Now ${money(this.nowPrice(Df))}</button>`
+      + `<button class="btn sm" data-act="b3Order" data-arg="${esc(k)}" aria-label="Order ${esc(Df.n)} for ${money(Df.p)}, arriving tomorrow">${money(Df.p)} · tomorrow</button></div>`;
+  },
+  /* the old mouse controls, kept under the tray */
+  mouseRow() {
+    const D = runtime.deco, H = D.hold, hd = H && decorDef(H.id), V = H && hd && hd.vars ? hd.vars[H.v || 0] : null, dis = H ? '' : 'disabled';
+    const pan = D.zone !== 'bedroom' ? `<span class="hint">View:</span><button class="btn sm" data-act="decoPan" data-arg="-40:0" aria-label="Look left">◀</button><button class="btn sm" data-act="decoPan" data-arg="40:0" aria-label="Look right">▶</button><button class="btn sm" data-act="decoPan" data-arg="0:-40" aria-label="Look up">▲</button><button class="btn sm" data-act="decoPan" data-arg="0:40" aria-label="Look down">▼</button>` : '';
+    return `<div class="b3-mouse"><button class="btn sm" data-act="decoRot" ${dis}>${D.zone === 'bedroom' ? '⇋ Face' : '⟳ Rotate'}</button>${H && hd.vars ? `<button class="btn sm" data-act="decoVar">◐ ${esc(V.n)}${V.p && !state.room.own['v:' + H.id + ':' + (H.v || 0)] ? ' · ' + money(V.p) : ''}</button>` : ''}`
+      + `<button class="btn sm" data-act="decoNudge" data-arg="-2:0" ${dis} aria-label="Nudge left">←</button><button class="btn sm" data-act="decoNudge" data-arg="2:0" ${dis} aria-label="Nudge right">→</button><button class="btn sm" data-act="decoNudge" data-arg="0:-2" ${dis} aria-label="Nudge up">↑</button><button class="btn sm" data-act="decoNudge" data-arg="0:2" ${dis} aria-label="Nudge down">↓</button>`
+      + `<button class="btn sm primary" data-act="decoPlace" ${H && D.ghost && D.ghost.ok ? '' : 'disabled'}>✓ Place</button><button class="btn sm danger" data-act="decoRemove" ${dis}>Store</button><button class="btn sm ghost" data-act="decoCancel" ${dis}>✕ Cancel</button>${pan}</div>`;
+  },
+  render() {
+    const D = runtime.deco, el = $('#deco'), zone = D.zone, H = D.hold, touch = !!D.touchUI;
+    const sv = el.querySelector('.b1-tray'), keep = sv ? [sv.scrollLeft, sv.scrollTop] : [0, 0], cv = el.querySelector('.b1-cats'), keepC = cv ? cv.scrollLeft : 0;
+    const shop = D.cat === 'shop', own = this.owned(zone), pool = shop ? this.forSale(zone) : own;
+    const cats = this.cats(pool);
+    if (D.cat !== 'all' && !shop && !cats.some(([k]) => k === D.cat)) D.cat = 'all';
+    if (D.sub && !cats.some(([k]) => k === D.sub)) D.sub = null;
+    const inCat = k => { const c = decorDef(k).cat || 'other'; return shop ? (!D.sub || c === D.sub) : (D.cat === 'all' || c === D.cat); };
+    const shown = pool.filter(k => inCat(k) && (shop || decorFree(k) > 0 || (H && H.id === k)))
+      .sort((a, b) => shop ? decorDef(a).p - decorDef(b).p : 0);
+    const zname = { bedroom: 'Bedroom', house: 'House', yard: 'Backyard' }[zone];
+    const head = `<div class="b1-head"><span class="b1-zone">${zname} · paused</span><span class="b1-money">${money(state.money)}</span><span style="flex:1"></span>`
+      + (touch ? `<button class="btn sm" data-act="b1Zoom" aria-label="${D.zoomIn ? 'Zoom out' : 'Zoom in'}">${D.zoomIn ? '－' : '＋'}</button>` : '')
+      + `<button class="btn sm" data-act="decoUndo" ${D.undo.length ? '' : 'disabled'} aria-label="Undo">↶</button>`
+      + (touch ? `<button class="btn sm ${D.more ? 'on' : ''}" data-act="b1More" aria-label="More options" aria-expanded="${!!D.more}">⋯</button>` : '')
+      + `<button class="btn sm primary" data-act="decoDone">Done</button></div>`;
+    const more = D.more || !touch ? `<div class="b1-more">${zone === 'bedroom' ? '<button class="btn sm" data-act="decoTab" data-arg="styles">Room styles</button>' : ''}<button class="btn sm" data-act="decoShop">Open LeafCart</button><button class="btn sm amber" data-act="homeUpOpen">Home upgrades</button></div>` : '';
+    const chip = (act, k, n, on) => `<button class="chip ${on ? 'on' : ''}" data-act="${act}" data-arg="${k}">${n}</button>`;
+    const catRow = `<div class="b1-cats">${chip('b1Cat', 'shop', '🛒 Shop', shop)}${shop ? chip('b3Sub', '', 'Everything', !D.sub) + cats.map(([k, n]) => chip('b3Sub', k, n, D.sub === k)).join('')
+      : chip('b1Cat', 'all', 'All', D.cat === 'all') + cats.map(([k, n]) => chip('b1Cat', k, n, D.cat === k)).join('')}</div>`;
+    const grow = touch ? `<button class="chip b3-grow" data-act="b1Tray" aria-label="${D.trayOpen ? 'Show fewer' : 'Show all items'}">${D.trayOpen ? '▾ Less' : '▴ More'}</button>` : '';
+    const empty = shop ? 'Nothing for sale for this space.' : own.length ? 'Everything here is already placed. Tap an item in the room to move it, or open 🛒 Shop.' : 'Nothing to place yet. Open 🛒 Shop to buy something for this space.';
+    const tray = `<div class="b1-tray ${D.trayOpen || !touch ? 'open' : ''} ${shop ? 'b3-shopping' : ''}">${shown.map(k => shop ? this.shopCard(k) : this.card(k, H)).join('') || `<span class="hint">${empty}</span>`}</div>`;
+    const note = shop ? `<div class="b3-note">Ordering costs the normal price and arrives tomorrow. <b>Now</b> costs 25% more and goes straight into your hands.</div>` : '';
+    el.innerHTML = head + more + `<div class="b3-catbar">${catRow}${grow}</div>` + note + tray + '<div class="b1-msg" role="status" aria-live="polite"></div>' + (touch ? '' : this.mouseRow());
+    hydrate(el);
+    const nt = el.querySelector('.b1-tray'); if (nt) { nt.scrollLeft = keep[0]; nt.scrollTop = keep[1]; }
+    const nc = el.querySelector('.b1-cats'); if (nc) nc.scrollLeft = keepC;
+    Build1.status();
+  }
+};
+Build1.render = function () { Build3.render(); };
+/* while browsing the shop with nothing in hand, the placing hint just gets in the way */
+Build1.status = (prev => function () { prev.call(this); const D = runtime.deco, el = $('#deco .b1-msg'); if (D && el && D.cat === 'shop' && !D.hold) el.textContent = ''; })(Build1.status);
+/* mouse play gets the same tray (the styles tab keeps its own page) */
+Deco.render = (prev => function () {
+  const D = runtime.deco;
+  if (D && !D.touchUI && D.tab !== 'styles') { if (D.cat === undefined) Object.assign(D, { cat: 'all', trayOpen: true, more: false }); Build1.render(); Build3.gridBtn(); return; }
+  prev.call(this);
+})(Deco.render);
+/* the Phase 2 grid toggle wraps Deco.render from outside, so the mouse path above adds it itself */
+Build3.gridBtn = () => { const el = $('#deco'), D = runtime.deco; if (!el || !D || el.querySelector('[data-act="b2Grid"]')) return; const undo = el.querySelector('[data-act="decoUndo"]'); if (!undo) return; const b = document.createElement('button'); b.className = 'btn sm' + (Build2.on() ? ' on' : ''); b.dataset.act = 'b2Grid'; b.textContent = Build2.on() ? '▦ Grid' : '✥ Free'; b.title = Build2.on() ? 'Snapping to the grid. Click for free placement (or hold Shift).' : 'Free placement. Click to snap to the grid.'; b.setAttribute('aria-pressed', String(Build2.on())); undo.before(b); };
+Object.assign(ACT, {
+  // tray items keep the original action name, so older code and tests that click decoPick still work
+  decoPick(id) { const D = runtime.deco; if (!D) return; if (D.touchUI) { D.trayOpen = false; Build1.buzz(8); } Deco.pick(id); },
+  b3Now(id) { Build3.buyNow(id); },
+  b3Order(id) { Build3.order(id); },
+  b3Sub(k) { runtime.deco.sub = k || null; Deco.render(); },
+  b1Cat(k) { const D = runtime.deco; D.cat = k; if (k === 'shop') { D.sub = null; } Deco.render(); }
+});
+(() => {
+  const st = document.createElement('style'); st.id = 'build3-css';
+  st.textContent = `
+.b3-catbar{display:flex;gap:5px;align-items:center;min-width:0}
+.b3-catbar .b1-cats{flex:1 1 auto;min-width:0}
+.b3-grow{flex:0 0 auto}
+#deco .it .wh{font-size:.85em;opacity:.65;line-height:1.1}
+#deco .b3-shop{width:132px!important;cursor:default;gap:3px;padding-bottom:6px}
+#deco .b3-shop .btn{width:100%;min-height:34px;padding:2px 4px;font-size:11px}
+#deco .b3-have{font-size:.85em;color:#36522e;font-weight:700;text-align:center}
+.b3-note{font:600 11px/1.3 var(--f-ui);opacity:.75}
+body.deco-on:not(.touch-ui) #deco>.b1-head,body.deco-on:not(.touch-ui) #deco>.b1-more,body.deco-on:not(.touch-ui) #deco>.b3-catbar,body.deco-on:not(.touch-ui) #deco>.b3-note,body.deco-on:not(.touch-ui) #deco>.b1-tray,body.deco-on:not(.touch-ui) #deco>.b1-msg,body.deco-on:not(.touch-ui) #deco>.b3-mouse{flex:1 1 100%}
+body.deco-on:not(.touch-ui) #deco .b1-tray{max-height:none;overflow:visible}
+.b3-mouse{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+@media (orientation:landscape) and (max-height:540px){.b3-grow{display:none}}
+body.deco-on.touch-ui #toasts{top:calc(env(safe-area-inset-top) + 8px)!important;bottom:auto!important}
+.b3-shopping~.b1-msg:empty{display:none}`;
+  document.head.appendChild(st);
+})();
 </script>
 <style id="bagseed-main-menu-style">
 /* Approved community-garden title screen; all rules stay inside this screen. */
@@ -30072,7 +30206,7 @@ function remainingHairSource(L,dir){
  function drawInside(c,loc,t){if(!handles(loc))return;const L=state.locations[loc],n=L.equip.dehum,a=DATA.tiers[n];fixtures.delete(loc);if(!a)return;const[x,y]=DATA.placements[loc],on=!!(L.dehumOn||n===2);groundShadow(c,x,y,a.width);sprite(c,x,y,n,on,t,L.dehumTarget);fixtures.set(loc,{x,y,tier:n,on});const b=BagseedTentPlacement.bounds(loc);RoomArt.hit('dehum:'+loc,x-a.width/2-1,y-a.height-1,a.width+2,a.height+2,EQ.dehum[n].name,[b[0]+b[2]/2,b[1]+b[3]+14],'equip');}
  // These stay on the exterior header, outside the zipped flap and contents mask.
  function drawSensor(c,loc,t=0){if(!handles(loc))return;const L=state.locations[loc],n=L.equip.sensor,b=BagseedTentPlacement.bounds(loc),[w,h]=window.BagseedSensors?.dimensions(n)||[n===3?18:n===2?14:9,n===3?14:n===2?10:n===1?9:8],scale=.72,x=b[0]+b[2]*(loc==='closet'?.81:loc==='tent2'?.875:.89)-w*scale/2,y=b[1]+b[3]*.078; c.save();c.translate(x,y);c.scale(scale,scale);Gear.sensor(c,0,0,n,envFor(loc),loc);c.restore();const f={x,y,w:w*scale,h:h*scale,tier:n};sensors.set(loc,f);RoomArt.hit('sensor:'+loc,x-1,y-1,f.w+2,f.h+2,n?EQ.sensor[n].name:'Climate check (hand)',[b[0]+b[2]/2,b[1]+b[3]+14],'equip');
-  controllers.delete(loc);if(L.equip.ctrl){const controllerScale=loc==='closet'?.55:.72,cx=x-1.8-9*controllerScale,cy=y+(f.h-11*controllerScale)/2;c.save();c.translate(cx,cy);c.scale(controllerScale,controllerScale);Gear.ctrl(c,0,0,L.equip.ctrl,true,settings.reduced?0:t,false);const powered=locOn(L,'ctrl')&&!state.fail.outage&&!roomTripped(lungRoomOf(loc)),glow=window.BagseedEquipmentGlow;glow?.display(c,1,1,7,5,'#b7db91',powered,.45,'controller-display');glow?.point(c,2.5,8.5,1.2,'#b7db91',powered,.75,'controller-indicator');glow?.point(c,6,8.5,.9,'#d4deae',powered,.35,'controller-button');c.restore();const controller={x:cx,y:cy,w:9*controllerScale,h:11*controllerScale,tier:L.equip.ctrl};controllers.set(loc,controller);RoomArt.hit('ctrl:'+loc,cx-.5,cy-.5,controller.w+1,controller.h+1,EQ.ctrl[L.equip.ctrl].name,[b[0]+b[2]/2,b[1]+b[3]+14],'equip');}
+  controllers.delete(loc);if(L.equip.ctrl){const controllerScale=loc==='closet'?.55:.72,cx=x-1.8-9*controllerScale,cy=y+(f.h-11*controllerScale)/2;c.save();c.translate(cx,cy);c.scale(controllerScale,controllerScale);Gear.ctrl(c,0,0,L.equip.ctrl,true,settings.reduced?0:t,false,loc);c.restore();const controller={x:cx,y:cy,w:9*controllerScale,h:11*controllerScale,tier:L.equip.ctrl};controllers.set(loc,controller);RoomArt.hit('ctrl:'+loc,cx-.5,cy-.5,controller.w+1,controller.h+1,EQ.ctrl[L.equip.ctrl].name,[b[0]+b[2]/2,b[1]+b[3]+14],'equip');}
  }
  Gear.dehum=function(c,x,y,n,on,t){if(!loaded||!DATA.tiers[n])return original.apply(this,arguments);sprite(c,x+6,y+16,n,on,t);};
  drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='dehum'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],scale=Math.min(184/a.height,235/a.width);c.save();c.translate(160,120);c.scale(scale,scale);sprite(c,0,a.height/2,n,true,0,55);c.restore();};
@@ -30193,6 +30327,81 @@ function remainingHairSource(L,dir){
  RoomArt.hit=function(id,x,y,w,h,label,walk,layer){const m=/^ac:(.+)$/.exec(id),f=m&&fixtures.get(m[1]);if(f){const a=DATA.tiers[f.tier];x=f.x-a.width/2-1;y=f.y-a.height-1;w=a.width+2;h=a.height+2;}return hit.call(this,id,x,y,w,h,label,walk,layer);};
  drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='ac'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],s=Math.min(181/a.height,239/a.width);c.save();c.translate(160,120);c.scale(s,s);sprite(c,0,a.height/2,n,true,0,true,80,1,false);c.restore();};
  const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Air conditioner artwork failed'));image.src=DATA.image;});window.BagseedAirConditioners=Object.freeze({ready,sprite,phase,air,fixtures,get loaded(){return loaded;}});
+})();
+
+</script>
+<script id="bagseed-hvac-production-code">
+/* Combined room heat pumps: fixed wall artwork, native heating and cooling. */
+(()=>{
+ 'use strict';
+ const DATA={"revision":"hvac-1","status":"approved","path":"assets/hvac-atlas.png","sha256":"53a7c40ecde236d95cdddeba5f17a6eace6ba675680ff6e8f4a42046a48a3141","size":[1774,887],"runtime":{"path":"assets/hvac-atlas.webp","sha256":"36ed38284d06d6e8af524a7efd672357775b07889c22ca29a7ef1df41023fee4","publicPath":"assets/hvac/hvac-36ed38284d06.webp"},"tiers":{"1":{"name":"Breeze Bridge Mini-Split","price":549,"watts":220,"crop":[152,59,1471,368],"width":26,"height":6.504418762746431,"vent":[285,328,1208,53],"display":[1265,241,89,35],"indicator":[1409,260],"buttons":[[1478,260]]},"2":{"name":"Canopy Climate Smart HVAC","price":849,"watts":210,"crop":[54,472,1664,353],"width":26,"height":5.515625,"vent":[148,722,1466,57],"display":[1350,594,160,70],"indicator":[1616,604],"buttons":[[1567,601],[1567,651]]}},"image":"assets/hvac/hvac-36ed38284d06.webp"},image=new Image(),original=Gear.hvac,icon=drawGearIcon,hit=RoomArt.hit,fixtures=new Map();let loaded=false;
+ function phase(loc,n,fallback=true){const L=state?.locations?.[loc];if(!L)return {powered:true,mode:fallback?'cool':'idle',heat:68,cool:78};const powered=locOn(L,'hvac')&&!state.fail.outage&&!roomTripped(lungRoomOf(loc)||LOC_DEF[loc]?.room),unit=powered&&envFor(loc).hvac.units.find(u=>(u.loc===undefined||u.loc===loc)&&u.name===EQ.hvac[n].name);return {powered,mode:unit?(unit.dir>0?'heat':'cool'):'idle',heat:L.heatTo||68,cool:L.coolTo||80};}
+ function project(a,r){return[(r[0]-a.crop[0])*a.width/a.crop[2],(r[1]-a.crop[1])*a.height/a.crop[3],(r[2]||0)*a.width/a.crop[2],(r[3]||0)*a.height/a.crop[3]];}
+ function air(t,mode){if(!['heat','cool'].includes(mode)||settings.reduced)return [];return Array.from({length:3},(_,i)=>{const p=(t*.32+i/3)%1;return {x:(i-1)*4,y:p*(mode==='heat'?-3:4),a:Math.sin(Math.PI*p)*.12};});}
+ function sprite(c,x,y,n,s={powered:true,mode:'cool',heat:68,cool:78},t=0,animate=true){const a=DATA.tiers[n];if(!loaded||!a)return;c.save();c.translate(x,y);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...a.crop,0,0,a.width,a.height);const color=s.mode==='heat'?'#f1b76e':'#a8e6d3',[dx,dy,dw,dh]=project(a,a.display);c.fillStyle='#19342e';c.fillRect(dx,dy,dw,dh);if(s.powered){c.save();c.beginPath();c.rect(dx,dy,dw,dh);c.clip();c.fillStyle=color;c.textAlign='center';c.textBaseline='middle';if(s.mode==='idle'){c.font=dh*.42+'px monospace';c.fillText(s.heat+'°',dx+dw/2,dy+dh*.27,dw*.94);c.fillText(s.cool+'°',dx+dw/2,dy+dh*.76,dw*.94);}else{c.font=dh*.76+'px monospace';c.fillText((s.mode==='heat'?s.heat:s.cool)+'°',dx+dw/2,dy+dh*.53,dw*.95);}c.restore();}window.BagseedEquipmentGlow?.display(c,dx,dy,dw,dh,color,s.powered,.8,'hvac-display');const[ix,iy]=project(a,a.indicator);c.fillStyle=s.powered?(s.mode==='idle'?'#91a58c':color):'#26362f';c.beginPath();c.arc(ix,iy,.20,0,Math.PI*2);c.fill();window.BagseedEquipmentGlow?.point(c,ix,iy,1.2,color,s.powered,.9,'hvac-indicator');for(const p of a.buttons){const[bx,by]=project(a,p);window.BagseedEquipmentGlow?.point(c,bx,by,.85,'#e9d3a1',s.powered,.32,'hvac-button');}
+  if(animate){const[vx,vy,vw,vh]=project(a,a.vent);for(const p of air(t,s.mode)){const xx=vx+vw/2+p.x,yy=vy+vh+p.y,dir=s.mode==='heat'?-1:1;c.strokeStyle=s.mode==='heat'?`rgba(245,191,122,${p.a})`:`rgba(179,229,224,${p.a})`;c.lineWidth=.13;c.lineCap='round';c.beginPath();c.moveTo(xx,yy);c.bezierCurveTo(xx+.7,yy+dir*.6,xx-.7,yy+dir*1.3,xx,yy+dir*2);c.stroke();}}c.restore();
+ }
+ Gear.hvac=function(c,x,y,n,on,t=0){if(!loaded||!DATA.tiers[n])return original.apply(this,arguments);const loc=runtime.drawLoc,s=phase(loc,n,on);sprite(c,x,y,n,s,t);if(state?.locations?.[loc])fixtures.set(loc,{x,y,tier:n,...s});};
+ RoomArt.hit=function(id,x,y,w,h,label,walk,layer){const m=/^hvac:(.+)$/.exec(id),f=m&&fixtures.get(m[1]);if(f){const a=DATA.tiers[f.tier];x=f.x-1;y=f.y-1;w=a.width+2;h=a.height+2;}return hit.call(this,id,x,y,w,h,label,walk,layer);};
+ drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='hvac'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],s=Math.min(178/a.height,258/a.width);c.save();c.translate(160-a.width*s/2,120-a.height*s/2);c.scale(s,s);sprite(c,0,0,n,{powered:true,mode:'cool',heat:68,cool:78},0,false);c.restore();};
+ const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Combined climate artwork failed'));image.src=DATA.image;});window.BagseedHVAC=Object.freeze({ready,sprite,phase,air,fixtures,get loaded(){return loaded;}});
+})();
+
+</script>
+<script id="bagseed-tent-details-production-code">
+/* Tent details: artwork only. Automation, camera access and drying rules remain native. */
+(()=>{
+ 'use strict';
+ const DATA={"revision":"tent-details-1","status":"approved","path":"assets/tent-details-atlas.png","sha256":"47d02e89f999e719b81c1d18b3bc2a0cde4eb91478daf43b5dad7cc0a2581ff2","size":[2061,763],"runtime":{"path":"assets/tent-details-atlas.webp","sha256":"dcc12fc893aa0f8c252318a047bd9b5fb766201e156e019c2357c23d91876a98","publicPath":"assets/tent-details/tent-details-dcc12fc893aa.webp"},"items":{"controller":{"name":"Canopy Brain Controller","crop":[34,75,633,618],"width":9,"height":11,"display":[181,222,345,146],"buttons":[[186,478],[281,478],[377,478]],"indicator":[457,478]},"camera":{"name":"PeekLeaf Mini Grow Cam","crop":[734,53,447,654],"width":9,"height":13.167785234899329},"drying":{"name":"Drying status tag","crop":[1247,39,788,627],"width":16,"height":14,"reading":[1530,260,430,205],"progress":[1322,514,647,70],"warning":[1976,246]}},"image":"assets/tent-details/tent-details-dcc12fc893aa.webp"},image=new Image(),ctrl=Gear.ctrl,extra=drawExtraIcon,gear=drawGearIcon,oldDry=RoomArt.dryTag,oldCam=drawGrowCamArt;let loaded=false;const dryFixtures=[];
+ function geometry(a,w=a.width,h=a.height){const s=Math.min(w/a.crop[2],h/a.crop[3]);return {x:(w-a.crop[2]*s)/2,y:(h-a.crop[3]*s)/2,w:a.crop[2]*s,h:a.crop[3]*s,s};}
+ function project(a,r,g=geometry(a)){return[g.x+(r[0]-a.crop[0])*g.s,g.y+(r[1]-a.crop[1])*g.s,(r[2]||0)*g.s,(r[3]||0)*g.s];}
+ function base(c,a,w=a.width,h=a.height){const g=geometry(a,w,h);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...a.crop,g.x,g.y,g.w,g.h);return g;}
+ function controllerState(loc,on=true,warn=false){const L=state?.locations?.[loc];if(!L)return{powered:!!on,temp:74,hum:55,mode:'AUTO',warn};const powered=locOn(L,'ctrl')&&!state.fail.outage&&!roomTripped(lungRoomOf(loc)||LOC_DEF[loc]?.room),env=envFor(loc),ps=plantsIn(loc),dry=ps.some(p=>p.stage===S.drying),grow=ps.some(p=>p.stage<S.drying);return{powered,temp:env.temp,hum:env.hum,mode:grow?'GROW':dry?'DRY':'IDLE',warn:warn||dry&&ps.some(p=>p.dry?.mold>.3)};}
+ function controller(c,x,y,s={powered:true,temp:74,hum:55,mode:'AUTO',warn:false},t=0){if(!loaded)return;const a=DATA.items.controller;c.save();c.translate(x,y);const g=base(c,a),[dx,dy,dw,dh]=project(a,a.display,g);c.fillStyle='#163a32';c.fillRect(dx,dy,dw,dh);if(s.powered){c.save();c.beginPath();c.rect(dx,dy,dw,dh);c.clip();c.textAlign='center';c.textBaseline='middle';c.fillStyle='#c4e4c0';c.font=dh*.29+'px monospace';c.fillText(Math.round(s.temp)+'°F',dx+dw/2,dy+dh*.23,dw*.92);c.fillText(Math.round(s.hum)+'% RH',dx+dw/2,dy+dh*.56,dw*.92);c.fillStyle='#a6c795';c.font=dh*.18+'px monospace';c.fillText(s.mode,dx+dw/2,dy+dh*.84,dw*.92);c.restore();}const glow=window.BagseedEquipmentGlow,color=s.warn?'#efb46a':'#a6e0bc',[ix,iy]=project(a,a.indicator,g);c.fillStyle=s.powered?color:'#273b32';c.beginPath();c.arc(ix,iy,.24,0,Math.PI*2);c.fill();glow?.display(c,dx,dy,dw,dh,'#b7db91',s.powered,.55,'controller-display');glow?.point(c,ix,iy,1.1,color,s.powered,.75*(settings.reduced?1:.94+Math.sin(t*1.4)*.06),'controller-indicator');for(const p of a.buttons){const[bx,by]=project(a,p,g);glow?.point(c,bx,by,.8,'#e8cc91',s.powered,.32,'controller-button');}c.restore();}
+ function camera(c,w,h){if(!loaded)return;const a=DATA.items.camera;c.save();c.translate(w*.11,h*.095);base(c,a,w*.78,h*.81);c.restore();}
+ function dryState(p,loc){const env=p.dry?.remote?Seasons.shedEnv():envFor(loc),progress=clamp(p.dry?.prog||0,0,1),ready=p.stage===S.finished;return{temp:env.temp,hum:env.hum,tOk:Math.abs(env.temp-70)<=4,hOk:Math.abs(env.hum-70)<=6,progress:ready?1:progress,warn:(p.dry?.mold||0)>.3,ready,spoiled:!!p.dry?.spoiled};}
+ function dryingTag(c,x,y,s,t=0){if(!loaded)return;const a=DATA.items.drying;c.save();c.translate(x,y);const g=base(c,a),[rx,ry,rw,rh]=project(a,a.reading,g);c.textAlign='left';c.textBaseline='middle';c.font=rh*.35+'px monospace';c.fillStyle=s.tOk?'#365a3c':'#a35832';c.fillText('T '+Math.round(s.temp)+'°F',rx,ry+rh*.25,rw);c.fillStyle=s.hOk?'#365a3c':'#a35832';c.fillText('RH '+Math.round(s.hum)+'%',rx,ry+rh*.74,rw);const[px,py,pw,ph]=project(a,a.progress,g);c.fillStyle='#d4c49e';c.beginPath();c.roundRect(px,py,pw,ph,ph*.35);c.fill();if(s.progress>0){c.fillStyle=s.spoiled?'#ae6343':s.ready?'#77975c':'#c39c53';c.beginPath();c.roundRect(px,py,pw*s.progress,ph,Math.min(ph*.35,pw*s.progress/2));c.fill();}c.fillStyle='#3b4930';c.font=ph*.85+'px monospace';c.textAlign='center';c.fillText(s.spoiled?'CHECK':s.ready?'READY':Math.round(s.progress*100)+'%',px+pw/2,py+ph*.54,pw*.94);if(s.warn&&(settings.reduced||Math.floor(t*3)%2)){const[wx,wy]=project(a,a.warning,g);c.fillStyle='#bd6042';c.beginPath();c.arc(wx,wy,.43,0,Math.PI*2);c.fill();c.fillStyle='#fff1c9';c.font='.65px sans-serif';c.fillText('!',wx,wy+.03);}c.restore();}
+ Gear.ctrl=function(c,x,y,n,on,t=0,warn=false,loc=runtime.drawLoc){if(!loaded||!n)return ctrl.apply(this,arguments);controller(c,x,y,controllerState(loc,on,warn),t);};
+ RoomArt.dryTag=function(c,x,y,p,loc){if(!loaded)return oldDry.apply(this,arguments);const s=dryState(p,loc);dryingTag(c,x,y,s,settings.reduced?0:runtime.t||0);if(dryFixtures.length>=64)dryFixtures.shift();dryFixtures.push({loc,pid:p.id,x,y,w:16,h:14,...s});};
+ drawGrowCamArt=function(c,w,h){if(!loaded)return oldCam.apply(this,arguments);c.fillStyle='#1a2420';c.fillRect(0,0,w,h);camera(c,w,h);};
+ drawExtraIcon=function(c,cv,id){if(id!=='growcam'||!loaded)return extra.apply(this,arguments);cv.width=320;cv.height=240;drawGrowCamArt(c,320,240);};
+ drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='ctrl'||n!==1||!loaded)return gear.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.items.controller,s=Math.min(183/a.height,238/a.width);c.save();c.translate(160-a.width*s/2,120-a.height*s/2);c.scale(s,s);controller(c,0,0);c.restore();};
+ const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Tent detail artwork failed'));image.src=DATA.image;});window.BagseedTentDetails=Object.freeze({ready,controller,camera,dryingTag,controllerState,dryState,dryFixtures,geometry,get loaded(){return loaded;}});
+})();
+
+</script>
+<script id="bagseed-water-pots-production-code">
+/* Water & Pots: native inventory, watering and moisture rules; illustrated surfaces. */
+(()=>{
+ 'use strict';
+ const DATA={"revision":"water-and-pots-1","status":"approved","atlases":{"watering":{"path":"assets/watering-atlas.png","sha256":"000716b88158313a37d4c272257a5ad2fcbfe62520eafefb947e51ee7dbb0f3e","size":[1536,1024],"runtime":{"path":"assets/watering-atlas.webp","sha256":"6205236b2055b12ae28a20f7d4a5f5d349026dde0bfd3989b32cb669dff95b3b","publicPath":"assets/water-and-pots/watering-6205236b2055.webp"}},"pots":{"path":"assets/pots-atlas.png","sha256":"24adbe809b87e50b45f200abac889935d9a96e57bd0ca027c05ab22251c398f1","size":[2079,756],"runtime":{"path":"assets/pots-atlas.webp","sha256":"fe2961f56744db1629c3be9087b507b37f1843de011a892294f3251adb5c0bbb","publicPath":"assets/water-and-pots/pots-fe2961f56744.webp"}}},"watering":{"water0":{"name":"Dented Watering Can","price":0,"crop":[40,80,508,352],"width":13,"height":9.007874015748031,"gauge":null,"reading":null},"water1":{"name":"Brass Duchess Can","price":24.99,"crop":[548,76,598,350],"width":16,"height":9.364548494983278,"gauge":null,"reading":null},"water2":{"name":"PumpPal Sprayer","price":39,"crop":[1152,38,343,402],"width":13,"height":15.236151603498543,"gauge":null,"reading":null},"water3":{"name":"Drip Reservoir Kit","price":119,"crop":[45,481,391,472],"width":14,"height":16.900255754475705,"gauge":[327,637,24,158],"reading":[144,687,132,51]},"tank_grow":{"name":"DripWorks Room Reservoir","price":79,"crop":[516,480,488,481],"width":26,"height":25.62704918032787,"gauge":[885,627,24,168],"reading":[642,674,162,49]},"barrel":{"name":"Rain Barrel & Drip Kit","price":59,"crop":[1058,458,430,512],"width":24,"height":28.57674418604651,"gauge":[1386,591,20,197],"reading":[1235,697,81,35],"ink":"#435139"}},"pots":{"1":{"name":"Mystery Yogurt Tub","price":0,"crop":[27,198,643,491],"soil":[351,297,267,39],"foot":679,"bodyHeight":10,"display":null,"indicator":null},"2":{"name":"Breathe Bag Fabric Pot","price":9.99,"crop":[693,184,706,507],"soil":[1045,291,270,48],"foot":681,"bodyHeight":10,"display":null,"indicator":null},"3":{"name":"Root Royale Smart Pot","price":34.99,"crop":[1412,87,652,605],"soil":[1740,282,259,45],"foot":682,"bodyHeight":10,"display":[1925,120,62,45],"indicator":[1928,183],"button":[1973,186]}},"wateringImage":"assets/water-and-pots/watering-6205236b2055.webp","potsImage":"assets/water-and-pots/pots-fe2961f56744.webp"},waterImage=new Image(),potImage=new Image(),can=Gear.can,pot=Gear.pot,tank=drawTank,barrel=drawRainBarrel,gearIcon=drawGearIcon,extraIcon=drawExtraIcon,hit=RoomArt.hit,plantDraw=PlantArt.draw,addActors=Actors.addTo,frames=new WeakMap(),fronts=new Map();let loaded=false;
+ const fixtures=new Map(),layers=[],emissions=new WeakMap(),surfaces=new WeakMap();
+ function project(a,r){const s=a.width/a.crop[2];return[(r[0]-a.crop[0])*s,(r[1]-a.crop[1])*s,(r[2]||0)*s,(r[3]||0)*s];}
+ function gauge(c,a,frac,t=0,animate=false){if(!a.gauge)return;const[x,y,w,h]=project(a,a.gauge),f=clamp(frac,0,1);c.save();c.beginPath();c.roundRect(x,y,w,h,Math.min(w*.3,h*.1));c.clip();c.fillStyle='#233b3c';c.fillRect(x,y,w,h);if(f>0){const fill=c.createLinearGradient(x,0,x+w,0);fill.addColorStop(0,f<=.2?'#c79762':'#5ca5a7');fill.addColorStop(.6,f<=.2?'#e9bb7d':'#a6d8d1');fill.addColorStop(1,f<=.2?'#b7804a':'#488f95');c.fillStyle=fill;c.fillRect(x,y+h*(1-f),w,h*f);c.strokeStyle='rgba(225,249,230,.68)';c.lineWidth=.13;c.beginPath();c.moveTo(x,y+h*(1-f));c.quadraticCurveTo(x+w*.5,y+h*(1-f)+(animate&&!settings.reduced?Math.sin(t*1.4)*.08:0),x+w,y+h*(1-f));c.stroke();}c.fillStyle='rgba(240,252,235,.17)';c.fillRect(x+w*.12,y,w*.18,h);c.restore();}
+ function waterSprite(c,x,bottom,key,frac=1,label=5,t=0,animate=true){const a=DATA.watering[key];if(!loaded||!a)return;c.save();c.translate(x-a.width/2,bottom-a.height);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(waterImage,...a.crop,0,0,a.width,a.height);gauge(c,a,frac,t,animate);if(a.reading){const[dx,dy,dw,dh]=project(a,a.reading);c.fillStyle=a.ink||'#ecdba6';c.font=dh*.80+'px monospace';c.textAlign='center';c.textBaseline='middle';c.fillText(String(label),dx+dw/2,dy+dh*.52,dw*.94);}c.restore();}
+ function potGeometry(n){const a=DATA.pots[n],s=a.bodyHeight/(a.foot-a.soil[1]);return{a,s,left:-(a.soil[0]-a.crop[0])*s,top:-(a.soil[1]-a.crop[1])*s,w:a.crop[2]*s,h:a.crop[3]*s};}
+ function frontImage(n){if(fronts.has(n))return fronts.get(n);const a=DATA.pots[n],cv=document.createElement('canvas');cv.width=a.crop[2];cv.height=a.crop[3];const c=cv.getContext('2d');c.drawImage(potImage,...a.crop,0,0,cv.width,cv.height);c.globalCompositeOperation='destination-out';c.fillStyle='#000';c.fillRect(0,0,cv.width,a.soil[1]-a.crop[1]);c.beginPath();c.ellipse(a.soil[0]-a.crop[0],a.soil[1]-a.crop[1],a.soil[2],a.soil[3],0,0,Math.PI*2);c.fill();fronts.set(n,cv);return cv;}
+ function potSprite(c,x,y,n,wet=60,stump=false,front=false,emit=true){if(!loaded||!DATA.pots[n])return;const g=potGeometry(n),a=g.a,w=clamp(Number(wet)||0,0,100);c.save();c.translate(x,y);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';if(front)c.drawImage(frontImage(n),g.left,g.top,g.w,g.h);else{c.drawImage(potImage,...a.crop,g.left,g.top,g.w,g.h);c.fillStyle=w>35?`rgba(32,21,13,${w/100*.28})`:'rgba(194,146,93,.14)';c.beginPath();c.ellipse(0,0,a.soil[2]*g.s,a.soil[3]*g.s,0,0,Math.PI*2);c.fill();}if(a.display&&!front){const[dx,dy,dw,dh]=a.display.map((v,i)=>i<2?(v-a.crop[i])*g.s+(i===0?g.left:g.top):v*g.s);c.fillStyle='#213c33';c.fillRect(dx,dy,dw,dh);c.fillStyle='#c1e3ba';c.font=dh*.80+'px monospace';c.textAlign='center';c.textBaseline='middle';c.fillText(Math.round(w)+'%',dx+dw/2,dy+dh*.52,dw*.95);const ix=g.left+(a.indicator[0]-a.crop[0])*g.s,iy=g.top+(a.indicator[1]-a.crop[1])*g.s;probe(c,ix,iy,w,emit?.12:0);if(emit)queueProbe(c,ix,iy,w);window.BagseedEquipmentGlow?.display(c,dx,dy,dw,dh,'#b4db9b',true,.4,'pot-display');if(a.button){const bx=g.left+(a.button[0]-a.crop[0])*g.s,by=g.top+(a.button[1]-a.crop[1])*g.s;window.BagseedEquipmentGlow?.point(c,bx,by,.65,'#e8cf99',true,.25,'pot-button');}}if(stump){c.fillStyle='#806340';c.fillRect(-.45,-2,.9,2.4);c.fillStyle='#c5aa78';c.fillRect(-.45,-2,.9,.4);}c.restore();}
+ const key=(x,y,n)=>`${x}:${y}:${n}`;
+ // Emission is composed after tint. Later illustrated surfaces cut the light
+ // with their actual alpha, preserving plants, tent flaps and player silhouettes.
+ function probe(c,x,y,wet,halo){const color=wet<30?'#ff5042':'#64ef76';c.save();if(halo){const r=1.35,g=c.createRadialGradient(x,y,.12,x,y,r);g.addColorStop(0,color);g.addColorStop(.3,color+'a0');g.addColorStop(1,color+'00');c.save();c.globalAlpha*=halo;c.fillStyle=g;c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fill();c.restore();}c.fillStyle=color;c.beginPath();c.arc(x,y,.28,0,Math.PI*2);c.fill();c.fillStyle=wet<30?'#ffd2a9':'#d3ffc4';c.beginPath();c.arc(x-.055,y-.055,.095,0,Math.PI*2);c.fill();c.restore();}
+ function queueProbe(c,x,y,wet){const f=emissions.get(c);if(!f)return;const g=f.g;g.save();g.setTransform(c.getTransform());g.globalAlpha=c.globalAlpha*f.night;probe(g,x,y,wet,.42);g.restore();f.active=true;}
+ function world(draw){return function(c,...args){if(frames.has(c))return draw.call(this,c,...args);frames.set(c,new Set());const night=window.BagseedEquipmentGlow?.night()||0,own=Object.prototype.hasOwnProperty.call(c,'drawImage'),original=c.drawImage;let f,complete=false;if(night){let cv=surfaces.get(c);if(!cv){cv=document.createElement('canvas');surfaces.set(c,cv);}if(cv.width!==c.canvas.width||cv.height!==c.canvas.height){cv.width=c.canvas.width;cv.height=c.canvas.height;}const g=cv.getContext('2d');g.resetTransform();g.clearRect(0,0,cv.width,cv.height);f={g,cv,night,active:false};emissions.set(c,f);c.drawImage=function(image,...positions){const result=original.call(this,image,...positions);if(f.active&&this===c&&c.globalCompositeOperation==='source-over'){g.save();g.setTransform(c.getTransform());g.globalCompositeOperation='destination-out';g.globalAlpha=c.globalAlpha;g.imageSmoothingEnabled=c.imageSmoothingEnabled;g.imageSmoothingQuality=c.imageSmoothingQuality;g.drawImage(image,...positions);g.restore();}return result;};}try{const result=window.BagseedEquipmentGlow?BagseedEquipmentGlow.withWorld(c,()=>draw.call(this,c,...args)):draw.call(this,c,...args);complete=true;return result;}finally{frames.delete(c);emissions.delete(c);if(f){if(own)c.drawImage=original;else delete c.drawImage;if(complete&&f.active){c.save();c.resetTransform();c.globalCompositeOperation='source-over';c.globalAlpha=1;c.drawImage(f.cv,0,0);c.restore();}}}};}
+
+ RoomArt.draw=world(RoomArt.draw);SCENES.growroom.draw=world(SCENES.growroom.draw);SCENES.backyard.draw=world(SCENES.backyard.draw);
+ PlantArt.draw=function(c,p,x,y,...args){const pending=frames.get(c),pos=p&&SLOT_POS[p.loc]?.[p.slot];if(loaded&&pending&&pos&&x===pos[0]&&y===pos[1]&&p.stage<S.drying&&LOC_DEF[p.loc]?.kind!=='outdoor'){const n=state.locations[p.loc].equip.pot||(p.loc==='gh'?2:1);if(DATA.pots[n]){groundShadow(c,x,y+10,18);potSprite(c,x,y,n,p.water,false,false,true);pending.add(key(x,y,n));if(layers.length>=64)layers.shift();layers.push({loc:p.loc,slot:p.slot,phase:'soil-before-plant'});}}return plantDraw.call(this,c,p,x,y,...args);};
+ Gear.pot=function(c,x,y,n,wet,stump){if(!loaded||!DATA.pots[n])return pot.apply(this,arguments);const pending=frames.get(c),front=!!pending?.has(key(x,y,n));if(!front)groundShadow(c,x,y+10,18);potSprite(c,x,y,n,wet,stump,front);if(front){pending.delete(key(x,y,n));if(layers.length>=64)layers.shift();layers.push({phase:'rim-after-plant',x,y});}};
+ Gear.can=function(c,x,y,n){if(!loaded||!DATA.watering['water'+n])return can.apply(this,arguments);const a=DATA.watering['water'+n],level=n===3?(state?.v114?.water?.tanks?.bedroom?.level??state?.reservoir??0):5;groundShadow(c,x+a.width/2,y+10,a.width*.8);waterSprite(c,x+a.width/2,y+10,'water'+n,level/5,level,runtime.t||0);fixtures.set('bedroom',{x,y,level,tier:n,w:a.width,h:a.height});};
+ drawTank=function(c,x,y,frac,label){if(!loaded)return tank.apply(this,arguments);groundShadow(c,x+11,y+30,24);waterSprite(c,x+11,y+30,'tank_grow',frac,label,runtime.t||0);fixtures.set('growroom',{x:x+11,y:y+30,frac});};
+ drawRainBarrel=function(c,x,y,frac,t=0){if(!loaded)return barrel.apply(this,arguments);groundShadow(c,x+10,y+22,22);waterSprite(c,x+10,y+22,'barrel',frac,Math.round(frac*WATER.barrelCap),t);fixtures.set('barrel',{x:x+10,y:y+22,frac});};
+ Actors.addTo=function(items,c,t,scene){addActors.call(this,items,c,t,scene);if(scene!=='growroom')return;const T=Water.S().tanks.growroom;if(T.has)items.push({y:162,d:()=>{drawTank(c,384,132,T.level/WATER.tankDays,T.level);RoomArt.hit('tank:growroom',382,128,28,36,`Grow-room drip tank · ${T.level}/${WATER.tankDays} days`,[396,176],'item');}});};
+ function cameraPot(c,x,y,n,wet,front=false){c.save();c.translate(x,y);c.scale(.5,.5);potSprite(c,0,0,n,wet,false,front,!front);c.restore();}
+ RoomArt.hit=function(id,x,y,w,h,label,walk,layer){if(loaded&&id==='can'){const f=fixtures.get('bedroom');if(f){x=f.x-1;y=f.y+10-f.h-1;w=f.w+2;h=f.h+2;}}if(loaded&&id==='barrel'){x=206;y=42;w=28;h=32;}return hit.call(this,id,x,y,w,h,label,walk,layer);};
+ function iconWater(c,cv,key,museum=false){cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.watering[key],s=Math.min(182/a.height,245/a.width);c.save();c.translate(160,120);c.scale(s,s);waterSprite(c,0,a.height/2,key,1,key==='barrel'?60:5,0,false);c.restore();}
+ drawGearIcon=function(c,cv,slot,n,museum){if(loaded&&slot==='water'&&DATA.watering['water'+n])return iconWater(c,cv,'water'+n,museum);if(!loaded||slot!=='pot'||!DATA.pots[n])return gearIcon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const g=potGeometry(n),s=Math.min(178/g.h,245/g.w);c.save();c.translate(160-(g.left+g.w/2)*s,120-(g.top+g.h/2)*s);c.scale(s,s);potSprite(c,0,0,n,60);c.restore();};
+ drawExtraIcon=function(c,cv,id){if(loaded&&['tank_grow','barrel'].includes(id))return iconWater(c,cv,id);return extraIcon.apply(this,arguments);};
+ const ready=Promise.all([[waterImage,DATA.wateringImage],[potImage,DATA.potsImage]].map(([im,url])=>new Promise((resolve,reject)=>{im.onload=resolve;im.onerror=()=>reject(Error('Water & Pots artwork failed'));im.src=url;}))).then(()=>{loaded=true;});window.BagseedWaterPots=Object.freeze({ready,waterSprite,potSprite,cameraPot,potGeometry,frontImage,fixtures,layers,get loaded(){return loaded;}});
 })();
 
 </script>

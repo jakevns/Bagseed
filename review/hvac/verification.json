@@ -1,0 +1,16 @@
+{
+  "status": "approved; final merged validation passed",
+  "entryPoint": "public/index.html",
+  "buildAndSourceChecks": "passed",
+  "combinedPurchasesReplacementAndMigration": "passed",
+  "standaloneACPurchasesAndSaveReload": "passed",
+  "heaterPurchasesAndSaveReload": "passed",
+  "windowStationControlsAndAccess": "passed",
+  "artworkPlacements": 8,
+  "characterRevisionPreserved": "custom-walk-arm-layer-v6",
+  "originalSourceArtPreserved": true,
+  "losslessRGBAIdentical": true,
+  "mergedMain": "4256519",
+  "finalMergedTests": 6,
+  "phoneGridAndLandingPreserved": true
+}
