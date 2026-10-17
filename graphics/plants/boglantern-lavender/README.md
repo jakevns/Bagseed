@@ -1,6 +1,6 @@
 # Bog Lantern — Lavender Marsh connected component prototype
 
-Status: artwork samples awaiting approval. This batch contains the final named catalog strain plus two explicitly requested experimental phenotype options. Full native painted-renderer replacement remains pending.
+Status: artwork and growth samples approved on 2026-10-17. This batch contains the final named catalog strain plus two explicitly requested experimental phenotype options. Full native painted-renderer replacement remains pending.
 
 Native lineage: ??? × Marsh Light; additional Bog Lantern experimental phenotype. Artwork supplies broad sage-blue fans, airy lilac flowers and peach pistils, with lavender finishing leaves applied in the shared renderer. Healthy fan source sprites stay green. Lavender Marsh is a review phenotype label, not a new native strain. `lineId` stays `boglantern`. Its broad / blue / Lavender expression differs from the earlier narrow / forest / Red accents kit. The `boglantern@1` default and every earlier saved identity remain unchanged.
 
@@ -12,4 +12,4 @@ Variant registration uses `lineId` and `registerAsDefault: false`. The compiler 
 
 Samples in `review/boglantern-lavender-components/` include seed through harvest-ready, late-flower senescence, 50/90-inch physical scale, natural/cool-night colors, and 120 frames / 10 seconds of growth and wind. The controlled height studies do not override native growth or autoflower timing. Full care/training, diagnostic-state, drying-organ and camera/depth integration remain pending.
 
-Reproduce: `python3 tools/compile-plant-components.py boglantern-lavender`, `node tools/preview-plant-components.cjs boglantern-lavender`, `python3 tools/verify-plant-wind.py boglantern-lavender`. New tests: `tests/plant-batch-five.test.cjs`; use the existing shared component/identity/growth/color suites and `npm run check`. No push before user approval.
+Reproduce: `python3 tools/compile-plant-components.py boglantern-lavender`, `node tools/preview-plant-components.cjs boglantern-lavender`, `python3 tools/verify-plant-wind.py boglantern-lavender`. New tests: `tests/plant-batch-five.test.cjs`; use the existing shared component/identity/growth/color suites and `npm run check`. User approved this batch and requested its push on 2026-10-17.

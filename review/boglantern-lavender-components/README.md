@@ -1,6 +1,6 @@
 # Bog Lantern — Lavender Marsh review samples
 
-Status: awaiting user approval.
+Status: artwork, growth cycles and wind samples approved on 2026-10-17.
 
 - `boglantern-lavender-growth-and-flower.png`: seed, germination, seedling, vegetation, flower and harvest-ready senescence.
 - `boglantern-lavender-late-flower-senescence.png`: mature flower portrait.

@@ -1,6 +1,6 @@
 # Gas Station Sushi and two experimental phenotype options
 
-Status: review samples awaiting approval. Saved locally; not pushed.
+Status: artwork, growth cycles, color shifts and wind samples approved on 2026-10-17; user requested the push.
 
 The user explicitly chose additional experimental phenotypes after the catalog audit found only Gas Station Sushi unfinished. This batch completes the twelve named catalog kits and adds two extra compatible profiles of existing native lines.
 

@@ -1,6 +1,6 @@
 # Frog Prince — Copper Reed connected component prototype
 
-Status: artwork samples awaiting approval. This batch contains the final named catalog strain plus two explicitly requested experimental phenotype options. Full native painted-renderer replacement remains pending.
+Status: artwork and growth samples approved on 2026-10-17. This batch contains the final named catalog strain plus two explicitly requested experimental phenotype options. Full native painted-renderer replacement remains pending.
 
 Native lineage: Lily Pad × ???; additional Frog Prince experimental autoflower phenotype. Artwork supplies narrow forest-green fans, russet/copper flowers and orange pistils, with red finishing leaves applied in the shared renderer. Healthy fan source sprites stay green. Copper Reed is a review phenotype label, not a new native strain. `lineId` stays `frogprince`. Its narrow / forest / Red accents expression differs from the earlier broad / lime / Purple kit. The `frogprince@1` default and every earlier saved identity remain unchanged.
 
@@ -12,4 +12,4 @@ Variant registration uses `lineId` and `registerAsDefault: false`. The compiler 
 
 Samples in `review/frogprince-red-components/` include seed through harvest-ready, late-flower senescence, 50/90-inch physical scale, natural/cool-night colors, and 120 frames / 10 seconds of growth and wind. The controlled height studies do not override native growth or autoflower timing. Full care/training, diagnostic-state, drying-organ and camera/depth integration remain pending.
 
-Reproduce: `python3 tools/compile-plant-components.py frogprince-red`, `node tools/preview-plant-components.cjs frogprince-red`, `python3 tools/verify-plant-wind.py frogprince-red`. New tests: `tests/plant-batch-five.test.cjs`; use the existing shared component/identity/growth/color suites and `npm run check`. No push before user approval.
+Reproduce: `python3 tools/compile-plant-components.py frogprince-red`, `node tools/preview-plant-components.cjs frogprince-red`, `python3 tools/verify-plant-wind.py frogprince-red`. New tests: `tests/plant-batch-five.test.cjs`; use the existing shared component/identity/growth/color suites and `npm run check`. User approved this batch and requested its push on 2026-10-17.
