@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "51309117522135d5667e55bb24d86b8773f04b863cf8c0ce45bdda1ab3352cca",
-  "updatedSHA": "4ecdf2fafb26e90e77e7853cd748cdfc4fa12409136faee2a23cd447d2578a54",
+  "workingSourceSHA": "27db15760e617803c8ea928451c1483d10ea7d7677162a962e88885388a2a777",
+  "updatedSHA": "7ae23283561d592090790eb790f4d43c124d25d80c7ba73c85a6330d6f4e5467",
   "characterRevision": "custom-walk-waist-coverage-v9",
   "characterPayloadSHA256": "755ca8c97009d046cc37e3bdf018b685470a60a9a11d9e898a9d295670937b87",
   "characterSourcesSHA256": {
@@ -32,7 +32,7 @@
     "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 64049948,
+  "bytes": 64058701,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [
@@ -148,5 +148,6 @@
   "hvacTiers": 2,
   "tentDetailsRevision": "tent-details-1",
   "waterPotsRevision": "water-and-pots-1",
-  "waterPotsDesigns": 9
+  "waterPotsDesigns": 9,
+  "nightColorsRevision": "night-temperature-colors-1"
 }

@@ -898,7 +898,7 @@ EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
 { name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools automatically. Replaces separate heaters and ACs in this room, moving them to Unused gear.', review: [5, 'Paid for itself the first heat wave.'] },
 { name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Replaces separate room heaters and ACs, moving them to Unused gear.', review: [5, 'It knew a cold snap was coming before I did.'] }];
 EQ.ctrl = [{ name: 'No controller', price: 0, watts: 0 },
-{ name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Sets digital heaters, ACs, humidifiers and dehumidifiers to each stage automatically, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
+{ name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Automates digital climate gear by growth stage, offers optional lights-off room cooling for receptive flower colors, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
 LOC_SLOTS.push('heater', 'ac', 'hvac', 'ctrl');
 const SLOT_NAME = { light: 'Grow light', fan: 'Fan', exhaust: 'Exhaust / filter', humid: 'Humidifier', dehum: 'Dehumidifier', sensor: 'Sensor', pot: 'Container', heater: 'Heater', ac: 'Air conditioner', hvac: 'Mini-split / HVAC', ctrl: 'Smart controller', water: 'Watering', computer: 'Computer', workbench: 'Workbench', camera: 'Camera', storage: 'Storage' };
 
@@ -1273,12 +1273,13 @@ function isLightOn(loc, minute = state.minute) {
 }
 /* heating / cooling. Output is limited by unit size; power depends on how hard
    the unit works AND how far outdoor conditions are from the target. */
+function climateTargets(loc, minute = state.minute) { return window.BagseedNightCooling?.targets(loc, minute) || { heat: state.locations[loc].heatTo, cool: state.locations[loc].coolTo }; }
 function hvacOutput(loc, temp) {
   const L = state.locations[loc], e = L.equip, F = state.fail, out = { delta: 0, watts: 0, load: 0, mode: 'idle', units: [] };
   if (state.fail.outage > 0 || roomTripped((LOC_DEF[loc] || LOC_DEF.closet).room)) return out;
-  const outT = state.outTemp;
+  const outT = state.outTemp, targets = climateTargets(loc);
   const run = (it, d, frac, dir) => {
-    const target = dir > 0 ? L.heatTo : L.coolTo, gap = dir > 0 ? Math.max(0, target - outT) : Math.max(0, outT - target);
+    const target = dir > 0 ? targets.heat : targets.cool, gap = dir > 0 ? Math.max(0, target - outT) : Math.max(0, outT - target);
     const wx = 1 + Math.max(0, gap - 6) / 12;                         // weather multiplier: mild ≈ 1, heat wave ≈ 2.9
     const w = it.watts * frac * wx * (it.eff || 1);
     out.delta += d; out.watts += w; out.load = Math.max(out.load, frac * wx); out.units.push({ name: it.name, dir, w: Math.round(w) });
@@ -1286,19 +1287,19 @@ function hvacOutput(loc, temp) {
   };
   if (e.hvac && locOn(L, 'hvac')) {
     const it = EQ.hvac[e.hvac];
-    if (temp < L.heatTo - .3) { const d = Math.min(L.heatTo - temp, it.maxD); run(it, d, d / it.maxD, 1); }
-    else if (temp > L.coolTo + .3) { const d = Math.min(temp - L.coolTo, it.maxD); run(it, -d, d / it.maxD, -1); }
+    if (temp < targets.heat - .3) { const d = Math.min(targets.heat - temp, it.maxD); run(it, d, d / it.maxD, 1); }
+    else if (temp > targets.cool + .3) { const d = Math.min(temp - targets.cool, it.maxD); run(it, -d, d / it.maxD, -1); }
     return out;
   }
   if (e.heater && locOn(L, 'heater') && !F.heatTrip) {
     const it = EQ.heater[e.heater];
     if (it.manual) { const set = L.heatMode === 2 ? 1 : .5, coldPenalty = clamp(1.15 - Math.max(0, 50 - state.outTemp) / 80, .7, 1); run(it, it.maxD * set * coldPenalty, set, 1); }
-    else if (temp < L.heatTo - .3) { const d = Math.min(L.heatTo - temp, it.maxD); run(it, d, d / it.maxD, 1); }
+    else if (temp < targets.heat - .3) { const d = Math.min(targets.heat - temp, it.maxD); run(it, d, d / it.maxD, 1); }
   }
   if (e.ac && locOn(L, 'ac') && !F.acIce) {
     const it = EQ.ac[e.ac];
     if (it.manual) { const set = L.acMode === 2 ? 1 : .5, heatPenalty = clamp(1.15 - Math.max(0, state.outTemp - 85) / 60, .7, 1); run(it, -it.maxD * set * heatPenalty, set, -1); }
-    else if (temp > L.coolTo + .3) { const d = Math.min(temp - L.coolTo, it.maxD); run(it, -d, d / it.maxD, -1); }
+    else if (temp > targets.cool + .3) { const d = Math.min(temp - targets.cool, it.maxD); run(it, -d, d / it.maxD, -1); }
   }
   return out;
 }
@@ -1330,28 +1331,28 @@ function roomAmbient(room, minute = state.minute) {
   const outT = state.outTemp, H = out.hvac;
   let base = out.temp;
   const run = (L, loc, it, d, frac, dir) => {
-    const target = dir > 0 ? L.heatTo : L.coolTo, gap = dir > 0 ? Math.max(0, target - outT) : Math.max(0, outT - target);
+    const target = dir > 0 ? climateTargets(loc, minute).heat : climateTargets(loc, minute).cool, gap = dir > 0 ? Math.max(0, target - outT) : Math.max(0, outT - target);
     const wx = 1 + Math.max(0, gap - 6) / 12, w = it.watts * frac * wx * (it.eff || 1);
     base += d; H.delta += d; H.watts += w; H.load = Math.max(H.load, frac * wx); H.units.push({ name: it.name, dir, w: Math.round(w), loc });
     H.mode = H.mode === 'idle' ? (dir > 0 ? 'heat' : 'cool') : H.mode === (dir > 0 ? 'heat' : 'cool') ? H.mode : 'fighting';
   };
   for (const loc of locs) {
-    const L = state.locations[loc], e = L.equip;
+    const L = state.locations[loc], e = L.equip, targets = climateTargets(loc, minute);
     if (e.hvac && locOn(L, 'hvac')) {
       const it = EQ.hvac[e.hvac];
-      if (base + cold < L.heatTo - .3) { const d = Math.min(L.heatTo - (base + cold), it.maxD); run(L, loc, it, d, d / it.maxD, 1); }
-      else if (base + hot > L.coolTo + .3) { const d = Math.min(base + hot - L.coolTo, it.maxD); run(L, loc, it, -d, d / it.maxD, -1); }
+      if (base + cold < targets.heat - .3) { const d = Math.min(targets.heat - (base + cold), it.maxD); run(L, loc, it, d, d / it.maxD, 1); }
+      else if (base + hot > targets.cool + .3) { const d = Math.min(base + hot - targets.cool, it.maxD); run(L, loc, it, -d, d / it.maxD, -1); }
       continue;
     }
     if (e.heater && locOn(L, 'heater') && !F.heatTrip) {
       const it = EQ.heater[e.heater];
       if (it.manual) { const set = L.heatMode === 2 ? 1 : .5, coldPenalty = clamp(1.15 - Math.max(0, 50 - state.outTemp) / 80, .7, 1); run(L, loc, it, it.maxD * set * coldPenalty, set, 1); }
-      else if (base + cold < L.heatTo - .3) { const d = Math.min(L.heatTo - (base + cold), it.maxD); run(L, loc, it, d, d / it.maxD, 1); }
+      else if (base + cold < targets.heat - .3) { const d = Math.min(targets.heat - (base + cold), it.maxD); run(L, loc, it, d, d / it.maxD, 1); }
     }
     if (e.ac && locOn(L, 'ac') && !F.acIce) {
       const it = EQ.ac[e.ac];
       if (it.manual) { const set = L.acMode === 2 ? 1 : .5, heatPenalty = clamp(1.15 - Math.max(0, state.outTemp - 85) / 60, .7, 1); run(L, loc, it, -it.maxD * set * heatPenalty, set, -1); }
-      else if (base + hot > L.coolTo + .3) { const d = Math.min(base + hot - L.coolTo, it.maxD); run(L, loc, it, -d, d / it.maxD, -1); }
+      else if (base + hot > targets.cool + .3) { const d = Math.min(base + hot - targets.cool, it.maxD); run(L, loc, it, -d, d / it.maxD, -1); }
     }
   }
   out.temp = base;
@@ -1599,8 +1600,10 @@ const PlantArt = {
   build(p) {
     const g = (typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)), lp = LEAF_PAL[g.leafKey] || LEAF_PAL.forest, bp = BUD_PAL[g.colorName] || BUD_PAL['Forest green'];
     const rng = mulberry32(p.seed), st = p.stage;
-    if (st === S.drying) return this.drying(p, g, lp, bp, rng);
-    if (st === S.finished) return p.dry ? this.drying(p, g, lp, bp, rng) : this.jar(p, bp);
+    const nightPigment = window.BagseedNightColor?.expression(p, g);
+    const dryBP = nightPigment?.strength ? { ...bp, bud: mix(bp.bud, nightPigment.hex, nightPigment.strength * .62), dark: mix(bp.dark, shade(nightPigment.hex, -.3), nightPigment.strength * .62) } : bp;
+    if (st === S.drying) return this.drying(p, g, lp, dryBP, rng);
+    if (st === S.finished) return p.dry ? this.drying(p, g, lp, dryBP, rng) : this.jar(p, dryBP);
     const Hpx = Math.max(3, Math.round(p.height * 2.1)), W = p._w || 104, H = Math.max(14, Hpx + 22), P = new Pix(W, H), cx = W >> 1, by = H - 1;
     // health / nutrition colour shifts
     const sick = clamp((55 - p.health) / 70, 0, .55);
@@ -1702,6 +1705,7 @@ const PlantArt = {
       if (p.nutr < 25 && lowFrac > .4) { const t = (25 - p.nutr) / 30; lf = mix(lf, '#d8c25a', t); lt = mix(lt, '#efe49a', t); }
       if (fadeT) { const t = fadeT * clamp(lowFrac * 1.4, 0, 1); lf = mix(lf, bp.fade, t); dk = mix(dk, shade(bp.fade, -.35), t); lt = mix(lt, shade(bp.fade, .25), t); }
       if ((g.colorName === 'Purple' || g.colorName === 'Dark purple' || g.colorName === 'Lavender') && st >= S.midflower && nd.m < 2) { lf = mix(lf, bp.bud, .35); }
+      if (nightPigment?.strength) { const t = nightPigment.strength * .82; lf = mix(lf, nightPigment.hex, t); dk = mix(dk, shade(nightPigment.hex, -.35), t); lt = mix(lt, shade(nightPigment.hex, .3), t); }
       if (!sh.main) { dk = shade(dk, -.12); lf = shade(lf, -.08); }
       return [packCol(lf), packCol(dk), packCol(lt)];
     };
@@ -1753,7 +1757,8 @@ const PlantArt = {
       const pistilAge = { 6: 0, 7: .08, 8: .35, 9: .7, 10: .92 }[st];
       const purpleShift = { 6: 0, 7: .25, 8: .65, 9: 1, 10: 1 }[st];
       let budHex = mix('#c8e59a', bp.bud, (g.colorName.includes('green') ? 1 : purpleShift) * (p.pheno.deep ? 1 : .92)); if (MU === 'ember') budHex = mix(budHex, '#d8705a', .12 + .25 * purpleShift); if (MU === 'ink') budHex = mix(budHex, '#4a3a6a', .3 * purpleShift);
-      const budDark = mix('#7ba84a', bp.dark, purpleShift);
+      let budDark = mix('#7ba84a', bp.dark, purpleShift);
+      if (nightPigment?.strength) { budHex = mix(budHex, nightPigment.hex, nightPigment.strength * .62); budDark = mix(budDark, shade(nightPigment.hex, -.3), nightPigment.strength * .62); }
       const pist = packCol(mix('#f6f2e4', '#e07a30', pistilAge)), sugar = packCol(shade(leafHex, -.1));
       const bC = packCol(budHex), bD = packCol(budDark), frost = packCol('#f6fbff');
       const base = (1.2 + p.yieldPot * 1.1 * (g.yield || 1) * p.pheno.y) * fpr;
