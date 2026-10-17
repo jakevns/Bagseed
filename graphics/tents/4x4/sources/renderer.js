@@ -31,18 +31,22 @@
   const L=state.locations.tent4,e=L.equip,dp=doorProg(loc),tier=Shell.of(loc).tier,cx=X+W/2,base=Y+H,env=envFor(loc),on=isLightOn(loc);
   const P={light:[cx,44],exhaust:[47,40],fan:[133,60],humid:[43,113],sensor:[124,72],dehum:[X+W+2,base-16],heater:[X-14,base-12],ctrl:[X+W+2,Y+18]};
   this.geo[loc]={x:X,y:Y,w:W,h:H,cx};runtime.drawLoc=loc;groundShadow(c,cx,base+1,W+6);sprite(c,tier,false,X,Y,W,H);RoomArt.plate(c,cx-15,Y,loc,t);
-  if(e.dehum){groundShadow(c,P.dehum[0]+6,P.dehum[1]+16,14);Gear.dehum(c,...P.dehum,e.dehum,L.dehumOn||e.dehum===2,t);RoomArt.hit('dehum:'+loc,P.dehum[0]-1,P.dehum[1]-1,14,18,EQ.dehum[e.dehum].name,null,'equip');}
+  if(e.dehum&&!window.BagseedDehumidifiers?.handles(loc)){groundShadow(c,P.dehum[0]+6,P.dehum[1]+16,14);Gear.dehum(c,...P.dehum,e.dehum,L.dehumOn||e.dehum===2,t);RoomArt.hit('dehum:'+loc,P.dehum[0]-1,P.dehum[1]-1,14,18,EQ.dehum[e.dehum].name,null,'equip');}
   if(e.heater){Gear.heater(c,...P.heater,e.heater,env.hvac.units.some(u=>u.dir>0),t);RoomArt.hit('heater:'+loc,P.heater[0]-1,P.heater[1]-3,14,16,EQ.heater[e.heater].name,null,'equip');}
-  if(e.ctrl){Gear.ctrl(c,...P.ctrl,e.ctrl,true,t,false);RoomArt.hit('ctrl:'+loc,P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');}
+  if(e.ctrl&&!window.BagseedDehumidifiers?.handles(loc)){Gear.ctrl(c,...P.ctrl,e.ctrl,true,t,false);RoomArt.hit('ctrl:'+loc,P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');}
   if(dp<1){c.save();c.clip(opening(new Path2D(),X,Y,W,H));try{
    diffusion(c,e.light,on,t);Gear.filter(c,...P.exhaust,e.exhaust,exMul(L)>0,t);Gear.light(c,...P.light,e.light,on,t);
-   runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;try{Gear.fan(c,...P.fan,e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
-   Gear.humid(c,...P.humid,e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,loc);Gear.sensor(c,...P.sensor,e.sensor,env,loc);slots(c,t);
+
+   // Rear-mounted fans stay behind the humidifier, canopy and front fabric.
+        runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;try{Gear.fan(c,...P.fan,e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
+        Gear.humid(c,...P.humid,e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,loc);if(window.BagseedDehumidifiers?.handles(loc))BagseedDehumidifiers.drawInside(c,loc,t);else Gear.sensor(c,...P.sensor,e.sensor,env,loc);slots(c,t);
+
   }finally{c.restore();}}
   foreground(c,tier,dp);
   if(dp>.9){if(Shell.of(loc).zip<35)R(c,X+W*.15,Y+H*.22,1,3,'#ffd257');const dry=plantsIn(loc).find(p=>p.stage===S.drying);if(dry)RoomArt.dryTag(c,cx+6,Y+40,dry,loc);}
   RoomArt.hit('space:'+loc,dp>=1?X+2:X,dp>=1?Y+2:Y,dp>=1?W-4:W,dp>=1?H-4:H,locName(loc)+(dp>=1?' (zipped)':'')+' · Grow space controls',[cx,base+8],dp>=1?'furniture':'structure');
-  if(dp<1)for(const k of ['light','exhaust','fan','humid','sensor']){const n=e[k];if(!n&&k!=='sensor')continue;const[px,py]=P[k],b={light:[-26,-7,52,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];RoomArt.hit(k+':'+loc,px+b[0],py+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,[cx,base+8],'equip');}
+  if(dp<1)for(const k of ['light','exhaust','fan','humid','sensor']){if(k==='sensor'&&window.BagseedDehumidifiers?.handles('tent4'))continue;const n=e[k];if(!n&&k!=='sensor')continue;const[px,py]=P[k],b={light:[-26,-7,52,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];RoomArt.hit(k+':'+loc,px+b[0],py+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,[cx,base+8],'equip');}
+    window.BagseedDehumidifiers?.drawSensor(c,'tent4',t);
  };
  // The older late glow must not draw over actors or the new front fabric.
  RoomArt.growEffectMasks.tent4=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};
