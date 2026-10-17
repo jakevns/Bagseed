@@ -1,6 +1,6 @@
 # Zoomies Auto samples
 
-Status: awaiting user approval as part of the Halfmoon / Zoomies / Cruise Control batch.
+Status: approved on 2026-10-17 as part of the Halfmoon / Zoomies / Cruise Control batch.
 
 - `zoomies-growth-and-flower.png`: seed, germination, seedling, vegetation, flower and harvest-ready senescence.
 - `zoomies-late-flower-senescence.png`: mature flower portrait with golden leaves.

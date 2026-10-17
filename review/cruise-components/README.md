@@ -1,6 +1,6 @@
 # Cruise Control Auto samples
 
-Status: awaiting user approval as part of the Halfmoon / Zoomies / Cruise Control batch.
+Status: approved on 2026-10-17 as part of the Halfmoon / Zoomies / Cruise Control batch.
 
 - `cruise-growth-and-flower.png`: seed, germination, seedling, vegetation, flower and harvest-ready senescence.
 - `cruise-late-flower-senescence.png`: mature flower portrait with ochre leaves.

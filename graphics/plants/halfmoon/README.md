@@ -1,6 +1,6 @@
 # Halfmoon CBD connected component prototype
 
-Status: sample awaiting approval. Sixth kit, part of the three-strain review after Moonberry. Full painted-renderer integration remains pending; this registers parts and produces actual connected-rig samples without replacing the native renderer.
+Status: artwork and growth samples approved on 2026-10-17. Sixth kit, part of the three-strain review after Moonberry. Full painted-renderer integration remains pending; this registers parts and produces actual connected-rig samples without replacing the native renderer.
 
 The existing catalog defines `halfmoon` (Tidewater CBD × Lemon Hush) as photoperiod Type III, height factor 1.15, branching 0.95, and Citrus aroma. `sources/profile.json` pins its expressed visual traits and review captions. Native height, growth timing, chemistry and genetics are unchanged; actual plant height is the renderer input and its genetic factor is not applied twice. The 50/90-inch figures are controlled physical-scale studies rather than predictions of a normal indoor autoflower's size.
 
@@ -20,4 +20,4 @@ Reproduce:
 - `node --test tests/plant-batch-three.test.cjs tests/plant-canopy.test.cjs tests/porchlight-growth-model.test.cjs tests/*components.test.cjs tests/plant-phenotype-library.test.cjs tests/night-color.test.cjs`
 - `npm run check`
 
-Preview captures load current `index.html` in a disposable browser and inject only the review rig. Existing output and character payload are unchanged. No push until user approves this batch.
+Preview captures load current `index.html` in a disposable browser and inject only the review rig. Existing output and character payload are unchanged. User approved this batch on 2026-10-17.

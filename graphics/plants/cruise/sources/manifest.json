@@ -1,6 +1,6 @@
 {
   "revision": "cruise-components-1",
-  "status": "sample-awaiting-approval",
+  "status": "approved-component-prototype",
   "name": "Cruise Control Auto",
   "apiName": "BagseedCruiseGrowth",
   "source": "assets/components.png",

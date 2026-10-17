@@ -1,6 +1,6 @@
 # Halfmoon CBD / Zoomies Auto / Cruise Control Auto
 
-Status: review samples awaiting approval. Saved locally; not pushed.
+Status: artwork, growth cycles and wind samples approved on 2026-10-17, including Cruise Control Auto’s cool-night color shifts.
 
 ![Three-strain late-flower portrait](next-three-late-flower.png)
 
