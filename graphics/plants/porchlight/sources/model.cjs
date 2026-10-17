@@ -79,4 +79,20 @@ function pose(model,p,t=0,wind=1,reduced=false){
  return{joints,branches,organs};
 }
 function counts(model){return{joints:model.joints.length,primaryBranches:model.branches.filter(b=>b.order===1&&!b.cut).length,secondaryBranches:model.branches.filter(b=>b.order===2&&!b.cut).length,leaves:model.organs.filter(o=>o.kind==='leaf'&&!o.removed).length,flowers:model.organs.filter(o=>o.kind==='flower').length};}
-module.exports={build,pose,counts};
+// Finishing color is an expressed phenotype, not low nutrition or a new inherited roll.
+// visualState.senescence is a review/prospective adapter input, not a change to stage durations.
+function senescence(p,traits=p.artIdentity?.traits||{}){
+ const stage=p.stage??5,late=stage===9||stage===10;
+ const override=p.visualState?.senescence;
+ const amount=late?(Number.isFinite(override)?clamp(override,0,1):stage===9?.65:.9):0;
+ const color=traits.colorName||'Forest green',mutation=p.pheno?.mut;
+ const palettes={
+  'Lime green':['gold',[218,185,65]],'Forest green':['gold',[218,180,66]],
+  'Blue-green':['ochre',[204,166,77]],'Lavender':['lavender',[158,116,183]],
+  'Purple':['purple',[124,67,140]],'Dark purple':['deep-purple',[77,44,92]],
+  'Pink accents':['rose',[192,103,130]],'Red accents':['red',[174,68,48]]
+ };
+ const [palette,rgb]=mutation==='ink'?['near-black',[44,32,52]]:(palettes[color]||palettes['Forest green']);
+ return{amount,palette,rgb:rgb.slice()};
+}
+module.exports={build,pose,counts,senescence};

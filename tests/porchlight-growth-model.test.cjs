@@ -9,3 +9,16 @@ test('growth and posing are deterministic, preserve the input plant, and remembe
 test('older fan leaves retain their leaflet type as later nodes grow',()=>{const young=model.build(plant(14)),older=model.build(plant(50)),parts=new Map(older.organs.map(o=>[o.id,o.role]));for(const o of young.organs)if(parts.has(o.id))assert.equal(parts.get(o.id),o.role,o.id+' changed its leaflet count');});
 
 test('seedlings have cotyledons and their first single true-leaf pair',()=>{const m=model.build(plant(3)),roles=m.organs.map(o=>o.role);assert.equal(roles.filter(r=>r==='cotyledon').length,1);assert.equal(roles.filter(r=>r==='singleLeaf').length,2);assert.equal(roles.some(r=>r==='fiveLeaf'||r==='sevenLeaf'),false);});
+
+test('senescence follows finishing stage and expressed color without depending on hunger or stress',()=>{
+ const p=plant(50,{stage:9,nutr:60,stress:0,artIdentity:{seed:'stable',traits:{colorName:'Red accents'}}}),before=JSON.stringify(p);
+ assert.equal(model.senescence(p).palette,'red');assert.equal(model.senescence(p).amount,.65);
+ assert.deepEqual(model.senescence({...p,nutr:1,stress:90}),model.senescence(p));
+ assert.equal(model.senescence({...p,stage:8,visualState:{senescence:1}}).amount,0);
+ assert.equal(model.senescence({...p,stage:10}).amount,.9);
+ assert.equal(model.senescence({...p,visualState:{senescence:2}}).amount,1);
+ assert.equal(model.senescence({...p,visualState:{senescence:NaN}}).amount,.65);
+ for(const [color,palette]of [['Forest green','gold'],['Purple','purple'],['Dark purple','deep-purple'],['Lavender','lavender']])assert.equal(model.senescence(p,{colorName:color}).palette,palette);
+ assert.equal(model.senescence({...p,pheno:{mut:'ink'}}).palette,'near-black');
+ assert.equal(JSON.stringify(p),before);
+});

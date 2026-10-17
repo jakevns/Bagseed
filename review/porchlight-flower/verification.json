@@ -30,5 +30,11 @@
     }
   ],
   "errors": [],
-  "productionRendererUnchanged": true
+  "productionRendererUnchanged": true,
+  "lateFlowerPortrait": {
+    "stage": 9,
+    "senescence": 1,
+    "colorName": "Forest green",
+    "palette": "gold"
+  }
 }

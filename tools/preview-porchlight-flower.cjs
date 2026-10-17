@@ -39,12 +39,23 @@ const {chromium}=require('playwright');
     dc.save();dc.translate(x,445);api.part(dc,role,0,0,295);dc.restore();
     dc.fillStyle='#29483a';dc.font='22px Georgia';dc.fillText(['Early flower','Mid flower','Late flower'][i],60+i*400,524);
    }
-   files['porchlight-flower-detail']=detail.toDataURL();return{files,counts};
+   files['porchlight-flower-detail']=detail.toDataURL();
+   const [late,lc]=board(900,1200,'PORCHLIGHT / LATE FLOWER','Final-week color study · Golden senescence');
+   lc.fillStyle='#e1e6d3';lc.fillRect(20,110,860,1040);
+   const p={id:'porchlight-growth-study',lineId:'porchlight',artIdentity:{seed:'porchlight-phenotype-study',traits:{colorName:'Forest green'}},height:50,nodes:11,stage:9,loc:'tent5',training:'natural',density:.82,water:60,nutr:60,health:92,stress:0,sex:'F',pheno:{b:1},visualState:{senescence:1}};
+   const x=450,base=982,ppi=16;
+   lc.fillStyle='#c4c7a6';lc.beginPath();lc.ellipse(x,base+85,205,20,0,0,Math.PI*2);lc.fill();
+   lc.save();lc.translate(x,base);lc.scale(ppi,ppi);BagseedWaterPots.potSprite(lc,0,0,2,60);lc.restore();
+   api.draw(lc,p,x,base,ppi,0,0,{reduced:true});
+   lc.save();lc.translate(x,base);lc.scale(ppi,ppi);BagseedWaterPots.potSprite(lc,0,0,2,60,false,true);lc.restore();
+   lc.fillStyle='#29483a';lc.font='20px Georgia';lc.fillText('Mature flowers · Golden fan leaves · Healthy stems',40,1176);
+   files['porchlight-late-flower-senescence']=late.toDataURL();
+   return{files,counts};
   });
   assert.deepEqual(errors,[]);assert.ok(result.counts.every(c=>c.flowers===19));
   const out=path.join(root,'review/porchlight-flower');fs.mkdirSync(out,{recursive:true});
   for(const [name,url]of Object.entries(result.files))fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(url.split(',')[1],'base64'));
-  fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({status:'sample-awaiting-approval',stages:[7,8,10],heightInches:50,counts:result.counts,errors,productionRendererUnchanged:true},null,2)+'\n');
+  fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({status:'sample-awaiting-approval',stages:[7,8,10],lateFlowerPortrait:{stage:9,senescence:1,colorName:'Forest green',palette:'gold'},heightInches:50,counts:result.counts,errors,productionRendererUnchanged:true},null,2)+'\n');
   console.log('Captured Porchlight early, mid and late flowering reference and flower detail.');
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
