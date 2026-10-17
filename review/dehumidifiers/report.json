@@ -8,7 +8,8 @@
   "perTentClimatePreserved": true,
   "splitFanAnimation": true,
   "fanHeightEqualAndExhaustClearance": true,
-  "fansAboveCanopy": true,
+  "fansBehindCanopy": true,
+  "approved2x2PositionsPreserved": true,
   "plantsAndGeometryPreserved": true,
   "storeAndPhoneArtwork": true,
   "errors": []

@@ -38,10 +38,11 @@
         Gear.filter(c,P.exhaust[0],P.exhaust[1],e.exhaust,exMul(L)>0,t);
         Gear.light(c,P.light[0],P.light[1]+DATA.lightVisualOffsetY,e.light,on,t);
 
+        // Rear-mounted fans stay behind the humidifier, canopy and front fabric.
+        runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
         Gear.humid(c,P.humid[0],P.humid[1]+DATA.humidVisualOffsetY,e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,'tent2');
         if(window.BagseedDehumidifiers?.handles('tent2'))BagseedDehumidifiers.drawInside(c,'tent2',t);else Gear.sensor(c,P.sensor[0],P.sensor[1],e.sensor,env,'tent2');slots(c,t);
-        // Side-mounted fans sit in front of the canopy, behind the tent fabric.
-        runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
+
       }finally{c.restore();}
     }
     foreground(c,tier,dp);
