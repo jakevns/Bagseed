@@ -12738,8 +12738,7 @@ const growroomArt114w = SceneArt.growroom.bind(SceneArt);
 SceneArt.growroom = function (c, t) {
   growroomArt114w(c, t);
   const T = Water.S().tanks.growroom;
-  if (T.has) { drawTank(c, 384, 132, T.level / WATER.tankDays, T.level); RoomArt.hit('tank:growroom', 382, 128, 28, 36, `Grow-room drip tank · ${T.level}/${WATER.tankDays} days`, [396, 176], 'item'); }
-  else RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
+  if (!T.has) RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
 };
 const grSolids114w = SCENES.growroom.solids;
 SCENES.growroom.solids = function () { const s = grSolids114w.call(this); if (Water.S().tanks.growroom.has) s.push([384, 154, 22, 10]); return s; };
@@ -12758,6 +12757,13 @@ INIT114.push((st) => {
   }
 });
 
+function drawRainBarrel(c, x, y, frac, t = 0) {
+  c.save(); c.translate(x - 210, y - 50);
+    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
+    const f = clamp(frac, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
+    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+  c.restore();
+}
 /* backyard rain barrel art (under the downspout, between the AC unit and the hose reel) */
 const yardAddTo114w = Actors.addTo.bind(Actors);
 Actors.addTo = function (items, c, t, scene) {
@@ -12767,9 +12773,7 @@ Actors.addTo = function (items, c, t, scene) {
   items.push({ y: 72, d: () => {
     R(c, 214, 8, 3, 46, '#8a9aa6'); R(c, 214, 8, 1, 46, '#aab8c2');                     // downspout
     if (!B.has) { RoomArt.hit('barrelspot', 204, 46, 30, 26, 'Spot for a rain barrel (LeafCart › Water & Pots)', [219, 84], 'structure'); return; }
-    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
-    const f = clamp(B.level / WATER.barrelCap, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
-    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+    drawRainBarrel(c, 210, 50, B.level / WATER.barrelCap, t);
     if ((WATER.rainHr[state.weather] || 0) && !settings.reduced) R(c, 215, 46 + Math.floor(t * 8) % 6, 1, 2, '#bfe6ff');
     RoomArt.hit('barrel', 206, 46, 28, 28, `Rain barrel · ${Math.round(B.level)}/${WATER.barrelCap} gal`, [219, 84], 'item');
   } });
@@ -12881,7 +12885,7 @@ function plantCamArt(cv, loc) {
   const ps = plantsIn(loc), n = Math.max(1, slotCount(loc)), lightOn = isLightOn(loc);
   if (!out && lightOn) { c.fillStyle = 'rgba(255,240,200,.16)'; c.fillRect(0, 0, W, H); }
   if (!out && !lightOn) { c.fillStyle = 'rgba(10,10,30,.55)'; c.fillRect(0, 0, W, H); }
-  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6; try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } R(c, x - 6, base, 12, 5, '#7a4e2a'); });
+  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6, potTier = state.locations[loc].equip.pot || (loc === 'gh' ? 2 : 1), newPot = loc !== 'outdoor' && window.BagseedWaterPots?.loaded; if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water); try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water, true); else R(c, x - 6, base, 12, 5, '#7a4e2a'); });
   // camera overlay: timestamp + REC dot, scanlines
   for (let y = 0; y < H; y += 3) { c.fillStyle = 'rgba(0,0,0,.08)'; c.fillRect(0, y, W, 1); }
   R(c, 3, 3, 3, 3, Math.floor(performance.now() / 600) % 2 ? '#ff5a4f' : '#7a2c22'); pxText(c, clock(state.minute), 9, 3, 1, '#e8ffd0');
@@ -17093,17 +17097,6 @@ drawExtraIcon = function (ctx, cv, id) {
 };
 const drawDecorIcon115a = drawDecorIcon;
 drawDecorIcon = function (ctx, cv, id) { if (PROD_ART[id]) { PROD_ART[id](cv); return; } return drawDecorIcon115a(ctx, cv, id); };
-
-/* ART02: the installed room reservoir in the grow room matches its icon: lid, fill cap, level window, drip lines to the tents */
-const growroomArt115 = SceneArt.growroom.bind(SceneArt);
-SceneArt.growroom = function (c, t) {
-  growroomArt115(c, t);
-  const T = Water.S().tanks.growroom; if (!T.has) return;
-  const x = 384, y = 132;
-  R(c, x + 7, y - 4, 8, 2, '#7fd4ff');                                         // fill cap
-  R(c, x + 27, y + 26, 1, 4, '#2b2b33'); R(c, x + 27, y + 29, 16, 1, '#2b2b33'); // drip line toward the tents
-  for (const loc of ['tent4', 'tent5']) if (locOwned(loc)) { const g = TentArt.geo[loc]; if (g) { R(c, g.x + g.w - 4, g.y + g.h - 6, 1, 4, '#2b2b33'); R(c, g.x + g.w - 6, g.y + g.h - 3, 4, 1, '#2b2b33'); } }
-};
 
 /* ---------------- ART04: seed packets ---------------- */
 const PKT_MOTIF = {

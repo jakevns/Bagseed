@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "3f505cd21cadc89961192d28f2e21195f2d34a960f8de86afc4bae0d79471f6b",
-  "updatedSHA": "34933b8a89f8ac352f8760b1e8a290fecb7675af655ef8aed98104f93327b9f7",
+  "workingSourceSHA": "136bf1110de5b11f8d2768bbcc7f20df6a4f45777872c83f375435d36f961cdf",
+  "updatedSHA": "23a9a1a4305f27447a21165bf54aec93d6c3daada296f4f8b041cf78620717f6",
   "characterRevision": "custom-walk-arm-layer-v6",
   "characterPayloadSHA256": "89065e804b89c94d7c2cb8218d619a37d6918d5e42107b78e4a6797b578c5f35",
   "characterSourcesSHA256": {
@@ -30,7 +30,7 @@
     "graphics/production/walk/sources/profile_v3.py": "df86ab08bb691ebcc14fb61e90c423ebb78bfcab2dd3b95e4f4a7642d5d1993c",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 63993222,
+  "bytes": 64003261,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [
@@ -144,5 +144,7 @@
   "airConditionerTiers": 2,
   "hvacRevision": "hvac-1",
   "hvacTiers": 2,
-  "tentDetailsRevision": "tent-details-1"
+  "tentDetailsRevision": "tent-details-1",
+  "waterPotsRevision": "water-and-pots-1",
+  "waterPotsDesigns": 9
 }

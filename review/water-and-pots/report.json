@@ -1,0 +1,15 @@
+{
+  "status": "awaiting-artwork-approval",
+  "entryPoint": "public/index.html",
+  "designs": 9,
+  "waterTools": 4,
+  "pots": 3,
+  "reservoirAndRainBarrel": 2,
+  "storeCards": 7,
+  "freeStarterArtwork": true,
+  "plantLayerCases": 6,
+  "liveWaterGauges": true,
+  "fixedAspectRatios": true,
+  "readOnlyDrawing": true,
+  "errors": []
+}

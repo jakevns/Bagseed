@@ -49,7 +49,7 @@ html[data-bagseed-loading="loading"] body > :not(#bagseed-loading):not(script):n
   const statusText=document.getElementById('bagseed-loading-status'),detail=document.getElementById('bagseed-loading-detail'),reload=document.getElementById('bagseed-loading-reload');
   let savedReduced=false;try{savedReduced=!!JSON.parse(localStorage.getItem('bagseed.settings.v1'))?.reduced;}catch{}
   overlay.dataset.reduced=String(matchMedia('(prefers-reduced-motion: reduce)').matches||savedReduced);
-  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners','BagseedHVAC','BagseedTentDetails'];
+  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners','BagseedHVAC','BagseedTentDetails','BagseedWaterPots'];
   let phase='loading',resolveReady,rejectReady;
   const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});ready.catch(()=>{});
   const guarded=['click','pointerdown','touchstart','keydown','wheel'];
@@ -12905,8 +12905,7 @@ const growroomArt114w = SceneArt.growroom.bind(SceneArt);
 SceneArt.growroom = function (c, t) {
   growroomArt114w(c, t);
   const T = Water.S().tanks.growroom;
-  if (T.has) { drawTank(c, 384, 132, T.level / WATER.tankDays, T.level); RoomArt.hit('tank:growroom', 382, 128, 28, 36, `Grow-room drip tank · ${T.level}/${WATER.tankDays} days`, [396, 176], 'item'); }
-  else RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
+  if (!T.has) RoomArt.hit('tankspot', 382, 150, 28, 14, 'Spot for a grow-room drip tank (LeafCart › Water & Pots)', [396, 176], 'structure');
 };
 const grSolids114w = SCENES.growroom.solids;
 SCENES.growroom.solids = function () { const s = grSolids114w.call(this); if (Water.S().tanks.growroom.has) s.push([384, 154, 22, 10]); return s; };
@@ -12925,6 +12924,13 @@ INIT114.push((st) => {
   }
 });
 
+function drawRainBarrel(c, x, y, frac, t = 0) {
+  c.save(); c.translate(x - 210, y - 50);
+    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
+    const f = clamp(frac, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
+    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+  c.restore();
+}
 /* backyard rain barrel art (under the downspout, between the AC unit and the hose reel) */
 const yardAddTo114w = Actors.addTo.bind(Actors);
 Actors.addTo = function (items, c, t, scene) {
@@ -12934,9 +12940,7 @@ Actors.addTo = function (items, c, t, scene) {
   items.push({ y: 72, d: () => {
     R(c, 214, 8, 3, 46, '#8a9aa6'); R(c, 214, 8, 1, 46, '#aab8c2');                     // downspout
     if (!B.has) { RoomArt.hit('barrelspot', 204, 46, 30, 26, 'Spot for a rain barrel (LeafCart › Water & Pots)', [219, 84], 'structure'); return; }
-    groundShadow(c, 220, 72, 22); R(c, 210, 50, 20, 22, '#5a6a3a'); R(c, 210, 50, 20, 2, '#7a8a52'); R(c, 211, 55, 18, 1, '#3f4a28'); R(c, 211, 63, 18, 1, '#3f4a28'); R(c, 210, 70, 20, 2, '#3f4a28');
-    const f = clamp(B.level / WATER.barrelCap, 0, 1), lv = Math.round(14 * f); R(c, 226, 54, 2, 15, '#1d2414'); R(c, 226, 69 - lv, 2, lv, f <= .2 ? '#ff7a63' : '#7fd4ff');
-    R(c, 212, 66, 4, 2, '#c8ccd0'); R(c, 213, 68, 2, 3, '#9aa0a6');
+    drawRainBarrel(c, 210, 50, B.level / WATER.barrelCap, t);
     if ((WATER.rainHr[state.weather] || 0) && !settings.reduced) R(c, 215, 46 + Math.floor(t * 8) % 6, 1, 2, '#bfe6ff');
     RoomArt.hit('barrel', 206, 46, 28, 28, `Rain barrel · ${Math.round(B.level)}/${WATER.barrelCap} gal`, [219, 84], 'item');
   } });
@@ -13048,7 +13052,7 @@ function plantCamArt(cv, loc) {
   const ps = plantsIn(loc), n = Math.max(1, slotCount(loc)), lightOn = isLightOn(loc);
   if (!out && lightOn) { c.fillStyle = 'rgba(255,240,200,.16)'; c.fillRect(0, 0, W, H); }
   if (!out && !lightOn) { c.fillStyle = 'rgba(10,10,30,.55)'; c.fillRect(0, 0, W, H); }
-  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6; try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } R(c, x - 6, base, 12, 5, '#7a4e2a'); });
+  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6, potTier = state.locations[loc].equip.pot || (loc === 'gh' ? 2 : 1), newPot = loc !== 'outdoor' && window.BagseedWaterPots?.loaded; if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water); try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water, true); else R(c, x - 6, base, 12, 5, '#7a4e2a'); });
   // camera overlay: timestamp + REC dot, scanlines
   for (let y = 0; y < H; y += 3) { c.fillStyle = 'rgba(0,0,0,.08)'; c.fillRect(0, y, W, 1); }
   R(c, 3, 3, 3, 3, Math.floor(performance.now() / 600) % 2 ? '#ff5a4f' : '#7a2c22'); pxText(c, clock(state.minute), 9, 3, 1, '#e8ffd0');
@@ -17261,17 +17265,6 @@ drawExtraIcon = function (ctx, cv, id) {
 };
 const drawDecorIcon115a = drawDecorIcon;
 drawDecorIcon = function (ctx, cv, id) { if (PROD_ART[id]) { PROD_ART[id](cv); return; } return drawDecorIcon115a(ctx, cv, id); };
-
-/* ART02: the installed room reservoir in the grow room matches its icon: lid, fill cap, level window, drip lines to the tents */
-const growroomArt115 = SceneArt.growroom.bind(SceneArt);
-SceneArt.growroom = function (c, t) {
-  growroomArt115(c, t);
-  const T = Water.S().tanks.growroom; if (!T.has) return;
-  const x = 384, y = 132;
-  R(c, x + 7, y - 4, 8, 2, '#7fd4ff');                                         // fill cap
-  R(c, x + 27, y + 26, 1, 4, '#2b2b33'); R(c, x + 27, y + 29, 16, 1, '#2b2b33'); // drip line toward the tents
-  for (const loc of ['tent4', 'tent5']) if (locOwned(loc)) { const g = TentArt.geo[loc]; if (g) { R(c, g.x + g.w - 4, g.y + g.h - 6, 1, 4, '#2b2b33'); R(c, g.x + g.w - 6, g.y + g.h - 3, 4, 1, '#2b2b33'); } }
-};
 
 /* ---------------- ART04: seed packets ---------------- */
 const PKT_MOTIF = {
@@ -30251,6 +30244,36 @@ function remainingHairSource(L,dir){
  drawExtraIcon=function(c,cv,id){if(id!=='growcam'||!loaded)return extra.apply(this,arguments);cv.width=320;cv.height=240;drawGrowCamArt(c,320,240);};
  drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='ctrl'||n!==1||!loaded)return gear.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.items.controller,s=Math.min(183/a.height,238/a.width);c.save();c.translate(160-a.width*s/2,120-a.height*s/2);c.scale(s,s);controller(c,0,0);c.restore();};
  const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Tent detail artwork failed'));image.src=DATA.image;});window.BagseedTentDetails=Object.freeze({ready,controller,camera,dryingTag,controllerState,dryState,dryFixtures,geometry,get loaded(){return loaded;}});
+})();
+
+</script>
+<script id="bagseed-water-pots-production-code">
+/* Water & Pots: native inventory, watering and moisture rules; illustrated surfaces. */
+(()=>{
+ 'use strict';
+ const DATA={"revision":"water-and-pots-1","status":"proposal","atlases":{"watering":{"path":"assets/watering-atlas.png","sha256":"000716b88158313a37d4c272257a5ad2fcbfe62520eafefb947e51ee7dbb0f3e","size":[1536,1024],"runtime":{"path":"assets/watering-atlas.webp","sha256":"6205236b2055b12ae28a20f7d4a5f5d349026dde0bfd3989b32cb669dff95b3b","publicPath":"assets/water-and-pots/watering-6205236b2055.webp"}},"pots":{"path":"assets/pots-atlas.png","sha256":"24adbe809b87e50b45f200abac889935d9a96e57bd0ca027c05ab22251c398f1","size":[2079,756],"runtime":{"path":"assets/pots-atlas.webp","sha256":"fe2961f56744db1629c3be9087b507b37f1843de011a892294f3251adb5c0bbb","publicPath":"assets/water-and-pots/pots-fe2961f56744.webp"}}},"watering":{"water0":{"name":"Dented Watering Can","price":0,"crop":[40,80,508,352],"width":13,"height":9.007874015748031,"gauge":null,"reading":null},"water1":{"name":"Brass Duchess Can","price":24.99,"crop":[548,76,598,350],"width":16,"height":9.364548494983278,"gauge":null,"reading":null},"water2":{"name":"PumpPal Sprayer","price":39,"crop":[1152,38,343,402],"width":13,"height":15.236151603498543,"gauge":null,"reading":null},"water3":{"name":"Drip Reservoir Kit","price":119,"crop":[45,481,391,472],"width":14,"height":16.900255754475705,"gauge":[327,637,24,158],"reading":[144,687,132,51]},"tank_grow":{"name":"DripWorks Room Reservoir","price":79,"crop":[516,480,488,481],"width":26,"height":25.62704918032787,"gauge":[885,627,24,168],"reading":[642,674,162,49]},"barrel":{"name":"Rain Barrel & Drip Kit","price":59,"crop":[1058,458,430,512],"width":24,"height":28.57674418604651,"gauge":[1386,591,20,197],"reading":[1235,697,81,35],"ink":"#435139"}},"pots":{"1":{"name":"Mystery Yogurt Tub","price":0,"crop":[27,198,643,491],"soil":[351,297,267,39],"foot":679,"bodyHeight":10,"display":null,"indicator":null},"2":{"name":"Breathe Bag Fabric Pot","price":9.99,"crop":[693,184,706,507],"soil":[1045,291,270,48],"foot":681,"bodyHeight":10,"display":null,"indicator":null},"3":{"name":"Root Royale Smart Pot","price":34.99,"crop":[1412,87,652,605],"soil":[1740,282,259,45],"foot":682,"bodyHeight":10,"display":[1925,120,62,45],"indicator":[1928,183],"button":[1973,186]}},"wateringImage":"assets/water-and-pots/watering-6205236b2055.webp","potsImage":"assets/water-and-pots/pots-fe2961f56744.webp"},waterImage=new Image(),potImage=new Image(),can=Gear.can,pot=Gear.pot,tank=drawTank,barrel=drawRainBarrel,gearIcon=drawGearIcon,extraIcon=drawExtraIcon,hit=RoomArt.hit,plantDraw=PlantArt.draw,addActors=Actors.addTo,frames=new WeakMap(),fronts=new Map();let loaded=false;
+ const fixtures=new Map(),layers=[];
+ function project(a,r){const s=a.width/a.crop[2];return[(r[0]-a.crop[0])*s,(r[1]-a.crop[1])*s,(r[2]||0)*s,(r[3]||0)*s];}
+ function gauge(c,a,frac,t=0,animate=false){if(!a.gauge)return;const[x,y,w,h]=project(a,a.gauge),f=clamp(frac,0,1);c.save();c.beginPath();c.roundRect(x,y,w,h,Math.min(w*.3,h*.1));c.clip();c.fillStyle='#233b3c';c.fillRect(x,y,w,h);if(f>0){const fill=c.createLinearGradient(x,0,x+w,0);fill.addColorStop(0,f<=.2?'#c79762':'#5ca5a7');fill.addColorStop(.6,f<=.2?'#e9bb7d':'#a6d8d1');fill.addColorStop(1,f<=.2?'#b7804a':'#488f95');c.fillStyle=fill;c.fillRect(x,y+h*(1-f),w,h*f);c.strokeStyle='rgba(225,249,230,.68)';c.lineWidth=.13;c.beginPath();c.moveTo(x,y+h*(1-f));c.quadraticCurveTo(x+w*.5,y+h*(1-f)+(animate&&!settings.reduced?Math.sin(t*1.4)*.08:0),x+w,y+h*(1-f));c.stroke();}c.fillStyle='rgba(240,252,235,.17)';c.fillRect(x+w*.12,y,w*.18,h);c.restore();}
+ function waterSprite(c,x,bottom,key,frac=1,label=5,t=0,animate=true){const a=DATA.watering[key];if(!loaded||!a)return;c.save();c.translate(x-a.width/2,bottom-a.height);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(waterImage,...a.crop,0,0,a.width,a.height);gauge(c,a,frac,t,animate);if(a.reading){const[dx,dy,dw,dh]=project(a,a.reading);c.fillStyle=a.ink||'#ecdba6';c.font=dh*.80+'px monospace';c.textAlign='center';c.textBaseline='middle';c.fillText(String(label),dx+dw/2,dy+dh*.52,dw*.94);}c.restore();}
+ function potGeometry(n){const a=DATA.pots[n],s=a.bodyHeight/(a.foot-a.soil[1]);return{a,s,left:-(a.soil[0]-a.crop[0])*s,top:-(a.soil[1]-a.crop[1])*s,w:a.crop[2]*s,h:a.crop[3]*s};}
+ function frontImage(n){if(fronts.has(n))return fronts.get(n);const a=DATA.pots[n],cv=document.createElement('canvas');cv.width=a.crop[2];cv.height=a.crop[3];const c=cv.getContext('2d');c.drawImage(potImage,...a.crop,0,0,cv.width,cv.height);c.globalCompositeOperation='destination-out';c.fillStyle='#000';c.beginPath();c.ellipse(a.soil[0]-a.crop[0],a.soil[1]-a.crop[1],a.soil[2],a.soil[3],0,0,Math.PI*2);c.fill();fronts.set(n,cv);return cv;}
+ function potSprite(c,x,y,n,wet=60,stump=false,front=false){if(!loaded||!DATA.pots[n])return;const g=potGeometry(n),a=g.a,w=clamp(Number(wet)||0,0,100);c.save();c.translate(x,y);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';if(front)c.drawImage(frontImage(n),g.left,g.top,g.w,g.h);else{c.drawImage(potImage,...a.crop,g.left,g.top,g.w,g.h);c.fillStyle=w>35?`rgba(32,21,13,${w/100*.28})`:'rgba(194,146,93,.14)';c.beginPath();c.ellipse(0,0,a.soil[2]*g.s,a.soil[3]*g.s,0,0,Math.PI*2);c.fill();}if(a.display){const[dx,dy,dw,dh]=a.display.map((v,i)=>i<2?(v-a.crop[i])*g.s+(i===0?g.left:g.top):v*g.s);c.fillStyle='#213c33';c.fillRect(dx,dy,dw,dh);c.fillStyle='#c1e3ba';c.font=dh*.80+'px monospace';c.textAlign='center';c.textBaseline='middle';c.fillText(Math.round(w)+'%',dx+dw/2,dy+dh*.52,dw*.95);const ix=g.left+(a.indicator[0]-a.crop[0])*g.s,iy=g.top+(a.indicator[1]-a.crop[1])*g.s,color=w<30?'#e9a270':'#b5dc9a';c.fillStyle=color;c.beginPath();c.arc(ix,iy,.18,0,Math.PI*2);c.fill();window.BagseedEquipmentGlow?.point(c,ix,iy,.85,color,true,.55,'pot-probe');window.BagseedEquipmentGlow?.display(c,dx,dy,dw,dh,'#b4db9b',true,.4,'pot-display');if(a.button){const bx=g.left+(a.button[0]-a.crop[0])*g.s,by=g.top+(a.button[1]-a.crop[1])*g.s;window.BagseedEquipmentGlow?.point(c,bx,by,.65,'#e8cf99',true,.25,'pot-button');}}if(stump){c.fillStyle='#806340';c.fillRect(-.45,-2,.9,2.4);c.fillStyle='#c5aa78';c.fillRect(-.45,-2,.9,.4);}c.restore();}
+ const key=(x,y,n)=>`${x}:${y}:${n}`;
+ function world(draw){return function(c,...args){if(frames.has(c))return draw.call(this,c,...args);frames.set(c,new Set());try{return window.BagseedEquipmentGlow?BagseedEquipmentGlow.withWorld(c,()=>draw.call(this,c,...args)):draw.call(this,c,...args);}finally{frames.delete(c);}};}
+ RoomArt.draw=world(RoomArt.draw);SCENES.growroom.draw=world(SCENES.growroom.draw);SCENES.backyard.draw=world(SCENES.backyard.draw);
+ PlantArt.draw=function(c,p,x,y,...args){const pending=frames.get(c),pos=p&&SLOT_POS[p.loc]?.[p.slot];if(loaded&&pending&&pos&&x===pos[0]&&y===pos[1]&&p.stage<S.drying&&LOC_DEF[p.loc]?.kind!=='outdoor'){const n=state.locations[p.loc].equip.pot||(p.loc==='gh'?2:1);if(DATA.pots[n]){groundShadow(c,x,y+10,18);potSprite(c,x,y,n,p.water,false,false);pending.add(key(x,y,n));if(layers.length>=64)layers.shift();layers.push({loc:p.loc,slot:p.slot,phase:'soil-before-plant'});}}return plantDraw.call(this,c,p,x,y,...args);};
+ Gear.pot=function(c,x,y,n,wet,stump){if(!loaded||!DATA.pots[n])return pot.apply(this,arguments);const pending=frames.get(c),front=!!pending?.has(key(x,y,n));if(!front)groundShadow(c,x,y+10,18);potSprite(c,x,y,n,wet,stump,front);if(front){pending.delete(key(x,y,n));if(layers.length>=64)layers.shift();layers.push({phase:'rim-after-plant',x,y});}};
+ Gear.can=function(c,x,y,n){if(!loaded||!DATA.watering['water'+n])return can.apply(this,arguments);const a=DATA.watering['water'+n],level=n===3?(state?.v114?.water?.tanks?.bedroom?.level??state?.reservoir??0):5;groundShadow(c,x+a.width/2,y+10,a.width*.8);waterSprite(c,x+a.width/2,y+10,'water'+n,level/5,level,runtime.t||0);fixtures.set('bedroom',{x,y,level,tier:n,w:a.width,h:a.height});};
+ drawTank=function(c,x,y,frac,label){if(!loaded)return tank.apply(this,arguments);groundShadow(c,x+11,y+30,24);waterSprite(c,x+11,y+30,'tank_grow',frac,label,runtime.t||0);fixtures.set('growroom',{x:x+11,y:y+30,frac});};
+ drawRainBarrel=function(c,x,y,frac,t=0){if(!loaded)return barrel.apply(this,arguments);groundShadow(c,x+10,y+22,22);waterSprite(c,x+10,y+22,'barrel',frac,Math.round(frac*WATER.barrelCap),t);fixtures.set('barrel',{x:x+10,y:y+22,frac});};
+ Actors.addTo=function(items,c,t,scene){addActors.call(this,items,c,t,scene);if(scene!=='growroom')return;const T=Water.S().tanks.growroom;if(T.has)items.push({y:162,d:()=>{drawTank(c,384,132,T.level/WATER.tankDays,T.level);RoomArt.hit('tank:growroom',382,128,28,36,`Grow-room drip tank · ${T.level}/${WATER.tankDays} days`,[396,176],'item');}});};
+ function cameraPot(c,x,y,n,wet,front=false){c.save();c.translate(x,y);c.scale(.5,.5);potSprite(c,0,0,n,wet,false,front);c.restore();}
+ RoomArt.hit=function(id,x,y,w,h,label,walk,layer){if(loaded&&id==='can'){const f=fixtures.get('bedroom');if(f){x=f.x-1;y=f.y+10-f.h-1;w=f.w+2;h=f.h+2;}}if(loaded&&id==='barrel'){x=206;y=42;w=28;h=32;}return hit.call(this,id,x,y,w,h,label,walk,layer);};
+ function iconWater(c,cv,key,museum=false){cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.watering[key],s=Math.min(182/a.height,245/a.width);c.save();c.translate(160,120);c.scale(s,s);waterSprite(c,0,a.height/2,key,1,key==='barrel'?60:5,0,false);c.restore();}
+ drawGearIcon=function(c,cv,slot,n,museum){if(loaded&&slot==='water'&&DATA.watering['water'+n])return iconWater(c,cv,'water'+n,museum);if(!loaded||slot!=='pot'||!DATA.pots[n])return gearIcon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const g=potGeometry(n),s=Math.min(178/g.h,245/g.w);c.save();c.translate(160-(g.left+g.w/2)*s,120-(g.top+g.h/2)*s);c.scale(s,s);potSprite(c,0,0,n,60);c.restore();};
+ drawExtraIcon=function(c,cv,id){if(loaded&&['tank_grow','barrel'].includes(id))return iconWater(c,cv,id);return extraIcon.apply(this,arguments);};
+ const ready=Promise.all([[waterImage,DATA.wateringImage],[potImage,DATA.potsImage]].map(([im,url])=>new Promise((resolve,reject)=>{im.onload=resolve;im.onerror=()=>reject(Error('Water & Pots artwork failed'));im.src=url;}))).then(()=>{loaded=true;});window.BagseedWaterPots=Object.freeze({ready,waterSprite,potSprite,cameraPot,potGeometry,frontImage,fixtures,layers,get loaded(){return loaded;}});
 })();
 
 </script>

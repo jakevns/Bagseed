@@ -1,0 +1,12 @@
+{
+  "status": "local samples awaiting artwork approval",
+  "entryPoint": "public/index.html",
+  "designs": 9,
+  "buildAndSourceChecks": "passed",
+  "sevenPurchasesIrrigationLayeringAndSaveReload": "passed",
+  "starterTentRegression": "passed",
+  "allTentPlayerDepth": "passed",
+  "originalSourceArtPreserved": true,
+  "twoLosslessRGBAMatches": true,
+  "characterRevisionPreserved": "custom-walk-arm-layer-v6"
+}
