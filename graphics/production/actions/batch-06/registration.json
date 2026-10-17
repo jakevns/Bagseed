@@ -249,68 +249,6 @@
           3
         ]
       }
-    },
-    "rosalind": {
-      "down": {
-        "sourceBox": [
-          329,
-          1264,
-          551,
-          1521
-        ],
-        "alphaBounds": [
-          32,
-          0,
-          181,
-          257
-        ],
-        "scale": 0.38910505836575876,
-        "targetHeight": 100,
-        "placement": [
-          17,
-          7
-        ]
-      },
-      "right": {
-        "sourceBox": [
-          555,
-          1264,
-          790,
-          1521
-        ],
-        "alphaBounds": [
-          45,
-          2,
-          188,
-          257
-        ],
-        "scale": 0.39215686274509803,
-        "targetHeight": 100,
-        "placement": [
-          20,
-          7
-        ]
-      },
-      "up": {
-        "sourceBox": [
-          794,
-          1264,
-          1001,
-          1521
-        ],
-        "alphaBounds": [
-          36,
-          0,
-          178,
-          257
-        ],
-        "scale": 0.38910505836575876,
-        "targetHeight": 100,
-        "placement": [
-          24,
-          7
-        ]
-      }
     }
   },
   "limitations": [

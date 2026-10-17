@@ -1,5 +1,7 @@
 # Character audit: broken, off-style and mis-sized characters
 
+Repair results and current evidence: [character-audit-results.md](character-audit-results.md). The findings below are the original pre-repair audit.
+
 Audit date: 2026-10-16. Build audited: `public/index.html` on branch `ccr-12191481-bpni4g` (package 1.1.5-2).
 
 ## How this was measured

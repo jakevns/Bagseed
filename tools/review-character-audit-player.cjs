@@ -1,5 +1,6 @@
 const fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const ROOT=path.resolve(__dirname,'..'),OUT=path.join(ROOT,'docs/graphics/character-audit');
+const write=(file,data)=>{if(fs.existsSync(file)&&fs.readFileSync(file).equals(Buffer.from(data)))return;fs.writeFileSync(file+'.tmp',data);fs.renameSync(file+'.tmp',file);};
 (async()=>{
  const {createStaticServer}=await import('./server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
  try{
@@ -15,9 +16,12 @@ const ROOT=path.resolve(__dirname,'..'),OUT=path.join(ROOT,'docs/graphics/charac
    }
    const hashes={},selected=new Set(['bald','short','buzz','crop','caesar','fade']),sha=async a=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',a))).map(v=>v.toString(16).padStart(2,'0')).join('');
    for(const[hairS]of HAIRS)if(selected.has(hairS)){let group='';for(const face of ['soft','round','angular','long','square','heart','oval','diamond','oblong','pear','triangle','wide','petite','strong','button'])for(const dir of ['down','right','up','left']){const h=BagseedArt.head(BagseedArt.normalize({hairS,face,hairC:'#c4c4c4'}),dir);group+=await sha(h.getContext('2d').getImageData(0,0,192,320).data);}hashes[hairS]=await sha(new TextEncoder().encode(group));}
-   return {sheet:c.toDataURL(),measurements,hashes};
+   const reactions=document.createElement('canvas');reactions.width=960;reactions.height=540;const q=reactions.getContext('2d');q.fillStyle='#e8dfce';q.fillRect(0,0,960,540);q.font='16px sans-serif';q.fillStyle='#38281c';
+   ['short','afro','long'].forEach((hairS,row)=>{q.fillText(hairS+' - idle / sniff',8,row*180+20);['down','right','up'].forEach((dir,col)=>{const L=BagseedArt.normalize({hairS,hairC:'#9959bd',topS:'hoodie',shirtC:'#5f9c33'});for(const[nose,offset]of [[false,0],[true,130]]){const im=BagseedArt.sprite(L,dir,0,0,0,0,nose,3);q.drawImage(im,10+col*320+offset,row*180+28,96,144);}});});
+   return {sheet:c.toDataURL(),reactions:reactions.toDataURL(),measurements,hashes};
   });
-  fs.writeFileSync(path.join(OUT,'player-cel-style.png'),Buffer.from(r.sheet.split(',')[1],'base64'));fs.writeFileSync(path.join(OUT,'player-cel-style.json'),JSON.stringify({measurements:r.measurements},null,2)+'\n');
+  write(path.join(OUT,'player-cel-style.png'),Buffer.from(r.sheet.split(',')[1],'base64'));write(path.join(OUT,'player-cel-style.json'),JSON.stringify({measurements:r.measurements},null,2)+'\n');
+  write(path.join(OUT,'player-reactions.png'),Buffer.from(r.reactions.split(',')[1],'base64'));
   if(process.argv.includes('--write-fixture'))fs.writeFileSync(path.join(ROOT,'tests/fixtures/hair-audit-cel-v1.json'),JSON.stringify({revision:'character-audit-cel-v1',hashes:r.hashes},null,2)+'\n');
   console.log(JSON.stringify(r.measurements));
  }finally{await browser?.close();await new Promise(r=>server.close(r));}

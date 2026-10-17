@@ -4,15 +4,17 @@ This script only crops, registers and normalizes material channels. Hair is
 never extracted from a painted face, and the bald base never contains hair.
 """
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'sources'))
+from retained_png import save_png
 import hashlib
 import json
-import sys
 import numpy as np
 from PIL import Image, ImageFilter
 
 ROOT=Path(__file__).resolve().parent
 DIRS=['down','right','up','left']
-SPECS=json.loads((ROOT/'sources/prompts.json').read_text())['specs']
+SPECS=json.loads((ROOT/'sources/prompts.json').read_text(encoding='utf-8-sig'))['specs']
 OUT=ROOT/'registered'
 RESAMPLE=Image.Resampling.LANCZOS
 PAD=64
@@ -23,7 +25,7 @@ report={'version':'bald-and-hair-10','assets':{},'features':{},'anatomy':{},'hai
 ONLY=set(sys.argv[1:])
 if ONLY:
     assert ONLY<={s[0] for s in SPECS},('Unknown hairstyle',ONLY)
-    report=json.loads((ROOT/'manifest.json').read_text())
+    report=json.loads((ROOT/'manifest.json').read_text(encoding='utf-8-sig'))
     report['version']='bald-and-hair-10'
 
 def bbox(mask):
@@ -59,8 +61,8 @@ def save(im,key):
     file=OUT/(key+'.png');file.parent.mkdir(parents=True,exist_ok=True)
     # Browsers and Windows image previews may hold the previous PNG mapped.
     # Replace complete files atomically instead of truncating a mapped image.
-    temporary=file.with_suffix('.png.tmp');im.save(temporary,format='PNG');temporary.replace(file)
-    report['assets'][key]=str(file.relative_to(ROOT))
+    save_png(im,file)
+    report['assets'][key]=file.relative_to(ROOT).as_posix()
 
 def resize(im,size):
     return im.convert('RGBa').resize(size,RESAMPLE).convert('RGBA')
@@ -175,9 +177,9 @@ for i,direction in enumerate(DIRS):
 
 # Authored scalp/ear landmarks replace silhouette scoring. Hair volume cannot
 # push roots sideways or make the cut sit lower to avoid touching an ear.
-FITTING=json.loads((ROOT/'hair-fit.json').read_text())
+FITTING=json.loads((ROOT/'hair-fit.json').read_text(encoding='utf-8-sig'))
 assert set(FITTING['styles'])=={s[0] for s in SPECS}
-report['fitting']={'version':FITTING['version'],'sha256':hashlib.sha256((ROOT/'hair-fit.json').read_text().encode()).hexdigest()}
+report['fitting']={'version':FITTING['version'],'sha256':hashlib.sha256((ROOT/'hair-fit.json').read_text(encoding='utf-8-sig').encode()).hexdigest()}
 
 def fit_hair(cell,direction,style):
     raw=np.asarray(cell);box=bbox(raw[:,:,3]>50);crop=cell.crop(box)
@@ -258,5 +260,5 @@ for group,names in [(1,['cap','beanie','bucket','straw']),(2,['sunhat','officer'
             out=Image.new('RGBA',(192,HEIGHT));out.alpha_composite(resize(crop,(w,h)),(x,y));key=f'headwear/{name}/{direction}';save(out,key)
             report['hats'][key]={'source':filename,'sourceBox':box,'bounds':b,'position':[x,y],'size':[w,h],'brimY':bottom}
 
-temporary=ROOT/'manifest.json.tmp';temporary.write_text(json.dumps(report,indent=2)+'\n',newline='\n');temporary.replace(ROOT/'manifest.json')
+temporary=ROOT/'manifest.json.tmp';temporary.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n');temporary.replace(ROOT/'manifest.json')
 print(f'{len(report["hair"])} independent hairstyles registered; bald anatomy saved in four directions')

@@ -27945,7 +27945,7 @@ function remainingHairSource(L,dir){
     }
     if(L.prop&&!nose&&dir!=='up'){g.save();g.translate(0,36);props(g,L,dir);g.restore();}
     out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[headX+x*headScale/3,headY+y*headScale/3]);
-    out.bagseedNose=H.bagseedFeatures.nose?.map((v,i)=>(i?headY:headX)+v*headScale/3);
+    out.bagseedNose=(H.bagseedFeatures.nose||[96,155]).map((v,i)=>(i?headY:headX)+v*headScale/3);
     return nose?out:scalePlayerFigure(out,PLAYER_FIGURE_SCALE);
   }
   function props(g,L,dir) {
@@ -27984,6 +27984,7 @@ function remainingHairSource(L,dir){
       g.clearRect(x-4,65+offset,12,15);g.save();g.translate(x+2,61+offset);g.rotate(dir==='left'?.35:-.35);g.drawImage(arm,-6,0,12,22);g.restore();
     }
     out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-ground),ground+(y-ground)*(frame%2?.988:1)]:breath?[x,ground+(y-ground)*.99]:[x,y]);
+    out.bagseedNose=source.bagseedNose;
     out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;out.bagseedWalkProfile=source.bagseedWalkProfile;
     out.bagseedCastWalk=source.bagseedCastWalk;
     out.bagseedFigureScale=source.bagseedFigureScale;
@@ -28010,15 +28011,21 @@ function remainingHairSource(L,dir){
       if(person.walkFrameCount===8&&moving)source.bagseedCastWalk={id:person.id,dir,frame:frame%8};
     }
     else if(!nose&&(walking||frame>0)&&(source=authoredWalk(L,dir,frame,!!blink,density))){rig=false;breath=0;act=0;}
-    else source=generic(L,dir,nose,!!blink,density);
+    else{
+      // The legacy modular reaction puts fingers at the collar and lowers the
+      // head to meet them. Preserve the fitted figure until matching raised-
+      // hand outfit art exists; a small sniff emote carries the reaction.
+      source=generic(L,dir,false,!!blink,density);sniff=!!nose;
+    }
     const out=animate(source,L,dir,frame,breath,blink,act&&!nose,rig&&!nose,density);
     out.bagseedAuthoredId=person&&person.id!=='player'?person.id:null;
     if(sniff){
       // A small sniff emote preserves the complete idle drawing and its size.
       const probe=cv();probe.getContext('2d').drawImage(out,0,0,96,108);
-      const face=faceCoordinates(probe,L),g=out.getContext('2d');g.save();g.scale(density,density);g.strokeStyle='#62432d';g.lineWidth=.7;g.lineCap='round';
-      const x=face.x+(dir==='left'?-7:7),y=face.mouthY-2;
-      for(let i=0;i<2;i++){g.beginPath();g.moveTo(x+i*2,y+2);g.quadraticCurveTo(x+i*2+1.5,y,x+i*2,y-2);g.stroke();}g.restore();
+      const face=faceCoordinates(probe,L),g=out.getContext('2d');g.save();g.setTransform(density,0,0,density,0,0);g.strokeStyle='#62432d';g.lineWidth=.7;g.lineCap='round';
+      const modular=!person||person.id==='player',point=out.bagseedNose||[48,63];
+      const side=dir==='left'?-1:1,x=modular?(side<0?12:84):face.x+side*7,y=modular?point[1]:face.mouthY-2;
+      for(let i=0;i<2;i++){g.beginPath();g.moveTo(x+i*2*side,y+2);g.quadraticCurveTo(x+i*2*side+1.5*side,y,x+i*2*side,y-2);g.stroke();}g.restore();
       out.bagseedAuthoredNoseFallback=true;
     }
     if(person&&person.id!=='player'&&L.expr!=='neutral'&&dir!=='up'&&!nose){const g=out.getContext('2d'),f=faceCoordinates(out,L);g.save();g.translate(f.x-32,f.eyeY-79/3);g.scale(1/3,1/3);faceDetails(g,{...L,eyes:'round',eyeC:'#2b1d14',brows:'thin',mouth:'default',nose:'default',ears:'normal',extras:[],marks:[],pierce:[],glasses:'none',acc:'none'},dir);g.restore();}

@@ -4,6 +4,8 @@ import sys,json,hashlib
 import numpy as np
 from PIL import Image,ImageFilter
 HERE=Path(__file__).resolve().parent;ART=HERE.parent
+sys.path.insert(0,str(ART/'sources'))
+from retained_png import save_png, save_text
 sys.path.insert(0,str(ART/'cast/sources'))
 # Do not import extract.py: its top-level loop would overwrite registrations.
 sys.path.insert(0,str(ART/'walk/sources'))
@@ -33,7 +35,7 @@ def body(crop,height):
  return out,scale
 
 def main():
- config=json.loads((HERE/'manifest.json').read_text(encoding='utf-8-sig'));cast=json.loads((ART/'cast/sources/asset-manifest.json').read_text())
+ config=json.loads((HERE/'manifest.json').read_text(encoding='utf-8-sig'));cast=json.loads((ART/'cast/sources/asset-manifest.json').read_text(encoding='utf-8-sig'))
  people={p['assetId']:p for p in cast['people']};selected=sys.argv[1:];selected=[]if selected==['--cast-only']else selected
  for id,spec in config['people'].items():
   if selected and id not in selected:continue
@@ -51,12 +53,12 @@ def main():
     else:
      direction=['down','right','up'][col];out,s=body(crop,height);file=(target/f'{direction}-idle.png')if row==0 else(actions/f'{direction}.png')
      if direction=='right':
-      mirror=(target/'left-idle.png')if row==0 else(actions/'left.png');out.transpose(Image.Transpose.FLIP_LEFT_RIGHT).save(mirror)
-    temp=file.with_suffix('.png.tmp');out.save(temp,format='PNG');temp.replace(file)
+      mirror=(target/'left-idle.png')if row==0 else(actions/'left.png');save_png(out.transpose(Image.Transpose.FLIP_LEFT_RIGHT),mirror)
+    save_png(out,file)
     report['cells'].append({'row':row,'column':col,'cell':bounds,'subject':box,'scale':s,'output':str(file.relative_to(ART)).replace('\\','/')})
   person['styleRedraw']={'source':str(source.relative_to(ART)).replace('\\','/'),'sha256':report['sourceSHA256'],'height':height,'approvedStyle':'Remy/Priya/Doug/Poppy'}
   cast['sources']['style-audit/'+id]={'sha256':report['sourceSHA256']}
-  (HERE/'sources'/f'{id}-registration.json').write_text(json.dumps(report,indent=2)+'\n',newline='\n')
+  save_text(json.dumps(report,indent=2)+'\n',HERE/'sources'/f'{id}-registration.json')
   print(id,'registered at',height,flush=True)
- file=ART/'cast/sources/asset-manifest.json';tmp=file.with_suffix('.json.tmp');tmp.write_text(json.dumps(cast,indent=2)+'\n',newline='\n');tmp.replace(file)
+ file=ART/'cast/sources/asset-manifest.json';tmp=file.with_suffix('.json.tmp');tmp.write_text(json.dumps(cast,indent=2)+'\n',encoding='utf-8',newline='\n');tmp.replace(file)
 if __name__=='__main__':main()

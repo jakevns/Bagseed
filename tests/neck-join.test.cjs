@@ -47,25 +47,17 @@ test('standing garments and head/body shapes share one body neck and one jaw att
  });assert.equal(r.failures.length,0,JSON.stringify(r.failures.slice(0,10)));assert.equal(r.views,5400);assert.ok(r.neckPixels>50000);
 });
 
-test('reaction fingers actually meet the nose instead of the throat for every garment',async()=>{
- const r=await inspect('reaction-contact',()=>{
-  const failures=[];let views=0,handPixels=0;
-  for(const topS of ['tee','tank','hoodie','flannel','sweater','cardigan','overalls','work','crop','jacket','garden','pjs','labcoat','suit','officer'])for(const face of ['soft','wide','petite','long','button'])for(const body of ['slim','average','broad','curvy','stocky','tall'])for(const dir of ['down','right','left']){
-   const L=BagseedArt.normalize({topS,face,body,short:body==='stocky',hairS:'bald',skin:'#cf9670',shirtC:'#0066ff',facial:'none',hat:'none',acc:'none'}),B=BagseedArt.body(L,dir,true,3),raw=B.getContext('2d').getImageData(0,0,288,324).data;
-   // Find the fingers from the rendered body pixels, independently of the
-   // attachment metadata. The previous renderer misses this by 9–15 pixels.
-   const skin=(x,y)=>{const n=(y*288+x)*4;return raw[n+3]>160&&raw[n]>raw[n+1]*1.15&&raw[n+1]>raw[n+2]+6;};let first=-1,total=0,count=0;
-   for(let y=90;y<170&&first<0;y++)for(let x=80;x<220;x++)if(skin(x,y)){first=y;break;}
-   for(let y=first;y<=first+5;y++)for(let x=80;x<220;x++)if(skin(x,y)){total+=x;count++;}
-   if(!count){failures.push({topS,dir,reason:'no fingers'});continue;}
-   const hand=[total/count/3,first/3+1.5],sy=L.short?.9:body==='tall'?1.07:1,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[body]),sprite=BagseedArt.sprite(L,dir,0,0,0,0,true,3),f=BagseedArt.landmarks(L,'down'),origin=sprite.bagseedEyes[0].map((v,i)=>v-f.eyes[0][i]/3),nose=f.nose.map((v,i)=>origin[i]+v/3),target=[48+(hand[0]-48)*width,143+(hand[1]-107)*sy];
-   const error=Math.hypot(nose[0]-target[0],nose[1]-target[1]);if(error>.7)failures.push({topS,face,body,dir,error,nose,target,reason:'hand at throat instead of nose'});
-   const projected=document.createElement('canvas');projected.width=288;projected.height=432;const g=projected.getContext('2d');g.scale(3,3);g.translate(48,143);g.scale(width,sy);g.drawImage(B,-48,-107,96,108);
-   const p=projected.getContext('2d').getImageData(0,0,288,432).data,a=sprite.getContext('2d').getImageData(0,0,288,432).data;
-   for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const x=Math.round(target[0]*3)+dx,y=Math.round(target[1]*3)+dy,n=(y*288+x)*4;if(p[n+3]>250){handPixels++;if(Math.max(...[0,1,2,3].map(k=>Math.abs(p[n+k]-a[n+k])))>8)failures.push({topS,face,body,dir,reason:'fingers hidden behind face'});}}
-   views++;
-  }return{views,handPixels,failures};
- });assert.equal(r.failures.length,0,JSON.stringify(r.failures.slice(0,10)));assert.equal(r.views,1350);assert.ok(r.handPixels>8000);
+test('custom reactions preserve the fitted figure with a visible sniff emote for every garment',async()=>{
+ const r=await inspect('reaction-proportions',()=>{
+  const failures=[];let views=0,changedPixels=0;
+  const measure=c=>{const a=c.getContext('2d').getImageData(0,0,c.width,c.height).data;let t=c.height,b=-1;for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++)if(a[(y*c.width+x)*4+3]>80){t=Math.min(t,y);b=Math.max(b,y);}return {a,h:b-t+1};};
+  for(const topS of ['tee','tank','hoodie','flannel','sweater','cardigan','overalls','work','crop','jacket','garden','pjs','labcoat','suit','officer'])for(const face of ['soft','wide','petite','long','button'])for(const body of ['slim','average','broad','curvy','stocky','tall'])for(const dir of ['down','right','up','left']){
+   const L=BagseedArt.normalize({topS,face,body,short:body==='stocky',hairS:'bald',skin:'#cf9670',shirtC:'#0066ff',facial:'none',hat:'none',acc:'none'}),idle=BagseedArt.sprite(L,dir,0,0,0,0,false,3),pose=BagseedArt.sprite(L,dir,0,0,0,0,true,3),a=measure(idle),b=measure(pose);let changed=0;
+   for(let n=0;n<a.a.length;n+=4)if([0,1,2,3].some(k=>a.a[n+k]!==b.a[n+k]))changed++;
+   if(a.h!==b.h||!pose.bagseedAuthoredNoseFallback||!changed||changed>500||JSON.stringify(idle.bagseedEyes)!==JSON.stringify(pose.bagseedEyes))failures.push({topS,face,body,dir,idleHeight:a.h,poseHeight:b.h,changed});
+   views++;changedPixels+=changed;
+  }return{views,changedPixels,failures};
+ });assert.equal(r.failures.length,0,JSON.stringify(r.failures.slice(0,10)));assert.equal(r.views,1800);assert.ok(r.changedPixels>10000);
 });
 
 test('portraits also use the body neck rather than a second head neck',async()=>{

@@ -5,7 +5,7 @@
       "id": "marcus",
       "name": "Marcus Bell",
       "age": 46,
-      "role": "Middle-school PE teacher \u00c2\u00b7 dad of twins",
+      "role": "Middle-school PE teacher \u00b7 dad of twins",
       "kid": false,
       "look": {
         "skin": "#5a3624",
@@ -47,9 +47,9 @@
     {
       "source": "collections.neighbors.ines.look",
       "id": "ines",
-      "name": "In\u00c3\u00a9s Calder\u00c3\u00b3n",
+      "name": "In\u00e9s Calder\u00f3n",
       "age": 67,
-      "role": "Retired librarian \u00c2\u00b7 rose whisperer",
+      "role": "Retired librarian \u00b7 rose whisperer",
       "kid": false,
       "look": {
         "skin": "#cf9670",
@@ -94,7 +94,7 @@
       "id": "tobias",
       "name": "Tobias Nguyen",
       "age": 24,
-      "role": "Barista \u00c2\u00b7 bedroom music producer",
+      "role": "Barista \u00b7 bedroom music producer",
       "kid": false,
       "look": {
         "skin": "#e8b48f",
@@ -139,7 +139,7 @@
       "id": "bev",
       "name": "Beverly Sloane",
       "age": 58,
-      "role": "Real estate agent \u00c2\u00b7 neighborhood watch captain",
+      "role": "Real estate agent \u00b7 neighborhood watch captain",
       "kid": false,
       "look": {
         "skin": "#f6d3b3",
@@ -183,7 +183,7 @@
       "id": "kenji",
       "name": "Kenji Mori",
       "age": 41,
-      "role": "Remote software engineer \u00c2\u00b7 chili nerd",
+      "role": "Remote software engineer \u00b7 chili nerd",
       "kid": false,
       "look": {
         "skin": "#e8b48f",
@@ -749,7 +749,7 @@
       "id": "cass",
       "name": "Cass Mercer",
       "age": "29",
-      "role": "Manager, the caf\u00c3\u00a9",
+      "role": "Manager, the caf\u00e9",
       "kid": false,
       "look": {
         "skin": "#f6d3b3",
@@ -1362,7 +1362,7 @@
       "id": "luz",
       "name": "Luz",
       "age": "young adult",
-      "role": "In\u00c3\u00a9s's granddaughter, botany student (visiting)",
+      "role": "In\u00e9s's granddaughter, botany student (visiting)",
       "kid": false,
       "look": {
         "skin": "#cf9670",

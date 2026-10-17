@@ -3,7 +3,9 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
 test('mobile loading viewport stays stable while unstyled menu images arrive',async()=>{
   const root=path.resolve(__dirname,'..'),out=path.join(root,'review/loading-first-paint');fs.mkdirSync(out,{recursive:true});
   const html=fs.readFileSync(path.join(root,'public/index.html')),marker=Buffer.from('<!-- bagseed-loading-shell-end -->'),shell=html.indexOf(marker)+marker.length,app=html.indexOf('<div id="app">',shell),menu=html.indexOf('</section>',app)+10,native=html.indexOf('<script id="bagseed-illustrated-production-code">'),responses=new Set();let response,browser;
-  const server=http.createServer((req,res)=>{if(req.url==='/favicon.ico'){res.writeHead(204);res.end();return;}response=res;responses.add(res);res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});res.write(html.subarray(0,shell));});await new Promise(r=>server.listen(0,'127.0.0.1',r));
+  const {createStaticServer}=await import('../tools/server.mjs'),assets=createStaticServer(),serveAsset=assets.listeners('request')[0];
+  // Delay the HTML stream while serving real companion scripts and artwork.
+  const server=http.createServer((req,res)=>{if(req.url==='/favicon.ico'){res.writeHead(204);res.end();return;}if(req.url!=='/'&&req.url!=='/index.html'){serveAsset(req,res);return;}response=res;responses.add(res);res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});res.write(html.subarray(0,shell));});await new Promise(r=>server.listen(0,'127.0.0.1',r));
   try{
     browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});const results=[];
     for(const [name,device,complete]of [['pixel',devices['Pixel 7'],true],['iphone',devices['iPhone 13'],false],['narrow',{viewport:{width:320,height:568},isMobile:true,hasTouch:true,deviceScaleFactor:2},false]]){

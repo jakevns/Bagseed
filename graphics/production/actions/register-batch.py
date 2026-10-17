@@ -11,6 +11,8 @@ from PIL import Image, ImageOps, ImageFilter
 import numpy as np
 
 actions = Path(__file__).resolve().parent
+sys.path.insert(0,str(actions.parent/'sources'))
+from retained_png import save_png, save_text
 folder = actions / sys.argv[1]
 config = json.loads((folder / 'crops.json').read_text(encoding='utf-8-sig'))
 isolate_components = config.pop('_isolateComponents', False)
@@ -20,8 +22,8 @@ config.pop('_targetHeights', None)
 source_name = config.pop('_source', 'source.png')
 view_sources = config.pop('_viewSources', {})
 source = Image.open(folder / source_name).convert('RGBA')
-roster = json.loads((actions.parent / 'cast/sources/cast-roster.json').read_text())['people']
-samples = json.loads((actions.parents[2] / 'review/characters-v2/sources/baseline-assets.json').read_text())['people']
+roster = json.loads((actions.parent / 'cast/sources/cast-roster.json').read_text(encoding='utf-8-sig'))['people']
+samples = json.loads((actions.parents[2] / 'review/characters-v2/sources/baseline-assets.json').read_text(encoding='utf-8-sig'))['people']
 roster += [{**p, 'assetId': p['id'], 'kid': p['id'] == 'poppy'} for p in samples]
 people = {p['id']: p for p in roster}
 report = {'source': source_name, 'sourceSHA256': hashlib.sha256((folder / source_name).read_bytes()).hexdigest(), 'characters': {}}
@@ -79,16 +81,16 @@ for name, boxes in config.items():
         assert x >= 1 and y >= 1 and x + art.width <= 95, f'Clipped sprite: {name} {direction}'
         out = Image.new('RGBA', (96, 108))
         out.alpha_composite(art, (x, y))
-        out.save(target / (direction + '.png'))
+        save_png(out,target / (direction + '.png'))
         report['characters'][name][direction] = {'sourceBox': box, 'alphaBounds': bounds, 'scale': scale, 'targetHeight': target_height, 'placement': [x, y]}
         if direction == 'right':
-            ImageOps.mirror(out).save(target / 'left.png')
+            save_png(ImageOps.mirror(out),target / 'left.png')
         if direction == 'down':
             portrait = crop.crop((0, 0, crop.width, round(crop.height * .53)))
             portrait.thumbnail((188, 188), Image.Resampling.LANCZOS)
             p = Image.new('RGBA', (192, 192))
             p.alpha_composite(portrait, ((192 - portrait.width) // 2, 192 - portrait.height))
-            p.save(target / 'portrait.png')
+            save_png(p,target / 'portrait.png')
 report['limitations'] = ['Left profile mirrors right, including hand and prop side.', 'Only matching canonical outfits use these action drawings.']
-(folder / 'registration.json').write_text(json.dumps(report, indent=2) + '\n')
+save_text(json.dumps(report, indent=2) + '\n',folder / 'registration.json')
 print(f'{len(config)} characters registered: {folder.name}')

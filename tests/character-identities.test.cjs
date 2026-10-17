@@ -1,5 +1,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),{chromium}=require('playwright');
 test('patient identities match world NPCs and unknown ids never impersonate Doug',{timeout:180000},async()=>{
+ const manifest=JSON.parse(require('node:fs').readFileSync(require('node:path').join(__dirname,'../graphics/production/cast/sources/asset-manifest.json'),'utf8'));
+ assert.equal(manifest.people.find(p=>p.id==='ines')?.name,'In\u00e9s Calder\u00f3n');
  const {createStaticServer}=await import('../tools/server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
  try{
   browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH,headless:true,args:['--disable-gpu']});const page=await require('./helpers/art-page.cjs')(browser);await page.goto('http://127.0.0.1:'+server.address().port,{timeout:120000});await page.evaluate(()=>BagseedArt.ready);
