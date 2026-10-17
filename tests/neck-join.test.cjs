@@ -36,11 +36,11 @@ test('standing garments and head/body shapes share one body neck and one jaw att
   for(const topS of tops)for(const face of faces)for(const[bi,body]of bodies.entries())for(const dir of ['down','right','up','left']){
    const L=BagseedArt.normalize({topS,face,body,pres:['neutral','masc','fem'][bi%3],skin:['#f0c7a0','#cf9670','#5d3829'][bi%3],hairS:'bald',facial:'none',ears:'hidden',hat:'none',acc:'none'}),sy=body==='tall'?1.07:1,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[body])*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1),shapeY=(199-BagseedArt.landmarks(L,'down').chin[1])/16,neck=143-65*sy,headY=neck-(199-15*shapeY)/3;
    for(const nose of [false]){
-    const projected=cv(),g=projected.getContext('2d'),B=BagseedArt.body(L,dir,nose,3);g.scale(3,3);g.translate(48,143);g.scale(width,sy);g.drawImage(B,-48,-107,96,108);const expected=read(projected),sprite=BagseedArt.sprite(L,dir,0,0,0,0,nose,3),a=read(sprite);
+    const projected=cv(),g=projected.getContext('2d'),B=BagseedArt.body(L,dir,nose,3);g.scale(3,3);g.translate(48,143);g.scale(width,sy);g.drawImage(B,-48,-107,96,108);const registered=cv(),r=registered.getContext('2d'),factor=BagseedArt.playerFigureScale;r.imageSmoothingQuality='high';r.setTransform(factor,0,0,factor,144*(1-factor),429*(1-factor));r.drawImage(projected,0,0);const expected=read(registered),sprite=BagseedArt.sprite(L,dir,0,0,0,0,nose,3),a=read(sprite);
     // This band lies below the jaw and within the removed head-neck material.
     // Its skin and collar must come directly from the selected garment body.
-    for(let y=neck+3;y<neck+5;y+=.5)for(let x=46;x<=49;x+=.5){const xx=Math.round(x*3),yy=Math.round(y*3),n=(yy*288+xx)*4;if(expected[n+3]>250){neckPixels++;if(Math.max(...[0,1,2,3].map(k=>Math.abs(expected[n+k]-a[n+k])))>6)failures.push({topS,face,body,dir,nose,x,y,reason:'head repainted body neck'});}}
-    const features=BagseedArt.landmarks(L,dir).eyes;for(let i=0;i<features.length;i++){const[x,y]=features[i],actual=sprite.bagseedEyes[i],target=[48+(x-96)/3,headY+y/3];if(actual.some((v,k)=>Math.abs(v-target[k])>.001))failures.push({topS,face,body,dir,nose,reason:'jaw attached at old neck root'});eyes++;}
+    for(let y=neck+3;y<neck+5;y+=.5)for(let x=46;x<=49;x+=.5){const xx=Math.round((48+(x-48)*factor)*3),yy=Math.round((143+(y-143)*factor)*3),n=(yy*288+xx)*4;if(expected[n+3]>250){neckPixels++;if(Math.max(...[0,1,2,3].map(k=>Math.abs(expected[n+k]-a[n+k])))>6)failures.push({topS,face,body,dir,nose,x,y,reason:'head repainted body neck'});}}
+    const features=BagseedArt.landmarks(L,dir).eyes;for(let i=0;i<features.length;i++){const[x,y]=features[i],actual=sprite.bagseedEyes[i],target=[48+(x-96)/3*factor,143+(headY+y/3-143)*factor];if(actual.some((v,k)=>Math.abs(v-target[k])>.001))failures.push({topS,face,body,dir,nose,reason:'jaw attached at old neck root'});eyes++;}
     views++;
    }
   }return{views,neckPixels,eyes,failures};
@@ -74,9 +74,9 @@ test('portraits also use the body neck rather than a second head neck',async()=>
   for(const topS of ['tee','tank','hoodie','flannel','sweater','cardigan','overalls','work','crop','jacket','garden','pjs','labcoat','suit','officer'])for(const face of ['soft','wide','petite','long','heart']){
    const L=BagseedArt.normalize({topS,face,hairS:'bald',facial:'none',hat:'none',acc:'none',shirtC:'#263347'}),h=BagseedArt.head(L,'down',false,true),p=h.getContext('2d').getImageData(0,0,192,320).data;let top=320;
    for(let y=0;y<320&&top===320;y++)for(let x=0;x<192;x++)if(p[(y*192+x)*4+3]>100){top=y;break;}
-   const shapeY=(199-BagseedArt.landmarks(L,'down').chin[1])/16,anchor=199-15*shapeY+5,fit=Math.min(1,130/(anchor-top)),c=document.createElement('canvas');c.width=c.height=192;const g=c.getContext('2d');g.translate(96,135);g.scale(fit,fit);const B=BagseedArt.body(L,'down',false,3);g.drawImage(B,0,120,288,120,-144,-11,288,120);
+   const shapeY=(199-BagseedArt.landmarks(L,'down').chin[1])/16,anchor=199-15*shapeY+5,fit=Math.min(1,116/(anchor-top)),c=document.createElement('canvas');c.width=c.height=192;const g=c.getContext('2d');g.translate(96,148);g.scale(fit,fit);const B=BagseedArt.body(L,'down',false,3);g.drawImage(B,0,120,288,120,-144,-11,288,120);
    const expected=g.getImageData(0,0,192,192).data,a=BagseedArt.portrait(L).getContext('2d').getImageData(0,0,192,192).data;
-   for(let dy=5;dy<12;dy++)for(let dx=-4;dx<=4;dx++){const x=Math.round(96+dx*fit),y=Math.round(135+dy*fit),n=(y*192+x)*4;if(expected[n+3]>250){neckPixels++;if(Math.max(...[0,1,2,3].map(k=>Math.abs(expected[n+k]-a[n+k])))>5)failures.push({topS,face,x,y,reason:'portrait has two neck layers'});}}
+   for(let dy=5;dy<12;dy++)for(let dx=-4;dx<=4;dx++){const x=Math.round(96+dx*fit),y=Math.round(148+dy*fit),n=(y*192+x)*4;if(expected[n+3]>250){neckPixels++;if(Math.max(...[0,1,2,3].map(k=>Math.abs(expected[n+k]-a[n+k])))>5)failures.push({topS,face,x,y,reason:'portrait has two neck layers'});}}
    views++;
   }return{views,neckPixels,failures};
  });assert.equal(r.failures.length,0,JSON.stringify(r.failures.slice(0,10)));assert.equal(r.views,75);assert.ok(r.neckPixels>3000);

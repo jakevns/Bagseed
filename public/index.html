@@ -27617,12 +27617,33 @@ function remainingHairSource(L,dir){
  const result={width:192,height:HEAD_HEIGHT,data:g.getImageData(0,0,192,HEAD_HEIGHT)};remainingHairSources.set(key,result);return result;
 }
 
+  const hairToneFields=new WeakMap();
+  function hairToneField(raw){
+    if(hairToneFields.has(raw.data))return hairToneFields.get(raw.data);
+    // Read broad light masses rather than individual painted strands. Keep the
+    // original alpha/silhouette: this changes material, never scalp fitting.
+    const source=cv(192,HEAD_HEIGHT);source.getContext('2d').putImageData(raw.data,0,0);
+    const small=cv(12,20),s=small.getContext('2d');s.imageSmoothingQuality='high';s.drawImage(source,0,0,12,20);
+    const broad=cv(192,HEAD_HEIGHT),b=broad.getContext('2d');b.imageSmoothingQuality='high';b.drawImage(small,0,0,192,HEAD_HEIGHT);
+    const tones=b.getImageData(0,0,192,HEAD_HEIGHT).data,values=[];
+    for(let n=0;n<tones.length;n+=4)if(raw.data.data[n+3]>220)values.push(tones[n]);
+    values.sort((a,b)=>a-b);const lo=values[Math.floor(values.length*.1)]||0,hi=values[Math.floor(values.length*.9)]||255;
+    for(let n=0;n<tones.length;n+=4){
+      const x=n/4%192,y=Math.floor(n/4/192),volume=Math.max(0,1-Math.hypot((x-83)/90,(y-92)/120));
+      tones[n]=hi-lo>35?Math.max(60,Math.min(190,75+(tones[n]-lo)/(hi-lo)*110)):80+volume*110;
+    }
+    hairToneFields.set(raw.data,tones);return tones;
+  }
   function hairLayer(L,dir){
     const signature='wig|'+dir+'|'+L.hairS+'|'+L.hairC+'|'+L.hairHi+'|'+L.hat+'|'+L.ears;if(colored.has(signature))return colored.get(signature);
     const closeFade=['fade','hightop','flattop','quiff','pomp','fauxhawk','curlytop'].includes(L.hairS);
     const batchRear=dir==='up'&&(fittedHairCuts.has(L.hairS)||remainingClosedCuts.has(L.hairS)),raw=fittedHairCuts.has(L.hairS)?batchHairSource(L,dir):remainingHairFits[L.hairS]?remainingHairSource(L,dir):pixels(`wig/${L.hairS}/${dir}`),out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),d=new ImageData(new Uint8ClampedArray(raw.data.data),192,HEAD_HEIGHT),a=d.data,target=rgb(L.hairC),anatomy=L.hairS==='buzz'||closeFade?batchScalpMask(L,dir):null;
-    for(let n=0;n<a.length;n+=4){if(a[n+3]<10){a[n+3]=0;continue;}const x=n/4%192,y=Math.floor(n/4/192),l=a[n],tone=L.hairHi!=='none'&&l>115&&(x+y*.45)%28<5?rgb(L.hairHi):target,factor=.2+l/180;
-      for(let k=0;k<3;k++)a[n+k]=Math.min(255,tone[k]*factor);
+    const broad=hairToneField(raw),highlight=L.hairHi!=='none'?rgb(L.hairHi):target;
+    for(let n=0;n<a.length;n+=4){if(a[n+3]<10){a[n+3]=0;continue;}const x=n/4%192,y=Math.floor(n/4/192),l=a[n],light=broad[n],factor=light<100?.56:light<155?1:1.28,tone=light>=155?highlight:target;
+      // Three opaque cel colors plus warm outline ink; no strand-by-strand
+      // luminance multiplication or repeating highlight/noise pattern.
+      const edge=x<1||x>190||y<1||y>=HEAD_HEIGHT-1||raw.data.data[n-4+3]<100||raw.data.data[n+4+3]<100||raw.data.data[n-192*4+3]<100||raw.data.data[n+192*4+3]<100;
+      for(let k=0;k<3;k++)a[n+k]=edge&&l<65?[58,38,28][k]:Math.min(255,Math.round(tone[k]*factor));
       // A buzzcut follows the bald skull, with no projecting fringe. Fade
       // density is alpha, so pale stubble reveals skin rather than a white cap.
       if(L.hairS==='buzz'&&!batchRear)a[n+3]*=anatomy[n+3]/255;
@@ -27873,9 +27894,21 @@ function remainingHairSource(L,dir){
     g.drawImage(H,hx,hy,64,H.height/3);
     const hand=p['hand'+walk.rig.frames[f].nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
     out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);out.bagseedAuthoredWalk=f;out.bagseedWalkProfile=walk.imagePrefix||'walk/';
-    if(walkFigures.size>96)walkFigures.clear();walkFigures.set(sig,out);return out;
+    const registered=scalePlayerFigure(out,PLAYER_FIGURE_SCALE);
+    if(walkFigures.size>96)walkFigures.clear();walkFigures.set(sig,registered);return registered;
   }
 
+  const PLAYER_FIGURE_SCALE=100/94;
+  function scalePlayerFigure(source,factor){
+    const out=cv(source.width,source.height),g=out.getContext('2d'),density=source.width/96,ground=143;
+    g.imageSmoothingQuality='high';g.setTransform(factor,0,0,factor,48*density*(1-factor),ground*density*(1-factor));g.drawImage(source,0,0);
+    const point=([x,y])=>[48+(x-48)*factor,ground+(y-ground)*factor];
+    out.bagseedEyes=(source.bagseedEyes||[]).map(point);
+    if(source.bagseedNose)out.bagseedNose=point(source.bagseedNose);
+    if(source.bagseedHand){const [x,y]=point([source.bagseedHand.x,source.bagseedHand.y]);out.bagseedHand={x,y};}
+    out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;out.bagseedWalkProfile=source.bagseedWalkProfile;
+    out.bagseedFigureScale=factor;return out;
+  }
   function generic(L,dir,nose=false,blink=false,density=1) {
     const out=cv(96*density,144*density),g=out.getContext('2d'),B=body(L,dir,nose,3);
     // The reaction artwork turns toward the raised hand. A profile head's
@@ -27913,7 +27946,7 @@ function remainingHairSource(L,dir){
     if(L.prop&&!nose&&dir!=='up'){g.save();g.translate(0,36);props(g,L,dir);g.restore();}
     out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[headX+x*headScale/3,headY+y*headScale/3]);
     out.bagseedNose=H.bagseedFeatures.nose?.map((v,i)=>(i?headY:headX)+v*headScale/3);
-    return out;
+    return nose?out:scalePlayerFigure(out,PLAYER_FIGURE_SCALE);
   }
   function props(g,L,dir) {
     const side=dir!=='down',x=side?50:64,y=77;g.save();g.strokeStyle='#413b35';g.lineWidth=1.2;
@@ -27953,6 +27986,7 @@ function remainingHairSource(L,dir){
     out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-ground),ground+(y-ground)*(frame%2?.988:1)]:breath?[x,ground+(y-ground)*.99]:[x,y]);
     out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;out.bagseedWalkProfile=source.bagseedWalkProfile;
     out.bagseedCastWalk=source.bagseedCastWalk;
+    out.bagseedFigureScale=source.bagseedFigureScale;
     if(source.bagseedHand)out.bagseedHand={...source.bagseedHand};
     else if(density===1)out.bagseedHand=hands(out,L,dir);return out;
   }
@@ -28001,7 +28035,9 @@ function remainingHairSource(L,dir){
       const h=head(L,'down',false,true),p=h.getContext('2d').getImageData(0,0,192,HEAD_HEIGHT).data;let top=HEAD_HEIGHT;
       for(let y=0;y<HEAD_HEIGHT&&top===HEAD_HEIGHT;y++)for(let x=0;x<192;x++)if(p[(y*192+x)*4+3]>100){top=y;break;}
       const joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),anchor=joinY-(-11+(BODY_JOIN-40)*3);
-      const fit=Math.min(1,130/(anchor-top));g.save();g.translate(96,135);g.scale(fit,fit);
+      // Match the illustrated busts: the head occupies about 60% of the frame,
+      // with shoulders filling the lower third and full hair above the brow.
+      const fit=Math.min(1,116/(anchor-top));g.save();g.translate(96,148);g.scale(fit,fit);
       g.drawImage(h.bagseedNeckBridge,-96,-anchor);
       g.save();g.scale(width,1);g.drawImage(torso,0,40*d,96*d,40*d,-144,-11,288,120);g.restore();
       g.drawImage(h,-96,-anchor);g.restore();
@@ -28118,7 +28154,7 @@ function remainingHairSource(L,dir){
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-approved-stride',walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'character-audit-cel-v1',playerFigureScale:PLAYER_FIGURE_SCALE,walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();
 
