@@ -1,5 +1,7 @@
 # Moonberry connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork approved with the five-strain popcorn-bud review on 2026-10-17. Fifth organ kit after Porchlight, Velvet Underbrush, Pixel Punch and Cotton Candy CRT. The painted rigs remain review prototypes pending full care/training and native renderer integration.
 
 ## Native identity and source artwork

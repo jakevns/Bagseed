@@ -1,5 +1,7 @@
 # Frog Prince — Copper Reed connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork and growth samples approved on 2026-10-17. This batch contains the final named catalog strain plus two explicitly requested experimental phenotype options. Full native painted-renderer replacement remains pending.
 
 Native lineage: Lily Pad × ???; additional Frog Prince experimental autoflower phenotype. Artwork supplies narrow forest-green fans, russet/copper flowers and orange pistils, with red finishing leaves applied in the shared renderer. Healthy fan source sprites stay green. Copper Reed is a review phenotype label, not a new native strain. `lineId` stays `frogprince`. Its narrow / forest / Red accents expression differs from the earlier broad / lime / Purple kit. The `frogprince@1` default and every earlier saved identity remain unchanged.

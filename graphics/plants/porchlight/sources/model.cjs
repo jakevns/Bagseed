@@ -10,24 +10,27 @@ function build(p,traits={},options={}){
  const seed=String(p.artIdentity?.seed||p.genome115?.id||p.pheno?.pid||p.seed||p.id||'porchlight');
  const model={revision:'attached-popcorn-2',height,nodes,seed,joints:[],branches:[],organs:[],training:p.training||'natural'};
  const branching=clamp((traits.branching||1.1)*(p.pheno?.b||1),.6,1.5),giant=p.loc==='outdoor'?1+Math.max(0,height-50)/140:1,leafLength=clamp(height*.13,1.1,9.2),density=clamp(p.density??.82,.2,1);
+ const mutationArts=new Set(p.visualState?.mutationArts||[]),forked=(model.training==='topped'||mutationArts.has('twin'))&&nodes>=4;
  const lean=model.training==='lst'?-height*.28:0;
- const trunkY=height*.89,trunkX=f=>lean*Math.pow(f,1.4)+(hash(seed+':lean')-.5)*height*.025*Math.sin(f*Math.PI);
+ const trunkY=height*(forked?.60:.89),trunkX=f=>lean*Math.pow(f,1.4)+(hash(seed+':lean')-.5)*height*.025*Math.sin(f*Math.PI);
  model.joints.push({id:'root',parent:null,x:0,y:0});
  for(let i=1;i<=count;i++){
   const u=Math.min(i,nodes)/(nodes+.7),y=trunkY*u;
   model.joints.push({id:'node:'+i,parent:i===1?'root':'node:'+(i-1),x:trunkX(u),y});
  }
  model.joints.push({id:'apex',parent:'node:'+count,x:trunkX(1),y:trunkY});
+ if(forked)for(const side of [-1,1])model.branches.push({id:'leader:'+side,parent:'apex',at:0,dx:side*height*.17,dy:height*.31,width:clamp(height*.007,.18,.6),side,z:side*.1,cut:false,order:0,growth:1});
  const addLeaf=(id,parent,at,role,length,angle,z,growth=1)=>{
   if(growth<=.001)return;
   const parentBranch=model.branches.find(b=>b.id===parent),baseNode=Number(parent.match(/(?:node:|branch:)(\d+)/)?.[1]||nodes);
   const removed=p.visualState?.removedLeaves?.includes(id)||Canopy.removed(p,baseNode/(nodes+.7),parentBranch?.order===2?parentBranch.at:at||1);
-  model.organs.push({id,parent,at,role,length:length*growth,angle,z,removed,kind:'leaf'});
+  model.organs.push({id,parent,at,role,length:length*growth*(mutationArts.has('dwarf')?.72:mutationArts.has('triploid')?1.12:1),angle,z,removed,kind:'leaf'});
  };
  for(let i=1;i<=count;i++){
   const growth=clamp(nodes-i+1,0,1),node='node:'+i,older=i<=Math.ceil(nodes*.4),cut=(!!p.pruned&&older)||Canopy.removed(p,i/(nodes+.7));
   const role=i===1?'singleLeaf':i===2?'threeLeaf':i===3?'fiveLeaf':'sevenLeaf',fanLength=i===1?Math.min(2,leafLength):i===2?Math.min(3.5,leafLength):i===3?Math.min(6,leafLength):leafLength;
   for(const side of [-1,1])if(!cut&&stage>2)addLeaf('fan:'+i+':'+side,node,0,role,fanLength*(.88+.12*hash(seed+':leafsize:'+i+':'+side)),side*(.92+hash(seed+':angle:'+i+':'+side)*.34),(i%2===0?side:-side)*.1,growth);
+  if(mutationArts.has('whorl')&&!cut&&stage>2)addLeaf('fan:'+i+':whorl',node,0,role,fanLength*.82,.08,.4,growth);
   if(stage<3||i<2||i>=nodes-.2)continue;
   for(const side of [-1,1]){
    const id='branch:'+i+':'+side,age=clamp((nodes-i+.3)/3,0,1),length=height*.53*Math.pow(1-i/(nodes+1),.66)*branching*giant*age;
@@ -50,7 +53,10 @@ function build(p,traits={},options={}){
   }
  }
  if(stage===2&&height<12)model.organs.push({id:'cotyledons',parent:'node:1',at:0,role:'cotyledon',length:Math.min(2.5,height*.25),angle:0,z:0,kind:'leaf'});
- if(stage<=2){addLeaf('seedling:true:left','apex',0,'singleLeaf',height*.40,-.72,.3);addLeaf('seedling:true:right','apex',0,'singleLeaf',height*.40,.72,.1);}else{addLeaf('apex:fan:left','apex',0,'threeLeaf',leafLength*.57,-.35,.3);addLeaf('apex:fan:right','apex',0,'fiveLeaf',leafLength*.54,.36,.1);}
+ if(stage<=2){addLeaf('seedling:true:left','apex',0,'singleLeaf',height*.40,-.72,.3);addLeaf('seedling:true:right','apex',0,'singleLeaf',height*.40,.72,.1);}else if(forked){for(const side of [-1,1]){addLeaf('leader:'+side+'/fan:left','leader:'+side,1,'threeLeaf',leafLength*.57,-.35,.3);addLeaf('leader:'+side+'/fan:right','leader:'+side,1,'fiveLeaf',leafLength*.54,.36,.1);}}else{addLeaf('apex:fan:left','apex',0,'threeLeaf',leafLength*.57,-.35,.3);addLeaf('apex:fan:right','apex',0,'fiveLeaf',leafLength*.54,.36,.1);}
+ // Each leader keeps its own connected nodes after topping or a natural fork.
+ if(forked)for(const side of [-1,1])for(const [j,at]of [.25,.5,.75].entries())for(const sd of [-1,1])
+  addLeaf('leader:'+side+'/node:'+j+':'+sd,'leader:'+side,at,nodes>=8?'sevenLeaf':'fiveLeaf',leafLength*(.74-at*.16),sd*.78,sd*.15);
  if(stage>=6&&stage<=10){
   const male=p.sex==='M',role=male?(stage>=9?'maleOpen':'maleClosed'):stage<=7?'femaleEarly':stage===8?'femaleMid':'femaleLate';
   const factor=male?.65:({6:.20,7:.42,8:.7,9:.9,10:1}[stage]);
@@ -67,7 +73,14 @@ function build(p,traits={},options={}){
      flower(b.id+'/bud:'+j,b.id,at,base*(.20+.35*at)*Canopy.budScale(u,at),u,at);
    }
   }
-  flower('apex:flower','apex',0,Math.min(11,height*.18)*(male?1:Canopy.topScale(p)),1,1,true);
+  if(forked)for(const side of [-1,1]){
+   const id='leader:'+side,base=Math.min(9,height*.15);
+   flower(id+'/flower',id,1,base*(male?1:Canopy.topScale(p)),1,1,true);
+   if(!male)for(const [j,at]of [.2,.45,.7].entries())flower(id+'/bud:'+j,id,at,base*(.2+.4*at),1,at);
+  }
+  else flower('apex:flower','apex',0,Math.min(11,height*.18)*(male?1:Canopy.topScale(p)),1,1,true);
+  if(mutationArts.has('crest'))for(const o of model.organs)if(o.site==='apical')o.widthScale=2.1;
+  if(mutationArts.has('triploid'))for(const o of model.organs)if(o.kind==='flower')o.widthScale=1.25;
  }
  // Bound the complete assembled canopy, not just the stem, to the labeled height.
  const pose0=pose(model,p,0,0,true);let top=trunkY;

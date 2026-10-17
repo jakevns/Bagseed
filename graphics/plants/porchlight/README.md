@@ -1,5 +1,7 @@
 # Porchlight components and continuous-growth prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: component artwork and 50/90-inch growth prototype approved by the user; saved as a checkpoint. This renderer is injected only into the disposable preview browser; the production game, growth rates, existing saves and native renderer are unchanged.
 
 ## Artwork

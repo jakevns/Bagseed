@@ -1,5 +1,7 @@
 # Night Shift connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork and growth samples approved on 2026-10-17. New kit after the approved Halfmoon / Zoomies / Cruise Control batch. Full painted-renderer replacement remains pending.
 
 The native catalog lists `nightshift` (Moonberry × Dark Matter) as a photoperiod Type II line. The new organ sheet supplies broad deep forest-green leaves and dense inky-plum flowers with silver frost and copper pistils; the shared renderer applies deep purple senescence rather than painting dying colors into healthy fan components. See `sources/profile.json` for the exact review phenotype and captions.

@@ -1,5 +1,7 @@
 # Halfmoon CBD connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork and growth samples approved on 2026-10-17. Sixth kit, part of the three-strain review after Moonberry. Full painted-renderer integration remains pending; this registers parts and produces actual connected-rig samples without replacing the native renderer.
 
 The existing catalog defines `halfmoon` (Tidewater CBD × Lemon Hush) as photoperiod Type III, height factor 1.15, branching 0.95, and Citrus aroma. `sources/profile.json` pins its expressed visual traits and review captions. Native height, growth timing, chemistry and genetics are unchanged; actual plant height is the renderer input and its genetic factor is not applied twice. The 50/90-inch figures are controlled physical-scale studies rather than predictions of a normal indoor autoflower's size.

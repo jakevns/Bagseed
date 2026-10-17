@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "f45906e19fdbc2cd43576ae68c8c4343118c6f17c36dea6eef6f9b622b95aa92",
-  "updatedSHA": "fe41c84c50098e65b72cbe031214d55de5fe2109dd579a9a48166274afc52618",
+  "workingSourceSHA": "4d3ba163f4c487399c16c642c440391f32c737db8253320dcfefb593f1e21173",
+  "updatedSHA": "aa76fd409d15d187d49211633fab5a678161134982b255491d5151ed48473f9e",
   "characterRevision": "character-audit-cel-v1",
   "characterPayloadSHA256": "948302e1abc76482aa633dd322d1c00279cd1696a99956ceb80c5d065dbe5fcb",
   "characterSourcesSHA256": {
@@ -32,7 +32,7 @@
     "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 64087302,
+  "bytes": 64248520,
   "modularAssets": 544,
   "embeddedImages": 1812,
   "approvedIdentities": [
@@ -149,5 +149,7 @@
     "standard",
     "pro",
     "premium"
-  ]
+  ],
+  "livePlantsRevision": "live-plants-1",
+  "livePlantKits": 14
 }

@@ -1,5 +1,7 @@
 # Pixel Punch connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork, growth, flowering, purple senescence, cool-night color samples and wind animation approved by the user. This is the third organ kit after Porchlight and Velvet Underbrush. The live painted-renderer integration remains pending; no native game or save code changes are made by this kit.
 
 ## Strain identity

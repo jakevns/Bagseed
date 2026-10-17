@@ -1,5 +1,7 @@
 # Bog Lantern — Lavender Marsh connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork and growth samples approved on 2026-10-17. This batch contains the final named catalog strain plus two explicitly requested experimental phenotype options. Full native painted-renderer replacement remains pending.
 
 Native lineage: ??? × Marsh Light; additional Bog Lantern experimental phenotype. Artwork supplies broad sage-blue fans, airy lilac flowers and peach pistils, with lavender finishing leaves applied in the shared renderer. Healthy fan source sprites stay green. Lavender Marsh is a review phenotype label, not a new native strain. `lineId` stays `boglantern`. Its broad / blue / Lavender expression differs from the earlier narrow / forest / Red accents kit. The `boglantern@1` default and every earlier saved identity remain unchanged.

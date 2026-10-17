@@ -1,5 +1,7 @@
 # Velvet Underbrush connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: component artwork, growth, flowering and red senescence approved by the user. The painted kit remains a prototype pending full renderer integration. The separately approved night cooling and Sprout color features are integrated into the native game.
 
 ## Strain identity and source art

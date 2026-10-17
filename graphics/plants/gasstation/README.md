@@ -1,5 +1,7 @@
 # Gas Station Sushi connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork and growth samples approved on 2026-10-17. This batch contains the final named catalog strain plus two explicitly requested experimental phenotype options. Full native painted-renderer replacement remains pending.
 
 Native lineage: Diesel Bog × Wasabi Peas; fixed photoperiod Type I catalog strain. Artwork supplies narrow blue-green fans, long frosty mint-blue flowers and amber pistils, with ochre finishing leaves applied in the shared renderer. Healthy fan source sprites stay green. Gas Station Sushi uses its native narrow / blue / Blue-green traits, branching .9 and height factor 1.3. The renderer uses actual height and does not multiply that factor again. This is the last named catalog strain to receive a component kit.

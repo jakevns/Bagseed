@@ -1,5 +1,7 @@
 # Frog Prince connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork and growth samples approved on 2026-10-17. New kit after the approved Halfmoon / Zoomies / Cruise Control batch. Full painted-renderer replacement remains pending.
 
 The native catalog lists `frogprince` (Lily Pad × ???) as a autoflower experimental line. The new organ sheet supplies broad lime-green leaves and compact grape-purple flowers with gold pistils; the shared renderer applies purple senescence rather than painting dying colors into healthy fan components. See `sources/profile.json` for the exact review phenotype and captions.

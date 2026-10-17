@@ -1867,6 +1867,10 @@ const PlantArt = {
   /* draw with gentle sway: per-row integer offsets */
   draw(ctx, p, x, y, scale = 1, t = runtime.t, swayAmp = 1) {
     const s = this.get(p);
+    if (s.illustrated && window.BagseedPlants?.loaded) {
+      const image=BagseedPlants.frame(p,s,t,swayAmp);ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+      ctx.drawImage(image,x-s.ax*scale,y-s.ay*scale,s.w*scale,s.h*scale);ctx.restore();return s;
+    }
     if (s.hang) {
       const amp = settings.reduced ? 0 : swayAmp;
       if (!amp) { ctx.drawImage(s.cv, Math.round(x - s.ax * scale), Math.round(y), s.w * scale, s.h * scale); return s; }
@@ -3718,7 +3722,7 @@ function hydrate(root) {
     if (k === 'x') drawExtraIcon(ctx, cv, a);
     if (k === 'seed') drawPacket(ctx, cv, a, b);
     if (k === 'inv') { const s = state.inv.seeds.find(x => x.id === a); if (s) drawPacket(ctx, cv, s.lineId, s.kind); }
-    if (k === 'codex') { const g = GEN(a); R(ctx, 0, 0, cv.width, cv.height, '#1a2420'); if (!g.discovered) { R(ctx, 0, 0, cv.width, cv.height, '#141b18'); pxText(ctx, '???', cv.width / 2 - 8, cv.height / 2 - 3, 1, '#3b4d45'); return; } const p = demoPlant(a, +b || 9, 77); const s = PlantArt.build(p); ctx.drawImage(s.cv, cv.width / 2 - s.ax, cv.height - 4 - s.ay); }
+    if (k === 'codex') { const g = GEN(a); R(ctx, 0, 0, cv.width, cv.height, '#1a2420'); if (!g.discovered) { R(ctx, 0, 0, cv.width, cv.height, '#141b18'); pxText(ctx, '???', cv.width / 2 - 8, cv.height / 2 - 3, 1, '#3b4d45'); return; } const p = demoPlant(a, +b || 9, 77); const s = PlantArt.build(p); ctx.drawImage(s.cv, cv.width / 2 - s.ax, cv.height - 4 - s.ay, s.w, s.h); }
     if (k === 'post') { const p = state.social.posts.find(x => x.id === a); if (p) renderPhoto(cv, p.snap, p.o); }
     if (k === 'npcpost') { const f = state.social.feed[+a]; if (f) renderPhoto(cv, Object.assign(demoPlant(f.lineId, 9, f.seed), { name: '', loc: 'tent2', lightTier: 3, organic: false, pest: { type: null, lvl: 0 } }), { cam: 2, filter: f.npc === 'pixel' ? 'neon' : f.npc === 'grandma' ? 'vintage' : 'none', bg: 'studio', angle: 'front', zoom: 1.15 }); }
     if (k === 'portrait') drawPortrait(cv, lookFor(a));
@@ -12946,7 +12950,7 @@ function plantCamArt(cv, loc) {
   const ps = plantsIn(loc), n = Math.max(1, slotCount(loc)), lightOn = isLightOn(loc);
   if (!out && lightOn) { c.fillStyle = 'rgba(255,240,200,.16)'; c.fillRect(0, 0, W, H); }
   if (!out && !lightOn) { c.fillStyle = 'rgba(10,10,30,.55)'; c.fillRect(0, 0, W, H); }
-  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6, potTier = state.locations[loc].equip.pot || (loc === 'gh' ? 2 : 1), newPot = loc !== 'outdoor' && window.BagseedWaterPots?.loaded; if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water); try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay); c.restore(); } catch (e) { } if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water, true); else R(c, x - 6, base, 12, 5, '#7a4e2a'); });
+  ps.forEach((p, i) => { const x = Math.round((i + .5) * W / Math.min(n, 6)), base = H - 6, potTier = state.locations[loc].equip.pot || (loc === 'gh' ? 2 : 1), newPot = loc !== 'outdoor' && window.BagseedWaterPots?.loaded; if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water); try { const sc = PlantArt.get(p); const k = Math.min(1, (H - 12) / sc.h); c.save(); c.translate(x, base); c.scale(k, k); c.drawImage(sc.cv, -sc.ax, -sc.ay, sc.w, sc.h); c.restore(); } catch (e) { } if (newPot) BagseedWaterPots.cameraPot(c, x, base, potTier, p.water, true); else R(c, x - 6, base, 12, 5, '#7a4e2a'); });
   // camera overlay: timestamp + REC dot, scanlines
   for (let y = 0; y < H; y += 3) { c.fillStyle = 'rgba(0,0,0,.08)'; c.fillRect(0, y, W, 1); }
   R(c, 3, 3, 3, 3, Math.floor(performance.now() / 600) % 2 ? '#ff5a4f' : '#7a2c22'); pxText(c, clock(state.minute), 9, 3, 1, '#e8ffd0');
@@ -17288,7 +17292,7 @@ const Packet = {
     const W = cv.width, H = cv.height; R(ctx, 0, 0, W, H, '#14191b');
     const cx = Math.round(W / 2), by = H - 6;
     R(ctx, cx - 10, by - 12, 20, 12, '#e9ecef'); R(ctx, cx - 9, by - 11, 18, 2, '#ffffff'); R(ctx, cx - 9, by - 8, 18, 7, '#6b4426');            // rooting cup
-    ctx.save(); try { const p = demoPlant(lineId, 3, 5), s = PlantArt.build(p); ctx.drawImage(s.cv, cx - s.ax, by - 9 - s.ay); } catch (e) { } ctx.restore();
+    ctx.save(); try { const p = demoPlant(lineId, 3, 5), s = PlantArt.build(p); ctx.drawImage(s.cv, cx - s.ax, by - 9 - s.ay, s.w, s.h); } catch (e) { } ctx.restore();
     ctx.fillStyle = 'rgba(200,236,248,.28)'; ctx.fillRect(cx - 12, by - 34, 24, 24); R(ctx, cx - 12, by - 34, 24, 1, 'rgba(255,255,255,.6)'); R(ctx, cx - 3, by - 36, 6, 2, '#c8ccd0');   // humidity dome
     pxText(ctx, 'CLONE', cx - 14, 3, 1, '#9be15d');
   },
@@ -27714,7 +27718,7 @@ const MutGen = {
     const p = demoPlant(line, mode === 'leaf' ? 5 : flower ? 8 : 6, 77, { id: 'mutdemo_' + k + '_' + mode, sex: 'F', sexKnown: true, pheno: { h: 1, b: 1, y: 1, a: 1, deep: false, mut: k, muts: [k] } });
     const s = PlantArt.build(p);
     if (mode === 'leaf') { const z = Math.max(1, Math.floor(Math.min(W / s.w, H / s.h) * 1.6)); ctx.drawImage(s.cv, Math.round(W / 2 - s.ax * z), Math.round(H * .95 - s.ay * z + s.h * z * .28), s.w * z, s.h * z); return; }
-    ctx.drawImage(s.cv, W / 2 - s.ax, H - 4 - s.ay);
+    ctx.drawImage(s.cv, W / 2 - s.ax, H - 4 - s.ay, s.w, s.h);
     ctx.fillStyle = MUTS[k].tint; ctx.fillRect(3, 3, 4, 4);
   }
 };

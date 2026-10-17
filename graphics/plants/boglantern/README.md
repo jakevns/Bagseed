@@ -1,5 +1,7 @@
 # Bog Lantern connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: artwork and growth samples approved on 2026-10-17. New kit after the approved Halfmoon / Zoomies / Cruise Control batch. Full painted-renderer replacement remains pending.
 
 The native catalog lists `boglantern` (??? × Marsh Light) as a photoperiod experimental line. The new organ sheet supplies narrow forest-green leaves and russet/olive flowers with copper pistils; the shared renderer applies copper-red senescence rather than painting dying colors into healthy fan components. See `sources/profile.json` for the exact review phenotype and captions.

@@ -1,5 +1,7 @@
 # Cotton Candy CRT connected component prototype
 
+**Production update:** this approved kit is now connected to the live game through `BagseedPlants` / native `PlantArt`. See `review/live-plants/README.md`. The notes below preserve the original component-review milestone.
+
 Status: component artwork, growth, flowering, pink senescence, cool-night colors and wind animation approved by the user. This is the fourth kit, after Porchlight, Velvet Underbrush and Pixel Punch. The painted rigs remain review prototypes pending full care/training and native renderer integration.
 
 ## Identity and artwork

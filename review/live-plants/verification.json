@@ -1,0 +1,356 @@
+{
+  "readonly": true,
+  "catalog": [
+    {
+      "id": "bag_pq2brf9",
+      "painted": true
+    },
+    {
+      "id": "porchlight",
+      "painted": true
+    },
+    {
+      "id": "velvet",
+      "painted": true
+    },
+    {
+      "id": "pixelpunch",
+      "painted": true
+    },
+    {
+      "id": "cottoncandy",
+      "painted": true
+    },
+    {
+      "id": "moonberry",
+      "painted": true
+    },
+    {
+      "id": "halfmoon",
+      "painted": true
+    },
+    {
+      "id": "zoomies",
+      "painted": true
+    },
+    {
+      "id": "cruise",
+      "painted": true
+    },
+    {
+      "id": "boglantern",
+      "painted": true
+    },
+    {
+      "id": "frogprince",
+      "painted": true
+    },
+    {
+      "id": "nightshift",
+      "painted": true
+    },
+    {
+      "id": "gasstation",
+      "painted": true
+    },
+    {
+      "id": "cl_ogkush",
+      "painted": true
+    },
+    {
+      "id": "cl_whitewidow",
+      "painted": true
+    },
+    {
+      "id": "cl_northernlights",
+      "painted": true
+    },
+    {
+      "id": "cl_skunk1",
+      "painted": true
+    },
+    {
+      "id": "cl_afghani",
+      "painted": true
+    },
+    {
+      "id": "cl_hindukush",
+      "painted": true
+    },
+    {
+      "id": "cl_bubbakush",
+      "painted": true
+    },
+    {
+      "id": "cl_purplekush",
+      "painted": true
+    },
+    {
+      "id": "cl_gdp",
+      "painted": true
+    },
+    {
+      "id": "cl_blueberry",
+      "painted": true
+    },
+    {
+      "id": "cl_bluedream",
+      "painted": true
+    },
+    {
+      "id": "cl_sourdiesel",
+      "painted": true
+    },
+    {
+      "id": "cl_chemdawg",
+      "painted": true
+    },
+    {
+      "id": "cl_jackherer",
+      "painted": true
+    },
+    {
+      "id": "cl_durban",
+      "painted": true
+    },
+    {
+      "id": "cl_trainwreck",
+      "painted": true
+    },
+    {
+      "id": "cl_ak47",
+      "painted": true
+    },
+    {
+      "id": "cl_ssh",
+      "painted": true
+    },
+    {
+      "id": "cl_slh",
+      "painted": true
+    },
+    {
+      "id": "cl_pineexpress",
+      "painted": true
+    },
+    {
+      "id": "cl_gsc",
+      "painted": true
+    },
+    {
+      "id": "cl_gg4",
+      "painted": true
+    },
+    {
+      "id": "cl_harlequin",
+      "painted": true
+    },
+    {
+      "id": "cl_cannatonic",
+      "painted": true
+    },
+    {
+      "id": "cl_acdc",
+      "painted": true
+    }
+  ],
+  "cross": {
+    "painted": true,
+    "traits": {
+      "leafShape": "hybrid",
+      "leafKey": "forest",
+      "colorName": "Pink accents",
+      "branching": 1.1
+    }
+  },
+  "styles": 4,
+  "toppedLeaders": 2,
+  "stressChanged": true,
+  "mutations": [
+    {
+      "key": "fernfrond",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "freakshow",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "ducksfoot",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "monophylla",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "moonmarble",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "snowtip",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "goldleaf",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "ember",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "pinkpistil",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "inkleaf",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "twinleader",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "crested",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "whorl",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "pocketdwarf",
+      "painted": true,
+      "changed": true
+    },
+    {
+      "key": "triploid",
+      "painted": true,
+      "changed": true
+    }
+  ],
+  "stages": [
+    {
+      "stage": 0,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 1,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 2,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 3,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 4,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 5,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 6,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 7,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 8,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 9,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 10,
+      "painted": true,
+      "hang": false
+    },
+    {
+      "stage": 11,
+      "painted": true,
+      "hang": true
+    },
+    {
+      "stage": 12,
+      "painted": true,
+      "hang": true
+    }
+  ],
+  "snapshotIndependent": true,
+  "clonePinned": true,
+  "proxyFlowers": 71,
+  "windChanged": true,
+  "eightFramesMs": 21,
+  "id": "p_vr0p2g8",
+  "recipe": "{\"v\":1,\"seed\":\"ph_b1khepu\",\"leafKit\":\"porchlight\",\"flowerKit\":\"porchlight\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+  "layers": [
+    {
+      "loc": "closet",
+      "slot": 0,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 29,
+      "y": 92
+    },
+    {
+      "loc": "tent2",
+      "slot": 0,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 87,
+      "y": 102
+    },
+    {
+      "loc": "tent2",
+      "slot": 1,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 127,
+      "y": 102
+    }
+  ],
+  "atlasRequests": 14,
+  "saveReload": true,
+  "legacyMigration": true,
+  "errors": []
+}

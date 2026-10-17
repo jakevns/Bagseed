@@ -1,6 +1,6 @@
 # Reusable plant parts and phenotype identities
 
-Status: tested foundation, not connected to the live game. Porchlight is the first planned organ kit. Its component artwork and 50/90-inch growth prototype are approved. The 15 registered part roles remain integration drafts while training and care states are unfinished; the component sheet supplies asset paths and attachment coordinates; `readiness()` explicitly reports them as pending. Whole-plant concept sheets are not treated as usable organ art. The first attached growth prototype and the 50/90-inch samples are documented in `porchlight/README.md`.
+Status: approved component artwork is now connected to the native `PlantArt` path in `public/index.html` through `sources/live-renderer.js`. The production adapter handles live scenes, plant inspectors, Sprout photos, codex/seed-library imagery, growth, training, care, drying, mutations and saved visual recipes. The original `phenotype-library.cjs` API below remains a stricter integration-draft library for future explicit part inheritance; the live adapter consumes approved atlas manifests and persists its own `paintArt115` recipe. See [the production integration](../../review/live-plants/README.md).
 
 ## Data model
 
@@ -70,3 +70,12 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 ## Final named strain and additional experimental profiles
 
 `gasstation@1` completes component-kit coverage of all 12 named native catalog strains with narrow blue-green foliage, mint-blue flower spears and ochre senescence. At the user's request, `boglantern-lavender@1` and `frogprince-red@1` add Lavender Marsh and Copper Reed phenotype families of the existing Bog Lantern and Frog Prince lines. These are extra profiles, not new native strains. `lineId` retains the actual parent line, and `registerAsDefault: false` preserves the earlier default profiles. Existing saved plant/clone identities stay pinned. The profiles enforce compatible expressed foliage and flower palettes and can be selected explicitly through the existing identity helper's `profile` option. Native automatic phenotype selection and full painted-renderer integration remain pending. All three kits are approved in their review folders and `review/plant-batch-05/`.
+
+
+## Live renderer integration
+
+`tools/compile-live-plants.cjs` verifies all fourteen approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
+
+Visual recipes (`paintArt115`, schema v1) record the component donor kits, stable phenotype seed and expressed traits. Actual plant height, node count, water, health, nutrition, stress, pruning and training remain live inputs. Recipes are stored on plant and clone phenotype records, copied into photos, and populated for older saves at post-load and save boundaries. Rendering does not alter biology. Existing mutant genes from the latest merged update remain native; the painted compositor expresses all fifteen leaf/color/structure traits, including stacked traits.
+
+Earlier per-strain notes describe the original prototype milestone. Production integration is now active; individual sample captures remain historical approvals. Validation and actual game screenshots are in `review/live-plants/`.
