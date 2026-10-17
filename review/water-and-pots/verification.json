@@ -1,5 +1,5 @@
 {
-  "status": "local samples awaiting artwork approval",
+  "status": "approved",
   "entryPoint": "public/index.html",
   "designs": 9,
   "buildAndSourceChecks": "passed",
@@ -8,5 +8,8 @@
   "allTentPlayerDepth": "passed",
   "originalSourceArtPreserved": true,
   "twoLosslessRGBAMatches": true,
-  "characterRevisionPreserved": "custom-walk-arm-layer-v6"
+  "characterRevisionPreserved": "custom-walk-arm-layer-v6",
+  "nightLEDNotDimmed": "passed",
+  "foregroundIllustrationOccludesLED": "passed",
+  "rearRimBehindPlant": "passed"
 }

@@ -1,6 +1,6 @@
 # Water & Pots artwork samples
 
-Awaiting artwork approval. Nine designs cover the full Water & Pots category: Dented Watering Can (free), Brass Duchess Can ($24.99), PumpPal Sprayer ($39), Drip Reservoir Kit ($119), Mystery Yogurt Tub (free), Breathe Bag Fabric Pot ($9.99), Root Royale Smart Pot ($34.99), DripWorks Room Reservoir ($79), and Rain Barrel & Drip Kit ($59). Existing prices, ownership, placement anchors, watering amounts, costs, irrigation scope and simulation rules remain unchanged.
+Artwork approved, including the smart-pot night emission and plant layering fixes. Nine designs cover the full Water & Pots category: Dented Watering Can (free), Brass Duchess Can ($24.99), PumpPal Sprayer ($39), Drip Reservoir Kit ($119), Mystery Yogurt Tub (free), Breathe Bag Fabric Pot ($9.99), Root Royale Smart Pot ($34.99), DripWorks Room Reservoir ($79), and Rain Barrel & Drip Kit ($59). Existing prices, ownership, placement anchors, watering amounts, costs, irrigation scope and simulation rules remain unchanged.
 
 Two generated PNG atlases are retained unchanged. Fingerprinted runtime WebPs decode to identical RGBA pixels; compilers verify source/runtime/public checksums and crop bounds. All assets retain their source proportions. The loading gate waits for both atlases, including its existing error/retry behavior.
 
