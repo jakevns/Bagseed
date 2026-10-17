@@ -1,6 +1,6 @@
 # Porchlight flowering reference
 
-Status: awaiting user review; not pushed or installed in the production renderer.
+Status: flowering references and phenotype-aware late-flower senescence approved by the user. Published as a prototype checkpoint; not installed in the production renderer.
 
 Reproduce with `node tools/preview-porchlight-flower.cjs`. This opens the current `index.html` in a disposable browser and injects the existing component prototype. Early, mid and late female flowering inputs use stages 7, 8 and 10, the same phenotype seed, 50-inch height, 11 nodes, healthy conditions and natural training. Heights are controlled study inputs rather than a growth timeline. The full renderer has not yet completed training/care integration.
 

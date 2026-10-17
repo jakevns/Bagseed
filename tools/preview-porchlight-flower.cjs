@@ -55,7 +55,7 @@ const {chromium}=require('playwright');
   assert.deepEqual(errors,[]);assert.ok(result.counts.every(c=>c.flowers===19));
   const out=path.join(root,'review/porchlight-flower');fs.mkdirSync(out,{recursive:true});
   for(const [name,url]of Object.entries(result.files))fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(url.split(',')[1],'base64'));
-  fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({status:'sample-awaiting-approval',stages:[7,8,10],lateFlowerPortrait:{stage:9,senescence:1,colorName:'Forest green',palette:'gold'},heightInches:50,counts:result.counts,errors,productionRendererUnchanged:true},null,2)+'\n');
+  fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({status:'approved-flowering-prototype',stages:[7,8,10],lateFlowerPortrait:{stage:9,senescence:1,colorName:'Forest green',palette:'gold'},heightInches:50,counts:result.counts,errors,productionRendererUnchanged:true},null,2)+'\n');
   console.log('Captured Porchlight early, mid and late flowering reference and flower detail.');
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

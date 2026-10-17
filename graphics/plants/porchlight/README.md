@@ -31,3 +31,7 @@ The existing game's `Giant.proxy` compresses tall outdoor specimens to fit the y
 - Frame PNGs are local intermediates excluded from Git. The comparison, component sheet, GIF and MP4 are retained for approval.
 
 The prototype is pure/read-only: rendering does not advance growth, write phenotypes, spend inventory or modify saves. Native game build verification remains `npm run check`.
+
+## Approved flowering and senescence checkpoint
+
+The user approved the early/mid/late female flower references and the larger late-flower Porchlight portrait with golden fan-leaf senescence. Review images are in `review/porchlight-flower/`; reproduce with `node tools/preview-porchlight-flower.cjs`. Finish color is driven by the expressed color phenotype, with a separate late-stage progress input. Gold, ochre, lavender, purple, deep purple, rose, red and the ink mutation's near-black purple are supported. Color does not reroll genetics or depend on low nutrients; flowers and stems retain their source art. Native simulation, saves and the live renderer remain unchanged pending the full integration milestone.
