@@ -1,6 +1,6 @@
 {
   "revision": "sensors-1",
-  "status": "proposal",
+  "status": "approved",
   "path": "assets/sensors-atlas.png",
   "sha256": "a97601e9b9010b94d46efb08266ab1cea99a334ab340934ffbc9b91003c7e0fa",
   "size": [
@@ -96,5 +96,6 @@
       ]
     }
   },
-  "mountScale": 0.72
+  "mountScale": 0.72,
+  "approvedDate": "2026-10-17"
 }

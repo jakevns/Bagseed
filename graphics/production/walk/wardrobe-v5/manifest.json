@@ -493,6 +493,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                552,
+                111,
+                105
+              ],
+              "destination": [
+                92,
+                228
+              ]
             }
           }
         },
@@ -536,6 +548,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                113,
+                552,
+                88,
+                99
+              ],
+              "destination": [
+                108,
+                231
               ]
             }
           }
@@ -581,6 +605,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                203,
+                552,
+                77,
+                128
+              ],
+              "destination": [
+                100,
+                228
+              ]
             }
           }
         },
@@ -624,6 +660,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                282,
+                552,
+                85,
+                94
+              ],
+              "destination": [
+                107,
+                225
               ]
             }
           }
@@ -1109,6 +1157,18 @@
                 87,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                738,
+                552,
+                111,
+                105
+              ],
+              "destination": [
+                85,
+                228
+              ]
             }
           }
         },
@@ -1152,6 +1212,18 @@
               "destination": [
                 94,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                851,
+                552,
+                88,
+                99
+              ],
+              "destination": [
+                92,
+                231
               ]
             }
           }
@@ -1197,6 +1269,18 @@
                 113,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                941,
+                552,
+                77,
+                128
+              ],
+              "destination": [
+                111,
+                228
+              ]
             }
           }
         },
@@ -1240,6 +1324,18 @@
               "destination": [
                 129,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                682,
+                85,
+                94
+              ],
+              "destination": [
+                96,
+                225
               ]
             }
           }
@@ -1285,6 +1381,18 @@
                 90,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                369,
+                552,
+                94,
+                96
+              ],
+              "destination": [
+                88,
+                228
+              ]
             }
           }
         },
@@ -1328,6 +1436,18 @@
               "destination": [
                 124,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                465,
+                552,
+                83,
+                92
+              ],
+              "destination": [
+                106,
+                231
               ]
             }
           }
@@ -1373,6 +1493,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                550,
+                552,
+                88,
+                128
+              ],
+              "destination": [
+                94,
+                228
+              ]
             }
           }
         },
@@ -1416,6 +1548,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                640,
+                552,
+                96,
+                99
+              ],
+              "destination": [
+                83,
+                224
               ]
             }
           }
@@ -1461,6 +1605,18 @@
                 146,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                87,
+                682,
+                94,
+                96
+              ],
+              "destination": [
+                106,
+                228
+              ]
             }
           }
         },
@@ -1504,6 +1660,18 @@
               "destination": [
                 132,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                183,
+                682,
+                83,
+                92
+              ],
+              "destination": [
+                99,
+                231
               ]
             }
           }
@@ -1549,6 +1717,18 @@
                 145,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                268,
+                682,
+                88,
+                128
+              ],
+              "destination": [
+                106,
+                228
+              ]
             }
           }
         },
@@ -1593,6 +1773,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                358,
+                682,
+                96,
+                99
+              ],
+              "destination": [
+                109,
+                224
+              ]
             }
           }
         }
@@ -1612,7 +1804,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "753429824ff829d44ced87a18c5567cec194fb6efdcf2aca5e16ee5d818c11af"
+      "upperComposite": "intact-painted-upper-v6",
+      "atlasSHA256": "a88228c9f435454ea70fa5986a5c120baf0fcf82f6d08ad8e54f9a9e18048df6"
     },
     "bottom-jeans": {
       "kind": "bottom",
@@ -6752,6 +6945,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                476,
+                110,
+                105
+              ],
+              "destination": [
+                92,
+                228
+              ]
             }
           }
         },
@@ -6837,6 +7042,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                112,
+                476,
+                81,
+                100
+              ],
+              "destination": [
+                114,
+                230
               ]
             }
           }
@@ -6924,6 +7141,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                195,
+                476,
+                77,
+                129
+              ],
+              "destination": [
+                97,
+                227
+              ]
             }
           }
         },
@@ -7009,6 +7238,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                274,
+                476,
+                79,
+                96
+              ],
+              "destination": [
+                114,
+                224
               ]
             }
           }
@@ -7560,6 +7801,18 @@
                 88,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                732,
+                476,
+                110,
+                105
+              ],
+              "destination": [
+                86,
+                228
+              ]
             }
           }
         },
@@ -7645,6 +7898,18 @@
               "destination": [
                 96,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                844,
+                476,
+                81,
+                100
+              ],
+              "destination": [
+                93,
+                230
               ]
             }
           }
@@ -7732,6 +7997,18 @@
                 115,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                927,
+                476,
+                77,
+                129
+              ],
+              "destination": [
+                114,
+                227
+              ]
             }
           }
         },
@@ -7817,6 +8094,18 @@
               "destination": [
                 129,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                607,
+                79,
+                96
+              ],
+              "destination": [
+                95,
+                224
               ]
             }
           }
@@ -7904,6 +8193,18 @@
                 89,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                355,
+                476,
+                97,
+                97
+              ],
+              "destination": [
+                86,
+                227
+              ]
             }
           }
         },
@@ -7989,6 +8290,18 @@
               "destination": [
                 146,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                81,
+                607,
+                97,
+                97
+              ],
+              "destination": [
+                105,
+                227
               ]
             }
           }
@@ -8076,6 +8389,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                454,
+                476,
+                82,
+                95
+              ],
+              "destination": [
+                108,
+                229
+              ]
             }
           }
         },
@@ -8161,6 +8486,18 @@
               "destination": [
                 132,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                180,
+                607,
+                82,
+                95
+              ],
+              "destination": [
+                98,
+                229
               ]
             }
           }
@@ -8248,6 +8585,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                538,
+                476,
+                87,
+                129
+              ],
+              "destination": [
+                91,
+                227
+              ]
             }
           }
         },
@@ -8333,6 +8682,18 @@
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                264,
+                607,
+                87,
+                129
+              ],
+              "destination": [
+                110,
+                227
               ]
             }
           }
@@ -8420,6 +8781,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                627,
+                476,
+                103,
+                100
+              ],
+              "destination": [
+                81,
+                223
+              ]
             }
           }
         },
@@ -8506,6 +8879,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                353,
+                607,
+                103,
+                100
+              ],
+              "destination": [
+                104,
+                223
+              ]
             }
           }
         }
@@ -8525,7 +8910,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "f0d9d93364a8eaf2453fbcd0425e9e829de7e7eb9c2e0ccb30303a0e9728c3fb"
+      "atlasSHA256": "42a0aaf7adaba092ec564f3ec66ed9fad258513738d369d07c3a8fae646951dc",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-tank": {
       "kind": "top",
@@ -13543,6 +13929,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                531,
+                110,
+                106
+              ],
+              "destination": [
+                92,
+                228
+              ]
             }
           }
         },
@@ -13628,6 +14026,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                112,
+                531,
+                84,
+                101
+              ],
+              "destination": [
+                114,
+                231
               ]
             }
           }
@@ -13715,6 +14125,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                198,
+                531,
+                76,
+                128
+              ],
+              "destination": [
+                98,
+                228
+              ]
             }
           }
         },
@@ -13800,6 +14222,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                276,
+                531,
+                77,
+                94
+              ],
+              "destination": [
+                116,
+                225
               ]
             }
           }
@@ -14307,6 +14741,18 @@
                 88,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                739,
+                531,
+                110,
+                106
+              ],
+              "destination": [
+                86,
+                228
+              ]
             }
           }
         },
@@ -14392,6 +14838,18 @@
               "destination": [
                 92,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                851,
+                531,
+                84,
+                101
+              ],
+              "destination": [
+                90,
+                231
               ]
             }
           }
@@ -14479,6 +14937,18 @@
                 115,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                937,
+                531,
+                76,
+                128
+              ],
+              "destination": [
+                114,
+                228
+              ]
             }
           }
         },
@@ -14564,6 +15034,18 @@
               "destination": [
                 131,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                661,
+                77,
+                94
+              ],
+              "destination": [
+                95,
+                225
               ]
             }
           }
@@ -14651,6 +15133,18 @@
                 85,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                355,
+                531,
+                101,
+                97
+              ],
+              "destination": [
+                83,
+                227
+              ]
             }
           }
         },
@@ -14736,6 +15230,18 @@
               "destination": [
                 146,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                79,
+                661,
+                101,
+                97
+              ],
+              "destination": [
+                104,
+                227
               ]
             }
           }
@@ -14823,6 +15329,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                458,
+                531,
+                85,
+                92
+              ],
+              "destination": [
+                105,
+                231
+              ]
             }
           }
         },
@@ -14908,6 +15426,18 @@
               "destination": [
                 134,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                182,
+                661,
+                85,
+                92
+              ],
+              "destination": [
+                98,
+                231
               ]
             }
           }
@@ -14995,6 +15525,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                545,
+                531,
+                88,
+                127
+              ],
+              "destination": [
+                91,
+                228
+              ]
             }
           }
         },
@@ -15080,6 +15622,18 @@
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                269,
+                661,
+                88,
+                127
+              ],
+              "destination": [
+                109,
+                228
               ]
             }
           }
@@ -15167,6 +15721,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                635,
+                531,
+                102,
+                101
+              ],
+              "destination": [
+                81,
+                223
+              ]
             }
           }
         },
@@ -15253,6 +15819,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                359,
+                661,
+                102,
+                101
+              ],
+              "destination": [
+                105,
+                223
+              ]
             }
           }
         }
@@ -15273,7 +15851,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "9586f68e735705758aaf01b487e395f0adacf3a978017e4ed722fe6f3e0b1f13"
+      "atlasSHA256": "b0471d44fd52bf9808e8623ab8628f6c9fc634355cfdf0069a240464c8441487",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-cardigan": {
       "kind": "top",
@@ -15373,8 +15952,8 @@
             },
             "farArm": {
               "rect": [
-                705,
-                309,
+                702,
+                310,
                 56,
                 84
               ],
@@ -15478,8 +16057,8 @@
             },
             "farArm": {
               "rect": [
-                380,
-                309,
+                589,
+                310,
                 56,
                 87
               ],
@@ -15583,8 +16162,8 @@
             },
             "farArm": {
               "rect": [
-                650,
-                309,
+                647,
+                310,
                 53,
                 85
               ],
@@ -15676,8 +16255,8 @@
             },
             "nearArm": {
               "rect": [
-                825,
-                109,
+                101,
+                215,
                 54,
                 92
               ],
@@ -15688,8 +16267,8 @@
             },
             "farArm": {
               "rect": [
-                763,
-                309,
+                760,
+                310,
                 43,
                 84
               ],
@@ -15750,7 +16329,7 @@
           "parts": {
             "torso": {
               "rect": [
-                471,
+                714,
                 215,
                 114,
                 91
@@ -15762,8 +16341,8 @@
             },
             "nearArm": {
               "rect": [
-                229,
-                309,
+                438,
+                310,
                 74,
                 88
               ],
@@ -15774,14 +16353,26 @@
             },
             "farArm": {
               "rect": [
-                602,
-                400,
+                534,
+                403,
                 76,
                 70
               ],
               "destination": [
                 125,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                549,
+                114,
+                106
+              ],
+              "destination": [
+                91,
+                227
               ]
             }
           }
@@ -15836,8 +16427,8 @@
           "parts": {
             "torso": {
               "rect": [
-                881,
-                109,
+                157,
+                215,
                 84,
                 92
               ],
@@ -15848,8 +16439,8 @@
             },
             "nearArm": {
               "rect": [
-                864,
-                309,
+                861,
+                310,
                 36,
                 83
               ],
@@ -15860,14 +16451,26 @@
             },
             "farArm": {
               "rect": [
-                759,
-                400,
+                691,
+                403,
                 70,
                 70
               ],
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                116,
+                549,
+                84,
+                102
+              ],
+              "destination": [
+                114,
+                229
               ]
             }
           }
@@ -15922,8 +16525,8 @@
           "parts": {
             "torso": {
               "rect": [
-                845,
-                215,
+                71,
+                310,
                 67,
                 90
               ],
@@ -15934,8 +16537,8 @@
             },
             "nearArm": {
               "rect": [
-                53,
-                309,
+                262,
+                310,
                 44,
                 89
               ],
@@ -15946,14 +16549,26 @@
             },
             "farArm": {
               "rect": [
-                59,
-                484,
+                0,
+                486,
                 51,
                 61
               ],
               "destination": [
                 125,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                202,
+                549,
+                67,
+                105
+              ],
+              "destination": [
+                113,
+                228
               ]
             }
           }
@@ -16008,7 +16623,7 @@
           "parts": {
             "torso": {
               "rect": [
-                86,
+                329,
                 215,
                 82,
                 92
@@ -16020,8 +16635,8 @@
             },
             "nearArm": {
               "rect": [
-                142,
-                400,
+                129,
+                403,
                 43,
                 78
               ],
@@ -16032,14 +16647,26 @@
             },
             "farArm": {
               "rect": [
-                947,
-                400,
+                879,
+                403,
                 34,
                 64
               ],
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                271,
+                549,
+                82,
+                97
+              ],
+              "destination": [
+                112,
+                223
               ]
             }
           }
@@ -16125,8 +16752,8 @@
             },
             "nearArm": {
               "rect": [
-                0,
-                309,
+                209,
+                310,
                 51,
                 89
               ],
@@ -16137,8 +16764,8 @@
             },
             "farArm": {
               "rect": [
-                86,
-                400,
+                0,
+                403,
                 54,
                 81
               ],
@@ -16230,8 +16857,8 @@
             },
             "farArm": {
               "rect": [
-                808,
-                309,
+                805,
+                310,
                 54,
                 84
               ],
@@ -16242,8 +16869,8 @@
             },
             "nearArm": {
               "rect": [
-                233,
-                400,
+                220,
+                403,
                 50,
                 77
               ],
@@ -16347,7 +16974,7 @@
             },
             "farArm": {
               "rect": [
-                414,
+                657,
                 215,
                 55,
                 91
@@ -16514,7 +17141,7 @@
           "parts": {
             "torso": {
               "rect": [
-                587,
+                830,
                 215,
                 114,
                 91
@@ -16526,8 +17153,8 @@
             },
             "nearArm": {
               "rect": [
-                305,
-                309,
+                514,
+                310,
                 73,
                 88
               ],
@@ -16538,14 +17165,26 @@
             },
             "farArm": {
               "rect": [
-                680,
-                400,
+                612,
+                403,
                 77,
                 70
               ],
               "destination": [
                 87,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                718,
+                549,
+                114,
+                106
+              ],
+              "destination": [
+                83,
+                227
               ]
             }
           }
@@ -16600,7 +17239,7 @@
           "parts": {
             "torso": {
               "rect": [
-                0,
+                243,
                 215,
                 84,
                 92
@@ -16612,8 +17251,8 @@
             },
             "nearArm": {
               "rect": [
-                902,
-                309,
+                899,
+                310,
                 36,
                 83
               ],
@@ -16624,14 +17263,26 @@
             },
             "farArm": {
               "rect": [
-                831,
-                400,
+                763,
+                403,
                 71,
                 70
               ],
               "destination": [
                 93,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                834,
+                549,
+                84,
+                102
+              ],
+              "destination": [
+                90,
+                229
               ]
             }
           }
@@ -16686,8 +17337,8 @@
           "parts": {
             "torso": {
               "rect": [
-                914,
-                215,
+                140,
+                310,
                 67,
                 90
               ],
@@ -16698,8 +17349,8 @@
             },
             "nearArm": {
               "rect": [
-                99,
-                309,
+                308,
+                310,
                 43,
                 89
               ],
@@ -16710,14 +17361,26 @@
             },
             "farArm": {
               "rect": [
-                112,
-                484,
+                53,
+                486,
                 52,
                 61
               ],
               "destination": [
                 112,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                920,
+                549,
+                67,
+                105
+              ],
+              "destination": [
+                108,
+                228
               ]
             }
           }
@@ -16772,7 +17435,7 @@
           "parts": {
             "torso": {
               "rect": [
-                170,
+                413,
                 215,
                 82,
                 92
@@ -16784,8 +17447,8 @@
             },
             "nearArm": {
               "rect": [
-                187,
-                400,
+                174,
+                403,
                 44,
                 78
               ],
@@ -16796,8 +17459,8 @@
             },
             "farArm": {
               "rect": [
-                983,
-                400,
+                915,
+                403,
                 35,
                 64
               ],
@@ -16805,34 +17468,46 @@
                 129,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                657,
+                82,
+                97
+              ],
+              "destination": [
+                94,
+                223
+              ]
             }
           }
         },
         "right/4": {
           "registration": {
             "errors": {
-              "measuredNeck": 1.836,
-              "handL": 1.836
+              "measuredNeck": 0.971,
+              "handL": 0.971
             },
-            "maxKeypointError": 1.836,
+            "maxKeypointError": 0.971,
             "visibleHandsMeasured": 1,
-            "limbCoreIoU": 0.9586883552801446,
+            "limbCoreIoU": 0.9385171790235082,
             "groundError": 0.0,
-            "uniformScale": 0.23124040804479085,
-            "rotationDegrees": 0.8085937499999998,
+            "uniformScale": 0.06645161011856066,
+            "rotationDegrees": 2.0,
             "finalSourceToCanvasTranslation": [
-              19.936217616737544,
-              119.66012524187761
+              40.92240332593889,
+              157.53096868389463
             ],
             "resamplingPasses": 1,
             "sourceLandmarks": {
               "measuredNeck": [
-                48.666666666666664,
-                78.2636815920398
+                49.166666666666664,
+                78.52564102564102
               ],
               "handL": [
-                55.57222222222222,
-                100.82777777777778
+                58.17460317460317,
+                105.16798941798942
               ]
             },
             "targetLandmarks": {
@@ -16846,50 +17521,63 @@
               ]
             },
             "accepted": true,
-            "source": "wardrobe-v5/assets/top-cardigan.png",
+            "source": "wardrobe-v5/assets/arm-v6-cardigan-contact-clean.png",
             "sourceCell": [
               0,
-              543,
-              362,
-              1086
+              0,
+              1024,
+              1536
             ],
-            "frame": 4
+            "frame": 4,
+            "resamplingMethod": "one-pass premultiplied full-footprint Lanczos"
           },
           "parts": {
             "torso": {
               "rect": [
-                438,
-                309,
-                104,
-                86
+                623,
+                109,
+                109,
+                94
               ],
               "destination": [
-                97,
-                232
-              ]
-            },
-            "farArm": {
-              "rect": [
-                345,
-                400,
-                46,
-                76
-              ],
-              "destination": [
-                97,
-                247
+                76,
+                224
               ]
             },
             "nearArm": {
               "rect": [
-                523,
-                400,
-                37,
-                75
+                56,
+                403,
+                34,
+                79
               ],
               "destination": [
                 148,
                 243
+              ]
+            },
+            "farArm": {
+              "rect": [
+                332,
+                403,
+                58,
+                76
+              ],
+              "destination": [
+                85,
+                247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                355,
+                549,
+                109,
+                101
+              ],
+              "destination": [
+                76,
+                224
               ]
             }
           }
@@ -16897,28 +17585,28 @@
         "left/4": {
           "registration": {
             "errors": {
-              "measuredNeck": 1.836,
-              "handL": 1.836
+              "measuredNeck": 0.971,
+              "handL": 0.971
             },
-            "maxKeypointError": 1.836,
+            "maxKeypointError": 0.971,
             "visibleHandsMeasured": 1,
-            "limbCoreIoU": 0.9586883552801446,
+            "limbCoreIoU": 0.9385171790235082,
             "groundError": 0.0,
-            "uniformScale": 0.23124040804479085,
-            "rotationDegrees": 0.8085937499999998,
+            "uniformScale": 0.06645161011856066,
+            "rotationDegrees": 2.0,
             "finalSourceToCanvasTranslation": [
-              19.936217616737544,
-              119.66012524187761
+              40.92240332593889,
+              157.53096868389463
             ],
             "resamplingPasses": 1,
             "sourceLandmarks": {
               "measuredNeck": [
-                48.666666666666664,
-                78.2636815920398
+                49.166666666666664,
+                78.52564102564102
               ],
               "handL": [
-                55.57222222222222,
-                100.82777777777778
+                58.17460317460317,
+                105.16798941798942
               ]
             },
             "targetLandmarks": {
@@ -16932,33 +17620,46 @@
               ]
             },
             "accepted": true,
-            "source": "wardrobe-v5/assets/top-cardigan.png",
+            "source": "wardrobe-v5/assets/arm-v6-cardigan-contact-clean.png",
             "sourceCell": [
               0,
-              543,
-              362,
-              1086
+              0,
+              1024,
+              1536
             ],
-            "frame": 4
+            "frame": 4,
+            "resamplingMethod": "one-pass premultiplied full-footprint Lanczos"
           },
           "parts": {
             "torso": {
               "rect": [
-                544,
-                309,
-                104,
-                86
+                734,
+                109,
+                109,
+                94
               ],
               "destination": [
-                87,
-                232
+                103,
+                224
+              ]
+            },
+            "nearArm": {
+              "rect": [
+                92,
+                403,
+                35,
+                79
+              ],
+              "destination": [
+                106,
+                243
               ]
             },
             "farArm": {
               "rect": [
-                393,
-                400,
-                45,
+                392,
+                403,
+                57,
                 76
               ],
               "destination": [
@@ -16966,16 +17667,16 @@
                 247
               ]
             },
-            "nearArm": {
+            "wholeUpper": {
               "rect": [
-                562,
-                400,
-                38,
-                75
+                84,
+                657,
+                109,
+                101
               ],
               "destination": [
                 103,
-                243
+                224
               ]
             }
           }
@@ -17030,7 +17731,7 @@
           "parts": {
             "torso": {
               "rect": [
-                254,
+                497,
                 215,
                 78,
                 92
@@ -17042,8 +17743,8 @@
             },
             "nearArm": {
               "rect": [
-                440,
-                400,
+                451,
+                403,
                 39,
                 76
               ],
@@ -17054,14 +17755,26 @@
             },
             "farArm": {
               "rect": [
-                166,
-                484,
+                107,
+                486,
                 32,
                 61
               ],
               "destination": [
                 124,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                466,
+                549,
+                78,
+                94
+              ],
+              "destination": [
+                112,
+                229
               ]
             }
           }
@@ -17116,7 +17829,7 @@
           "parts": {
             "torso": {
               "rect": [
-                334,
+                577,
                 215,
                 78,
                 92
@@ -17128,8 +17841,8 @@
             },
             "nearArm": {
               "rect": [
-                481,
-                400,
+                492,
+                403,
                 40,
                 76
               ],
@@ -17140,14 +17853,26 @@
             },
             "farArm": {
               "rect": [
-                200,
-                484,
+                141,
+                486,
                 32,
                 61
               ],
               "destination": [
                 132,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                195,
+                657,
+                78,
+                94
+              ],
+              "destination": [
+                98,
+                229
               ]
             }
           }
@@ -17202,7 +17927,7 @@
           "parts": {
             "torso": {
               "rect": [
-                703,
+                946,
                 215,
                 69,
                 91
@@ -17214,8 +17939,8 @@
             },
             "nearArm": {
               "rect": [
-                144,
-                309,
+                353,
+                310,
                 41,
                 89
               ],
@@ -17226,14 +17951,26 @@
             },
             "farArm": {
               "rect": [
-                234,
-                484,
+                175,
+                486,
                 19,
                 60
               ],
               "destination": [
                 125,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                546,
+                549,
+                69,
+                106
+              ],
+              "destination": [
+                114,
+                227
               ]
             }
           }
@@ -17288,8 +18025,8 @@
           "parts": {
             "torso": {
               "rect": [
-                774,
-                215,
+                0,
+                310,
                 69,
                 91
               ],
@@ -17300,8 +18037,8 @@
             },
             "nearArm": {
               "rect": [
-                187,
-                309,
+                396,
+                310,
                 40,
                 89
               ],
@@ -17312,14 +18049,26 @@
             },
             "farArm": {
               "rect": [
-                0,
-                484,
+                952,
+                403,
                 19,
                 63
               ],
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                275,
+                657,
+                69,
+                106
+              ],
+              "destination": [
+                105,
+                227
               ]
             }
           }
@@ -17374,7 +18123,7 @@
           "parts": {
             "torso": {
               "rect": [
-                623,
+                845,
                 109,
                 99,
                 93
@@ -17386,8 +18135,8 @@
             },
             "nearArm": {
               "rect": [
-                0,
-                400,
+                937,
+                310,
                 84,
                 82
               ],
@@ -17398,14 +18147,26 @@
             },
             "farArm": {
               "rect": [
-                21,
-                484,
+                973,
+                403,
                 36,
                 62
               ],
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                617,
+                549,
+                99,
+                101
+              ],
+              "destination": [
+                81,
+                222
               ]
             }
           }
@@ -17460,8 +18221,8 @@
           "parts": {
             "torso": {
               "rect": [
-                724,
-                109,
+                0,
+                215,
                 99,
                 93
               ],
@@ -17472,8 +18233,8 @@
             },
             "farArm": {
               "rect": [
-                285,
-                400,
+                272,
+                403,
                 58,
                 77
               ],
@@ -17484,14 +18245,26 @@
             },
             "nearArm": {
               "rect": [
-                904,
-                400,
+                836,
+                403,
                 41,
                 67
               ],
               "destination": [
                 121,
                 240
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                346,
+                657,
+                99,
+                101
+              ],
+              "destination": [
+                108,
+                222
               ]
             }
           }
@@ -17503,17 +18276,18 @@
       "accepted": true,
       "profileRevision": "wardrobe-eight-side-v5",
       "profileBases": {
-        "upper": 123.787
+        "upper": 122.665
       },
       "profileToneAudit": {
         "upper": {
           "standingMedian": 100.8946,
-          "generatedMedian": 98.6108,
-          "materialBase": 123.787,
+          "generatedMedian": 97.71679999999999,
+          "materialBase": 122.665,
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "6220a9185303920e534e2fdf6579fcd5e3f789f0934996630f7e861b3d03e2ff"
+      "upperComposite": "intact-painted-upper-v6",
+      "atlasSHA256": "4c18fa2dc2e9169665761f5d47a1aefdfa3236b8881f622939290e8524d065dc"
     },
     "top-sweater": {
       "kind": "top",
@@ -18023,6 +18797,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                552,
+                117,
+                104
+              ],
+              "destination": [
+                91,
+                229
+              ]
             }
           }
         },
@@ -18108,6 +18894,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                119,
+                552,
+                86,
+                99
+              ],
+              "destination": [
+                112,
+                231
               ]
             }
           }
@@ -18195,6 +18993,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                207,
+                552,
+                79,
+                127
+              ],
+              "destination": [
+                97,
+                229
+              ]
             }
           }
         },
@@ -18280,6 +19090,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                288,
+                552,
+                78,
+                92
+              ],
+              "destination": [
+                114,
+                226
               ]
             }
           }
@@ -18787,6 +19609,18 @@
                 83,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                752,
+                552,
+                117,
+                104
+              ],
+              "destination": [
+                80,
+                229
+              ]
             }
           }
         },
@@ -18872,6 +19706,18 @@
               "destination": [
                 92,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                871,
+                552,
+                86,
+                99
+              ],
+              "destination": [
+                90,
+                231
               ]
             }
           }
@@ -18959,6 +19805,18 @@
                 113,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                682,
+                79,
+                127
+              ],
+              "destination": [
+                112,
+                229
+              ]
             }
           }
         },
@@ -19044,6 +19902,18 @@
               "destination": [
                 130,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                81,
+                682,
+                78,
+                92
+              ],
+              "destination": [
+                96,
+                226
               ]
             }
           }
@@ -19131,6 +20001,18 @@
                 85,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                368,
+                552,
+                105,
+                98
+              ],
+              "destination": [
+                81,
+                227
+              ]
             }
           }
         },
@@ -19216,6 +20098,18 @@
               "destination": [
                 146,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                161,
+                682,
+                105,
+                98
+              ],
+              "destination": [
+                102,
+                227
               ]
             }
           }
@@ -19303,6 +20197,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                475,
+                552,
+                85,
+                93
+              ],
+              "destination": [
+                105,
+                232
+              ]
             }
           }
         },
@@ -19388,6 +20294,18 @@
               "destination": [
                 132,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                268,
+                682,
+                85,
+                93
+              ],
+              "destination": [
+                98,
+                232
               ]
             }
           }
@@ -19475,6 +20393,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                562,
+                552,
+                87,
+                128
+              ],
+              "destination": [
+                92,
+                228
+              ]
             }
           }
         },
@@ -19560,6 +20490,18 @@
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                355,
+                682,
+                87,
+                128
+              ],
+              "destination": [
+                109,
+                228
               ]
             }
           }
@@ -19647,6 +20589,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                651,
+                552,
+                99,
+                99
+              ],
+              "destination": [
+                81,
+                224
+              ]
             }
           }
         },
@@ -19733,6 +20687,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                444,
+                682,
+                99,
+                99
+              ],
+              "destination": [
+                108,
+                224
+              ]
             }
           }
         }
@@ -19753,7 +20719,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "db31983951f9592f8cc02fa761b4ca808040c3b57fe2eb04201fdbc0a785903a"
+      "atlasSHA256": "261ea6f57471046a79681587a53e8c75a5e35b42cfef8ebbcbb18087dafd13ac",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-flannel": {
       "kind": "top",
@@ -20259,6 +21226,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                535,
+                111,
+                101
+              ],
+              "destination": [
+                91,
+                230
+              ]
             }
           }
         },
@@ -20344,6 +21323,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                113,
+                535,
+                90,
+                99
+              ],
+              "destination": [
+                109,
+                231
               ]
             }
           }
@@ -20431,6 +21422,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                205,
+                535,
+                74,
+                102
+              ],
+              "destination": [
+                104,
+                229
+              ]
             }
           }
         },
@@ -20516,6 +21519,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                281,
+                535,
+                77,
+                91
+              ],
+              "destination": [
+                114,
+                226
               ]
             }
           }
@@ -21019,6 +22034,18 @@
                 87,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                747,
+                535,
+                111,
+                101
+              ],
+              "destination": [
+                86,
+                230
+              ]
             }
           }
         },
@@ -21104,6 +22131,18 @@
               "destination": [
                 90,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                860,
+                535,
+                90,
+                99
+              ],
+              "destination": [
+                89,
+                231
               ]
             }
           }
@@ -21191,6 +22230,18 @@
                 114,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                664,
+                74,
+                102
+              ],
+              "destination": [
+                110,
+                229
+              ]
             }
           }
         },
@@ -21276,6 +22327,18 @@
               "destination": [
                 139,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                76,
+                664,
+                77,
+                91
+              ],
+              "destination": [
+                97,
+                226
               ]
             }
           }
@@ -21363,6 +22426,18 @@
                 93,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                360,
+                535,
+                95,
+                100
+              ],
+              "destination": [
+                90,
+                227
+              ]
             }
           }
         },
@@ -21448,6 +22523,18 @@
               "destination": [
                 146,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                155,
+                664,
+                95,
+                100
+              ],
+              "destination": [
+                103,
+                227
               ]
             }
           }
@@ -21535,6 +22622,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                457,
+                535,
+                89,
+                95
+              ],
+              "destination": [
+                102,
+                229
+              ]
             }
           }
         },
@@ -21620,6 +22719,18 @@
               "destination": [
                 146,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                252,
+                664,
+                89,
+                95
+              ],
+              "destination": [
+                97,
+                229
               ]
             }
           }
@@ -21707,6 +22818,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                548,
+                535,
+                92,
+                127
+              ],
+              "destination": [
+                95,
+                228
+              ]
             }
           }
         },
@@ -21792,6 +22915,18 @@
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                343,
+                664,
+                92,
+                127
+              ],
+              "destination": [
+                101,
+                228
               ]
             }
           }
@@ -21879,6 +23014,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                642,
+                535,
+                103,
+                100
+              ],
+              "destination": [
+                80,
+                224
+              ]
             }
           }
         },
@@ -21965,6 +23112,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                437,
+                664,
+                103,
+                100
+              ],
+              "destination": [
+                105,
+                224
+              ]
             }
           }
         }
@@ -21984,7 +23143,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "9df9e9131e750e163c244ea51d7e4a318886726373ce489a2050c1720cbb7725"
+      "atlasSHA256": "c6b2744f774f5f08365c3c299cf8813ac2d8972d30fc1c480b90e1deb7b26af2",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-jacket": {
       "kind": "top",
@@ -22494,6 +23654,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                528,
+                115,
+                105
+              ],
+              "destination": [
+                91,
+                228
+              ]
             }
           }
         },
@@ -22579,6 +23751,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                117,
+                528,
+                89,
+                100
+              ],
+              "destination": [
+                109,
+                231
               ]
             }
           }
@@ -22666,6 +23850,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                208,
+                528,
+                80,
+                128
+              ],
+              "destination": [
+                96,
+                228
+              ]
             }
           }
         },
@@ -22751,6 +23947,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                290,
+                528,
+                83,
+                96
+              ],
+              "destination": [
+                111,
+                224
               ]
             }
           }
@@ -23258,6 +24466,18 @@
                 83,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                749,
+                528,
+                115,
+                105
+              ],
+              "destination": [
+                82,
+                228
+              ]
             }
           }
         },
@@ -23343,6 +24563,18 @@
               "destination": [
                 92,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                866,
+                528,
+                89,
+                100
+              ],
+              "destination": [
+                90,
+                231
               ]
             }
           }
@@ -23430,6 +24662,18 @@
                 112,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                658,
+                80,
+                128
+              ],
+              "destination": [
+                112,
+                228
+              ]
             }
           }
         },
@@ -23515,6 +24759,18 @@
               "destination": [
                 138,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                82,
+                658,
+                83,
+                96
+              ],
+              "destination": [
+                94,
+                224
               ]
             }
           }
@@ -23602,6 +24858,18 @@
                 89,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                375,
+                528,
+                97,
+                98
+              ],
+              "destination": [
+                86,
+                228
+              ]
             }
           }
         },
@@ -23687,6 +24955,18 @@
               "destination": [
                 146,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                167,
+                658,
+                97,
+                98
+              ],
+              "destination": [
+                105,
+                228
               ]
             }
           }
@@ -23774,6 +25054,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                474,
+                528,
+                84,
+                91
+              ],
+              "destination": [
+                106,
+                232
+              ]
             }
           }
         },
@@ -23859,6 +25151,18 @@
               "destination": [
                 133,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                266,
+                658,
+                84,
+                91
+              ],
+              "destination": [
+                98,
+                232
               ]
             }
           }
@@ -23946,6 +25250,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                560,
+                528,
+                84,
+                127
+              ],
+              "destination": [
+                94,
+                229
+              ]
             }
           }
         },
@@ -24031,6 +25347,18 @@
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                352,
+                658,
+                84,
+                127
+              ],
+              "destination": [
+                110,
+                229
               ]
             }
           }
@@ -24118,6 +25446,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                646,
+                528,
+                101,
+                100
+              ],
+              "destination": [
+                80,
+                224
+              ]
             }
           }
         },
@@ -24204,6 +25544,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                438,
+                658,
+                101,
+                100
+              ],
+              "destination": [
+                107,
+                224
+              ]
             }
           }
         }
@@ -24224,7 +25576,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "7313124f176935957235f338338ebcf2da9a5797d4a4e887db315e02aaae0bcc"
+      "atlasSHA256": "a75ad8ff03a3270d995c9cda158fd87bd3e1e51c70f293b6c041ef5d95cfac39",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-officer": {
       "kind": "top",
@@ -24734,6 +26087,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                535,
+                114,
+                106
+              ],
+              "destination": [
+                89,
+                228
+              ]
             }
           }
         },
@@ -24819,6 +26184,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                116,
+                535,
+                82,
+                99
+              ],
+              "destination": [
+                115,
+                231
               ]
             }
           }
@@ -24906,6 +26283,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                200,
+                535,
+                77,
+                127
+              ],
+              "destination": [
+                97,
+                229
+              ]
             }
           }
         },
@@ -24991,6 +26380,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                279,
+                535,
+                80,
+                90
+              ],
+              "destination": [
+                113,
+                227
               ]
             }
           }
@@ -25498,6 +26899,18 @@
                 86,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                740,
+                535,
+                114,
+                106
+              ],
+              "destination": [
+                85,
+                228
+              ]
             }
           }
         },
@@ -25583,6 +26996,18 @@
               "destination": [
                 93,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                856,
+                535,
+                82,
+                99
+              ],
+              "destination": [
+                91,
+                231
               ]
             }
           }
@@ -25670,6 +27095,18 @@
                 115,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                940,
+                535,
+                77,
+                127
+              ],
+              "destination": [
+                114,
+                229
+              ]
             }
           }
         },
@@ -25755,6 +27192,18 @@
               "destination": [
                 131,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                664,
+                80,
+                90
+              ],
+              "destination": [
+                95,
+                227
               ]
             }
           }
@@ -25842,6 +27291,18 @@
                 85,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                361,
+                535,
+                103,
+                99
+              ],
+              "destination": [
+                81,
+                227
+              ]
             }
           }
         },
@@ -25927,6 +27388,18 @@
               "destination": [
                 146,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                82,
+                664,
+                103,
+                99
+              ],
+              "destination": [
+                104,
+                227
               ]
             }
           }
@@ -26014,6 +27487,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                466,
+                535,
+                83,
+                93
+              ],
+              "destination": [
+                107,
+                230
+              ]
             }
           }
         },
@@ -26099,6 +27584,18 @@
               "destination": [
                 134,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                187,
+                664,
+                83,
+                93
+              ],
+              "destination": [
+                98,
+                230
               ]
             }
           }
@@ -26186,6 +27683,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                551,
+                535,
+                85,
+                127
+              ],
+              "destination": [
+                92,
+                229
+              ]
             }
           }
         },
@@ -26271,6 +27780,18 @@
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                272,
+                664,
+                85,
+                127
+              ],
+              "destination": [
+                111,
+                229
               ]
             }
           }
@@ -26358,6 +27879,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                638,
+                535,
+                100,
+                99
+              ],
+              "destination": [
+                80,
+                224
+              ]
             }
           }
         },
@@ -26444,6 +27977,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                359,
+                664,
+                100,
+                99
+              ],
+              "destination": [
+                108,
+                224
+              ]
             }
           }
         }
@@ -26464,7 +28009,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "fa1aeae57d5013db84e45db0749e3d4da68826c312bb207045eb698d044546ea"
+      "atlasSHA256": "51ab353514d9ba7cc87ee667b46fd1cd17b5633ae4ed6912c98ef863802d4779",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-garden": {
       "kind": "top",
@@ -27082,6 +28628,18 @@
                 147,
                 355
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                553,
+                116,
+                131
+              ],
+              "destination": [
+                88,
+                231
+              ]
             }
           }
         },
@@ -27168,6 +28726,18 @@
                 125,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                118,
+                553,
+                86,
+                111
+              ],
+              "destination": [
+                108,
+                233
+              ]
             }
           }
         },
@@ -27253,6 +28823,18 @@
               "destination": [
                 125,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                206,
+                553,
+                66,
+                112
+              ],
+              "destination": [
+                110,
+                231
               ]
             }
           }
@@ -27363,6 +28945,18 @@
               "destination": [
                 115,
                 358
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                274,
+                553,
+                80,
+                136
+              ],
+              "destination": [
+                112,
+                229
               ]
             }
           }
@@ -27978,6 +29572,18 @@
                 134,
                 355
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                750,
+                553,
+                116,
+                131
+              ],
+              "destination": [
+                84,
+                231
+              ]
             }
           }
         },
@@ -28064,6 +29670,18 @@
                 96,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                868,
+                553,
+                86,
+                111
+              ],
+              "destination": [
+                94,
+                233
+              ]
             }
           }
         },
@@ -28149,6 +29767,18 @@
               "destination": [
                 115,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                956,
+                553,
+                66,
+                112
+              ],
+              "destination": [
+                112,
+                231
               ]
             }
           }
@@ -28260,6 +29890,18 @@
                 167,
                 358
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                694,
+                80,
+                136
+              ],
+              "destination": [
+                96,
+                229
+              ]
             }
           }
         },
@@ -28369,6 +30011,18 @@
               "destination": [
                 99,
                 351
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                356,
+                553,
+                109,
+                139
+              ],
+              "destination": [
+                79,
+                229
               ]
             }
           }
@@ -28480,6 +30134,18 @@
                 143,
                 351
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                82,
+                694,
+                109,
+                139
+              ],
+              "destination": [
+                100,
+                229
+              ]
             }
           }
         },
@@ -28589,6 +30255,18 @@
               "destination": [
                 132,
                 361
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                467,
+                553,
+                77,
+                138
+              ],
+              "destination": [
+                111,
+                233
               ]
             }
           }
@@ -28700,6 +30378,18 @@
                 149,
                 361
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                193,
+                694,
+                77,
+                138
+              ],
+              "destination": [
+                100,
+                233
+              ]
             }
           }
         },
@@ -28809,6 +30499,18 @@
               "destination": [
                 119,
                 338
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                546,
+                553,
+                90,
+                126
+              ],
+              "destination": [
+                92,
+                233
               ]
             }
           }
@@ -28920,6 +30622,18 @@
                 162,
                 338
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                272,
+                694,
+                90,
+                126
+              ],
+              "destination": [
+                106,
+                233
+              ]
             }
           }
         },
@@ -29029,6 +30743,18 @@
               "destination": [
                 106,
                 315
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                638,
+                553,
+                110,
+                134
+              ],
+              "destination": [
+                82,
+                228
               ]
             }
           }
@@ -29140,6 +30866,18 @@
                 175,
                 315
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                364,
+                694,
+                110,
+                134
+              ],
+              "destination": [
+                96,
+                228
+              ]
             }
           }
         }
@@ -29161,7 +30899,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "72b1d82c6b05313e91c2928a58c079e6e09c3bde75eac8fc3cabba742fd175af"
+      "atlasSHA256": "6d7b4b6e562c1a5c207ce34f42bc973759c34f6f0e46d7b4bad42ff4f0bbf332",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-labcoat": {
       "kind": "top",
@@ -29791,6 +31530,18 @@
                 146,
                 318
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                692,
+                115,
+                148
+              ],
+              "destination": [
+                92,
+                227
+              ]
             }
           }
         },
@@ -29900,6 +31651,18 @@
               "destination": [
                 144,
                 329
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                117,
+                692,
+                95,
+                135
+              ],
+              "destination": [
+                102,
+                228
               ]
             }
           }
@@ -30011,6 +31774,18 @@
                 102,
                 318
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                214,
+                692,
+                84,
+                142
+              ],
+              "destination": [
+                95,
+                226
+              ]
             }
           }
         },
@@ -30120,6 +31895,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                300,
+                692,
+                96,
+                153
+              ],
+              "destination": [
+                110,
+                225
               ]
             }
           }
@@ -30761,6 +32548,18 @@
                 98,
                 318
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                807,
+                692,
+                115,
+                148
+              ],
+              "destination": [
+                81,
+                227
+              ]
             }
           }
         },
@@ -30870,6 +32669,18 @@
               "destination": [
                 110,
                 328
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                924,
+                692,
+                95,
+                135
+              ],
+              "destination": [
+                91,
+                228
               ]
             }
           }
@@ -30981,6 +32792,18 @@
                 110,
                 318
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                847,
+                84,
+                142
+              ],
+              "destination": [
+                109,
+                226
+              ]
             }
           }
         },
@@ -31090,6 +32913,18 @@
               "destination": [
                 139,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                86,
+                847,
+                96,
+                153
+              ],
+              "destination": [
+                82,
+                225
               ]
             }
           }
@@ -31201,6 +33036,18 @@
                 98,
                 318
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                398,
+                692,
+                102,
+                149
+              ],
+              "destination": [
+                85,
+                227
+              ]
             }
           }
         },
@@ -31310,6 +33157,18 @@
               "destination": [
                 103,
                 318
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                184,
+                847,
+                102,
+                149
+              ],
+              "destination": [
+                101,
+                227
               ]
             }
           }
@@ -31421,6 +33280,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                502,
+                692,
+                91,
+                153
+              ],
+              "destination": [
+                99,
+                231
+              ]
             }
           }
         },
@@ -31530,6 +33401,18 @@
               "destination": [
                 146,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                288,
+                847,
+                91,
+                153
+              ],
+              "destination": [
+                98,
+                231
               ]
             }
           }
@@ -31641,6 +33524,18 @@
                 102,
                 318
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                595,
+                692,
+                93,
+                138
+              ],
+              "destination": [
+                92,
+                228
+              ]
             }
           }
         },
@@ -31750,6 +33645,18 @@
               "destination": [
                 139,
                 318
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                381,
+                847,
+                93,
+                138
+              ],
+              "destination": [
+                103,
+                228
               ]
             }
           }
@@ -31861,6 +33768,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                690,
+                692,
+                115,
+                153
+              ],
+              "destination": [
+                82,
+                223
+              ]
             }
           }
         },
@@ -31971,6 +33890,18 @@
                 139,
                 315
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                476,
+                847,
+                115,
+                153
+              ],
+              "destination": [
+                91,
+                223
+              ]
             }
           }
         }
@@ -31992,7 +33923,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "90c5169bfa5334e407211f3ceed450b2b0424ff1f185cdc89ca738d3d3a0e18b"
+      "atlasSHA256": "120272b0de90437b51f801f3b4298f71f04f37430d3157850aa407fe659f297c",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-overalls": {
       "kind": "top",
@@ -32669,6 +34601,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                941,
+                113,
+                106
+              ],
+              "destination": [
+                91,
+                228
+              ]
             }
           }
         },
@@ -32778,6 +34722,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                115,
+                941,
+                84,
+                102
+              ],
+              "destination": [
+                115,
+                230
               ]
             }
           }
@@ -32889,6 +34845,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                201,
+                941,
+                81,
+                127
+              ],
+              "destination": [
+                94,
+                229
+              ]
             }
           }
         },
@@ -32998,6 +34966,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                284,
+                941,
+                79,
+                96
+              ],
+              "destination": [
+                114,
+                225
               ]
             }
           }
@@ -33675,6 +35655,18 @@
                 87,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                745,
+                941,
+                113,
+                106
+              ],
+              "destination": [
+                84,
+                228
+              ]
             }
           }
         },
@@ -33784,6 +35776,18 @@
               "destination": [
                 90,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                860,
+                941,
+                84,
+                102
+              ],
+              "destination": [
+                89,
+                230
               ]
             }
           }
@@ -33895,6 +35899,18 @@
                 113,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                1070,
+                81,
+                127
+              ],
+              "destination": [
+                113,
+                229
+              ]
             }
           }
         },
@@ -34004,6 +36020,18 @@
               "destination": [
                 139,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                83,
+                1070,
+                79,
+                96
+              ],
+              "destination": [
+                95,
+                225
               ]
             }
           }
@@ -34115,6 +36143,18 @@
                 85,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                365,
+                941,
+                102,
+                99
+              ],
+              "destination": [
+                82,
+                227
+              ]
             }
           }
         },
@@ -34224,6 +36264,18 @@
               "destination": [
                 146,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                164,
+                1070,
+                102,
+                99
+              ],
+              "destination": [
+                104,
+                227
               ]
             }
           }
@@ -34335,6 +36387,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                469,
+                941,
+                80,
+                96
+              ],
+              "destination": [
+                110,
+                229
+              ]
             }
           }
         },
@@ -34444,6 +36508,18 @@
               "destination": [
                 146,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                268,
+                1070,
+                80,
+                96
+              ],
+              "destination": [
+                98,
+                229
               ]
             }
           }
@@ -34555,6 +36631,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                551,
+                941,
+                85,
+                127
+              ],
+              "destination": [
+                94,
+                229
+              ]
             }
           }
         },
@@ -34664,6 +36752,18 @@
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                350,
+                1070,
+                85,
+                127
+              ],
+              "destination": [
+                109,
+                229
               ]
             }
           }
@@ -34775,6 +36875,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                638,
+                941,
+                105,
+                101
+              ],
+              "destination": [
+                81,
+                223
+              ]
             }
           }
         },
@@ -34885,6 +36997,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                437,
+                1070,
+                105,
+                101
+              ],
+              "destination": [
+                102,
+                223
+              ]
             }
           }
         }
@@ -34911,7 +37035,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "827a73281d5cb52300c93bec02a8a2e10d01a0d95058bf639c5ff91dc939b9e1"
+      "atlasSHA256": "125b070708d9d51ed7fbbecba0c8c30ca3906c6e6ee3dfc23737fc12832d3805",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-pjs": {
       "kind": "top",
@@ -35541,6 +37666,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                936,
+                112,
+                107
+              ],
+              "destination": [
+                91,
+                227
+              ]
             }
           }
         },
@@ -35650,6 +37787,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                114,
+                936,
+                89,
+                104
+              ],
+              "destination": [
+                111,
+                229
               ]
             }
           }
@@ -35761,6 +37910,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                205,
+                936,
+                65,
+                108
+              ],
+              "destination": [
+                109,
+                227
+              ]
             }
           }
         },
@@ -35870,6 +38031,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                272,
+                936,
+                80,
+                95
+              ],
+              "destination": [
+                112,
+                226
               ]
             }
           }
@@ -36497,6 +38670,18 @@
                 87,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                742,
+                936,
+                112,
+                107
+              ],
+              "destination": [
+                85,
+                227
+              ]
             }
           }
         },
@@ -36606,6 +38791,18 @@
               "destination": [
                 91,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                856,
+                936,
+                89,
+                104
+              ],
+              "destination": [
+                88,
+                229
               ]
             }
           }
@@ -36717,6 +38914,18 @@
                 115,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                947,
+                936,
+                65,
+                108
+              ],
+              "destination": [
+                114,
+                227
+              ]
             }
           }
         },
@@ -36826,6 +39035,18 @@
               "destination": [
                 139,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                1068,
+                80,
+                95
+              ],
+              "destination": [
+                96,
+                226
               ]
             }
           }
@@ -36937,6 +39158,18 @@
                 86,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                354,
+                936,
+                102,
+                99
+              ],
+              "destination": [
+                83,
+                228
+              ]
             }
           }
         },
@@ -37046,6 +39279,18 @@
               "destination": [
                 146,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                82,
+                1068,
+                102,
+                99
+              ],
+              "destination": [
+                103,
+                228
               ]
             }
           }
@@ -37157,6 +39402,18 @@
                 124,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                458,
+                936,
+                87,
+                95
+              ],
+              "destination": [
+                103,
+                230
+              ]
             }
           }
         },
@@ -37266,6 +39523,18 @@
               "destination": [
                 146,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                186,
+                1068,
+                87,
+                95
+              ],
+              "destination": [
+                98,
+                230
               ]
             }
           }
@@ -37377,6 +39646,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                547,
+                936,
+                90,
+                130
+              ],
+              "destination": [
+                89,
+                226
+              ]
             }
           }
         },
@@ -37486,6 +39767,18 @@
               "destination": [
                 145,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                275,
+                1068,
+                90,
+                130
+              ],
+              "destination": [
+                109,
+                226
               ]
             }
           }
@@ -37597,6 +39890,18 @@
                 125,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                639,
+                936,
+                101,
+                101
+              ],
+              "destination": [
+                80,
+                223
+              ]
             }
           }
         },
@@ -37707,6 +40012,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                367,
+                1068,
+                101,
+                101
+              ],
+              "destination": [
+                107,
+                223
+              ]
             }
           }
         }
@@ -37734,7 +40051,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "84f18b6fab91093e3843858cb45454a090923459df4c4abb42c17d92f2b9bee2"
+      "atlasSHA256": "887c581cfaf12046a57223c9a47f994d86f3b548c13420e8d4864d6fe8e17586",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "top-suit": {
       "kind": "top",
@@ -38364,6 +40682,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                927,
+                117,
+                108
+              ],
+              "destination": [
+                91,
+                227
+              ]
             }
           }
         },
@@ -38473,6 +40803,18 @@
               "destination": [
                 125,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                119,
+                927,
+                93,
+                104
+              ],
+              "destination": [
+                108,
+                229
               ]
             }
           }
@@ -38584,6 +40926,18 @@
                 125,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                214,
+                927,
+                67,
+                106
+              ],
+              "destination": [
+                106,
+                228
+              ]
             }
           }
         },
@@ -38694,6 +41048,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                283,
+                927,
+                88,
+                96
+              ],
+              "destination": [
+                105,
+                225
               ]
             }
           }
@@ -39321,6 +41687,18 @@
                 83,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                766,
+                927,
+                117,
+                108
+              ],
+              "destination": [
+                80,
+                227
+              ]
             }
           }
         },
@@ -39431,6 +41809,18 @@
                 90,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                885,
+                927,
+                93,
+                104
+              ],
+              "destination": [
+                87,
+                229
+              ]
             }
           }
         },
@@ -39540,6 +41930,18 @@
               "destination": [
                 115,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                0,
+                1059,
+                67,
+                106
+              ],
+              "destination": [
+                115,
+                228
               ]
             }
           }
@@ -39652,6 +42054,18 @@
                 139,
                 245
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                69,
+                1059,
+                88,
+                96
+              ],
+              "destination": [
+                95,
+                225
+              ]
             }
           }
         },
@@ -39761,6 +42175,18 @@
               "destination": [
                 90,
                 247
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                373,
+                927,
+                97,
+                104
+              ],
+              "destination": [
+                87,
+                226
               ]
             }
           }
@@ -39872,6 +42298,18 @@
                 146,
                 247
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                159,
+                1059,
+                97,
+                104
+              ],
+              "destination": [
+                104,
+                226
+              ]
             }
           }
         },
@@ -39981,6 +42419,18 @@
               "destination": [
                 124,
                 251
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                472,
+                927,
+                98,
+                102
+              ],
+              "destination": [
+                93,
+                227
               ]
             }
           }
@@ -40092,6 +42542,18 @@
                 146,
                 251
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                258,
+                1059,
+                98,
+                102
+              ],
+              "destination": [
+                97,
+                227
+              ]
             }
           }
         },
@@ -40201,6 +42663,18 @@
               "destination": [
                 125,
                 248
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                572,
+                927,
+                90,
+                130
+              ],
+              "destination": [
+                86,
+                226
               ]
             }
           }
@@ -40312,6 +42786,18 @@
                 145,
                 248
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                358,
+                1059,
+                90,
+                130
+              ],
+              "destination": [
+                112,
+                226
+              ]
             }
           }
         },
@@ -40421,6 +42907,18 @@
               "destination": [
                 125,
                 245
+              ]
+            },
+            "wholeUpper": {
+              "rect": [
+                664,
+                927,
+                100,
+                106
+              ],
+              "destination": [
+                80,
+                221
               ]
             }
           }
@@ -40532,6 +43030,18 @@
                 121,
                 240
               ]
+            },
+            "wholeUpper": {
+              "rect": [
+                450,
+                1059,
+                100,
+                106
+              ],
+              "destination": [
+                108,
+                221
+              ]
             }
           }
         }
@@ -40559,7 +43069,8 @@
           "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
         }
       },
-      "atlasSHA256": "b57df7e9c77731da21f1a69920b3715befbca2db6a4201107aa3764ced0cb2a9"
+      "atlasSHA256": "d8d686ca76b83c9567c0fa805057f05b55c050754fe37c7a99689308572abf5d",
+      "upperComposite": "intact-painted-upper-v6"
     },
     "bottom-cargo": {
       "kind": "bottom",
@@ -56752,6 +59263,7 @@
     "wardrobe-v5/assets/shoe-boots.png": "8a7adfb18fe245b77f351f6dc3b7554622284e95a9695d9edcf31557f151b0a8",
     "wardrobe-v5/assets/shoe-rainboots.png": "c835f8d3ad0cfd62670c8571ddac39c4053e95b372805a9c4b4618b284970905",
     "wardrobe-v5/assets/shoe-sandals.png": "e38880cf13a61d71879d77431f434e0aa2a9a435982e79bfa5fdbfd2749c02d7",
-    "wardrobe-v5/assets/correction-seven.png": "29ace58a85208c1be4a263253234867f37d3925434855efb2d05e4a7976c4b6c"
+    "wardrobe-v5/assets/correction-seven.png": "29ace58a85208c1be4a263253234867f37d3925434855efb2d05e4a7976c4b6c",
+    "wardrobe-v5/assets/arm-v6-cardigan-contact-clean.png": "4216456ea49b0f01a5df71d6133604b1f9f5b04bb12b1730265cc64a8d62c426"
   }
 }

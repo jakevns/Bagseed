@@ -1,4 +1,4 @@
-/* Thermometer samples. Fixed physical sizes and original artwork proportions at the approved exterior mounts. */
+/* Approved thermometers. Fixed physical sizes and original artwork proportions at the approved exterior mounts. */
 (()=>{
  'use strict';
  const DATA=__BAGSEED_SENSORS_DATA__,image=new Image(),original=Gear.sensor,icon=drawGearIcon;let loaded=false;

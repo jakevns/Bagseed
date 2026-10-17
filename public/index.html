@@ -27845,11 +27845,15 @@ function remainingHairSource(L,dir){
     const H=head(L,dir,blink,true),joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),nx=48+(p.neck[0]-48)*width,ny=143+(p.neck[1]-143)*sy,hx=nx-32,hy=ny-joinY/3;
     g.drawImage(H.bagseedNeckBridge,hx,hy,64,H.height/3);
     const lower=items[top].fullSuit?top:bottom;
-    const layers=[[top,'farArm'],['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot'],[top,'torso'],['skin-base','nearLeg'],[lower,'nearLeg']];
-    // Aprons and coats keep their original painted hem pixels over trousers.
-    // Their leg-labelled hem pieces are additional top layers, not bottoms.
-    if(items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
-    layers.push([shoe,'nearFoot'],[top,'nearArm']);
+    // Side shirts retain their complete painted shoulder/arm silhouette.
+    // Re-slicing sleeves around inferred wrists hid cuffs behind trousers.
+    const intact=items[top].frames[f].parts.wholeUpper,layers=[];
+    if(!intact)layers.push([top,'farArm']);
+    layers.push(['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot']);
+    if(!intact)layers.push([top,'torso']);
+    layers.push(['skin-base','nearLeg'],[lower,'nearLeg']);
+    if(!intact&&items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
+    layers.push([shoe,'nearFoot'],[top,intact?'wholeUpper':'nearArm']);
     for(const [item,name]of layers){
       const part=walkPart(item,f,name,L,walk);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
     }
@@ -28089,7 +28093,7 @@ function remainingHairSource(L,dir){
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-wardrobe-eight-side-v5',walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-arm-layer-v6',walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();
 
@@ -29626,10 +29630,10 @@ function remainingHairSource(L,dir){
 
 </script>
 <script id="bagseed-sensors-production-code">
-/* Thermometer samples. Fixed physical sizes and original artwork proportions at the approved exterior mounts. */
+/* Approved thermometers. Fixed physical sizes and original artwork proportions at the approved exterior mounts. */
 (()=>{
  'use strict';
- const DATA={"revision":"sensors-1","status":"proposal","path":"assets/sensors-atlas.png","sha256":"a97601e9b9010b94d46efb08266ab1cea99a334ab340934ffbc9b91003c7e0fa","size":[1447,1087],"runtime":{"path":"assets/sensors-atlas.webp","sha256":"016134ad78b990991f8cefd69fcb32a4d54d7687f75980b6db5574461937cbe7","publicPath":"assets/sensors/sensors-016134ad78b9.webp"},"tiers":{"0":{"name":"The Back of Your Hand","price":0,"width":9,"height":8.816326530612244,"crop":[206,71,441,432]},"1":{"name":"Probably-A-Thermometer","price":6.99,"width":9,"height":8.26875,"crop":[819,70,480,441],"dial":[1060,299,115],"reading":[968,350,184,62]},"2":{"name":"TrueRead Hygrometer","price":24.99,"width":14,"height":9.66612641815235,"crop":[82,572,617,426],"display":[181,697,419,145]},"3":{"name":"Canopy Sentinel","price":89,"width":18,"height":12.816455696202532,"crop":[765,554,632,450],"display":[915,656,333,104],"graph":[915,833,333,44],"led":[999,941,15]}},"mountScale":0.72,"image":"assets/sensors/sensors-016134ad78b9.webp"},image=new Image(),original=Gear.sensor,icon=drawGearIcon;let loaded=false;
+ const DATA={"revision":"sensors-1","status":"approved","path":"assets/sensors-atlas.png","sha256":"a97601e9b9010b94d46efb08266ab1cea99a334ab340934ffbc9b91003c7e0fa","size":[1447,1087],"runtime":{"path":"assets/sensors-atlas.webp","sha256":"016134ad78b990991f8cefd69fcb32a4d54d7687f75980b6db5574461937cbe7","publicPath":"assets/sensors/sensors-016134ad78b9.webp"},"tiers":{"0":{"name":"The Back of Your Hand","price":0,"width":9,"height":8.816326530612244,"crop":[206,71,441,432]},"1":{"name":"Probably-A-Thermometer","price":6.99,"width":9,"height":8.26875,"crop":[819,70,480,441],"dial":[1060,299,115],"reading":[968,350,184,62]},"2":{"name":"TrueRead Hygrometer","price":24.99,"width":14,"height":9.66612641815235,"crop":[82,572,617,426],"display":[181,697,419,145]},"3":{"name":"Canopy Sentinel","price":89,"width":18,"height":12.816455696202532,"crop":[765,554,632,450],"display":[915,656,333,104],"graph":[915,833,333,44],"led":[999,941,15]}},"mountScale":0.72,"approvedDate":"2026-10-17","image":"assets/sensors/sensors-016134ad78b9.webp"},image=new Image(),original=Gear.sensor,icon=drawGearIcon;let loaded=false;
  function project(a,r){const[x,y,w,h]=a.crop;return [(r[0]-x)*a.width/w,(r[1]-y)*a.height/h,r[2]*a.width/w,(r[3]||0)*a.height/h];}
  function history(c,a,log){const[x,y,w,h]=project(a,a.graph);c.save();c.beginPath();c.rect(x,y,w,h);c.clip();c.lineWidth=.11;c.strokeStyle='#52684c';for(let i=1;i<4;i++){c.beginPath();c.moveTo(x,y+h*i/4);c.lineTo(x+w,y+h*i/4);c.stroke();}const recent=(log||[]).slice(-24);if(recent.length>1){for(const[k,color,lo,hi]of [[0,'#36553d',45,105],[1,'#458b86',20,90]]){c.strokeStyle=color;c.lineWidth=.16;c.beginPath();recent.forEach((v,i)=>{const px=x+i*w/(recent.length-1),py=y+h*(1-clamp((v[k]-lo)/(hi-lo),0,1));i?c.lineTo(px,py):c.moveTo(px,py);});c.stroke();}}c.restore();}
  function sprite(c,x,y,n,env={temp:74,hum:55},log=[],failed=false){const a=DATA.tiers[n];if(!loaded||!a)return;c.save();c.translate(x,y);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...a.crop,0,0,a.width,a.height);

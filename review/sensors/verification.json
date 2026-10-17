@@ -1,13 +1,21 @@
 {
-  "status": "local samples awaiting artwork approval",
+  "status": "approved for main; merged release validated",
   "entryPoint": "public/index.html",
   "buildAndSourceChecks": "passed",
-  "characterRevisionPreserved": "custom-walk-wardrobe-eight-side-v5",
+  "characterRevisionPreserved": "custom-walk-arm-layer-v6",
   "sensorPurchaseDeliverySaveReload": "passed",
   "sourceAndRuntimeRGBAIdentical": true,
   "sensorCentersAndTopMountsPreserved": true,
   "controllerSizePreserved": true,
   "sensorScaleFixedAcrossFourTents": 0.72,
   "artworkAspectRatiosPreserved": true,
-  "reviewHeadersUseIdenticalWorldCropAndZoom": true
+  "reviewHeadersUseIdenticalWorldCropAndZoom": true,
+  "mergedMain": "c6864e5",
+  "mergedReleaseChecks": {
+    "buildAndCharacterHashes": "passed",
+    "allFourDesignsAcrossOpenClosedTents": "32 cases passed",
+    "sensorPurchaseDeliverySaveReload": "passed",
+    "starterTentLayeringZipperSaveReload": "passed",
+    "creatorMirrorSideStrideHTTP": "passed"
+  }
 }

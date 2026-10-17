@@ -1,6 +1,6 @@
-# Thermometer and sensor artwork samples
+# Approved thermometer and sensor artwork
 
-Awaiting user artwork approval. Includes the free paper note for the existing hand-reading option, Probably-A-Thermometer ($6.99), TrueRead Hygrometer ($24.99), and Canopy Sentinel ($89). No new products or changes to prices, noise, failure chances, installation, controls or climate calculations.
+Approved for publication on 2026-10-17. Includes the free paper note for the existing hand-reading option, Probably-A-Thermometer ($6.99), TrueRead Hygrometer ($24.99), and Canopy Sentinel ($89). No new products or changes to prices, noise, failure chances, installation, controls or climate calculations.
 
 The unchanged generated PNG is retained in assets. The fingerprinted runtime WebP has identical decoded RGBA pixels; the compiler checks source/runtime/public hashes and crop bounds. Sensor decoding participates in the startup readiness gate.
 

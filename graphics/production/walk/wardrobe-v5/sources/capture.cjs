@@ -25,6 +25,6 @@ html=html.replace(/<script id="bagseed-illustrated-character-data"[^>]*><\/scrip
     const board=document.createElement('canvas');board.width=2304;board.height=Math.min(4,sets.length-group)*432;const g=board.getContext('2d');g.fillStyle='#292330';g.fillRect(0,0,board.width,board.height);
     sets.slice(group,group+4).forEach(([id,L],row)=>{for(let frame=0;frame<8;frame++)g.drawImage(BagseedArt.sprite(L,'right',frame,0,0,0,false,3,true),frame*288,row*432);g.fillStyle='#efe7d7';g.font='18px sans-serif';g.fillText(id,8,row*432+25);});boards['group-'+group]=board.toDataURL();
    }return {boards};
-  },inventory);fs.mkdirSync(out,{recursive:true});for(const[id,url]of Object.entries(result.boards))fs.writeFileSync(path.join(out,id+'.png'),Buffer.from(url.split(',')[1],'base64'));if(errors.length)throw Error(errors.join('\n'));console.log('Captured all 24 garments, 8 poses each, through the real compositor.');
+  },inventory);fs.mkdirSync(out,{recursive:true});for(const[id,url]of Object.entries(result.boards)){fs.writeFileSync(path.join(out,id+'.png.tmp'),Buffer.from(url.split(',')[1],'base64'));fs.renameSync(path.join(out,id+'.png.tmp'),path.join(out,id+'.png'));}if(errors.length)throw Error(errors.join('\n'));console.log('Captured all 24 garments, 8 poses each, through the real compositor.');
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
