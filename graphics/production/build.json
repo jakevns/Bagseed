@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "f54d8a574f8ebb034e5a3d4f7e4dcdd42518d40cfe5589b3666b29db3069218c",
-  "updatedSHA": "9b84e05a71b468d12149b5412aaca916bea2076c61d9bb5b8a1d3816db3369c7",
+  "workingSourceSHA": "3faa167b26d8806b4c2eb1481d558fa5ba330f78aa49af4e19c3cfc4576dee9e",
+  "updatedSHA": "d026ed0d6bc578c4769e69d778060423307f330a0b8e27497a07e23a72f88e61",
   "characterRevision": "custom-walk-arm-layer-v6",
   "characterPayloadSHA256": "89065e804b89c94d7c2cb8218d619a37d6918d5e42107b78e4a6797b578c5f35",
   "characterSourcesSHA256": {
@@ -30,7 +30,7 @@
     "graphics/production/walk/sources/profile_v3.py": "df86ab08bb691ebcc14fb61e90c423ebb78bfcab2dd3b95e4f4a7642d5d1993c",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 63993385,
+  "bytes": 64005330,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [
@@ -141,5 +141,8 @@
   "heaterTiers": 2,
   "equipmentGlowRevision": "equipment-glow-1",
   "airConditionersRevision": "air-conditioners-1",
-  "airConditionerTiers": 2
+  "airConditionerTiers": 2,
+  "hvacRevision": "hvac-1",
+  "hvacTiers": 2,
+  "tentDetailsRevision": "tent-details-1"
 }
