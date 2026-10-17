@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "e01d45611049210492d89ad61adc5fc15bb7b19ee20a8ddaf2bd25f4e98737ae",
-  "updatedSHA": "b7ccc910e2215aff691479c55e6f7f03da68fc13f0d0985d9b0984bd60cff0f0",
+  "workingSourceSHA": "c49bcfe8202280ae84e242ba961b49ecd5f5643e6940a0adba146b26e4669483",
+  "updatedSHA": "2fb927bcdb47577d3e77ac5e1310acc651f33965ca682c1f4818b139fc3af809",
   "characterRevision": "custom-walk-arm-layer-v6",
   "characterPayloadSHA256": "89065e804b89c94d7c2cb8218d619a37d6918d5e42107b78e4a6797b578c5f35",
   "characterSourcesSHA256": {
@@ -30,7 +30,7 @@
     "graphics/production/walk/sources/profile_v3.py": "df86ab08bb691ebcc14fb61e90c423ebb78bfcab2dd3b95e4f4a7642d5d1993c",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 63969978,
+  "bytes": 63981277,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [

@@ -27023,6 +27023,156 @@ body.deco-on.touch-ui #deco .b1-tray .it{touch-action:pan-y;width:70px}
   document.head.appendChild(st);
 })();
 </script>
+<script>
+'use strict';
+/* =====================================================================
+   BUILD MODE · PHASE 2 · feel and clarity
+   Items you move by hand snap to the 8px grid the overlay draws (▦ Grid
+   / ✥ Free toggles it; Shift with a mouse places freely for that move).
+   The held item lifts with a shadow, shows its floor footprint as
+   green or red tiles, and lands with a little squash, a puff of dust
+   and a sound that matches what it is made of.
+   Scripted moves (saves, tests, Deco.move from code) are never snapped.
+   ===================================================================== */
+const Build2 = {
+  G: 8,
+  userUntil: 0, shift: false, lastCell: '',
+  anims: new Map(),   // uid -> landing time
+  puffs: [],
+  on() { return settings.decoGrid !== false; },
+  snapping() { return this.on() && !this.shift && performance.now() < this.userUntil; },
+  user() { this.userUntil = performance.now() + 40; },
+  dims(H, zone) { return DecoZ.dims({ id: H.id, zone, rot: H.rot }, decorDef(H.id)); },
+  /* the center that puts the item's top-left on a grid corner */
+  snap(px, py, w, h) { const G = this.G; return [Math.round((px - w / 2) / G) * G + w / 2, Math.round((py - h / 2) / G) * G + h / 2]; },
+  toggle() { settings.decoGrid = !this.on(); saveSettings(); Deco.render(); toast(this.on() ? 'Grid snap on: things line up with the dots.' : 'Free placement: move things a pixel at a time.'); Sfx.click(); },
+  dragging() { return !!((Build1.g && Build1.g.mode === 'drag') || (Build1.tr && Build1.tr.started)); },
+  material(id) {
+    const s = (id + ' ' + (decorDef(id) || {}).n).toLowerCase();
+    if (/plant|fern|cactus|palm|succulent|bonsai|planter|vine/.test(s)) return 'plant';
+    if (/rug|mat\b|beanbag|cushion|couch|sofa|loveseat|armchair|ottoman|basket|hamper|towel|stones/.test(s)) return 'soft';
+    if (/poster|print|painting|calendar|catalog|art\b|plaque|certificate|photo|frame|notebook|book/.test(s)) return 'paper';
+    if (/lamp|lantern|metal|fridge|stove|microwave|kettle|toolbox|clock|speaker|camera|tv\b|record|lights|sign|post|bins|dish|duck|trophy|candle/.test(s)) return 'metal';
+    return 'wood';
+  },
+  sound(kind, id) {
+    const S = Sfx;
+    if (kind === 'lift') { S.tone(392, .06, 'sine', .035, 0, 140); return; }
+    const m = this.material(id);
+    if (m === 'soft') { S.noise(.12, .05, 500); S.tone(170, .09, 'sine', .045); }
+    else if (m === 'plant') { S.noise(.07, .03, 900); S.tone(523, .06, 'sine', .035, .03); S.tone(659, .08, 'sine', .03, .08); }
+    else if (m === 'paper') { S.noise(.05, .035, 3200); S.tone(620, .04, 'triangle', .025, .03); }
+    else if (m === 'metal') { S.tone(880, .1, 'triangle', .03); S.tone(1320, .16, 'sine', .018, .02); S.noise(.03, .02, 2400); }
+    else { S.tone(300, .05, 'triangle', .06, 0, -60); S.noise(.04, .035, 1600); S.tone(210, .06, 'triangle', .035, .05); }
+  },
+  /* ---------- the held item ---------- */
+  drawGhost(c, t) {
+    const D = runtime.deco, H = D.hold, g = D.ghost, Df = decorDef(H.id), [w, h] = this.dims(H, D.zone), ok = g.ok, G = this.G, now = performance.now();
+    const foot = Df.k === 'floor' ? DecoZ.foot({ id: H.id, zone: D.zone, rot: H.rot, x: g.x, y: g.y }, Df) : Df.k === 'rug' ? [g.x, g.y, w, h] : null;
+    // a local grid around the item while snapping is on
+    if (this.on()) {
+      const x0 = Math.floor((g.x - G * 2) / G) * G, x1 = g.x + w + G * 2, y0 = Math.floor((g.y - G * 2) / G) * G, y1 = g.y + h + G * 2;
+      c.fillStyle = 'rgba(255,255,255,.16)';
+      for (let x = x0; x <= x1; x += G) c.fillRect(x, y0, 1, y1 - y0);
+      for (let y = y0; y <= y1; y += G) c.fillRect(x0, y, x1 - x0, 1);
+    }
+    // footprint tiles: the floor this item will take up
+    if (foot) {
+      const cx0 = Math.floor(foot[0] / G) * G, cy0 = Math.floor(foot[1] / G) * G;
+      for (let y = cy0; y < foot[1] + foot[3]; y += G) for (let x = cx0; x < foot[0] + foot[2]; x += G) {
+        c.fillStyle = ok ? 'rgba(124,240,90,.30)' : 'rgba(255,90,79,.34)'; c.fillRect(x + 1, y + 1, G - 1, G - 1);
+        c.fillStyle = ok ? 'rgba(60,150,40,.55)' : 'rgba(170,40,30,.6)'; c.fillRect(x, y, G, 1); c.fillRect(x, y, 1, G);
+      }
+    }
+    // lifted: higher while dragging, a slow bob while resting
+    const lift = this.dragging() ? 4 : 2 + Math.sin(now / 260) * .8, ly = Math.round(g.y - lift);
+    c.save(); c.globalAlpha = .28; c.fillStyle = '#000';
+    if (Df.k === 'wall') c.fillRect(g.x + 2, g.y + 2, w, h);
+    else if (Df.k !== 'rug') { c.beginPath(); c.ellipse(g.x + w / 2, g.y + h - 1, Math.max(4, w * .45), Math.max(2, Math.min(5, h * .12)), 0, 0, Math.PI * 2); c.fill(); }
+    c.restore();
+    c.save(); c.globalAlpha = ok ? .92 : .55; drawDecor(c, { id: H.id, x: g.x, y: Df.k === 'rug' ? g.y : ly, flip: H.flip, rot: H.rot, v: H.v, zone: D.zone }, t); c.restore();
+    // outline: solid when it fits, dashed when it doesn't (shape, not just color)
+    const oy = Df.k === 'rug' ? g.y : ly; c.fillStyle = ok ? '#7cf05a' : '#ff5a4f';
+    for (let i = -1; i <= w; i++) if (ok || (i & 2)) { c.fillRect(g.x + i, oy - 1, 1, 1); c.fillRect(g.x + i, oy + h, 1, 1); }
+    for (let j = 0; j < h; j++) if (ok || (j & 2)) { c.fillRect(g.x - 1, oy + j, 1, 1); c.fillRect(g.x + w, oy + j, 1, 1); }
+    const sx = g.x + w + 2, sy = oy - 7; R(c, sx - 1, sy - 1, 7, 7, '#1a1a1a');
+    if (ok) { c.fillStyle = '#7cf05a'; for (const [a, b] of [[0, 3], [1, 4], [2, 3], [3, 2], [4, 1]]) c.fillRect(sx + a, sy + b, 1, 1); }
+    else { c.fillStyle = '#ff5a4f'; for (let k = 0; k < 5; k++) { c.fillRect(sx + k, sy + k, 1, 1); c.fillRect(sx + 4 - k, sy + k, 1, 1); } }
+  },
+  drawPuffs(c) {
+    const now = performance.now(); this.puffs = this.puffs.filter(p => now - p.t0 < 420);
+    for (const p of this.puffs) { const k = (now - p.t0) / 420, r = 1 + k * 3; c.fillStyle = `rgba(235,225,205,${(.55 * (1 - k)).toFixed(3)})`; c.beginPath(); c.arc(p.x + p.vx * k * 10, p.y - k * 4, r, 0, Math.PI * 2); c.fill(); }
+  },
+  land(rec) {
+    const now = performance.now(), Df = decorDef(rec.id), [w, h] = DecoZ.dims(Object.assign({ zone: runtime.deco.zone }, rec), Df);
+    this.anims.set(rec.uid, now);
+    if (Df.k === 'wall' || settings.reduced) return;
+    const by = rec.y + h - 1; for (let i = 0; i < 6; i++) this.puffs.push({ x: rec.x + (i < 3 ? 1 : w - 1), y: by, vx: (i < 3 ? -1 : 1) * (.4 + (i % 3) * .3), t0: now + i * 15 });
+  }
+};
+
+/* hand-driven input marks the next move as "snap it" (window capture runs before every other listener) */
+for (const type of ['pointerdown', 'pointermove', 'pointerup', 'click'])
+  window.addEventListener(type, e => { if (!runtime.deco) return; Build2.shift = !!e.shiftKey; if (e.target === View.cv || (Build1.tr && Build1.tr.started) || (e.target.closest && e.target.closest('#deco .b1-tray'))) Build2.user(); }, true);
+window.addEventListener('keydown', e => { if (runtime.deco && e.key.startsWith('Arrow')) Build2.user(); }, true);
+
+Deco.move = (prev => function (x, y) {
+  const D = runtime.deco; if (!D || !D.hold) return prev.call(this, x, y);
+  if (Build2.snapping()) { const [w, h] = Build2.dims(D.hold, D.zone); [x, y] = Build2.snap(x, y, w, h); }
+  prev.call(this, x, y);
+  const g = D.ghost, cell = g ? g.x + ':' + g.y : '';
+  if (cell && cell !== Build2.lastCell && Build2.snapping() && D.touchUI) Build1.buzz(3);   // a tick per grid step under a finger
+  Build2.lastCell = cell;
+})(Deco.move);
+/* arrows and ←→↑↓ buttons step a whole grid cell while snapping */
+Deco.nudge = (prev => function (dx, dy) {
+  const D = runtime.deco; if (!D || !D.hold || !Build2.on()) return prev.call(this, dx, dy);
+  const [w, h] = Build2.dims(D.hold, D.zone), g = D.ghost || { x: (D.cam ? D.cam.x : 160) - w / 2, y: (D.cam ? D.cam.y : 120) - h / 2 };
+  Build2.user(); this.move(g.x + w / 2 + Math.sign(dx) * Build2.G, g.y + h / 2 + Math.sign(dy) * Build2.G); this.render();
+})(Deco.nudge);
+/* a freshly picked item starts on the grid too */
+Deco.pick = (prev => function (id) {
+  prev.call(this, id); const D = runtime.deco; if (!D || !D.hold || D.hold.fromUid || !D.ghost || !Build2.on()) return;
+  const [w, h] = Build2.dims(D.hold, D.zone); Build2.user(); this.move(D.ghost.x + w / 2, D.ghost.y + h / 2); Build2.userUntil = 0; this.render();
+})(Deco.pick);
+Deco.pickPlaced = (prev => function (d) { const tone = Sfx.tone; Sfx.tone = () => { }; try { prev.call(this, d); } finally { Sfx.tone = tone; } Build2.sound('lift'); })(Deco.pickPlaced);
+/* landing: matching sound, squash and dust (the old two-beep chime is replaced) */
+Deco.place = (prev => function () {
+  const D = runtime.deco, H = D && D.hold, tone = Sfx.tone; let ok;
+  Sfx.tone = () => { }; try { ok = prev.call(this); } finally { Sfx.tone = tone; }
+  if (!ok) { Sfx.bad(); return ok; }
+  const list = DecoZ.list(D.zone), rec = H && (list.find(x => x.uid === H.fromUid) || list[list.length - 1 - ((H.kids || []).length)]);
+  if (rec) { Build2.sound('place', rec.id); Build2.land(rec); }
+  return ok;
+})(Deco.place);
+/* the held item is drawn here instead of by the base overlay, lifted and tiled */
+Deco.overlay = (prev => function (c, t) {
+  const D = runtime.deco; if (!D) return; const g = D.ghost, held = D.hold && g;
+  if (held) D.ghost = null; try { prev.call(this, c, t); } finally { D.ghost = g; }
+  Build2.drawPuffs(c);
+  if (held) Build2.drawGhost(c, t);
+})(Deco.overlay);
+/* a just-placed item squashes and settles */
+drawDecor = (prev => function (c, d, t) {
+  const t0 = d.uid && Build2.anims.get(d.uid); if (!t0) return prev.call(this, c, d, t);
+  const p = (performance.now() - t0) / 300; if (p >= 1 || p < 0 || settings.reduced) { if (p >= 1) Build2.anims.delete(d.uid); return prev.call(this, c, d, t); }
+  const Df = decorDef(d.id); if (!Df) return prev.call(this, c, d, t);
+  const [w, h] = DecoZ.dims(Object.assign({ zone: 'bedroom' }, d), Df), e = Math.sin(p * Math.PI * 2) * (1 - p), cx = d.x + w / 2, by = d.y + h;
+  c.save(); c.translate(cx, by); c.scale(1 + e * .1, 1 - e * .14); c.translate(-cx, -by);
+  try { return prev.call(this, c, d, t); } finally { c.restore(); }
+})(drawDecor);
+/* ▦ Grid / ✥ Free beside Undo, on phones and with a mouse */
+Deco.render = (prev => function () {
+  prev.call(this); const D = runtime.deco, el = $('#deco'); if (!D || !el || el.querySelector('[data-act="b2Grid"]')) return;
+  const undo = el.querySelector('[data-act="decoUndo"]'); if (!undo) return;
+  const b = document.createElement('button'); b.className = 'btn sm' + (Build2.on() ? ' on' : ''); b.dataset.act = 'b2Grid';
+  b.textContent = D.touchUI ? (Build2.on() ? '▦' : '✥') : (Build2.on() ? '▦ Grid' : '✥ Free'); b.setAttribute('aria-label', Build2.on() ? 'Grid snap on' : 'Free placement'); b.title = Build2.on() ? 'Snapping to the grid. Tap for free placement (or hold Shift).' : 'Free placement. Tap to snap to the grid.';
+  b.setAttribute('aria-pressed', String(Build2.on())); undo.before(b);
+})(Deco.render);
+Object.assign(ACT, { b2Grid() { Build2.toggle(); } });
+/* narrow phones: the header drops the room label so Done always fits beside the grid toggle */
+(() => { const st = document.createElement('style'); st.id = 'build2-css'; st.textContent = '@media (max-width:440px){.b1-zone{display:none}.b1-head{gap:4px}.b1-head .btn{min-width:42px;padding-left:8px;padding-right:8px}}'; document.head.appendChild(st); })();
+</script>
 <style id="bagseed-main-menu-style">
 /* Approved community-garden title screen; all rules stay inside this screen. */
 body:has(#screen-title.menu-home:not([hidden])) { background: #e4e8d7; }
