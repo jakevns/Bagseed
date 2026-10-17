@@ -14,7 +14,7 @@ folders=[ROOT/'walk/atlases'] if '--walk-only' in sys.argv else [ROOT/'registere
 for folder in folders:
     paths.extend(sorted(folder.rglob('*.png')))
 out=ROOT/'encoded';out.mkdir(exist_ok=True)
-manifest=json.loads((out/'manifest.json').read_text()) if '--walk-only' in sys.argv else {'format':'lossless WebP','decodedRGBAEqual':True,'files':{}}
+manifest=json.loads((out/'manifest.json').read_text(encoding='utf-8-sig')) if '--walk-only' in sys.argv else {'format':'lossless WebP','decodedRGBAEqual':True,'files':{}}
 before=after=0
 for path in paths:
     source_sha=hashlib.sha256(path.read_bytes()).hexdigest();target=out/(source_sha+'.webp')
@@ -23,8 +23,8 @@ for path in paths:
     decoded=Image.open(target).convert('RGBA')
     assert np.array_equal(np.array(image),np.array(decoded)),f'RGBA changed during encoding: {path}'
     before+=path.stat().st_size;after+=target.stat().st_size
-    manifest['files'][str(path.relative_to(REPO))]={'sourceSHA256':source_sha,'encoded':str(target.relative_to(REPO)),'encodedSHA256':hashlib.sha256(target.read_bytes()).hexdigest()}
+    manifest['files'][path.relative_to(REPO).as_posix()]={'sourceSHA256':source_sha,'encoded':target.relative_to(REPO).as_posix(),'encodedSHA256':hashlib.sha256(target.read_bytes()).hexdigest()}
 if '--walk-only' in sys.argv:manifest.update(walkPngBytes=before,walkWebpBytes=after)
 else:manifest.update(pngBytes=before,webpBytes=after)
-(out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+(out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8',newline='\n')
 print(f'{len(paths)} images encoded with identical decoded RGBA: {before:,} PNG bytes -> {after:,} WebP bytes')

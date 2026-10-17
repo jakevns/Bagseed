@@ -5,15 +5,17 @@ artifacts/
 .env.*
 *.log
 .DS_Store
+__pycache__/
 review/*.zip
-review/velvet-components/frames/
-review/pixelpunch-components/frames/
-review/cottoncandy-components/frames/
 
 graphics/production/encoded/
 review/characters-v1/
 dist/
 .Rproj.user
+review/velvet-components/frames/
+review/pixelpunch-components/frames/
+review/cottoncandy-components/frames/
+
 review/moonberry-components/frames/
 
 review/halfmoon-components/frames/
@@ -22,3 +24,6 @@ review/cruise-components/frames/
 review/boglantern-components/frames/
 review/frogprince-components/frames/
 review/nightshift-components/frames/
+review/gasstation-components/frames/
+review/boglantern-lavender-components/frames/
+review/frogprince-red-components/frames/

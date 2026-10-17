@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "ced8fcda85d1748a9ab779c20725d7ea75cdb176eb900ca676edea9331d1a441",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        481
+      ],
+      "subject": [
+        90,
+        26,
+        331,
+        481
+      ],
+      "scale": 0.21978021978021978,
+      "output": "cast/registered/cast-52-hardwarePT/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        481
+      ],
+      "subject": [
+        121,
+        29,
+        305,
+        481
+      ],
+      "scale": 0.22123893805309736,
+      "output": "cast/registered/cast-52-hardwarePT/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        481
+      ],
+      "subject": [
+        83,
+        28,
+        315,
+        479
+      ],
+      "scale": 0.22172949002217296,
+      "output": "cast/registered/cast-52-hardwarePT/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        481,
+        418,
+        820
+      ],
+      "subject": [
+        46,
+        19,
+        360,
+        326
+      ],
+      "scale": 0.5859872611464968,
+      "output": "cast/registered/cast-52-hardwarePT/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        481,
+        836,
+        820
+      ],
+      "subject": [
+        44,
+        19,
+        363,
+        326
+      ],
+      "scale": 0.5768025078369906,
+      "output": "cast/registered/cast-52-hardwarePT/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        481,
+        1254,
+        820
+      ],
+      "subject": [
+        37,
+        24,
+        355,
+        326
+      ],
+      "scale": 0.5786163522012578,
+      "output": "cast/registered/cast-52-hardwarePT/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        820,
+        418,
+        1254
+      ],
+      "subject": [
+        94,
+        1,
+        322,
+        406
+      ],
+      "scale": 0.24691358024691357,
+      "output": "style-audit-v1/actions/cast-52-hardwarePT/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        820,
+        836,
+        1254
+      ],
+      "subject": [
+        125,
+        6,
+        312,
+        405
+      ],
+      "scale": 0.2506265664160401,
+      "output": "style-audit-v1/actions/cast-52-hardwarePT/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        820,
+        1254,
+        1254
+      ],
+      "subject": [
+        94,
+        1,
+        315,
+        406
+      ],
+      "scale": 0.24691358024691357,
+      "output": "style-audit-v1/actions/cast-52-hardwarePT/up.png"
+    }
+  ]
+}

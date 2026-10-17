@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen",
+  "prompt": "Create ONE transparent PNG atlas with exactly 5 rows and THREE columns. The FIRST reference is an identity chart: each row is ONE different character shown front/right/back in idle. Preserve each row's exact face, hair silhouette, skin, outfit, age, build, accessories and head/body proportions. NOW DRAW EACH SAME CHARACTER HOLDING THEIR NOSE with thumb and forefinger, mild unpleasant smell reaction. Column 1 front, column 2 right-facing true profile, column 3 back. Static upright planted feet, no crouching or walking. Other hand at side; shoulders and belly remain same size as idle. Same entire figure height and head size as that character's idle identity. Keep kid a child. Do not replace faces, hair or outfits. Clear generous transparent gutters between ALL cells, no text/labels/borders/background/shadows/glow. Fill canvas with clearly separated whole figures. Rows must be evenly spaced. Use second reference for approved Bagseed style: large rounded head ~one-third figure, large dark eyes with white glints, warm dark-brown thin contours, soft rounded short limbs, two or three flat cel tones, solid simplified hair/beards, NO texture noise. Heavy bodies have soft round belly, never square broad shoulders. This is final production game art, not pixel art. Every cell complete head to soles. No head exaggeration compared with first reference. Rows top-to-bottom: Miles (small brown-haired boy, green tee), Hugo (olive shirt bearded soft heavy man), Anika (long black hair, blue button shirt), Enzo (black parted hair, round glasses, navy blazer), Sasha Reed (dark brown skin, round dark curly hair, cream sleeves and rust overalls).",
+  "source": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-400386f2-260d-44a7-a5a3-38802bfcb118.png",
+  "references": [
+    "C:/Projects/Bagseed/.cache/nose-batch-12-references.png",
+    "C:/Projects/Bagseed/review/characters-v2/assets/master-cast.png"
+  ],
+  "assetIds": [
+    "cast-23-miles",
+    "cast-24-hugo",
+    "cast-25-anika",
+    "cast-26-enzo",
+    "cast-27-sasha"
+  ]
+}

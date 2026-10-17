@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "e567ba0890ac26dd5f43db1d4bdba476e1f49d0cc4cea8e8b823d4f9d22c4a51",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        474
+      ],
+      "subject": [
+        135,
+        21,
+        385,
+        473
+      ],
+      "scale": 0.22123893805309736,
+      "output": "cast/registered/cast-06-mateo/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        474
+      ],
+      "subject": [
+        130,
+        20,
+        311,
+        474
+      ],
+      "scale": 0.22026431718061673,
+      "output": "cast/registered/cast-06-mateo/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        474
+      ],
+      "subject": [
+        36,
+        20,
+        283,
+        473
+      ],
+      "scale": 0.22075055187637968,
+      "output": "cast/registered/cast-06-mateo/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        474,
+        418,
+        820
+      ],
+      "subject": [
+        90,
+        29,
+        414,
+        336
+      ],
+      "scale": 0.5679012345679012,
+      "output": "cast/registered/cast-06-mateo/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        474,
+        836,
+        820
+      ],
+      "subject": [
+        56,
+        33,
+        364,
+        336
+      ],
+      "scale": 0.5974025974025974,
+      "output": "cast/registered/cast-06-mateo/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        474,
+        1254,
+        820
+      ],
+      "subject": [
+        5,
+        36,
+        329,
+        337
+      ],
+      "scale": 0.5679012345679012,
+      "output": "cast/registered/cast-06-mateo/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        820,
+        418,
+        1254
+      ],
+      "subject": [
+        145,
+        2,
+        371,
+        410
+      ],
+      "scale": 0.24509803921568626,
+      "output": "style-audit-v1/actions/cast-06-mateo/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        820,
+        836,
+        1254
+      ],
+      "subject": [
+        129,
+        2,
+        313,
+        410
+      ],
+      "scale": 0.24509803921568626,
+      "output": "style-audit-v1/actions/cast-06-mateo/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        820,
+        1254,
+        1254
+      ],
+      "subject": [
+        54,
+        1,
+        272,
+        411
+      ],
+      "scale": 0.24390243902439024,
+      "output": "style-audit-v1/actions/cast-06-mateo/up.png"
+    }
+  ]
+}

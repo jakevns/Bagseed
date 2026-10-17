@@ -1,0 +1,26 @@
+{
+  "id": "boglantern-lavender",
+  "lineId": "boglantern",
+  "name": "Bog Lantern \u2014 Lavender Marsh",
+  "shortName": "Bog / Lavender Marsh",
+  "apiName": "BagseedBoglanternLavenderGrowth",
+  "revision": "boglantern-lavender-components-1",
+  "libraryRevision": "plant-parts-library-13",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "blue",
+    "colorName": "Lavender",
+    "branching": 1.1
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Broad sage-blue fans \u2192 soft lavender senescence",
+  "finishSubtitle": "Final-week color study \u00b7 lavender phenotype senescence",
+  "finishCaption": "Lavender fan leaves \u00b7 Pale lilac calyces \u00b7 Peach pistils",
+  "finishPalette": "lavender",
+  "windCaption": "Late flower / lavender autumn fade",
+  "coolNights": true,
+  "coolPalette": "lavender",
+  "coolColorLabel": "lavender",
+  "experimental": true,
+  "registerAsDefault": false,
+  "phenotypeNote": "Additional representative phenotype of the existing native experimental strain. Earlier default profile and saved plants stay pinned."
+}

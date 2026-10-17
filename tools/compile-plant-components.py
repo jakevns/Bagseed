@@ -54,6 +54,7 @@ sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 dest=root/f'public/assets/plants/{strain}/components-{sha(runtime)[:12]}.webp'
 dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(runtime.read_bytes())
 manifest={'revision':spec['revision'],'status':'sample-awaiting-approval','name':spec['name'],'apiName':spec['apiName'],'source':'assets/components.png','sourceSHA256':sha(source),'runtime':str(dest.relative_to(root/'public')),'runtimeSHA256':sha(runtime),'size':list(im.size),'parts':parts}
+if 'lineId' in spec: manifest['lineId']=spec['lineId']
 (base/'sources').mkdir(parents=True,exist_ok=True)
 previous_manifest=base/'sources/manifest.json'
 if previous_manifest.exists():
@@ -65,6 +66,7 @@ catalog_path=root/'graphics/plants/sources/library.json'; catalog=json.loads(cat
 new_profile = f'{strain}@1' not in catalog['profiles']
 if new_profile: catalog['revision']=spec['libraryRevision']
 profile={'id':f'{strain}@1','name':spec['name'],'roles':{}}
+if 'lineId' in spec: profile['lineId']=spec['lineId']
 for role,choices in catalog['profiles']['porchlight@1']['roles'].items():
     original=catalog['parts'][choices[0]]; pid=f'{strain}.{role}@1'; p=json.loads(json.dumps(original))
     a=parts[role]; p.update(id=pid,status='draft',asset=f'graphics/plants/{strain}/assets/components.webp',crop=a['crop'],attach=[round(a['attach'][0]/a['crop'][2],6),round(a['attach'][1]/a['crop'][3],6)])
@@ -79,7 +81,11 @@ for role,choices in catalog['profiles']['porchlight@1']['roles'].items():
         assert catalog['parts'][pid]==p, 'Never rewrite a published part ID'
     catalog['parts'][pid]=p; profile['roles'][role]=[pid]
 if not new_profile: assert catalog['profiles'][profile['id']]==profile
-catalog['profiles'][profile['id']]=profile; catalog['strains'][strain]=profile['id']
+catalog['profiles'][profile['id']]=profile
+if spec.get('registerAsDefault', True):
+    catalog['strains'][spec.get('lineId', strain)]=profile['id']
+else:
+    assert spec.get('lineId') in catalog['strains'], 'Variant needs an existing native strain; never register a fake strain'
 catalog['inheritedTraits']['branching']={'type':'number','source':'PlantTraits115.for'}
 catalog_path.write_text(json.dumps(catalog,indent=2)+'\n')
 print('Measured 16 components; RGBA-exact WebP verified; registered '+profile['id']+' without changing earlier identities.')

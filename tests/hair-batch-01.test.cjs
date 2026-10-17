@@ -51,9 +51,9 @@ test('rear hair covers the cranial surface down to the nape on every head shape'
  });assert.equal(r.failures.length,0,JSON.stringify(r.failures.slice(0,5)));assert.equal(r.views,75);
 });
 
-test('the accepted five-cut batch and Bald remain pixel-identical during later hair work',async()=>{
+test('the fitted five-cut silhouettes retain the reviewed cel-shading appearance',async()=>{
  const page=await artPage(browser,);try{
-  const fixture=JSON.parse(fs.readFileSync(path.join(ROOT,'tests/fixtures/hair-all-v11.json')));
+  const fixture=JSON.parse(fs.readFileSync(path.join(ROOT,'tests/fixtures/hair-audit-cel-v1.json')));
   await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const current=await page.evaluate(async()=>{
    const hashes={},selected=new Set(['bald','short','buzz','crop','caesar','fade']);let views=0;
    const sha=async a=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',a))).map(v=>v.toString(16).padStart(2,'0')).join('');

@@ -1,4 +1,5 @@
 {
+  "source": "source.png",
   "sourceSHA256": "32af36a631820b21c05b9cb1c4019db7bb90696b54f9851c382b32df0586a61e",
   "characters": {
     "marcus": {
@@ -14,6 +15,12 @@
           10,
           280,
           506
+        ],
+        "scale": 0.20161290322580644,
+        "targetHeight": 100,
+        "placement": [
+          23,
+          7
         ]
       },
       "right": {
@@ -28,6 +35,12 @@
           11,
           194,
           507
+        ],
+        "scale": 0.20161290322580644,
+        "targetHeight": 100,
+        "placement": [
+          29,
+          7
         ]
       },
       "up": {
@@ -42,6 +55,12 @@
           11,
           309,
           507
+        ],
+        "scale": 0.20161290322580644,
+        "targetHeight": 100,
+        "placement": [
+          22,
+          7
         ]
       }
     },
@@ -58,6 +77,12 @@
           1,
           250,
           474
+        ],
+        "scale": 0.19661733615221988,
+        "targetHeight": 93,
+        "placement": [
+          25,
+          14
         ]
       },
       "right": {
@@ -72,6 +97,12 @@
           5,
           225,
           473
+        ],
+        "scale": 0.1987179487179487,
+        "targetHeight": 93,
+        "placement": [
+          26,
+          14
         ]
       },
       "up": {
@@ -86,12 +117,18 @@
           4,
           277,
           474
+        ],
+        "scale": 0.19787234042553192,
+        "targetHeight": 93,
+        "placement": [
+          23,
+          14
         ]
       }
     }
   },
   "limitations": [
-    "Left profile mirrors the right profile; raised-hand and carried-book sides mirror with it.",
-    "Only matching canonical outfits receive these poses; custom appearances retain existing renderer."
+    "Left profile mirrors right, including hand and prop side.",
+    "Only matching canonical outfits use these action drawings."
   ]
 }

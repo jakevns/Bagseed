@@ -4,6 +4,7 @@ This performs technical extraction, alpha cleanup and scale registration only.
 It does not synthesize or paint character artwork.
 """
 from pathlib import Path
+from retained_png import save_png, save_text
 import json
 import hashlib
 import numpy as np
@@ -12,7 +13,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
 DIRS = ['down', 'right', 'up', 'left']
-audit = json.loads((REPO/'docs/graphics/roster-audit.json').read_text())
+audit = json.loads((REPO/'docs/graphics/roster-audit.json').read_text(encoding='utf-8-sig'))
 hair = [p[0] for p in audit['options']['hair']]
 tops = ['tee','tank','hoodie','flannel','sweater','cardigan','overalls','work','crop','jacket','garden','pjs','labcoat','suit','officer']
 faces = [p[0] for p in audit['options']['face']]
@@ -81,7 +82,7 @@ for source,(kind,ids) in sets.items():
                 rows.append(im.height);break
         if rows is None:raise ValueError(f'Cannot identify {len(ids)} individual face rows in {source}')
     else:rows=separators(alpha.sum(axis=1),len(ids))
-    manifest['sources'][source]={'path':str(path.relative_to(ROOT)),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'size':list(im.size),'rows':rows,'columns':cols}
+    manifest['sources'][source]={'path':path.relative_to(ROOT).as_posix(),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'size':list(im.size),'rows':rows,'columns':cols}
     for row,ident in enumerate(ids):
         for column,direction in enumerate(DIRS):
             bounds=[cols[column],rows[row],cols[column+1],rows[row+1]]
@@ -148,8 +149,8 @@ for source,(kind,ids) in sets.items():
                     registered.alpha_composite(pose,(round(48-48*pose_scale),round(107-107*pose_scale)))
                     out=registered
             key=f'{kind}/{ident}/{direction}'
-            target=ROOT/'registered'/f'{key}.png';target.parent.mkdir(parents=True,exist_ok=True);out.save(target)
-            manifest['assets'][key]={'path':str(target.relative_to(ROOT)),'source':source,'cell':bounds,'subjectBounds':list(subject),'skinBounds':skinbox,'scale':scale}
+            target=ROOT/'registered'/f'{key}.png';target.parent.mkdir(parents=True,exist_ok=True);save_png(out,target)
+            manifest['assets'][key]={'path':target.relative_to(ROOT).as_posix(),'source':source,'cell':bounds,'subjectBounds':list(subject),'skinBounds':skinbox,'scale':scale}
     print(source,len(ids)*4,'views registered')
-(ROOT/'sources/asset-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+save_text(json.dumps(manifest,indent=2)+'\n',ROOT/'sources/asset-manifest.json')
 print('Registered',len(manifest['assets']),'modular views; original sources retained.')

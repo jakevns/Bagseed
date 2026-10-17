@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen",
+  "prompt": "Create ONE transparent PNG atlas with exactly 5 rows and THREE columns. The FIRST reference is an identity chart: each row is ONE different character shown front/right/back in idle. Preserve each row's exact face, hair silhouette, skin, outfit, age, build, accessories and head/body proportions. NOW DRAW EACH SAME CHARACTER HOLDING THEIR NOSE with thumb and forefinger, mild unpleasant smell reaction. Column 1 front, column 2 right-facing true profile, column 3 back. Static upright planted feet, no crouching or walking. Other hand at side; shoulders and belly remain same size as idle. Same entire figure height and head size as that character's idle identity. Keep kid a child. Do not replace faces, hair or outfits. Clear generous transparent gutters between ALL cells, no text/labels/borders/background/shadows/glow. Fill canvas with clearly separated whole figures. Rows must be evenly spaced. Use second reference for approved Bagseed style: large rounded head ~one-third figure, large dark eyes with white glints, warm dark-brown thin contours, soft rounded short limbs, two or three flat cel tones, solid simplified hair/beards, NO texture noise. Heavy bodies have soft round belly, never square broad shoulders. This is final production game art, not pixel art. Every cell complete head to soles. No head exaggeration compared with first reference. Rows top-to-bottom: Theo (tan skin, black buzz cut, plain black tee), Marisol (long curly brown hair, glasses, yellow tee, navy jeans), Dr Vale (long black hair, glasses, white lab coat, charcoal shirt, blue jeans), Soil Shed (olive cap, solid beard, red plaid, navy jeans, round belly), Patchwork (long brown hair, pink sweatshirt, navy jeans).",
+  "source": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-d7837916-1f79-4678-9513-9eea0f7f55f5.png",
+  "references": [
+    "C:/Projects/Bagseed/.cache/nose-batch-13-references.png",
+    "C:/Projects/Bagseed/review/characters-v2/assets/master-cast.png"
+  ],
+  "assetIds": [
+    "cast-38-theo",
+    "cast-39-marisol",
+    "cast-40-vale",
+    "cast-41-shed",
+    "cast-42-patchwork"
+  ]
+}

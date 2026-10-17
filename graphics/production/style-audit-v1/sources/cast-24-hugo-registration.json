@@ -1,0 +1,168 @@
+{
+  "sourceSHA256": "a02fcdfc1358ace3f422989b943a4ab5dab446f5317f7c1ca2f1feb0acf08a9a",
+  "height": 100,
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        418,
+        479
+      ],
+      "subject": [
+        132,
+        36,
+        381,
+        479
+      ],
+      "scale": 0.22573363431151242,
+      "output": "cast/registered/cast-24-hugo/down-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "cell": [
+        418,
+        0,
+        836,
+        479
+      ],
+      "subject": [
+        112,
+        49,
+        310,
+        479
+      ],
+      "scale": 0.23255813953488372,
+      "output": "cast/registered/cast-24-hugo/right-idle.png"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "cell": [
+        836,
+        0,
+        1254,
+        479
+      ],
+      "subject": [
+        58,
+        52,
+        292,
+        478
+      ],
+      "scale": 0.2347417840375587,
+      "output": "cast/registered/cast-24-hugo/up-idle.png"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "cell": [
+        0,
+        479,
+        418,
+        816
+      ],
+      "subject": [
+        88,
+        20,
+        410,
+        320
+      ],
+      "scale": 0.5714285714285714,
+      "output": "cast/registered/cast-24-hugo/portrait-neutral.png"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "cell": [
+        418,
+        479,
+        836,
+        816
+      ],
+      "subject": [
+        57,
+        20,
+        372,
+        320
+      ],
+      "scale": 0.5841269841269842,
+      "output": "cast/registered/cast-24-hugo/portrait-friendly.png"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "cell": [
+        836,
+        479,
+        1254,
+        816
+      ],
+      "subject": [
+        29,
+        22,
+        345,
+        320
+      ],
+      "scale": 0.5822784810126582,
+      "output": "cast/registered/cast-24-hugo/portrait-concerned.png"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "cell": [
+        0,
+        816,
+        418,
+        1254
+      ],
+      "subject": [
+        152,
+        1,
+        367,
+        404
+      ],
+      "scale": 0.24813895781637718,
+      "output": "style-audit-v1/actions/cast-24-hugo/down.png"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "cell": [
+        418,
+        816,
+        836,
+        1254
+      ],
+      "subject": [
+        110,
+        5,
+        311,
+        404
+      ],
+      "scale": 0.2506265664160401,
+      "output": "style-audit-v1/actions/cast-24-hugo/right.png"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "cell": [
+        836,
+        816,
+        1254,
+        1254
+      ],
+      "subject": [
+        69,
+        5,
+        301,
+        403
+      ],
+      "scale": 0.25125628140703515,
+      "output": "style-audit-v1/actions/cast-24-hugo/up.png"
+    }
+  ]
+}
