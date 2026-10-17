@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bagseed · Wardrobe side walk</title>
+<style>body{margin:0;background:#211d28;color:#eee8dc;font:16px/1.5 system-ui}main{max-width:1000px;margin:auto;padding:24px}h1{font-size:26px}button,select{font:inherit;color:inherit;background:#383240;border:1px solid #82728c;border-radius:5px;padding:8px;margin:4px}canvas{display:block;background:#292330;width:288px;height:auto;aspect-ratio:2/3;max-width:100%;object-fit:contain}a{color:#c8dfb1}.controls{margin:16px 0}#steps button[aria-pressed=true]{background:#506d44}</style>
+<main><h1>Wardrobe · Complete eight-pose side walk</h1><p>All 15 tops, five bottoms and four shoe styles now share the approved side cycle. Choose a garment to inspect its eight poses. Front and back retain their existing four-pose animation.</p>
+<label>Garment <select id="garment"></select></label><div class="controls"><button id="play">Pause</button><button id="slow">Slow motion</button><span id="counter"></span><div id="steps"></div></div>
+<canvas id="figure" width="288" height="432" aria-label="Animated garment rendered at native artwork resolution"></canvas>
+<p>Native 288 × 432 artwork, captured through the game compositor. Both footfalls are drawn. The left-facing bodies mirror these symmetric garments and use the existing left-facing head renderer in the game.</p>
+<p><a href="README.md">Validation and scope</a> · <a href="live-wardrobe-validation.json">All 300 outfit combinations</a> · <a href="../../public/index.html">Play the updated game</a></p></main>
+<script>
+const names=['cardigan','crop','flannel','garden','hoodie','jacket','labcoat','officer','overalls','pjs','suit','sweater','tank','tee','work','cargo','jeans','joggers','shorts','skirt','boots','rainboots','sandals','sneakers'],garment=document.querySelector('#garment'),canvas=document.querySelector('canvas'),g=canvas.getContext('2d'),boards=[];let frame=0,playing=true,slow=false,last=0;
+names.forEach((name,i)=>garment.add(new Option((i<15?'Top: ':i<20?'Bottom: ':'Shoes: ')+name,i)));
+for(let i=0;i<6;i++){const im=new Image();im.src='group-'+i*4+'.png';im.onload=draw;boards.push(im);}
+const buttons=[];for(let i=0;i<8;i++){const b=document.createElement('button');b.textContent=i+1;b.onclick=()=>{playing=false;frame=i;document.querySelector('#play').textContent='Play';draw();};document.querySelector('#steps').append(b);buttons.push(b);}
+function draw(){const index=+garment.value,im=boards[Math.floor(index/4)];g.clearRect(0,0,288,432);if(im?.complete&&im.naturalWidth)g.drawImage(im,frame*288,(index%4)*432,288,432,0,0,288,432);document.querySelector('#counter').textContent='Pose '+(frame+1)+' / 8';buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===frame)));}
+garment.onchange=draw;document.querySelector('#play').onclick=e=>{playing=!playing;e.target.textContent=playing?'Pause':'Play';};document.querySelector('#slow').onclick=e=>{slow=!slow;e.target.textContent=slow?'Normal speed':'Slow motion';};
+function tick(t){if(playing&&t-last>=(slow?375:125)){last=t;frame=(frame+1)%8;draw();}requestAnimationFrame(tick);}requestAnimationFrame(tick);
+</script></html>

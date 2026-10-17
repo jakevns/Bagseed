@@ -1,0 +1,199 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "records": [
+    {
+      "id": "top-tee",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical. Replace the blue hoodie with a plain medium-blue short-sleeved crew-neck T-SHIRT, sleeves end above elbow, tan exposed forearms connecting EXACTLY to original hands. No hood. Standing shirt design from reference2. Retain navy jeans and sneakers.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-8bf761a5-6afe-4c67-b15d-554642fa1c1d.png"
+    },
+    {
+      "id": "top-cardigan",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with OPEN-FRONT medium-blue knitted CARDIGAN over cream crew-neck tee, long sleeves, ribbed cuffs, narrow button placket. Navy jeans and sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-0a98457d-2330-4e39-83fe-5b934cee3448.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-cardigan-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-flannel",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with OPEN medium-blue collared FLANNEL overshirt over cream tee, long sleeves, cuffs, placket and breast pockets. Plain key-blue fabric; the game supplies plaid procedurally. Navy jeans and sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-7d561cf6-e1c5-43d6-bc5e-7b6600b66e96.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-flannel-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-sweater",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with plain medium-blue CREW-NECK KNIT SWEATER, long sleeves, ribbed collar/cuffs/waistband, no hood or strings. Navy jeans and sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-3cb1bc74-68dd-483c-90e7-23db380620bc.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-sweater-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-tank",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-0d162ba5-b61c-4087-8dc0-5d1ddf4c22a8.png",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with plain medium-blue sleeveless TANK TOP with bound armholes, tan bare shoulders and arms, same hands. Navy jeans and sneakers unchanged.",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-tank-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-crop",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-5c01260f-668c-4c58-87e5-4683a3c40fad.png",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with plain medium-blue short-sleeved CROPPED T-SHIRT, hem just above waist exposing a narrow strip of tan midriff. Tan forearms and hands. Navy jeans and sneakers unchanged.",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-crop-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-work",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-9e22b7c9-9724-41a3-a842-7700bfe64e92.png",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with medium-blue collared long-sleeved WORK SHIRT, button front, two breast pockets, cuffs, NO hood. Navy jeans and sneakers unchanged.",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-work-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-jacket",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with medium-blue DENIM JACKET over cream tee, structured collar, breast pockets, cropped waistband and long sleeves. Navy jeans and sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-ba487bc7-1ea2-40eb-88e7-2d97e6b0cb20.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-jacket-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-officer",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with medium-blue short-sleeved collared OFFICER SHIRT, epaulets, two breast pockets and tiny brass badge. Exposed tan forearms. Navy jeans and sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-91d8553e-4f15-4260-a493-3825a7fe810c.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-officer-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-garden",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with medium-blue long-sleeved GARDENING SHIRT and matching long work APRON, neck strap, waist tie, apron bib and patch pockets, hem above knees. Keep arm swings/feet identical, cloth apron drapes naturally without hiding both legs. Navy trousers and sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-cd492970-ec64-420e-ab23-e585fee82ed9.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-garden-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-labcoat",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie with an OPEN medium-blue LAB COAT, not white, over cream shirt. Long sleeves, lapels, two large pockets, coat hem just above knees. Keep original hand positions, legs and feet identical. Navy trousers and sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-ba88157f-9658-489c-8656-c6a0a546ace9.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-labcoat-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-overalls",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie AND jeans with medium-blue DENIM BIB OVERALLS over cream short-sleeved tee: brass buckles, square bib pocket, shoulder straps, full-length matching blue trouser legs. Tan forearms connect original hands. Same leg/foot poses, brown sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-87272fb1-1544-4b6f-881f-271af0dc8945.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-overalls-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-pjs",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie AND jeans with medium-blue loose PAJAMA SET, long-sleeved button shirt with collar, cream piping and full-length matching pajama trousers. Same original hand/leg/foot positions, brown sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-1974ca15-ba13-4f6a-af00-9c5201c22808.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-pjs-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "top-suit",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace hoodie AND jeans with medium-blue FORMAL TWO-PIECE SUIT, tailored blazer over cream shirt, narrow lapels and full-length matching suit trousers. No tie needed. Same original hand/leg/foot positions, brown sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-e71bbf45-988b-43ff-8101-4044f382bf18.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/top-suit-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "bottom-cargo",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace only navy jeans with dark-navy CARGO TROUSERS, side patch pockets and relaxed straight cuffs. Blue hoodie, original tan hands and brown sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-f3c1a8ee-ebd7-42cb-ac2f-acc23c1f37d5.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/bottom-cargo-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "bottom-joggers",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace only navy jeans with dark-navy JOGGERS, elastic ankle cuffs and drawstring waist, soft tapered fabric. Blue hoodie, original tan hands and brown sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-bf000f7c-1e7c-496c-a5dc-c7681d215bee.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/bottom-joggers-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "bottom-shorts",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace only navy jeans with dark-navy knee-length casual SHORTS; exposed tan calves and knees must preserve both legs EXACTLY in all poses. Blue hoodie, original hands and brown sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-2186e3c0-f8fe-4b7f-aa61-1d76e399f5dc.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/bottom-shorts-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "bottom-skirt",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace only navy jeans with dark-navy knee-length A-LINE SKIRT, soft drape at moving hips. Exposed tan lower legs preserve every source knee/ankle/foot position and swing. Blue hoodie, original hands and brown sneakers unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-e91976ad-55f4-442a-93eb-831211936c08.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/bottom-skirt-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "shoe-boots",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace ONLY brown sneakers with brown ankle-height WORK BOOTS, sturdy leather shafts above ankles, small laces, thick dark soles. Preserve every heel/toe contact and lifted foot angle. Blue hoodie, navy jeans and hands unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-77761758-6ec5-4739-9ad4-3943a9313975.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/shoe-boots-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "shoe-rainboots",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace ONLY brown sneakers with brown mid-calf RUBBER RAIN BOOTS, smooth shafts with subtle top lip, round toes and thick dark soles, pants tucked within shafts. Preserve every heel/toe position and foot angle. Blue hoodie, navy jeans and hands unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-6a16dfa8-bb1b-475e-8f8d-32391ae448e4.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/shoe-rainboots-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "shoe-sandals",
+      "prompt": "Production clothing replacement edit for Bagseed. Edit reference 1 EXACTLY: eight chronological neck-down right-facing walking drawings in FOUR COLUMNS by TWO ROWS; row 2 continues the SAME right-facing cycle. Preserve every hand/shoulder/hip/knee/ankle/foot position, size and torso angle in each cell. No pose redesign, no duplicate phases, no left-facing turn. Keep the delicate illustrated linework and fine fabric detail of reference 1, matching reference 2's standing garment construction. Neck down ONLY, no head, hair or face. Same tan skin #cf9670; medium key-blue #5086bf upper garments; dark navy #36405a bottoms; brown #2b1d14 shoes and cream soles. Natural value shading within these material hues only. Transparent background and gutters, no shadow, text, floor or grid. All eight isolated complete silhouettes with padding. ONLY change the named garment, all companion garments/limbs in reference1 stay identical.  Reference1 includes the CORRECTED eighth pose: in last bottom-right cell the camera-near hand is BACK on screen LEFT of the hip (not forward across stomach); preserve that arm placement exactly.Replace ONLY brown sneakers with brown leather TWO-STRAP SANDALS, tan exposed toes, flat dark soles. Preserve every heel/toe position and lifted foot angle; toes all point RIGHT. Blue hoodie, navy jeans and hands unchanged.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-e8cb10b8-49a5-4bd2-b73e-40af0fb9f495.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/approved-stride-reference.png",
+        "C:/Projects/Bagseed/graphics/production/walk/assets/shoe-sandals-standing-style-reference.png"
+      ]
+    },
+    {
+      "id": "correction-seven",
+      "prompt": "Bagseed garment edit. Exact TWO columns by TWO rows. All four sprites must preserve the EXACT SAME neck-down right-facing pose, anatomy, knees, hands, toe angles and body size of reference. Near arm hangs DIAGONALLY BACK TO SCREEN LEFT, hand LEFT of hips, far hand partly visible at front waist. Near knee raised in front, foot raised on screen right. Change ONLY the hoodie garment in each cell: top-left plain blue short-sleeve crew-neck T-SHIRT; top-right blue sleeveless TANK TOP, bare arms; bottom-left blue short-sleeve CROP T-SHIRT exposing narrow midriff; bottom-right blue long-sleeve collared button WORK SHIRT with two breast pockets. No hood in any cell. Preserve exact navy jeans and brown cream-soled sneakers. Tan skin. Match existing fine illustrated outlines and delicate shading, no heavy ink. Only neck-down sprites, transparent background and gutters, no shadow/text/floor. Same large cells and padding as reference. Do not move arms forward, all four near hands stay BACK to left of hips.",
+      "originalOutput": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-8c20c2e9-7433-4fd3-8e5c-39ef6a406729.png",
+      "refs": [
+        "C:/Projects/Bagseed/graphics/production/walk/wardrobe-v5/assets/correction-reference.png"
+      ]
+    }
+  ]
+}

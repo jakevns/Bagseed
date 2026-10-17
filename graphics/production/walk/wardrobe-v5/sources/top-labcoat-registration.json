@@ -1,0 +1,370 @@
+[
+  {
+    "errors": {
+      "measuredNeck": 0.453,
+      "handL": 0.453
+    },
+    "maxKeypointError": 0.453,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 1.0,
+    "groundError": 0.0,
+    "uniformScale": 0.2261108378452792,
+    "rotationDegrees": -0.7851562499999999,
+    "finalSourceToCanvasTranslation": [
+      16.496466147789967,
+      119.94391860123446
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.37681159420289
+      ],
+      "handL": [
+        34.494623655913976,
+        107.86290322580645
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.24038461538461
+      ],
+      "handL": [
+        35.00925925925926,
+        107.32671957671958
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-labcoat.png",
+    "sourceCell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "frame": 0
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.936,
+      "handL": 0.936
+    },
+    "maxKeypointError": 0.936,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9875104079933389,
+    "groundError": 0.0,
+    "uniformScale": 0.22471272091947792,
+    "rotationDegrees": 0.7851562499999999,
+    "finalSourceToCanvasTranslation": [
+      14.470792836603481,
+      118.236856445381
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.33666666666666
+      ],
+      "handL": [
+        52.462450592885375,
+        108.04084321475625
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.21806853582554
+      ],
+      "handL": [
+        51.37692307692308,
+        106.52307692307693
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-labcoat.png",
+    "sourceCell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "frame": 1
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.374,
+      "handL": 0.374
+    },
+    "maxKeypointError": 0.374,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9691040164778579,
+    "groundError": 0.0,
+    "uniformScale": 0.22545301402373463,
+    "rotationDegrees": 2.0,
+    "finalSourceToCanvasTranslation": [
+      16.647427436784714,
+      114.15801791525865
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.2680412371134
+      ],
+      "handL": [
+        48.457070707070706,
+        108.10353535353535
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.19551282051282
+      ],
+      "handL": [
+        46.71391076115486,
+        107.39370078740158
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-labcoat.png",
+    "sourceCell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "frame": 2
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.154,
+      "handL": 0.154
+    },
+    "maxKeypointError": 0.154,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9401858304297329,
+    "groundError": 0.0,
+    "uniformScale": 0.22645438735195988,
+    "rotationDegrees": -1.62890625,
+    "finalSourceToCanvasTranslation": [
+      12.742559318698806,
+      121.41926218412968
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.23913043478261
+      ],
+      "handL": [
+        58.472,
+        103.13866666666667
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.21100917431193
+      ],
+      "handL": [
+        59.04705882352942,
+        102.5529411764706
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-labcoat.png",
+    "sourceCell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "frame": 3
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.242,
+      "handL": 0.242
+    },
+    "maxKeypointError": 0.242,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9958688355280144,
+    "groundError": 0.0,
+    "uniformScale": 0.22328626925858777,
+    "rotationDegrees": -1.71484375,
+    "finalSourceToCanvasTranslation": [
+      15.322928317281605,
+      141.41826443020292
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.33903133903134
+      ],
+      "handL": [
+        55.600806451612904,
+        104.39919354838709
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.20711974110033
+      ],
+      "handL": [
+        55.76734693877551,
+        103.79183673469389
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-labcoat.png",
+    "sourceCell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "frame": 4
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.415,
+      "handL": 0.415
+    },
+    "maxKeypointError": 0.415,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9313554392088423,
+    "groundError": 0.0,
+    "uniformScale": 0.22166239585517847,
+    "rotationDegrees": -1.71484375,
+    "finalSourceToCanvasTranslation": [
+      15.018562574199077,
+      144.8992529758695
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.32352941176471
+      ],
+      "handL": [
+        57.98739495798319,
+        104.67366946778712
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.20666666666666
+      ],
+      "handL": [
+        57.95430107526882,
+        103.86155913978494
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-labcoat.png",
+    "sourceCell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "frame": 5
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.044,
+      "handL": 0.044
+    },
+    "maxKeypointError": 0.044,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9873506676036542,
+    "groundError": 0.0,
+    "uniformScale": 0.22100306199178232,
+    "rotationDegrees": -0.41015624999999994,
+    "finalSourceToCanvasTranslation": [
+      17.92832040073732,
+      141.65095587303045
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.29931972789116
+      ],
+      "handL": [
+        47.61635220125786,
+        107.75220125786164
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.833333333333336,
+        78.18627450980392
+      ],
+      "handL": [
+        47.715415019762844,
+        107.65876152832675
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-labcoat.png",
+    "sourceCell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "frame": 6
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.016,
+      "handL": 0.016
+    },
+    "maxKeypointError": 0.016,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.973517559009787,
+    "groundError": 0.0,
+    "uniformScale": 0.22366233061794272,
+    "rotationDegrees": 1.3203125000000004,
+    "finalSourceToCanvasTranslation": [
+      18.724574293995683,
+      133.78271494037986
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.333333333333336,
+        76.9927536231884
+      ],
+      "handL": [
+        33.13333333333333,
+        104.22692307692307
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.0,
+        76.87908496732025
+      ],
+      "handL": [
+        32.141496598639456,
+        103.83265306122449
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-labcoat.png",
+    "sourceCell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "frame": 7
+  }
+]

@@ -27771,7 +27771,7 @@ function remainingHairSource(L,dir){
   // Select a complete compatible outfit/rig; never mix eight-pose legs with
   // four-pose sleeves or shoes from the earlier wardrobe.
   function customWalkSet(L,dir){
-    return DATA.walk.stride&&['right','left'].includes(dir)&&L.topS==='hoodie'&&L.bottomS==='jeans'&&L.shoesS==='sneakers'?DATA.walk.stride:DATA.walk;
+    return DATA.walk.stride&&['right','left'].includes(dir)?DATA.walk.stride:DATA.walk;
   }
   function customWalkFrameCount(look,dir='down'){
     const L=normalize(look);return isChild(L)?4:customWalkSet(L,dir).frameCounts?.[dir]||4;
@@ -28089,7 +28089,7 @@ function remainingHairSource(L,dir){
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-approved-stride',walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-wardrobe-eight-side-v5',walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();
 
@@ -29199,7 +29199,7 @@ function remainingHairSource(L,dir){
         // Rear-mounted fans stay behind the humidifier, canopy and front fabric.
         runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;
         try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
-        Gear.ctrl(c,P.ctrl[0],P.ctrl[1],e.ctrl,true,t,false);
+        if(!window.BagseedDehumidifiers?.handles('closet'))Gear.ctrl(c,P.ctrl[0],P.ctrl[1],e.ctrl,true,t,false);
         Gear.humid(c,P.humid[0],P.humid[1],e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,'closet');
         if(window.BagseedDehumidifiers?.handles('closet'))BagseedDehumidifiers.drawInside(c,'closet',t);else Gear.sensor(c,P.sensor[0],P.sensor[1],e.sensor,env,'closet');slots.call(this,c,t);
 
@@ -29210,12 +29210,12 @@ function remainingHairSource(L,dir){
     else{
       this.hit('space:closet',X,Y,W,H,'Starter tent · Grow space controls',null,'structure');
       for(const k of ['light','exhaust','fan','humid','sensor','ctrl']){
-        if(k==='sensor'&&window.BagseedDehumidifiers?.handles('closet'))continue;const n=L.equip[k];if(!n&&k!=='sensor')continue;const[x,y]=P[k];
+        if((k==='sensor'||k==='ctrl')&&window.BagseedDehumidifiers?.handles('closet'))continue;const n=L.equip[k];if(!n&&k!=='sensor')continue;const[x,y]=P[k];
         const box={light:[-14,-7,28,12],exhaust:[-8,-12,16,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,L.equip.sensor===3?20:14,14],ctrl:[-1,-1,11,13]}[k];
         this.hit(k+':closet',x+box[0],y+box[1],box[2],box[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,null,'equip');
       }
     }
-    window.BagseedDehumidifiers?.drawSensor(c,'closet');
+    window.BagseedDehumidifiers?.drawSensor(c,'closet',t);
   };
   // Keep lighting inside the current opening. Fabric is drawn only in its normal
   // scene position, before players/NPCs, never as a final room-wide repaint.
@@ -29269,8 +29269,8 @@ function remainingHairSource(L,dir){
     if(!supported())return original.call(this,c,t);
     const L=state.locations.tent2,P=DEV_POS.tent2,e=L.equip,dp=doorProg('tent2'),tier=Shell.of('tent2').tier;runtime.drawLoc='tent2';
     groundShadow(c,X+W/2,Y+H+1,W+6);sprite(c,tier,false,X,Y,W,H);this.plate(c,Math.round(X+W/2-15),0,'tent2',t);
-    const env=envFor('tent2'),on=isLightOn('tent2');Gear.ctrl(c,P.ctrl[0],P.ctrl[1],e.ctrl,true,t,false);
-    if(e.ctrl)this.hit('ctrl:tent2',P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');
+    const env=envFor('tent2'),on=isLightOn('tent2');if(!window.BagseedDehumidifiers?.handles('tent2'))Gear.ctrl(c,P.ctrl[0],P.ctrl[1],e.ctrl,true,t,false);
+    if(e.ctrl&&!window.BagseedDehumidifiers?.handles('tent2'))this.hit('ctrl:tent2',P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');
     if(dp<1){
       c.save();c.clip(opening(new Path2D(),X,Y,W,H));
       try{
@@ -29292,7 +29292,7 @@ function remainingHairSource(L,dir){
       this.hit('space:tent2',X,Y,W,H,'2x2 tent · Grow space controls',null,'structure');
       for(const k of ['light','exhaust','fan','humid','sensor']){if(k==='sensor'&&window.BagseedDehumidifiers?.handles('tent2'))continue;const n=e[k];if(!n&&k!=='sensor')continue;const[x,py]=P[k],y=py+(k==='light'?DATA.lightVisualOffsetY:k==='humid'?DATA.humidVisualOffsetY:0),b={light:[-22,-7,44,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];this.hit(k+':tent2',x+b[0],y+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,null,'equip');}
     }
-    window.BagseedDehumidifiers?.drawSensor(c,'tent2');
+    window.BagseedDehumidifiers?.drawSensor(c,'tent2',t);
   };
   // The legacy room beam uses fixed old bounds. Local diffusion above replaces it.
   RoomArt.growEffectMasks.tent2=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};
@@ -29340,7 +29340,7 @@ function remainingHairSource(L,dir){
   this.geo[loc]={x:X,y:Y,w:W,h:H,cx};runtime.drawLoc=loc;groundShadow(c,cx,base+1,W+6);sprite(c,tier,false,X,Y,W,H);RoomArt.plate(c,cx-15,Y,loc,t);
   if(e.dehum&&!window.BagseedDehumidifiers?.handles(loc)){groundShadow(c,P.dehum[0]+6,P.dehum[1]+16,14);Gear.dehum(c,...P.dehum,e.dehum,L.dehumOn||e.dehum===2,t);RoomArt.hit('dehum:'+loc,P.dehum[0]-1,P.dehum[1]-1,14,18,EQ.dehum[e.dehum].name,null,'equip');}
   if(e.heater){Gear.heater(c,...P.heater,e.heater,env.hvac.units.some(u=>u.dir>0),t);RoomArt.hit('heater:'+loc,P.heater[0]-1,P.heater[1]-3,14,16,EQ.heater[e.heater].name,null,'equip');}
-  if(e.ctrl){Gear.ctrl(c,...P.ctrl,e.ctrl,true,t,false);RoomArt.hit('ctrl:'+loc,P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');}
+  if(e.ctrl&&!window.BagseedDehumidifiers?.handles(loc)){Gear.ctrl(c,...P.ctrl,e.ctrl,true,t,false);RoomArt.hit('ctrl:'+loc,P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');}
   if(dp<1){c.save();c.clip(opening(new Path2D(),X,Y,W,H));try{
    diffusion(c,e.light,on,t);Gear.filter(c,...P.exhaust,e.exhaust,exMul(L)>0,t);Gear.light(c,...P.light,e.light,on,t);
 
@@ -29353,7 +29353,7 @@ function remainingHairSource(L,dir){
   if(dp>.9){if(Shell.of(loc).zip<35)R(c,X+W*.15,Y+H*.22,1,3,'#ffd257');const dry=plantsIn(loc).find(p=>p.stage===S.drying);if(dry)RoomArt.dryTag(c,cx+6,Y+40,dry,loc);}
   RoomArt.hit('space:'+loc,dp>=1?X+2:X,dp>=1?Y+2:Y,dp>=1?W-4:W,dp>=1?H-4:H,locName(loc)+(dp>=1?' (zipped)':'')+' · Grow space controls',[cx,base+8],dp>=1?'furniture':'structure');
   if(dp<1)for(const k of ['light','exhaust','fan','humid','sensor']){if(k==='sensor'&&window.BagseedDehumidifiers?.handles('tent4'))continue;const n=e[k];if(!n&&k!=='sensor')continue;const[px,py]=P[k],b={light:[-26,-7,52,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];RoomArt.hit(k+':'+loc,px+b[0],py+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,[cx,base+8],'equip');}
-    window.BagseedDehumidifiers?.drawSensor(c,'tent4');
+    window.BagseedDehumidifiers?.drawSensor(c,'tent4',t);
  };
  // The older late glow must not draw over actors or the new front fabric.
  RoomArt.growEffectMasks.tent4=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};
@@ -29401,7 +29401,7 @@ function remainingHairSource(L,dir){
   this.geo[loc]={x:X,y:Y,w:W,h:H,cx};runtime.drawLoc=loc;groundShadow(c,cx,base+1,W+6);sprite(c,tier,false,X,Y,W,H);RoomArt.plate(c,cx-15,Y,loc,t);
   if(e.dehum&&!window.BagseedDehumidifiers?.handles(loc)){groundShadow(c,P.dehum[0]+6,P.dehum[1]+16,14);Gear.dehum(c,...P.dehum,e.dehum,L.dehumOn||e.dehum===2,t);RoomArt.hit('dehum:'+loc,P.dehum[0]-1,P.dehum[1]-1,14,18,EQ.dehum[e.dehum].name,null,'equip');}
   if(e.heater){Gear.heater(c,...P.heater,e.heater,env.hvac.units.some(u=>u.dir>0),t);RoomArt.hit('heater:'+loc,P.heater[0]-1,P.heater[1]-3,14,16,EQ.heater[e.heater].name,null,'equip');}
-  if(e.ctrl){Gear.ctrl(c,...P.ctrl,e.ctrl,true,t,false);RoomArt.hit('ctrl:'+loc,P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');}
+  if(e.ctrl&&!window.BagseedDehumidifiers?.handles(loc)){Gear.ctrl(c,...P.ctrl,e.ctrl,true,t,false);RoomArt.hit('ctrl:'+loc,P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');}
   if(dp<1){c.save();c.clip(opening(new Path2D(),X,Y,W,H));try{
    diffusion(c,e.light,on,t);Gear.filter(c,...P.exhaust,e.exhaust,exMul(L)>0,t);for(const lx of [cx-40,cx+40])Gear.light(c,lx,P.light[1],e.light,on,t);
 
@@ -29414,7 +29414,7 @@ function remainingHairSource(L,dir){
   if(dp>.9){if(Shell.of(loc).zip<35)R(c,X+W*.15,Y+H*.22,1,3,'#ffd257');const dry=plantsIn(loc).find(p=>p.stage===S.drying);if(dry)RoomArt.dryTag(c,cx+6,Y+40,dry,loc);}
   RoomArt.hit('space:'+loc,dp>=1?X+2:X,dp>=1?Y+2:Y,dp>=1?W-4:W,dp>=1?H-4:H,locName(loc)+(dp>=1?' (zipped)':'')+' · Grow space controls',[cx,base+8],dp>=1?'furniture':'structure');
   if(dp<1)for(const k of ['light','exhaust','fan','humid','sensor']){if(k==='sensor'&&window.BagseedDehumidifiers?.handles('tent5'))continue;const n=e[k];if(!n&&k!=='sensor')continue;const[px,py]=P[k],b={light:[-66,-7,132,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];RoomArt.hit(k+':'+loc,px+b[0],py+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,[cx,base+8],'equip');}
-    window.BagseedDehumidifiers?.drawSensor(c,'tent5');
+    window.BagseedDehumidifiers?.drawSensor(c,'tent5',t);
  };
  // The older late glow must not draw over actors or the new front fabric.
  RoomArt.growEffectMasks.tent5=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};
@@ -29605,10 +29605,10 @@ function remainingHairSource(L,dir){
 
 </script>
 <script id="bagseed-dehumidifiers-production-code">
-/* Dehumidifier samples: local climate stays unchanged; render before plants/fabric. */
+/* Approved dehumidifiers: local climate stays unchanged; render before plants/fabric. */
 (()=>{
  'use strict';
- const DATA={"revision":"dehumidifiers-1","status":"proposal","path":"assets/dehumidifiers-atlas.png","sha256":"d79bf76ab796b667a7491681375649c47f8c36975141e23fc6cfc408a43844b9","size":[1230,1278],"runtime":{"path":"assets/dehumidifiers-atlas.webp","sha256":"07a1d0663d943283ead9f38d736c09b316d05c65482878adaf4a4d3e08032e8a","publicPath":"assets/dehumidifiers/dehumidifiers-07a1d0663d94.webp"},"tiers":{"1":{"name":"DryGuy Junior","price":59,"watts":120,"width":11.8,"height":12.1,"on":[127,56,421,431],"off":[682,56,422,431]},"2":{"name":"Arid Andy Smart","price":189,"watts":180,"width":12.2,"height":16,"on":[75,535,519,676],"off":[644,535,519,676],"display":{"on":[365,837,114,52],"off":[935,837,114,52]}}},"placements":{"closet":[17.5,82],"tent2":[128,96],"tent4":[116,112],"tent5":[316,122]},"image":"assets/dehumidifiers/dehumidifiers-07a1d0663d94.webp"},image=new Image(),original=Gear.dehum,icon=drawGearIcon,fixtures=new Map(),sensors=new Map();let loaded=false;
+ const DATA={"revision":"dehumidifiers-1","status":"approved","path":"assets/dehumidifiers-atlas.png","sha256":"d79bf76ab796b667a7491681375649c47f8c36975141e23fc6cfc408a43844b9","size":[1230,1278],"runtime":{"path":"assets/dehumidifiers-atlas.webp","sha256":"07a1d0663d943283ead9f38d736c09b316d05c65482878adaf4a4d3e08032e8a","publicPath":"assets/dehumidifiers/dehumidifiers-07a1d0663d94.webp"},"tiers":{"1":{"name":"DryGuy Junior","price":59,"watts":120,"width":11.8,"height":12.1,"on":[127,56,421,431],"off":[682,56,422,431]},"2":{"name":"Arid Andy Smart","price":189,"watts":180,"width":12.2,"height":16,"on":[75,535,519,676],"off":[644,535,519,676],"display":{"on":[365,837,114,52],"off":[935,837,114,52]}}},"placements":{"closet":[17.5,82],"tent2":[128,96],"tent4":[116,112],"tent5":[316,122]},"approvedDate":"2026-10-17","image":"assets/dehumidifiers/dehumidifiers-07a1d0663d94.webp"},image=new Image(),original=Gear.dehum,icon=drawGearIcon,fixtures=new Map(),sensors=new Map(),controllers=new Map();let loaded=false;
  const handles=loc=>loaded&&!!DATA.placements[loc];
  function sprite(c,x,y,n,on=true,t=0,target=55){const a=DATA.tiers[n];if(!loaded||!a)return;const k=on?'on':'off',r=a[k];c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...r,x-a.width/2,y-a.height,a.width,a.height);
   if(n===2&&on){const d=a.display[k],dx=x-a.width/2+(d[0]-r[0])*a.width/r[2],dy=y-a.height+(d[1]-r[1])*a.height/r[3],dw=d[2]*a.width/r[2],dh=d[3]*a.height/r[3];c.fillStyle='#c5e6ab';c.font=dh*.87+'px monospace';c.textAlign='center';c.textBaseline='middle';c.fillText(String(target),dx+dw/2,dy+dh/2,dw*.92);}
@@ -29616,10 +29616,12 @@ function remainingHairSource(L,dir){
  }
  function drawInside(c,loc,t){if(!handles(loc))return;const L=state.locations[loc],n=L.equip.dehum,a=DATA.tiers[n];fixtures.delete(loc);if(!a)return;const[x,y]=DATA.placements[loc],on=!!(L.dehumOn||n===2);groundShadow(c,x,y,a.width);sprite(c,x,y,n,on,t,L.dehumTarget);fixtures.set(loc,{x,y,tier:n,on});const b=BagseedTentPlacement.bounds(loc);RoomArt.hit('dehum:'+loc,x-a.width/2-1,y-a.height-1,a.width+2,a.height+2,EQ.dehum[n].name,[b[0]+b[2]/2,b[1]+b[3]+14],'equip');}
  // These stay on the exterior header, outside the zipped flap and contents mask.
- function drawSensor(c,loc){if(!handles(loc))return;const L=state.locations[loc],n=L.equip.sensor,b=BagseedTentPlacement.bounds(loc),w=n===3?18:n===2?14:9,h=n===3?14:n===2?10:n===1?9:8,scale=loc==='closet'?.55:.72,x=b[0]+b[2]*(loc==='closet'?.81:loc==='tent2'?.875:.89)-w*scale/2,y=b[1]+b[3]*.078; c.save();c.translate(x,y);c.scale(scale,scale);Gear.sensor(c,0,0,n,envFor(loc),loc);c.restore();const f={x,y,w:w*scale,h:h*scale,tier:n};sensors.set(loc,f);RoomArt.hit('sensor:'+loc,x-1,y-1,f.w+2,f.h+2,n?EQ.sensor[n].name:'Climate check (hand)',[b[0]+b[2]/2,b[1]+b[3]+14],'equip');}
+ function drawSensor(c,loc,t=0){if(!handles(loc))return;const L=state.locations[loc],n=L.equip.sensor,b=BagseedTentPlacement.bounds(loc),w=n===3?18:n===2?14:9,h=n===3?14:n===2?10:n===1?9:8,scale=loc==='closet'?.55:.72,x=b[0]+b[2]*(loc==='closet'?.81:loc==='tent2'?.875:.89)-w*scale/2,y=b[1]+b[3]*.078; c.save();c.translate(x,y);c.scale(scale,scale);Gear.sensor(c,0,0,n,envFor(loc),loc);c.restore();const f={x,y,w:w*scale,h:h*scale,tier:n};sensors.set(loc,f);RoomArt.hit('sensor:'+loc,x-1,y-1,f.w+2,f.h+2,n?EQ.sensor[n].name:'Climate check (hand)',[b[0]+b[2]/2,b[1]+b[3]+14],'equip');
+  controllers.delete(loc);if(L.equip.ctrl){const cx=x-1.8-9*scale,cy=y+(f.h-11*scale)/2;c.save();c.translate(cx,cy);c.scale(scale,scale);Gear.ctrl(c,0,0,L.equip.ctrl,true,settings.reduced?0:t,false);c.restore();const controller={x:cx,y:cy,w:9*scale,h:11*scale,tier:L.equip.ctrl};controllers.set(loc,controller);RoomArt.hit('ctrl:'+loc,cx-.5,cy-.5,controller.w+1,controller.h+1,EQ.ctrl[L.equip.ctrl].name,[b[0]+b[2]/2,b[1]+b[3]+14],'equip');}
+ }
  Gear.dehum=function(c,x,y,n,on,t){if(!loaded||!DATA.tiers[n])return original.apply(this,arguments);sprite(c,x+6,y+16,n,on,t);};
  drawGearIcon=function(c,cv,slot,n,museum){if(slot!=='dehum'||!loaded||!DATA.tiers[n])return icon.apply(this,arguments);cv.width=320;cv.height=240;c.fillStyle=museum?'#2a2016':'#1a2420';c.fillRect(0,0,320,240);const a=DATA.tiers[n],scale=Math.min(184/a.height,235/a.width);c.save();c.translate(160,120);c.scale(scale,scale);sprite(c,0,a.height/2,n,true,0,55);c.restore();};
- const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Dehumidifier artwork failed'));image.src=DATA.image;});window.BagseedDehumidifiers=Object.freeze({ready,handles,sprite,drawInside,drawSensor,fixtures,sensors,placements:DATA.placements,get loaded(){return loaded;}});
+ const ready=new Promise((resolve,reject)=>{image.onload=()=>{loaded=true;resolve();};image.onerror=()=>reject(Error('Dehumidifier artwork failed'));image.src=DATA.image;});window.BagseedDehumidifiers=Object.freeze({ready,handles,sprite,drawInside,drawSensor,fixtures,sensors,controllers,placements:DATA.placements,get loaded(){return loaded;}});
 })();
 
 </script>

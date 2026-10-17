@@ -29,8 +29,8 @@
     if(!supported())return original.call(this,c,t);
     const L=state.locations.tent2,P=DEV_POS.tent2,e=L.equip,dp=doorProg('tent2'),tier=Shell.of('tent2').tier;runtime.drawLoc='tent2';
     groundShadow(c,X+W/2,Y+H+1,W+6);sprite(c,tier,false,X,Y,W,H);this.plate(c,Math.round(X+W/2-15),0,'tent2',t);
-    const env=envFor('tent2'),on=isLightOn('tent2');Gear.ctrl(c,P.ctrl[0],P.ctrl[1],e.ctrl,true,t,false);
-    if(e.ctrl)this.hit('ctrl:tent2',P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');
+    const env=envFor('tent2'),on=isLightOn('tent2');if(!window.BagseedDehumidifiers?.handles('tent2'))Gear.ctrl(c,P.ctrl[0],P.ctrl[1],e.ctrl,true,t,false);
+    if(e.ctrl&&!window.BagseedDehumidifiers?.handles('tent2'))this.hit('ctrl:tent2',P.ctrl[0]-1,P.ctrl[1]-1,11,13,EQ.ctrl[e.ctrl].name,null,'equip');
     if(dp<1){
       c.save();c.clip(opening(new Path2D(),X,Y,W,H));
       try{
@@ -52,7 +52,7 @@
       this.hit('space:tent2',X,Y,W,H,'2x2 tent · Grow space controls',null,'structure');
       for(const k of ['light','exhaust','fan','humid','sensor']){if(k==='sensor'&&window.BagseedDehumidifiers?.handles('tent2'))continue;const n=e[k];if(!n&&k!=='sensor')continue;const[x,py]=P[k],y=py+(k==='light'?DATA.lightVisualOffsetY:k==='humid'?DATA.humidVisualOffsetY:0),b={light:[-22,-7,44,12],exhaust:[-7,-12,14,30],fan:[-6,-6,12,14],humid:[-7,-14,14,15],sensor:[-1,-1,14,12]}[k];this.hit(k+':tent2',x+b[0],y+b[1],b[2],b[3],k==='sensor'&&!n?'Climate check (hand)':EQ[k][n].name,null,'equip');}
     }
-    window.BagseedDehumidifiers?.drawSensor(c,'tent2');
+    window.BagseedDehumidifiers?.drawSensor(c,'tent2',t);
   };
   // The legacy room beam uses fixed old bounds. Local diffusion above replaces it.
   RoomArt.growEffectMasks.tent2=function(c){if(!supported())return;c.beginPath();c.rect(0,0,0,0);c.clip();};

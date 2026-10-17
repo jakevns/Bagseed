@@ -1,6 +1,6 @@
 {
   "revision": "dehumidifiers-1",
-  "status": "proposal",
+  "status": "approved",
   "path": "assets/dehumidifiers-atlas.png",
   "sha256": "d79bf76ab796b667a7491681375649c47f8c36975141e23fc6cfc408a43844b9",
   "size": [
@@ -83,5 +83,6 @@
       316,
       122
     ]
-  }
+  },
+  "approvedDate": "2026-10-17"
 }

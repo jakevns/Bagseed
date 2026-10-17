@@ -9,9 +9,18 @@
   "placementPreview": "passed: both dehumidifier tiers across all four tents",
   "closedSensorPreview": "passed: all four tents and all three purchased sensor tiers",
   "fanClearanceAndSeparateClickTargets": "passed",
-  "originalCharacterDataPreserved": "custom-walk-approved-stride",
-  "publication": "local samples only; awaiting user artwork approval",
+  "originalCharacterDataPreserved": "custom-walk-wardrobe-eight-side-v5",
+  "publication": "approved for main; merged with e542eeb and validated",
   "fiveByFiveDehumidifier": "between plants 5 and 6; x=316",
   "dualFanHeight": "starter, 4x4 and 5x5 raised; approved 2x2 positions retained",
-  "canopyLayering": "fans behind humidifiers, dehumidifiers and plants; front fabric and actors retain their normal depth"
+  "canopyLayering": "fans behind humidifiers, dehumidifiers and plants; front fabric and actors retain their normal depth",
+  "closedBrainControllers": "adjacent to thermometer, separate clickable exterior mounts on all four tents",
+  "mergedReleaseChecks": {
+    "buildAndCharacterHashes": "passed",
+    "dehumidifierPurchaseDeliverySaveReload": "passed",
+    "starterTentLayeringZipperSaveReload": "passed",
+    "allTentPlayerDepth": "passed",
+    "wardrobeCreatorMirrorSideStrideHTTP": "passed",
+    "closedBrainControllerAndSensorTargets": "passed: all four tents"
+  }
 }

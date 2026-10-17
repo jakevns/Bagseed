@@ -32,8 +32,9 @@ test('approved custom side stride is live in '+(httpMode?'served':'file')+' game
   });
   assert.deepEqual(result.checks.map(c=>c.frame),[0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7]);
   for(const c of result.checks){assert.equal(c.authored,c.dir+'/'+c.frame);assert.equal(c.profile,'stride/');assert.ok(c.error<.001);}
-  assert.equal(result.fallback,4);assert.equal(result.front,4);assert.equal(result.reduced,2);assert.equal(result.mirror,8);assert.deepEqual(errors,[]);
-  const out=path.join(root,'review/custom-walk-v4');fs.writeFileSync(path.join(out,'live-game-poses.png'),Buffer.from(result.board.split(',')[1],'base64'));delete result.board;
+  assert.equal(result.fallback,8);assert.equal(result.front,4);assert.equal(result.reduced,2);assert.equal(result.mirror,8);assert.deepEqual(errors,[]);
+  const out=path.join(root,'review/custom-walk-v5');fs.writeFileSync(path.join(out,'live-game-poses.png'),Buffer.from(result.board.split(',')[1],'base64'));delete result.board;
   fs.writeFileSync(path.join(out,'live-game-checks.json'),JSON.stringify({...result,creator,browserErrors:errors,transport:httpMode?'http':'file'},null,2)+'\n');
  }finally{await browser?.close();if(server)await new Promise(r=>server.close(r));}
+
 });
