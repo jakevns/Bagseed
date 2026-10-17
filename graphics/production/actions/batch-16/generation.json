@@ -1,0 +1,14 @@
+{
+  "tool": "image_gen",
+  "prompt": "Create ONE transparent PNG atlas with exactly 3 rows and THREE columns. The FIRST reference is an identity chart: each row is ONE different character shown front/right/back in idle. Preserve each row's exact face, hair silhouette, skin, outfit, age, build, accessories and head/body proportions. NOW DRAW EACH SAME CHARACTER HOLDING THEIR NOSE with thumb and forefinger, mild unpleasant smell reaction. Column 1 front, column 2 right-facing true profile, column 3 back. Static upright planted feet, no crouching or walking. Other hand at side; shoulders and belly remain same size as idle. Same entire figure height and head size as that character's idle identity. Keep kid a child. Do not replace faces, hair or outfits. Clear generous transparent gutters between ALL cells, no text/labels/borders/background/shadows/glow. Fill canvas with clearly separated whole figures. Rows must be evenly spaced. Use second reference for approved Bagseed style: large rounded head ~one-third figure, large dark eyes with white glints, warm dark-brown thin contours, soft rounded short limbs, two or three flat cel tones, solid simplified hair/beards, NO texture noise. Heavy bodies have soft round belly, never square broad shoulders. This is final production game art, not pixel art. Every cell complete head to soles. No head exaggeration compared with first reference. Rows top-to-bottom: Mara (long dark auburn waves, rectangular glasses, plum cardigan, black shirt, charcoal pants); Eli (short loosely parted black hair, glasses, denim blue jacket, dark tee, brown-gray pants); Nico (youth, SHORT compact black curls swept forward with SHAVED sides and small tight back silhouette, charcoal zip hoodie, purple pants). Nico must NOT have an afro, large hair mass, full shaved head, or crouch. Match their idle head width and body height exactly.",
+  "source": "C:\\Users\\Jake Bailey\\.codex\\generated_images\\01a13d50-80c7-7d60-a885-a07ae6d73a67\\exec-71b31199-eeed-48cb-bc6f-4178ed5b804b.png",
+  "references": [
+    "C:/Projects/Bagseed/.cache/nose-batch-16-references.png",
+    "C:/Projects/Bagseed/review/characters-v2/assets/master-cast.png"
+  ],
+  "assetIds": [
+    "cast-10-mara",
+    "cast-11-eli",
+    "cast-12-nico"
+  ]
+}

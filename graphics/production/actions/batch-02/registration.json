@@ -1,5 +1,5 @@
 {
-  "correctedFrontSHA256": "3cf654fd7598ebf8db3493a623944222f2b1a6520ad36da1a81c159b858cd014",
+  "source": "source.png",
   "sourceSHA256": "0f161b67ab90900ac2c87a4c5761a2d1319efe941a18eebf97b2a0c3f9ff6a7d",
   "characters": {
     "tobias": {
@@ -15,6 +15,12 @@
           14,
           226,
           324
+        ],
+        "scale": 0.3225806451612903,
+        "targetHeight": 100,
+        "placement": [
+          25,
+          7
         ]
       },
       "right": {
@@ -29,6 +35,12 @@
           15,
           190,
           325
+        ],
+        "scale": 0.3225806451612903,
+        "targetHeight": 100,
+        "placement": [
+          29,
+          7
         ]
       },
       "up": {
@@ -43,6 +55,12 @@
           14,
           187,
           323
+        ],
+        "scale": 0.32362459546925565,
+        "targetHeight": 100,
+        "placement": [
+          24,
+          7
         ]
       }
     },
@@ -59,6 +77,12 @@
           98,
           840,
           1473
+        ],
+        "scale": 0.07272727272727272,
+        "targetHeight": 100,
+        "placement": [
+          21,
+          7
         ]
       },
       "right": {
@@ -73,6 +97,12 @@
           4,
           189,
           306
+        ],
+        "scale": 0.33112582781456956,
+        "targetHeight": 100,
+        "placement": [
+          28,
+          7
         ]
       },
       "up": {
@@ -87,6 +117,12 @@
           7,
           199,
           305
+        ],
+        "scale": 0.33557046979865773,
+        "targetHeight": 100,
+        "placement": [
+          25,
+          7
         ]
       }
     },
@@ -103,6 +139,12 @@
           1,
           233,
           328
+        ],
+        "scale": 0.3180428134556575,
+        "targetHeight": 104,
+        "placement": [
+          24,
+          3
         ]
       },
       "right": {
@@ -117,6 +159,12 @@
           1,
           188,
           329
+        ],
+        "scale": 0.3170731707317073,
+        "targetHeight": 104,
+        "placement": [
+          28,
+          3
         ]
       },
       "up": {
@@ -131,6 +179,12 @@
           1,
           205,
           328
+        ],
+        "scale": 0.3180428134556575,
+        "targetHeight": 104,
+        "placement": [
+          25,
+          3
         ]
       }
     },
@@ -147,6 +201,12 @@
           1,
           239,
           292
+        ],
+        "scale": 0.3436426116838488,
+        "targetHeight": 100,
+        "placement": [
+          18,
+          7
         ]
       },
       "right": {
@@ -161,6 +221,12 @@
           2,
           196,
           293
+        ],
+        "scale": 0.3436426116838488,
+        "targetHeight": 100,
+        "placement": [
+          25,
+          7
         ]
       },
       "up": {
@@ -175,6 +241,12 @@
           3,
           218,
           291
+        ],
+        "scale": 0.3472222222222222,
+        "targetHeight": 100,
+        "placement": [
+          19,
+          7
         ]
       }
     },
@@ -191,6 +263,12 @@
           2,
           214,
           261
+        ],
+        "scale": 0.3861003861003861,
+        "targetHeight": 100,
+        "placement": [
+          20,
+          7
         ]
       },
       "right": {
@@ -205,6 +283,12 @@
           3,
           187,
           261
+        ],
+        "scale": 0.3875968992248062,
+        "targetHeight": 100,
+        "placement": [
+          19,
+          7
         ]
       },
       "up": {
@@ -219,12 +303,18 @@
           2,
           195,
           261
+        ],
+        "scale": 0.3861003861003861,
+        "targetHeight": 100,
+        "placement": [
+          20,
+          7
         ]
       }
     }
   },
   "limitations": [
-    "Left profile mirrors the right profile; raised-hand and carried-book sides mirror with it.",
-    "Only matching canonical outfits receive these poses; custom appearances retain existing renderer."
+    "Left profile mirrors right, including hand and prop side.",
+    "Only matching canonical outfits use these action drawings."
   ]
 }

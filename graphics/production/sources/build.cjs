@@ -57,7 +57,11 @@ for(const [batch,names] of Object.entries({
   'batch-08':['auto','swamp','rosalind','theo','marisol'],
   'batch-09':['cure','lumen','cafePT','gardenPT','hardwarePT'],
   'batch-10':['player','remy','doug','priya','poppy'],
-  'batch-11':['dev','ari','sam','talia','luz']
+  'batch-11':['dev','ari','sam','talia','luz'],
+  ...Object.fromEntries(['12','13','14','15','16','17'].map(n=>{
+    const batch='batch-'+n,sheet=JSON.parse(fs.readFileSync(path.join(art,'actions',batch,'sheet.json')));
+    return [batch,Object.keys(sheet.assetIds)];
+  }))
 })) for(const name of names) {
   const configPath=path.join(art,'actions',batch,'sheet.json');
   const assetId=fs.existsSync(configPath)?JSON.parse(fs.readFileSync(configPath)).assetIds[name]:null;

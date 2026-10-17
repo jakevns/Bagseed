@@ -1,0 +1,320 @@
+{
+  "source": "source.png",
+  "sourceSHA256": "a223ea10df6539a80467c7a51a86ddc2726b354013be6c81a679921a070003d7",
+  "characters": {
+    "cast-43-canopy": {
+      "down": {
+        "sourceBox": [
+          0,
+          0,
+          341,
+          307
+        ],
+        "alphaBounds": [
+          173,
+          16,
+          333,
+          305
+        ],
+        "scale": 0.3460207612456747,
+        "targetHeight": 100,
+        "placement": [
+          24,
+          7
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          341,
+          0,
+          683,
+          307
+        ],
+        "alphaBounds": [
+          106,
+          16,
+          251,
+          305
+        ],
+        "scale": 0.3460207612456747,
+        "targetHeight": 100,
+        "placement": [
+          24,
+          7
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          683,
+          0,
+          1024,
+          307
+        ],
+        "alphaBounds": [
+          10,
+          17,
+          180,
+          305
+        ],
+        "scale": 0.3472222222222222,
+        "targetHeight": 100,
+        "placement": [
+          24,
+          7
+        ]
+      }
+    },
+    "cast-44-pheno": {
+      "down": {
+        "sourceBox": [
+          0,
+          307,
+          341,
+          619
+        ],
+        "alphaBounds": [
+          167,
+          18,
+          333,
+          312
+        ],
+        "scale": 0.3401360544217687,
+        "targetHeight": 100,
+        "placement": [
+          24,
+          7
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          341,
+          307,
+          683,
+          619
+        ],
+        "alphaBounds": [
+          120,
+          17,
+          254,
+          311
+        ],
+        "scale": 0.3401360544217687,
+        "targetHeight": 100,
+        "placement": [
+          28,
+          7
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          683,
+          307,
+          1024,
+          619
+        ],
+        "alphaBounds": [
+          11,
+          15,
+          181,
+          312
+        ],
+        "scale": 0.3367003367003367,
+        "targetHeight": 100,
+        "placement": [
+          24,
+          7
+        ]
+      }
+    },
+    "cast-45-fern": {
+      "down": {
+        "sourceBox": [
+          0,
+          619,
+          347,
+          922
+        ],
+        "alphaBounds": [
+          167,
+          20,
+          347,
+          301
+        ],
+        "scale": 0.3309608540925267,
+        "targetHeight": 93,
+        "placement": [
+          22,
+          14
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          347,
+          619,
+          683,
+          922
+        ],
+        "alphaBounds": [
+          117,
+          19,
+          262,
+          301
+        ],
+        "scale": 0.32978723404255317,
+        "targetHeight": 93,
+        "placement": [
+          28,
+          14
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          683,
+          619,
+          1024,
+          922
+        ],
+        "alphaBounds": [
+          8,
+          22,
+          185,
+          302
+        ],
+        "scale": 0.33214285714285713,
+        "targetHeight": 93,
+        "placement": [
+          23,
+          14
+        ]
+      }
+    },
+    "cast-46-tinker": {
+      "down": {
+        "sourceBox": [
+          0,
+          922,
+          341,
+          1229
+        ],
+        "alphaBounds": [
+          168,
+          13,
+          337,
+          306
+        ],
+        "scale": 0.3412969283276451,
+        "targetHeight": 100,
+        "placement": [
+          24,
+          7
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          341,
+          922,
+          683,
+          1229
+        ],
+        "alphaBounds": [
+          113,
+          15,
+          256,
+          306
+        ],
+        "scale": 0.3436426116838488,
+        "targetHeight": 100,
+        "placement": [
+          26,
+          7
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          683,
+          922,
+          1024,
+          1229
+        ],
+        "alphaBounds": [
+          16,
+          16,
+          185,
+          306
+        ],
+        "scale": 0.3448275862068966,
+        "targetHeight": 100,
+        "placement": [
+          25,
+          7
+        ]
+      }
+    },
+    "cast-47-netted": {
+      "down": {
+        "sourceBox": [
+          0,
+          1229,
+          341,
+          1536
+        ],
+        "alphaBounds": [
+          167,
+          4,
+          334,
+          302
+        ],
+        "scale": 0.348993288590604,
+        "targetHeight": 104,
+        "placement": [
+          23,
+          3
+        ]
+      },
+      "right": {
+        "sourceBox": [
+          341,
+          1229,
+          683,
+          1536
+        ],
+        "alphaBounds": [
+          88,
+          9,
+          259,
+          302
+        ],
+        "scale": 0.35494880546075086,
+        "targetHeight": 104,
+        "placement": [
+          16,
+          3
+        ]
+      },
+      "up": {
+        "sourceBox": [
+          683,
+          1229,
+          1024,
+          1536
+        ],
+        "alphaBounds": [
+          18,
+          8,
+          181,
+          302
+        ],
+        "scale": 0.35374149659863946,
+        "targetHeight": 104,
+        "placement": [
+          26,
+          3
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Left profile mirrors right, including hand and prop side.",
+    "Only matching canonical outfits use these action drawings."
+  ]
+}

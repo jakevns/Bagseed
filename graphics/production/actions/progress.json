@@ -1,39 +1,39 @@
 {
   "scope": "72 authored appearances: 67 additional cast appearances plus five original samples",
-  "completedCount": 52,
-  "remainingCount": 20,
+  "completedCount": 72,
+  "remainingCount": 0,
   "completedBatches": {
     "batch-01": [
-      "cast-01-marcus",
-      "cast-02-ines"
+      "marcus",
+      "ines"
     ],
     "batch-02": [
-      "cast-03-tobias",
-      "cast-04-bev",
-      "cast-05-kenji",
-      "cast-06-mateo",
-      "cast-07-elena"
+      "tobias",
+      "bev",
+      "kenji",
+      "mateo",
+      "elena"
     ],
     "batch-03": [
-      "cast-08-rosa",
-      "cast-09-leo",
-      "cast-10-mara",
-      "cast-11-eli",
-      "cast-12-nico"
+      "rosa",
+      "leo",
+      "mara",
+      "eli",
+      "nico"
     ],
     "batch-04": [
-      "cast-13-alma",
-      "cast-14-owen",
-      "cast-15-amina",
-      "cast-16-ronan",
-      "cast-17-leila"
+      "alma",
+      "owen",
+      "amina",
+      "ronan",
+      "leila"
     ],
     "batch-05": [
-      "cast-18-cass",
-      "cast-19-jun",
-      "cast-20-rosie",
-      "cast-21-arthur",
-      "cast-22-nadia"
+      "cass",
+      "jun",
+      "rosie",
+      "arthur",
+      "nadia"
     ],
     "batch-06": [
       "cast-33-0",
@@ -76,134 +76,58 @@
       "cast-30-sam",
       "cast-31-talia",
       "cast-32-luz"
+    ],
+    "batch-12": [
+      "cast-23-miles",
+      "cast-24-hugo",
+      "cast-25-anika",
+      "cast-26-enzo",
+      "cast-27-sasha"
+    ],
+    "batch-13": [
+      "cast-38-theo",
+      "cast-39-marisol",
+      "cast-40-vale",
+      "cast-41-shed",
+      "cast-42-patchwork"
+    ],
+    "batch-14": [
+      "cast-43-canopy",
+      "cast-44-pheno",
+      "cast-45-fern",
+      "cast-46-tinker",
+      "cast-47-netted"
+    ],
+    "batch-15": [
+      "cast-53-threadsPT",
+      "cast-54-marketPT",
+      "cast-55-communityPT",
+      "cast-56-labPT",
+      "cast-57-officer"
+    ],
+    "batch-16": [
+      "cast-10-mara",
+      "cast-11-eli",
+      "cast-12-nico"
+    ],
+    "batch-17": [
+      "cast-54-marketPT",
+      "cast-56-labPT",
+      "cast-11-eli"
     ]
   },
-  "remainingAppearances": [
-    {
-      "assetId": "cast-23-miles",
-      "id": "miles",
-      "name": "Miles Dunn",
-      "source": "collections.residents.miles.look"
-    },
-    {
-      "assetId": "cast-24-hugo",
-      "id": "hugo",
-      "name": "Hugo Serrano",
-      "source": "collections.residents.hugo.look"
-    },
-    {
-      "assetId": "cast-25-anika",
-      "id": "anika",
-      "name": "Anika Patel",
-      "source": "collections.residents.anika.look"
-    },
-    {
-      "assetId": "cast-26-enzo",
-      "id": "enzo",
-      "name": "Enzo Park",
-      "source": "collections.residents.enzo.look"
-    },
-    {
-      "assetId": "cast-27-sasha",
-      "id": "sasha",
-      "name": "Sasha Reed",
-      "source": "collections.residents.sasha.look"
-    },
-    {
-      "assetId": "cast-38-theo",
-      "id": "theo",
-      "name": "Theo Park",
-      "source": "collections.patients.theo.look"
-    },
-    {
-      "assetId": "cast-39-marisol",
-      "id": "marisol",
-      "name": "Marisol Vega",
-      "source": "collections.patients.marisol.look"
-    },
-    {
-      "assetId": "cast-40-vale",
-      "id": "vale",
-      "name": "Dr. Juniper Vale",
-      "source": "collections.channels.vale.look"
-    },
-    {
-      "assetId": "cast-41-shed",
-      "id": "shed",
-      "name": "The Soil Shed",
-      "source": "collections.channels.shed.look"
-    },
-    {
-      "assetId": "cast-42-patchwork",
-      "id": "patchwork",
-      "name": "Patchwork Grow Diaries",
-      "source": "collections.channels.patchwork.look"
-    },
-    {
-      "assetId": "cast-43-canopy",
-      "id": "canopy",
-      "name": "Canopy Conversations",
-      "source": "collections.channels.canopy.look"
-    },
-    {
-      "assetId": "cast-44-pheno",
-      "id": "pheno",
-      "name": "Pheno Hunters HQ",
-      "source": "collections.channels.pheno.look"
-    },
-    {
-      "assetId": "cast-45-fern",
-      "id": "fern",
-      "name": "Ask Auntie Fern",
-      "source": "collections.channels.fern.look"
-    },
-    {
-      "assetId": "cast-46-tinker",
-      "id": "tinker",
-      "name": "Tinkerbench",
-      "source": "collections.channels.tinker.look"
-    },
-    {
-      "assetId": "cast-47-netted",
-      "id": "netted",
-      "name": "Netted & Neat",
-      "source": "collections.channels.netted.look"
-    },
-    {
-      "assetId": "cast-53-threadsPT",
-      "id": "threadsPT",
-      "name": "June",
-      "source": "collections.shopStaff.threads.ptLook"
-    },
-    {
-      "assetId": "cast-54-marketPT",
-      "id": "marketPT",
-      "name": "Kai",
-      "source": "collections.shopStaff.market.ptLook"
-    },
-    {
-      "assetId": "cast-55-communityPT",
-      "id": "communityPT",
-      "name": "Volunteer desk",
-      "source": "collections.shopStaff.community.ptLook"
-    },
-    {
-      "assetId": "cast-56-labPT",
-      "id": "labPT",
-      "name": "Night desk",
-      "source": "collections.shopStaff.lab.ptLook"
-    },
-    {
-      "assetId": "cast-57-officer",
-      "id": "officer",
-      "name": "Officer",
-      "source": "collections.NPCs.officer"
-    }
-  ],
+  "remainingAppearances": [],
   "latestReview": "review/poses-batch-10-11/README.md",
   "playableGame": "public/index.html",
-  "workflow": "Local files; no push or deployment requested.",
-  "additionalCastCompletedCount": 47,
+  "workflow": "Retained source art and reproducible registrations on ccr-12191481-bpni4g.",
+  "additionalCastCompletedCount": 67,
   "originalSamplesCompletedCount": 5,
-  "latestRendererReview": "review/customization-v4/README.md"
+  "latestRendererReview": "review/customization-v4/README.md",
+  "remaining": [],
+  "notes": [
+    "All twenty formerly missing authored reactions are retained in batches 12\u201315.",
+    "Nico, Mara and Eli replacements are in batch 16; compact-hair corrections override Kai, Night desk and Eli in batch 17.",
+    "Full style redraw sheets provide the final poses for the eighteen redrawn appearances.",
+    "All registration uses kid 82, short 93, tall 104, otherwise 100; no custom height overrides."
+  ]
 }

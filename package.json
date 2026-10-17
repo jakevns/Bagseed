@@ -8,7 +8,7 @@
     "check": "node tools/check.mjs",
     "test": "node --test --test-concurrency=1 tests/*.test.cjs",
     "build:bedroom": "node tools/build-bedroom.cjs",
-    "build:graphics": "python3 graphics/production/sources/extract.py && python3 graphics/production/cast/sources/extract.py && python3 graphics/production/customization-v5/register.py && python3 graphics/production/sources/prepare-customization.py && python3 graphics/production/sources/encode.py && node graphics/production/sources/build.cjs"
+    "build:graphics": "python3 graphics/production/sources/extract.py && python3 graphics/production/cast/sources/extract.py && python3 graphics/production/actions/register-all.py && python3 graphics/production/customization-v5/register.py && python3 graphics/production/sources/prepare-customization.py && python3 graphics/production/sources/encode.py && node graphics/production/sources/build.cjs"
   },
   "engines": {
     "node": ">=22"
