@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "51309117522135d5667e55bb24d86b8773f04b863cf8c0ce45bdda1ab3352cca",
-  "updatedSHA": "4ecdf2fafb26e90e77e7853cd748cdfc4fa12409136faee2a23cd447d2578a54",
+  "updatedSHA": "087b0b9bb21c8255255728af6c13cac0db44350adf0132bafe4599016fe8b2b4",
   "characterRevision": "custom-walk-waist-coverage-v9",
   "characterPayloadSHA256": "755ca8c97009d046cc37e3bdf018b685470a60a9a11d9e898a9d295670937b87",
   "characterSourcesSHA256": {
@@ -32,7 +32,7 @@
     "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 64049948,
+  "bytes": 64051960,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [
@@ -148,5 +148,7 @@
   "hvacTiers": 2,
   "tentDetailsRevision": "tent-details-1",
   "waterPotsRevision": "water-and-pots-1",
-  "waterPotsDesigns": 9
+  "waterPotsDesigns": 9,
+  "personScaleRevision": "person-scale-1",
+  "personScale": 1.8
 }
