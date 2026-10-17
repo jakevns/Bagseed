@@ -23,7 +23,7 @@ test('Pixel Punch uses attached growth and wind, female/male flower organs, purp
  assert.equal(a.nodes,11);assert.equal(tall.nodes,11);assert.ok(model.counts(tall).leaves>model.counts(a).leaves);
  const ids=new Set(tall.branches.map(b=>b.id));for(const b of a.branches)assert.ok(ids.has(b.id));
  const parents=new Set([...a.joints,...a.branches].map(x=>x.id));for(const o of a.organs)assert.ok(parents.has(o.parent));
- assert.equal(model.counts(a).flowers,19);assert.ok(a.organs.filter(o=>o.kind==='flower').every(o=>o.role==='femaleLate'));
+ assert.equal(model.counts(a).flowers,model.counts(a).primaryBranches*5+1);assert.ok(a.organs.filter(o=>o.kind==='flower').every(o=>o.role==='femaleLate'));
  const male=model.build({...plant,sex:'M',stage:8},identity.traits);assert.ok(male.organs.filter(o=>o.kind==='flower').every(o=>o.role==='maleClosed'));
  assert.deepEqual(model.pose(a,plant,1,1).joints.get('root'),{x:0,y:0});assert.deepEqual(model.pose(a,plant,1,1,true),model.pose(a,plant,10,1,true));
  const warm=model.senescence(plant,identity.traits,night),coldPlant={...plant,nightColor:{hours:24}},cold=model.senescence(coldPlant,identity.traits,night);

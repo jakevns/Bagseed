@@ -1347,7 +1347,7 @@ function pestDaily(p, g, env, L) {
 /* ---------- harvest / jar / sex ---------- */
 function harvestPlant(p) {
   if (p.sex === 'M') { toast('Male plants don\'t make buds to harvest.', 'warn'); return; }
-  p.stage = S.drying; p.prog = 0; p.dry = newDry(); invalidate(p); state.rep.cultivation += 1;
+  p.canopyHarvest = window.BagseedCanopy?.read(p); p.stage = S.drying; p.prog = 0; p.dry = newDry(); invalidate(p); state.rep.cultivation += 1;
   const L = state.locations[p.loc];
   if (['outdoor', 'greenhouse'].includes(LOC_DEF[p.loc].kind)) { p.dry.remote = true; notify(`${p.name} is hanging in the garden shed: dark, steady, gentle air. Check back in a couple of days.`); SaveSys.request('harvest'); return; }
   notify(`${p.name} is hanging to dry. Bagseed drying rule: dark, closed space, gentle air, about 70°F / 70%.`); SaveSys.request('harvest');
@@ -1362,7 +1362,7 @@ function jarPlant(p) {
   const appearance = clamp((qAvg * .7 + (COLOR_RARITY[g.colorName] - 1) * .6 + (p.pheno.deep ? .1 : 0) - p.mold * .6) * Math.min(1.04, dq + .05), 0, 1);
   const aroma = clamp((p.aroma * .9 + .1) * (fast ? .74 : Math.min(1.06, dq)), 0, 1), consistency = clamp(1 - p.stress / 120 - (1 - (g.stability || .7)) * .3, 0, 1);
   const overall = clamp((appearance * .25 + aroma * .2 + hAvg * .2 + consistency * .15 + qAvg * .2) * (.55 + dq * .45) * (p.seeded ? .8 : 1), 0, 1);
-  const jars = Math.max(1, Math.round(p.yieldPot * (typeof SizeYield1151 !== 'undefined' ? SizeYield1151.factorFor(p) : 1) * (g.yield || 1) * p.pheno.y * ((LOC_DEF[p.harvestLoc1151 || p.loc] && LOC_DEF[p.harvestLoc1151 || p.loc].yieldMul) || 1) * (p.pheno.mut ? (MUTS[p.pheno.mut] ? MUTS[p.pheno.mut].yield : 1) : 1) * (.5 + p.health / 100) * (p.training === 'scrog' ? 1.3 : p.training === 'lst' ? 1.15 : p.training === 'topped' ? 1.1 : 1) * (1 - p.mold * .4) * (res.label === 'Mold Risk' ? .8 : 1) * 2.2));
+  const jars = Math.max(1, Math.round(p.yieldPot * (window.BagseedCanopy?.yieldFactor(p) ?? 1) * (typeof SizeYield1151 !== 'undefined' ? SizeYield1151.factorFor(p) : 1) * (g.yield || 1) * p.pheno.y * ((LOC_DEF[p.harvestLoc1151 || p.loc] && LOC_DEF[p.harvestLoc1151 || p.loc].yieldMul) || 1) * (p.pheno.mut ? (MUTS[p.pheno.mut] ? MUTS[p.pheno.mut].yield : 1) : 1) * (.5 + p.health / 100) * (p.training === 'scrog' ? 1.3 : p.training === 'lst' ? 1.15 : p.training === 'topped' ? 1.1 : 1) * (1 - p.mold * .4) * (res.label === 'Mold Risk' ? .8 : 1) * 2.2));
   const grade = overall > .86 ? 'A+' : overall > .76 ? 'A' : overall > .64 ? 'B' : overall > .5 ? 'C' : 'D';
   const b = { id: 'h_' + uid(), lineId: p.lineId, name: p.name, jars, grade, overall, scores: { appearance, aroma, health: hAvg, consistency, cultivation: qAvg, drying: clamp(dq, 0, 1) }, type: g.type, aromaName: g.aroma, organic: p.organic, day: state.day, dry: res.label };
   state.inv.harvest.push(b);
@@ -1761,7 +1761,7 @@ function tintPacked(c, hex, t) { const [r, g, b] = unpack(c), [R2, G2, B2] = hex
 function invalidate(p) { runtime.sprites.delete(p.id); }
 
 const PlantArt = {
-  key(p) { return [p.stage, Math.round(p.height * 2), Math.floor(p.nodes * 2), p.training, p.pruned, p.staked ? 1 : 0, Math.round(p.water / 12), Math.round(p.health / 12), Math.round(p.burn * 4), p.pest.type ? Math.round(p.pest.lvl * 5) : 0, Math.round(p.mold * 5), Math.round(p.prog), Math.round(p.nutr / 20), p.lineId, p.sexKnown ? p.sex : '?', p.seeded ? 1 : 0, Math.round((p.stress || 0) / 25), p.dry ? Math.round(p.dry.prog * 6) + '.' + Math.round(p.dry.mold * 4) : ''].join('|'); },
+  key(p) { return [p.stage, Math.round(p.height * 2), Math.floor(p.nodes * 2), p.training, p.pruned, JSON.stringify(p.canopyHarvest || p.canopy || null), Math.round((p.density ?? .82)*100), p.staked ? 1 : 0, Math.round(p.water / 12), Math.round(p.health / 12), Math.round(p.burn * 4), p.pest.type ? Math.round(p.pest.lvl * 5) : 0, Math.round(p.mold * 5), Math.round(p.prog), Math.round(p.nutr / 20), p.lineId, p.sexKnown ? p.sex : '?', p.seeded ? 1 : 0, Math.round((p.stress || 0) / 25), p.dry ? Math.round(p.dry.prog * 6) + '.' + Math.round(p.dry.mold * 4) : ''].join('|'); },
   get(p) { const k = this.key(p); let c = runtime.sprites.get(p.id); if (!c || c.k !== k) { c = Object.assign({ k }, this.build(p)); runtime.sprites.set(p.id, c); } return c; },
 
   build(p) {
@@ -1797,7 +1797,8 @@ const PlantArt = {
     const stemAt = t => [cx + Math.sin(t * 2.6 + phase) * (p.training === 'natural' ? 1.3 : .6) + lean * Math.pow(t, 1.4), by - t * Hpx];
     const grow = { seedling: .3, earlyveg: .45, veg: .75, matveg: .95 }[STAGES[st].k] || 1;
     const canopyY = topY + 2;
-    const lowCut = p.pruned ? Math.ceil(N * .4) : 0;
+    const canopy = window.BagseedCanopy, topScale = canopy?.topScale(p) ?? 1;
+    const lowCut = p.pruned || canopy?.read(p).cleaned ? Math.ceil(N * .4) : 0;
     const mkShoot = (x0, y0, x1, y1, n, main, side, iBase) => {
       const pts = [], nodes = [];
       const steps = Math.max(2, Math.round(Math.hypot(x1 - x0, y1 - y0)));
@@ -1887,6 +1888,7 @@ const PlantArt = {
       for (const sh of ordered) {
         for (const [ni, nd] of sh.nodes.entries()) {
           if (sh.main && nd.i <= lowCut) continue;
+          if (canopy?.removed(p,(by-nd.y)/Hpx,ni/(sh.nodes.length||1))) continue;
           if (!sh.main && ni % 2 === 1) continue;
           if (fadeT && nd.i < N * .35 && rng() < fadeT * .7) continue; // dropped leaves
           const blades = Math.min(bladesMax, 1 + 2 * Math.min(4, nd.m + (sh.main ? 0 : 1)));
@@ -1946,9 +1948,12 @@ const PlantArt = {
         const [tx, ty] = sh.tip;
         if (sh.main) {
           const len = Math.max(2, Math.round(Hpx * .32 * fpr));
-          for (let k = len; k >= 0; k--) { const idx = Math.max(0, sh.pts.length - 1 - k); const [x, y] = sh.pts[idx]; bud(x, y, base * (1.15 - k / len * .45)); }
-          for (const nd of sh.nodes) if (nd.m >= 1 && nd.m <= 4) bud(nd.x, nd.y, base * .55);
-        } else { bud(tx, ty, base * .85); if (sh.nodes.length > 1) bud(sh.nodes[0].x, sh.nodes[0].y, base * .4); }
+          for (let k = len; k >= 0; k--) { const idx = Math.max(0, sh.pts.length - 1 - k); const [x, y] = sh.pts[idx]; bud(x, y, base * topScale * (1.15 - k / len * .45)); }
+          for (const nd of sh.nodes) if (nd.y > ty + Hpx*.32*fpr && !canopy?.removed(p,(by-nd.y)/Hpx)) bud(nd.x, nd.y, base * (canopy?.budScale((by-nd.y)/Hpx,.5) ?? .55) * .7);
+        } else {
+          if (!canopy?.removed(p,(by-ty)/Hpx)) bud(tx, ty, base * .85 * topScale);
+          for (const [i,nd] of sh.nodes.entries()) { const at=(i+1)/(sh.nodes.length+1); if (!canopy?.removed(p,(by-nd.y)/Hpx,at)) bud(nd.x,nd.y,base * .65 * (canopy?.budScale((by-nd.y)/Hpx,at) ?? .5)); }
+        }
         if (st === S.transition) for (let k = 0; k < 4; k++) P.set(tx + (rng() - .5) * 3, ty - rng() * 2, pist);
       }
     }
@@ -3284,7 +3289,7 @@ const MsgFX = {
 /* ============================ SOCIAL (Sprout) ======================= */
 function snapPlant(p) {
   const L = state.locations[p.loc];
-  return { id: 'snap_' + uid(), lineId: p.lineId, seed: p.seed, stage: p.stage, height: p.height, nodes: p.nodes, training: p.training, pruned: p.pruned, staked: p.staked, water: p.water, health: p.health, burn: p.burn, pest: { type: p.pest.type, lvl: p.pest.lvl }, mold: p.mold, prog: p.prog, nutr: p.nutr, yieldPot: p.yieldPot, pheno: p.pheno, name: p.name, loc: p.loc, lightTier: L.equip.light, organic: p.organic, plantId: p.id };
+  return { id: 'snap_' + uid(), lineId: p.lineId, seed: p.seed, stage: p.stage, height: p.height, nodes: p.nodes, training: p.training, canopy: p.canopy ? JSON.parse(JSON.stringify(p.canopy)) : undefined, canopyHarvest: p.canopyHarvest ? JSON.parse(JSON.stringify(p.canopyHarvest)) : undefined, density: p.density, pruned: p.pruned, staked: p.staked, water: p.water, health: p.health, burn: p.burn, pest: { type: p.pest.type, lvl: p.pest.lvl }, mold: p.mold, prog: p.prog, nutr: p.nutr, yieldPot: p.yieldPot, pheno: p.pheno, name: p.name, loc: p.loc, lightTier: L.equip.light, organic: p.organic, plantId: p.id };
 }
 const TAGS = ['#bagseed', '#closetgrow', '#medicalgarden', '#plantparent', '#growlight', '#organic', '#autoflower', '#photoperiod', '#genetics', '#macro', '#cozy', '#phenohunt'];
 const Social = {
@@ -4271,8 +4276,8 @@ const Panels = {
       if (male) { if (!p.keepMale) add('keepmale', 'Keep for future breeding', 'He stays. His pollen will seed any flowering female sharing this space.', true); add('remove', p.keepMale ? 'Retire male' : 'Remove plant', p.keepMale && st >= S.midflower ? 'Collect a pollen vial for future breeding, then compost him.' : 'Pull him before he can pollinate anything. 4 energy', true, 'danger'); }
       add('water', 'Water', `${state.gear.water === 3 ? 'Drip handles mornings, but you can hand-water' : esc(wt.name)} · ${state.gear.water === 3 ? 4 : wt.energy} energy`, true, p.water < 25 ? 'primary' : '');
       add('feed', 'Feed', I.jug ? `Use your ${esc(I.jug.line)} mix (${I.jug.uses} left)${I.jug.ready > state.day ? ' · still brewing' : ''} · 6 energy` : 'Mix nutrients at the workbench first', !!I.jug && I.jug.ready <= state.day && st >= S.seedling);
-      if (st >= S.earlyveg && st <= S.midflower) add('prune', 'Prune lower growth', p.pruned ? 'Already cleaned up underneath' : 'Remove weak lower shoots. Better airflow. Some stress. 8 energy', !p.pruned);
-      if (st >= S.veg && st <= S.midflower) add('defol', 'Shape canopy', 'Thin leaves for light and airflow. Stressful for autos. 10 energy', (p.lastDefol || -9) + 3 <= state.day);
+      if (st >= S.earlyveg && st <= S.midflower) add('prune', 'Prune lower growth', p.pruned ? 'Already cleaned up underneath' : 'Remove weak lower shoots and popcorn bud sites. Focus growth on top flowers. Some stress. 8 energy', !p.pruned);
+      if (st >= S.veg && st <= S.midflower) add('defol', 'Shape canopy', 'Thin lower leaves and popcorn bud sites; focus growth on top flowers. Stressful for autos. 10 energy', (p.lastDefol || -9) + 3 <= state.day);
       if (st >= S.earlyflower && !male) add('stake', 'Support branches', p.staked ? 'Already staked' : `Bamboo stakes (${I.stakes} left) · 6 energy`, !p.staked && I.stakes > 0);
       if (st >= S.earlyveg && st <= S.matveg) { const autoKnown = g.lifecycle === 'auto' && g.revealed.lifecycle, msg = 'Autoflower genetics can\'t be preserved through this cutting system.'; add('cut', 'Take a cutting', autoKnown ? msg : p.cutting ? 'Already took one' : `Preserve this exact plant as a clone in storage. 8 energy${g.bag ? ' · keeps the bag-seed line alive' : ''}`, !autoKnown && !p.cutting, '', autoKnown ? msg : ''); }
       if (g.lifecycle === 'photo' && st >= S.earlyveg && st <= S.matveg) add('flip', L.schedule === 'flower' ? 'Lights already on 12/12' : 'Flip lights to 12/12', g.revealed.lifecycle ? 'Longer nights trigger flowering in photoperiods. Affects every plant in this space.' : 'You don\'t know her lifecycle yet. Flipping now is a gamble.', L.schedule !== 'flower');
@@ -4592,8 +4597,8 @@ function doCare(a) {
   switch (a) {
     case 'water': { const wt = EQ.water[state.gear.water], e = state.gear.water === 3 ? 4 : wt.energy; if (!spend(e, 10)) return; if (p.water > 85) { p.root -= 6; think('Already soggy... maybe that was too much.'); } p.water = clamp(p.water + (wt.add || 45), 0, 100); state.stats.waterings++; Sfx.water(); if (!state.hints.water1) { state.hints.water1 = 1; think('Glug glug. Water when the top of the soil dries, not on a schedule.', 4000); } break; }
     case 'feed': { const j = I.jug; if (!j || !spend(6, 10)) return; p.nutr = clamp(p.nutr + 32 + j.strDiff * 4, 0, 100); if (j.strDiff > 2.5) { p.nutr = 100; p.stress += 15; think('Uh oh. That mix was way too strong.'); } else think(j.q > .7 ? 'She drinks it up.' : 'Hope that was okay...'); p.health = clamp(p.health + (j.q - .5) * 10, 1, 100); if (j.line === 'synthetic') p.organic = false; else { p.root = clamp(p.root + 4, 0, 100); state.rep.organic += .2; } j.uses--; if (j.uses <= 0) I.jug = null; Sfx.water(); break; }
-    case 'prune': if (!spend(8, 30)) return; p.pruned = 1; p.density = Math.max(0, p.density - .15); p.stress += auto ? 12 : 6; state.rep.cultivation += .3; break;
-    case 'defol': if (!spend(10, 30)) return; p.density = Math.max(0, p.density - .2); p.stress += auto ? 14 : 7; p.mold = Math.max(0, p.mold - .05); p.lastDefol = state.day; break;
+    case 'prune': if (p.pruned || p.stage < S.earlyveg || p.stage > S.midflower || !spend(8, 30)) return; p.canopy = window.BagseedCanopy?.care(p); p.pruned = 1; p.density = Math.max(0, p.density - .15); p.stress += auto ? 12 : 6; state.rep.cultivation += .3; break;
+    case 'defol': if (p.stage < S.veg || p.stage > S.midflower || (p.lastDefol ?? -9) + 3 > state.day || !spend(10, 30)) return; p.canopy = window.BagseedCanopy?.care(p); p.density = Math.max(0, p.density - .2); p.stress += auto ? 14 : 7; p.mold = Math.max(0, p.mold - .05); p.lastDefol = state.day; break;
     case 'stake': if (!I.stakes || !spend(6, 20)) return; I.stakes--; p.staked = true; p.yieldPot += .08; break;
     case 'cut': if (g.lifecycle === 'auto') { if (!g.revealed.lifecycle) reveal(g, 'lifecycle', true); toast('Autoflower genetics can\'t be preserved through this cutting system.', 'warn'); think('The cutting won\'t take. She runs on her own internal clock: an autoflower.'); renderPanel(); return; }
       if (!spend(8, 20)) return; p.cutting = true; addSeed(p.lineId, 'your own ' + p.name, 'cutting', Object.assign({}, p.pheno, { sex: p.sex, sexKnown: p.sexKnown }), p.seedType); p.stress += 5; if (g.bag && g.lifecycle === 'photo') unlock('stillgotit'); notify(`Cutting of ${p.name} is rooting in your ${EQ.storage[state.gear.storage].name}.`); break;
@@ -30889,6 +30894,30 @@ function remainingHairSource(L,dir){
  };
  window.BagseedNightCooling=Object.freeze({targets,controls,observe,config,reference});
 })();
+
+</script>
+<script id="bagseed-canopy-code">
+/* Shared game balance for canopy cleanup. Pure reads; only care() returns new save state. */
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.BagseedCanopy=api;})(globalThis,()=>{
+ 'use strict';
+ const clamp=n=>Number.isFinite(n)?Math.max(0,Math.min(1,n)):0;
+ function read(p){
+  const c=p.canopyHarvest||p.canopy;
+  // Old pruned saves retain cleanup without inventing a precise care date.
+  return c?.v===1?{v:1,cleaned:clamp(c.cleaned),credit:clamp(c.credit)}:{v:1,cleaned:p.pruned?1:0,credit:p.pruned?.6:0};
+ }
+ function care(p,stage=p.stage){
+  const old=read(p);if(stage<3||stage>8)return old;
+  // Credit is earned once. A later repeat cannot improve an earlier cleanup.
+  if(old.cleaned===1)return old;
+  return {v:1,cleaned:1,credit:stage<=7?1:.55};
+ }
+ function topScale(p){const c=read(p);return .88+.30*c.cleaned*c.credit;}
+ function yieldFactor(p){if(p.stage>=11&&!p.canopyHarvest)return 1;const c=read(p);return .90+.18*c.cleaned*c.credit;}
+ function removed(p,heightFraction,branchFraction=1){return read(p).cleaned>0&&(heightFraction<.38||branchFraction<.34);}
+ function budScale(heightFraction,branchFraction=1){return .22+.55*clamp(heightFraction)+.23*clamp(branchFraction);}
+ return Object.freeze({read,care,topScale,yieldFactor,removed,budScale});
+});
 
 </script>
 </body></html>

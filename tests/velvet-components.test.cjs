@@ -23,7 +23,7 @@ test('Velvet uses expressed branching with shared growth, wind and red finishing
  assert.equal(model.senescence({...plant,stage:5}).amount,0);
  const pose=model.pose(m,plant,1,1);assert.deepEqual(pose.joints.get('root'),{x:0,y:0});
  const parents=new Set([...m.joints,...m.branches].map(x=>x.id));for(const o of m.organs)assert.ok(parents.has(o.parent));
- const ready=model.build({...plant,stage:10},a.traits);assert.equal(model.counts(ready).flowers,19);assert.ok(ready.organs.filter(o=>o.kind==='flower').every(o=>o.role==='femaleLate'));
+ const ready=model.build({...plant,stage:10},a.traits);assert.equal(model.counts(ready).flowers,model.counts(ready).primaryBranches*5+1);assert.ok(ready.organs.filter(o=>o.kind==='flower').every(o=>o.role==='femaleLate'));
  const male=model.build({...plant,sex:'M',stage:9},a.traits);assert.ok(male.organs.filter(o=>o.kind==='flower').every(o=>o.role==='maleOpen'));
  const tall=model.build({...plant,height:90,loc:'outdoor'},a.traits);assert.ok(model.counts(tall).leaves>model.counts(m).leaves);
 });
