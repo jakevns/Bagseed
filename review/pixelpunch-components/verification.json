@@ -1,0 +1,104 @@
+{
+  "status": "sample-awaiting-approval",
+  "identity": {
+    "schemaVersion": 1,
+    "profile": "pixelpunch@1",
+    "libraryRevision": "plant-parts-library-3",
+    "seed": "pixelpunch-phenotype-study",
+    "traits": {
+      "leafShape": "hybrid",
+      "leafKey": "blue",
+      "colorName": "Purple",
+      "branching": 1.1
+    },
+    "parts": {
+      "seed": "pixelpunch.seed@1",
+      "radicle": "pixelpunch.radicle@1",
+      "cotyledon": "pixelpunch.cotyledon@1",
+      "singleLeaf": "pixelpunch.singleLeaf@1",
+      "threeLeaf": "pixelpunch.threeLeaf@1",
+      "fiveLeaf": "pixelpunch.fiveLeaf@1",
+      "sevenLeaf": "pixelpunch.sevenLeaf@1",
+      "sugarLeaf": "pixelpunch.sugarLeaf@1",
+      "stem": "pixelpunch.stem@1",
+      "node": "pixelpunch.node@1",
+      "femaleEarly": "pixelpunch.femaleEarly@1",
+      "femaleMid": "pixelpunch.femaleMid@1",
+      "femaleLate": "pixelpunch.femaleLate@1",
+      "maleClosed": "pixelpunch.maleClosed@1",
+      "maleOpen": "pixelpunch.maleOpen@1"
+    }
+  },
+  "measurements": [
+    {
+      "heightInches": 50,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 62,
+        "leaves": 140,
+        "flowers": 0
+      },
+      "measuredHeightInches": 49.875
+    },
+    {
+      "heightInches": 90,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 150,
+        "leaves": 254,
+        "flowers": 0
+      },
+      "measuredHeightInches": 89.875
+    }
+  ],
+  "finish": {
+    "amount": 1,
+    "palette": "purple",
+    "rgb": [
+      124,
+      67,
+      140
+    ]
+  },
+  "coolStudies": [
+    {
+      "dayTemp": 78,
+      "nightTemp": 70,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "purple",
+        "hex": "#622a8f",
+        "rgb": [
+          98,
+          42,
+          143
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "dayTemp": 78,
+      "nightTemp": 68,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "purple",
+        "hex": "#622a8f",
+        "rgb": [
+          98,
+          42,
+          143
+        ]
+      },
+      "sproutBonus": 0.08
+    }
+  ],
+  "animationFrames": 120,
+  "errors": [],
+  "productionRendererUnchanged": true
+}

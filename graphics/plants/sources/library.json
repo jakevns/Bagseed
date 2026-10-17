@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "plant-parts-library-2",
+  "revision": "plant-parts-library-3",
   "parts": {
     "porchlight.seed@1": {
       "id": "porchlight.seed@1",
@@ -561,6 +561,286 @@
         238,
         299
       ]
+    },
+    "pixelpunch.seed@1": {
+      "id": "pixelpunch.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        115,
+        145,
+        104,
+        102
+      ]
+    },
+    "pixelpunch.radicle@1": {
+      "id": "pixelpunch.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.951049,
+        0.982036
+      ],
+      "when": {},
+      "crop": [
+        413,
+        110,
+        143,
+        167
+      ]
+    },
+    "pixelpunch.cotyledon@1": {
+      "id": "pixelpunch.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.476496,
+        0.977941
+      ],
+      "when": {},
+      "crop": [
+        686,
+        119,
+        234,
+        136
+      ]
+    },
+    "pixelpunch.singleLeaf@1": {
+      "id": "pixelpunch.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.520408,
+        0.986047
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1058,
+        63,
+        98,
+        215
+      ]
+    },
+    "pixelpunch.threeLeaf@1": {
+      "id": "pixelpunch.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.483871,
+        0.985577
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        61,
+        378,
+        217,
+        208
+      ]
+    },
+    "pixelpunch.fiveLeaf@1": {
+      "id": "pixelpunch.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.502283,
+        0.986425
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        372,
+        365,
+        219,
+        221
+      ]
+    },
+    "pixelpunch.sevenLeaf@1": {
+      "id": "pixelpunch.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.494624,
+        0.987603
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        659,
+        349,
+        279,
+        242
+      ]
+    },
+    "pixelpunch.sugarLeaf@1": {
+      "id": "pixelpunch.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.985149
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1006,
+        379,
+        208,
+        202
+      ]
+    },
+    "pixelpunch.stem@1": {
+      "id": "pixelpunch.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.474576,
+        0.985849
+      ],
+      "when": {},
+      "crop": [
+        136,
+        651,
+        59,
+        212
+      ]
+    },
+    "pixelpunch.node@1": {
+      "id": "pixelpunch.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.489362,
+        0.982659
+      ],
+      "when": {},
+      "crop": [
+        391,
+        690,
+        188,
+        173
+      ]
+    },
+    "pixelpunch.femaleEarly@1": {
+      "id": "pixelpunch.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.53271,
+        0.985577
+      ],
+      "when": {},
+      "crop": [
+        679,
+        669,
+        214,
+        208
+      ]
+    },
+    "pixelpunch.femaleMid@1": {
+      "id": "pixelpunch.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.524444,
+        0.986486
+      ],
+      "when": {},
+      "crop": [
+        994,
+        655,
+        225,
+        222
+      ]
+    },
+    "pixelpunch.femaleLate@1": {
+      "id": "pixelpunch.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.490196,
+        0.988806
+      ],
+      "when": {},
+      "crop": [
+        43,
+        920,
+        255,
+        268
+      ]
+    },
+    "pixelpunch.maleClosed@1": {
+      "id": "pixelpunch.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.534722,
+        0.009174
+      ],
+      "when": {},
+      "crop": [
+        409,
+        949,
+        144,
+        218
+      ]
+    },
+    "pixelpunch.maleOpen@1": {
+      "id": "pixelpunch.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/pixelpunch/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.505291,
+        0.008658
+      ],
+      "when": {},
+      "crop": [
+        693,
+        951,
+        189,
+        231
+      ]
     }
   },
   "profiles": {
@@ -665,11 +945,63 @@
           "velvet.maleOpen@1"
         ]
       }
+    },
+    "pixelpunch@1": {
+      "id": "pixelpunch@1",
+      "name": "Pixel Punch",
+      "roles": {
+        "seed": [
+          "pixelpunch.seed@1"
+        ],
+        "radicle": [
+          "pixelpunch.radicle@1"
+        ],
+        "cotyledon": [
+          "pixelpunch.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "pixelpunch.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "pixelpunch.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "pixelpunch.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "pixelpunch.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "pixelpunch.sugarLeaf@1"
+        ],
+        "stem": [
+          "pixelpunch.stem@1"
+        ],
+        "node": [
+          "pixelpunch.node@1"
+        ],
+        "femaleEarly": [
+          "pixelpunch.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "pixelpunch.femaleMid@1"
+        ],
+        "femaleLate": [
+          "pixelpunch.femaleLate@1"
+        ],
+        "maleClosed": [
+          "pixelpunch.maleClosed@1"
+        ],
+        "maleOpen": [
+          "pixelpunch.maleOpen@1"
+        ]
+      }
     }
   },
   "strains": {
     "porchlight": "porchlight@1",
-    "velvet": "velvet@1"
+    "velvet": "velvet@1",
+    "pixelpunch": "pixelpunch@1"
   },
   "inheritedTraits": {
     "leafShape": {

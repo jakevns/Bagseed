@@ -1,0 +1,17 @@
+{
+  "sharedPreviewBackwardsCompatible": true,
+  "velvetApprovedStills": {
+    "velvet-growth-and-flower.png": {
+      "sha256": "f60c1f74b3023752f51987745ff2c6664e861f070efa0487266df69c4e455279",
+      "identical": true
+    },
+    "velvet-50-and-90-inches.png": {
+      "sha256": "aa10c3258c0b2f2e7e02dfab4bdadd7f7488231296ff93b7ff35d32a33c11447",
+      "identical": true
+    },
+    "velvet-late-flower-senescence.png": {
+      "sha256": "e7b8e8bd47a6cff69b8c2c82ccc6490424a2f6e67558db18e33d57b1db496236",
+      "identical": true
+    }
+  }
+}

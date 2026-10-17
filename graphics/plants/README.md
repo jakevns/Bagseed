@@ -43,3 +43,7 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 ## Second strain review kit
 
 `velvet@1` adds Velvet Underbrush using new painted organ assets and the same connected model, wind and phenotype-aware senescence renderer. The expressed `branching` trait is optional and does not change existing pinned identities. Porchlight approval remains recorded separately; Velvet samples are approved as a prototype checkpoint in `review/velvet-components/`. Neither kit replaces the native game renderer yet.
+
+## Third strain review kit
+
+`pixelpunch@1` adds the hybrid Pixel Punch component family, with new blue-green fans and purple flowers. Growth, wind, natural senescence, cool-night pigmentation and Sprout color appeal reuse the same shared systems. Native catalog traits and review captions are data in `pixelpunch/sources/profile.json`; the existing Porchlight/Velvet profiles remain available and pinned. Samples await approval under `review/pixelpunch-components/`; full painted-renderer integration remains pending.
