@@ -1,0 +1,104 @@
+{
+  "status": "sample-awaiting-approval",
+  "identity": {
+    "schemaVersion": 1,
+    "profile": "cruise@1",
+    "libraryRevision": "plant-parts-library-8",
+    "seed": "cruise-phenotype-study",
+    "traits": {
+      "leafShape": "hybrid",
+      "leafKey": "blue",
+      "colorName": "Blue-green",
+      "branching": 0.95
+    },
+    "parts": {
+      "seed": "cruise.seed@1",
+      "radicle": "cruise.radicle@1",
+      "cotyledon": "cruise.cotyledon@1",
+      "singleLeaf": "cruise.singleLeaf@1",
+      "threeLeaf": "cruise.threeLeaf@1",
+      "fiveLeaf": "cruise.fiveLeaf@1",
+      "sevenLeaf": "cruise.sevenLeaf@1",
+      "sugarLeaf": "cruise.sugarLeaf@1",
+      "stem": "cruise.stem@1",
+      "node": "cruise.node@1",
+      "femaleEarly": "cruise.femaleEarly@1",
+      "femaleMid": "cruise.femaleMid@1",
+      "femaleLate": "cruise.femaleLate@1",
+      "maleClosed": "cruise.maleClosed@1",
+      "maleOpen": "cruise.maleOpen@1"
+    }
+  },
+  "measurements": [
+    {
+      "heightInches": 50,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 52,
+        "leaves": 125,
+        "flowers": 0
+      },
+      "measuredHeightInches": 49.875
+    },
+    {
+      "heightInches": 90,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 132,
+        "leaves": 226,
+        "flowers": 0
+      },
+      "measuredHeightInches": 90
+    }
+  ],
+  "finish": {
+    "amount": 1,
+    "palette": "ochre",
+    "rgb": [
+      204,
+      166,
+      77
+    ]
+  },
+  "coolStudies": [
+    {
+      "dayTemp": 78,
+      "nightTemp": 70,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "blue violet",
+        "hex": "#425b8b",
+        "rgb": [
+          66,
+          91,
+          139
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "dayTemp": 78,
+      "nightTemp": 68,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "blue violet",
+        "hex": "#425b8b",
+        "rgb": [
+          66,
+          91,
+          139
+        ]
+      },
+      "sproutBonus": 0.08
+    }
+  ],
+  "animationFrames": 120,
+  "errors": [],
+  "productionRendererUnchanged": true
+}

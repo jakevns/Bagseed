@@ -54,4 +54,9 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 
 ## Fifth strain review kit
 
-`moonberry@1` adds Moonberry's hybrid organ family: sage-blue healthy fans, pale lilac flowers, lavender senescence and its existing genotype's cool-night response. It reuses the shared growth, wind, climate and Sprout color systems, keeping earlier appearance profiles pinned. Review samples await approval in `review/moonberry-components/`; full painted-renderer integration remains pending.
+`moonberry@1` adds Moonberry's hybrid organ family: sage-blue healthy fans, pale lilac flowers, lavender senescence and its existing genotype's cool-night response. It reuses the shared growth, wind, climate and Sprout color systems, keeping earlier appearance profiles pinned. Review samples are approved in `review/moonberry-components/`; full painted-renderer integration remains pending.
+
+
+## Sixth through eighth strain review batch
+
+`halfmoon@1`, `zoomies@1` and `cruise@1` add Halfmoon CBD, Zoomies Auto and Cruise Control Auto. Halfmoon is the first narrow-leaf kit; the autos supply lime and blue-green hybrid families. All use the shared connected growth, graded branch buds, canopy cleanup, wind and finishing-color systems. Halfmoon and Zoomies retain golden senescence without a cool-night color bonus; Cruise Control's existing Blue-green genotype can express its existing blue-violet cool-night palette. Earlier parts and saved identities remain pinned. Review samples await approval under their respective `review/*-components/` folders, with a combined portrait in `review/plant-batch-03/`. Full painted-renderer integration remains pending.
