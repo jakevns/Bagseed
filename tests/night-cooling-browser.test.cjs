@@ -46,6 +46,21 @@ test('smart controller cools shared room at lights off, records actual phenotype
   const saved=await page.evaluate(()=>{closePanel();SaveSys.now('Autumn Nights');return{config:state.nightCooling.bedroom,plants:nightStudyIds.map(id=>({id,color:state.plants[id].nightColor})),day:state.day,minute:state.minute};});
   await page.reload({timeout:120000});await page.evaluate(()=>BagseedStartup.ready);await page.locator('[data-act=continueGame]').click();
   const restored=await page.evaluate(ids=>({config:state.nightCooling.bedroom,plants:ids.map(id=>({id,color:state.plants[id].nightColor}))}),saved.plants.map(p=>p.id));assert.deepEqual(restored,{config:saved.config,plants:saved.plants});
-  assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({simulation,guards,saveReload:true,errors},null,2)+'\n');
+  const sprout=await page.evaluate(id=>{
+   const p=state.plants[id];state.vibe='cozy';const snap=snapPlant(p);snap.stage=10;
+   const options={cam:0,angle:'full',zoom:.7,filter:'none',bg:'closet',caption:'',tags:[]};
+   const samples=[0,6,24].map(hours=>({...snap,nightColor:{...snap.nightColor,hours}}));
+   const factors=samples.map(s=>SproutPerf.factors(s,options)),bonuses=factors.map(f=>f.colorBonus),odds=factors.map(f=>SproutPerf.viralChance(1.5,f.colorBonus));
+   const mono=SproutPerf.factors(samples[2],{...options,filter:'mono'}).colorBonus;
+   const full=samples[2],F=factors[2],expected=SproutPerf.viralChance(SproutPerf.perf(F),F.colorBonus);
+   window.sproutReviewHtml=SproutPerf.html(full,options);
+   const oldRandom=Math.random,oldViralChance=SproutPerf.viralChance,calls=[];
+   try{Math.random=()=>.5;SproutPerf.viralChance=function(...args){const probability=oldViralChance.apply(this,args);calls.push(probability);return probability;};Social.publish(full,options);}finally{Math.random=oldRandom;SproutPerf.viralChance=oldViralChance;}
+   const posted=state.social.posts[0],stored=BagseedNightColor.socialBonus(posted.snap,PlantTraits115.for(posted.snap),options);p.nightColor.hours=0;
+   return{bonuses,odds,mono,cap:SproutPerf.viralChance(100,.08),expected,rolled:calls[0],forecastHasColor:window.sproutReviewHtml.includes('Color appeal')&&window.sproutReviewHtml.includes('Viral chance'),snapshotStable:stored===BagseedNightColor.socialBonus(posted.snap,PlantTraits115.for(posted.snap),options)};
+  },saved.plants[0].id);
+  assert.deepEqual(sprout.bonuses,[0,.02,.08]);assert.ok(sprout.odds[0]<sprout.odds[1]&&sprout.odds[1]<sprout.odds[2]);assert.equal(sprout.mono,0);assert.equal(sprout.cap,.45);assert.equal(sprout.rolled,sprout.expected);assert.equal(sprout.forecastHasColor,true);assert.equal(sprout.snapshotStable,true);
+  await page.evaluate(()=>{document.getElementById('toasts').replaceChildren();openPanel('Sprout color forecast',()=>window.sproutReviewHtml);});await page.locator('#panel').screenshot({path:path.join(out,'sprout-color-forecast.png')});
+  assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({simulation,guards,saveReload:true,sprout,errors},null,2)+'\n');
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 });

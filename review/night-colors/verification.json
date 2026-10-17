@@ -207,5 +207,23 @@
     "ref": 77
   },
   "saveReload": true,
+  "sprout": {
+    "bonuses": [
+      0,
+      0.02,
+      0.08
+    ],
+    "odds": [
+      0.126,
+      0.146,
+      0.20600000000000002
+    ],
+    "mono": 0,
+    "cap": 0.45,
+    "expected": 0.09,
+    "rolled": 0.09,
+    "forecastHasColor": true,
+    "snapshotStable": true
+  },
   "errors": []
 }

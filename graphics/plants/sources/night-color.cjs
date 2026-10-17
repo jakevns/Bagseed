@@ -32,5 +32,6 @@
   const strength=palette&&stage>=8&&stage<=12?Math.min(1,hours/24)*(stage===8?.45:stage===9?.85:1):0;
   return{capable:!!palette,strength,palette:palette?.name||null,hex:palette?.hex||null,rgb:palette?.rgb.slice()||null};
  }
- return Object.freeze({thresholdF:10,fullExposureHours:24,capability,advance,expression});
+ function socialBonus(snapshot,traits={},options={}){return options.filter==='mono'?0:expression(snapshot,traits).strength*.08;}
+ return Object.freeze({thresholdF:10,fullExposureHours:24,capability,advance,expression,socialBonus});
 });

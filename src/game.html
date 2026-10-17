@@ -9724,23 +9724,24 @@ const SproutPerf = {
     const cons = recentDays >= 2 ? 1.1 : recentDays === 1 ? 1.04 : so.posts.length && state.day - so.posts[0].day > 7 ? .95 : 1;
     const friends = Object.entries(so.rel || {}).filter(([, r]) => r.rel >= 3).length + Object.values(state.npc.breeders).filter(b => b.friend >= 3).length;
     const infl = 1 + Math.min(.12, friends * .02);
-    return { q, timing: Math.pow(tm.mul, .85), tm, rel, topic, trend: tr, nov, fit, cred, cons, infl };
+    const colorBonus = window.BagseedNightColor?.socialBonus(snap, PlantTraits115.for(snap), o) || 0;
+    return { q, timing: Math.pow(tm.mul, .85), tm, rel, topic, trend: tr, nov, fit, cred, cons, infl, colorBonus };
   },
   perf(F, rand = 1) { return F.q * F.timing * F.rel * F.nov * F.fit * F.cred * F.cons * F.infl * rand; },
-  viralChance(perf) { return clamp((perf - 1.2) * .42, .01, .45); },
+  viralChance(perf, colorBonus = 0) { const extra = Number.isFinite(colorBonus) ? clamp(colorBonus, 0, .08) : 0; return Math.min(.45, clamp((perf - 1.2) * .42, .01, .45) + extra); },
   html(snap, o) {
-    const F = this.factors(snap, o), P = this.perf(F), vc = this.viralChance(P);
+    const F = this.factors(snap, o), P = this.perf(F), vc = this.viralChance(P, F.colorBonus), colorLift = vc - this.viralChance(P);
     const row = (lab, v, tip) => `<div class="ff"><span>${lab}</span><b style="color:${v > 1.03 ? 'var(--leaf)' : v < .97 ? 'var(--danger)' : 'var(--muted)'}">${v > 1.03 ? '▲' : v < .97 ? '▼' : '■'} ×${v.toFixed(2)}</b><span class="muted">${tip}</span></div>`;
     return `<div class="card forecast"><h3>Post forecast</h3>${bar('Expected', P * 50, 100, P > 1.4 ? '#ffc15a' : P > 1 ? '#a6e05a' : '#7fd4ff', P > 1.6 ? 'Great' : P > 1.2 ? 'Good' : P > .85 ? 'Okay' : 'Quiet')}
-      ${row('Photo quality', F.q, 'camera, stage, framing, filter, caption, tags')}${row('Timing', F.timing, `~${F.tm.online} followers online`)}${row('Relevance', F.rel, `trending: ${F.trend.tag}${F.topic === F.trend.topic ? ' ✓' : ''}`)}${row('Novelty', F.nov, F.nov < 1 ? 'you posted this plant recently' : 'fresh')}${row('Audience fit', F.fit, 'who follows you vs who this post appeals to')}${row('Credibility', F.cred, 'reputation + post history')}${row('Consistency', F.cons, 'posting regularly (not spamming)')}${row('Community', F.infl, 'friendly creators & breeders')}
-      <div class="small muted">Breakout chance ~${Math.round(vc * 100)}% (bounded random swing ±12%). Viral is a bonus, never required.</div></div>`;
+      ${row('Photo quality', F.q, 'camera, stage, framing, filter, caption, tags')}<div class="ff"><span>Color appeal</span><b style="color:${colorLift > 0 ? 'var(--leaf)' : 'var(--muted)'}">+${(colorLift * 100).toFixed(1)} pts</b><span class="muted">${o.filter === 'mono' ? 'monochrome hides the plant colors' : F.colorBonus ? 'captured cool-night colors · within the viral chance limit' : 'no additional cool-night color captured'}</span></div>${row('Timing', F.timing, `~${F.tm.online} followers online`)}${row('Relevance', F.rel, `trending: ${F.trend.tag}${F.topic === F.trend.topic ? ' ✓' : ''}`)}${row('Novelty', F.nov, F.nov < 1 ? 'you posted this plant recently' : 'fresh')}${row('Audience fit', F.fit, 'who follows you vs who this post appeals to')}${row('Credibility', F.cred, 'reputation + post history')}${row('Consistency', F.cons, 'posting regularly (not spamming)')}${row('Community', F.infl, 'friendly creators & breeders')}
+      <div class="small muted">Viral chance ~${Math.round(vc * 100)}% (bounded random swing ±12%). Viral is a bonus, never required.</div></div>`;
   }
 };
 Social.publish = function (snap, o) {
   const g = GEN(snap.lineId), sc = this.score(snap, o), F = SproutPerf.factors(snap, o), perf = SproutPerf.perf(F, rnd(.88, 1.12));
   const w0 = this.weights(snap, g, o), tm = F.tm;
   let likes = Math.round((7 + state.social.followers * .18) * perf * rnd(.9, 1.1)), fol = Math.round(likes * .24 * rnd(.8, 1.2) + perf * 2.2);
-  const viral = chance(SproutPerf.viralChance(perf)), breakout = !viral && perf > 1.5 && chance(.5);
+  const viral = chance(SproutPerf.viralChance(perf, F.colorBonus)), breakout = !viral && perf > 1.5 && chance(.5);
   if (viral) { likes = Math.round(likes * rnd(6, 11) + 120); fol = Math.round(fol * rnd(5, 9) + 60); }
   else if (breakout) { likes = Math.round(likes * rnd(1.8, 2.6)); fol = Math.round(fol * rnd(1.6, 2.2)); }
   const sponsor = state.social.sponsor && state.social.sponsor.accepted;

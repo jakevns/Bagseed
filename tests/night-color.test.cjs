@@ -35,3 +35,15 @@ test('color progress is persistent, capped, pure and separate from senescence/he
  assert.notDeepEqual(cool.rgb,warm.rgb);assert.equal(cool.palette,'red-cool');assert.equal(model.senescence({stage:10},{colorName:'Forest green'},core).palette,'gold');
  assert.equal(core.expression({...p,health:5,nutr:0,stress:90},red).strength,1);
 });
+
+
+test('Sprout color bonus grows with captured expression, is genetics-gated, and disappears in monochrome',()=>{
+ const snapshot={stage:10,nightColor:{hours:0}},options={filter:'none'};
+ assert.equal(core.socialBonus(snapshot,red,options),0);
+ const subtle=core.socialBonus({...snapshot,nightColor:{hours:6}},red,options),full=core.socialBonus({...snapshot,nightColor:{hours:24}},red,options);
+ assert.ok(subtle>0&&subtle<full);assert.equal(full,.08);
+ assert.equal(core.socialBonus({...snapshot,nightColor:{hours:24}},red,{filter:'mono'}),0);
+ assert.equal(core.socialBonus({...snapshot,nightColor:{hours:24}},{colorName:'Forest green'},options),0);
+ assert.equal(core.socialBonus({...snapshot,stage:5,nightColor:{hours:24}},red,options),0);
+ const saved=JSON.parse(JSON.stringify({...snapshot,nightColor:{hours:24}}));snapshot.nightColor.hours=72;assert.equal(core.socialBonus(saved,red,options),.08);
+});

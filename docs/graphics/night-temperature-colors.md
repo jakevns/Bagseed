@@ -36,3 +36,9 @@ Natural late-flower senescence stays separate from cool-night pigment expression
 `node tools/preview-night-colors.cjs` captures a controlled Velvet comparison: identical phenotype/health/maturity, 78°F lights-on reference, 68.1°F versus 68°F lights-off, after two nights. This boundary study uses explicit inputs, not a weather forecast or elapsed growth timeline. No additional plant kit is commissioned.
 
 A climate regression check initially failed on a stale watering-can hitbox expectation (289 versus the current illustrated sprite margin at 290). The identical failure was reproduced against the unchanged HEAD build; the assertion now checks the documented one-pixel margin relative to the actual watering position. No watering placement or access code changed.
+
+## Sprout color appeal
+
+The user requested that stronger color increase virality. Existing natural color-rarity scoring remains intact. A separate bonus uses the photo snapshot's expressed individual phenotype and saved cool-night exposure, growing from zero to 8 percentage points at full expression. It is added to the existing performance-based viral probability, still capped at 45%; no guaranteed viral result or extra yield/health bonus is introduced. Monochrome hides the visible color and receives zero extra appeal. Night-cooling settings alone do not earn a bonus, and ineligible green phenotypes keep zero bonus.
+
+`SproutPerf.factors` supplies the same snapshot-based bonus to the forecast and the actual publish roll. The forecast shows the effective increase after the chance cap. Posting/composition/timing/repeat-post rules otherwise retain their existing behavior. Historical posts do not change their appearance or appeal when the source plant later gains or loses exposure.
