@@ -1209,6 +1209,7 @@ function createPlant(lineId, loc, slot, pheno, seedType) {
   };
   if (p.pheno) { delete p.pheno.sex; delete p.pheno.sexKnown; }
   if (p.pheno.mut === undefined) { p.pheno.mut = rollMutation(g, null); if (p.pheno.mut === 'pocketdwarf') p.pheno.h *= .7; }
+  if (!Array.isArray(p.pheno.muts)) p.pheno.muts = p.pheno.mut ? [p.pheno.mut] : [];
   if (['outdoor'].includes((LOC_DEF[loc] || {}).kind)) p.directOutdoor = true; else p.indoorStart = true;
   state.plants[p.id] = p; state.locations[loc].slots[slot] = p.id;
   if (!state.codex.photos[lineId]) state.codex.photos[lineId] = 0;
@@ -1362,7 +1363,7 @@ function jarPlant(p) {
   const appearance = clamp((qAvg * .7 + (COLOR_RARITY[g.colorName] - 1) * .6 + (p.pheno.deep ? .1 : 0) - p.mold * .6) * Math.min(1.04, dq + .05), 0, 1);
   const aroma = clamp((p.aroma * .9 + .1) * (fast ? .74 : Math.min(1.06, dq)), 0, 1), consistency = clamp(1 - p.stress / 120 - (1 - (g.stability || .7)) * .3, 0, 1);
   const overall = clamp((appearance * .25 + aroma * .2 + hAvg * .2 + consistency * .15 + qAvg * .2) * (.55 + dq * .45) * (p.seeded ? .8 : 1), 0, 1);
-  const jars = Math.max(1, Math.round(p.yieldPot * (window.BagseedCanopy?.yieldFactor(p) ?? 1) * (typeof SizeYield1151 !== 'undefined' ? SizeYield1151.factorFor(p) : 1) * (g.yield || 1) * p.pheno.y * ((LOC_DEF[p.harvestLoc1151 || p.loc] && LOC_DEF[p.harvestLoc1151 || p.loc].yieldMul) || 1) * (p.pheno.mut ? (MUTS[p.pheno.mut] ? MUTS[p.pheno.mut].yield : 1) : 1) * (.5 + p.health / 100) * (p.training === 'scrog' ? 1.3 : p.training === 'lst' ? 1.15 : p.training === 'topped' ? 1.1 : 1) * (1 - p.mold * .4) * (res.label === 'Mold Risk' ? .8 : 1) * 2.2));
+  const jars = Math.max(1, Math.round(p.yieldPot * (window.BagseedCanopy?.yieldFactor(p) ?? 1) * (typeof SizeYield1151 !== 'undefined' ? SizeYield1151.factorFor(p) : 1) * (g.yield || 1) * p.pheno.y * ((LOC_DEF[p.harvestLoc1151 || p.loc] && LOC_DEF[p.harvestLoc1151 || p.loc].yieldMul) || 1) * Mut.k(p, 'yield') * (.5 + p.health / 100) * (p.training === 'scrog' ? 1.3 : p.training === 'lst' ? 1.15 : p.training === 'topped' ? 1.1 : 1) * (1 - p.mold * .4) * (res.label === 'Mold Risk' ? .8 : 1) * 2.2));
   const grade = overall > .86 ? 'A+' : overall > .76 ? 'A' : overall > .64 ? 'B' : overall > .5 ? 'C' : 'D';
   const b = { id: 'h_' + uid(), lineId: p.lineId, name: p.name, jars, grade, overall, scores: { appearance, aroma, health: hAvg, consistency, cultivation: qAvg, drying: clamp(dq, 0, 1) }, type: g.type, aromaName: g.aroma, organic: p.organic, day: state.day, dry: res.label };
   state.inv.harvest.push(b);
@@ -1373,7 +1374,7 @@ function jarPlant(p) {
   if (!plantsIn(p.loc).some(x => x.stage <= S.drying) && !state.locations[p.loc].on.light) { state.locations[p.loc].on.light = true; toast('Drying done: grow light power switched back on.'); }
   state.stats.harvests++; state.rep.cultivation += 2; if (p.organic) state.rep.organic += 1.5;
   { const K = (LOC_DEF[p.harvestLoc1151 || p.loc] || {}).kind; if (K === 'tent') state.stats.tentHarvests++; if (K === 'outdoor' || K === 'greenhouse') { state.stats.outdoorHarvests++; unlock('outdoors'); } }
-  if (p.pheno.mut && MUTS[p.pheno.mut]) { b.mut = p.pheno.mut; b.overall = clamp(b.overall * (1 + (MUTS[p.pheno.mut].collector - 1) * .15), 0, 1); }
+  if (p.pheno.mut && MUTS[p.pheno.mut]) { b.mut = p.pheno.mut; b.muts = Mut.list(p).slice(); b.overall = clamp(b.overall * (1 + (Mut.k(p, 'collector') - 1) * .15), 0, 1); }
   SaveSys.request('jar');
   if (state.stats.harvests === 1) { state.firstHarvestDay = state.day; unlock('bagseedhero'); setStory('patient'); }
   if (g.experimental) { state.npc.breeders[g.breeder].flags.readyReport = g.id; addMsg(g.breeder, `Heard you finished ${g.name}. Send me the test report when you can!`, [{ label: 'Send test report', fx: 'report:' + g.id }]); }
@@ -1761,7 +1762,7 @@ function tintPacked(c, hex, t) { const [r, g, b] = unpack(c), [R2, G2, B2] = hex
 function invalidate(p) { runtime.sprites.delete(p.id); }
 
 const PlantArt = {
-  key(p) { return [p.stage, Math.round(p.height * 2), Math.floor(p.nodes * 2), p.training, p.pruned, JSON.stringify(p.canopyHarvest || p.canopy || null), Math.round((p.density ?? .82)*100), p.staked ? 1 : 0, Math.round(p.water / 12), Math.round(p.health / 12), Math.round(p.burn * 4), p.pest.type ? Math.round(p.pest.lvl * 5) : 0, Math.round(p.mold * 5), Math.round(p.prog), Math.round(p.nutr / 20), p.lineId, p.sexKnown ? p.sex : '?', p.seeded ? 1 : 0, Math.round((p.stress || 0) / 25), p.dry ? Math.round(p.dry.prog * 6) + '.' + Math.round(p.dry.mold * 4) : ''].join('|'); },
+  key(p) { return [p.stage, Math.round(p.height * 2), Math.floor(p.nodes * 2), p.training, p.pruned, JSON.stringify(p.canopyHarvest || p.canopy || null), Math.round((p.density ?? .82)*100), Mut.list(p).join('+'), p.staked ? 1 : 0, Math.round(p.water / 12), Math.round(p.health / 12), Math.round(p.burn * 4), p.pest.type ? Math.round(p.pest.lvl * 5) : 0, Math.round(p.mold * 5), Math.round(p.prog), Math.round(p.nutr / 20), p.lineId, p.sexKnown ? p.sex : '?', p.seeded ? 1 : 0, Math.round((p.stress || 0) / 25), p.dry ? Math.round(p.dry.prog * 6) + '.' + Math.round(p.dry.mold * 4) : ''].join('|'); },
   get(p) { const k = this.key(p); let c = runtime.sprites.get(p.id); if (!c || c.k !== k) { c = Object.assign({ k }, this.build(p)); runtime.sprites.set(p.id, c); } return c; },
 
   build(p) {
@@ -1774,12 +1775,14 @@ const PlantArt = {
     const Hpx = Math.max(3, Math.round(p.height * 2.1)), W = p._w || 104, H = Math.max(14, Hpx + 22), P = new Pix(W, H), cx = W >> 1, by = H - 1;
     // health / nutrition colour shifts
     const sick = clamp((55 - p.health) / 70, 0, .55);
-    const MU = p.pheno && p.pheno.mut && MUTS[p.pheno.mut] ? MUTS[p.pheno.mut].art : null, mstage = clamp((st - 2) / 6, 0, 1);
+    const MUS = new Set(Mut.list(p).map(k => MUTS[k].art)), MA = a => MUS.has(a), mstage = clamp((st - 2) / 6, 0, 1);
     let leafHex = mix(lp.leaf, '#d6c35a', sick), darkHex = mix(lp.dark, '#8a7a2a', sick * .7), lightHex = mix(lp.light, '#efe49a', sick);
-    if (MU === 'gold') { leafHex = mix(leafHex, '#d9e05a', .55); lightHex = mix(lightHex, '#f6f4a0', .6); darkHex = mix(darkHex, '#9aa03a', .45); }
-    if (MU === 'ink') { leafHex = mix(leafHex, '#2c2a3e', .25 + mstage * .45); darkHex = mix(darkHex, '#15141f', .3 + mstage * .5); lightHex = mix(lightHex, '#5a4a7a', .2 + mstage * .4); }
+    if (MA('gold')) { leafHex = mix(leafHex, '#d9e05a', .55); lightHex = mix(lightHex, '#fbf8b4', .7); darkHex = mix(darkHex, '#9aa03a', .45); }
+    if (MA('triploid')) { leafHex = mix(leafHex, '#2f7a34', .32); darkHex = mix(darkHex, '#1d4f22', .35); lightHex = mix(lightHex, '#5fa856', .25); }
+    if (MA('ink')) { leafHex = mix(leafHex, '#2c2a3e', .25 + mstage * .45); darkHex = mix(darkHex, '#15141f', .3 + mstage * .5); lightHex = mix(lightHex, '#5a4a7a', .2 + mstage * .4); }
     const C = { leaf: packCol(leafHex), dark: packCol(darkHex), light: packCol(lightHex), stem: packCol(mix(lp.dark, '#8d7b45', .35)), stemL: packCol(mix(lp.leaf, '#c9c08a', .4)), seed: packCol('#6b4a2a'), seedD: packCol('#3e2a17'), white: packCol('#f1efdc') };
-    if (MU === 'ember') { C.stem = packCol('#a8322a'); C.stemL = packCol('#d9604a'); }
+    if (MA('ember')) { C.stem = packCol('#a8322a'); C.stemL = packCol('#d9604a'); }
+    if (MA('crest')) { C.stemL = packCol(mix(lp.leaf, '#e2dc9a', .45)); }
     const CREAM = packCol('#f3f0d6'), CREAMD = packCol('#d8d4b0');
     const fadeT = st === S.lateflower ? .35 : st === S.ready ? .6 : 0;
     const droop = (p.water < 22 ? (22 - p.water) / 22 * .8 : 0) + (p.health < 45 ? .25 : 0) + (p.water > 93 ? .25 : 0) + clamp((p.stress || 0) / 160, 0, .3);
@@ -1806,7 +1809,7 @@ const PlantArt = {
       for (let k = 1; k <= n; k++) { const t = k / (n + .6); const q = pts[Math.round(t * steps)]; nodes.push({ x: q[0], y: q[1], i: iBase + k, m: n - k }); }
       return { pts, nodes, tip: pts[pts.length - 1], main, side };
     };
-    if ((p.training === 'topped' || (MU === 'twin' && p.training === 'natural')) && N >= 4) {
+    if ((p.training === 'topped' || (MA('twin') && p.training === 'natural')) && N >= 4) {
       const split = stemAt(.28); shoots.push(mkShoot(cx, by, split[0], split[1], 2, true, 0, 0));
       shoots.push(mkShoot(split[0], split[1], split[0] - Hpx * .22, topY + 1, N - 2, true, -1, 2));
       shoots.push(mkShoot(split[0], split[1], split[0] + Hpx * .22, topY + 2, N - 2, true, 1, 2));
@@ -1836,23 +1839,26 @@ const PlantArt = {
     // stakes (behind)
     if (p.staked) { const sc = packCol('#c9a35a'); P.line(cx - 10, by, cx - 12, topY + Hpx * .4, sc); P.line(cx + 11, by, cx + 13, topY + Hpx * .45, sc); }
     // ---------- draw branches & stems ----------
-    const drawStem = (sh, w) => { for (let k = 0; k < sh.pts.length; k++) { const [x, y] = sh.pts[k]; const ww = sh.main ? Math.max(1, w * (1 - k / sh.pts.length * .6)) : 1; P.set(x, y, C.stem); if (ww > 1.4) P.set(x + 1, y, C.stemL); } };
+    const drawStem = (sh, w) => { for (let k = 0; k < sh.pts.length; k++) { const [x, y] = sh.pts[k]; const ww = sh.main ? Math.max(1, w * (1 - k / sh.pts.length * .6)) : 1; P.set(x, y, C.stem); if (ww > 1.4) P.set(x + 1, y, C.stemL);
+      if (MA('crest') && sh.main && st >= S.earlyveg) { const f = k / sh.pts.length - .5; if (f > 0) { const half = Math.round(f * 2 * (2 + Hpx / 18)); for (let d = 1; d <= half; d++) { P.set(x - d, y, d === half ? C.stem : C.stemL); P.set(x + d, y, d === half ? C.stem : C.stemL); } } } } };
     shoots.slice().sort((a, b) => a.main - b.main).forEach(sh => drawStem(sh, Math.min(2.4, 1 + Hpx / 40)));
     // ---------- leaves ----------
-    const bladesMax = (g.leafShape === 'narrow' ? 9 : 7) + (MU === 'fern' ? 2 : 0), hwBase = (g.leafShape === 'broad' ? 1.9 : g.leafShape === 'narrow' ? .9 : 1.3) * (MU === 'fern' ? .78 : 1);
-    const leafMax = (st <= S.seedling ? 4 : st === S.earlyveg ? 8 : st === S.veg ? 12 : 14) * (g.leafShape === 'narrow' ? 1.1 : 1) * (MU === 'dwarf' ? .72 : MU === 'fern' ? 1.08 : 1);
+    const bladesMax = MA('duck') ? 5 : (g.leafShape === 'narrow' ? 9 : 7) + (MA('fern') ? 2 : 0) - (MA('triploid') ? 2 : 0), hwBase = (g.leafShape === 'broad' ? 1.9 : g.leafShape === 'narrow' ? .9 : 1.3) * (MA('fern') ? .7 : 1) * (MA('triploid') ? 1.35 : 1);
+    const leafMax = (st <= S.seedling ? 4 : st === S.earlyveg ? 8 : st === S.veg ? 12 : 14) * (g.leafShape === 'narrow' ? 1.1 : 1) * (MA('dwarf') ? .72 : MA('fern') ? 1.08 : 1) * (MA('triploid') ? 1.14 : 1) * (MA('mono') ? .9 : 1);
     const blade = (x0, y0, ang, len, hw, cf, ce, cr, tipC) => {
-      const ca = Math.cos(ang), sa = Math.sin(ang), vg = MU === 'variegated' && st >= S.seedling ? rng() : 1, vside = vg < 1 ? (rng() < .5 ? 1 : -1) : 1;
+      const ca = Math.cos(ang), sa = Math.sin(ang), vg = MA('variegated') && st >= S.seedling ? rng() : 1, vside = vg < 1 ? (rng() < .5 ? 1 : -1) : 1, vph = rng() * 6, thin = MA('fern');
       for (let s = 0; s <= len; s += .5) {
         const t = s / len, cxp = x0 + ca * s, cyp = y0 - sa * s;
         let w = hw * Math.pow(Math.sin(Math.PI * Math.min(1, t * 1.12 + .02)), .75);
-        if (w > .9 && (Math.floor(s) % 2 === 0) && t > .15 && t < .9) w += .55;
-        if (MU === 'fern' && t > .18) w *= (Math.floor(s * 1.4) % 2 ? .32 : 1.08);
+        if (w > .9 && (Math.floor(s) % 2 === 0) && t > .15 && t < .9 && !MA('duck') && !MA('mono')) w += .55;
+        if (MA('fern') && t > .18) w *= (Math.floor(s * 1.4) % 2 ? .18 : 1.15);
+        if (MA('mono') && t > .1 && t < .92) w += .35 * Math.sin(t * Math.PI);
         for (let k = -w; k <= w; k += .5) {
           const px = cxp + sa * k, py = cyp + ca * k;
-          const edge = Math.abs(k) > w - .8;
+          const edge = Math.abs(k) > w - .8 && !(thin && w < 1.6);
           let col = tipC && t > .86 ? tipC : edge ? ce : (Math.abs(k) < .3 && len > 5 && t < .85) ? cr : cf;
-          if (vg < .62 && !edge && (vg < .25 || k * vside > 0) && t > .08) col = (Math.floor(s) + Math.round(k)) % 5 === 0 ? CREAMD : CREAM;
+          if (vg < .62 && !edge && (vg < .25 || k * vside > 0) && t > .08) col = (vg < .25 ? Math.sin(s * 1.7 + k * 2.3 + vph) > .55 : (Math.floor(s) + Math.round(k)) % 5 === 0) ? CREAMD : CREAM;
+          else if (vg < .85 && t > .12 && Math.sin(s * .9 + k * 1.6 + vph) > .82) col = edge ? CREAMD : CREAM;
           P.set(px, py, col);
         }
       }
@@ -1860,10 +1866,24 @@ const PlantArt = {
     const fanLeaf = (x, y, dir, size, n, hw, cf, ce, cr, tipC) => {
       const pet = Math.max(1, size * .28), ex = x + Math.cos(dir) * pet, ey = y - Math.sin(dir) * pet;
       P.line(x, y, ex, ey, C.stem);
+      if (MA('mono') && n > 1) { blade(ex, ey, dir, size * .95, hw * 1.75, cf, ce, cr, tipC); return; }
       if (n <= 1) { blade(ex, ey, dir, size * .75, hw * .9, cf, ce, cr, tipC); return; }
-      const spread = Math.min(2.95, .56 * (n - 1));
+      const spread = Math.min(2.95, .56 * (n - 1) * (MA('duck') ? 1.15 : 1));
+      if (MA('duck')) { // webbing between the leaflets, scalloped where the tips separate
+        const a0 = dir - spread / 2, step = spread / (n - 1);
+        for (let r = 1; r < size * .8; r += .5) for (let a = a0; a <= a0 + spread; a += .45 / r) {
+          const u = ((a - a0) / step) % 1, f = (a - dir) / spread, R = size * (1 - .62 * Math.abs(f) * 1.6) * (.8 - .2 * Math.sin(u * Math.PI));
+          if (r > R) continue; P.set(ex + Math.cos(a) * r, ey - Math.sin(a) * r, r > R - .9 ? ce : cf);
+        }
+      }
       for (let j = 0; j < n; j++) {
-        const f = j / (n - 1) - .5, a = dir + spread * f, l = size * (1 - .62 * Math.abs(f) * 2 * .8);
+        const f = j / (n - 1) - .5, a = dir + spread * f, l = size * (1 - .62 * Math.abs(f) * 2 * .8), ca = Math.cos(a), sa = Math.sin(a);
+        if (MA('duck')) { for (let s2 = 1; s2 < l * .8; s2 += .5) P.set(ex + ca * s2, ey - sa * s2, cr); continue; } // fused pad: only the veins show
+        if (MA('freak') && l > 3) { // a fern frond: midrib with a comb of forward-swept pinnae, gaps between them
+          for (let s2 = 0; s2 <= l; s2 += .5) P.set(ex + ca * s2, ey - sa * s2, s2 > l - 1 ? cf : cr);
+          for (let s2 = 1.5; s2 < l - .5; s2 += 2) { const pl = Math.max(1, l * .34 * Math.sin(Math.PI * Math.min(1, s2 / l * 1.1))); for (const sd of [-1, 1]) { const pa = a + sd * 1.05, ox = ex + ca * s2, oy = ey - sa * s2; for (let u = .5; u <= pl; u += .5) P.set(ox + Math.cos(pa) * u, oy - Math.sin(pa) * u, tipC && u > pl - .6 ? tipC : u > pl - .6 ? ce : cf); } }
+          continue;
+        }
         blade(ex, ey, a, Math.max(2, l), hw * (1 - Math.abs(f) * .4), cf, ce, cr, tipC);
       }
     };
@@ -1875,7 +1895,10 @@ const PlantArt = {
       if ((g.colorName === 'Purple' || g.colorName === 'Dark purple' || g.colorName === 'Lavender') && st >= S.midflower && nd.m < 2) { lf = mix(lf, bp.bud, .35); }
       if (nightPigment?.strength) { const t = nightPigment.strength * .82; lf = mix(lf, nightPigment.hex, t); dk = mix(dk, shade(nightPigment.hex, -.35), t); lt = mix(lt, shade(nightPigment.hex, .3), t); }
       if (!sh.main) { dk = shade(dk, -.12); lf = shade(lf, -.08); }
-      return [packCol(lf), packCol(dk), packCol(lt)];
+      let rib = lt;
+      if (MA('albino') && nd.m <= 1) { const t = (nd.m === 0 ? .88 : .55) * (1 - mstage * .35); lf = mix(lf, '#f2f4ea', t); lt = mix(lt, '#ffffff', t); dk = mix(dk, '#cfd6c2', t); rib = mix(rib, '#e4ecd6', t); }
+      if (MA('ember')) rib = mix(lt, '#c4483a', .75);
+      return [packCol(lf), packCol(dk), packCol(rib)];
     };
     if (st === S.seedling) {
       const sh = shoots[0], base = sh.pts[Math.round(sh.pts.length * .55)] || sh.tip;
@@ -1899,14 +1922,15 @@ const PlantArt = {
           if (sh.main) {
             fanLeaf(nd.x, nd.y, Math.PI - up, size, blades, hwBase, cf, ce, cr, tip);
             fanLeaf(nd.x, nd.y, up, size, blades, hwBase, cf, ce, cr, tip);
-            if (MU === 'whorl') fanLeaf(nd.x, nd.y, Math.PI / 2 + (nd.i % 2 ? .3 : -.3), size * .82, blades, hwBase, cf, ce, cr, tip);
+            if (MA('whorl')) fanLeaf(nd.x, nd.y, Math.PI / 2 + (nd.i % 2 ? .3 : -.3), size * .82, blades, hwBase, cf, ce, cr, tip);
           } else {
             fanLeaf(nd.x, nd.y, sh.side < 0 ? Math.PI - up + .1 : up - .1, size * .75, Math.max(1, blades - 2), hwBase * .9, cf, ce, cr, tip);
           }
         }
         // tip cluster
         const [tx, ty] = sh.tip; const [cf, ce, cr] = leafCol({ i: N, m: 0 }, sh);
-        if (st < S.transition) { fanLeaf(tx, ty, 1.95 - droop * .3, leafMax * .4, 3, hwBase * .8, cf, ce, cr); fanLeaf(tx, ty, 1.2 + droop * .3, leafMax * .4, 3, hwBase * .8, cf, ce, cr); }
+        if (st < S.transition) { fanLeaf(tx, ty, 1.95 - droop * .3, leafMax * .4, 3, hwBase * .8, cf, ce, cr); fanLeaf(tx, ty, 1.2 + droop * .3, leafMax * .4, 3, hwBase * .8, cf, ce, cr);
+          if (MA('crest') && sh.main && st >= S.earlyveg) { const span = 3 + Hpx / 7; for (const d of [-1, -.5, .5, 1]) fanLeaf(tx + d * span, ty + 1 + Math.abs(d) * 1.5, 1.57 - d * .7, leafMax * .36, 3, hwBase * .8, cf, ce, cr); } }
       }
     }
     // ---------- preflowers (after the sex reveal) ----------
@@ -1925,12 +1949,12 @@ const PlantArt = {
       const fpr = { 6: .2, 7: .45, 8: .72, 9: .92, 10: 1 }[st] || 1;
       const pistilAge = { 6: 0, 7: .08, 8: .35, 9: .7, 10: .92 }[st];
       const purpleShift = { 6: 0, 7: .25, 8: .65, 9: 1, 10: 1 }[st];
-      let budHex = mix('#c8e59a', bp.bud, (g.colorName.includes('green') ? 1 : purpleShift) * (p.pheno.deep ? 1 : .92)); if (MU === 'ember') budHex = mix(budHex, '#d8705a', .12 + .25 * purpleShift); if (MU === 'ink') budHex = mix(budHex, '#4a3a6a', .3 * purpleShift);
+      let budHex = mix('#c8e59a', bp.bud, (g.colorName.includes('green') ? 1 : purpleShift) * (p.pheno.deep ? 1 : .92)); if (MA('ember')) budHex = mix(budHex, '#d8705a', .12 + .25 * purpleShift); if (MA('ink')) budHex = mix(budHex, '#4a3a6a', .3 * purpleShift);
       let budDark = mix('#7ba84a', bp.dark, purpleShift);
       if (nightPigment?.strength) { budHex = mix(budHex, nightPigment.hex, nightPigment.strength * .62); budDark = mix(budDark, shade(nightPigment.hex, -.3), nightPigment.strength * .62); }
-      const pist = packCol(mix('#f6f2e4', '#e07a30', pistilAge)), sugar = packCol(shade(leafHex, -.1));
+      const pist = packCol(MA('pink') ? mix('#ff5fa8', '#ff8a6a', pistilAge) : mix('#f6f2e4', '#e07a30', pistilAge)), sugar = packCol(shade(leafHex, -.1));
       const bC = packCol(budHex), bD = packCol(budDark), frost = packCol('#f6fbff');
-      const base = (1.2 + p.yieldPot * 1.1 * (g.yield || 1) * p.pheno.y) * fpr;
+      const base = (1.2 + p.yieldPot * 1.1 * (g.yield || 1) * p.pheno.y) * fpr * (MA('triploid') ? 1.15 : 1);
       const bud = (x, y, r) => {
         if (r < .8) { P.set(x, y, pist); return; }
         const ri = Math.max(1, Math.round(r));
@@ -1949,6 +1973,7 @@ const PlantArt = {
         if (sh.main) {
           const len = Math.max(2, Math.round(Hpx * .32 * fpr));
           for (let k = len; k >= 0; k--) { const idx = Math.max(0, sh.pts.length - 1 - k); const [x, y] = sh.pts[idx]; bud(x, y, base * topScale * (1.15 - k / len * .45)); }
+          if (MA('crest')) { const span = Math.round(4 + Hpx / 6); for (let d = -span; d <= span; d++) if (d) bud(tx + d, ty + Math.round(Math.sin(d * .8) * 1.6) + Math.abs(d) * .2, base * topScale * (1 - Math.abs(d) / span * .3)); }
           for (const nd of sh.nodes) if (nd.y > ty + Hpx*.32*fpr && !canopy?.removed(p,(by-nd.y)/Hpx)) bud(nd.x, nd.y, base * (canopy?.budScale((by-nd.y)/Hpx,.5) ?? .55) * .7);
         } else {
           if (!canopy?.removed(p,(by-ty)/Hpx)) bud(tx, ty, base * .85 * topScale);
@@ -3302,7 +3327,7 @@ const Social = {
     s *= o.zoom < .8 ? .88 : o.zoom > 2.4 ? .92 : o.zoom >= 1.1 && o.zoom <= 1.7 ? 1.1 : 1;
     s *= { none: 1, warm: 1.05, mono: .97, vintage: 1.03, neon: (g.colorName.match(/Purple|Pink|Lavender/) ? 1.18 : .95), dreamy: 1.1 }[o.filter] || 1;
     s *= { closet: 1, tent: 1.03, studio: 1.08, window: 1.05, garden: 1.07 }[o.bg] || 1;
-    if (snap.pheno && snap.pheno.mut && MUTS[snap.pheno.mut]) s *= MUTS[snap.pheno.mut].photo;
+    s *= Mut.k(snap, 'photo');
     s *= Social2.scoreMul();
     if (o.angle === 'macro' && st >= S.earlyflower) s *= 1.15;
     const words = o.caption.trim().split(/\s+/).filter(Boolean).length; if (words >= 4) s *= 1.08; if (words > 40) s *= .95;
@@ -4251,7 +4276,7 @@ const Panels = {
       let right = '';
       if (t === 'overview') {
         const notes = runtime.inspect && runtime.inspect.pid === p.id && runtime.inspect.day === state.day ? runtime.inspect.notes : null;
-        right = `<div class="mono small" style="color:var(--amber)">${esc(STAGES[p.stage].name.toUpperCase())} · DAY ${p.age} · ${esc(locName(p.loc).toUpperCase())}${p.pheno.mut && MUTS[p.pheno.mut] ? ' · ' + esc(MUTS[p.pheno.mut].name.toUpperCase()) : ''}</div><div class="pips">${pips}</div>
+        right = `<div class="mono small" style="color:var(--amber)">${esc(STAGES[p.stage].name.toUpperCase())} · DAY ${p.age} · ${esc(locName(p.loc).toUpperCase())}${p.mutSeen && Mut.list(p).length ? ' · ' + esc(Mut.list(p).map(k => MUTS[k].name.toUpperCase()).join(' + ')) : ''}</div><div class="pips">${pips}</div>
           ${p.stage >= S.drying ? dryPanel(p.loc) || (p.dry && p.dry.result ? `<div class="note ${p.dry.spoiled ? 'bad' : 'good'}">Drying result: <b>${esc(p.dry.result.label)}</b>${p.dry.result.avgT ? ` · averaged ${p.dry.result.avgT}°F / ${p.dry.result.avgH}%` : ''}. ${p.dry.spoiled ? 'Compost it from the Care tab.' : 'Trim & jar it from the Care tab.'}</div>` : '') : `
           ${bar('Health ' + lvlSym(p.health), p.health, 100, lvlCol(p.health))}${bar('Stress ' + lvlSym(p.stress, 1), p.stress, 100, lvlCol(p.stress, 1))}
           ${bar('Water', p.water, 100, '#7fd4ff', smart || sensorTier >= 2 ? Math.round(p.water) + '%' : p.water < 20 ? 'Dry' : p.water > 85 ? 'Soggy' : 'Damp')}${bar('Nutrition', p.nutr, 100, lvlCol(p.nutr))}${bar('Roots', p.root, 100, lvlCol(p.root))}
@@ -4740,7 +4765,7 @@ const ACT = {
   fix(kind) { if (!spend(3, 10)) return; if (kind === 'flicker' && chance(.3)) { think('Jiggled it. Still flickering. Jiggled harder. ...Nope.'); renderPanel(); return; } state.fail[kind] = false; think({ flicker: 'Jiggled the cord. Steady light. For now.', rattle: 'Tightened the screw. Blessed silence.', sensor: 'Reset. It reads normal numbers again.', humStuck: 'Unplugged, replugged. It stopped raining in the tent.', heatTrip: 'Breaker reset. The heater hums back to life.', acIce: 'Thawed out. Cold air again.' }[kind]); Sfx.good(); renderPanel(); },
   humid(arg) { const [loc, i] = arg.split(':'); state.locations[loc].humidMode = +i; renderPanel(); }, humidTimer(loc) { state.locations[loc].humidTimer = !state.locations[loc].humidTimer; renderPanel(); }, dehum(loc) { state.locations[loc].dehumOn = !state.locations[loc].dehumOn; renderPanel(); },
   openBox() { runtime.pkgOpen = true; Sfx.pkg(); renderPanel(); }, install(where) { openPackageInstall(where); },
-  sow(arg) { const [loc, slot, sid] = arg.split(':'), s = state.inv.seeds.find(x => x.id === sid); if (!s || state.locations[loc].slots[+slot]) return; if (!spend(4, 15)) return; state.inv.seeds = state.inv.seeds.filter(x => x !== s); const p = createPlant(s.lineId, loc, +slot, s.pheno ? Object.assign({}, s.pheno) : null, s.seedType); if (!s.pheno && s.inherit && !p.pheno.mut && chance(.35)) p.pheno.mut = s.inherit; SaveSys.request('sow'); if (s.kind === 'cutting') { p.stage = S.seedling; p.height = 3; p.nodes = 2; } if (state.story === 'plant') setStory('grow'); closePanel(); Sfx.good(); think(GEN(s.lineId).bag ? 'Tucked in. Good luck, little mystery.' : `${p.name} is in the dirt. Let\'s go.`, 4000); },
+  sow(arg) { const [loc, slot, sid] = arg.split(':'), s = state.inv.seeds.find(x => x.id === sid); if (!s || state.locations[loc].slots[+slot]) return; if (!spend(4, 15)) return; state.inv.seeds = state.inv.seeds.filter(x => x !== s); const p = createPlant(s.lineId, loc, +slot, s.pheno ? Object.assign({}, s.pheno) : null, s.seedType); if (!s.pheno && !s.blueprint115 && s.inherit && !p.pheno.mut && chance(.35)) { p.pheno.mut = s.inherit; p.pheno.muts = [s.inherit]; } SaveSys.request('sow'); if (s.kind === 'cutting') { p.stage = S.seedling; p.height = 3; p.nodes = 2; } if (state.story === 'plant') setStory('grow'); closePanel(); Sfx.good(); think(GEN(s.lineId).bag ? 'Tucked in. Good luck, little mystery.' : `${p.name} is in the dirt. Let\'s go.`, 4000); },
   town(id) { townGo(id); }, nameLine() { const g = GEN(runtime.nameGid), v = ($('#lineName') || {}).value; g.lineName = (v || '').trim().slice(0, 24) || 'Closet Miracle'; toast(`The bag-seed line is now <b>${esc(g.lineName)}</b>.`, 'social'); closePanel(); },
   toggle(k) { settings[k] = !settings[k]; applySettings(); saveSettings(); renderPanel(); }, custom(k) { state.custom[k] = !state.custom[k]; renderPanel(); },
   saveNow() { autosave(true); }, toTitle() { autosave(); closePanel(); state = null; show('title'); refreshTitle(); },
@@ -5168,16 +5193,29 @@ const SEASON_DATA = {
 };
 
 /* ============================ MUTATIONS ============================== */
-/* Rare fictional traits. Not strictly better: each has a tradeoff.        */
+/* Rare traits modeled on real cannabis leaf/structure variants. Not strictly
+   better: each has a tradeoff. gene: how it travels through seed.
+   recessive = shows with two copies; one copy is a hidden carrier.
+   dominant  = one copy shows.
+   chimera   = a tissue (somatic) quirk: cuttings keep it, seed rarely does
+               (only through the mother, like plastid variegation).
+   sterile   = the whole plant is the trait (triploid): cuttings only.       */
 const MUTS = {
-  fernfrond: { name: 'Fernfrond', desc: 'Deeply split, feathery leaflets with saw-tooth edges. Gorgeous, a little slower.', w: 18, yield: .93, speed: .92, photo: 1.22, collector: 1.35, art: 'fern' },
-  moonmarble: { name: 'Moonmarble Variegation', desc: 'Cream-and-green marbled leaves (a chimera). Showstopping, but the pale tissue makes the plant less vigorous.', w: 10, yield: .86, speed: .95, photo: 1.32, collector: 1.6, stress: 1.2, art: 'variegated' },
-  goldleaf: { name: 'Goldleaf', desc: 'Lime-gold foliage that glows under any light. Slightly sensitive to intense light.', w: 16, yield: .97, speed: 1, photo: 1.15, collector: 1.2, burn: 1.35, art: 'gold' },
-  ember: { name: 'Ember Stem', desc: 'Crimson stems and petioles; buds blush red late. Mostly cosmetic.', w: 20, yield: 1, speed: 1, photo: 1.12, collector: 1.15, aroma: 1.05, art: 'ember' },
-  twinleader: { name: 'Twin Leader', desc: 'The main stem splits on its own into two tops. More yield, denser canopy (watch mold).', w: 14, yield: 1.08, speed: 1, photo: 1.05, collector: 1.1, mold: 1.25, art: 'twin' },
-  pocketdwarf: { name: 'Pocket Dwarf', desc: 'Tight internodes and small leaves. Perfect for cramped spaces, lighter harvests.', w: 12, yield: .84, speed: 1.03, photo: 1.1, collector: 1.2, height: .7, art: 'dwarf' },
-  whorl: { name: 'Triple Whorl', desc: 'Three leaves per node instead of two. Lush, bushy, rare.', w: 8, yield: 1.05, speed: .97, photo: 1.2, collector: 1.45, art: 'whorl' },
-  inkleaf: { name: 'Inkleaf', desc: 'Near-black pigment creeps into the leaves as the plant matures. Moody and slow.', w: 7, yield: .92, speed: .94, photo: 1.28, collector: 1.5, art: 'ink' }
+  fernfrond: { name: 'Fernfrond', desc: 'Deeply split, feathery leaflets with saw-tooth edges. Gorgeous, a little slower.', w: 18, yield: .93, speed: .92, photo: 1.22, collector: 1.35, art: 'fern', gene: 'recessive', tint: '#5fae4a' },
+  freakshow: { name: 'Freakshow', desc: 'Every leaflet splits again into lacy, fractal sub-leaflets, the famous fern-like freak leaf. Breeds true once you stack two copies.', w: 6, yield: .9, speed: .93, photo: 1.38, collector: 1.75, art: 'freak', gene: 'recessive', tint: '#4f9a3c' },
+  ducksfoot: { name: 'Ducksfoot', desc: 'Webbed leaflets fuse into one broad, duck-foot fan. Superb camouflage, a touch less airflow (watch mold).', w: 9, yield: .96, speed: .98, photo: 1.22, collector: 1.4, mold: 1.15, art: 'duck', gene: 'recessive', tint: '#3f8a3a' },
+  monophylla: { name: 'Monophylla', desc: 'Single-bladed leaves with no leaflets at all, like a different species. Wild to look at, slightly less vigorous.', w: 5, yield: .88, speed: .95, photo: 1.3, collector: 1.55, art: 'mono', gene: 'recessive', tint: '#57a046' },
+  moonmarble: { name: 'Moonmarble Variegation', desc: 'Cream-and-green marbled leaves (a chimera). Showstopping, but the pale tissue makes the plant less vigorous.', w: 10, yield: .86, speed: .95, photo: 1.32, collector: 1.6, stress: 1.2, art: 'variegated', gene: 'chimera', tint: '#e8e3be' },
+  snowtip: { name: 'Snowtip Albino', desc: 'New growth unfurls ghost-white before greening up: partial albinism in a tissue sector. Stunning under lights, burns easily.', w: 6, yield: .9, speed: .96, photo: 1.3, collector: 1.5, burn: 1.4, stress: 1.1, art: 'albino', gene: 'chimera', tint: '#f2f4ea' },
+  goldleaf: { name: 'Goldleaf', desc: 'Lime-gold foliage that glows under any light. Slightly sensitive to intense light.', w: 16, yield: .97, speed: 1, photo: 1.15, collector: 1.2, burn: 1.35, art: 'gold', gene: 'recessive', tint: '#d9e05a' },
+  ember: { name: 'Ember Stem', desc: 'Crimson stems, petioles and leaf veins; buds blush red late. Mostly cosmetic.', w: 20, yield: 1, speed: 1, photo: 1.12, collector: 1.15, aroma: 1.05, art: 'ember', gene: 'dominant', tint: '#c0392b' },
+  pinkpistil: { name: 'Pink Pistil', desc: 'Hot-pink stigmas that age to coral instead of orange. Purely cosmetic and a crowd favorite in photos.', w: 12, yield: 1, speed: 1, photo: 1.18, collector: 1.2, art: 'pink', gene: 'dominant', tint: '#ff5fa8' },
+  inkleaf: { name: 'Inkleaf', desc: 'Near-black pigment creeps into the leaves as the plant matures. Moody and slow.', w: 7, yield: .92, speed: .94, photo: 1.28, collector: 1.5, art: 'ink', gene: 'recessive', tint: '#2c2a3e' },
+  twinleader: { name: 'Twin Leader', desc: 'The main stem splits on its own into two tops. More yield, denser canopy (watch mold).', w: 14, yield: 1.08, speed: 1, photo: 1.05, collector: 1.1, mold: 1.25, art: 'twin', gene: 'recessive', tint: '#6fb04a' },
+  crested: { name: 'Crested Cola', desc: 'Fasciation: the main stem flattens into a ribbon and the top cola grows as a wide, wavy crest. A tissue quirk, so keep it with cuttings.', w: 6, yield: 1.1, speed: .97, photo: 1.26, collector: 1.45, mold: 1.2, art: 'crest', gene: 'chimera', tint: '#8fbf5a' },
+  whorl: { name: 'Triple Whorl', desc: 'Three leaves per node instead of two. Lush, bushy, rare.', w: 8, yield: 1.05, speed: .97, photo: 1.2, collector: 1.45, art: 'whorl', gene: 'recessive', tint: '#5fa84a' },
+  pocketdwarf: { name: 'Pocket Dwarf', desc: 'Tight internodes and small leaves. Perfect for cramped spaces, lighter harvests.', w: 12, yield: .84, speed: 1.03, photo: 1.1, collector: 1.2, height: .7, art: 'dwarf', gene: 'recessive', tint: '#7cbc52' },
+  triploid: { name: 'Triploid', desc: 'An extra chromosome set: thick, oversized leaves and chunky buds, and nearly seedless even when pollinated. It can\'t be bred by seed. Keep her alive with cuttings.', w: 4, yield: 1.12, speed: .94, photo: 1.16, collector: 1.5, mold: 1.05, art: 'triploid', gene: 'sterile', tint: '#2f7a34' }
 };
 function rollMutation(g, inheritFrom) {
   if (inheritFrom && MUTS[inheritFrom] && chance(.35)) return inheritFrom;
@@ -7676,7 +7714,7 @@ ACT.ghSched = arg => { const L = state.locations.gh; if (arg === 'auto') L.manua
 const Cull = {
   valuable(p) {
     const g = (typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)), why = [];
-    if (p.pheno && p.pheno.mut && MUTS[p.pheno.mut]) why.push(`rare mutation: ${MUTS[p.pheno.mut].name}`);
+    if (Mut.list(p).length) why.push(`rare mutation: ${Mut.list(p).map(k => MUTS[k].name).join(' + ')}`);
     if (g.rarity === 'Rare' || g.rarity === 'Mythic') why.push(`${g.rarity.toLowerCase()} genetics`);
     if (g.bag) why.push('your original bag-seed line');
     if (g.experimental) why.push('untested breeder genetics');
@@ -7700,14 +7738,18 @@ const Cull = {
 
 /* ============================ MUTATIONS ============================= */
 const Mut = {
-  k(p, key) { const m = p && p.pheno && p.pheno.mut && MUTS[p.pheno.mut]; return m && m[key] !== undefined ? m[key] : 1; },
+  /* every expressed mutation; pheno.mut stays the headline one for older code */
+  list(p) { const ph = p && p.pheno; if (!ph) return []; const l = Array.isArray(ph.muts) ? ph.muts : ph.mut ? [ph.mut] : []; return l.filter(k => MUTS[k]); },
+  k(p, key) { let v = 1; for (const k of this.list(p)) if (MUTS[k][key] !== undefined) v *= MUTS[k][key]; return v; },
   reveal(p) {
-    const m = p.pheno && p.pheno.mut && MUTS[p.pheno.mut]; if (!m || p.mutSeen) return;
-    p.mutSeen = true; state.stats.mutations++;
-    const C = state.codex.mutations; C[p.pheno.mut] = C[p.pheno.mut] || { first: state.day, line: p.lineId, count: 0 }; C[p.pheno.mut].count++;
-    state.rep.genetics += 2; unlock('mutant');
-    setTimeout(() => { Sfx.good(); dialog({ who: 'you', name: '✦ Rare trait!', text: `${p.name} is showing something unusual: ${m.name}. ${m.desc}`, choices: [{ label: 'Whoa', fn: () => { } }, { label: 'Mark as favorite', fn: () => { p.favorite = true; toast('Marked as a favorite. Culling it will ask twice.'); } }], tiny: (typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)).lifecycle === 'auto' ? 'Autoflowers can\'t be preserved with cuttings in Bagseed. Pollinated seeds might carry the trait.' : 'Take a cutting during vegetative growth to preserve this exact plant.' }); }, 600);
-    notify(`Rare trait spotted on ${p.name}: ${m.name}!`, 'social');
+    const ks = this.list(p); if (!ks.length || p.mutSeen) return;
+    p.mutSeen = true; const names = ks.map(k => MUTS[k].name).join(' + '), C = state.codex.mutations;
+    for (const k of ks) { C[k] = C[k] || { first: state.day, line: p.lineId, count: 0 }; C[k].count++; }
+    if (p.clone) { notify(`${p.name} kept her mother's ${names}. Cuttings carry the exact phenotype.`, 'social'); return; }
+    state.stats.mutations++; state.rep.genetics += 2; unlock('mutant');
+    const m = MUTS[ks[0]], how = { recessive: 'Recessive: seeds need a copy from both parents to show it.', dominant: 'Dominant: about half her seeds should show it, even crossed to something plain.', chimera: 'A tissue sector, not a seed gene: cuttings keep it, seeds rarely do.', sterile: 'Sterile: she won\'t make viable seeds or pollen. Cuttings are the only way to keep her.' }[m.gene] || '';
+    setTimeout(() => { Sfx.good(); dialog({ who: 'you', name: '✦ Rare trait!', text: `${p.name} is showing something unusual: ${names}. ${ks.map(k => MUTS[k].desc).join(' ')}`, choices: [{ label: 'Whoa', fn: () => { } }, { label: 'Mark as favorite', fn: () => { p.favorite = true; toast('Marked as a favorite. Culling it will ask twice.'); } }], tiny: ((typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)).lifecycle === 'auto' ? 'Autoflowers can\'t be preserved with cuttings in Bagseed. Pollinated seeds might carry the trait. ' : 'Take a cutting during vegetative growth to preserve this exact plant. ') + how }); }, 600);
+    notify(`Rare trait spotted on ${p.name}: ${names}!`, 'social');
   }
 };
 
@@ -27702,6 +27744,175 @@ body.deco-on:not(.touch-ui) #deco>.b5-cozy{flex:1 1 100%;max-height:none}
 @media (orientation:landscape) and (max-height:540px){.b5-cozy{order:4;flex:1 1 auto;max-height:none}}`;
   document.head.appendChild(st);
 })();
+</script>
+<script id="mutation-genetics-code">
+'use strict';
+/* Mutation genetics. The saved genome is the source of truth for rare traits:
+   genome115.mg  = { trait: copies (1|2) } for seed-borne (recessive/dominant) genes
+   genome115.som = [trait] tissue traits (chimera/sterile) that cuttings carry
+   genome115.odds = { trait: 0..1 } pedigree estimate of hiding one recessive copy
+   Clones copy the genome, so they keep the exact phenotype. Seeds segregate.
+   This is a simplified game model, not a claim about real cultivar genomes. */
+const MutGen = {
+  rev: 'mutgen-1',
+  GENE: { recessive: 'Recessive', dominant: 'Dominant', chimera: 'Chimera (tissue)', sterile: 'Sterile (triploid)' },
+  HOW: {
+    recessive: 'Needs a copy from both parents to show. Cross it out, then cross the carriers back together (or back to a clone of the mutant) to bring it back.',
+    dominant: 'One copy shows. Roughly half the seeds from a cross to a plain plant will show it.',
+    chimera: 'Lives in a sector of tissue, not the seed. Cuttings keep it; seeds only rarely inherit it, and only from the mother.',
+    sterile: 'Makes no viable seeds or pollen. Cuttings are the only way to keep it going.'
+  },
+  of(G) {
+    if (!G) return { mg: {}, som: [] };
+    if (G.mg) return { mg: G.mg, som: G.som || [] };
+    const mg = {}, som = [], m = MUTS[G.mut];
+    if (m) { if (m.gene === 'recessive') mg[G.mut] = 2; else if (m.gene === 'dominant') mg[G.mut] = 1; else som.push(G.mut); }
+    return { mg, som };
+  },
+  shows(k, c) { const m = MUTS[k]; return !!m && (m.gene === 'dominant' ? c >= 1 : c >= 2); },
+  expressed(G, keep) {
+    const { mg, som } = this.of(G), out = Object.keys(mg).filter(k => this.shows(k, mg[k]));
+    for (const k of som) if (MUTS[k] && !out.includes(k)) out.push(k);
+    out.sort((a, b) => (b === keep) - (a === keep) || MUTS[b].collector - MUTS[a].collector);
+    return out;
+  },
+  add(G, k) {
+    const m = MUTS[k]; if (!m) return; G.mg = G.mg || {}; G.som = G.som || [];
+    if (m.gene === 'recessive') G.mg[k] = 2; else if (m.gene === 'dominant') G.mg[k] = Math.max(1, G.mg[k] || 0); else if (!G.som.includes(k)) G.som.push(k);
+  },
+  /* genome -> phenotype. A trait set on the phenotype alone (older saves, legacy seeds) is written into the genome first. */
+  sync(p) {
+    const G = p && p.genome115; if (!G || !p.pheno) return;
+    const gt = this.of(G); G.mg = gt.mg; G.som = gt.som;
+    const had = Array.isArray(p.pheno.muts) ? p.pheno.muts : p.pheno.mut ? [p.pheno.mut] : [];
+    for (const k of had) if (MUTS[k] && !this.expressed(G).includes(k)) this.add(G, k);
+    const list = this.expressed(G, p.pheno.mut);
+    p.pheno.muts = list; p.pheno.mut = list[0] || null; G.mut = p.pheno.mut;
+    if (G.odds) for (const k of list) delete G.odds[k];
+  },
+  /* a brand-new genome (fresh seed): rolled traits become genes; some lines quietly carry a recessive */
+  fresh(p, G) {
+    const g = GEN(p.lineId), r = Individual115.rng(G.id + ':mutcarry');
+    for (const k of (Array.isArray(p.pheno.muts) ? p.pheno.muts : p.pheno.mut ? [p.pheno.mut] : [])) this.add(G, k);
+    G.mg = G.mg || {}; G.som = G.som || [];
+    if (r() < (g.experimental ? .12 : g.bag ? .1 : .04)) {
+      const rec = Object.entries(MUTS).filter(([, m]) => m.gene === 'recessive'), tot = rec.reduce((n, [, m]) => n + m.w, 0);
+      let x = r() * tot; for (const [k, m] of rec) { if ((x -= m.w) <= 0) { if (!G.mg[k]) G.mg[k] = 1; break; } }
+    }
+    // Pocket Dwarf's shortness is the gene's job; keep it out of the blended height alleles.
+    if (this.expressed(G).includes('pocketdwarf') && G.alleles && G.alleles.heightF) G.alleles.heightF = G.alleles.heightF.map(v => v / .7);
+    this.sync(p);
+  },
+  /* chance that a parent passes one copy, from what the player can know (expressed traits and pedigree odds) */
+  known(G, k) {
+    const { mg, som } = this.of(G), m = MUTS[k];
+    if (!m) return 0; if (m.gene === 'dominant') return (mg[k] || 0) / 2;
+    if (m.gene === 'recessive') return this.shows(k, mg[k] || 0) ? 1 : ((G.odds && G.odds[k]) || 0) * .5;
+    return som.includes(k) ? (m.gene === 'chimera' ? .12 : 0) : 0;
+  },
+  child(bp, index) {
+    const r = Individual115.rng(bp.seed + ':' + index + ':mut'), A = this.of(bp.mother.genome), B = this.of(bp.father.genome), G = { mg: {}, som: [], odds: {} };
+    const pass = c => c >= 2 ? 1 : c === 1 ? (r() < .5 ? 1 : 0) : 0;
+    for (const k of new Set([...Object.keys(A.mg), ...Object.keys(B.mg)])) {
+      if (!MUTS[k] || MUTS[k].gene === 'sterile') continue;
+      const c = pass(A.mg[k] || 0) + pass(B.mg[k] || 0); if (c) G.mg[k] = Math.min(2, c);
+    }
+    // tissue traits ride along the mother's line only now and then (like plastid variegation)
+    for (const k of A.som) if (MUTS[k] && MUTS[k].gene === 'chimera' && r() < .12) G.som.push(k);
+    // a brand-new spontaneous change, rarely
+    if (r() < .012 * (1 + Knowledge.level('genetics') * .04)) {
+      const all = Object.entries(MUTS), tot = all.reduce((n, [, m]) => n + m.w, 0); let x = r() * tot;
+      for (const [k, m] of all) { if ((x -= m.w) > 0) continue; if (m.gene === 'recessive') G.mg[k] = Math.min(2, (G.mg[k] || 0) + 1); else if (m.gene === 'dominant') G.mg[k] = Math.max(1, G.mg[k] || 0); else if (!G.som.includes(k)) G.som.push(k); break; }
+    }
+    // pedigree odds of hiding a recessive copy, given the seedling doesn't show it
+    for (const k of Object.keys(MUTS)) {
+      if (MUTS[k].gene !== 'recessive' || this.shows(k, G.mg[k] || 0)) continue;
+      const pa = this.known(bp.mother.genome, k), pb = this.known(bp.father.genome, k), none = 1 - pa * pb;
+      if (none > 0 && (pa || pb)) G.odds[k] = Math.round((pa * (1 - pb) + (1 - pa) * pb) / none * 100) / 100;
+    }
+    return G;
+  },
+  /* what a seed lot is expected to show, from its saved parents */
+  lotOdds(bp) {
+    const out = [];
+    for (const [k, m] of Object.entries(MUTS)) {
+      const pa = this.known(bp.mother.genome, k), pb = this.known(bp.father.genome, k); let show = 0, carry = 0;
+      if (m.gene === 'recessive') { show = pa * pb; carry = pa * (1 - pb) + (1 - pa) * pb; }
+      else if (m.gene === 'dominant') show = 1 - (1 - pa) * (1 - pb);
+      else if (m.gene === 'chimera') show = pa;
+      if (show > .001 || carry > .001) out.push({ k, show, carry });
+    }
+    return out;
+  },
+  pct: x => Math.round(x * 100) + '%',
+  panel(p) {
+    const G = p.genome115, list = p.mutSeen ? Mut.list(p) : [], odds = G && G.odds ? Object.entries(G.odds).filter(([k, v]) => MUTS[k] && v > 0) : [];
+    if (!list.length && !odds.length) return '';
+    const auto = (typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)).lifecycle === 'auto';
+    const rows = list.map(k => { const m = MUTS[k], c = G && G.mg ? G.mg[k] : 0; return `<div style="display:flex;align-items:flex-start;gap:10px;margin:6px 0"><canvas class="px" width="40" height="40" data-draw="mutart:${k}:leaf" style="width:40px;height:40px;border-radius:6px;flex:none"></canvas><div class="small"><b>✦ ${esc(m.name)}</b> · ${esc(this.GENE[m.gene])}${m.gene === 'recessive' || m.gene === 'dominant' ? ` · ${c >= 2 ? 'two copies (breeds true)' : 'one copy'}` : ''}<br><span class="muted">${esc(this.HOW[m.gene])}</span></div></div>`; }).join('');
+    const keep = list.length ? `<p class="small">${auto ? 'Autoflowers can\'t be cloned here: keep the trait going by pollinating her and growing out the seeds.' : p.cutting ? 'You already have a cutting of her in storage: grow it to keep this exact phenotype.' : 'Take a cutting in veg to keep this exact phenotype, mutations and all.'}${p.clone ? ' She is a clone, so she carries her mother\'s mutations exactly.' : ''}</p>` : '';
+    const carry = odds.length ? `<p class="small"><b>Pedigree says she may hide:</b> ${odds.map(([k, v]) => `${esc(MUTS[k].name)} (${this.pct(v)} carrier odds)`).join(', ')}. Cross her to a plant that shows or carries it to bring it out.</p>` : '';
+    return `<div class="card" style="margin-top:10px"><h3>Mutation genetics</h3>${rows}${keep}${carry}</div>`;
+  },
+  seedNote(s) {
+    if (!s) return '';
+    if (s.kind === 'cutting') { const l = s.pheno && (s.pheno.muts || (s.pheno.mut ? [s.pheno.mut] : [])).filter(k => MUTS[k]) || []; return l.length ? `<p class="small">✦ Clone keeps ${l.map(k => esc(MUTS[k].name)).join(' + ')} exactly.</p>` : ''; }
+    if (!s.blueprint115) return '';
+    const o = this.lotOdds(s.blueprint115); if (!o.length) return '';
+    return `<p class="small">✦ Mutation odds per seed: ${o.map(x => `${esc(MUTS[x.k].name)} ${x.show > .001 ? this.pct(x.show) + ' show' : ''}${x.show > .001 && x.carry > .001 ? ' · ' : ''}${x.carry > .001 ? this.pct(x.carry) + ' carry' : ''}`).join('; ')}</p>`;
+  },
+  guide() {
+    const C = state.codex.mutations || {}, keys = Object.keys(MUTS), found = keys.filter(k => C[k]).length;
+    return `<div class="card" style="margin-top:12px"><h3>✦ Mutation field guide · ${found} of ${keys.length}</h3><p class="small muted">Rare traits show up in early veg. Clone a keeper to hold her exact phenotype, or breed the trait into other genetics.</p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">${keys.map(k => { const m = MUTS[k], c = C[k]; return `<div class="card"><canvas class="px" width="104" height="80" data-draw="mutart:${k}:${c ? 'plant' : 'none'}" style="width:100%;border-radius:6px"></canvas><h3>${c ? esc(m.name) : '???'}</h3><div class="meta">${esc(this.GENE[m.gene])}${c ? ` · found ${c.count}×` : ''}</div>${c ? `<div class="small muted">${esc(m.desc)}</div>` : ''}</div>`; }).join('')}</div></div>`;
+  },
+  /* artwork for the guide and the plant card: the trait on a healthy demo plant, or one fan leaf up close */
+  draw(cv, k, mode) {
+    const ctx = cv.getContext('2d'), W = cv.width, H = cv.height; ctx.imageSmoothingEnabled = false;
+    ctx.fillStyle = '#1a2420'; ctx.fillRect(0, 0, W, H);
+    if (!MUTS[k] || mode === 'none') { ctx.fillStyle = '#141b18'; ctx.fillRect(0, 0, W, H); pxText(ctx, '???', W / 2 - 8, H / 2 - 3, 1, '#3b4d45'); return; }
+    const flower = ['pink', 'crest', 'triploid', 'ember'].includes(MUTS[k].art), line = (LINES.find(l => l.id === 'porchlight') || LINES[0]).id;
+    const p = demoPlant(line, mode === 'leaf' ? 5 : flower ? 8 : 6, 77, { id: 'mutdemo_' + k + '_' + mode, sex: 'F', sexKnown: true, pheno: { h: 1, b: 1, y: 1, a: 1, deep: false, mut: k, muts: [k] } });
+    const s = PlantArt.build(p);
+    if (mode === 'leaf') { const z = Math.max(1, Math.floor(Math.min(W / s.w, H / s.h) * 1.6)); ctx.drawImage(s.cv, Math.round(W / 2 - s.ax * z), Math.round(H * .95 - s.ay * z + s.h * z * .28), s.w * z, s.h * z); return; }
+    ctx.drawImage(s.cv, W / 2 - s.ax, H - 4 - s.ay);
+    ctx.fillStyle = MUTS[k].tint; ctx.fillRect(3, 3, 4, 4);
+  }
+};
+Individual115.ensure = (prev => function (p) { const had = !!p.genome115, G = prev.call(this, p); if (!had) MutGen.fresh(p, G); else if (!G.mg) MutGen.sync(p); return G; })(Individual115.ensure);
+Individual115.offspring = (prev => function (bp, index, lineId) {
+  const ph = prev.call(this, bp, index, lineId), G = MutGen.child(bp, index);
+  Object.assign(ph.genome115, G);
+  const list = MutGen.expressed(ph.genome115); ph.muts = list; ph.mut = list[0] || null; ph.genome115.mut = ph.mut;
+  if (list.includes('pocketdwarf')) ph.h *= .7;
+  return ph;
+})(Individual115.offspring);
+createPlant = (prev => function () { const p = prev.apply(this, arguments); MutGen.sync(p); return p; })(createPlant);
+ACT.sow = (prev => function (arg) {
+  const [loc, slot, id] = String(arg).split(':'), s = SeedLots115.find(id), L = state.locations[loc], before = L && L.slots[+slot];
+  const kind = s && s.kind, r = prev.apply(this, arguments), p = L && L.slots[+slot] !== before && state.plants[L.slots[+slot]];
+  if (p && p.pheno) { if (kind === 'cutting') p.clone = true; MutGen.sync(p); }
+  return r;
+})(ACT.sow);
+Breeding.pollenFrom = (prev => function (p) {
+  if (p && Mut.list(p).includes('triploid')) return think('His pollen is sterile. Triploids can\'t father seeds; only cuttings keep him.');
+  return prev.apply(this, arguments);
+})(Breeding.pollenFrom);
+Breeding.pollinate = (prev => function (qid) {
+  const q = state.plants[qid];
+  if (q && Mut.list(q).includes('triploid')) return think('She\'s triploid: pollen won\'t set viable seeds in her. Keep her going with cuttings.');
+  return prev.apply(this, arguments);
+})(Breeding.pollinate);
+seedInfo = (prev => function (lineId, s) { return prev(lineId, s) + MutGen.seedNote(s); })(seedInfo);
+Panels.plant = (prev => function (pid) {
+  const result = prev.apply(this, arguments), o = runtime.overlay; if (!o || !state.plants[pid]) return result;
+  const content = o.fn; o.fn = () => { const p = state.plants[pid]; return content() + (p && runtime.plantTab === 'overview' ? MutGen.panel(p) : ''); }; renderPanel(); return result;
+})(Panels.plant);
+Panels.codex = (prev => function (id) {
+  const result = prev.apply(this, arguments), o = runtime.overlay; if (!o) return result;
+  const content = o.fn; o.fn = () => content() + (runtime.codexSel ? '' : MutGen.guide()); renderPanel(); return result;
+})(Panels.codex);
+hydrate = (prev => function (root) { prev(root); root.querySelectorAll('canvas[data-draw^="mutart:"]').forEach(cv => { const [, k, mode] = cv.dataset.draw.split(':'); safeRun('mutart', () => MutGen.draw(cv, k, mode)); }); })(hydrate);
+POSTLOAD115.push(() => { for (const p of Object.values(state.plants || {})) if (p && p.pheno && p.genome115) MutGen.sync(p); });
 </script>
 <style id="bagseed-main-menu-style">
 /* Approved community-garden title screen; all rules stay inside this screen. */
