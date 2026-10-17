@@ -1,0 +1,48 @@
+{
+  "errors": {
+    "measuredNeck": 0.698,
+    "handL": 0.698
+  },
+  "maxKeypointError": 0.698,
+  "visibleHandsMeasured": 1,
+  "limbCoreIoU": 0.9346759617867286,
+  "groundError": 0.0,
+  "uniformScale": 0.08567539260563282,
+  "rotationDegrees": 2.0,
+  "finalSourceToCanvasTranslation": [
+    17.55966635125875,
+    49.08598389241311
+  ],
+  "resamplingPasses": 1,
+  "sourceLandmarks": {
+    "measuredNeck": [
+      48.833333333333336,
+      78.37704918032787
+    ],
+    "handL": [
+      57.928,
+      104.56133333333334
+    ]
+  },
+  "targetLandmarks": {
+    "measuredNeck": [
+      48.666666666666664,
+      78.24
+    ],
+    "handL": [
+      55.8014705882353,
+      103.80514705882354
+    ]
+  },
+  "accepted": true,
+  "source": "wardrobe-v5/arm-v7/assets/top-labcoat-contact.png",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "frame": 4,
+  "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+  "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+}

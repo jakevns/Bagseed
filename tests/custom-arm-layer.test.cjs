@@ -22,6 +22,6 @@ test('both painted arm silhouettes remain visible over every bottom in all side 
     }
    }return {tops:tops.length,composites,skinChecks,failures};
   });
-  fs.writeFileSync(path.join(root,'review/arm-v6/pixel-validation.json'),JSON.stringify({...result,browserErrors:errors},null,2)+'\n');assert.equal(result.tops,13);assert.equal(result.composites,1040);assert.deepEqual(result.failures,[]);assert.deepEqual(errors,[]);
+  const target=path.join(root,process.env.BAGSEED_ARM_REVIEW_OUT||'review/arm-v6','pixel-validation.json');fs.writeFileSync(target+'.tmp',JSON.stringify({...result,browserErrors:errors},null,2)+'\n');fs.renameSync(target+'.tmp',target);assert.equal(result.tops,13);assert.equal(result.composites,1040);assert.deepEqual(result.failures,[]);assert.deepEqual(errors,[]);
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 });

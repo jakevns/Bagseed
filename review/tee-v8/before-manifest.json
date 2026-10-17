@@ -1,0 +1,2506 @@
+{
+  "kind": "top",
+  "style": "tee",
+  "fullSuit": false,
+  "frames": {
+    "down/0": {
+      "registration": {
+        "landmarkScope": "detected full-template distal hands; inferred anatomical neck; physical painted-foot baseline",
+        "uniformScale": 0.373055419921875,
+        "rotationDegrees": -0.62890625,
+        "translationAfterInitial": [
+          -0.7912619222581633,
+          1.2778714054668399
+        ],
+        "initialGroundTranslationPx": -3,
+        "maxKeypointError": 0.375,
+        "errors": {
+          "handL": 0.375,
+          "handR": 0.313,
+          "inferredNeck": 0.375
+        },
+        "groundError": 0.0,
+        "detachedLargeComponents": 0,
+        "sourceLandmarks": {
+          "handL": [
+            36.19554204660587,
+            109.99797365754813
+          ],
+          "handR": [
+            65.59173126614986,
+            104.29457364341086
+          ],
+          "inferredNeck": [
+            48.0,
+            80.0
+          ]
+        },
+        "targetLandmarks": {
+          "handL": [
+            36.327179487179485,
+            110.66769230769232
+          ],
+          "handR": [
+            65.68306010928961,
+            104.60928961748634
+          ],
+          "inferredNeck": [
+            48.0,
+            80.0
+          ]
+        },
+        "limbCoreIoU": 1.0,
+        "sourceCell": [
+          0,
+          0,
+          256,
+          385
+        ],
+        "sourceSlot": 0,
+        "source": "assets\\top-tee-v1.png",
+        "accepted": true,
+        "candidates": [
+          {
+            "source": "assets\\top-tee-v1.png",
+            "maxKeypointError": 0.375,
+            "limbCoreIoU": 1.0,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-v2.png",
+            "maxKeypointError": 2.553,
+            "limbCoreIoU": 0.9852863899106674,
+            "accepted": false
+          }
+        ]
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            0,
+            0,
+            133,
+            111
+          ],
+          "destination": [
+            81,
+            212
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            183,
+            113,
+            46,
+            96
+          ],
+          "destination": [
+            82,
+            241
+          ]
+        },
+        "farArm": {
+          "rect": [
+            437,
+            307,
+            54,
+            84
+          ],
+          "destination": [
+            159,
+            241
+          ]
+        }
+      }
+    },
+    "down/1": {
+      "registration": {
+        "landmarkScope": "detected full-template distal hands; inferred anatomical neck; physical painted-foot baseline",
+        "uniformScale": 0.36997924804687504,
+        "rotationDegrees": 0.9648437500000002,
+        "translationAfterInitial": [
+          1.9408364395984652,
+          0.948852199893679
+        ],
+        "initialGroundTranslationPx": -3,
+        "maxKeypointError": 0.679,
+        "errors": {
+          "handL": 0.679,
+          "handR": 0.679,
+          "inferredNeck": 0.678
+        },
+        "groundError": 0.0,
+        "detachedLargeComponents": 0,
+        "sourceLandmarks": {
+          "handL": [
+            35.33226837060703,
+            109.65921192758253
+          ],
+          "handR": [
+            65.6610644257703,
+            104.88515406162465
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "targetLandmarks": {
+          "handL": [
+            34.85329018338727,
+            110.3797195253506
+          ],
+          "handR": [
+            65.64471879286694,
+            105.58984910836763
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "limbCoreIoU": 0.9922418405564473,
+        "sourceCell": [
+          256,
+          0,
+          512,
+          385
+        ],
+        "sourceSlot": 1,
+        "source": "assets\\top-tee-v1.png",
+        "accepted": true,
+        "candidates": [
+          {
+            "source": "assets\\top-tee-v1.png",
+            "maxKeypointError": 0.679,
+            "limbCoreIoU": 0.9922418405564473,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-v2.png",
+            "maxKeypointError": 2.917,
+            "limbCoreIoU": 0.9676297485286249,
+            "accepted": false
+          }
+        ]
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            270,
+            0,
+            132,
+            108
+          ],
+          "destination": [
+            81,
+            212
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            0,
+            113,
+            47,
+            98
+          ],
+          "destination": [
+            81,
+            238
+          ]
+        },
+        "farArm": {
+          "rect": [
+            328,
+            307,
+            54,
+            87
+          ],
+          "destination": [
+            159,
+            238
+          ]
+        }
+      }
+    },
+    "down/2": {
+      "registration": {
+        "landmarkScope": "detected full-template distal hands; inferred anatomical neck; physical painted-foot baseline",
+        "uniformScale": 0.372264404296875,
+        "rotationDegrees": 0.7851562499999999,
+        "translationAfterInitial": [
+          1.594063877161994,
+          0.45796302619433504
+        ],
+        "initialGroundTranslationPx": -4,
+        "maxKeypointError": 0.542,
+        "errors": {
+          "handL": 0.542,
+          "handR": 0.542,
+          "inferredNeck": 0.541
+        },
+        "groundError": 0.0,
+        "detachedLargeComponents": 0,
+        "sourceLandmarks": {
+          "handL": [
+            30.719945355191257,
+            105.32103825136612
+          ],
+          "handR": [
+            62.5,
+            111.60090702947845
+          ],
+          "inferredNeck": [
+            48.0,
+            80.0
+          ]
+        },
+        "targetLandmarks": {
+          "handL": [
+            30.460113960113958,
+            105.92450142450143
+          ],
+          "handR": [
+            62.319651741293534,
+            112.58582089552239
+          ],
+          "inferredNeck": [
+            48.0,
+            80.0
+          ]
+        },
+        "limbCoreIoU": 0.9929337869667626,
+        "sourceCell": [
+          512,
+          0,
+          768,
+          385
+        ],
+        "sourceSlot": 2,
+        "source": "assets\\top-tee-v1.png",
+        "accepted": true,
+        "candidates": [
+          {
+            "source": "assets\\top-tee-v1.png",
+            "maxKeypointError": 0.542,
+            "limbCoreIoU": 0.9929337869667626,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-v2.png",
+            "maxKeypointError": 2.791,
+            "limbCoreIoU": 0.96807118555352,
+            "accepted": false
+          }
+        ]
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            404,
+            0,
+            132,
+            107
+          ],
+          "destination": [
+            76,
+            212
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            823,
+            0,
+            50,
+            102
+          ],
+          "destination": [
+            159,
+            241
+          ]
+        },
+        "farArm": {
+          "rect": [
+            384,
+            307,
+            51,
+            85
+          ],
+          "destination": [
+            77,
+            241
+          ]
+        }
+      }
+    },
+    "down/3": {
+      "registration": {
+        "landmarkScope": "detected full-template distal hands; inferred anatomical neck; physical painted-foot baseline",
+        "uniformScale": 0.37010009765625007,
+        "rotationDegrees": 1.8320312499999998,
+        "translationAfterInitial": [
+          3.4876862771602983,
+          0.11063178575446386
+        ],
+        "initialGroundTranslationPx": -3,
+        "maxKeypointError": 0.651,
+        "errors": {
+          "handL": 0.651,
+          "handR": 0.651,
+          "inferredNeck": 0.651
+        },
+        "groundError": 0.0,
+        "detachedLargeComponents": 0,
+        "sourceLandmarks": {
+          "handL": [
+            36.404761904761905,
+            105.2440476190476
+          ],
+          "handR": [
+            64.27417027417027,
+            105.20346320346322
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "targetLandmarks": {
+          "handL": [
+            35.697154471544714,
+            105.60365853658537
+          ],
+          "handR": [
+            63.879999999999995,
+            106.48740740740742
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "limbCoreIoU": 1.0,
+        "sourceCell": [
+          768,
+          0,
+          1024,
+          385
+        ],
+        "sourceSlot": 3,
+        "source": "assets\\top-tee-v1.png",
+        "accepted": true,
+        "candidates": [
+          {
+            "source": "assets\\top-tee-v1.png",
+            "maxKeypointError": 0.651,
+            "limbCoreIoU": 1.0,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-v2.png",
+            "maxKeypointError": 2.844,
+            "limbCoreIoU": 0.9933314809669352,
+            "accepted": false
+          }
+        ]
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            135,
+            0,
+            133,
+            109
+          ],
+          "destination": [
+            76,
+            212
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            615,
+            113,
+            50,
+            92
+          ],
+          "destination": [
+            159,
+            238
+          ]
+        },
+        "farArm": {
+          "rect": [
+            493,
+            307,
+            43,
+            84
+          ],
+          "destination": [
+            85,
+            238
+          ]
+        }
+      }
+    },
+    "right/0": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.226,
+          "handL": 0.226
+        },
+        "maxKeypointError": 0.226,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9931051465156365,
+        "groundError": 0.0,
+        "uniformScale": 0.15808397894826656,
+        "rotationDegrees": 1.71484375,
+        "finalSourceToCanvasTranslation": [
+          58.446859879275,
+          169.21617661925788
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            78.6984126984127
+          ],
+          "handL": [
+            36.52400548696845,
+            107.88340192043897
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            78.24038461538461
+          ],
+          "handL": [
+            35.00925925925926,
+            107.32671957671958
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          0,
+          0,
+          386,
+          548
+        ],
+        "frame": 0
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            741,
+            213,
+            110,
+            90
+          ],
+          "destination": [
+            92,
+            228
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            175,
+            307,
+            75,
+            88
+          ],
+          "destination": [
+            93,
+            243
+          ]
+        },
+        "farArm": {
+          "rect": [
+            314,
+            398,
+            75,
+            70
+          ],
+          "destination": [
+            125,
+            248
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            0,
+            477,
+            110,
+            105
+          ],
+          "destination": [
+            92,
+            228
+          ]
+        }
+      }
+    },
+    "right/1": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.222,
+          "handL": 0.223
+        },
+        "maxKeypointError": 0.223,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9765166340508806,
+        "groundError": 0.0,
+        "uniformScale": 0.15464435656228995,
+        "rotationDegrees": 2.0,
+        "finalSourceToCanvasTranslation": [
+          65.07119707540654,
+          173.11874302322724
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            79.70426065162907
+          ],
+          "handL": [
+            53.721774193548384,
+            107.06048387096774
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            79.21806853582554
+          ],
+          "handL": [
+            51.37692307692308,
+            106.52307692307693
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          386,
+          0,
+          724,
+          548
+        ],
+        "frame": 1
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            159,
+            213,
+            81,
+            91
+          ],
+          "destination": [
+            114,
+            230
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            632,
+            307,
+            37,
+            82
+          ],
+          "destination": [
+            134,
+            247
+          ]
+        },
+        "farArm": {
+          "rect": [
+            469,
+            398,
+            67,
+            70
+          ],
+          "destination": [
+            125,
+            251
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            112,
+            477,
+            81,
+            100
+          ],
+          "destination": [
+            114,
+            230
+          ]
+        }
+      }
+    },
+    "right/2": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.111,
+          "handL": 0.111
+        },
+        "maxKeypointError": 0.111,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9878260869565217,
+        "groundError": 0.0,
+        "uniformScale": 0.15513703689587155,
+        "rotationDegrees": 2.0,
+        "finalSourceToCanvasTranslation": [
+          53.64772068621039,
+          169.79363591133398
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            78.6489898989899
+          ],
+          "handL": [
+            48.91164658634538,
+            107.71887550200803
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            78.19551282051282
+          ],
+          "handL": [
+            46.71391076115486,
+            107.39370078740158
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          724,
+          0,
+          1086,
+          548
+        ],
+        "frame": 2
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            325,
+            213,
+            59,
+            91
+          ],
+          "destination": [
+            115,
+            227
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            0,
+            307,
+            43,
+            89
+          ],
+          "destination": [
+            124,
+            243
+          ]
+        },
+        "farArm": {
+          "rect": [
+            744,
+            398,
+            48,
+            61
+          ],
+          "destination": [
+            125,
+            248
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            195,
+            477,
+            77,
+            129
+          ],
+          "destination": [
+            97,
+            227
+          ]
+        }
+      }
+    },
+    "right/3": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.18,
+          "handL": 0.181
+        },
+        "maxKeypointError": 0.181,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9765258215962441,
+        "groundError": 0.0,
+        "uniformScale": 0.15928332924688207,
+        "rotationDegrees": -0.7148437500000001,
+        "finalSourceToCanvasTranslation": [
+          55.180380181947555,
+          169.23716193420248
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            77.67153284671532
+          ],
+          "handL": [
+            59.98562091503268,
+            103.11895424836602
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            77.21100917431193
+          ],
+          "handL": [
+            59.04705882352942,
+            102.5529411764706
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          1086,
+          0,
+          1448,
+          548
+        ],
+        "frame": 3
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            447,
+            213,
+            79,
+            91
+          ],
+          "destination": [
+            114,
+            224
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            884,
+            307,
+            43,
+            78
+          ],
+          "destination": [
+            148,
+            240
+          ]
+        },
+        "farArm": {
+          "rect": [
+            608,
+            398,
+            34,
+            64
+          ],
+          "destination": [
+            125,
+            245
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            274,
+            477,
+            79,
+            96
+          ],
+          "destination": [
+            114,
+            224
+          ]
+        }
+      }
+    },
+    "up/0": {
+      "registration": {
+        "landmarkScope": "detected full-template distal hands; inferred anatomical neck; physical painted-foot baseline",
+        "uniformScale": 0.36481567382812496,
+        "rotationDegrees": 0.9648437500000002,
+        "translationAfterInitial": [
+          3.0351195297872664,
+          2.898610062459994
+        ],
+        "initialGroundTranslationPx": -1,
+        "maxKeypointError": 1.588,
+        "errors": {
+          "handL": 1.588,
+          "handR": 1.36,
+          "inferredNeck": 1.588
+        },
+        "groundError": 0.0,
+        "detachedLargeComponents": 0,
+        "sourceLandmarks": {
+          "handL": [
+            30.67476383265857,
+            106.0620782726046
+          ],
+          "handR": [
+            64.89999999999999,
+            100.59473684210526
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "targetLandmarks": {
+          "handL": [
+            31.413533834586463,
+            108.13157894736842
+          ],
+          "handR": [
+            64.85526315789474,
+            103.12719298245615
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "limbCoreIoU": 1.0,
+        "sourceCell": [
+          0,
+          769,
+          256,
+          1153
+        ],
+        "sourceSlot": 8,
+        "source": "assets\\top-tee-v1.png",
+        "accepted": true,
+        "candidates": [
+          {
+            "source": "assets\\top-tee-v1.png",
+            "maxKeypointError": 1.588,
+            "limbCoreIoU": 1.0,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-v2.png",
+            "maxKeypointError": 4.099,
+            "limbCoreIoU": 0.9876135425268373,
+            "accepted": false
+          }
+        ]
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            49,
+            113,
+            132,
+            98
+          ],
+          "destination": [
+            81,
+            226
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            965,
+            213,
+            48,
+            89
+          ],
+          "destination": [
+            80,
+            241
+          ]
+        },
+        "farArm": {
+          "rect": [
+            757,
+            307,
+            52,
+            81
+          ],
+          "destination": [
+            159,
+            241
+          ]
+        }
+      }
+    },
+    "up/1": {
+      "registration": {
+        "landmarkScope": "detected full-template distal hands; inferred anatomical neck; physical painted-foot baseline",
+        "uniformScale": 0.18828552246093752,
+        "rotationDegrees": -1.03515625,
+        "translationAfterInitial": [
+          -0.957288867592957,
+          0.2951400573408023
+        ],
+        "initialGroundTranslationPx": 15,
+        "maxKeypointError": 0.717,
+        "errors": {
+          "handL": 0.717,
+          "handR": 0.595,
+          "inferredNeck": 0.717
+        },
+        "groundError": 0.0,
+        "detachedLargeComponents": 0,
+        "sourceLandmarks": {
+          "handL": [
+            29.993514915693904,
+            104.07392996108949
+          ],
+          "handR": [
+            63.25238095238095,
+            103.43333333333334
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "targetLandmarks": {
+          "handL": [
+            31.52754820936639,
+            103.71349862258954
+          ],
+          "handR": [
+            64.06164383561644,
+            103.46803652968036
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "limbCoreIoU": 0.9997080291970802,
+        "sourceCell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "sourceSlot": 1,
+        "source": "assets\\top-tee-focused-2.png",
+        "accepted": true,
+        "candidates": [
+          {
+            "source": "assets\\top-tee-v1.png",
+            "maxKeypointError": 2.148,
+            "limbCoreIoU": 0.9973714953271028,
+            "accepted": false
+          },
+          {
+            "source": "assets\\top-tee-v2.png",
+            "maxKeypointError": 3.798,
+            "limbCoreIoU": 0.981892523364486,
+            "accepted": false
+          },
+          {
+            "source": "assets\\top-tee-focused-2.png",
+            "maxKeypointError": 0.76,
+            "limbCoreIoU": 0.9997080291970802,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-focused-2.png",
+            "maxKeypointError": 0.717,
+            "limbCoreIoU": 0.9997080291970802,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-focused-2.png",
+            "maxKeypointError": 0.788,
+            "limbCoreIoU": 0.9997080291970802,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-focused-2.png",
+            "maxKeypointError": 0.764,
+            "limbCoreIoU": 0.9997080291970802,
+            "accepted": true
+          }
+        ]
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            681,
+            0,
+            140,
+            106
+          ],
+          "destination": [
+            75,
+            215
+          ]
+        },
+        "farArm": {
+          "rect": [
+            538,
+            307,
+            53,
+            84
+          ],
+          "destination": [
+            159,
+            238
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            0,
+            398,
+            50,
+            77
+          ],
+          "destination": [
+            78,
+            238
+          ]
+        }
+      }
+    },
+    "up/2": {
+      "registration": {
+        "landmarkScope": "detected full-template distal hands; inferred anatomical neck; physical painted-foot baseline",
+        "uniformScale": 0.376922607421875,
+        "rotationDegrees": 0.53125,
+        "translationAfterInitial": [
+          0.6130784205165289,
+          -1.1774167249791674
+        ],
+        "initialGroundTranslationPx": -2,
+        "maxKeypointError": 0.35,
+        "errors": {
+          "handL": 0.35,
+          "handR": 0.35,
+          "inferredNeck": 0.35
+        },
+        "groundError": 0.0,
+        "detachedLargeComponents": 0,
+        "sourceLandmarks": {
+          "handL": [
+            30.301652892561986,
+            109.04407713498624
+          ],
+          "handR": [
+            65.54581673306772,
+            109.02257636122177
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "targetLandmarks": {
+          "handL": [
+            30.073002754820937,
+            108.35399449035812
+          ],
+          "handR": [
+            65.7040650406504,
+            108.74471544715448
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "limbCoreIoU": 1.0,
+        "sourceCell": [
+          512,
+          769,
+          768,
+          1153
+        ],
+        "sourceSlot": 10,
+        "source": "assets\\top-tee-v1.png",
+        "accepted": true,
+        "candidates": [
+          {
+            "source": "assets\\top-tee-v1.png",
+            "maxKeypointError": 0.35,
+            "limbCoreIoU": 1.0,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-v2.png",
+            "maxKeypointError": 3.082,
+            "limbCoreIoU": 0.9997387669801463,
+            "accepted": false
+          }
+        ]
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            538,
+            0,
+            141,
+            107
+          ],
+          "destination": [
+            74,
+            216
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            340,
+            113,
+            55,
+            95
+          ],
+          "destination": [
+            159,
+            241
+          ]
+        },
+        "farArm": {
+          "rect": [
+            105,
+            213,
+            52,
+            91
+          ],
+          "destination": [
+            76,
+            241
+          ]
+        }
+      }
+    },
+    "up/3": {
+      "registration": {
+        "landmarkScope": "detected full-template distal hands; inferred anatomical neck; physical painted-foot baseline",
+        "uniformScale": 0.37664794921875,
+        "rotationDegrees": -0.4648437500000001,
+        "translationAfterInitial": [
+          -1.689591337987883,
+          -0.24342224306025173
+        ],
+        "initialGroundTranslationPx": -1,
+        "maxKeypointError": 0.885,
+        "errors": {
+          "handL": 0.09,
+          "handR": 0.885,
+          "inferredNeck": 0.885
+        },
+        "groundError": 0.0,
+        "detachedLargeComponents": 0,
+        "sourceLandmarks": {
+          "handL": [
+            31.916666666666668,
+            107.625
+          ],
+          "handR": [
+            66.53095238095239,
+            110.33809523809525
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "targetLandmarks": {
+          "handL": [
+            31.333333333333332,
+            107.5983606557377
+          ],
+          "handR": [
+            65.47474747474747,
+            109.34469696969698
+          ],
+          "inferredNeck": [
+            48.0,
+            79.0
+          ]
+        },
+        "limbCoreIoU": 1.0,
+        "sourceCell": [
+          768,
+          769,
+          1024,
+          1153
+        ],
+        "sourceSlot": 11,
+        "source": "assets\\top-tee-v1.png",
+        "accepted": true,
+        "candidates": [
+          {
+            "source": "assets\\top-tee-v1.png",
+            "maxKeypointError": 0.885,
+            "limbCoreIoU": 1.0,
+            "accepted": true
+          },
+          {
+            "source": "assets\\top-tee-v2.png",
+            "maxKeypointError": 3.318,
+            "limbCoreIoU": 0.9958027282266527,
+            "accepted": false
+          }
+        ]
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            875,
+            0,
+            142,
+            102
+          ],
+          "destination": [
+            73,
+            219
+          ]
+        },
+        "farArm": {
+          "rect": [
+            231,
+            113,
+            49,
+            96
+          ],
+          "destination": [
+            79,
+            238
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            282,
+            113,
+            56,
+            96
+          ],
+          "destination": [
+            159,
+            238
+          ]
+        }
+      }
+    },
+    "left/0": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.226,
+          "handL": 0.226
+        },
+        "maxKeypointError": 0.226,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9931051465156365,
+        "groundError": 0.0,
+        "uniformScale": 0.15808397894826656,
+        "rotationDegrees": 1.71484375,
+        "finalSourceToCanvasTranslation": [
+          58.446859879275,
+          169.21617661925788
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            78.6984126984127
+          ],
+          "handL": [
+            36.52400548696845,
+            107.88340192043897
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            78.24038461538461
+          ],
+          "handL": [
+            35.00925925925926,
+            107.32671957671958
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          0,
+          0,
+          386,
+          548
+        ],
+        "frame": 0
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            853,
+            213,
+            110,
+            90
+          ],
+          "destination": [
+            86,
+            228
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            252,
+            307,
+            74,
+            88
+          ],
+          "destination": [
+            121,
+            243
+          ]
+        },
+        "farArm": {
+          "rect": [
+            391,
+            398,
+            76,
+            70
+          ],
+          "destination": [
+            88,
+            248
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            742,
+            477,
+            110,
+            105
+          ],
+          "destination": [
+            86,
+            228
+          ]
+        }
+      }
+    },
+    "left/1": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.222,
+          "handL": 0.223
+        },
+        "maxKeypointError": 0.223,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9765166340508806,
+        "groundError": 0.0,
+        "uniformScale": 0.15464435656228995,
+        "rotationDegrees": 2.0,
+        "finalSourceToCanvasTranslation": [
+          65.07119707540654,
+          173.11874302322724
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            79.70426065162907
+          ],
+          "handL": [
+            53.721774193548384,
+            107.06048387096774
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            79.21806853582554
+          ],
+          "handL": [
+            51.37692307692308,
+            106.52307692307693
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          386,
+          0,
+          724,
+          548
+        ],
+        "frame": 1
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            242,
+            213,
+            81,
+            91
+          ],
+          "destination": [
+            93,
+            230
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            593,
+            307,
+            37,
+            83
+          ],
+          "destination": [
+            117,
+            246
+          ]
+        },
+        "farArm": {
+          "rect": [
+            538,
+            398,
+            68,
+            70
+          ],
+          "destination": [
+            96,
+            251
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            854,
+            477,
+            81,
+            100
+          ],
+          "destination": [
+            93,
+            230
+          ]
+        }
+      }
+    },
+    "left/2": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.111,
+          "handL": 0.111
+        },
+        "maxKeypointError": 0.111,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9878260869565217,
+        "groundError": 0.0,
+        "uniformScale": 0.15513703689587155,
+        "rotationDegrees": 2.0,
+        "finalSourceToCanvasTranslation": [
+          53.64772068621039,
+          169.79363591133398
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            78.6489898989899
+          ],
+          "handL": [
+            48.91164658634538,
+            107.71887550200803
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            78.19551282051282
+          ],
+          "handL": [
+            46.71391076115486,
+            107.39370078740158
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          724,
+          0,
+          1086,
+          548
+        ],
+        "frame": 2
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            386,
+            213,
+            59,
+            91
+          ],
+          "destination": [
+            114,
+            227
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            45,
+            307,
+            43,
+            89
+          ],
+          "destination": [
+            121,
+            243
+          ]
+        },
+        "farArm": {
+          "rect": [
+            794,
+            398,
+            49,
+            61
+          ],
+          "destination": [
+            115,
+            248
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            937,
+            477,
+            77,
+            129
+          ],
+          "destination": [
+            114,
+            227
+          ]
+        }
+      }
+    },
+    "left/3": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.18,
+          "handL": 0.181
+        },
+        "maxKeypointError": 0.181,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9765258215962441,
+        "groundError": 0.0,
+        "uniformScale": 0.15928332924688207,
+        "rotationDegrees": -0.7148437500000001,
+        "finalSourceToCanvasTranslation": [
+          55.180380181947555,
+          169.23716193420248
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            77.67153284671532
+          ],
+          "handL": [
+            59.98562091503268,
+            103.11895424836602
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            77.21100917431193
+          ],
+          "handL": [
+            59.04705882352942,
+            102.5529411764706
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          1086,
+          0,
+          1448,
+          548
+        ],
+        "frame": 3
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            528,
+            213,
+            79,
+            91
+          ],
+          "destination": [
+            95,
+            224
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            929,
+            307,
+            44,
+            78
+          ],
+          "destination": [
+            97,
+            240
+          ]
+        },
+        "farArm": {
+          "rect": [
+            644,
+            398,
+            35,
+            64
+          ],
+          "destination": [
+            129,
+            245
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            0,
+            608,
+            79,
+            96
+          ],
+          "destination": [
+            95,
+            224
+          ]
+        }
+      }
+    },
+    "right/4": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.589,
+          "handL": 0.589
+        },
+        "maxKeypointError": 0.589,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.892589723728376,
+        "groundError": 0.0,
+        "uniformScale": 0.09246372939399015,
+        "rotationDegrees": 2.0,
+        "finalSourceToCanvasTranslation": [
+          11.492966533746843,
+          15.525493538277605
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            78.25190839694656
+          ],
+          "handL": [
+            57.250305250305246,
+            104.55433455433456
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            78.24
+          ],
+          "handL": [
+            55.8014705882353,
+            103.80514705882354
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/arm-v7/assets/top-tee-contact.png",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "frame": 4,
+        "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+        "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            397,
+            113,
+            107,
+            94
+          ],
+          "destination": [
+            78,
+            224
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            811,
+            307,
+            34,
+            79
+          ],
+          "destination": [
+            148,
+            243
+          ]
+        },
+        "farArm": {
+          "rect": [
+            195,
+            398,
+            58,
+            73
+          ],
+          "destination": [
+            85,
+            247
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            355,
+            477,
+            107,
+            101
+          ],
+          "destination": [
+            78,
+            224
+          ]
+        }
+      },
+      "profileBases": {
+        "upper": 126.36
+      }
+    },
+    "left/4": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.589,
+          "handL": 0.589
+        },
+        "maxKeypointError": 0.589,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.892589723728376,
+        "groundError": 0.0,
+        "uniformScale": 0.09246372939399015,
+        "rotationDegrees": 2.0,
+        "finalSourceToCanvasTranslation": [
+          11.492966533746843,
+          15.525493538277605
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            78.25190839694656
+          ],
+          "handL": [
+            57.250305250305246,
+            104.55433455433456
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            78.24
+          ],
+          "handL": [
+            55.8014705882353,
+            103.80514705882354
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/arm-v7/assets/top-tee-contact.png",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "frame": 4,
+        "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+        "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            506,
+            113,
+            107,
+            94
+          ],
+          "destination": [
+            103,
+            224
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            847,
+            307,
+            35,
+            79
+          ],
+          "destination": [
+            106,
+            243
+          ]
+        },
+        "farArm": {
+          "rect": [
+            255,
+            398,
+            57,
+            73
+          ],
+          "destination": [
+            146,
+            247
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            81,
+            608,
+            107,
+            101
+          ],
+          "destination": [
+            103,
+            224
+          ]
+        }
+      },
+      "profileBases": {
+        "upper": 126.36
+      }
+    },
+    "right/5": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.25,
+          "handL": 0.25
+        },
+        "maxKeypointError": 0.25,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9608817137534927,
+        "groundError": 0.0,
+        "uniformScale": 0.15833170276901704,
+        "rotationDegrees": 1.9726562500000002,
+        "finalSourceToCanvasTranslation": [
+          58.91666285790401,
+          177.54326936392064
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            79.70921985815603
+          ],
+          "handL": [
+            59.88621151271753,
+            104.41499330655957
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            79.20666666666666
+          ],
+          "handL": [
+            57.95430107526882,
+            103.86155913978494
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          386,
+          548,
+          724,
+          1086
+        ],
+        "frame": 5
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            667,
+            113,
+            82,
+            92
+          ],
+          "destination": [
+            108,
+            229
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            112,
+            398,
+            39,
+            76
+          ],
+          "destination": [
+            148,
+            246
+          ]
+        },
+        "farArm": {
+          "rect": [
+            845,
+            398,
+            32,
+            61
+          ],
+          "destination": [
+            124,
+            251
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            464,
+            477,
+            82,
+            95
+          ],
+          "destination": [
+            108,
+            229
+          ]
+        }
+      }
+    },
+    "left/5": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.25,
+          "handL": 0.25
+        },
+        "maxKeypointError": 0.25,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9608817137534927,
+        "groundError": 0.0,
+        "uniformScale": 0.15833170276901704,
+        "rotationDegrees": 1.9726562500000002,
+        "finalSourceToCanvasTranslation": [
+          58.91666285790401,
+          177.54326936392064
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            79.70921985815603
+          ],
+          "handL": [
+            59.88621151271753,
+            104.41499330655957
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.666666666666664,
+            79.20666666666666
+          ],
+          "handL": [
+            57.95430107526882,
+            103.86155913978494
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          386,
+          548,
+          724,
+          1086
+        ],
+        "frame": 5
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            751,
+            113,
+            82,
+            92
+          ],
+          "destination": [
+            98,
+            229
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            153,
+            398,
+            40,
+            76
+          ],
+          "destination": [
+            101,
+            246
+          ]
+        },
+        "farArm": {
+          "rect": [
+            879,
+            398,
+            32,
+            61
+          ],
+          "destination": [
+            132,
+            251
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            190,
+            608,
+            82,
+            95
+          ],
+          "destination": [
+            98,
+            229
+          ]
+        }
+      }
+    },
+    "right/6": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.005,
+          "handL": 0.005
+        },
+        "maxKeypointError": 0.005,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9864818024263432,
+        "groundError": 0.0,
+        "uniformScale": 0.15821619022155198,
+        "rotationDegrees": 1.9960937500000002,
+        "finalSourceToCanvasTranslation": [
+          52.3097305966908,
+          175.83236005219692
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            78.52487562189054
+          ],
+          "handL": [
+            49.5824039653036,
+            108.02106567534076
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.833333333333336,
+            78.18627450980392
+          ],
+          "handL": [
+            47.715415019762844,
+            107.65876152832675
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          724,
+          548,
+          1086,
+          1086
+        ],
+        "frame": 6
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            609,
+            213,
+            64,
+            91
+          ],
+          "destination": [
+            114,
+            227
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            90,
+            307,
+            41,
+            89
+          ],
+          "destination": [
+            127,
+            243
+          ]
+        },
+        "farArm": {
+          "rect": [
+            913,
+            398,
+            19,
+            60
+          ],
+          "destination": [
+            125,
+            248
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            548,
+            477,
+            87,
+            129
+          ],
+          "destination": [
+            91,
+            227
+          ]
+        }
+      }
+    },
+    "left/6": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.005,
+          "handL": 0.005
+        },
+        "maxKeypointError": 0.005,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.9864818024263432,
+        "groundError": 0.0,
+        "uniformScale": 0.15821619022155198,
+        "rotationDegrees": 1.9960937500000002,
+        "finalSourceToCanvasTranslation": [
+          52.3097305966908,
+          175.83236005219692
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            49.666666666666664,
+            78.52487562189054
+          ],
+          "handL": [
+            49.5824039653036,
+            108.02106567534076
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.833333333333336,
+            78.18627450980392
+          ],
+          "handL": [
+            47.715415019762844,
+            107.65876152832675
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          724,
+          548,
+          1086,
+          1086
+        ],
+        "frame": 6
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            675,
+            213,
+            64,
+            91
+          ],
+          "destination": [
+            110,
+            227
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            133,
+            307,
+            40,
+            89
+          ],
+          "destination": [
+            121,
+            243
+          ]
+        },
+        "farArm": {
+          "rect": [
+            723,
+            398,
+            19,
+            63
+          ],
+          "destination": [
+            145,
+            248
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            274,
+            608,
+            87,
+            129
+          ],
+          "destination": [
+            110,
+            227
+          ]
+        }
+      }
+    },
+    "right/7": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.14,
+          "handL": 0.14
+        },
+        "maxKeypointError": 0.14,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.8954010095344924,
+        "groundError": 0.0,
+        "uniformScale": 0.15282854891371137,
+        "rotationDegrees": -1.8476562500000004,
+        "finalSourceToCanvasTranslation": [
+          -1.3483026878097915,
+          173.41067470714
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            48.0,
+            76.89120370370371
+          ],
+          "handL": [
+            31.078651685393258,
+            103.59300873907615
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.0,
+            76.87908496732025
+          ],
+          "handL": [
+            32.141496598639456,
+            103.83265306122449
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          1086,
+          548,
+          1448,
+          1086
+        ],
+        "frame": 7
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            835,
+            113,
+            103,
+            92
+          ],
+          "destination": [
+            81,
+            223
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            671,
+            307,
+            84,
+            82
+          ],
+          "destination": [
+            84,
+            240
+          ]
+        },
+        "farArm": {
+          "rect": [
+            934,
+            398,
+            36,
+            59
+          ],
+          "destination": [
+            125,
+            245
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            637,
+            477,
+            103,
+            100
+          ],
+          "destination": [
+            81,
+            223
+          ]
+        }
+      }
+    },
+    "left/7": {
+      "registration": {
+        "errors": {
+          "measuredNeck": 0.14,
+          "handL": 0.14
+        },
+        "maxKeypointError": 0.14,
+        "visibleHandsMeasured": 1,
+        "limbCoreIoU": 0.8954010095344924,
+        "groundError": 0.0,
+        "uniformScale": 0.15282854891371137,
+        "rotationDegrees": -1.8476562500000004,
+        "finalSourceToCanvasTranslation": [
+          -1.3483026878097915,
+          173.41067470714
+        ],
+        "resamplingPasses": 1,
+        "sourceLandmarks": {
+          "measuredNeck": [
+            48.0,
+            76.89120370370371
+          ],
+          "handL": [
+            31.078651685393258,
+            103.59300873907615
+          ]
+        },
+        "targetLandmarks": {
+          "measuredNeck": [
+            48.0,
+            76.87908496732025
+          ],
+          "handL": [
+            32.141496598639456,
+            103.83265306122449
+          ]
+        },
+        "accepted": true,
+        "source": "wardrobe-v5/assets/top-tee.png",
+        "sourceCell": [
+          1086,
+          548,
+          1448,
+          1086
+        ],
+        "frame": 7
+      },
+      "parts": {
+        "torso": {
+          "rect": [
+            0,
+            213,
+            103,
+            92
+          ],
+          "destination": [
+            104,
+            223
+          ]
+        },
+        "farArm": {
+          "rect": [
+            52,
+            398,
+            58,
+            77
+          ],
+          "destination": [
+            146,
+            245
+          ]
+        },
+        "nearArm": {
+          "rect": [
+            681,
+            398,
+            40,
+            64
+          ],
+          "destination": [
+            121,
+            240
+          ]
+        },
+        "wholeUpper": {
+          "rect": [
+            363,
+            608,
+            103,
+            100
+          ],
+          "destination": [
+            104,
+            223
+          ]
+        }
+      }
+    }
+  },
+  "source": "assets\\top-tee-v1.png",
+  "atlas": "wardrobe-v5/atlases/top-tee.png",
+  "accepted": true,
+  "profileRevision": "individual-arm-source-v7",
+  "profileBases": {
+    "upper": 118.54
+  },
+  "profileToneAudit": {
+    "upper": {
+      "standingMedian": 112.47739999999999,
+      "generatedMedian": 105.27159999999999,
+      "materialBase": 118.54,
+      "method": "Normalize the generated material to the existing standing outfit in its canonical palette; no source pixels repainted."
+    }
+  },
+  "atlasSHA256": "a14a27131d0e49e61b2049b42f3558f57ff30a445910a6b865677a117c388b44",
+  "upperComposite": "intact-painted-upper-v6"
+}

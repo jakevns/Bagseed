@@ -1,0 +1,13 @@
+{
+  "upstreamMain": "a825df738f82d99771986f3e282acab732902e78",
+  "characterRevision": "custom-walk-waist-coverage-v9",
+  "upstreamGameSourcePreserved": true,
+  "finalMergeTests": {
+    "passed": 10,
+    "failed": 0,
+    "coverage": ["custom waist coverage: 1800 composites and 583200 pixels", "live walk, creator and mirror", "categorized decorating tray and shop", "combined HVAC", "brain controller, grow camera and drying", "Water and Pots purchases, irrigation, layering and saves"]
+  },
+  "precedingMergeTests": {"passed": 16, "failed": 0, "upstream": "4256519", "coverage": ["all 300 custom wardrobe combinations and 7200 frames", "arm visibility", "waist coverage", "phone decorating", "sensors", "heaters", "air conditioners", "room climate placement"]},
+  "buildSourceChecks": "passed",
+  "htmlAndCompanionDataBelowGithub100MiBLimit": true
+}

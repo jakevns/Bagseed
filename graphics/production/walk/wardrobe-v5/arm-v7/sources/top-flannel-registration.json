@@ -1,0 +1,48 @@
+{
+  "errors": {
+    "measuredNeck": 0.699,
+    "handL": 0.699
+  },
+  "maxKeypointError": 0.699,
+  "visibleHandsMeasured": 1,
+  "limbCoreIoU": 0.9140201394268009,
+  "groundError": 0.0,
+  "uniformScale": 0.09298296608936794,
+  "rotationDegrees": 1.8554687499999998,
+  "finalSourceToCanvasTranslation": [
+    8.497560460124578,
+    11.622618500331026
+  ],
+  "resamplingPasses": 1,
+  "sourceLandmarks": {
+    "measuredNeck": [
+      48.666666666666664,
+      78.18926553672317
+    ],
+    "handL": [
+      56.531007751937985,
+      104.80490956072352
+    ]
+  },
+  "targetLandmarks": {
+    "measuredNeck": [
+      48.666666666666664,
+      78.24
+    ],
+    "handL": [
+      55.8014705882353,
+      103.80514705882354
+    ]
+  },
+  "accepted": true,
+  "source": "wardrobe-v5/arm-v7/assets/top-flannel-contact.png",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "frame": 4,
+  "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+  "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+}

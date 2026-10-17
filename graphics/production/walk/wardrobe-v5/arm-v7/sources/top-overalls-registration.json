@@ -1,0 +1,48 @@
+{
+  "errors": {
+    "measuredNeck": 0.525,
+    "handL": 0.525
+  },
+  "maxKeypointError": 0.525,
+  "visibleHandsMeasured": 1,
+  "limbCoreIoU": 0.8863636363636364,
+  "groundError": 0.0,
+  "uniformScale": 0.08991252014653477,
+  "rotationDegrees": 1.71484375,
+  "finalSourceToCanvasTranslation": [
+    9.95088584318763,
+    26.690551021880246
+  ],
+  "resamplingPasses": 1,
+  "sourceLandmarks": {
+    "measuredNeck": [
+      47.666666666666664,
+      77.46770025839793
+    ],
+    "handL": [
+      56.64277180406213,
+      103.81362007168458
+    ]
+  },
+  "targetLandmarks": {
+    "measuredNeck": [
+      47.666666666666664,
+      77.34435261707989
+    ],
+    "handL": [
+      56.22306717363751,
+      104.59822560202788
+    ]
+  },
+  "accepted": true,
+  "source": "wardrobe-v5/arm-v7/assets/top-overalls-contact.png",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "frame": 4,
+  "resamplingMethod": "single premultiplied affine with full footprint for large sources",
+  "paletteMethod": "Per-contact fabric luminance matched to original contact; seven other poses unchanged"
+}
