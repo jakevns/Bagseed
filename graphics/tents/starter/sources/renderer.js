@@ -55,11 +55,13 @@
         const env=envFor('closet'),on=isLightOn('closet'),e=L.equip;
         RoomArt.diffuseTentLight(c,'closet',t);Gear.filter(c,P.exhaust[0],P.exhaust[1],e.exhaust,exMul(L)>0,t);
         Gear.light(c,P.light[0],P.light[1],e.light,on,t);
-        runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;
-        try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
+
         Gear.ctrl(c,P.ctrl[0],P.ctrl[1],e.ctrl,true,t,false);
         Gear.humid(c,P.humid[0],P.humid[1],e.humid,e.humid&&locOn(L,'humid')&&(L.humidMode||e.humid===3)&&(!L.humidTimer||on),t,'closet');
         if(window.BagseedDehumidifiers?.handles('closet'))BagseedDehumidifiers.drawInside(c,'closet',t);else Gear.sensor(c,P.sensor[0],P.sensor[1],e.sensor,env,'closet');slots.call(this,c,t);
+        // Side-mounted fans sit in front of the canopy, behind the tent fabric.
+        runtime.fanSpdHint=e.fan>=2?[.6,1,1.4][L.fanSpeed-1]:1;
+        try{Gear.fan(c,P.fan[0],P.fan[1],e.fan,t,fanMul(L)>0);}finally{runtime.fanSpdHint=1;}
       }finally{c.restore();}
     }
     facade(c,tier,dp);indicators(c,dp);

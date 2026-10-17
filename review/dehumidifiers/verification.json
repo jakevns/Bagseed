@@ -10,5 +10,8 @@
   "closedSensorPreview": "passed: all four tents and all three purchased sensor tiers",
   "fanClearanceAndSeparateClickTargets": "passed",
   "originalCharacterDataPreserved": "custom-walk-approved-stride",
-  "publication": "local samples only; awaiting user artwork approval"
+  "publication": "local samples only; awaiting user artwork approval",
+  "fiveByFiveDehumidifier": "between plants 5 and 6; x=316",
+  "dualFanHeight": "equal on opposite sides; centered within opening with exhaust clearance",
+  "canopyLayering": "fans after plants, before front fabric and actors"
 }

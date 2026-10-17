@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "875973488b0d76f7a5af6395e1820ec4a21aa868a32a7e260120589a26a55d15",
-  "updatedSHA": "2eeda46eea93e3797e47c99eff012bcb9570922f31c8f0c0d7c682f27c3efff0",
+  "updatedSHA": "dd87e743dc4c890bc531cb479e2459c3af5b4fea3b248e5a8fcf85b44b3cfd6c",
   "characterRevision": "custom-walk-approved-stride",
   "characterPayloadSHA256": "6b3e083642ed6160f035b11800aec4b2af575d1ca2699801d59ec7d87ded9040",
   "characterSourcesSHA256": {
@@ -26,7 +26,7 @@
     "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa",
     "graphics/production/walk/stride-v4/candidate-manifest.json": "49d9554ce407cfabbe323d0fb7cf18fdac38513c7cd839cf09dbe492188cb0f9"
   },
-  "bytes": 63921578,
+  "bytes": 63921905,
   "modularAssets": 544,
   "embeddedImages": 1629,
   "approvedIdentities": [
