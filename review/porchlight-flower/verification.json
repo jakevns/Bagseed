@@ -1,0 +1,34 @@
+{
+  "status": "sample-awaiting-approval",
+  "stages": [
+    7,
+    8,
+    10
+  ],
+  "heightInches": 50,
+  "counts": [
+    {
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 62,
+      "leaves": 140,
+      "flowers": 19
+    },
+    {
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 62,
+      "leaves": 140,
+      "flowers": 19
+    },
+    {
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 62,
+      "leaves": 140,
+      "flowers": 19
+    }
+  ],
+  "errors": [],
+  "productionRendererUnchanged": true
+}
