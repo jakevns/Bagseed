@@ -1,6 +1,6 @@
 # Velvet Underbrush artwork review
 
-Status: samples awaiting user approval; no push or production integration.
+Status: artwork approved for publication as a prototype checkpoint. Full painted-renderer integration remains pending.
 
 - `velvet-growth-and-flower.png`: seed, germination, seedling, early/mature vegetation, early/mid/late flower and harvest-ready. Panels are independently magnified.
 - `velvet-50-and-90-inches.png`: the same phenotype at a shared physical scale.

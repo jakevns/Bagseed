@@ -220,10 +220,11 @@
     ],
     "mono": 0,
     "cap": 0.45,
-    "expected": 0.09,
-    "rolled": 0.09,
+    "expected": 0.14081837341939213,
+    "rolled": 0.14081837341939213,
     "forecastHasColor": true,
     "snapshotStable": true
   },
-  "errors": []
+  "errors": [],
+  "status": "approved-night-cooling-and-sprout-colors"
 }

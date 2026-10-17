@@ -42,4 +42,4 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 
 ## Second strain review kit
 
-`velvet@1` adds Velvet Underbrush using new painted organ assets and the same connected model, wind and phenotype-aware senescence renderer. The expressed `branching` trait is optional and does not change existing pinned identities. Porchlight approval remains recorded separately; Velvet samples await review in `review/velvet-components/`. Neither kit replaces the native game renderer yet.
+`velvet@1` adds Velvet Underbrush using new painted organ assets and the same connected model, wind and phenotype-aware senescence renderer. The expressed `branching` trait is optional and does not change existing pinned identities. Porchlight approval remains recorded separately; Velvet samples are approved as a prototype checkpoint in `review/velvet-components/`. Neither kit replaces the native game renderer yet.

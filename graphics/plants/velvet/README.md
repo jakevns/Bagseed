@@ -1,6 +1,6 @@
 # Velvet Underbrush connected component prototype
 
-Status: awaiting user artwork approval. No production renderer or game/save changes. This is the next strain after the approved Porchlight growth/flower/senescence study, with the same integration boundary.
+Status: component artwork, growth, flowering and red senescence approved by the user. The painted kit remains a prototype pending full renderer integration. The separately approved night cooling and Sprout color features are integrated into the native game.
 
 ## Strain identity and source art
 

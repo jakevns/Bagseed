@@ -1,6 +1,6 @@
 # Cool nights and autumn colors review
 
-Status: local feature awaiting user approval; nothing pushed.
+Status: night cooling, phenotype color expression and Sprout color appeal approved for publication.
 
 - `smart-controller.png`: the real controller panel in `index.html`, with the whole-bedroom night cooling setting.
 - `smart-controller-mobile.png`: the same controls at a 440px mobile viewport.

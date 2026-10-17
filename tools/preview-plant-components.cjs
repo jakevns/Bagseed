@@ -80,7 +80,7 @@ const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
   for(const [name,url]of Object.entries(result.files))fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(url.split(',')[1],'base64'));
   for(const [i,url]of result.frames.entries())fs.writeFileSync(path.join(out,'frames',String(i).padStart(3,'0')+'.png'),Buffer.from(url.split(',')[1],'base64'));
   if(result.frames.length){const {spawnSync}=require('node:child_process');for(const [ext,args]of [['mp4',['-c:v','libx264','-preset','medium','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart']],['gif',['-filter_complex','[0:v]split[a][b];[a]palettegen[p];[b][p]paletteuse=dither=sierra2_4a','-loop','0']]]){const r=spawnSync('ffmpeg',['-y','-v','error','-framerate','12','-i',path.join(out,'frames/%03d.png'),...args,path.join(out,'velvet-growth-and-wind.'+ext)],{encoding:'utf8'});assert.equal(r.status,0,r.stderr||r.error?.message);}}
-  fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({status:'sample-awaiting-approval',identity,measurements:result.measurements,finish:result.finish,animationFrames:result.frames.length,errors,productionRendererUnchanged:true},null,2)+'\n');
+  fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({status:manifest.status,identity,measurements:result.measurements,finish:result.finish,animationFrames:result.frames.length,errors,productionRendererUnchanged:true},null,2)+'\n');
   console.log('Captured Velvet growth, flower, red senescence and '+result.frames.length+' wind frames.');
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

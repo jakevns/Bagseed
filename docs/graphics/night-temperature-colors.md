@@ -1,6 +1,6 @@
 # Cool nights and phenotype color expression
 
-Status: local feature and artwork samples awaiting user approval. Velvet organ kit approval remains separate. Do not advance to another strain until this checkpoint is reviewed.
+Status: night cooling, phenotype color expression, Sprout color appeal and Velvet component artwork approved by the user. The controller/native-renderer feature is integrated; the painted organ kits remain prototypes pending full care/training integration.
 
 ## Player behavior
 
