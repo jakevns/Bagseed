@@ -118,5 +118,6 @@
   "reduced": 2,
   "mirror": 8,
   "creator": 8,
-  "browserErrors": []
+  "browserErrors": [],
+  "transport": "file"
 }

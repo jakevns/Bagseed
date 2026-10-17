@@ -1,0 +1,18 @@
+{
+  "purchases": 3,
+  "storeMatchesDelivery": true,
+  "plantsAndSlotsPreserved": true,
+  "humidityControlsPreserved": true,
+  "saveReload": true,
+  "nativeLoopAnimation": true,
+  "offAndReducedMotion": true,
+  "missingArtworkBlocksStartup": true,
+  "finalMoney": 1837.01,
+  "errors": [],
+  "mergedCharacterReleasePreserved": true,
+  "characterDataCompanionPreserved": true,
+  "characterRevision": "custom-walk-approved-stride",
+  "castWalkFrameChecks": 96,
+  "liveStrideCreatorMirrorChecks": true,
+  "liveStrideTransport": "http"
+}

@@ -1,0 +1,24 @@
+{
+  "proposalOnly": false,
+  "entryPoint": "public/index.html",
+  "tiers": 3,
+  "prices": [
+    19.99,
+    44,
+    99
+  ],
+  "catalogAndContentsPreserved": true,
+  "geometryPreserved": true,
+  "requestedPlacements": true,
+  "starterPlantInFront": true,
+  "starterExhaustRight": true,
+  "timerAndFailureVisuals": true,
+  "steamAnimation": true,
+  "tankBubbleAnimation": true,
+  "effectCases": 3,
+  "targets": 12,
+  "animationFrames": 96,
+  "frameDurationMs": 60,
+  "storeAndPhoneArtwork": true,
+  "errors": []
+}
