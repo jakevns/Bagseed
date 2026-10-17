@@ -1,0 +1,19 @@
+{
+  "status": "approved-for-publication",
+  "entryPoint": "public/index.html",
+  "paperIncluded": true,
+  "purchasedTiers": 3,
+  "openClosedSensorCases": 32,
+  "adjacentControllerCases": 32,
+  "approvedMountCenters": true,
+  "fixedSensorSizesAcrossTents": true,
+  "originalArtworkProportions": true,
+  "sameZoomHeaderPreviews": true,
+  "liveAnalogTemperature": true,
+  "liveDigitalTemperatureAndHumidity": true,
+  "savedHistoryGraph": true,
+  "paperRemainsFree": true,
+  "catalogAndPlantsPreserved": true,
+  "matchingStoreAndPhoneArtwork": true,
+  "errors": []
+}

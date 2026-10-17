@@ -5,8 +5,8 @@
   "hairFitRevision": "temple-roots-10",
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
-  "workingSourceSHA": "4ba7eecb8272836cc850c04d98b5e4679cd4b27e82fa17cafb0d63d96fcf288b",
-  "updatedSHA": "ea806b7fccbb8bf23a0742268c609b1e8801cd56853a9b6bae1b7da151cd7f25",
+  "workingSourceSHA": "c49bcfe8202280ae84e242ba961b49ecd5f5643e6940a0adba146b26e4669483",
+  "updatedSHA": "53c3cc8dc829f5eabec28191eef2acb04bc3de9032663f65a42b82836cf865dd",
   "characterRevision": "custom-walk-waist-coverage-v9",
   "characterPayloadSHA256": "755ca8c97009d046cc37e3bdf018b685470a60a9a11d9e898a9d295670937b87",
   "characterSourcesSHA256": {
@@ -32,7 +32,7 @@
     "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 63944362,
+  "bytes": 63981414,
   "modularAssets": 544,
   "embeddedImages": 1650,
   "approvedIdentities": [
@@ -52,12 +52,12 @@
   "curtainSets": 6,
   "menuRevision": "community-menu-3",
   "previousCharacterBytes": 101055566,
-  "walkBytesIncrease": 39749449,
+  "walkBytesIncrease": 39786501,
   "walkReviewStatus": "full wardrobe registered; visual review pending",
   "characterDataFile": "public/character-data.js",
   "characterDataSHA256": "c990921bc05d5a0af37b186f96fc584e7069af555d7e5ae107eafcb0c17cd230",
   "characterDataBytes": 76860653,
-  "packageBytes": 140805015,
+  "packageBytes": 140842067,
   "castWalkRevision": "cast-walk-eight-v1",
   "walkingStandard": "eight-frame-full-stride-v1",
   "castWalkFrameCount": 8,
@@ -135,5 +135,13 @@
   "dehumidifiersRevision": "dehumidifiers-1",
   "dehumidifierTiers": 2,
   "exteriorTentSensors": true,
-  "dualFanLayout": "opposite-sides"
+  "dualFanLayout": "opposite-sides",
+  "sensorsRevision": "sensors-1",
+  "sensorDesigns": 4,
+  "roomClimatePlacementRevision": "window-station-1",
+  "heatersRevision": "heaters-1",
+  "heaterTiers": 2,
+  "equipmentGlowRevision": "equipment-glow-1",
+  "airConditionersRevision": "air-conditioners-1",
+  "airConditionerTiers": 2
 }

@@ -1,0 +1,90 @@
+{
+  "revision": "air-conditioners-1",
+  "status": "approved",
+  "path": "assets/air-conditioners-atlas.png",
+  "sha256": "f19e444f947e1eef7996921185cbf1f1854043118192003e9c9e712ec89a8acf",
+  "size": [
+    1873,
+    840
+  ],
+  "runtime": {
+    "path": "assets/air-conditioners-atlas.webp",
+    "sha256": "a20e56aa8d567dcdafec29f7c8267387ed0e6bd384386e04a908db00c76cb73d",
+    "publicPath": "assets/air-conditioners/air-conditioners-a20e56aa8d56.webp"
+  },
+  "tiers": {
+    "1": {
+      "name": "Rattlebox Compact AC",
+      "price": 139,
+      "watts": 300,
+      "crop": [
+        76,
+        263,
+        1001,
+        554
+      ],
+      "width": 16,
+      "height": 8.855144855144855,
+      "vent": [
+        185,
+        399,
+        791,
+        145
+      ],
+      "indicator": [
+        856,
+        601
+      ],
+      "buttons": [
+        [
+          796,
+          671
+        ],
+        [
+          920,
+          671
+        ]
+      ],
+      "display": null
+    },
+    "2": {
+      "name": "Polar Pal Digital AC",
+      "price": 289,
+      "watts": 250,
+      "crop": [
+        1148,
+        16,
+        690,
+        806
+      ],
+      "width": 14,
+      "height": 16.3536231884058,
+      "vent": [
+        1275,
+        165,
+        393,
+        154
+      ],
+      "indicator": [
+        1370,
+        494
+      ],
+      "buttons": [
+        [
+          1468,
+          494
+        ],
+        [
+          1557,
+          494
+        ]
+      ],
+      "display": [
+        1395,
+        377,
+        155,
+        59
+      ]
+    }
+  }
+}

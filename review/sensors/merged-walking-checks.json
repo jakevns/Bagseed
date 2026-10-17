@@ -1,0 +1,123 @@
+{
+  "checks": [
+    {
+      "dir": "right",
+      "frame": 0,
+      "authored": "right/0",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "right",
+      "frame": 1,
+      "authored": "right/1",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "right",
+      "frame": 2,
+      "authored": "right/2",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "right",
+      "frame": 3,
+      "authored": "right/3",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "right",
+      "frame": 4,
+      "authored": "right/4",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "right",
+      "frame": 5,
+      "authored": "right/5",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "right",
+      "frame": 6,
+      "authored": "right/6",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "right",
+      "frame": 7,
+      "authored": "right/7",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "left",
+      "frame": 0,
+      "authored": "left/0",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "left",
+      "frame": 1,
+      "authored": "left/1",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "left",
+      "frame": 2,
+      "authored": "left/2",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "left",
+      "frame": 3,
+      "authored": "left/3",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "left",
+      "frame": 4,
+      "authored": "left/4",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "left",
+      "frame": 5,
+      "authored": "left/5",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "left",
+      "frame": 6,
+      "authored": "left/6",
+      "profile": "stride/",
+      "error": 0
+    },
+    {
+      "dir": "left",
+      "frame": 7,
+      "authored": "left/7",
+      "profile": "stride/",
+      "error": 0
+    }
+  ],
+  "fallback": 8,
+  "front": 4,
+  "reduced": 2,
+  "mirror": 8,
+  "creator": 8,
+  "browserErrors": [],
+  "transport": "http"
+}
