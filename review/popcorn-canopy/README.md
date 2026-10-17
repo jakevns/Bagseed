@@ -1,4 +1,4 @@
-# Popcorn buds and canopy cleanup — review pending
+# Popcorn buds and canopy cleanup — approved 2026-10-17
 
 The shared illustrated attachment model now places four stable flower sites along each primary branch, in addition to its terminal flower and the main apex. Flowers increase in size along the branch; the apex remains the largest. All five component kits use the same model: Porchlight, Velvet Underbrush, Pixel Punch, Cotton Candy CRT, and Moonberry. Existing approved organ atlases and inherited part identities are unchanged. These screenshots supersede the earlier tip-only flowering studies for this proposed revision.
 
@@ -12,4 +12,4 @@ Reproduce samples: `node tools/preview-popcorn-canopy.cjs`.
 
 Validation: 34 pure/unit tests, native browser care → render/cache → cooldown → repeated action → independent snapshot → save/reload → frozen harvest → actual jar-count comparison, plus `npm run check`. Shared wind posing keeps flowers attached to their branch curve and roots fixed; no new random phenotype rolls or inherited care state.
 
-No push until user approval.
+User approved the five-strain artwork and canopy cleanup samples on 2026-10-17.

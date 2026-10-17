@@ -1,6 +1,6 @@
 # Moonberry connected component prototype
 
-Status: awaiting artwork approval. Fifth organ kit after Porchlight, Velvet Underbrush, Pixel Punch and Cotton Candy CRT. The painted rigs remain review prototypes pending full care/training and native renderer integration.
+Status: artwork approved with the five-strain popcorn-bud review on 2026-10-17. Fifth organ kit after Porchlight, Velvet Underbrush, Pixel Punch and Cotton Candy CRT. The painted rigs remain review prototypes pending full care/training and native renderer integration.
 
 ## Native identity and source artwork
 

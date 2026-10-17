@@ -1,6 +1,6 @@
 # Moonberry artwork review
 
-Status: awaiting user approval; saved locally as a component prototype, not installed as the live plant renderer.
+Status: approved with the five-strain popcorn-bud review on 2026-10-17; saved locally as a component prototype, not installed as the live plant renderer.
 
 - `moonberry-growth-and-flower.png`: seed through harvest-ready and lavender senescence.
 - `moonberry-late-flower-senescence.png`: large mature portrait.
