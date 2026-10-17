@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {chromium}=require('playwright');
 const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
 (async()=>{
- const strain=process.argv[2]||'velvet';assert.ok(['velvet','pixelpunch'].includes(strain),'Unknown component review kit');
+ const strain=process.argv[2]||'velvet';assert.ok(['velvet','pixelpunch','cottoncandy'].includes(strain),'Unknown component review kit');
  const root=path.resolve(__dirname,'..'),read=name=>fs.readFileSync(path.join(root,name),'utf8');
  const manifest=JSON.parse(read('graphics/plants/'+strain+'/sources/manifest.json'));
  const library=JSON.parse(read('graphics/plants/sources/library.json'));
@@ -58,7 +58,7 @@ const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
    lc.fillStyle='#29483a';lc.font='19px Georgia';lc.fillText(spec.finishCaption,28,1176);
    files[spec.id+'-late-flower-senescence']=late.toDataURL();
    if(spec.coolNights){
-    const core=window.BagseedNightColor,[cv,c]=board(1400,1100,spec.name.toUpperCase()+' / COOL-NIGHT COLORS','Same purple phenotype · Natural finish and temperature-enhanced expression');
+    const core=window.BagseedNightColor,[cv,c]=board(1400,1100,spec.name.toUpperCase()+' / COOL-NIGHT COLORS','Same '+(spec.coolColorLabel||'purple')+' phenotype · Natural finish and temperature-enhanced expression');
     for(const [i,nightTemp]of [70,68].entries()){
      let exposure=null;
      for(let day=0;day<2;day++){
@@ -67,7 +67,7 @@ const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
      }
      const p={...plant(50,10),nightColor:exposure},left=20+i*690;
      c.fillStyle='#e0e5d2';c.fillRect(left,110,670,860);specimen(c,p,left+335,830,12.5);
-     c.fillStyle='#29483a';c.font='bold 25px Georgia';c.fillText(i?'10°F drop / deeper purple':'8°F drop / natural purple finish',left+20,1010);c.font='20px Georgia';c.fillText('78°F lights on → '+nightTemp+'°F lights off',left+20,1045);
+     c.fillStyle='#29483a';c.font='bold 25px Georgia';c.fillText(i?'10°F drop / deeper '+(spec.coolColorLabel||'purple'):'8°F drop / natural '+(spec.coolColorLabel||'purple')+' finish',left+20,1010);c.font='20px Georgia';c.fillText('78°F lights on → '+nightTemp+'°F lights off',left+20,1045);
      coolStudies.push({dayTemp:78,nightTemp,hours:exposure.hours,expression:core.expression(p,identity.traits),sproutBonus:core.socialBonus(p,identity.traits,{filter:'none'})});
     }
     files[spec.id+'-cool-night-colors']=cv.toDataURL();
@@ -93,7 +93,7 @@ const identityAPI=require('../graphics/plants/sources/phenotype-library.cjs');
    return{files,frames,measurements,coolStudies,finish:api.Model.senescence(plant(50,10))};
   },{manifest,identity,spec,makeFrames:!process.argv.includes('--stills')});
   assert.deepEqual(errors,[]);assert.equal(result.finish.palette,spec.finishPalette);assert.ok(result.measurements[1].counts.leaves>result.measurements[0].counts.leaves);
-  if(spec.coolNights){assert.equal(result.coolStudies[0].hours,0);assert.equal(result.coolStudies[1].hours,24);assert.equal(result.coolStudies[1].expression.palette,'purple');}
+  if(spec.coolNights){assert.equal(result.coolStudies[0].hours,0);assert.equal(result.coolStudies[1].hours,24);assert.equal(result.coolStudies[1].expression.palette,spec.coolPalette||'purple');}
   const outputArg=process.argv.find(arg=>arg.startsWith('--output='));
   const out=outputArg?path.resolve(outputArg.slice('--output='.length)):path.join(root,'review',strain+'-components');fs.mkdirSync(path.join(out,'frames'),{recursive:true});
   for(const [name,url]of Object.entries(result.files))fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(url.split(',')[1],'base64'));

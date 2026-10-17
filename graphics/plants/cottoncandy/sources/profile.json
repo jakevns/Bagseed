@@ -1,0 +1,22 @@
+{
+  "id": "cottoncandy",
+  "name": "Cotton Candy CRT",
+  "shortName": "Cotton Candy",
+  "apiName": "BagseedCottonCandyGrowth",
+  "revision": "cottoncandy-components-1",
+  "libraryRevision": "plant-parts-library-4",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "lime",
+    "colorName": "Pink accents",
+    "branching": 1
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Lime-green hybrid leaves \u2192 rose-pink autumn fade",
+  "finishSubtitle": "Final-week color study \u00b7 Pink phenotype senescence",
+  "finishCaption": "Rose-pink fan leaves \u00b7 Peach pistils \u00b7 Frosty blush flowers",
+  "finishPalette": "rose",
+  "windCaption": "Late flower / rose-pink autumn fade",
+  "coolNights": true,
+  "coolPalette": "rose",
+  "coolColorLabel": "rose-pink"
+}
