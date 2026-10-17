@@ -5689,7 +5689,7 @@ Object.assign(SceneArt, {
     const L = state.locations[loc], pid = L.slots[i], p = pid && state.plants[pid];
     if (!unlocked) { this.hit('bedplot:' + i, x - 22, y - 10, 44, 18, 'Raised bed (outdoor planting is locked)', [x, y + 12], 'plant'); return; }
     if (p && (p.stage === S.drying || p.stage === S.finished && p.dry)) {
-      R(c, x - 1, y - 12, 2, 4, '#7d6a3c'); R(c, x - 6, y - 22, 14, 9, '#f2e4c4'); R(c, x - 6, y - 22, 14, 1, '#ffffff'); pxTextTiny(c, p.stage === S.drying ? Math.round((p.dry ? p.dry.prog : 0) * 100) + '%' : 'OK', x - 4, y - 20, '#2b1d14');
+      RoomArt.dryTag(c, x - 8, y - 26, p, loc);
       this.hit('plant:' + loc + ':' + i, x - 20, y - 26, 40, 30, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (dry · ready to jar)'), [x, y + 12], 'plant'); return;
     }
     if (p) {
@@ -7488,7 +7488,7 @@ const Greenhouse = {
   },
   slot(c, i, x, y, t) {
     const L = state.locations.gh, pid = L.slots[i], p = pid && state.plants[pid], walk = [ghLayout().box[0] + ghLayout().box[2] / 2, ghLayout().box[1] + ghLayout().box[3] + 14];
-    if (p && (p.stage === S.drying || (p.stage === S.finished && p.dry))) { R(c, x - 1, y - 4, 2, 4, '#7d6a3c'); R(c, x - 6, y - 14, 14, 9, '#f2e4c4'); pxTextTiny(c, p.stage === S.drying ? Math.round((p.dry ? p.dry.prog : 0) * 100) + '%' : 'OK', x - 4, y - 12, '#2b1d14'); RoomArt.hit('plant:gh:' + i, x - 16, y - 18, 32, 22, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (ready to jar)'), walk, 'plant'); return; }
+    if (p && (p.stage === S.drying || (p.stage === S.finished && p.dry))) { RoomArt.dryTag(c, x - 8, y - 18, p, 'gh'); RoomArt.hit('plant:gh:' + i, x - 16, y - 18, 32, 22, p.name + (p.stage === S.drying ? ' (drying in the shed)' : ' (ready to jar)'), walk, 'plant'); return; }
     if (p) { const s = PlantArt.draw(c, p, x, y, 1, t, .6); Gear.pot(c, x, y, L.equip.pot || 2, p.water); const hgt = Math.min(s.h, 110); RoomArt.hit('plant:gh:' + i, x - 16, y - hgt, 32, hgt + 10, p.name + ' · ' + STAGES[p.stage].name, walk, 'plant'); }
     else { Gear.pot(c, x, y, L.equip.pot || 2, 0); RoomArt.hit('slot:gh:' + i, x - 9, y - 6, 18, 16, 'Empty greenhouse pot', walk, 'plant'); }
   }

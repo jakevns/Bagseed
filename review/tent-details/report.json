@@ -1,0 +1,15 @@
+{
+  "status": "awaiting-artwork-approval",
+  "entryPoint": "public/index.html",
+  "controllerTier": 1,
+  "growCamera": 1,
+  "newDryingStatus": true,
+  "openClosedHeaderCases": 8,
+  "approvedHeaderPositions": true,
+  "storeMatchesCameraMenu": true,
+  "liveControllerReadings": true,
+  "offAndOutage": true,
+  "dryingProgressClimateWarningsAndReady": true,
+  "modelAndCameraPermissionsUnchanged": true,
+  "errors": []
+}

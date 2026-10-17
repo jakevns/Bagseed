@@ -1,0 +1,12 @@
+{
+  "status": "local samples awaiting artwork approval",
+  "entryPoint": "public/index.html",
+  "buildAndSourceChecks": "passed",
+  "purchasesCameraAccessAutomationDryingAndSaveReload": "passed",
+  "sensorRegression": "passed",
+  "starterTentRegression": "passed",
+  "headerCases": 8,
+  "originalSourceArtPreserved": true,
+  "losslessRGBAIdentical": true,
+  "characterRevisionPreserved": "custom-walk-arm-layer-v6"
+}
