@@ -100,8 +100,12 @@ assert.ok(sha(current)===baselineSHA||sha(current)===priorSHA,'Unexpected edits 
 const html=require('../../../tools/compile-main-menu.cjs')(original.toString()).replace('</body></html>',`<script id="bagseed-illustrated-character-data" src="character-data.js"></script><script id="${marker}">\n${characterCode}\n</script>\n${require('../../../tools/build-bedroom.cjs')()}</body></html>`).replace(/\r\n/g,'\n');
 assert.ok(html.includes(marker),'Could not find baseline insertion point');
 assert.ok(Buffer.byteLength(html)<100*1024*1024&&Buffer.byteLength(characterDataScript)<100*1024*1024,'Each playable package file must remain below GitHub\'s 100 MiB limit');
-const characterDataTarget=path.join(root,'public/character-data.js');fs.writeFileSync(characterDataTarget+'.tmp',characterDataScript);fs.renameSync(characterDataTarget+'.tmp',characterDataTarget);
-const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging,target);
+function replaceIfChanged(file,contents){
+ if(fs.existsSync(file)&&sha(fs.readFileSync(file))===sha(Buffer.from(contents)))return;
+ const staging=file+'.tmp';fs.writeFileSync(staging,contents);fs.renameSync(staging,file);
+}
+const characterDataTarget=path.join(root,'public/character-data.js');replaceIfChanged(characterDataTarget,characterDataScript);
+replaceIfChanged(target,html);
 const characterSources=['graphics/production/sources/renderer.js','graphics/production/sources/face-details.js','graphics/production/sources/hair-batch-01.js','graphics/production/sources/hair-fit-rest.js','graphics/production/sources/build.cjs','graphics/production/customization-v5/detail-landmarks.json','graphics/production/customization-v5/manifest.json','graphics/production/customization-v5/hair-fit.json','graphics/production/customization-v5/register.py'];
 const characterSourcesSHA256=Object.fromEntries(characterSources.map(file=>[file,sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'))]));
 for(const file of ['graphics/production/cast-walk-v1/manifest.json','graphics/production/cast-walk-v1/sources/clocks.js','graphics/production/walk/sources/renderer.js','graphics/production/walk/manifest.json','graphics/production/walk/rig.json','graphics/production/walk/stride-v4/candidate-manifest.json'])characterSourcesSHA256[file]=sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'));

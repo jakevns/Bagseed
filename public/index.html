@@ -26897,8 +26897,14 @@ body #screen-title.menu-home .menu-clips { position: absolute; pointer-events: n
   }
   const fields=[...Object.keys(fallback),'short','hatC','capC','accC','topPat','topC2','botPat','botC2','emb','prop'];
   const key = look => {const L=normalize(look);return JSON.stringify([fields.map(k=>L[k]??null),L.extras,L.pierce,L.marks]);};
-  const approvalKey = look => key({...look,expr:'neutral'});
+  const approvalKey = look => key({...look,expr:'neutral',prop:null});
   const canonical = new Map([...DATA.approved,...DATA.cast].map(p=>[approvalKey(p.look),p]));
+  function authoredPerson(look){
+    const person=canonical.get(approvalKey(look));if(person)return person;
+    // drawKid adds short:true to the same approved child identity.
+    const child=canonical.get(approvalKey({...look,short:look.short?undefined:true}));if(child?.kid)return child;
+    return null;
+  }
   const identityFields=['skin','hairC','hairS','facial','eyeC','eyes','brows','face','body','pres','short','nose','mouth','ears','hat','hatC','capC','glasses','acc','accC','hairHi'];
   const identityKey=look=>{const L=normalize(look);return JSON.stringify([identityFields.map(k=>L[k]??null),L.extras,L.pierce,L.marks]);};
   const identities=new Map();for(const p of [...DATA.approved,...DATA.cast])if(!identities.has(identityKey(p.look)))identities.set(identityKey(p.look),p);
@@ -27952,19 +27958,20 @@ function remainingHairSource(L,dir){
   }
   function sprite(look,dir='down',frame=0,breath=0,blink=0,act=0,nose=false,density=1,walking=false) {
     if(!loaded)return cv();const L=normalize(look),signature=key(L)+'|'+dir+'|'+[frame,breath,blink,act,nose,density,walking].join(',');if(cache.has(signature))return cache.get(signature);
-    const person=canonical.get(approvalKey(L));let source,rig=true;
+    const person=authoredPerson(L);let source,rig=true;
     if(person&&nose&&person.actions){source=images.get(person.actions[dir]);rig=false;}
     else if(person&&person.id!=='player'&&!nose){source=images.get(person.assets[(!person.rig&&(walking||frame)?`${dir}-${frame%(person.walkFrameCount||4)}`:`${dir}-idle`)]);rig=!!person.rig;if(person.walkFrameCount===8&&(walking||frame))source.bagseedCastWalk={id:person.id,dir,frame:frame%8};}
     else if(!nose&&(walking||frame>0)&&(source=authoredWalk(L,dir,frame,!!blink,density))){rig=false;breath=0;act=0;}
     else source=generic(L,dir,nose,!!blink,density);
     const out=animate(source,L,dir,frame,breath,blink,act&&!nose,rig&&!nose,density);
+    out.bagseedAuthoredId=person&&person.id!=='player'?person.id:null;
     if(person&&person.id!=='player'&&L.expr!=='neutral'&&dir!=='up'&&!nose){const g=out.getContext('2d'),f=faceCoordinates(out,L);g.save();g.translate(f.x-32,f.eyeY-79/3);g.scale(1/3,1/3);faceDetails(g,{...L,eyes:'round',eyeC:'#2b1d14',brows:'thin',mouth:'default',nose:'default',ears:'normal',extras:[],marks:[],pierce:[],glasses:'none',acc:'none'},dir);g.restore();}
     if(cache.size>600)cache.delete(cache.keys().next().value);cache.set(signature,out);return out;
   }
   function portrait(look) {
     if(!loaded)return cv(192,192);const L=normalize(look),signature=key(L)+'|'+(L.bg||'');if(portraits.has(signature))return portraits.get(signature);
     const out=cv(192,192),g=out.getContext('2d');g.fillStyle=L.bg||'#eadfc9';g.fillRect(0,0,192,192);
-    const person=canonical.get(approvalKey(L));
+    const person=authoredPerson(L);
     if(person&&person.id!=='player'){const expression=['happy','grin','laugh','proud'].includes(L.expr)?'friendly':['sad','worried','angry'].includes(L.expr)?'concerned':'neutral';g.drawImage(images.get(person.portraits[expression]),0,0);}
     else{
       const torso=body(L,'down',false,3),d=torso.width/96;
@@ -27995,7 +28002,7 @@ function remainingHairSource(L,dir){
     if(scale===1&&NightLamps1151.drawing)NightLamps1151.carry(c,x,y,look,anim);
   };
   Cast115.drawKid=function(c,x,y,look,anim={}){drawPerson(c,x,y,{...look,short:true},1,anim);};
-  drawTinyPerson=(c,x,y,look,frame=0,prop)=>drawPerson(c,x,y,{...look,prop},.42,{frame});
+  drawTinyPerson=(c,x,y,look,frame=0,prop)=>drawPerson(c,x,y,prop===undefined?look:{...look,prop},.42,{frame});
     // Eight-frame actors retain displacement-driven phases. Old four-frame
   // actors continue through their established clocks and rendering paths.
   let castWalkDrawing=null;
