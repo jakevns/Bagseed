@@ -2,6 +2,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const root=path.resolve(__dirname,'..'),review=path.join(root,'review/custom-walk-v5');
 const inventory=JSON.parse(fs.readFileSync(path.join(root,'review/custom-walk-v1/inventory.json')));
+function writeReport(coverage){const target=path.join(review,'live-wardrobe-validation.json'),staging=target+'.tmp';fs.writeFileSync(staging,JSON.stringify(coverage,null,2)+'\n');fs.renameSync(staging,target);}
 const fixture=JSON.parse(fs.readFileSync(path.join(root,'review/characters-v2/sources/baseline-assets.json'))).people.find(p=>p.id==='player').look;
 
 test('all custom wardrobe walk combinations render grounded frames with connected hands and a following flashlight',{timeout:900000},async()=>{
@@ -42,7 +43,7 @@ test('all custom wardrobe walk combinations render grounded frames with connecte
     return {records,failures};
    },{topS,inventory,fixture});
    coverage.perTop[topS]=result.records;coverage.outfits+=result.records.length;coverage.frames+=result.records.reduce((n,v)=>n+v.frames,0);coverage.failures.push(...result.failures);
-   fs.mkdirSync(review,{recursive:true});fs.writeFileSync(path.join(review,'live-wardrobe-validation.json'),JSON.stringify(coverage,null,2)+'\n');
+   fs.mkdirSync(review,{recursive:true});writeReport(coverage);
   }
   assert.equal(coverage.outfits,15*5*4);assert.equal(coverage.frames,15*5*4*24);assert.deepEqual(coverage.failures,[]);
   const extra=await page.evaluate(fixture=>{
@@ -65,6 +66,6 @@ test('all custom wardrobe walk combinations render grounded frames with connecte
    if(!SaveSys.now('disposable custom walk validation'))throw Error('Disposable save failed');return {look:playerLook(),mirror:{animated,stopped},reduced};
   });assert.deepEqual(saved.mirror,{animated:true,stopped:true});assert.ok(saved.reduced.every(v=>v.walk&&[1,3].includes(v.frame)));
   await page.reload({timeout:180000});await page.evaluate(()=>BagseedArt.ready);await page.locator('[data-act=continueGame]').click();await page.waitForFunction(()=>screen==='game'&&!!state?.player);assert.deepEqual(await page.evaluate(()=>playerLook()),saved.look);
-  assert.deepEqual(errors,[]);Object.assign(coverage,{creator,mirror:saved.mirror,reducedMotion:true,saveReload:'passed in disposable browser storage',browserErrors:errors});fs.writeFileSync(path.join(review,'live-wardrobe-validation.json'),JSON.stringify(coverage,null,2)+'\n');
+  assert.deepEqual(errors,[]);Object.assign(coverage,{creator,mirror:saved.mirror,reducedMotion:true,saveReload:'passed in disposable browser storage',browserErrors:errors});writeReport(coverage);
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 });

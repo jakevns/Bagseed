@@ -78,11 +78,15 @@
     const H=head(L,dir,blink,true),joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),nx=48+(p.neck[0]-48)*width,ny=143+(p.neck[1]-143)*sy,hx=nx-32,hy=ny-joinY/3;
     g.drawImage(H.bagseedNeckBridge,hx,hy,64,H.height/3);
     const lower=items[top].fullSuit?top:bottom;
-    const layers=[[top,'farArm'],['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot'],[top,'torso'],['skin-base','nearLeg'],[lower,'nearLeg']];
-    // Aprons and coats keep their original painted hem pixels over trousers.
-    // Their leg-labelled hem pieces are additional top layers, not bottoms.
-    if(items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
-    layers.push([shoe,'nearFoot'],[top,'nearArm']);
+    // Side shirts retain their complete painted shoulder/arm silhouette.
+    // Re-slicing sleeves around inferred wrists hid cuffs behind trousers.
+    const intact=items[top].frames[f].parts.wholeUpper,layers=[];
+    if(!intact)layers.push([top,'farArm']);
+    layers.push(['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot']);
+    if(!intact)layers.push([top,'torso']);
+    layers.push(['skin-base','nearLeg'],[lower,'nearLeg']);
+    if(!intact&&items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
+    layers.push([shoe,'nearFoot'],[top,intact?'wholeUpper':'nearArm']);
     for(const [item,name]of layers){
       const part=walkPart(item,f,name,L,walk);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
     }

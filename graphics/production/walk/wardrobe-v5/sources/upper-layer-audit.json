@@ -1,0 +1,1276 @@
+{
+  "top-hoodie": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 6,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 7,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 6,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 7,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-tee": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 15,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 24,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 15,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 24,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-work": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 4,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 8,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 9,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 27,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 4,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 8,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 9,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 27,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-cardigan": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 1,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 10,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 1,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 10,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-sweater": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 11,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 19,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 11,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 19,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-flannel": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 10,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 5,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 10,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 5,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-jacket": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 10,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 6,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 15,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 10,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 6,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 15,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-officer": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 1,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 7,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 21,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 1,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 7,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 21,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-garden": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 975,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 705,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 584,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 1186,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 1126,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 1017,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 802,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 1410,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 975,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 705,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 584,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 1186,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 1126,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 1017,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 806,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 1410,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-labcoat": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 2,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 3,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 21,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 8,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 2,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 3,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 21,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 8,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-overalls": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 12,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 3,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 21,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 12,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 3,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 21,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-pjs": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 4,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 12,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 16,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 3,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 35,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 4,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 12,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 16,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 3,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 35,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ],
+  "top-suit": [
+    {
+      "frame": "right/0",
+      "restoredSkinPixels": 8,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/1",
+      "restoredSkinPixels": 20,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/2",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/4",
+      "restoredSkinPixels": 57,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/5",
+      "restoredSkinPixels": 43,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/6",
+      "restoredSkinPixels": 33,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "right/7",
+      "restoredSkinPixels": 15,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/0",
+      "restoredSkinPixels": 8,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/1",
+      "restoredSkinPixels": 20,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/2",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/3",
+      "restoredSkinPixels": 0,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/4",
+      "restoredSkinPixels": 57,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/5",
+      "restoredSkinPixels": 43,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/6",
+      "restoredSkinPixels": 33,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    },
+    {
+      "frame": "left/7",
+      "restoredSkinPixels": 15,
+      "missingSkinPixels": 0,
+      "sourcePixelsUnchanged": true
+    }
+  ]
+}

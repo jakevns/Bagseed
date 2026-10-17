@@ -1,0 +1,11 @@
+# Shirt arm repair
+
+The cardigan's second contact drawing repeated its first arm arrangement. Its replacement now puts the near arm forward and far arm backward, using the tank-top anatomy as the pose reference and the cardigan as the garment reference. The built-in image generation prompts and original output paths are in `graphics/production/walk/wardrobe-v5/sources/arm-v6-generation.json`; untouched outputs are retained beside the other wardrobe source images. Registration uses one uniform similarity transform from those original pixels and the existing foreground/background exclusion.
+
+The old arm partition and wrist cutoff reclassified sleeve and palm pixels as trouser layers. Thirteen affected tops now use an intact painted upper-body layer, preserving both shoulder/sleeve/hand silhouettes above bottoms. Existing source pixels are selected and composited without per-limb movement or mesh warps. The crop-top and tank-top atlases are byte-for-byte unchanged. Front/back frames retain their original parts.
+
+`index.html` synchronizes the previous published animation and the correction at native artwork resolution, with pause, slow motion and individual poses. `pixel-validation.json` checks actual skin-pixel visibility near both hands in 1,040 composites (13 tops × 16 side poses × 5 bottoms). It supplements the 300-outfit/7,200-frame connectivity and flashlight checks in `../custom-walk-v5/live-wardrobe-validation.json`. The source-pixel audit is `graphics/production/walk/wardrobe-v5/sources/upper-layer-audit.json`.
+
+The crop/tank exception is intentional. The unaffected head, standing and front/back artwork should not be redrawn as part of this repair. Visual comparisons and playback remain necessary; joint and pixel checks alone do not establish a natural gait.
+
+The new large cardigan source uses a single full-footprint premultiplied Lanczos resample, avoiding dashed fine outlines from undersampling. `graphics/production/walk/sources/test_affine_footprint.py` checks thin-line reduction against reference Lanczos and checks transparent-edge color preservation. `preserved-art.json` verifies unchanged crop/tank atlas hashes and 440 identical front/back shirt parts.

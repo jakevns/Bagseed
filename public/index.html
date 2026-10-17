@@ -27845,11 +27845,15 @@ function remainingHairSource(L,dir){
     const H=head(L,dir,blink,true),joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),nx=48+(p.neck[0]-48)*width,ny=143+(p.neck[1]-143)*sy,hx=nx-32,hy=ny-joinY/3;
     g.drawImage(H.bagseedNeckBridge,hx,hy,64,H.height/3);
     const lower=items[top].fullSuit?top:bottom;
-    const layers=[[top,'farArm'],['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot'],[top,'torso'],['skin-base','nearLeg'],[lower,'nearLeg']];
-    // Aprons and coats keep their original painted hem pixels over trousers.
-    // Their leg-labelled hem pieces are additional top layers, not bottoms.
-    if(items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
-    layers.push([shoe,'nearFoot'],[top,'nearArm']);
+    // Side shirts retain their complete painted shoulder/arm silhouette.
+    // Re-slicing sleeves around inferred wrists hid cuffs behind trousers.
+    const intact=items[top].frames[f].parts.wholeUpper,layers=[];
+    if(!intact)layers.push([top,'farArm']);
+    layers.push(['skin-base','farLeg'],[lower,'farLeg'],[shoe,'farFoot']);
+    if(!intact)layers.push([top,'torso']);
+    layers.push(['skin-base','nearLeg'],[lower,'nearLeg']);
+    if(!intact&&items[top].longHem)layers.push([top,'farLeg'],[top,'nearLeg']);
+    layers.push([shoe,'nearFoot'],[top,intact?'wholeUpper':'nearArm']);
     for(const [item,name]of layers){
       const part=walkPart(item,f,name,L,walk);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
     }
@@ -28089,7 +28093,7 @@ function remainingHairSource(L,dir){
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-wardrobe-eight-side-v5',walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'custom-walk-arm-layer-v6',walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();
 

@@ -30,8 +30,12 @@ for item in ids:
   raw=im.crop(cell)
   if f==7 and item in ['top-tee','top-tank','top-crop','top-work'] and (V/'assets/correction-seven.png').exists():
    correction=Image.open(V/'assets/correction-seven.png').convert('RGBA');ca=np.array(correction)[:,:,3]>40;rs=separators(ca.sum(1),2);cs=separators(ca.sum(0),2);slot=['top-tee','top-tank','top-crop','top-work'].index(item);rr,cc=divmod(slot,2);raw=correction.crop((cs[cc],rs[rr],cs[cc+1],rs[rr+1]))
+  if f==4 and item=='top-cardigan' and (V/'assets/arm-v6-cardigan-contact-clean.png').exists():
+   raw=Image.open(V/'assets/arm-v6-cardigan-contact-clean.png').convert('RGBA')
   registered,fit=packing.register(raw,frame,master);fit.update(source=f'wardrobe-v5/assets/{item}.png',sourceCell=cell,frame=f)
-  (V/'registered'/item).mkdir(parents=True,exist_ok=True);registered.save(V/'registered'/item/f'right-{f}.png')
+  if f==4 and item=='top-cardigan':
+   fit['source']='wardrobe-v5/assets/arm-v6-cardigan-contact-clean.png';fit['sourceCell']=[0,0,raw.width,raw.height];fit['resamplingMethod']='one-pass premultiplied full-footprint Lanczos'
+  (V/'registered'/item).mkdir(parents=True,exist_ok=True);target=V/'registered'/item/f'right-{f}.png';staging=target.with_suffix('.png.tmp');registered.save(staging,format='PNG');staging.replace(target)
   frames[f'right/{f}']=(registered,fit)
   frames[f'left/{f}']=(registered.transpose(Image.Transpose.FLIP_LEFT_RIGHT),fit)
   report.append(fit)
@@ -52,5 +56,8 @@ for item in ids:
 frames={f'{di}/{f}':(Image.open(W/f'stride-v4/{di}-{f}.png').convert('RGBA'),{'accepted':True,'source':'approved stride-v4 registered source'})for di in ['right','left']for f in range(8)}
 entry=packing.pack('top-hoodie',old['items']['top-hoodie'],frames,'top','hoodie');entry['atlas']=entry['atlas'].replace('profile-v3/','wardrobe-v5/');entry['profileRevision']='wardrobe-eight-side-v5';manifest['items']['top-hoodie']=entry
 manifest['sources']['wardrobe-v5/assets/correction-seven.png']=hashlib.sha256((V/'assets/correction-seven.png').read_bytes()).hexdigest()
+manifest['sources']['wardrobe-v5/assets/arm-v6-cardigan-contact-clean.png']=hashlib.sha256((V/'assets/arm-v6-cardigan-contact-clean.png').read_bytes()).hexdigest()
+from upper_layer import attach_upper_layers
+attach_upper_layers(V,manifest)
 for item in manifest['items'].values():item['atlasSHA256']=hashlib.sha256((W/item['atlas']).read_bytes()).hexdigest()
 (V/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

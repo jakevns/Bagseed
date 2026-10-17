@@ -185,28 +185,28 @@
   },
   {
     "errors": {
-      "measuredNeck": 1.836,
-      "handL": 1.836
+      "measuredNeck": 0.971,
+      "handL": 0.971
     },
-    "maxKeypointError": 1.836,
+    "maxKeypointError": 0.971,
     "visibleHandsMeasured": 1,
-    "limbCoreIoU": 0.9586883552801446,
+    "limbCoreIoU": 0.9385171790235082,
     "groundError": 0.0,
-    "uniformScale": 0.23124040804479085,
-    "rotationDegrees": 0.8085937499999998,
+    "uniformScale": 0.06645161011856066,
+    "rotationDegrees": 2.0,
     "finalSourceToCanvasTranslation": [
-      19.936217616737544,
-      119.66012524187761
+      40.92240332593889,
+      157.53096868389463
     ],
     "resamplingPasses": 1,
     "sourceLandmarks": {
       "measuredNeck": [
-        48.666666666666664,
-        78.2636815920398
+        49.166666666666664,
+        78.52564102564102
       ],
       "handL": [
-        55.57222222222222,
-        100.82777777777778
+        58.17460317460317,
+        105.16798941798942
       ]
     },
     "targetLandmarks": {
@@ -220,14 +220,15 @@
       ]
     },
     "accepted": true,
-    "source": "wardrobe-v5/assets/top-cardigan.png",
+    "source": "wardrobe-v5/assets/arm-v6-cardigan-contact-clean.png",
     "sourceCell": [
       0,
-      543,
-      362,
-      1086
+      0,
+      1024,
+      1536
     ],
-    "frame": 4
+    "frame": 4,
+    "resamplingMethod": "one-pass premultiplied full-footprint Lanczos"
   },
   {
     "errors": {
