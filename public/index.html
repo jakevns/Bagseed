@@ -2791,7 +2791,8 @@ const RoomArt = {
     for (const loc of ['closet', 'tent2']) {
       const L = state.locations[loc]; if (loc === 'tent2' && !L.owned) continue; const P = DEV_POS[loc];
       if (L.equip.dehum && !window.BagseedDehumidifiers?.handles(loc)) items.push({ y: P.dehum[1] + 16, d: () => { groundShadow(c, P.dehum[0] + 6, P.dehum[1] + 16, 14); Gear.dehum(c, P.dehum[0], P.dehum[1], L.equip.dehum, L.dehumOn || L.equip.dehum === 2, t); this.hit('dehum:' + loc, P.dehum[0] - 1, P.dehum[1] - 1, 14, 18, EQ.dehum[L.equip.dehum].name, null, 'equip'); } });
-      if (L.equip.heater) items.push({ y: P.heater[1] + 12, d: () => { const on = envFor(loc).hvac.units.some(u => u.dir > 0); runtime.drawLoc = loc; groundShadow(c, P.heater[0] + 6, P.heater[1] + 12, 14); Gear.heater(c, P.heater[0], P.heater[1], L.equip.heater, on, t); this.hit('heater:' + loc, P.heater[0] - 1, P.heater[1] - 3, 14, 16, EQ.heater[L.equip.heater].name, null, 'equip'); } });
+      const heater = window.BagseedRoomClimate?.heaterPlacement(loc) || P.heater;
+      if (L.equip.heater) items.push({ y: heater[1] + 12, d: () => { const on = envFor(loc).hvac.units.some(u => u.dir > 0); runtime.drawLoc = loc; groundShadow(c, heater[0] + 6, heater[1] + 12, 14); Gear.heater(c, heater[0], heater[1], L.equip.heater, on, t); this.hit('heater:' + loc, heater[0] - 1, heater[1] - 3, 14, 16, EQ.heater[L.equip.heater].name, null, 'equip'); } });
     }
     items.push({ y: 113, d: () => { Gear.can(c, 300, 103, state.gear.water); this.hit('can', 298, 98, 18, 15, state.gear.water === 3 ? 'Drip reservoir (' + state.reservoir + ' days)' : EQ.water[state.gear.water].name, null, 'item'); } });
     if (state.gear.camera === 2) items.push({ y: 118, d: () => Gear.camera(c, 206, 100, 2) });
@@ -13125,13 +13126,13 @@ Panels.space = function (loc) {
 };
 Object.assign(ACT, { camInstall(loc) { GrowCam.install(loc); }, camRemove(loc) { GrowCam.remove(loc); }, remoteView(loc) { Panels.spaceRemote(loc); } });
 const equipPanel114 = Panels.equip;
-Panels.equip = function (slot, loc) { if (!Access.atLoc(loc)) { Access.denyLoc(loc); return Panels.spaceRemote(loc); } return equipPanel114.call(Panels, slot, loc); };
+Panels.equip = function (slot, loc) { if (!Access.atLoc(loc) && !window.BagseedRoomClimate?.canControl(slot, loc)) { Access.denyLoc(loc); return Panels.spaceRemote(loc); } return equipPanel114.call(Panels, slot, loc); };
 
 /* ---------------- action guards: re-checked at the moment an action runs ---------------- */
 const LOC_ACTS = { door: a => a, sched: a => a.split(':')[0], humid: a => a.split(':')[0], humidTimer: a => a, dehum: a => a, dehumB: a => a.split(':')[0], fanSpd: a => a.split(':')[0], exSpd: a => a.split(':')[0], heatMode: a => a.split(':')[0], acMode: a => a.split(':')[0], pwr: a => a.split(':')[0], pwrSet: a => a.split(':')[0], pwrB: a => a.split(':')[0], filterReplace: a => a, filterInspect: a => a, ghSched: () => 'gh', spaceTab: a => a };
 for (const [k, toLoc] of Object.entries(LOC_ACTS)) {
   const f = ACT[k]; if (!f) continue;
-  ACT[k] = function (arg) { const loc = safeRun('acc', () => toLoc(String(arg))); if (loc && LOC_DEF[loc] && !Access.atLoc(loc)) { Access.denyLoc(loc); if (k === 'spaceTab') Panels.spaceRemote(loc); return; } return f.call(ACT, arg); };
+  ACT[k] = function (arg) { const loc = safeRun('acc', () => toLoc(String(arg))); if (loc && LOC_DEF[loc] && !Access.atLoc(loc) && !window.BagseedRoomClimate?.canAct(k, arg)) { Access.denyLoc(loc); if (k === 'spaceTab') Panels.spaceRemote(loc); return; } return f.call(ACT, arg); };
 }
 const PLANT_ACTS = { care: () => curPlant(), train: () => curPlant(), inspect: a => state.plants[a], movePlant: a => state.plants[String(a).split(':')[0]], hardenPlant: a => state.plants[a], collectPollen: a => state.plants[a], pollinateWith: a => state.plants[String(a).split(':')[0]], plantTab: () => curPlant() };
 for (const [k, toP] of Object.entries(PLANT_ACTS)) {
@@ -13148,7 +13149,7 @@ doInspect = function (pid) { const p = state.plants[pid]; if (p && !Access.atPla
 const moverMove114 = Mover.move.bind(Mover);
 Mover.move = function (pid, loc, slot, confirmed) { const p = state.plants[pid]; if (p && !Access.atPlant(p)) { Access.denyPlant(p); return; } return moverMove114(pid, loc, slot, confirmed); };
 /* range sliders (humidity / temperature targets) are per-tent settings too */
-document.addEventListener('input', e => { const el = e.target, k = el.dataset && el.dataset.input; if (!k || !el.dataset.loc || !['humidTarget', 'dehumTarget', 'heatTo', 'coolTo'].includes(k)) return; if (!Access.atLoc(el.dataset.loc)) { e.stopImmediatePropagation(); Access.denyLoc(el.dataset.loc); renderPanel(); } }, true);
+document.addEventListener('input', e => { const el = e.target, k = el.dataset && el.dataset.input; if (!k || !el.dataset.loc || !['humidTarget', 'dehumTarget', 'heatTo', 'coolTo'].includes(k)) return; if (!Access.atLoc(el.dataset.loc) && !window.BagseedRoomClimate?.canInput(k, el.dataset.loc)) { e.stopImmediatePropagation(); Access.denyLoc(el.dataset.loc); renderPanel(); } }, true);
 ACT.openSpace = loc => Panels.space(loc || undefined);
 
 /* =====================================================================
@@ -29687,6 +29688,28 @@ function remainingHairSource(L,dir){
  function wrap(draw){return function(c,...args){marks.length=0;return withWorld(c,()=>draw.call(this,c,...args));};}
  RoomArt.draw=wrap(RoomArt.draw);SCENES.growroom.draw=wrap(SCENES.growroom.draw);
  window.BagseedEquipmentGlow=Object.freeze({night,point,display,withWorld,marks,get disabled(){return disabled;},set disabled(v){disabled=!!v;}});
+})();
+
+</script>
+<script id="bagseed-room-climate-production-code">
+/* Shared bedroom heating/cooling lives beside the watering station/window. */
+(()=>{
+ 'use strict';
+ const layout=ACMount.layout,drawMount=ACMount.draw,addActors=Actors.addTo,statics=DecoZ.statics,solids=SCENES.bedroom.solids;
+ function owners(){return ['closet','tent2'].filter(loc=>state?.locations?.[loc]&&locOwned(loc));}
+ function floorUnits(){const units=[];for(const slot of ['heater','ac'])for(const loc of owners()){const e=state.locations[loc].equip;if(e[slot]&&(slot==='heater'||!e.hvac))units.push({loc,slot,tier:e[slot]});}return units.map((u,i)=>({...u,cx:323,foot:113+i*18,x:u.slot==='heater'?317:315,y:113+i*18-(u.slot==='heater'?12:u.tier===1?9:12),floor:true,win:false}));}
+ function heaterPlacement(loc){const u=floorUnits().find(u=>u.loc===loc&&u.slot==='heater');return u?[u.x,u.y]:null;}
+ function wallUnits(){return owners().filter(loc=>state.locations[loc].equip.hvac).map((loc,i)=>({loc,slot:'hvac',tier:state.locations[loc].equip.hvac,x:303,y:58+i*15,floor:false,win:false}));}
+ ACMount.layout=function(room){return room==='bedroom'?[...floorUnits().filter(u=>u.slot==='ac'),...wallUnits()]:layout.call(this,room);};
+ ACMount.draw=function(c,room,t){if(room!=='bedroom')return drawMount.call(this,c,room,t);for(const u of wallUnits()){runtime.drawLoc=u.loc;const on=envFor(u.loc).hvac.units.length>0;Gear.hvac(c,u.x,u.y,u.tier,on,t);RoomArt.hit('hvac:'+u.loc,u.x-2,u.y-2,30,13,EQ.hvac[u.tier].name+' · whole bedroom',[u.x+13,114],'equip');}};
+ Actors.addTo=function(items,c,t,scene){addActors.call(this,items,c,t,scene);if(scene!=='bedroom')return;for(const u of floorUnits().filter(u=>u.slot==='ac'))items.push({y:u.foot,d:()=>{runtime.drawLoc=u.loc;groundShadow(c,u.cx,u.foot,17);Gear.ac(c,u.x,u.y,u.tier,envFor(u.loc).hvac.units.some(v=>v.dir<0),t);RoomArt.hit('ac:'+u.loc,u.x-1,u.foot-(u.tier===1?10:16),20,u.tier===1?12:18,EQ.ac[u.tier].name+' · whole bedroom',[u.cx,u.foot+7],'equip');}});};
+ function footprint(u){return [u.cx-8,u.foot-4,17,5,u.slot==='heater'?'the room heater':'the room cooler'];}
+ DecoZ.statics=function(zone){const original=statics.call(this,zone);return zone==='bedroom'?[...original.filter(r=>r[4]!=='a heater'),...floorUnits().map(footprint)]:original;};
+ SCENES.bedroom.solids=function(){return [...solids.call(this),...floorUnits().map(u=>footprint(u).slice(0,4))];};
+ function canControl(slot,loc){if(!state||state.scene!=='bedroom'||!['heater','ac','hvac'].includes(slot))return false;const u=[...floorUnits(),...wallUnits()].find(u=>u.loc===loc&&u.slot===slot);if(!u)return false;const x=u.floor?u.cx:u.x+13,y=u.floor?u.foot+7:114;return Math.hypot(state.player.x-x,(state.player.y-y)*.8)<=18;}
+ function canAct(action,arg){const[loc,slot]=String(arg).split(':');return action==='heatMode'?canControl('heater',loc):action==='acMode'?canControl('ac',loc):['pwr','pwrSet','pwrB'].includes(action)&&canControl(slot,loc);}
+ function canInput(key,loc){return key==='heatTo'&&(canControl('heater',loc)||canControl('hvac',loc))||key==='coolTo'&&(canControl('ac',loc)||canControl('hvac',loc));}
+ window.BagseedRoomClimate=Object.freeze({floorUnits,wallUnits,heaterPlacement,canControl,canAct,canInput});
 })();
 
 </script>

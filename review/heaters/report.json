@@ -30,7 +30,8 @@
   "heaterOffTripAndOutage": true,
   "otherHeaterDoesNotLightIdleUnit": true,
   "reducedMotion": true,
-  "originalCatalogAndAnchorsPreserved": true,
   "matchingStoreAndPhoneArtwork": true,
-  "errors": []
+  "errors": [],
+  "originalCatalogAndLogicalAnchorsPreserved": true,
+  "bedroomWindowStation": true
 }

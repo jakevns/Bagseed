@@ -9,5 +9,9 @@
   "originalSourceArtPreserved": true,
   "losslessRGBAIdentical": true,
   "characterRevisionPreserved": "custom-walk-arm-layer-v6",
-  "nightButtonGlowsPaintBeforeOccluders": true
+  "nightButtonGlowsPaintBeforeOccluders": true,
+  "bedroomWindowStation": true,
+  "nearbyControlsAndSaveReload": "passed",
+  "doorwayClear": true,
+  "unrelatedTentAccessPreserved": true
 }

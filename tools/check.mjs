@@ -15,6 +15,7 @@ if (!html.includes(require('./compile-tent2.cjs')())) throw new Error('The 2x2 t
 if (!html.includes(require('./compile-tent4.cjs')())) throw new Error('The 4x4 tent renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-tent5.cjs')())) throw new Error('The 5x5 tent renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-tent-placement.cjs')())) throw new Error('The tent placement renderer differs from its source. Rebuild before publishing.');
+if (!html.includes(require('./compile-room-climate.cjs')())) throw new Error('The room climate placement differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-heaters.cjs')())) throw new Error('The heater renderer differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-equipment-glow.cjs')())) throw new Error('The equipment glow differs from its source. Rebuild before publishing.');
 if (!html.includes(require('./compile-sensors.cjs')())) throw new Error('The thermometer renderer differs from its source. Rebuild before publishing.');
