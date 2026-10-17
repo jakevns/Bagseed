@@ -83,11 +83,16 @@ walk.rig=JSON.parse(fs.readFileSync(path.join(walkRoot,'rig.json')));
 assert.equal(walk.rigSHA256,sha(fs.readFileSync(path.join(walkRoot,'rig.json'),'utf8').replace(/\r\n/g,'\n')),'Walk rig changed after registration');
 for(const[file,hash]of Object.entries(walk.sources))assert.equal(hash,sha(fs.readFileSync(path.join(walkRoot,file))),'Walk source changed after registration');
 for(const[id,item]of Object.entries(walk.items))add('walk/'+id,path.join(walkRoot,item.atlas));
-// Publish the approved eight-pose custom sample as an isolated complete rig.
-const stridePath='stride-v4/candidate-manifest.json',stride=JSON.parse(fs.readFileSync(path.join(walkRoot,stridePath)));
-walk.stride={frameCounts:stride.frameCounts,rig:stride.candidateRig,imagePrefix:'stride/',items:Object.fromEntries(Object.entries(stride.items).filter(([,item])=>item.profileRevision==='eight-pose-profiles-v4'))};
-assert.deepEqual(Object.keys(walk.stride.items).sort(),['bottom-jeans','shoe-sneakers','skin-base','top-hoodie']);
-for(const[id,item]of Object.entries(walk.stride.items))images['stride/'+id]='data:image/png;base64,'+fs.readFileSync(path.join(walkRoot,item.atlas)).toString('base64');
+// Every wardrobe item shares the approved eight-pose side rig.
+const stridePath='wardrobe-v5/manifest.json',stride=JSON.parse(fs.readFileSync(path.join(walkRoot,stridePath)));
+walk.stride={...stride,imagePrefix:'stride/'};
+assert.deepEqual(Object.keys(stride.items).sort(),Object.keys(walk.items).sort(),'Every custom garment needs matching side poses');
+for(const[file,hash]of Object.entries(stride.sources))assert.equal(sha(fs.readFileSync(path.join(walkRoot,file))),hash,'Stale wardrobe source: '+file);
+for(const[id,item]of Object.entries(stride.items)){
+ assert.ok(item.accepted,'Unreviewed wardrobe stride: '+id);
+ for(const dir of ['right','left'])for(let f=0;f<8;f++)assert.ok(item.frames[dir+'/'+f],'Missing wardrobe pose: '+id+'/'+dir+'/'+f);
+ const bytes=fs.readFileSync(path.join(walkRoot,item.atlas));assert.equal(sha(bytes),item.atlasSHA256,'Stale wardrobe atlas: '+id);images['stride/'+id]='data:image/png;base64,'+bytes.toString('base64');
+}
 assert.deepEqual(detailLandmarks.canvas,[192,320],'Detail landmarks must use the registered bald-head canvas');
 const data={images,approved,cast,traits,walk,headFeatures:layers.features,detailLandmarks,hatRegistration:layers.hats,hatAssets:Object.keys(layers.hats),layeredHair:true,haircuts:61,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
 const characterDataScript='window.__BAGSEED_ILLUSTRATED_DATA__ = '+JSON.stringify(data).replace(/</g,'\\u003c')+';\n';
@@ -104,7 +109,7 @@ const characterDataTarget=path.join(root,'public/character-data.js');fs.writeFil
 const staging=target+'.tmp';fs.writeFileSync(staging,html);fs.renameSync(staging,target);
 const characterSources=['graphics/production/sources/renderer.js','graphics/production/sources/face-details.js','graphics/production/sources/hair-batch-01.js','graphics/production/sources/hair-fit-rest.js','graphics/production/sources/build.cjs','graphics/production/customization-v5/detail-landmarks.json','graphics/production/customization-v5/manifest.json','graphics/production/customization-v5/hair-fit.json','graphics/production/customization-v5/register.py'];
 const characterSourcesSHA256=Object.fromEntries(characterSources.map(file=>[file,sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'))]));
-for(const file of ['graphics/production/cast-walk-v1/manifest.json','graphics/production/cast-walk-v1/sources/clocks.js','graphics/production/walk/sources/renderer.js','graphics/production/walk/manifest.json','graphics/production/walk/rig.json','graphics/production/walk/stride-v4/candidate-manifest.json'])characterSourcesSHA256[file]=sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'));
+for(const file of ['graphics/production/cast-walk-v1/manifest.json','graphics/production/cast-walk-v1/sources/clocks.js','graphics/production/walk/sources/renderer.js','graphics/production/walk/manifest.json','graphics/production/walk/rig.json','graphics/production/walk/wardrobe-v5/manifest.json'])characterSourcesSHA256[file]=sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'));
 const report={version:'illustrated-1',approval:'User requested a universal repair for duplicated head/body necks in custom characters.',customizationReview:'review/neck-v14/README.md',hairFitRevision:hairFit.version,hairRuntimeFitRevision:'scalp-fit-12',baselineSHA,workingSourceSHA:sha(original),updatedSHA:sha(Buffer.from(html)),characterRevision:characterCode.match(/renderingRevision:'([^']+)'/)[1],characterPayloadSHA256:sha(characterCode.trim()),characterSourcesSHA256,bytes:Buffer.byteLength(html),modularAssets:Object.keys(manifest.assets).length,embeddedImages:Object.keys(images).length,approvedIdentities:approved.map(p=>p.id),additionalAuthoredAppearances:cast.length,bedroomRevision:'bedroom-shell-1',bedRevision:'beds-batch-04',bedCombinations:80,deskRevision:'seedling-desks-1',deskVariations:3,curtainRevision:'curtains-batch-03',curtainSets:6,menuRevision:JSON.parse(fs.readFileSync(path.join(root,'graphics/main-menu/sources/manifest.json'))).revision};
 Object.assign(report,{approval:'User requested Phase 2 custom wardrobe walking; visual review pending.',customizationReview:'review/custom-walk-v2/README.md',previousCharacterBytes:101055566,walkBytesIncrease:Buffer.byteLength(html)-101055566,walkReviewStatus:walk.status});
 Object.assign(report,{characterDataFile:'public/character-data.js',characterDataSHA256:sha(characterDataScript),characterDataBytes:Buffer.byteLength(characterDataScript)});
@@ -122,5 +127,5 @@ Object.assign(report, { loadingRevision: 'loading-bedroom-3' });
 Object.assign(report, { loadingMobileFraming: 'fixed-window' });
 Object.assign(report, { bedroomWindowRevision: 'bedroom-window-1', outdoorArtSharedWithLoading: true });
 Object.assign(report, { starterTentRevision: 'starter-tent-2', starterTentShells: ['budget','standard'], tent2Revision: 'tent2-1', tent2Shells: ['standard','pro','premium'] });
-Object.assign(report,{customStrideReview:'review/custom-walk-v4/README.md',customStrideLive:{outfit:['hoodie','jeans','sneakers'],directions:['right','left'],frames:8,remainingWardrobeFrames:4}});
+Object.assign(report,{customStrideReview:'review/custom-walk-v5/README.md',customStrideLive:{outfits:300,garments:24,directions:['right','left'],frames:8,frontBackFrames:4}});
 const reportPath=path.join(art,'build.json');fs.writeFileSync(reportPath+'.tmp',JSON.stringify(report,null,2)+'\n');fs.renameSync(reportPath+'.tmp',reportPath);console.log(JSON.stringify(report,null,2));

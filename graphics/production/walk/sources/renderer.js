@@ -4,7 +4,7 @@
   // Select a complete compatible outfit/rig; never mix eight-pose legs with
   // four-pose sleeves or shoes from the earlier wardrobe.
   function customWalkSet(L,dir){
-    return DATA.walk.stride&&['right','left'].includes(dir)&&L.topS==='hoodie'&&L.bottomS==='jeans'&&L.shoesS==='sneakers'?DATA.walk.stride:DATA.walk;
+    return DATA.walk.stride&&['right','left'].includes(dir)?DATA.walk.stride:DATA.walk;
   }
   function customWalkFrameCount(look,dir='down'){
     const L=normalize(look);return isChild(L)?4:customWalkSet(L,dir).frameCounts?.[dir]||4;

@@ -1,6 +1,6 @@
 // Add-only wardrobe walk checks. Every browser context and save is disposable.
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
-const root=path.resolve(__dirname,'..'),review=path.join(root,'review/custom-walk-v4');
+const root=path.resolve(__dirname,'..'),review=path.join(root,'review/custom-walk-v5');
 const inventory=JSON.parse(fs.readFileSync(path.join(root,'review/custom-walk-v1/inventory.json')));
 const fixture=JSON.parse(fs.readFileSync(path.join(root,'review/characters-v2/sources/baseline-assets.json'))).people.find(p=>p.id==='player').look;
 
@@ -19,11 +19,12 @@ test('all custom wardrobe walk combinations render grounded frames with connecte
     function nearest(data,w,h,x,y,radius){let best=null,d=Infinity;for(let yy=Math.max(0,Math.floor(y-radius));yy<=Math.min(h-1,Math.ceil(y+radius));yy++)for(let xx=Math.max(0,Math.floor(x-radius));xx<=Math.min(w-1,Math.ceil(x+radius));xx++){const dd=Math.hypot(xx-x,yy-y);if(dd<=radius&&dd<d&&data[(yy*w+xx)*4+3]>40){d=dd;best=yy*w+xx;}}return best;}
     function connected(data,w,h,start,end){if(start===null||end===null)return false;const seen=new Uint8Array(w*h),queue=[start];seen[start]=1;for(let i=0;i<queue.length;i++){const p=queue[i];if(p===end)return true;const x=p%w,y=Math.floor(p/w);for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const xx=x+dx,yy=y+dy;if(xx<0||xx>=w||yy<0||yy>=h)continue;const n=yy*w+xx;if(!seen[n]&&data[n*4+3]>40){seen[n]=1;queue.push(n);}}}return false;}
     for(const bottomS of inventory.bottom)for(const shoesS of inventory.shoe){
-     const L={...look,bottomS,shoesS},record={topS,bottomS,shoesS,frames:0,minBaseline:Infinity,maxBaseline:-Infinity,maxFlashlightError:0,handChecks:0};
+     const L={...look,bottomS,shoesS},sideImages={right:new Set(),left:new Set()},record={topS,bottomS,shoesS,frames:0,minBaseline:Infinity,maxBaseline:-Infinity,maxFlashlightError:0,handChecks:0};
      for(const dir of dirs)for(let frame=0;frame<BagseedArt.customWalkFrameCount(L,dir);frame++){
       const im=BagseedArt.sprite(L,dir,frame,0,0,0,false,1,true),expected=dir+'/'+frame,data=im.getContext('2d',{willReadFrequently:true}).getImageData(0,0,im.width,im.height).data;
       const key=[topS,bottomS,shoesS,expected].join('/');let opaque=0,bottom=-1;
       for(let y=0;y<im.height;y++)for(let x=0;x<im.width;x++)if(data[(y*im.width+x)*4+3]>100){opaque++;bottom=y;}
+      if(sideImages[dir])sideImages[dir].add(im.toDataURL());
       if(im.bagseedAuthoredWalk!==expected)failures.push(key+': legacy/fallback frame');
       if(opaque<600)failures.push(key+': empty or incomplete figure');
       if(bottom<141||bottom>143)failures.push(key+': painted ground '+bottom);
@@ -35,6 +36,7 @@ test('all custom wardrobe walk combinations render grounded frames with connecte
       if(error>.001)failures.push(key+': flashlight drift '+error);
       record.frames++;record.handChecks++;record.minBaseline=Math.min(record.minBaseline,bottom);record.maxBaseline=Math.max(record.maxBaseline,bottom);record.maxFlashlightError=Math.max(record.maxFlashlightError,error);
      }
+     for(const dir of ['right','left'])if(sideImages[dir].size!==8)failures.push([topS,bottomS,shoesS,dir].join('/')+': repeated side poses');
      records.push(record);
     }
     return {records,failures};
@@ -42,7 +44,7 @@ test('all custom wardrobe walk combinations render grounded frames with connecte
    coverage.perTop[topS]=result.records;coverage.outfits+=result.records.length;coverage.frames+=result.records.reduce((n,v)=>n+v.frames,0);coverage.failures.push(...result.failures);
    fs.mkdirSync(review,{recursive:true});fs.writeFileSync(path.join(review,'live-wardrobe-validation.json'),JSON.stringify(coverage,null,2)+'\n');
   }
-  assert.equal(coverage.outfits,15*5*4);assert.equal(coverage.frames,15*5*4*16+8);assert.deepEqual(coverage.failures,[]);
+  assert.equal(coverage.outfits,15*5*4);assert.equal(coverage.frames,15*5*4*24);assert.deepEqual(coverage.failures,[]);
   const extra=await page.evaluate(fixture=>{
    const failures=[],footColors=new Set(),variants=[];
    for(const body of ['slim','average','broad','curvy','stocky','tall'])for(const pres of ['fem','masc','neutral'])for(const dir of ['down','right','up','left'])for(let frame=0;frame<4;frame++){

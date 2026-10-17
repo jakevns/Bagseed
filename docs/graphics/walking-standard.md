@@ -12,6 +12,6 @@ Playback must reach all eight frames in every direction and wrap 8→1 without a
 
 Review front/right/back/left at native rendering resolution beside the standing figure, with pause, slow motion and individual frame controls. Landmark and hash checks support the review; they do not establish good motion by themselves.
 
-Current rollout: the approved custom hoodie/jeans/sneakers side sample, followed by Remy, Priya and Doug in all four directions. Remaining custom wardrobe pieces and Poppy retain their existing art until explicitly updated.
+Current rollout: all 24 custom wardrobe garments share the approved eight-pose side cycle, across all 300 outfit combinations. Remy, Priya and Doug have eight poses in all four directions. Custom front/back walking and Poppy retain their existing four-pose art.
 
-The approved custom hoodie/jeans/sneakers eight-pose side cycle is now active in gameplay, creator and wardrobe mirror, at 125 ms per pose. Its complete garment set and rig are selected together. Other outfit combinations and front/back directions retain the registered four-pose cycle; the remaining wardrobe eight-pose rollout is still pending. See `review/custom-walk-v4/live-game-checks.json` for live file-game checks.
+The complete custom wardrobe side cycle is active in gameplay, creator and wardrobe mirror, at 125 ms per pose. Every selected garment uses the same eight-pose rig. See `review/custom-walk-v5/README.md` for the live validation and native-resolution garment review.

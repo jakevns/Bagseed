@@ -1,0 +1,370 @@
+[
+  {
+    "errors": {
+      "measuredNeck": 0.113,
+      "handL": 0.113
+    },
+    "maxKeypointError": 0.113,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.997537552327013,
+    "groundError": 0.0,
+    "uniformScale": 0.20881260268621193,
+    "rotationDegrees": -2.0,
+    "finalSourceToCanvasTranslation": [
+      25.931908221131884,
+      136.6266081477096
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.38461538461539
+      ],
+      "handL": [
+        34.154626108998734,
+        106.9340937896071
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.24038461538461
+      ],
+      "handL": [
+        35.00925925925926,
+        107.32671957671958
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-sweater.png",
+    "sourceCell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "frame": 0
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.052,
+      "handL": 0.052
+    },
+    "maxKeypointError": 0.052,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9935843793584379,
+    "groundError": 0.0,
+    "uniformScale": 0.20669631999900775,
+    "rotationDegrees": -0.5273437499999999,
+    "finalSourceToCanvasTranslation": [
+      28.619350574063184,
+      137.04086842492217
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        79.37216828478965
+      ],
+      "handL": [
+        51.5,
+        106.70442708333333
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.21806853582554
+      ],
+      "handL": [
+        51.37692307692308,
+        106.52307692307693
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-sweater.png",
+    "sourceCell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "frame": 1
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.328,
+      "handL": 0.328
+    },
+    "maxKeypointError": 0.328,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9964788732394366,
+    "groundError": 0.0,
+    "uniformScale": 0.2071436982141338,
+    "rotationDegrees": 0.03515625000000005,
+    "finalSourceToCanvasTranslation": [
+      25.7650598795909,
+      133.65199490654908
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        78.34920634920634
+      ],
+      "handL": [
+        47.373891001267424,
+        107.02915082382764
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.19551282051282
+      ],
+      "handL": [
+        46.71391076115486,
+        107.39370078740158
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-sweater.png",
+    "sourceCell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "frame": 2
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.847,
+      "handL": 0.847
+    },
+    "maxKeypointError": 0.847,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9788546255506608,
+    "groundError": 0.0,
+    "uniformScale": 0.2080348201156698,
+    "rotationDegrees": -0.28515625,
+    "finalSourceToCanvasTranslation": [
+      28.270934819738468,
+      131.41742639652256
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.0,
+        77.32380952380952
+      ],
+      "handL": [
+        57.996309963099634,
+        101.79089790897909
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        77.21100917431193
+      ],
+      "handL": [
+        59.04705882352942,
+        102.5529411764706
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-sweater.png",
+    "sourceCell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "frame": 3
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.579,
+      "handL": 0.579
+    },
+    "maxKeypointError": 0.579,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9656330749354005,
+    "groundError": 0.0,
+    "uniformScale": 0.20849588408301398,
+    "rotationDegrees": 1.2851562500000002,
+    "finalSourceToCanvasTranslation": [
+      27.576360779976554,
+      157.58061124016294
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.333333333333336,
+        78.35474006116208
+      ],
+      "handL": [
+        57.6972010178117,
+        104.40076335877863
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        78.20711974110033
+      ],
+      "handL": [
+        55.76734693877551,
+        103.79183673469389
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-sweater.png",
+    "sourceCell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "frame": 4
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.011,
+      "handL": 0.011
+    },
+    "maxKeypointError": 0.011,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.94075682382134,
+    "groundError": 0.0,
+    "uniformScale": 0.20214064494089404,
+    "rotationDegrees": 0.8398437499999999,
+    "finalSourceToCanvasTranslation": [
+      24.637877640482838,
+      164.53972999680178
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.333333333333336,
+        79.37820512820512
+      ],
+      "handL": [
+        58.971177944862156,
+        103.87218045112782
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.666666666666664,
+        79.20666666666666
+      ],
+      "handL": [
+        57.95430107526882,
+        103.86155913978494
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-sweater.png",
+    "sourceCell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "frame": 5
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.236,
+      "handL": 0.236
+    },
+    "maxKeypointError": 0.236,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9989458889669712,
+    "groundError": 0.0,
+    "uniformScale": 0.20432881042908546,
+    "rotationDegrees": 0.03515625,
+    "finalSourceToCanvasTranslation": [
+      26.73646359448815,
+      163.0881580151434
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        49.333333333333336,
+        78.35598705501617
+      ],
+      "handL": [
+        48.46163069544364,
+        107.43165467625899
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.833333333333336,
+        78.18627450980392
+      ],
+      "handL": [
+        47.715415019762844,
+        107.65876152832675
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-sweater.png",
+    "sourceCell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "frame": 6
+  },
+  {
+    "errors": {
+      "measuredNeck": 0.022,
+      "handL": 0.022
+    },
+    "maxKeypointError": 0.022,
+    "visibleHandsMeasured": 1,
+    "limbCoreIoU": 0.9674257711155952,
+    "groundError": 0.0,
+    "uniformScale": 0.2069850448259524,
+    "rotationDegrees": -1.6337890625000002,
+    "finalSourceToCanvasTranslation": [
+      20.332994756518048,
+      160.9442539707341
+    ],
+    "resamplingPasses": 1,
+    "sourceLandmarks": {
+      "measuredNeck": [
+        48.333333333333336,
+        77.00934579439253
+      ],
+      "handL": [
+        31.70631970260223,
+        103.51425030978935
+      ]
+    },
+    "targetLandmarks": {
+      "measuredNeck": [
+        48.0,
+        76.87908496732025
+      ],
+      "handL": [
+        32.141496598639456,
+        103.83265306122449
+      ]
+    },
+    "accepted": true,
+    "source": "wardrobe-v5/assets/top-sweater.png",
+    "sourceCell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "frame": 7
+  }
+]
