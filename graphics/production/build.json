@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "009086178e0e69b71157cc2f02a1a320703e0f0edb7c8b61d67f7b7a5ad926e6",
-  "updatedSHA": "ce84a69d29c0e4bf8b326fd85d799afdee5ffb341ad0bf9703bccdfd6b367555",
+  "updatedSHA": "e5de5f26e71b3cb26c26986a986b74b282d12a30f80fabf3352342c2e9fd13a9",
   "characterRevision": "custom-walk-phase-1",
   "characterPayloadSHA256": "e5c4419ea541c919159dfe6dd605a220e1186b9a8b24a45435e9fa6f727941ef",
   "characterSourcesSHA256": {
@@ -23,7 +23,7 @@
     "graphics/production/walk/manifest.json": "c4cd3cdd76fafb72191d1a28a50f6021abe5cb2c5becf68a37a71d29bdf653e3",
     "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa"
   },
-  "bytes": 104036176,
+  "bytes": 104043442,
   "modularAssets": 544,
   "embeddedImages": 1561,
   "approvedIdentities": [
@@ -96,5 +96,7 @@
     "standard",
     "pro",
     "premium"
-  ]
+  ],
+  "humidifiersRevision": "humidifiers-1",
+  "humidifierTiers": 3
 }

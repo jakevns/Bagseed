@@ -1,6 +1,6 @@
 {
-  "revision": "humidifiers-proposal-2",
-  "status": "awaiting-user-approval",
+  "revision": "humidifiers-1",
+  "status": "approved",
   "path": "assets/humidifiers-atlas.png",
   "size": [
     1024,
@@ -171,5 +171,11 @@
       220,
       122
     ]
+  },
+  "approvedDate": "2026-10-16",
+  "runtime": {
+    "path": "assets/humidifiers-atlas.webp",
+    "sha256": "ee9793cda72e264ca590c6c5f0fb93628e72a01d6eee7135a805d0c23e23083a",
+    "publicPath": "assets/humidifiers/humidifiers-ee9793cda72e.webp"
   }
 }

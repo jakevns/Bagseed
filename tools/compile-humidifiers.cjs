@@ -1,0 +1,7 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{createHash}=require('node:crypto');
+module.exports=function compileHumidifiers(){
+ const root=path.resolve(__dirname,'../graphics/humidifiers'),data=JSON.parse(fs.readFileSync(path.join(root,'sources/manifest.json')));assert.equal(data.status,'approved');assert.deepEqual(Object.keys(data.tiers),['1','2','3']);
+ for(const a of [data,data.runtime]){assert.equal(createHash('sha256').update(fs.readFileSync(path.join(root,a.path))).digest('hex'),a.sha256,'Humidifier source/runtime checksum differs');if(a===data.runtime){assert.equal(createHash('sha256').update(fs.readFileSync(path.resolve(__dirname,'../public',a.publicPath))).digest('hex'),a.sha256,'Published humidifier asset differs');data.image=a.publicPath;}}
+ for(const a of Object.values(data.tiers))for(const k of ['on','off']){const[x,y,w,h]=a[k];assert.ok(x>=0&&y>=0&&w>0&&h>0&&x+w<=data.size[0]&&y+h<=data.size[1]);for(const r of [a.water[k],...(a.display?[a.display[k]]:[])])assert.ok(r[0]>=x&&r[1]>=y&&r[0]+r[2]<=x+w&&r[1]+r[3]<=y+h,'Animated detail outside device');}
+ const code=fs.readFileSync(path.join(root,'sources/renderer.js'),'utf8').replace('__BAGSEED_HUMIDIFIERS_DATA__',()=>JSON.stringify(data));new(require('node:vm').Script)(code);return `<script id="bagseed-humidifiers-production-code">\n${code}\n</script>\n`.replace(/\r\n/g,'\n');
+};
