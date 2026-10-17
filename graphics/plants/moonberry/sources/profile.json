@@ -1,0 +1,22 @@
+{
+  "id": "moonberry",
+  "name": "Moonberry",
+  "shortName": "Moonberry",
+  "apiName": "BagseedMoonberryGrowth",
+  "revision": "moonberry-components-1",
+  "libraryRevision": "plant-parts-library-5",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "blue",
+    "colorName": "Lavender",
+    "branching": 1.05
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Sage-blue hybrid leaves \u2192 soft lavender autumn fade",
+  "finishSubtitle": "Final-week color study \u00b7 Lavender phenotype senescence",
+  "finishCaption": "Lavender fan leaves \u00b7 Amber pistils \u00b7 Silvery lilac flowers",
+  "finishPalette": "lavender",
+  "windCaption": "Late flower / lavender autumn fade",
+  "coolNights": true,
+  "coolPalette": "lavender",
+  "coolColorLabel": "lavender"
+}

@@ -1,5 +1,6 @@
 /* Porchlight attachment model. Physical dimensions are inches, independent of camera zoom. */
 'use strict';
+const Canopy=typeof window==='object'?window.BagseedCanopy:require('../../sources/canopy.cjs');
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function hash(s){let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return(h>>>0)/4294967296;}
 const lerp=(a,b,t)=>a+(b-a)*t;
@@ -7,7 +8,7 @@ function bezier(a,b,c,t){const u=1-t;return{x:u*u*a.x+2*u*t*b.x+t*t*c.x,y:u*u*a.
 function build(p,traits={},options={}){
  const height=Math.max(.2,Number(p.height)||.2),nodes=clamp(Number(p.nodes)||1,1,11),count=Math.ceil(nodes),stage=p.stage??5;
  const seed=String(p.artIdentity?.seed||p.genome115?.id||p.pheno?.pid||p.seed||p.id||'porchlight');
- const model={revision:'porchlight-attached-1',height,nodes,seed,joints:[],branches:[],organs:[],training:p.training||'natural'};
+ const model={revision:'attached-popcorn-2',height,nodes,seed,joints:[],branches:[],organs:[],training:p.training||'natural'};
  const branching=clamp((traits.branching||1.1)*(p.pheno?.b||1),.6,1.5),giant=p.loc==='outdoor'?1+Math.max(0,height-50)/140:1,leafLength=clamp(height*.13,1.1,9.2),density=clamp(p.density??.82,.2,1);
  const lean=model.training==='lst'?-height*.28:0;
  const trunkY=height*.89,trunkX=f=>lean*Math.pow(f,1.4)+(hash(seed+':lean')-.5)*height*.025*Math.sin(f*Math.PI);
@@ -19,11 +20,12 @@ function build(p,traits={},options={}){
  model.joints.push({id:'apex',parent:'node:'+count,x:trunkX(1),y:trunkY});
  const addLeaf=(id,parent,at,role,length,angle,z,growth=1)=>{
   if(growth<=.001)return;
-  const removed=p.visualState?.removedLeaves?.includes(id)||false;
+  const parentBranch=model.branches.find(b=>b.id===parent),baseNode=Number(parent.match(/(?:node:|branch:)(\d+)/)?.[1]||nodes);
+  const removed=p.visualState?.removedLeaves?.includes(id)||Canopy.removed(p,baseNode/(nodes+.7),parentBranch?.order===2?parentBranch.at:at||1);
   model.organs.push({id,parent,at,role,length:length*growth,angle,z,removed,kind:'leaf'});
  };
  for(let i=1;i<=count;i++){
-  const growth=clamp(nodes-i+1,0,1),node='node:'+i,older=i<=Math.ceil(nodes*.4),cut=!!p.pruned&&older;
+  const growth=clamp(nodes-i+1,0,1),node='node:'+i,older=i<=Math.ceil(nodes*.4),cut=(!!p.pruned&&older)||Canopy.removed(p,i/(nodes+.7));
   const role=i===1?'singleLeaf':i===2?'threeLeaf':i===3?'fiveLeaf':'sevenLeaf',fanLength=i===1?Math.min(2,leafLength):i===2?Math.min(3.5,leafLength):i===3?Math.min(6,leafLength):leafLength;
   for(const side of [-1,1])if(!cut&&stage>2)addLeaf('fan:'+i+':'+side,node,0,role,fanLength*(.88+.12*hash(seed+':leafsize:'+i+':'+side)),side*(.92+hash(seed+':angle:'+i+':'+side)*.34),(i%2===0?side:-side)*.1,growth);
   if(stage<3||i<2||i>=nodes-.2)continue;
@@ -38,7 +40,7 @@ function build(p,traits={},options={}){
     const dist=j*4.4,at=clamp(dist/length,.12,.92),birth=clamp((length-dist)/2.4,0,1),sub=id+'/shoot:'+j;
     if(birth<=.001)continue;
     const sd=j%2===0?-side:side,subLength=Math.min(leafLength*.88,(length-dist)*.62)*birth;
-    model.branches.push({id:sub,parent:id,at,dx:sd*subLength*.55,dy:subLength*.68,width:.12,side:sd,z:(j%2?-.2:.2),cut,order:2,growth:birth});
+    model.branches.push({id:sub,parent:id,at,dx:sd*subLength*.55,dy:subLength*.68,width:.12,side:sd,z:(j%2?-.2:.2),cut:cut||Canopy.removed(p,i/(nodes+.7),at),order:2,growth:birth});
     if(!cut&&hash(seed+':cover:'+sub)<density+.14){
      addLeaf(sub+'/fan',sub,1,j===1?'fiveLeaf':'sevenLeaf',leafLength*(.68+.13*hash(seed+':size:'+sub)),sd*(.55+hash(seed+':rot:'+sub)*.65),j%2?-.2:.2,birth);
      if(hash(seed+':paired:'+sub)>.56)addLeaf(sub+'/rear',id,at,'fiveLeaf',leafLength*.54,-sd*.65,-.3,birth);
@@ -52,8 +54,20 @@ function build(p,traits={},options={}){
  if(stage>=6&&stage<=10){
   const male=p.sex==='M',role=male?(stage>=9?'maleOpen':'maleClosed'):stage<=7?'femaleEarly':stage===8?'femaleMid':'femaleLate';
   const factor=male?.65:({6:.20,7:.42,8:.7,9:.9,10:1}[stage]);
-  for(const b of model.branches)if(!b.cut&&b.order===1)model.organs.push({id:b.id+'/flower',parent:b.id,at:1,role,length:Math.min(8,height*.13)*factor,angle:0,z:.55,kind:'flower'});
-  model.organs.push({id:'apex:flower',parent:'apex',at:0,role,length:Math.min(11,height*.18)*factor,angle:0,z:.6,kind:'flower'});
+  const flower=(id,parent,at,length,heightFraction,branchFraction=1,apical=false)=>{
+   if(!male&&!apical&&Canopy.removed(p,heightFraction,branchFraction))return;
+   model.organs.push({id,parent,at,role,length:length*factor,angle:0,z:.55,kind:'flower',site:apical?'apical':branchFraction<.5||heightFraction<.4?'popcorn':'lateral'});
+  };
+  for(const b of model.branches)if(!b.cut&&b.order===1){
+   const u=Number(b.parent.split(':')[1])/(nodes+.7),base=Math.min(8,height*.13);
+   flower(b.id+'/flower',b.id,1,base*(male?1:Canopy.budScale(u,1)*Canopy.topScale(p)),u);
+   if(!male){
+    // Stable positions on the same branch curve; never free-floating flower stamps.
+    for(const [j,at]of [.20,.42,.64,.82].entries())
+     flower(b.id+'/bud:'+j,b.id,at,base*(.20+.35*at)*Canopy.budScale(u,at),u,at);
+   }
+  }
+  flower('apex:flower','apex',0,Math.min(11,height*.18)*(male?1:Canopy.topScale(p)),1,1,true);
  }
  // Bound the complete assembled canopy, not just the stem, to the labeled height.
  const pose0=pose(model,p,0,0,true);let top=trunkY;
@@ -81,7 +95,7 @@ function pose(model,p,t=0,wind=1,reduced=false){
 function counts(model){return{joints:model.joints.length,primaryBranches:model.branches.filter(b=>b.order===1&&!b.cut).length,secondaryBranches:model.branches.filter(b=>b.order===2&&!b.cut).length,leaves:model.organs.filter(o=>o.kind==='leaf'&&!o.removed).length,flowers:model.organs.filter(o=>o.kind==='flower').length};}
 // Finishing color is an expressed phenotype, not low nutrition or a new inherited roll.
 // visualState.senescence is a review/prospective adapter input, not a change to stage durations.
-function senescence(p,traits=p.artIdentity?.traits||{}){
+function senescence(p,traits=p.artIdentity?.traits||{},nightColor=null){
  const stage=p.stage??5,late=stage===9||stage===10;
  const override=p.visualState?.senescence;
  const amount=late?(Number.isFinite(override)?clamp(override,0,1):stage===9?.65:.9):0;
@@ -93,6 +107,8 @@ function senescence(p,traits=p.artIdentity?.traits||{}){
   'Pink accents':['rose',[192,103,130]],'Red accents':['red',[174,68,48]]
  };
  const [palette,rgb]=mutation==='ink'?['near-black',[44,32,52]]:(palettes[color]||palettes['Forest green']);
+ const pigment=nightColor?.expression(p,traits);
+ if(pigment?.strength)return{amount:Math.max(amount,pigment.strength*.85),palette:palette+'-cool',rgb:rgb.map((v,i)=>Math.round(lerp(v,pigment.rgb[i],pigment.strength*.9)))};
  return{amount,palette,rgb:rgb.slice()};
 }
 module.exports={build,pose,counts,senescence};

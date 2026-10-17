@@ -1,0 +1,26 @@
+{
+  "id": "frogprince-red",
+  "lineId": "frogprince",
+  "name": "Frog Prince \u2014 Copper Reed",
+  "shortName": "Frog / Copper Reed",
+  "apiName": "BagseedFrogprinceRedGrowth",
+  "revision": "frogprince-red-components-1",
+  "libraryRevision": "plant-parts-library-14",
+  "traits": {
+    "leafShape": "narrow",
+    "leafKey": "forest",
+    "colorName": "Red accents",
+    "branching": 0.9
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Narrow forest-green fans \u2192 copper-red autumn fade",
+  "finishSubtitle": "Final-week color study \u00b7 red phenotype senescence",
+  "finishCaption": "Copper-red narrow fans \u00b7 Russet calyces \u00b7 Orange pistils",
+  "finishPalette": "red",
+  "windCaption": "Late flower / red autumn fade",
+  "coolNights": true,
+  "coolPalette": "wine red",
+  "coolColorLabel": "red",
+  "experimental": true,
+  "registerAsDefault": false,
+  "phenotypeNote": "Additional representative phenotype of the existing native experimental strain. Earlier default profile and saved plants stay pinned."
+}

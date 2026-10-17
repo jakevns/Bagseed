@@ -1,0 +1,23 @@
+{
+  "id": "nightshift",
+  "name": "Night Shift",
+  "shortName": "Night Shift",
+  "apiName": "BagseedNightshiftGrowth",
+  "revision": "nightshift-components-1",
+  "libraryRevision": "plant-parts-library-11",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "forest",
+    "colorName": "Dark purple",
+    "branching": 1.1
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Deep forest-green fans \u2192 smoky plum senescence",
+  "finishSubtitle": "Final-week color study \u00b7 deep-purple phenotype senescence",
+  "finishCaption": "Dark plum fan leaves \u00b7 Inky calyces \u00b7 Silver frost and copper pistils",
+  "finishPalette": "deep-purple",
+  "windCaption": "Late flower / deep-purple autumn fade",
+  "coolNights": true,
+  "coolPalette": "near-black purple",
+  "coolColorLabel": "near-black purple",
+  "experimental": false
+}

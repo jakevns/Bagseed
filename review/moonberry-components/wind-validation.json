@@ -1,0 +1,16 @@
+{
+  "framesCompared": [
+    100,
+    110
+  ],
+  "bothHeightInches": 90,
+  "canopyMoves": true,
+  "soilLandmarkStable": true,
+  "soilLandmarkBounds": [
+    280,
+    833,
+    330,
+    841
+  ],
+  "rootAttachmentVerifiedBy": "tests/moonberry-components.test.cjs"
+}

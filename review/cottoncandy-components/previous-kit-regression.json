@@ -1,0 +1,21 @@
+{
+  "sharedPreviewBackwardsCompatible": true,
+  "pixelPunchApprovedStills": {
+    "pixelpunch-growth-and-flower.png": {
+      "sha256": "962babc5bd3e85c995b1383ba45a9637a17ab45a6ef2c9fb05db8048d7c07351",
+      "identical": true
+    },
+    "pixelpunch-50-and-90-inches.png": {
+      "sha256": "143fb57e78f9358471b272ee3df662cf304db34350c8a83ca962f7914c12419a",
+      "identical": true
+    },
+    "pixelpunch-late-flower-senescence.png": {
+      "sha256": "82e720023bc7513a09a1607317cf7edca1eefa8b4710e5a672a4fd32223a1cd5",
+      "identical": true
+    },
+    "pixelpunch-cool-night-colors.png": {
+      "sha256": "db73a3f250a9e08aba5490d3f31f620305c07a30c481ee908e8f2e541fa48d06",
+      "identical": true
+    }
+  }
+}

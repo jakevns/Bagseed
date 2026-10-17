@@ -898,7 +898,7 @@ EQ.hvac = [{ name: 'No mini-split', price: 0, watts: 0 },
 { name: 'Breeze Bridge Mini-Split', brand: 'Breeze Bridge', price: 549, watts: 220, maxD: 22, thermo: true, both: true, eff: .6, fail: .004, desc: 'Efficient heat pump that heats AND cools automatically. Replaces separate heaters and ACs in this room, moving them to Unused gear.', review: [5, 'Paid for itself the first heat wave.'] },
 { name: 'Canopy Climate Smart HVAC', brand: 'Canopy Climate', price: 849, watts: 210, maxD: 26, thermo: true, both: true, smart: true, eff: .48, fail: 0, desc: 'Heats, cools and talks to your environment controller. Replaces separate room heaters and ACs, moving them to Unused gear.', review: [5, 'It knew a cold snap was coming before I did.'] }];
 EQ.ctrl = [{ name: 'No controller', price: 0, watts: 0 },
-{ name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Sets digital heaters, ACs, humidifiers and dehumidifiers to each stage automatically, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
+{ name: 'Canopy Brain Controller', brand: 'Canopy Climate', price: 159, watts: 4, desc: 'Environment controller. Automates digital climate gear by growth stage, offers optional lights-off room cooling for receptive flower colors, and switches to drying mode after harvest.', review: [5, 'I stopped babysitting dials. I have hobbies again.'] }];
 LOC_SLOTS.push('heater', 'ac', 'hvac', 'ctrl');
 const SLOT_NAME = { light: 'Grow light', fan: 'Fan', exhaust: 'Exhaust / filter', humid: 'Humidifier', dehum: 'Dehumidifier', sensor: 'Sensor', pot: 'Container', heater: 'Heater', ac: 'Air conditioner', hvac: 'Mini-split / HVAC', ctrl: 'Smart controller', water: 'Watering', computer: 'Computer', workbench: 'Workbench', camera: 'Camera', storage: 'Storage' };
 
@@ -1180,7 +1180,7 @@ function pestDaily(p, g, env, L) {
 /* ---------- harvest / jar / sex ---------- */
 function harvestPlant(p) {
   if (p.sex === 'M') { toast('Male plants don\'t make buds to harvest.', 'warn'); return; }
-  p.stage = S.drying; p.prog = 0; p.dry = newDry(); invalidate(p); state.rep.cultivation += 1;
+  p.canopyHarvest = window.BagseedCanopy?.read(p); p.stage = S.drying; p.prog = 0; p.dry = newDry(); invalidate(p); state.rep.cultivation += 1;
   const L = state.locations[p.loc];
   if (['outdoor', 'greenhouse'].includes(LOC_DEF[p.loc].kind)) { p.dry.remote = true; notify(`${p.name} is hanging in the garden shed: dark, steady, gentle air. Check back in a couple of days.`); SaveSys.request('harvest'); return; }
   notify(`${p.name} is hanging to dry. Bagseed drying rule: dark, closed space, gentle air, about 70°F / 70%.`); SaveSys.request('harvest');
@@ -1195,7 +1195,7 @@ function jarPlant(p) {
   const appearance = clamp((qAvg * .7 + (COLOR_RARITY[g.colorName] - 1) * .6 + (p.pheno.deep ? .1 : 0) - p.mold * .6) * Math.min(1.04, dq + .05), 0, 1);
   const aroma = clamp((p.aroma * .9 + .1) * (fast ? .74 : Math.min(1.06, dq)), 0, 1), consistency = clamp(1 - p.stress / 120 - (1 - (g.stability || .7)) * .3, 0, 1);
   const overall = clamp((appearance * .25 + aroma * .2 + hAvg * .2 + consistency * .15 + qAvg * .2) * (.55 + dq * .45) * (p.seeded ? .8 : 1), 0, 1);
-  const jars = Math.max(1, Math.round(p.yieldPot * (typeof SizeYield1151 !== 'undefined' ? SizeYield1151.factorFor(p) : 1) * (g.yield || 1) * p.pheno.y * ((LOC_DEF[p.harvestLoc1151 || p.loc] && LOC_DEF[p.harvestLoc1151 || p.loc].yieldMul) || 1) * (p.pheno.mut ? (MUTS[p.pheno.mut] ? MUTS[p.pheno.mut].yield : 1) : 1) * (.5 + p.health / 100) * (p.training === 'scrog' ? 1.3 : p.training === 'lst' ? 1.15 : p.training === 'topped' ? 1.1 : 1) * (1 - p.mold * .4) * (res.label === 'Mold Risk' ? .8 : 1) * 2.2));
+  const jars = Math.max(1, Math.round(p.yieldPot * (window.BagseedCanopy?.yieldFactor(p) ?? 1) * (typeof SizeYield1151 !== 'undefined' ? SizeYield1151.factorFor(p) : 1) * (g.yield || 1) * p.pheno.y * ((LOC_DEF[p.harvestLoc1151 || p.loc] && LOC_DEF[p.harvestLoc1151 || p.loc].yieldMul) || 1) * (p.pheno.mut ? (MUTS[p.pheno.mut] ? MUTS[p.pheno.mut].yield : 1) : 1) * (.5 + p.health / 100) * (p.training === 'scrog' ? 1.3 : p.training === 'lst' ? 1.15 : p.training === 'topped' ? 1.1 : 1) * (1 - p.mold * .4) * (res.label === 'Mold Risk' ? .8 : 1) * 2.2));
   const grade = overall > .86 ? 'A+' : overall > .76 ? 'A' : overall > .64 ? 'B' : overall > .5 ? 'C' : 'D';
   const b = { id: 'h_' + uid(), lineId: p.lineId, name: p.name, jars, grade, overall, scores: { appearance, aroma, health: hAvg, consistency, cultivation: qAvg, drying: clamp(dq, 0, 1) }, type: g.type, aromaName: g.aroma, organic: p.organic, day: state.day, dry: res.label };
   state.inv.harvest.push(b);
@@ -1273,12 +1273,13 @@ function isLightOn(loc, minute = state.minute) {
 }
 /* heating / cooling. Output is limited by unit size; power depends on how hard
    the unit works AND how far outdoor conditions are from the target. */
+function climateTargets(loc, minute = state.minute) { return window.BagseedNightCooling?.targets(loc, minute) || { heat: state.locations[loc].heatTo, cool: state.locations[loc].coolTo }; }
 function hvacOutput(loc, temp) {
   const L = state.locations[loc], e = L.equip, F = state.fail, out = { delta: 0, watts: 0, load: 0, mode: 'idle', units: [] };
   if (state.fail.outage > 0 || roomTripped((LOC_DEF[loc] || LOC_DEF.closet).room)) return out;
-  const outT = state.outTemp;
+  const outT = state.outTemp, targets = climateTargets(loc);
   const run = (it, d, frac, dir) => {
-    const target = dir > 0 ? L.heatTo : L.coolTo, gap = dir > 0 ? Math.max(0, target - outT) : Math.max(0, outT - target);
+    const target = dir > 0 ? targets.heat : targets.cool, gap = dir > 0 ? Math.max(0, target - outT) : Math.max(0, outT - target);
     const wx = 1 + Math.max(0, gap - 6) / 12;                         // weather multiplier: mild ≈ 1, heat wave ≈ 2.9
     const w = it.watts * frac * wx * (it.eff || 1);
     out.delta += d; out.watts += w; out.load = Math.max(out.load, frac * wx); out.units.push({ name: it.name, dir, w: Math.round(w) });
@@ -1286,19 +1287,19 @@ function hvacOutput(loc, temp) {
   };
   if (e.hvac && locOn(L, 'hvac')) {
     const it = EQ.hvac[e.hvac];
-    if (temp < L.heatTo - .3) { const d = Math.min(L.heatTo - temp, it.maxD); run(it, d, d / it.maxD, 1); }
-    else if (temp > L.coolTo + .3) { const d = Math.min(temp - L.coolTo, it.maxD); run(it, -d, d / it.maxD, -1); }
+    if (temp < targets.heat - .3) { const d = Math.min(targets.heat - temp, it.maxD); run(it, d, d / it.maxD, 1); }
+    else if (temp > targets.cool + .3) { const d = Math.min(temp - targets.cool, it.maxD); run(it, -d, d / it.maxD, -1); }
     return out;
   }
   if (e.heater && locOn(L, 'heater') && !F.heatTrip) {
     const it = EQ.heater[e.heater];
     if (it.manual) { const set = L.heatMode === 2 ? 1 : .5, coldPenalty = clamp(1.15 - Math.max(0, 50 - state.outTemp) / 80, .7, 1); run(it, it.maxD * set * coldPenalty, set, 1); }
-    else if (temp < L.heatTo - .3) { const d = Math.min(L.heatTo - temp, it.maxD); run(it, d, d / it.maxD, 1); }
+    else if (temp < targets.heat - .3) { const d = Math.min(targets.heat - temp, it.maxD); run(it, d, d / it.maxD, 1); }
   }
   if (e.ac && locOn(L, 'ac') && !F.acIce) {
     const it = EQ.ac[e.ac];
     if (it.manual) { const set = L.acMode === 2 ? 1 : .5, heatPenalty = clamp(1.15 - Math.max(0, state.outTemp - 85) / 60, .7, 1); run(it, -it.maxD * set * heatPenalty, set, -1); }
-    else if (temp > L.coolTo + .3) { const d = Math.min(temp - L.coolTo, it.maxD); run(it, -d, d / it.maxD, -1); }
+    else if (temp > targets.cool + .3) { const d = Math.min(temp - targets.cool, it.maxD); run(it, -d, d / it.maxD, -1); }
   }
   return out;
 }
@@ -1330,28 +1331,28 @@ function roomAmbient(room, minute = state.minute) {
   const outT = state.outTemp, H = out.hvac;
   let base = out.temp;
   const run = (L, loc, it, d, frac, dir) => {
-    const target = dir > 0 ? L.heatTo : L.coolTo, gap = dir > 0 ? Math.max(0, target - outT) : Math.max(0, outT - target);
+    const target = dir > 0 ? climateTargets(loc, minute).heat : climateTargets(loc, minute).cool, gap = dir > 0 ? Math.max(0, target - outT) : Math.max(0, outT - target);
     const wx = 1 + Math.max(0, gap - 6) / 12, w = it.watts * frac * wx * (it.eff || 1);
     base += d; H.delta += d; H.watts += w; H.load = Math.max(H.load, frac * wx); H.units.push({ name: it.name, dir, w: Math.round(w), loc });
     H.mode = H.mode === 'idle' ? (dir > 0 ? 'heat' : 'cool') : H.mode === (dir > 0 ? 'heat' : 'cool') ? H.mode : 'fighting';
   };
   for (const loc of locs) {
-    const L = state.locations[loc], e = L.equip;
+    const L = state.locations[loc], e = L.equip, targets = climateTargets(loc, minute);
     if (e.hvac && locOn(L, 'hvac')) {
       const it = EQ.hvac[e.hvac];
-      if (base + cold < L.heatTo - .3) { const d = Math.min(L.heatTo - (base + cold), it.maxD); run(L, loc, it, d, d / it.maxD, 1); }
-      else if (base + hot > L.coolTo + .3) { const d = Math.min(base + hot - L.coolTo, it.maxD); run(L, loc, it, -d, d / it.maxD, -1); }
+      if (base + cold < targets.heat - .3) { const d = Math.min(targets.heat - (base + cold), it.maxD); run(L, loc, it, d, d / it.maxD, 1); }
+      else if (base + hot > targets.cool + .3) { const d = Math.min(base + hot - targets.cool, it.maxD); run(L, loc, it, -d, d / it.maxD, -1); }
       continue;
     }
     if (e.heater && locOn(L, 'heater') && !F.heatTrip) {
       const it = EQ.heater[e.heater];
       if (it.manual) { const set = L.heatMode === 2 ? 1 : .5, coldPenalty = clamp(1.15 - Math.max(0, 50 - state.outTemp) / 80, .7, 1); run(L, loc, it, it.maxD * set * coldPenalty, set, 1); }
-      else if (base + cold < L.heatTo - .3) { const d = Math.min(L.heatTo - (base + cold), it.maxD); run(L, loc, it, d, d / it.maxD, 1); }
+      else if (base + cold < targets.heat - .3) { const d = Math.min(targets.heat - (base + cold), it.maxD); run(L, loc, it, d, d / it.maxD, 1); }
     }
     if (e.ac && locOn(L, 'ac') && !F.acIce) {
       const it = EQ.ac[e.ac];
       if (it.manual) { const set = L.acMode === 2 ? 1 : .5, heatPenalty = clamp(1.15 - Math.max(0, state.outTemp - 85) / 60, .7, 1); run(L, loc, it, -it.maxD * set * heatPenalty, set, -1); }
-      else if (base + hot > L.coolTo + .3) { const d = Math.min(base + hot - L.coolTo, it.maxD); run(L, loc, it, -d, d / it.maxD, -1); }
+      else if (base + hot > targets.cool + .3) { const d = Math.min(base + hot - targets.cool, it.maxD); run(L, loc, it, -d, d / it.maxD, -1); }
     }
   }
   out.temp = base;
@@ -1593,14 +1594,16 @@ function tintPacked(c, hex, t) { const [r, g, b] = unpack(c), [R2, G2, B2] = hex
 function invalidate(p) { runtime.sprites.delete(p.id); }
 
 const PlantArt = {
-  key(p) { return [p.stage, Math.round(p.height * 2), Math.floor(p.nodes * 2), p.training, p.pruned, p.staked ? 1 : 0, Math.round(p.water / 12), Math.round(p.health / 12), Math.round(p.burn * 4), p.pest.type ? Math.round(p.pest.lvl * 5) : 0, Math.round(p.mold * 5), Math.round(p.prog), Math.round(p.nutr / 20), p.lineId, p.sexKnown ? p.sex : '?', p.seeded ? 1 : 0, Math.round((p.stress || 0) / 25), p.dry ? Math.round(p.dry.prog * 6) + '.' + Math.round(p.dry.mold * 4) : ''].join('|'); },
+  key(p) { return [p.stage, Math.round(p.height * 2), Math.floor(p.nodes * 2), p.training, p.pruned, JSON.stringify(p.canopyHarvest || p.canopy || null), Math.round((p.density ?? .82)*100), p.staked ? 1 : 0, Math.round(p.water / 12), Math.round(p.health / 12), Math.round(p.burn * 4), p.pest.type ? Math.round(p.pest.lvl * 5) : 0, Math.round(p.mold * 5), Math.round(p.prog), Math.round(p.nutr / 20), p.lineId, p.sexKnown ? p.sex : '?', p.seeded ? 1 : 0, Math.round((p.stress || 0) / 25), p.dry ? Math.round(p.dry.prog * 6) + '.' + Math.round(p.dry.mold * 4) : ''].join('|'); },
   get(p) { const k = this.key(p); let c = runtime.sprites.get(p.id); if (!c || c.k !== k) { c = Object.assign({ k }, this.build(p)); runtime.sprites.set(p.id, c); } return c; },
 
   build(p) {
     const g = (typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)), lp = LEAF_PAL[g.leafKey] || LEAF_PAL.forest, bp = BUD_PAL[g.colorName] || BUD_PAL['Forest green'];
     const rng = mulberry32(p.seed), st = p.stage;
-    if (st === S.drying) return this.drying(p, g, lp, bp, rng);
-    if (st === S.finished) return p.dry ? this.drying(p, g, lp, bp, rng) : this.jar(p, bp);
+    const nightPigment = window.BagseedNightColor?.expression(p, g);
+    const dryBP = nightPigment?.strength ? { ...bp, bud: mix(bp.bud, nightPigment.hex, nightPigment.strength * .62), dark: mix(bp.dark, shade(nightPigment.hex, -.3), nightPigment.strength * .62) } : bp;
+    if (st === S.drying) return this.drying(p, g, lp, dryBP, rng);
+    if (st === S.finished) return p.dry ? this.drying(p, g, lp, dryBP, rng) : this.jar(p, dryBP);
     const Hpx = Math.max(3, Math.round(p.height * 2.1)), W = p._w || 104, H = Math.max(14, Hpx + 22), P = new Pix(W, H), cx = W >> 1, by = H - 1;
     // health / nutrition colour shifts
     const sick = clamp((55 - p.health) / 70, 0, .55);
@@ -1627,7 +1630,8 @@ const PlantArt = {
     const stemAt = t => [cx + Math.sin(t * 2.6 + phase) * (p.training === 'natural' ? 1.3 : .6) + lean * Math.pow(t, 1.4), by - t * Hpx];
     const grow = { seedling: .3, earlyveg: .45, veg: .75, matveg: .95 }[STAGES[st].k] || 1;
     const canopyY = topY + 2;
-    const lowCut = p.pruned ? Math.ceil(N * .4) : 0;
+    const canopy = window.BagseedCanopy, topScale = canopy?.topScale(p) ?? 1;
+    const lowCut = p.pruned || canopy?.read(p).cleaned ? Math.ceil(N * .4) : 0;
     const mkShoot = (x0, y0, x1, y1, n, main, side, iBase) => {
       const pts = [], nodes = [];
       const steps = Math.max(2, Math.round(Math.hypot(x1 - x0, y1 - y0)));
@@ -1702,6 +1706,7 @@ const PlantArt = {
       if (p.nutr < 25 && lowFrac > .4) { const t = (25 - p.nutr) / 30; lf = mix(lf, '#d8c25a', t); lt = mix(lt, '#efe49a', t); }
       if (fadeT) { const t = fadeT * clamp(lowFrac * 1.4, 0, 1); lf = mix(lf, bp.fade, t); dk = mix(dk, shade(bp.fade, -.35), t); lt = mix(lt, shade(bp.fade, .25), t); }
       if ((g.colorName === 'Purple' || g.colorName === 'Dark purple' || g.colorName === 'Lavender') && st >= S.midflower && nd.m < 2) { lf = mix(lf, bp.bud, .35); }
+      if (nightPigment?.strength) { const t = nightPigment.strength * .82; lf = mix(lf, nightPigment.hex, t); dk = mix(dk, shade(nightPigment.hex, -.35), t); lt = mix(lt, shade(nightPigment.hex, .3), t); }
       if (!sh.main) { dk = shade(dk, -.12); lf = shade(lf, -.08); }
       return [packCol(lf), packCol(dk), packCol(lt)];
     };
@@ -1716,6 +1721,7 @@ const PlantArt = {
       for (const sh of ordered) {
         for (const [ni, nd] of sh.nodes.entries()) {
           if (sh.main && nd.i <= lowCut) continue;
+          if (canopy?.removed(p,(by-nd.y)/Hpx,ni/(sh.nodes.length||1))) continue;
           if (!sh.main && ni % 2 === 1) continue;
           if (fadeT && nd.i < N * .35 && rng() < fadeT * .7) continue; // dropped leaves
           const blades = Math.min(bladesMax, 1 + 2 * Math.min(4, nd.m + (sh.main ? 0 : 1)));
@@ -1753,7 +1759,8 @@ const PlantArt = {
       const pistilAge = { 6: 0, 7: .08, 8: .35, 9: .7, 10: .92 }[st];
       const purpleShift = { 6: 0, 7: .25, 8: .65, 9: 1, 10: 1 }[st];
       let budHex = mix('#c8e59a', bp.bud, (g.colorName.includes('green') ? 1 : purpleShift) * (p.pheno.deep ? 1 : .92)); if (MU === 'ember') budHex = mix(budHex, '#d8705a', .12 + .25 * purpleShift); if (MU === 'ink') budHex = mix(budHex, '#4a3a6a', .3 * purpleShift);
-      const budDark = mix('#7ba84a', bp.dark, purpleShift);
+      let budDark = mix('#7ba84a', bp.dark, purpleShift);
+      if (nightPigment?.strength) { budHex = mix(budHex, nightPigment.hex, nightPigment.strength * .62); budDark = mix(budDark, shade(nightPigment.hex, -.3), nightPigment.strength * .62); }
       const pist = packCol(mix('#f6f2e4', '#e07a30', pistilAge)), sugar = packCol(shade(leafHex, -.1));
       const bC = packCol(budHex), bD = packCol(budDark), frost = packCol('#f6fbff');
       const base = (1.2 + p.yieldPot * 1.1 * (g.yield || 1) * p.pheno.y) * fpr;
@@ -1774,9 +1781,12 @@ const PlantArt = {
         const [tx, ty] = sh.tip;
         if (sh.main) {
           const len = Math.max(2, Math.round(Hpx * .32 * fpr));
-          for (let k = len; k >= 0; k--) { const idx = Math.max(0, sh.pts.length - 1 - k); const [x, y] = sh.pts[idx]; bud(x, y, base * (1.15 - k / len * .45)); }
-          for (const nd of sh.nodes) if (nd.m >= 1 && nd.m <= 4) bud(nd.x, nd.y, base * .55);
-        } else { bud(tx, ty, base * .85); if (sh.nodes.length > 1) bud(sh.nodes[0].x, sh.nodes[0].y, base * .4); }
+          for (let k = len; k >= 0; k--) { const idx = Math.max(0, sh.pts.length - 1 - k); const [x, y] = sh.pts[idx]; bud(x, y, base * topScale * (1.15 - k / len * .45)); }
+          for (const nd of sh.nodes) if (nd.y > ty + Hpx*.32*fpr && !canopy?.removed(p,(by-nd.y)/Hpx)) bud(nd.x, nd.y, base * (canopy?.budScale((by-nd.y)/Hpx,.5) ?? .55) * .7);
+        } else {
+          if (!canopy?.removed(p,(by-ty)/Hpx)) bud(tx, ty, base * .85 * topScale);
+          for (const [i,nd] of sh.nodes.entries()) { const at=(i+1)/(sh.nodes.length+1); if (!canopy?.removed(p,(by-nd.y)/Hpx,at)) bud(nd.x,nd.y,base * .65 * (canopy?.budScale((by-nd.y)/Hpx,at) ?? .5)); }
+        }
         if (st === S.transition) for (let k = 0; k < 4; k++) P.set(tx + (rng() - .5) * 3, ty - rng() * 2, pist);
       }
     }
@@ -3120,7 +3130,7 @@ const MsgFX = {
 /* ============================ SOCIAL (Sprout) ======================= */
 function snapPlant(p) {
   const L = state.locations[p.loc];
-  return { id: 'snap_' + uid(), lineId: p.lineId, seed: p.seed, stage: p.stage, height: p.height, nodes: p.nodes, training: p.training, pruned: p.pruned, staked: p.staked, water: p.water, health: p.health, burn: p.burn, pest: { type: p.pest.type, lvl: p.pest.lvl }, mold: p.mold, prog: p.prog, nutr: p.nutr, yieldPot: p.yieldPot, pheno: p.pheno, name: p.name, loc: p.loc, lightTier: L.equip.light, organic: p.organic, plantId: p.id };
+  return { id: 'snap_' + uid(), lineId: p.lineId, seed: p.seed, stage: p.stage, height: p.height, nodes: p.nodes, training: p.training, canopy: p.canopy ? JSON.parse(JSON.stringify(p.canopy)) : undefined, canopyHarvest: p.canopyHarvest ? JSON.parse(JSON.stringify(p.canopyHarvest)) : undefined, density: p.density, pruned: p.pruned, staked: p.staked, water: p.water, health: p.health, burn: p.burn, pest: { type: p.pest.type, lvl: p.pest.lvl }, mold: p.mold, prog: p.prog, nutr: p.nutr, yieldPot: p.yieldPot, pheno: p.pheno, name: p.name, loc: p.loc, lightTier: L.equip.light, organic: p.organic, plantId: p.id };
 }
 const TAGS = ['#bagseed', '#closetgrow', '#medicalgarden', '#plantparent', '#growlight', '#organic', '#autoflower', '#photoperiod', '#genetics', '#macro', '#cozy', '#phenohunt'];
 const Social = {
@@ -4107,8 +4117,8 @@ const Panels = {
       if (male) { if (!p.keepMale) add('keepmale', 'Keep for future breeding', 'He stays. His pollen will seed any flowering female sharing this space.', true); add('remove', p.keepMale ? 'Retire male' : 'Remove plant', p.keepMale && st >= S.midflower ? 'Collect a pollen vial for future breeding, then compost him.' : 'Pull him before he can pollinate anything. 4 energy', true, 'danger'); }
       add('water', 'Water', `${state.gear.water === 3 ? 'Drip handles mornings, but you can hand-water' : esc(wt.name)} · ${state.gear.water === 3 ? 4 : wt.energy} energy`, true, p.water < 25 ? 'primary' : '');
       add('feed', 'Feed', I.jug ? `Use your ${esc(I.jug.line)} mix (${I.jug.uses} left)${I.jug.ready > state.day ? ' · still brewing' : ''} · 6 energy` : 'Mix nutrients at the workbench first', !!I.jug && I.jug.ready <= state.day && st >= S.seedling);
-      if (st >= S.earlyveg && st <= S.midflower) add('prune', 'Prune lower growth', p.pruned ? 'Already cleaned up underneath' : 'Remove weak lower shoots. Better airflow. Some stress. 8 energy', !p.pruned);
-      if (st >= S.veg && st <= S.midflower) add('defol', 'Shape canopy', 'Thin leaves for light and airflow. Stressful for autos. 10 energy', (p.lastDefol || -9) + 3 <= state.day);
+      if (st >= S.earlyveg && st <= S.midflower) add('prune', 'Prune lower growth', p.pruned ? 'Already cleaned up underneath' : 'Remove weak lower shoots and popcorn bud sites. Focus growth on top flowers. Some stress. 8 energy', !p.pruned);
+      if (st >= S.veg && st <= S.midflower) add('defol', 'Shape canopy', 'Thin lower leaves and popcorn bud sites; focus growth on top flowers. Stressful for autos. 10 energy', (p.lastDefol || -9) + 3 <= state.day);
       if (st >= S.earlyflower && !male) add('stake', 'Support branches', p.staked ? 'Already staked' : `Bamboo stakes (${I.stakes} left) · 6 energy`, !p.staked && I.stakes > 0);
       if (st >= S.earlyveg && st <= S.matveg) { const autoKnown = g.lifecycle === 'auto' && g.revealed.lifecycle, msg = 'Autoflower genetics can\'t be preserved through this cutting system.'; add('cut', 'Take a cutting', autoKnown ? msg : p.cutting ? 'Already took one' : `Preserve this exact plant as a clone in storage. 8 energy${g.bag ? ' · keeps the bag-seed line alive' : ''}`, !autoKnown && !p.cutting, '', autoKnown ? msg : ''); }
       if (g.lifecycle === 'photo' && st >= S.earlyveg && st <= S.matveg) add('flip', L.schedule === 'flower' ? 'Lights already on 12/12' : 'Flip lights to 12/12', g.revealed.lifecycle ? 'Longer nights trigger flowering in photoperiods. Affects every plant in this space.' : 'You don\'t know her lifecycle yet. Flipping now is a gamble.', L.schedule !== 'flower');
@@ -4428,8 +4438,8 @@ function doCare(a) {
   switch (a) {
     case 'water': { const wt = EQ.water[state.gear.water], e = state.gear.water === 3 ? 4 : wt.energy; if (!spend(e, 10)) return; if (p.water > 85) { p.root -= 6; think('Already soggy... maybe that was too much.'); } p.water = clamp(p.water + (wt.add || 45), 0, 100); state.stats.waterings++; Sfx.water(); if (!state.hints.water1) { state.hints.water1 = 1; think('Glug glug. Water when the top of the soil dries, not on a schedule.', 4000); } break; }
     case 'feed': { const j = I.jug; if (!j || !spend(6, 10)) return; p.nutr = clamp(p.nutr + 32 + j.strDiff * 4, 0, 100); if (j.strDiff > 2.5) { p.nutr = 100; p.stress += 15; think('Uh oh. That mix was way too strong.'); } else think(j.q > .7 ? 'She drinks it up.' : 'Hope that was okay...'); p.health = clamp(p.health + (j.q - .5) * 10, 1, 100); if (j.line === 'synthetic') p.organic = false; else { p.root = clamp(p.root + 4, 0, 100); state.rep.organic += .2; } j.uses--; if (j.uses <= 0) I.jug = null; Sfx.water(); break; }
-    case 'prune': if (!spend(8, 30)) return; p.pruned = 1; p.density = Math.max(0, p.density - .15); p.stress += auto ? 12 : 6; state.rep.cultivation += .3; break;
-    case 'defol': if (!spend(10, 30)) return; p.density = Math.max(0, p.density - .2); p.stress += auto ? 14 : 7; p.mold = Math.max(0, p.mold - .05); p.lastDefol = state.day; break;
+    case 'prune': if (p.pruned || p.stage < S.earlyveg || p.stage > S.midflower || !spend(8, 30)) return; p.canopy = window.BagseedCanopy?.care(p); p.pruned = 1; p.density = Math.max(0, p.density - .15); p.stress += auto ? 12 : 6; state.rep.cultivation += .3; break;
+    case 'defol': if (p.stage < S.veg || p.stage > S.midflower || (p.lastDefol ?? -9) + 3 > state.day || !spend(10, 30)) return; p.canopy = window.BagseedCanopy?.care(p); p.density = Math.max(0, p.density - .2); p.stress += auto ? 14 : 7; p.mold = Math.max(0, p.mold - .05); p.lastDefol = state.day; break;
     case 'stake': if (!I.stakes || !spend(6, 20)) return; I.stakes--; p.staked = true; p.yieldPot += .08; break;
     case 'cut': if (g.lifecycle === 'auto') { if (!g.revealed.lifecycle) reveal(g, 'lifecycle', true); toast('Autoflower genetics can\'t be preserved through this cutting system.', 'warn'); think('The cutting won\'t take. She runs on her own internal clock: an autoflower.'); renderPanel(); return; }
       if (!spend(8, 20)) return; p.cutting = true; addSeed(p.lineId, 'your own ' + p.name, 'cutting', Object.assign({}, p.pheno, { sex: p.sex, sexKnown: p.sexKnown }), p.seedType); p.stress += 5; if (g.bag && g.lifecycle === 'photo') unlock('stillgotit'); notify(`Cutting of ${p.name} is rooting in your ${EQ.storage[state.gear.storage].name}.`); break;
@@ -9727,23 +9737,24 @@ const SproutPerf = {
     const cons = recentDays >= 2 ? 1.1 : recentDays === 1 ? 1.04 : so.posts.length && state.day - so.posts[0].day > 7 ? .95 : 1;
     const friends = Object.entries(so.rel || {}).filter(([, r]) => r.rel >= 3).length + Object.values(state.npc.breeders).filter(b => b.friend >= 3).length;
     const infl = 1 + Math.min(.12, friends * .02);
-    return { q, timing: Math.pow(tm.mul, .85), tm, rel, topic, trend: tr, nov, fit, cred, cons, infl };
+    const colorBonus = window.BagseedNightColor?.socialBonus(snap, PlantTraits115.for(snap), o) || 0;
+    return { q, timing: Math.pow(tm.mul, .85), tm, rel, topic, trend: tr, nov, fit, cred, cons, infl, colorBonus };
   },
   perf(F, rand = 1) { return F.q * F.timing * F.rel * F.nov * F.fit * F.cred * F.cons * F.infl * rand; },
-  viralChance(perf) { return clamp((perf - 1.2) * .42, .01, .45); },
+  viralChance(perf, colorBonus = 0) { const extra = Number.isFinite(colorBonus) ? clamp(colorBonus, 0, .08) : 0; return Math.min(.45, clamp((perf - 1.2) * .42, .01, .45) + extra); },
   html(snap, o) {
-    const F = this.factors(snap, o), P = this.perf(F), vc = this.viralChance(P);
+    const F = this.factors(snap, o), P = this.perf(F), vc = this.viralChance(P, F.colorBonus), colorLift = vc - this.viralChance(P);
     const row = (lab, v, tip) => `<div class="ff"><span>${lab}</span><b style="color:${v > 1.03 ? 'var(--leaf)' : v < .97 ? 'var(--danger)' : 'var(--muted)'}">${v > 1.03 ? '▲' : v < .97 ? '▼' : '■'} ×${v.toFixed(2)}</b><span class="muted">${tip}</span></div>`;
     return `<div class="card forecast"><h3>Post forecast</h3>${bar('Expected', P * 50, 100, P > 1.4 ? '#ffc15a' : P > 1 ? '#a6e05a' : '#7fd4ff', P > 1.6 ? 'Great' : P > 1.2 ? 'Good' : P > .85 ? 'Okay' : 'Quiet')}
-      ${row('Photo quality', F.q, 'camera, stage, framing, filter, caption, tags')}${row('Timing', F.timing, `~${F.tm.online} followers online`)}${row('Relevance', F.rel, `trending: ${F.trend.tag}${F.topic === F.trend.topic ? ' ✓' : ''}`)}${row('Novelty', F.nov, F.nov < 1 ? 'you posted this plant recently' : 'fresh')}${row('Audience fit', F.fit, 'who follows you vs who this post appeals to')}${row('Credibility', F.cred, 'reputation + post history')}${row('Consistency', F.cons, 'posting regularly (not spamming)')}${row('Community', F.infl, 'friendly creators & breeders')}
-      <div class="small muted">Breakout chance ~${Math.round(vc * 100)}% (bounded random swing ±12%). Viral is a bonus, never required.</div></div>`;
+      ${row('Photo quality', F.q, 'camera, stage, framing, filter, caption, tags')}<div class="ff"><span>Color appeal</span><b style="color:${colorLift > 0 ? 'var(--leaf)' : 'var(--muted)'}">+${(colorLift * 100).toFixed(1)} pts</b><span class="muted">${o.filter === 'mono' ? 'monochrome hides the plant colors' : F.colorBonus ? 'captured cool-night colors · within the viral chance limit' : 'no additional cool-night color captured'}</span></div>${row('Timing', F.timing, `~${F.tm.online} followers online`)}${row('Relevance', F.rel, `trending: ${F.trend.tag}${F.topic === F.trend.topic ? ' ✓' : ''}`)}${row('Novelty', F.nov, F.nov < 1 ? 'you posted this plant recently' : 'fresh')}${row('Audience fit', F.fit, 'who follows you vs who this post appeals to')}${row('Credibility', F.cred, 'reputation + post history')}${row('Consistency', F.cons, 'posting regularly (not spamming)')}${row('Community', F.infl, 'friendly creators & breeders')}
+      <div class="small muted">Viral chance ~${Math.round(vc * 100)}% (bounded random swing ±12%). Viral is a bonus, never required.</div></div>`;
   }
 };
 Social.publish = function (snap, o) {
   const g = GEN(snap.lineId), sc = this.score(snap, o), F = SproutPerf.factors(snap, o), perf = SproutPerf.perf(F, rnd(.88, 1.12));
   const w0 = this.weights(snap, g, o), tm = F.tm;
   let likes = Math.round((7 + state.social.followers * .18) * perf * rnd(.9, 1.1)), fol = Math.round(likes * .24 * rnd(.8, 1.2) + perf * 2.2);
-  const viral = chance(SproutPerf.viralChance(perf)), breakout = !viral && perf > 1.5 && chance(.5);
+  const viral = chance(SproutPerf.viralChance(perf, F.colorBonus)), breakout = !viral && perf > 1.5 && chance(.5);
   if (viral) { likes = Math.round(likes * rnd(6, 11) + 120); fol = Math.round(fol * rnd(5, 9) + 60); }
   else if (breakout) { likes = Math.round(likes * rnd(1.8, 2.6)); fol = Math.round(fol * rnd(1.6, 2.2)); }
   const sponsor = state.social.sponsor && state.social.sponsor.accepted;

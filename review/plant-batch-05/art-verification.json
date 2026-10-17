@@ -1,0 +1,45 @@
+{
+  "counts": [
+    {
+      "strain": "gasstation",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 48,
+      "leaves": 125,
+      "flowers": 91
+    },
+    {
+      "strain": "boglantern-lavender",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 62,
+      "leaves": 137,
+      "flowers": 91
+    },
+    {
+      "strain": "frogprince-red",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 48,
+      "leaves": 121,
+      "flowers": 91
+    },
+    {
+      "treatment": "natural",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 48,
+      "leaves": 125,
+      "flowers": 91
+    },
+    {
+      "treatment": "shaped",
+      "joints": 13,
+      "primaryBranches": 12,
+      "secondaryBranches": 18,
+      "leaves": 65,
+      "flowers": 49
+    }
+  ],
+  "errors": []
+}

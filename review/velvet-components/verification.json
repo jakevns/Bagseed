@@ -1,0 +1,68 @@
+{
+  "status": "approved-component-prototype",
+  "identity": {
+    "schemaVersion": 1,
+    "profile": "velvet@1",
+    "libraryRevision": "plant-parts-library-2",
+    "seed": "velvet-phenotype-study",
+    "traits": {
+      "leafShape": "broad",
+      "leafKey": "forest",
+      "colorName": "Red accents",
+      "branching": 1
+    },
+    "parts": {
+      "seed": "velvet.seed@1",
+      "radicle": "velvet.radicle@1",
+      "cotyledon": "velvet.cotyledon@1",
+      "singleLeaf": "velvet.singleLeaf@1",
+      "threeLeaf": "velvet.threeLeaf@1",
+      "fiveLeaf": "velvet.fiveLeaf@1",
+      "sevenLeaf": "velvet.sevenLeaf@1",
+      "sugarLeaf": "velvet.sugarLeaf@1",
+      "stem": "velvet.stem@1",
+      "node": "velvet.node@1",
+      "femaleEarly": "velvet.femaleEarly@1",
+      "femaleMid": "velvet.femaleMid@1",
+      "femaleLate": "velvet.femaleLate@1",
+      "maleClosed": "velvet.maleClosed@1",
+      "maleOpen": "velvet.maleOpen@1"
+    }
+  },
+  "measurements": [
+    {
+      "heightInches": 50,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 52,
+        "leaves": 129,
+        "flowers": 0
+      },
+      "measuredHeightInches": 49.875
+    },
+    {
+      "heightInches": 90,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 136,
+        "leaves": 239,
+        "flowers": 0
+      },
+      "measuredHeightInches": 89.875
+    }
+  ],
+  "finish": {
+    "amount": 1,
+    "palette": "red",
+    "rgb": [
+      174,
+      68,
+      48
+    ]
+  },
+  "animationFrames": 120,
+  "errors": [],
+  "productionRendererUnchanged": true
+}

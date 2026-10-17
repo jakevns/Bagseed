@@ -1,0 +1,69 @@
+{
+  "status": "approved-component-prototype",
+  "identity": {
+    "schemaVersion": 1,
+    "profile": "halfmoon@1",
+    "libraryRevision": "plant-parts-library-7",
+    "seed": "halfmoon-phenotype-study",
+    "traits": {
+      "leafShape": "narrow",
+      "leafKey": "lime",
+      "colorName": "Lime green",
+      "branching": 0.95
+    },
+    "parts": {
+      "seed": "halfmoon.seed@1",
+      "radicle": "halfmoon.radicle@1",
+      "cotyledon": "halfmoon.cotyledon@1",
+      "singleLeaf": "halfmoon.singleLeaf@1",
+      "threeLeaf": "halfmoon.threeLeaf@1",
+      "fiveLeaf": "halfmoon.fiveLeaf@1",
+      "sevenLeaf": "halfmoon.sevenLeaf@1",
+      "sugarLeaf": "halfmoon.sugarLeaf@1",
+      "stem": "halfmoon.stem@1",
+      "node": "halfmoon.node@1",
+      "femaleEarly": "halfmoon.femaleEarly@1",
+      "femaleMid": "halfmoon.femaleMid@1",
+      "femaleLate": "halfmoon.femaleLate@1",
+      "maleClosed": "halfmoon.maleClosed@1",
+      "maleOpen": "halfmoon.maleOpen@1"
+    }
+  },
+  "measurements": [
+    {
+      "heightInches": 50,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 52,
+        "leaves": 146,
+        "flowers": 0
+      },
+      "measuredHeightInches": 49.875
+    },
+    {
+      "heightInches": 90,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 132,
+        "leaves": 274,
+        "flowers": 0
+      },
+      "measuredHeightInches": 90
+    }
+  ],
+  "finish": {
+    "amount": 1,
+    "palette": "gold",
+    "rgb": [
+      218,
+      185,
+      65
+    ]
+  },
+  "coolStudies": [],
+  "animationFrames": 120,
+  "errors": [],
+  "productionRendererUnchanged": true
+}

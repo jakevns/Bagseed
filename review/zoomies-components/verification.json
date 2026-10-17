@@ -1,0 +1,69 @@
+{
+  "status": "approved-component-prototype",
+  "identity": {
+    "schemaVersion": 1,
+    "profile": "zoomies@1",
+    "libraryRevision": "plant-parts-library-7",
+    "seed": "zoomies-phenotype-study",
+    "traits": {
+      "leafShape": "hybrid",
+      "leafKey": "lime",
+      "colorName": "Lime green",
+      "branching": 0.9
+    },
+    "parts": {
+      "seed": "zoomies.seed@1",
+      "radicle": "zoomies.radicle@1",
+      "cotyledon": "zoomies.cotyledon@1",
+      "singleLeaf": "zoomies.singleLeaf@1",
+      "threeLeaf": "zoomies.threeLeaf@1",
+      "fiveLeaf": "zoomies.fiveLeaf@1",
+      "sevenLeaf": "zoomies.sevenLeaf@1",
+      "sugarLeaf": "zoomies.sugarLeaf@1",
+      "stem": "zoomies.stem@1",
+      "node": "zoomies.node@1",
+      "femaleEarly": "zoomies.femaleEarly@1",
+      "femaleMid": "zoomies.femaleMid@1",
+      "femaleLate": "zoomies.femaleLate@1",
+      "maleClosed": "zoomies.maleClosed@1",
+      "maleOpen": "zoomies.maleOpen@1"
+    }
+  },
+  "measurements": [
+    {
+      "heightInches": 50,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 48,
+        "leaves": 126,
+        "flowers": 0
+      },
+      "measuredHeightInches": 49.875
+    },
+    {
+      "heightInches": 90,
+      "counts": {
+        "joints": 13,
+        "primaryBranches": 18,
+        "secondaryBranches": 124,
+        "leaves": 229,
+        "flowers": 0
+      },
+      "measuredHeightInches": 89.875
+    }
+  ],
+  "finish": {
+    "amount": 1,
+    "palette": "gold",
+    "rgb": [
+      218,
+      185,
+      65
+    ]
+  },
+  "coolStudies": [],
+  "animationFrames": 120,
+  "errors": [],
+  "productionRendererUnchanged": true
+}

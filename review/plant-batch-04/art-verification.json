@@ -1,0 +1,45 @@
+{
+  "counts": [
+    {
+      "strain": "boglantern",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 64,
+      "leaves": 155,
+      "flowers": 91
+    },
+    {
+      "strain": "frogprince",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 58,
+      "leaves": 149,
+      "flowers": 91
+    },
+    {
+      "strain": "nightshift",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 62,
+      "leaves": 146,
+      "flowers": 91
+    },
+    {
+      "treatment": "natural",
+      "joints": 13,
+      "primaryBranches": 18,
+      "secondaryBranches": 64,
+      "leaves": 155,
+      "flowers": 91
+    },
+    {
+      "treatment": "shaped",
+      "joints": 13,
+      "primaryBranches": 12,
+      "secondaryBranches": 24,
+      "leaves": 77,
+      "flowers": 49
+    }
+  ],
+  "errors": []
+}

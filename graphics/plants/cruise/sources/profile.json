@@ -1,0 +1,22 @@
+{
+  "id": "cruise",
+  "name": "Cruise Control Auto",
+  "shortName": "Cruise Control",
+  "apiName": "BagseedCruiseGrowth",
+  "revision": "cruise-components-1",
+  "libraryRevision": "plant-parts-library-8",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "blue",
+    "colorName": "Blue-green",
+    "branching": 0.95
+  },
+  "growthSubtitle": "One connected phenotype \u00b7 Sea-glass hybrid foliage \u2192 ochre senescence with receptive cool-night color",
+  "finishSubtitle": "Final-week color study \u00b7 Natural ochre senescence",
+  "finishCaption": "Ochre fan leaves \u00b7 Mint-blue flowers \u00b7 Apricot pistils",
+  "finishPalette": "ochre",
+  "windCaption": "Late flower / ochre autumn fade",
+  "coolNights": true,
+  "coolPalette": "blue violet",
+  "coolColorLabel": "blue"
+}

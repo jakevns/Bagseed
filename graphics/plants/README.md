@@ -35,7 +35,38 @@ const library = require('./sources/library.json');
 const identity = api.createIdentity(plant, expressedTraits, library);
 // Persist once at a successful lifecycle event; not during rendering.
 const status = api.readiness(identity, library);
-// Currently false: Porchlight organ artwork has not been commissioned/approved.
+// Currently false: full care/training integration is unfinished; library entries remain drafts.
 ```
 
 Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-only behavior, clone and save stability, offspring identities, library extensions, incompatible art, approval requirements and newly registered phenotype traits.
+
+## Second strain review kit
+
+`velvet@1` adds Velvet Underbrush using new painted organ assets and the same connected model, wind and phenotype-aware senescence renderer. The expressed `branching` trait is optional and does not change existing pinned identities. Porchlight approval remains recorded separately; Velvet samples are approved as a prototype checkpoint in `review/velvet-components/`. Neither kit replaces the native game renderer yet.
+
+## Third strain review kit
+
+`pixelpunch@1` adds the hybrid Pixel Punch component family, with new blue-green fans and purple flowers. Growth, wind, natural senescence, cool-night pigmentation and Sprout color appeal reuse the same shared systems. Native catalog traits and review captions are data in `pixelpunch/sources/profile.json`; the existing Porchlight/Velvet profiles remain available and pinned. Samples are approved as a prototype checkpoint under `review/pixelpunch-components/`; full painted-renderer integration remains pending.
+
+## Fourth strain review kit
+
+`cottoncandy@1` adds Cotton Candy CRT's hybrid organ family: lime-green healthy leaves, blush flowers, rose-pink senescence and its existing genotype's cool-night response. It uses the same connected growth, wind, climate and Sprout color systems; earlier profiles remain pinned. Review samples are approved as a prototype checkpoint in `review/cottoncandy-components/`. Painted-renderer integration remains pending.
+
+## Fifth strain review kit
+
+`moonberry@1` adds Moonberry's hybrid organ family: sage-blue healthy fans, pale lilac flowers, lavender senescence and its existing genotype's cool-night response. It reuses the shared growth, wind, climate and Sprout color systems, keeping earlier appearance profiles pinned. Review samples are approved in `review/moonberry-components/`; full painted-renderer integration remains pending.
+
+
+## Sixth through eighth strain review batch
+
+`halfmoon@1`, `zoomies@1` and `cruise@1` add Halfmoon CBD, Zoomies Auto and Cruise Control Auto. Halfmoon is the first narrow-leaf kit; the autos supply lime and blue-green hybrid families. All use the shared connected growth, graded branch buds, canopy cleanup, wind and finishing-color systems. Halfmoon and Zoomies retain golden senescence without a cool-night color bonus; Cruise Control's existing Blue-green genotype can express its existing blue-violet cool-night palette. Earlier parts and saved identities remain pinned. Review samples are approved under their respective `review/*-components/` folders, with a combined portrait in `review/plant-batch-03/`. Full painted-renderer integration remains pending.
+
+
+## Ninth through eleventh strain review batch
+
+`boglantern@1`, `frogprince@1` and `nightshift@1` add Bog Lantern, Frog Prince and Night Shift. Bog Lantern and Frog Prince are experimental native lines: these samples show representative narrow forest/red and broad lime/purple phenotypes, without freezing their per-save genetics. Their new parts enforce compatible leaf shape, leaf palette and flower palette; unsupported expressions require future compatible parts rather than a silent substitution. Night Shift follows its fixed broad forest/Dark purple catalog identity. All three reuse the shared connected growth, popcorn buds, canopy cleanup, wind, senescence and genotype-gated cool-night color systems. Earlier eight profiles and their saved identities remain pinned. Review samples are approved under the respective `review/*-components/` folders and `review/plant-batch-04/`. Full painted-renderer integration remains pending.
+
+
+## Final named strain and additional experimental profiles
+
+`gasstation@1` completes component-kit coverage of all 12 named native catalog strains with narrow blue-green foliage, mint-blue flower spears and ochre senescence. At the user's request, `boglantern-lavender@1` and `frogprince-red@1` add Lavender Marsh and Copper Reed phenotype families of the existing Bog Lantern and Frog Prince lines. These are extra profiles, not new native strains. `lineId` retains the actual parent line, and `registerAsDefault: false` preserves the earlier default profiles. Existing saved plant/clone identities stay pinned. The profiles enforce compatible expressed foliage and flower palettes and can be selected explicitly through the existing identity helper's `profile` option. Native automatic phenotype selection and full painted-renderer integration remain pending. All three kits are approved in their review folders and `review/plant-batch-05/`.

@@ -1,0 +1,230 @@
+{
+  "simulation": {
+    "red": {
+      "loc": "closet",
+      "lastStamp": 147300,
+      "wasLight": false,
+      "daySum": 924,
+      "dayN": 12,
+      "hours": 24,
+      "drop": 10,
+      "qualifying": true,
+      "dayTemp": 77,
+      "lastLight": 146580
+    },
+    "green": {
+      "loc": "tent2",
+      "lastStamp": 147300,
+      "wasLight": false,
+      "daySum": 885.5999999999998,
+      "dayN": 12,
+      "hours": 0,
+      "drop": 8.299999999999983,
+      "qualifying": false,
+      "dayTemp": 73.79999999999998,
+      "lastLight": 146580
+    },
+    "expression": {
+      "capable": true,
+      "strength": 0.85,
+      "palette": "wine red",
+      "hex": "#792c45",
+      "rgb": [
+        121,
+        44,
+        69
+      ]
+    },
+    "records": [
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 108
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 108
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 108
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 108
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 108
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 70
+      },
+      {
+        "temp": 67,
+        "drop": 10,
+        "qualifying": true,
+        "watts": 108
+      }
+    ],
+    "nativeChanged": true,
+    "dryingChanged": true,
+    "greenUnchanged": true,
+    "cacheChanged": true,
+    "snapshot": true
+  },
+  "guards": {
+    "denied": true,
+    "mixed": false,
+    "off": false,
+    "outage": 0,
+    "missing": false,
+    "drying": false,
+    "normal": {
+      "heat": 64,
+      "cool": 67,
+      "night": true
+    },
+    "eight": {
+      "heat": 66,
+      "cool": 69,
+      "night": true
+    },
+    "ref": 77
+  },
+  "saveReload": true,
+  "sprout": {
+    "bonuses": [
+      0,
+      0.02,
+      0.08
+    ],
+    "odds": [
+      0.126,
+      0.146,
+      0.20600000000000002
+    ],
+    "mono": 0,
+    "cap": 0.45,
+    "expected": 0.14081837341939213,
+    "rolled": 0.14081837341939213,
+    "forecastHasColor": true,
+    "snapshotStable": true
+  },
+  "errors": [],
+  "status": "approved-night-cooling-and-sprout-colors"
+}
