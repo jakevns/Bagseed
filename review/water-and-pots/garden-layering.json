@@ -1,0 +1,10 @@
+{
+  "cases": 12,
+  "protectedPixels": 60,
+  "eligibleSpecies": 132,
+  "speciesStagePotRenders": 1584,
+  "entryPoint": "public/index.html",
+  "savedCropsUnchanged": true,
+  "gardenCareTargetsPreserved": true,
+  "errors": []
+}
