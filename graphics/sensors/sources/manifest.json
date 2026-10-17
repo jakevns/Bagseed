@@ -1,0 +1,99 @@
+{
+  "revision": "sensors-1",
+  "status": "proposal",
+  "path": "assets/sensors-atlas.png",
+  "sha256": "a97601e9b9010b94d46efb08266ab1cea99a334ab340934ffbc9b91003c7e0fa",
+  "size": [
+    1447,
+    1087
+  ],
+  "runtime": {
+    "path": "assets/sensors-atlas.webp",
+    "sha256": "016134ad78b990991f8cefd69fcb32a4d54d7687f75980b6db5574461937cbe7",
+    "publicPath": "assets/sensors/sensors-016134ad78b9.webp"
+  },
+  "tiers": {
+    "0": {
+      "name": "The Back of Your Hand",
+      "price": 0,
+      "width": 9,
+      "height": 8,
+      "crop": [
+        206,
+        71,
+        441,
+        432
+      ]
+    },
+    "1": {
+      "name": "Probably-A-Thermometer",
+      "price": 6.99,
+      "width": 9,
+      "height": 9,
+      "crop": [
+        819,
+        70,
+        480,
+        441
+      ],
+      "dial": [
+        1060,
+        299,
+        115
+      ],
+      "reading": [
+        968,
+        350,
+        184,
+        62
+      ]
+    },
+    "2": {
+      "name": "TrueRead Hygrometer",
+      "price": 24.99,
+      "width": 14,
+      "height": 10,
+      "crop": [
+        82,
+        572,
+        617,
+        426
+      ],
+      "display": [
+        181,
+        697,
+        419,
+        145
+      ]
+    },
+    "3": {
+      "name": "Canopy Sentinel",
+      "price": 89,
+      "width": 18,
+      "height": 14,
+      "crop": [
+        765,
+        554,
+        632,
+        450
+      ],
+      "display": [
+        915,
+        656,
+        333,
+        104
+      ],
+      "graph": [
+        915,
+        833,
+        333,
+        44
+      ],
+      "led": [
+        999,
+        941,
+        15
+      ]
+    }
+  }
+}

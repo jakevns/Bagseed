@@ -1,0 +1,9 @@
+# Thermometer and sensor artwork samples
+
+Awaiting user artwork approval. Includes the free paper note for the existing hand-reading option, Probably-A-Thermometer ($6.99), TrueRead Hygrometer ($24.99), and Canopy Sentinel ($89). No new products or changes to prices, noise, failure chances, installation, controls or climate calculations.
+
+The unchanged generated PNG is retained in assets. The fingerprinted runtime WebP has identical decoded RGBA pixels; the compiler checks source/runtime/public hashes and crop bounds. Sensor decoding participates in the startup readiness gate.
+
+The renderer replaces only Gear.sensor and its store/inventory/delivery icon. It retains the exact original 9×8, 9×9, 14×10 and 18×14 footprints. The existing approved exterior mounting code, approach positions, paper option and adjacent brain controller are unchanged. All four designs remain visible with zipped doors. The paper has no invented readings. The analog needle and numeric temperature use the supplied environment. Digital devices show temperature and humidity. The smart sensor plots the existing saved climate log, without generating history or advancing the simulation. Rendering never samples game RNG.
+
+Run `npm run build:bedroom` and `npm run check`; generate actual public/index.html captures with `node tools/preview-sensors.cjs`. The preview validates all 32 combinations of four designs, four tents and open/closed doors; exact exterior anchors and footprints; adjacent controller targets; live readings and saved-history rendering; unchanged model/catalog; matching store cards and phone display. `node --test --test-concurrency=1 tests/sensors.test.cjs tests/starter-tent.test.cjs` checks real purchases, delivery, installation, save/reload, missing-art startup handling and existing tent layering/zipper behavior.

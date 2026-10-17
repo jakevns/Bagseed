@@ -1,0 +1,9 @@
+{
+  "status": "local samples awaiting artwork approval",
+  "entryPoint": "public/index.html",
+  "buildAndSourceChecks": "passed",
+  "mountAndControllerModuleUnchanged": true,
+  "characterRevisionPreserved": "custom-walk-wardrobe-eight-side-v5",
+  "sensorPurchaseDeliverySaveReload": "passed",
+  "sourceAndRuntimeRGBAIdentical": true
+}

@@ -1,0 +1,16 @@
+{
+  "status": "awaiting-artwork-approval",
+  "entryPoint": "public/index.html",
+  "paperIncluded": true,
+  "purchasedTiers": 3,
+  "openClosedSensorCases": 32,
+  "adjacentControllerCases": 32,
+  "exactApprovedMounts": true,
+  "liveAnalogTemperature": true,
+  "liveDigitalTemperatureAndHumidity": true,
+  "savedHistoryGraph": true,
+  "paperRemainsFree": true,
+  "catalogAndPlantsPreserved": true,
+  "matchingStoreAndPhoneArtwork": true,
+  "errors": []
+}
