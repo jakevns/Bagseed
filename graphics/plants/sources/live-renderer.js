@@ -24,11 +24,13 @@
   // Shape and tissue pattern are independent. Retain single-blade precedence
   // for Monophylla; webbing wins over dissected foliage in a combined plant.
   const shape=arts.includes('mono')?'monophylla':arts.includes('duck')?'ducksfoot':arts.includes('freak')?'freakshow':arts.includes('fern')?'fernfrond':null;
-  const painted=MUTATIONS[shape||'']||(arts.includes('variegated')?MUTATIONS.moonmarble:arts.includes('albino')?MUTATIONS.snowtip:arts.includes('gold')?MUTATIONS.goldleaf:arts.includes('ink')?MUTATIONS.inkleaf:arts.includes('ember')?MUTATIONS.ember:arts.includes('pink')?MUTATIONS.pinkpistil:null);
+  const painted=MUTATIONS[shape||'']||(arts.includes('variegated')?MUTATIONS.moonmarble:arts.includes('albino')?MUTATIONS.snowtip:arts.includes('gold')?MUTATIONS.goldleaf:arts.includes('ink')?MUTATIONS.inkleaf:arts.includes('ember')?MUTATIONS.ember:arts.includes('pink')?MUTATIONS.pinkpistil:arts.includes('twin')?MUTATIONS.twinleader:arts.includes('crest')?MUTATIONS.crested:arts.includes('whorl')?MUTATIONS.whorl:arts.includes('dwarf')?MUTATIONS.pocketdwarf:arts.includes('triploid')?MUTATIONS.triploid:null);
   const choices=painted?Object.keys(painted.variants):[],roll=hash(r.seed+':'+painted?.mutationKey+':form')%10;
   const variant=painted?choices[r.traits.leafShape==='broad'?(roll<8?1:0):r.traits.leafShape==='narrow'?(roll<8?0:1):roll%choices.length]:null;
   const layer=key=>{const m=MUTATIONS[key],names=Object.keys(m.variants),roll=hash(r.seed+':'+key+':form')%10;return{key,revision:m.revision,variant:names[r.traits.leafShape==='broad'?(roll<8?1:0):r.traits.leafShape==='narrow'?(roll<8?0:1):roll%names.length]};};
-  return{r,arts,view,mutation:painted?{key:painted.mutationKey,revision:painted.revision,variant}:null,material:arts.includes('variegated')?'moonmarble':null,chlorophyll:arts.filter(a=>a==='albino'||a==='gold').map(a=>a==='albino'?'snowtip':'goldleaf'),stemMutation:arts.includes('ember')?layer('ember'):null,flowerMutation:arts.includes('pink')?layer('pinkpistil'):null};
+  const structures=Object.fromEntries([['twin','twinleader'],['crest','crested'],['whorl','whorl'],['dwarf','pocketdwarf'],['triploid','triploid']].filter(([art])=>arts.includes(art)).map(([,key])=>[key,layer(key)]));
+  view.visualState.structuralGeometry=Object.fromEntries(Object.entries(structures).map(([key,s])=>[key,MUTATIONS[key].variants[s.variant].geometry]));
+  return{r,arts,view,mutation:painted?{key:painted.mutationKey,revision:painted.revision,variant}:null,structures,material:arts.includes('variegated')?'moonmarble':null,chlorophyll:arts.filter(a=>a==='albino'||a==='gold').map(a=>a==='albino'?'snowtip':'goldleaf'),stemMutation:arts.includes('ember')?layer('ember'):null,flowerMutation:arts.includes('pink')?layer('pinkpistil'):null};
  }
  function patternVariant(d,id,key='moonmarble'){
   const names=Object.keys(MUTATIONS[key].variants),main=d.mutation?.key===key?d.mutation.variant:names[hash(d.r.seed+':'+key+':pattern-family')%names.length];
@@ -37,8 +39,9 @@
   return hash(d.r.seed+':'+key+':'+id)%5===0?names[(names.indexOf(main)+1)%names.length]:main;
  }
  function partData(d,role,organId=''){
-  const m=d.mutation&&MUTATIONS[d.mutation.key],variant=m?.mutationKey==='moonmarble'&&organId?patternVariant(d,organId):d.mutation?.variant,part=m?.material!=='stigmas'?m?.variants[variant].parts[role]:null;
-  const r=d.r,kit=role.startsWith('female')||role.startsWith('male')?r.flowerKit:r.leafKit,base=part?{...part,kit:'mutation:'+m.mutationKey+':'+part.atlas,leafKey:m.leafKey,mutation:m.mutationKey}:{...DATA[kit].parts[role],kit};
+  const m=d.mutation&&MUTATIONS[d.mutation.key],variant=m?.mutationKey==='moonmarble'&&organId?patternVariant(d,organId):d.mutation?.variant,part=!['stigmas','structure','fasciation','identity'].includes(m?.material)?m?.variants[variant].parts[role]:null;
+  const r=d.r,kit=role.startsWith('female')||role.startsWith('male')?r.flowerKit:r.leafKit;let base=part?{...part,kit:'mutation:'+m.mutationKey+':'+part.atlas,leafKey:m.leafKey,mutation:m.mutationKey}:{...DATA[kit].parts[role],kit};
+  if(d.structures.crested&&role.startsWith('female')&&(organId==='apex:flower'||/^leader:.*\/flower$/.test(organId)||d.view.stage>=11)){const p=MUTATIONS.crested.variants[d.structures.crested.variant].parts[role];base={...p,kit:'mutation:crested:'+p.atlas,mutation:'crested',inheritedFlowerKit:r.flowerKit};}
   if(d.flowerMutation&&role.startsWith('female')){const p=MUTATIONS.pinkpistil.variants[d.flowerMutation.variant].parts[role];if(p)base.stigma={...p,kit:'mutation:pinkpistil:'+p.atlas};}
   return base;
  }
@@ -88,7 +91,6 @@
     if(snowTissue){const light=limit((col[0]*.2126+col[1]*.7152+col[2]*.0722-150)/85,.35,1.25),green=(arts.includes('gold')?[185,178,59]:targetLeaf.map(v=>v*.75)).map(v=>v*light);col=mixRGB(col,green,snowTissue*(1-snow));}
     if(sourceLeaf!==d.r.traits.leafKey)col=tintPixel(col,targetLeaf,.68*(1-golden)*(1-snowTissue*snow)*(a.mutation==='inkleaf'?.2:1));
     if(goldMask)col=tintPixel(col,[211,196,64],goldMask[i/4]*.85);
-    if(arts.includes('triploid'))col=tintPixel(col,[43,108,48],.26);
     if(inkMask)col=tintPixel(col,[42,30,53],(.18+inkMask[i/4]*.72)*(.35+limit((p.stage-2)/8,0,1)*.45));
     if(amount)col=tintPixel(col,finish.rgb,amount*(a.mutation==='inkleaf'?.55:1));
     if(red)col=mixRGB(col,original,red);
@@ -102,6 +104,7 @@
    }
    if(flower){
     const pistil=col[0]>col[1]*1.15&&col[0]>col[2]*1.15,frost=Math.max(...col)-Math.min(...col)<45&&col.reduce((a,b)=>a+b)>495;
+    if(a.mutation==='crested'&&!pistil&&!frost)col=tintPixel(col,rgb((BUD_PAL[d.r.traits.colorName]||BUD_PAL['Forest green']).bud),.58);
     if(pigment.strength&&!pistil&&!frost)col=tintPixel(col,pigment.rgb,pigment.strength*.5);
     if(a.stigma&&col[0]>col[1]*1.15&&col[1]>col[2]*1.12)col=tintPixel(col,a.stigma.pigment,.9);
     if(arts.includes('ember')&&p.stage>=8&&!frost&&!pistil)col=tintPixel(col,[182,77,58],.22);
@@ -132,24 +135,48 @@
   }travelled+=length;});
  }
  function stemNode(c,d,p,width){const a=stemParts(d).nodeCollar,h=width*1.65,w=h*a.crop[2]/a.crop[3];c.drawImage(images['mutation:ember:'+a.atlas],...a.crop,p.x-w/2,-p.y-h/2,w,h);}
- function drawRig(c,p,d,m,t,wind){
+ function structurePart(d,key,role){const s=d.structures[key];return MUTATIONS[key].variants[s.variant].parts[role];}
+ function structureNode(c,d,key,role,p,width){
+  const a=structurePart(d,key,role),h=width*(role==='fork'?6.4:key==='pocketdwarf'?2.8:4.2),w=h*a.crop[2]/a.crop[3],anchor=a.joint||[a.crop[2]/2,a.crop[3]/2];
+  c.drawImage(images['mutation:'+key+':'+a.atlas],...a.crop,p.x-anchor[0]/a.crop[2]*w,-p.y-anchor[1]/a.crop[3]*h,w,h);
+ }
+ function identityBadge(c,d){
+  const a=structurePart(d,'triploid','badge'),w=6,h=w*a.crop[3]/a.crop[2],x=1.5,y=1.8;
+  c.strokeStyle='#72543b';c.lineWidth=.16;c.beginPath();c.moveTo(x+w/2,0);c.lineTo(x+w/2,-y);c.stroke();
+  c.drawImage(images['mutation:triploid:'+a.atlas],...a.crop,x,-y-h/2,w,h);
+ }
+ function ribbon(c,d,points,width){
+  const a=structurePart(d,'crested','ribbon'),im=images['mutation:crested:'+a.atlas],[sx,sy,sw,sh]=a.crop;
+  for(let i=1;i<points.length;i++){const start=points[i-1],end=points[i],length=Math.hypot(end.x-start.x,end.y-start.y),n=Math.max(1,Math.ceil(length));
+   for(let j=0;j<n;j++){const u=(j+.5)/n,f=(i-1+u)/(points.length-1),w=width*(.34+.66*f);c.save();c.translate(start.x+(end.x-start.x)*u,-start.y-(end.y-start.y)*u);c.rotate(Math.atan2(-(end.y-start.y),end.x-start.x)+Math.PI/2);c.drawImage(im,sx,sy+sh*(.1+.7*(1-f)),sw,Math.max(1,sh*.7/(n*(points.length-1))),-w/2,-length/n/2-.025,w,length/n+.05);c.restore();}
+  }
+ }
+ function drawRig(c,p,d,m,t,wind,{labels=true}={}){
   const pose=Model.pose(m,d.view,t,wind,settings.reduced),H=m.height,finish=Model.senescence(d.view,d.r.traits,BagseedNightColor),ember=d.arts.includes('ember');
   if(p.staked)for(const side of [-1,1])stamp(c,p,d,'bamboo',side*H*.12,0,H*.78,0,{},.35);
   const leaf=o=>{if(o.removed)return;const a=pose.organs.get(o.id),lower=a.y<H*.48;let amount=finish.amount*(.78+.35*(1-a.y/H)),color=finish.rgb;
    if((p.nutr<25&&lower)||p.health<50){amount=Math.max(amount,.65);color=[205,179,76];}
-   stamp(c,p,d,o.role,a.x,a.y,o.length,a.angle,{amount:limit(amount,0,1),rgb:color,rear:o.z<0,young:a.y>H*.72,maturity:o.maturity,organId:o.id},d.arts.includes('triploid')?1.2:1);
+   stamp(c,p,d,o.role,a.x,a.y,o.length,a.angle,{amount:limit(amount,0,1),rgb:color,rear:o.z<0,young:a.y>H*.72,maturity:o.maturity,organId:o.id});
   };
   for(const o of m.organs)if(o.kind==='leaf'&&o.z<0)leaf(o);
   for(const b of pose.branches.values())if(!b.cut){c.lineCap='round';c.beginPath();c.moveTo(b.start.x,-b.start.y);c.quadraticCurveTo(b.control.x,-b.control.y,b.end.x,-b.end.y);c.strokeStyle=ember?'#7d2731':'#394b24';c.lineWidth=b.width*1.6;c.stroke();c.strokeStyle=ember?'#b95046':'#81914b';c.lineWidth=b.width;c.stroke();if(d.stemMutation){const curve=Array.from({length:9},(_,i)=>{const u=i/8,v=1-u;return{x:v*v*b.start.x+2*v*u*b.control.x+u*u*b.end.x,y:v*v*b.start.y+2*v*u*b.control.y+u*u*b.end.y};});paintedStem(c,d,curve,b.width);}}
   const trunk=m.joints.map(j=>pose.joints.get(j.id)),w=limit(H*.014,.18,1.2)*(d.arts.includes('crest')?1.6:1);stroke(c,trunk,w*1.5,ember?'#792c36':'#3b4b28');stroke(c,trunk,w,ember?'#b64742':'#738443');stroke(c,trunk,w*.26,ember?'#e27a61':'#b6b780');
+  if(d.structures.crested&&p.stage>=3){
+   const upper=trunk.filter(a=>a.y>=pose.joints.get('apex').y*.56);if(upper.length>1)ribbon(c,d,upper,H*(d.view.visualState.structuralGeometry.crested.ribbonWidth||.065));
+   for(const b of pose.branches.values())if(b.order===0&&!b.cut)ribbon(c,d,[b.start,b.control,b.end],H*.06);
+  }
   if(d.stemMutation){paintedStem(c,d,trunk,w);for(const j of m.joints)if(j.id.startsWith('node:'))stemNode(c,d,pose.joints.get(j.id),w);}
+  if(d.structures.twinleader&&m.branches.some(b=>b.id==='leader:-1')){structureNode(c,d,'twinleader','fork',pose.joints.get('apex'),w);if(p.training==='topped')for(const side of [-1,1])structureNode(c,d,'twinleader','fork',pose.branches.get('leader:'+side).end,w*.7);}
+  if(d.structures.whorl&&p.stage>=3)for(const j of m.joints)if(j.id.startsWith('node:')&&m.organs.some(o=>o.parent===j.id&&o.id.endsWith(':whorl')&&!o.removed))structureNode(c,d,'whorl','nodeCollar',pose.joints.get(j.id),w);
+  if(d.structures.pocketdwarf&&p.stage>=3)for(const j of m.joints)if(j.id.startsWith('node:'))structureNode(c,d,'pocketdwarf','nodeCollar',pose.joints.get(j.id),w);
   for(const o of m.organs)if(o.kind==='leaf'&&o.z>=0)leaf(o);
-  for(const o of m.organs)if(o.kind==='flower'){const a=pose.organs.get(o.id);stamp(c,p,d,o.role,a.x,a.y,o.length,a.angle,{},o.widthScale||1);}
+  for(const o of m.organs)if(o.kind==='flower'){const a=pose.organs.get(o.id);stamp(c,p,d,o.role,a.x,a.y,o.length,a.angle,{organId:o.id},o.widthScale||1);}
   if(p.staked){c.strokeStyle='#d7c395';c.lineWidth=.12;for(const side of [-1,1])for(const u of [.34,.57]){const a=pose.joints.get('node:'+Math.max(1,Math.round(m.nodes*u)));c.beginPath();c.moveTo(side*H*.12,-a.y);c.lineTo(a.x,-a.y);c.stroke();}}
   if(p.training==='scrog'){const y=H*.57,span=H*.5;c.strokeStyle='rgba(219,220,187,.72)';c.lineWidth=.12;for(let x=-span;x<=span;x+=3){c.beginPath();c.moveTo(x,-y-1.4);c.lineTo(x+2,-y+1.4);c.stroke();}for(const dy of [-1.4,0,1.4]){c.beginPath();c.moveTo(-span,-y+dy);c.lineTo(span,-y+dy);c.stroke();}}
+  if(labels&&p.mutSeen&&d.structures.triploid)identityBadge(c,d);
   return pose;
  }
- function bounds(m,d){const pose=Model.pose(m,d.view,0,0,true);let lo=0,hi=0;for(const o of m.organs){if(o.removed)continue;const a=pose.organs.get(o.id),part=partData(d,o.role,o.id),ca=Math.cos(a.angle),sa=Math.sin(a.angle);for(const [x,y]of part.outline){const v=a.x+o.length*(x*ca+y*sa)*(o.widthScale||1);lo=Math.min(lo,v);hi=Math.max(hi,v);}}for(const b of pose.branches.values())if(!b.cut){lo=Math.min(lo,b.end.x);hi=Math.max(hi,b.end.x);}return{lo,hi};}
+ function bounds(m,d){const pose=Model.pose(m,d.view,0,0,true);let lo=0,hi=0;for(const o of m.organs){if(o.removed)continue;const a=pose.organs.get(o.id),part=partData(d,o.role,o.id),ca=Math.cos(a.angle),sa=Math.sin(a.angle);for(const [x,y]of part.outline){const v=a.x+o.length*(x*ca+y*sa)*(o.widthScale||1);lo=Math.min(lo,v);hi=Math.max(hi,v);}}for(const b of pose.branches.values())if(!b.cut){lo=Math.min(lo,b.end.x);hi=Math.max(hi,b.end.x);}if(d.structures.triploid&&d.view.mutSeen&&d.view.stage>=2)hi=Math.max(hi,7.5);return{lo,hi};}
  function surface(w,h){const cv=document.createElement('canvas');cv.width=Math.ceil(w*3);cv.height=Math.ceil(h*3);return cv;}
  function paint(s,p,t=0,wind=0,target=s.cv){const c=target.getContext('2d');c.resetTransform();c.clearRect(0,0,target.width,target.height);c.scale(3,3);c.translate(s.ax,s.ay);
   if(p.stage<=1){const role=p.stage===0?'seed':'radicle';stamp(c,p,s.d,role,0,0,p.stage===0?3.5:5);}
@@ -163,7 +190,14 @@
   const w=hang?64:p.stage>=12?22:p.stage<2?18:Math.max(20,Math.ceil((b.hi-b.lo)*2.1)+14),h=hang?58:p.stage>=12?24:p.stage<2?14:Math.ceil(model.height*2.1)+8;
   const s={cv:surface(w,h),w,h,ax:hang?32:p.stage<2||p.stage>=12?w/2:7-b.lo*2.1,ay:hang?0:h-3,hang,illustrated:true,d,model,recipe:copy(d.r)};paint(s,p);return s;
  }
- PlantArt.key=function(p){const r=recipe(p);return baseKey.call(this,p)+'|painted-5|'+r.leafKit+'|'+r.flowerKit+'|'+r.seed+'|'+JSON.stringify(r.traits)+'|'+(typeof Mut!=='undefined'?Mut.list(p).join(','):'')+'|'+(p.pheno?.b||1);};
+ // Reuse the live compositor at inspection resolution instead of enlarging an
+ // already rasterized room sprite. Coordinates and attachments are unchanged.
+ function detail(p,{joint='apex',span=18,width=520,height=440,t=0,wind=0,labels=true}={}){
+  const s=build(p),pose=Model.pose(s.model,s.d.view,t,wind,settings.reduced),a=pose.joints.get(joint)||pose.branches.get(joint)?.end;
+  if(!a)throw Error('Unknown plant detail attachment: '+joint);const cv=document.createElement('canvas');cv.width=width;cv.height=height;const c=cv.getContext('2d'),scale=Math.min(width,height)/(span*2);
+  c.translate(width/2,height*.68);c.scale(scale,scale);c.translate(-a.x,a.y);drawRig(c,p,s.d,s.model,t,wind,{labels});return cv;
+ }
+ PlantArt.key=function(p){const r=recipe(p);return baseKey.call(this,p)+'|painted-7|'+r.leafKit+'|'+r.flowerKit+'|'+r.seed+'|'+JSON.stringify(r.traits)+'|'+(typeof Mut!=='undefined'?Mut.list(p).join(','):'')+'|'+(p.pheno?.b||1)+'|'+!!p.mutSeen;};
  PlantArt.build=build;
  PlantArt.get=function(p){if(!loaded)return baseGet.call(this,p);const k=this.key(p);let s=runtime.sprites.get(p.id);if(!s||s.k!==k||!s.illustrated){s=Object.assign({k},build(p));runtime.sprites.set(p.id,s);}return s;};
  // The same painted organs also supply the native mutation guide and plant-card
@@ -171,9 +205,14 @@
  const prevMutationDraw=MutGen.draw;
  MutGen.draw=function(cv,key,mode){
   if(!loaded||!MUTATIONS[key]||mode==='none')return prevMutationDraw.apply(this,arguments);
-  const p=demoPlant('porchlight',key==='pinkpistil'?8:mode==='leaf'?5:6,77,{id:'mutdemo_'+key+'_'+mode,sex:'F',sexKnown:true,pheno:{h:1,b:1,y:1,a:1,deep:false,mut:key,muts:[key]}}),c=cv.getContext('2d'),W=cv.width,H=cv.height;
+  const structural=['twinleader','crested','whorl','pocketdwarf'].includes(key),p=demoPlant('porchlight',['pinkpistil','crested'].includes(key)?8:mode==='leaf'?5:6,77,{id:'mutdemo_'+key+'_'+mode,sex:'F',sexKnown:true,mutSeen:true,pheno:{h:1,b:1,y:1,a:1,deep:false,mut:key,muts:[key]}}),c=cv.getContext('2d'),W=cv.width,H=cv.height;
+  if(key==='pocketdwarf'){p.height=18;p.nodes=9;}
   c.clearRect(0,0,W,H);c.fillStyle='#1a2420';c.fillRect(0,0,W,H);c.imageSmoothingEnabled=true;
-  if(mode==='leaf'){const image=tile(p,descriptor(p),key==='pinkpistil'?'femaleMid':'sevenLeaf',{organId:'guide:leaf',young:true,maturity:0}),scale=Math.min((W-4)/image.width,(H-4)/image.height);c.drawImage(image,(W-image.width*scale)/2,(H-image.height*scale)/2,image.width*scale,image.height*scale);}
+  if(mode==='leaf'&&key==='triploid'){const d=descriptor(p),a=structurePart(d,'triploid','badge'),scale=Math.min((W-4)/a.crop[2],(H-4)/a.crop[3]);c.drawImage(images['mutation:triploid:'+a.atlas],...a.crop,(W-a.crop[2]*scale)/2,(H-a.crop[3]*scale)/2,a.crop[2]*scale,a.crop[3]*scale);}
+  else if(mode==='leaf'&&structural){
+   if(key!=='pocketdwarf'){p.height=key==='whorl'?12:22;p.nodes=key==='whorl'?3:5;}const image=detail(p,{joint:key==='whorl'?'node:2':key==='pocketdwarf'?'node:5':'apex',span:key==='whorl'?5:key==='pocketdwarf'?6:12,width:160,height:160});c.drawImage(image,1,1,W-2,H-2);
+  }
+  else if(mode==='leaf'){const image=tile(p,descriptor(p),key==='pinkpistil'?'femaleMid':'sevenLeaf',{organId:'guide:leaf',young:true,maturity:0}),scale=Math.min((W-4)/image.width,(H-4)/image.height);c.drawImage(image,(W-image.width*scale)/2,(H-image.height*scale)/2,image.width*scale,image.height*scale);}
   else{const s=build(p),scale=Math.min((W-8)/s.w,(H-8)/s.h);c.drawImage(s.cv,W/2-s.ax*scale,H-4-s.ay*scale,s.w*scale,s.h*scale);c.fillStyle=MUTS[key].tint;c.fillRect(3,3,4,4);}
  };
  function frame(p,s,t,wind){if(settings.reduced||!wind||p.stage<2||p.stage>=12)return s.cv;const key=Math.floor(t*8)+':'+Math.round(wind*4);let f=liveFrames.get(s);if(!f||f.key!==key){f=f||{cv:surface(s.w,s.h)};f.key=key;paint(s,p,t,wind,f.cv);liveFrames.set(s,f);}return f.cv;}
@@ -184,5 +223,5 @@
  const prevWrite=SaveSys.write;SaveSys.write=function(){if(state?.plants)for(const p of Object.values(state.plants))ensure(p);return prevWrite.apply(this,arguments);};
  const atlases={...DATA};for(const m of Object.values(MUTATIONS))for(const [name,a]of Object.entries(m.atlases))atlases['mutation:'+m.mutationKey+':'+name]=a;
  const ready=Promise.all(Object.entries(atlases).map(([id,a])=>new Promise((resolve,reject)=>{const im=new Image();images[id]=im;im.onload=resolve;im.onerror=()=>reject(Error('Plant artwork failed: '+id));im.src=a.runtime;}))).then(()=>{loaded=true;all();});
- window.BagseedPlants=Object.freeze({revision:'live-plants-5',ready,recipe,ensure,descriptor,frame,build,kits:DATA,mutations:MUTATIONS,atlasCount:Object.keys(atlases).length,Model,get loaded(){return loaded;},get tileCount(){return tiles.size;}});
+ window.BagseedPlants=Object.freeze({revision:'live-plants-7',ready,recipe,ensure,descriptor,frame,build,detail,kits:DATA,mutations:MUTATIONS,atlasCount:Object.keys(atlases).length,Model,get loaded(){return loaded;},get tileCount(){return tiles.size;}});
 })();

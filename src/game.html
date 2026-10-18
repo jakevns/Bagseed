@@ -5062,7 +5062,7 @@ const MUTS = {
   crested: { name: 'Crested Cola', desc: 'Fasciation: the main stem flattens into a ribbon and the top cola grows as a wide, wavy crest. A tissue quirk, so keep it with cuttings.', w: 6, yield: 1.1, speed: .97, photo: 1.26, collector: 1.45, mold: 1.2, art: 'crest', gene: 'chimera', tint: '#8fbf5a' },
   whorl: { name: 'Triple Whorl', desc: 'Three leaves per node instead of two. Lush, bushy, rare.', w: 8, yield: 1.05, speed: .97, photo: 1.2, collector: 1.45, art: 'whorl', gene: 'recessive', tint: '#5fa84a' },
   pocketdwarf: { name: 'Pocket Dwarf', desc: 'Tight internodes and small leaves. Perfect for cramped spaces, lighter harvests.', w: 12, yield: .84, speed: 1.03, photo: 1.1, collector: 1.2, height: .7, art: 'dwarf', gene: 'recessive', tint: '#7cbc52' },
-  triploid: { name: 'Triploid', desc: 'An extra chromosome set: thick, oversized leaves and chunky buds, and nearly seedless even when pollinated. It can\'t be bred by seed. Keep her alive with cuttings.', w: 4, yield: 1.12, speed: .94, photo: 1.16, collector: 1.5, mold: 1.05, art: 'triploid', gene: 'sterile', tint: '#2f7a34' }
+  triploid: { name: 'Triploid', desc: 'Three chromosome sets. Appearance follows the strain and phenotype; the 3x tag marks known genetics. In Bagseed it cannot be bred by seed. Keep it alive with cuttings.', w: 4, yield: 1.12, speed: .94, photo: 1.16, collector: 1.5, mold: 1.05, art: 'triploid', gene: 'sterile', tint: '#2f7a34' }
 };
 function rollMutation(g, inheritFrom) {
   if (inheritFrom && MUTS[inheritFrom] && chance(.35)) return inheritFrom;

@@ -1,0 +1,484 @@
+{
+  "status": "user-approved-for-production",
+  "runtimeRevision": "live-plants-6",
+  "mutations": [
+    "twinleader",
+    "crested",
+    "whorl"
+  ],
+  "buildSHA256": "03f338d44bbf78f032bc43710a0a31e656bf3f18d80c6633f2ad55884b636874",
+  "characterRelease": "character-audit-cel-v1",
+  "personScaleRevision": "person-scale-1",
+  "personScale": 1.35,
+  "integrationBase": "bd35adb8545a5fe10358ac4e8faf60a0f6bdb9ea",
+  "assets": {
+    "twinleader": {
+      "manifest": "graphics/plants/mutations/twinleader/sources/manifest.json",
+      "manifestSHA256": "9a8ff57cbd071b8dd4314d5f052b7b529c5eb043a1665ada426fdc836f643fc1",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "2e8e21854f4c86b4ee44f3788c885dbd8c999c47f288234294d05ca401c48e77",
+          "runtime": "assets/plants/mutations/twinleader/components-92af4b6e9f62.webp",
+          "runtimeSHA256": "92af4b6e9f626096499b4852f8b21f890f0c015f4b3bb400eda0d85e2f442128",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    },
+    "crested": {
+      "manifest": "graphics/plants/mutations/crested/sources/manifest.json",
+      "manifestSHA256": "31fe7b37cf950489f9cb8efaaef79ab1b355a464b659f3a26130412bd5ee4ce7",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "6f1e5f8eb45ba2b9a6ff4e4f2dd8b79ff456cff46deffc9585efdcb100fbd9df",
+          "runtime": "assets/plants/mutations/crested/components-71a25c2283d8.webp",
+          "runtimeSHA256": "71a25c2283d896427b9516e634e335b2c39f3960cf452db6c38bf9693442f62e",
+          "size": [
+            1774,
+            887
+          ]
+        }
+      }
+    },
+    "whorl": {
+      "manifest": "graphics/plants/mutations/whorl/sources/manifest.json",
+      "manifestSHA256": "e755c7baa7b7eb5c011a39c0340354466a76ee1ffa70c686da81efd2855d8469",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "8a2992ca46f7ae2d623c0a7e2905d36fe03adda6ff5e76c7a22eff5a8286f0c5",
+          "runtime": "assets/plants/mutations/whorl/components-633143b0a346.webp",
+          "runtimeSHA256": "633143b0a3465a18257c873f6439807d2f53c5e79bfcf510dc59d607599d9d82",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    }
+  },
+  "assetStorage": {
+    "pipeline": "tools/external-assets.cjs",
+    "publishedImagesDir": "public/assets/embedded",
+    "mutationAtlasesDir": "public/assets/plants/mutations",
+    "publishedImageCount": 1841,
+    "plantAtlasCount": 29
+  },
+  "sourcePack": "Bagseed_Mutation_References.zip",
+  "referencePhotos": [
+    {
+      "id": "R06",
+      "title": "Three leaves around a node",
+      "traits": [
+        13
+      ],
+      "credit": "Dutch Passion",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://dutch-passion.com/img/web/Tri-Leaf-cannabis-seedling-three-leaved-plant-Dutch-passion-seed-company-1080x1080-80.webp",
+      "source_url": "https://dutch-passion.com/en/blog/top-11-most-common-cannabis-plant-mutations-n1111",
+      "resize": true,
+      "original_dimensions": [
+        1080,
+        1080
+      ],
+      "file": "photos/R06.jpg",
+      "bytes": 162498,
+      "status": "downloaded"
+    },
+    {
+      "id": "R16",
+      "title": "Lowryder fasciation",
+      "traits": [
+        12
+      ],
+      "credit": "mutantfarmer",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/fasciation-lowryder.DXc3vT03_2m9E3Q.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        1280,
+        1280
+      ],
+      "file": "photos/R16.jpg",
+      "bytes": 139954,
+      "status": "downloaded"
+    },
+    {
+      "id": "R23",
+      "title": "Reported self-topping seedling",
+      "traits": [
+        11
+      ],
+      "credit": "Original grower photograph via 420 Magazine; author attribution on linked thread",
+      "kind": "firsthand appearance report, not genetic proof",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://www.420magazine.com/community/gallery/img_2589-jpeg.1829654/full",
+      "source_url": "https://www.420magazine.com/community/threads/self-topping-seedling-genetic-mutation.501350/",
+      "resize": true,
+      "original_dimensions": [
+        1238,
+        1074
+      ],
+      "file": "photos/R23.jpg",
+      "bytes": 353359,
+      "status": "downloaded"
+    },
+    {
+      "id": "R27",
+      "title": "Flattened and fused stem reference",
+      "traits": [
+        12
+      ],
+      "credit": "Ascent 420, via ETHOS",
+      "kind": "fasciated stem closeup; use R30 for flowering crest",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd416243a-102b-4c8e-9bb0-54fa43ef9e3a_627x728.png",
+      "source_url": "https://www.ethosgenetics.com/resources/common-cannabis-mutations",
+      "resize": true,
+      "original_dimensions": [
+        627,
+        728
+      ],
+      "file": "photos/R27.jpg",
+      "bytes": 103892,
+      "status": "downloaded"
+    },
+    {
+      "id": "R29",
+      "title": "Reported spontaneous Y-shaped stem split",
+      "traits": [
+        11
+      ],
+      "credit": "PrairieFrostGrow, GrowDiaries",
+      "kind": "firsthand grower report; cause unconfirmed",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://bucket.growdiaries.com/static/post/photo/16964/2993484_b994a1c31a28110eae3f9965eca7048a_m.jpg",
+      "source_url": "https://growdiaries.com/grow-questions/22786-main-stem-split-on-two-strains-in-same-environment",
+      "resize": true,
+      "original_dimensions": [
+        500,
+        500
+      ],
+      "file": "photos/R29.jpg",
+      "bytes": 80983,
+      "status": "downloaded"
+    },
+    {
+      "id": "R30",
+      "title": "Flattened flowering crest",
+      "traits": [
+        12
+      ],
+      "credit": "GTR Seeds",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://gtrseeds.com/cdn/shop/articles/fasciation-in-cannabis-plants-and-polyploidy-899337.jpg?v=1741282983",
+      "source_url": "https://gtrseeds.com/blogs/news/fascinating-faciation",
+      "resize": true,
+      "original_dimensions": [
+        1880,
+        2000
+      ],
+      "file": "photos/R30.jpg",
+      "bytes": 488883,
+      "status": "downloaded"
+    }
+  ],
+  "sourcePhotosIncludedInRepository": false,
+  "generatedSources": {
+    "twinleader-components": "exec-6686e971-e7ed-4b29-8355-9da7562d705e.png",
+    "whorl-components": "exec-fec5c1f0-2eac-49b9-9b66-15a921f5ee22.png",
+    "crested-components-final": "exec-337baa36-1657-4d2d-b15a-f070266d2cd8.png"
+  },
+  "verification": {
+    "report": "verification.json",
+    "modelTestsPassed": 22,
+    "browserRegressionTestsPassed": 6,
+    "finalNativeBatchCapturePassed": true,
+    "catalogCountPerFamily": 38,
+    "stageRange": [
+      0,
+      12
+    ],
+    "structuralChecks": {
+      "twinRootCount": 1,
+      "twinTerminalFlowers": 2,
+      "toppedTwinTerminalFlowers": 4,
+      "crestUsesWidePaintedOrgan": true,
+      "crestTileIsWide": true,
+      "crestChangesOutline": true,
+      "whorls": [
+        {
+          "id": "node:1",
+          "leaves": [
+            {
+              "id": "fan:1:-1",
+              "role": "singleLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:1:1",
+              "role": "singleLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:1:whorl",
+              "role": "singleLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 0
+        },
+        {
+          "id": "node:2",
+          "leaves": [
+            {
+              "id": "fan:2:-1",
+              "role": "threeLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:2:1",
+              "role": "threeLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:2:whorl",
+              "role": "threeLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:3",
+          "leaves": [
+            {
+              "id": "fan:3:-1",
+              "role": "fiveLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:3:1",
+              "role": "fiveLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:3:whorl",
+              "role": "fiveLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:4",
+          "leaves": [
+            {
+              "id": "fan:4:-1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:4:1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:4:whorl",
+              "role": "sevenLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:5",
+          "leaves": [
+            {
+              "id": "fan:5:-1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:5:1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:5:whorl",
+              "role": "sevenLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:6",
+          "leaves": [
+            {
+              "id": "fan:6:-1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:6:1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:6:whorl",
+              "role": "sevenLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:7",
+          "leaves": [
+            {
+              "id": "fan:7:-1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:7:1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:7:whorl",
+              "role": "sevenLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:8",
+          "leaves": [
+            {
+              "id": "fan:8:-1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:8:1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:8:whorl",
+              "role": "sevenLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:9",
+          "leaves": [
+            {
+              "id": "fan:9:-1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:9:1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:9:whorl",
+              "role": "sevenLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:10",
+          "leaves": [
+            {
+              "id": "fan:10:-1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:10:1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:10:whorl",
+              "role": "sevenLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 3
+        },
+        {
+          "id": "node:11",
+          "leaves": [
+            {
+              "id": "fan:11:-1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:11:1",
+              "role": "sevenLeaf",
+              "at": 0
+            },
+            {
+              "id": "fan:11:whorl",
+              "role": "sevenLeaf",
+              "at": 0
+            }
+          ],
+          "branches": 0
+        }
+      ],
+      "threeFansPerNode": true,
+      "threeBranchesPerInteriorNode": true,
+      "inheritedKitsPreserved": true,
+      "eightGiantFramesMs": 47.899999998509884
+    },
+    "saveReload": true,
+    "legacySave": true,
+    "errors": [],
+    "animation": {
+      "frames": 72,
+      "fps": 12,
+      "seconds": 6
+    },
+    "approvedReleaseBuildCheckPassed": true,
+    "approvedReleaseBatchBrowserTestPassed": true
+  },
+  "files": {
+    "README.md": "0e669d82c4786c9dc18e8efee41ca8f5acb387ad0cdb614aa3032f1ce3e67204",
+    "bedroom-gameplay.png": "5d9d13b5da985638f1e70b29b206a98b4dae74792c99023119db8283ea2c5322",
+    "combined-mutations.png": "889c7c1ab300d32a1ff94fca6105f98e05e0c6b08e7d799ca20f0d716b5e0f15",
+    "crested-growth.png": "8d09b979ee9ce6bfd64dccbcb6a9119cc405b9626e80356f0cb0da563f5918e4",
+    "growth-and-wind.gif": "bb47d2f5b6fa4f4941f9894989891149b9abe4eb9daa042f5a8cca0c29deea64",
+    "growth-and-wind.mp4": "8280cf53f496025b738a328c566bee2a3dce1b60ad59b272d87271a1823020e6",
+    "mobile-gameplay.png": "b829344cde0fc1d2860e9cfc5a125b667d37a92cf3f52f947f2353f78fce6fda",
+    "native-guide.png": "e10e9c4fad5f7ce260207b5fe9a03d6e205787343e6d64e85a31165bd5b3e57c",
+    "phenotype-colors.png": "a9a5ea60f594890be17be922c0f67eea7b309cb8e5d0993bb83b6d48af6bdad4",
+    "runtime-structure-details.png": "cdbe1bf296103970dd0dfadc7eb4a00811badd620f13ec9368e96fa72a40ecbf",
+    "structural-skeletons.png": "123d90c10bec8d24dc763b85d22f81556f5a3a64eb0e1993f7747e94aa573e59",
+    "three-mutations.png": "8f8d8e82a6682cd7e7080e753139f6dde482410b1ef3b1d45527c4424b76050e",
+    "training-and-stress.png": "6a02f962003288236217c281a2af8f768894ed685887673ecb74c98da300ce7e",
+    "twinleader-growth.png": "44fafdb31fd7e769dd25cd27e870be5545868efeb368c1fcc14541d89aae2d6b",
+    "verification.json": "5520659a369ea0f1946241e07d979c1c60a79c895064f89da93e56e96775a86c",
+    "whorl-growth.png": "bdc6dbd5d7ff576b26e9dcd9e894aa5338f5a5c8f07453216c5cc083de6aa120"
+  }
+}

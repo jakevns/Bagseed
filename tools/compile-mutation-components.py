@@ -158,3 +158,63 @@ manifest = {'revision': 'pinkpistil-parts-1', 'status': 'approved-live-component
                            'review/mutation-detail/photo-based-batch-02/detail-and-color-studies-02.png']}
 (BASE / 'sources/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
 print('Registered Pink Pistil: six stigma overlays; native flower bodies and male flowers retained.')
+
+# Structural mutations keep inherited leaf/flower kits. Only the junctions,
+# ribbon stem and fused apical crest need new painted tissue.
+structures = {
+    'twinleader': ('twin', 'structure', ['fork', 'internode'],
+                   [('open-v', {'forkHeight': .56, 'spread': .22, 'rise': .33}),
+                    ('upright-v', {'forkHeight': .61, 'spread': .16, 'rise': .30})], ['R29', 'R23']),
+    'whorl': ('whorl', 'structure', ['nodeCollar', 'internode'],
+              [('radial-open', {'rearScale': .74, 'rearAngle': .14}),
+               ('offset-rear', {'rearScale': .63, 'rearAngle': .32})], ['R06']),
+    'crested': ('crest', 'fasciation', ['ribbon', 'femaleEarly', 'femaleMid', 'femaleLate'],
+                [('scalloped-fan', {'ribbonWidth': .065}),
+                 ('curled-comb', {'ribbonWidth': .080})], ['R27', 'R16', 'R30'])
+}
+for key, (art, material, roles, forms, refs) in structures.items():
+    BASE = ROOT / f'graphics/plants/mutations/{key}'
+    organs, asset = measure('components', len(roles) * 2, len(roles))
+    variants = {}
+    for i, (name, geometry) in enumerate(forms):
+        parts = dict(zip(roles, organs[i * len(roles):(i + 1) * len(roles)]))
+        for role in ['fork', 'nodeCollar']:
+            if role in parts:
+                part = parts[role]
+                part['joint'] = [round(part['crop'][2] * .5, 2), round(part['crop'][3] * .53, 2)]
+        variants[name] = {'parts': parts, 'geometry': geometry}
+    manifest = {'revision': key + '-parts-1', 'status': 'approved-live-components',
+                'mutationKey': key, 'art': art, 'material': material, 'partRoles': roles,
+                'atlases': {'components': asset}, 'variants': variants,
+                'references': ['Bagseed_Mutation_References/' + r for r in refs] +
+                              ['review/mutation-detail/photo-based-batch-03/structure-and-color-studies-03.png']}
+    (BASE / 'sources/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    print('Registered', key, ': painted structural organs; inherited leaf kits and native genetics retained.')
+
+# Final two approved concepts: stature is a connected model trait, while ploidy
+# is an identity read from the game's genetics, never diagnosed from leaf count.
+final_families = {
+    'pocketdwarf': ('dwarf', 'structure', ['internode', 'nodeCollar'],
+                    [('cushion', {'trunkRatio': .62, 'branchScale': .56, 'leafFloor': .46}),
+                     ('upright-compact', {'trunkRatio': .72, 'branchScale': .66, 'leafFloor': .40})],
+                    ['R24', 'R22'], 4),
+    'triploid': ('triploid', 'identity', ['badge'],
+                 [('copper-plate', {}), ('verdigris-plate', {})], ['R09', 'R10'], 2)
+}
+for key, (art, material, roles, forms, refs, count) in final_families.items():
+    BASE = ROOT / f'graphics/plants/mutations/{key}'
+    organs, asset = measure('components', count, 2)
+    variants = {}
+    for i, (name, geometry) in enumerate(forms):
+        parts = dict(zip(roles, organs[i * len(roles):(i + 1) * len(roles)]))
+        if 'nodeCollar' in parts:
+            p = parts['nodeCollar']
+            p['joint'] = [round(p['crop'][2] * .5, 2), round(p['crop'][3] * .5, 2)]
+        variants[name] = {'parts': parts, 'geometry': geometry}
+    manifest = {'revision': key + '-parts-1', 'status': 'approved-live-components',
+                'mutationKey': key, 'art': art, 'material': material, 'partRoles': roles,
+                'atlases': {'components': asset}, 'variants': variants,
+                'references': ['Bagseed_Mutation_References/' + r for r in refs] +
+                              ['review/mutation-detail/photo-based-batch-03/structure-and-color-studies-03.png']}
+    (BASE / 'sources/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    print('Registered', key, ': inherited anatomy retained; no simulation/genetic multipliers changed.')

@@ -1,0 +1,198 @@
+{
+  "status": "user-approved-for-production",
+  "runtimeRevision": "live-plants-7",
+  "mutations": [
+    "pocketdwarf",
+    "triploid"
+  ],
+  "buildSHA256": "9f9adfaf363c0ca17ad522995b834fad2e156123c93605618f08853be0bf3e78",
+  "workingSourceSHA256": "1473e0e743c4312f62b3d3410ce6e0d07e423d970d082e8c504ce35f170180b7",
+  "characterRelease": "character-audit-cel-v1",
+  "personScaleRevision": "person-scale-1",
+  "personScale": 1.35,
+  "integrationBase": "da7a69d5ec73469ad7e50040f6625f10a81eeec9",
+  "assets": {
+    "pocketdwarf": {
+      "manifest": "graphics/plants/mutations/pocketdwarf/sources/manifest.json",
+      "manifestSHA256": "a58f598d3191fe4057d1944d6804e2233159246127f3174389cd3ba2cb1515f0",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "e12c6ce9df2ec06629460cad76110278332e03da26016ee822e8aa65232a7169",
+          "runtime": "assets/plants/mutations/pocketdwarf/components-2c0245413803.webp",
+          "runtimeSHA256": "2c02454138030f3469d52bc0ff9acc393bab61f6dfb2ac114e1c87c400ebab08",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    },
+    "triploid": {
+      "manifest": "graphics/plants/mutations/triploid/sources/manifest.json",
+      "manifestSHA256": "389303ff635db6aa54d4efa9ffdc1cbbe88dd50fda0a449ba5977d48f57ec3be",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "514de01ba7e549df9aac0e61968334ed5d1a97dfd4522f7cba6eb0afe9435702",
+          "runtime": "assets/plants/mutations/triploid/components-2b0588095275.webp",
+          "runtimeSHA256": "2b0588095275a11301d26b34b63a72446672ab9c8263948d3f601e1f5f68cc1d",
+          "size": [
+            2172,
+            724
+          ]
+        }
+      }
+    }
+  },
+  "assetStorage": {
+    "pipeline": "tools/external-assets.cjs",
+    "publishedImagesDir": "public/assets/embedded",
+    "mutationAtlasesDir": "public/assets/plants/mutations",
+    "publishedImageCount": 1841,
+    "plantAtlasCount": 31,
+    "mutationFamilies": 15
+  },
+  "sourcePack": "Bagseed_Mutation_References.zip",
+  "referencePhotos": [
+    {
+      "id": "R09",
+      "title": "Diploid and triploid whole-plant architecture, Figure 4",
+      "traits": [
+        15
+      ],
+      "credit": "Crawford et al. (2021), Genes 12:923",
+      "kind": "scientific photographic comparison",
+      "license": "CC BY 4.0; see article and any figure-specific credits",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3a76/8234880/1297ad83dc8a/genes-12-00923-g004.jpg",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234880/",
+      "resize": false,
+      "original_dimensions": [
+        747,
+        858
+      ],
+      "file": "photos/R09.jpg",
+      "bytes": 278192,
+      "status": "downloaded"
+    },
+    {
+      "id": "R10",
+      "title": "Chromosome and DNA-content comparison, Figure 2",
+      "traits": [
+        15
+      ],
+      "credit": "Crawford et al. (2021), Genes 12:923",
+      "kind": "scientific figure",
+      "license": "CC BY 4.0; see article and any figure-specific credits",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3a76/8234880/6b1e000d580a/genes-12-00923-g002.jpg",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234880/",
+      "resize": false,
+      "original_dimensions": [
+        771,
+        1130
+      ],
+      "file": "photos/R10.jpg",
+      "bytes": 153775,
+      "status": "downloaded"
+    },
+    {
+      "id": "R22",
+      "title": "Reported dwarf photoperiod plant",
+      "traits": [
+        14
+      ],
+      "credit": "Original grower photograph via Overgrow; author attribution on linked thread",
+      "kind": "anecdotal dwarf habit; training visible, cause unconfirmed",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://overgrow.com/uploads/default/original/4X/f/1/7/f1772a0fc414f27f345b1c57354252f1316b0201.jpeg",
+      "source_url": "https://overgrow.com/t/genetic-dwarf-photoperiod-plants/183538",
+      "resize": true,
+      "original_dimensions": [
+        1512,
+        2016
+      ],
+      "file": "photos/R22.jpg",
+      "bytes": 420508,
+      "status": "downloaded"
+    },
+    {
+      "id": "R24",
+      "title": "Micro Lowryder 1 flowering plant",
+      "traits": [
+        14
+      ],
+      "credit": "David Strange, via Doctor\u2019s Choice",
+      "kind": "compact cultivar analogue; not proof of a single dwarf mutation",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://doctorschoice.farm/wp-content/uploads/2026/07/A20micro20LR120phenotype.png",
+      "source_url": "https://doctorschoice.farm/blog/lowryder-story/",
+      "resize": true,
+      "original_dimensions": [
+        957,
+        648
+      ],
+      "file": "photos/R24.jpg",
+      "bytes": 112326,
+      "status": "downloaded"
+    }
+  ],
+  "sourcePhotosIncludedInRepository": false,
+  "generatedSources": {
+    "pocketdwarf-components": "exec-58787004-21e9-4d39-8f6e-37faa0ffbcec.png",
+    "triploid-components": "exec-aa50176d-6681-475c-958d-f2a1b60633ae.png"
+  },
+  "verification": {
+    "report": "verification.json",
+    "modelTestsPassed": 26,
+    "browserRegressionTestsPassed": 7,
+    "finalNativeBatchCapturePassed": true,
+    "catalogCountPerFamily": 38,
+    "stageRange": [
+      0,
+      12
+    ],
+    "anatomyAndIdentityChecks": {
+      "nodeGapRatio": 0.936420661426921,
+      "branchReachRatio": 0.7639631896141301,
+      "matureLeafRatio": 2.225999969738141,
+      "actualHeightPreserved": true,
+      "triploidBodyIdentical": true,
+      "triploidGeometryIdentical": true,
+      "hiddenTriploidHasNoTag": true,
+      "knownTriploidHasTag": true,
+      "discoveryInvalidatesSprite": true,
+      "inheritedRecipesPreserved": true
+    },
+    "saveReload": true,
+    "legacySave": true,
+    "errors": [],
+    "animation": {
+      "frames": 72,
+      "fps": 12,
+      "seconds": 6
+    },
+    "postIntegration": {
+      "buildPassed": true,
+      "staticIntegrityPassed": true,
+      "finalBatchModelAndBrowserTestsPassed": 5,
+      "chosenFaceWalkingSaveReloadPassed": true,
+      "latestMainRetained": true
+    }
+  },
+  "files": {
+    "README.md": "984fa9992dd0408263febc702ff404079a685e8f5dcdaff4a9b749e0075b5dad",
+    "anatomy-and-identity.png": "ebb5ab05105ea50f33944d6d598d0633cbd8997bb40267173406790bf54e8e25",
+    "bedroom-gameplay.png": "c5cff22098453e44e4a0f973ae89ac866fd5b1d26b8bfab15d6b6061c7cadb40",
+    "combined-mutations.png": "9510cfa4ac90cb9c78720c0cd581da4ad1c722624bff00361d56be6cc54cb04b",
+    "growth-and-wind.gif": "acd4c5453e34f01a03aeacafd3ad2c461ee586573a811f41682b91933be33a2d",
+    "growth-and-wind.mp4": "5be060718f6c6264791ff4c4eba145bb9302e21ce672f77c062fe92a78e96ad2",
+    "mobile-gameplay.png": "72f53d9ba5e602aad1c4f6d76f46941d76906332e54311c783f882d42decbb35",
+    "native-guide.png": "21f20090a03cb34665153c1fc0851ca9250be752b6af6b0b35390d20e5967686",
+    "phenotype-colors.png": "4fdfb61314e605fb799400e69b751bdaf37be616210c2af18fccf8235d6e373b",
+    "pocketdwarf-growth.png": "47ff9e9bef9020427fdb9a6a463e74dd3c47cf4ae46edc5a9749d5bfa9f553e3",
+    "training-and-stress.png": "76901757f83b181b4d6d4c8b95d6a120cdd5071d7af73c3482a5124e027759e4",
+    "triploid-growth.png": "b21e4ec2e4c3e706811ee615826cd475470190b8ce8be463f087e73a4c0a1baf",
+    "two-mutations.png": "f9ca40e0bd29a24094e734d2f81b7fcd5764e817743a6adbda4dc62db9804872",
+    "verification.json": "b68e48f992ed8b77d0265e840d58b0fe48b0bc08f83aaee4f95a9797108867bc"
+  }
+}
