@@ -5,7 +5,7 @@ test('loading cover paints during download, waits for all art, blocks input, and
   const root=path.resolve(__dirname,'..'),out=path.join(root,'review/loading-screen');fs.mkdirSync(out,{recursive:true});
   const html=fs.readFileSync(path.join(root,'public/index.html')),marker=Buffer.from('<!-- bagseed-loading-shell-end -->'),cut=html.indexOf(marker)+marker.length;
   assert.ok(cut>marker.length&&cut<500000,'Loading shell must arrive in the first small HTML chunk');
-  const coffeePrefix='data:image/png;base64,'+fs.readFileSync(path.join(root,'graphics/coffee/assets/mug.png')).toString('base64').slice(0,120);
+  const coffeePrefix=require('../tools/external-assets.cjs').externalize('data:image/png;base64,'+fs.readFileSync(path.join(root,'graphics/coffee/assets/mug.png')).toString('base64')).text;
   const {createStaticServer}=await import('../tools/server.mjs'),app=createStaticServer();let releaseStream,streamResponse,browser,streamed=false;
   const server=http.createServer((req,res)=>{if(req.url==='/index.html?stream=1'&&!streamed){streamed=true;
     streamResponse=res;res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});res.write(html.subarray(0,cut));releaseStream=()=>res.end(html.subarray(cut));
@@ -26,7 +26,7 @@ test('loading cover paints during download, waits for all art, blocks input, and
         Object.defineProperty(im,'onload',{configurable:true,get:()=>callback,set:fn=>{callback=fn;}});
         im.addEventListener('load',event=>{
           const run=()=>callback?.call(im,event),mode=sessionStorage.getItem('startup-test-mode')||'hold';
-          if(!im.src.startsWith(prefix)||mode==='pass')return run();
+          if(!im.src.endsWith(prefix)||mode==='pass')return run();
           if(mode==='reject')return im.onerror?.call(im,new Event('error'));
           window.__heldStartupArt.push(run);
         });return im;

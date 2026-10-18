@@ -2,7 +2,7 @@ const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),{chromium}=require('playwright');
 test('fixed mobile loading window fits the slow-download Reload notice',async()=>{
   const root=path.resolve(__dirname,'..'),html=fs.readFileSync(path.join(root,'public/index.html')),marker=Buffer.from('<!-- bagseed-loading-shell-end -->'),cut=html.indexOf(marker)+marker.length,responses=new Set();
-  const server=http.createServer((req,res)=>{if(req.url==='/favicon.ico'){res.writeHead(204);res.end();return;}responses.add(res);res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});res.write(html.subarray(0,cut));});
+  const server=http.createServer((req,res)=>{if(req.url==='/favicon.ico'){res.writeHead(204);res.end();return;}responses.add(res);if(req.url.startsWith('/assets/')){res.writeHead(200);res.end(fs.readFileSync(path.join(root,'public',decodeURIComponent(req.url.split('?')[0]))));return;}res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});res.write(html.subarray(0,cut));});
   await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
   try{
     browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});

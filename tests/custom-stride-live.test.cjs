@@ -1,7 +1,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{pathToFileURL}=require('node:url'),{chromium}=require('playwright');
 const httpMode=process.env.BAGSEED_TEST_HTTP==='1';
 test('approved custom side stride is live in '+(httpMode?'served':'file')+' game, creator and mirror',{timeout:180000},async()=>{
- const root=path.resolve(__dirname,'..');let browser,server;let entry=pathToFileURL(path.join(root,'public/index.html')).href;
+ const root=path.resolve(__dirname,'..');let browser,server;let entry=httpMode?null:pathToFileURL(require('../tools/build-standalone.cjs')(path.join(require('node:os').tmpdir(),'bagseed-standalone-stride'))).href;
  try{
   if(httpMode){const {createStaticServer}=await import('../tools/server.mjs');server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));entry='http://127.0.0.1:'+server.address().port+'/index.html';}
   browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH,headless:true,args:['--disable-gpu','--disable-accelerated-2d-canvas']});
