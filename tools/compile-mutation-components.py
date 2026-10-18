@@ -93,6 +93,9 @@ families = {
     'ducksfoot': ('duck', ['broad-webbed', 'spear-webbed'], ['R05', 'R13']),
     'monophylla': ('mono', ['lanceolate', 'quilted-broad'], ['R14', 'R15']),
     'moonmarble': ('variegated', ['marbled', 'sectorial'], ['R26', 'R28', 'R13']),
+    'snowtip': ('albino', ['ivory-crown', 'green-edged'], ['R25', 'R26']),
+    'fernfrond': ('fern', ['fine-open', 'paired-fronds'], ['R02', 'R17', 'R03']),
+    'goldleaf': ('gold', ['green-veined', 'golden-olive'], ['R18']),
 }
 for key, (art, names, references) in families.items():
     BASE = ROOT / f'graphics/plants/mutations/{key}'
@@ -106,6 +109,8 @@ for key, (art, names, references) in families.items():
                 'mutationKey': key, 'art': art, 'leafKey': 'forest',
                 'atlases': {'components': asset}, 'variants': variants,
                 'references': ['Bagseed_Mutation_References/' + r for r in references] +
-                              ['review/mutation-detail/photo-based-batch-01/leaf-studies-01.png']}
+                              [('review/mutation-detail/photo-based-batch-02/detail-and-color-studies-02.png'
+                                if key in ['fernfrond', 'goldleaf'] else
+                                'review/mutation-detail/photo-based-batch-01/leaf-studies-01.png')]}
     (BASE / 'sources/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print('Registered', key, ': eight painted organs; RGBA-exact atlas; catalog unchanged.')

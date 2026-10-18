@@ -24,7 +24,7 @@ function build(p,traits={},options={}){
   if(growth<=.001)return;
   const parentBranch=model.branches.find(b=>b.id===parent),baseNode=Number(parent.match(/(?:node:|branch:)(\d+)/)?.[1]||nodes);
   const removed=p.visualState?.removedLeaves?.includes(id)||Canopy.removed(p,baseNode/(nodes+.7),parentBranch?.order===2?parentBranch.at:at||1);
-  model.organs.push({id,parent,at,role,length:length*growth*(mutationArts.has('dwarf')?.72:mutationArts.has('triploid')?1.12:1),angle,z,removed,kind:'leaf'});
+  model.organs.push({id,parent,at,role,length:length*growth*(mutationArts.has('dwarf')?.72:mutationArts.has('triploid')?1.12:1),angle,z,removed,kind:'leaf',...(mutationArts.has('albino')?{maturity:clamp((nodes-baseNode)/2.5,0,1)}:{})});
  };
  for(let i=1;i<=count;i++){
   const growth=clamp(nodes-i+1,0,1),node='node:'+i,older=i<=Math.ceil(nodes*.4),cut=(!!p.pruned&&older)||Canopy.removed(p,i/(nodes+.7));
@@ -83,7 +83,7 @@ function build(p,traits={},options={}){
   if(mutationArts.has('triploid'))for(const o of model.organs)if(o.kind==='flower')o.widthScale=1.25;
   // Painted mutation sugar leaves belong to their flower's attachment, not a
   // free-floating overlay. Retain the same IDs and parents throughout bloom.
-  if(!male&&['freak','duck','mono','variegated'].some(k=>mutationArts.has(k)))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
+  if(!male&&['freak','duck','mono','variegated','fern','albino','gold'].some(k=>mutationArts.has(k)))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
    addLeaf(bud.id+'/sugar:'+side,bud.parent,bud.at,'sugarLeaf',bud.length*.62,side*.50,.4);
    const leaf=model.organs[model.organs.length-1];if(leaf.id===bud.id+'/sugar:'+side)leaf.offsetY=bud.length*.18;
   }

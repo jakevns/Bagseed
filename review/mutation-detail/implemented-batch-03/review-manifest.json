@@ -1,0 +1,269 @@
+{
+  "status": "user-approved-for-production",
+  "runtimeRevision": "live-plants-4",
+  "mutations": [
+    "snowtip",
+    "fernfrond",
+    "goldleaf"
+  ],
+  "buildSHA256": "d3472f6799bf5c7a4b59d189e633eb39f9558b6e79130b4d57cb654a3a2597ca",
+  "characterRelease": "character-audit-cel-v1",
+  "personScaleRevision": "person-scale-1",
+  "assets": {
+    "snowtip": {
+      "manifest": "graphics/plants/mutations/snowtip/sources/manifest.json",
+      "manifestSHA256": "d3a929ff12d940d9399ae0d45cacd1d328bfdae3fd63639f5ff875023a9189b1",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "169639997ded57ec795cbddfc95a11215a6a14b83a91de966a0cc410744aea2e",
+          "runtime": "assets/plants/mutations/snowtip/components-4b69b12e2ba5.webp",
+          "runtimeSHA256": "4b69b12e2ba5c9250814b1928cc09ac96912260fae8046044cc73bac341d02ef",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    },
+    "fernfrond": {
+      "manifest": "graphics/plants/mutations/fernfrond/sources/manifest.json",
+      "manifestSHA256": "86f9862729cce7483f239de803c0ff5b54436f7a33b9f321e1ddb2ec4bcae478",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "4323621dfcdd549e53f37be244d7252f0a42d3894e1ffc5ced35cd1cb02a6f08",
+          "runtime": "assets/plants/mutations/fernfrond/components-22f82dd57b3f.webp",
+          "runtimeSHA256": "22f82dd57b3f45ca098f98a66a15b55cb52d886a0a7afd7130fd91fe16cf600a",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    },
+    "goldleaf": {
+      "manifest": "graphics/plants/mutations/goldleaf/sources/manifest.json",
+      "manifestSHA256": "e3e4b79de97a35b0136ae4221a7a7990a0960cd4282096ecda1c87bb0c44a172",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "15e65a4b6c05deaeff99d5e23f8839c70281c8de119d00f95c0b3cf4ce8aa871",
+          "runtime": "assets/plants/mutations/goldleaf/components-241660aca1e0.webp",
+          "runtimeSHA256": "241660aca1e0f7ec02d74713db199a3045227454c57afbcfceccc3c4a68fb1fa",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    }
+  },
+  "sourcePack": "Bagseed_Mutation_References.zip",
+  "referencePhotos": [
+    {
+      "id": "R25",
+      "title": "White cannabis seedling",
+      "traits": [
+        6
+      ],
+      "credit": "Royal Queen Seeds",
+      "kind": "white tissue reference; image alone cannot prove genetic albinism",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://www.royalqueenseeds.com/img/cms/Seedling_6.jpg",
+      "source_url": "https://www.royalqueenseeds.com/us/blog-albino-weed-the-stuff-of-legend-or-scientific-fact-n722",
+      "resize": true,
+      "original_dimensions": [
+        848,
+        330
+      ],
+      "file": "photos/R25.jpg",
+      "bytes": 26540,
+      "status": "downloaded"
+    },
+    {
+      "id": "R26",
+      "title": "White sectors on Legitimo F5 leaf",
+      "traits": [
+        5,
+        6
+      ],
+      "credit": "mutantfarmer; Legitimo F5 (KalySeeds)",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-legitimo-2.4Scgh3xr_Z1VG3bO.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        714,
+        1280
+      ],
+      "file": "photos/R26.jpg",
+      "bytes": 142837,
+      "status": "downloaded"
+    },
+    {
+      "id": "R02",
+      "title": "Freakshow leaf morphology comparison",
+      "traits": [
+        1,
+        2
+      ],
+      "credit": "Shapeshifter collection, via Doctor\u2019s Choice",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://doctorschoice.farm/wp-content/uploads/2026/09/04-monstra.webp",
+      "source_url": "https://doctorschoice.farm/blog/freakshow-cannabis-mutation-history/",
+      "resize": true,
+      "original_dimensions": [
+        1600,
+        1066
+      ],
+      "file": "photos/R02.jpg",
+      "bytes": 318865,
+      "status": "downloaded"
+    },
+    {
+      "id": "R17",
+      "title": "Freaky Ryder leaf closeup",
+      "traits": [
+        1,
+        2
+      ],
+      "credit": "mutantfarmer",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-freakshow-own-drive-leaf.DmSud6WT_ZD7rBk.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        720,
+        1280
+      ],
+      "file": "photos/R17.jpg",
+      "bytes": 95898,
+      "status": "downloaded"
+    },
+    {
+      "id": "R03",
+      "title": "Large outdoor Freakshow habit",
+      "traits": [
+        1,
+        2
+      ],
+      "credit": "Shapeshifter collection, via Doctor\u2019s Choice",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://doctorschoice.farm/wp-content/uploads/2026/09/05-giant.webp",
+      "source_url": "https://doctorschoice.farm/blog/freakshow-cannabis-mutation-history/",
+      "resize": true,
+      "original_dimensions": [
+        853,
+        1280
+      ],
+      "file": "photos/R03.jpg",
+      "bytes": 265881,
+      "status": "downloaded"
+    },
+    {
+      "id": "R18",
+      "title": "Variegated White Widow Duck leaf",
+      "traits": [
+        5,
+        6
+      ],
+      "credit": "mutantfarmer",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-variegation-1.CtI5jPgs_Z111UmI.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        1280,
+        1280
+      ],
+      "file": "photos/R18.jpg",
+      "bytes": 106939,
+      "status": "downloaded"
+    }
+  ],
+  "sourcePhotosIncludedInRepository": false,
+  "generatedSources": {
+    "snowtip": "exec-3833682f-089c-4c9a-b023-f2bf57cfcf6f.png",
+    "fernfrond": "exec-28b69695-ef4c-496e-b595-ecc1ebe0b4dd.png",
+    "goldleaf": "exec-cb0e457f-6925-46aa-8c8d-e43b0544a628.png"
+  },
+  "verification": {
+    "catalogRecordsPerFamily": [
+      38,
+      38,
+      38
+    ],
+    "chlorophyllChecks": {
+      "young": {
+        "id": "fan:4:-1",
+        "maturity": 0,
+        "total": 20673,
+        "brightness": 130.92275334010455,
+        "pale": 0.15972524548928554,
+        "green": 0.7693610022734968,
+        "gold": 0.1191892807043003
+      },
+      "middle": {
+        "id": "fan:4:-1",
+        "maturity": 0.5,
+        "total": 20673,
+        "brightness": 122.94401725922657,
+        "pale": 0.09640594011512602,
+        "green": 0.7761331204953321,
+        "gold": 0.13640980989696705
+      },
+      "older": {
+        "id": "fan:4:-1",
+        "maturity": 1,
+        "total": 20673,
+        "brightness": 100.34434632612553,
+        "pale": 0,
+        "green": 0.9856334349151067,
+        "gold": 0.046921104822715616
+      },
+      "gold": {
+        "id": "fan:4:-1",
+        "total": 22223,
+        "brightness": 148.4589954821569,
+        "pale": 0,
+        "green": 0.23003194888178913,
+        "gold": 0.827791027314044
+      },
+      "formStable": true,
+      "greensWithAge": true,
+      "goldIsHealthy": true
+    },
+    "moonmarblePaleTissueRetention": 1,
+    "saveReload": true,
+    "legacySave": true,
+    "javascriptErrors": [],
+    "animation": {
+      "frames": 72,
+      "fps": 12,
+      "seconds": 6
+    }
+  },
+  "files": {
+    "bedroom-gameplay.png": "ebe2c4614fef60f8b870a5faa3fa6ed6e356213bc66188bda443387c5355d20e",
+    "combined-mutations.png": "6eeffde59e7e098fc54e8caa9d8ae102207cd7bc592167289b831c9e3d966f3c",
+    "fernfrond-growth.png": "3f5180c08af84478898edcdcafbbff2b75747067e6d3cba9878771368af1bfa6",
+    "goldleaf-growth.png": "4e3e1bec467188038771dc672454718bdd49a4ebda94d262b3ddbf6bcee2f8cf",
+    "growth-and-wind.gif": "292f478b590f0ab240aac798a3cf65c2cc82debc7cd50d13631f633c89124974",
+    "growth-and-wind.mp4": "6adc966e682c308a01ffaa6e861d4879a2f3a982e1a180fe7afd1ef997c4b236",
+    "mobile-gameplay.png": "36ec1fcf696c05daa6fbe00eec3995eb74071852b2ba30c05fcb2a80b2c7cab3",
+    "native-guide.png": "34d79ea4f2ff5798f4c1651512d660ef3149ce02a507a8fc9050c49416e1a67b",
+    "phenotype-colors.png": "cabf281a8607a4a1e51584460035d3f7978d6fa31ea85e379c599321a90e4622",
+    "runtime-leaf-details.png": "a31130a11a5dc49a83c1f4616cb10dbf19b8f5616df5f59e866c51c1ea6aff59",
+    "snowtip-growth.png": "c725f79cf7bcd1925cb84c638a5cc2c0cd0963bb55811301dc88eef4a21cfe36",
+    "snowtip-leaf-aging.png": "73a2016797ca6eeab9db50f3d180f9a1230ef695e3783610d8c4cc81cbcac18d",
+    "three-mutations.png": "08fdfcd45d4d5d745fbc3fb6cf99dd46fb7a29bf653f397e962594754991e1d6",
+    "training-and-stress.png": "e9809cf245442bccc5b6c713885de62d7e89b8f33b607ecd2baca8977bf09a14",
+    "verification.json": "a8b63caec9c6b5d3eeb846bd4802127ccd58ffe1583813686d0f0d7b542c7211"
+  }
+}
