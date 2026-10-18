@@ -1,0 +1,76 @@
+{
+  "source": "graphics\\production\\walk\\sources\\cardigan-idle-v11\\down-raw.png",
+  "sourceSHA256": "ca5055234a0612fe6e568b2528c92f57f42474e8c5858a1f99bae26d7e9d9bcd",
+  "oldIdleSHA256": "59cc5789413301c425e5f13a7d5ae4cc1dd6e0f76a2611d6a67b7469837099a5",
+  "registration": {
+    "uniformScale": 0.14831460674157304,
+    "rotationDegrees": 0,
+    "translationPixels": [
+      72.27303370786517,
+      105.49887640449438
+    ],
+    "groundError": 0.0,
+    "operations": [
+      "uniform-scale",
+      "translate"
+    ],
+    "sourceBounds": [
+      172,
+      118,
+      852,
+      1453
+    ],
+    "guideBounds": [
+      82,
+      123,
+      205,
+      321
+    ]
+  },
+  "registeredSHA256": "f6f0b732ad0cf461a2a3c044ae9ef6d3ccdedbc40336e6b216f55629f6d03c07",
+  "oldIdle": {
+    "shoulderBand": 111.5,
+    "upperBodyBand": 129.0,
+    "hipBand": 135.0,
+    "denimHipBand": 113.5,
+    "shinBand": 99.0
+  },
+  "newIdle": {
+    "shoulderBand": 94.5,
+    "upperBodyBand": 112.0,
+    "hipBand": 112.0,
+    "denimHipBand": 70.0,
+    "shinBand": 83.0
+  },
+  "walk": [
+    {
+      "shoulderBand": 100.5,
+      "upperBodyBand": 130.0,
+      "hipBand": 74.0,
+      "denimHipBand": 69.5,
+      "shinBand": 87.0
+    },
+    {
+      "shoulderBand": 94.0,
+      "upperBodyBand": 116.0,
+      "hipBand": 116.0,
+      "denimHipBand": 68.0,
+      "shinBand": 34.0
+    },
+    {
+      "shoulderBand": 103.0,
+      "upperBodyBand": 128.0,
+      "hipBand": 101.0,
+      "denimHipBand": 72.0,
+      "shinBand": 78.0
+    },
+    {
+      "shoulderBand": 99.0,
+      "upperBodyBand": 118.0,
+      "hipBand": 112.0,
+      "denimHipBand": 74.0,
+      "shinBand": 36.0
+    }
+  ],
+  "runtimeInstalled": false
+}

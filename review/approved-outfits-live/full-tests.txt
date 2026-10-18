@@ -1,0 +1,325 @@
+
+> bagseed@1.1.5-2 test
+> node tools/run-tests.cjs --test-concurrency=4
+
+player                 idle {"down":32.3,"right":34.1,"up":33.4,"left":34.1} nose {"down":32.3,"right":34.1,"up":33.4,"left":34.1}
+remy                   idle {"down":33.1,"right":33.1,"up":33.1,"left":33.1} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+doug                   idle {"down":33.1,"right":33.1,"up":33.1,"left":33.1} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+priya                  idle {"down":33.1,"right":33.1,"up":33.1,"left":33.1} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+poppy                  idle {"down":27.3,"right":27.3,"up":27.3,"left":27.3} nose {"down":27.3,"right":27.3,"up":27.3,"left":27.3}
+cast-01-marcus         idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-02-ines           idle {"down":31,"right":31,"up":31,"left":31} nose {"down":31,"right":31,"up":31,"left":31}
+cast-03-tobias         idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-04-bev            idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-05-kenji          idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.7,"up":34.7,"left":34.7}
+cast-06-mateo          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-07-elena          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-08-rosa           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-09-leo            idle {"down":27.3,"right":27.3,"up":27.3,"left":27.3} nose {"down":27.3,"right":27.3,"up":27.3,"left":27.3}
+cast-10-mara           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-11-eli            idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-12-nico           idle {"down":31,"right":31,"up":31,"left":31} nose {"down":31,"right":31,"up":31,"left":31}
+cast-13-alma           idle {"down":31,"right":31,"up":31,"left":31} nose {"down":31,"right":31,"up":31,"left":31}
+cast-14-owen           idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.7,"up":34.7,"left":34.7}
+cast-15-amina          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-16-ronan          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-17-leila          idle {"down":31,"right":31,"up":31,"left":31} nose {"down":31,"right":31,"up":31,"left":31}
+cast-18-cass           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-19-jun            idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-20-rosie          idle {"down":31,"right":31,"up":31,"left":31} nose {"down":31,"right":31,"up":31,"left":31}
+cast-21-arthur         idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.7,"up":34.7,"left":34.7}
+cast-22-nadia          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-23-miles          idle {"down":27.3,"right":27.3,"up":27.3,"left":27.3} nose {"down":27.3,"right":27.3,"up":27.3,"left":27.3}
+cast-24-hugo           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-25-anika          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-26-enzo           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-27-sasha          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-28-dev            idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.7,"up":34.7,"left":34.7}
+cast-29-ari            idle {"down":27.3,"right":27.3,"up":27.3,"left":27.3} nose {"down":27.3,"right":27,"up":27.3,"left":27}
+cast-30-sam            idle {"down":27.3,"right":27.3,"up":27.3,"left":27.3} nose {"down":27.3,"right":27.3,"up":27.3,"left":27.3}
+cast-31-talia          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-32-luz            idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-33-0              idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33,"left":33.3}
+cast-34-1              idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-35-2              idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-36-3              idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.7,"up":34.7,"left":34.7}
+cast-40-vale           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-41-shed           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-42-patchwork      idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-43-canopy         idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-44-pheno          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-45-fern           idle {"down":31,"right":31,"up":31,"left":31} nose {"down":31,"right":31,"up":31,"left":31}
+cast-46-tinker         idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-47-netted         idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.7,"up":34.7,"left":34.7}
+cast-48-cure           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-49-lumen          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-50-cafePT         idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-51-gardenPT       idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-52-hardwarePT     idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-53-threadsPT      idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-54-marketPT       idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-55-communityPT    idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-56-labPT          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-57-officer        idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.7,"up":34.7,"left":34.7}
+cast-58-suit           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-59-amani          idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.7,"up":34.3,"left":34.7}
+cast-60-grandma        idle {"down":31,"right":31,"up":31,"left":31} nose {"down":31,"right":31,"up":30.7,"left":31}
+cast-61-pixel          idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33,"right":33.3,"up":33.3,"left":33.3}
+cast-62-moon           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-63-auto           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33,"right":33.3,"up":33.3,"left":33.3}
+cast-64-swamp          idle {"down":34.7,"right":34.7,"up":34.7,"left":34.7} nose {"down":34.7,"right":34.3,"up":34.7,"left":34.3}
+cast-65-rosalind       idle {"down":31,"right":31,"up":31,"left":31} nose {"down":31,"right":31,"up":31,"left":31}
+cast-66-theo           idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33.3,"right":33.3,"up":33.3,"left":33.3}
+cast-67-marisol        idle {"down":33.3,"right":33.3,"up":33.3,"left":33.3} nose {"down":33,"right":33.3,"up":33.3,"left":33.3}
+69 appearances, 276 direction comparisons, 0 flagged rows.
+✔ ac samples purchase, deliver, fit and survive reload; missing art blocks startup (46029.1958ms)
+✔ approved outfit pack retains all thirty reviewed paintings with verified source hashes (9.8838ms)
+✔ approved cardigan, jacket and flannel drawings are used by live idle/walk rendering (18158.3601ms)
+✔ the widened bedroom wall accepts decor between the window, door and closet (14441.8964ms)
+✔ painted live window follows game time, layers scheduled neighbors, preserves weather, sill, curtains, interactions and saves (45939.2085ms)
+✔ bedroom shell preserves interactions and finishes, with responsive light and phone rendering (29947.91ms)
+✔ batch-01: 20 drawings/previews, complete catalog, purchase, save and sleep controls (40057.8354ms)
+✔ batch-02: 20 drawings/previews, complete catalog, purchase, save and sleep controls (33586.0832ms)
+✔ batch-03: 20 drawings/previews, complete catalog, purchase, save and sleep controls (43855.4826ms)
+✔ batch-04: 20 drawings/previews, complete catalog, purchase, save and sleep controls (33175.9303ms)
+✔ the cozy score rises as a room gains walls, seats, rugs, light, plants and touches (20143.5137ms)
+✔ the ♥ chip opens a breakdown with tips; Close goes back to the tray (15716.9718ms)
+✔ reaching 3, 4 and 5 hearts pays a one-time housewarming gift (19573.0485ms)
+✔ a cozy bedroom makes the first few energy each day free (20128.9014ms)
+✔ too many of the same item costs points (19047.2662ms)
+✔ mouse play shows the ♥ chip and panel too (17837.044ms)
+✔ phone: hand moves snap to the 8px grid, ▦ switches to free placement, arrows step a cell (23245.4282ms)
+✔ scripted moves are never snapped (saves, tests and other code keep exact positions) (18643.4218ms)
+✔ landing: squash, dust and a sound that matches the material; lifting has its own sound (22647.138ms)
+✔ the held item draws lifted with green footprint tiles, red when it does not fit (20330.3986ms)
+✔ phone: tabs follow what things are, and every item says where it goes (17685.0051ms)
+✔ phone: buy now for 25% more lands the item in your hands; ordering costs list price and arrives tomorrow (22412.4956ms)
+✔ buying now without enough money changes nothing (18863.8719ms)
+✔ phone landscape: shop cards and their buttons fit beside the room (18638.6527ms)
+✔ mouse play: same tray and shop, with Room styles, grid toggle and the Place row (18169.9773ms)
+✔ redo brings back what undo took away; the header still fits a narrow phone (19774.0314ms)
+✔ ⧉ places the held item and picks up the next copy beside it; it hides on the last one (18127.7648ms)
+✔ select mode: tap to pick several, drag one to move the group, undo puts them back (20149.7481ms)
+✔ a group that would not fit snaps back untouched (17426.0097ms)
+✔ selecting a table brings what sits on it (15950.3308ms)
+✔ mouse: drag a box to select, store the selection, pack up the room and undo it (21184.7902ms)
+✔ layouts: save, lay out again exactly, and report what is missing (35193.5369ms)
+✔ phone portrait: full-stage decorating, item buttons, finger drag, tap to pick up (23251.1559ms)
+✔ phone portrait: an item dragged up out of the tray lands in the room (16798.7766ms)
+✔ phone landscape: the side panel keeps Done and the status line on screen (20481.0186ms)
+✔ mouse play keeps its click-to-place controls under the shared tray (18136.1918ms)
+✔ camera upgrades retain photo unlocks, store/package artwork, vintage placement and saved equipment (46873.0889ms)
+✔ Remy, Priya and Doug have 96 distinct high-resolution walk assets and working eight-phase game clocks (24188.4939ms)
+✔ approved chairs retain store delivery, style choices, finish purchases, placement, seating and saves (46772.8364ms)
+Authored lookup checks: 183
+✔ NPC definitions retain authored art with original, null and undefined props, including child draws (13969.3797ms)
+{"checked":272,"fallbacks":0,"failures":[],"expected":272}
+✔ authored NPC reactions never switch to procedural figures when pose art is missing (11608.6417ms)
+✔ every hairstyle has identical readable pixels in the external-image game and direct-file standalone (37733.1558ms)
+✔ patient identities match world NPCs and unknown ids never impersonate Doug (12763.0337ms)
+✔ every rear garment frame has explicit rear artwork provenance (76.3235ms)
+✔ approved desks preserve purchases, finish unlocks, attached lamps, flips and saved furniture (30976.5102ms)
+✔ computer purchases, job upgrades, all desktop style purchases, package art and saved options remain functional (52174.8394ms)
+✔ Cotton Candy atlas bounds and checksums resolve to its lime/pink hybrid appearance (24.5485ms)
+✔ fourth kit preserves saved identities for all three earlier strains and inherited clone selections (21.6592ms)
+✔ Cotton Candy has attached flowers, expanding shoots, fixed roots and a rose cool-night response (57.4665ms)
+✔ all six window treatments visibly animate at native resolution in the real game loop, with stronger wind and still reduced motion (53574.2772ms)
+✔ curtain batch 01: animation, original window behavior, store/package purchase and saved choices (35402.5358ms)
+✔ curtain batch 02: animation, original window behavior, store/package purchase and saved choices (37618.9743ms)
+✔ curtain batch 03: animation, original window behavior, store/package purchase and saved choices (36649.5336ms)
+✔ uncropped custom alignment: every garment, build, presentation, direction and stride (135204.3597ms)
+✔ both painted arm silhouettes remain visible over every bottom in all side poses (55722.3344ms)
+✔ facial hair follows the lower face without repainting eyes, crown or back hair (37567.0498ms)
+✔ hairstyles retain transparent canvas margins when the face is widened or lengthened (26250.4353ms)
+✔ hats preserve the registered face scale and eye placement (18342.8093ms)
+✔ animated blinks stay inside registered eyes and leave the cheeks and mouth intact (18850.9398ms)
+✔ creator retains source detail and neck, trousers and feet remain connected (9009.9773ms)
+✔ rear neck shading follows skin color rather than the selected hair color (6060.5261ms)
+✔ all hair is transparent and recolorable, with only the reviewed warm outline ink (11635.4456ms)
+✔ changing hair preserves face geometry and gives long and tied styles headroom (58509.4788ms)
+✔ close cuts fit the skull width, stay centered and finish at the nape (10038.7396ms)
+✔ the original opaque fringe strands survive composition over the forehead (15736.245ms)
+✔ footwear styles keep a consistent footprint across outfits and directions (8419.0784ms)
+✔ custom idle breath preserves the sharp rest raster instead of squashing it (11161.6709ms)
+✔ every walking top has visible neck skin below the jaw across frames, faces and builds (32134.488ms)
+✔ enlarged room figures retain native detail and hair retains outline and interior ink (15692.9576ms)
+✔ approved custom side stride is live in file game, creator and mirror (16068.1184ms)
+{"composites":1800,"checkedPixels":568736,"failures":0}
+✔ all walking outfits have opaque waist-to-pelvis joins (72664.1872ms)
+✔ all custom wardrobe walk combinations render grounded frames with connected hands and a following flashlight (194374.1254ms)
+✔ dehumidifier samples purchase, deliver, fit and survive reload; missing art blocks startup (37467.4766ms)
+✔ desk stacking and the pegboard top remain usable with aligned saved decorations (42224.5193ms)
+✔ approved exhaust purchase, deliver, fit and survive reload; missing art blocks startup (43016.7385ms)
+✔ all mouth choices replace the native lips on every head shape and never mark the back (16521.3546ms)
+✔ individual ear studs follow the visible lobe for every ear option and head shape (17843.8877ms)
+✔ hidden ears suppress all ear jewelry and facial details stay off the rear skull (8832.0348ms)
+✔ eye colors stay inside the native irises and removing brows leaves clean skin (9415.2876ms)
+✔ iris color follows each eye opening when its height changes (8222.5453ms)
+✔ headphone cups follow the near ears in profile and both ears in front and back (11640.659ms)
+✔ detail controls create a character and preserve its rendered face through save and reload (30232.1054ms)
+✔ approved fans purchase, deliver, fit and survive reload; missing art blocks startup (48238.3093ms)
+✔ Freakshow paints its own growing organs, gates startup and preserves genotype, clones and legacy saves (56929.6769ms)
+✔ orientation math: every bed, every orientation keeps slots inside the turned footprint (13655.0907ms)
+✔ place a turned bed, turn it again with plants in it, collide, save and reload (27720.2188ms)
+✔ an old save without bed orientation loads unchanged (32775.4625ms)
+✔ touch layout: the placement bar fits a phone and its turn buttons respond to taps (17773.4134ms)
+✔ garden crops share rear/plant/front pot layers in every tent and pot tier (21761.3028ms)
+✔ suit cloth values match idle and lab coats stay white in every walking phase (17287.1982ms)
+✔ a save created by the original flashlight build loads with appearance and progress intact (31052.3451ms)
+✔ every hairstyle, skin palette, authored clothing design and appearance choice renders (83052.0342ms)
+✔ custom outfits keep a consistent face, joined legs and a single footwear layer (31978.9874ms)
+✔ a character customized through creator controls renders, plays and survives wardrobe changes and reload (30844.174ms)
+✔ seating, shop counters, scene changes and Next Track remain functional (15079.0958ms)
+✔ flashlights follow illustrated hands and retain obstacle-limited beams (15477.2521ms)
+✔ a live smell encounter renders the pose and dismisses with Escape (16663.1569ms)
+✔ approved lights purchase, deliver, fit and survive reload; missing art blocks startup (51341.4215ms)
+✔ garden plants can be grown in the grow-tent pots instead of cannabis (22839.7452ms)
+✔ remaining exposed-ear hairstyles preserve selected ears across every head and ear shape (109676.9811ms)
+✔ long and tied hair has a smaller crown while keeping complete loose ends (12082.6961ms)
+✔ full rear caps cover the skull and preserve narrow natural partings (13370.8504ms)
+✔ all remaining cuts work through creator and mirror controls, with a saved long-haired character (40465.8046ms)
+✔ five cuts preserve the selected ear artwork across all head and ear shapes (21337ms)
+✔ rear hair covers the cranial surface down to the nape on every head shape (6613.2093ms)
+✔ the fitted five-cut heads retain their candidate material and registered silhouettes (8545.251ms)
+✔ ear jewelry stays on the selected ears, and hidden ears have no floating jewelry (23224.3081ms)
+✔ the five styles work in the creator and mirror and survive save/reload (20140.675ms)
+✔ loose hair and afros conceal ears and their jewelry for all head and ear shapes (59887.8946ms)
+✔ complete hair ends remain above garments in figures, walking and nose-covering poses (200225.2258ms)
+✔ portraits preserve loose hair over the shoulders without a neckline crop (11056.9563ms)
+✔ hair preserves pale material, clips mohawk sides to the scalp and leaves no cream cheek strips (15751.7216ms)
+✔ short crops stay within measured skull proportions in front and back (11782.4423ms)
+✔ short hair opens around ear cartilage and fade materials do not dye ears (16477.0123ms)
+✔ heater samples purchase, deliver, fit and survive reload; missing art blocks startup (40381.577ms)
+✔ approved humidifiers purchase, deliver, fit and survive reload; missing art blocks startup (47138.3478ms)
+✔ combined HVAC purchases replace room heaters and ACs without losing inventory or other rooms (41397.8651ms)
+✔ topping and inherited twin leaders carry connected leaves and flowers along both new shoots (34.9729ms)
+✔ SCROG and LST retain attachment parents, whorls add real node leaves, and giant proxy properties remain readable (20.1306ms)
+✔ live index renders painted plants, waits for atlases, and preserves saved genetics and mutations (57785.4388ms)
+✔ mobile loading viewport stays stable while unstyled menu images arrive (17966.3396ms)
+✔ fixed mobile loading window fits the slow-download Reload notice (4302.3465ms)
+✔ loading cover paints during download, waits for all art, blocks input, and recovers from failure without changing a save (96234.8804ms)
+✔ community main menu fits desktop/phone layouts and preserves keyboard, settings, import, new game and Continue (39256.6902ms)
+✔ Moonberry atlas bounds and checksums resolve to its sage/lavender hybrid appearance (15.6165ms)
+✔ fifth kit preserves saved identities for all four earlier strains and inherited clone selections (11.0605ms)
+✔ Moonberry has attached flowers, expanding shoots, fixed roots and a lavender cool-night response (32.4839ms)
+✔ all selected mouth silhouettes remain distinct at creator size with expressions enabled (9049.9762ms)
+✔ expressions preserve an explicitly selected mouth and Classic still responds (7113.1942ms)
+✔ moustaches leave ear cartilage intact and all beard styles leave the neck root intact (9128.4628ms)
+✔ new mouth styles and cleaned beards work through creator, wardrobe and save/reload (34395.3941ms)
+✔ Ducksfoot, Monophylla and Moonmarble grow painted organs and preserve combinations, clones and saves (69006.0484ms)
+✔ Snowtip greens attached leaves with age while Fernfrond and Goldleaf keep painted anatomy, wind and saved identity (107691.5543ms)
+✔ Ember vascular texture, female Pink Pistil hairs and Inkleaf pigment grow on native plants and preserve saves (73924.0753ms)
+✔ Twin Leader forks, fasciated Crested Cola and three-way Whorl nodes stay connected through growth, wind and saves (58084.6033ms)
+✔ Pocket Dwarf has compact connected growth; Triploid retains inherited anatomy and reveals only its known-genetics badge (52645.8941ms)
+✔ mutations live in the genome: clones keep them, seeds segregate them, and the guide draws them (37335.0503ms)
+✔ attached heads omit their painted neck while preserving the face, jaw and hair (13429.4246ms)
+✔ standing garments and head/body shapes share one body neck and one jaw attachment (156322.7838ms)
+✔ custom reactions preserve the fitted figure with a visible sniff emote for every garment (92334.3585ms)
+✔ portraits also use the body neck rather than a second head neck (8458.3931ms)
+✔ short and child figures keep the neck connected during movement and reactions (6517.2001ms)
+✔ 10F actual lights-off differential is inclusive and independent of absolute temperature (1.6974ms)
+✔ only receptive flowering phenotypes express colors, with no universal purple conversion (0.531ms)
+✔ exposure accumulates without rerender farming, expires stale references and learns a fresh daytime mean (1.4633ms)
+✔ color progress is persistent, capped, pure and separate from senescence/health/genetic selection (2.4677ms)
+✔ Sprout color bonus grows with captured expression, is genetics-gated, and disappears in monochrome (0.4393ms)
+✔ smart controller cools shared room at lights off, records actual phenotype exposure, persists and respects access (34627.2976ms)
+✔ people stand at a believable height in the home grow spaces only (17930.7229ms)
+✔ Pixel Punch atlas checksums, isolated crop bounds and attachment points match its hybrid profile (13.4345ms)
+✔ third kit preserves saved Porchlight/Velvet identities, clones and all earlier part/profile records (9.0107ms)
+✔ Pixel Punch uses attached growth and wind, female/male flower organs, purple senescence and genetics-gated cold color (35.1078ms)
+✔ last catalog strain and two extra profiles preserve all eleven earlier kits and native defaults (22.9095ms)
+✔ Gas Station Sushi has isolated organs and a saved identity belonging to its native strain (14.3263ms)
+✔ Gas Station Sushi expands attached branch buds and preserves cleanup, male flowers and root-fixed wind (34.6507ms)
+✔ Gas Station Sushi uses phenotype-specific finishing and eligible cool-night color without reselecting organs (1.7398ms)
+✔ Bog Lantern — Lavender Marsh has isolated organs and a saved identity belonging to its native strain (9.6548ms)
+✔ Bog Lantern — Lavender Marsh expands attached branch buds and preserves cleanup, male flowers and root-fixed wind (25.7233ms)
+✔ Bog Lantern — Lavender Marsh uses phenotype-specific finishing and eligible cool-night color without reselecting organs (1.0802ms)
+✔ Bog Lantern — Lavender Marsh is an additional compatible phenotype, without replacing the approved default (3.9328ms)
+✔ Frog Prince — Copper Reed has isolated organs and a saved identity belonging to its native strain (7.8109ms)
+✔ Frog Prince — Copper Reed expands attached branch buds and preserves cleanup, male flowers and root-fixed wind (16.1143ms)
+✔ Frog Prince — Copper Reed uses phenotype-specific finishing and eligible cool-night color without reselecting organs (0.9279ms)
+✔ Frog Prince — Copper Reed is an additional compatible phenotype, without replacing the approved default (2.814ms)
+✔ registering three new kits preserves every earlier part/profile record and saved identity (22.3341ms)
+✔ Bog Lantern has isolated measured organs and a pinned compatible phenotype (8.9518ms)
+✔ Bog Lantern grows attached popcorn buds, preserves branches and supports cleanup and wind (41.0057ms)
+✔ Bog Lantern finishes with its own senescence and only genetically eligible cold color (1.201ms)
+✔ Frog Prince has isolated measured organs and a pinned compatible phenotype (8.3964ms)
+✔ Frog Prince grows attached popcorn buds, preserves branches and supports cleanup and wind (32.3085ms)
+✔ Frog Prince finishes with its own senescence and only genetically eligible cold color (0.7874ms)
+✔ Night Shift has isolated measured organs and a pinned compatible phenotype (10.2957ms)
+✔ Night Shift grows attached popcorn buds, preserves branches and supports cleanup and wind (25.7588ms)
+✔ Night Shift finishes with its own senescence and only genetically eligible cold color (1.2244ms)
+✔ boglantern experimental review never silently replaces a different rolled phenotype (19.5113ms)
+✔ frogprince experimental review never silently replaces a different rolled phenotype (21.2397ms)
+✔ registering three new kits preserves every earlier part/profile record and saved identity (12.7852ms)
+✔ Halfmoon CBD has isolated measured organs and a pinned compatible phenotype (10.83ms)
+✔ Halfmoon CBD grows attached popcorn buds, preserves branches and supports cleanup and wind (37.9241ms)
+✔ Halfmoon CBD finishes with its own senescence and only genetically eligible cold color (2.2505ms)
+✔ Zoomies Auto has isolated measured organs and a pinned compatible phenotype (7.7587ms)
+✔ Zoomies Auto grows attached popcorn buds, preserves branches and supports cleanup and wind (20.6881ms)
+✔ Zoomies Auto finishes with its own senescence and only genetically eligible cold color (0.4902ms)
+✔ Cruise Control Auto has isolated measured organs and a pinned compatible phenotype (8.7021ms)
+✔ Cruise Control Auto grows attached popcorn buds, preserves branches and supports cleanup and wind (16.8596ms)
+✔ Cruise Control Auto finishes with its own senescence and only genetically eligible cold color (0.9988ms)
+✔ native canopy care updates rendering, persists through save, snapshots, and harvests exactly once (30355.3417ms)
+✔ all female kits have stable graded branch sites and the largest apical flower (74.4535ms)
+✔ cleanup persists, removes lower sites and leaves, enlarges retained tops and cannot stack (8.3083ms)
+✔ old pruned saves receive bounded credit and old dried harvests keep their quantity (2.4033ms)
+✔ draft Porchlight library is explicit about unfinished art and does not change plant data (4.5986ms)
+✔ save/reload and cloned genomes preserve artwork identity; conditions do not reroll it (2.8982ms)
+✔ new inherited phenotype IDs get their own stable variation seed without changing parents (1.9007ms)
+✔ adding parts and a new strain preserves pinned existing plants (3.527ms)
+✔ incompatible leaf families, missing saved parts and unregistered strains are not silently replaced (5.4231ms)
+✔ approved parts need real asset references and anchors; transient conditions are not inherited selectors (2.7157ms)
+✔ a newly registered phenotype trait can select new compatible artwork without rewriting the resolver (3.7334ms)
+✔ adult player height and solid cel hair match the authored character scale (14871.7406ms)
+✔ 50 and 90 inch plants add attached secondary growth while keeping the native 11-node limit (26.5027ms)
+✔ every organ has a real parent, including at fractional new-node and side-shoot thresholds (405.2347ms)
+✔ wind keeps the root fixed and supported branches move less; reduced motion is stationary (15.1197ms)
+✔ growth and posing are deterministic, preserve the input plant, and remember removed leaf IDs (11.4291ms)
+✔ older fan leaves retain their leaflet type as later nodes grow (2.812ms)
+✔ seedlings have cotyledons and their first single true-leaf pair (0.4885ms)
+✔ senescence follows finishing stage and expressed color without depending on hunger or stress (1.0193ms)
+✔ window climate station keeps shared effects, usable nearby controls and strict plant access (30346.1474ms)
+✔ all three seedling desks share room/store/package art and preserve purchases, supplies, mixing and saves (37190.403ms)
+✔ sensor samples purchase, deliver, fit and survive reload; missing art blocks startup (45261.6493ms)
+✔ title, character creation, and a new playable bedroom (19314.3108ms)
+✔ the standalone local file creates a bald character and retains its saved appearance (34999.8581ms)
+✔ keyboard movement works in all four directions (13047.7248ms)
+✔ wardrobe appearance and progress survive save, reload, and Continue (32458.4588ms)
+✔ a chosen face shape survives walking, save, reload, and Continue (24784.4493ms)
+✔ authored cast and all haircuts render without changing their appearance data (57545.0863ms)
+✔ indoor and outdoor scenes render in daylight and at night (13782.646ms)
+✔ mobile portrait creation, gameplay, and viewport layout (9061.8848ms)
+✔ mobile landscape creation, gameplay, and viewport layout (8879.4735ms)
+✔ starter shells layer live contents, animate, share store/package art, fit and survive reload (34719.1212ms)
+✔ Pocket Dwarf compresses mature node spacing and branch reach while retaining substantial leaf anatomy (27.1655ms)
+✔ Triploid alone changes no leaf, flower, node, branch, or training geometry (930.0438ms)
+✔ compact forms remain distinct and keep physical height and removed-leaf identity through further growth (29.0434ms)
+✔ final mutations compose with earlier structures and preserve genetics, attached organs, fixed roots and reduced motion (109.0918ms)
+✔ LeafCart cards, search/sort, cart checkout and package previews use the approved bed art at its proper proportions (36144.1326ms)
+✔ a natural fork develops from one rooted trunk and keeps two distinct terminal flowers (41.4027ms)
+✔ topping a Twin Leader creates four connected tops while retaining the original fork parents (11.4342ms)
+✔ Triple Whorl supplies three distinct fans and three branch origins at a shared node, not extra leaflets (14.3418ms)
+✔ fasciation marks only female terminal flowers and keeps lateral/popcorn buds graded (18.8184ms)
+✔ structural combinations retain all attachment parents, input genetics, fixed roots and stable removed-leaf identities (626.7562ms)
+✔ brain controller, grow camera and drying art preserve purchases, automation, access and saves (40970.1795ms)
+✔ players in front of every tent stay above its fabric in open, zipped and night views (25627.0417ms)
+✔ approved 2x2 art loads before play, purchases and fits all shells, preserves a save and reserves the widened footprint (33148.9378ms)
+✔ approved 4x4 art loads before play, purchases and fits all shells, preserves a save and keeps the four-slot grow-room footprint (32819.226ms)
+✔ approved 5x5 art loads before play, purchases and fits all shells, preserves a save and keeps the six-slot grow-room footprint (40600.0667ms)
+✔ Velvet source/runtime checksums and all attachment crops resolve to distinct registered parts (21.8535ms)
+✔ adding Velvet leaves existing pinned Porchlight identities intact and clones preserve Velvet selections (23.6354ms)
+✔ Velvet uses expressed branching with shared growth, wind and red finishing, including attached flower sites (50.7312ms)
+✔ walk manifests never reuse donor-frame parts or retain pasted-repair metadata (115.7554ms)
+✔ front and rear reference guides complete both leg phases without duplicated half-steps (53.0971ms)
+✔ all Water & Pots purchases, levels, irrigation, plant layers and saved inventory remain native (45750.1359ms)
+✔ backyard planters rotate while placing and moving, and keep their plants (20208.5663ms)
+ℹ tests 240
+ℹ suites 0
+ℹ pass 240
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1345325.0168

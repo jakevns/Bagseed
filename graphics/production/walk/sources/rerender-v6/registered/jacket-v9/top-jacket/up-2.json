@@ -1,0 +1,38 @@
+{
+  "uniformScale": 0.17939609236234458,
+  "rotationDegrees": 0,
+  "translationPixels": [
+    50.39342806394316,
+    168.158081705151
+  ],
+  "groundError": 0.0,
+  "operations": [
+    "uniform-scale",
+    "translate"
+  ],
+  "sourceBounds": [
+    190,
+    328,
+    835,
+    1454
+  ],
+  "guideBounds": [
+    87,
+    227,
+    207,
+    429
+  ],
+  "source": "sources/rerender-v6/jacket-v9-retry1/top-jacket-up-2.png",
+  "sourceSHA256": "38f60c214c1f117c0c27a622519ed35fc58312b600ab8a727e478bce3109bf8a",
+  "sourceSlot": 0,
+  "sourceFrame": "up/2",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "poseReference": "pose-guides-v6/up-2.png",
+  "poseReferenceSHA256": "92e1d8287cb73e8437b51d082df9ea9d15aef88b3e7410ef0420d6553a1d9079",
+  "registeredSHA256": "d656b6fde35c17854104fc80e69837cbe0578ebe95dff3cc13bf746bfd6881b0"
+}

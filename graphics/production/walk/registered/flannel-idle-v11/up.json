@@ -1,0 +1,76 @@
+{
+  "source": "graphics\\production\\walk\\sources\\flannel-idle-v11\\up-raw.png",
+  "sourceSHA256": "5de1be39435f0a3a6e13c32b9a683ad35a7cec49f5acb70515a688f3a977134e",
+  "oldIdleSHA256": "c96926fd5e072355e2b1865b8d7e907b37c33d3401779e2063b2ee8b07245f9d",
+  "registration": {
+    "uniformScale": 0.2268041237113402,
+    "rotationDegrees": 0,
+    "translationPixels": [
+      25.44845360824742,
+      17.536082474226816
+    ],
+    "groundError": 0.0,
+    "operations": [
+      "uniform-scale",
+      "translate"
+    ],
+    "sourceBounds": [
+      263,
+      465,
+      767,
+      1338
+    ],
+    "guideBounds": [
+      82,
+      123,
+      205,
+      321
+    ]
+  },
+  "registeredSHA256": "e07c2c4f0b3112a1e677269b50bc5399f11579472b1a005528ff052aed3cd054",
+  "oldIdle": {
+    "shoulderBand": 111.0,
+    "upperBodyBand": 132.0,
+    "hipBand": 135.0,
+    "denimHipBand": 110.0,
+    "shinBand": 98.0
+  },
+  "newIdle": {
+    "shoulderBand": 98.0,
+    "upperBodyBand": 118.0,
+    "hipBand": 127.0,
+    "denimHipBand": 76.0,
+    "shinBand": 86.0
+  },
+  "walk": [
+    {
+      "shoulderBand": 100.5,
+      "upperBodyBand": 132.0,
+      "hipBand": 102.0,
+      "denimHipBand": 75.0,
+      "shinBand": 80.0
+    },
+    {
+      "shoulderBand": 100.0,
+      "upperBodyBand": 130.0,
+      "hipBand": 140.0,
+      "denimHipBand": 76.0,
+      "shinBand": 69.0
+    },
+    {
+      "shoulderBand": 102.0,
+      "upperBodyBand": 134.0,
+      "hipBand": 113.0,
+      "denimHipBand": 77.5,
+      "shinBand": 80.0
+    },
+    {
+      "shoulderBand": 99.0,
+      "upperBodyBand": 125.0,
+      "hipBand": 122.0,
+      "denimHipBand": 78.0,
+      "shinBand": 74.0
+    }
+  ],
+  "runtimeInstalled": false
+}

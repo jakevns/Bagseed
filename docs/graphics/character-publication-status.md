@@ -1,5 +1,7 @@
 # Character publication status
 
+This page records the earlier hair publication. The subsequent approved cardigan, jacket and flannel integration, corrected pose guides and final flannel palette are described in [Approved custom outfits in the game](approved-outfits-publication.md). Its validation supersedes the older counts and cardigan-candidate status below.
+
 This update preserves the external-image layout and merges plant-art commit
 `bd35adb` from `main` before publishing the character renderer changes.
 

@@ -1,0 +1,17 @@
+{
+  "dir": "down",
+  "references": [
+    "graphics/production/customization/top/jacket/down.png",
+    "graphics/production/walk/sources/rerender-v6/jacket-v9/top-jacket-down-0.png"
+  ],
+  "prompt": "Redraw ONE headless body in stationary neutral IDLE pose, FRONT view facing camera. Reference 1 is ONLY the exact idle pose and jacket garment design. Reference 2 is the NEW WALKING body: match THIS second reference's compact proportions, torso length, shoulder breadth, narrow denim hips, leg thickness, delicate linework and soft 2-3 tone shading precisely. The old idle is too broad: reduce shoulder breadth about15 percent, actual denim pelvis breadth about28 percent compared with reference1 at same total height. Do NOT make it skinny: keep walking body's rounded short limbs. BOTH feet planted flat, side by side, mild gap, same shoe size, both arms straight relaxed down at sides with symmetrical hands. No raised knee or arm swing. Muted blue open ZIP jacket over cream T-shirt, folded collar, diagonal pockets, ribbed cuffs/hem. Exact jacket blue #436296 (RGB67,98,150), shadow #32496e, highlight #5876a2. Navy jeans, brown canvas sneakers with cream sole and toe cap. Short neck cap. Fine warm brown contours #49382e; no black, bold outline, speckles or painterly texture. Keep the neck-to-feet body height and balanced stance of first image, but all WIDTHS from second walking build. One complete figure, all hands/shoes visible with margins. No head, face or hair. Transparent background, NO glow, NO shadow, NO floor, NO surrounding colored haze. Fresh clean game artwork, portrait2:3.",
+  "source": "graphics/production/walk/sources/jacket-idle-v9/down-raw.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "runtimeInstalled": false,
+  "authorization": "User requests walking first, then redraw idle to match walking proportions, one outfit at a time.",
+  "referenceSHA256": {
+    "graphics/production/walk/sources/rerender-v6/jacket-v9/top-jacket-down-0.png": "a2b79d5acaa7fd30ce22fa24779a58f16d7001015e81e58a51982e9db2480e53",
+    "graphics/production/customization/top/jacket/down.png": "6b8cd23fae8598d53b40a3bcfcc8b7992e6b432cd318c1210ea7814ee9680388"
+  }
+}

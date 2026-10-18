@@ -1,0 +1,86 @@
+{
+  "view": "up",
+  "frame": 2,
+  "source": "graphics\\production\\walk\\sources\\rerender-v6\\registered\\flannel-v11\\top-flannel\\up-2.png",
+  "sourceSHA256": "e14d2952291014301b12047a3634038792635606b4d40a23596a188c9030c11f",
+  "output": "graphics\\production\\walk\\sources\\rerender-v6\\registered\\flannel-v13\\top-flannel\\up-2.png",
+  "outputSHA256": "3a6c2c1377993e8205130812852f838bd02077cd050976b15a254a02034bac56",
+  "operation": "user-authorized shared material palette",
+  "alphaIdentical": true,
+  "outlinePixelsIdentical": true,
+  "dimensionsIdentical": true,
+  "runtimeInstalled": false,
+  "materials": {
+    "flannel": {
+      "pixels": 8154,
+      "medianRGB": [
+        60.0,
+        81.0,
+        133.0
+      ],
+      "beforeMedianRGB": [
+        67.0,
+        88.0,
+        138.0
+      ],
+      "allColorsInSharedRamp": true
+    },
+    "jeans": {
+      "pixels": 3741,
+      "medianRGB": [
+        59.0,
+        63.0,
+        80.0
+      ],
+      "beforeMedianRGB": [
+        66.0,
+        72.0,
+        99.0
+      ],
+      "allColorsInSharedRamp": true
+    },
+    "skin": {
+      "pixels": 675,
+      "medianRGB": [
+        209.0,
+        134.0,
+        85.0
+      ],
+      "beforeMedianRGB": [
+        235.0,
+        165.0,
+        117.0
+      ],
+      "allColorsInSharedRamp": true
+    },
+    "leather": {
+      "pixels": 26,
+      "medianRGB": [
+        142.5,
+        112.0,
+        89.0
+      ],
+      "beforeMedianRGB": [
+        128.5,
+        92.0,
+        75.0
+      ],
+      "allColorsInSharedRamp": true
+    },
+    "cream": {
+      "pixels": 357,
+      "medianRGB": [
+        239.0,
+        208.0,
+        177.0
+      ],
+      "beforeMedianRGB": [
+        249.0,
+        233.0,
+        214.0
+      ],
+      "allColorsInSharedRamp": true
+    }
+  },
+  "unchangedCopyOf": "graphics\\production\\walk\\sources\\rerender-v6\\registered\\flannel-v12\\top-flannel\\up-2.png"
+}

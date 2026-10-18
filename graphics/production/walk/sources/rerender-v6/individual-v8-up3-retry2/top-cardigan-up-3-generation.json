@@ -1,0 +1,16 @@
+{
+  "garment": "cardigan",
+  "dir": "up",
+  "firstFrame": 3,
+  "count": 1,
+  "source": "graphics/production/walk/sources/rerender-v6/individual-v8-up3-retry2/top-cardigan-up-3.png",
+  "poseReference": "pose-guides-v6/up-3.png",
+  "prompt": "One freshly painted headless BACK-VIEW chibi walking body. Reference A approved idle determines all garment details, exact muted colors, thin warm contours, shoulder width and proportions. Reference B is a joint-position diagram ONLY. Anatomical LEFT leg supports body at IMAGE LEFT with planted shoe lowest; anatomical RIGHT leg is bent passing on IMAGE RIGHT, knee and cream-soled shoe lifted. Arms settle at sides. Complete blue cardigan back with ribbed cuffs/hem/collar, no white collar or extra waist band; navy jeans with pockets/seams/hems; brown sneakers with cream soles. EXACT CLOTH PALETTE: main cardigan #466495 RGB(70,100,149); gentle shadows #354d76; small highlights #5b7ba9. It is muted/dark blue, not bright blue, periwinkle or pale denim. Match the approved idle's cloth value exactly. EVERY outer contour and dark crease or shoe edge is warm brown #49382e (73,56,46), not black or near-black. Thin delicate line weight, clean 2–3 tone cel shading, no extra texture. No RGB channel below30 in dark marks. No head/face/hair/background/shadow/glow/text. Single headless full body including neck cap, hands and entire shoes; transparent margins, portrait2:3.",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "references": [
+    "graphics/production/customization/top/cardigan/up.png",
+    "graphics/production/walk/pose-guides-v6/up-3.png"
+  ],
+  "visualApproval": false
+}

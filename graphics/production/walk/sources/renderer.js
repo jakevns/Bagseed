@@ -1,6 +1,61 @@
   // Authored wardrobe walking. Standing, reactions and authored NPCs keep
   // their established paths. Every moving pixel comes from a generated frame.
   const walkParts=new Map(),walkFigures=new Map();
+  const approvedBodies=new Map(),approvedNecks=new Map();
+  function approvedOutfitView(L,dir,frame){
+    return !isChild(L)&&L.bottomS==='jeans'&&L.shoesS==='sneakers'?DATA.walk?.approvedOutfits?.items[L.topS]?.frames[dir+'/'+frame]:null;
+  }
+  function approvedBodyFrame(L,dir,frame){
+    const view=approvedOutfitView(L,dir,frame);if(!view)return null;
+    const signature=key(L)+'|'+dir+'/'+frame;if(approvedBodies.has(signature))return approvedBodies.get(signature);
+    const source=cv(288,432),s=source.getContext('2d',{willReadFrequently:true}),roles=cv(288,432),r=roles.getContext('2d',{willReadFrequently:true});
+    s.drawImage(images.get('approved-outfits/'+L.topS),...view.rect,0,0,288,432);
+    r.drawImage(images.get('approved-outfits/'+L.topS+'-roles'),...view.rect,0,0,288,432);
+    const data=s.getImageData(0,0,288,432),a=data.data,labels=r.getImageData(0,0,288,432).data;
+    for(let n=0;n<a.length;n+=4){
+      const part=labels[n],role=labels[n+1];if(!a[n+3])continue;
+      if(!role)continue;
+      let tone=rgb(role===1?L.skin:role===2?L.shirtC:role===3?L.pantsC:L.shoesC);
+      if(role===2&&pattern(L.topPat,((n/4)%288)/3,Math.floor(n/4/288)/3))tone=rgb(L.topC2||'#ffffff');
+      if(role===3&&pattern(L.botPat,((n/4)%288)/3,Math.floor(n/4/288)/3))tone=rgb(L.botC2||'#ffffff');
+      const color=material(tone,lum(a[n],a[n+1],a[n+2]),view.materialBases[role]);a[n]=color[0];a[n+1]=color[1];a[n+2]=color[2];
+    }
+    s.putImageData(data,0,0);
+    const combined=cv(288,432),g=combined.getContext('2d');g.scale(3,3);
+    g.drawImage(source,0,0,96,144);walkAccessories(g,L,dir,view.keypoints);
+    combined.bagseedApprovedOutfit={garment:L.topS,frame:dir+'/'+frame,source:view.source};
+    if(approvedBodies.size>240)approvedBodies.clear();approvedBodies.set(signature,combined);return combined;
+  }
+  function approvedAttachment(L,dir,frame){
+    const k=L.topS+'/'+dir+'/'+frame;if(approvedNecks.has(k))return approvedNecks.get(k);
+    const view=DATA.walk.approvedOutfits.items[L.topS].frames[dir+'/'+frame],source=cv(288,432),g=source.getContext('2d');
+    g.drawImage(images.get('approved-outfits/'+L.topS),...view.rect,0,0,288,432);
+    const result=paintedNeck(source,[48,78],3,dir,L.topS);approvedNecks.set(k,result);return result;
+  }
+  function approvedIdleBody(L,dir,density){
+    const full=approvedBodyFrame(L,dir,'idle'),out=cv(96*density,108*density),g=out.getContext('2d');
+    g.drawImage(full,0,108,288,324,0,0,out.width,out.height);
+    const neck=approvedAttachment(L,dir,'idle');out.bagseedNeck={...neck,root:[neck.root[0],neck.root[1]-36],top:neck.top-36,opening:neck.opening-36,shoulderY:neck.shoulderY-36};
+    out.bagseedApprovedOutfit=full.bagseedApprovedOutfit;return out;
+  }
+  function approvedWalkFigure(L,dir,frame,blink,density){
+    const view=approvedOutfitView(L,dir,frame);if(!view)return null;
+    const B=approvedBodyFrame(L,dir,frame),attachment=approvedAttachment(L,dir,frame),rest=approvedAttachment(L,dir,'idle');
+    const sy=(L.short?.9:L.body==='tall'?1.07:1)*(143-rest.root[1])/(143-attachment.root[1]);
+    const shoulderFit=rest.shoulderWidth/attachment.shoulderWidth;
+    const width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1)*shoulderFit;
+    const out=cv(96*density,144*density),g=out.getContext('2d');g.scale(density,density);
+    const H=head(L,dir,blink,true),ny=143+(attachment.root[1]-143)*sy,nx=48+(attachment.root[0]-48)*width;
+    const placement=headPlacement(L,dir,[nx,ny]),[hx,hy]=placement.origin;
+    neckBacking(g,H,L,dir,hx,hy,ny,143+(attachment.opening-143)*sy);
+    g.save();g.translate(48,143);g.scale(width,sy);g.drawImage(B,-48,-143,96,144);g.restore();
+    neckSurface(g,H,L,dir,hx,hy,attachment,width,sy,144);g.drawImage(H,hx,hy,64,H.height/3);
+    out.bagseedHeadOrigin=[hx,hy];out.bagseedBodyTransform={width,sy};out.bagseedApprovedOutfit=B.bagseedApprovedOutfit;
+    out.bagseedAuthoredWalk=dir+'/'+frame;out.bagseedWalkProfile='approved-outfits/';out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);
+    out.bagseedAlignment={...placement,attachment,shoulderBand:[3,7].map(d=>143+(attachment.shoulderY+d-143)*sy),shoulderWidth:attachment.shoulderWidth*width,uniformScale:sy,shoulderFit:1,rigNeck:view.keypoints.neck,garment:L.topS,bottom:L.bottomS,rear:dir==='up',source:view.source};
+    const hand=view.keypoints['hand'+view.keypoints.nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
+    return scalePlayerFigure(out,PLAYER_FIGURE_SCALE);
+  }
   function walkNeck(item,frame,walk){
     const key=(walk.imagePrefix||'walk/')+item+'|'+frame;
     if(neckRegistrations.has(key))return neckRegistrations.get(key);
@@ -89,6 +144,7 @@
     }
   }
   function authoredWalk(L,dir,frame,blink,density=1){
+    const approved=approvedWalkFigure(L,dir,frame%4,blink,density);if(approved)return approved;
     const walk=customWalkSet(L,dir),top='top-'+L.topS,bottom='bottom-'+L.bottomS,shoe='shoe-'+L.shoesS,items=walk?.items;
     if(!items?.[top]?.accepted||!items[shoe]?.accepted||!items[top].fullSuit&&!items[bottom]?.accepted||isChild(L))return null;
     const f=dir+'/'+(frame%(walk.frameCounts?.[dir]||4)),sig=(walk.imagePrefix||'walk/')+key(L)+'|'+f+'|'+blink+'|'+density;

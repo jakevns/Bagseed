@@ -1,0 +1,17 @@
+{
+  "dir": "up",
+  "references": [
+    "graphics/production/customization/top/jacket/up.png",
+    "graphics/production/walk/sources/rerender-v6/jacket-v9-retry1/top-jacket-up-0.png"
+  ],
+  "prompt": "Redraw ONE headless body in stationary neutral IDLE pose, BACK view facing away. Reference 1 is ONLY the exact idle pose and jacket garment design. Reference 2 is the NEW WALKING body: match THIS second reference's compact proportions, torso length, shoulder breadth, narrow denim hips, leg thickness, delicate linework and soft 2-3 tone shading precisely. The old idle is too broad: reduce shoulder breadth about15 percent, actual denim pelvis breadth about28 percent compared with reference1 at same total height. Do NOT make it skinny: keep walking body's rounded short limbs. BOTH feet planted flat, side by side, mild gap, same shoe size, both arms straight relaxed down at sides with symmetrical hands. No raised knee or arm swing. Muted blue jacket back, horizontal upper-back YOKE seam, folded blue collar, ribbed cuffs/hem, navy jeans rear pockets. No white or cream visible at rear collar. Exact jacket blue #436296 (RGB67,98,150), shadow #32496e, highlight #5876a2. Navy jeans, brown canvas sneakers with cream sole and toe cap. Short neck cap. Fine warm brown contours #49382e; no black, bold outline, speckles or painterly texture. Keep the neck-to-feet body height and balanced stance of first image, but all WIDTHS from second walking build. One complete figure, all hands/shoes visible with margins. No head, face or hair. Transparent background, NO glow, NO shadow, NO floor, NO surrounding colored haze. Fresh clean game artwork, portrait2:3.",
+  "source": "graphics/production/walk/sources/jacket-idle-v9/up-raw.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "runtimeInstalled": false,
+  "authorization": "User requests walking first, then redraw idle to match walking proportions, one outfit at a time.",
+  "referenceSHA256": {
+    "graphics/production/walk/sources/rerender-v6/jacket-v9-retry1/top-jacket-up-0.png": "07f61239a418aca685298f4f9dca69db6a5f6510e5fd632445b01cd93f35c843",
+    "graphics/production/customization/top/jacket/up.png": "0742ac9cd0a9871d8ccd05b97c9ea1d815225039f321f4a11df3eb8e5680bf13"
+  }
+}

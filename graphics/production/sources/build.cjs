@@ -99,6 +99,14 @@ walk.rig=JSON.parse(fs.readFileSync(path.join(walkRoot,'rig.json')));
 assert.equal(walk.rigSHA256,sha(fs.readFileSync(path.join(walkRoot,'rig.json'),'utf8').replace(/\r\n/g,'\n')),'Walk rig changed after registration');
 for(const[file,hash]of Object.entries(walk.sources))assert.equal(hash,sha(fs.readFileSync(path.join(walkRoot,file))),'Walk source changed after registration');
 for(const[id,item]of Object.entries(walk.items))add('walk/'+id,path.join(walkRoot,item.atlas));
+const approvedOutfits=JSON.parse(fs.readFileSync(path.join(walkRoot,'approved-outfits/manifest.json')));
+for(const[file,hash]of Object.entries(approvedOutfits.sources))assert.equal(sha(fs.readFileSync(path.join(root,file))),hash,'Stale approved outfit source: '+file);
+for(const[id,item]of Object.entries(approvedOutfits.items)){
+ for(const[field,hashField,suffix]of [['atlas','atlasSHA256',''],['rolesAtlas','rolesSHA256','-roles']]){
+  const file=path.join(walkRoot,item[field]);assert.equal(sha(fs.readFileSync(file)),item[hashField]);add('approved-outfits/'+id+suffix,file);
+ }
+}
+walk.approvedOutfits=approvedOutfits;
 // Every wardrobe item shares the approved eight-pose side rig.
 const stridePath='wardrobe-v5/manifest.json',stride=JSON.parse(fs.readFileSync(path.join(walkRoot,stridePath)));
 walk.stride={...stride,imagePrefix:'stride/'};

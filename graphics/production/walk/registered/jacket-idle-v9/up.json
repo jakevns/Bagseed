@@ -1,0 +1,76 @@
+{
+  "source": "graphics\\production\\walk\\sources\\jacket-idle-v9\\up-raw.png",
+  "sourceSHA256": "0b17378380a462b3b17d835943d1df23bdbb9197f1d640e38d2a4680daf72f4b",
+  "oldIdleSHA256": "0742ac9cd0a9871d8ccd05b97c9ea1d815225039f321f4a11df3eb8e5680bf13",
+  "registration": {
+    "uniformScale": 0.21267454350161116,
+    "rotationDegrees": 0,
+    "translationPixels": [
+      33.89795918367348,
+      26.233082706766936
+    ],
+    "groundError": 0.0,
+    "operations": [
+      "uniform-scale",
+      "translate"
+    ],
+    "sourceBounds": [
+      258,
+      455,
+      766,
+      1386
+    ],
+    "guideBounds": [
+      79,
+      123,
+      209,
+      321
+    ]
+  },
+  "registeredSHA256": "c35404abb6ab565ef5198e0473621413afaaa65f05cce96742ac9d1411fe48ab",
+  "oldIdle": {
+    "shoulderBand": 120.0,
+    "upperBodyBand": 142.0,
+    "hipBand": 137.0,
+    "denimHipBand": 94.0,
+    "shinBand": 100.0
+  },
+  "newIdle": {
+    "shoulderBand": 97.0,
+    "upperBodyBand": 119.0,
+    "hipBand": 117.0,
+    "denimHipBand": 68.0,
+    "shinBand": 86.0
+  },
+  "walk": [
+    {
+      "shoulderBand": 101.5,
+      "upperBodyBand": 130.0,
+      "hipBand": 101.0,
+      "denimHipBand": 66.0,
+      "shinBand": 81.0
+    },
+    {
+      "shoulderBand": 103.5,
+      "upperBodyBand": 126.0,
+      "hipBand": 119.0,
+      "denimHipBand": 74.0,
+      "shinBand": 75.0
+    },
+    {
+      "shoulderBand": 101.5,
+      "upperBodyBand": 131.0,
+      "hipBand": 103.0,
+      "denimHipBand": 67.0,
+      "shinBand": 81.0
+    },
+    {
+      "shoulderBand": 97.0,
+      "upperBodyBand": 118.0,
+      "hipBand": 107.0,
+      "denimHipBand": 67.0,
+      "shinBand": 68.0
+    }
+  ],
+  "runtimeInstalled": false
+}

@@ -46,7 +46,20 @@ test('every hairstyle, skin palette, authored clothing design and appearance cho
 
 test('custom outfits keep a consistent face, joined legs and a single footwear layer',async()=>{
   await pageFor(async page=>{
-    const report=await page.evaluate(()=>{
+    const report=await page.evaluate(async()=>{
+      const masks={},data=__BAGSEED_ILLUSTRATED_DATA__;
+      for(const[top,item]of Object.entries(data.walk.approvedOutfits.items)){
+        const canvases=[];
+        for(const suffix of ['','-roles']){const im=new Image();im.src=data.images['approved-outfits/'+top+suffix];await im.decode();const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const g=c.getContext('2d');g.drawImage(im,0,0);canvases.push(g.getImageData(0,0,c.width,c.height));}
+        for(const dir of ['down','up']){
+          const [source,roles]=canvases,rect=item.frames[dir+'/idle'].rect,mask=[];
+          for(let y=140;y<144;y++)for(let x=0;x<96;x++){
+            const X=Math.round((48+(x-48)/BagseedArt.playerFigureScale)*3)+rect[0],Y=Math.round((143+(y-143)/BagseedArt.playerFigureScale)*3)+rect[1];let inside=true;
+            for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const n=((Y+dy)*roles.width+X+dx)*4;if(roles.data[n]!==3||source.data[n+3]<250)inside=false;}
+            mask.push(inside);
+          }masks[top+'/'+dir]=mask;
+        }
+      }
       const base={skin:'#cf9670',hairC:'#3e9f7a',hairS:'short',facial:'none',shirtC:'#5f9c33',topS:'hoodie',pantsC:'#36405a',bottomS:'jeans',shoesC:'#2b1d14',shoesS:'sneakers',glasses:'none',hat:'none',acc:'none',pres:'neutral',body:'average',eyeC:'#2b1d14',eyes:'dot',brows:'thin',face:'soft',extras:[]};
       const region=(canvas,x,y,w,h)=>Array.from(canvas.getContext('2d').getImageData(x,y+(canvas.width===96?canvas.height-108:0),w,h).data).join(',');
       const head=region(BagseedArt.portrait(base),0,0,192,124),mismatches=[],widths={};let footChecks=0;
@@ -70,7 +83,16 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
         for(const shoesS of ['sneakers','boots','sandals','rainboots']){
           const look={...base,shoesS},feet=region(charSprite(look,dir),0,104,96,4); // below the longest trouser hem
           for(const topS of tops)for(const bottomS of ['jeans','joggers','cargo','shorts','skirt']){
-            if(region(charSprite({...look,topS,bottomS},dir),0,104,96,4)!==feet)mismatches.push([dir,shoesS,topS,bottomS].join('/'));
+            const rendered=charSprite({...look,topS,bottomS},dir),approved=rendered.bagseedApprovedOutfit&&__BAGSEED_ILLUSTRATED_DATA__.walk.approvedOutfits?.items[topS]?.frames[dir+'/idle'];
+            // Reviewed outfits have their own painted footwear geometry;
+            // changing trousers must still leave exactly one identical sole.
+            const expected=approved?region(charSprite({...look,topS,bottomS:'jeans'},dir),0,104,96,4):feet;
+            const actual=region(rendered,0,104,96,4),mask=approved&&masks[topS+'/'+dir];
+            // Authored trouser hems may cover a few sole-edge pixels. Check
+            // the source-painted opaque shoe interior, not trouser pixels.
+            const shoePixels=value=>value.split(',').filter((_,n)=>mask[Math.floor(n/4)]).join(',');
+            if(mask){if(mask.filter(Boolean).length<5)throw Error('Empty authored shoe check');if(shoePixels(actual)!==shoePixels(expected))mismatches.push([dir,shoesS,topS,bottomS].join('/'));}
+            else if(actual!==expected)mismatches.push([dir,shoesS,topS,bottomS].join('/'));
             footChecks++;
           }
         }

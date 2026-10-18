@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-18",
+  "branch": "ccr-12191481-bpni4g",
+  "mergedMain": "78f1335",
+  "hairFixCommit": "c9c7173",
+  "scope": {
+    "tops": [
+      "cardigan",
+      "jacket",
+      "flannel"
+    ],
+    "newArtCombination": {
+      "bottomS": "jeans",
+      "shoesS": "sneakers"
+    },
+    "directions": [
+      "down",
+      "up"
+    ],
+    "paintings": 30,
+    "otherCombinations": "existing complete renderer retained",
+    "profiles": "existing eight-frame renderer retained"
+  },
+  "build": "npm run build:graphics passed",
+  "fullSuite": {
+    "command": "npm test -- --test-concurrency=4",
+    "tests": 240,
+    "pass": 240,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMilliseconds": 1345325.0168
+  },
+  "characterAudit": {
+    "appearances": 69,
+    "directionComparisons": 276,
+    "flaggedRows": 0
+  },
+  "pythonChecks": {
+    "sharedPaletteV13": 3,
+    "paletteClustering": 3,
+    "failures": 0
+  },
+  "publishedImages": {
+    "referencedExternalImages": 1847,
+    "missingFromGitIndex": []
+  },
+  "sourceCheck": "node tools/check.mjs passed"
+}

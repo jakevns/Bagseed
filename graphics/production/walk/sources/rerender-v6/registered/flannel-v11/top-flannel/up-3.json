@@ -1,0 +1,38 @@
+{
+  "uniformScale": 0.2222222222222222,
+  "rotationDegrees": 0,
+  "translationPixels": [
+    28.944444444444457,
+    109.44444444444446
+  ],
+  "groundError": 0.0,
+  "operations": [
+    "uniform-scale",
+    "translate"
+  ],
+  "sourceBounds": [
+    263,
+    529,
+    777,
+    1438
+  ],
+  "guideBounds": [
+    90,
+    227,
+    198,
+    429
+  ],
+  "source": "sources/rerender-v6/flannel-v9/top-flannel-up-3.png",
+  "sourceSHA256": "8222d52a39adf92cd0901cbfd88351da580e6fef770f994da0600a41124dbbda",
+  "sourceSlot": 0,
+  "sourceFrame": "up/3",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "poseReference": "pose-guides-v6/up-3.png",
+  "poseReferenceSHA256": "4929e4cf65a82d5b8c8ad8359fbac01e09dbaf9a1b8f39dc68922a28334406d9",
+  "registeredSHA256": "afd62c57f1313383b63fea9539ccbb3d3f10e928bfb47ec818a6b857eb08dcdd"
+}

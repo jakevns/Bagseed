@@ -212,13 +212,15 @@ test('the original opaque fringe strands survive composition over the forehead',
 });
 
 test('footwear styles keep a consistent footprint across outfits and directions',async()=>{
-  const result=await inspect(()=>{
+  const result=await inspect(async()=>{
     const failures=[],measurements=[];
     for(const dir of ['down','right','up','left'])for(const bottomS of ['jeans','shorts','skirt'])for(const shoesS of ['sneakers','boots','sandals','rainboots']){
       const look=BagseedArt.normalize({bottomS,shoesS,topS:'jacket'}),c=BagseedArt.body(look,dir),a=c.getContext('2d').getImageData(0,103,96,4).data;let left=96,right=-1;
       // Long trousers now fall over the shoe top (hem <= 103); measure the sole below it.
       for(let y=0;y<4;y++)for(let x=0;x<96;x++)if(a[(y*96+x)*4+3]>100){left=Math.min(left,x);right=Math.max(right,x);}
-      const width=right-left+1,target=dir==='down'||dir==='up'?32:28;measurements.push({dir,bottomS,shoesS,width});if(Math.abs(width-target)>1||Math.abs((left+right)/2-47.5)>1)failures.push({dir,bottomS,shoesS,left,right,width});
+      const approved=c.bagseedApprovedOutfit&&__BAGSEED_ILLUSTRATED_DATA__.walk.approvedOutfits?.items.jacket?.frames[dir+'/idle'],bounds=approved?.feet.all;
+      const fullWidth=bounds?(bounds[2]-bounds[0])/3:dir==='down'||dir==='up'?32:28;
+      const width=right-left+1,target=fullWidth,center=bounds?(bounds[0]+bounds[2])/6-.5:47.5;measurements.push({dir,bottomS,shoesS,width});if(Math.abs(width-target)>1||Math.abs((left+right)/2-center)>1)failures.push({dir,bottomS,shoesS,left,right,width,target});
     }
     return {measurements,failures};
   });fs.writeFileSync(path.join(OUT,'footwear-registration.json'),JSON.stringify(result,null,2)+'\n');assert.deepEqual(result.failures,[]);assert.equal(result.measurements.length,48);

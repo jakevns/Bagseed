@@ -1,0 +1,17 @@
+{
+  "dir": "down",
+  "prompt": "Edit image1 front IDLE flannel body. Preserve its EXACT silhouette, shoulder width, torso length, short neck cap, arm/hand positions, jeans, shoes and planted standing pose. ONLY correct BLUE PLAID FABRIC COLORS to precisely match original approved flannel in image2. Original blue is subdued navy/mid blue with fine light blue checks. Keep source's saturation/contrast: base RGB55,75,120, navy RGB38,55,89, grid RGB111,142,185. Do not wash out or desaturate the blue. Match original plaid stripe weights. All geometry and fine warm linework unchanged. Clean 2-3 tone cel shading. No head/hair. Single figure transparent background, no shadow/glow/floor/text; all hands/shoes visible with margins. This is a COLOR-ONLY correction to first image.",
+  "references": [
+    "graphics/production/walk/sources/flannel-idle-v9/down-raw.png",
+    "graphics/production/customization/top/flannel/down.png"
+  ],
+  "source": "graphics/production/walk/sources/flannel-idle-v11/down-raw.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/walk/sources/flannel-idle-v9/down-raw.png": "d1b1d37a17255ab02db86bc8dc1f7eced5958650dde3d77ce6a0774fcd5fa7d7",
+    "graphics/production/customization/top/flannel/down.png": "b9990eb4d0ffa312ee260136726d0d91bf7297bdc4fe99123033a3c397a9156a"
+  },
+  "unchangedCopyOf": "graphics/production/walk/sources/flannel-idle-v10/down-raw.png"
+}

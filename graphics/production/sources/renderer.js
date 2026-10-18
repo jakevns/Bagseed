@@ -588,6 +588,7 @@
     g.drawImage(surface,0,0,96,144);
   }
   function body(L,dir,nose=false,density=1) {
+    if(!nose&&approvedOutfitView(L,dir,'idle'))return approvedIdleBody(L,dir,density);
     const signature=JSON.stringify([L.skin,L.topS,L.shirtC,L.bottomS,L.pantsC,L.shoesS,L.shoesC,L.acc,L.accC,L.topPat,L.topC2,L.botPat,L.botC2,L.emb,dir,nose,density]);if(bodies.has(signature))return bodies.get(signature);
     const out=cv(96*density,108*density),g=out.getContext('2d');g.scale(density,density);
     const asset=id=>density>1&&images.has('hires/'+id)?'hires/'+id:id;
@@ -699,6 +700,7 @@
     if(source.bagseedNose)out.bagseedNose=point(source.bagseedNose);
     if(source.bagseedHand){const [x,y]=point([source.bagseedHand.x,source.bagseedHand.y]);out.bagseedHand={x,y};}
     out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;out.bagseedWalkProfile=source.bagseedWalkProfile;
+    out.bagseedApprovedOutfit=source.bagseedApprovedOutfit;
     out.bagseedBodyTransform=source.bagseedBodyTransform;
     if(source.bagseedAlignment){const a=source.bagseedAlignment;out.bagseedAlignment={...a,origin:point(a.origin),jaw:point(a.jaw),collar:point(a.collar),shoulderBand:a.shoulderBand.map(y=>point([48,y])[1]),neckLength:a.neckLength*factor,shoulderWidth:a.shoulderWidth*factor,headScale:a.headScale*factor};}
     out.bagseedFigureScale=factor;return out;
@@ -742,6 +744,7 @@
     if(L.prop&&!nose&&dir!=='up'){g.save();g.translate(0,36);props(g,L,dir);g.restore();}
     out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[headX+x*headScale/3,headY+y*headScale/3]);
     out.bagseedHeadOrigin=[headX,headY];
+    out.bagseedApprovedOutfit=B.bagseedApprovedOutfit;
     out.bagseedAlignment={...placement,shoulderBand:[3,7].map(d=>143+(B.bagseedNeck.shoulderY+d-107)*sy),shoulderWidth:B.bagseedNeck.shoulderWidth*width*presentation,garment:L.topS,bottom:wardrobeFullSuit(L)?L.topS:L.bottomS,rear:dir==='up',source:`top/${L.topS}/${dir}`};
     out.bagseedNose=(H.bagseedFeatures.nose||[96,155]).map((v,i)=>(i?headY:headX)+v*headScale/3);
     return nose?out:scalePlayerFigure(out,PLAYER_FIGURE_SCALE);
@@ -823,6 +826,7 @@
       source=generic(L,dir,false,!!blink,density);sniff=!!nose;
     }
     const out=animate(source,L,dir,frame,breath,blink,act&&!nose,rig&&!nose,density);
+    out.bagseedApprovedOutfit=source.bagseedApprovedOutfit;
     out.bagseedAuthoredId=person&&person.id!=='player'?person.id:null;
     if(sniff){
       // A small sniff emote preserves the complete idle drawing and its size.

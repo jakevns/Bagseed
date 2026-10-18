@@ -127,14 +127,33 @@ def means(values, k=4):
     while len(centers)<k:
         dist=np.min(np.sum((values[:,None]-np.array(centers)[None])**2,axis=2),axis=1)
         centers.append(values[np.argmax(dist)])
-    centers=np.array(centers)
-    for _ in range(35):
-        ids=np.argmin(np.sum((values[:,None]-centers[None])**2,axis=2),axis=1)
-        new=np.array([values[ids==i].mean(0) if np.any(ids==i) else centers[i] for i in range(k)])
-        if np.max(np.abs(new-centers))<.001: break
-        centers=new
-    weights=np.bincount(ids,minlength=k)/len(ids)
-    return centers,weights
+    starts=[np.array(centers)]
+    # A single farthest-point start spends clusters on tiny button/antialias
+    # outliers and can merge the entire plaid into one color. Deterministic
+    # k-means++ restarts choose the minimum squared-error solution instead.
+    # Keep every sampled pixel, k=4, occupancy weighting and DeltaE limit.
+    rng=np.random.default_rng(0)
+    for _ in range(8):
+        seed=[values[rng.integers(len(values))]]
+        while len(seed)<k:
+            dist=np.min(np.sum((values[:,None]-np.array(seed)[None])**2,axis=2),axis=1)
+            total=dist.sum()
+            seed.append(values[rng.choice(len(values),p=dist/total)] if total else values[0])
+        starts.append(np.array(seed))
+    best=None
+    for centers in starts:
+        for _ in range(100):
+            ids=np.argmin(np.sum((values[:,None]-centers[None])**2,axis=2),axis=1)
+            new=np.array([values[ids==i].mean(0) if np.any(ids==i) else centers[i] for i in range(k)])
+            converged=np.max(np.abs(new-centers))<.001
+            centers=new
+            if converged: break
+        distances=np.sum((values[:,None]-centers[None])**2,axis=2)
+        ids=distances.argmin(1)
+        error=float(distances[np.arange(len(values)),ids].sum())
+        if best is None or error<best[0]:
+            best=(error,centers.copy(),np.bincount(ids,minlength=k)/len(ids))
+    return best[1],best[2]
 
 def palette(idle,walk,garment='tee'):
     a,aw=means(garment_colors(idle,garment)); b,bw=means(garment_colors(walk,garment))
@@ -191,10 +210,13 @@ def main():
     global OUT
     parser=argparse.ArgumentParser()
     parser.add_argument('--attempt',default='')
+    parser.add_argument('--guides',default='registered/mannequin',help='Front/rear reference directory relative to walk/')
     args=parser.parse_args()
     active=SRC/args.attempt if args.attempt else SRC
     if args.attempt: OUT=OUT/args.attempt
     OUT.mkdir(exist_ok=True,parents=True); records=[]; seen=set(); candidates={}; idle_hashes={}
+    preview_file=OUT/'idle-review.json'
+    preview_idles=read(preview_file) if preview_file.exists() else {}
     for meta in sorted(active.glob('*-generation.json')):
         data=read(meta)
         if 'source' not in data: continue
@@ -212,14 +234,14 @@ def main():
             if identity in seen: raise ValueError(f'Duplicate {identity}')
             seen.add(identity)
             raw=sheet.crop((columns[slot],0,columns[slot+1],sheet.height))
-            guide_path=W/(f'stride-v4/{di}-{f}.png' if di in ['left','right'] else f'registered/mannequin/{di}-{f}.png')
+            guide_path=W/data.get('poseReference',f'stride-v4/{di}-{f}.png' if di in ['left','right'] else f'{args.guides}/{di}-{f}.png')
             guide=Image.open(guide_path).convert('RGBA')
             registered,registration=fit(raw,guide)
             destination=(STAGE/args.attempt if args.attempt else STAGE)/f'top-{garment}/{di}-{f}.png'; destination.parent.mkdir(parents=True,exist_ok=True)
             registered.save(destination)
             registration.update(source=str(source.relative_to(W)).replace('\\','/'),sourceSHA256=original_sha,
                 sourceSlot=slot,sourceFrame=key,sourceCell=[columns[slot],0,columns[slot+1],sheet.height],
-                poseReference=str(guide_path.relative_to(W)).replace('\\','/'),registeredSHA256=sha(destination))
+                poseReference=str(guide_path.relative_to(W)).replace('\\','/'),poseReferenceSHA256=sha(guide_path),registeredSHA256=sha(destination))
             write(destination.with_suffix('.json'),registration)
             col=palette(idle,registered,garment); it,ib=ink(idle); wt,wb=ink(registered)
             checks={'palette':col,'outlineRatio':wt/max(.001,it),'blackEdgeFraction':wb,
@@ -249,13 +271,13 @@ def main():
     expected=sum(j['count'] for j in read(SRC/'plan.json')['jobs'])
     guide_cycles={}
     for di in ['down','up']:
-        offsets=[leading_foot_offset(Image.open(W/f'registered/mannequin/{di}-{f}.png').convert('RGBA')) for f in range(4)]
+        offsets=[leading_foot_offset(Image.open(W/f'{args.guides}/{di}-{f}.png').convert('RGBA')) for f in range(4)]
         guide_cycles[di]={'lowestFootOffsets':offsets,'leftLeading':sum(x<-.025 for x in offsets),
             'rightLeading':sum(x>.025 for x in offsets),
             'balanced':sum(x<-.025 for x in offsets)==2 and sum(x>.025 for x in offsets)==2}
     report={'status':'NOT APPROVED: numeric gates and visual review required','expected':expected,'generated':len(records),
             'missing':expected-len(records),'failedFrames':sum(bool(r['failures']) for r in records),
-            'idleSHA256':idle_hashes,'poseGuideCycles':guide_cycles,'frames':records}
+            'idleSHA256':idle_hashes,'poseGuideCycles':guide_cycles,'previewIdles':preview_idles,'frames':records}
     write(OUT/'acceptance.json',report)
     # Full source bodies, identical uniform body-height scale; never squeeze figures.
     garments=sorted(set(g for g,k in candidates))
@@ -264,7 +286,7 @@ def main():
         for row,(g,di) in enumerate(itertools.product(subset,['down','up'])):
             draw.text((8,row*285+5),f'{g} {di}   IDLE | new 0 | new 1 | new 2 | new 3 (not approved)',fill='black')
             if any((g,f'{di}/{f}') not in candidates for f in range(4)): continue
-            idle=Image.open(ROOT/f'graphics/production/customization/top/{g}/{di}.png').convert('RGBA')
+            idle=Image.open(ROOT/preview_idles.get(g,{}).get(di,f'graphics/production/customization/top/{g}/{di}.png')).convert('RGBA')
             for col,im in enumerate([idle]+[candidates[g,f'{di}/{f}'] for f in range(4)]):
                 board.paste(tile(im,(240,255)),(col*240,row*285+25))
         board.save(OUT/f'candidate-contact-{start//3+1:02}.png')
