@@ -1,0 +1,11 @@
+{
+  "revision": "character-alignment-audit-v6",
+  "hashes": {
+    "bald": "fa7428ff2c61f213115bd69f76814800d153eb3b673092217e70c5baf57a1a8a",
+    "short": "b6eb1253b3c5437e6795f2d57be95edf25a43afbd39063c322f7b893897cfc0d",
+    "buzz": "44ec950b60939cbffeceec074082d2b6f70bf08cb1cdb4725f89477c65e5c1fa",
+    "crop": "b098c8bffc6b8d2e76e12c8feba95ec11fa5df6648e2fcc0f5c4308d1a35f624",
+    "caesar": "26166e5bc594d98b88f12366e7fe9ca72caa13a7e553188f8a13887d4e530308",
+    "fade": "5fe5b94d9e11417b0cf7ce85941c05bfbedb89568a11c0d381b1cedd4fd14f32"
+  }
+}

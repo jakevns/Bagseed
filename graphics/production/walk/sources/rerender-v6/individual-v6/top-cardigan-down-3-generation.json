@@ -1,0 +1,16 @@
+{
+  "garment": "cardigan",
+  "dir": "down",
+  "firstFrame": 3,
+  "count": 1,
+  "source": "graphics/production/walk/sources/rerender-v6/individual-v6/top-cardigan-down-3.png",
+  "prompt": "Generate exactly ONE headless walking garment sprite, transparent background. Reference A is the APPROVED idle cardigan and is the exact source of truth for garment identity, palette, thin colored line weight, body proportions, skin, jeans and cream-toe brown sneakers. Reference B is ONLY the exact pose reference: front view, walking passing phase, viewer RIGHT leg is forward and lower, viewer LEFT leg bends behind and is higher; viewer LEFT fist is forward across hip, viewer RIGHT hand down/back. Copy that pose precisely, do not mirror. Dress it in A's open muted blue/navy knit cardigan with brass buttons, ribbed cuffs/hem, two pockets and cream undershirt. Same cut, colors, details, shoulder width and thin warm dark brown contours as A. Clean 2–3 tone cel shading, subtle knit details. No black sticker border, no wristbands, no muddy shading, no extra waist band. Full headless figure including neck cap, hands, jeans and both shoes. No head/face/hair. Single figure only, portrait 2:3 canvas, centered with transparent margins and complete shoes. No ground shadow, no glow, no labels, no background. Preserve source A's delicate linework rather than thickening it. Paint entirely fresh art.",
+  "seed": null,
+  "seedNote": "Built-in image generator does not expose a seed",
+  "references": [
+    "graphics/production/customization/top/cardigan/down.png",
+    "graphics/production/walk/registered/mannequin/down-3.png"
+  ],
+  "visualApproval": false,
+  "visualNotes": "Leading leg correct. Arm swing mirrored relative to guide; rejected pending corrected generation."
+}

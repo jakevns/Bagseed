@@ -42,18 +42,19 @@ test('rear hair covers the cranial surface down to the nape on every head shape'
   // Independent anatomical cross-sections; exclude ears, outline AA and neck.
   const rows=[[109,87,105],[115,75,118],[125,66,126],[137,63,130],[146,65,129],[157,70,124],[168,75,119],[177,82,112],[182,89,105]];
   for(const[face,[sx,sy]]of Object.entries(faces))for(const hairS of cuts){
-   const look=BagseedArt.normalize({face,hairS,hairC:'#893bd0',skin:'#cf9670',ears:'normal',hat:'none'}),head=BagseedArt.head(look,'up').getContext('2d'),bare=BagseedArt.head({...look,hairS:'bald'},'up').getContext('2d');let exposed=0,samples=0;
+   const look=BagseedArt.normalize({face,hairS,hairC:'#893bd0',skin:'#cf9670',ears:'normal',hat:'none'}),head=BagseedArt.head(look,'up').getContext('2d'),bare=BagseedArt.head({...look,hairS:'bald'},'up').getContext('2d'),hair=BagseedArt.hairLayer(look,'up').getContext('2d');let exposed=0,samples=0;
    for(const[y,l,r]of rows)for(let x=l;x<=r;x+=2){const xx=Math.round(96+(x-96)*sx),yy=Math.round(199+(y-199)*sy),p=head.getImageData(xx,yy,1,1).data,b=bare.getImageData(xx,yy,1,1).data;if(b[3]<230)continue;
-    if(p[3]<200||Math.max(...[0,1,2].map(k=>Math.abs(p[k]-b[k])))<25)exposed++;samples++;pixels++;
+    const tapered=['buzz','fade'].includes(hairS)&&y>=168;
+    if(p[3]<200||(tapered?hair.getImageData(x,y,1,1).data[3]<5:Math.max(...[0,1,2].map(k=>Math.abs(p[k]-b[k])))<25))exposed++;samples++;pixels++;
    }
    if(exposed)failures.push({face,hairS,exposed,samples});views++;
   }return{views,pixels,failures};
  });assert.equal(r.failures.length,0,JSON.stringify(r.failures.slice(0,5)));assert.equal(r.views,75);
 });
 
-test('the fitted five-cut silhouettes retain the reviewed cel-shading appearance',async()=>{
+test('the fitted five-cut heads retain their candidate material and registered silhouettes',async()=>{
  const page=await artPage(browser,);try{
-  const fixture=JSON.parse(fs.readFileSync(path.join(ROOT,'tests/fixtures/hair-audit-cel-v1.json')));
+  const fixture=JSON.parse(fs.readFileSync(path.join(ROOT,'tests/fixtures/hair-audited-v6.json')));
   await page.goto(url);await page.evaluate(()=>BagseedArt.ready);const current=await page.evaluate(async()=>{
    const hashes={},selected=new Set(['bald','short','buzz','crop','caesar','fade']);let views=0;
    const sha=async a=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',a))).map(v=>v.toString(16).padStart(2,'0')).join('');

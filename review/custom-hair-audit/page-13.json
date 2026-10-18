@@ -1,0 +1,82 @@
+[
+  {
+    "hairS": "bigafro",
+    "label": "Big afro",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1136,
+    "inside": 799,
+    "opaque": 9961,
+    "hash": "44eaa4a90d3c0fafd1c39ecd6d220ca5f08d5d8e49a8b5b524400431a42a9059"
+  },
+  {
+    "hairS": "bigafro",
+    "label": "Big afro",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1207,
+    "inside": 790,
+    "opaque": 11406,
+    "hash": "bfcf15a67be258d5da78579affa55e4ef4d621db54c166312bc8723c4470c977"
+  },
+  {
+    "hairS": "bigafro",
+    "label": "Big afro",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1578,
+    "inside": 1242,
+    "opaque": 15500,
+    "hash": "def5ca06889911395310f303208b9e8fc81e7268d37277ca15850363cfdb23f3"
+  },
+  {
+    "hairS": "bigafro",
+    "label": "Big afro",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1241,
+    "inside": 830,
+    "opaque": 11123,
+    "hash": "dc71996a6a1db6b74ece838eb5bca7f40086e607030f075c83a8cff7dffc1079"
+  },
+  {
+    "hairS": "bigafro",
+    "label": "Big afro",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1136,
+    "inside": 799,
+    "opaque": 9961,
+    "hash": "51b6bd54486bf3908187acd5f8a92f5623090ebf386fd76c48439c5addaf2daf"
+  },
+  {
+    "hairS": "bigafro",
+    "label": "Big afro",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1207,
+    "inside": 790,
+    "opaque": 11406,
+    "hash": "fdce8d6f846fc76c605b687c8de8fb5b4c8b9236ae31951d1d48e5f0f0e89ef2"
+  },
+  {
+    "hairS": "bigafro",
+    "label": "Big afro",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1578,
+    "inside": 1242,
+    "opaque": 15500,
+    "hash": "8a08ab5e2aeda056266aa28709504e489165916abdb4fd021915b9c3322e4efe"
+  },
+  {
+    "hairS": "bigafro",
+    "label": "Big afro",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1241,
+    "inside": 830,
+    "opaque": 11123,
+    "hash": "ce9ee14a9dba4206369b6676b9fb5bd02a825379045b44787c07d84b6f3ee223"
+  }
+]

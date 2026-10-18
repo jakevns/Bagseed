@@ -1,0 +1,11 @@
+{
+  "revision": "character-native-ink-v2",
+  "hashes": {
+    "bald": "fa7428ff2c61f213115bd69f76814800d153eb3b673092217e70c5baf57a1a8a",
+    "short": "e459179544676b06450b5c5445283661e9a199bfbaeec797bb2aced3b413f309",
+    "buzz": "b68d752a3f3fa7d9144e8c921d28b2dfdb52637c5a47ee0de06ae76a45e6a92b",
+    "crop": "700b5a9af4b7114662da0d3ae321e5bbe778998a10d496dab01dcfc32b153fb2",
+    "caesar": "6f987917d7ef4094cc7bc8a72c084c137b7fd0d1db711d2a8f88ea86646cd651",
+    "fade": "6470b809588373fce4691317dfdc760bbfd5dfd18f22cf0b7de93b6980c3644d"
+  }
+}

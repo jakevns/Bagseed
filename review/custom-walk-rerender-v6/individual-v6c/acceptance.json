@@ -1,0 +1,701 @@
+{
+  "status": "NOT APPROVED: numeric gates and visual review required",
+  "expected": 152,
+  "generated": 8,
+  "missing": 144,
+  "failedFrames": 0,
+  "idleSHA256": {
+    "graphics\\production\\customization\\top\\cardigan\\down.png": "59cc5789413301c425e5f13a7d5ae4cc1dd6e0f76a2611d6a67b7469837099a5",
+    "graphics\\production\\customization\\top\\cardigan\\up.png": "0be5948cc824709a0b44eeb860d7b66602ab5604aa796156e328500c28e4c203"
+  },
+  "poseGuideCycles": {
+    "down": {
+      "lowestFootOffsets": [
+        0.06807511737089202,
+        0.05787037037037037,
+        -0.0539906103286385,
+        0.0625
+      ],
+      "leftLeading": 1,
+      "rightLeading": 3,
+      "balanced": false
+    },
+    "up": {
+      "lowestFootOffsets": [
+        0.08374384236453201,
+        0.07560975609756097,
+        -0.06635071090047394,
+        0.07177033492822966
+      ],
+      "leftLeading": 1,
+      "rightLeading": 3,
+      "balanced": false
+    }
+  },
+  "frames": [
+    {
+      "garment": "cardigan",
+      "frame": "down/0",
+      "registration": {
+        "uniformScale": 0.24398625429553264,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          18.39518900343643,
+          66.68041237113403
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          282,
+          612,
+          763,
+          1485
+        ],
+        "guideBounds": [
+          80,
+          216,
+          212,
+          429
+        ],
+        "source": "sources/rerender-v6/individual-v6c/top-cardigan-down-0.png",
+        "sourceSHA256": "ecd1ca2fbc4824a4a2db5265b1488bf54f5ad6346a715d09b74163bf641bd601",
+        "sourceSlot": 0,
+        "sourceFrame": "down/0",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "poseReference": "registered/mannequin/down-0.png",
+        "registeredSHA256": "7e462423b1abdd536c84f5cf10fc91fa5767f6e8f6875c6996afac2689c8fc63"
+      },
+      "checks": {
+        "palette": {
+          "clusterDeltaE": [
+            5.702689361894984,
+            1.265300547881161,
+            35.21103213636955,
+            11.057686467993298
+          ],
+          "maxDeltaE": 35.21103213636955,
+          "dominantDeltaE": 5.336322076185832,
+          "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+          "idleWeights": [
+            0.9188332276474318,
+            0.049778059606848446,
+            0.028535193405199746,
+            0.0028535193405199747
+          ],
+          "walkWeights": [
+            0.6275736252280427,
+            0.007297367735209799,
+            0.3614803231691426,
+            0.0036486838676048996
+          ],
+          "pass": true
+        },
+        "outlineRatio": 0.6829431333972833,
+        "blackEdgeFraction": 0.0,
+        "outlinePass": true,
+        "blackPass": true,
+        "backNeckCreamFraction": null,
+        "idleBackNeckCreamFraction": null,
+        "backNeckPass": true,
+        "leadingFoot": {
+          "guideOffset": 0.06807511737089202,
+          "candidateOffset": 0.07511737089201878,
+          "pass": true
+        },
+        "detachedComponentAreas": [],
+        "edgeClipped": false
+      },
+      "failures": [],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "frame": "down/1",
+      "registration": {
+        "uniformScale": 0.25381903642773207,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          5.237367802585197,
+          55.88601645123384
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          286,
+          619,
+          768,
+          1470
+        ],
+        "guideBounds": [
+          80,
+          213,
+          214,
+          429
+        ],
+        "source": "sources/rerender-v6/individual-v6c/top-cardigan-down-1.png",
+        "sourceSHA256": "d7c7efc9cbb821b0ac68a6cef0da79fb5fa6607a73b5c4629a4150d19058792d",
+        "sourceSlot": 0,
+        "sourceFrame": "down/1",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "poseReference": "registered/mannequin/down-1.png",
+        "registeredSHA256": "df8516867326883460920f9873dffa2d9fc6e6d42ee7abf7f2970320b4b0bfef"
+      },
+      "checks": {
+        "palette": {
+          "clusterDeltaE": [
+            1.1452665727196203,
+            0.7743936679444284,
+            22.879022506229536,
+            11.08936687437514
+          ],
+          "maxDeltaE": 22.879022506229536,
+          "dominantDeltaE": 1.484531336640535,
+          "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+          "idleWeights": [
+            0.9188332276474318,
+            0.049778059606848446,
+            0.028535193405199746,
+            0.0028535193405199747
+          ],
+          "walkWeights": [
+            0.919008875739645,
+            0.0014792899408284023,
+            0.07507396449704141,
+            0.004437869822485207
+          ],
+          "pass": true
+        },
+        "outlineRatio": 0.7450080849168581,
+        "blackEdgeFraction": 0.002178649237472767,
+        "outlinePass": true,
+        "blackPass": true,
+        "backNeckCreamFraction": null,
+        "idleBackNeckCreamFraction": null,
+        "backNeckPass": true,
+        "leadingFoot": {
+          "guideOffset": 0.05787037037037037,
+          "candidateOffset": 0.0625,
+          "pass": true
+        },
+        "detachedComponentAreas": [],
+        "edgeClipped": false
+      },
+      "failures": [],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "frame": "down/2",
+      "registration": {
+        "uniformScale": 0.2409502262443439,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          24.7420814479638,
+          76.00791855203619
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          282,
+          581,
+          760,
+          1465
+        ],
+        "guideBounds": [
+          77,
+          216,
+          209,
+          429
+        ],
+        "source": "sources/rerender-v6/individual-v6c/top-cardigan-down-2.png",
+        "sourceSHA256": "822d15f1cc711419804d1075b6edb900bda3a0288b93a36c49b998128ad90fd3",
+        "sourceSlot": 0,
+        "sourceFrame": "down/2",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "poseReference": "registered/mannequin/down-2.png",
+        "registeredSHA256": "a2e55e5953c858d3f50b74bd37918e3e957ca5096f295eb08488b95f60bb7ff1"
+      },
+      "checks": {
+        "palette": {
+          "clusterDeltaE": [
+            4.928983267177826,
+            2.0072782753229332,
+            1.7783733043864653,
+            13.341126050967892
+          ],
+          "maxDeltaE": 13.341126050967892,
+          "dominantDeltaE": 4.608698400802059,
+          "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+          "idleWeights": [
+            0.9188332276474318,
+            0.049778059606848446,
+            0.028535193405199746,
+            0.0028535193405199747
+          ],
+          "walkWeights": [
+            0.8298027757487217,
+            0.1168736303871439,
+            0.046384222059897735,
+            0.006939371804236669
+          ],
+          "pass": true
+        },
+        "outlineRatio": 0.5938076131524511,
+        "blackEdgeFraction": 0.016753926701570682,
+        "outlinePass": true,
+        "blackPass": true,
+        "backNeckCreamFraction": null,
+        "idleBackNeckCreamFraction": null,
+        "backNeckPass": true,
+        "leadingFoot": {
+          "guideOffset": -0.0539906103286385,
+          "candidateOffset": -0.05868544600938967,
+          "pass": true
+        },
+        "detachedComponentAreas": [],
+        "edgeClipped": false
+      },
+      "failures": [],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "frame": "down/3",
+      "registration": {
+        "uniformScale": 0.2305229455709712,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          22.511205976520813,
+          89.90074706510137
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          263,
+          534,
+          768,
+          1471
+        ],
+        "guideBounds": [
+          74,
+          213,
+          210,
+          429
+        ],
+        "source": "sources/rerender-v6/individual-v6c/top-cardigan-down-3.png",
+        "sourceSHA256": "b2f090c093c4b1cc51851f170894c50091b9898ad10032f7bf4b2c8e9722e222",
+        "sourceSlot": 0,
+        "sourceFrame": "down/3",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "poseReference": "registered/mannequin/down-3.png",
+        "registeredSHA256": "4ebb6aa0fb5559b4ded4a01a3e62d965a41cfa8b915dde9cab8cf9d279991298"
+      },
+      "checks": {
+        "palette": {
+          "clusterDeltaE": [
+            3.303075815514532,
+            1.500178248904163,
+            29.26648609631478,
+            16.125676542306888
+          ],
+          "maxDeltaE": 29.26648609631478,
+          "dominantDeltaE": 3.54766081120358,
+          "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+          "idleWeights": [
+            0.9188332276474318,
+            0.049778059606848446,
+            0.028535193405199746,
+            0.0028535193405199747
+          ],
+          "walkWeights": [
+            0.8142804291527932,
+            0.17906030336662968,
+            0.0029596744358120607,
+            0.003699593044765076
+          ],
+          "pass": true
+        },
+        "outlineRatio": 0.5142308709077477,
+        "blackEdgeFraction": 0.0011547344110854503,
+        "outlinePass": true,
+        "blackPass": true,
+        "backNeckCreamFraction": null,
+        "idleBackNeckCreamFraction": null,
+        "backNeckPass": true,
+        "leadingFoot": {
+          "guideOffset": 0.0625,
+          "candidateOffset": 0.06018518518518518,
+          "pass": true
+        },
+        "detachedComponentAreas": [],
+        "edgeClipped": false
+      },
+      "failures": [],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/0",
+      "registration": {
+        "uniformScale": 0.24816625916870416,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          17.57762836185819,
+          74.86674816625919
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          278,
+          609,
+          751,
+          1427
+        ],
+        "guideBounds": [
+          78,
+          226,
+          213,
+          429
+        ],
+        "source": "sources/rerender-v6/individual-v6c/top-cardigan-up-0.png",
+        "sourceSHA256": "d190f6175493696fd412756ebbc20c706a34800d3eabf27cadc839a79f57eeb1",
+        "sourceSlot": 0,
+        "sourceFrame": "up/0",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "poseReference": "registered/mannequin/up-0.png",
+        "registeredSHA256": "85641f1339b8a78f8a0bbec7bf324305f3fa5cd0aca7cd36724ab6bdf7d475ac"
+      },
+      "checks": {
+        "palette": {
+          "clusterDeltaE": [
+            3.026165568953792,
+            3.036768764584687,
+            12.299348523972398,
+            4.023910720713563
+          ],
+          "maxDeltaE": 12.299348523972398,
+          "dominantDeltaE": 4.112192032256182,
+          "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+          "idleWeights": [
+            0.4760135680827007,
+            0.04878048780487805,
+            0.08867711193668228,
+            0.38652883217573897
+          ],
+          "walkWeights": [
+            0.782200956937799,
+            0.030239234449760767,
+            0.1678468899521531,
+            0.01971291866028708
+          ],
+          "pass": true
+        },
+        "outlineRatio": 0.7261553460283358,
+        "blackEdgeFraction": 0.0,
+        "outlinePass": true,
+        "blackPass": true,
+        "backNeckCreamFraction": 0.0,
+        "idleBackNeckCreamFraction": 0.0,
+        "backNeckPass": true,
+        "leadingFoot": {
+          "guideOffset": 0.08374384236453201,
+          "candidateOffset": 0.08620689655172414,
+          "pass": true
+        },
+        "detachedComponentAreas": [],
+        "edgeClipped": false
+      },
+      "failures": [],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/1",
+      "registration": {
+        "uniformScale": 0.25753768844221103,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          -2.3894472361808994,
+          61.236180904522655
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          288,
+          632,
+          740,
+          1428
+        ],
+        "guideBounds": [
+          78,
+          224,
+          213,
+          429
+        ],
+        "source": "sources/rerender-v6/individual-v6c/top-cardigan-up-1.png",
+        "sourceSHA256": "dcb891624a3e724de45f0b14a1b01cf5b42a3be73a64181d8cf4940d5e30c5f4",
+        "sourceSlot": 0,
+        "sourceFrame": "up/1",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "poseReference": "registered/mannequin/up-1.png",
+        "registeredSHA256": "fa6004f4fc3077c9b053618fdf6e6b218a254bb5ee86a5621b2d5f6c1fb77ed3"
+      },
+      "checks": {
+        "palette": {
+          "clusterDeltaE": [
+            2.6598292361467593,
+            2.3618552039828375,
+            2.135579410964669,
+            2.7184660802108014
+          ],
+          "maxDeltaE": 2.7184660802108014,
+          "dominantDeltaE": 2.607715768953571,
+          "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+          "idleWeights": [
+            0.4760135680827007,
+            0.04878048780487805,
+            0.08867711193668228,
+            0.38652883217573897
+          ],
+          "walkWeights": [
+            0.49800545874448876,
+            0.02771362586605081,
+            0.14654629435229896,
+            0.32773462103716144
+          ],
+          "pass": true
+        },
+        "outlineRatio": 0.7065772013522479,
+        "blackEdgeFraction": 0.0,
+        "outlinePass": true,
+        "blackPass": true,
+        "backNeckCreamFraction": 0.0,
+        "idleBackNeckCreamFraction": 0.0,
+        "backNeckPass": true,
+        "leadingFoot": {
+          "guideOffset": 0.07560975609756097,
+          "candidateOffset": 0.07317073170731707,
+          "pass": true
+        },
+        "detachedComponentAreas": [],
+        "edgeClipped": false
+      },
+      "failures": [],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/2",
+      "registration": {
+        "uniformScale": 0.24421296296296297,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          19.71875,
+          74.8912037037037
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          274,
+          586,
+          751,
+          1450
+        ],
+        "guideBounds": [
+          76,
+          218,
+          211,
+          429
+        ],
+        "source": "sources/rerender-v6/individual-v6c/top-cardigan-up-2.png",
+        "sourceSHA256": "457f21381b21e295396f63f1bda0117cbab68badbc613eedf3bb8a6e502444f1",
+        "sourceSlot": 0,
+        "sourceFrame": "up/2",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "poseReference": "registered/mannequin/up-2.png",
+        "registeredSHA256": "91653b7a697f72257e6e75c63aaf3a3590c85f87556859a810cc2761c0f40b72"
+      },
+      "checks": {
+        "palette": {
+          "clusterDeltaE": [
+            2.957935938230575,
+            1.0679902830593335,
+            1.96241017588238,
+            3.6926128399805163
+          ],
+          "maxDeltaE": 3.6926128399805163,
+          "dominantDeltaE": 3.0263514370223676,
+          "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+          "idleWeights": [
+            0.4760135680827007,
+            0.04878048780487805,
+            0.08867711193668228,
+            0.38652883217573897
+          ],
+          "walkWeights": [
+            0.4935008665511265,
+            0.042677642980935876,
+            0.13106585788561526,
+            0.3327556325823224
+          ],
+          "pass": true
+        },
+        "outlineRatio": 0.6708999689271131,
+        "blackEdgeFraction": 0.008348794063079777,
+        "outlinePass": true,
+        "blackPass": true,
+        "backNeckCreamFraction": 0.0,
+        "idleBackNeckCreamFraction": 0.0,
+        "backNeckPass": true,
+        "leadingFoot": {
+          "guideOffset": -0.06635071090047394,
+          "candidateOffset": -0.06398104265402843,
+          "pass": true
+        },
+        "detachedComponentAreas": [],
+        "edgeClipped": false
+      },
+      "failures": [],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/3",
+      "registration": {
+        "uniformScale": 0.25770653514180025,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          15.342786683107278,
+          63.82983970406906
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          279,
+          606,
+          766,
+          1417
+        ],
+        "guideBounds": [
+          76,
+          220,
+          211,
+          429
+        ],
+        "source": "sources/rerender-v6/individual-v6c/top-cardigan-up-3.png",
+        "sourceSHA256": "d60c04edb2d991d329b9a4e1c0947879ef15c62755fa62857643de2076ee53e9",
+        "sourceSlot": 0,
+        "sourceFrame": "up/3",
+        "sourceCell": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "poseReference": "registered/mannequin/up-3.png",
+        "registeredSHA256": "e3b4cb6d418c92ad501b900ab2a5908044692c65eecaf0c6316df871720f283b"
+      },
+      "checks": {
+        "palette": {
+          "clusterDeltaE": [
+            3.8334927940768795,
+            2.0803837519652246,
+            2.748865215957598,
+            3.335263638984125
+          ],
+          "maxDeltaE": 3.8334927940768795,
+          "dominantDeltaE": 3.4514309186675733,
+          "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+          "idleWeights": [
+            0.4760135680827007,
+            0.04878048780487805,
+            0.08867711193668228,
+            0.38652883217573897
+          ],
+          "walkWeights": [
+            0.49920063948840926,
+            0.053557154276578735,
+            0.12470023980815348,
+            0.3225419664268585
+          ],
+          "pass": true
+        },
+        "outlineRatio": 0.6299628761970089,
+        "blackEdgeFraction": 0.003293084522502744,
+        "outlinePass": true,
+        "blackPass": true,
+        "backNeckCreamFraction": 0.0,
+        "idleBackNeckCreamFraction": 0.0,
+        "backNeckPass": true,
+        "leadingFoot": {
+          "guideOffset": 0.07177033492822966,
+          "candidateOffset": 0.07655502392344497,
+          "pass": true
+        },
+        "detachedComponentAreas": [],
+        "edgeClipped": false
+      },
+      "failures": [],
+      "visualApproval": false
+    }
+  ]
+}

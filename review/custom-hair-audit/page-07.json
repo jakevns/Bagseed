@@ -1,0 +1,402 @@
+[
+  {
+    "hairS": "bowl",
+    "label": "Bowl cut",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1207,
+    "inside": 494,
+    "opaque": 3603,
+    "hash": "23d353c3c33fd1b4b9c8c7f6601a1769a98ec70ceeca8e25e56305e5d74330c7"
+  },
+  {
+    "hairS": "bowl",
+    "label": "Bowl cut",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1489,
+    "inside": 992,
+    "opaque": 5138,
+    "hash": "2c39a5f5f2958b12f03a9bb01dc942ddad8383830da58d88b6b1ea88b0f6c794"
+  },
+  {
+    "hairS": "bowl",
+    "label": "Bowl cut",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1702,
+    "inside": 1183,
+    "opaque": 6208,
+    "hash": "10f7bc8f5eec47743f6eb82afd0d9a77f3c1a3d146714c59adef28aeaaaceb1e"
+  },
+  {
+    "hairS": "bowl",
+    "label": "Bowl cut",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1428,
+    "inside": 889,
+    "opaque": 5048,
+    "hash": "660476d9676b08f5cd71fef4cc85b40a0d7e1a88e5816f862e4799c058cb0e77"
+  },
+  {
+    "hairS": "bowl",
+    "label": "Bowl cut",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1207,
+    "inside": 494,
+    "opaque": 3603,
+    "hash": "433d98bc98774daee3bee2b3e1619f9e7ea2a1ff4b26ebba50f3ef3a0c6a5357"
+  },
+  {
+    "hairS": "bowl",
+    "label": "Bowl cut",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1489,
+    "inside": 992,
+    "opaque": 5138,
+    "hash": "b7fcb226981e2fc688cf58da2d6ed7771410d62089ae8033423441124a5362e5"
+  },
+  {
+    "hairS": "bowl",
+    "label": "Bowl cut",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1702,
+    "inside": 1183,
+    "opaque": 6208,
+    "hash": "71c9d92b97979d7e6e415088b553e59aa910aac56d8786cf1068ea8bdddaf509"
+  },
+  {
+    "hairS": "bowl",
+    "label": "Bowl cut",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1428,
+    "inside": 889,
+    "opaque": 5048,
+    "hash": "0747beb85d5f0cb1a0b0ba1785ba7285d6396053b74bd93b130425540c7edfb0"
+  },
+  {
+    "hairS": "curtains",
+    "label": "Curtain bangs",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1660,
+    "inside": 758,
+    "opaque": 4741,
+    "hash": "d329b4c6ec166e23ec819ea14192000be4c76934bab34edae35720b601086fa3"
+  },
+  {
+    "hairS": "curtains",
+    "label": "Curtain bangs",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1941,
+    "inside": 1215,
+    "opaque": 5894,
+    "hash": "604d2d80ba28efb0fc78b7ed4ec91341e6e06a948d11f745c52798bf2565b71d"
+  },
+  {
+    "hairS": "curtains",
+    "label": "Curtain bangs",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 2509,
+    "inside": 1759,
+    "opaque": 7697,
+    "hash": "48afaf8fbaffc09b30f8eed60b30b60483a8db20d415e5787ec7092d378dd415"
+  },
+  {
+    "hairS": "curtains",
+    "label": "Curtain bangs",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1855,
+    "inside": 1164,
+    "opaque": 5799,
+    "hash": "61bb2c7d067594d288b2ff575a035959d10dc3934771bb7a4095813584235c11"
+  },
+  {
+    "hairS": "curtains",
+    "label": "Curtain bangs",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1660,
+    "inside": 758,
+    "opaque": 4741,
+    "hash": "a2d4d9d620ee8b618f3785f29b6e0606e3390f89746c9b63456c3e0a7b3fa290"
+  },
+  {
+    "hairS": "curtains",
+    "label": "Curtain bangs",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1941,
+    "inside": 1215,
+    "opaque": 5894,
+    "hash": "c545d921ec9c63c7769259b5d2e6dca032478522a6739246a53e76d9228b49a6"
+  },
+  {
+    "hairS": "curtains",
+    "label": "Curtain bangs",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 2509,
+    "inside": 1759,
+    "opaque": 7697,
+    "hash": "8871cf485e365ae7d54df5fe3021f183a3b9fb8a928d17afe30c841ff42d10db"
+  },
+  {
+    "hairS": "curtains",
+    "label": "Curtain bangs",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1855,
+    "inside": 1164,
+    "opaque": 5799,
+    "hash": "1237dcc15659a0c7d543f1386e8e3f3f76af4cd7e3fdf55076af835963a47fd0"
+  },
+  {
+    "hairS": "angledbob",
+    "label": "Angled bob",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 2055,
+    "inside": 1014,
+    "opaque": 5989,
+    "hash": "ca4bef9a6c58ae31ec20c7f120e258c2d10a85a5ad61cdf8824681a710d8b8c4"
+  },
+  {
+    "hairS": "angledbob",
+    "label": "Angled bob",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1555,
+    "inside": 855,
+    "opaque": 5584,
+    "hash": "ac554fd42ad1b09737fa7c786c42ecfdcc9ddcc33c9d1f9ae107590b9a9d4482"
+  },
+  {
+    "hairS": "angledbob",
+    "label": "Angled bob",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 2234,
+    "inside": 1578,
+    "opaque": 9122,
+    "hash": "8f47a1e993ede242a9761a138724c81b83c64c6048970be8abd494185a96fd9f"
+  },
+  {
+    "hairS": "angledbob",
+    "label": "Angled bob",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1608,
+    "inside": 848,
+    "opaque": 5596,
+    "hash": "75392c913234685067d0c108652dc09d008c513c04694f0573aa249c9a4c02d1"
+  },
+  {
+    "hairS": "angledbob",
+    "label": "Angled bob",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 2055,
+    "inside": 1014,
+    "opaque": 5989,
+    "hash": "f3d053e6c613d4cde41291e733adbbb9eee08086794da4b627c433b8da26b3e9"
+  },
+  {
+    "hairS": "angledbob",
+    "label": "Angled bob",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1555,
+    "inside": 855,
+    "opaque": 5584,
+    "hash": "2c74686c0a2e7c616c581f571a49f9f2b8a7ba14d76a4f7a1171a968df12f293"
+  },
+  {
+    "hairS": "angledbob",
+    "label": "Angled bob",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 2234,
+    "inside": 1578,
+    "opaque": 9122,
+    "hash": "6b1768f59c80d28693a0ed25637388c39a42748c511f7387d01afb3d991d3e66"
+  },
+  {
+    "hairS": "angledbob",
+    "label": "Angled bob",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1608,
+    "inside": 848,
+    "opaque": 5596,
+    "hash": "e4ca8e2e0f081ed1b5308d643ed484b14089f66ae21da9d35e4e4edb46a4f36a"
+  },
+  {
+    "hairS": "asymbob",
+    "label": "Asymmetric bob",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1369,
+    "inside": 664,
+    "opaque": 4636,
+    "hash": "55c184375aeef671d8fed8313a09ec02c3fc855403be29b5d424782773afdf5b"
+  },
+  {
+    "hairS": "asymbob",
+    "label": "Asymmetric bob",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1387,
+    "inside": 717,
+    "opaque": 5219,
+    "hash": "1ac95a3dff684c23b94170d6f4277f0dd8046767e50e44836f382c026c11d608"
+  },
+  {
+    "hairS": "asymbob",
+    "label": "Asymmetric bob",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 2158,
+    "inside": 1586,
+    "opaque": 8283,
+    "hash": "92a2940d376396db6ed86c7684afc54ebf0aebc1d1e0f182750853304cdb9f0f"
+  },
+  {
+    "hairS": "asymbob",
+    "label": "Asymmetric bob",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1383,
+    "inside": 719,
+    "opaque": 5335,
+    "hash": "715ac2bad877cfc0e582af24a4efd03bc4215c09788bf44d245ebe2f9f44d299"
+  },
+  {
+    "hairS": "asymbob",
+    "label": "Asymmetric bob",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1369,
+    "inside": 664,
+    "opaque": 4636,
+    "hash": "76f78e9204f30324575a4d3b5c8ee32d36a4e64a5fa919d6e1ded98c18c6f984"
+  },
+  {
+    "hairS": "asymbob",
+    "label": "Asymmetric bob",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1387,
+    "inside": 717,
+    "opaque": 5219,
+    "hash": "9462410be01071526e71a5dcbe900292c0e32f79a98b58761635576d00688e81"
+  },
+  {
+    "hairS": "asymbob",
+    "label": "Asymmetric bob",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 2158,
+    "inside": 1586,
+    "opaque": 8283,
+    "hash": "946f49ccf6d09095a8bf163acd09cbe22021ecd3c2926dc21ad244204c420864"
+  },
+  {
+    "hairS": "asymbob",
+    "label": "Asymmetric bob",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1383,
+    "inside": 719,
+    "opaque": 5335,
+    "hash": "84b2ec83f118d9ea43fc26274e33a1409fca92f05f67605026c9cb66b35a08f9"
+  },
+  {
+    "hairS": "braidbob",
+    "label": "Braided bob",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1451,
+    "inside": 645,
+    "opaque": 4719,
+    "hash": "60633bde946f224b42300320dc3a8439644f1f80469daac1278682e863fa95e9"
+  },
+  {
+    "hairS": "braidbob",
+    "label": "Braided bob",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1554,
+    "inside": 974,
+    "opaque": 5247,
+    "hash": "b9729d8c268cb72ebe1a5d6a4a51dc233f511f161b06987328f8e3832383b4f9"
+  },
+  {
+    "hairS": "braidbob",
+    "label": "Braided bob",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 2494,
+    "inside": 1874,
+    "opaque": 8241,
+    "hash": "25ee5baadf1618a8c26ce14c89b94ccb9f2eb21ff5b328322e14de0aa793b757"
+  },
+  {
+    "hairS": "braidbob",
+    "label": "Braided bob",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1455,
+    "inside": 834,
+    "opaque": 5198,
+    "hash": "959a0238b905b8ccc709e8bf7bb1cc7642896a28a9efa7f7a5c72c500d9905d8"
+  },
+  {
+    "hairS": "braidbob",
+    "label": "Braided bob",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1451,
+    "inside": 645,
+    "opaque": 4719,
+    "hash": "39347271b96801e12c663fb644122ccc4f3de43460aa6a2e287773b660753857"
+  },
+  {
+    "hairS": "braidbob",
+    "label": "Braided bob",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1554,
+    "inside": 974,
+    "opaque": 5247,
+    "hash": "ee82c036e33006340ca7345ddc629b5dc9ac12c105a26b2f52be92d3d5cab627"
+  },
+  {
+    "hairS": "braidbob",
+    "label": "Braided bob",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 2494,
+    "inside": 1874,
+    "opaque": 8241,
+    "hash": "dcf6d0e1de0b90b8d3c220d9d2a0bdfaeecfe655bb5fc912455a128b468980c5"
+  },
+  {
+    "hairS": "braidbob",
+    "label": "Braided bob",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1455,
+    "inside": 834,
+    "opaque": 5198,
+    "hash": "e507099c1e238128d76628bff397ceff15f73302624da792d052ef6b5391fc0d"
+  }
+]

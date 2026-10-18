@@ -1,0 +1,16 @@
+{
+  "garment": "cardigan",
+  "dir": "down",
+  "firstFrame": 3,
+  "count": 1,
+  "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-down-3.png",
+  "prompt": "Create ONE freshly drawn transparent sprite for this game. The FIRST reference is the exact POSE: match its arm positions and legs exactly, not mirrored. Front view. On the IMAGE LEFT the elbow bends and its fist is raised in front of belly; on IMAGE RIGHT the arm is almost straight and hand lowered near hip. IMAGE RIGHT leg extends downward/forward, IMAGE LEFT knee bent and foot raised behind. The SECOND reference is exact garment identity, color, proportions and line weight: blue cardigan open over cream shirt, brown buttons, ribbed knit cuffs/hem, two patch pockets, navy jeans and brown sneakers with cream toe caps and soles. Draw this exact outfit on the first reference's pose. Preserve first-reference shoulder/neck size and pose geometry. Single headless full figure with neck cap, no head, no face. Thin delicate warm brown/navy colored line art, same subtle thin edges as second reference, no black stroke. Soft clean two/three-tone cel shading. No texture noise or extra waist band. Transparent margins around all sides, entire shoes included. Portrait 2:3 canvas. Do not reverse either arm. No ground/shadow/glow/text/background. IMPORTANT COLOR CONSTRAINT: every darkest contour, including shoe soles, laces, jeans creases and cardigan hem, must be visibly warm dark brown #49382e (RGB73,56,46) or navy #344154. Never use pure black or near-black anywhere. This is a softly colored game sprite. Keep the subtle garment palette unchanged; only contours use the stated brown/navy.",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "references": [
+    "graphics/production/walk/registered/mannequin/down-3.png",
+    "graphics/production/customization/top/cardigan/down.png"
+  ],
+  "visualApproval": false,
+  "visualNotes": "Arm/leg sides match guide; brown contours. Complete-cycle review pending."
+}

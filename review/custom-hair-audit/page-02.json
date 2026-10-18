@@ -1,0 +1,402 @@
+[
+  {
+    "hairS": "bob",
+    "label": "Bob",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1278,
+    "inside": 596,
+    "opaque": 4569,
+    "hash": "6699d393728f59e85d1a3a509257afea5657b218f78c757b54997a7c84291439"
+  },
+  {
+    "hairS": "bob",
+    "label": "Bob",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1375,
+    "inside": 845,
+    "opaque": 5440,
+    "hash": "dcd1d5971cb6aa27ecac29eb6ec6ea4a9d4ffcef568dbbba42c965588544c6d9"
+  },
+  {
+    "hairS": "bob",
+    "label": "Bob",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1954,
+    "inside": 1499,
+    "opaque": 8274,
+    "hash": "215bdae02fac0d28da77409f125bf43104aae00add7deb41c6ea60c9d534877e"
+  },
+  {
+    "hairS": "bob",
+    "label": "Bob",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1480,
+    "inside": 859,
+    "opaque": 5871,
+    "hash": "4858fa26f619df232e35aa046ec38772781ebeda577e05c85ce3e82195fce796"
+  },
+  {
+    "hairS": "bob",
+    "label": "Bob",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1278,
+    "inside": 596,
+    "opaque": 4569,
+    "hash": "032a4a0977bfbe900889cecb0b9e97564fe05bd6481a8ce04fad056841472c18"
+  },
+  {
+    "hairS": "bob",
+    "label": "Bob",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1375,
+    "inside": 845,
+    "opaque": 5440,
+    "hash": "70dc2638ddbf7bcee7ad0563352ba4591177c08546d875a605b4165f64e0df78"
+  },
+  {
+    "hairS": "bob",
+    "label": "Bob",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1954,
+    "inside": 1499,
+    "opaque": 8274,
+    "hash": "ee193029550008c8716543350fd8b27937ad685b6a8d7f3768b81d0da3022a77"
+  },
+  {
+    "hairS": "bob",
+    "label": "Bob",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1480,
+    "inside": 859,
+    "opaque": 5871,
+    "hash": "516890b557b4de0eea569d1d3ca383885e90006e5fa4719ff5f5b8c61259acae"
+  },
+  {
+    "hairS": "curly",
+    "label": "Curly",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1720,
+    "inside": 815,
+    "opaque": 5616,
+    "hash": "043b5374d0d9cafefccfb9a68814b3d7c547d0114b502ba9c6cfbc7f271b8d5c"
+  },
+  {
+    "hairS": "curly",
+    "label": "Curly",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1833,
+    "inside": 1160,
+    "opaque": 6693,
+    "hash": "228117deb9cd0e8350d331f9ecf879949b9d5ffd951001c3645b8d7bdde604b3"
+  },
+  {
+    "hairS": "curly",
+    "label": "Curly",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 2431,
+    "inside": 1798,
+    "opaque": 8764,
+    "hash": "5dff328ccaa533911899451dcea7615f463f0094b37912d110ac1e832d63408d"
+  },
+  {
+    "hairS": "curly",
+    "label": "Curly",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1709,
+    "inside": 1066,
+    "opaque": 6591,
+    "hash": "ff1772d9aedd118f8dc6d9cea9dc9ab3dac19c8392e7de1a478c021f5ccbde74"
+  },
+  {
+    "hairS": "curly",
+    "label": "Curly",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1720,
+    "inside": 815,
+    "opaque": 5616,
+    "hash": "0a896c6f8b3fdecd8d6fc839d459eb303a6b7db8ddefbe8f0839130eb64596cf"
+  },
+  {
+    "hairS": "curly",
+    "label": "Curly",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1833,
+    "inside": 1160,
+    "opaque": 6693,
+    "hash": "43bf5123dff620c7cf998f4f87fb4984cf1724057e1c6d36b0b25d12a7b9eb0c"
+  },
+  {
+    "hairS": "curly",
+    "label": "Curly",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 2431,
+    "inside": 1798,
+    "opaque": 8764,
+    "hash": "1b97b7ddaee2d5d6cf9fdc7cc25436033521146007d7736a3c99ce3c4b4b1774"
+  },
+  {
+    "hairS": "curly",
+    "label": "Curly",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1709,
+    "inside": 1066,
+    "opaque": 6591,
+    "hash": "a56ab7d63991884d345d25b593d083a77856dc9de23a842943f57201673f3d55"
+  },
+  {
+    "hairS": "wavy",
+    "label": "Wavy",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 2488,
+    "inside": 1159,
+    "opaque": 8315,
+    "hash": "5801e93e8f2e141f431b1cdc5bd2b6b2ebab94a55b70c1fd18282a61730e4e6f"
+  },
+  {
+    "hairS": "wavy",
+    "label": "Wavy",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 2384,
+    "inside": 1501,
+    "opaque": 9027,
+    "hash": "c5f043a5d7b7422cf56234045cd34d5dde14b99df9359b0ba8dc9b71a162cbf7"
+  },
+  {
+    "hairS": "wavy",
+    "label": "Wavy",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 3059,
+    "inside": 2224,
+    "opaque": 11847,
+    "hash": "d7ac823d74446eb56171f2ad01b7e637e5a9f381cafa8b5c83ed4f192c36a4ef"
+  },
+  {
+    "hairS": "wavy",
+    "label": "Wavy",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 2229,
+    "inside": 1251,
+    "opaque": 8461,
+    "hash": "311a6497b97b8fb652a72cb094fac0e7b14255f3b997f0fec0e58237022d4de5"
+  },
+  {
+    "hairS": "wavy",
+    "label": "Wavy",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 2488,
+    "inside": 1159,
+    "opaque": 8315,
+    "hash": "d59402ba5b65d6f625b39360e375aefef731fc8644b358911e53fda9a30a99f4"
+  },
+  {
+    "hairS": "wavy",
+    "label": "Wavy",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 2384,
+    "inside": 1501,
+    "opaque": 9027,
+    "hash": "de5bfd55ad9bc9954c9e8740f64501309f5c6b813b4de741d1cdcdba22c6372a"
+  },
+  {
+    "hairS": "wavy",
+    "label": "Wavy",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 3059,
+    "inside": 2224,
+    "opaque": 11847,
+    "hash": "261ef5bcb063746d718d6a829f31523fd9a07e0b6fb2f0ace16347a9c1dbf1c6"
+  },
+  {
+    "hairS": "wavy",
+    "label": "Wavy",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 2229,
+    "inside": 1251,
+    "opaque": 8461,
+    "hash": "b6109bf20c67ae074e23cc62e1fed6124522ca3c254d5164ed80fa6012a2d14f"
+  },
+  {
+    "hairS": "bun",
+    "label": "Bun",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1540,
+    "inside": 754,
+    "opaque": 5776,
+    "hash": "4aa7be9ecb2483c59c7592cb22d7c8bcf05bed4e85b208899cd6508c41ea997c"
+  },
+  {
+    "hairS": "bun",
+    "label": "Bun",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1367,
+    "inside": 788,
+    "opaque": 5085,
+    "hash": "7dc013d1b0bd4a05336beeac8fd679fb6a4b647a7600790d59fce4aa4bad555f"
+  },
+  {
+    "hairS": "bun",
+    "label": "Bun",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1943,
+    "inside": 1449,
+    "opaque": 7817,
+    "hash": "4f3deb4d3f9d301933e3f33641a0714b538551f4b222a58598f549452aa9329b"
+  },
+  {
+    "hairS": "bun",
+    "label": "Bun",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1361,
+    "inside": 790,
+    "opaque": 5066,
+    "hash": "b5ed9482b0d802824c1b395d811a7eea701b5ccbaeffd418a749b93fc7b028f2"
+  },
+  {
+    "hairS": "bun",
+    "label": "Bun",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1540,
+    "inside": 754,
+    "opaque": 5776,
+    "hash": "42e9a0be6264a00591a1a5344a70a55174c5130551e79540cc58450f38da9a61"
+  },
+  {
+    "hairS": "bun",
+    "label": "Bun",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1367,
+    "inside": 788,
+    "opaque": 5085,
+    "hash": "c65f9316307a76ff7577755048466f43bc2b0d4ab39b4835d8befbccbba8cdf0"
+  },
+  {
+    "hairS": "bun",
+    "label": "Bun",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1943,
+    "inside": 1449,
+    "opaque": 7817,
+    "hash": "f6ecc0631ff2baef9b76838b98dc3ab60471483fcc0c511e53221f7d556bec21"
+  },
+  {
+    "hairS": "bun",
+    "label": "Bun",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1361,
+    "inside": 790,
+    "opaque": 5066,
+    "hash": "0737b43428100699289ca0de0528f54bbefa8cb8d302f006b5fa96c61867cfed"
+  },
+  {
+    "hairS": "ponytail",
+    "label": "Ponytail",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1480,
+    "inside": 714,
+    "opaque": 4677,
+    "hash": "44307dad34f28565c7ac66ea03bcdbc8b83ecba0711e184a3e0b52ccd11b8d86"
+  },
+  {
+    "hairS": "ponytail",
+    "label": "Ponytail",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1710,
+    "inside": 904,
+    "opaque": 5933,
+    "hash": "7b3b7f9912dfcb4fe5ea5a0475b19c3dd4e1ec2f7a2b5a0b3824d7102ece00b5"
+  },
+  {
+    "hairS": "ponytail",
+    "label": "Ponytail",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 2530,
+    "inside": 1722,
+    "opaque": 9373,
+    "hash": "c9210ef96fb0e18af8bca093fccc90814eab8c8a771abbc63d07d4f88ab78da2"
+  },
+  {
+    "hairS": "ponytail",
+    "label": "Ponytail",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1671,
+    "inside": 840,
+    "opaque": 6076,
+    "hash": "58dc661294d8c1f5035e17ce92aaf98e5f813ee93f499fa4c2eeb6ac4fcebdfd"
+  },
+  {
+    "hairS": "ponytail",
+    "label": "Ponytail",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1480,
+    "inside": 714,
+    "opaque": 4677,
+    "hash": "5f9f370e1dfaa552485aeeddf340430e462888a9b4a7f8404acbb6cdb8b3a1d3"
+  },
+  {
+    "hairS": "ponytail",
+    "label": "Ponytail",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1710,
+    "inside": 904,
+    "opaque": 5933,
+    "hash": "45b4f25bf5ffcd14d9cdeec7b23563f0d7658b1fb5f5e3aed33f74111cac6f20"
+  },
+  {
+    "hairS": "ponytail",
+    "label": "Ponytail",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 2530,
+    "inside": 1722,
+    "opaque": 9373,
+    "hash": "02d707d040384d7e39cb87d765c93b5a82cae1697910d3d0d4df67304647adcd"
+  },
+  {
+    "hairS": "ponytail",
+    "label": "Ponytail",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1671,
+    "inside": 840,
+    "opaque": 6076,
+    "hash": "0f6a965ac897ea445c6f79992d4173720b446867cab045618694d687e273a2de"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "external-file",
+    "url": "file:///C:/Projects/Bagseed/public/index.html",
+    "ok": false,
+    "name": "SecurityError",
+    "message": "Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.",
+    "revision": "character-alignment-audit-v6",
+    "pageErrors": 0
+  },
+  {
+    "mode": "external-http",
+    "url": "http://127.0.0.1:50033",
+    "ok": true,
+    "opaque": 5138,
+    "revision": "character-alignment-audit-v6",
+    "pageErrors": 0
+  },
+  {
+    "mode": "standalone-file",
+    "url": "file:///C:/Projects/Bagseed/dist/standalone/index.html",
+    "ok": true,
+    "opaque": 5138,
+    "revision": "character-alignment-audit-v6",
+    "pageErrors": 0
+  }
+]

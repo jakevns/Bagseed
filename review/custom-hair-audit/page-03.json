@@ -1,0 +1,402 @@
+[
+  {
+    "hairS": "braids",
+    "label": "Braids",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 2320,
+    "inside": 951,
+    "opaque": 7687,
+    "hash": "a295bad208796941fa462d1066b30669f5560f232d930e307b6337c0503e716d"
+  },
+  {
+    "hairS": "braids",
+    "label": "Braids",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1898,
+    "inside": 973,
+    "opaque": 6731,
+    "hash": "040fdee23e2052174f9f838dd0ef3357a2adf524fba8f8335e64b3af8239a43e"
+  },
+  {
+    "hairS": "braids",
+    "label": "Braids",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 3000,
+    "inside": 1782,
+    "opaque": 11018,
+    "hash": "96e776afbf07df7cd542c7a6457076a1975fc7821ab0b442032672b0716226a7"
+  },
+  {
+    "hairS": "braids",
+    "label": "Braids",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1930,
+    "inside": 1021,
+    "opaque": 6938,
+    "hash": "224c343d034432c7e7dbc2fc58036a4d76e7022afc055e246ae0fc04aee9a3d1"
+  },
+  {
+    "hairS": "braids",
+    "label": "Braids",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 2320,
+    "inside": 951,
+    "opaque": 7687,
+    "hash": "3f9244392ce5a82fc5d10445dfe45dc9b1be57c7c73db1644d4d66bf2f25cd28"
+  },
+  {
+    "hairS": "braids",
+    "label": "Braids",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1898,
+    "inside": 973,
+    "opaque": 6731,
+    "hash": "38f4201739f1a75fa876af7e1ad45854b337f38a8a5f92695d3921305c5419d6"
+  },
+  {
+    "hairS": "braids",
+    "label": "Braids",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 3000,
+    "inside": 1782,
+    "opaque": 11018,
+    "hash": "cc2a64a543897380c45a701d6e263f2b827cb148f45e1dcbebc17ba3571cb575"
+  },
+  {
+    "hairS": "braids",
+    "label": "Braids",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1930,
+    "inside": 1021,
+    "opaque": 6938,
+    "hash": "b3a89334300b426d2506200a9517fa1bf10be27b8b6fc00cbe73520e87073414"
+  },
+  {
+    "hairS": "locs",
+    "label": "Locs",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 2352,
+    "inside": 1312,
+    "opaque": 6934,
+    "hash": "e728d4076a57de6f1f3b53d9695801b9196ab1c6356e8e3544827c4cd018a128"
+  },
+  {
+    "hairS": "locs",
+    "label": "Locs",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 2270,
+    "inside": 1454,
+    "opaque": 7686,
+    "hash": "aaff6c87e97434ffac7579b6464a4d5c750e9b8a9289d9ba09398cd2a293126b"
+  },
+  {
+    "hairS": "locs",
+    "label": "Locs",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 3172,
+    "inside": 2342,
+    "opaque": 10390,
+    "hash": "afbd0ebba2d62d681304f35fe307e6543e7df1defa1054d2eefb1a473928911b"
+  },
+  {
+    "hairS": "locs",
+    "label": "Locs",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 2180,
+    "inside": 1346,
+    "opaque": 7258,
+    "hash": "17cc49e90f53495b549327744b379868fe758a35bf0da487ca86fcdd142af0cb"
+  },
+  {
+    "hairS": "locs",
+    "label": "Locs",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 2352,
+    "inside": 1312,
+    "opaque": 6934,
+    "hash": "0ee306e2ee7bd52b3576f0e7c569f4794f29fb07226da07b0a067491ca749d4d"
+  },
+  {
+    "hairS": "locs",
+    "label": "Locs",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 2270,
+    "inside": 1454,
+    "opaque": 7686,
+    "hash": "136f29b1dd861c2f095abfbf64271548c9e8c2564f7cbc05d991a1a366899c4e"
+  },
+  {
+    "hairS": "locs",
+    "label": "Locs",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 3172,
+    "inside": 2342,
+    "opaque": 10390,
+    "hash": "2c444155cb127e51d4cdbc4710163c9ecba2103b0d242a8ad5aff516d86edba4"
+  },
+  {
+    "hairS": "locs",
+    "label": "Locs",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 2180,
+    "inside": 1346,
+    "opaque": 7258,
+    "hash": "661799b9ab90919b794721ebf22190af2812d3c3781e8160db89e31e5b8a3329"
+  },
+  {
+    "hairS": "afro",
+    "label": "Afro",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1129,
+    "inside": 826,
+    "opaque": 7563,
+    "hash": "60122f1559fc0c31a0ca3df34a9f3c744859dd5dcbd4dfa74880a0a56f39e4c6"
+  },
+  {
+    "hairS": "afro",
+    "label": "Afro",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 986,
+    "inside": 704,
+    "opaque": 9427,
+    "hash": "94e748264bdbed810dc8e0ed14f1f7b80b9830a28f81a907e5686cc2c3c0ad37"
+  },
+  {
+    "hairS": "afro",
+    "label": "Afro",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1407,
+    "inside": 1134,
+    "opaque": 12029,
+    "hash": "e049f0dbc32341811859880c6f177e8bf0e68a252d17b5de92a4460574abf20e"
+  },
+  {
+    "hairS": "afro",
+    "label": "Afro",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1132,
+    "inside": 794,
+    "opaque": 8533,
+    "hash": "d87f7b945d3e504025a508387f253e5a947a8fcd076ad6c3b5c2aff1edb19e77"
+  },
+  {
+    "hairS": "afro",
+    "label": "Afro",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1129,
+    "inside": 826,
+    "opaque": 7563,
+    "hash": "11c637f1b47b9a5c2dce958a502e8bcf5ad90b7330727287fb62cc2c57ee177f"
+  },
+  {
+    "hairS": "afro",
+    "label": "Afro",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 986,
+    "inside": 704,
+    "opaque": 9427,
+    "hash": "d40278df0e6f684e7b72e710fa08b4523b28910c01a3c13032374d53a4121233"
+  },
+  {
+    "hairS": "afro",
+    "label": "Afro",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1407,
+    "inside": 1134,
+    "opaque": 12029,
+    "hash": "b0611469b1e6bf46624769802dd78ad529f789b544f8836cf6cd9d2311fc5633"
+  },
+  {
+    "hairS": "afro",
+    "label": "Afro",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1132,
+    "inside": 794,
+    "opaque": 8533,
+    "hash": "9181d3e9939d0d1dbe5511bcd378e4387eea4b8ab1b5cf0655a5dcb9dbaace6d"
+  },
+  {
+    "hairS": "mohawk",
+    "label": "Mohawk",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 937,
+    "inside": 521,
+    "opaque": 3190,
+    "hash": "a1355283ea48b258650d3316e5743406f79132b6cf5eb07f29639220cb956209"
+  },
+  {
+    "hairS": "mohawk",
+    "label": "Mohawk",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 952,
+    "inside": 365,
+    "opaque": 3327,
+    "hash": "1347fa912381cea350c46f907573ad27f79bac5e5cad3a92c3654ef188a242f4"
+  },
+  {
+    "hairS": "mohawk",
+    "label": "Mohawk",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1178,
+    "inside": 750,
+    "opaque": 4304,
+    "hash": "f974d2a6b6c05136ed2c920a058ecc1f4b7c1518701ad24a6979d95633ff87b9"
+  },
+  {
+    "hairS": "mohawk",
+    "label": "Mohawk",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 865,
+    "inside": 289,
+    "opaque": 3069,
+    "hash": "82f30ff2cb1cd7f31b3d614284c75b18f01350d5b19612a425d7ee679d0a009d"
+  },
+  {
+    "hairS": "mohawk",
+    "label": "Mohawk",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 937,
+    "inside": 521,
+    "opaque": 3190,
+    "hash": "6abb7075fb1116d14e3114ac3236276d6040c0f76acebd9fa44117ec33f2c0a3"
+  },
+  {
+    "hairS": "mohawk",
+    "label": "Mohawk",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 952,
+    "inside": 365,
+    "opaque": 3327,
+    "hash": "a085609ddd369435da1a90d307f042b2b2c132167ad4aac794e7931a51554b20"
+  },
+  {
+    "hairS": "mohawk",
+    "label": "Mohawk",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1178,
+    "inside": 750,
+    "opaque": 4304,
+    "hash": "3e96e1989ec71e2d0670b46a8bbc8cda950d47abe299ab2097a45728fc3b20ab"
+  },
+  {
+    "hairS": "mohawk",
+    "label": "Mohawk",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 865,
+    "inside": 289,
+    "opaque": 3069,
+    "hash": "b67539e5e868c905ae9aae56328f4a062999166cb8755cd866d2c3546a208495"
+  },
+  {
+    "hairS": "sidecut",
+    "label": "Shaved Side",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1335,
+    "inside": 787,
+    "opaque": 4567,
+    "hash": "f4e067094b280d223cda5558125f59e6f8b229917804c49637946b143bc32d8d"
+  },
+  {
+    "hairS": "sidecut",
+    "label": "Shaved Side",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1135,
+    "inside": 576,
+    "opaque": 5047,
+    "hash": "a7b189ba2b80acca28f0f535838bd7d594d2a623c4620f7d1eaaa4165552b900"
+  },
+  {
+    "hairS": "sidecut",
+    "label": "Shaved Side",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 2007,
+    "inside": 1423,
+    "opaque": 6949,
+    "hash": "d5a3a492cc88dba9322afd2287e5138d476a19d908ae09af4733f2086d2ab024"
+  },
+  {
+    "hairS": "sidecut",
+    "label": "Shaved Side",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1154,
+    "inside": 487,
+    "opaque": 3480,
+    "hash": "94787bb81982ba4f4a371cc8e574ca9078cf9e821af8864305aebaf57a08671d"
+  },
+  {
+    "hairS": "sidecut",
+    "label": "Shaved Side",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1335,
+    "inside": 787,
+    "opaque": 4567,
+    "hash": "f80ebd1e7d0d1241f92d7abea76605ff8f4d7f665244dd79af7b0c00bc29cb2e"
+  },
+  {
+    "hairS": "sidecut",
+    "label": "Shaved Side",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1135,
+    "inside": 576,
+    "opaque": 5047,
+    "hash": "b0c568bb0d821299adc193186368033e3d91361e97980d40dc5b5990fc71f0a7"
+  },
+  {
+    "hairS": "sidecut",
+    "label": "Shaved Side",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 2007,
+    "inside": 1423,
+    "opaque": 6949,
+    "hash": "e198219de6d9d60c96a661598aee0d82a5ae59caf0136b70acd4f378815fab7b"
+  },
+  {
+    "hairS": "sidecut",
+    "label": "Shaved Side",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1154,
+    "inside": 487,
+    "opaque": 3480,
+    "hash": "ba3dbee1434b30d9aeb45c5606cc3cef423d375e5428f6fb32dbf1df924bd7c1"
+  }
+]

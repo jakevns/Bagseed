@@ -28,11 +28,16 @@ test('complete hair ends remain above garments in figures, walking and nose-cove
   const failures=[],faces=['soft','round','angular','long','square','heart','oval','diamond','oblong','pear','triangle','wide','petite','strong','button'],cuts=['long','halfup','boxbraids','longcurls','bluntlong','locs'];let views=0,pixels=0;
   const cv=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;},read=c=>c.getContext('2d').getImageData(0,0,c.width,c.height).data;
   for(const hairS of cuts)for(const face of faces)for(const body of ['slim','average','broad','curvy','stocky','tall'])for(const dir of ['down','right','up','left']){
-   const look=BagseedArt.normalize({hairS,face,body,pres:'fem',hairC:'#b64fd2',hat:'none',facial:'none',topS:'jacket',shirtC:'#20ed32',topPat:'stripe',topC2:'#edfc21',acc:'none'}),h=BagseedArt.head(look,dir,false,true),mask=cv(288,432),g=mask.getContext('2d'),sy=body==='tall'?1.07:1,neck=143-65*sy,shapeY=(199-BagseedArt.landmarks(look,'down').chin[1])/16,headY=neck-(199-15*shapeY)/3;
+   const look=BagseedArt.normalize({hairS,face,body,pres:'fem',hairC:'#b64fd2',hat:'none',facial:'none',topS:'jacket',shirtC:'#20ed32',topPat:'stripe',topC2:'#edfc21',acc:'none'}),h=BagseedArt.head(look,dir,false,true),mask=cv(288,432),g=mask.getContext('2d'),sy=body==='tall'?1.07:1,neck=143+(BagseedArt.body(look,dir,false,3).bagseedNeck.root[1]-107)*sy,shapeY=(199-BagseedArt.landmarks(look,'down').chin[1])/16,headY=neck-199/3;
    // Project the independently composed transparent head at the documented
    // jaw attachment to the body's single neck. Inspect hair below the collar,
    // erased it. Testing only head() could never detect that figure-layer bug.
-   const factor=BagseedArt.playerFigureScale,original=cv(288,432);original.getContext('2d').drawImage(h,48,headY*3,192,320);g.imageSmoothingQuality='high';g.setTransform(factor,0,0,factor,144*(1-factor),429*(1-factor));g.drawImage(original,0,0);g.resetTransform();
+   const factor=BagseedArt.playerFigureScale,original=cv(288,432);const probe=BagseedArt.sprite(look,dir,0,0,0,0,false,3),[headX,headYRegistered]=probe.bagseedHeadOrigin;
+   // Reproduce the two native raster passes: head composition, then uniform
+   // figure registration. A single resized head has different strand-edge
+   // antialiasing and falsely reports clothing over those opaque strands.
+   original.getContext('2d').drawImage(h,(48+(headX-48)/factor)*3,(143+(headYRegistered-143)/factor)*3,192,320);
+   g.imageSmoothingQuality='high';g.setTransform(factor,0,0,factor,144*(1-factor),429*(1-factor));g.drawImage(original,0,0);g.resetTransform();
    const expected=read(mask),points=[];
    for(let y=Math.ceil((143+(neck+3-143)*factor)*3);y<420;y++)for(let x=0;x<288;x++){
     const n=(y*288+x)*4;if(expected[n+3]>250&&expected[n]>expected[n+1]*1.5&&expected[n+2]>expected[n+1]*1.5)points.push(n);
@@ -49,8 +54,10 @@ test('complete hair ends remain above garments in figures, walking and nose-cove
    // Project independent hair from the accepted walking rig's neck, including
    // rear views where eyes are intentionally absent.
    const data=window.__BAGSEED_ILLUSTRATED_DATA__,walk=movingSprite.bagseedWalkProfile==='stride/'?data.walk.stride:data.walk,p=walk.rig.frames[dir+'/1'].keypoints,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[body])*.955;
-   raw.getContext('2d').drawImage(h,(48+(p.neck[0]-48)*width-32)*3,(143+(p.neck[1]-143)*sy-(199-15*shapeY)/3)*3);
-   mg.imageSmoothingQuality='high';mg.setTransform(factor,0,0,factor,144*(1-factor),429*(1-factor));mg.drawImage(raw,0,0);
+   // Reproject the independent original head at the registered attachment.
+   // The body is now fitted to its actual collar, not the old inferred rig point.
+   const [walkingHeadX,walkingHeadY]=movingSprite.bagseedHeadOrigin;
+   mg.imageSmoothingQuality='high';mg.drawImage(h,walkingHeadX*3,walkingHeadY*3,192*factor,320*factor);
    const opaque=read(moving),a=read(movingSprite),b=read(BagseedArt.sprite({...look,shirtC:'#fd2137',topC2:'#2363fa'},dir,1,0,0,0,false,3));let samples=0,mismatch=0;
    // Use the independent hair alpha, not the composited sprite alpha: garment
    // color can legitimately show through partially transparent edge strands.
