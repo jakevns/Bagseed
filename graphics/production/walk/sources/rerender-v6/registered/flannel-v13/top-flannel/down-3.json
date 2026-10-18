@@ -1,0 +1,134 @@
+{
+  "view": "down",
+  "frame": 3,
+  "source": "graphics\\production\\walk\\sources\\rerender-v6\\registered\\flannel-v13-uncolored\\top-flannel\\down-3.png",
+  "sourceSHA256": "a85e28ad3163f78ea2d69258e800b1fbc13e5662014d0d05df7226e160c9ba18",
+  "output": "graphics\\production\\walk\\sources\\rerender-v6\\registered\\flannel-v13\\top-flannel\\down-3.png",
+  "outputSHA256": "638dd3628f6feed4e26b8bb07dc1573a52e4f8fe12513233e34e3adf6f12fd0d",
+  "operation": "Fresh down/3 drawing, uniform registration, user-authorized shared material palette",
+  "alphaIdentical": true,
+  "outlinePixelsIdentical": true,
+  "dimensionsIdentical": true,
+  "runtimeInstalled": false,
+  "materials": {
+    "flannel": {
+      "pixels": 7579,
+      "medianRGB": [
+        60.0,
+        81.0,
+        133.0
+      ],
+      "beforeMedianRGB": [
+        63.0,
+        83.0,
+        130.0
+      ],
+      "allColorsInSharedRamp": true
+    },
+    "jeans": {
+      "pixels": 3270,
+      "medianRGB": [
+        59.0,
+        63.0,
+        80.0
+      ],
+      "beforeMedianRGB": [
+        72.0,
+        82.0,
+        112.0
+      ],
+      "allColorsInSharedRamp": true
+    },
+    "skin": {
+      "pixels": 1183,
+      "medianRGB": [
+        209.0,
+        134.0,
+        85.0
+      ],
+      "beforeMedianRGB": [
+        246.0,
+        160.0,
+        97.0
+      ],
+      "allColorsInSharedRamp": true
+    },
+    "leather": {
+      "pixels": 113,
+      "medianRGB": [
+        143.0,
+        112.0,
+        89.0
+      ],
+      "beforeMedianRGB": [
+        133.0,
+        76.0,
+        51.0
+      ],
+      "allColorsInSharedRamp": true
+    },
+    "cream": {
+      "pixels": 496,
+      "medianRGB": [
+        239.0,
+        208.0,
+        177.0
+      ],
+      "beforeMedianRGB": [
+        252.0,
+        226.0,
+        193.0
+      ],
+      "allColorsInSharedRamp": true
+    }
+  },
+  "generatedRaw": "graphics\\production\\walk\\sources\\rerender-v6\\flannel-v13-retry1\\top-flannel-down-3.png",
+  "generatedRawSHA256": "1885c3fb48c4432b3442a97cc45b93debfdbae77b942662d710f9f871c079ed8",
+  "registration": {
+    "uniformScale": 0.15018587360594796,
+    "rotationDegrees": 0,
+    "translationPixels": [
+      73.51338289962825,
+      209.57843866171004
+    ],
+    "groundError": 0.0,
+    "operations": [
+      "uniform-scale",
+      "translate"
+    ],
+    "sourceBounds": [
+      114,
+      116,
+      940,
+      1461
+    ],
+    "guideBounds": [
+      90,
+      227,
+      198,
+      429
+    ]
+  },
+  "materialHemOverride": [
+    [
+      115,
+      325
+    ],
+    [
+      130,
+      328
+    ],
+    [
+      149,
+      331
+    ],
+    [
+      165,
+      330
+    ],
+    [
+      187,
+      326
+    ]
+  ]
+}

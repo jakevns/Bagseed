@@ -1,0 +1,2916 @@
+{
+  "version": "approved-cardigan-jacket-flannel-v1",
+  "density": 3,
+  "frameCounts": {
+    "down": 4,
+    "up": 4
+  },
+  "items": {
+    "cardigan": {
+      "atlas": "atlases/approved-cardigan.png",
+      "atlasSHA256": "178e923b2957aac113a3ef022ddb3c82c5280593703908dae5abeb0a9847a6fc",
+      "rolesAtlas": "atlases/approved-cardigan-roles.png",
+      "rolesSHA256": "1ec97d0250a4033be27b04b0130e187cbb73f6e0d32ed11a70e7ddea7bae5aef",
+      "frames": {
+        "down/idle": {
+          "rect": [
+            0,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/registered/cardigan-idle-v11/down.png",
+          "sourceSHA256": "f6f0b732ad0cf461a2a3c044ae9ef6d3ccdedbc40336e6b216f55629f6d03c07",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              35.666666666666664,
+              109.33333333333333
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              63.0,
+              109.0
+            ],
+            "waist": [
+              48,
+              106.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 173.92299999999997,
+            "2": 101.66120000000001,
+            "3": 79.53339999999999,
+            "4": 101.2483
+          },
+          "feet": {
+            "all": [
+              103,
+              393,
+              194,
+              429
+            ],
+            "left": [
+              103,
+              393,
+              143,
+              429
+            ],
+            "right": [
+              155,
+              393,
+              194,
+              429
+            ]
+          }
+        },
+        "down/0": {
+          "rect": [
+            288,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-0.png",
+          "sourceSHA256": "00148bf12d91e593b59caf0157759bc31cfb1a06b27b64e04d1468c627296d2d",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              33.666666666666664,
+              106.33333333333333
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              66.0,
+              102.33333333333333
+            ],
+            "waist": [
+              48,
+              106.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 159.7012,
+            "2": 96.08239999999998,
+            "3": 64.16319999999999,
+            "4": 134.1426
+          },
+          "feet": {
+            "all": [
+              105,
+              381,
+              190,
+              429
+            ],
+            "left": [
+              105,
+              401,
+              145,
+              429
+            ],
+            "right": [
+              162,
+              381,
+              190,
+              404
+            ]
+          }
+        },
+        "down/1": {
+          "rect": [
+            576,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-1.png",
+          "sourceSHA256": "a70f6a95541c59326c2a8fceaf52ab848223d12dfc9b7845d999d2ef82cb1b6b",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              43,
+              125
+            ],
+            "ankleL": [
+              43,
+              137
+            ],
+            "kneeR": [
+              55,
+              116
+            ],
+            "ankleR": [
+              54,
+              125
+            ],
+            "elbowL": [
+              34,
+              99
+            ],
+            "handL": [
+              35.333333333333336,
+              109.0
+            ],
+            "elbowR": [
+              62,
+              98
+            ],
+            "handR": [
+              63.666666666666664,
+              109.33333333333333
+            ],
+            "waist": [
+              48,
+              105.26666666666667
+            ],
+            "nearArm": "L"
+          },
+          "materialBases": {
+            "1": 159.18139999999997,
+            "2": 94.6612,
+            "3": 65.0188,
+            "4": 140.8346
+          },
+          "feet": {
+            "all": [
+              121,
+              363,
+              179,
+              429
+            ],
+            "left": [
+              121,
+              404,
+              152,
+              429
+            ],
+            "right": [
+              156,
+              363,
+              179,
+              385
+            ]
+          }
+        },
+        "down/2": {
+          "rect": [
+            864,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-2.png",
+          "sourceSHA256": "129b2777cc9ca3aa453b200afd761be5fc40122d863e121e51bc96c9102f7f39",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              62,
+              110
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              35,
+              104
+            ],
+            "waist": [
+              48,
+              106.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 157.61579999999998,
+            "2": 92.87379999999999,
+            "3": 58.1592,
+            "4": 140.28159999999997
+          },
+          "feet": {
+            "all": [
+              118,
+              379,
+              191,
+              429
+            ],
+            "left": [
+              118,
+              379,
+              143,
+              402
+            ],
+            "right": [
+              154,
+              405,
+              191,
+              429
+            ]
+          }
+        },
+        "down/3": {
+          "rect": [
+            1152,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-3.png",
+          "sourceSHA256": "789930a3d5f030a54260bbf2663fbe1aec3e5e8b362bd87c622e0bda27833fa5",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              53,
+              125
+            ],
+            "ankleL": [
+              53,
+              137
+            ],
+            "kneeR": [
+              41,
+              116
+            ],
+            "ankleR": [
+              42,
+              125
+            ],
+            "elbowL": [
+              62,
+              99
+            ],
+            "handL": [
+              60,
+              111
+            ],
+            "elbowR": [
+              34,
+              98
+            ],
+            "handR": [
+              36,
+              108
+            ],
+            "waist": [
+              48,
+              105.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 150.7012,
+            "2": 94.7844,
+            "3": 66.5936,
+            "4": 154.5048
+          },
+          "feet": {
+            "all": [
+              108,
+              353,
+              170,
+              429
+            ],
+            "left": [
+              108,
+              353,
+              135,
+              382
+            ],
+            "right": [
+              136,
+              405,
+              170,
+              429
+            ]
+          }
+        },
+        "up/idle": {
+          "rect": [
+            0,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/registered/cardigan-idle-v11/up.png",
+          "sourceSHA256": "9d88165c2f451822293b9280f6e842d26ff7dbf21d633a74263c094f10cf5cfd",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              35.0,
+              110.0
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              60.666666666666664,
+              110.0
+            ],
+            "waist": [
+              48,
+              107.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 176.386,
+            "2": 95.2922,
+            "3": 79.10419999999999,
+            "4": 81.63929999999999
+          },
+          "feet": {
+            "all": [
+              104,
+              393,
+              184,
+              429
+            ],
+            "left": [
+              104,
+              393,
+              137,
+              429
+            ],
+            "right": [
+              151,
+              393,
+              184,
+              429
+            ]
+          }
+        },
+        "up/0": {
+          "rect": [
+            288,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-0.png",
+          "sourceSHA256": "b44aa7f88ab57af3490cbb8a7cff717b989f79c06b0607db455cbbe7e529a18f",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              62,
+              110
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              35,
+              104
+            ],
+            "waist": [
+              48,
+              106.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 147.5516,
+            "2": 102.3896,
+            "3": 60.4492,
+            "4": 145.4286
+          },
+          "feet": {
+            "all": [
+              109,
+              380,
+              181,
+              429
+            ],
+            "left": [
+              109,
+              380,
+              138,
+              419
+            ],
+            "right": [
+              147,
+              412,
+              181,
+              429
+            ]
+          }
+        },
+        "up/1": {
+          "rect": [
+            576,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-1.png",
+          "sourceSHA256": "5bb02c1b47c1e929f7eb82a1ef6b2b7a0fdab959449cf53b363d6596968674f5",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              53,
+              125
+            ],
+            "ankleL": [
+              53,
+              137
+            ],
+            "kneeR": [
+              41,
+              116
+            ],
+            "ankleR": [
+              42,
+              125
+            ],
+            "elbowL": [
+              62,
+              99
+            ],
+            "handL": [
+              60,
+              111
+            ],
+            "elbowR": [
+              34,
+              98
+            ],
+            "handR": [
+              36,
+              108
+            ],
+            "waist": [
+              48,
+              106.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 146.75099999999998,
+            "2": 101.67839999999998,
+            "3": 63.517399999999995,
+            "4": 151.55579999999998
+          },
+          "feet": {
+            "all": [
+              119,
+              362,
+              179,
+              429
+            ],
+            "left": [
+              119,
+              362,
+              144,
+              397
+            ],
+            "right": [
+              148,
+              412,
+              179,
+              429
+            ]
+          }
+        },
+        "up/2": {
+          "rect": [
+            864,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-2.png",
+          "sourceSHA256": "cfc3c20a2614d1c941f633ea7316239de3ab24e67dcf140c72b7080dcdffcf8b",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              32.0,
+              103.0
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              64.0,
+              109.0
+            ],
+            "waist": [
+              48,
+              107.33333333333333
+            ],
+            "nearArm": "L"
+          },
+          "materialBases": {
+            "1": 152.03699999999998,
+            "2": 99.1678,
+            "3": 63.2314,
+            "4": 148.23489999999998
+          },
+          "feet": {
+            "all": [
+              108,
+              387,
+              192,
+              429
+            ],
+            "left": [
+              108,
+              405,
+              146,
+              429
+            ],
+            "right": [
+              162,
+              387,
+              192,
+              425
+            ]
+          }
+        },
+        "up/3": {
+          "rect": [
+            1152,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-3.png",
+          "sourceSHA256": "6547406e8aff712df2208460ce6a469dfc2cd606a17e540d41e06396eefd1364",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              43,
+              125
+            ],
+            "ankleL": [
+              43,
+              137
+            ],
+            "kneeR": [
+              55,
+              116
+            ],
+            "ankleR": [
+              54,
+              125
+            ],
+            "elbowL": [
+              34,
+              99
+            ],
+            "handL": [
+              33.333333333333336,
+              110.66666666666667
+            ],
+            "elbowR": [
+              62,
+              98
+            ],
+            "handR": [
+              62.333333333333336,
+              108.83333333333333
+            ],
+            "waist": [
+              48,
+              107.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 142.8954,
+            "2": 94.71739999999998,
+            "3": 62.9713,
+            "4": 155.8498
+          },
+          "feet": {
+            "all": [
+              110,
+              373,
+              176,
+              429
+            ],
+            "left": [
+              110,
+              409,
+              146,
+              429
+            ],
+            "right": [
+              150,
+              373,
+              176,
+              399
+            ]
+          }
+        }
+      }
+    },
+    "jacket": {
+      "atlas": "atlases/approved-jacket.png",
+      "atlasSHA256": "f4abb22f8b3232a63a34b6d879cbca8b2c1328f9807bef09551221cfefacb65d",
+      "rolesAtlas": "atlases/approved-jacket-roles.png",
+      "rolesSHA256": "ac92cf99c4f27e6a11263e4fa637a25e4435274855dcd545b237fe55208ec1ea",
+      "frames": {
+        "down/idle": {
+          "rect": [
+            0,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/registered/jacket-idle-v9/down.png",
+          "sourceSHA256": "20b0a68d54c2a9baef00fdc05be1e485f17ebd5538fbd6538949f9ce1c946c1b",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              33.0,
+              111.66666666666667
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              58.0,
+              111.33333333333333
+            ],
+            "waist": [
+              48,
+              107.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 160.1854,
+            "2": 95.29499999999999,
+            "3": 67.8102,
+            "4": 129.2698
+          },
+          "feet": {
+            "all": [
+              100,
+              392,
+              175,
+              429
+            ],
+            "left": [
+              100,
+              392,
+              134,
+              429
+            ],
+            "right": [
+              141,
+              393,
+              175,
+              429
+            ]
+          }
+        },
+        "down/0": {
+          "rect": [
+            288,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-0.png",
+          "sourceSHA256": "28da2c969bf7e2ab20d9dd63c133f701f09ce4228d87020e16237db1060c6dba",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              30.666666666666668,
+              108.16666666666667
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              58.666666666666664,
+              107.0
+            ],
+            "waist": [
+              48,
+              105.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 150.1172,
+            "2": 95.5076,
+            "3": 67.2314,
+            "4": 144.73829999999998
+          },
+          "feet": {
+            "all": [
+              101,
+              380,
+              166,
+              429
+            ],
+            "left": [
+              101,
+              402,
+              134,
+              429
+            ],
+            "right": [
+              143,
+              380,
+              166,
+              406
+            ]
+          }
+        },
+        "down/1": {
+          "rect": [
+            576,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-1.png",
+          "sourceSHA256": "4b177b25db80813371273cefdb0ce057cf69ea2a0745ac158b77185f6c4d29d7",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              43,
+              125
+            ],
+            "ankleL": [
+              43,
+              137
+            ],
+            "kneeR": [
+              55,
+              116
+            ],
+            "ankleR": [
+              54,
+              125
+            ],
+            "elbowL": [
+              34,
+              99
+            ],
+            "handL": [
+              31.0,
+              109.66666666666667
+            ],
+            "elbowR": [
+              62,
+              98
+            ],
+            "handR": [
+              60.333333333333336,
+              109.33333333333333
+            ],
+            "waist": [
+              48,
+              105.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 165.1276,
+            "2": 94.94599999999998,
+            "3": 66.8744,
+            "4": 125.7054
+          },
+          "feet": {
+            "all": [
+              108,
+              358,
+              166,
+              429
+            ],
+            "left": [
+              108,
+              406,
+              139,
+              429
+            ],
+            "right": [
+              143,
+              358,
+              166,
+              383
+            ]
+          }
+        },
+        "down/2": {
+          "rect": [
+            864,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-2.png",
+          "sourceSHA256": "413aff5b5ab9a027d042796013fa34261f26fdd3a221df6db77b5c4682a44e54",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              62,
+              110
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              35,
+              104
+            ],
+            "waist": [
+              48,
+              105.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 157.7562,
+            "2": 96.0944,
+            "3": 63.66179999999999,
+            "4": 143.8418
+          },
+          "feet": {
+            "all": [
+              117,
+              374,
+              181,
+              429
+            ],
+            "left": [
+              117,
+              374,
+              139,
+              398
+            ],
+            "right": [
+              148,
+              404,
+              181,
+              429
+            ]
+          }
+        },
+        "down/3": {
+          "rect": [
+            1152,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-3.png",
+          "sourceSHA256": "21d134eb022e11f455bd7db7846a3f391274565d265236ab0c672c94326f3bd9",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              53,
+              125
+            ],
+            "ankleL": [
+              53,
+              137
+            ],
+            "kneeR": [
+              41,
+              116
+            ],
+            "ankleR": [
+              42,
+              125
+            ],
+            "elbowL": [
+              62,
+              99
+            ],
+            "handL": [
+              60,
+              111
+            ],
+            "elbowR": [
+              34,
+              98
+            ],
+            "handR": [
+              36,
+              108
+            ],
+            "waist": [
+              48,
+              104.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 157.6078,
+            "2": 92.4434,
+            "3": 65.2354,
+            "4": 136.2842
+          },
+          "feet": {
+            "all": [
+              118,
+              356,
+              176,
+              429
+            ],
+            "left": [
+              118,
+              356,
+              141,
+              383
+            ],
+            "right": [
+              144,
+              406,
+              176,
+              429
+            ]
+          }
+        },
+        "up/idle": {
+          "rect": [
+            0,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/registered/jacket-idle-v9/up.png",
+          "sourceSHA256": "c35404abb6ab565ef5198e0473621413afaaa65f05cce96742ac9d1411fe48ab",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              34.0,
+              111.66666666666667
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              60.666666666666664,
+              111.66666666666667
+            ],
+            "waist": [
+              48,
+              107.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 136.54919999999998,
+            "2": 95.15459999999999,
+            "3": 60.806200000000004,
+            "4": 143.7423
+          },
+          "feet": {
+            "all": [
+              98,
+              392,
+              188,
+              429
+            ],
+            "left": [
+              98,
+              392,
+              136,
+              429
+            ],
+            "right": [
+              150,
+              392,
+              188,
+              429
+            ]
+          }
+        },
+        "up/0": {
+          "rect": [
+            288,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-0.png",
+          "sourceSHA256": "e4b36294fd6352981957338775da3cef60f895fb442abc269442fc8736337fa0",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              62,
+              110
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              35,
+              104
+            ],
+            "waist": [
+              48,
+              105.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 142.8063,
+            "2": 99.79359999999998,
+            "3": 68.08699999999999,
+            "4": 134.9194
+          },
+          "feet": {
+            "all": [
+              109,
+              371,
+              184,
+              429
+            ],
+            "left": [
+              109,
+              371,
+              138,
+              412
+            ],
+            "right": [
+              151,
+              410,
+              184,
+              429
+            ]
+          }
+        },
+        "up/1": {
+          "rect": [
+            576,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-1.png",
+          "sourceSHA256": "6337826df7a20e37942cfa16bf9a575c27c021090c5dd20f1abdbdd5de42bc29",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              53,
+              125
+            ],
+            "ankleL": [
+              53,
+              137
+            ],
+            "kneeR": [
+              41,
+              116
+            ],
+            "ankleR": [
+              42,
+              125
+            ],
+            "elbowL": [
+              62,
+              99
+            ],
+            "handL": [
+              60,
+              111
+            ],
+            "elbowR": [
+              34,
+              98
+            ],
+            "handR": [
+              36,
+              108
+            ],
+            "waist": [
+              48,
+              106.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 129.3088,
+            "2": 96.66120000000001,
+            "3": 66.738,
+            "4": 138.0676
+          },
+          "feet": {
+            "all": [
+              114,
+              369,
+              183,
+              429
+            ],
+            "left": [
+              114,
+              369,
+              140,
+              400
+            ],
+            "right": [
+              148,
+              409,
+              183,
+              429
+            ]
+          }
+        },
+        "up/2": {
+          "rect": [
+            864,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-2.png",
+          "sourceSHA256": "d656b6fde35c17854104fc80e69837cbe0578ebe95dff3cc13bf746bfd6881b0",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              32.0,
+              111.33333333333333
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              63.333333333333336,
+              100.33333333333333
+            ],
+            "waist": [
+              48,
+              105.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 122.681,
+            "2": 94.0182,
+            "3": 63.5122,
+            "4": 156.8354
+          },
+          "feet": {
+            "all": [
+              107,
+              369,
+              186,
+              429
+            ],
+            "left": [
+              107,
+              406,
+              143,
+              429
+            ],
+            "right": [
+              157,
+              369,
+              186,
+              410
+            ]
+          }
+        },
+        "up/3": {
+          "rect": [
+            1152,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-3.png",
+          "sourceSHA256": "f51cafb734725e18cb89a467340edd794dba9228fe7a66e15eed098f2ff3b3f8",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              43,
+              125
+            ],
+            "ankleL": [
+              43,
+              137
+            ],
+            "kneeR": [
+              55,
+              116
+            ],
+            "ankleR": [
+              54,
+              125
+            ],
+            "elbowL": [
+              34,
+              99
+            ],
+            "handL": [
+              34.0,
+              108.33333333333333
+            ],
+            "elbowR": [
+              62,
+              98
+            ],
+            "handR": [
+              60.166666666666664,
+              108.66666666666667
+            ],
+            "waist": [
+              48,
+              105.33333333333333
+            ],
+            "nearArm": "L"
+          },
+          "materialBases": {
+            "1": 119.1779,
+            "2": 98.24889999999999,
+            "3": 63.8704,
+            "4": 146.4246
+          },
+          "feet": {
+            "all": [
+              113,
+              368,
+              174,
+              429
+            ],
+            "left": [
+              113,
+              407,
+              146,
+              429
+            ],
+            "right": [
+              148,
+              368,
+              174,
+              401
+            ]
+          }
+        }
+      }
+    },
+    "flannel": {
+      "atlas": "atlases/approved-flannel.png",
+      "atlasSHA256": "3930969e3ff7c207067697fd81163978b8a0a4671d2bd3f7afe74a5a06ec73e8",
+      "rolesAtlas": "atlases/approved-flannel-roles.png",
+      "rolesSHA256": "4e9bd160b136ef1012a013d1c3bdd11e2104d0c3ccd0ffd0655a44a0146bd58b",
+      "frames": {
+        "down/idle": {
+          "rect": [
+            0,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/registered/flannel-idle-v13/down.png",
+          "sourceSHA256": "c9e388f2337e830f57ce1e3aa919416f0aba25bdf5e39073811d6eed1d41955c",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              33.666666666666664,
+              111.33333333333333
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              61.666666666666664,
+              111.33333333333333
+            ],
+            "waist": [
+              48,
+              109.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 146.4072,
+            "2": 79.2898,
+            "3": 63.376999999999995,
+            "4": 130.35119999999998
+          },
+          "feet": {
+            "all": [
+              99,
+              392,
+              188,
+              429
+            ],
+            "left": [
+              99,
+              392,
+              140,
+              429
+            ],
+            "right": [
+              147,
+              393,
+              188,
+              429
+            ]
+          }
+        },
+        "down/0": {
+          "rect": [
+            288,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-0.png",
+          "sourceSHA256": "eb5218dd3a240d42f64da5552ac3ab3c20cd6d152ef307f7dbfd30fce9921db5",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              32.0,
+              109.66666666666667
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              63.333333333333336,
+              104.33333333333333
+            ],
+            "waist": [
+              48,
+              109.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 146.4072,
+            "2": 79.2898,
+            "3": 63.376999999999995,
+            "4": 149.6366
+          },
+          "feet": {
+            "all": [
+              104,
+              377,
+              178,
+              429
+            ],
+            "left": [
+              104,
+              403,
+              143,
+              429
+            ],
+            "right": [
+              151,
+              377,
+              178,
+              402
+            ]
+          }
+        },
+        "down/1": {
+          "rect": [
+            576,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-1.png",
+          "sourceSHA256": "b7b9e7ef056643f2f41495dfe531612d843250d89e6ab559d61f4c2af9c5c459",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              43,
+              125
+            ],
+            "ankleL": [
+              43,
+              137
+            ],
+            "kneeR": [
+              55,
+              116
+            ],
+            "ankleR": [
+              54,
+              125
+            ],
+            "elbowL": [
+              34,
+              99
+            ],
+            "handL": [
+              30.0,
+              110.66666666666667
+            ],
+            "elbowR": [
+              62,
+              98
+            ],
+            "handR": [
+              61.333333333333336,
+              111.0
+            ],
+            "waist": [
+              48,
+              108.66666666666667
+            ],
+            "nearArm": "L"
+          },
+          "materialBases": {
+            "1": 146.4072,
+            "2": 80.2898,
+            "3": 63.376999999999995,
+            "4": 119.0363
+          },
+          "feet": {
+            "all": [
+              99,
+              375,
+              166,
+              429
+            ],
+            "left": [
+              99,
+              405,
+              134,
+              429
+            ],
+            "right": [
+              142,
+              375,
+              166,
+              397
+            ]
+          }
+        },
+        "down/2": {
+          "rect": [
+            864,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-2.png",
+          "sourceSHA256": "2a0c8fb416182c0bd2afb77802c535212d77d91aad26cfa59bac3db3a04e2c9f",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              62,
+              110
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              35,
+              104
+            ],
+            "waist": [
+              48,
+              108.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 146.4072,
+            "2": 79.2898,
+            "3": 63.376999999999995,
+            "4": 118.6452
+          },
+          "feet": {
+            "all": [
+              125,
+              368,
+              189,
+              429
+            ],
+            "left": [
+              125,
+              368,
+              149,
+              392
+            ],
+            "right": [
+              155,
+              404,
+              189,
+              429
+            ]
+          }
+        },
+        "down/3": {
+          "rect": [
+            1152,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-3.png",
+          "sourceSHA256": "638dd3628f6feed4e26b8bb07dc1573a52e4f8fe12513233e34e3adf6f12fd0d",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              53,
+              125
+            ],
+            "ankleL": [
+              53,
+              137
+            ],
+            "kneeR": [
+              41,
+              116
+            ],
+            "ankleR": [
+              42,
+              125
+            ],
+            "elbowL": [
+              62,
+              99
+            ],
+            "handL": [
+              60,
+              111
+            ],
+            "elbowR": [
+              34,
+              98
+            ],
+            "handR": [
+              36,
+              108
+            ],
+            "waist": [
+              48,
+              109.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 146.4072,
+            "2": 79.2898,
+            "3": 63.376999999999995,
+            "4": 116.92999999999999
+          },
+          "feet": {
+            "all": [
+              123,
+              363,
+              188,
+              429
+            ],
+            "left": [
+              123,
+              363,
+              149,
+              386
+            ],
+            "right": [
+              155,
+              404,
+              188,
+              429
+            ]
+          }
+        },
+        "up/idle": {
+          "rect": [
+            0,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/registered/flannel-idle-v13/up.png",
+          "sourceSHA256": "1e6fa851f734b02a6510498d553dd0ce5bdd3b079583a2267c407178b883b25a",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              33.0,
+              112.33333333333333
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              61.666666666666664,
+              112.33333333333333
+            ],
+            "waist": [
+              48,
+              112.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 145.58569999999997,
+            "2": 79.2898,
+            "3": 63.376999999999995,
+            "4": 117.8306
+          },
+          "feet": {
+            "all": [
+              96,
+              392,
+              188,
+              429
+            ],
+            "left": [
+              96,
+              392,
+              137,
+              429
+            ],
+            "right": [
+              147,
+              392,
+              188,
+              429
+            ]
+          }
+        },
+        "up/0": {
+          "rect": [
+            288,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-0.png",
+          "sourceSHA256": "1e7dc422eae5f384b5e20203b39e663ac55f84f485713e5d78b8359afb59c71e",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              62,
+              110
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              35,
+              104
+            ],
+            "waist": [
+              48,
+              108.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 146.4072,
+            "2": 79.2898,
+            "3": 63.376999999999995,
+            "4": 148.279
+          },
+          "feet": {
+            "all": [
+              107,
+              367,
+              180,
+              429
+            ],
+            "left": [
+              107,
+              367,
+              139,
+              406
+            ],
+            "right": [
+              145,
+              410,
+              180,
+              429
+            ]
+          }
+        },
+        "up/1": {
+          "rect": [
+            576,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-1.png",
+          "sourceSHA256": "a77d0384682a90266b549c287f6ba0477908c1b30441a8f8fefd47613d09ce92",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              53,
+              125
+            ],
+            "ankleL": [
+              53,
+              137
+            ],
+            "kneeR": [
+              41,
+              116
+            ],
+            "ankleR": [
+              42,
+              125
+            ],
+            "elbowL": [
+              62,
+              99
+            ],
+            "handL": [
+              60,
+              111
+            ],
+            "elbowR": [
+              34,
+              98
+            ],
+            "handR": [
+              36,
+              108
+            ],
+            "waist": [
+              48,
+              109.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 146.4072,
+            "2": 80.2898,
+            "3": 63.376999999999995,
+            "4": 143.4794
+          },
+          "feet": {
+            "all": [
+              115,
+              357,
+              180,
+              429
+            ],
+            "left": [
+              115,
+              357,
+              143,
+              393
+            ],
+            "right": [
+              147,
+              411,
+              180,
+              429
+            ]
+          }
+        },
+        "up/2": {
+          "rect": [
+            864,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-2.png",
+          "sourceSHA256": "3a6c2c1377993e8205130812852f838bd02077cd050976b15a254a02034bac56",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              29.0,
+              106.33333333333333
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              65.33333333333333,
+              108.0
+            ],
+            "waist": [
+              48,
+              111.33333333333333
+            ],
+            "nearArm": "L"
+          },
+          "materialBases": {
+            "1": 146.4072,
+            "2": 79.2898,
+            "3": 63.376999999999995,
+            "4": 148.279
+          },
+          "feet": {
+            "all": [
+              112,
+              383,
+              182,
+              429
+            ],
+            "left": [
+              112,
+              407,
+              146,
+              429
+            ],
+            "right": [
+              154,
+              383,
+              182,
+              408
+            ]
+          }
+        },
+        "up/3": {
+          "rect": [
+            1152,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-3.png",
+          "sourceSHA256": "97b7e4d16c04ae6604bbd8d386b4704747b39394ddd7a4cb12cb1fab8c8146dd",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              43,
+              125
+            ],
+            "ankleL": [
+              43,
+              137
+            ],
+            "kneeR": [
+              55,
+              116
+            ],
+            "ankleR": [
+              54,
+              125
+            ],
+            "elbowL": [
+              34,
+              99
+            ],
+            "handL": [
+              34.0,
+              110.66666666666667
+            ],
+            "elbowR": [
+              62,
+              98
+            ],
+            "handR": [
+              63.666666666666664,
+              108.0
+            ],
+            "waist": [
+              48,
+              109.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 145.69199999999998,
+            "2": 79.2898,
+            "3": 63.376999999999995,
+            "4": 119.0363
+          },
+          "feet": {
+            "all": [
+              115,
+              367,
+              179,
+              429
+            ],
+            "left": [
+              115,
+              415,
+              148,
+              429
+            ],
+            "right": [
+              152,
+              367,
+              179,
+              393
+            ]
+          }
+        }
+      }
+    }
+  },
+  "sources": {
+    "graphics/production/walk/registered/cardigan-idle-v11/down.png": "f6f0b732ad0cf461a2a3c044ae9ef6d3ccdedbc40336e6b216f55629f6d03c07",
+    "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-0.png": "00148bf12d91e593b59caf0157759bc31cfb1a06b27b64e04d1468c627296d2d",
+    "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-1.png": "a70f6a95541c59326c2a8fceaf52ab848223d12dfc9b7845d999d2ef82cb1b6b",
+    "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-2.png": "129b2777cc9ca3aa453b200afd761be5fc40122d863e121e51bc96c9102f7f39",
+    "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-3.png": "789930a3d5f030a54260bbf2663fbe1aec3e5e8b362bd87c622e0bda27833fa5",
+    "graphics/production/walk/registered/cardigan-idle-v11/up.png": "9d88165c2f451822293b9280f6e842d26ff7dbf21d633a74263c094f10cf5cfd",
+    "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-0.png": "b44aa7f88ab57af3490cbb8a7cff717b989f79c06b0607db455cbbe7e529a18f",
+    "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-1.png": "5bb02c1b47c1e929f7eb82a1ef6b2b7a0fdab959449cf53b363d6596968674f5",
+    "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-2.png": "cfc3c20a2614d1c941f633ea7316239de3ab24e67dcf140c72b7080dcdffcf8b",
+    "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-3.png": "6547406e8aff712df2208460ce6a469dfc2cd606a17e540d41e06396eefd1364",
+    "graphics/production/walk/registered/jacket-idle-v9/down.png": "20b0a68d54c2a9baef00fdc05be1e485f17ebd5538fbd6538949f9ce1c946c1b",
+    "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-0.png": "28da2c969bf7e2ab20d9dd63c133f701f09ce4228d87020e16237db1060c6dba",
+    "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-1.png": "4b177b25db80813371273cefdb0ce057cf69ea2a0745ac158b77185f6c4d29d7",
+    "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-2.png": "413aff5b5ab9a027d042796013fa34261f26fdd3a221df6db77b5c4682a44e54",
+    "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-3.png": "21d134eb022e11f455bd7db7846a3f391274565d265236ab0c672c94326f3bd9",
+    "graphics/production/walk/registered/jacket-idle-v9/up.png": "c35404abb6ab565ef5198e0473621413afaaa65f05cce96742ac9d1411fe48ab",
+    "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-0.png": "e4b36294fd6352981957338775da3cef60f895fb442abc269442fc8736337fa0",
+    "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-1.png": "6337826df7a20e37942cfa16bf9a575c27c021090c5dd20f1abdbdd5de42bc29",
+    "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-2.png": "d656b6fde35c17854104fc80e69837cbe0578ebe95dff3cc13bf746bfd6881b0",
+    "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-3.png": "f51cafb734725e18cb89a467340edd794dba9228fe7a66e15eed098f2ff3b3f8",
+    "graphics/production/walk/registered/flannel-idle-v13/down.png": "c9e388f2337e830f57ce1e3aa919416f0aba25bdf5e39073811d6eed1d41955c",
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-0.png": "eb5218dd3a240d42f64da5552ac3ab3c20cd6d152ef307f7dbfd30fce9921db5",
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-1.png": "b7b9e7ef056643f2f41495dfe531612d843250d89e6ab559d61f4c2af9c5c459",
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-2.png": "2a0c8fb416182c0bd2afb77802c535212d77d91aad26cfa59bac3db3a04e2c9f",
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-3.png": "638dd3628f6feed4e26b8bb07dc1573a52e4f8fe12513233e34e3adf6f12fd0d",
+    "graphics/production/walk/registered/flannel-idle-v13/up.png": "1e6fa851f734b02a6510498d553dd0ce5bdd3b079583a2267c407178b883b25a",
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-0.png": "1e7dc422eae5f384b5e20203b39e663ac55f84f485713e5d78b8359afb59c71e",
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-1.png": "a77d0384682a90266b549c287f6ba0477908c1b30441a8f8fefd47613d09ce92",
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-2.png": "3a6c2c1377993e8205130812852f838bd02077cd050976b15a254a02034bac56",
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-3.png": "97b7e4d16c04ae6604bbd8d386b4704747b39394ddd7a4cb12cb1fab8c8146dd"
+  }
+}

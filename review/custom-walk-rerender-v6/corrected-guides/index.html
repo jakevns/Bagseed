@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Balanced pose-guide cycles</title>
+<style>body{font:17px system-ui;background:#eee9dd;color:#352d28;margin:24px}button,input{font:inherit}main{display:flex;gap:30px;flex-wrap:wrap}.figure{position:relative;width:288px;height:432px;background:#dedbd1;border:1px solid #9f9a90}.figure:after{content:"";position:absolute;left:0;right:0;top:429px;border-top:1px dashed #765e47}img{max-width:100%}.figure img{width:288px;height:432px}label{margin-left:15px}</style>
+<h1>Balanced front and rear pose guides</h1>
+<p>Technical pose diagrams, not replacement game artwork. Garment style and detail still come from the approved idle art. Each guide uses the native 288 × 432 canvas.</p>
+<button id="play">Pause</button><button id="step">Next phase</button><label>Phase <input id="phase" type="range" min="0" max="3" step="1" value="0"></label>
+<p id="caption"></p><main><section><h2>Front</h2><div class="figure"><img id="down" alt="Front pose"></div></section><section><h2>Back</h2><div class="figure"><img id="up" alt="Rear pose"></div></section></main>
+<h2>All eight guides</h2><a href="sequence.png"><img src="sequence.png" alt="Four front and four rear guide phases"></a>
+<p><a href="../original-guides-and-cardigan.png">Original repeated-foot guides and earlier cardigan evidence</a></p>
+<script>
+const names=['Right-leg contact','Right-leg support; left leg passing','Left-leg contact','Left-leg support; right leg passing'];
+const images={};for(const dir of ['down','up'])for(let f=0;f<4;f++){const im=new Image();im.src='../../../graphics/production/walk/pose-guides-v6/'+dir+'-'+f+'.png';images[dir+'/'+f]=im;}
+let frame=0,playing=true;const slider=document.querySelector('#phase');
+function show(){for(const dir of ['down','up'])document.getElementById(dir).src=images[dir+'/'+frame].src;slider.value=frame;document.querySelector('#caption').textContent=frame+' — '+names[frame];}
+function pause(){playing=false;document.querySelector('#play').textContent='Play';}
+document.querySelector('#play').onclick=()=>{playing=!playing;document.querySelector('#play').textContent=playing?'Pause':'Play';};
+document.querySelector('#step').onclick=()=>{pause();frame=(frame+1)%4;show();};slider.oninput=()=>{pause();frame=Number(slider.value);show();};
+Promise.all(Object.values(images).map(im=>im.decode())).then(()=>{show();setInterval(()=>{if(playing){frame=(frame+1)%4;show();}},250);});
+</script></html>

@@ -1,6 +1,74 @@
   // Authored wardrobe walking. Standing, reactions and authored NPCs keep
   // their established paths. Every moving pixel comes from a generated frame.
   const walkParts=new Map(),walkFigures=new Map();
+  const approvedBodies=new Map(),approvedNecks=new Map();
+  function approvedOutfitView(L,dir,frame){
+    return !isChild(L)&&L.bottomS==='jeans'&&L.shoesS==='sneakers'?DATA.walk?.approvedOutfits?.items[L.topS]?.frames[dir+'/'+frame]:null;
+  }
+  function approvedBodyFrame(L,dir,frame){
+    const view=approvedOutfitView(L,dir,frame);if(!view)return null;
+    const signature=key(L)+'|'+dir+'/'+frame;if(approvedBodies.has(signature))return approvedBodies.get(signature);
+    const source=cv(288,432),s=source.getContext('2d',{willReadFrequently:true}),roles=cv(288,432),r=roles.getContext('2d',{willReadFrequently:true});
+    s.drawImage(images.get('approved-outfits/'+L.topS),...view.rect,0,0,288,432);
+    r.drawImage(images.get('approved-outfits/'+L.topS+'-roles'),...view.rect,0,0,288,432);
+    const data=s.getImageData(0,0,288,432),a=data.data,labels=r.getImageData(0,0,288,432).data;
+    for(let n=0;n<a.length;n+=4){
+      const part=labels[n],role=labels[n+1];if(!a[n+3])continue;
+      if(!role)continue;
+      let tone=rgb(role===1?L.skin:role===2?L.shirtC:role===3?L.pantsC:L.shoesC);
+      if(role===2&&pattern(L.topPat,((n/4)%288)/3,Math.floor(n/4/288)/3))tone=rgb(L.topC2||'#ffffff');
+      if(role===3&&pattern(L.botPat,((n/4)%288)/3,Math.floor(n/4/288)/3))tone=rgb(L.botC2||'#ffffff');
+      const color=material(tone,lum(a[n],a[n+1],a[n+2]),view.materialBases[role]);a[n]=color[0];a[n+1]=color[1];a[n+2]=color[2];
+    }
+    s.putImageData(data,0,0);
+    const combined=cv(288,432),g=combined.getContext('2d');g.scale(3,3);
+    g.drawImage(source,0,0,96,144);walkAccessories(g,L,dir,view.keypoints);
+    combined.bagseedApprovedOutfit={garment:L.topS,frame:dir+'/'+frame,source:view.source};
+    if(approvedBodies.size>240)approvedBodies.clear();approvedBodies.set(signature,combined);return combined;
+  }
+  function approvedAttachment(L,dir,frame){
+    const k=L.topS+'/'+dir+'/'+frame;if(approvedNecks.has(k))return approvedNecks.get(k);
+    const view=DATA.walk.approvedOutfits.items[L.topS].frames[dir+'/'+frame],source=cv(288,432),g=source.getContext('2d');
+    g.drawImage(images.get('approved-outfits/'+L.topS),...view.rect,0,0,288,432);
+    const result=paintedNeck(source,[48,78],3,dir,L.topS);approvedNecks.set(k,result);return result;
+  }
+  function approvedIdleBody(L,dir,density){
+    const full=approvedBodyFrame(L,dir,'idle'),out=cv(96*density,108*density),g=out.getContext('2d');
+    g.drawImage(full,0,108,288,324,0,0,out.width,out.height);
+    const neck=approvedAttachment(L,dir,'idle');out.bagseedNeck={...neck,root:[neck.root[0],neck.root[1]-36],top:neck.top-36,opening:neck.opening-36,shoulderY:neck.shoulderY-36};
+    out.bagseedApprovedOutfit=full.bagseedApprovedOutfit;return out;
+  }
+  function approvedWalkFigure(L,dir,frame,blink,density){
+    const view=approvedOutfitView(L,dir,frame);if(!view)return null;
+    const B=approvedBodyFrame(L,dir,frame),attachment=approvedAttachment(L,dir,frame),rest=approvedAttachment(L,dir,'idle');
+    const sy=(L.short?.9:L.body==='tall'?1.07:1)*(143-rest.root[1])/(143-attachment.root[1]);
+    const shoulderFit=rest.shoulderWidth/attachment.shoulderWidth;
+    const width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1)*shoulderFit;
+    const out=cv(96*density,144*density),g=out.getContext('2d');g.scale(density,density);
+    const H=head(L,dir,blink,true),ny=143+(attachment.root[1]-143)*sy,nx=48+(attachment.root[0]-48)*width;
+    const placement=headPlacement(L,dir,[nx,ny]),[hx,hy]=placement.origin;
+    neckBacking(g,H,L,dir,hx,hy,ny,143+(attachment.opening-143)*sy);
+    g.save();g.translate(48,143);g.scale(width,sy);g.drawImage(B,-48,-143,96,144);g.restore();
+    neckSurface(g,H,L,dir,hx,hy,attachment,width,sy,144);g.drawImage(H,hx,hy,64,H.height/3);
+    out.bagseedHeadOrigin=[hx,hy];out.bagseedBodyTransform={width,sy};out.bagseedApprovedOutfit=B.bagseedApprovedOutfit;
+    out.bagseedAuthoredWalk=dir+'/'+frame;out.bagseedWalkProfile='approved-outfits/';out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);
+    out.bagseedAlignment={...placement,attachment,shoulderBand:[3,7].map(d=>143+(attachment.shoulderY+d-143)*sy),shoulderWidth:attachment.shoulderWidth*width,uniformScale:sy,shoulderFit:1,rigNeck:view.keypoints.neck,garment:L.topS,bottom:L.bottomS,rear:dir==='up',source:view.source};
+    const hand=view.keypoints['hand'+view.keypoints.nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
+    return scalePlayerFigure(out,PLAYER_FIGURE_SCALE);
+  }
+  function walkNeck(item,frame,walk){
+    const key=(walk.imagePrefix||'walk/')+item+'|'+frame;
+    if(neckRegistrations.has(key))return neckRegistrations.get(key);
+    const entry=walk.items[item],view=entry?.frames[frame];
+    if(!view?.parts?.torso&&!view?.parts?.wholeUpper)throw new Error('Missing authored wardrobe view: '+item+'/'+frame);
+    const parts=view.parts,source=cv(288,432),s=source.getContext('2d');
+    for(const name of parts.wholeUpper?['wholeUpper']:['farArm','torso','nearArm']){
+      const part=parts[name];if(!part)continue;const[sx,sy,w,h]=part.rect;
+      s.drawImage(images.get((walk.imagePrefix||'walk/')+item),sx,sy,w,h,...part.destination,w,h);
+    }
+    const registration=paintedNeck(source,walk.rig.frames[frame].keypoints.neck,3,frame.split('/')[0],item.slice(4));
+    neckRegistrations.set(key,registration);return registration;
+  }
   // Select a complete compatible outfit/rig; never mix eight-pose legs with
   // four-pose sleeves or shoes from the earlier wardrobe.
   function customWalkSet(L,dir){
@@ -30,21 +98,30 @@
       const brass=r>120&&gg>85&&gg>b*2.6&&r<gg*1.65;
       const skin=bodySkinPixel(r,gg,b)&&!brass&&(kind!=='shoe'||entry.style==='sandals'&&light>88&&r<gg*1.9&&b>gg*.62);
       let tone,base;
-      if(kind==='skin'){tone=rgb(['overalls','pjs','suit'].includes(L.topS)?L.shirtC:name==='pelvis'?L.pantsC:['skirt','shorts'].includes(L.bottomS)?L.skin:L.pantsC);base=145;}
+      if(kind==='skin'){tone=rgb(wardrobeFullSuit(L)?L.shirtC:name==='pelvis'?L.pantsC:['skirt','shorts'].includes(L.bottomS)?L.skin:L.pantsC);base=145;}
       else if(skin){tone=rgb(L.skin);base=160;}
-      else if(cream||brass)continue;
+      else if(brass)continue;
+      else if(cream&&kind!=='bottom'&&!(entry.fullSuit&&name.endsWith('Leg')))continue;
       else if(kind==='shoe'){tone=rgb(L.shoesC);base=62;}
       else if(!blue&&light<35)continue;
       else if(kind==='bottom'){tone=rgb(L.pantsC);base=70;}
-      else{tone=rgb(L.shirtC);base=entry.fullSuit?105:115;}
+      else if(entry.style==='labcoat'){tone=rgb('#f2f2ee');base=115;}
+      // The front/rear suit source is much lighter than the standing jacket.
+      // Match its cloth value; using the full-suit default made it flash pale
+      // pink/green on movement even though the selected color was unchanged.
+      else{tone=rgb(L.shirtC);base=entry.style==='suit'?180:entry.fullSuit?105:115;}
       const profileRole=kind==='shoe'?'shoe':kind==='bottom'||entry.fullSuit&&name.endsWith('Leg')?'lower':'upper';
       const profileBase=entry.frames[frame].profileBases?.[profileRole]||entry.profileBases?.[profileRole];
-      if(!skin&&kind!=='skin'&&/^(right|left)\//.test(frame)&&profileBase)base=profileBase;
+      if(!skin&&kind!=='skin'&&entry.style!=='labcoat'&&/^(right|left)\//.test(frame)&&profileBase)base=profileBase;
       if(!skin&&kind!=='shoe'&&kind!=='skin'){
         const [u,v]=name.endsWith('Leg')?walkLegLocal(walk.rig.frames[frame],name,x,y):walkLocal(p,x,y),pat=kind==='bottom'?L.botPat:L.topPat;
         if(blue&&pattern(pat,u,v)){tone=rgb((kind==='bottom'?L.botC2:L.topC2)||'#ffffff');}
       }
-      const mapped=material(tone,light,base);a[i]=mapped[0];a[i+1]=mapped[1];a[i+2]=mapped[2];
+      // Cream placeholders on trouser panels are highlights of that fabric,
+      // not white material. Preserve a modest fold highlight without the
+      // generic material function bleaching dark pants toward pale gray.
+      const fabricHighlight=cream&&(kind==='bottom'||entry.fullSuit&&name.endsWith('Leg'));
+      const mapped=material(tone,fabricHighlight?Math.min(light,base*1.12):light,base);a[i]=mapped[0];a[i+1]=mapped[1];a[i+2]=mapped[2];
     }
     g.putImageData(data,0,0);const result={image:out,x:part.destination[0]/3,y:part.destination[1]/3};
     if(walkParts.size>1600)walkParts.clear();walkParts.set(sig,result);return result;
@@ -67,6 +144,7 @@
     }
   }
   function authoredWalk(L,dir,frame,blink,density=1){
+    const approved=approvedWalkFigure(L,dir,frame%4,blink,density);if(approved)return approved;
     const walk=customWalkSet(L,dir),top='top-'+L.topS,bottom='bottom-'+L.bottomS,shoe='shoe-'+L.shoesS,items=walk?.items;
     if(!items?.[top]?.accepted||!items[shoe]?.accepted||!items[top].fullSuit&&!items[bottom]?.accepted||isChild(L))return null;
     const f=dir+'/'+(frame%(walk.frameCounts?.[dir]||4)),sig=(walk.imagePrefix||'walk/')+key(L)+'|'+f+'|'+blink+'|'+density;
@@ -75,10 +153,27 @@
     // gameplay downsampling. Independent low-resolution resampling leaves
     // antialiased seams along the otherwise perfectly adjacent label edges.
     const out=cv(96*density,144*density),g=out.getContext('2d'),bodyFrame=cv(288,432),b=bodyFrame.getContext('2d');g.scale(density,density);b.scale(3,3);g.imageSmoothingEnabled=true;g.imageSmoothingQuality='low';
-    const p=walk.rig.frames[f].keypoints,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1),sy=L.short?.9:L.body==='tall'?1.07:1;
-    const H=head(L,dir,blink,true),joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1),nx=48+(p.neck[0]-48)*width,ny=143+(p.neck[1]-143)*sy,hx=nx-32,hy=ny-joinY/3;
-    g.drawImage(H.bagseedNeckBridge,hx,hy,64,H.height/3);
-    const lower=items[top].fullSuit?top:bottom;
+    // The front/rear wardrobe paintings have taller torsos than the standing
+    // wardrobe. Register that body to the same feet-to-collar span before
+    // attaching the head; burying the jaw was masking this scale mismatch.
+    const p=walk.rig.frames[f].keypoints,attachment=walkNeck(top,f,walk),rest=body(L,dir,false,3).bagseedNeck;
+    const restShoulder=36+rest.shoulderY,restCollar=36+rest.root[1];
+    // One feet-anchored similarity fit to both anatomical landmarks. Shoulder
+    // silhouettes alone vary with the garment's cut; fitting just that row
+    // let a rear hoodie drop its collar and head several pixels on movement.
+    const shoulderSpan=143-attachment.shoulderY,collarSpan=143-attachment.root[1];
+    const bodyFit=((143-restShoulder)*shoulderSpan+(143-restCollar)*collarSpan)/(shoulderSpan*shoulderSpan+collarSpan*collarSpan);
+    const build=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1)*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1);
+    // Register the complete walking body uniformly first. The separate build
+    // fit matches the measured painted shoulder span, including presentation.
+    const shoulderFit=rest.shoulderWidth/(attachment.shoulderWidth*bodyFit),width=build*bodyFit*shoulderFit,sy=(L.short?.9:L.body==='tall'?1.07:1)*bodyFit;
+    // The walking rig's neck landmark is the collar/root, not the jaw. Using
+    // the jaw there buried the painted neck under the head in every stride.
+    // The collar covers the lower part of the head's original neck. Retain
+    // a short exposed neck above it, fitted with the selected face shape.
+    const H=head(L,dir,blink,true),nx=48+(p.neck[0]-48+attachment.root[0]-48)*width,ny=143+(attachment.root[1]-143)*sy;
+    const placement=headPlacement(L,dir,[nx,ny]),[hx,hy]=placement.origin;
+    const lower=wardrobeFullSuit(L)?top:bottom;
     // Side shirts retain their complete painted shoulder/arm silhouette.
     // Re-slicing sleeves around inferred wrists hid cuffs behind trousers.
     const intact=items[top].frames[f].parts.wholeUpper,layers=[];
@@ -92,10 +187,17 @@
     for(const [item,name]of layers){
       const part=walkPart(item,f,name,L,walk);if(part)b.drawImage(part.image,part.x,part.y,part.image.width/3,part.image.height/3);
     }
+    neckBacking(g,H,L,dir,hx,hy,ny,143+(attachment.opening-143)*sy);
     walkAccessories(b,L,dir,p);g.save();g.translate(48,143);g.scale(width,sy);g.drawImage(bodyFrame,-48,-143,96,144);g.restore();
+    // Cover the source's cut neck cap/placeholder inside the opening, ending
+    // at the painted collar rather than continuing into the shirt's chest.
+    neckSurface(g,H,L,dir,hx,hy,attachment,width,sy,144);
     // Hair, hats and ears retain the approved head renderer and translate as
     // one complete layer, above clothing, without a mesh or row deformation.
     g.drawImage(H,hx,hy,64,H.height/3);
+    out.bagseedHeadOrigin=[hx,hy];
+    out.bagseedAlignment={...placement,attachment:{root:attachment.root,top:attachment.top,opening:attachment.opening},shoulderBand:[3,7].map(d=>143+(attachment.shoulderY+d-143)*sy),shoulderWidth:attachment.shoulderWidth*width,uniformScale:bodyFit,shoulderFit,rigNeck:p.neck,garment:L.topS,bottom:wardrobeFullSuit(L)?L.topS:L.bottomS,rear:dir==='up',source:items[top].frames[f].registration?.source,sourceSlot:items[top].frames[f].registration?.sourceSlot};
+    out.bagseedBodyTransform={width,sy};
     const hand=p['hand'+walk.rig.frames[f].nearArm];out.bagseedHand={x:48+(hand[0]-48)*width,y:143+(hand[1]-143)*sy};
     out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[hx+x/3,hy+y/3]);out.bagseedAuthoredWalk=f;out.bagseedWalkProfile=walk.imagePrefix||'walk/';
     const registered=scalePlayerFigure(out,PLAYER_FIGURE_SCALE);

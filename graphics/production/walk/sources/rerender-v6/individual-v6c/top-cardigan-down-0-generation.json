@@ -1,0 +1,15 @@
+{
+  "garment": "cardigan",
+  "dir": "down",
+  "firstFrame": 0,
+  "count": 1,
+  "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-down-0.png",
+  "prompt": "Create ONE freshly drawn transparent headless walking game sprite. FIRST reference is the exact POSE: match arm positions, legs, foot height, silhouette and direction precisely, do not mirror. FRONT view, cycle frame 0. IMAGE LEFT leg extends downward and forward, IMAGE RIGHT leg trails raised. IMAGE LEFT arm hangs almost straight with lowered fist, IMAGE RIGHT arm goes behind the torso. SECOND reference is the approved idle, exact garment identity, body proportions, colors and delicate line weight. Dress the pose in that exact outfit: open muted blue cardigan with brass buttons, two patch pockets, ribbed cuffs/hem, cream undershirt. Navy jeans with clear hems/seams; brown sneakers with cream toe caps and cream soles. Same narrow soft shoulders and short neck cap as idle. Thin delicate warm brown/navy line art, soft clean 2–3 tone cel shading, no texture noise, no sticker stroke. IMPORTANT every darkest contour on clothes/skin/shoes/jeans must be #49382e (RGB73,56,46) or navy #344154, never black or near-black. No added details. Entire headless figure with hands and both complete shoes, no head/face/hair. Portrait 2:3 canvas, transparent background and margins all sides. No shadow/glow/text. Fresh art only.",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "references": [
+    "graphics/production/walk/registered/mannequin/down-0.png",
+    "graphics/production/customization/top/cardigan/down.png"
+  ],
+  "visualApproval": false
+}

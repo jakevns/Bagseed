@@ -1,0 +1,208 @@
+{
+  "status": "Source-art review; no runtime installation",
+  "reviewScale": "Every figure uniformly normalized to 240px body height; width untouched",
+  "views": {
+    "down": {
+      "source": "graphics\\production\\walk\\sources\\cardigan-idle-v11\\down-raw.png",
+      "sourceSHA256": "ca5055234a0612fe6e568b2528c92f57f42474e8c5858a1f99bae26d7e9d9bcd",
+      "oldIdleSHA256": "59cc5789413301c425e5f13a7d5ae4cc1dd6e0f76a2611d6a67b7469837099a5",
+      "registration": {
+        "uniformScale": 0.14831460674157304,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          72.27303370786517,
+          105.49887640449438
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          172,
+          118,
+          852,
+          1453
+        ],
+        "guideBounds": [
+          82,
+          123,
+          205,
+          321
+        ]
+      },
+      "registeredSHA256": "f6f0b732ad0cf461a2a3c044ae9ef6d3ccdedbc40336e6b216f55629f6d03c07",
+      "oldIdle": {
+        "shoulderBand": 111.5,
+        "upperBodyBand": 129.0,
+        "hipBand": 135.0,
+        "denimHipBand": 113.5,
+        "shinBand": 99.0
+      },
+      "newIdle": {
+        "shoulderBand": 94.5,
+        "upperBodyBand": 112.0,
+        "hipBand": 112.0,
+        "denimHipBand": 70.0,
+        "shinBand": 83.0
+      },
+      "walk": [
+        {
+          "shoulderBand": 100.5,
+          "upperBodyBand": 130.0,
+          "hipBand": 74.0,
+          "denimHipBand": 69.5,
+          "shinBand": 87.0
+        },
+        {
+          "shoulderBand": 94.0,
+          "upperBodyBand": 116.0,
+          "hipBand": 116.0,
+          "denimHipBand": 68.0,
+          "shinBand": 34.0
+        },
+        {
+          "shoulderBand": 103.0,
+          "upperBodyBand": 128.0,
+          "hipBand": 101.0,
+          "denimHipBand": 72.0,
+          "shinBand": 78.0
+        },
+        {
+          "shoulderBand": 99.0,
+          "upperBodyBand": 118.0,
+          "hipBand": 112.0,
+          "denimHipBand": 74.0,
+          "shinBand": 36.0
+        }
+      ],
+      "runtimeInstalled": false,
+      "paletteComparedWithOriginal": {
+        "clusterDeltaE": [
+          4.649272139410074,
+          5.115419612862354,
+          27.06988393053359,
+          41.1808753434496
+        ],
+        "maxDeltaE": 41.1808753434496,
+        "dominantDeltaE": 5.199754205815712,
+        "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+        "idleWeights": [
+          0.9188332276474318,
+          0.049778059606848446,
+          0.028535193405199746,
+          0.0028535193405199747
+        ],
+        "walkWeights": [
+          0.6373687119955777,
+          0.002211166390270868,
+          0.35655058043117743,
+          0.003869541182974019
+        ],
+        "pass": true
+      },
+      "rawSHA256Unchanged": true
+    },
+    "up": {
+      "source": "graphics\\production\\walk\\sources\\cardigan-idle-v11\\up-raw.png",
+      "sourceSHA256": "7d23eb72df03dfe7b6822b24ec0c989602f8e929fd374e7e00807b8da77607fa",
+      "oldIdleSHA256": "0be5948cc824709a0b44eeb860d7b66602ab5604aa796156e328500c28e4c203",
+      "registration": {
+        "uniformScale": 0.14943396226415095,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          67.34037735849056,
+          104.02188679245282
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          185,
+          127,
+          839,
+          1452
+        ],
+        "guideBounds": [
+          83,
+          123,
+          205,
+          321
+        ]
+      },
+      "registeredSHA256": "9d88165c2f451822293b9280f6e842d26ff7dbf21d633a74263c094f10cf5cfd",
+      "oldIdle": {
+        "shoulderBand": 110.0,
+        "upperBodyBand": 127.0,
+        "hipBand": 134.0,
+        "denimHipBand": 114.5,
+        "shinBand": 100.0
+      },
+      "newIdle": {
+        "shoulderBand": 92.0,
+        "upperBodyBand": 107.0,
+        "hipBand": 109.0,
+        "denimHipBand": 68.0,
+        "shinBand": 77.0
+      },
+      "walk": [
+        {
+          "shoulderBand": 96.0,
+          "upperBodyBand": 125.0,
+          "hipBand": 101.0,
+          "denimHipBand": 65.0,
+          "shinBand": 77.0
+        },
+        {
+          "shoulderBand": 95.5,
+          "upperBodyBand": 115.0,
+          "hipBand": 111.0,
+          "denimHipBand": 66.0,
+          "shinBand": 64.0
+        },
+        {
+          "shoulderBand": 97.0,
+          "upperBodyBand": 127.0,
+          "hipBand": 107.0,
+          "denimHipBand": 68.0,
+          "shinBand": 85.0
+        },
+        {
+          "shoulderBand": 94.5,
+          "upperBodyBand": 116.0,
+          "hipBand": 121.0,
+          "denimHipBand": 67.0,
+          "shinBand": 71.0
+        }
+      ],
+      "runtimeInstalled": false,
+      "paletteComparedWithOriginal": {
+        "clusterDeltaE": [
+          3.3590251954190347,
+          2.1091405514747605,
+          3.6673554209559738,
+          4.851900229848956
+        ],
+        "maxDeltaE": 4.851900229848956,
+        "dominantDeltaE": 4.037075904618313,
+        "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+        "idleWeights": [
+          0.4760135680827007,
+          0.04878048780487805,
+          0.08867711193668228,
+          0.38652883217573897
+        ],
+        "walkWeights": [
+          0.6638141809290954,
+          0.15550122249388754,
+          0.12860635696821515,
+          0.05207823960880196
+        ],
+        "pass": true
+      },
+      "rawSHA256Unchanged": true
+    }
+  }
+}

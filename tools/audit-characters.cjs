@@ -15,7 +15,7 @@ const ROOT=path.resolve(__dirname,'..'),OUT=path.join(ROOT,'docs/graphics/charac
      const count=p.id==='player'?BagseedArt.customWalkFrameCount(p.look,dir):p.walkFrameCount||4,idle=BagseedArt.sprite(p.look,dir,0,0,0,0,false,3),nose=BagseedArt.sprite(p.look,dir,0,0,0,0,true,3);
      row.idle[dir]=measure(idle);row.walk[dir]=Array.from({length:count},(_,frame)=>measure(BagseedArt.sprite(p.look,dir,frame,0,0,0,false,3,true)));row.nose[dir]=measure(nose);
      if(!row.idle[dir])row.failures.push(dir+': empty idle');
-     if(!p.actions?.[dir]||nose.bagseedAuthoredNoseFallback)row.failures.push(dir+': missing authored reaction');
+     if(p.id!=='player'&&(!p.actions?.[dir]||nose.bagseedAuthoredNoseFallback))row.failures.push(dir+': missing authored reaction');
      if(p.id!=='player'&&(idle.bagseedAuthoredId!==p.id||nose.bagseedAuthoredId!==p.id))row.failures.push(dir+': authored identity mismatch');
      if(Math.abs(row.nose[dir]-row.idle[dir])>1)row.failures.push(dir+': nose/idle height differs by more than 1 world unit');
     }

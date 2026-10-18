@@ -1,0 +1,38 @@
+{
+  "uniformScale": 0.1843065693430657,
+  "rotationDegrees": 0,
+  "translationPixels": [
+    48.9507299270073,
+    163.41423357664235
+  ],
+  "groundError": 0.0,
+  "operations": [
+    "uniform-scale",
+    "translate"
+  ],
+  "sourceBounds": [
+    233,
+    345,
+    805,
+    1441
+  ],
+  "guideBounds": [
+    90,
+    227,
+    198,
+    429
+  ],
+  "source": "sources/rerender-v6/individual-v8/top-cardigan-up-1.png",
+  "sourceSHA256": "b4147d2b300c9c964ed97debff2fc31e48d529a5b4afff2b5c8dd85a5949aeed",
+  "sourceSlot": 0,
+  "sourceFrame": "up/1",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "poseReference": "pose-guides-v6/up-1.png",
+  "poseReferenceSHA256": "f87f51043d4399a147392516030246e5f25cf3fd8d729887811882eab765c6fe",
+  "registeredSHA256": "5bb02c1b47c1e929f7eb82a1ef6b2b7a0fdab959449cf53b363d6596968674f5"
+}

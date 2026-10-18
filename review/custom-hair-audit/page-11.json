@@ -1,0 +1,402 @@
+[
+  {
+    "hairS": "lowbun",
+    "label": "Low bun",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1237,
+    "inside": 466,
+    "opaque": 4739,
+    "hash": "7fac9ea1716f69cf12e8d08866c8362eba037dee2c8ee4a463fd814d3e4227f0"
+  },
+  {
+    "hairS": "lowbun",
+    "label": "Low bun",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1085,
+    "inside": 627,
+    "opaque": 4414,
+    "hash": "adb071392f6f0421b0bb8771964f7e499189a821099b5118a29c13cb5f24ec92"
+  },
+  {
+    "hairS": "lowbun",
+    "label": "Low bun",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1722,
+    "inside": 1075,
+    "opaque": 6542,
+    "hash": "9c80f8e12d5e113771196d2ed42dac6f4bdea260b8fed55b30b974dc707a6bc6"
+  },
+  {
+    "hairS": "lowbun",
+    "label": "Low bun",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 981,
+    "inside": 554,
+    "opaque": 4380,
+    "hash": "0a77fd9ca9b4162f42f813ac9d87aacc19c78336ffafb7ed1325375540012616"
+  },
+  {
+    "hairS": "lowbun",
+    "label": "Low bun",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1237,
+    "inside": 466,
+    "opaque": 4739,
+    "hash": "1a990eb63ef78498961c59b4e3a0630979911d4972f26dd97c27633a0cf10e43"
+  },
+  {
+    "hairS": "lowbun",
+    "label": "Low bun",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1085,
+    "inside": 627,
+    "opaque": 4414,
+    "hash": "7d0a1d2b09f6a442b3ce51f2467915d066adf9700174c1c514c8710c054c5ce1"
+  },
+  {
+    "hairS": "lowbun",
+    "label": "Low bun",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1722,
+    "inside": 1075,
+    "opaque": 6542,
+    "hash": "485c22cde3a539d2f3bf01e6ecbc0c4c3b2f7efb42338af47ae98225f0be7a90"
+  },
+  {
+    "hairS": "lowbun",
+    "label": "Low bun",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 981,
+    "inside": 554,
+    "opaque": 4380,
+    "hash": "a1237a712cc62c9370bd48289dc06faff222a9109b1417077d5d336a34fc4b44"
+  },
+  {
+    "hairS": "layered",
+    "label": "Layered long",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 2383,
+    "inside": 1292,
+    "opaque": 8904,
+    "hash": "bc8bd717f4f29a50d76e06489235f0687ae67e6a2465b06a02b370b39ef3d77a"
+  },
+  {
+    "hairS": "layered",
+    "label": "Layered long",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 2264,
+    "inside": 1379,
+    "opaque": 9192,
+    "hash": "a66cf869228238c4a41a0337178bf14bfb901f90ad2531a01144354631c123b0"
+  },
+  {
+    "hairS": "layered",
+    "label": "Layered long",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 3268,
+    "inside": 2527,
+    "opaque": 12699,
+    "hash": "b3464ee5f743a1fc08fe8b33d8830c9c879adb649f1825bf0bf7cb00cad5c982"
+  },
+  {
+    "hairS": "layered",
+    "label": "Layered long",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 2193,
+    "inside": 1333,
+    "opaque": 9152,
+    "hash": "526fcb57ea76b3516c36683e74613a13e624174b4cceb7a3716c7cf2fa01b7cb"
+  },
+  {
+    "hairS": "layered",
+    "label": "Layered long",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 2383,
+    "inside": 1292,
+    "opaque": 8904,
+    "hash": "5f4a572378b39b54b1c7c5fcbc840d8652c90b277ef09bd2c09a244111000175"
+  },
+  {
+    "hairS": "layered",
+    "label": "Layered long",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 2264,
+    "inside": 1379,
+    "opaque": 9192,
+    "hash": "b7357955ffd2e7ec7b2fb3cd5b9be82666ac2142618ca12933d3fb6b687490ac"
+  },
+  {
+    "hairS": "layered",
+    "label": "Layered long",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 3268,
+    "inside": 2527,
+    "opaque": 12699,
+    "hash": "c9d964822f34df19016ed802cdbdd347662f5163a28b31d8609bb92f3a5a28e8"
+  },
+  {
+    "hairS": "layered",
+    "label": "Layered long",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 2193,
+    "inside": 1333,
+    "opaque": 9152,
+    "hash": "8747f8b81b2a5f6f7da32f113492d22b6fa5dec24a8db1e45284e6dede11ab45"
+  },
+  {
+    "hairS": "bluntlong",
+    "label": "Blunt long with bangs",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 2750,
+    "inside": 1615,
+    "opaque": 10960,
+    "hash": "ba75c9bf1c1642fa15cc031fe16b5ce3b71e0e330c5e4b16bcb51a34c9ea7ad1"
+  },
+  {
+    "hairS": "bluntlong",
+    "label": "Blunt long with bangs",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 2482,
+    "inside": 1699,
+    "opaque": 10837,
+    "hash": "8e61f050be1f2f8d851b5529470ebce1f6bbf14a1e14d6f18c0c7a5933d85cea"
+  },
+  {
+    "hairS": "bluntlong",
+    "label": "Blunt long with bangs",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 3173,
+    "inside": 2510,
+    "opaque": 15156,
+    "hash": "dcd9e76441b5c241290ea8f84e1cb9b0bc666a719a41e3dfba631f4f4c2b7a99"
+  },
+  {
+    "hairS": "bluntlong",
+    "label": "Blunt long with bangs",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 2281,
+    "inside": 1491,
+    "opaque": 10689,
+    "hash": "d25031acedaa6ee8b35d5c0fad06d6054dc353c70f0a5a63a8d89543ffeb3ccb"
+  },
+  {
+    "hairS": "bluntlong",
+    "label": "Blunt long with bangs",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 2750,
+    "inside": 1615,
+    "opaque": 10960,
+    "hash": "114983f2b3f7321a8fbf133ff5fec728f8dcffd2e18a43d1464463053a26eff3"
+  },
+  {
+    "hairS": "bluntlong",
+    "label": "Blunt long with bangs",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 2482,
+    "inside": 1699,
+    "opaque": 10837,
+    "hash": "5ac9220759bb1d115e8decc5ebd8ed798e35e2f0384d2643e03585ed9738cd4f"
+  },
+  {
+    "hairS": "bluntlong",
+    "label": "Blunt long with bangs",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 3173,
+    "inside": 2510,
+    "opaque": 15156,
+    "hash": "f834012c0e80c75d59ce146f0b5a573324246631581f39c4b4b432f93b324770"
+  },
+  {
+    "hairS": "bluntlong",
+    "label": "Blunt long with bangs",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 2281,
+    "inside": 1491,
+    "opaque": 10689,
+    "hash": "3c77ae0d409f14a37c05d8479409dafa2a41fdd5b9ca71dbf2a443a9e3be391b"
+  },
+  {
+    "hairS": "beachwaves",
+    "label": "Beach waves",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 2082,
+    "inside": 1150,
+    "opaque": 8391,
+    "hash": "3d33ae58c1ab9cd98f79d605d9ea1863c80d29d8afd6ad50ba73d4fd1edfa961"
+  },
+  {
+    "hairS": "beachwaves",
+    "label": "Beach waves",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1930,
+    "inside": 1221,
+    "opaque": 8025,
+    "hash": "ab8c261205ebfb2e4e50627a2106f485364c97654205c0d79972cb56d12de341"
+  },
+  {
+    "hairS": "beachwaves",
+    "label": "Beach waves",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 2727,
+    "inside": 2109,
+    "opaque": 11624,
+    "hash": "50d5fbbb386bb1dbb707acc67a17e76f9f80706ec54fc0902881665db8cbe213"
+  },
+  {
+    "hairS": "beachwaves",
+    "label": "Beach waves",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1863,
+    "inside": 1141,
+    "opaque": 8031,
+    "hash": "3cd5d46374f9d7f76ac5121da7f7d11717db85f2d7f36181a2fe3590806ec6ea"
+  },
+  {
+    "hairS": "beachwaves",
+    "label": "Beach waves",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 2082,
+    "inside": 1150,
+    "opaque": 8391,
+    "hash": "1db34e2ba5cb44aa966e25635ca952a1211c5101ed5891c35a0a94c65114dff2"
+  },
+  {
+    "hairS": "beachwaves",
+    "label": "Beach waves",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1930,
+    "inside": 1221,
+    "opaque": 8025,
+    "hash": "556a2abb932c5c574aa6c9fb2b8e50cb50dacd317b64fc764932f79d11fece1b"
+  },
+  {
+    "hairS": "beachwaves",
+    "label": "Beach waves",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 2727,
+    "inside": 2109,
+    "opaque": 11624,
+    "hash": "d0a71b675ab549bd7be4c77c3288c793bc1feb3a881e77dc56e48d810ecad500"
+  },
+  {
+    "hairS": "beachwaves",
+    "label": "Beach waves",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1863,
+    "inside": 1141,
+    "opaque": 8031,
+    "hash": "58358136ee6c3182d10ac29bbabee77ac27b89110d900c1cb865b1589de984a4"
+  },
+  {
+    "hairS": "longcurls",
+    "label": "Long curls",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 2257,
+    "inside": 1275,
+    "opaque": 8713,
+    "hash": "956a95901ab08e7f6b15639b1d3c3a2cb98a57287d773094ebe40ea22507da9e"
+  },
+  {
+    "hairS": "longcurls",
+    "label": "Long curls",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 2048,
+    "inside": 1303,
+    "opaque": 8441,
+    "hash": "fd842eecba37d31c5ef4140fd67bc3851f8fb0237d2aebb504bc1884437e4e46"
+  },
+  {
+    "hairS": "longcurls",
+    "label": "Long curls",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 3068,
+    "inside": 2419,
+    "opaque": 12102,
+    "hash": "9990898098d49f9d5a7bd6c177a5cc0bb5c28d1685e5ae3b81dec0a7b5625794"
+  },
+  {
+    "hairS": "longcurls",
+    "label": "Long curls",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1989,
+    "inside": 1268,
+    "opaque": 8304,
+    "hash": "4bc6f23a33fba85d7dc4743d265a671f5da74be802f7bef8239189926815fb11"
+  },
+  {
+    "hairS": "longcurls",
+    "label": "Long curls",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 2257,
+    "inside": 1275,
+    "opaque": 8713,
+    "hash": "228a468efaffcd76ea5d9f28c5a00f5345c53cc438835755b64ef735f54af92a"
+  },
+  {
+    "hairS": "longcurls",
+    "label": "Long curls",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 2048,
+    "inside": 1303,
+    "opaque": 8441,
+    "hash": "30b156516f29662d6d6ff5b37b1c916b1befd34ed947b131a937cf50e68751ae"
+  },
+  {
+    "hairS": "longcurls",
+    "label": "Long curls",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 3068,
+    "inside": 2419,
+    "opaque": 12102,
+    "hash": "c5a6d21f4a5940fc57c1c3c50810378309f5eb76badd565fd24bba10c7e60850"
+  },
+  {
+    "hairS": "longcurls",
+    "label": "Long curls",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1989,
+    "inside": 1268,
+    "opaque": 8304,
+    "hash": "2fcb44dc29c029899f9f0d4b13dadaaeeabe60c129b359952f28b3131a0e6a5c"
+  }
+]

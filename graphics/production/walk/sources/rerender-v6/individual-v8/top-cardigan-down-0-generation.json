@@ -1,0 +1,20 @@
+{
+  "garment": "cardigan",
+  "dir": "down",
+  "firstFrame": 0,
+  "count": 1,
+  "source": "graphics/production/walk/sources/rerender-v6/individual-v8/top-cardigan-down-0.png",
+  "poseReference": "pose-guides-v6/down-0.png",
+  "prompt": "Generate one isolated headless game body in the exact thin-line soft chibi cel style and exact muted palette of the FIRST reference (approved cardigan idle). Dress the SECOND reference's technical joint pose in those exact clothes. Do not copy the diagram style. Anatomical RIGHT leg takes the forward step at bottom LEFT of the picture, anatomical LEFT foot trails behind on picture RIGHT. Left arm forward/image right fist; right arm back/image left hand. Single front-view contact frame. Exact source colors, narrow soft shoulders, short neck cap, open muted blue cardigan over cream tee, brown buttons, patch pockets and ribbed hems/cuffs, navy jeans, brown cream-toe sneakers. Thin subtle colored lines like idle. ABSOLUTE COLOR REQUIREMENT: use #49382e RGB(73,56,46) for EVERY outer contour, seam, shoe bottom and crease. All darkest marks must be visibly brown, never pure black or near-black. No RGB channel below 30 anywhere. Preserve muted cardigan blue and gentle shadows from the approved idle; do not make it more saturated, contrasty or textured. Paint clean 2\u20133 tone shaded shapes, crisp hands, modest thin lines. No background, head, hair, face, text, shadow or glow. Transparent margins, both complete shoes visible, single figure, portrait2:3. Fresh art from these references only.",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "references": [
+    "graphics/production/customization/top/cardigan/down.png",
+    "graphics/production/walk/pose-guides-v6/down-0.png"
+  ],
+  "visualApproval": false,
+  "referenceSHA256": {
+    "graphics/production/customization/top/cardigan/down.png": "59cc5789413301c425e5f13a7d5ae4cc1dd6e0f76a2611d6a67b7469837099a5",
+    "graphics/production/walk/pose-guides-v6/down-0.png": "786181ecf759adb804e62e9958f691a3c8870b6ba29a0d963b51c32a795ffd61"
+  }
+}

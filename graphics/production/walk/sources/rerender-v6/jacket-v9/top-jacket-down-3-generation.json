@@ -1,0 +1,21 @@
+{
+  "garment": "jacket",
+  "dir": "down",
+  "firstFrame": 3,
+  "count": 1,
+  "prompt": "ONE headless game body walking TOWARD camera FRONT view. First reference approved jacket idle defines exact garment design, muted colors, soft chibi short-limb build and thin delicate warm outlines. Second reference ONLY technical joint pose, never copy diagram geometry/style. PASSING phase: anatomical LEFT leg supports body, shoe on IMAGE RIGHT lower and planted; opposite leg on IMAGE LEFT bent and raised clearly, knee forward and shoe tucked up. Supporting shin vertical under hip. Arms settle closer to sides. Follow guide exactly, no mirroring. Muted blue open zip jacket over cream T-shirt, folded collar, diagonal pocket openings, ribbed cuffs and hem. No buttons or cardigan details. Navy jeans with subtle seams and hems, brown canvas sneakers with cream toe caps/soles. Preserve short neck cap and compact soft body, crisp fingers. Main jacket blue #436296, shadow #32496e, highlights #5876a2. Clean 2-3 tone cel shading, no grain. Every darkest contour/seam/crease/shoe bottom warm brown #49382e RGB73,56,46, NEVER black/near-black, no RGB channel below30. Fine colored outlines, no bold sticker border, no extra contrast or saturation. Single complete figure with neck cap, hands and complete shoes, no head/face/hair. Portrait 2:3 transparent background with margins. No shadow, glow, text or floor. Fresh art from these two references only.",
+  "poseReference": "pose-guides-v6/down-3.png",
+  "references": [
+    "graphics/production/customization/top/jacket/down.png",
+    "graphics/production/walk/pose-guides-v6/down-3.png"
+  ],
+  "source": "graphics/production/walk/sources/rerender-v6/jacket-v9/top-jacket-down-3.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "visualApproval": false,
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/customization/top/jacket/down.png": "6b8cd23fae8598d53b40a3bcfcc8b7992e6b432cd318c1210ea7814ee9680388",
+    "graphics/production/walk/pose-guides-v6/down-3.png": "ee3639347fd9c2c6930d6d6146ef7fb8425abee83c57f912990d3a60da49b263"
+  }
+}

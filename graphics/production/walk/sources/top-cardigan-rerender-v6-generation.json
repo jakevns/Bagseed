@@ -1,0 +1,163 @@
+{
+  "method": "Built-in image generator; individual frames authorized by user",
+  "seed": null,
+  "seedNote": "Not exposed by built-in tool",
+  "rawPixelsUnchanged": true,
+  "installed": false,
+  "poseGuideIssue": "Required original front and rear guides each lead with same image-side foot in three of four frames; clarification requested before correcting guides.",
+  "generations": [
+    {
+      "garment": "cardigan",
+      "dir": "down",
+      "firstFrame": 3,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6/top-cardigan-down-3.png",
+      "prompt": "Generate exactly ONE headless walking garment sprite, transparent background. Reference A is the APPROVED idle cardigan and is the exact source of truth for garment identity, palette, thin colored line weight, body proportions, skin, jeans and cream-toe brown sneakers. Reference B is ONLY the exact pose reference: front view, walking passing phase, viewer RIGHT leg is forward and lower, viewer LEFT leg bends behind and is higher; viewer LEFT fist is forward across hip, viewer RIGHT hand down/back. Copy that pose precisely, do not mirror. Dress it in A's open muted blue/navy knit cardigan with brass buttons, ribbed cuffs/hem, two pockets and cream undershirt. Same cut, colors, details, shoulder width and thin warm dark brown contours as A. Clean 2\u20133 tone cel shading, subtle knit details. No black sticker border, no wristbands, no muddy shading, no extra waist band. Full headless figure including neck cap, hands, jeans and both shoes. No head/face/hair. Single figure only, portrait 2:3 canvas, centered with transparent margins and complete shoes. No ground shadow, no glow, no labels, no background. Preserve source A's delicate linework rather than thickening it. Paint entirely fresh art.",
+      "seed": null,
+      "seedNote": "Built-in image generator does not expose a seed",
+      "references": [
+        "graphics/production/customization/top/cardigan/down.png",
+        "graphics/production/walk/registered/mannequin/down-3.png"
+      ],
+      "visualApproval": false,
+      "visualNotes": "Leading leg correct. Arm swing mirrored relative to guide; rejected pending corrected generation."
+    },
+    {
+      "garment": "cardigan",
+      "dir": "down",
+      "firstFrame": 3,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6b/top-cardigan-down-3.png",
+      "prompt": "Create ONE freshly drawn transparent sprite for this game. The FIRST reference is the exact POSE: match its arm positions and legs exactly, not mirrored. Front view. On the IMAGE LEFT the elbow bends and its fist is raised in front of belly; on IMAGE RIGHT the arm is almost straight and hand lowered near hip. IMAGE RIGHT leg extends downward/forward, IMAGE LEFT knee bent and foot raised behind. The SECOND reference is exact garment identity, color, proportions and line weight: blue cardigan open over cream shirt, brown buttons, ribbed knit cuffs/hem, two patch pockets, navy jeans and brown sneakers with cream toe caps and soles. Draw this exact outfit on the first reference's pose. Preserve first-reference shoulder/neck size and pose geometry. Single headless full figure with neck cap, no head, no face. Thin delicate warm brown/navy colored line art, same subtle thin edges as second reference, no black stroke. Soft clean two/three-tone cel shading. No texture noise or extra waist band. Transparent margins around all sides, entire shoes included. Portrait 2:3 canvas. Do not reverse either arm. No ground/shadow/glow/text/background.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/down-3.png",
+        "graphics/production/customization/top/cardigan/down.png"
+      ],
+      "visualApproval": false,
+      "visualNotes": "Arm/leg sides now match guide; numeric and complete-cycle comparison pending."
+    },
+    {
+      "garment": "cardigan",
+      "dir": "down",
+      "firstFrame": 0,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-down-0.png",
+      "prompt": "Create ONE freshly drawn transparent headless walking game sprite. FIRST reference is the exact POSE: match arm positions, legs, foot height, silhouette and direction precisely, do not mirror. FRONT view, cycle frame 0. IMAGE LEFT leg extends downward and forward, IMAGE RIGHT leg trails raised. IMAGE LEFT arm hangs almost straight with lowered fist, IMAGE RIGHT arm goes behind the torso. SECOND reference is the approved idle, exact garment identity, body proportions, colors and delicate line weight. Dress the pose in that exact outfit: open muted blue cardigan with brass buttons, two patch pockets, ribbed cuffs/hem, cream undershirt. Navy jeans with clear hems/seams; brown sneakers with cream toe caps and cream soles. Same narrow soft shoulders and short neck cap as idle. Thin delicate warm brown/navy line art, soft clean 2\u20133 tone cel shading, no texture noise, no sticker stroke. IMPORTANT every darkest contour on clothes/skin/shoes/jeans must be #49382e (RGB73,56,46) or navy #344154, never black or near-black. No added details. Entire headless figure with hands and both complete shoes, no head/face/hair. Portrait 2:3 canvas, transparent background and margins all sides. No shadow/glow/text. Fresh art only.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/down-0.png",
+        "graphics/production/customization/top/cardigan/down.png"
+      ],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "dir": "down",
+      "firstFrame": 1,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-down-1.png",
+      "prompt": "Create ONE freshly drawn transparent headless walking game sprite. FIRST reference is the exact POSE: match arm positions, legs, foot height, silhouette and direction precisely, do not mirror. FRONT view, cycle frame 1. IMAGE LEFT leg extends downward and forward, IMAGE RIGHT knee bent and foot raised behind. IMAGE LEFT arm hangs lowered; IMAGE RIGHT arm goes behind torso. SECOND reference is the approved idle, exact garment identity, body proportions, colors and delicate line weight. Dress the pose in that exact outfit: open muted blue cardigan with brass buttons, two patch pockets, ribbed cuffs/hem, cream undershirt. Navy jeans with clear hems/seams; brown sneakers with cream toe caps and cream soles. Same narrow soft shoulders and short neck cap as idle. Thin delicate warm brown/navy line art, soft clean 2\u20133 tone cel shading, no texture noise, no sticker stroke. IMPORTANT every darkest contour on clothes/skin/shoes/jeans must be #49382e (RGB73,56,46) or navy #344154, never black or near-black. No added details. Entire headless figure with hands and both complete shoes, no head/face/hair. Portrait 2:3 canvas, transparent background and margins all sides. No shadow/glow/text. Fresh art only.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/down-1.png",
+        "graphics/production/customization/top/cardigan/down.png"
+      ],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "dir": "down",
+      "firstFrame": 2,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-down-2.png",
+      "prompt": "Create ONE freshly drawn transparent headless walking game sprite. FIRST reference is the exact POSE: match arm positions, legs, foot height, silhouette and direction precisely, do not mirror. FRONT view, cycle frame 2. IMAGE RIGHT leg extends downward and forward, IMAGE LEFT leg trails raised. IMAGE RIGHT elbow bends with fist raised in front near hip; IMAGE LEFT hand lowered. SECOND reference is the approved idle, exact garment identity, body proportions, colors and delicate line weight. Dress the pose in that exact outfit: open muted blue cardigan with brass buttons, two patch pockets, ribbed cuffs/hem, cream undershirt. Navy jeans with clear hems/seams; brown sneakers with cream toe caps and cream soles. Same narrow soft shoulders and short neck cap as idle. Thin delicate warm brown/navy line art, soft clean 2\u20133 tone cel shading, no texture noise, no sticker stroke. IMPORTANT every darkest contour on clothes/skin/shoes/jeans must be #49382e (RGB73,56,46) or navy #344154, never black or near-black. No added details. Entire headless figure with hands and both complete shoes, no head/face/hair. Portrait 2:3 canvas, transparent background and margins all sides. No shadow/glow/text. Fresh art only.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/down-2.png",
+        "graphics/production/customization/top/cardigan/down.png"
+      ],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "dir": "down",
+      "firstFrame": 3,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-down-3.png",
+      "prompt": "Create ONE freshly drawn transparent sprite for this game. The FIRST reference is the exact POSE: match its arm positions and legs exactly, not mirrored. Front view. On the IMAGE LEFT the elbow bends and its fist is raised in front of belly; on IMAGE RIGHT the arm is almost straight and hand lowered near hip. IMAGE RIGHT leg extends downward/forward, IMAGE LEFT knee bent and foot raised behind. The SECOND reference is exact garment identity, color, proportions and line weight: blue cardigan open over cream shirt, brown buttons, ribbed knit cuffs/hem, two patch pockets, navy jeans and brown sneakers with cream toe caps and soles. Draw this exact outfit on the first reference's pose. Preserve first-reference shoulder/neck size and pose geometry. Single headless full figure with neck cap, no head, no face. Thin delicate warm brown/navy colored line art, same subtle thin edges as second reference, no black stroke. Soft clean two/three-tone cel shading. No texture noise or extra waist band. Transparent margins around all sides, entire shoes included. Portrait 2:3 canvas. Do not reverse either arm. No ground/shadow/glow/text/background. IMPORTANT COLOR CONSTRAINT: every darkest contour, including shoe soles, laces, jeans creases and cardigan hem, must be visibly warm dark brown #49382e (RGB73,56,46) or navy #344154. Never use pure black or near-black anywhere. This is a softly colored game sprite. Keep the subtle garment palette unchanged; only contours use the stated brown/navy.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/down-3.png",
+        "graphics/production/customization/top/cardigan/down.png"
+      ],
+      "visualApproval": false,
+      "visualNotes": "Arm/leg sides match guide; brown contours. Complete-cycle review pending."
+    },
+    {
+      "garment": "cardigan",
+      "dir": "up",
+      "firstFrame": 0,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-up-0.png",
+      "prompt": "Create ONE freshly drawn transparent headless walking game sprite. FIRST reference is the exact POSE: match arm positions, legs, foot height, silhouette and direction precisely, do not mirror. BACK view, cycle frame 0. IMAGE RIGHT shoe shows its raised sole; IMAGE LEFT leg supports body. IMAGE LEFT hand lowered behind torso and IMAGE RIGHT hand partly hidden forward. SECOND reference is the approved idle, exact garment identity, body proportions, colors and delicate line weight. Dress the pose in that exact outfit: blue knit cardigan with smooth back, subtly ribbed round collar/cuffs/hem, NO white or cream collar, no extra waistband or dark hip band. Navy jeans with clear hems/seams and back pockets; brown sneakers with cream toe caps and cream soles. Same narrow soft shoulders and short neck cap as idle. Thin delicate warm brown/navy line art, soft clean 2\u20133 tone cel shading, no texture noise, no sticker stroke. IMPORTANT every darkest contour on clothes/skin/shoes/jeans must be #49382e (RGB73,56,46) or navy #344154, never black or near-black. No added details. Entire headless figure with hands and both complete shoes, no head/face/hair. Portrait 2:3 canvas, transparent background and margins all sides. No shadow/glow/text. Fresh art only.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/up-0.png",
+        "graphics/production/customization/top/cardigan/up.png"
+      ],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "dir": "up",
+      "firstFrame": 1,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-up-1.png",
+      "prompt": "Create ONE freshly drawn transparent headless walking game sprite. FIRST reference is the exact POSE: match arm positions, legs, foot height, silhouette and direction precisely, do not mirror. BACK view, cycle frame 1. IMAGE LEFT shoe raised showing its sole, IMAGE RIGHT leg extended down. IMAGE LEFT fist is behind near hip and IMAGE RIGHT hand mostly hidden forward. SECOND reference is the approved idle, exact garment identity, body proportions, colors and delicate line weight. Dress the pose in that exact outfit: blue knit cardigan with smooth back, subtly ribbed round collar/cuffs/hem, NO white or cream collar, no extra waistband or dark hip band. Navy jeans with clear hems/seams and back pockets; brown sneakers with cream toe caps and cream soles. Same narrow soft shoulders and short neck cap as idle. Thin delicate warm brown/navy line art, soft clean 2\u20133 tone cel shading, no texture noise, no sticker stroke. IMPORTANT every darkest contour on clothes/skin/shoes/jeans must be #49382e (RGB73,56,46) or navy #344154, never black or near-black. No added details. Entire headless figure with hands and both complete shoes, no head/face/hair. Portrait 2:3 canvas, transparent background and margins all sides. No shadow/glow/text. Fresh art only.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/up-1.png",
+        "graphics/production/customization/top/cardigan/up.png"
+      ],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "dir": "up",
+      "firstFrame": 2,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-up-2.png",
+      "prompt": "Create ONE freshly drawn transparent headless walking game sprite. FIRST reference is the exact POSE: match arm positions, legs, foot height, silhouette and direction precisely, do not mirror. BACK view, cycle frame 2. IMAGE LEFT leg is down extended, IMAGE RIGHT bent foot behind. Arms follow exact reference silhouette. SECOND reference is the approved idle, exact garment identity, body proportions, colors and delicate line weight. Dress the pose in that exact outfit: blue knit cardigan with smooth back, subtly ribbed round collar/cuffs/hem, NO white or cream collar, no extra waistband or dark hip band. Navy jeans with clear hems/seams and back pockets; brown sneakers with cream toe caps and cream soles. Same narrow soft shoulders and short neck cap as idle. Thin delicate warm brown/navy line art, soft clean 2\u20133 tone cel shading, no texture noise, no sticker stroke. IMPORTANT every darkest contour on clothes/skin/shoes/jeans must be #49382e (RGB73,56,46) or navy #344154, never black or near-black. No added details. Entire headless figure with hands and both complete shoes, no head/face/hair. Portrait 2:3 canvas, transparent background and margins all sides. No shadow/glow/text. Fresh art only.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/up-2.png",
+        "graphics/production/customization/top/cardigan/up.png"
+      ],
+      "visualApproval": false
+    },
+    {
+      "garment": "cardigan",
+      "dir": "up",
+      "firstFrame": 3,
+      "count": 1,
+      "source": "graphics/production/walk/sources/rerender-v6/individual-v6c/top-cardigan-up-3.png",
+      "prompt": "Create ONE freshly drawn transparent headless walking game sprite. FIRST reference is the exact POSE: match arm positions, legs, foot height, silhouette and direction precisely, do not mirror. BACK view, cycle frame 3. IMAGE LEFT shoe raised sole facing viewer, IMAGE RIGHT leg extended down. IMAGE RIGHT fist raised backwards near hip, IMAGE LEFT arm forward and obscured. SECOND reference is the approved idle, exact garment identity, body proportions, colors and delicate line weight. Dress the pose in that exact outfit: blue knit cardigan with smooth back, subtly ribbed round collar/cuffs/hem, NO white or cream collar, no extra waistband or dark hip band. Navy jeans with clear hems/seams and back pockets; brown sneakers with cream toe caps and cream soles. Same narrow soft shoulders and short neck cap as idle. Thin delicate warm brown/navy line art, soft clean 2\u20133 tone cel shading, no texture noise, no sticker stroke. IMPORTANT every darkest contour on clothes/skin/shoes/jeans must be #49382e (RGB73,56,46) or navy #344154, never black or near-black. No added details. Entire headless figure with hands and both complete shoes, no head/face/hair. Portrait 2:3 canvas, transparent background and margins all sides. No shadow/glow/text. Fresh art only.",
+      "seed": null,
+      "seedNote": "Built-in tool does not expose seed",
+      "references": [
+        "graphics/production/walk/registered/mannequin/up-3.png",
+        "graphics/production/customization/top/cardigan/up.png"
+      ],
+      "visualApproval": false
+    }
+  ]
+}

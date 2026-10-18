@@ -1,7 +1,11 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),{chromium,devices}=require('playwright');
 test('mobile loading viewport stays stable while unstyled menu images arrive',async()=>{
-  const root=path.resolve(__dirname,'..'),out=path.join(root,'review/loading-first-paint');fs.mkdirSync(out,{recursive:true});
+  const root=path.resolve(__dirname,'..'),artifacts=path.join(root,'artifacts/loading-first-paint');fs.mkdirSync(artifacts,{recursive:true});
+  // Windows image previews can memory-map existing diagnostic PNGs. Give
+  // each run its own output, so screenshot replacement cannot fail an
+  // otherwise passing viewport assertion or race another test invocation.
+  const out=fs.mkdtempSync(path.join(artifacts,'run-'));
   const html=fs.readFileSync(path.join(root,'public/index.html')),marker=Buffer.from('<!-- bagseed-loading-shell-end -->'),shell=html.indexOf(marker)+marker.length,app=html.indexOf('<div id="app">',shell),menu=html.indexOf('</section>',app)+10,native=html.indexOf('<script id="bagseed-illustrated-production-code">'),responses=new Set();let response,browser;
   const {createStaticServer}=await import('../tools/server.mjs'),assets=createStaticServer(),serveAsset=assets.listeners('request')[0];
   // Delay the HTML stream while serving real companion scripts and artwork.

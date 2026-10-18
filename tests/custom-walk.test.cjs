@@ -29,7 +29,8 @@ test('all custom wardrobe walk combinations render grounded frames with connecte
       if(im.bagseedAuthoredWalk!==expected)failures.push(key+': legacy/fallback frame');
       if(opaque<600)failures.push(key+': empty or incomplete figure');
       if(bottom<141||bottom>143)failures.push(key+': painted ground '+bottom);
-      const p=(im.bagseedWalkProfile==='stride/'?window.__BAGSEED_ILLUSTRATED_DATA__.walk.stride.rig:rig).frames[expected],hand=im.bagseedHand,project=([x,y])=>[48+(x-48)*BagseedArt.playerFigureScale,143+(y-143)*BagseedArt.playerFigureScale],handPoint=project(p.keypoints['hand'+p.nearArm]),shoulder=project(p.keypoints['shoulder'+p.nearArm]);
+      const approved=im.bagseedApprovedOutfit&&window.__BAGSEED_ILLUSTRATED_DATA__.walk.approvedOutfits.items[topS].frames[expected];
+      const p=approved?{keypoints:approved.keypoints,nearArm:approved.keypoints.nearArm}:(im.bagseedWalkProfile==='stride/'?window.__BAGSEED_ILLUSTRATED_DATA__.walk.stride.rig:rig).frames[expected],hand=im.bagseedHand,project=([x,y])=>[48+(x-48)*im.bagseedBodyTransform.width*BagseedArt.playerFigureScale,143+(y-143)*im.bagseedBodyTransform.sy*BagseedArt.playerFigureScale],handPoint=project(p.keypoints['hand'+p.nearArm]),shoulder=project(p.keypoints['shoulder'+p.nearArm]);
       if(!hand||Math.hypot(hand.x-handPoint[0],hand.y-handPoint[1])>.001)failures.push(key+': wrong hand attachment');
       const palm=nearest(data,im.width,im.height,handPoint[0],handPoint[1],4),arm=nearest(data,im.width,im.height,shoulder[0],shoulder[1],3);
       if(!connected(data,im.width,im.height,palm,arm))failures.push(key+': hand is not alpha-connected to shoulder');

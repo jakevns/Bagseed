@@ -1,0 +1,179 @@
+{
+  "status": "generation and visual review pending; not approved",
+  "frames": 152,
+  "rawPixelsMustRemainUnedited": true,
+  "seed": null,
+  "seedNote": "Built-in image generator does not expose seeds; do not invent one.",
+  "jobs": [
+    {
+      "garment": "garden",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "garden",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "jacket",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "jacket",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "cardigan",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "cardigan",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "flannel",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "flannel",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "hoodie",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "hoodie",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "labcoat",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "labcoat",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "officer",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "officer",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "overalls",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "overalls",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "pjs",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "pjs",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "suit",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "suit",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "crop",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "crop",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "tank",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "tank",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "tee",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "tee",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "sweater",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "sweater",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "work",
+      "dir": "down",
+      "count": 4
+    },
+    {
+      "garment": "work",
+      "dir": "up",
+      "count": 4
+    },
+    {
+      "garment": "garden",
+      "dir": "right",
+      "count": 8
+    },
+    {
+      "garment": "garden",
+      "dir": "left",
+      "count": 8
+    },
+    {
+      "garment": "labcoat",
+      "dir": "right",
+      "count": 8
+    },
+    {
+      "garment": "labcoat",
+      "dir": "left",
+      "count": 8
+    }
+  ]
+}

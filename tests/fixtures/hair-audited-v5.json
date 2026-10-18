@@ -1,0 +1,11 @@
+{
+  "revision": "character-hair-neck-audit-v5",
+  "hashes": {
+    "bald": "fa7428ff2c61f213115bd69f76814800d153eb3b673092217e70c5baf57a1a8a",
+    "short": "d02ffca717d3848c5a2ccd59a968f4e8fccaed47e8873d65af7ee9a835003a27",
+    "buzz": "44ec950b60939cbffeceec074082d2b6f70bf08cb1cdb4725f89477c65e5c1fa",
+    "crop": "7bd5ef3dd3b303a4b62407cc47b6d02002ae3e587018a6a2b224499215b2fc64",
+    "caesar": "def79f8ae28fe2759bec59732b74bb24b2f7f594829d3584bb86fac5f9569835",
+    "fade": "dfd20a7189793859df97c375b0904ffe1f078e7ff8d704f7bace9534c93b70bc"
+  }
+}

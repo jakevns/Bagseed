@@ -1,0 +1,19 @@
+{
+  "view": "down",
+  "source": "graphics/production/walk/sources/cardigan-idle-v11/down-raw.png",
+  "prompt": "EDIT FIRST IMAGE, a standing headless cardigan figure that is currently TOO NARROW. Make the body about 15% WIDER horizontally across shoulders, torso, hips, thighs, calves, arms, hands and shoes, while retaining EXACTLY the same body height, torso length, pose, foot separation relative to body width, colors, line weight and all clothing details. Second image is the WALKING figure whose body build it must match. The revised idle must look like that same person stopped moving: compact soft chibi build with moderate shoulders/hips and short limbs, not a tall thin fashion figure. At a 240px neck-to-sole body height, target shoulder width about 100px, hip span about108px, standing lower-leg span around82px (two calves and gap). Current narrow idle is only 86px across shoulder; increase this to the target. Keep both feet planted and arms relaxed; do not copy the walking leg pose. FRONT view, open blue cardigan over cream tee with brown buttons, two patch pockets and ribbed cuffs/hem. Same navy jeans and brown cream-soled sneakers. Same thin warm brown linework and clean cel shades, NO added texture or bold stroke. Keep all artwork crisp. Single complete headless front standing figure, no head/face/hair, transparent background, no text/floor/shadow/glow, portrait2:3. Change WIDTH ONLY; leave height/torso-to-leg length unchanged.",
+  "seed": null,
+  "seedNote": "Not exposed by built-in image generator",
+  "references": [
+    "graphics/production/walk/sources/cardigan-idle-v9/down-raw.png",
+    "graphics/production/walk/sources/rerender-v6/individual-v8/top-cardigan-down-0.png"
+  ],
+  "authorization": "User requested idle matching walking proportions for cardigan only.",
+  "runtimeInstalled": false,
+  "retainedByteIdenticalFrom": "graphics/production/walk/sources/cardigan-idle-v10/down-raw.png",
+  "rawSHA256": "ca5055234a0612fe6e568b2528c92f57f42474e8c5858a1f99bae26d7e9d9bcd",
+  "referenceSHA256": {
+    "graphics/production/walk/sources/cardigan-idle-v9/down-raw.png": "98e21d18ec4ca854200c60161c1d22a1a37fa447dc3e81ef58b2d8e890150f22",
+    "graphics/production/walk/sources/rerender-v6/individual-v8/top-cardigan-down-0.png": "73ad91aa67076010a8f388cd1df464d706c14c9f4a203ed6708f21fa5c4afc6f"
+  }
+}

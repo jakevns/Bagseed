@@ -1,0 +1,17 @@
+<!doctype html><meta charset="utf-8"><title>Flannel idle and walk review</title>
+<style>body{font:17px system-ui;background:#eee9dd;color:#352d28;margin:24px}button,input{font:inherit}button{padding:8px;margin:4px}section{display:flex;gap:12px;flex-wrap:wrap}figure{margin:0;text-align:center}img.pose{width:240px;height:270px}#comparison{max-width:100%;height:auto}a{color:#214c83}</style>
+<h1>Flannel v13: down/3 shirt updated</h1><p>One palette for the flannel, jeans, skin and footwear across eight walking frames and two idle views. Before and after play in sync. Only down/3 has a new drawing. The other nine images are byte-identical to v12; all views use the same shared palette.</p><p>Front and rear source-art review only. These candidates are not installed in the game. Each body is uniformly scaled to the same height; widths are never stretched.</p>
+<button id="play">Pause</button><button id="step">Next frame</button><button id="toggle">Show idle in cycle</button><label>Phase <input id="phase" type="range" min="0" max="3" step="1" value="0"></label><span id="caption"></span>
+<h2>Front</h2><section><figure><figcaption>Previous idle</figcaption><img class="pose" src="down-old-preview.png"></figure><figure><figcaption>Shared-palette idle</figcaption><img class="pose" src="down-idle-preview.png"></figure><figure><figcaption>Previous cycle</figcaption><img class="pose" id="before-down" src="down-before-0-preview.png"></figure><figure><figcaption>Shared-palette cycle</figcaption><img class="pose" id="down" src="down-0-preview.png"></figure></section>
+<h2>Back</h2><section><figure><figcaption>Previous idle</figcaption><img class="pose" src="up-old-preview.png"></figure><figure><figcaption>Shared-palette idle</figcaption><img class="pose" src="up-idle-preview.png"></figure><figure><figcaption>Previous cycle</figcaption><img class="pose" id="before-up" src="up-before-0-preview.png"></figure><figure><figcaption>Shared-palette cycle</figcaption><img class="pose" id="up" src="up-0-preview.png"></figure></section>
+<h2>All poses</h2><a href="comparison.png"><img id="comparison" src="comparison.png"></a><p><a href="measurements.json">Proportions, color measurements and raw-image hashes</a></p>
+<script>
+let phase=0,playing=true,idle=false;const names=['right contact','right support / left passing','left contact','left support / right passing'];
+for(const d of ['down','up'])for(const f of ['idle',0,1,2,3]){const im=new Image();im.src=`${d}-${f}-preview.png`;}
+function draw(){for(const d of ['down','up'])document.getElementById('before-'+d).src=idle?`${d}-old-preview.png`:`${d}-before-${phase}-preview.png`;for(const d of ['down','up'])document.getElementById(d).src=`${d}-${idle?'idle':phase}-preview.png`;document.getElementById('phase').value=phase;document.getElementById('caption').textContent=idle?'Idle':`${phase}: ${names[phase]}`;}
+document.getElementById('play').onclick=()=>{playing=!playing;document.getElementById('play').textContent=playing?'Pause':'Play';};
+document.getElementById('step').onclick=()=>{idle=false;phase=(phase+1)%4;draw();};
+document.getElementById('toggle').onclick=()=>{idle=!idle;draw();};
+document.getElementById('phase').oninput=e=>{idle=false;phase=+e.target.value;draw();};
+setInterval(()=>{if(playing&&!idle){phase=(phase+1)%4;draw();}},190);draw();
+</script><p><a href="shared-palette.json">Unchanged shared palette</a></p>

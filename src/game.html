@@ -4849,8 +4849,8 @@ function migrate(s) {
   // player
   const P = s.player, defs = { pronouns: 'they', face: 'soft', eyes: 'dot', brows: 'thin', extras: [], bottomS: 'jeans', shoesS: 'sneakers', shoesC: '#2b1d14', pantsC: '#36405a', dir: 'down', eyeC: '#2b1d14', body: 'average', pres: 'neutral', hairS: 'short', topS: P.shirtS || 'tee', shirtC: '#5f9c33', hairC: '#4a2c1a', facial: 'none', hat: 'none', glasses: 'none', acc: 'none' };
   for (const [k, v] of Object.entries(defs)) if (P[k] === undefined) P[k] = Array.isArray(v) ? v.slice() : v;
-  // older builds overwrote the face shape with the walking direction (1 / -1)
-  if (typeof P.face !== 'string') P.face = 'soft';
+  // older builds stored walk facing (1/-1) in P.face, overwriting the head shape
+  if (typeof P.face !== 'string') P.face = defs.face;
   if (P.hairS === 'sides') P.hairS = 'balding';
   if (P.facial === 'beard' && !FACIAL.some(f => f[0] === P.facial)) P.facial = 'beard';
   P.wardrobe = P.wardrobe || {};

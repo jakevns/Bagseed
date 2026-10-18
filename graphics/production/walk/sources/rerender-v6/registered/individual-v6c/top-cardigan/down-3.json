@@ -1,0 +1,37 @@
+{
+  "uniformScale": 0.2305229455709712,
+  "rotationDegrees": 0,
+  "translationPixels": [
+    22.511205976520813,
+    89.90074706510137
+  ],
+  "groundError": 0.0,
+  "operations": [
+    "uniform-scale",
+    "translate"
+  ],
+  "sourceBounds": [
+    263,
+    534,
+    768,
+    1471
+  ],
+  "guideBounds": [
+    74,
+    213,
+    210,
+    429
+  ],
+  "source": "sources/rerender-v6/individual-v6c/top-cardigan-down-3.png",
+  "sourceSHA256": "b2f090c093c4b1cc51851f170894c50091b9898ad10032f7bf4b2c8e9722e222",
+  "sourceSlot": 0,
+  "sourceFrame": "down/3",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "poseReference": "registered/mannequin/down-3.png",
+  "registeredSHA256": "4ebb6aa0fb5559b4ded4a01a3e62d965a41cfa8b915dde9cab8cf9d279991298"
+}

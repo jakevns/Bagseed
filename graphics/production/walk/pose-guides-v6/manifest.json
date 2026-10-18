@@ -1,0 +1,566 @@
+{
+  "version": "balanced-technical-pose-guides-v6",
+  "runtimeInstalled": false,
+  "frames": {
+    "down/0": {
+      "phase": "right-contact",
+      "view": "down",
+      "supportLeg": "anatomical-right",
+      "supportImageSide": "left",
+      "passing": false,
+      "points": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          37,
+          85
+        ],
+        "shoulderR": [
+          59,
+          85
+        ],
+        "hipL": [
+          43,
+          110
+        ],
+        "hipR": [
+          53,
+          110
+        ],
+        "kneeL": [
+          40,
+          124
+        ],
+        "ankleL": [
+          39,
+          137
+        ],
+        "kneeR": [
+          54,
+          123
+        ],
+        "ankleR": [
+          56,
+          132
+        ],
+        "elbowL": [
+          33,
+          98
+        ],
+        "handL": [
+          34,
+          110
+        ],
+        "elbowR": [
+          65,
+          96
+        ],
+        "handR": [
+          61,
+          104
+        ]
+      },
+      "mirror": false,
+      "canvas": [
+        288,
+        432
+      ],
+      "density": 3,
+      "groundBaseline": 143,
+      "purpose": "technical pose reference only; approved idle remains garment/style reference",
+      "guideSHA256": "786181ecf759adb804e62e9958f691a3c8870b6ba29a0d963b51c32a795ffd61"
+    },
+    "down/1": {
+      "phase": "right-support-left-passing",
+      "view": "down",
+      "supportLeg": "anatomical-right",
+      "supportImageSide": "left",
+      "passing": true,
+      "points": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          37,
+          85
+        ],
+        "shoulderR": [
+          59,
+          85
+        ],
+        "hipL": [
+          43,
+          110
+        ],
+        "hipR": [
+          53,
+          110
+        ],
+        "kneeL": [
+          43,
+          125
+        ],
+        "ankleL": [
+          43,
+          137
+        ],
+        "kneeR": [
+          55,
+          116
+        ],
+        "ankleR": [
+          54,
+          125
+        ],
+        "elbowL": [
+          34,
+          99
+        ],
+        "handL": [
+          36,
+          111
+        ],
+        "elbowR": [
+          62,
+          98
+        ],
+        "handR": [
+          60,
+          108
+        ]
+      },
+      "mirror": false,
+      "canvas": [
+        288,
+        432
+      ],
+      "density": 3,
+      "groundBaseline": 143,
+      "purpose": "technical pose reference only; approved idle remains garment/style reference",
+      "guideSHA256": "8d0f867c983fe28af4febb0988f7d2a475da2b35c18527636357ad39b1aec9aa"
+    },
+    "down/2": {
+      "phase": "left-contact",
+      "view": "down",
+      "supportLeg": "anatomical-left",
+      "supportImageSide": "right",
+      "passing": false,
+      "points": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          59,
+          85
+        ],
+        "shoulderR": [
+          37,
+          85
+        ],
+        "hipL": [
+          53,
+          110
+        ],
+        "hipR": [
+          43,
+          110
+        ],
+        "kneeL": [
+          56,
+          124
+        ],
+        "ankleL": [
+          57,
+          137
+        ],
+        "kneeR": [
+          42,
+          123
+        ],
+        "ankleR": [
+          40,
+          132
+        ],
+        "elbowL": [
+          63,
+          98
+        ],
+        "handL": [
+          62,
+          110
+        ],
+        "elbowR": [
+          31,
+          96
+        ],
+        "handR": [
+          35,
+          104
+        ]
+      },
+      "mirror": true,
+      "canvas": [
+        288,
+        432
+      ],
+      "density": 3,
+      "groundBaseline": 143,
+      "purpose": "technical pose reference only; approved idle remains garment/style reference",
+      "guideSHA256": "a683d27e2c34f132f73ab48ad251675829c95f222327e8df4985d293461cd19a"
+    },
+    "down/3": {
+      "phase": "left-support-right-passing",
+      "view": "down",
+      "supportLeg": "anatomical-left",
+      "supportImageSide": "right",
+      "passing": true,
+      "points": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          59,
+          85
+        ],
+        "shoulderR": [
+          37,
+          85
+        ],
+        "hipL": [
+          53,
+          110
+        ],
+        "hipR": [
+          43,
+          110
+        ],
+        "kneeL": [
+          53,
+          125
+        ],
+        "ankleL": [
+          53,
+          137
+        ],
+        "kneeR": [
+          41,
+          116
+        ],
+        "ankleR": [
+          42,
+          125
+        ],
+        "elbowL": [
+          62,
+          99
+        ],
+        "handL": [
+          60,
+          111
+        ],
+        "elbowR": [
+          34,
+          98
+        ],
+        "handR": [
+          36,
+          108
+        ]
+      },
+      "mirror": true,
+      "canvas": [
+        288,
+        432
+      ],
+      "density": 3,
+      "groundBaseline": 143,
+      "purpose": "technical pose reference only; approved idle remains garment/style reference",
+      "guideSHA256": "ee3639347fd9c2c6930d6d6146ef7fb8425abee83c57f912990d3a60da49b263"
+    },
+    "up/0": {
+      "phase": "right-contact",
+      "view": "up",
+      "supportLeg": "anatomical-right",
+      "supportImageSide": "right",
+      "passing": false,
+      "points": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          59,
+          85
+        ],
+        "shoulderR": [
+          37,
+          85
+        ],
+        "hipL": [
+          53,
+          110
+        ],
+        "hipR": [
+          43,
+          110
+        ],
+        "kneeL": [
+          56,
+          124
+        ],
+        "ankleL": [
+          57,
+          137
+        ],
+        "kneeR": [
+          42,
+          123
+        ],
+        "ankleR": [
+          40,
+          132
+        ],
+        "elbowL": [
+          63,
+          98
+        ],
+        "handL": [
+          62,
+          110
+        ],
+        "elbowR": [
+          31,
+          96
+        ],
+        "handR": [
+          35,
+          104
+        ]
+      },
+      "mirror": true,
+      "canvas": [
+        288,
+        432
+      ],
+      "density": 3,
+      "groundBaseline": 143,
+      "purpose": "technical pose reference only; approved idle remains garment/style reference",
+      "guideSHA256": "7eed86413627a3a30a7d282f4d485f2e87c8f822f21642ee7b95dd18f1bdb716"
+    },
+    "up/1": {
+      "phase": "right-support-left-passing",
+      "view": "up",
+      "supportLeg": "anatomical-right",
+      "supportImageSide": "right",
+      "passing": true,
+      "points": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          59,
+          85
+        ],
+        "shoulderR": [
+          37,
+          85
+        ],
+        "hipL": [
+          53,
+          110
+        ],
+        "hipR": [
+          43,
+          110
+        ],
+        "kneeL": [
+          53,
+          125
+        ],
+        "ankleL": [
+          53,
+          137
+        ],
+        "kneeR": [
+          41,
+          116
+        ],
+        "ankleR": [
+          42,
+          125
+        ],
+        "elbowL": [
+          62,
+          99
+        ],
+        "handL": [
+          60,
+          111
+        ],
+        "elbowR": [
+          34,
+          98
+        ],
+        "handR": [
+          36,
+          108
+        ]
+      },
+      "mirror": true,
+      "canvas": [
+        288,
+        432
+      ],
+      "density": 3,
+      "groundBaseline": 143,
+      "purpose": "technical pose reference only; approved idle remains garment/style reference",
+      "guideSHA256": "f87f51043d4399a147392516030246e5f25cf3fd8d729887811882eab765c6fe"
+    },
+    "up/2": {
+      "phase": "left-contact",
+      "view": "up",
+      "supportLeg": "anatomical-left",
+      "supportImageSide": "left",
+      "passing": false,
+      "points": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          37,
+          85
+        ],
+        "shoulderR": [
+          59,
+          85
+        ],
+        "hipL": [
+          43,
+          110
+        ],
+        "hipR": [
+          53,
+          110
+        ],
+        "kneeL": [
+          40,
+          124
+        ],
+        "ankleL": [
+          39,
+          137
+        ],
+        "kneeR": [
+          54,
+          123
+        ],
+        "ankleR": [
+          56,
+          132
+        ],
+        "elbowL": [
+          33,
+          98
+        ],
+        "handL": [
+          34,
+          110
+        ],
+        "elbowR": [
+          65,
+          96
+        ],
+        "handR": [
+          61,
+          104
+        ]
+      },
+      "mirror": false,
+      "canvas": [
+        288,
+        432
+      ],
+      "density": 3,
+      "groundBaseline": 143,
+      "purpose": "technical pose reference only; approved idle remains garment/style reference",
+      "guideSHA256": "92e1d8287cb73e8437b51d082df9ea9d15aef88b3e7410ef0420d6553a1d9079"
+    },
+    "up/3": {
+      "phase": "left-support-right-passing",
+      "view": "up",
+      "supportLeg": "anatomical-left",
+      "supportImageSide": "left",
+      "passing": true,
+      "points": {
+        "neck": [
+          48,
+          78
+        ],
+        "shoulderL": [
+          37,
+          85
+        ],
+        "shoulderR": [
+          59,
+          85
+        ],
+        "hipL": [
+          43,
+          110
+        ],
+        "hipR": [
+          53,
+          110
+        ],
+        "kneeL": [
+          43,
+          125
+        ],
+        "ankleL": [
+          43,
+          137
+        ],
+        "kneeR": [
+          55,
+          116
+        ],
+        "ankleR": [
+          54,
+          125
+        ],
+        "elbowL": [
+          34,
+          99
+        ],
+        "handL": [
+          36,
+          111
+        ],
+        "elbowR": [
+          62,
+          98
+        ],
+        "handR": [
+          60,
+          108
+        ]
+      },
+      "mirror": false,
+      "canvas": [
+        288,
+        432
+      ],
+      "density": 3,
+      "groundBaseline": 143,
+      "purpose": "technical pose reference only; approved idle remains garment/style reference",
+      "guideSHA256": "4929e4cf65a82d5b8c8ad8359fbac01e09dbaf9a1b8f39dc68922a28334406d9"
+    }
+  }
+}

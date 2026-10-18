@@ -3,7 +3,7 @@ test('live index renders painted plants, waits for atlases, and preserves saved 
  const {createStaticServer}=await import('../tools/server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
  const out=path.resolve(__dirname,'../review/live-plants');fs.mkdirSync(out,{recursive:true});
  try{
-  browser=await chromium.launch({executablePath:'/usr/bin/chromium'});const page=await require('./helpers/art-page.cjs')(browser,{viewport:{width:1200,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(30000);
+  browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});const page=await require('./helpers/art-page.cjs')(browser,{viewport:{width:1200,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(30000);
   let release,requests=0;const gate=new Promise(r=>release=r);await page.route('**/assets/plants/**',async route=>{requests++;await gate;await route.continue();});
   await page.goto('http://127.0.0.1:'+server.address().port+'/index.html',{waitUntil:'domcontentloaded',timeout:120000});
   assert.equal(await page.evaluate(()=>BagseedStartup.canRender),false);assert.equal(await page.evaluate(()=>BagseedPlants.loaded),false);assert.ok(await page.locator('#bagseed-loading').isVisible());release();await page.evaluate(()=>BagseedStartup.ready);assert.equal(requests,await page.evaluate(()=>BagseedPlants.atlasCount));assert.equal(requests,31);await page.unroute('**/assets/plants/**');

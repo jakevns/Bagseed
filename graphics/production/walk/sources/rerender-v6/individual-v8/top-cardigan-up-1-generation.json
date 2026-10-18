@@ -1,0 +1,20 @@
+{
+  "garment": "cardigan",
+  "dir": "up",
+  "firstFrame": 1,
+  "count": 1,
+  "source": "graphics/production/walk/sources/rerender-v6/individual-v8/top-cardigan-up-1.png",
+  "poseReference": "pose-guides-v6/up-1.png",
+  "prompt": "Generate ONE headless game body walking away from camera, BACK view. FIRST reference is the approved idle: exact outfit, muted palette, soft chibi proportions and delicate colored lines. SECOND reference is ONLY the technical joint pose; do not copy its geometric shapes or diagram style. Phase PASSING: anatomical RIGHT leg supports the body, shoe on IMAGE RIGHT is lower and planted. Anatomical LEFT leg is on IMAGE LEFT, knee bent and lifted, foot tucked up beside the planted leg, substantially higher; supporting shin almost vertical under hip. Arms settle toward the sides as legs pass. Precisely match guide joint positions and foot-height difference; do not mirror. Same blue cardigan with smooth knit back and ribbed neck/cuffs/hem, no cream/white back collar or added hip band. Navy jeans with seams, hems and back pockets; brown canvas sneakers with cream toe caps and soles; lifted rear shoe sole visible. Same cut, colors, shoulder width and short neck cap as idle. Thin subtle brown linework, clean 2\u20133 tone cel shading, crisp hands. ABSOLUTE COLOR REQUIREMENT: every darkest contour/seam/crease/shoe bottom is visibly warm brown #49382e RGB73,56,46, never black or near-black. No RGB channel below30. Preserve muted source blue; no extra texture, saturation, contrast or sticker border. Single complete headless figure, hands and both entire shoes, no head/face/hair, portrait2:3, transparent background and margins, no text/shadow/glow. Entirely fresh art from these two references.",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "references": [
+    "graphics/production/customization/top/cardigan/up.png",
+    "graphics/production/walk/pose-guides-v6/up-1.png"
+  ],
+  "visualApproval": false,
+  "referenceSHA256": {
+    "graphics/production/customization/top/cardigan/up.png": "0be5948cc824709a0b44eeb860d7b66602ab5604aa796156e328500c28e4c203",
+    "graphics/production/walk/pose-guides-v6/up-1.png": "f87f51043d4399a147392516030246e5f25cf3fd8d729887811882eab765c6fe"
+  }
+}

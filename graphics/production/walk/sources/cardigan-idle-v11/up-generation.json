@@ -1,0 +1,18 @@
+{
+  "view": "up",
+  "source": "graphics/production/walk/sources/cardigan-idle-v11/up-raw.png",
+  "prompt": "Edit FIRST IMAGE with a COLOR-ONLY correction to the blue cardigan. Keep its EXACT standing body proportions, silhouette, widths, height, pose, hands, neck cap, jeans, pockets, shoes and all linework unchanged. This slimmer back-view idle now has the correct geometry; do not resize or redraw the body. The cardigan blue has become too bright: match the SECOND image's approved muted blue palette. Main cloth #466495 RGB(70,100,149), quiet shadow #354d76, restrained highlight #5674a0. Use those muted colors on the existing blue garment shapes; no vivid bright blue, no periwinkle or pastel. Preserve its thin warm-brown contour, ribbed neckline/cuffs/hem and existing small folds. Same cream/brown sneakers and navy jeans. Entire headless BACK standing figure, transparent background, no head/face/text/shadow/glow, same portrait canvas and margin. Change ONLY the blue garment color; keep every proportion and garment detail of the first image.",
+  "seed": null,
+  "seedNote": "Not exposed by built-in image generator",
+  "references": [
+    "graphics/production/walk/sources/cardigan-idle-v10/up-raw.png",
+    "graphics/production/customization/top/cardigan/up.png"
+  ],
+  "authorization": "User requested idle matching walking proportions for cardigan only.",
+  "runtimeInstalled": false,
+  "rawSHA256": "7d23eb72df03dfe7b6822b24ec0c989602f8e929fd374e7e00807b8da77607fa",
+  "referenceSHA256": {
+    "graphics/production/walk/sources/cardigan-idle-v10/up-raw.png": "0c9b00c5b29c5ecc2804b4f4b968fdd6a252f702f10ffe21b8fdb537cc2e0ca5",
+    "graphics/production/customization/top/cardigan/up.png": "0be5948cc824709a0b44eeb860d7b66602ab5604aa796156e328500c28e4c203"
+  }
+}

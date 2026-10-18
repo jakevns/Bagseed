@@ -1,0 +1,155 @@
+{
+  "sources": [
+    {
+      "garment": "cardigan",
+      "frame": "down/idle",
+      "source": "graphics/production/walk/registered/cardigan-idle-v11/down.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "down/0",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-0.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "down/1",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-1.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "down/2",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-2.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "down/3",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/down-3.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/idle",
+      "source": "graphics/production/walk/registered/cardigan-idle-v11/up.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/0",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-0.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/1",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-1.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/2",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-2.png"
+    },
+    {
+      "garment": "cardigan",
+      "frame": "up/3",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/individual-v8/top-cardigan/up-3.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "down/idle",
+      "source": "graphics/production/walk/registered/jacket-idle-v9/down.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "down/0",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-0.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "down/1",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-1.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "down/2",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-2.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "down/3",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/down-3.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "up/idle",
+      "source": "graphics/production/walk/registered/jacket-idle-v9/up.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "up/0",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-0.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "up/1",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-1.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "up/2",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-2.png"
+    },
+    {
+      "garment": "jacket",
+      "frame": "up/3",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/jacket-v9/top-jacket/up-3.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "down/idle",
+      "source": "graphics/production/walk/registered/flannel-idle-v13/down.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "down/0",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-0.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "down/1",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-1.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "down/2",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-2.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "down/3",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/down-3.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "up/idle",
+      "source": "graphics/production/walk/registered/flannel-idle-v13/up.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "up/0",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-0.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "up/1",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-1.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "up/2",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-2.png"
+    },
+    {
+      "garment": "flannel",
+      "frame": "up/3",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-3.png"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,494 @@
+{
+  "revision": "character-hair-neck-audit-v5",
+  "scope": "Visual: each style in four directions, white and purple, with game-size figure. Automated head/ear/build coverage is recorded separately in test results.",
+  "styles": [
+    {
+      "id": "bald",
+      "label": "Bald",
+      "status": "Reviewed",
+      "notes": "Intentional bare scalp; no artificial hair ink.",
+      "views": 8,
+      "evidence": "bald.png"
+    },
+    {
+      "id": "short",
+      "label": "Short",
+      "status": "Reviewed",
+      "notes": "Retain swept locks, clean forehead opening and foreground ears.",
+      "views": 8,
+      "evidence": "short.png"
+    },
+    {
+      "id": "buzz",
+      "label": "Buzzed",
+      "status": "Cleaned",
+      "notes": "Remove stray long marks and broad shade bands; use translucent close-shaven coverage.",
+      "views": 8,
+      "evidence": "buzz.png"
+    },
+    {
+      "id": "medium",
+      "label": "Medium",
+      "status": "Reviewed",
+      "notes": "Layered lock lines continue through both profiles and the nape.",
+      "views": 8,
+      "evidence": "medium.png"
+    },
+    {
+      "id": "long",
+      "label": "Long",
+      "status": "Cleaned",
+      "notes": "Retain full lengths and part lines; soften the dark lower shading block.",
+      "views": 8,
+      "evidence": "long.png"
+    },
+    {
+      "id": "bob",
+      "label": "Bob",
+      "status": "Reviewed",
+      "notes": "Keep the curved hem, internal strands and covered ear roots.",
+      "views": 8,
+      "evidence": "bob.png"
+    },
+    {
+      "id": "curly",
+      "label": "Curly",
+      "status": "Reviewed",
+      "notes": "Approved reference: retain the current curl and part line treatment.",
+      "views": 8,
+      "evidence": "curly.png"
+    },
+    {
+      "id": "wavy",
+      "label": "Wavy",
+      "status": "Cleaned",
+      "notes": "Retain wave boundaries; soften the lower shadow mass.",
+      "views": 8,
+      "evidence": "wavy.png"
+    },
+    {
+      "id": "bun",
+      "label": "Bun",
+      "status": "Reviewed",
+      "notes": "Keep gathered crown lines, bun contour and visible ears.",
+      "views": 8,
+      "evidence": "bun.png"
+    },
+    {
+      "id": "ponytail",
+      "label": "Ponytail",
+      "status": "Reviewed",
+      "notes": "Keep swept crown, hair tie and complete tail.",
+      "views": 8,
+      "evidence": "ponytail.png"
+    },
+    {
+      "id": "braids",
+      "label": "Braids",
+      "status": "Reviewed",
+      "notes": "Retain braid crossings and complete ends; ears stay in front.",
+      "views": 8,
+      "evidence": "braids.png"
+    },
+    {
+      "id": "locs",
+      "label": "Locs",
+      "status": "Cleaned",
+      "notes": "Retain solid lock boundaries; soften the darker lower lengths.",
+      "views": 8,
+      "evidence": "locs.png"
+    },
+    {
+      "id": "afro",
+      "label": "Afro",
+      "status": "Cleaned",
+      "notes": "Filter short disconnected texture fragments while retaining connected curl outlines.",
+      "views": 8,
+      "evidence": "afro.png"
+    },
+    {
+      "id": "mohawk",
+      "label": "Mohawk",
+      "status": "Reviewed",
+      "notes": "Keep deliberate bare sides, central ridge and rear strip.",
+      "views": 8,
+      "evidence": "mohawk.png"
+    },
+    {
+      "id": "sidecut",
+      "label": "Shaved Side",
+      "status": "Reviewed",
+      "notes": "Keep the intentionally shaved side and the swept opposite side.",
+      "views": 8,
+      "evidence": "sidecut.png"
+    },
+    {
+      "id": "balding",
+      "label": "Thinning Top",
+      "status": "Reviewed",
+      "notes": "Keep the thin side/rear ring; do not fill the intentionally bare crown.",
+      "views": 8,
+      "evidence": "balding.png"
+    },
+    {
+      "id": "pixie",
+      "label": "Pixie",
+      "status": "Reviewed",
+      "notes": "Short layered lines remain fitted around the ears and nape.",
+      "views": 8,
+      "evidence": "pixie.png"
+    },
+    {
+      "id": "sidepixie",
+      "label": "Side-swept pixie",
+      "status": "Reviewed",
+      "notes": "Keep the asymmetric swept fringe and short rear cap.",
+      "views": 8,
+      "evidence": "sidepixie.png"
+    },
+    {
+      "id": "crop",
+      "label": "Textured crop",
+      "status": "Reviewed",
+      "notes": "Retain short textured lock groups without adding speckle.",
+      "views": 8,
+      "evidence": "crop.png"
+    },
+    {
+      "id": "caesar",
+      "label": "Caesar",
+      "status": "Reviewed",
+      "notes": "Keep straight fringe, curved crown lines and clean nape.",
+      "views": 8,
+      "evidence": "caesar.png"
+    },
+    {
+      "id": "fade",
+      "label": "Low fade",
+      "status": "Cleaned",
+      "notes": "Apply the scalp fade to the rear as well as the temples; remove the opaque nape band.",
+      "views": 8,
+      "evidence": "fade.png"
+    },
+    {
+      "id": "hightop",
+      "label": "High-top fade",
+      "status": "Cleaned",
+      "notes": "Retain the raised curl top; taper side/rear coverage into the selected skin.",
+      "views": 8,
+      "evidence": "hightop.png"
+    },
+    {
+      "id": "flattop",
+      "label": "Flat-top",
+      "status": "Cleaned",
+      "notes": "Keep the intentional level top and top-edge strokes; fade the rear cap.",
+      "views": 8,
+      "evidence": "flattop.png"
+    },
+    {
+      "id": "quiff",
+      "label": "Quiff",
+      "status": "Cleaned",
+      "notes": "Keep swept crown strokes; fade the rear rather than leaving a solid lower band.",
+      "views": 8,
+      "evidence": "quiff.png"
+    },
+    {
+      "id": "pomp",
+      "label": "Pompadour",
+      "status": "Cleaned",
+      "notes": "Preserve the rolled top; taper the sides and nape.",
+      "views": 8,
+      "evidence": "pomp.png"
+    },
+    {
+      "id": "slick",
+      "label": "Slicked back",
+      "status": "Reviewed",
+      "notes": "Keep coherent swept-back strokes and full rear cap.",
+      "views": 8,
+      "evidence": "slick.png"
+    },
+    {
+      "id": "spikes",
+      "label": "Spiky",
+      "status": "Reviewed",
+      "notes": "Keep separate spike contours and their root lines.",
+      "views": 8,
+      "evidence": "spikes.png"
+    },
+    {
+      "id": "fauxhawk",
+      "label": "Faux-hawk",
+      "status": "Cleaned",
+      "notes": "Preserve the central ridge and soften side/rear fade coverage.",
+      "views": 8,
+      "evidence": "fauxhawk.png"
+    },
+    {
+      "id": "curlytop",
+      "label": "Curly top fade",
+      "status": "Cleaned",
+      "notes": "Retain curl outlines while tapering the temples and nape.",
+      "views": 8,
+      "evidence": "curlytop.png"
+    },
+    {
+      "id": "twistsS",
+      "label": "Short twists",
+      "status": "Reviewed",
+      "notes": "Keep connected twist boundaries in all four views.",
+      "views": 8,
+      "evidence": "twistsS.png"
+    },
+    {
+      "id": "bowl",
+      "label": "Bowl cut",
+      "status": "Reviewed",
+      "notes": "Retain the rounded fringe, ear openings and complete rear cap.",
+      "views": 8,
+      "evidence": "bowl.png"
+    },
+    {
+      "id": "curtains",
+      "label": "Curtain bangs",
+      "status": "Reviewed",
+      "notes": "Keep the centre part and curved loose ends.",
+      "views": 8,
+      "evidence": "curtains.png"
+    },
+    {
+      "id": "angledbob",
+      "label": "Angled bob",
+      "status": "Reviewed",
+      "notes": "Keep the angled profile hem and clean strand lines.",
+      "views": 8,
+      "evidence": "angledbob.png"
+    },
+    {
+      "id": "asymbob",
+      "label": "Asymmetric bob",
+      "status": "Reviewed",
+      "notes": "Keep the intended unequal sides; do not force the long fringe away from the eye.",
+      "views": 8,
+      "evidence": "asymbob.png"
+    },
+    {
+      "id": "braidbob",
+      "label": "Braided bob",
+      "status": "Reviewed",
+      "notes": "Keep the crown braid, gathered rear section and loose lower locks.",
+      "views": 8,
+      "evidence": "braidbob.png"
+    },
+    {
+      "id": "lob",
+      "label": "Lob",
+      "status": "Cleaned",
+      "notes": "Preserve shoulder-length ends and soften lower shading.",
+      "views": 8,
+      "evidence": "lob.png"
+    },
+    {
+      "id": "shag",
+      "label": "Shag",
+      "status": "Reviewed",
+      "notes": "Keep separate shag layers and a closed rear scalp.",
+      "views": 8,
+      "evidence": "shag.png"
+    },
+    {
+      "id": "wolf",
+      "label": "Wolf cut",
+      "status": "Reviewed",
+      "notes": "Keep short crown layers and longer nape strands.",
+      "views": 8,
+      "evidence": "wolf.png"
+    },
+    {
+      "id": "mullet",
+      "label": "Mullet",
+      "status": "Reviewed",
+      "notes": "Keep short sides and complete long nape.",
+      "views": 8,
+      "evidence": "mullet.png"
+    },
+    {
+      "id": "curlybob",
+      "label": "Curly bob",
+      "status": "Reviewed",
+      "notes": "Retain curved locks and the curly lower hem.",
+      "views": 8,
+      "evidence": "curlybob.png"
+    },
+    {
+      "id": "twistout",
+      "label": "Twist-out",
+      "status": "Cleaned",
+      "notes": "Filter small texture fragments without losing the twist structure.",
+      "views": 8,
+      "evidence": "twistout.png"
+    },
+    {
+      "id": "puff",
+      "label": "Afro puff",
+      "status": "Cleaned",
+      "notes": "Clean puff texture fragments; keep the smooth gathered scalp and tendrils.",
+      "views": 8,
+      "evidence": "puff.png"
+    },
+    {
+      "id": "puffs",
+      "label": "Twin puffs",
+      "status": "Cleaned",
+      "notes": "Clean disconnected puff texture while retaining both puff silhouettes.",
+      "views": 8,
+      "evidence": "puffs.png"
+    },
+    {
+      "id": "topknot",
+      "label": "Top knot",
+      "status": "Reviewed",
+      "notes": "Keep the tied knot, swept high hairline and rear cap; exposed forehead is intentional.",
+      "views": 8,
+      "evidence": "topknot.png"
+    },
+    {
+      "id": "halfup",
+      "label": "Half-up bun",
+      "status": "Reviewed",
+      "notes": "Keep the top bun and complete loose lengths above clothing.",
+      "views": 8,
+      "evidence": "halfup.png"
+    },
+    {
+      "id": "ponyhi",
+      "label": "High ponytail",
+      "status": "Reviewed",
+      "notes": "Keep the high tie and complete long tail; preserve the swept fringe.",
+      "views": 8,
+      "evidence": "ponyhi.png"
+    },
+    {
+      "id": "sidepony",
+      "label": "Side ponytail",
+      "status": "Reviewed",
+      "notes": "Keep the side tie and the asymmetric tail across all views.",
+      "views": 8,
+      "evidence": "sidepony.png"
+    },
+    {
+      "id": "spacebuns",
+      "label": "Space buns",
+      "status": "Reviewed",
+      "notes": "Keep both tied buns and the fitted rear scalp.",
+      "views": 8,
+      "evidence": "spacebuns.png"
+    },
+    {
+      "id": "bantu",
+      "label": "Bantu knots",
+      "status": "Cleaned",
+      "notes": "Prune tiny fragments while keeping coherent knot spirals.",
+      "views": 8,
+      "evidence": "bantu.png"
+    },
+    {
+      "id": "crownbraid",
+      "label": "Crown braid",
+      "status": "Reviewed",
+      "notes": "Retain crown crossings and the gathered rear section.",
+      "views": 8,
+      "evidence": "crownbraid.png"
+    },
+    {
+      "id": "lowbun",
+      "label": "Low bun",
+      "status": "Reviewed",
+      "notes": "Keep the lower knot and swept crown strands.",
+      "views": 8,
+      "evidence": "lowbun.png"
+    },
+    {
+      "id": "layered",
+      "label": "Layered long",
+      "status": "Cleaned",
+      "notes": "Retain complete layers and soften the darker lower lengths.",
+      "views": 8,
+      "evidence": "layered.png"
+    },
+    {
+      "id": "bluntlong",
+      "label": "Blunt long with bangs",
+      "status": "Cleaned",
+      "notes": "Keep blunt fringe/end lines and reduce the harsh lower shadow block.",
+      "views": 8,
+      "evidence": "bluntlong.png"
+    },
+    {
+      "id": "beachwaves",
+      "label": "Beach waves",
+      "status": "Cleaned",
+      "notes": "Retain broad wave lines with lighter lower shading.",
+      "views": 8,
+      "evidence": "beachwaves.png"
+    },
+    {
+      "id": "longcurls",
+      "label": "Long curls",
+      "status": "Cleaned",
+      "notes": "Preserve complete curl lines and soften their lower shadow mass.",
+      "views": 8,
+      "evidence": "longcurls.png"
+    },
+    {
+      "id": "twinbraids",
+      "label": "Twin braids",
+      "status": "Reviewed",
+      "notes": "Keep both braid crossings, roots and ends.",
+      "views": 8,
+      "evidence": "twinbraids.png"
+    },
+    {
+      "id": "boxbraids",
+      "label": "Box braids",
+      "status": "Cleaned",
+      "notes": "Keep narrow braid lines, filter tiny fragments and soften lower shading.",
+      "views": 8,
+      "evidence": "boxbraids.png"
+    },
+    {
+      "id": "longtwists",
+      "label": "Long twists",
+      "status": "Cleaned",
+      "notes": "Keep connected twist shapes and soften the lower shadow mass.",
+      "views": 8,
+      "evidence": "longtwists.png"
+    },
+    {
+      "id": "cornrows",
+      "label": "Cornrows",
+      "status": "Cleaned",
+      "notes": "Keep narrow continuous rows and intentional scalp channels; reject tiny disconnected ink fragments.",
+      "views": 8,
+      "evidence": "cornrows.png"
+    },
+    {
+      "id": "loosebraid",
+      "label": "Loose side braid",
+      "status": "Reviewed",
+      "notes": "Keep the side braid, tied end and swept crown.",
+      "views": 8,
+      "evidence": "loosebraid.png"
+    },
+    {
+      "id": "bigafro",
+      "label": "Big afro",
+      "status": "Cleaned",
+      "notes": "Keep the large round curl silhouette while filtering small disconnected texture marks.",
+      "views": 8,
+      "evidence": "bigafro.png"
+    }
+  ]
+}

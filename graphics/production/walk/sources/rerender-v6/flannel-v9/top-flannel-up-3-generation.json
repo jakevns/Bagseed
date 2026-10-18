@@ -1,0 +1,21 @@
+{
+  "garment": "flannel",
+  "dir": "up",
+  "firstFrame": 3,
+  "count": 1,
+  "poseReference": "pose-guides-v6/up-3.png",
+  "references": [
+    "graphics/production/customization/top/flannel/up.png",
+    "graphics/production/walk/pose-guides-v6/up-3.png"
+  ],
+  "prompt": "Use case: stylized-concept. ONE headless game body walking away from camera BACK, portrait2:3. Reference1 is approved flannel idle: exact outfit, blue plaid layout, rolled cuffs, soft chibi short limbs, muted palette. Reference2 ONLY technical joint pose, never diagram style or shapes. PASSING: anatomical LEFT leg supports on IMAGE LEFT; opposite knee on IMAGE RIGHT lifts and bends, shoe tucked up substantially above ground, support shin vertical below hip. Arms closer to sides. Match guide positions, do not mirror. Blue plaid button-up flannel shirt CLOSED, folded blue collar, regular light-blue grid checks on navy/midblue, small buttons, plain plaid back, no front buttons/pockets, no white rear collar, sleeves rolled at wrists. Shirt hem overlaps navy jeans continuously with no transparent waist gap. Brown canvas sneakers, cream toe caps/soles, compact feet. Same compact rounded body and short neck cap as idle, delicate warm-brown fine outlines, clean 2-3 tone cel shading. Preserve plaid and subtle fabric folds; NO noisy texture, thick black contours, increased saturation or contrast. All darkest outlines/seams/shoe bottoms warm brown #49382e RGB73,56,46, never black or near-black, no RGB channel below30. Complete single body including hands and entire shoes, no head/face/hair. Genuinely transparent background and ample empty margins. NO glow, shadow, halo, floor, text. Fresh art from only these two references.",
+  "source": "graphics/production/walk/sources/rerender-v6/flannel-v9/top-flannel-up-3.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "visualApproval": false,
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/walk/pose-guides-v6/up-3.png": "4929e4cf65a82d5b8c8ad8359fbac01e09dbaf9a1b8f39dc68922a28334406d9",
+    "graphics/production/customization/top/flannel/up.png": "c96926fd5e072355e2b1865b8d7e907b37c33d3401779e2063b2ee8b07245f9d"
+  }
+}

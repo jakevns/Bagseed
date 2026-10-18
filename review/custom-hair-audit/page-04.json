@@ -1,0 +1,402 @@
+[
+  {
+    "hairS": "balding",
+    "label": "Thinning Top",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 95,
+    "inside": 0,
+    "opaque": 533,
+    "hash": "2e8e117ec970410a74a38087dbb34980e99e3821e970205acc79cb1d2df1d32b"
+  },
+  {
+    "hairS": "balding",
+    "label": "Thinning Top",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 258,
+    "inside": 98,
+    "opaque": 1107,
+    "hash": "70eca6cb2119fe024b31bd55c431eee36c79004a7008e89c02baee7d490eaa61"
+  },
+  {
+    "hairS": "balding",
+    "label": "Thinning Top",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 153,
+    "inside": 8,
+    "opaque": 1137,
+    "hash": "61ed1d3503e63e2b235d5be5e15b8d976a64363a4d11d4d6d5a93fd694231cfc"
+  },
+  {
+    "hairS": "balding",
+    "label": "Thinning Top",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 249,
+    "inside": 105,
+    "opaque": 1031,
+    "hash": "b6d004955e101f51d60dd9336d7f31414aad0f991d1d695f4ecc8c6221a927b0"
+  },
+  {
+    "hairS": "balding",
+    "label": "Thinning Top",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 95,
+    "inside": 0,
+    "opaque": 533,
+    "hash": "aa088abf96377a6338fc272b701437abf73dbab745aad7f65f44cbb07a02c36a"
+  },
+  {
+    "hairS": "balding",
+    "label": "Thinning Top",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 258,
+    "inside": 98,
+    "opaque": 1107,
+    "hash": "16d6a11b1c0a156a4049613aa98329a856853bf01af2edfcf657dbeabf850516"
+  },
+  {
+    "hairS": "balding",
+    "label": "Thinning Top",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 153,
+    "inside": 8,
+    "opaque": 1137,
+    "hash": "a6fc37b01b2cdffeac497b63bd5b84981a1021155fa53ef1c29a3e699792de44"
+  },
+  {
+    "hairS": "balding",
+    "label": "Thinning Top",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 249,
+    "inside": 105,
+    "opaque": 1031,
+    "hash": "268fa67bcec37a232e6a32c25973051d660db1e55b277dfb1e64787d3ca0951e"
+  },
+  {
+    "hairS": "pixie",
+    "label": "Pixie",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1097,
+    "inside": 557,
+    "opaque": 3407,
+    "hash": "5feba9c02f632d8a07390a7668ce90b61131bae1304d23c9709db5ef0d4843ef"
+  },
+  {
+    "hairS": "pixie",
+    "label": "Pixie",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1189,
+    "inside": 732,
+    "opaque": 4293,
+    "hash": "efc214ae596adee81799a40215edfa63f20c7b668e789069c6949774522651ab"
+  },
+  {
+    "hairS": "pixie",
+    "label": "Pixie",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1508,
+    "inside": 1086,
+    "opaque": 5691,
+    "hash": "c18ffeb921e14d52c0b990876f6d6f36d0a8d24b17e503a9708d3e9352d52ef1"
+  },
+  {
+    "hairS": "pixie",
+    "label": "Pixie",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1188,
+    "inside": 742,
+    "opaque": 4295,
+    "hash": "43f4a7294234b7e458cfec10a300e9d261a85ab99d6228d92c2e4db3db5d214d"
+  },
+  {
+    "hairS": "pixie",
+    "label": "Pixie",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1097,
+    "inside": 557,
+    "opaque": 3407,
+    "hash": "08d90dc014a62217677be84482bcc3e19f75fd6d4e5e06e1b9de030c6b71fdc9"
+  },
+  {
+    "hairS": "pixie",
+    "label": "Pixie",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1189,
+    "inside": 732,
+    "opaque": 4293,
+    "hash": "c214be01677150d138c0251705e617c96bbefdeb71f4ca1b61632e0054e0b61e"
+  },
+  {
+    "hairS": "pixie",
+    "label": "Pixie",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1508,
+    "inside": 1086,
+    "opaque": 5691,
+    "hash": "a431f5004be7066cc6e8681afd54f461a5bce5af2576cba1b74f2aaec44840c0"
+  },
+  {
+    "hairS": "pixie",
+    "label": "Pixie",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1188,
+    "inside": 742,
+    "opaque": 4295,
+    "hash": "0065a5c2b2f79d4cea3996cae39947aab741b9cc5c1b0d67b46b5d37233b1181"
+  },
+  {
+    "hairS": "sidepixie",
+    "label": "Side-swept pixie",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1165,
+    "inside": 519,
+    "opaque": 3261,
+    "hash": "c8e5abcde6a3f3921caaf51f39c92e274fcc16ce6886c1aff378b3194fa79931"
+  },
+  {
+    "hairS": "sidepixie",
+    "label": "Side-swept pixie",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1169,
+    "inside": 729,
+    "opaque": 4068,
+    "hash": "a281948706e7bc7ab9063c2319042fbbf852ba99c101c018e15b37f6237106fd"
+  },
+  {
+    "hairS": "sidepixie",
+    "label": "Side-swept pixie",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1714,
+    "inside": 1174,
+    "opaque": 5596,
+    "hash": "0422169783a66eada23efd1901cf6b5e5f9c1baa7b288cd1733a4a0923cb0387"
+  },
+  {
+    "hairS": "sidepixie",
+    "label": "Side-swept pixie",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1210,
+    "inside": 701,
+    "opaque": 3938,
+    "hash": "0cb40b3465b7d62aa0987eb3e056913524ddd8bb0c7543ca6cc0ef3b6427bf6b"
+  },
+  {
+    "hairS": "sidepixie",
+    "label": "Side-swept pixie",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1165,
+    "inside": 519,
+    "opaque": 3261,
+    "hash": "111d1d3427aa957b7c4bf64a1b627bbd1a2a3972504ad2d38f0a3f55b6260583"
+  },
+  {
+    "hairS": "sidepixie",
+    "label": "Side-swept pixie",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1169,
+    "inside": 729,
+    "opaque": 4068,
+    "hash": "1fa06ccd01f5487260d21225409700937bacf7b662c0bee64c0577902700819e"
+  },
+  {
+    "hairS": "sidepixie",
+    "label": "Side-swept pixie",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1714,
+    "inside": 1174,
+    "opaque": 5596,
+    "hash": "c4d28d426dd358c854efb9278e3350e34d248463245eda3eb14ce4c0f114c2be"
+  },
+  {
+    "hairS": "sidepixie",
+    "label": "Side-swept pixie",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1210,
+    "inside": 701,
+    "opaque": 3938,
+    "hash": "a839cfb00978b058f02be6c5839bb879c34fd4b6f39e21d4f6cacd13a8e67652"
+  },
+  {
+    "hairS": "crop",
+    "label": "Textured crop",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1130,
+    "inside": 538,
+    "opaque": 3128,
+    "hash": "dc320809338870907ca88b47ce96a811ca1314b598382e91a3bfd6c9ff043a9c"
+  },
+  {
+    "hairS": "crop",
+    "label": "Textured crop",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1320,
+    "inside": 854,
+    "opaque": 4703,
+    "hash": "66d17c76cd6ea98db558e2bf61d912ad720ca3a3c44d1f397382a2c2bd8866d1"
+  },
+  {
+    "hairS": "crop",
+    "label": "Textured crop",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1674,
+    "inside": 1324,
+    "opaque": 6018,
+    "hash": "97d41244766a862bf81988de8f7e9f81019bf2dc0408aaeb32e6a599e0915479"
+  },
+  {
+    "hairS": "crop",
+    "label": "Textured crop",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1296,
+    "inside": 858,
+    "opaque": 4554,
+    "hash": "ce28d3abefb02045d00603754d3d157229d9a49d71bbbf52a16e8aeade05618d"
+  },
+  {
+    "hairS": "crop",
+    "label": "Textured crop",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1130,
+    "inside": 538,
+    "opaque": 3128,
+    "hash": "f80211d92857f06f8efa6366204fc87ae3230a9fc5a13d76556160b2cc9e73ce"
+  },
+  {
+    "hairS": "crop",
+    "label": "Textured crop",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1320,
+    "inside": 854,
+    "opaque": 4703,
+    "hash": "13f3a453d76d8d5875aa13b7a344a43a2ebd16c1fae7b9f3152e4f7d94eae041"
+  },
+  {
+    "hairS": "crop",
+    "label": "Textured crop",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1674,
+    "inside": 1324,
+    "opaque": 6018,
+    "hash": "f0b4f33d0ab2caa1e20125c8ebbe92dc38bdb01843d9ec4f8a576834a3400bea"
+  },
+  {
+    "hairS": "crop",
+    "label": "Textured crop",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1296,
+    "inside": 858,
+    "opaque": 4554,
+    "hash": "cbb6580a52e5f28e96c4cb839e55ed258263874f24f8d53361b38e6bd6e98320"
+  },
+  {
+    "hairS": "caesar",
+    "label": "Caesar",
+    "dir": "down",
+    "hairC": "#eeeeee",
+    "ink": 1302,
+    "inside": 709,
+    "opaque": 3831,
+    "hash": "7a9a73ef9ef5684d94fb198984303a40bc3e056763ea9a19bac1bc40c7dc8a70"
+  },
+  {
+    "hairS": "caesar",
+    "label": "Caesar",
+    "dir": "right",
+    "hairC": "#eeeeee",
+    "ink": 1507,
+    "inside": 930,
+    "opaque": 5412,
+    "hash": "4ce2e765da1be7ea1d310ee64528322c00926ed3c6fcbba2f7cb3a6aca132760"
+  },
+  {
+    "hairS": "caesar",
+    "label": "Caesar",
+    "dir": "up",
+    "hairC": "#eeeeee",
+    "ink": 1667,
+    "inside": 1277,
+    "opaque": 6581,
+    "hash": "b959ef9ca6d839d20c6800a74c46f58ff5d1d96327396f95a12eb6ab238fa3a9"
+  },
+  {
+    "hairS": "caesar",
+    "label": "Caesar",
+    "dir": "left",
+    "hairC": "#eeeeee",
+    "ink": 1528,
+    "inside": 1003,
+    "opaque": 5330,
+    "hash": "31d023b92db9746c626f9ed1f681a9e57831b990184f3a2e224a2933effb0891"
+  },
+  {
+    "hairS": "caesar",
+    "label": "Caesar",
+    "dir": "down",
+    "hairC": "#9959bd",
+    "ink": 1302,
+    "inside": 709,
+    "opaque": 3831,
+    "hash": "ee5bd961b8b29088c1754efb17c3085591fae7308b0970f9921bc48c77be1128"
+  },
+  {
+    "hairS": "caesar",
+    "label": "Caesar",
+    "dir": "right",
+    "hairC": "#9959bd",
+    "ink": 1507,
+    "inside": 930,
+    "opaque": 5412,
+    "hash": "8479d9b57899edb61c6caec5872325f5fe2a474abf9806fb1ced7108921f7234"
+  },
+  {
+    "hairS": "caesar",
+    "label": "Caesar",
+    "dir": "up",
+    "hairC": "#9959bd",
+    "ink": 1667,
+    "inside": 1277,
+    "opaque": 6581,
+    "hash": "91b40779aaa89c34d7c6aa58758a2d318212136f17b3a4125c236706bb1d296e"
+  },
+  {
+    "hairS": "caesar",
+    "label": "Caesar",
+    "dir": "left",
+    "hairC": "#9959bd",
+    "ink": 1528,
+    "inside": 1003,
+    "opaque": 5330,
+    "hash": "2d78238dede86d94442f18c81c47602bf4943f20eda46dc096cab9ebf182d40a"
+  }
+]

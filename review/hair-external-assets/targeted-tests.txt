@@ -1,0 +1,13 @@
+✔ enlarged room figures retain native detail and hair retains outline and interior ink (12139.9817ms)
+✔ loose hair and afros conceal ears and their jewelry for all head and ear shapes (35033.6644ms)
+✔ complete hair ends remain above garments in figures, walking and nose-covering poses (66557.5291ms)
+✔ portraits preserve loose hair over the shoulders without a neckline crop (4790.1689ms)
+✔ hair preserves pale material, clips mohawk sides to the scalp and leaves no cream cheek strips (8562.3475ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 107269.0281

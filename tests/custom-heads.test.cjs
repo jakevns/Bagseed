@@ -26,22 +26,26 @@ test('facial hair follows the lower face without repainting eyes, crown or back 
     for(const [hairS]of HAIRS){
       const look=BagseedArt.normalize({hairS,hairC:'#c4c4c4',facial:'none',hat:'none',face:'soft'}),back=read(BagseedArt.head(look,'up'));
       for(const dir of ['down','right','left']){
-        const baseline=read(BagseedArt.head(look,dir)),features=registration.features[`hair/${hairS}/${dir}`].eyes,eyeY=Math.min(...features.map(p=>p[1]));
+        const baseline=read(BagseedArt.head(look,dir)),hair=read(BagseedArt.hairLayer(look,dir)),features=registration.features[`hair/${hairS}/${dir}`].eyes,eyeY=Math.min(...features.map(p=>p[1]));
         for(const facial of facials){
-          const a=read(BagseedArt.head({...look,facial},dir));let changed=0,neutral=0;
+          const a=read(BagseedArt.head({...look,facial},dir)),reference=read(BagseedArt.head({...look,hairS:'bald',ears:'hidden',facial},dir));let changed=0,uncovered=0,neutral=0,expectedNeutral=0;
           for(let y=0;y<Math.floor(eyeY-8);y++)for(let x=0;x<192;x++){const n=(y*192+x)*4;if(!samePixel(a,baseline,n)){failures.push(`${hairS}/${dir}/${facial}: crown changed`);y=192;break;}}
           for(const [ex,ey]of features){
             let changedEye=false;for(let y=Math.floor(ey-5);y<=Math.ceil(ey+5);y++)for(let x=Math.floor(ex-6);x<=Math.ceil(ex+6);x++)if(!samePixel(a,baseline,(y*192+x)*4))changedEye=true;
             if(changedEye)failures.push(`${hairS}/${dir}/${facial}: eye repainted`);eyes++;
           }
-          for(let y=Math.floor(eyeY+7);y<215;y++)for(let x=35;x<157;x++){const n=(y*192+x)*4;if(!samePixel(a,baseline,n)){changed++;if(a[n+3]>200&&Math.max(a[n],a[n+1],a[n+2])-Math.min(a[n],a[n+1],a[n+2])<=3)neutral++;}}
+          for(let y=Math.floor(eyeY+7);y<215;y++)for(let x=35;x<157;x++){const n=(y*192+x)*4;if(!samePixel(a,baseline,n)){changed++;if(hair[n+3]===0){uncovered++;if(a[n+3]>200&&Math.max(a[n],a[n+1],a[n+2])-Math.min(a[n],a[n+1],a[n+2])<=3)neutral++;if(reference[n+3]>200&&Math.max(reference[n],reference[n+1],reference[n+2])-Math.min(reference[n],reference[n+1],reference[n+2])<=3)expectedNeutral++;}}}
           if(changed<4)failures.push(`${hairS}/${dir}/${facial}: facial layer missing`);
           // Light stubble intentionally blends with skin. Substantial styles
           // need opaque silver strands, rather than the old fixed brown ink.
           // A pencil moustache is a thin antialiased stroke; most pixels blend
           // with the skin. Its neutral core is smaller than a filled beard's.
           const neutralFraction=facial==='pencil'?.1:.3;
-          if(!['stubble','scruff'].includes(facial)&&neutral<Math.max(3,changed*neutralFraction))failures.push(`${hairS}/${dir}/${facial}: silver recolor missing (${neutral}/${changed})`);
+          // A warm hair contour blended over a beard is not a silver beard
+          // pixel. Judge exposed pixels against the unobscured beard; hair
+          // can cover its opaque core and leave only translucent edge hairs.
+          const requiredNeutral=Math.min(Math.max(3,uncovered*neutralFraction),expectedNeutral);
+          if(!['stubble','scruff'].includes(facial)&&neutral<requiredNeutral)failures.push(`${hairS}/${dir}/${facial}: silver recolor missing (${neutral}/${uncovered} exposed; expected ${expectedNeutral})`);
           silverLayers++;views++;
         }
       }
@@ -208,13 +212,15 @@ test('the original opaque fringe strands survive composition over the forehead',
 });
 
 test('footwear styles keep a consistent footprint across outfits and directions',async()=>{
-  const result=await inspect(()=>{
+  const result=await inspect(async()=>{
     const failures=[],measurements=[];
     for(const dir of ['down','right','up','left'])for(const bottomS of ['jeans','shorts','skirt'])for(const shoesS of ['sneakers','boots','sandals','rainboots']){
       const look=BagseedArt.normalize({bottomS,shoesS,topS:'jacket'}),c=BagseedArt.body(look,dir),a=c.getContext('2d').getImageData(0,103,96,4).data;let left=96,right=-1;
       // Long trousers now fall over the shoe top (hem <= 103); measure the sole below it.
       for(let y=0;y<4;y++)for(let x=0;x<96;x++)if(a[(y*96+x)*4+3]>100){left=Math.min(left,x);right=Math.max(right,x);}
-      const width=right-left+1,target=dir==='down'||dir==='up'?32:28;measurements.push({dir,bottomS,shoesS,width});if(Math.abs(width-target)>1||Math.abs((left+right)/2-47.5)>1)failures.push({dir,bottomS,shoesS,left,right,width});
+      const approved=c.bagseedApprovedOutfit&&__BAGSEED_ILLUSTRATED_DATA__.walk.approvedOutfits?.items.jacket?.frames[dir+'/idle'],bounds=approved?.feet.all;
+      const fullWidth=bounds?(bounds[2]-bounds[0])/3:dir==='down'||dir==='up'?32:28;
+      const width=right-left+1,target=fullWidth,center=bounds?(bounds[0]+bounds[2])/6-.5:47.5;measurements.push({dir,bottomS,shoesS,width});if(Math.abs(width-target)>1||Math.abs((left+right)/2-center)>1)failures.push({dir,bottomS,shoesS,left,right,width,target});
     }
     return {measurements,failures};
   });fs.writeFileSync(path.join(OUT,'footwear-registration.json'),JSON.stringify(result,null,2)+'\n');assert.deepEqual(result.failures,[]);assert.equal(result.measurements.length,48);

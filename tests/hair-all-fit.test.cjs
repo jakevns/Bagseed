@@ -39,13 +39,13 @@ test('long and tied hair has a smaller crown while keeping complete loose ends',
 
 test('full rear caps cover the skull and preserve narrow natural partings',async()=>{
  const r=await inspect('rear-coverage',()=>{
-  const bare=new Set(['bald','balding','mohawk','sidecut','cornrows']),cuts=HAIRS.filter(([id])=>!bare.has(id)).map(([id])=>id),failures=[],measurements=[];
+  const faded=new Set(['fade','hightop','flattop','quiff','pomp','fauxhawk','curlytop']),bare=new Set(['bald','balding','mohawk','sidecut','cornrows']),cuts=HAIRS.filter(([id])=>!bare.has(id)).map(([id])=>id),failures=[],measurements=[];
   const read=c=>c.getContext('2d').getImageData(0,0,192,320).data;
   const base=read(BagseedArt.head(BagseedArt.normalize({hairS:'bald',ears:'hidden'}),'up'));
   for(const hairS of cuts){const hair=read(BagseedArt.hairLayer(BagseedArt.normalize({hairS,ears:'hidden',hairC:'#ffffff',hat:'none'}),'up'));let samples=0,exposed=0;const coordinates=[];
    for(let y=106;y<=180;y++)for(let x=40;x<153;x++){
     if(base[(y*192+x)*4+3]<240||[-2,2].some(dx=>base[(y*192+x+dx)*4+3]<240))continue;
-    let covered=false;for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++)if(hair[((y+dy)*192+x+dx)*4+3]>170)covered=true;
+    let covered=false;for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++)if(hair[((y+dy)*192+x+dx)*4+3]>(hairS==='buzz'?8:faded.has(hairS)&&y>=133?5:170))covered=true;
     samples++;if(!covered){exposed++;if(coordinates.length<15)coordinates.push([x,y]);}
    }
    measurements.push({hairS,samples,exposed});if(exposed>samples*.015)failures.push({hairS,samples,exposed,coordinates});

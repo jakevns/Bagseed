@@ -22,7 +22,7 @@ const write=(file,data)=>{if(fs.existsSync(file)&&fs.readFileSync(file).equals(B
   });
   write(path.join(OUT,'player-cel-style.png'),Buffer.from(r.sheet.split(',')[1],'base64'));write(path.join(OUT,'player-cel-style.json'),JSON.stringify({measurements:r.measurements},null,2)+'\n');
   write(path.join(OUT,'player-reactions.png'),Buffer.from(r.reactions.split(',')[1],'base64'));
-  if(process.argv.includes('--write-fixture'))fs.writeFileSync(path.join(ROOT,'tests/fixtures/hair-audit-cel-v1.json'),JSON.stringify({revision:'character-audit-cel-v1',hashes:r.hashes},null,2)+'\n');
+  if(process.argv.includes('--write-fixture'))fs.writeFileSync(path.join(ROOT,'tests/fixtures/hair-audited-v6.json'),JSON.stringify({revision:'character-alignment-audit-v6',hashes:r.hashes},null,2)+'\n');
   console.log(JSON.stringify(r.measurements));
  }finally{await browser?.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -70,7 +70,7 @@
     const signature=id+'|'+JSON.stringify(palette)+'|'+kind;if(colored.has(signature))return colored.get(signature);
     const source=pixels(id),out=cv(source.width,source.height),g=out.getContext('2d');
     const d=new ImageData(new Uint8ClampedArray(source.data.data),source.width,source.height),p=d.data;
-    const skin=rgb(L.skin),hair=rgb(L.hairC),top=rgb(L.shirtC),bot=rgb(L.pantsC),shoe=rgb(L.shoesC),hi=rgb(L.hairHi);
+    const skin=rgb(L.skin),hair=rgb(L.hairC),top=rgb(L.topS==='labcoat'?'#f2f2ee':L.shirtC),bot=rgb(L.pantsC),shoe=rgb(L.shoesC),hi=rgb(L.hairHi);
     const density=['top','bottom','shoe'].includes(kind)?source.width/96:1;
     let hatMask;const faceAlpha=kind==='head'?faceMask(id).bagseedAlpha:null;
     if(kind==='hat'&&!DATA.hatAssets?.includes(id)){
@@ -346,7 +346,48 @@
   }
   __BAGSEED_HAIR_BATCH_01__
   __BAGSEED_HAIR_FIT_REST__
-  const hairToneFields=new WeakMap();
+  const hairToneFields=new WeakMap(),hairContourMasks=new WeakMap(),hairLineMasks=new WeakMap();
+  const hairInkProfiles={buzz:[0,0],hightop:[6,6],afro:[9,16],bigafro:[9,16],twistout:[9,16],puff:[9,14],puffs:[9,14],bantu:[8,10],boxbraids:[8,12],cornrows:[8,12]};
+  const looseHairShadows=new Set(['long','wavy','lob','layered','bluntlong','beachwaves','longcurls','locs','boxbraids','longtwists']);
+  function hairLinework(raw,style){
+    if(hairLineMasks.has(raw.data))return hairLineMasks.get(raw.data);
+    const [contrast,minStroke]=hairInkProfiles[style]||[13,18];
+    if(!minStroke){const empty=new Uint8Array(192*HEAD_HEIGHT);hairLineMasks.set(raw.data,empty);return empty;}
+    // Recover the original painted part/lock/curl lines before recoloring.
+    // Compare with a small local light field, not a global darkness cutoff:
+    // a shaded lock is still hair, while its darker crease is ink.
+    const w=192,h=HEAD_HEIGHT,a=raw.data.data,kernel=[1,4,7,10,12,10,7,4,1],light=new Float32Array(w*h),weight=new Float32Array(w*h),candidate=new Uint8Array(w*h),mask=new Uint8Array(w*h);
+    for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+      let sum=0,alpha=0;for(let dx=-4;dx<=4;dx++){const xx=x+dx;if(xx<0||xx>=w)continue;const n=(y*w+xx)*4,k=kernel[dx+4]*a[n+3];sum+=a[n]*k;alpha+=k;}
+      light[y*w+x]=sum;weight[y*w+x]=alpha;
+    }
+    for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+      const p=y*w+x,n=p*4;if(a[n+3]<180||a[n]>160)continue;
+      let sum=0,alpha=0;for(let dy=-4;dy<=4;dy++){const yy=y+dy;if(yy<0||yy>=h)continue;const q=yy*w+x,k=kernel[dy+4];sum+=light[q]*k;alpha+=weight[q]*k;}
+      if(alpha&&sum/alpha-a[n]>=contrast)candidate[p]=1;
+    }
+    // Discard isolated texture specks; retain connected authored strokes.
+    const seen=new Uint8Array(w*h);
+    for(let p=0;p<candidate.length;p++)if(candidate[p]&&!seen[p]){
+      const component=[p];seen[p]=1;
+      for(let i=0;i<component.length;i++){const q=component[i],x=q%w,y=Math.floor(q/w);
+        for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const xx=x+dx,yy=y+dy;if(xx<0||xx>=w||yy<0||yy>=h)continue;const next=yy*w+xx;if(candidate[next]&&!seen[next]){seen[next]=1;component.push(next);}}
+      }
+      if(component.length>=minStroke)for(const q of component)mask[q]=1;
+    }
+    hairLineMasks.set(raw.data,mask);return mask;
+  }
+  function hairContour(raw){
+    if(hairContourMasks.has(raw.data))return hairContourMasks.get(raw.data);
+    const a=raw.data.data,mask=new Uint8Array(192*HEAD_HEIGHT),neighbors=[[-2,0],[2,0],[0,-2],[0,2],[-1,-1],[1,-1],[-1,1],[1,1]];
+    for(let y=0;y<HEAD_HEIGHT;y++)for(let x=0;x<192;x++){
+      if(a[(y*192+x)*4+3]<10)continue;
+      for(const[dx,dy]of neighbors){const xx=x+dx,yy=y+dy;
+        if(xx<0||xx>=192||yy<0||yy>=HEAD_HEIGHT||a[(yy*192+xx)*4+3]<80){mask[y*192+x]=1;break;}
+      }
+    }
+    hairContourMasks.set(raw.data,mask);return mask;
+  }
   function hairToneField(raw){
     if(hairToneFields.has(raw.data))return hairToneFields.get(raw.data);
     // Read broad light masses rather than individual painted strands. Keep the
@@ -367,21 +408,29 @@
     const signature='wig|'+dir+'|'+L.hairS+'|'+L.hairC+'|'+L.hairHi+'|'+L.hat+'|'+L.ears;if(colored.has(signature))return colored.get(signature);
     const closeFade=['fade','hightop','flattop','quiff','pomp','fauxhawk','curlytop'].includes(L.hairS);
     const batchRear=dir==='up'&&(fittedHairCuts.has(L.hairS)||remainingClosedCuts.has(L.hairS)),raw=fittedHairCuts.has(L.hairS)?batchHairSource(L,dir):remainingHairFits[L.hairS]?remainingHairSource(L,dir):pixels(`wig/${L.hairS}/${dir}`),out=cv(192,HEAD_HEIGHT),g=out.getContext('2d'),d=new ImageData(new Uint8ClampedArray(raw.data.data),192,HEAD_HEIGHT),a=d.data,target=rgb(L.hairC),anatomy=L.hairS==='buzz'||closeFade?batchScalpMask(L,dir):null;
-    const broad=hairToneField(raw),highlight=L.hairHi!=='none'?rgb(L.hairHi):target;
-    for(let n=0;n<a.length;n+=4){if(a[n+3]<10){a[n+3]=0;continue;}const x=n/4%192,y=Math.floor(n/4/192),l=a[n],light=broad[n],factor=light<100?.56:light<155?1:1.28,tone=light>=155?highlight:target;
-      // Three opaque cel colors plus warm outline ink; no strand-by-strand
-      // luminance multiplication or repeating highlight/noise pattern.
-      const edge=x<1||x>190||y<1||y>=HEAD_HEIGHT-1||raw.data.data[n-4+3]<100||raw.data.data[n+4+3]<100||raw.data.data[n-192*4+3]<100||raw.data.data[n+192*4+3]<100;
-      for(let k=0;k<3;k++)a[n+k]=edge&&l<65?[58,38,28][k]:Math.min(255,Math.round(tone[k]*factor));
+    const broad=hairToneField(raw),contour=hairContour(raw),linework=hairLinework(raw,L.hairS),highlight=L.hairHi!=='none'?rgb(L.hairHi):target;
+    const shaved=L.hairS==='mohawk'?scalpMask(dir):null;
+    for(let n=0;n<a.length;n+=4){if(a[n+3]<10){a[n+3]=0;continue;}const x=n/4%192,y=Math.floor(n/4/192),l=a[n],light=broad[n],factor=L.hairS==='buzz'?1:light<100?(looseHairShadows.has(L.hairS)?.74:.56):light<155?1:1.28,tone=light>=155&&L.hairS!=='buzz'?highlight:target;
+      // Three cel colors plus the source painting's warm outline/interior ink.
+      // Ink the inside of the existing silhouette, including the hairline.
+      // Grayscale source edges are often light, so darkness cannot identify
+      // their contour. Keep alpha intact: no halo or expanded haircut.
+      // Interior strands shade the selected color; only the silhouette uses
+      // dark brown ink. In particular, white hair must remain predominantly
+      // white rather than inheriting dense brown source hatching.
+      const pale=lum(...target)>200;
+      const strand=pale?.84:looseHairShadows.has(L.hairS)?.74:.56;
+      for(let k=0;k<3;k++)a[n+k]=contour[n/4]?[58,38,28][k]:Math.min(255,Math.round(linework[n/4]?target[k]*strand:tone[k]*(pale?Math.max(.84,factor):factor)));
+      if(shaved&&y>125)a[n+3]*=shaved[n+3]<10?0:shaved[n+3]/255;
       // A buzzcut follows the bald skull, with no projecting fringe. Fade
       // density is alpha, so pale stubble reveals skin rather than a white cap.
-      if(L.hairS==='buzz'&&!batchRear)a[n+3]*=anatomy[n+3]/255;
-      if(closeFade&&!batchRear){
+      if(L.hairS==='buzz')a[n+3]*=.48*anatomy[n+3]/255;
+      if(closeFade){
         // The fade reaches skin at the upper ear, not below the lobe. Its
         // source-painted short stubble follows skull anatomy while the top
         // keeps every strand and its intended volume.
         const temple=dir==='up'?1:dir==='right'?1-smooth(95,112,x):dir==='left'?smooth(80,97,x):Math.max(1-smooth(62,77,x),smooth(117,132,x));
-        const fade=smooth(128,153,y)*temple,density=Math.max(.05,Math.min(1,1-(l-65)/125));
+        const fade=smooth(128,172,y)*temple,density=Math.max(.10,Math.min(.35,1-(l-65)/125));
         a[n+3]*=(1-fade+fade*density)*(1-fade+fade*anatomy[n+3]/255);
       }
     }
@@ -408,6 +457,9 @@
       const cut=dir==='down'?'M73 181Q96 190 121 181L125 208H70Z':dir==='up'?'M70 178Q96 194 123 178L123 208H70Z':'M70 178Q88 185 110 185L116 208H70Z';
       const mask=cv(192,HEAD_HEIGHT),m=mask.getContext('2d');if(dir==='left'){m.translate(193,0);m.scale(-1,1);}m.fill(new Path2D(cut));
       neckBridge=cv(192,HEAD_HEIGHT);const n=neckBridge.getContext('2d');n.drawImage(out,0,0);n.globalCompositeOperation='destination-in';n.drawImage(mask,0,0);
+      // The detached head painting ends in an outlined neck stump. Continue
+      // clean upper-neck material instead of exposing that horizontal rim.
+      const clean=cv(192,HEAD_HEIGHT),c=clean.getContext('2d');c.drawImage(neckBridge,0,0,192,195,0,0,192,195);c.drawImage(neckBridge,0,192,192,3,0,195,192,13);neckBridge=clean;
       g.save();g.globalCompositeOperation='destination-out';g.drawImage(mask,0,0);g.restore();
     }
     const faceShape=L.face,shape=faceFits[faceShape]||[1,1];
@@ -434,7 +486,109 @@
     out.bagseedEyes=out.bagseedFeatures.eyes;
     if(heads.size>200)heads.clear();heads.set(signature,out);return out;
   }
+  const neckRegistrations=new Map();
+  const wardrobeFullSuit=L=>['overalls','pjs'].includes(L.topS);
+  function paintedNeck(source,expected,density=3,dir='down',style=''){
+    const w=source.width,h=source.height,a=source.getContext('2d',{willReadFrequently:true}).getImageData(0,0,w,h).data,[cx,cy]=expected;
+    const cloth=new Uint8Array(w*h),occlusion=cv(w,h),mask=occlusion.getContext('2d').createImageData(w,h);
+    for(let n=0;n<a.length;n+=4){const r=a[n],g=a[n+1],b=a[n+2],skin=r>g*1.2&&g>b*1.15&&r-g>25;if(a[n+3]>30&&!skin)cloth[n/4]=1;}
+    for(let y=Math.max(0,Math.floor((cy-20)*density));y<Math.min(h,(cy+20)*density);y++)for(let x=Math.max(0,Math.floor((cx-20)*density));x<Math.min(w,(cx+20)*density);x++){
+      let covered=false;for(let dy=-2;dy<=2&&!covered;dy++)for(let dx=-2;dx<=2;dx++){const xx=x+dx,yy=y+dy;if(xx>=0&&xx<w&&yy>=0&&yy<h&&cloth[yy*w+xx]){covered=true;break;}}
+      if(covered)mask.data[(y*w+x)*4+3]=255;
+    }
+    occlusion.getContext('2d').putImageData(mask,0,0);
+    const skin=n=>a[n+3]>160&&bodySkinPixel(a[n],a[n+1],a[n+2]);let top=null,collar=null;
+    for(let y=Math.max(0,Math.floor((cy-16)*density));y<Math.min(h,(cy+8)*density)&&top===null;y++){
+      let count=0;for(let x=Math.floor((cx-4)*density);x<Math.ceil((cx+4)*density);x++)if(skin((y*w+x)*4))count++;
+      if(count>=density*2)top=y/density;
+    }
+    if(top===null)top=cy-5;
+    if(cy>60){
+      // Walking cut-neck caps can be black or cream. Their physical top is
+      // stable across materials; skin-color classification is not.
+      for(let y=Math.max(0,Math.floor((cy-16)*density));y<Math.min(h,(cy+4)*density);y++){
+        let count=0;for(let x=Math.floor((cx-3)*density);x<Math.ceil((cx+3)*density);x++)if(a[(y*w+x)*4+3]>160)count++;
+        if(count>=density*3){top=y/density;break;}
+      }
+    }
+    for(let y=Math.ceil((top+1)*density);y<Math.min(h,(cy+12)*density);y++){
+      let count=0;for(let x=Math.floor((cx-1)*density);x<Math.ceil((cx+1)*density);x++){const n=(y*w+x)*4,r=a[n],g=a[n+1],b=a[n+2],fabric=(b>=r*.95&&g>=r*.95&&lum(r,g,b)>12)||(r>175&&g>160&&b>125&&Math.abs(r-g)<45);if(a[n+3]>160&&!skin(n)&&fabric)count++;}
+      if(count>=density*1.5){collar=y/density;break;}
+    }
+    collar=collar??top+5;
+    const centres=[],capWidths=[];
+    // The cut cap may be black, cream or skin. Its alpha contour is a more
+    // reliable centre than the few surviving warm pixels on one shaded edge.
+    for(let y=Math.floor((top+1)*density);y<Math.ceil((top+3)*density);y++){
+      let left=w,right=-1;for(let x=Math.max(0,Math.floor((cx-10)*density));x<Math.min(w,(cx+10)*density);x++)if(a[(y*w+x)*4+3]>160){left=Math.min(left,x);right=Math.max(right,x);}
+      if(right>=left&&(right-left+1)/density<=14){centres.push((left+right+1)/(2*density));capWidths.push((right-left+1)/density);}
+    }
+    centres.sort((a,b)=>a-b);const neckX=centres.length?centres[Math.floor(centres.length/2)]:cx;
+    // Source collars include a few blue antialias/placeholder pixels inside
+    // the bare neck. Use a continuous anatomical aperture there, preserving
+    // the actual lower collar edge and the surrounding hood fabric.
+    const aperture=occlusion.getContext('2d');aperture.save();aperture.scale(density,density);aperture.globalCompositeOperation='destination-out';
+    // Follow the taper of the painted opening, rather than erasing a skin
+    // rectangle into the shirt. The central cut cap is a placeholder, not ink.
+    aperture.beginPath();aperture.moveTo(neckX-3.5,top-1);aperture.lineTo(neckX+3.5,top-1);aperture.lineTo(neckX+4,collar-.3);
+    if(style==='hoodie'&&dir==='down'){
+      // The original cut cap continues into a cream V-shaped placeholder.
+      // Follow that inner opening to its point without covering hood fabric
+      // or the drawstrings on either side with a rectangular skin patch.
+      aperture.quadraticCurveTo(neckX+2,collar+2,neckX,collar+3);aperture.quadraticCurveTo(neckX-2,collar+2,neckX-4,collar-.3);
+    }else aperture.quadraticCurveTo(neckX,collar+1,neckX-4,collar-.3);
+    aperture.closePath();aperture.fill();
+    aperture.restore();
+    // A tank's deeper neckline must expose chest, not lower the entire head.
+    // Measure the painted collar, not a guessed offset from the cut neck cap.
+    // Deep tank necklines expose chest below the anatomical shoulder root.
+    const rootY=style==='tank'||style==='crop'?Math.min(collar,top+7):collar;
+    const spanAt=y=>{let left=w,right=-1;for(let x=Math.max(0,Math.floor((cx-24)*density));x<Math.min(w,(cx+24)*density);x++)if(a[(y*w+x)*4+3]>160){left=Math.min(left,x);right=Math.max(right,x);}return right>left?(right-left+1)/density:0;};
+    capWidths.sort((a,b)=>a-b);const threshold=Math.max(14,(capWidths[Math.floor(capWidths.length/2)]||9)*1.8);
+    let shoulderY=cy+5;
+    // Detect where the narrow neck cap actually widens into the shoulders.
+    // Rig neck y is inferred and can sit well inside a hoodie, so adding a
+    // fixed offset to it measured the chest and enlarged walking figures.
+    for(let y=Math.ceil((top+1)*density);y<Math.min(h,(cy+14)*density);y++)if(spanAt(y)>=threshold){shoulderY=y/density;break;}
+    const rows=[];
+    for(let y=Math.floor((shoulderY+3)*density);y<=Math.ceil((shoulderY+7)*density)&&y<h;y++){
+      let left=w,right=-1;for(let x=Math.max(0,Math.floor((cx-24)*density));x<Math.min(w,(cx+24)*density);x++)if(a[(y*w+x)*4+3]>160){left=Math.min(left,x);right=Math.max(right,x);}
+      if(right>left)rows.push((right-left+1)/density);
+    }
+    rows.sort((a,b)=>a-b);
+    return {root:[neckX,rootY],opening:Math.max(collar,rootY+3),top,occlusion,shoulderWidth:rows[Math.floor(rows.length/2)]||24,shoulderY};
+  }
+  // All poses attach the same fitted jaw to the body's own collar. The head
+  // never inherits a garment's vertical distortion or a direction-specific
+  // magic offset. These values are reference-canvas pixels (world scale /3).
+  const VISIBLE_NECK=5;
+  function headPlacement(L,dir,collar,headScale=1){
+    const fit=faceFits[L.face]||[1,1],joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*fit[1];
+    const localX=96+((dir==='right'?90:dir==='left'?103:96)-96)*fit[0];
+    const jaw=[collar[0],collar[1]-VISIBLE_NECK*headScale];
+    return {origin:[jaw[0]-localX/3*headScale,jaw[1]-joinY/3*headScale],jaw,collar,neckLength:VISIBLE_NECK*headScale,headScale};
+  }
+  function neckBacking(g,H,L,dir,hx,hy,root,opening,headScale=1){
+    // Fill the garment's transparent neck opening behind its collar. The
+    // garment owns its neckline; no skin rectangle is painted over clothing.
+    const fit=faceFits[L.face]||[1,1],join=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*fit[1],localX=96+((dir==='right'?90:dir==='left'?103:96)-96)*fit[0];
+    const cx=hx+localX/3*headScale,y=hy+join/3*headScale;
+    if(opening>y){g.fillStyle=L.skin;g.beginPath();g.moveTo(cx-3.3*headScale,y-1);g.lineTo(cx+3.3*headScale,y-1);g.lineTo(cx+4.5*headScale,opening+1);g.quadraticCurveTo(cx,opening+2,cx-4.5*headScale,opening+1);g.closePath();g.fill();}
+    g.drawImage(H.bagseedNeckBridge,hx,hy,64*headScale,H.height/3*headScale);
+  }
+  function neckSurface(g,H,L,dir,hx,hy,registration,width,sy,bodyHeight,headScale=1){
+    const surface=cv(288,432),c=surface.getContext('2d');c.scale(3,3);
+    neckBacking(c,H,L,dir,hx,hy,143+(registration.root[1]-bodyHeight+1)*sy,143+(registration.opening-bodyHeight+1)*sy,headScale);
+    c.globalCompositeOperation='destination-out';c.translate(48,143);c.scale(width,sy);c.drawImage(registration.occlusion,-48,-bodyHeight+1,96,bodyHeight);
+    // Fabric can divide the backing into tiny isolated fragments. Only the
+    // connected neck surface belongs here, never skin flecks on a shirt.
+    const im=c.getImageData(0,0,288,432),a=im.data,seen=new Uint8Array(288*432);let largest=[];
+    for(let p=0;p<seen.length;p++)if(!seen[p]&&a[p*4+3]>8){const component=[p];seen[p]=1;for(let i=0;i<component.length;i++){const q=component[i],x=q%288,y=Math.floor(q/288);for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const xx=x+dx,yy=y+dy,n=yy*288+xx;if(xx>=0&&xx<288&&yy>=0&&yy<432&&!seen[n]&&a[n*4+3]>8){seen[n]=1;component.push(n);}}}if(component.length>largest.length)largest=component;}
+    seen.fill(0);for(const p of largest)seen[p]=1;for(let p=0;p<seen.length;p++)if(!seen[p])a[p*4+3]=0;c.putImageData(im,0,0);
+    g.drawImage(surface,0,0,96,144);
+  }
   function body(L,dir,nose=false,density=1) {
+    if(!nose&&approvedOutfitView(L,dir,'idle'))return approvedIdleBody(L,dir,density);
     const signature=JSON.stringify([L.skin,L.topS,L.shirtC,L.bottomS,L.pantsC,L.shoesS,L.shoesC,L.acc,L.accC,L.topPat,L.topC2,L.botPat,L.botC2,L.emb,dir,nose,density]);if(bodies.has(signature))return bodies.get(signature);
     const out=cv(96*density,108*density),g=out.getContext('2d');g.scale(density,density);
     const asset=id=>density>1&&images.has('hires/'+id)?'hires/'+id:id;
@@ -443,7 +597,7 @@
     // Component sheets use different proportions. Register trousers to the
     // torso's waist and shoes to its ankles before layering, once per body.
     const lowerScale=side?1.9:1.8;
-    const fullSuit=['overalls','pjs','suit'].includes(L.topS);
+    const fullSuit=wardrobeFullSuit(L);
     const waist={tee:73,tank:73,hoodie:75,flannel:76,sweater:75,cardigan:76,work:75,crop:71,jacket:74,garden:75,pjs:75,labcoat:75,suit:75,officer:75}[L.topS]||75;
     // Long trousers keep their own hem. It sits just above the bottom sheet's
     // baked shoes, so clip there rather than at a shared line that cut it off.
@@ -485,6 +639,12 @@
     g.drawImage(overlay,0,0,96*d,41*d,0,0,96,41);
     g.drawImage(overlay,0,41*d,96*d,(waist-41)*d,0,41,96,28);
     g.drawImage(overlay,0,waist*d,96*d,(107-waist)*d,0,69,96,38);
+    const neckKey=top+'|neck';
+    if(!neckRegistrations.has(neckKey)){
+      const source=cv(288,324),s=source.getContext('2d');s.drawImage(images.get(top),0,0,96*d,41*d,0,0,288,123);s.drawImage(images.get(top),0,41*d,96*d,(waist-41)*d,0,123,288,84);
+      neckRegistrations.set(neckKey,paintedNeck(source,[48,BODY_JOIN],3,dir,L.topS));
+    }
+    out.bagseedNeck=neckRegistrations.get(neckKey);
     // Exclude the feet baked into clothing sheets. The selected footwear is
     // the only shoe layer; its ankle overlaps the trousers by a few pixels.
     const shoeTop=['boots','rainboots'].includes(L.shoesS)?93:99;
@@ -530,15 +690,19 @@
     if(bodies.size>200)bodies.clear();bodies.set(signature,out);return out;
   }
   __BAGSEED_WALK_RENDERER__
-  const PLAYER_FIGURE_SCALE=100/94;
+  const PLAYER_FIGURE_SCALE=100/97;
   function scalePlayerFigure(source,factor){
     const out=cv(source.width,source.height),g=out.getContext('2d'),density=source.width/96,ground=143;
     g.imageSmoothingQuality='high';g.setTransform(factor,0,0,factor,48*density*(1-factor),ground*density*(1-factor));g.drawImage(source,0,0);
     const point=([x,y])=>[48+(x-48)*factor,ground+(y-ground)*factor];
     out.bagseedEyes=(source.bagseedEyes||[]).map(point);
+    if(source.bagseedHeadOrigin)out.bagseedHeadOrigin=point(source.bagseedHeadOrigin);
     if(source.bagseedNose)out.bagseedNose=point(source.bagseedNose);
     if(source.bagseedHand){const [x,y]=point([source.bagseedHand.x,source.bagseedHand.y]);out.bagseedHand={x,y};}
     out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;out.bagseedWalkProfile=source.bagseedWalkProfile;
+    out.bagseedApprovedOutfit=source.bagseedApprovedOutfit;
+    out.bagseedBodyTransform=source.bagseedBodyTransform;
+    if(source.bagseedAlignment){const a=source.bagseedAlignment;out.bagseedAlignment={...a,origin:point(a.origin),jaw:point(a.jaw),collar:point(a.collar),shoulderBand:a.shoulderBand.map(y=>point([48,y])[1]),neckLength:a.neckLength*factor,shoulderWidth:a.shoulderWidth*factor,headScale:a.headScale*factor};}
     out.bagseedFigureScale=factor;return out;
   }
   function generic(L,dir,nose=false,blink=false,density=1) {
@@ -548,9 +712,10 @@
     const headDir=nose&&dir!=='up'?'down':dir,H=head(L,headDir,blink,true);g.scale(density,density);
     const width={slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[L.body]||1;
     const short=!!L.short,kid=isChild(L),sy=kid?.74:short?.9:L.body==='tall'?1.07:1;
-    const neckY=143+(BODY_JOIN-107)*sy,headScale=kid?.9:1;
-    const joinY=HEAD_NECK+(HEAD_JOIN-HEAD_NECK)*(faceFits[L.face]?.[1]||1);let headY=neckY-joinY/3*headScale,headX=48-32*headScale;
+    const neckY=143+((B.bagseedNeck?.root[1]??BODY_JOIN)-107)*sy,headScale=kid?.9:1;
     const presentation=L.pres==='masc'?1.045:L.pres==='fem'?.955:1;
+    const collar=[48+(B.bagseedNeck.root[0]-48)*width*presentation,neckY],placement=headPlacement(L,headDir,collar,headScale);
+    const joinY=HEAD_NECK;let [headX,headY]=placement.origin;
     if(nose){
       const [x,y]=B.bagseedNoseContact,point=H.bagseedFeatures.nose||[96,joinY],target=dir==='up'?[48,y+4]:[x,y];
       headX=48+(target[0]-48)*width*presentation-point[0]/3*headScale;
@@ -560,8 +725,9 @@
     // The anatomical join is underneath the body, filling gaps in posed art.
     // Its neck occupies the same span as the body's neck, rather than stacking
     // above it. Clothing and the body's painted neck own the visible surface.
-    g.drawImage(H.bagseedNeckBridge,headX,headY,64*headScale,H.height/3*headScale);
+    neckBacking(g,H,L,headDir,headX,headY,neckY,143+((B.bagseedNeck?.opening??BODY_JOIN)-107)*sy,headScale);
     g.save();g.translate(48,143);g.scale(width*presentation,sy);g.drawImage(B,-48,-107,96,108);g.restore();
+    neckSurface(g,H,L,headDir,headX,headY,B.bagseedNeck,width*presentation,sy,108,headScale);
     // Draw the complete transparent head over clothing. Cropping this pass at
     // the neck used to put a horizontal shirt edge through every loose length.
     drawHead();
@@ -577,6 +743,9 @@
     }
     if(L.prop&&!nose&&dir!=='up'){g.save();g.translate(0,36);props(g,L,dir);g.restore();}
     out.bagseedEyes=H.bagseedEyes.map(([x,y])=>[headX+x*headScale/3,headY+y*headScale/3]);
+    out.bagseedHeadOrigin=[headX,headY];
+    out.bagseedApprovedOutfit=B.bagseedApprovedOutfit;
+    out.bagseedAlignment={...placement,shoulderBand:[3,7].map(d=>143+(B.bagseedNeck.shoulderY+d-107)*sy),shoulderWidth:B.bagseedNeck.shoulderWidth*width*presentation,garment:L.topS,bottom:wardrobeFullSuit(L)?L.topS:L.bottomS,rear:dir==='up',source:`top/${L.topS}/${dir}`};
     out.bagseedNose=(H.bagseedFeatures.nose||[96,155]).map((v,i)=>(i?headY:headX)+v*headScale/3);
     return nose?out:scalePlayerFigure(out,PLAYER_FIGURE_SCALE);
   }
@@ -602,12 +771,16 @@
   }
   function animate(source,L,dir,frame,breath,blink,act,rig,density=1) {
     const height=source.height/(source.width/96),ground=height-1,offset=height-108,out=cv(96*density,height*density),g=out.getContext('2d');g.scale(density,density);g.imageSmoothingEnabled=source.width>=out.width;g.imageSmoothingQuality='high';
+    // Custom figures already contain several fitted art layers. A second
+    // whole-bitmap 99% squash softened every line whenever idle breath toggled.
+    // Preserve their native rest drawing; blinking remains independent.
+    const breathe=breath&&!source.bagseedFigureScale;
     if(rig&&frame){
       // Move one continuous silhouette. Cutting a drawing at x=48/y=79
       // severed overlapping profile legs and exposed rectangular seams.
       const phase=frame===1?1:frame===3?-1:0,side=dir==='right'||dir==='left';
       g.save();g.translate(48,ground);g.transform(1,0,phase*(side?.018:.01),frame%2?.988:1,0,0);g.drawImage(source,-48,-ground,96,height);g.restore();
-    }else if(breath){g.save();g.translate(48,ground);g.scale(1,.99);g.drawImage(source,-48,-ground,96,height);g.restore();}
+    }else if(breathe){g.save();g.translate(48,ground);g.scale(1,.99);g.drawImage(source,-48,-ground,96,height);g.restore();}
     else g.drawImage(source,0,0,96,height);
     if(act&&dir!=='up'){
       // Existing interact flag remains visible; a small wrist/forearm lift uses
@@ -615,8 +788,11 @@
       const x=dir==='left'?34:dir==='right'?46:62,arm=cv(12*density,22*density);arm.getContext('2d').drawImage(out,(x-4)*density,(58+offset)*density,12*density,22*density,0,0,12*density,22*density);
       g.clearRect(x-4,65+offset,12,15);g.save();g.translate(x+2,61+offset);g.rotate(dir==='left'?.35:-.35);g.drawImage(arm,-6,0,12,22);g.restore();
     }
-    out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-ground),ground+(y-ground)*(frame%2?.988:1)]:breath?[x,ground+(y-ground)*.99]:[x,y]);
+    out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-ground),ground+(y-ground)*(frame%2?.988:1)]:breathe?[x,ground+(y-ground)*.99]:[x,y]);
     out.bagseedNose=source.bagseedNose;
+    out.bagseedHeadOrigin=source.bagseedHeadOrigin;
+    out.bagseedAlignment=source.bagseedAlignment;
+    out.bagseedBodyTransform=source.bagseedBodyTransform;
     out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;out.bagseedWalkProfile=source.bagseedWalkProfile;
     out.bagseedCastWalk=source.bagseedCastWalk;
     out.bagseedFigureScale=source.bagseedFigureScale;
@@ -634,7 +810,7 @@
   function sprite(look,dir='down',frame=0,breath=0,blink=0,act=0,nose=false,density=1,walking=false) {
     if(!loaded)return cv();const L=normalize(look),signature=key(L)+'|'+dir+'|'+[frame,breath,blink,act,nose,density,walking].join(',');if(cache.has(signature))return cache.get(signature);
     const person=authoredPerson(L);let source,rig=true,sniff=false;
-    if(person&&nose&&person.actions?.[dir]){source=images.get(person.actions[dir]);rig=false;}
+    if(person&&person.id!=='player'&&nose&&person.actions?.[dir]){source=images.get(person.actions[dir]);rig=false;}
     else if(person&&person.id!=='player'){
       const moving=!nose&&(walking||frame);
       source=images.get(person.assets[(!person.rig&&moving?`${dir}-${frame%(person.walkFrameCount||4)}`:`${dir}-idle`)]);
@@ -650,6 +826,7 @@
       source=generic(L,dir,false,!!blink,density);sniff=!!nose;
     }
     const out=animate(source,L,dir,frame,breath,blink,act&&!nose,rig&&!nose,density);
+    out.bagseedApprovedOutfit=source.bagseedApprovedOutfit;
     out.bagseedAuthoredId=person&&person.id!=='player'?person.id:null;
     if(sniff){
       // A small sniff emote preserves the complete idle drawing and its size.
@@ -693,7 +870,10 @@
     let smell=Smell1151.drawing;
     if(!smell&&Smell1151.active?.kind==='staff'&&Smell1151.active.scene===Smell1151.scene()&&Math.abs(x-Smell1151.active.view.x)<1&&Math.abs(y-Smell1151.active.view.y)<1)smell=Smell1151.active;
     const dir=smell?Smell1151.face({x,y}):anim.dir||'down';
-    const transform=c.getTransform(),density=Math.max(1,Math.min(3,Math.ceil(Math.max(Math.abs(transform.a),Math.abs(transform.d))*scale/3)));
+    // Compose at the native artwork resolution, then fit the finished figure
+    // once. Sizing intermediate canvases to the display footprint threw away
+    // line detail before the 1.8x bedroom/grow-room enlargement.
+    const transform=c.getTransform(),density=3;
     const image=sprite(look,dir,smell?0:anim.frame||0,anim.breath?1:0,anim.blink?1:0,anim.act?1:0,!!smell,density,!!anim.walk);
     const height=32*image.height/image.width;c.save();c.imageSmoothingEnabled=image.width>=32*scale*Math.abs(transform.a);c.imageSmoothingQuality='high';c.drawImage(image,Math.round(x)-16*scale,Math.round(y)-height*scale,32*scale,height*scale);c.restore();
     if(scale===1&&NightLamps1151.drawing)NightLamps1151.carry(c,x,y,look,anim);
@@ -775,6 +955,6 @@
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'character-audit-cel-v1',playerFigureScale:PLAYER_FIGURE_SCALE,walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'character-alignment-audit-v6',playerFigureScale:PLAYER_FIGURE_SCALE,walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();

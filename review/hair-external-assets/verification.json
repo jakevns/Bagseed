@@ -1,0 +1,79 @@
+{
+  "mergedMain": "bd35adb",
+  "characterRevision": "character-alignment-audit-v6",
+  "publishedImages": 1841,
+  "publishedBytes": {
+    "html": 3837828,
+    "characterData": 1372061
+  },
+  "hair": {
+    "styles": 61,
+    "identicalPixelViews": 488,
+    "visualOverviewPagesReviewed": 8
+  },
+  "launchModes": [
+    {
+      "mode": "external-file",
+      "url": "file:///C:/Projects/Bagseed/public/index.html",
+      "ok": false,
+      "name": "SecurityError",
+      "message": "Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.",
+      "revision": "character-alignment-audit-v6",
+      "pageErrors": 0
+    },
+    {
+      "mode": "external-http",
+      "url": "http://127.0.0.1:50033",
+      "ok": true,
+      "opaque": 5138,
+      "revision": "character-alignment-audit-v6",
+      "pageErrors": 0
+    },
+    {
+      "mode": "standalone-file",
+      "url": "file:///C:/Projects/Bagseed/dist/standalone/index.html",
+      "ok": true,
+      "opaque": 5138,
+      "revision": "character-alignment-audit-v6",
+      "pageErrors": 0
+    }
+  ],
+  "fullTestRun": {
+    "command": "npm test -- --test-concurrency=4",
+    "tests": 225,
+    "passed": 225,
+    "failed": 0
+  },
+  "strictWalkGate": {
+    "individualCandidates": 8,
+    "expected": 152,
+    "numericFailures": 0,
+    "installed": false,
+    "originalGuideCycles": {
+      "down": {
+        "lowestFootOffsets": [
+          0.06807511737089202,
+          0.05787037037037037,
+          -0.0539906103286385,
+          0.0625
+        ],
+        "leftLeading": 1,
+        "rightLeading": 3,
+        "balanced": false
+      },
+      "up": {
+        "lowestFootOffsets": [
+          0.08374384236453201,
+          0.07560975609756097,
+          -0.06635071090047394,
+          0.07177033492822966
+        ],
+        "leftLeading": 1,
+        "rightLeading": 3,
+        "balanced": false
+      }
+    },
+    "donorRepairTest": "Passed. Rejected local donor experiment withdrawn; committed atlas and matching manifest restored. Original source-art redraw remains pending.",
+    "generationWorkflow": "Individual generation authorized. Pose-guide sequence correction remains unresolved."
+  }
+}

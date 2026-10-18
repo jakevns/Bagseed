@@ -1,0 +1,20 @@
+{
+  "garment": "flannel",
+  "dir": "down",
+  "firstFrame": 3,
+  "count": 1,
+  "poseReference": "pose-guides-v6/down-3.png",
+  "references": [
+    "graphics/production/walk/sources/rerender-v6/flannel-v11-color2/top-flannel-down-2.png",
+    "graphics/production/walk/pose-guides-v6/down-3.png"
+  ],
+  "prompt": "ONE headless FRONT walking game body. Image1 defines SAME MODEL, same flannel pattern, shirt design, body width and proportions. Image2 gives PASSING phase limb pose. Preserve planted RIGHT-SIDE-OF-IMAGE leg from image1: IMAGE RIGHT shoe is lowest, flat on ground, shin straight below hip. IMAGE LEFT knee bends up and free foot tucks up, bottom substantially ABOVE right shoe. DO NOT SWITCH LEGS. Left side of picture = raised knee; right side of picture = planted foot. Arms relaxed down near sides, little swing in passing. Closed BLUE PLAID button shirt with collar, chest pocket on IMAGE RIGHT, small buttons, cuffed wrists, plaid checks same scale as image1. Same shirt cut, shoulder width, torso length and full rounded sleeves. Navy jeans, brown canvas sneakers with cream toes/soles. No shrinking or narrowing body. Fine warm brown lines, clean2-3 tone cel shading, no texture noise. Single complete headless short-limbed game body, short neck cap, hands/shoes visible with margins. Transparent background, no floor/shadow/glow/text. Portrait2:3. Colors are normalized later; prioritize exact consistent garment design, body proportions and IMAGE RIGHT planted shoe.",
+  "source": "graphics/production/walk/sources/rerender-v6/flannel-v13-retry1/top-flannel-down-3.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/walk/pose-guides-v6/down-3.png": "ee3639347fd9c2c6930d6d6146ef7fb8425abee83c57f912990d3a60da49b263",
+    "graphics/production/walk/sources/rerender-v6/flannel-v11-color2/top-flannel-down-2.png": "86b4beaa3fe5ccf4fc0f2a511187b7efdc90531ddaaaf4ad6aa74824a366287c"
+  }
+}

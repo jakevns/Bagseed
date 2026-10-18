@@ -1,0 +1,49 @@
+{
+  "createdUTC": "2026-10-18T14:17:44.356100+00:00",
+  "revision": "character-alignment-audit-v6",
+  "status": "Technical checks passed; user visual approval pending",
+  "npmCommand": "npm test -- --test-concurrency=4",
+  "tests": 225,
+  "passed": 225,
+  "failed": 0,
+  "matrix": {
+    "cases": 7560,
+    "maxRasterShoulderDelta": 1,
+    "failures": [],
+    "profileSequences": 540,
+    "profileSequencesWithMotion": 540
+  },
+  "wardrobeSheets": 270,
+  "hairSheets": 122,
+  "comparisonSheets": 15,
+  "builtHTMLSHA256": "d7bc8641028b844ee11fae6bb3840e51b1fd891ea835013e664af09d4224ab54",
+  "characterSourcesSHA256": {
+    "graphics/production/sources/renderer.js": "f3af3efb67f3f29ca0b577aff06a718b572d9d3f75468590caaf51532195a219",
+    "graphics/production/sources/face-details.js": "da8a1766981e3e8b7b4318c99c0e2728c37f54dd06ff473f9f3db5d33dbc1b10",
+    "graphics/production/sources/hair-batch-01.js": "9ecdd8b585399ea4a5c9f11534914f21cb1d8be136839ea9c9ac6d75f8fd8390",
+    "graphics/production/sources/hair-fit-rest.js": "57e1ea90c42bac147c83c798c61c8a1ddc195a30556d112ecf112bf8120d9ef3",
+    "graphics/production/sources/build.cjs": "ef451b9e9ef05e91db53f0c8f78eea940973920650c365b0f905a7ff9b51d891",
+    "graphics/production/customization-v5/detail-landmarks.json": "f76bdb3ce7b9c55751b5f6468528f2128f751bdd69edce8e17b31871c89a0fb6",
+    "graphics/production/customization-v5/manifest.json": "a2717a7134fd34139976335732742558b307917f0646f50ebfa89212edebeb32",
+    "graphics/production/customization-v5/hair-fit.json": "acf4244aab6c7b1733ff0bcfffe51c9e37758a2acc302f20027a34f9a127dc2b",
+    "graphics/production/customization-v5/register.py": "902b0963954211c145c442d3ff458e4aa554f3f6727ec7af4f4c52527e83f636",
+    "graphics/production/cast-walk-v1/manifest.json": "ccb56f9bafcb586332832238c4dc4f43068c53b641ab804326f0e9caca6946a0",
+    "graphics/production/cast-walk-v1/sources/clocks.js": "8cb078c95c1b6408f9888a5ae6bbbb2830f7561bedced21075f56778da6b23bc",
+    "graphics/production/walk/sources/renderer.js": "3918f855b0cfc1e4ec53228e4aba28618eeda9b9b61d179fa5502b4c685b64fb",
+    "graphics/production/walk/manifest.json": "9d49fd24d49dc591d83948ba7b693b96d963fb930e8b3d0f5f6c7e1a38f99206",
+    "graphics/production/walk/rig.json": "dafca4cad76cbf47b753d0bea091d4a118d4ef8bf0c110dbb6290ac7197c21fa",
+    "graphics/production/walk/wardrobe-v5/manifest.json": "99d7daf644a1b0279bf90601bb8d1e24a269f605dbf9fb61344e9b9f11f9764a",
+    "graphics/production/walk/wardrobe-v5/sources/register.py": "3f3848f47ba738bd9d2390c41c44b9b0dabbb7086b317f1d6ba25cc21dea0cc6",
+    "graphics/production/walk/wardrobe-v5/sources/upper_layer.py": "b8dc5c0da648fd507fa653e90d389ca6e52f2c04ae16701bef1664ec62bd111c",
+    "graphics/production/walk/wardrobe-v5/sources/repair_one.py": "47ed61ab0fb732ad75f7e4ecb43c44afdd156bff68612d6f9cc895bd4e6502aa",
+    "graphics/production/walk/wardrobe-v5/sources/repack_lower.py": "5ad89b5072c67ade5ba9e1bd181b52e5c1c6e6e64f6861eac741052ae7c12bbd",
+    "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
+    "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
+  },
+  "openSourceArtFollowups": [
+    "wardrobe redraw remains unapproved for all 15 garment front/rear cycles",
+    "garden and labcoat side source-art matching",
+    "genuine overalls up/1 redraw (rejected donor experiment withdrawn)",
+    "original mannequin guide sequence repeats a leading foot in three of four frames"
+  ]
+}
