@@ -32,6 +32,11 @@ def measure(name, expected, columns):
         y0, y1 = max(0, r[0].start - 2), min(image.height, r[0].stop + 2)
         alpha = rgba[y0:y1, x0:x1, 3]
         h, w = alpha.shape
+        region_labels = labels[y0:y1, x0:x1]
+        label_sizes = np.bincount(region_labels.ravel())
+        own_label = int(np.argmax(label_sizes[1:]) + 1)
+        foreign = (region_labels > 0) & (region_labels != own_label)
+        isolated = BASE.name != 'freakshow' and bool(foreign.any())
         # A downward leaflet can reach the petiole's level. Select the strongest
         # bottom cluster, rather than averaging the two disconnected endpoints.
         bottom = alpha[max(0, h - 16):] > 160
@@ -39,17 +44,22 @@ def measure(name, expected, columns):
         cluster = max(range(1, n + 1), key=lambda k: int(bottom[:, clusters == k].sum()))
         ys, xs = np.where((alpha > 160) & (clusters == cluster)[None, :])
         ax, ay = float(np.median(xs[ys >= h - 16])), float(ys.max())
-        ys, xs = np.where(alpha > 100)
+        ys, xs = np.where(region_labels == own_label if isolated else alpha > 100)
         points = np.column_stack([xs, ys])
         hull = points[ConvexHull(points).vertices]
         parts.append({'atlas': name, 'crop': [x0, y0, w, h], 'attach': [ax, ay],
                       'outline': [[round((float(x) - ax) / h, 6), round((ay - float(y)) / h, 6)]
                                   for x, y in hull]})
+        # Closely spaced source organs can have overlapping rectangular crops.
+        # Register a geometry clip for stray neighbor pixels; keep the source and
+        # exact runtime atlas unchanged, including all original owned tissue.
+        if isolated:
+            parts[-1]['clipHull'] = True
     encoded = BASE / f'assets/{name}.webp'
     image.save(encoded, 'WEBP', lossless=True, exact=True)
     assert np.array_equal(rgba, np.array(Image.open(encoded).convert('RGBA')))
     data = encoded.read_bytes()
-    public = ROOT / f'public/assets/plants/mutations/freakshow/{name}-{sha(data)[:12]}.webp'
+    public = ROOT / f'public/assets/plants/mutations/{BASE.name}/{name}-{sha(data)[:12]}.webp'
     public.parent.mkdir(parents=True, exist_ok=True)
     public.write_bytes(data)
     return parts, {'source': f'assets/{name}.png', 'sourceSHA256': sha(source.read_bytes()),
@@ -75,3 +85,27 @@ manifest = {'revision': 'freakshow-parts-1', 'status': 'approved-live-components
                            'review/mutation-detail/photo-based-batch-01/leaf-studies-01.png']}
 (BASE / 'sources/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
 print('Registered two Freakshow organ sets; two RGBA-exact atlases; strain catalog unchanged.')
+
+# Additional original atlases use two rows (stable forms/pattern families) and
+# four columns (juvenile, young, mature and sugar). Historical role names are
+# growth slots, not a leaflet count: Monophylla remains single-bladed as an adult.
+families = {
+    'ducksfoot': ('duck', ['broad-webbed', 'spear-webbed'], ['R05', 'R13']),
+    'monophylla': ('mono', ['lanceolate', 'quilted-broad'], ['R14', 'R15']),
+    'moonmarble': ('variegated', ['marbled', 'sectorial'], ['R26', 'R28', 'R13']),
+}
+for key, (art, names, references) in families.items():
+    BASE = ROOT / f'graphics/plants/mutations/{key}'
+    organs, asset = measure('components', 8, 4)
+    variants = {}
+    for i, name in enumerate(names):
+        single, young, adult, sugar = organs[i * 4:i * 4 + 4]
+        variants[name] = {'parts': dict(singleLeaf=single, threeLeaf=young,
+                                       fiveLeaf=adult, sevenLeaf=adult, sugarLeaf=sugar)}
+    manifest = {'revision': key + '-parts-1', 'status': 'approved-live-components',
+                'mutationKey': key, 'art': art, 'leafKey': 'forest',
+                'atlases': {'components': asset}, 'variants': variants,
+                'references': ['Bagseed_Mutation_References/' + r for r in references] +
+                              ['review/mutation-detail/photo-based-batch-01/leaf-studies-01.png']}
+    (BASE / 'sources/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    print('Registered', key, ': eight painted organs; RGBA-exact atlas; catalog unchanged.')

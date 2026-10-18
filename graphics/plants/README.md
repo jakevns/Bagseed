@@ -92,3 +92,8 @@ mutation identities and genotype/save data are preserved.
 
 See `review/mutation-detail/freakshow-in-game/` for native gameplay captures and
 verification. The user approved this gameplay implementation for production.
+
+
+## Next three mutation implementations
+
+Ducksfoot, Monophylla and Moonmarble have isolated painted juvenile, young, mature and sugar organs in two forms/pattern families each. The user approved all three native gameplay implementations for production. See `mutations/*/README.md` and `review/mutation-detail/implemented-batch-02/`. Moonmarble tissue sectors stay pale through palette/senescence changes and combine with expressed leaf-shape traits; the former synthetic wave pattern is removed. Existing mutation genes, stats, carriers and saved identity rules are unchanged.

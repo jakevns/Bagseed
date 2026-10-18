@@ -81,16 +81,16 @@ function build(p,traits={},options={}){
   else flower('apex:flower','apex',0,Math.min(11,height*.18)*(male?1:Canopy.topScale(p)),1,1,true);
   if(mutationArts.has('crest'))for(const o of model.organs)if(o.site==='apical')o.widthScale=2.1;
   if(mutationArts.has('triploid'))for(const o of model.organs)if(o.kind==='flower')o.widthScale=1.25;
-  // Small dissected sugar leaves belong to their flower's attachment, not a
+  // Painted mutation sugar leaves belong to their flower's attachment, not a
   // free-floating overlay. Retain the same IDs and parents throughout bloom.
-  if(!male&&mutationArts.has('freak')&&!mutationArts.has('duck'))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
+  if(!male&&['freak','duck','mono','variegated'].some(k=>mutationArts.has(k)))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
    addLeaf(bud.id+'/sugar:'+side,bud.parent,bud.at,'sugarLeaf',bud.length*.62,side*.50,.4);
    const leaf=model.organs[model.organs.length-1];if(leaf.id===bud.id+'/sugar:'+side)leaf.offsetY=bud.length*.18;
   }
  }
  // Bound the complete assembled canopy, not just the stem, to the labeled height.
  const pose0=pose(model,p,0,0,true);let top=trunkY;
- for(const organ of model.organs){const a=pose0.organs.get(organ.id);if(organ.removed||!a)continue;const outline=options.parts?.[organ.role]?.outline;if(outline){const ca=Math.cos(a.angle),sa=Math.sin(a.angle);for(const[x,y]of outline)top=Math.max(top,a.y+organ.length*(y*ca-x*sa));}else top=Math.max(top,a.y+organ.length*(Math.max(0,Math.cos(a.angle))+.58*Math.abs(Math.sin(a.angle))));}
+ for(const organ of model.organs){const a=pose0.organs.get(organ.id);if(organ.removed||!a)continue;const outline=(options.partFor?.(organ)||options.parts?.[organ.role])?.outline;if(outline){const ca=Math.cos(a.angle),sa=Math.sin(a.angle);for(const[x,y]of outline)top=Math.max(top,a.y+organ.length*(y*ca-x*sa));}else top=Math.max(top,a.y+organ.length*(Math.max(0,Math.cos(a.angle))+.58*Math.abs(Math.sin(a.angle))));}
  const scale=height/top;
  for(const j of model.joints){j.x*=scale;j.y*=scale;}
  for(const b of model.branches){b.dx*=scale;b.dy*=scale;b.width*=scale;}

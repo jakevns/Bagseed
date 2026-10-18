@@ -1,0 +1,228 @@
+{
+  "status": "user-approved-for-production",
+  "runtimeRevision": "live-plants-3",
+  "mutations": [
+    "ducksfoot",
+    "monophylla",
+    "moonmarble"
+  ],
+  "buildSHA256": "6cfcd1c46936bc4b32fed6a3ebb77e0db727aa41e346fbeb4923a172f8978946",
+  "characterRelease": "character-audit-cel-v1",
+  "personScaleRevision": "person-scale-1",
+  "assets": {
+    "ducksfoot": {
+      "manifest": "graphics/plants/mutations/ducksfoot/sources/manifest.json",
+      "manifestSHA256": "5adc323611358365482d231f14dfa2d163db0e6b3bf95e71c31990f993c6006e",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "596f9c70cf7174c9c93e33ffc0dbd05e89688805a9eef64037e0cb9c9b8401c2",
+          "runtime": "assets/plants/mutations/ducksfoot/components-a25eb68067f9.webp",
+          "runtimeSHA256": "a25eb68067f9644ec7b818baff8a5c6675d0854e4ec6e2323fdfd006e5d03456",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    },
+    "monophylla": {
+      "manifest": "graphics/plants/mutations/monophylla/sources/manifest.json",
+      "manifestSHA256": "64c8d81912c3274eda245a1bcc27b200de4851fed46a4ecb05e52bddd1c72e08",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "a26367ff15511c1d6a810d7e0ee41948b3711c5a0257add9ec15b8cc56a7d657",
+          "runtime": "assets/plants/mutations/monophylla/components-97351bd24dc4.webp",
+          "runtimeSHA256": "97351bd24dc481cd8193e7284431c706019ffcf2a0bf2f1226222c333c4e84e1",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    },
+    "moonmarble": {
+      "manifest": "graphics/plants/mutations/moonmarble/sources/manifest.json",
+      "manifestSHA256": "5e3999ed2212172f4eb43720743bb1c92d42d9d7c0bb4aaf14917e8dd1ac0981",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "5f04e52c67720ffac48f6328ccf10f2bf7d9f9e83b2c761d146e2117e442f34b",
+          "runtime": "assets/plants/mutations/moonmarble/components-71e10badfa94.webp",
+          "runtimeSHA256": "71e10badfa94f79d9964adeabc61b116479790bc9b9cdcb54d54462bdd258d57",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    }
+  },
+  "sourcePack": "Bagseed_Mutation_References.zip",
+  "referencePhotos": [
+    {
+      "id": "R05",
+      "title": "Ducksfoot webbed leaf",
+      "traits": [
+        3
+      ],
+      "credit": "Dutch Passion",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://dutch-passion.com/img/web/Ducksfoot-or-webbed-cannabis-leaves-stealth-leaf-cannabis-1080x1417-80.webp",
+      "source_url": "https://dutch-passion.com/en/blog/top-11-most-common-cannabis-plant-mutations-n1111",
+      "resize": true,
+      "original_dimensions": [
+        1080,
+        1417
+      ],
+      "file": "photos/R05.jpg",
+      "bytes": 329758,
+      "status": "downloaded"
+    },
+    {
+      "id": "R13",
+      "title": "Mutant phenotypes, Figure 5 (A whorled; B Ducksfoot; C ABC; D variegation)",
+      "traits": [
+        3,
+        5,
+        13
+      ],
+      "credit": "Hesami et al. (2022), Plants 11:2383; photographs credited to Dutch Passion",
+      "kind": "photographic reference",
+      "license": "CC BY 4.0; see article and any figure-specific credits",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1c6a/9505140/a51e220df154/plants-11-02383-g005.jpg",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9505140/",
+      "resize": false,
+      "original_dimensions": [
+        774,
+        769
+      ],
+      "file": "photos/R13.jpg",
+      "bytes": 281138,
+      "status": "downloaded"
+    },
+    {
+      "id": "R14",
+      "title": "AD17 single lanceolate leaf",
+      "traits": [
+        4
+      ],
+      "credit": "mutantfarmer; AD17 Berry (KalySeeds)",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-ad17-1.BldoBBzj_17GOUB.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        1280,
+        1280
+      ],
+      "file": "photos/R14.jpg",
+      "bytes": 159611,
+      "status": "downloaded"
+    },
+    {
+      "id": "R15",
+      "title": "AD17 plant architecture",
+      "traits": [
+        4
+      ],
+      "credit": "mutantfarmer; AD17 Berry (KalySeeds)",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-ad17-2.D7JpfPWj_jUuqa.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        1280,
+        1280
+      ],
+      "file": "photos/R15.jpg",
+      "bytes": 120231,
+      "status": "downloaded"
+    },
+    {
+      "id": "R26",
+      "title": "White sectors on Legitimo F5 leaf",
+      "traits": [
+        5,
+        6
+      ],
+      "credit": "mutantfarmer; Legitimo F5 (KalySeeds)",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-legitimo-2.4Scgh3xr_Z1VG3bO.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        714,
+        1280
+      ],
+      "file": "photos/R26.jpg",
+      "bytes": 142837,
+      "status": "downloaded"
+    },
+    {
+      "id": "R28",
+      "title": "Sectorial cannabis variegation",
+      "traits": [
+        5,
+        6
+      ],
+      "credit": "Steve Zalesky, via ETHOS",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3493c492-4289-4c3d-9173-56eb4c9872fd_1920x2560.jpeg",
+      "source_url": "https://www.ethosgenetics.com/resources/common-cannabis-mutations",
+      "resize": true,
+      "original_dimensions": [
+        1456,
+        1941
+      ],
+      "file": "photos/R28.jpg",
+      "bytes": 491997,
+      "status": "downloaded"
+    }
+  ],
+  "sourcePhotosIncludedInRepository": false,
+  "generatedSources": {
+    "ducksfoot": "exec-9d7e49ec-77f3-47a4-a3d4-611657886de6.png",
+    "monophylla": "exec-3ea07c7d-73f6-4819-abc3-e0931378b3ce.png",
+    "moonmarble": "exec-0418a760-6005-4346-9677-0e42ca968b54.png"
+  },
+  "verification": {
+    "catalogRecordsPerFamily": [
+      38,
+      38,
+      38
+    ],
+    "paleTissuePixelsChecked": 27005,
+    "paleTissueRetention": 1,
+    "saveReload": true,
+    "legacySave": true,
+    "javascriptErrors": [],
+    "animation": {
+      "frames": 72,
+      "fps": 12,
+      "seconds": 6
+    }
+  },
+  "files": {
+    "bedroom-gameplay.png": "7bd9753fcde85cdec5f91a11d57b7d97d3c313fde62a76b3166100ec54cab877",
+    "combined-mutations.png": "6d81efcc80f88c6ef813bb7327bcdd00712d3bdc6f9c12b9bf3256a87d9eed78",
+    "ducksfoot-growth.png": "393a73b1bf0d9ee6a66b703abdf30000b7aedd24eb9024c6802e5695aa4d11e4",
+    "growth-and-wind.gif": "efe8fb81dfc00f10ca6853ac75ba8a6c4c2b24fec1b1fe6094def268d80d6b63",
+    "growth-and-wind.mp4": "ae2c828c07440aac842538625182c67d75413ec3f9e0f2b2875a626f60070219",
+    "mobile-gameplay.png": "5e9d112c4b29773479652022f87ec4360725a7ebabdbdfe1a7d318a520e857c8",
+    "monophylla-growth.png": "96ec2e394291e5e04544920c0bdf7c390f19b2c64221106a8ce7252d818f58e7",
+    "moonmarble-growth.png": "bbb609ad1d5d7f54de666de9d1197a2099615ee8c20b0cf5658ac79c17aa24d8",
+    "native-guide.png": "dd17b2a3063057722d20e5c184205ed43878b668ee06d3373c2d574797ae3dff",
+    "phenotype-colors.png": "94ac3fb45b76c70608f4bd07cd27dc1bcb6b75ef935d5c81de01bd9c06ec656e",
+    "runtime-leaf-details.png": "2d15c48c1cf3785f72ea665669c02c560f1df678f310ab7c468933780b8c0f17",
+    "three-mutations.png": "99c2618a6a2d7b28906f325c97d1c2e45d96134b611fc365cf0a15851c55288e",
+    "training-and-stress.png": "6d1f61028ac992d28170e345d378600346d2c4ba10226971338095fcfdb4eaa5",
+    "verification.json": "efdb837687249e6b8d015a78994a0fcd734ae253932819b04c25e8d9ebeeab58"
+  }
+}
