@@ -79,3 +79,16 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 Visual recipes (`paintArt115`, schema v1) record the component donor kits, stable phenotype seed and expressed traits. Actual plant height, node count, water, health, nutrition, stress, pruning and training remain live inputs. Recipes are stored on plant and clone phenotype records, copied into photos, and populated for older saves at post-load and save boundaries. Rendering does not alter biology. Existing mutant genes from the latest merged update remain native; the painted compositor expresses all fifteen leaf/color/structure traits, including stacked traits.
 
 Earlier per-strain notes describe the original prototype milestone. Production integration is now active; individual sample captures remain historical approvals. Validation and actual game screenshots are in `review/live-plants/`.
+
+
+## Painted mutation components
+
+The first mutation implementation is [Freakshow](mutations/freakshow/README.md).
+Its two leaf forms use dedicated painted development and mature-fan atlases,
+loaded through the same startup gate as the fourteen strain kits. The live
+renderer applies the existing phenotype palette, finishing colors, symptoms,
+training and wind. Mutation kits are separate from the strain catalog; native
+mutation identities and genotype/save data are preserved.
+
+See `review/mutation-detail/freakshow-in-game/` for native gameplay captures and
+verification. The user approved this gameplay implementation for production.

@@ -81,6 +81,12 @@ function build(p,traits={},options={}){
   else flower('apex:flower','apex',0,Math.min(11,height*.18)*(male?1:Canopy.topScale(p)),1,1,true);
   if(mutationArts.has('crest'))for(const o of model.organs)if(o.site==='apical')o.widthScale=2.1;
   if(mutationArts.has('triploid'))for(const o of model.organs)if(o.kind==='flower')o.widthScale=1.25;
+  // Small dissected sugar leaves belong to their flower's attachment, not a
+  // free-floating overlay. Retain the same IDs and parents throughout bloom.
+  if(!male&&mutationArts.has('freak')&&!mutationArts.has('duck'))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
+   addLeaf(bud.id+'/sugar:'+side,bud.parent,bud.at,'sugarLeaf',bud.length*.62,side*.50,.4);
+   const leaf=model.organs[model.organs.length-1];if(leaf.id===bud.id+'/sugar:'+side)leaf.offsetY=bud.length*.18;
+  }
  }
  // Bound the complete assembled canopy, not just the stem, to the labeled height.
  const pose0=pose(model,p,0,0,true);let top=trunkY;
@@ -88,7 +94,7 @@ function build(p,traits={},options={}){
  const scale=height/top;
  for(const j of model.joints){j.x*=scale;j.y*=scale;}
  for(const b of model.branches){b.dx*=scale;b.dy*=scale;b.width*=scale;}
- for(const o of model.organs)o.length*=scale;
+ for(const o of model.organs){o.length*=scale;if(o.offsetY)o.offsetY*=scale;}
  model.canopyScale=scale;return model;
 }
 function pose(model,p,t=0,wind=1,reduced=false){
@@ -102,7 +108,7 @@ function pose(model,p,t=0,wind=1,reduced=false){
   const control={x:lerp(start.x,end.x,.45)-b.side*length*.055,y:lerp(start.y,end.y,.45)-length*.07};branches.set(b.id,{...b,start,control,end});
  }
  const droop=clamp((22-(p.water??60))/22,0,1)*.55+(p.water>93?.22:0)+clamp((p.stress||0)/200,0,.4);
- for(const o of model.organs){const base=at(o.parent,o.at),flutter=Math.sin(t*2.3+hash(model.seed+':'+o.id)*6.28)*.065*amp,sgn=o.angle<0?-1:1;organs.set(o.id,{...base,angle:o.angle+sgn*droop+flutter});}
+ for(const o of model.organs){const base=at(o.parent,o.at),flutter=Math.sin(t*2.3+hash(model.seed+':'+o.id)*6.28)*.065*amp,sgn=o.angle<0?-1:1;organs.set(o.id,{...base,y:base.y+(o.offsetY||0),angle:o.angle+sgn*droop+flutter});}
  return{joints,branches,organs};
 }
 function counts(model){return{joints:model.joints.length,primaryBranches:model.branches.filter(b=>b.order===1&&!b.cut).length,secondaryBranches:model.branches.filter(b=>b.order===2&&!b.cut).length,leaves:model.organs.filter(o=>o.kind==='leaf'&&!o.removed).length,flowers:model.organs.filter(o=>o.kind==='flower').length};}

@@ -10,8 +10,21 @@ module.exports=function(){
   kits[id]={...m,traits:spec.traits,lineId:spec.lineId||id};
  }
  assert.equal(Object.keys(kits).length,14);
+ const mutations={};
+ for(const id of fs.readdirSync(path.join(base,'mutations'))){
+  const file=path.join(base,'mutations',id,'sources/manifest.json');if(!fs.existsSync(file))continue;
+  const m=JSON.parse(fs.readFileSync(file));assert.equal(m.mutationKey,id);
+  for(const a of Object.values(m.atlases)){
+   for(const [file,expected]of [[path.join(base,'mutations',id,a.source),a.sourceSHA256],[path.join(root,'public',a.runtime),a.runtimeSHA256]])
+    assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),expected,'Mutation artwork changed: '+file);
+  }
+  for(const v of Object.values(m.variants))for(const role of ['singleLeaf','threeLeaf','fiveLeaf','sevenLeaf','sugarLeaf']){
+   const p=v.parts[role];assert.ok(p&&m.atlases[p.atlas]&&p.outline.length>=3&&p.attach.length===2,'Missing mutation organ: '+id+'/'+role);
+  }
+  mutations[id]=m;
+ }
  const model=fs.readFileSync(path.join(base,'porchlight/sources/model.cjs'),'utf8');
- const renderer=fs.readFileSync(path.join(base,'sources/live-renderer.js'),'utf8').replace('__BAGSEED_LIVE_PLANTS__',()=>JSON.stringify(kits));
+ const renderer=fs.readFileSync(path.join(base,'sources/live-renderer.js'),'utf8').replace('__BAGSEED_LIVE_PLANTS__',()=>JSON.stringify(kits)).replace('__BAGSEED_PLANT_MUTATIONS__',()=>JSON.stringify(mutations));
  const code='(()=>{const module={exports:{}};'+model+';window.BagseedPlantModel=module.exports;})();\n'+renderer;
  new(require('node:vm').Script)(code);return '<script id="bagseed-live-plants-code">\n'+code+'\n</script>\n';
 };

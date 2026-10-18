@@ -1,0 +1,325 @@
+{
+  "status": "user-approved-concept-art",
+  "scope": "original approval concept artwork; no game integration or push",
+  "native_mutation_keys": {
+    "Twin Leader": "twinleader",
+    "Crested Cola": "crested",
+    "Triple Whorl": "whorl",
+    "Pocket Dwarf": "pocketdwarf",
+    "Triploid": "triploid"
+  },
+  "traits": [
+    {
+      "number": 11,
+      "name": "Twin Leader",
+      "biological_basis": "Bifurcation or spontaneous loss of apical dominance",
+      "evidence": "Game label; firsthand visual reports, cause unconfirmed",
+      "research_note": "Two leaders may follow spontaneous developmental change or injury. A Y-shaped fork does not prove a heritable mutation.",
+      "art_direction": "One rooted trunk should visibly divide into two comparable upright leaders. Keep the fork clear through the foliage and give each leader its own terminal flower.",
+      "avoid": "Two separate seedlings, two disconnected trunks, or a single unchanged central cola. Calling a trained plant proof of a genetic mutation.",
+      "stage_notes": "Young: one trunk before division. Vegetative: readable Y fork. Flowering: two separated leading colas.",
+      "reference_ids": [
+        "R29",
+        "R23",
+        "R08"
+      ]
+    },
+    {
+      "number": 12,
+      "name": "Crested Cola",
+      "biological_basis": "Fasciation",
+      "evidence": "Documented growth abnormality; stem and flower references",
+      "research_note": "Fasciation flattens and broadens growth; its causes vary. A crest alone does not demonstrate polyploidy.",
+      "art_direction": "Show a ribbon-like upper stem supporting a broad, scalloped fan or elongated crest of flower tissue. Use lateral width, not just additional height.",
+      "avoid": "An ordinary round bud enlarged uniformly. Three separate leaders used as a substitute for a fused crest.",
+      "stage_notes": "Young: optional broadening at the tip. Vegetative: flatten the affected stem. Flowering: make the crest unmistakable from its outline.",
+      "reference_ids": [
+        "R16",
+        "R27",
+        "R30"
+      ]
+    },
+    {
+      "number": 13,
+      "name": "Triple Whorl",
+      "biological_basis": "Whorled phyllotaxy with three organs per node",
+      "evidence": "Documented visible arrangement; distinct from triploidy",
+      "research_note": "Three leaves around one node are a phyllotaxy pattern, not evidence of three chromosome sets.",
+      "art_direction": "Place three petioles or branches at the same stem level, spaced around the axis. In an oblique view, allow a smaller rear leaf to remain visible.",
+      "avoid": "Three leaflets on one leaf; ordinary opposite pairs; automatically assigning the Triploid identity.",
+      "stage_notes": "Young: show the three-way arrangement clearly. Vegetative: repeat on selected nodes. Flowering: keep three-way branch origins visible. Persistence can vary.",
+      "reference_ids": [
+        "R06",
+        "R13"
+      ]
+    },
+    {
+      "number": 14,
+      "name": "Pocket Dwarf",
+      "biological_basis": "Compact stature and shortened internodes",
+      "evidence": "Game name; compact cultivar and anecdotal dwarf analogues",
+      "research_note": "Lowryder offers a compact plant reference. Small stature alone does not prove a particular dwarf mutation.",
+      "art_direction": "Shorten the stem gaps between nodes and the branch reach while preserving full leaf shapes. Include the same pot or a scale marker for comparison.",
+      "avoid": "A tall sparse plant labeled dwarf. Simply scaling the entire normal plant down, including all leaf detail, with no structural difference.",
+      "stage_notes": "Young: size may be ambiguous. Vegetative: compressed node spacing. Flowering: short mature silhouette with flowers close to the main stem.",
+      "reference_ids": [
+        "R24",
+        "R22"
+      ]
+    },
+    {
+      "number": 15,
+      "name": "Triploid",
+      "biological_basis": "Three chromosome sets, commonly 30 chromosomes in cannabis",
+      "evidence": "Confirmed cytogenetic trait; scientific comparison photographs",
+      "research_note": "Triploidy concerns chromosome number. Published diploid/triploid comparisons do not supply a universal identifying silhouette.",
+      "art_direction": "Keep believable cannabis architecture. If needed for gameplay, add a clearly designed UI badge or subtle vigor cue, explicitly marked as a game convention.",
+      "avoid": "Three leaves per node, a crest, or guaranteed giant buds used as visual proof. Universal yield or potency promises.",
+      "stage_notes": "All stages: identity comes from the game’s genetic state. Show ordinary growth; consult the comparison figure for variation, not a diagnostic rule.",
+      "reference_ids": [
+        "R09",
+        "R10"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "whole-plant-examples-03.png",
+      "dimensions": [
+        1810,
+        869
+      ],
+      "sha256": "fed92d6f153e7d021da48a03d6e02d4db2c1cdfa0d86a66dbe632ecf5262218d"
+    },
+    {
+      "file": "structure-and-color-studies-03.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "2e8b3cc365fe116ed5369d6fc2dc48c4d4c99a164d702fb1b95aa4167b2ea1a9"
+    }
+  ],
+  "source_pack": "Bagseed_Mutation_References.zip",
+  "references_consulted": [
+    {
+      "id": "R06",
+      "title": "Three leaves around a node",
+      "traits": [
+        13
+      ],
+      "credit": "Dutch Passion",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://dutch-passion.com/img/web/Tri-Leaf-cannabis-seedling-three-leaved-plant-Dutch-passion-seed-company-1080x1080-80.webp",
+      "source_url": "https://dutch-passion.com/en/blog/top-11-most-common-cannabis-plant-mutations-n1111",
+      "resize": true,
+      "original_dimensions": [
+        1080,
+        1080
+      ],
+      "file": "photos/R06.jpg",
+      "bytes": 162498,
+      "status": "downloaded"
+    },
+    {
+      "id": "R09",
+      "title": "Diploid and triploid whole-plant architecture, Figure 4",
+      "traits": [
+        15
+      ],
+      "credit": "Crawford et al. (2021), Genes 12:923",
+      "kind": "scientific photographic comparison",
+      "license": "CC BY 4.0; see article and any figure-specific credits",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3a76/8234880/1297ad83dc8a/genes-12-00923-g004.jpg",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234880/",
+      "resize": false,
+      "original_dimensions": [
+        747,
+        858
+      ],
+      "file": "photos/R09.jpg",
+      "bytes": 278192,
+      "status": "downloaded"
+    },
+    {
+      "id": "R10",
+      "title": "Chromosome and DNA-content comparison, Figure 2",
+      "traits": [
+        15
+      ],
+      "credit": "Crawford et al. (2021), Genes 12:923",
+      "kind": "scientific figure",
+      "license": "CC BY 4.0; see article and any figure-specific credits",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3a76/8234880/6b1e000d580a/genes-12-00923-g002.jpg",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234880/",
+      "resize": false,
+      "original_dimensions": [
+        771,
+        1130
+      ],
+      "file": "photos/R10.jpg",
+      "bytes": 153775,
+      "status": "downloaded"
+    },
+    {
+      "id": "R16",
+      "title": "Lowryder fasciation",
+      "traits": [
+        12
+      ],
+      "credit": "mutantfarmer",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/fasciation-lowryder.DXc3vT03_2m9E3Q.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        1280,
+        1280
+      ],
+      "file": "photos/R16.jpg",
+      "bytes": 139954,
+      "status": "downloaded"
+    },
+    {
+      "id": "R22",
+      "title": "Reported dwarf photoperiod plant",
+      "traits": [
+        14
+      ],
+      "credit": "Original grower photograph via Overgrow; author attribution on linked thread",
+      "kind": "anecdotal dwarf habit; training visible, cause unconfirmed",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://overgrow.com/uploads/default/original/4X/f/1/7/f1772a0fc414f27f345b1c57354252f1316b0201.jpeg",
+      "source_url": "https://overgrow.com/t/genetic-dwarf-photoperiod-plants/183538",
+      "resize": true,
+      "original_dimensions": [
+        1512,
+        2016
+      ],
+      "file": "photos/R22.jpg",
+      "bytes": 420508,
+      "status": "downloaded"
+    },
+    {
+      "id": "R23",
+      "title": "Reported self-topping seedling",
+      "traits": [
+        11
+      ],
+      "credit": "Original grower photograph via 420 Magazine; author attribution on linked thread",
+      "kind": "firsthand appearance report, not genetic proof",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://www.420magazine.com/community/gallery/img_2589-jpeg.1829654/full",
+      "source_url": "https://www.420magazine.com/community/threads/self-topping-seedling-genetic-mutation.501350/",
+      "resize": true,
+      "original_dimensions": [
+        1238,
+        1074
+      ],
+      "file": "photos/R23.jpg",
+      "bytes": 353359,
+      "status": "downloaded"
+    },
+    {
+      "id": "R24",
+      "title": "Micro Lowryder 1 flowering plant",
+      "traits": [
+        14
+      ],
+      "credit": "David Strange, via Doctor’s Choice",
+      "kind": "compact cultivar analogue; not proof of a single dwarf mutation",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://doctorschoice.farm/wp-content/uploads/2026/07/A20micro20LR120phenotype.png",
+      "source_url": "https://doctorschoice.farm/blog/lowryder-story/",
+      "resize": true,
+      "original_dimensions": [
+        957,
+        648
+      ],
+      "file": "photos/R24.jpg",
+      "bytes": 112326,
+      "status": "downloaded"
+    },
+    {
+      "id": "R27",
+      "title": "Flattened and fused stem reference",
+      "traits": [
+        12
+      ],
+      "credit": "Ascent 420, via ETHOS",
+      "kind": "fasciated stem closeup; use R30 for flowering crest",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd416243a-102b-4c8e-9bb0-54fa43ef9e3a_627x728.png",
+      "source_url": "https://www.ethosgenetics.com/resources/common-cannabis-mutations",
+      "resize": true,
+      "original_dimensions": [
+        627,
+        728
+      ],
+      "file": "photos/R27.jpg",
+      "bytes": 103892,
+      "status": "downloaded"
+    },
+    {
+      "id": "R29",
+      "title": "Reported spontaneous Y-shaped stem split",
+      "traits": [
+        11
+      ],
+      "credit": "PrairieFrostGrow, GrowDiaries",
+      "kind": "firsthand grower report; cause unconfirmed",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://bucket.growdiaries.com/static/post/photo/16964/2993484_b994a1c31a28110eae3f9965eca7048a_m.jpg",
+      "source_url": "https://growdiaries.com/grow-questions/22786-main-stem-split-on-two-strains-in-same-environment",
+      "resize": true,
+      "original_dimensions": [
+        500,
+        500
+      ],
+      "file": "photos/R29.jpg",
+      "bytes": 80983,
+      "status": "downloaded"
+    },
+    {
+      "id": "R30",
+      "title": "Flattened flowering crest",
+      "traits": [
+        12
+      ],
+      "credit": "GTR Seeds",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://gtrseeds.com/cdn/shop/articles/fasciation-in-cannabis-plants-and-polyploidy-899337.jpg?v=1741282983",
+      "source_url": "https://gtrseeds.com/blogs/news/fascinating-faciation",
+      "resize": true,
+      "original_dimensions": [
+        1880,
+        2000
+      ],
+      "file": "photos/R30.jpg",
+      "bytes": 488883,
+      "status": "downloaded"
+    }
+  ],
+  "direct_photographic_inputs": {
+    "whole_plant_plate": [
+      "R29",
+      "R30",
+      "R06",
+      "R24"
+    ],
+    "detail_plate": [
+      "R29",
+      "R27",
+      "R06",
+      "R09"
+    ]
+  },
+  "style_reference": "review/mutation-detail/photo-based-batch-02/whole-plant-examples-02.png",
+  "color_variations": "Green A/B forms plus proposed plum-green host pigmentation C; not verified genetic combinations.",
+  "identity_limits": "Triploid is a genetic identity, not a guaranteed silhouette, vigor, bud size, whorled node or fasciated crest. 3x copper badge is a proposed game UI convention. Bifurcation, fasciation and dwarf stature do not establish a heritable mutation from photographs alone.",
+  "source_handling": "Originals unmodified outside repository; supplied provenance retained; no source photograph shipped as game art.",
+  "approval_note": "User called the concepts perfect and authorized implementing one mutation at a time. Runtime work is reviewed separately."
+}
