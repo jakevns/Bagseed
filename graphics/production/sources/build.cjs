@@ -111,14 +111,16 @@ for(const[id,item]of Object.entries(stride.items)){
 }
 assert.deepEqual(detailLandmarks.canvas,[192,320],'Detail landmarks must use the registered bald-head canvas');
 const data={images,approved,cast,traits,walk,headFeatures:layers.features,detailLandmarks,hatRegistration:layers.hats,hatAssets:Object.keys(layers.hats),layeredHair:true,haircuts:61,manifest:{parts:Object.keys(manifest.assets),sourceHashes:Object.fromEntries(Object.entries(manifest.sources).map(([k,v])=>[k,v.sha256])),castSourceHashes:Object.fromEntries(Object.entries(castManifest.sources).map(([k,v])=>[k,v.sha256])),baselineSHA}};
-const characterDataScript='window.__BAGSEED_ILLUSTRATED_DATA__ = '+JSON.stringify(data).replace(/</g,'\\u003c')+';\n';
+// Images publish as separate files under public/assets/embedded.
+const assets=require('../../../tools/external-assets.cjs');
+const characterDataScript=assets.publish('window.__BAGSEED_ILLUSTRATED_DATA__ = '+JSON.stringify(data).replace(/</g,'\\u003c')+';\n');
 const characterCode=fs.readFileSync(path.join(__dirname,'renderer.js'),'utf8').replace(/\r\n/g,'\n').replace('__BAGSEED_CAST_WALK_CLOCKS__',()=>fs.readFileSync(path.join(castWalkRoot,'sources/clocks.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_WALK_RENDERER__',()=>fs.readFileSync(path.join(walkRoot,'sources/renderer.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_DETAIL_RENDERER__',()=>fs.readFileSync(path.join(__dirname,'face-details.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_HAIR_BATCH_01__',()=>fs.readFileSync(path.join(__dirname,'hair-batch-01.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_HAIR_FIT_REST__',()=>fs.readFileSync(path.join(__dirname,'hair-fit-rest.js'),'utf8').replace(/\r\n/g,'\n')).replace('__BAGSEED_ART_DATA__',()=> 'window.__BAGSEED_ILLUSTRATED_DATA__');
 new (require('node:vm').Script)(characterCode,{filename:'illustrated-production-code'});
 const marker='bagseed-illustrated-production-code';
 const target=path.join(root,'public/index.html'),current=fs.readFileSync(target);
 const priorReport=path.join(art,'build.json'),priorSHA=fs.existsSync(priorReport)?JSON.parse(fs.readFileSync(priorReport)).updatedSHA:null;
 assert.ok(sha(current)===baselineSHA||sha(current)===priorSHA,'Unexpected edits to the working HTML; preserve them before rebuilding');
-const html=require('../../../tools/compile-main-menu.cjs')(original.toString()).replace('</body></html>',`<script id="bagseed-illustrated-character-data" src="character-data.js"></script><script id="${marker}">\n${characterCode}\n</script>\n${require('../../../tools/build-bedroom.cjs')()}</body></html>`).replace(/\r\n/g,'\n');
+const html=assets.publish(require('../../../tools/compile-main-menu.cjs')(original.toString()).replace('</body></html>',`<script id="bagseed-illustrated-character-data" src="character-data.js"></script><script id="${marker}">\n${characterCode}\n</script>\n${require('../../../tools/build-bedroom.cjs')()}</body></html>`).replace(/\r\n/g,'\n'));
 assert.ok(html.includes(marker),'Could not find baseline insertion point');
 assert.ok(Buffer.byteLength(html)<100*1024*1024&&Buffer.byteLength(characterDataScript)<100*1024*1024,'Each playable package file must remain below GitHub\'s 100 MiB limit');
 function replaceIfChanged(file,contents){
@@ -127,6 +129,7 @@ function replaceIfChanged(file,contents){
 }
 const characterDataTarget=path.join(root,'public/character-data.js');replaceIfChanged(characterDataTarget,characterDataScript);
 replaceIfChanged(target,html);
+assets.prune([html,characterDataScript]);
 const characterSources=['graphics/production/sources/renderer.js','graphics/production/sources/face-details.js','graphics/production/sources/hair-batch-01.js','graphics/production/sources/hair-fit-rest.js','graphics/production/sources/build.cjs','graphics/production/customization-v5/detail-landmarks.json','graphics/production/customization-v5/manifest.json','graphics/production/customization-v5/hair-fit.json','graphics/production/customization-v5/register.py'];
 const characterSourcesSHA256=Object.fromEntries(characterSources.map(file=>[file,sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'))]));
 for(const file of ['graphics/production/cast-walk-v1/manifest.json','graphics/production/cast-walk-v1/sources/clocks.js','graphics/production/walk/sources/renderer.js','graphics/production/walk/manifest.json','graphics/production/walk/rig.json','graphics/production/walk/wardrobe-v5/manifest.json','graphics/production/walk/wardrobe-v5/sources/register.py','graphics/production/walk/wardrobe-v5/sources/upper_layer.py','graphics/production/walk/wardrobe-v5/sources/repair_one.py','graphics/production/walk/wardrobe-v5/sources/repack_lower.py','graphics/production/walk/sources/profile_v3.py','graphics/production/walk/sources/affine_footprint.py'])characterSourcesSHA256[file]=sha(fs.readFileSync(path.join(root,file),'utf8').replace(/\r\n/g,'\n'));

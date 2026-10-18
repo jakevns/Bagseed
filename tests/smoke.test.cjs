@@ -67,7 +67,7 @@ test('title, character creation, and a new playable bedroom', async () => {
 
 test('the standalone local file creates a bald character and retains its saved appearance',async()=>{
   await withPage({viewport:{width:1280,height:800}},async page=>{
-    await page.goto(require('node:url').pathToFileURL(path.resolve(__dirname,'../public/index.html')).href);
+    await page.goto(require('node:url').pathToFileURL(require('../tools/build-standalone.cjs')(path.join(require('node:os').tmpdir(),'bagseed-standalone-smoke'))).href);
     await page.evaluate(()=>BagseedArt.ready);
     await page.locator('[data-act="newGame"]').click();
     await page.locator('[data-act="hairGrp"][data-arg="short"]').click();
