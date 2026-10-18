@@ -83,7 +83,7 @@ function build(p,traits={},options={}){
   if(mutationArts.has('triploid'))for(const o of model.organs)if(o.kind==='flower')o.widthScale=1.25;
   // Painted mutation sugar leaves belong to their flower's attachment, not a
   // free-floating overlay. Retain the same IDs and parents throughout bloom.
-  if(!male&&['freak','duck','mono','variegated','fern','albino','gold'].some(k=>mutationArts.has(k)))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
+  if(!male&&['freak','duck','mono','variegated','fern','albino','gold','ember','pink','ink'].some(k=>mutationArts.has(k)))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
    addLeaf(bud.id+'/sugar:'+side,bud.parent,bud.at,'sugarLeaf',bud.length*.62,side*.50,.4);
    const leaf=model.organs[model.organs.length-1];if(leaf.id===bud.id+'/sugar:'+side)leaf.offsetY=bud.length*.18;
   }

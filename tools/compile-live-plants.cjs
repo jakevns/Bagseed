@@ -18,7 +18,7 @@ module.exports=function(){
    for(const [file,expected]of [[path.join(base,'mutations',id,a.source),a.sourceSHA256],[path.join(root,'public',a.runtime),a.runtimeSHA256]])
     assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),expected,'Mutation artwork changed: '+file);
   }
-  for(const v of Object.values(m.variants))for(const role of ['singleLeaf','threeLeaf','fiveLeaf','sevenLeaf','sugarLeaf']){
+  for(const v of Object.values(m.variants))for(const role of m.partRoles||['singleLeaf','threeLeaf','fiveLeaf','sevenLeaf','sugarLeaf']){
    const p=v.parts[role];assert.ok(p&&m.atlases[p.atlas]&&p.outline.length>=3&&p.attach.length===2,'Missing mutation organ: '+id+'/'+role);
   }
   mutations[id]=m;

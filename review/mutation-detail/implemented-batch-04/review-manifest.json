@@ -1,0 +1,270 @@
+{
+  "status": "user-approved-for-production",
+  "runtimeRevision": "live-plants-5",
+  "mutations": [
+    "ember",
+    "pinkpistil",
+    "inkleaf"
+  ],
+  "buildSHA256": "efc61d24f6e48681fbd668b8dfabfcfbb8f437cf3cf0711f04a53f1a55ad8601",
+  "characterRelease": "character-audit-cel-v1",
+  "personScaleRevision": "person-scale-1",
+  "assets": {
+    "ember": {
+      "manifest": "graphics/plants/mutations/ember/sources/manifest.json",
+      "manifestSHA256": "2b1ccace51d70f78c679e6c6e9a1f332033000a5ff81622de46b711e0cb38f6e",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "1468e89a5675e5140efd77db780ad41f4549c7a1d64aef0d97d7b504a4283241",
+          "runtime": "assets/plants/mutations/ember/components-47e5bebe6a43.webp",
+          "runtimeSHA256": "47e5bebe6a433da4902499b5c9daceca4cb7052724bd7346684a8a0216b4dac7",
+          "size": [
+            1536,
+            1024
+          ]
+        },
+        "bark": {
+          "source": "assets/bark.png",
+          "sourceSHA256": "906d9c9117c78eaa47cc74fe1b42bd1bc678e7731bd3dc14a4d00231d71f82bc",
+          "runtime": "assets/plants/mutations/ember/bark-d734ed09ad30.webp",
+          "runtimeSHA256": "d734ed09ad301141ddfaa890db5db749cdd78c210f8e0a6617bb56a3a9055de6",
+          "size": [
+            1024,
+            1536
+          ]
+        }
+      }
+    },
+    "pinkpistil": {
+      "manifest": "graphics/plants/mutations/pinkpistil/sources/manifest.json",
+      "manifestSHA256": "8a8b9c70596deaff6d4acb064543603d902b47b37bbca977a9e8a027882a2caf",
+      "atlases": {
+        "stigmas": {
+          "source": "assets/stigmas.png",
+          "sourceSHA256": "420f7aaf5048cd0e000badfbacf542ae8750fdc5eed21e255794dfae445a4133",
+          "runtime": "assets/plants/mutations/pinkpistil/stigmas-a4e398be4f29.webp",
+          "runtimeSHA256": "a4e398be4f29cfa677767719bbc2a746c3aa2c58361e41d6b24afea5c1268de2",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      }
+    },
+    "inkleaf": {
+      "manifest": "graphics/plants/mutations/inkleaf/sources/manifest.json",
+      "manifestSHA256": "15be4376f4fe2fe1698b72a801aa190867b4f2fc77ea5cd87e2d94863377ed7f",
+      "atlases": {
+        "components": {
+          "source": "assets/components.png",
+          "sourceSHA256": "d61a7922b4b1117d4e2672126654846d76ec9a1c39ea8fbf50a9c907c60855d7",
+          "runtime": "assets/plants/mutations/inkleaf/components-99c694aa1d4d.webp",
+          "runtimeSHA256": "99c694aa1d4df292dd57fa8a6137d8c0f26b14a10d44e01ebfe556864188518e",
+          "size": [
+            1774,
+            887
+          ]
+        }
+      }
+    }
+  },
+  "sourcePack": "Bagseed_Mutation_References.zip",
+  "referencePhotos": [
+    {
+      "id": "R11",
+      "title": "Anthocyanin leaf and petiole phenotypes, Figure 1",
+      "traits": [
+        8,
+        10
+      ],
+      "credit": "Gagalova et al. (2024), Plant Direct 8:e70016",
+      "kind": "photographic reference",
+      "license": "CC BY-NC-ND 4.0; unmodified figure, noncommercial reference",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/66e7/11588432/a5c68e57c7c8/PLD3-8-e70016-g001.jpg",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11588432/",
+      "resize": false,
+      "original_dimensions": [
+        709,
+        205
+      ],
+      "file": "photos/R11.jpg",
+      "bytes": 54607,
+      "status": "downloaded"
+    },
+    {
+      "id": "R19",
+      "title": "Serious 6 pink stigmas",
+      "traits": [
+        9
+      ],
+      "credit": "Serious Seeds",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://www.seriousseeds.com/sites/default/files/styles/306_535/public/strains/SERIOUS%206%20%5BVRIJSTAAND%5D.png?itok=ogSiaSon",
+      "source_url": "https://www.seriousseeds.com/cannabis-seeds/serious-6",
+      "resize": true,
+      "original_dimensions": [
+        306,
+        535
+      ],
+      "file": "photos/R19.jpg",
+      "bytes": 61122,
+      "status": "downloaded"
+    },
+    {
+      "id": "R20",
+      "title": "Serious 6 stigma macro",
+      "traits": [
+        9
+      ],
+      "credit": "Serious Seeds photo, hosted by Supreme Seeds",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://www.supremeseeds.de/thumbnail/cb/ab/37/1741062181/Serious.6.08september2021.015.Instagramfeed_1920x1920.jpg?ts=1741062309",
+      "source_url": "https://www.supremeseeds.de/Breeder/Serious-Seeds/",
+      "resize": true,
+      "original_dimensions": [
+        1920,
+        1920
+      ],
+      "file": "photos/R20.jpg",
+      "bytes": 363410,
+      "status": "downloaded"
+    }
+  ],
+  "sourcePhotosIncludedInRepository": false,
+  "generatedSources": {
+    "ember-components": "exec-d3da36cd-d544-4d35-a5a3-d4e597413643.png",
+    "ember-bark": "exec-eb453b98-e193-4852-b395-a060ec59cb12.png",
+    "pinkpistil-stigmas": "exec-f7273f37-726b-4e8e-bbf9-7627d604ee6f.png",
+    "inkleaf-components": "exec-a4fcf7be-f15c-48a4-835e-5fb8d87448b5.png"
+  },
+  "verification": {
+    "report": "verification.json",
+    "catalogCountPerFamily": 38,
+    "stageRange": [
+      0,
+      12
+    ],
+    "pigmentChecks": {
+      "ember": {
+        "id": "fan:4:-1",
+        "total": 22180,
+        "brightness": 76.54429775473348,
+        "contrast": 25.80303434763842,
+        "pale": 0,
+        "green": 0.7495491433724075,
+        "gold": 0.07673579801623084,
+        "pink": 0,
+        "red": 0.14440937781785393,
+        "dark": 0.6981064021641118
+      },
+      "pink": {
+        "id": "apex:flower",
+        "total": 22141,
+        "brightness": 123.70251629104388,
+        "contrast": 48.45843801078283,
+        "pale": 0.1335983017930536,
+        "green": 0.48290501784020595,
+        "gold": 0.25613115938756154,
+        "pink": 0.12804299715460007,
+        "red": 0.13508874937898016,
+        "dark": 0.25951854026466736
+      },
+      "pinkControl": {
+        "id": "apex:flower",
+        "total": 4059,
+        "brightness": 124.06066612466101,
+        "contrast": 42.279364299080754,
+        "pale": 0.10051736881005174,
+        "green": 0.4786893323478689,
+        "gold": 0.3887657058388766,
+        "pink": 0,
+        "red": 0.08253264350825326,
+        "dark": 0.20817935452081793
+      },
+      "ink": {
+        "id": "fan:4:-1",
+        "total": 21447,
+        "brightness": 38.65753377162357,
+        "contrast": 18.506704793965966,
+        "pale": 0,
+        "green": 0.08877698512612486,
+        "gold": 0.03319811628666014,
+        "pink": 0.0037767519932857744,
+        "red": 0.01548002051568984,
+        "dark": 0.9843334732130368
+      },
+      "juvenile": {
+        "id": "seedling:true:left",
+        "total": 10824,
+        "brightness": 72.03807172949026,
+        "contrast": 31.079120668291658,
+        "pale": 0,
+        "green": 0.6307280118255728,
+        "gold": 0.013950480413895048,
+        "pink": 0.0053584626755358465,
+        "red": 0.016906873614190687,
+        "dark": 0.727549889135255
+      },
+      "greenSourcePixels": 32076,
+      "greenPreservedPixels": 32076,
+      "pinkLeavesUnchanged": true,
+      "pinkMaleUnchanged": true,
+      "pinkHasGreenBracts": true,
+      "emberHasRedVeinsAndGreenBlade": true,
+      "inkHasShadedDarkTissue": true,
+      "inkDevelopsFromGreen": true,
+      "flowerKitPreserved": true,
+      "eightGiantFramesMs": 48.5
+    },
+    "saveReload": true,
+    "legacySave": true,
+    "errors": [],
+    "animation": {
+      "frames": 72,
+      "fps": 12,
+      "seconds": 6
+    },
+    "modelTestsPassed": 17,
+    "browserRegressionTestsPassed": 14,
+    "finalBatchCapturePassed": true,
+    "priorFreakshowCapturePassed": true,
+    "browserChecksBlocked": [
+      {
+        "test": "standalone local-file smoke",
+        "reason": "Cloud Chromium blocks file:// navigation with net::ERR_BLOCKED_BY_ADMINISTRATOR; gameplay assertions were not reached."
+      }
+    ],
+    "standaloneGeneratedAndReinliningVerified": true,
+    "mergedBatchCapturePassed": true
+  },
+  "files": {
+    "README.md": "83d14d25222898ba56e2de41cc55196be50c31159da2c4d6e3e02fbbda78c303",
+    "bedroom-gameplay.png": "5424d18c7085cd1a76a53e47087e127d5c53820a42c440872b4fc27660db52a9",
+    "combined-mutations.png": "b35064ff74e6137ea7dd439e39dccf385b75d31df0f68d0f3b9c893d21df18b8",
+    "ember-growth.png": "663b3577e628620fc8b02b77d172f988a16d6d13ecc0fc7ed9a79c82ca1115e2",
+    "ember-structure.png": "ed050191fbb4b8de32c207f28ff03a2687f326cb6eaabf6ebedef395a33306dd",
+    "growth-and-wind.gif": "819a73bb3d1c3731149a816c554e1dc6aa0b264dc0377530bf34ffb025ed5cbd",
+    "growth-and-wind.mp4": "28f578d773e32be08589ffd7c934daf3a5d78320313306ddbbcfb1ecf009bceb",
+    "inkleaf-growth.png": "9cbd5ec8316443b3fa3ebb8df55a9be9b200291badbe27e775266985f14731f2",
+    "mobile-gameplay.png": "5de5d71753d474a9871c36a548869b96ae4c68dfab26597407d95c4d34d68e5b",
+    "native-guide.png": "d9f3d7d5061ead868a06d83b3f681193f0aabdac949651c6b26f03abe88cd2a8",
+    "phenotype-colors.png": "247a85d8871fa6b4e5a67ec5f60d3a7cdf297cf1f1568176e616cf3b3eb153c8",
+    "pinkpistil-growth.png": "9f165eb07440e91bd4ce553cce5b864959333e6be54f25b5efbbf0487937abda",
+    "runtime-leaf-details.png": "3b871bd5b0b162714edd371268eed8b98da73b3788d17dc1e6178bb0574f81e5",
+    "three-mutations.png": "0688c23d8c8ab4698a85668ae2473ad3d0efb1381d5eea3b123bfbfe79872186",
+    "tissue-closeups.png": "7f996c12d86b061d30b632b759b207a97bd7a1061094f7694f7f50b6e9c71bb9",
+    "training-and-stress.png": "67e6432c167e58472a0a89a22ef869912c557455dfacda0270cf9a1db753fde9",
+    "verification.json": "90fa688b12402222d4e26c64f4c4d7d2504d738700919aff9c202a17699ebd72"
+  },
+  "personScale": 1.35,
+  "integrationBase": "dc958b159aea7507a03b685d2c69a0aa8ca0fee3",
+  "assetStorage": {
+    "pipeline": "tools/external-assets.cjs",
+    "publishedImagesDir": "public/assets/embedded",
+    "mutationAtlasesDir": "public/assets/plants/mutations",
+    "publishedImageCount": 1841
+  }
+}

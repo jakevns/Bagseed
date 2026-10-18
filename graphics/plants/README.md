@@ -102,3 +102,7 @@ Ducksfoot, Monophylla and Moonmarble have isolated painted juvenile, young, matu
 ## Snowtip, Fernfrond and Goldleaf
 
 The user approved all three native gameplay implementations for production. Each supplies painted juvenile, young, mature and sugar organs in two forms. Snowtip greens stable node-bound organs as later nodes develop; Fernfrond uses connected painted fine fronds; Goldleaf retains green tissue within healthy golden leaf zones. Their tissue layers can combine with existing leaf shapes and Moonmarble. Native guide/card art reuses the same components. Review: `review/mutation-detail/implemented-batch-03/`.
+
+## Ember Stem, Pink Pistil and Inkleaf
+
+The user approved these three gameplay implementations for production. Ember has painted vascular leaves and stem material that follows the posed skeleton. Pink Pistil layers painted stigma hairs over each inherited flower kit while protecting bracts/trichomes and leaving vegetative leaves/male flowers unchanged. Inkleaf supplies shaded dark leaf organs and a reusable pigment layer. Native guide/card art reuses the same components. Review: `review/mutation-detail/implemented-batch-04/`.

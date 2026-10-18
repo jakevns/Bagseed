@@ -24,10 +24,11 @@
   // Shape and tissue pattern are independent. Retain single-blade precedence
   // for Monophylla; webbing wins over dissected foliage in a combined plant.
   const shape=arts.includes('mono')?'monophylla':arts.includes('duck')?'ducksfoot':arts.includes('freak')?'freakshow':arts.includes('fern')?'fernfrond':null;
-  const painted=MUTATIONS[shape||'']||(arts.includes('variegated')?MUTATIONS.moonmarble:arts.includes('albino')?MUTATIONS.snowtip:arts.includes('gold')?MUTATIONS.goldleaf:null);
+  const painted=MUTATIONS[shape||'']||(arts.includes('variegated')?MUTATIONS.moonmarble:arts.includes('albino')?MUTATIONS.snowtip:arts.includes('gold')?MUTATIONS.goldleaf:arts.includes('ink')?MUTATIONS.inkleaf:arts.includes('ember')?MUTATIONS.ember:arts.includes('pink')?MUTATIONS.pinkpistil:null);
   const choices=painted?Object.keys(painted.variants):[],roll=hash(r.seed+':'+painted?.mutationKey+':form')%10;
   const variant=painted?choices[r.traits.leafShape==='broad'?(roll<8?1:0):r.traits.leafShape==='narrow'?(roll<8?0:1):roll%choices.length]:null;
-  return{r,arts,view,mutation:painted?{key:painted.mutationKey,revision:painted.revision,variant}:null,material:arts.includes('variegated')?'moonmarble':null,chlorophyll:arts.filter(a=>a==='albino'||a==='gold').map(a=>a==='albino'?'snowtip':'goldleaf')};
+  const layer=key=>{const m=MUTATIONS[key],names=Object.keys(m.variants),roll=hash(r.seed+':'+key+':form')%10;return{key,revision:m.revision,variant:names[r.traits.leafShape==='broad'?(roll<8?1:0):r.traits.leafShape==='narrow'?(roll<8?0:1):roll%names.length]};};
+  return{r,arts,view,mutation:painted?{key:painted.mutationKey,revision:painted.revision,variant}:null,material:arts.includes('variegated')?'moonmarble':null,chlorophyll:arts.filter(a=>a==='albino'||a==='gold').map(a=>a==='albino'?'snowtip':'goldleaf'),stemMutation:arts.includes('ember')?layer('ember'):null,flowerMutation:arts.includes('pink')?layer('pinkpistil'):null};
  }
  function patternVariant(d,id,key='moonmarble'){
   const names=Object.keys(MUTATIONS[key].variants),main=d.mutation?.key===key?d.mutation.variant:names[hash(d.r.seed+':'+key+':pattern-family')%names.length];
@@ -36,18 +37,21 @@
   return hash(d.r.seed+':'+key+':'+id)%5===0?names[(names.indexOf(main)+1)%names.length]:main;
  }
  function partData(d,role,organId=''){
-  const m=d.mutation&&MUTATIONS[d.mutation.key],variant=m?.mutationKey==='moonmarble'&&organId?patternVariant(d,organId):d.mutation?.variant,part=m?.variants[variant].parts[role];
-  if(part)return{...part,kit:'mutation:'+m.mutationKey+':'+part.atlas,leafKey:m.leafKey,mutation:m.mutationKey};
-  const r=d.r,kit=role.startsWith('female')||role.startsWith('male')?r.flowerKit:r.leafKit;return{...DATA[kit].parts[role],kit};
+  const m=d.mutation&&MUTATIONS[d.mutation.key],variant=m?.mutationKey==='moonmarble'&&organId?patternVariant(d,organId):d.mutation?.variant,part=m?.material!=='stigmas'?m?.variants[variant].parts[role]:null;
+  const r=d.r,kit=role.startsWith('female')||role.startsWith('male')?r.flowerKit:r.leafKit,base=part?{...part,kit:'mutation:'+m.mutationKey+':'+part.atlas,leafKey:m.leafKey,mutation:m.mutationKey}:{...DATA[kit].parts[role],kit};
+  if(d.flowerMutation&&role.startsWith('female')){const p=MUTATIONS.pinkpistil.variants[d.flowerMutation.variant].parts[role];if(p)base.stigma={...p,kit:'mutation:pinkpistil:'+p.atlas};}
+  return base;
  }
  const patterns=new Map();
  function creamCoverage(col){return limit((col[0]/Math.max(1,col[1])-.78)/.19,0,1)*limit((col[2]/Math.max(1,col[1])-.35)/.23,0,1)*limit((col[0]-115)/55,0,1);}
  function goldCoverage(col){return limit((col[0]/Math.max(1,col[1])-.72)/.26,0,1)*limit((col[1]-col[2])/70,0,1);}
+ function redCoverage(col){return limit((col[0]/Math.max(1,col[1])-1.05)/.6,0,1)*limit((col[0]-col[2]*.85)/55,0,1);}
+ function inkCoverage(col){return limit(((col[0]+col[2])*.5-col[1]+8)/35,0,1);}
  function patternPixels(d,role,id,w,h,material='moonmarble'){
   const m=MUTATIONS[material],part=m.variants[patternVariant(d,id,material)].parts[role];if(!part)return null;
   const key=[material,part.crop.join(','),w,h].join(':');if(patterns.has(key))return patterns.get(key);
   const cv=document.createElement('canvas');cv.width=w;cv.height=h;const c=cv.getContext('2d');c.drawImage(images['mutation:'+material+':'+part.atlas],...part.crop,0,0,w,h);
-  const rgba=c.getImageData(0,0,w,h).data,mask=new Float32Array(w*h);for(let i=0;i<mask.length;i++)mask[i]=(material==='goldleaf'?goldCoverage:creamCoverage)(rgba.subarray(i*4,i*4+3))*rgba[i*4+3]/255;
+  const rgba=c.getImageData(0,0,w,h).data,mask=new Float32Array(w*h),coverage=({goldleaf:goldCoverage,ember:redCoverage,inkleaf:inkCoverage})[material]||creamCoverage;for(let i=0;i<mask.length;i++)mask[i]=coverage(rgba.subarray(i*4,i*4+3))*rgba[i*4+3]/255;
   if(patterns.size>=64)patterns.delete(patterns.keys().next().value);patterns.set(key,mask);return mask;
  }
  function tintPixel(color,target,t){const light=limit((color[0]*.2126+color[1]*.7152+color[2]*.0722)/112,.3,1.4);return color.map((v,k)=>v*(1-t)+Math.min(255,target[k]*light)*t);}
@@ -60,26 +64,35 @@
   const snow=arts.includes('albino')&&role.endsWith('Leaf')?Math.round(limit(1-(finish.maturity??(finish.young?0:1)),0,1)*12)/12:0;
   const goldPattern=arts.includes('gold')&&role.endsWith('Leaf')?patternVariant(d,finish.organId||'','goldleaf'):'';
   const snowPattern=snow?patternVariant(d,finish.organId||'','snowtip'):'';
-  const key=[a.kit,a.crop.join(','),role,pattern,snow,snowPattern,goldPattern,amount,finish.rgb?.join(','),brightness,d.r.traits.leafKey,arts.join(','),p.stage,!!finish.young,...disease,hash(d.r.seed)%7,Math.round((pigment?.strength||0)*24),pigment?.hex||'',Math.round((p.dry?.prog||0)*6)].join(':');
+  const inkPattern=arts.includes('ink')&&role.endsWith('Leaf')?patternVariant(d,finish.organId||'','inkleaf'):'',redPattern=arts.includes('ember')&&role.endsWith('Leaf')?patternVariant(d,finish.organId||'','ember'):'';
+  const key=[a.kit,a.crop.join(','),a.stigma?.crop.join(','),role,pattern,snow,snowPattern,goldPattern,inkPattern,redPattern,amount,finish.rgb?.join(','),brightness,d.r.traits.leafKey,arts.join(','),p.stage,!!finish.young,...disease,hash(d.r.seed)%7,Math.round((pigment?.strength||0)*24),pigment?.hex||'',Math.round((p.dry?.prog||0)*6)].join(':');
   if(tiles.has(key))return tiles.get(key);
-  const cv=document.createElement('canvas'),factor=Math.min(1,(a.mutation?256:112)/Math.max(a.crop[2],a.crop[3]));cv.width=Math.max(2,Math.round(a.crop[2]*factor));cv.height=Math.max(2,Math.round(a.crop[3]*factor));const c=cv.getContext('2d');
+  const cv=document.createElement('canvas'),factor=Math.min(1,(a.mutation||a.stigma?256:112)/Math.max(a.crop[2],a.crop[3]));cv.width=Math.max(2,Math.round(a.crop[2]*factor));cv.height=Math.max(2,Math.round(a.crop[3]*factor));const c=cv.getContext('2d');
   c.save();if(a.clipHull){c.beginPath();a.outline.forEach(([x,y],i)=>c[i?'lineTo':'moveTo']((a.attach[0]+x*a.crop[3]+.5)*cv.width/a.crop[2],(a.attach[1]-y*a.crop[3]+.5)*cv.height/a.crop[3]));c.closePath();c.clip();}c.drawImage(images[a.kit],...a.crop,0,0,cv.width,cv.height);c.restore();
   const pixels=c.getImageData(0,0,cv.width,cv.height),v=pixels.data,targetLeaf=rgb((LEAF_PAL[d.r.traits.leafKey]||LEAF_PAL.forest).leaf),sourceLeaf=a.leafKey||DATA[d.r.leafKit].traits.leafKey,seed=hash(d.r.seed)%99;
+  // Preserve the inherited bracts and trichomes. New painted hairs may occupy
+  // native stigma tissue or open gaps inside the flower's silhouette.
+  const stigmaMask=a.stigma?new Uint8Array(cv.width*cv.height):null;
+  if(stigmaMask)for(let i=0;i<v.length;i+=4)stigmaMask[i/4]=v[i+3]<40||v[i]>v[i+1]*1.15&&v[i+1]>v[i+2]*1.12?1:0;
   const patternMask=pattern&&a.mutation!=='moonmarble'?patternPixels(d,role,finish.organId||'',cv.width,cv.height):null;
   const goldMask=goldPattern&&a.mutation!=='goldleaf'?patternPixels(d,role,finish.organId||'',cv.width,cv.height,'goldleaf'):null;
   const snowMask=snowPattern&&a.mutation!=='snowtip'?patternPixels(d,role,finish.organId||'',cv.width,cv.height,'snowtip'):null;
+  const inkMask=inkPattern&&a.mutation!=='inkleaf'?patternPixels(d,role,finish.organId||'',cv.width,cv.height,'inkleaf'):null;
+  const redMask=redPattern&&a.mutation!=='ember'?patternPixels(d,role,finish.organId||'',cv.width,cv.height,'ember'):null;
   for(let i=0;i<v.length;i+=4){if(!v[i+3])continue;const y=Math.floor(i/4/cv.width)/cv.height,x=(i/4%cv.width)/cv.width;let col=[v[i],v[i+1],v[i+2]];
    if(leaf){
-    const pale=a.mutation==='moonmarble'?creamCoverage(col):0,original=col.slice();
+    const pale=a.mutation==='moonmarble'?creamCoverage(col):0,original=col.slice(),red=a.mutation==='ember'?redCoverage(col):0;
     const snowTissue=a.mutation==='snowtip'?creamCoverage(col):0,golden=a.mutation==='goldleaf'?goldCoverage(col):0;
     // Snowtip is pale new tissue over green supporting foliage, not an all-white
     // adult. The same node-bound organ greens as later nodes develop above it.
     if(snowTissue){const light=limit((col[0]*.2126+col[1]*.7152+col[2]*.0722-150)/85,.35,1.25),green=(arts.includes('gold')?[185,178,59]:targetLeaf.map(v=>v*.75)).map(v=>v*light);col=mixRGB(col,green,snowTissue*(1-snow));}
-    if(sourceLeaf!==d.r.traits.leafKey)col=tintPixel(col,targetLeaf,.68*(1-golden)*(1-snowTissue*snow));
+    if(sourceLeaf!==d.r.traits.leafKey)col=tintPixel(col,targetLeaf,.68*(1-golden)*(1-snowTissue*snow)*(a.mutation==='inkleaf'?.2:1));
     if(goldMask)col=tintPixel(col,[211,196,64],goldMask[i/4]*.85);
     if(arts.includes('triploid'))col=tintPixel(col,[43,108,48],.26);
-    if(arts.includes('ink'))col=tintPixel(col,[42,30,53],.35+limit((p.stage-2)/8,0,1)*.45);
-    if(amount)col=tintPixel(col,finish.rgb,amount);
+    if(inkMask)col=tintPixel(col,[42,30,53],(.18+inkMask[i/4]*.72)*(.35+limit((p.stage-2)/8,0,1)*.45));
+    if(amount)col=tintPixel(col,finish.rgb,amount*(a.mutation==='inkleaf'?.55:1));
+    if(red)col=mixRGB(col,original,red);
+    if(redMask)col=tintPixel(col,[151,43,66],redMask[i/4]*.88);
     if(pale)col=mixRGB(col,original,pale);
     if(patternMask)col=mixRGB(col,[237,229,194],patternMask[i/4]*.94);
     if(snowTissue&&snow)col=mixRGB(col,original,snowTissue*snow);
@@ -90,13 +103,16 @@
    if(flower){
     const pistil=col[0]>col[1]*1.15&&col[0]>col[2]*1.15,frost=Math.max(...col)-Math.min(...col)<45&&col.reduce((a,b)=>a+b)>495;
     if(pigment.strength&&!pistil&&!frost)col=tintPixel(col,pigment.rgb,pigment.strength*.5);
-    if(arts.includes('pink')&&(pistil||(p.stage<=7&&frost)))col=tintPixel(col,[246,88,155],.9);
+    if(a.stigma&&col[0]>col[1]*1.15&&col[1]>col[2]*1.12)col=tintPixel(col,a.stigma.pigment,.9);
     if(arts.includes('ember')&&p.stage>=8&&!frost&&!pistil)col=tintPixel(col,[182,77,58],.22);
     if(p.stage>=11)col=tintPixel(col,[142,128,75],limit((p.dry?.prog||0)*.55,0,.65));
     if(disease[2]&&hash(seed+':m:'+Math.floor(x*29)+':'+Math.floor(y*29))%43<disease[2]*2)col=[147,147,131];
    }
    for(let k=0;k<3;k++)v[i+k]=col[k]*brightness;
   }c.putImageData(pixels,0,0);
+  // Hairs overlay the existing strain flower. Keep its bracts, morphology,
+  // trichomes and attachment; only female flowers receive the stigma layer.
+  if(a.stigma){c.save();c.beginPath();a.outline.forEach(([x,y],i)=>c[i?'lineTo':'moveTo']((a.attach[0]+x*a.crop[3]+.5)*cv.width/a.crop[2],(a.attach[1]-y*a.crop[3]+.5)*cv.height/a.crop[3]));c.closePath();c.clip();c.beginPath();for(let y=0;y<cv.height;y++)for(let x=0;x<cv.width;){if(!stigmaMask[y*cv.width+x]){x++;continue;}const start=x;while(x<cv.width&&stigmaMask[y*cv.width+x])x++;c.rect(start,y,x-start,1);}c.clip();c.globalAlpha=.88;c.drawImage(images[a.stigma.kit],...a.stigma.crop,0,0,cv.width,cv.height);c.restore();}
   if(tiles.size>=384)tiles.delete(tiles.keys().next().value);tiles.set(key,cv);return cv;
  }
  function stamp(c,p,d,role,x,y,length,angle=0,finish={},widthScale=1){
@@ -104,6 +120,18 @@
   c.save();c.translate(x,-y);c.rotate(angle);c.drawImage(image,-a.attach[0]/a.crop[2]*w,-a.attach[1]/a.crop[3]*length,w,length);c.restore();
  }
  function stroke(c,points,width,color){c.strokeStyle=color;c.lineWidth=width;c.lineCap='round';c.lineJoin='round';c.beginPath();for(const [i,a]of points.entries())c[i?'lineTo':'moveTo'](a.x,-a.y);c.stroke();}
+ function stemParts(d){return MUTATIONS.ember.variants[d.stemMutation.variant].parts;}
+ function paintedStem(c,d,points,width){
+  const part=stemParts(d).internode,im=images['mutation:ember:'+part.atlas],[sx,sy,sw,sh]=part.crop;
+  // Project short pieces of painted vascular texture along the actual posed
+  // branch curve. Texture stays attached as the skeleton bends in the breeze.
+  const lengths=points.slice(1).map((p,i)=>Math.hypot(p.x-points[i].x,p.y-points[i].y)),total=lengths.reduce((a,b)=>a+b,0);let travelled=0;
+  points.slice(1).forEach((p,i)=>{const a=points[i],length=lengths[i],count=Math.max(1,Math.ceil(length/1.5));for(let j=0;j<count;j++){
+   const u=(j+.5)/count,x=a.x+(p.x-a.x)*u,y=a.y+(p.y-a.y)*u,w=width*(1-.25*(travelled+u*length)/Math.max(.01,total));
+   c.save();c.translate(x,-y);c.rotate(Math.atan2(-(p.y-a.y),p.x-a.x)+Math.PI/2);c.drawImage(im,sx,sy+sh*.08+sh*.76*j/count,sw,Math.max(1,sh*.76/count),-w/2,-length/count/2-.025,w,length/count+.05);c.restore();
+  }travelled+=length;});
+ }
+ function stemNode(c,d,p,width){const a=stemParts(d).nodeCollar,h=width*1.65,w=h*a.crop[2]/a.crop[3];c.drawImage(images['mutation:ember:'+a.atlas],...a.crop,p.x-w/2,-p.y-h/2,w,h);}
  function drawRig(c,p,d,m,t,wind){
   const pose=Model.pose(m,d.view,t,wind,settings.reduced),H=m.height,finish=Model.senescence(d.view,d.r.traits,BagseedNightColor),ember=d.arts.includes('ember');
   if(p.staked)for(const side of [-1,1])stamp(c,p,d,'bamboo',side*H*.12,0,H*.78,0,{},.35);
@@ -112,8 +140,9 @@
    stamp(c,p,d,o.role,a.x,a.y,o.length,a.angle,{amount:limit(amount,0,1),rgb:color,rear:o.z<0,young:a.y>H*.72,maturity:o.maturity,organId:o.id},d.arts.includes('triploid')?1.2:1);
   };
   for(const o of m.organs)if(o.kind==='leaf'&&o.z<0)leaf(o);
-  for(const b of pose.branches.values())if(!b.cut){c.lineCap='round';c.beginPath();c.moveTo(b.start.x,-b.start.y);c.quadraticCurveTo(b.control.x,-b.control.y,b.end.x,-b.end.y);c.strokeStyle=ember?'#7d2731':'#394b24';c.lineWidth=b.width*1.6;c.stroke();c.strokeStyle=ember?'#b95046':'#81914b';c.lineWidth=b.width;c.stroke();}
+  for(const b of pose.branches.values())if(!b.cut){c.lineCap='round';c.beginPath();c.moveTo(b.start.x,-b.start.y);c.quadraticCurveTo(b.control.x,-b.control.y,b.end.x,-b.end.y);c.strokeStyle=ember?'#7d2731':'#394b24';c.lineWidth=b.width*1.6;c.stroke();c.strokeStyle=ember?'#b95046':'#81914b';c.lineWidth=b.width;c.stroke();if(d.stemMutation){const curve=Array.from({length:9},(_,i)=>{const u=i/8,v=1-u;return{x:v*v*b.start.x+2*v*u*b.control.x+u*u*b.end.x,y:v*v*b.start.y+2*v*u*b.control.y+u*u*b.end.y};});paintedStem(c,d,curve,b.width);}}
   const trunk=m.joints.map(j=>pose.joints.get(j.id)),w=limit(H*.014,.18,1.2)*(d.arts.includes('crest')?1.6:1);stroke(c,trunk,w*1.5,ember?'#792c36':'#3b4b28');stroke(c,trunk,w,ember?'#b64742':'#738443');stroke(c,trunk,w*.26,ember?'#e27a61':'#b6b780');
+  if(d.stemMutation){paintedStem(c,d,trunk,w);for(const j of m.joints)if(j.id.startsWith('node:'))stemNode(c,d,pose.joints.get(j.id),w);}
   for(const o of m.organs)if(o.kind==='leaf'&&o.z>=0)leaf(o);
   for(const o of m.organs)if(o.kind==='flower'){const a=pose.organs.get(o.id);stamp(c,p,d,o.role,a.x,a.y,o.length,a.angle,{},o.widthScale||1);}
   if(p.staked){c.strokeStyle='#d7c395';c.lineWidth=.12;for(const side of [-1,1])for(const u of [.34,.57]){const a=pose.joints.get('node:'+Math.max(1,Math.round(m.nodes*u)));c.beginPath();c.moveTo(side*H*.12,-a.y);c.lineTo(a.x,-a.y);c.stroke();}}
@@ -134,7 +163,7 @@
   const w=hang?64:p.stage>=12?22:p.stage<2?18:Math.max(20,Math.ceil((b.hi-b.lo)*2.1)+14),h=hang?58:p.stage>=12?24:p.stage<2?14:Math.ceil(model.height*2.1)+8;
   const s={cv:surface(w,h),w,h,ax:hang?32:p.stage<2||p.stage>=12?w/2:7-b.lo*2.1,ay:hang?0:h-3,hang,illustrated:true,d,model,recipe:copy(d.r)};paint(s,p);return s;
  }
- PlantArt.key=function(p){const r=recipe(p);return baseKey.call(this,p)+'|painted-4|'+r.leafKit+'|'+r.flowerKit+'|'+r.seed+'|'+JSON.stringify(r.traits)+'|'+(typeof Mut!=='undefined'?Mut.list(p).join(','):'')+'|'+(p.pheno?.b||1);};
+ PlantArt.key=function(p){const r=recipe(p);return baseKey.call(this,p)+'|painted-5|'+r.leafKit+'|'+r.flowerKit+'|'+r.seed+'|'+JSON.stringify(r.traits)+'|'+(typeof Mut!=='undefined'?Mut.list(p).join(','):'')+'|'+(p.pheno?.b||1);};
  PlantArt.build=build;
  PlantArt.get=function(p){if(!loaded)return baseGet.call(this,p);const k=this.key(p);let s=runtime.sprites.get(p.id);if(!s||s.k!==k||!s.illustrated){s=Object.assign({k},build(p));runtime.sprites.set(p.id,s);}return s;};
  // The same painted organs also supply the native mutation guide and plant-card
@@ -142,9 +171,9 @@
  const prevMutationDraw=MutGen.draw;
  MutGen.draw=function(cv,key,mode){
   if(!loaded||!MUTATIONS[key]||mode==='none')return prevMutationDraw.apply(this,arguments);
-  const p=demoPlant('porchlight',mode==='leaf'?5:6,77,{id:'mutdemo_'+key+'_'+mode,sex:'F',sexKnown:true,pheno:{h:1,b:1,y:1,a:1,deep:false,mut:key,muts:[key]}}),c=cv.getContext('2d'),W=cv.width,H=cv.height;
+  const p=demoPlant('porchlight',key==='pinkpistil'?8:mode==='leaf'?5:6,77,{id:'mutdemo_'+key+'_'+mode,sex:'F',sexKnown:true,pheno:{h:1,b:1,y:1,a:1,deep:false,mut:key,muts:[key]}}),c=cv.getContext('2d'),W=cv.width,H=cv.height;
   c.clearRect(0,0,W,H);c.fillStyle='#1a2420';c.fillRect(0,0,W,H);c.imageSmoothingEnabled=true;
-  if(mode==='leaf'){const image=tile(p,descriptor(p),'sevenLeaf',{organId:'guide:leaf',young:true,maturity:0}),scale=Math.min((W-4)/image.width,(H-4)/image.height);c.drawImage(image,(W-image.width*scale)/2,(H-image.height*scale)/2,image.width*scale,image.height*scale);}
+  if(mode==='leaf'){const image=tile(p,descriptor(p),key==='pinkpistil'?'femaleMid':'sevenLeaf',{organId:'guide:leaf',young:true,maturity:0}),scale=Math.min((W-4)/image.width,(H-4)/image.height);c.drawImage(image,(W-image.width*scale)/2,(H-image.height*scale)/2,image.width*scale,image.height*scale);}
   else{const s=build(p),scale=Math.min((W-8)/s.w,(H-8)/s.h);c.drawImage(s.cv,W/2-s.ax*scale,H-4-s.ay*scale,s.w*scale,s.h*scale);c.fillStyle=MUTS[key].tint;c.fillRect(3,3,4,4);}
  };
  function frame(p,s,t,wind){if(settings.reduced||!wind||p.stage<2||p.stage>=12)return s.cv;const key=Math.floor(t*8)+':'+Math.round(wind*4);let f=liveFrames.get(s);if(!f||f.key!==key){f=f||{cv:surface(s.w,s.h)};f.key=key;paint(s,p,t,wind,f.cv);liveFrames.set(s,f);}return f.cv;}
@@ -155,5 +184,5 @@
  const prevWrite=SaveSys.write;SaveSys.write=function(){if(state?.plants)for(const p of Object.values(state.plants))ensure(p);return prevWrite.apply(this,arguments);};
  const atlases={...DATA};for(const m of Object.values(MUTATIONS))for(const [name,a]of Object.entries(m.atlases))atlases['mutation:'+m.mutationKey+':'+name]=a;
  const ready=Promise.all(Object.entries(atlases).map(([id,a])=>new Promise((resolve,reject)=>{const im=new Image();images[id]=im;im.onload=resolve;im.onerror=()=>reject(Error('Plant artwork failed: '+id));im.src=a.runtime;}))).then(()=>{loaded=true;all();});
- window.BagseedPlants=Object.freeze({revision:'live-plants-4',ready,recipe,ensure,descriptor,frame,build,kits:DATA,mutations:MUTATIONS,atlasCount:Object.keys(atlases).length,Model,get loaded(){return loaded;},get tileCount(){return tiles.size;}});
+ window.BagseedPlants=Object.freeze({revision:'live-plants-5',ready,recipe,ensure,descriptor,frame,build,kits:DATA,mutations:MUTATIONS,atlasCount:Object.keys(atlases).length,Model,get loaded(){return loaded;},get tileCount(){return tiles.size;}});
 })();
