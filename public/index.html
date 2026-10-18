@@ -31510,7 +31510,7 @@ module.exports={build,pose,counts,senescence};
    keep their world coordinates. */
 (()=>{
  'use strict';
- const SCALE=1.8,SCENES_SCALED=['bedroom','growroom'];
+ const SCALE=1.35,SCENES_SCALED=['bedroom','growroom'];
  let active=null;
  function scaled(draw){return function(c,...args){if(active)return draw.call(this,c,...args);active=c;try{return draw.call(this,c,...args);}finally{active=null;}};}
  for(const id of SCENES_SCALED)SCENES[id].draw=scaled(SCENES[id].draw);

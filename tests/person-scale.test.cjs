@@ -17,9 +17,9 @@ test('people stand at a believable height in the home grow spaces only',async()=
       };
       return {bedroom:height('bedroom',250,150),growroom:height('growroom',400,160),hallway:height('hallway',120,160),scale:BagseedPersonScale.scale,scenes:BagseedPersonScale.scenes};
     });
-    assert.deepEqual(errors,[]);assert.equal(report.scale,1.8);assert.deepEqual(report.scenes,['bedroom','growroom']);
-    for(const scene of ['bedroom','growroom'])assert.ok(report[scene].height>=50,`${scene} player is ${report[scene].height} world units tall`);
-    for(const scene of ['bedroom','growroom'])assert.ok(report[scene].hitHeight>=50,'tap area follows the taller sprite');
+    assert.deepEqual(errors,[]);assert.equal(report.scale,1.35);assert.deepEqual(report.scenes,['bedroom','growroom']);
+    for(const scene of ['bedroom','growroom'])assert.ok(report[scene].height>=38,`${scene} player is ${report[scene].height} world units tall`);
+    for(const scene of ['bedroom','growroom'])assert.ok(report[scene].hitHeight>=38,'tap area follows the taller sprite');
     assert.ok(report.hallway.height<=40,`hallway player stays at its original size, got ${report.hallway.height}`);
   }finally{await browser?.close();await new Promise(r=>server.close(r));}
 });
