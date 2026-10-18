@@ -938,7 +938,7 @@ function newState(ch) {
   const wardrobe = JSON.parse(JSON.stringify(STARTER_WARDROBE));
   for (const [slot, key] of [['shirt', 'topS'], ['bottom', 'bottomS'], ['shoes', 'shoesS'], ['hat', 'hat'], ['glasses', 'glasses'], ['acc', 'acc']]) if (ch[key] && !wardrobe[slot].includes(ch[key])) wardrobe[slot].push(ch[key]);
   const st = {
-    v: 2, player: Object.assign({ x: 190, y: 150, tx: 190, ty: 150, face: 1, dir: 'down', energy: 100, pronouns: 'they', wardrobe }, ch),
+    v: 2, player: Object.assign({ x: 190, y: 150, tx: 190, ty: 150, dir: 'down', energy: 100, pronouns: 'they', wardrobe }, ch),
     vibe: ch.vibe, difficulty: ch.difficulty, custom: { pests: true, failures: true, odor: true, electricity: true },
     day: 1, minute: 8 * 60, weather: 'Sunny', baseTemp: 71, baseHum: 44, outTemp: 74, outHum: 40, forecast: [], money: 60,
     story: 'explore', hints: {},
@@ -4849,6 +4849,8 @@ function migrate(s) {
   // player
   const P = s.player, defs = { pronouns: 'they', face: 'soft', eyes: 'dot', brows: 'thin', extras: [], bottomS: 'jeans', shoesS: 'sneakers', shoesC: '#2b1d14', pantsC: '#36405a', dir: 'down', eyeC: '#2b1d14', body: 'average', pres: 'neutral', hairS: 'short', topS: P.shirtS || 'tee', shirtC: '#5f9c33', hairC: '#4a2c1a', facial: 'none', hat: 'none', glasses: 'none', acc: 'none' };
   for (const [k, v] of Object.entries(defs)) if (P[k] === undefined) P[k] = Array.isArray(v) ? v.slice() : v;
+  // older builds overwrote the face shape with the walking direction (1 / -1)
+  if (typeof P.face !== 'string') P.face = 'soft';
   if (P.hairS === 'sides') P.hairS = 'balding';
   if (P.facial === 'beard' && !FACIAL.some(f => f[0] === P.facial)) P.facial = 'beard';
   P.wardrobe = P.wardrobe || {};
@@ -6098,7 +6100,7 @@ const Move = {
     if (dy) { if (!this.blocked(p.x, p.y + dy)) { p.y += dy; moved = true; } else if (!dx) { for (const n of [1, -1, 2, -2, 3, -3, 4, -4]) if (!this.blocked(p.x + n, p.y + dy) && !this.blocked(p.x + n, p.y)) { p.x += Math.sign(n) * Math.min(Math.abs(n), Math.abs(dy) + .6); moved = true; break; } } }
     return moved;
   },
-  face(dx, dy) { const p = state.player; if (Math.abs(dx) > Math.abs(dy) * 1.1) p.dir = dx > 0 ? 'right' : 'left'; else if (Math.abs(dy) > .01) p.dir = dy > 0 ? 'down' : 'up'; p.face = dx >= 0 ? 1 : -1; },
+  face(dx, dy) { const p = state.player; if (Math.abs(dx) > Math.abs(dy) * 1.1) p.dir = dx > 0 ? 'right' : 'left'; else if (Math.abs(dy) > .01) p.dir = dy > 0 ? 'down' : 'up'; },
   update(dt) {
     if (!state) return;
     this.refresh();
