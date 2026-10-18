@@ -106,3 +106,7 @@ The user approved all three native gameplay implementations for production. Each
 ## Ember Stem, Pink Pistil and Inkleaf
 
 The user approved these three gameplay implementations for production. Ember has painted vascular leaves and stem material that follows the posed skeleton. Pink Pistil layers painted stigma hairs over each inherited flower kit while protecting bracts/trichomes and leaving vegetative leaves/male flowers unchanged. Inkleaf supplies shaded dark leaf organs and a reusable pigment layer. Native guide/card art reuses the same components. Review: `review/mutation-detail/implemented-batch-04/`.
+
+## Twin Leader, Crested Cola and Triple Whorl
+
+The user approved these three gameplay implementations for production. Twin Leader supplies a connected developing fork and two terminal tops, or four after topping. Crested Cola supplies a grooved flattened upper stem and genuinely fused, wide flowering organs. Triple Whorl supplies three independent fans and branch origins per developed node. All inherit host leaf anatomy, flower palettes, training, wind, cleanup and saved identity. `BagseedPlants.detail` reuses the live compositor at inspection resolution for structural guide icons and close-ups. Review: `review/mutation-detail/implemented-batch-05/`.

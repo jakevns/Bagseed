@@ -8,18 +8,23 @@ function bezier(a,b,c,t){const u=1-t;return{x:u*u*a.x+2*u*t*b.x+t*t*c.x,y:u*u*a.
 function build(p,traits={},options={}){
  const height=Math.max(.2,Number(p.height)||.2),nodes=clamp(Number(p.nodes)||1,1,11),count=Math.ceil(nodes),stage=p.stage??5;
  const seed=String(p.artIdentity?.seed||p.genome115?.id||p.pheno?.pid||p.seed||p.id||'porchlight');
- const model={revision:'attached-popcorn-2',height,nodes,seed,joints:[],branches:[],organs:[],training:p.training||'natural'};
+ const model={revision:'attached-structures-1',height,nodes,seed,joints:[],branches:[],organs:[],training:p.training||'natural'};
  const branching=clamp((traits.branching||1.1)*(p.pheno?.b||1),.6,1.5),giant=p.loc==='outdoor'?1+Math.max(0,height-50)/140:1,leafLength=clamp(height*.13,1.1,9.2),density=clamp(p.density??.82,.2,1);
- const mutationArts=new Set(p.visualState?.mutationArts||[]),forked=(model.training==='topped'||mutationArts.has('twin'))&&nodes>=4;
+ const mutationArts=new Set(p.visualState?.mutationArts||[]),structure=p.visualState?.structuralGeometry||{};
+ const twin=mutationArts.has('twin'),whorl=mutationArts.has('whorl'),crest=mutationArts.has('crest');
+ const forkGrowth=twin?clamp(nodes-3,0,1):1,forked=twin?nodes>3:model.training==='topped'&&nodes>=4;
+ const twinShape=structure.twinleader||{forkHeight:.56,spread:.22,rise:.33},whorlShape=structure.whorl||{rearScale:.74,rearAngle:.14};
  const lean=model.training==='lst'?-height*.28:0;
- const trunkY=height*(forked?.60:.89),trunkX=f=>lean*Math.pow(f,1.4)+(hash(seed+':lean')-.5)*height*.025*Math.sin(f*Math.PI);
+ const trunkY=height*(forked?(twin?lerp(.89,twinShape.forkHeight,forkGrowth):.60):.89),trunkX=f=>lean*Math.pow(f,1.4)+(hash(seed+':lean')-.5)*height*.025*Math.sin(f*Math.PI);
  model.joints.push({id:'root',parent:null,x:0,y:0});
  for(let i=1;i<=count;i++){
   const u=Math.min(i,nodes)/(nodes+.7),y=trunkY*u;
   model.joints.push({id:'node:'+i,parent:i===1?'root':'node:'+(i-1),x:trunkX(u),y});
  }
  model.joints.push({id:'apex',parent:'node:'+count,x:trunkX(1),y:trunkY});
- if(forked)for(const side of [-1,1])model.branches.push({id:'leader:'+side,parent:'apex',at:0,dx:side*height*.17,dy:height*.31,width:clamp(height*.007,.18,.6),side,z:side*.1,cut:false,order:0,growth:1});
+ if(forked)for(const side of [-1,1])model.branches.push({id:'leader:'+side,parent:'apex',at:0,dx:side*height*(twin?twinShape.spread:.17)*forkGrowth,dy:height*(twin?twinShape.rise:.31)*forkGrowth,width:clamp(height*.007,.18,.6),side,z:side*.1,cut:false,order:0,growth:forkGrowth});
+ const toppedTwin=twin&&forked&&model.training==='topped';
+ if(toppedTwin)for(const side of [-1,1])for(const tip of [-1,1])model.branches.push({id:'leader:'+side+'/top:'+tip,parent:'leader:'+side,at:1,dx:tip*height*.09,dy:height*.13,width:clamp(height*.005,.14,.4),side:tip,z:tip*.1,cut:false,order:0,growth:forkGrowth});
  const addLeaf=(id,parent,at,role,length,angle,z,growth=1)=>{
   if(growth<=.001)return;
   const parentBranch=model.branches.find(b=>b.id===parent),baseNode=Number(parent.match(/(?:node:|branch:)(\d+)/)?.[1]||nodes);
@@ -30,19 +35,19 @@ function build(p,traits={},options={}){
   const growth=clamp(nodes-i+1,0,1),node='node:'+i,older=i<=Math.ceil(nodes*.4),cut=(!!p.pruned&&older)||Canopy.removed(p,i/(nodes+.7));
   const role=i===1?'singleLeaf':i===2?'threeLeaf':i===3?'fiveLeaf':'sevenLeaf',fanLength=i===1?Math.min(2,leafLength):i===2?Math.min(3.5,leafLength):i===3?Math.min(6,leafLength):leafLength;
   for(const side of [-1,1])if(!cut&&stage>2)addLeaf('fan:'+i+':'+side,node,0,role,fanLength*(.88+.12*hash(seed+':leafsize:'+i+':'+side)),side*(.92+hash(seed+':angle:'+i+':'+side)*.34),(i%2===0?side:-side)*.1,growth);
-  if(mutationArts.has('whorl')&&!cut&&stage>2)addLeaf('fan:'+i+':whorl',node,0,role,fanLength*.82,.08,.4,growth);
+  if(whorl&&!cut&&stage>2)addLeaf('fan:'+i+':whorl',node,0,role,fanLength*whorlShape.rearScale,(i%2?1:-1)*whorlShape.rearAngle,-.45,growth);
   if(stage<3||i<2||i>=nodes-.2)continue;
-  for(const side of [-1,1]){
-   const id='branch:'+i+':'+side,age=clamp((nodes-i+.3)/3,0,1),length=height*.53*Math.pow(1-i/(nodes+1),.66)*branching*giant*age;
+  for(const side of whorl?[-1,1,0]:[-1,1]){
+   const rear=side===0,id='branch:'+i+':'+(rear?'whorl':side),age=clamp((nodes-i+.3)/3,0,1),length=height*.53*Math.pow(1-i/(nodes+1),.66)*branching*giant*age*(twin?.79:1)*(rear?whorlShape.rearScale:1);
    if(length<.45)continue;
    const sideways=model.training==='lst'||model.training==='scrog';
-   const spread=.72+.28*hash(seed+':spread:'+id),dx=side*length*(sideways?1.2:.62*spread),dy=sideways?Math.max(.3,height*.76-model.joints[i].y):length*(.86+(hash(seed+':rise:'+id)-.5)*.20);
-   model.branches.push({id,parent:node,at:0,dx,dy,width:clamp(height*.005,.13,.45),side,z:side*.1,cut,order:1,growth:age});
+   const spread=.72+.28*hash(seed+':spread:'+id),direction=rear?(i%2?1:-1):side,dx=direction*length*(rear?.18:sideways?1.2:.62*spread),dy=sideways?Math.max(.3,height*.76-model.joints[i].y):length*(.86+(hash(seed+':rise:'+id)-.5)*.20);
+   model.branches.push({id,parent:node,at:0,dx,dy,width:clamp(height*.005,.13,.45),side:direction,z:rear?-.45:side*.1,cut,order:1,growth:age});
    const sites=Math.min(12,Math.floor(length/4.4));
    for(let j=1;j<=sites;j++){
     const dist=j*4.4,at=clamp(dist/length,.12,.92),birth=clamp((length-dist)/2.4,0,1),sub=id+'/shoot:'+j;
     if(birth<=.001)continue;
-    const sd=j%2===0?-side:side,subLength=Math.min(leafLength*.88,(length-dist)*.62)*birth;
+    const sd=j%2===0?-direction:direction,subLength=Math.min(leafLength*.88,(length-dist)*.62)*birth;
     model.branches.push({id:sub,parent:id,at,dx:sd*subLength*.55,dy:subLength*.68,width:.12,side:sd,z:(j%2?-.2:.2),cut:cut||Canopy.removed(p,i/(nodes+.7),at),order:2,growth:birth});
     if(!cut&&hash(seed+':cover:'+sub)<density+.14){
      addLeaf(sub+'/fan',sub,1,j===1?'fiveLeaf':'sevenLeaf',leafLength*(.68+.13*hash(seed+':size:'+sub)),sd*(.55+hash(seed+':rot:'+sub)*.65),j%2?-.2:.2,birth);
@@ -54,6 +59,8 @@ function build(p,traits={},options={}){
  }
  if(stage===2&&height<12)model.organs.push({id:'cotyledons',parent:'node:1',at:0,role:'cotyledon',length:Math.min(2.5,height*.25),angle:0,z:0,kind:'leaf'});
  if(stage<=2){addLeaf('seedling:true:left','apex',0,'singleLeaf',height*.40,-.72,.3);addLeaf('seedling:true:right','apex',0,'singleLeaf',height*.40,.72,.1);}else if(forked){for(const side of [-1,1]){addLeaf('leader:'+side+'/fan:left','leader:'+side,1,'threeLeaf',leafLength*.57,-.35,.3);addLeaf('leader:'+side+'/fan:right','leader:'+side,1,'fiveLeaf',leafLength*.54,.36,.1);}}else{addLeaf('apex:fan:left','apex',0,'threeLeaf',leafLength*.57,-.35,.3);addLeaf('apex:fan:right','apex',0,'fiveLeaf',leafLength*.54,.36,.1);}
+ if(stage===2&&whorl)addLeaf('seedling:true:whorl','apex',0,'singleLeaf',height*.40*whorlShape.rearScale,whorlShape.rearAngle,-.45);
+ if(toppedTwin)for(const side of [-1,1])for(const tip of [-1,1])for(const sd of [-1,1])addLeaf('leader:'+side+'/top:'+tip+'/fan:'+sd,'leader:'+side+'/top:'+tip,1,'threeLeaf',leafLength*.44,sd*.45,sd*.1);
  // Each leader keeps its own connected nodes after topping or a natural fork.
  if(forked)for(const side of [-1,1])for(const [j,at]of [.25,.5,.75].entries())for(const sd of [-1,1])
   addLeaf('leader:'+side+'/node:'+j+':'+sd,'leader:'+side,at,nodes>=8?'sevenLeaf':'fiveLeaf',leafLength*(.74-at*.16),sd*.78,sd*.15);
@@ -74,16 +81,17 @@ function build(p,traits={},options={}){
    }
   }
   if(forked)for(const side of [-1,1]){
-   const id='leader:'+side,base=Math.min(9,height*.15);
-   flower(id+'/flower',id,1,base*(male?1:Canopy.topScale(p)),1,1,true);
+   const id='leader:'+side,base=Math.min(twin?11:9,height*(twin?.19:.15));
+   if(toppedTwin)for(const tip of [-1,1])flower(id+'/top:'+tip+'/flower',id+'/top:'+tip,1,base*.8*(male?1:Canopy.topScale(p)),1,1,true);
+   else flower(id+'/flower',id,1,base*(male?1:Canopy.topScale(p)),1,1,true);
    if(!male)for(const [j,at]of [.2,.45,.7].entries())flower(id+'/bud:'+j,id,at,base*(.2+.4*at),1,at);
   }
   else flower('apex:flower','apex',0,Math.min(11,height*.18)*(male?1:Canopy.topScale(p)),1,1,true);
-  if(mutationArts.has('crest'))for(const o of model.organs)if(o.site==='apical')o.widthScale=2.1;
+  if(crest&&!male)for(const o of model.organs)if(o.site==='apical'){o.crested=true;o.length*=1.22;}
   if(mutationArts.has('triploid'))for(const o of model.organs)if(o.kind==='flower')o.widthScale=1.25;
   // Painted mutation sugar leaves belong to their flower's attachment, not a
   // free-floating overlay. Retain the same IDs and parents throughout bloom.
-  if(!male&&['freak','duck','mono','variegated','fern','albino','gold','ember','pink','ink'].some(k=>mutationArts.has(k)))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
+  if(!male&&['freak','duck','mono','variegated','fern','albino','gold','ember','pink','ink','twin','crest','whorl'].some(k=>mutationArts.has(k)))for(const bud of model.organs.filter(o=>o.kind==='flower'&&o.site!=='popcorn'))for(const side of [-1,1]){
    addLeaf(bud.id+'/sugar:'+side,bud.parent,bud.at,'sugarLeaf',bud.length*.62,side*.50,.4);
    const leaf=model.organs[model.organs.length-1];if(leaf.id===bud.id+'/sugar:'+side)leaf.offsetY=bud.length*.18;
   }

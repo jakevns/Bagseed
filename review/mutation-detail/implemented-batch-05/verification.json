@@ -1,0 +1,760 @@
+{
+  "readOnly": true,
+  "palePixels": 31277,
+  "paleRetention": 1,
+  "chlorophyllChecks": null,
+  "pigmentChecks": null,
+  "structuralChecks": {
+    "twinRootCount": 1,
+    "twinTerminalFlowers": 2,
+    "toppedTwinTerminalFlowers": 4,
+    "crestUsesWidePaintedOrgan": true,
+    "crestTileIsWide": true,
+    "crestChangesOutline": true,
+    "whorls": [
+      {
+        "id": "node:1",
+        "leaves": [
+          {
+            "id": "fan:1:-1",
+            "role": "singleLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:1:1",
+            "role": "singleLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:1:whorl",
+            "role": "singleLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 0
+      },
+      {
+        "id": "node:2",
+        "leaves": [
+          {
+            "id": "fan:2:-1",
+            "role": "threeLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:2:1",
+            "role": "threeLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:2:whorl",
+            "role": "threeLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:3",
+        "leaves": [
+          {
+            "id": "fan:3:-1",
+            "role": "fiveLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:3:1",
+            "role": "fiveLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:3:whorl",
+            "role": "fiveLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:4",
+        "leaves": [
+          {
+            "id": "fan:4:-1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:4:1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:4:whorl",
+            "role": "sevenLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:5",
+        "leaves": [
+          {
+            "id": "fan:5:-1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:5:1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:5:whorl",
+            "role": "sevenLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:6",
+        "leaves": [
+          {
+            "id": "fan:6:-1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:6:1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:6:whorl",
+            "role": "sevenLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:7",
+        "leaves": [
+          {
+            "id": "fan:7:-1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:7:1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:7:whorl",
+            "role": "sevenLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:8",
+        "leaves": [
+          {
+            "id": "fan:8:-1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:8:1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:8:whorl",
+            "role": "sevenLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:9",
+        "leaves": [
+          {
+            "id": "fan:9:-1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:9:1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:9:whorl",
+            "role": "sevenLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:10",
+        "leaves": [
+          {
+            "id": "fan:10:-1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:10:1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:10:whorl",
+            "role": "sevenLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 3
+      },
+      {
+        "id": "node:11",
+        "leaves": [
+          {
+            "id": "fan:11:-1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:11:1",
+            "role": "sevenLeaf",
+            "at": 0
+          },
+          {
+            "id": "fan:11:whorl",
+            "role": "sevenLeaf",
+            "at": 0
+          }
+        ],
+        "branches": 0
+      }
+    ],
+    "threeFansPerNode": true,
+    "threeBranchesPerInteriorNode": true,
+    "inheritedKitsPreserved": true,
+    "eightGiantFramesMs": 47.899999998509884
+  },
+  "sources": [
+    "crested",
+    "twinleader",
+    "whorl"
+  ],
+  "families": [
+    {
+      "key": "twinleader",
+      "id": "p_1gb5gbu",
+      "mutation": {
+        "key": "twinleader",
+        "revision": "twinleader-parts-1",
+        "variant": "upright-v"
+      },
+      "genome": "{\"id\":\"ph_helqvce\",\"alleles\":{\"heightF\":[0.8870042536770926,0.9129957463229075],\"branching\":[1.093303342757281,1.1066966572427193],\"yield\":[1.0086373036797158,0.9913626963202842],\"aromaInt\":[0.6979317190013825,0.7020682809986174],\"moldRes\":[0.7079379537855275,0.6920620462144724],\"pestRes\":[0.5968719953116961,0.6031280046883039],\"speed\":[1.0023876532143914,0.9976123467856087],\"stressSens\":[0.5035464889451395,0.4964535110548604],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Pine\",\"Pine\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":0.9305878926999867,\"c\":1.0563412429532035,\"tp\":[0.8264529990032315,1.1583492132835091,0.8036609613336623],\"minor\":0.5443136892281473},\"mut\":\"twinleader\",\"family\":null,\"generation\":null,\"lineId\":\"porchlight\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{\"twinleader\":2},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_helqvce\",\"leafKit\":\"porchlight\",\"flowerKit\":\"porchlight\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+      "variants": [
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v",
+        "upright-v"
+      ],
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true
+        }
+      ],
+      "connected": true,
+      "sugarLeaves": 80,
+      "formsDiffer": true,
+      "trainingForms": 4,
+      "stressChanges": true,
+      "cleanupRemoves": true,
+      "maleWorks": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "cloneStable": true,
+      "snapshotStable": true,
+      "catalogCount": 38,
+      "catalogWorks": true,
+      "giantHeight": 90,
+      "giantGrowsMore": true
+    },
+    {
+      "key": "crested",
+      "id": "p_o0ducuq",
+      "mutation": {
+        "key": "crested",
+        "revision": "crested-parts-1",
+        "variant": "curled-comb"
+      },
+      "genome": "{\"id\":\"ph_cn0qhx6\",\"alleles\":{\"heightF\":[0.9005506231072359,0.8994493768927642],\"branching\":[1.1093862617169508,1.0906137382830494],\"yield\":[0.9864890094054863,1.0135109905945137],\"aromaInt\":[0.7069885751339606,0.6930114248660393],\"moldRes\":[0.6906563888352829,0.709343611164717],\"pestRes\":[0.5983964198660106,0.6016035801339894],\"speed\":[1.00495575072011,0.9950442492798902],\"stressSens\":[0.4980291789909825,0.5019708210090176],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Pine\",\"Pine\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":1.131195849343203,\"c\":1.12206247264985,\"tp\":[1.1202607952058317,1.1607406734488905,1.1319881794042885],\"minor\":0.03241029800847173},\"mut\":\"crested\",\"family\":null,\"generation\":null,\"lineId\":\"porchlight\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[\"crested\"]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_cn0qhx6\",\"leafKit\":\"porchlight\",\"flowerKit\":\"porchlight\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+      "variants": [
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb",
+        "curled-comb"
+      ],
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true
+        }
+      ],
+      "connected": true,
+      "sugarLeaves": 74,
+      "formsDiffer": true,
+      "trainingForms": 4,
+      "stressChanges": true,
+      "cleanupRemoves": true,
+      "maleWorks": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "cloneStable": true,
+      "snapshotStable": true,
+      "catalogCount": 38,
+      "catalogWorks": true,
+      "giantHeight": 90,
+      "giantGrowsMore": true
+    },
+    {
+      "key": "whorl",
+      "id": "p_4rv5mds",
+      "mutation": {
+        "key": "whorl",
+        "revision": "whorl-parts-1",
+        "variant": "offset-rear"
+      },
+      "genome": "{\"id\":\"ph_f3fup3g\",\"alleles\":{\"heightF\":[0.8940236279703677,0.9059763720296323],\"branching\":[1.1090027230232955,1.0909972769767047],\"yield\":[0.9898758118599653,1.0101241881400347],\"aromaInt\":[0.709230864024721,0.6907691359752789],\"moldRes\":[0.703094441080233,0.6969055589197669],\"pestRes\":[0.6047252747747116,0.5952747252252883],\"speed\":[0.9870049798558466,1.0129950201441533],\"stressSens\":[0.499758171972353,0.5002418280276469],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Pine\",\"Pine\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":0.9492448551114648,\"c\":0.9000920414226129,\"tp\":[1.0458831895142795,0.8967526871711016,1.1899756101891399],\"minor\":0.9481884168926626},\"mut\":\"whorl\",\"family\":null,\"generation\":null,\"lineId\":\"porchlight\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{\"whorl\":2},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_f3fup3g\",\"leafKit\":\"porchlight\",\"flowerKit\":\"porchlight\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+      "variants": [
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear",
+        "offset-rear"
+      ],
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true
+        }
+      ],
+      "connected": true,
+      "sugarLeaves": 110,
+      "formsDiffer": true,
+      "trainingForms": 4,
+      "stressChanges": true,
+      "cleanupRemoves": true,
+      "maleWorks": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "cloneStable": true,
+      "snapshotStable": true,
+      "catalogCount": 38,
+      "catalogWorks": true,
+      "giantHeight": 90,
+      "giantGrowsMore": true
+    }
+  ],
+  "combos": [
+    {
+      "muts": [
+        "twinleader",
+        "crested"
+      ],
+      "shape": "twinleader",
+      "material": null,
+      "chlorophyll": [],
+      "stem": null,
+      "flower": null,
+      "structures": {
+        "twinleader": {
+          "key": "twinleader",
+          "revision": "twinleader-parts-1",
+          "variant": "upright-v"
+        },
+        "crested": {
+          "key": "crested",
+          "revision": "crested-parts-1",
+          "variant": "scalloped-fan"
+        }
+      },
+      "changed": true,
+      "finite": true
+    },
+    {
+      "muts": [
+        "whorl",
+        "ducksfoot"
+      ],
+      "shape": "ducksfoot",
+      "material": null,
+      "chlorophyll": [],
+      "stem": null,
+      "flower": null,
+      "structures": {
+        "whorl": {
+          "key": "whorl",
+          "revision": "whorl-parts-1",
+          "variant": "offset-rear"
+        }
+      },
+      "changed": true,
+      "finite": true
+    },
+    {
+      "muts": [
+        "crested",
+        "pinkpistil"
+      ],
+      "shape": "pinkpistil",
+      "material": null,
+      "chlorophyll": [],
+      "stem": null,
+      "flower": {
+        "key": "pinkpistil",
+        "revision": "pinkpistil-parts-1",
+        "variant": "magenta-coral"
+      },
+      "structures": {
+        "crested": {
+          "key": "crested",
+          "revision": "crested-parts-1",
+          "variant": "scalloped-fan"
+        }
+      },
+      "changed": true,
+      "finite": true
+    },
+    {
+      "muts": [
+        "twinleader",
+        "whorl",
+        "inkleaf"
+      ],
+      "shape": "inkleaf",
+      "material": null,
+      "chlorophyll": [],
+      "stem": null,
+      "flower": null,
+      "structures": {
+        "twinleader": {
+          "key": "twinleader",
+          "revision": "twinleader-parts-1",
+          "variant": "upright-v"
+        },
+        "whorl": {
+          "key": "whorl",
+          "revision": "whorl-parts-1",
+          "variant": "offset-rear"
+        }
+      },
+      "changed": true,
+      "finite": true
+    },
+    {
+      "muts": [
+        "crested",
+        "moonmarble"
+      ],
+      "shape": "moonmarble",
+      "material": "moonmarble",
+      "chlorophyll": [],
+      "stem": null,
+      "flower": null,
+      "structures": {
+        "crested": {
+          "key": "crested",
+          "revision": "crested-parts-1",
+          "variant": "scalloped-fan"
+        }
+      },
+      "changed": true,
+      "finite": true
+    }
+  ],
+  "layers": [
+    {
+      "loc": "closet",
+      "slot": 0,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 29,
+      "y": 92
+    },
+    {
+      "loc": "tent2",
+      "slot": 0,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 87,
+      "y": 102
+    },
+    {
+      "loc": "tent2",
+      "slot": 1,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 127,
+      "y": 102
+    }
+  ],
+  "animation": {
+    "frames": 72,
+    "fps": 12,
+    "seconds": 6
+  },
+  "mutationAtlasRequests": [
+    "/assets/plants/mutations/crested/components-71a25c2283d8.webp",
+    "/assets/plants/mutations/ducksfoot/components-a25eb68067f9.webp",
+    "/assets/plants/mutations/ember/components-47e5bebe6a43.webp",
+    "/assets/plants/mutations/ember/bark-d734ed09ad30.webp",
+    "/assets/plants/mutations/fernfrond/components-22f82dd57b3f.webp",
+    "/assets/plants/mutations/freakshow/development-cbb346ea18c8.webp",
+    "/assets/plants/mutations/freakshow/mature-fans-82af4406b711.webp",
+    "/assets/plants/mutations/goldleaf/components-241660aca1e0.webp",
+    "/assets/plants/mutations/inkleaf/components-99c694aa1d4d.webp",
+    "/assets/plants/mutations/monophylla/components-97351bd24dc4.webp",
+    "/assets/plants/mutations/moonmarble/components-71e10badfa94.webp",
+    "/assets/plants/mutations/pinkpistil/stigmas-a4e398be4f29.webp",
+    "/assets/plants/mutations/snowtip/components-4b69b12e2ba5.webp",
+    "/assets/plants/mutations/twinleader/components-92af4b6e9f62.webp",
+    "/assets/plants/mutations/whorl/components-633143b0a346.webp"
+  ],
+  "saveReload": true,
+  "legacySave": true,
+  "errors": []
+}
