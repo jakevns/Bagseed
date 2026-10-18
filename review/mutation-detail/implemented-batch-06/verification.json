@@ -1,0 +1,358 @@
+{
+  "readOnly": true,
+  "families": [
+    {
+      "key": "pocketdwarf",
+      "id": "p_6hhabys",
+      "mutation": {
+        "key": "pocketdwarf",
+        "revision": "pocketdwarf-parts-1",
+        "variant": "upright-compact"
+      },
+      "structure": {
+        "key": "pocketdwarf",
+        "revision": "pocketdwarf-parts-1",
+        "variant": "upright-compact"
+      },
+      "genome": "{\"id\":\"ph_kvg4f9a\",\"alleles\":{\"heightF\":[1.2797005149073502,1.2917280565212215],\"branching\":[1.0858971429090016,1.1141028570909985],\"yield\":[1.0148323305952363,0.9851676694047637],\"aromaInt\":[0.6899695439394563,0.7100304560605436],\"moldRes\":[0.6935220894899684,0.7064779105100315],\"pestRes\":[0.6088731409641914,0.5911268590358085],\"speed\":[1.014930235268548,0.9850697647314519],\"stressSens\":[0.4998579082032666,0.5001420917967334],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Pine\",\"Pine\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":1.0670617781346663,\"c\":1.0130079107359051,\"tp\":[0.9445469124242664,0.9774221720173956,1.0847722796723247],\"minor\":0.9322269093245268},\"mut\":\"pocketdwarf\",\"family\":null,\"generation\":null,\"lineId\":\"porchlight\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{\"pocketdwarf\":2},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_kvg4f9a\",\"leafKit\":\"porchlight\",\"flowerKit\":\"porchlight\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 4,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 5,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 6,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 7,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 8,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 9,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 10,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 11,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        },
+        {
+          "stage": 12,
+          "finite": true,
+          "painted": true,
+          "form": "upright-compact"
+        }
+      ],
+      "connected": true,
+      "formsDiffer": true,
+      "trainingForms": 4,
+      "stressChanges": true,
+      "cleanupRemoves": true,
+      "maleWorks": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "cloneStable": true,
+      "snapshotStable": true,
+      "catalogCount": 38,
+      "catalogWorks": true,
+      "giantHeight": 90,
+      "giantGrowsMore": true
+    },
+    {
+      "key": "triploid",
+      "id": "p_5mqh12c",
+      "mutation": {
+        "key": "triploid",
+        "revision": "triploid-parts-1",
+        "variant": "verdigris-plate"
+      },
+      "structure": {
+        "key": "triploid",
+        "revision": "triploid-parts-1",
+        "variant": "verdigris-plate"
+      },
+      "genome": "{\"id\":\"ph_adqyxyz\",\"alleles\":{\"heightF\":[0.8909869454938453,0.9090130545061548],\"branching\":[1.0898097944287584,1.1101902055712418],\"yield\":[1.013205093855504,0.986794906144496],\"aromaInt\":[0.691679492951138,0.708320507048862],\"moldRes\":[0.6937823294023983,0.7062176705976017],\"pestRes\":[0.5964140406819061,0.6035859593180939],\"speed\":[0.9998996944143437,1.0001003055856563],\"stressSens\":[0.4997864806803409,0.5002135193196591],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Pine\",\"Pine\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":1.0093749826774001,\"c\":1.0847847841214389,\"tp\":[1.0262754325754941,1.1085666419006885,0.8838166747242213],\"minor\":0.7117914508562535},\"mut\":\"triploid\",\"family\":null,\"generation\":null,\"lineId\":\"porchlight\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[\"triploid\"]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_adqyxyz\",\"leafKit\":\"porchlight\",\"flowerKit\":\"porchlight\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 4,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 5,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 6,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 7,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 8,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 9,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 10,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 11,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        },
+        {
+          "stage": 12,
+          "finite": true,
+          "painted": true,
+          "form": "verdigris-plate"
+        }
+      ],
+      "connected": true,
+      "formsDiffer": true,
+      "trainingForms": 4,
+      "stressChanges": true,
+      "cleanupRemoves": true,
+      "maleWorks": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "cloneStable": true,
+      "snapshotStable": true,
+      "catalogCount": 38,
+      "catalogWorks": true,
+      "giantHeight": 90,
+      "giantGrowsMore": true
+    }
+  ],
+  "checks": {
+    "nodeGapRatio": 0.936420661426921,
+    "branchReachRatio": 0.7639631896141301,
+    "matureLeafRatio": 2.225999969738141,
+    "actualHeightPreserved": true,
+    "triploidBodyIdentical": true,
+    "triploidGeometryIdentical": true,
+    "hiddenTriploidHasNoTag": true,
+    "knownTriploidHasTag": true,
+    "discoveryInvalidatesSprite": true,
+    "inheritedRecipesPreserved": true
+  },
+  "combos": [
+    {
+      "muts": [
+        "pocketdwarf",
+        "freakshow"
+      ],
+      "structureKeys": [
+        "pocketdwarf"
+      ],
+      "painted": true,
+      "finite": true,
+      "changed": true
+    },
+    {
+      "muts": [
+        "pocketdwarf",
+        "crested"
+      ],
+      "structureKeys": [
+        "crested",
+        "pocketdwarf"
+      ],
+      "painted": true,
+      "finite": true,
+      "changed": true
+    },
+    {
+      "muts": [
+        "triploid",
+        "whorl"
+      ],
+      "structureKeys": [
+        "whorl",
+        "triploid"
+      ],
+      "painted": true,
+      "finite": true,
+      "changed": true
+    },
+    {
+      "muts": [
+        "triploid",
+        "inkleaf"
+      ],
+      "structureKeys": [
+        "triploid"
+      ],
+      "painted": true,
+      "finite": true,
+      "changed": true
+    },
+    {
+      "muts": [
+        "pocketdwarf",
+        "triploid",
+        "pinkpistil"
+      ],
+      "structureKeys": [
+        "pocketdwarf",
+        "triploid"
+      ],
+      "painted": true,
+      "finite": true,
+      "changed": true
+    }
+  ],
+  "sources": [
+    "pocketdwarf",
+    "triploid"
+  ],
+  "layers": [
+    {
+      "loc": "closet",
+      "slot": 0,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 29,
+      "y": 92
+    },
+    {
+      "loc": "tent2",
+      "slot": 0,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 87,
+      "y": 102
+    }
+  ],
+  "animation": {
+    "frames": 72,
+    "fps": 12,
+    "seconds": 6
+  },
+  "mutationAtlasRequests": [
+    "/assets/plants/mutations/crested/components-71a25c2283d8.webp",
+    "/assets/plants/mutations/ducksfoot/components-a25eb68067f9.webp",
+    "/assets/plants/mutations/ember/components-47e5bebe6a43.webp",
+    "/assets/plants/mutations/ember/bark-d734ed09ad30.webp",
+    "/assets/plants/mutations/fernfrond/components-22f82dd57b3f.webp",
+    "/assets/plants/mutations/freakshow/development-cbb346ea18c8.webp",
+    "/assets/plants/mutations/freakshow/mature-fans-82af4406b711.webp",
+    "/assets/plants/mutations/goldleaf/components-241660aca1e0.webp",
+    "/assets/plants/mutations/inkleaf/components-99c694aa1d4d.webp",
+    "/assets/plants/mutations/monophylla/components-97351bd24dc4.webp",
+    "/assets/plants/mutations/moonmarble/components-71e10badfa94.webp",
+    "/assets/plants/mutations/pinkpistil/stigmas-a4e398be4f29.webp",
+    "/assets/plants/mutations/pocketdwarf/components-2c0245413803.webp",
+    "/assets/plants/mutations/snowtip/components-4b69b12e2ba5.webp",
+    "/assets/plants/mutations/triploid/components-2b0588095275.webp",
+    "/assets/plants/mutations/twinleader/components-92af4b6e9f62.webp",
+    "/assets/plants/mutations/whorl/components-633143b0a346.webp"
+  ],
+  "saveReload": true,
+  "legacySave": true,
+  "errors": []
+}

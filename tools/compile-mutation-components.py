@@ -190,3 +190,31 @@ for key, (art, material, roles, forms, refs) in structures.items():
                               ['review/mutation-detail/photo-based-batch-03/structure-and-color-studies-03.png']}
     (BASE / 'sources/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print('Registered', key, ': painted structural organs; inherited leaf kits and native genetics retained.')
+
+# Final two approved concepts: stature is a connected model trait, while ploidy
+# is an identity read from the game's genetics, never diagnosed from leaf count.
+final_families = {
+    'pocketdwarf': ('dwarf', 'structure', ['internode', 'nodeCollar'],
+                    [('cushion', {'trunkRatio': .62, 'branchScale': .56, 'leafFloor': .46}),
+                     ('upright-compact', {'trunkRatio': .72, 'branchScale': .66, 'leafFloor': .40})],
+                    ['R24', 'R22'], 4),
+    'triploid': ('triploid', 'identity', ['badge'],
+                 [('copper-plate', {}), ('verdigris-plate', {})], ['R09', 'R10'], 2)
+}
+for key, (art, material, roles, forms, refs, count) in final_families.items():
+    BASE = ROOT / f'graphics/plants/mutations/{key}'
+    organs, asset = measure('components', count, 2)
+    variants = {}
+    for i, (name, geometry) in enumerate(forms):
+        parts = dict(zip(roles, organs[i * len(roles):(i + 1) * len(roles)]))
+        if 'nodeCollar' in parts:
+            p = parts['nodeCollar']
+            p['joint'] = [round(p['crop'][2] * .5, 2), round(p['crop'][3] * .5, 2)]
+        variants[name] = {'parts': parts, 'geometry': geometry}
+    manifest = {'revision': key + '-parts-1', 'status': 'approved-live-components',
+                'mutationKey': key, 'art': art, 'material': material, 'partRoles': roles,
+                'atlases': {'components': asset}, 'variants': variants,
+                'references': ['Bagseed_Mutation_References/' + r for r in refs] +
+                              ['review/mutation-detail/photo-based-batch-03/structure-and-color-studies-03.png']}
+    (BASE / 'sources/manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    print('Registered', key, ': inherited anatomy retained; no simulation/genetic multipliers changed.')

@@ -110,3 +110,7 @@ The user approved these three gameplay implementations for production. Ember has
 ## Twin Leader, Crested Cola and Triple Whorl
 
 The user approved these three gameplay implementations for production. Twin Leader supplies a connected developing fork and two terminal tops, or four after topping. Crested Cola supplies a grooved flattened upper stem and genuinely fused, wide flowering organs. Triple Whorl supplies three independent fans and branch origins per developed node. All inherit host leaf anatomy, flower palettes, training, wind, cleanup and saved identity. `BagseedPlants.detail` reuses the live compositor at inspection resolution for structural guide icons and close-ups. Review: `review/mutation-detail/implemented-batch-05/`.
+
+## Pocket Dwarf and Triploid
+
+The final two native mutation families have user-approved gameplay implementations. All fifteen mutation families now have approved component artwork. Pocket Dwarf has a compact connected axis, shorter branch reach and retained mature leaf detail at its actual saved height. Triploid retains inherited anatomy; a copper/verdigris 3x identity tag appears after discovery. The live renderer no longer forces uniformly enlarged/darkened Triploid tissue. Hidden traits remain unmarked, and revealing a trait invalidates its sprite cache. The guide description follows the approved scientific references while preserving existing Bagseed reproduction and balance rules. Review: `review/mutation-detail/implemented-batch-06/`.
