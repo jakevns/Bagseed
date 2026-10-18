@@ -129,6 +129,23 @@ test('wardrobe appearance and progress survive save, reload, and Continue', asyn
   });
 });
 
+test('a chosen face shape survives walking, save, reload, and Continue', async () => {
+  await withPage({ viewport: { width: 1280, height: 800 } }, async page => {
+    await startGame(page, 'Face Gardener');
+    await page.evaluate(() => {
+      state.player.face = 'heart';
+      Move.face(5, 0);
+      Move.face(-5, 2);
+      if (!SaveSys.now('face shape test')) throw new Error('Save write failed');
+    });
+    assert.equal(await page.evaluate(() => state.player.face), 'heart');
+    await page.reload();
+    await page.locator('[data-act="continueGame"]').click();
+    await page.waitForFunction(() => screen === 'game' && state);
+    assert.equal(await page.evaluate(() => playerLook().face), 'heart');
+  });
+});
+
 test('authored cast and all haircuts render without changing their appearance data', async () => {
   await withPage({ viewport: { width: 1280, height: 800 } }, async page => {
     await startGame(page);
