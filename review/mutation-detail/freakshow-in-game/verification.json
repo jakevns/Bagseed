@@ -1,0 +1,415 @@
+{
+  "readOnly": true,
+  "sourceImages": [
+    "development-cbb346ea18c8.webp",
+    "mature-fans-82af4406b711.webp"
+  ],
+  "form": "fuller",
+  "variants": [
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller",
+    "fuller"
+  ],
+  "stages": [
+    {
+      "stage": 0,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 1,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 2,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 3,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 4,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 5,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 6,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 7,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 8,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 9,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 10,
+      "painted": true,
+      "hang": false,
+      "finite": true
+    },
+    {
+      "stage": 11,
+      "painted": true,
+      "hang": true,
+      "finite": true
+    },
+    {
+      "stage": 12,
+      "painted": true,
+      "hang": true,
+      "finite": true
+    }
+  ],
+  "connected": true,
+  "sugarLeaves": 74,
+  "sugarParents": true,
+  "formsDiffer": true,
+  "dimensions": [
+    {
+      "name": "Natural",
+      "w": 87,
+      "h": 113
+    },
+    {
+      "name": "Topped",
+      "w": 87,
+      "h": 113
+    },
+    {
+      "name": "LST",
+      "w": 158,
+      "h": 113
+    },
+    {
+      "name": "SCROG",
+      "w": 158,
+      "h": 113
+    },
+    {
+      "name": "Bamboo supports",
+      "w": 87,
+      "h": 113
+    },
+    {
+      "name": "Canopy cleanup",
+      "w": 67,
+      "h": 113
+    },
+    {
+      "name": "Thirst / low nutrition",
+      "w": 90,
+      "h": 113
+    },
+    {
+      "name": "Burn / pest symptoms",
+      "w": 87,
+      "h": 113
+    }
+  ],
+  "trainingForms": 5,
+  "toppedLeaders": 2,
+  "allCatalog": [
+    {
+      "id": "bag_fjzv7b5",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "porchlight",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "velvet",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "pixelpunch",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cottoncandy",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "moonberry",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "halfmoon",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "zoomies",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cruise",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "boglantern",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "frogprince",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "nightshift",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "gasstation",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_ogkush",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_whitewidow",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_northernlights",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_skunk1",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_afghani",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_hindukush",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_bubbakush",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_purplekush",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_gdp",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_blueberry",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_bluedream",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_sourdiesel",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_chemdawg",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_jackherer",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_durban",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_trainwreck",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_ak47",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_ssh",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_slh",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_pineexpress",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_gsc",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_gg4",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_harlequin",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_cannatonic",
+      "painted": true,
+      "mutation": "freakshow"
+    },
+    {
+      "id": "cl_acdc",
+      "painted": true,
+      "mutation": "freakshow"
+    }
+  ],
+  "maleWorks": true,
+  "symptomChanges": [
+    true,
+    true,
+    true
+  ],
+  "windChanged": true,
+  "reducedStable": true,
+  "rootFixed": true,
+  "eightFramesMs": 12.899999998509884,
+  "snapshotStable": true,
+  "cloneStable": true,
+  "layers": [
+    {
+      "loc": "closet",
+      "slot": 0,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 29,
+      "y": 92
+    },
+    {
+      "loc": "tent2",
+      "slot": 0,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 87,
+      "y": 102
+    },
+    {
+      "loc": "tent2",
+      "slot": 1,
+      "phase": "soil-before-plant"
+    },
+    {
+      "phase": "rim-after-plant",
+      "x": 127,
+      "y": 102
+    }
+  ],
+  "leafRoles": [
+    "singleLeaf",
+    "threeLeaf",
+    "fiveLeaf",
+    "sevenLeaf",
+    "sugarLeaf"
+  ],
+  "mappedRoles": true,
+  "id": "p_aupe89z",
+  "recipe": "{\"v\":1,\"seed\":\"ph_tig90jj\",\"leafKit\":\"porchlight\",\"flowerKit\":\"porchlight\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+  "genome": "{\"id\":\"ph_tig90jj\",\"alleles\":{\"heightF\":[0.9104078079925385,0.8895921920074615],\"branching\":[1.0935337527245284,1.1064662472754718],\"yield\":[0.9990058528631925,1.0009941471368073],\"aromaInt\":[0.7093977579085622,0.6906022420914377],\"moldRes\":[0.7094287745580077,0.6905712254419922],\"pestRes\":[0.6018882787465117,0.5981117212534882],\"speed\":[0.9947612982452847,1.0052387017547153],\"stressSens\":[0.4962182805244811,0.5037817194755189],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Pine\",\"Pine\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":1.0780961045296862,\"c\":0.8778517265571281,\"tp\":[0.8630273608490825,1.0072495011612774,1.0886411285027862],\"minor\":0.5178365844767541},\"mut\":\"freakshow\",\"family\":null,\"generation\":null,\"lineId\":\"porchlight\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{\"freakshow\":2},\"som\":[]}",
+  "mutation": {
+    "key": "freakshow",
+    "revision": "freakshow-parts-1",
+    "variant": "fuller"
+  },
+  "animation": {
+    "frames": 72,
+    "fps": 12,
+    "seconds": 6,
+    "gifFrames": 48,
+    "canopyPixelsChanged": 61262,
+    "fixedPotPixels": true
+  },
+  "mutationAtlasRequests": 2,
+  "saveReload": true,
+  "legacySave": true,
+  "errors": []
+}

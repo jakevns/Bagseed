@@ -79,3 +79,26 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 Visual recipes (`paintArt115`, schema v1) record the component donor kits, stable phenotype seed and expressed traits. Actual plant height, node count, water, health, nutrition, stress, pruning and training remain live inputs. Recipes are stored on plant and clone phenotype records, copied into photos, and populated for older saves at post-load and save boundaries. Rendering does not alter biology. Existing mutant genes from the latest merged update remain native; the painted compositor expresses all fifteen leaf/color/structure traits, including stacked traits.
 
 Earlier per-strain notes describe the original prototype milestone. Production integration is now active; individual sample captures remain historical approvals. Validation and actual game screenshots are in `review/live-plants/`.
+
+
+## Painted mutation components
+
+The first mutation implementation is [Freakshow](mutations/freakshow/README.md).
+Its two leaf forms use dedicated painted development and mature-fan atlases,
+loaded through the same startup gate as the fourteen strain kits. The live
+renderer applies the existing phenotype palette, finishing colors, symptoms,
+training and wind. Mutation kits are separate from the strain catalog; native
+mutation identities and genotype/save data are preserved.
+
+See `review/mutation-detail/freakshow-in-game/` for native gameplay captures and
+verification. The user approved this gameplay implementation for production.
+
+
+## Next three mutation implementations
+
+Ducksfoot, Monophylla and Moonmarble have isolated painted juvenile, young, mature and sugar organs in two forms/pattern families each. The user approved all three native gameplay implementations for production. See `mutations/*/README.md` and `review/mutation-detail/implemented-batch-02/`. Moonmarble tissue sectors stay pale through palette/senescence changes and combine with expressed leaf-shape traits; the former synthetic wave pattern is removed. Existing mutation genes, stats, carriers and saved identity rules are unchanged.
+
+
+## Snowtip, Fernfrond and Goldleaf
+
+The user approved all three native gameplay implementations for production. Each supplies painted juvenile, young, mature and sugar organs in two forms. Snowtip greens stable node-bound organs as later nodes develop; Fernfrond uses connected painted fine fronds; Goldleaf retains green tissue within healthy golden leaf zones. Their tissue layers can combine with existing leaf shapes and Moonmarble. Native guide/card art reuses the same components. Review: `review/mutation-detail/implemented-batch-03/`.

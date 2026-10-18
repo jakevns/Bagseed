@@ -1,0 +1,21 @@
+{
+  "status": "user-approved-for-production",
+  "mutation": "freakshow",
+  "runtimeRevision": "live-plants-2",
+  "buildSHA256": "1e349a11ac32fd2307f222fbdb261341b9ff2c77166c4bdaae171a7fe538a365",
+  "characterRelease": "character-audit-cel-v1",
+  "sourceManifest": "graphics/plants/mutations/freakshow/sources/manifest.json",
+  "files": {
+    "growth-and-wind.gif": "1f4a1c645ce4a472ff748f2fb1c1e82ee6c51d5c4f7e73a124fd57966e1ed208",
+    "bedroom-gameplay.png": "192b629f1e993d45634d6252da1631990fc6da7e062bf8f6156e180dbf86eefc",
+    "phenotype-colors.png": "afb794f445166e3a7b9778e93bc6a66dab6af0ed8c25b536e29617f8effb7f8c",
+    "runtime-leaf-closeups.png": "07bbe5e90e4b63d1abe48aa942c0f5ad4f2c579bae0eeea3eff63edfa0194edd",
+    "lifecycle.png": "52836f24b5936cb889b2d74d854045659ab3ee429443c71ae512176b4f8ff8f4",
+    "normal-and-two-forms.png": "76f814744f4414bc79b9135ff58f5b470261a4bfea187f949ecfa836a2005769",
+    "mobile-gameplay.png": "30bc8707fa5e80e1771cca231287038a1e9cb297ec35383f6ca5f6a305958e81",
+    "growth-and-wind.mp4": "da9a44a74c21ab31a4eea28e6de11532404a5617f448ba1f6b21e227d1ed0e4f",
+    "sprout-photo.png": "dd9614f944c0e8ea30f923788384fa307a7c73f69aa10d8b24a42e9613d17a51",
+    "native-inspector.png": "4babae51f92740a021d31b170ff6b148aea43f8d03bbfd1e9e9afce125beaefc",
+    "training-and-stress.png": "8ce54e4955d1225f9c8483f0987cb4637dbe08049ac7d2d040ffe9d2c83d630b"
+  }
+}

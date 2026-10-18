@@ -1,0 +1,290 @@
+{
+  "status": "user-approved-concept-art",
+  "scope": "original concept art only; no game integration or repository push",
+  "trait_ids": [
+    "fernfrond",
+    "goldleaf",
+    "ember",
+    "pinkpistil",
+    "inkleaf"
+  ],
+  "traits": [
+    {
+      "number": 1,
+      "name": "Fernfrond",
+      "biological_basis": "Fern-leaf morphology, interpreted as a separate Bagseed variant",
+      "evidence": "Game name; shared real-world morphology with Freakshow",
+      "research_note": "No independently established Fernfrond mutation was verified. Use the fern-leaf family as its visual basis.",
+      "art_direction": "Proposed distinction: long, delicate fronds with evenly spaced fine lateral lobes. Open, airy foliage; retain a readable central axis on each leaf.",
+      "avoid": "Do not reuse the exact Freakshow sprite or present the proposed distinction as a separate proven genotype.",
+      "stage_notes": "Young: early divided leaves. Vegetative: fine frond silhouette. Flowering: recognizable fronds remain beside normal cannabis inflorescences.",
+      "reference_ids": [
+        "R17",
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Goldleaf",
+      "biological_basis": "Yellow-green pigment variation; Divina visual analogue",
+      "evidence": "Game name; real yellow-green variegation documented in a plant patent",
+      "research_note": "Divina documents yellow-green foliage. This does not verify an entirely golden Bagseed phenotype.",
+      "art_direction": "Use chartreuse, yellow-green and muted ochre highlights, with darker green veins for legibility. Treat uniform gold as an intentional art exaggeration.",
+      "avoid": "Using necrotic brown margins or drooping deficiency leaves as the default healthy mutation. Metallic gold reflections.",
+      "stage_notes": "Young: pale lime leaves. Vegetative: strongest yellow-green surfaces. Flowering: keep recognizable live foliage rather than a dead autumn silhouette.",
+      "reference_ids": [
+        "R18",
+        "R21"
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Ember Stem",
+      "biological_basis": "Anthocyanin-associated red or purple pigmentation",
+      "evidence": "Game name; photographed cannabis pigmentation research",
+      "research_note": "Cannabis petioles and veins can accumulate red-purple anthocyanin pigmentation; redness alone is not proof of mutation.",
+      "art_direction": "Concentrate muted red, burgundy or rose color on stems, petioles and selected veins. Retain green leaves for a strong contrast.",
+      "avoid": "Flat neon-red paint over every branch. Presenting redness as a diagnosis of genetics, nutrition or health.",
+      "stage_notes": "Young: red petiole accents. Vegetative: more visible colored stems. Flowering: continue the same tissue-specific color placement.",
+      "reference_ids": [
+        "R11",
+        "R04"
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Pink Pistil",
+      "biological_basis": "Pink stigmas, commonly called pistils by growers",
+      "evidence": "Documented cultivar color trait; Serious Seeds reference",
+      "research_note": "Serious 6 includes plants with pink flower stigmas. This is a floral color trait, not proof of a new mutation.",
+      "art_direction": "Paint thin curling pink and magenta hairs emerging from green flower clusters. Use white or pale pink secondary hairs to retain detail.",
+      "avoid": "Solid pink leaves or large pink flower petals. Pink hairs visible before female flowers develop.",
+      "stage_notes": "Young/vegetative: ordinary foliage. Early flowering: sparse pink hairs. Mature flowering: denser hair clusters while green bracts remain visible.",
+      "reference_ids": [
+        "R19",
+        "R20"
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Inkleaf",
+      "biological_basis": "Very dark anthocyanin-rich foliage",
+      "evidence": "Game name; pigment analogue, not verified literal black mutation",
+      "research_note": "Dark red-purple cannabis leaf pigmentation provides a visual analogue; the research does not establish literal ink-black leaves.",
+      "art_direction": "Use a deep purple-green base, plum shadows and cool green edge highlights. Preserve veins and overlapping leaf boundaries.",
+      "avoid": "Featureless black silhouettes. Assuming darker color establishes potency or a distinct mutation.",
+      "stage_notes": "Young: restrained purple-green. Vegetative: broaden dark leaf surfaces. Flowering: keep highlights so dark foliage remains readable behind buds.",
+      "reference_ids": [
+        "R11"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "whole-plant-examples-02.png",
+      "dimensions": [
+        1810,
+        869
+      ],
+      "sha256": "c21f0077c01dd70096890c0cdacb2dae23c36378ddc76a5ef9b4a29867bb314f"
+    },
+    {
+      "file": "detail-and-color-studies-02.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "a76dd099513478957bb57243a2b16f678c1b90ca348de8f3b41160d86db2dc84"
+    }
+  ],
+  "reference_pack": "Bagseed_Mutation_References.zip",
+  "references_consulted": [
+    {
+      "id": "R02",
+      "title": "Freakshow leaf morphology comparison",
+      "traits": [
+        1,
+        2
+      ],
+      "credit": "Shapeshifter collection, via Doctor’s Choice",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://doctorschoice.farm/wp-content/uploads/2026/09/04-monstra.webp",
+      "source_url": "https://doctorschoice.farm/blog/freakshow-cannabis-mutation-history/",
+      "resize": true,
+      "original_dimensions": [
+        1600,
+        1066
+      ],
+      "file": "photos/R02.jpg",
+      "bytes": 318865,
+      "status": "downloaded"
+    },
+    {
+      "id": "R03",
+      "title": "Large outdoor Freakshow habit",
+      "traits": [
+        1,
+        2
+      ],
+      "credit": "Shapeshifter collection, via Doctor’s Choice",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://doctorschoice.farm/wp-content/uploads/2026/09/05-giant.webp",
+      "source_url": "https://doctorschoice.farm/blog/freakshow-cannabis-mutation-history/",
+      "resize": true,
+      "original_dimensions": [
+        853,
+        1280
+      ],
+      "file": "photos/R03.jpg",
+      "bytes": 265881,
+      "status": "downloaded"
+    },
+    {
+      "id": "R11",
+      "title": "Anthocyanin leaf and petiole phenotypes, Figure 1",
+      "traits": [
+        8,
+        10
+      ],
+      "credit": "Gagalova et al. (2024), Plant Direct 8:e70016",
+      "kind": "photographic reference",
+      "license": "CC BY-NC-ND 4.0; unmodified figure, noncommercial reference",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/66e7/11588432/a5c68e57c7c8/PLD3-8-e70016-g001.jpg",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11588432/",
+      "resize": false,
+      "original_dimensions": [
+        709,
+        205
+      ],
+      "file": "photos/R11.jpg",
+      "bytes": 54607,
+      "status": "downloaded"
+    },
+    {
+      "id": "R17",
+      "title": "Freaky Ryder leaf closeup",
+      "traits": [
+        1,
+        2
+      ],
+      "credit": "mutantfarmer",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-freakshow-own-drive-leaf.DmSud6WT_ZD7rBk.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        720,
+        1280
+      ],
+      "file": "photos/R17.jpg",
+      "bytes": 95898,
+      "status": "downloaded"
+    },
+    {
+      "id": "R18",
+      "title": "Variegated White Widow Duck leaf",
+      "traits": [
+        5,
+        6
+      ],
+      "credit": "mutantfarmer",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-variegation-1.CtI5jPgs_Z111UmI.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        1280,
+        1280
+      ],
+      "file": "photos/R18.jpg",
+      "bytes": 106939,
+      "status": "downloaded"
+    },
+    {
+      "id": "R19",
+      "title": "Serious 6 pink stigmas",
+      "traits": [
+        9
+      ],
+      "credit": "Serious Seeds",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://www.seriousseeds.com/sites/default/files/styles/306_535/public/strains/SERIOUS%206%20%5BVRIJSTAAND%5D.png?itok=ogSiaSon",
+      "source_url": "https://www.seriousseeds.com/cannabis-seeds/serious-6",
+      "resize": true,
+      "original_dimensions": [
+        306,
+        535
+      ],
+      "file": "photos/R19.jpg",
+      "bytes": 61122,
+      "status": "downloaded"
+    },
+    {
+      "id": "R20",
+      "title": "Serious 6 stigma macro",
+      "traits": [
+        9
+      ],
+      "credit": "Serious Seeds photo, hosted by Supreme Seeds",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://www.supremeseeds.de/thumbnail/cb/ab/37/1741062181/Serious.6.08september2021.015.Instagramfeed_1920x1920.jpg?ts=1741062309",
+      "source_url": "https://www.supremeseeds.de/Breeder/Serious-Seeds/",
+      "resize": true,
+      "original_dimensions": [
+        1920,
+        1920
+      ],
+      "file": "photos/R20.jpg",
+      "bytes": 363410,
+      "status": "downloaded"
+    },
+    {
+      "id": "R21",
+      "title": "Divina variegated foliage patent figure",
+      "traits": [
+        5,
+        7
+      ],
+      "credit": "Salvatore Casano / Phytoplant Research SL, US20200170162P1",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://patentimages.storage.googleapis.com/9d/c8/9e/5ee1c7f7a6f3e6/US20200170162P1-20200528-D00000.png",
+      "source_url": "https://patents.google.com/patent/US20200170162P1/en",
+      "resize": false,
+      "original_dimensions": [
+        163,
+        120
+      ],
+      "file": "photos/R21.png",
+      "bytes": 15355,
+      "status": "downloaded"
+    }
+  ],
+  "photos_passed_to_generation": [
+    "R02",
+    "R18",
+    "R11",
+    "R20"
+  ],
+  "style_references": [
+    "review/mutation-detail/photo-based-batch-01/leaf-studies-01.png"
+  ],
+  "source_constraints": "Reference provenance carried from supplied pack. Originals left unmodified outside repository; no external photographs shipped as assets. R21 is a low-resolution monochrome patent figure, not a color palette source.",
+  "color_and_morphology_limits": "Fernfrond separation from Freakshow is a proposed game convention; uniform Goldleaf and extreme dark Inkleaf are game pigment interpretations. A/B/C detail studies are proposed art variations, not verified genetic combinations.",
+  "whole_plant_notes": "One flowering example per trait; identical pot type for comparison, visible branch nodes, dominant top flower and smaller lateral/lower bud sites. Pink Pistil affects stigmas rather than fan leaves.",
+  "remaining_five": [
+    "Twin Leader",
+    "Crested Cola",
+    "Triple Whorl",
+    "Pocket Dwarf",
+    "Triploid"
+  ],
+  "approval_note": "User approved this batch and requested the remaining five. Production integration and push have not occurred."
+}

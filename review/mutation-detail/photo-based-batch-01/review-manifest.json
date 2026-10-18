@@ -1,0 +1,259 @@
+{
+  "status": "user-approved-concept-art",
+  "scope": "original concept samples only; not integrated or pushed",
+  "file": "leaf-studies-01.png",
+  "sha256": "8d4d768e22a180c237db9a7c43201a9d38cff34a1cbb8d57c72d5d0ef3ebde4e",
+  "source_pack": "Bagseed_Mutation_References.zip",
+  "source_pack_checksums": {
+    "checked": 41,
+    "mismatches": 0
+  },
+  "families": [
+    {
+      "name": "Freakshow",
+      "id": "freakshow",
+      "references": [
+        "R17",
+        "R02"
+      ]
+    },
+    {
+      "name": "Ducksfoot",
+      "id": "ducksfoot",
+      "references": [
+        "R05",
+        "R13"
+      ]
+    },
+    {
+      "name": "Monophylla",
+      "id": "monophylla",
+      "references": [
+        "R14",
+        "R15"
+      ],
+      "note": "AD17 photographic analogue, not identification of a causal gene"
+    },
+    {
+      "name": "Moonmarble",
+      "id": "moonmarble",
+      "references": [
+        "R26",
+        "R28",
+        "R13"
+      ],
+      "note": "Variegation analogue"
+    },
+    {
+      "name": "Snowtip",
+      "id": "snowtip",
+      "references": [
+        "R25",
+        "R26"
+      ],
+      "note": "Partial-pale game interpretation with retained green foliage; no claim of a separately verified mutation or inevitable greening"
+    }
+  ],
+  "variants_per_family": [
+    "green form A",
+    "green form B",
+    "proposed plum/green pigment pairing"
+  ],
+  "color_evidence": "Color pairings are proposed game phenotypes, not verified combinations for every mutation.",
+  "photos_consulted": [
+    {
+      "id": "R02",
+      "title": "Freakshow leaf morphology comparison",
+      "traits": [
+        1,
+        2
+      ],
+      "credit": "Shapeshifter collection, via Doctor’s Choice",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://doctorschoice.farm/wp-content/uploads/2026/09/04-monstra.webp",
+      "source_url": "https://doctorschoice.farm/blog/freakshow-cannabis-mutation-history/",
+      "resize": true,
+      "original_dimensions": [
+        1600,
+        1066
+      ],
+      "file": "photos/R02.jpg",
+      "bytes": 318865,
+      "status": "downloaded"
+    },
+    {
+      "id": "R05",
+      "title": "Ducksfoot webbed leaf",
+      "traits": [
+        3
+      ],
+      "credit": "Dutch Passion",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://dutch-passion.com/img/web/Ducksfoot-or-webbed-cannabis-leaves-stealth-leaf-cannabis-1080x1417-80.webp",
+      "source_url": "https://dutch-passion.com/en/blog/top-11-most-common-cannabis-plant-mutations-n1111",
+      "resize": true,
+      "original_dimensions": [
+        1080,
+        1417
+      ],
+      "file": "photos/R05.jpg",
+      "bytes": 329758,
+      "status": "downloaded"
+    },
+    {
+      "id": "R13",
+      "title": "Mutant phenotypes, Figure 5 (A whorled; B Ducksfoot; C ABC; D variegation)",
+      "traits": [
+        3,
+        5,
+        13
+      ],
+      "credit": "Hesami et al. (2022), Plants 11:2383; photographs credited to Dutch Passion",
+      "kind": "photographic reference",
+      "license": "CC BY 4.0; see article and any figure-specific credits",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1c6a/9505140/a51e220df154/plants-11-02383-g005.jpg",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9505140/",
+      "resize": false,
+      "original_dimensions": [
+        774,
+        769
+      ],
+      "file": "photos/R13.jpg",
+      "bytes": 281138,
+      "status": "downloaded"
+    },
+    {
+      "id": "R14",
+      "title": "AD17 single lanceolate leaf",
+      "traits": [
+        4
+      ],
+      "credit": "mutantfarmer; AD17 Berry (KalySeeds)",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-ad17-1.BldoBBzj_17GOUB.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        1280,
+        1280
+      ],
+      "file": "photos/R14.jpg",
+      "bytes": 159611,
+      "status": "downloaded"
+    },
+    {
+      "id": "R15",
+      "title": "AD17 plant architecture",
+      "traits": [
+        4
+      ],
+      "credit": "mutantfarmer; AD17 Berry (KalySeeds)",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-ad17-2.D7JpfPWj_jUuqa.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        1280,
+        1280
+      ],
+      "file": "photos/R15.jpg",
+      "bytes": 120231,
+      "status": "downloaded"
+    },
+    {
+      "id": "R17",
+      "title": "Freaky Ryder leaf closeup",
+      "traits": [
+        1,
+        2
+      ],
+      "credit": "mutantfarmer",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-freakshow-own-drive-leaf.DmSud6WT_ZD7rBk.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        720,
+        1280
+      ],
+      "file": "photos/R17.jpg",
+      "bytes": 95898,
+      "status": "downloaded"
+    },
+    {
+      "id": "R25",
+      "title": "White cannabis seedling",
+      "traits": [
+        6
+      ],
+      "credit": "Royal Queen Seeds",
+      "kind": "white tissue reference; image alone cannot prove genetic albinism",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://www.royalqueenseeds.com/img/cms/Seedling_6.jpg",
+      "source_url": "https://www.royalqueenseeds.com/us/blog-albino-weed-the-stuff-of-legend-or-scientific-fact-n722",
+      "resize": true,
+      "original_dimensions": [
+        848,
+        330
+      ],
+      "file": "photos/R25.jpg",
+      "bytes": 26540,
+      "status": "downloaded"
+    },
+    {
+      "id": "R26",
+      "title": "White sectors on Legitimo F5 leaf",
+      "traits": [
+        5,
+        6
+      ],
+      "credit": "mutantfarmer; Legitimo F5 (KalySeeds)",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://mutant.farm/_astro/mutation-legitimo-2.4Scgh3xr_Z1VG3bO.webp",
+      "source_url": "https://mutant.farm/mutations/",
+      "resize": true,
+      "original_dimensions": [
+        714,
+        1280
+      ],
+      "file": "photos/R26.jpg",
+      "bytes": 142837,
+      "status": "downloaded"
+    },
+    {
+      "id": "R28",
+      "title": "Sectorial cannabis variegation",
+      "traits": [
+        5,
+        6
+      ],
+      "credit": "Steve Zalesky, via ETHOS",
+      "kind": "photographic reference",
+      "license": "No reuse license verified; study reference only",
+      "image_url": "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3493c492-4289-4c3d-9173-56eb4c9872fd_1920x2560.jpeg",
+      "source_url": "https://www.ethosgenetics.com/resources/common-cannabis-mutations",
+      "resize": true,
+      "original_dimensions": [
+        1456,
+        1941
+      ],
+      "file": "photos/R28.jpg",
+      "bytes": 491997,
+      "status": "downloaded"
+    }
+  ],
+  "photos_passed_to_generation": [
+    "R17",
+    "R05",
+    "R14",
+    "R28"
+  ],
+  "style_reference": "graphics/plants/porchlight/assets/components.png",
+  "approval_note": "User called the concepts perfect and authorized implementing one mutation at a time. Runtime work is reviewed separately."
+}
