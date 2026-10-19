@@ -1,0 +1,61 @@
+{
+  "id": "P108",
+  "key": "alyssum",
+  "name": "Sweet alyssum",
+  "status": "approved-growth-artwork",
+  "revision": "alyssum-garden-1",
+  "generatedSource": "exec-c6762721-2dd7-4e67-891f-a9aab4fec340.png",
+  "sourceSHA256": "66a4046b4841747af577b624874c7051a74ce8651d0880bc3ebf75aa73483a33",
+  "runtimeSHA256": "b9605b965b7526a121b4a7705d4694e452ad69fa359c7e04726fc90a9d53f196",
+  "runtime": "/assets/garden-plants/alyssum/stages-b9605b965b75.webp",
+  "stages": [
+    {
+      "crop": [
+        167,
+        273,
+        323,
+        230
+      ],
+      "attach": [
+        164.0,
+        227.0
+      ]
+    },
+    {
+      "crop": [
+        699,
+        145,
+        454,
+        387
+      ],
+      "attach": [
+        232.0,
+        384.0
+      ]
+    },
+    {
+      "crop": [
+        73,
+        684,
+        511,
+        434
+      ],
+      "attach": [
+        248.0,
+        431.0
+      ]
+    },
+    {
+      "crop": [
+        636,
+        655,
+        599,
+        492
+      ],
+      "attach": [
+        293.0,
+        489.0
+      ]
+    }
+  ]
+}

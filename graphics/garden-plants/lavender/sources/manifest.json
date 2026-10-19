@@ -1,0 +1,61 @@
+{
+  "id": "P126",
+  "key": "lavender",
+  "name": "Lavender",
+  "status": "approved-growth-artwork",
+  "revision": "lavender-garden-1",
+  "generatedSource": "exec-8ecfb7bb-4481-4ee8-9f22-c8f0fbe98444.png",
+  "sourceSHA256": "6d84f1ee41fdf9e494ddd45f5a6ffb58650cc1d1dc249b119777b661e2712fe3",
+  "runtimeSHA256": "497a70026b666a9b9d811e44942cfe8b4213bef96734380c4f447346abfc6af8",
+  "runtime": "/assets/garden-plants/lavender/stages-497a70026b66.webp",
+  "stages": [
+    {
+      "crop": [
+        154,
+        294,
+        345,
+        178
+      ],
+      "attach": [
+        178.0,
+        174.0
+      ]
+    },
+    {
+      "crop": [
+        728,
+        64,
+        406,
+        426
+      ],
+      "attach": [
+        210.0,
+        423.0
+      ]
+    },
+    {
+      "crop": [
+        85,
+        601,
+        510,
+        579
+      ],
+      "attach": [
+        251.0,
+        575.0
+      ]
+    },
+    {
+      "crop": [
+        673,
+        553,
+        526,
+        627
+      ],
+      "attach": [
+        261.0,
+        624.0
+      ]
+    }
+  ]
+}

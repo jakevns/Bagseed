@@ -1,0 +1,61 @@
+{
+  "id": "P070",
+  "key": "chamomile",
+  "name": "Chamomile",
+  "status": "sample-awaiting-approval",
+  "revision": "chamomile-garden-1",
+  "generatedSource": "exec-c8d2a8fa-a91b-46ae-9a1c-6a50f0272e62.png",
+  "sourceSHA256": "09f4a5844bccdf6f310f3279c1a86566a4362e684866b1ea2198da6c211add76",
+  "runtimeSHA256": "d34b0798ac83e3fd850cfe5639cf2bf437d5f855631fa30246bbf0603d182136",
+  "runtime": "/garden-review/chamomile.webp",
+  "stages": [
+    {
+      "crop": [
+        180,
+        255,
+        303,
+        178
+      ],
+      "attach": [
+        152.0,
+        174.0
+      ]
+    },
+    {
+      "crop": [
+        745,
+        31,
+        416,
+        417
+      ],
+      "attach": [
+        209.0,
+        414.0
+      ]
+    },
+    {
+      "crop": [
+        71,
+        602,
+        525,
+        530
+      ],
+      "attach": [
+        239.0,
+        526.0
+      ]
+    },
+    {
+      "crop": [
+        689,
+        568,
+        571,
+        573
+      ],
+      "attach": [
+        279.0,
+        570.0
+      ]
+    }
+  ]
+}
