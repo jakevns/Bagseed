@@ -89,7 +89,7 @@ test('headphone cups follow the near ears in profile and both ears in front and 
 test('detail controls create a character and preserve its rendered face through save and reload',async()=>{
  const page=await artPage(browser,{viewport:{width:1280,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  try{
-  await page.goto(url);await page.evaluate(()=>BagseedArt.ready);await page.locator('[data-act=newGame]').click();
+  await page.goto(url);await page.evaluate(()=>{SHELVED.wardrobe=false;return BagseedArt.ready;});await page.locator('[data-act=newGame]').click();
   for(const arg of ['mouth:teeth','ears:large','acc:earring'])await page.locator('[data-act=cr][data-arg="'+arg+'"]').click();
   for(const arg of ['pierce:nosering','marks:moleLip'])await page.locator('[data-act=crMulti][data-arg="'+arg+'"]').click();
   await page.locator('[data-act=startGame]').click();await page.waitForFunction(()=>screen==='game');await page.waitForTimeout(2300);

@@ -28020,7 +28020,7 @@ if (SHELVED.wardrobe) {
   const allowed = (slot, id, cur) => id === cur || (slot === 'shirt' || slot === 'topS' ? SHELF_TOPS.includes(id) : !SHELF_SLOTS.includes(slot) || id === 'none');
   /* drop unfinished chips; drop hat/glasses/accessory rows unless something is worn there */
   const prune = (root, act, look) => {
-    if (!root) return;
+    if (!root || !SHELVED.wardrobe) return;
     const key = { shirt: 'topS', bottom: 'bottomS', shoes: 'shoesS' };
     for (const b of root.querySelectorAll(`button.chip[data-act="${act}"]`)) {
       const [slot, id] = (b.dataset.arg || '').split(':'); if (!['shirt', 'topS', ...SHELF_SLOTS].includes(slot)) continue;

@@ -117,6 +117,7 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
 
 test('a character customized through creator controls renders, plays and survives wardrobe changes and reload',async()=>{
   await pageFor(async page=>{
+    await page.evaluate(()=>{SHELVED.wardrobe=false;});
     await page.locator('[data-act=newGame]').click();await page.locator('#crName').fill('Custom Gardener');
     for(const arg of ['body:broad','hairC:#3e9f7a','topS:flannel','bottomS:cargo','shoesS:boots','glasses:round'])await page.locator(`[data-act="cr"][data-arg="${arg}"]`).first().click();
     await page.locator('[data-act=crWalk][data-arg="0"]').click();
