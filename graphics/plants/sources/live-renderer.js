@@ -189,8 +189,8 @@
   return pose;
  }
  function bounds(m,d){const pose=Model.pose(m,d.view,0,0,true);let lo=0,hi=0;for(const o of m.organs){if(o.removed)continue;const a=pose.organs.get(o.id),part=partData(d,o.role,o.id),ca=Math.cos(a.angle),sa=Math.sin(a.angle);for(const [x,y]of part.outline){const v=a.x+o.length*(x*ca+y*sa)*(o.widthScale||1);lo=Math.min(lo,v);hi=Math.max(hi,v);}}for(const b of pose.branches.values())if(!b.cut){lo=Math.min(lo,b.end.x);hi=Math.max(hi,b.end.x);}if(d.structures.triploid&&d.view.mutSeen&&d.view.stage>=2)hi=Math.max(hi,7.5);return{lo,hi};}
- function surface(w,h){const cv=document.createElement('canvas');cv.width=Math.ceil(w*3);cv.height=Math.ceil(h*3);return cv;}
- function paint(s,p,t=0,wind=0,target=s.cv){const c=target.getContext('2d');c.resetTransform();c.clearRect(0,0,target.width,target.height);c.scale(3,3);c.translate(s.ax,s.ay);
+ function surface(w,h,density=3){const cv=document.createElement('canvas');cv.width=Math.ceil(w*density);cv.height=Math.ceil(h*density);cv.bagseedDensity=density;return cv;}
+ function paint(s,p,t=0,wind=0,target=s.cv){const c=target.getContext('2d');c.resetTransform();c.clearRect(0,0,target.width,target.height);c.scale(target.bagseedDensity||3,target.bagseedDensity||3);c.translate(s.ax,s.ay);
   if(p.stage<=1){const role=p.stage===0?'seed':'radicle';stamp(c,p,s.d,role,0,0,p.stage===0?3.5:5);}
   else if(s.hang){const n=3+(p.yieldPot>1?1:0);for(let i=0;i<n;i++){const x=-22+i*44/(n-1),off=settings.reduced?0:Math.sin(t*1.1+i)*wind*.6;c.strokeStyle='#b8a47b';c.lineWidth=.45;c.beginPath();c.moveTo(x,0);c.lineTo(x+off,5);c.stroke();stamp(c,p,s.d,'femaleLate',x+off,-5,18+(hash(s.d.r.seed+':dry:'+i)%8),Math.PI);}}
   else if(p.stage>=12){c.fillStyle='rgba(172,204,181,.34)';c.strokeStyle='#a7b9a1';c.lineWidth=.7;c.beginPath();c.roundRect(-7,-17,14,17,2);c.fill();c.stroke();stamp(c,p,s.d,'femaleLate',0,1,11);c.fillStyle='#796b4d';c.fillRect(-7,-19,14,3);}
@@ -227,7 +227,12 @@
   else if(mode==='leaf'){const image=tile(p,descriptor(p),key==='pinkpistil'?'femaleMid':'sevenLeaf',{organId:'guide:leaf',young:true,maturity:0}),scale=Math.min((W-4)/image.width,(H-4)/image.height);c.drawImage(image,(W-image.width*scale)/2,(H-image.height*scale)/2,image.width*scale,image.height*scale);}
   else{const s=build(p),scale=Math.min((W-8)/s.w,(H-8)/s.h);c.drawImage(s.cv,W/2-s.ax*scale,H-4-s.ay*scale,s.w*scale,s.h*scale);c.fillStyle=MUTS[key].tint;c.fillRect(3,3,4,4);}
  };
- function frame(p,s,t,wind){if(settings.reduced||!wind||p.stage<2||p.stage>=12)return s.cv;const key=Math.floor(t*8)+':'+Math.round(wind*4);let f=liveFrames.get(s);if(!f||f.key!==key){f=f||{cv:surface(s.w,s.h)};f.key=key;paint(s,p,t,wind,f.cv);liveFrames.set(s,f);}return f.cv;}
+ function frame(p,s,t,wind){
+  const density=s.drawDensity||3,animated=!settings.reduced&&wind&&p.stage>=2&&p.stage<12;
+  if(!animated&&density===3)return s.cv;
+  const key=density+':'+(animated?Math.floor(t*8)+':'+Math.round(wind*4):'still');let f=liveFrames.get(s);
+  if(!f||f.key!==key){if(!f||f.cv.bagseedDensity!==density)f={cv:surface(s.w,s.h,density)};f.key=key;paint(s,p,animated?t:0,animated?wind:0,f.cv);liveFrames.set(s,f);}return f.cv;
+ }
  const prevCreate=createPlant;createPlant=function(){const p=prevCreate.apply(this,arguments);ensure(p);return p;};
  const prevSnap=snapPlant;snapPlant=function(p){if(state?.plants?.[p.id]===p)ensure(p);const s=prevSnap.apply(this,arguments);s.paintArt115=copy(recipe(p));return s;};
  if(typeof POSTLOAD115!=='undefined')POSTLOAD115.push(all);
@@ -235,5 +240,5 @@
  const prevWrite=SaveSys.write;SaveSys.write=function(){if(state?.plants)for(const p of Object.values(state.plants))ensure(p);return prevWrite.apply(this,arguments);};
  const atlases={...DATA};for(const m of Object.values(MUTATIONS))for(const [name,a]of Object.entries(m.atlases))atlases['mutation:'+m.mutationKey+':'+name]=a;
  const ready=Promise.all(Object.entries(atlases).map(([id,a])=>new Promise((resolve,reject)=>{const im=new Image();images[id]=im;im.onload=resolve;im.onerror=()=>reject(Error('Plant artwork failed: '+id));im.src=a.runtime;}))).then(()=>{loaded=true;all();});
- window.BagseedPlants=Object.freeze({revision:'live-plants-16',ready,recipe,ensure,descriptor,frame,build,detail,kits:DATA,mutations:MUTATIONS,atlasCount:Object.keys(atlases).length,Model,get loaded(){return loaded;},get tileCount(){return tiles.size;}});
+ window.BagseedPlants=Object.freeze({revision:'live-plants-17',ready,recipe,ensure,descriptor,frame,build,detail,kits:DATA,mutations:MUTATIONS,atlasCount:Object.keys(atlases).length,Model,get loaded(){return loaded;},get tileCount(){return tiles.size;}});
 })();

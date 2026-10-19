@@ -152,3 +152,7 @@ Approved dedicated kits map to existing `cl_pineexpress`, `cl_gsc` and `cl_gg4`.
 ## Completed catalog: Harlequin, Cannatonic and ACDC
 
 Approved dedicated kits map to `cl_harlequin`, `cl_cannatonic` and `cl_acdc`. All **37/37 named native strains** now have library mappings and dedicated artwork. Two extra experimental phenotype profiles bring the base atlas count to 39; 17 mutation atlases bring startup to 56 images. Native traits, simulation genetics, physical growth and golden senescence remain unchanged. Compatible living saves upgrade artwork while historical photos remain pinned. ACDC mid-flower explicitly attaches at source pixel (1092, 901), its central stem rather than a dangling leaflet; the compiler validates the anchor on opaque organ pixels. Approved checkpoint: `review/strain-batch-14/`.
+
+## Tent plant resolution
+
+The plant compiler appends `sources/scene-resolution.js` after the compositor. Bedroom/growroom use zoom-aware 3–6× world backing surfaces with a four-million-pixel cap, actual backing-size camera sampling and smooth final scaling. Plant frame surfaces match effective draw density, capped at 6×; reduced motion remains still. These rendering-only changes retain logical room coordinates, layering, genetics and the existing character payload. Review checkpoint: `review/plant-resolution/`.
