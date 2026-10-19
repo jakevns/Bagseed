@@ -1,0 +1,8 @@
+{
+  "runner": "node --test review/character-system-prototype/structural.test.cjs review/character-system-prototype/browser.test.cjs",
+  "tests": 10,
+  "passed": 10,
+  "failed": 0,
+  "durationMs": 18742.9258,
+  "scope": "Existing shared-compositor structural and browser checks"
+}

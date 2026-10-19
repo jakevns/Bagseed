@@ -1,0 +1,5839 @@
+{
+  "sourceParts": 180,
+  "frames": 108,
+  "patchRingNativePixels": 8,
+  "patchThreshold": 0.06,
+  "outlineThreshold": 0.95,
+  "outlineMaximumRGB": "0.6 * measured source ink + 0.4 * 255 + 1 rounding tolerance",
+  "sources": [
+    {
+      "view": "body/male/down",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 74,
+          "ringPixels": 379,
+          "brightness": 124.05405405405405,
+          "ringBrightness": 126.55672823218997,
+          "relativeDifference": 0.019775117554748534
+        },
+        {
+          "pixels": 68,
+          "ringPixels": 368,
+          "brightness": 123.25,
+          "ringBrightness": 125.29347826086956,
+          "relativeDifference": 0.016309534137242974
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 75,
+          "ringPixels": 379,
+          "brightness": 124.01333333333334,
+          "ringBrightness": 126.6754617414248,
+          "relativeDifference": 0.02101534402555018
+        },
+        {
+          "pixels": 70,
+          "ringPixels": 369,
+          "brightness": 123.1,
+          "ringBrightness": 125.63685636856368,
+          "relativeDifference": 0.020191975841242486
+        },
+        {
+          "pixels": 101,
+          "ringPixels": 290,
+          "brightness": 132.04950495049505,
+          "ringBrightness": 135.07241379310344,
+          "relativeDifference": 0.022379912801726597
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 82,
+          "brightness": 127.0,
+          "ringBrightness": 130.2560975609756,
+          "relativeDifference": 0.024997659395187676
+        },
+        {
+          "pixels": 89,
+          "ringPixels": 266,
+          "brightness": 132.7865168539326,
+          "ringBrightness": 135.2330827067669,
+          "relativeDifference": 0.018091474392692285
+        },
+        {
+          "pixels": 34,
+          "ringPixels": 225,
+          "brightness": 108.20588235294117,
+          "ringBrightness": 108.33333333333333,
+          "relativeDifference": 0.0011764705882352736
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 228,
+          "brightness": 104.34482758620689,
+          "ringBrightness": 104.56140350877193,
+          "relativeDifference": 0.002071279796343521
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 34,
+          "ringPixels": 225,
+          "brightness": 108.20588235294117,
+          "ringBrightness": 108.33333333333333,
+          "relativeDifference": 0.0011764705882352736
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 228,
+          "brightness": 104.58620689655173,
+          "ringBrightness": 104.56140350877193,
+          "relativeDifference": 0.00023721360796115498
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 115,
+          "brightness": 87.0,
+          "ringBrightness": 86.61739130434782,
+          "relativeDifference": 0.004417227186025577
+        },
+        {
+          "pixels": 110,
+          "ringPixels": 504,
+          "brightness": 103.88181818181818,
+          "ringBrightness": 103.77182539682539,
+          "relativeDifference": 0.0010599484452756738
+        },
+        {
+          "pixels": 54,
+          "ringPixels": 376,
+          "brightness": 108.22222222222223,
+          "ringBrightness": 109.92021276595744,
+          "relativeDifference": 0.015447482323843242
+        },
+        {
+          "pixels": 10,
+          "ringPixels": 316,
+          "brightness": 143.0,
+          "ringBrightness": 142.88291139240508,
+          "relativeDifference": 0.0008194724369337459
+        },
+        {
+          "pixels": 7,
+          "ringPixels": 283,
+          "brightness": 143.0,
+          "ringBrightness": 142.47349823321554,
+          "relativeDifference": 0.003695436507936584
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 107,
+          "ringPixels": 344,
+          "brightness": 124.02803738317758,
+          "ringBrightness": 125.89244186046511,
+          "relativeDifference": 0.014809502856048963
+        },
+        {
+          "pixels": 68,
+          "ringPixels": 342,
+          "brightness": 120.17647058823529,
+          "ringBrightness": 121.49122807017544,
+          "relativeDifference": 0.010821830537269091
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 218,
+          "brightness": 106.47826086956522,
+          "ringBrightness": 106.20642201834862,
+          "relativeDifference": 0.002559533087082401
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 68,
+          "ringPixels": 325,
+          "brightness": 122.8970588235294,
+          "ringBrightness": 124.44307692307693,
+          "relativeDifference": 0.012423496250443708
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 240,
+          "brightness": 104.10714285714286,
+          "ringBrightness": 103.85416666666667,
+          "relativeDifference": 0.0024358790657687283
+        },
+        {
+          "pixels": 122,
+          "ringPixels": 351,
+          "brightness": 113.20491803278688,
+          "ringBrightness": 115.19373219373219,
+          "relativeDifference": 0.01726495116592397
+        },
+        {
+          "pixels": 27,
+          "ringPixels": 237,
+          "brightness": 117.66666666666667,
+          "ringBrightness": 120.11392405063292,
+          "relativeDifference": 0.02037446868303651
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 94,
+          "brightness": 104.0,
+          "ringBrightness": 103.51063829787235,
+          "relativeDifference": 0.004727646454265092
+        },
+        {
+          "pixels": 20,
+          "ringPixels": 209,
+          "brightness": 116.75,
+          "ringBrightness": 116.622009569378,
+          "relativeDifference": 0.0010974809222942183
+        },
+        {
+          "pixels": 7,
+          "ringPixels": 283,
+          "brightness": 142.0,
+          "ringBrightness": 142.47349823321554,
+          "relativeDifference": 0.0033234126984126224
+        },
+        {
+          "pixels": 35,
+          "ringPixels": 298,
+          "brightness": 119.48571428571428,
+          "ringBrightness": 120.18120805369128,
+          "relativeDifference": 0.005787042577124742
+        },
+        {
+          "pixels": 74,
+          "ringPixels": 362,
+          "brightness": 110.39189189189189,
+          "ringBrightness": 111.00276243093923,
+          "relativeDifference": 0.0055032012327386505
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 2,
+          "ringPixels": 95,
+          "brightness": 117.0,
+          "ringBrightness": 117.09473684210526,
+          "relativeDifference": 0.0008090614886731379
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 215,
+          "brightness": 119.21739130434783,
+          "ringBrightness": 120.94418604651163,
+          "relativeDifference": 0.014277616796724143
+        },
+        {
+          "pixels": 76,
+          "ringPixels": 397,
+          "brightness": 110.23684210526316,
+          "ringBrightness": 110.72544080604534,
+          "relativeDifference": 0.004412704950419132
+        },
+        {
+          "pixels": 52,
+          "ringPixels": 290,
+          "brightness": 114.84615384615384,
+          "ringBrightness": 116.60689655172413,
+          "relativeDifference": 0.015099816199887194
+        },
+        {
+          "pixels": 9,
+          "ringPixels": 160,
+          "brightness": 114.44444444444444,
+          "ringBrightness": 115.65,
+          "relativeDifference": 0.010424172551280265
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 121,
+          "ringPixels": 336,
+          "brightness": 114.79338842975207,
+          "ringBrightness": 116.98511904761905,
+          "relativeDifference": 0.01873512319951422
+        },
+        {
+          "pixels": 36,
+          "ringPixels": 242,
+          "brightness": 115.80555555555556,
+          "ringBrightness": 118.69421487603306,
+          "relativeDifference": 0.024336984944838994
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 56,
+          "ringPixels": 295,
+          "brightness": 115.10714285714286,
+          "ringBrightness": 116.45423728813559,
+          "relativeDifference": 0.011567586224103575
+        },
+        {
+          "pixels": 12,
+          "ringPixels": 201,
+          "brightness": 118.5,
+          "ringBrightness": 119.51741293532338,
+          "relativeDifference": 0.008512675352786872
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 82,
+          "brightness": 127.0,
+          "ringBrightness": 130.2560975609756,
+          "relativeDifference": 0.024997659395187676
+        },
+        {
+          "pixels": 95,
+          "ringPixels": 317,
+          "brightness": 124.0,
+          "ringBrightness": 125.4826498422713,
+          "relativeDifference": 0.011815576449293633
+        },
+        {
+          "pixels": 72,
+          "ringPixels": 337,
+          "brightness": 121.52777777777777,
+          "ringBrightness": 122.45103857566765,
+          "relativeDifference": 0.007539836400157272
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 233,
+          "brightness": 109.75,
+          "ringBrightness": 109.75965665236052,
+          "relativeDifference": 8.797997966688581e-05
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 72,
+          "ringPixels": 325,
+          "brightness": 123.65277777777777,
+          "ringBrightness": 124.55692307692307,
+          "relativeDifference": 0.007258892374749192
+        },
+        {
+          "pixels": 31,
+          "ringPixels": 263,
+          "brightness": 109.16129032258064,
+          "ringBrightness": 109.56653992395437,
+          "relativeDifference": 0.0036986620336372086
+        },
+        {
+          "pixels": 96,
+          "ringPixels": 339,
+          "brightness": 122.42708333333333,
+          "ringBrightness": 123.09734513274336,
+          "relativeDifference": 0.005444973640067086
+        },
+        {
+          "pixels": 27,
+          "ringPixels": 230,
+          "brightness": 121.07407407407408,
+          "ringBrightness": 123.69565217391305,
+          "relativeDifference": 0.021193777257046156
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 98,
+          "brightness": 96.0,
+          "ringBrightness": 95.56122448979592,
+          "relativeDifference": 0.004591564335290974
+        },
+        {
+          "pixels": 99,
+          "ringPixels": 418,
+          "brightness": 105.8989898989899,
+          "ringBrightness": 105.97846889952153,
+          "relativeDifference": 0.0007499542252019948
+        },
+        {
+          "pixels": 10,
+          "ringPixels": 316,
+          "brightness": 142.7,
+          "ringBrightness": 142.88291139240508,
+          "relativeDifference": 0.0012801488339130478
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 264,
+          "brightness": 116.51724137931035,
+          "ringBrightness": 119.49242424242425,
+          "relativeDifference": 0.024898506177076958
+        },
+        {
+          "pixels": 81,
+          "ringPixels": 372,
+          "brightness": 117.06172839506173,
+          "ringBrightness": 117.66397849462365,
+          "relativeDifference": 0.005118389733774234
+        },
+        {
+          "pixels": 7,
+          "ringPixels": 308,
+          "brightness": 142.85714285714286,
+          "ringBrightness": 142.7077922077922,
+          "relativeDifference": 0.0010465486645129154
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 81,
+          "ringPixels": 397,
+          "brightness": 116.03703703703704,
+          "ringBrightness": 116.68010075566751,
+          "relativeDifference": 0.005511340103974298
+        },
+        {
+          "pixels": 7,
+          "ringPixels": 308,
+          "brightness": 142.85714285714286,
+          "ringBrightness": 142.7077922077922,
+          "relativeDifference": 0.0010465486645129154
+        },
+        {
+          "pixels": 16,
+          "ringPixels": 196,
+          "brightness": 120.3125,
+          "ringBrightness": 121.00510204081633,
+          "relativeDifference": 0.0057237424632120325
+        },
+        {
+          "pixels": 52,
+          "ringPixels": 289,
+          "brightness": 114.0,
+          "ringBrightness": 114.28719723183391,
+          "relativeDifference": 0.0025129431711526638
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 131,
+          "brightness": 101.25,
+          "ringBrightness": 101.50381679389314,
+          "relativeDifference": 0.0025005640370008944
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 124,
+          "brightness": 120.0,
+          "ringBrightness": 119.87903225806451,
+          "relativeDifference": 0.0010090817356206159
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 98,
+          "ringPixels": 313,
+          "brightness": 122.66326530612245,
+          "ringBrightness": 123.43769968051119,
+          "relativeDifference": 0.006273888580175829
+        },
+        {
+          "pixels": 36,
+          "ringPixels": 238,
+          "brightness": 121.5,
+          "ringBrightness": 122.74789915966386,
+          "relativeDifference": 0.010166358595194035
+        }
+      ]
+    },
+    {
+      "view": "body/male/down",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 56,
+          "ringPixels": 310,
+          "brightness": 115.01785714285714,
+          "ringBrightness": 115.94193548387096,
+          "relativeDifference": 0.007970182118810464
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 126,
+          "brightness": 106.5,
+          "ringBrightness": 106.5079365079365,
+          "relativeDifference": 7.451564828612315e-05
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 185,
+          "brightness": 113.0,
+          "ringBrightness": 112.87567567567568,
+          "relativeDifference": 0.001101427066372914
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 24,
+          "ringPixels": 204,
+          "brightness": 117.33333333333333,
+          "ringBrightness": 117.42156862745098,
+          "relativeDifference": 0.0007514402604993331
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 222,
+          "brightness": 107.875,
+          "ringBrightness": 108.02702702702703,
+          "relativeDifference": 0.0014073054791093745
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 31054,
+          "ringPixels": 3011,
+          "brightness": 131.17466348940556,
+          "ringBrightness": 131.25805380272334,
+          "relativeDifference": 0.0006353157836936348
+        },
+        {
+          "pixels": 25,
+          "ringPixels": 113,
+          "brightness": 90.48,
+          "ringBrightness": 90.53982300884955,
+          "relativeDifference": 0.0006607369758575866
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 197,
+          "brightness": 117.41666666666667,
+          "ringBrightness": 117.42131979695432,
+          "relativeDifference": 3.962764424464368e-05
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 210,
+          "brightness": 110.37931034482759,
+          "ringBrightness": 111.00952380952381,
+          "relativeDifference": 0.005677111684377463
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 13275,
+          "ringPixels": 1879,
+          "brightness": 147.32527306967984,
+          "ringBrightness": 145.35231506120277,
+          "relativeDifference": 0.013573626313735154
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 197,
+          "brightness": 117.20833333333333,
+          "ringBrightness": 117.42131979695432,
+          "relativeDifference": 0.0018138653524699822
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 210,
+          "brightness": 110.37931034482759,
+          "ringBrightness": 111.00952380952381,
+          "relativeDifference": 0.005677111684377463
+        },
+        {
+          "pixels": 155,
+          "ringPixels": 489,
+          "brightness": 102.0516129032258,
+          "ringBrightness": 103.01840490797547,
+          "relativeDifference": 0.009384653214280322
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 104,
+          "brightness": 135.0,
+          "ringBrightness": 134.60576923076923,
+          "relativeDifference": 0.0029287806271876887
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": []
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 13324,
+          "ringPixels": 1829,
+          "brightness": 156.51133293305313,
+          "ringBrightness": 156.7255330781848,
+          "relativeDifference": 0.0013667214328429021
+        },
+        {
+          "pixels": 148,
+          "ringPixels": 416,
+          "brightness": 105.5,
+          "ringBrightness": 105.84615384615384,
+          "relativeDifference": 0.0032703488372092405
+        },
+        {
+          "pixels": 70,
+          "ringPixels": 358,
+          "brightness": 110.01428571428572,
+          "ringBrightness": 112.64245810055866,
+          "relativeDifference": 0.02333198716177432
+        },
+        {
+          "pixels": 118,
+          "ringPixels": 492,
+          "brightness": 109.7542372881356,
+          "ringBrightness": 110.13821138211382,
+          "relativeDifference": 0.003486293168917223
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 70,
+          "ringPixels": 344,
+          "brightness": 114.42857142857143,
+          "ringBrightness": 115.1046511627907,
+          "relativeDifference": 0.005873609166871135
+        },
+        {
+          "pixels": 117,
+          "ringPixels": 506,
+          "brightness": 110.11965811965813,
+          "ringBrightness": 110.66403162055336,
+          "relativeDifference": 0.004919154787002428
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 135,
+          "brightness": 99.0,
+          "ringBrightness": 98.2,
+          "relativeDifference": 0.0081466395112016
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 260,
+          "brightness": 141.0,
+          "ringBrightness": 141.33846153846153,
+          "relativeDifference": 0.0023946881462936173
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": []
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 4,
+          "ringPixels": 260,
+          "brightness": 141.0,
+          "ringBrightness": 141.33846153846153,
+          "relativeDifference": 0.0023946881462936173
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 335,
+          "ringPixels": 2235,
+          "brightness": 134.55522388059703,
+          "ringBrightness": 134.5284116331096,
+          "relativeDifference": 0.00019930546389365354
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 390,
+          "ringPixels": 2526,
+          "brightness": 153.84615384615384,
+          "ringBrightness": 153.89152810768013,
+          "relativeDifference": 0.0002948457402706539
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 13567,
+          "ringPixels": 2930,
+          "brightness": 143.10333898430014,
+          "ringBrightness": 143.24982935153582,
+          "relativeDifference": 0.0010226215828585549
+        },
+        {
+          "pixels": 148,
+          "ringPixels": 416,
+          "brightness": 105.49324324324324,
+          "ringBrightness": 105.84615384615384,
+          "relativeDifference": 0.0033341844751727965
+        },
+        {
+          "pixels": 70,
+          "ringPixels": 358,
+          "brightness": 109.92857142857143,
+          "ringBrightness": 112.64245810055866,
+          "relativeDifference": 0.02409292834824745
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 500,
+          "ringPixels": 2796,
+          "brightness": 124.956,
+          "ringBrightness": 126.15701001430615,
+          "relativeDifference": 0.009519962578139378
+        },
+        {
+          "pixels": 70,
+          "ringPixels": 344,
+          "brightness": 114.32857142857142,
+          "ringBrightness": 115.1046511627907,
+          "relativeDifference": 0.006742383790570573
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 260,
+          "brightness": 141.0,
+          "ringBrightness": 141.33846153846153,
+          "relativeDifference": 0.0023946881462936173
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 364,
+          "ringPixels": 2236,
+          "brightness": 122.84065934065934,
+          "ringBrightness": 122.79830053667263,
+          "relativeDifference": 0.00034494617434925704
+        }
+      ]
+    },
+    {
+      "view": "body/male/right",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 325,
+          "ringPixels": 2102,
+          "brightness": 115.62153846153846,
+          "ringBrightness": 116.40675547098002,
+          "relativeDifference": 0.006745459112442197
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 260,
+          "brightness": 141.0,
+          "ringBrightness": 141.33846153846153,
+          "relativeDifference": 0.0023946881462936173
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 74,
+          "ringPixels": 376,
+          "brightness": 125.27027027027027,
+          "ringBrightness": 127.80319148936171,
+          "relativeDifference": 0.019818919931293533
+        },
+        {
+          "pixels": 72,
+          "ringPixels": 369,
+          "brightness": 126.61111111111111,
+          "ringBrightness": 129.65311653116532,
+          "relativeDifference": 0.023462647882613673
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 74,
+          "ringPixels": 376,
+          "brightness": 124.8108108108108,
+          "ringBrightness": 127.80319148936171,
+          "relativeDifference": 0.02341397459389726
+        },
+        {
+          "pixels": 72,
+          "ringPixels": 369,
+          "brightness": 128.79166666666666,
+          "ringBrightness": 129.65311653116532,
+          "relativeDifference": 0.006644266544040969
+        },
+        {
+          "pixels": 76,
+          "ringPixels": 286,
+          "brightness": 133.94736842105263,
+          "ringBrightness": 135.72027972027973,
+          "relativeDifference": 0.013062979997396737
+        },
+        {
+          "pixels": 53,
+          "ringPixels": 239,
+          "brightness": 130.52830188679246,
+          "ringBrightness": 133.51464435146443,
+          "relativeDifference": 0.02236715290055153
+        },
+        {
+          "pixels": 27,
+          "ringPixels": 222,
+          "brightness": 107.62962962962963,
+          "ringBrightness": 107.65765765765765,
+          "relativeDifference": 0.00026034402603431015
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 219,
+          "brightness": 106.82142857142857,
+          "ringBrightness": 106.90867579908675,
+          "relativeDifference": 0.0008160911825542133
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 27,
+          "ringPixels": 222,
+          "brightness": 107.55555555555556,
+          "ringBrightness": 107.65765765765765,
+          "relativeDifference": 0.0009483960948395366
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 219,
+          "brightness": 106.60714285714286,
+          "ringBrightness": 106.90867579908675,
+          "relativeDifference": 0.002820472143070597
+        },
+        {
+          "pixels": 209,
+          "ringPixels": 583,
+          "brightness": 104.52153110047847,
+          "ringBrightness": 104.45797598627787,
+          "relativeDifference": 0.000608427586314189
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 115,
+          "brightness": 93.0,
+          "ringBrightness": 91.99130434782609,
+          "relativeDifference": 0.010965119576519515
+        },
+        {
+          "pixels": 50,
+          "ringPixels": 353,
+          "brightness": 108.82,
+          "ringBrightness": 110.5070821529745,
+          "relativeDifference": 0.015266733317952332
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 57,
+          "ringPixels": 285,
+          "brightness": 122.43859649122807,
+          "ringBrightness": 123.87017543859649,
+          "relativeDifference": 0.01155709146531457
+        },
+        {
+          "pixels": 70,
+          "ringPixels": 354,
+          "brightness": 118.58571428571429,
+          "ringBrightness": 119.42937853107344,
+          "relativeDifference": 0.007064126563629766
+        },
+        {
+          "pixels": 21,
+          "ringPixels": 212,
+          "brightness": 118.19047619047619,
+          "ringBrightness": 118.0,
+          "relativeDifference": 0.0016142050040355068
+        },
+        {
+          "pixels": 7,
+          "ringPixels": 297,
+          "brightness": 145.85714285714286,
+          "ringBrightness": 145.7946127946128,
+          "relativeDifference": 0.00042889144757468677
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 68,
+          "ringPixels": 326,
+          "brightness": 119.69117647058823,
+          "ringBrightness": 120.53680981595092,
+          "relativeDifference": 0.007015561027821236
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 236,
+          "brightness": 114.71428571428571,
+          "ringBrightness": 115.9364406779661,
+          "relativeDifference": 0.010541594657672357
+        },
+        {
+          "pixels": 5,
+          "ringPixels": 276,
+          "brightness": 144.8,
+          "ringBrightness": 144.981884057971,
+          "relativeDifference": 0.001254529551418049
+        },
+        {
+          "pixels": 105,
+          "ringPixels": 345,
+          "brightness": 115.47619047619048,
+          "ringBrightness": 117.5304347826087,
+          "relativeDifference": 0.017478403021463036
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 230,
+          "brightness": 119.45833333333333,
+          "ringBrightness": 121.2,
+          "relativeDifference": 0.014370187018701932
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 202,
+          "ringPixels": 518,
+          "brightness": 107.23267326732673,
+          "ringBrightness": 107.27799227799228,
+          "relativeDifference": 0.00042244461984444
+        },
+        {
+          "pixels": 31,
+          "ringPixels": 251,
+          "brightness": 111.3225806451613,
+          "ringBrightness": 111.66533864541833,
+          "relativeDifference": 0.0030695111340272524
+        },
+        {
+          "pixels": 35,
+          "ringPixels": 296,
+          "brightness": 118.6,
+          "ringBrightness": 119.22972972972973,
+          "relativeDifference": 0.005281650232347293
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 97,
+          "brightness": 110.0,
+          "ringBrightness": 110.56701030927834,
+          "relativeDifference": 0.005128205128205078
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 97,
+          "brightness": 114.0,
+          "ringBrightness": 115.48453608247422,
+          "relativeDifference": 0.012854847348687689
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 47,
+          "ringPixels": 365,
+          "brightness": 119.2127659574468,
+          "ringBrightness": 120.03013698630137,
+          "relativeDifference": 0.006809715038047904
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 239,
+          "brightness": 114.65517241379311,
+          "ringBrightness": 116.0376569037657,
+          "relativeDifference": 0.011914102084283971
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 123,
+          "brightness": 115.5,
+          "ringBrightness": 115.3739837398374,
+          "relativeDifference": 0.001092241561553089
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 106,
+          "ringPixels": 324,
+          "brightness": 117.31132075471699,
+          "ringBrightness": 119.66358024691358,
+          "relativeDifference": 0.01965727155532993
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 240,
+          "brightness": 119.89189189189189,
+          "ringBrightness": 120.74583333333334,
+          "relativeDifference": 0.007072222849164839
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 12,
+          "ringPixels": 189,
+          "brightness": 107.66666666666667,
+          "ringBrightness": 108.03703703703704,
+          "relativeDifference": 0.0034281796366129242
+        },
+        {
+          "pixels": 3,
+          "ringPixels": 122,
+          "brightness": 99.66666666666667,
+          "ringBrightness": 100.47540983606558,
+          "relativeDifference": 0.008049165171044778
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 126,
+          "brightness": 93.5,
+          "ringBrightness": 93.2063492063492,
+          "relativeDifference": 0.0031505449591281115
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 81,
+          "ringPixels": 332,
+          "brightness": 124.45679012345678,
+          "ringBrightness": 126.46385542168674,
+          "relativeDifference": 0.015870663530994783
+        },
+        {
+          "pixels": 82,
+          "ringPixels": 361,
+          "brightness": 123.04878048780488,
+          "ringBrightness": 124.3628808864266,
+          "relativeDifference": 0.010566660962299596
+        },
+        {
+          "pixels": 34,
+          "ringPixels": 247,
+          "brightness": 108.58823529411765,
+          "ringBrightness": 108.26315789473684,
+          "relativeDifference": 0.003002659498412989
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 228,
+          "brightness": 145.0,
+          "ringBrightness": 145.75,
+          "relativeDifference": 0.005145797598627788
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 78,
+          "ringPixels": 329,
+          "brightness": 122.6923076923077,
+          "ringBrightness": 124.11854103343465,
+          "relativeDifference": 0.01149089676088575
+        },
+        {
+          "pixels": 36,
+          "ringPixels": 273,
+          "brightness": 107.58333333333333,
+          "ringBrightness": 107.1025641025641,
+          "relativeDifference": 0.004488867608331297
+        },
+        {
+          "pixels": 104,
+          "ringPixels": 335,
+          "brightness": 114.23076923076923,
+          "ringBrightness": 116.66567164179105,
+          "relativeDifference": 0.020870770096776372
+        },
+        {
+          "pixels": 22,
+          "ringPixels": 222,
+          "brightness": 122.54545454545455,
+          "ringBrightness": 125.58108108108108,
+          "relativeDifference": 0.024172642164679167
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 96,
+          "brightness": 110.0,
+          "ringBrightness": 110.03125,
+          "relativeDifference": 0.00028401022436807724
+        },
+        {
+          "pixels": 17,
+          "ringPixels": 194,
+          "brightness": 117.6470588235294,
+          "ringBrightness": 117.74226804123711,
+          "relativeDifference": 0.0008086239486601323
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 250,
+          "brightness": 118.26923076923077,
+          "ringBrightness": 120.728,
+          "relativeDifference": 0.020366188711560044
+        },
+        {
+          "pixels": 54,
+          "ringPixels": 354,
+          "brightness": 114.44444444444444,
+          "ringBrightness": 115.06497175141243,
+          "relativeDifference": 0.005392842821954364
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 22,
+          "ringPixels": 220,
+          "brightness": 120.77272727272727,
+          "ringBrightness": 122.13636363636364,
+          "relativeDifference": 0.011164867882396809
+        },
+        {
+          "pixels": 57,
+          "ringPixels": 380,
+          "brightness": 115.24561403508773,
+          "ringBrightness": 115.83421052631579,
+          "relativeDifference": 0.005081370076712697
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 127,
+          "brightness": 115.0,
+          "ringBrightness": 115.06299212598425,
+          "relativeDifference": 0.000547457743105453
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 104,
+          "ringPixels": 323,
+          "brightness": 114.0576923076923,
+          "ringBrightness": 116.84520123839009,
+          "relativeDifference": 0.02385642629011907
+        },
+        {
+          "pixels": 32,
+          "ringPixels": 228,
+          "brightness": 121.875,
+          "ringBrightness": 122.75,
+          "relativeDifference": 0.007128309572301426
+        }
+      ]
+    },
+    {
+      "view": "body/male/up",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 11,
+          "ringPixels": 206,
+          "brightness": 102.36363636363636,
+          "ringBrightness": 102.39805825242719,
+          "relativeDifference": 0.00033615763207126313
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 28,
+          "ringPixels": 236,
+          "brightness": 113.78571428571429,
+          "ringBrightness": 114.05084745762711,
+          "relativeDifference": 0.002324692694732726
+        },
+        {
+          "pixels": 27,
+          "ringPixels": 211,
+          "brightness": 116.62962962962963,
+          "ringBrightness": 116.55450236966824,
+          "relativeDifference": 0.0006445676351747877
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 30627,
+          "ringPixels": 2913,
+          "brightness": 143.13115878146732,
+          "ringBrightness": 144.53827669069688,
+          "relativeDifference": 0.009735261423108717
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 160,
+          "brightness": 109.46428571428571,
+          "ringBrightness": 109.575,
+          "relativeDifference": 0.0010103973142988332
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 205,
+          "brightness": 113.34782608695652,
+          "ringBrightness": 113.55609756097562,
+          "relativeDifference": 0.0018340844612704744
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 209,
+          "brightness": 112.35714285714286,
+          "ringBrightness": 112.56459330143541,
+          "relativeDifference": 0.0018429457985693442
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 13570,
+          "ringPixels": 1986,
+          "brightness": 147.57302873986737,
+          "ringBrightness": 147.9592145015106,
+          "relativeDifference": 0.002610082534868257
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 205,
+          "brightness": 113.08695652173913,
+          "ringBrightness": 113.55609756097562,
+          "relativeDifference": 0.004131359295651895
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 209,
+          "brightness": 112.25,
+          "ringBrightness": 112.56459330143541,
+          "relativeDifference": 0.0027947802431352708
+        },
+        {
+          "pixels": 221,
+          "ringPixels": 509,
+          "brightness": 99.28054298642535,
+          "ringBrightness": 100.6483300589391,
+          "relativeDifference": 0.013589764198897101
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 335,
+          "ringPixels": 2235,
+          "brightness": 147.9223880597015,
+          "ringBrightness": 147.89395973154362,
+          "relativeDifference": 0.00019222102247769477
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 228,
+          "brightness": 146.5,
+          "ringBrightness": 146.3201754385965,
+          "relativeDifference": 0.0012289799466442715
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 390,
+          "ringPixels": 2489,
+          "brightness": 149.51538461538462,
+          "ringBrightness": 149.52872639614304,
+          "relativeDifference": 8.92255359888351e-05
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 228,
+          "brightness": 146.5,
+          "ringBrightness": 146.3201754385965,
+          "relativeDifference": 0.0012289799466442715
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 267,
+          "brightness": 111.8108108108108,
+          "ringBrightness": 111.89513108614233,
+          "relativeDifference": 0.0007535651865549648
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 14360,
+          "ringPixels": 3050,
+          "brightness": 141.15062674094708,
+          "ringBrightness": 141.28360655737706,
+          "relativeDifference": 0.0009412260889303917
+        },
+        {
+          "pixels": 211,
+          "ringPixels": 478,
+          "brightness": 101.2132701421801,
+          "ringBrightness": 101.90376569037657,
+          "relativeDifference": 0.006775957134837152
+        },
+        {
+          "pixels": 52,
+          "ringPixels": 338,
+          "brightness": 112.01923076923077,
+          "ringBrightness": 112.62130177514793,
+          "relativeDifference": 0.00534597803814422
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 501,
+          "ringPixels": 2825,
+          "brightness": 126.09780439121757,
+          "ringBrightness": 127.23185840707964,
+          "relativeDifference": 0.008913286578222095
+        },
+        {
+          "pixels": 51,
+          "ringPixels": 316,
+          "brightness": 114.66666666666667,
+          "ringBrightness": 115.25949367088607,
+          "relativeDifference": 0.005143411491223186
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 286,
+          "brightness": 141.0,
+          "ringBrightness": 140.77972027972027,
+          "relativeDifference": 0.0015647120184786028
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 364,
+          "ringPixels": 2199,
+          "brightness": 121.3956043956044,
+          "ringBrightness": 121.37153251477945,
+          "relativeDifference": 0.00019833218157657378
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 288,
+          "brightness": 114.16216216216216,
+          "ringBrightness": 114.13888888888889,
+          "relativeDifference": 0.00020390309998489264
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 328,
+          "ringPixels": 2130,
+          "brightness": 116.32621951219512,
+          "ringBrightness": 117.11737089201878,
+          "relativeDifference": 0.006755200990236492
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 286,
+          "brightness": 141.0,
+          "ringBrightness": 140.77972027972027,
+          "relativeDifference": 0.0015647120184786028
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 2,
+          "ringPixels": 228,
+          "brightness": 146.5,
+          "ringBrightness": 146.3201754385965,
+          "relativeDifference": 0.0012289799466442715
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 2,
+          "ringPixels": 228,
+          "brightness": 146.5,
+          "ringBrightness": 146.3201754385965,
+          "relativeDifference": 0.0012289799466442715
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 292,
+          "brightness": 114.62162162162163,
+          "ringBrightness": 114.71917808219177,
+          "relativeDifference": 0.0008503936499636624
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 14090,
+          "ringPixels": 1931,
+          "brightness": 147.87260468417318,
+          "ringBrightness": 151.3858104609011,
+          "relativeDifference": 0.02320696877753468
+        },
+        {
+          "pixels": 211,
+          "ringPixels": 478,
+          "brightness": 101.24644549763033,
+          "ringBrightness": 101.90376569037657,
+          "relativeDifference": 0.006450401398741593
+        },
+        {
+          "pixels": 52,
+          "ringPixels": 338,
+          "brightness": 112.17307692307692,
+          "ringBrightness": 112.62130177514793,
+          "relativeDifference": 0.003979929595964915
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 205,
+          "brightness": 113.47826086956522,
+          "ringBrightness": 113.9560975609756,
+          "relativeDifference": 0.00419316475061554
+        },
+        {
+          "pixels": 83,
+          "ringPixels": 353,
+          "brightness": 108.18072289156626,
+          "ringBrightness": 109.6770538243626,
+          "relativeDifference": 0.013643062797734995
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 51,
+          "ringPixels": 316,
+          "brightness": 114.50980392156863,
+          "ringBrightness": 115.25949367088607,
+          "relativeDifference": 0.006504364416679784
+        },
+        {
+          "pixels": 111,
+          "ringPixels": 509,
+          "brightness": 110.71171171171171,
+          "ringBrightness": 110.98231827111984,
+          "relativeDifference": 0.0024382853379135124
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 286,
+          "brightness": 140.83333333333334,
+          "ringBrightness": 140.77972027972027,
+          "relativeDifference": 0.00038082938015895543
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 37,
+          "ringPixels": 309,
+          "brightness": 117.4054054054054,
+          "ringBrightness": 117.19741100323624,
+          "relativeDifference": 0.0017747354688869331
+        }
+      ]
+    },
+    {
+      "view": "body/male/left",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 6,
+          "ringPixels": 286,
+          "brightness": 140.66666666666666,
+          "ringBrightness": 140.77972027972027,
+          "relativeDifference": 0.0008030532581608938
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 69,
+          "ringPixels": 386,
+          "brightness": 125.6086956521739,
+          "ringBrightness": 125.23834196891191,
+          "relativeDifference": 0.002957190884513063
+        },
+        {
+          "pixels": 62,
+          "ringPixels": 360,
+          "brightness": 126.40322580645162,
+          "ringBrightness": 126.16666666666667,
+          "relativeDifference": 0.0018749733668555685
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 70,
+          "ringPixels": 387,
+          "brightness": 125.78571428571429,
+          "ringBrightness": 125.47545219638243,
+          "relativeDifference": 0.002472691541659193
+        },
+        {
+          "pixels": 63,
+          "ringPixels": 360,
+          "brightness": 126.71428571428571,
+          "ringBrightness": 126.31666666666666,
+          "relativeDifference": 0.003147795600625771
+        },
+        {
+          "pixels": 35,
+          "ringPixels": 200,
+          "brightness": 136.42857142857142,
+          "ringBrightness": 136.375,
+          "relativeDifference": 0.0003928244074897627
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 198,
+          "brightness": 137.27586206896552,
+          "ringBrightness": 136.91919191919192,
+          "relativeDifference": 0.0026049682646689058
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 200,
+          "brightness": 110.16666666666667,
+          "ringBrightness": 110.305,
+          "relativeDifference": 0.0012540984845051033
+        },
+        {
+          "pixels": 25,
+          "ringPixels": 206,
+          "brightness": 105.92,
+          "ringBrightness": 106.2621359223301,
+          "relativeDifference": 0.0032197350388305534
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 24,
+          "ringPixels": 200,
+          "brightness": 110.125,
+          "ringBrightness": 110.305,
+          "relativeDifference": 0.0016318389918861956
+        },
+        {
+          "pixels": 25,
+          "ringPixels": 206,
+          "brightness": 106.04,
+          "ringBrightness": 106.2621359223301,
+          "relativeDifference": 0.002090452261306527
+        },
+        {
+          "pixels": 39,
+          "ringPixels": 427,
+          "brightness": 110.76923076923077,
+          "ringBrightness": 110.88524590163935,
+          "relativeDifference": 0.0010462630214256685
+        },
+        {
+          "pixels": 45,
+          "ringPixels": 446,
+          "brightness": 108.71111111111111,
+          "ringBrightness": 108.7847533632287,
+          "relativeDifference": 0.0006769537995063044
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 227,
+          "brightness": 46.666666666666664,
+          "ringBrightness": 46.31718061674009,
+          "relativeDifference": 0.0075454948956945635
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 33,
+          "ringPixels": 247,
+          "brightness": 126.75757575757575,
+          "ringBrightness": 126.42914979757084,
+          "relativeDifference": 0.0025977075740108877
+        },
+        {
+          "pixels": 95,
+          "ringPixels": 354,
+          "brightness": 118.34736842105264,
+          "ringBrightness": 118.82485875706215,
+          "relativeDifference": 0.004018438069307873
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 229,
+          "brightness": 96.28571428571429,
+          "ringBrightness": 96.13973799126637,
+          "relativeDifference": 0.001518376245847273
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 94,
+          "ringPixels": 330,
+          "brightness": 121.70212765957447,
+          "ringBrightness": 122.38787878787879,
+          "relativeDifference": 0.005603096769843145
+        },
+        {
+          "pixels": 31,
+          "ringPixels": 246,
+          "brightness": 97.3225806451613,
+          "ringBrightness": 97.16260162601625,
+          "relativeDifference": 0.0016465081880043546
+        },
+        {
+          "pixels": 59,
+          "ringPixels": 297,
+          "brightness": 111.59322033898304,
+          "ringBrightness": 112.1919191919192,
+          "relativeDifference": 0.005336381240720185
+        },
+        {
+          "pixels": 21,
+          "ringPixels": 216,
+          "brightness": 120.0,
+          "ringBrightness": 120.10185185185185,
+          "relativeDifference": 0.0008480456402744234
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 39,
+          "ringPixels": 415,
+          "brightness": 111.02564102564102,
+          "ringBrightness": 110.90120481927711,
+          "relativeDifference": 0.0011220455771124352
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 154,
+          "brightness": 52.333333333333336,
+          "ringBrightness": 52.6948051948052,
+          "relativeDifference": 0.006859724789484515
+        },
+        {
+          "pixels": 34,
+          "ringPixels": 282,
+          "brightness": 107.5,
+          "ringBrightness": 107.25886524822695,
+          "relativeDifference": 0.0022481568420008274
+        },
+        {
+          "pixels": 55,
+          "ringPixels": 340,
+          "brightness": 95.52727272727273,
+          "ringBrightness": 94.89117647058823,
+          "relativeDifference": 0.0067034289208297015
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 2,
+          "ringPixels": 103,
+          "brightness": 102.0,
+          "ringBrightness": 101.1747572815534,
+          "relativeDifference": 0.008156606851549765
+        },
+        {
+          "pixels": 27,
+          "ringPixels": 230,
+          "brightness": 110.03703703703704,
+          "ringBrightness": 109.67826086956522,
+          "relativeDifference": 0.0032711693696391747
+        },
+        {
+          "pixels": 56,
+          "ringPixels": 375,
+          "brightness": 92.71428571428571,
+          "ringBrightness": 92.20533333333333,
+          "relativeDifference": 0.005519771607055048
+        },
+        {
+          "pixels": 30,
+          "ringPixels": 233,
+          "brightness": 105.0,
+          "ringBrightness": 104.6480686695279,
+          "relativeDifference": 0.0033629988106467154
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 140,
+          "brightness": 107.75,
+          "ringBrightness": 107.94285714285714,
+          "relativeDifference": 0.001786659608258274
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 60,
+          "ringPixels": 270,
+          "brightness": 114.33333333333333,
+          "ringBrightness": 114.9074074074074,
+          "relativeDifference": 0.004995970991136199
+        },
+        {
+          "pixels": 33,
+          "ringPixels": 237,
+          "brightness": 117.18181818181819,
+          "ringBrightness": 116.05907172995781,
+          "relativeDifference": 0.009673922383876607
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 42,
+          "ringPixels": 294,
+          "brightness": 98.57142857142857,
+          "ringBrightness": 98.12244897959184,
+          "relativeDifference": 0.00457570715474207
+        },
+        {
+          "pixels": 9,
+          "ringPixels": 207,
+          "brightness": 102.88888888888889,
+          "ringBrightness": 103.10144927536231,
+          "relativeDifference": 0.0020616624496298127
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 40,
+          "ringPixels": 252,
+          "brightness": 125.0,
+          "ringBrightness": 124.2579365079365,
+          "relativeDifference": 0.00597196052757642
+        },
+        {
+          "pixels": 117,
+          "ringPixels": 353,
+          "brightness": 117.23076923076923,
+          "ringBrightness": 117.85269121813032,
+          "relativeDifference": 0.005277113156542117
+        },
+        {
+          "pixels": 18,
+          "ringPixels": 201,
+          "brightness": 101.05555555555556,
+          "ringBrightness": 101.44776119402985,
+          "relativeDifference": 0.0038660847105749198
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 118,
+          "ringPixels": 347,
+          "brightness": 119.87288135593221,
+          "ringBrightness": 120.53314121037464,
+          "relativeDifference": 0.00547782832017987
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 214,
+          "brightness": 98.56521739130434,
+          "ringBrightness": 98.66822429906541,
+          "relativeDifference": 0.001043972449011086
+        },
+        {
+          "pixels": 53,
+          "ringPixels": 292,
+          "brightness": 119.32075471698113,
+          "ringBrightness": 119.88698630136986,
+          "relativeDifference": 0.004723044609406963
+        },
+        {
+          "pixels": 25,
+          "ringPixels": 226,
+          "brightness": 111.96,
+          "ringBrightness": 112.07964601769912,
+          "relativeDifference": 0.0010675088827478206
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 43,
+          "ringPixels": 367,
+          "brightness": 108.55813953488372,
+          "ringBrightness": 108.40871934604904,
+          "relativeDifference": 0.00137830415981321
+        },
+        {
+          "pixels": 31,
+          "ringPixels": 279,
+          "brightness": 106.0,
+          "ringBrightness": 106.38709677419355,
+          "relativeDifference": 0.003638568829593723
+        },
+        {
+          "pixels": 55,
+          "ringPixels": 350,
+          "brightness": 100.8,
+          "ringBrightness": 100.25714285714285,
+          "relativeDifference": 0.005414648047876904
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 92,
+          "brightness": 102.0,
+          "ringBrightness": 101.06521739130434,
+          "relativeDifference": 0.00924930092493013
+        },
+        {
+          "pixels": 59,
+          "ringPixels": 385,
+          "brightness": 100.37288135593221,
+          "ringBrightness": 99.85714285714286,
+          "relativeDifference": 0.005164763221066417
+        },
+        {
+          "pixels": 16,
+          "ringPixels": 197,
+          "brightness": 108.5625,
+          "ringBrightness": 108.74619289340102,
+          "relativeDifference": 0.0016891891891891964
+        },
+        {
+          "pixels": 53,
+          "ringPixels": 281,
+          "brightness": 106.84905660377359,
+          "ringBrightness": 105.31316725978648,
+          "relativeDifference": 0.014584020060837947
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 150,
+          "brightness": 107.0,
+          "ringBrightness": 106.74666666666667,
+          "relativeDifference": 0.0023732200849362695
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 56,
+          "ringPixels": 274,
+          "brightness": 121.08928571428571,
+          "ringBrightness": 122.08029197080292,
+          "relativeDifference": 0.008117659619901808
+        },
+        {
+          "pixels": 36,
+          "ringPixels": 252,
+          "brightness": 110.22222222222223,
+          "ringBrightness": 109.59126984126983,
+          "relativeDifference": 0.005757323387768521
+        }
+      ]
+    },
+    {
+      "view": "body/female/down",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 59,
+          "ringPixels": 343,
+          "brightness": 103.77966101694915,
+          "ringBrightness": 102.31486880466473,
+          "relativeDifference": 0.014316513615249238
+        },
+        {
+          "pixels": 15,
+          "ringPixels": 239,
+          "brightness": 102.8,
+          "ringBrightness": 102.94979079497908,
+          "relativeDifference": 0.0014549888234099088
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 24,
+          "ringPixels": 207,
+          "brightness": 115.0,
+          "ringBrightness": 114.98550724637681,
+          "relativeDifference": 0.00012603982858582595
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 402,
+          "brightness": 137.0,
+          "ringBrightness": 137.01492537313433,
+          "relativeDifference": 0.0001089324618736662
+        },
+        {
+          "pixels": 31,
+          "ringPixels": 244,
+          "brightness": 106.03225806451613,
+          "ringBrightness": 106.5860655737705,
+          "relativeDifference": 0.005195871582960976
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 198,
+          "brightness": 132.0,
+          "ringBrightness": 130.84848484848484,
+          "relativeDifference": 0.008800370541917587
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 203,
+          "brightness": 130.0,
+          "ringBrightness": 130.7783251231527,
+          "relativeDifference": 0.005951484104263992
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 29423,
+          "ringPixels": 2507,
+          "brightness": 141.43098936206368,
+          "ringBrightness": 142.0063821300359,
+          "relativeDifference": 0.004051879636263913
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 208,
+          "brightness": 117.1304347826087,
+          "ringBrightness": 117.5048076923077,
+          "relativeDifference": 0.003186022062001969
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 212,
+          "brightness": 98.20689655172414,
+          "ringBrightness": 98.66037735849056,
+          "relativeDifference": 0.004596382244907314
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 13853,
+          "ringPixels": 1909,
+          "brightness": 141.39919151086409,
+          "ringBrightness": 143.37035096909378,
+          "relativeDifference": 0.013748724508978943
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 208,
+          "brightness": 117.21739130434783,
+          "ringBrightness": 117.5048076923077,
+          "relativeDifference": 0.00244599683710372
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 212,
+          "brightness": 98.44827586206897,
+          "ringBrightness": 98.66037735849056,
+          "relativeDifference": 0.002149814364189058
+        },
+        {
+          "pixels": 123,
+          "ringPixels": 407,
+          "brightness": 93.9430894308943,
+          "ringBrightness": 93.97542997542998,
+          "relativeDifference": 0.00034413829810756643
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 18,
+          "ringPixels": 189,
+          "brightness": 133.77777777777777,
+          "ringBrightness": 134.0793650793651,
+          "relativeDifference": 0.002249319284953362
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 20,
+          "ringPixels": 203,
+          "brightness": 133.85,
+          "ringBrightness": 133.50738916256157,
+          "relativeDifference": 0.002566231274444727
+        },
+        {
+          "pixels": 36,
+          "ringPixels": 376,
+          "brightness": 119.02777777777777,
+          "ringBrightness": 119.11968085106383,
+          "relativeDifference": 0.0007715188004992139
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 14363,
+          "ringPixels": 1918,
+          "brightness": 147.59757710784655,
+          "ringBrightness": 147.55683003128257,
+          "relativeDifference": 0.00027614497109578617
+        },
+        {
+          "pixels": 123,
+          "ringPixels": 430,
+          "brightness": 93.08130081300813,
+          "ringBrightness": 93.15116279069767,
+          "relativeDifference": 0.000749985030745294
+        },
+        {
+          "pixels": 39,
+          "ringPixels": 307,
+          "brightness": 109.07692307692308,
+          "ringBrightness": 108.37133550488599,
+          "relativeDifference": 0.006510832119488621
+        },
+        {
+          "pixels": 30,
+          "ringPixels": 264,
+          "brightness": 106.1,
+          "ringBrightness": 105.50757575757575,
+          "relativeDifference": 0.005614992460687885
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 90,
+          "brightness": 101.0,
+          "ringBrightness": 100.43333333333334,
+          "relativeDifference": 0.005642217059409189
+        },
+        {
+          "pixels": 25,
+          "ringPixels": 266,
+          "brightness": 102.12,
+          "ringBrightness": 102.2593984962406,
+          "relativeDifference": 0.0013631851770155585
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 37,
+          "ringPixels": 280,
+          "brightness": 111.64864864864865,
+          "ringBrightness": 110.96428571428571,
+          "relativeDifference": 0.006167416209257241
+        },
+        {
+          "pixels": 71,
+          "ringPixels": 488,
+          "brightness": 104.02816901408451,
+          "ringBrightness": 103.11680327868852,
+          "relativeDifference": 0.008838188407886227
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 116,
+          "brightness": 87.0,
+          "ringBrightness": 87.81896551724138,
+          "relativeDifference": 0.009325611072936111
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 130,
+          "brightness": 112.75,
+          "ringBrightness": 112.91538461538461,
+          "relativeDifference": 0.001464677430342622
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 212,
+          "brightness": 130.0,
+          "ringBrightness": 130.97169811320754,
+          "relativeDifference": 0.007419145717784267
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 36,
+          "ringPixels": 376,
+          "brightness": 118.97222222222223,
+          "ringBrightness": 119.11968085106383,
+          "relativeDifference": 0.0012379031557847558
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 119,
+          "brightness": 86.0,
+          "ringBrightness": 86.70588235294117,
+          "relativeDifference": 0.00814111261872453
+        },
+        {
+          "pixels": 8,
+          "ringPixels": 198,
+          "brightness": 105.625,
+          "ringBrightness": 105.48989898989899,
+          "relativeDifference": 0.001280700914444394
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 212,
+          "brightness": 130.0,
+          "ringBrightness": 130.97169811320754,
+          "relativeDifference": 0.007419145717784267
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 345,
+          "ringPixels": 2251,
+          "brightness": 128.7536231884058,
+          "ringBrightness": 126.58374055975122,
+          "relativeDifference": 0.017141874770483203
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 401,
+          "ringPixels": 2531,
+          "brightness": 139.19700748129677,
+          "ringBrightness": 139.9174239431055,
+          "relativeDifference": 0.005148868822096576
+        },
+        {
+          "pixels": 36,
+          "ringPixels": 366,
+          "brightness": 118.13888888888889,
+          "ringBrightness": 118.2431693989071,
+          "relativeDifference": 0.0008819157212067882
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 14569,
+          "ringPixels": 3017,
+          "brightness": 138.81618505044958,
+          "ringBrightness": 135.9579052038449,
+          "relativeDifference": 0.021023270712498855
+        },
+        {
+          "pixels": 123,
+          "ringPixels": 430,
+          "brightness": 93.03252032520325,
+          "ringBrightness": 93.15116279069767,
+          "relativeDifference": 0.0012736552281263154
+        },
+        {
+          "pixels": 39,
+          "ringPixels": 307,
+          "brightness": 109.28205128205128,
+          "ringBrightness": 108.37133550488599,
+          "relativeDifference": 0.008403659260286899
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 416,
+          "ringPixels": 2592,
+          "brightness": 114.2235576923077,
+          "ringBrightness": 114.2175925925926,
+          "relativeDifference": 5.2225752440566094e-05
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 280,
+          "brightness": 111.72972972972973,
+          "ringBrightness": 110.96428571428571,
+          "relativeDifference": 0.006898111500621985
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 116,
+          "brightness": 87.0,
+          "ringBrightness": 87.81896551724138,
+          "relativeDifference": 0.009325611072936111
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 130,
+          "brightness": 112.75,
+          "ringBrightness": 112.91538461538461,
+          "relativeDifference": 0.001464677430342622
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 212,
+          "brightness": 130.0,
+          "ringBrightness": 130.97169811320754,
+          "relativeDifference": 0.007419145717784267
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 364,
+          "ringPixels": 2236,
+          "brightness": 120.96703296703296,
+          "ringBrightness": 123.52996422182468,
+          "relativeDifference": 0.02074744594104654
+        },
+        {
+          "pixels": 36,
+          "ringPixels": 376,
+          "brightness": 118.91666666666667,
+          "ringBrightness": 119.11968085106383,
+          "relativeDifference": 0.0017042875110704172
+        }
+      ]
+    },
+    {
+      "view": "body/female/right",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 340,
+          "ringPixels": 2210,
+          "brightness": 108.44411764705882,
+          "ringBrightness": 109.35158371040724,
+          "relativeDifference": 0.008298609243297655
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 119,
+          "brightness": 86.0,
+          "ringBrightness": 86.70588235294117,
+          "relativeDifference": 0.00814111261872453
+        },
+        {
+          "pixels": 8,
+          "ringPixels": 198,
+          "brightness": 105.625,
+          "ringBrightness": 105.48989898989899,
+          "relativeDifference": 0.001280700914444394
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 212,
+          "brightness": 130.0,
+          "ringBrightness": 130.97169811320754,
+          "relativeDifference": 0.007419145717784267
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 61,
+          "ringPixels": 352,
+          "brightness": 127.91803278688525,
+          "ringBrightness": 127.55113636363636,
+          "relativeDifference": 0.0028764653433027954
+        },
+        {
+          "pixels": 67,
+          "ringPixels": 367,
+          "brightness": 126.43283582089552,
+          "ringBrightness": 126.22888283378747,
+          "relativeDifference": 0.0016157394609648045
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 61,
+          "ringPixels": 352,
+          "brightness": 127.8688524590164,
+          "ringBrightness": 127.55113636363636,
+          "relativeDifference": 0.0024908919233322738
+        },
+        {
+          "pixels": 67,
+          "ringPixels": 367,
+          "brightness": 126.59701492537313,
+          "ringBrightness": 126.22888283378747,
+          "relativeDifference": 0.0029163855634403765
+        },
+        {
+          "pixels": 55,
+          "ringPixels": 230,
+          "brightness": 134.85454545454544,
+          "ringBrightness": 135.00434782608696,
+          "relativeDifference": 0.0011096114603248739
+        },
+        {
+          "pixels": 34,
+          "ringPixels": 202,
+          "brightness": 136.02941176470588,
+          "ringBrightness": 135.9851485148515,
+          "relativeDifference": 0.00032550061780872795
+        },
+        {
+          "pixels": 25,
+          "ringPixels": 200,
+          "brightness": 108.68,
+          "ringBrightness": 109.115,
+          "relativeDifference": 0.003986619621500142
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 200,
+          "brightness": 103.07692307692308,
+          "ringBrightness": 103.225,
+          "relativeDifference": 0.0014345063993888509
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 25,
+          "ringPixels": 200,
+          "brightness": 108.92,
+          "ringBrightness": 109.115,
+          "relativeDifference": 0.001787105347569016
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 200,
+          "brightness": 103.0,
+          "ringBrightness": 103.225,
+          "relativeDifference": 0.0021797045289415774
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 38,
+          "ringPixels": 251,
+          "brightness": 125.63157894736842,
+          "ringBrightness": 125.5179282868526,
+          "relativeDifference": 0.0009054536038556863
+        },
+        {
+          "pixels": 53,
+          "ringPixels": 308,
+          "brightness": 113.0,
+          "ringBrightness": 113.26948051948052,
+          "relativeDifference": 0.0023791096970218538
+        },
+        {
+          "pixels": 16,
+          "ringPixels": 193,
+          "brightness": 109.625,
+          "ringBrightness": 109.97927461139896,
+          "relativeDifference": 0.003221285216244228
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 52,
+          "ringPixels": 290,
+          "brightness": 119.61538461538461,
+          "ringBrightness": 120.07586206896552,
+          "relativeDifference": 0.003834887758843922
+        },
+        {
+          "pixels": 20,
+          "ringPixels": 200,
+          "brightness": 106.15,
+          "ringBrightness": 106.3,
+          "relativeDifference": 0.0014111006585135605
+        },
+        {
+          "pixels": 76,
+          "ringPixels": 310,
+          "brightness": 104.86842105263158,
+          "ringBrightness": 104.6741935483871,
+          "relativeDifference": 0.0018555433546731477
+        },
+        {
+          "pixels": 21,
+          "ringPixels": 222,
+          "brightness": 116.85714285714286,
+          "ringBrightness": 116.99549549549549,
+          "relativeDifference": 0.0011825467105949867
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 32,
+          "ringPixels": 271,
+          "brightness": 105.84375,
+          "ringBrightness": 105.5719557195572,
+          "relativeDifference": 0.0025744931842013323
+        },
+        {
+          "pixels": 56,
+          "ringPixels": 348,
+          "brightness": 108.0,
+          "ringBrightness": 106.92528735632185,
+          "relativeDifference": 0.010051061542596013
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 2,
+          "ringPixels": 95,
+          "brightness": 103.0,
+          "ringBrightness": 103.25263157894737,
+          "relativeDifference": 0.002446732592517118
+        },
+        {
+          "pixels": 59,
+          "ringPixels": 384,
+          "brightness": 107.45762711864407,
+          "ringBrightness": 106.38020833333333,
+          "relativeDifference": 0.010128000331929607
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 222,
+          "brightness": 109.20833333333333,
+          "ringBrightness": 108.82432432432432,
+          "relativeDifference": 0.0035287056583467565
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 137,
+          "brightness": 108.0,
+          "ringBrightness": 107.9051094890511,
+          "relativeDifference": 0.0008793884867753067
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 114,
+          "brightness": 119.0,
+          "ringBrightness": 119.34210526315789,
+          "relativeDifference": 0.0028665931642778016
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 74,
+          "ringPixels": 297,
+          "brightness": 105.10810810810811,
+          "ringBrightness": 105.11111111111111,
+          "relativeDifference": 2.8569796011646325e-05
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 225,
+          "brightness": 112.93103448275862,
+          "ringBrightness": 112.68,
+          "relativeDifference": 0.002227853059625598
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 20,
+          "ringPixels": 233,
+          "brightness": 95.25,
+          "ringBrightness": 95.35622317596567,
+          "relativeDifference": 0.001113961652714033
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 155,
+          "brightness": 87.0,
+          "ringBrightness": 87.23870967741935,
+          "relativeDifference": 0.0027362816151456433
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 61,
+          "ringPixels": 284,
+          "brightness": 124.63934426229508,
+          "ringBrightness": 124.44014084507042,
+          "relativeDifference": 0.0016007971051131885
+        },
+        {
+          "pixels": 74,
+          "ringPixels": 322,
+          "brightness": 119.21621621621621,
+          "ringBrightness": 119.96273291925466,
+          "relativeDifference": 0.006222905104545448
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 234,
+          "brightness": 100.0,
+          "ringBrightness": 99.56410256410257,
+          "relativeDifference": 0.004378058202420757
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 74,
+          "ringPixels": 317,
+          "brightness": 121.60810810810811,
+          "ringBrightness": 122.4416403785489,
+          "relativeDifference": 0.0068075882343929675
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 240,
+          "brightness": 99.13793103448276,
+          "ringBrightness": 98.50416666666666,
+          "relativeDifference": 0.006433883857529871
+        },
+        {
+          "pixels": 54,
+          "ringPixels": 294,
+          "brightness": 97.74074074074075,
+          "ringBrightness": 97.74489795918367,
+          "relativeDifference": 4.253130884297427e-05
+        },
+        {
+          "pixels": 19,
+          "ringPixels": 215,
+          "brightness": 121.26315789473684,
+          "ringBrightness": 121.06046511627908,
+          "relativeDifference": 0.00167431025697012
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 34,
+          "ringPixels": 287,
+          "brightness": 109.88235294117646,
+          "ringBrightness": 109.5191637630662,
+          "relativeDifference": 0.0033162157711136707
+        },
+        {
+          "pixels": 66,
+          "ringPixels": 381,
+          "brightness": 99.92424242424242,
+          "ringBrightness": 98.90551181102362,
+          "relativeDifference": 0.01030003884076017
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 97,
+          "brightness": 102.0,
+          "ringBrightness": 101.29896907216495,
+          "relativeDifference": 0.00692041522491347
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 246,
+          "brightness": 110.10344827586206,
+          "ringBrightness": 109.67073170731707,
+          "relativeDifference": 0.003945597533713908
+        },
+        {
+          "pixels": 67,
+          "ringPixels": 404,
+          "brightness": 100.3731343283582,
+          "ringBrightness": 99.31435643564356,
+          "relativeDifference": 0.010660874527246627
+        },
+        {
+          "pixels": 14,
+          "ringPixels": 186,
+          "brightness": 102.85714285714286,
+          "ringBrightness": 103.02150537634408,
+          "relativeDifference": 0.0015954195058671759
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 55,
+          "ringPixels": 273,
+          "brightness": 99.65454545454546,
+          "ringBrightness": 99.63736263736264,
+          "relativeDifference": 0.00017245355284394663
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 222,
+          "brightness": 118.28571428571429,
+          "ringBrightness": 117.52702702702703,
+          "relativeDifference": 0.00645542798009167
+        }
+      ]
+    },
+    {
+      "view": "body/female/up",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 33,
+          "ringPixels": 252,
+          "brightness": 92.15151515151516,
+          "ringBrightness": 91.93253968253968,
+          "relativeDifference": 0.0023819147141114078
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 29,
+          "ringPixels": 225,
+          "brightness": 100.24137931034483,
+          "ringBrightness": 100.71111111111111,
+          "relativeDifference": 0.00466415071369875
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 174,
+          "brightness": 109.0,
+          "ringBrightness": 108.48850574712644,
+          "relativeDifference": 0.00471473221380514
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 438,
+          "brightness": 136.07692307692307,
+          "ringBrightness": 136.1552511415525,
+          "relativeDifference": 0.000575284933726122
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 209,
+          "brightness": 112.53846153846153,
+          "ringBrightness": 112.89473684210526,
+          "relativeDifference": 0.003155818540433947
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 26033,
+          "ringPixels": 2713,
+          "brightness": 124.04932201436638,
+          "ringBrightness": 124.07777368227055,
+          "relativeDifference": 0.00022930511291265922
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 204,
+          "brightness": 103.72413793103448,
+          "ringBrightness": 104.16666666666667,
+          "relativeDifference": 0.004248275862069067
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 153,
+          "brightness": 111.0,
+          "ringBrightness": 111.0718954248366,
+          "relativeDifference": 0.0006472872778627408
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 205,
+          "brightness": 105.28571428571429,
+          "ringBrightness": 105.35609756097561,
+          "relativeDifference": 0.0006680512745888875
+        },
+        {
+          "pixels": 39,
+          "ringPixels": 263,
+          "brightness": 107.38461538461539,
+          "ringBrightness": 107.52851711026616,
+          "relativeDifference": 0.0013382656947013671
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 204,
+          "brightness": 114.5,
+          "ringBrightness": 114.63235294117646,
+          "relativeDifference": 0.0011545862732520265
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 14249,
+          "ringPixels": 2312,
+          "brightness": 119.43631132009264,
+          "ringBrightness": 119.42387543252595,
+          "relativeDifference": 0.00010413233971561993
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 205,
+          "brightness": 105.39285714285714,
+          "ringBrightness": 105.35609756097561,
+          "relativeDifference": 0.00034890796766889724
+        },
+        {
+          "pixels": 39,
+          "ringPixels": 263,
+          "brightness": 107.38461538461539,
+          "ringBrightness": 107.52851711026616,
+          "relativeDifference": 0.0013382656947013671
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 204,
+          "brightness": 114.29166666666667,
+          "ringBrightness": 114.63235294117646,
+          "relativeDifference": 0.0029719905922598964
+        },
+        {
+          "pixels": 240,
+          "ringPixels": 523,
+          "brightness": 92.73333333333333,
+          "ringBrightness": 93.76290630975143,
+          "relativeDifference": 0.010980600078850352
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 327,
+          "ringPixels": 2184,
+          "brightness": 151.86238532110093,
+          "ringBrightness": 152.66391941391942,
+          "relativeDifference": 0.0052503177954266785
+        },
+        {
+          "pixels": 53,
+          "ringPixels": 381,
+          "brightness": 113.11320754716981,
+          "ringBrightness": 112.53018372703411,
+          "relativeDifference": 0.005181043883745375
+        },
+        {
+          "pixels": 22,
+          "ringPixels": 205,
+          "brightness": 112.45454545454545,
+          "ringBrightness": 112.48780487804878,
+          "relativeDifference": 0.0002956713711266888
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 357,
+          "ringPixels": 2288,
+          "brightness": 150.85994397759103,
+          "ringBrightness": 149.98645104895104,
+          "relativeDifference": 0.005823812234579167
+        },
+        {
+          "pixels": 22,
+          "ringPixels": 204,
+          "brightness": 112.36363636363636,
+          "ringBrightness": 112.19117647058823,
+          "relativeDifference": 0.0015371965824187562
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 386,
+          "brightness": 114.29729729729729,
+          "ringBrightness": 114.48186528497409,
+          "relativeDifference": 0.0016122028341987984
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 15851,
+          "ringPixels": 3940,
+          "brightness": 121.9262507097344,
+          "ringBrightness": 121.97791878172589,
+          "relativeDifference": 0.0004235854530683022
+        },
+        {
+          "pixels": 232,
+          "ringPixels": 501,
+          "brightness": 93.37931034482759,
+          "ringBrightness": 93.0119760479042,
+          "relativeDifference": 0.003949322576849668
+        },
+        {
+          "pixels": 43,
+          "ringPixels": 309,
+          "brightness": 103.76744186046511,
+          "ringBrightness": 102.89320388349515,
+          "relativeDifference": 0.008496557051132895
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 428,
+          "ringPixels": 2667,
+          "brightness": 116.82943925233644,
+          "ringBrightness": 116.89463817022872,
+          "relativeDifference": 0.0005577579854204116
+        },
+        {
+          "pixels": 42,
+          "ringPixels": 286,
+          "brightness": 109.0952380952381,
+          "ringBrightness": 108.00699300699301,
+          "relativeDifference": 0.010075691008031571
+        },
+        {
+          "pixels": 3,
+          "ringPixels": 132,
+          "brightness": 109.66666666666667,
+          "ringBrightness": 109.74242424242425,
+          "relativeDifference": 0.0006903216899075165
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 313,
+          "ringPixels": 1882,
+          "brightness": 133.9776357827476,
+          "ringBrightness": 134.0807651434644,
+          "relativeDifference": 0.0007691585038796997
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 386,
+          "brightness": 114.1891891891892,
+          "ringBrightness": 114.48186528497409,
+          "relativeDifference": 0.0025565280147764376
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 358,
+          "ringPixels": 2320,
+          "brightness": 109.19553072625699,
+          "ringBrightness": 110.71767241379311,
+          "relativeDifference": 0.013747955988880534
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 198,
+          "brightness": 101.83333333333333,
+          "ringBrightness": 101.60606060606061,
+          "relativeDifference": 0.0022368028631075884
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 53,
+          "ringPixels": 381,
+          "brightness": 113.0754716981132,
+          "ringBrightness": 112.53018372703411,
+          "relativeDifference": 0.0048457040859526445
+        },
+        {
+          "pixels": 22,
+          "ringPixels": 205,
+          "brightness": 112.27272727272727,
+          "ringBrightness": 112.48780487804878,
+          "relativeDifference": 0.0019120081999527223
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 22,
+          "ringPixels": 204,
+          "brightness": 112.13636363636364,
+          "ringBrightness": 112.19117647058823,
+          "relativeDifference": 0.00048856635565241
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 386,
+          "brightness": 114.10810810810811,
+          "ringBrightness": 114.48186528497409,
+          "relativeDifference": 0.0032647719002097293
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 15473,
+          "ringPixels": 2757,
+          "brightness": 123.97608737801332,
+          "ringBrightness": 123.97497279651796,
+          "relativeDifference": 8.990374994373297e-06
+        },
+        {
+          "pixels": 232,
+          "ringPixels": 501,
+          "brightness": 93.39655172413794,
+          "ringBrightness": 93.0119760479042,
+          "relativeDifference": 0.004134689881609099
+        },
+        {
+          "pixels": 43,
+          "ringPixels": 309,
+          "brightness": 103.90697674418605,
+          "ringBrightness": 102.89320388349515,
+          "relativeDifference": 0.009852670754025605
+        },
+        {
+          "pixels": 24,
+          "ringPixels": 225,
+          "brightness": 106.66666666666667,
+          "ringBrightness": 106.84444444444445,
+          "relativeDifference": 0.0016638935108153018
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 42,
+          "ringPixels": 286,
+          "brightness": 109.14285714285714,
+          "ringBrightness": 108.00699300699301,
+          "relativeDifference": 0.010516579568052437
+        },
+        {
+          "pixels": 64,
+          "ringPixels": 451,
+          "brightness": 106.75,
+          "ringBrightness": 106.72727272727273,
+          "relativeDifference": 0.0002129471890970434
+        },
+        {
+          "pixels": 3,
+          "ringPixels": 132,
+          "brightness": 109.66666666666667,
+          "ringBrightness": 109.74242424242425,
+          "relativeDifference": 0.0006903216899075165
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 37,
+          "ringPixels": 386,
+          "brightness": 114.1891891891892,
+          "ringBrightness": 114.48186528497409,
+          "relativeDifference": 0.0025565280147764376
+        }
+      ]
+    },
+    {
+      "view": "body/female/left",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 6,
+          "ringPixels": 198,
+          "brightness": 101.16666666666667,
+          "ringBrightness": 101.60606060606061,
+          "relativeDifference": 0.0043244855353414685
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 53,
+          "ringPixels": 314,
+          "brightness": 124.01886792452831,
+          "ringBrightness": 123.87579617834395,
+          "relativeDifference": 0.0011549612644134372
+        },
+        {
+          "pixels": 50,
+          "ringPixels": 301,
+          "brightness": 124.4,
+          "ringBrightness": 124.16943521594685,
+          "relativeDifference": 0.0018568561872909825
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 54,
+          "ringPixels": 314,
+          "brightness": 124.18518518518519,
+          "ringBrightness": 124.03503184713375,
+          "relativeDifference": 0.0012105720119175236
+        },
+        {
+          "pixels": 52,
+          "ringPixels": 314,
+          "brightness": 124.86538461538461,
+          "ringBrightness": 124.76114649681529,
+          "relativeDifference": 0.0008355014481370459
+        },
+        {
+          "pixels": 90,
+          "ringPixels": 211,
+          "brightness": 135.11111111111111,
+          "ringBrightness": 133.92417061611374,
+          "relativeDifference": 0.008862780254952426
+        },
+        {
+          "pixels": 70,
+          "ringPixels": 197,
+          "brightness": 137.8,
+          "ringBrightness": 136.94416243654823,
+          "relativeDifference": 0.0062495366595004005
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 213,
+          "brightness": 107.21428571428571,
+          "ringBrightness": 107.54460093896714,
+          "relativeDifference": 0.0030714254532301973
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 212,
+          "brightness": 101.79310344827586,
+          "ringBrightness": 102.01415094339623,
+          "relativeDifference": 0.0021668316902723078
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 28,
+          "ringPixels": 213,
+          "brightness": 107.10714285714286,
+          "ringBrightness": 107.54460093896714,
+          "relativeDifference": 0.004067689851511352
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 212,
+          "brightness": 101.82758620689656,
+          "ringBrightness": 102.01415094339623,
+          "relativeDifference": 0.001828812324313651
+        },
+        {
+          "pixels": 46,
+          "ringPixels": 319,
+          "brightness": 102.45652173913044,
+          "ringBrightness": 101.73040752351098,
+          "relativeDifference": 0.007137632034469617
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 118,
+          "brightness": 90.0,
+          "ringBrightness": 89.39830508474576,
+          "relativeDifference": 0.006730495781590729
+        },
+        {
+          "pixels": 15,
+          "ringPixels": 222,
+          "brightness": 104.53333333333333,
+          "ringBrightness": 104.51351351351352,
+          "relativeDifference": 0.00018963882423924953
+        },
+        {
+          "pixels": 20,
+          "ringPixels": 354,
+          "brightness": 117.4,
+          "ringBrightness": 117.61864406779661,
+          "relativeDifference": 0.0018589235535700834
+        },
+        {
+          "pixels": 7,
+          "ringPixels": 287,
+          "brightness": 115.42857142857143,
+          "ringBrightness": 115.57839721254355,
+          "relativeDifference": 0.001296313044526791
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 95,
+          "ringPixels": 256,
+          "brightness": 122.84210526315789,
+          "ringBrightness": 121.67578125,
+          "relativeDifference": 0.00958550667335773
+        },
+        {
+          "pixels": 50,
+          "ringPixels": 302,
+          "brightness": 125.72,
+          "ringBrightness": 126.02980132450331,
+          "relativeDifference": 0.002458159270644494
+        },
+        {
+          "pixels": 35,
+          "ringPixels": 247,
+          "brightness": 109.05714285714286,
+          "ringBrightness": 108.54655870445345,
+          "relativeDifference": 0.004703826254682268
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 48,
+          "ringPixels": 274,
+          "brightness": 127.83333333333333,
+          "ringBrightness": 127.64598540145985,
+          "relativeDifference": 0.0014677150345484549
+        },
+        {
+          "pixels": 35,
+          "ringPixels": 253,
+          "brightness": 106.88571428571429,
+          "ringBrightness": 106.54545454545455,
+          "relativeDifference": 0.003193564115065813
+        },
+        {
+          "pixels": 56,
+          "ringPixels": 279,
+          "brightness": 117.58928571428571,
+          "ringBrightness": 118.48028673835125,
+          "relativeDifference": 0.007520247026690681
+        },
+        {
+          "pixels": 21,
+          "ringPixels": 204,
+          "brightness": 124.66666666666667,
+          "ringBrightness": 124.74019607843137,
+          "relativeDifference": 0.0005894604472039122
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 7,
+          "ringPixels": 190,
+          "brightness": 124.85714285714286,
+          "ringBrightness": 124.68947368421053,
+          "relativeDifference": 0.001344693886165366
+        },
+        {
+          "pixels": 3,
+          "ringPixels": 146,
+          "brightness": 113.66666666666667,
+          "ringBrightness": 113.47945205479452,
+          "relativeDifference": 0.001649766618380851
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 161,
+          "brightness": 111.0,
+          "ringBrightness": 110.95031055900621,
+          "relativeDifference": 0.0004478531041818212
+        },
+        {
+          "pixels": 34,
+          "ringPixels": 278,
+          "brightness": 112.02941176470588,
+          "ringBrightness": 111.68705035971223,
+          "relativeDifference": 0.00306536347670571
+        },
+        {
+          "pixels": 80,
+          "ringPixels": 372,
+          "brightness": 108.4875,
+          "ringBrightness": 106.70161290322581,
+          "relativeDifference": 0.016737208071952194
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 26,
+          "ringPixels": 223,
+          "brightness": 110.03846153846153,
+          "ringBrightness": 109.98654708520179,
+          "relativeDifference": 0.00047200730121589325
+        },
+        {
+          "pixels": 78,
+          "ringPixels": 394,
+          "brightness": 108.66666666666667,
+          "ringBrightness": 107.02791878172589,
+          "relativeDifference": 0.01531140569296566
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 221,
+          "brightness": 113.96153846153847,
+          "ringBrightness": 113.3076923076923,
+          "relativeDifference": 0.005770536320434546
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 146,
+          "brightness": 118.33333333333333,
+          "ringBrightness": 118.21232876712328,
+          "relativeDifference": 0.0010236205264886064
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 61,
+          "ringPixels": 276,
+          "brightness": 120.1639344262295,
+          "ringBrightness": 120.6123188405797,
+          "relativeDifference": 0.00371756731534908
+        },
+        {
+          "pixels": 32,
+          "ringPixels": 243,
+          "brightness": 114.34375,
+          "ringBrightness": 113.60905349794238,
+          "relativeDifference": 0.006466883399137928
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 38,
+          "ringPixels": 288,
+          "brightness": 106.39473684210526,
+          "ringBrightness": 105.48263888888889,
+          "relativeDifference": 0.008646901166144898
+        },
+        {
+          "pixels": 13,
+          "ringPixels": 221,
+          "brightness": 112.92307692307692,
+          "ringBrightness": 112.97285067873302,
+          "relativeDifference": 0.00044058156766929054
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 75,
+          "ringPixels": 243,
+          "brightness": 124.76,
+          "ringBrightness": 123.86831275720165,
+          "relativeDifference": 0.007198671096345522
+        },
+        {
+          "pixels": 49,
+          "ringPixels": 303,
+          "brightness": 124.65306122448979,
+          "ringBrightness": 124.85478547854785,
+          "relativeDifference": 0.001615670983574142
+        },
+        {
+          "pixels": 34,
+          "ringPixels": 234,
+          "brightness": 110.11764705882354,
+          "ringBrightness": 109.64957264957265,
+          "relativeDifference": 0.004268821099255905
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 47,
+          "ringPixels": 277,
+          "brightness": 125.14893617021276,
+          "ringBrightness": 124.93862815884476,
+          "relativeDifference": 0.0016832905440631017
+        },
+        {
+          "pixels": 34,
+          "ringPixels": 253,
+          "brightness": 109.55882352941177,
+          "ringBrightness": 108.85770750988142,
+          "relativeDifference": 0.006440664933777915
+        },
+        {
+          "pixels": 57,
+          "ringPixels": 277,
+          "brightness": 116.17543859649123,
+          "ringBrightness": 116.81227436823104,
+          "relativeDifference": 0.005451788137711398
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 206,
+          "brightness": 122.73913043478261,
+          "ringBrightness": 122.50970873786407,
+          "relativeDifference": 0.0018726817595284045
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 125,
+          "brightness": 130.0,
+          "ringBrightness": 129.912,
+          "relativeDifference": 0.0006773816121681896
+        },
+        {
+          "pixels": 18,
+          "ringPixels": 198,
+          "brightness": 108.88888888888889,
+          "ringBrightness": 108.66161616161617,
+          "relativeDifference": 0.0020915640250986967
+        },
+        {
+          "pixels": 44,
+          "ringPixels": 302,
+          "brightness": 106.04545454545455,
+          "ringBrightness": 105.07615894039735,
+          "relativeDifference": 0.009224695828546743
+        },
+        {
+          "pixels": 39,
+          "ringPixels": 320,
+          "brightness": 112.15384615384616,
+          "ringBrightness": 111.871875,
+          "relativeDifference": 0.0025204829528972994
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 43,
+          "ringPixels": 270,
+          "brightness": 106.04651162790698,
+          "ringBrightness": 104.87777777777778,
+          "relativeDifference": 0.01114377015696875
+        },
+        {
+          "pixels": 52,
+          "ringPixels": 374,
+          "brightness": 114.63461538461539,
+          "ringBrightness": 114.36363636363636,
+          "relativeDifference": 0.002369450898862717
+        },
+        {
+          "pixels": 27,
+          "ringPixels": 220,
+          "brightness": 114.74074074074075,
+          "ringBrightness": 113.8409090909091,
+          "relativeDifference": 0.007904290795087398
+        },
+        {
+          "pixels": 5,
+          "ringPixels": 151,
+          "brightness": 114.0,
+          "ringBrightness": 114.09933774834437,
+          "relativeDifference": 0.0008706251088281139
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 63,
+          "ringPixels": 274,
+          "brightness": 118.41269841269842,
+          "ringBrightness": 118.92335766423358,
+          "relativeDifference": 0.004294019791948248
+        },
+        {
+          "pixels": 33,
+          "ringPixels": 243,
+          "brightness": 111.84848484848484,
+          "ringBrightness": 110.98353909465021,
+          "relativeDifference": 0.007793459830984304
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/down",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 39,
+          "ringPixels": 284,
+          "brightness": 107.41025641025641,
+          "ringBrightness": 106.32394366197182,
+          "relativeDifference": 0.010217009554670217
+        },
+        {
+          "pixels": 10,
+          "ringPixels": 224,
+          "brightness": 108.7,
+          "ringBrightness": 108.98660714285714,
+          "relativeDifference": 0.0026297464465652913
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 24,
+          "ringPixels": 206,
+          "brightness": 117.0,
+          "ringBrightness": 116.99514563106796,
+          "relativeDifference": 4.1492054271650625e-05
+        },
+        {
+          "pixels": 38,
+          "ringPixels": 269,
+          "brightness": 108.84210526315789,
+          "ringBrightness": 110.10780669144981,
+          "relativeDifference": 0.011495110713073577
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 26823,
+          "ringPixels": 1974,
+          "brightness": 141.6277075644037,
+          "ringBrightness": 141.46656534954408,
+          "relativeDifference": 0.0011390833902091937
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 163,
+          "brightness": 109.0,
+          "ringBrightness": 109.079754601227,
+          "relativeDifference": 0.0007311586051743612
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 210,
+          "brightness": 105.71428571428571,
+          "ringBrightness": 105.88095238095238,
+          "relativeDifference": 0.0015740948954351696
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 12356,
+          "ringPixels": 1551,
+          "brightness": 146.6795079313694,
+          "ringBrightness": 144.89877498388137,
+          "relativeDifference": 0.012289496220282808
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 163,
+          "brightness": 108.8076923076923,
+          "ringBrightness": 109.079754601227,
+          "relativeDifference": 0.0024941593839231816
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 210,
+          "brightness": 105.53571428571429,
+          "ringBrightness": 105.88095238095238,
+          "relativeDifference": 0.0032606251405441168
+        },
+        {
+          "pixels": 123,
+          "ringPixels": 475,
+          "brightness": 101.21138211382114,
+          "ringBrightness": 101.75578947368422,
+          "relativeDifference": 0.005350136465737562
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 100,
+          "brightness": 105.0,
+          "ringBrightness": 106.05,
+          "relativeDifference": 0.009900990099009875
+        },
+        {
+          "pixels": 53,
+          "ringPixels": 378,
+          "brightness": 114.90566037735849,
+          "ringBrightness": 113.55291005291005,
+          "relativeDifference": 0.01191295162596997
+        },
+        {
+          "pixels": 43,
+          "ringPixels": 264,
+          "brightness": 112.93023255813954,
+          "ringBrightness": 113.04166666666667,
+          "relativeDifference": 0.000985779065481473
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 44,
+          "ringPixels": 281,
+          "brightness": 108.06818181818181,
+          "ringBrightness": 108.45195729537366,
+          "relativeDifference": 0.0035386680587664965
+        },
+        {
+          "pixels": 40,
+          "ringPixels": 364,
+          "brightness": 120.5,
+          "ringBrightness": 121.01098901098901,
+          "relativeDifference": 0.0042226661823465015
+        },
+        {
+          "pixels": 50,
+          "ringPixels": 320,
+          "brightness": 120.56,
+          "ringBrightness": 120.6375,
+          "relativeDifference": 0.0006424204745622262
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 11913,
+          "ringPixels": 1683,
+          "brightness": 149.33610341643583,
+          "ringBrightness": 151.31134878193703,
+          "relativeDifference": 0.0130541785622956
+        },
+        {
+          "pixels": 114,
+          "ringPixels": 396,
+          "brightness": 104.59649122807018,
+          "ringBrightness": 104.2550505050505,
+          "relativeDifference": 0.0032750521088964635
+        },
+        {
+          "pixels": 44,
+          "ringPixels": 306,
+          "brightness": 113.18181818181819,
+          "ringBrightness": 112.11437908496733,
+          "relativeDifference": 0.009520982995784058
+        },
+        {
+          "pixels": 21,
+          "ringPixels": 209,
+          "brightness": 112.57142857142857,
+          "ringBrightness": 112.56459330143541,
+          "relativeDifference": 6.072309056238292e-05
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 92,
+          "brightness": 107.5,
+          "ringBrightness": 107.56521739130434,
+          "relativeDifference": 0.0006063055780112833
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 100,
+          "brightness": 103.0,
+          "ringBrightness": 103.36,
+          "relativeDifference": 0.003482972136222905
+        },
+        {
+          "pixels": 11,
+          "ringPixels": 186,
+          "brightness": 105.9090909090909,
+          "ringBrightness": 105.75268817204301,
+          "relativeDifference": 0.0014789480981651788
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 44,
+          "ringPixels": 298,
+          "brightness": 116.68181818181819,
+          "ringBrightness": 115.28523489932886,
+          "relativeDifference": 0.012114155674045137
+        },
+        {
+          "pixels": 62,
+          "ringPixels": 438,
+          "brightness": 112.58064516129032,
+          "ringBrightness": 112.53424657534246,
+          "relativeDifference": 0.00041230636326152793
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 111,
+          "brightness": 96.0,
+          "ringBrightness": 95.34234234234235,
+          "relativeDifference": 0.0068978550505527075
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 140,
+          "brightness": 119.83333333333333,
+          "ringBrightness": 120.29285714285714,
+          "relativeDifference": 0.003820042356946394
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 40,
+          "ringPixels": 387,
+          "brightness": 122.775,
+          "ringBrightness": 123.12144702842377,
+          "relativeDifference": 0.002813864170584245
+        },
+        {
+          "pixels": 50,
+          "ringPixels": 346,
+          "brightness": 115.78,
+          "ringBrightness": 115.74566473988439,
+          "relativeDifference": 0.00029664402716743664
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 2,
+          "ringPixels": 116,
+          "brightness": 92.5,
+          "ringBrightness": 92.02586206896552,
+          "relativeDifference": 0.005152224824355908
+        },
+        {
+          "pixels": 16,
+          "ringPixels": 220,
+          "brightness": 110.875,
+          "ringBrightness": 110.8409090909091,
+          "relativeDifference": 0.00030756612671722087
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 372,
+          "ringPixels": 2265,
+          "brightness": 128.41129032258064,
+          "ringBrightness": 127.95452538631346,
+          "relativeDifference": 0.0035697442891381684
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 100,
+          "brightness": 105.0,
+          "ringBrightness": 106.05,
+          "relativeDifference": 0.009900990099009875
+        },
+        {
+          "pixels": 53,
+          "ringPixels": 378,
+          "brightness": 114.83018867924528,
+          "ringBrightness": 113.55291005291005,
+          "relativeDifference": 0.011248312577282985
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 453,
+          "ringPixels": 2446,
+          "brightness": 120.08388520971303,
+          "ringBrightness": 120.15535568274734,
+          "relativeDifference": 0.0005948172066754763
+        },
+        {
+          "pixels": 12,
+          "ringPixels": 220,
+          "brightness": 97.91666666666667,
+          "ringBrightness": 97.63636363636364,
+          "relativeDifference": 0.002870887647423969
+        },
+        {
+          "pixels": 40,
+          "ringPixels": 348,
+          "brightness": 118.95,
+          "ringBrightness": 119.3735632183908,
+          "relativeDifference": 0.0035482162630590067
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 12093,
+          "ringPixels": 2685,
+          "brightness": 140.90267096667495,
+          "ringBrightness": 140.84506517690875,
+          "relativeDifference": 0.0004090011225728342
+        },
+        {
+          "pixels": 114,
+          "ringPixels": 396,
+          "brightness": 104.64912280701755,
+          "ringBrightness": 104.2550505050505,
+          "relativeDifference": 0.003779886922101223
+        },
+        {
+          "pixels": 44,
+          "ringPixels": 306,
+          "brightness": 113.20454545454545,
+          "ringBrightness": 112.11437908496733,
+          "relativeDifference": 0.009723698052610464
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 377,
+          "ringPixels": 2414,
+          "brightness": 120.41379310344827,
+          "ringBrightness": 120.32518641259321,
+          "relativeDifference": 0.0007363935473262258
+        },
+        {
+          "pixels": 44,
+          "ringPixels": 298,
+          "brightness": 116.63636363636364,
+          "ringBrightness": 115.28523489932886,
+          "relativeDifference": 0.011719876688585817
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 111,
+          "brightness": 96.0,
+          "ringBrightness": 95.34234234234235,
+          "relativeDifference": 0.0068978550505527075
+        },
+        {
+          "pixels": 6,
+          "ringPixels": 140,
+          "brightness": 119.83333333333333,
+          "ringBrightness": 120.29285714285714,
+          "relativeDifference": 0.003820042356946394
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 367,
+          "ringPixels": 2040,
+          "brightness": 102.15531335149863,
+          "ringBrightness": 102.14362745098039,
+          "relativeDifference": 0.00011440655486660655
+        },
+        {
+          "pixels": 40,
+          "ringPixels": 387,
+          "brightness": 122.775,
+          "ringBrightness": 123.12144702842377,
+          "relativeDifference": 0.002813864170584245
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/right",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 319,
+          "ringPixels": 2047,
+          "brightness": 107.78683385579937,
+          "ringBrightness": 107.34636052760136,
+          "relativeDifference": 0.004103290749990109
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 116,
+          "brightness": 92.5,
+          "ringBrightness": 92.02586206896552,
+          "relativeDifference": 0.005152224824355908
+        },
+        {
+          "pixels": 16,
+          "ringPixels": 220,
+          "brightness": 110.6875,
+          "ringBrightness": 110.8409090909091,
+          "relativeDifference": 0.0013840475702276223
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 55,
+          "ringPixels": 322,
+          "brightness": 125.14545454545454,
+          "ringBrightness": 125.1304347826087,
+          "relativeDifference": 0.00012003285109600004
+        },
+        {
+          "pixels": 58,
+          "ringPixels": 335,
+          "brightness": 123.60344827586206,
+          "ringBrightness": 123.4955223880597,
+          "relativeDifference": 0.0008739255133739286
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 55,
+          "ringPixels": 322,
+          "brightness": 125.05454545454545,
+          "ringBrightness": 125.1304347826087,
+          "relativeDifference": 0.0006064817739592989
+        },
+        {
+          "pixels": 58,
+          "ringPixels": 335,
+          "brightness": 123.70689655172414,
+          "ringBrightness": 123.4955223880597,
+          "relativeDifference": 0.0017115937450772043
+        },
+        {
+          "pixels": 109,
+          "ringPixels": 226,
+          "brightness": 133.7981651376147,
+          "ringBrightness": 132.3362831858407,
+          "relativeDifference": 0.011046720646680542
+        },
+        {
+          "pixels": 41,
+          "ringPixels": 198,
+          "brightness": 136.2439024390244,
+          "ringBrightness": 135.6969696969697,
+          "relativeDifference": 0.0040305449950436235
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 210,
+          "brightness": 107.61538461538461,
+          "ringBrightness": 107.43333333333334,
+          "relativeDifference": 0.0016945511826057344
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 213,
+          "brightness": 103.58620689655173,
+          "ringBrightness": 103.49765258215963,
+          "relativeDifference": 0.0008556166462017216
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 26,
+          "ringPixels": 210,
+          "brightness": 107.46153846153847,
+          "ringBrightness": 107.43333333333334,
+          "relativeDifference": 0.0002625360987135887
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 213,
+          "brightness": 103.27586206896552,
+          "ringBrightness": 103.49765258215963,
+          "relativeDifference": 0.0021429521120591975
+        },
+        {
+          "pixels": 174,
+          "ringPixels": 541,
+          "brightness": 108.47701149425288,
+          "ringBrightness": 106.82070240295748,
+          "relativeDifference": 0.015505506461166474
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 163,
+          "brightness": 100.0,
+          "ringBrightness": 100.2638036809816,
+          "relativeDifference": 0.00263109588202901
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 155,
+          "brightness": 97.0,
+          "ringBrightness": 97.38064516129032,
+          "relativeDifference": 0.003908837948853797
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 46,
+          "ringPixels": 257,
+          "brightness": 122.78260869565217,
+          "ringBrightness": 122.58365758754864,
+          "relativeDifference": 0.001622982312804943
+        },
+        {
+          "pixels": 50,
+          "ringPixels": 302,
+          "brightness": 118.64,
+          "ringBrightness": 117.73841059602648,
+          "relativeDifference": 0.0076575639114661595
+        },
+        {
+          "pixels": 19,
+          "ringPixels": 197,
+          "brightness": 121.0,
+          "ringBrightness": 121.08121827411168,
+          "relativeDifference": 0.0006707751645495492
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 49,
+          "ringPixels": 281,
+          "brightness": 120.40816326530613,
+          "ringBrightness": 119.71886120996442,
+          "relativeDifference": 0.005757673004697285
+        },
+        {
+          "pixels": 22,
+          "ringPixels": 204,
+          "brightness": 116.27272727272727,
+          "ringBrightness": 116.4656862745098,
+          "relativeDifference": 0.0016567884323262026
+        },
+        {
+          "pixels": 84,
+          "ringPixels": 304,
+          "brightness": 114.55952380952381,
+          "ringBrightness": 114.78618421052632,
+          "relativeDifference": 0.0019746313771245587
+        },
+        {
+          "pixels": 17,
+          "ringPixels": 186,
+          "brightness": 123.29411764705883,
+          "ringBrightness": 123.26881720430107,
+          "relativeDifference": 0.00020524609006202822
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 31,
+          "ringPixels": 250,
+          "brightness": 111.83870967741936,
+          "ringBrightness": 111.024,
+          "relativeDifference": 0.007338140198689999
+        },
+        {
+          "pixels": 35,
+          "ringPixels": 276,
+          "brightness": 110.02857142857142,
+          "ringBrightness": 109.46376811594203,
+          "relativeDifference": 0.005159728395528688
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 99,
+          "brightness": 99.0,
+          "ringBrightness": 99.08080808080808,
+          "relativeDifference": 0.0008155775308390486
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 50,
+          "ringPixels": 351,
+          "brightness": 116.06,
+          "ringBrightness": 115.32193732193733,
+          "relativeDifference": 0.006400019763822301
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 234,
+          "brightness": 113.20689655172414,
+          "ringBrightness": 112.51282051282051,
+          "relativeDifference": 0.006168861786062357
+        },
+        {
+          "pixels": 2,
+          "ringPixels": 131,
+          "brightness": 111.5,
+          "ringBrightness": 111.38167938931298,
+          "relativeDifference": 0.0010622986772667966
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 87,
+          "ringPixels": 297,
+          "brightness": 117.48275862068965,
+          "ringBrightness": 117.84511784511784,
+          "relativeDifference": 0.0030748768472906363
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 224,
+          "brightness": 111.5,
+          "ringBrightness": 111.27678571428571,
+          "relativeDifference": 0.002005937575222714
+        },
+        {
+          "pixels": 3,
+          "ringPixels": 227,
+          "brightness": 47.333333333333336,
+          "ringBrightness": 47.31277533039648,
+          "relativeDifference": 0.00043451272501554984
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 7,
+          "ringPixels": 201,
+          "brightness": 98.28571428571429,
+          "ringBrightness": 98.37810945273633,
+          "relativeDifference": 0.0009391842101460856
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 117,
+          "ringPixels": 270,
+          "brightness": 123.11965811965813,
+          "ringBrightness": 121.48148148148148,
+          "relativeDifference": 0.01348499061913702
+        },
+        {
+          "pixels": 48,
+          "ringPixels": 305,
+          "brightness": 120.91666666666667,
+          "ringBrightness": 120.03606557377049,
+          "relativeDifference": 0.007336137590705978
+        },
+        {
+          "pixels": 25,
+          "ringPixels": 224,
+          "brightness": 116.96,
+          "ringBrightness": 116.49553571428571,
+          "relativeDifference": 0.003986970684039087
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 45,
+          "ringPixels": 277,
+          "brightness": 121.31111111111112,
+          "ringBrightness": 120.72202166064982,
+          "relativeDifference": 0.004879718234981475
+        },
+        {
+          "pixels": 27,
+          "ringPixels": 230,
+          "brightness": 115.92592592592592,
+          "ringBrightness": 115.35652173913043,
+          "relativeDifference": 0.004936038103533992
+        },
+        {
+          "pixels": 63,
+          "ringPixels": 288,
+          "brightness": 110.60317460317461,
+          "ringBrightness": 110.81944444444444,
+          "relativeDifference": 0.0019515513938373355
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 212,
+          "brightness": 124.6086956521739,
+          "ringBrightness": 124.82075471698113,
+          "relativeDifference": 0.0016989086894086175
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 167,
+          "ringPixels": 474,
+          "brightness": 110.62275449101796,
+          "ringBrightness": 110.4746835443038,
+          "relativeDifference": 0.0013403156448488533
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 249,
+          "brightness": 117.92307692307692,
+          "ringBrightness": 117.70682730923694,
+          "relativeDifference": 0.0018371883669232789
+        },
+        {
+          "pixels": 62,
+          "ringPixels": 336,
+          "brightness": 109.1774193548387,
+          "ringBrightness": 107.54761904761905,
+          "relativeDifference": 0.015154220257521684
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 22,
+          "ringPixels": 220,
+          "brightness": 120.31818181818181,
+          "ringBrightness": 120.38636363636364,
+          "relativeDifference": 0.0005663583160280155
+        },
+        {
+          "pixels": 66,
+          "ringPixels": 380,
+          "brightness": 110.84848484848484,
+          "ringBrightness": 108.82631578947368,
+          "relativeDifference": 0.018581618281768186
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 119,
+          "brightness": 115.0,
+          "ringBrightness": 114.61344537815125,
+          "relativeDifference": 0.003372681281618937
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 139,
+          "brightness": 110.25,
+          "ringBrightness": 110.62589928057554,
+          "relativeDifference": 0.0033979319763282716
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 67,
+          "ringPixels": 273,
+          "brightness": 114.56716417910448,
+          "ringBrightness": 114.88278388278388,
+          "relativeDifference": 0.0027473194243049746
+        },
+        {
+          "pixels": 34,
+          "ringPixels": 253,
+          "brightness": 114.0,
+          "ringBrightness": 112.96837944664031,
+          "relativeDifference": 0.009131940799832086
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 264,
+          "brightness": 45.0,
+          "ringBrightness": 45.196969696969695,
+          "relativeDifference": 0.004358028830036842
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/up",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 1,
+          "ringPixels": 154,
+          "brightness": 103.0,
+          "ringBrightness": 103.43506493506493,
+          "relativeDifference": 0.004206164856550888
+        },
+        {
+          "pixels": 14,
+          "ringPixels": 206,
+          "brightness": 96.71428571428571,
+          "ringBrightness": 96.69902912621359,
+          "relativeDifference": 0.00015777395295465282
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 150,
+          "brightness": 98.0,
+          "ringBrightness": 98.13333333333334,
+          "relativeDifference": 0.0013586956521739804
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.neck",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 33,
+          "ringPixels": 245,
+          "brightness": 104.9090909090909,
+          "ringBrightness": 105.38775510204081,
+          "relativeDifference": 0.004541933666643191
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 166,
+          "brightness": 120.0,
+          "ringBrightness": 119.76506024096386,
+          "relativeDifference": 0.001961671948091085
+        },
+        {
+          "pixels": 26,
+          "ringPixels": 208,
+          "brightness": 118.57692307692308,
+          "ringBrightness": 118.57211538461539,
+          "relativeDifference": 4.0546567733050616e-05
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.torso",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 23696,
+          "ringPixels": 2460,
+          "brightness": 143.30304692775152,
+          "ringBrightness": 143.2089430894309,
+          "relativeDifference": 0.0006571086713617788
+        },
+        {
+          "pixels": 33,
+          "ringPixels": 204,
+          "brightness": 104.48484848484848,
+          "ringBrightness": 105.2843137254902,
+          "relativeDifference": 0.007593393662860072
+        },
+        {
+          "pixels": 1,
+          "ringPixels": 156,
+          "brightness": 120.0,
+          "ringBrightness": 120.06410256410257,
+          "relativeDifference": 0.0005339028296850398
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 210,
+          "brightness": 108.89285714285714,
+          "ringBrightness": 108.82380952380953,
+          "relativeDifference": 0.0006344900013126459
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.pelvis",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 13629,
+          "ringPixels": 1715,
+          "brightness": 125.27214028908944,
+          "ringBrightness": 125.44373177842566,
+          "relativeDifference": 0.001367876153742849
+        },
+        {
+          "pixels": 28,
+          "ringPixels": 210,
+          "brightness": 108.78571428571429,
+          "ringBrightness": 108.82380952380953,
+          "relativeDifference": 0.00035006344900013
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.upperArm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 305,
+          "ringPixels": 2048,
+          "brightness": 152.95737704918034,
+          "ringBrightness": 153.0498046875,
+          "relativeDifference": 0.0006039056273765473
+        },
+        {
+          "pixels": 23,
+          "ringPixels": 220,
+          "brightness": 109.08695652173913,
+          "ringBrightness": 109.10909090909091,
+          "relativeDifference": 0.00020286473993469625
+        },
+        {
+          "pixels": 30,
+          "ringPixels": 232,
+          "brightness": 107.53333333333333,
+          "ringBrightness": 107.17241379310344,
+          "relativeDifference": 0.003367653367653382
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.forearm.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 318,
+          "ringPixels": 2047,
+          "brightness": 154.81446540880503,
+          "ringBrightness": 154.59501709819247,
+          "relativeDifference": 0.00141950442343933
+        },
+        {
+          "pixels": 33,
+          "ringPixels": 241,
+          "brightness": 105.93939393939394,
+          "ringBrightness": 105.45643153526972,
+          "relativeDifference": 0.004579733991498629
+        },
+        {
+          "pixels": 41,
+          "ringPixels": 392,
+          "brightness": 122.26829268292683,
+          "ringBrightness": 122.8188775510204,
+          "relativeDifference": 0.004482900992682175
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.thigh.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 14054,
+          "ringPixels": 2845,
+          "brightness": 128.49893268820264,
+          "ringBrightness": 128.5367311072056,
+          "relativeDifference": 0.00029406706298950637
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 268,
+          "brightness": 113.41379310344827,
+          "ringBrightness": 113.64179104477611,
+          "relativeDifference": 0.0020062860610671725
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.calf.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 438,
+          "ringPixels": 2695,
+          "brightness": 125.18493150684931,
+          "ringBrightness": 124.90871985157699,
+          "relativeDifference": 0.0022113080303803366
+        },
+        {
+          "pixels": 17,
+          "ringPixels": 209,
+          "brightness": 116.82352941176471,
+          "ringBrightness": 116.86124401913875,
+          "relativeDifference": 0.00032272981252762744
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 135,
+          "brightness": 115.25,
+          "ringBrightness": 115.2,
+          "relativeDifference": 0.0004340277777777531
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.hand.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 294,
+          "ringPixels": 1805,
+          "brightness": 135.48299319727892,
+          "ringBrightness": 135.53130193905818,
+          "relativeDifference": 0.0003564397381867409
+        },
+        {
+          "pixels": 41,
+          "ringPixels": 392,
+          "brightness": 122.3170731707317,
+          "ringBrightness": 122.8188775510204,
+          "relativeDifference": 0.004085726805964728
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.foot.R",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 369,
+          "ringPixels": 2407,
+          "brightness": 108.44715447154472,
+          "ringBrightness": 110.1067719152472,
+          "relativeDifference": 0.01507280083535584
+        },
+        {
+          "pixels": 12,
+          "ringPixels": 228,
+          "brightness": 106.0,
+          "ringBrightness": 106.1798245614035,
+          "relativeDifference": 0.0016935850303605908
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.upperArm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 23,
+          "ringPixels": 220,
+          "brightness": 108.95652173913044,
+          "ringBrightness": 109.10909090909091,
+          "relativeDifference": 0.0013983176716923789
+        },
+        {
+          "pixels": 30,
+          "ringPixels": 232,
+          "brightness": 107.46666666666667,
+          "ringBrightness": 107.17241379310344,
+          "relativeDifference": 0.0027456027456027954
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.forearm.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 33,
+          "ringPixels": 241,
+          "brightness": 105.93939393939394,
+          "ringBrightness": 105.45643153526972,
+          "relativeDifference": 0.004579733991498629
+        },
+        {
+          "pixels": 41,
+          "ringPixels": 392,
+          "brightness": 122.48780487804878,
+          "ringBrightness": 122.8188775510204,
+          "relativeDifference": 0.0026956171524536027
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.thigh.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 13815,
+          "ringPixels": 1698,
+          "brightness": 127.64299674267102,
+          "ringBrightness": 127.71967020023557,
+          "relativeDifference": 0.0006003261474473451
+        },
+        {
+          "pixels": 29,
+          "ringPixels": 268,
+          "brightness": 113.62068965517241,
+          "ringBrightness": 113.64179104477611,
+          "relativeDifference": 0.00018568336005357438
+        },
+        {
+          "pixels": 37,
+          "ringPixels": 268,
+          "brightness": 109.83783783783784,
+          "ringBrightness": 108.80223880597015,
+          "relativeDifference": 0.00951817759664395
+        },
+        {
+          "pixels": 11,
+          "ringPixels": 184,
+          "brightness": 103.9090909090909,
+          "ringBrightness": 103.75,
+          "relativeDifference": 0.0015334063526834362
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.calf.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 66,
+          "ringPixels": 435,
+          "brightness": 114.57575757575758,
+          "ringBrightness": 112.85977011494253,
+          "relativeDifference": 0.015204598229000362
+        },
+        {
+          "pixels": 17,
+          "ringPixels": 209,
+          "brightness": 117.05882352941177,
+          "ringBrightness": 116.86124401913875,
+          "relativeDifference": 0.0016907188686153107
+        },
+        {
+          "pixels": 4,
+          "ringPixels": 135,
+          "brightness": 115.25,
+          "ringBrightness": 115.2,
+          "relativeDifference": 0.0004340277777777531
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.hand.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 41,
+          "ringPixels": 392,
+          "brightness": 122.58536585365853,
+          "ringBrightness": 122.8188775510204,
+          "relativeDifference": 0.0019012687790187074
+        }
+      ]
+    },
+    {
+      "view": "body/androgynous/left",
+      "part": "body.foot.L",
+      "opaqueInterior": true,
+      "patches": [
+        {
+          "pixels": 12,
+          "ringPixels": 228,
+          "brightness": 106.0,
+          "ringBrightness": 106.1798245614035,
+          "relativeDifference": 0.0016935850303605908
+        }
+      ]
+    }
+  ],
+  "renders": [
+    {
+      "render": "body-androgynous-down-0.png",
+      "edgePixels": 1523,
+      "outlinedPixels": 1523,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-down-1.png",
+      "edgePixels": 1570,
+      "outlinedPixels": 1570,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-down-2.png",
+      "edgePixels": 1556,
+      "outlinedPixels": 1556,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-down-3.png",
+      "edgePixels": 1564,
+      "outlinedPixels": 1564,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-down-4.png",
+      "edgePixels": 1538,
+      "outlinedPixels": 1538,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-down-5.png",
+      "edgePixels": 1570,
+      "outlinedPixels": 1570,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-down-6.png",
+      "edgePixels": 1556,
+      "outlinedPixels": 1556,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-down-7.png",
+      "edgePixels": 1564,
+      "outlinedPixels": 1564,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-down-Standing.png",
+      "edgePixels": 1571,
+      "outlinedPixels": 1571,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-0.png",
+      "edgePixels": 1054,
+      "outlinedPixels": 1054,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-1.png",
+      "edgePixels": 972,
+      "outlinedPixels": 972,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-2.png",
+      "edgePixels": 778,
+      "outlinedPixels": 778,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-3.png",
+      "edgePixels": 976,
+      "outlinedPixels": 976,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-4.png",
+      "edgePixels": 1077,
+      "outlinedPixels": 1077,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-5.png",
+      "edgePixels": 974,
+      "outlinedPixels": 974,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-6.png",
+      "edgePixels": 778,
+      "outlinedPixels": 778,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-7.png",
+      "edgePixels": 972,
+      "outlinedPixels": 972,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-left-Standing.png",
+      "edgePixels": 741,
+      "outlinedPixels": 741,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-0.png",
+      "edgePixels": 1093,
+      "outlinedPixels": 1093,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-1.png",
+      "edgePixels": 984,
+      "outlinedPixels": 984,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-2.png",
+      "edgePixels": 778,
+      "outlinedPixels": 778,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-3.png",
+      "edgePixels": 989,
+      "outlinedPixels": 989,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-4.png",
+      "edgePixels": 1091,
+      "outlinedPixels": 1091,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-5.png",
+      "edgePixels": 987,
+      "outlinedPixels": 987,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-6.png",
+      "edgePixels": 778,
+      "outlinedPixels": 778,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-7.png",
+      "edgePixels": 987,
+      "outlinedPixels": 987,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-right-Standing.png",
+      "edgePixels": 739,
+      "outlinedPixels": 739,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-0.png",
+      "edgePixels": 1541,
+      "outlinedPixels": 1541,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-1.png",
+      "edgePixels": 1525,
+      "outlinedPixels": 1525,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-2.png",
+      "edgePixels": 1520,
+      "outlinedPixels": 1520,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-3.png",
+      "edgePixels": 1515,
+      "outlinedPixels": 1515,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-4.png",
+      "edgePixels": 1523,
+      "outlinedPixels": 1523,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-5.png",
+      "edgePixels": 1522,
+      "outlinedPixels": 1522,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-6.png",
+      "edgePixels": 1529,
+      "outlinedPixels": 1529,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-7.png",
+      "edgePixels": 1532,
+      "outlinedPixels": 1532,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-androgynous-up-Standing.png",
+      "edgePixels": 1557,
+      "outlinedPixels": 1557,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-0.png",
+      "edgePixels": 1182,
+      "outlinedPixels": 1182,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-1.png",
+      "edgePixels": 1168,
+      "outlinedPixels": 1168,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-2.png",
+      "edgePixels": 1169,
+      "outlinedPixels": 1169,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-3.png",
+      "edgePixels": 1164,
+      "outlinedPixels": 1164,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-4.png",
+      "edgePixels": 1522,
+      "outlinedPixels": 1522,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-5.png",
+      "edgePixels": 1167,
+      "outlinedPixels": 1167,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-6.png",
+      "edgePixels": 1168,
+      "outlinedPixels": 1168,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-7.png",
+      "edgePixels": 1168,
+      "outlinedPixels": 1168,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-down-Standing.png",
+      "edgePixels": 1196,
+      "outlinedPixels": 1196,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-0.png",
+      "edgePixels": 1028,
+      "outlinedPixels": 1028,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-1.png",
+      "edgePixels": 977,
+      "outlinedPixels": 977,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-2.png",
+      "edgePixels": 785,
+      "outlinedPixels": 785,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-3.png",
+      "edgePixels": 977,
+      "outlinedPixels": 977,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-4.png",
+      "edgePixels": 1036,
+      "outlinedPixels": 1036,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-5.png",
+      "edgePixels": 977,
+      "outlinedPixels": 977,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-6.png",
+      "edgePixels": 785,
+      "outlinedPixels": 785,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-7.png",
+      "edgePixels": 974,
+      "outlinedPixels": 974,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-left-Standing.png",
+      "edgePixels": 746,
+      "outlinedPixels": 746,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-0.png",
+      "edgePixels": 1056,
+      "outlinedPixels": 1056,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-1.png",
+      "edgePixels": 979,
+      "outlinedPixels": 979,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-2.png",
+      "edgePixels": 789,
+      "outlinedPixels": 789,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-3.png",
+      "edgePixels": 992,
+      "outlinedPixels": 992,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-4.png",
+      "edgePixels": 1079,
+      "outlinedPixels": 1079,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-5.png",
+      "edgePixels": 980,
+      "outlinedPixels": 980,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-6.png",
+      "edgePixels": 789,
+      "outlinedPixels": 789,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-7.png",
+      "edgePixels": 990,
+      "outlinedPixels": 990,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-right-Standing.png",
+      "edgePixels": 745,
+      "outlinedPixels": 745,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-0.png",
+      "edgePixels": 1510,
+      "outlinedPixels": 1510,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-1.png",
+      "edgePixels": 1319,
+      "outlinedPixels": 1319,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-2.png",
+      "edgePixels": 1149,
+      "outlinedPixels": 1149,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-3.png",
+      "edgePixels": 1314,
+      "outlinedPixels": 1314,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-4.png",
+      "edgePixels": 1328,
+      "outlinedPixels": 1328,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-5.png",
+      "edgePixels": 1317,
+      "outlinedPixels": 1317,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-6.png",
+      "edgePixels": 1328,
+      "outlinedPixels": 1328,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-7.png",
+      "edgePixels": 1317,
+      "outlinedPixels": 1317,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-female-up-Standing.png",
+      "edgePixels": 1339,
+      "outlinedPixels": 1339,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-0.png",
+      "edgePixels": 1516,
+      "outlinedPixels": 1516,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-1.png",
+      "edgePixels": 1172,
+      "outlinedPixels": 1172,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-2.png",
+      "edgePixels": 1176,
+      "outlinedPixels": 1176,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-3.png",
+      "edgePixels": 1173,
+      "outlinedPixels": 1173,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-4.png",
+      "edgePixels": 1475,
+      "outlinedPixels": 1475,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-5.png",
+      "edgePixels": 1341,
+      "outlinedPixels": 1341,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-6.png",
+      "edgePixels": 1195,
+      "outlinedPixels": 1195,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-7.png",
+      "edgePixels": 1343,
+      "outlinedPixels": 1343,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-down-Standing.png",
+      "edgePixels": 1522,
+      "outlinedPixels": 1522,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-0.png",
+      "edgePixels": 1024,
+      "outlinedPixels": 1024,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-1.png",
+      "edgePixels": 954,
+      "outlinedPixels": 954,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-2.png",
+      "edgePixels": 773,
+      "outlinedPixels": 773,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-3.png",
+      "edgePixels": 957,
+      "outlinedPixels": 957,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-4.png",
+      "edgePixels": 1051,
+      "outlinedPixels": 1051,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-5.png",
+      "edgePixels": 958,
+      "outlinedPixels": 958,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-6.png",
+      "edgePixels": 773,
+      "outlinedPixels": 773,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-7.png",
+      "edgePixels": 955,
+      "outlinedPixels": 955,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-left-Standing.png",
+      "edgePixels": 735,
+      "outlinedPixels": 735,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-0.png",
+      "edgePixels": 1058,
+      "outlinedPixels": 1058,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-1.png",
+      "edgePixels": 958,
+      "outlinedPixels": 958,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-2.png",
+      "edgePixels": 768,
+      "outlinedPixels": 768,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-3.png",
+      "edgePixels": 962,
+      "outlinedPixels": 962,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-4.png",
+      "edgePixels": 1060,
+      "outlinedPixels": 1060,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-5.png",
+      "edgePixels": 963,
+      "outlinedPixels": 963,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-6.png",
+      "edgePixels": 768,
+      "outlinedPixels": 768,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-7.png",
+      "edgePixels": 956,
+      "outlinedPixels": 956,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-right-Standing.png",
+      "edgePixels": 734,
+      "outlinedPixels": 734,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-0.png",
+      "edgePixels": 1457,
+      "outlinedPixels": 1457,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-1.png",
+      "edgePixels": 1486,
+      "outlinedPixels": 1486,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-2.png",
+      "edgePixels": 1152,
+      "outlinedPixels": 1152,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-3.png",
+      "edgePixels": 1470,
+      "outlinedPixels": 1470,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-4.png",
+      "edgePixels": 1477,
+      "outlinedPixels": 1477,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-5.png",
+      "edgePixels": 1468,
+      "outlinedPixels": 1468,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-6.png",
+      "edgePixels": 1128,
+      "outlinedPixels": 1128,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-7.png",
+      "edgePixels": 1473,
+      "outlinedPixels": 1473,
+      "outlineContinuity": 1.0
+    },
+    {
+      "render": "body-male-up-Standing.png",
+      "edgePixels": 1483,
+      "outlinedPixels": 1483,
+      "outlineContinuity": 1.0
+    }
+  ],
+  "failures": []
+}

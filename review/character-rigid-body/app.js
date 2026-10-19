@@ -11,7 +11,7 @@ function redraw(){
  $('strip').replaceChildren(...frames.map((cv,i)=>{const fig=document.createElement('figure'),caption=document.createElement('figcaption');caption.textContent='Walk '+i;fig.append(caption,cv);return fig;}));
  const onion=make();onion.width=288;onion.height=432;const c=onion.getContext('2d');c.globalAlpha=.16;frames.forEach(cv=>c.drawImage(cv,0,0));$('onion').replaceChildren(onion);
  $('measurements').textContent=JSON.stringify({source:doc.source,uniformScale:manifest.uniformScale,bones:doc.bones,parts:doc.parts},null,2);
- $('caution').textContent='Completed source parts: TELEA inpainting, radius 5; rounded overlapping joints. Far profile limbs are shaded 20–25% darker and cooler. Front/back calves use the requested 0.875 vertical projection. Body approval is pending; clothing and mesh skinning are deferred.';
+ $('caution').textContent='Completed source parts: painted texture patches and rotated thigh caps; pelvis owns the hip outline. Far limbs preserve shading at 80% brightness. Calves project to 0.85, forearms to 0.9; outer outlines are restored after assembly. Body approval is pending; clothing and mesh skinning are deferred.';
  $('status').textContent=`${doc.id} · 15 completed art parts · Standing + Walk 0–7 · source scale ${manifest.uniformScale} · builds excluded`;
  showFrame();window.reviewReady=true;
 }

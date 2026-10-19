@@ -1,4 +1,8 @@
-# Completed-source body review (approval pending)
+# Historical 75e350c notes — superseded
+
+See [CURRENT.md](CURRENT.md) for the current painted-joint repair, reproduction
+commands, image-generation outcomes and verification limits. The TELEA method,
+old pose angles and checks below describe the previous review only.
 
 This isolates body repair from the published game. Clothing, builds, catalog
 migration and mesh skinning remain deferred. No image-generation calls were used.

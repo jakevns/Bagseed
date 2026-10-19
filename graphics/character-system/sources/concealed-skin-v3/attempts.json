@@ -1,0 +1,22 @@
+{
+  "approvedLimit": 3,
+  "attempted": 3,
+  "retries": 0,
+  "accepted": 0,
+  "results": [
+    {
+      "anatomy": "androgynous",
+      "status": "service blocked output"
+    },
+    {
+      "anatomy": "female",
+      "status": "service blocked output"
+    },
+    {
+      "anatomy": "male",
+      "status": "rejected: retained arm/hand forms and altered registration",
+      "artifact": "male-model-rejected.png"
+    }
+  ],
+  "fallback": "same-part texture quilting; no more generation calls"
+}

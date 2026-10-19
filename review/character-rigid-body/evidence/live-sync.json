@@ -1,0 +1,108 @@
+{
+  "base": "http://127.0.0.1:5189",
+  "checked": [
+    {
+      "url": "/",
+      "path": "review/character-rigid-body/index.html",
+      "sha256": "c71effcca9ba4ece0d2a64f126e1c5995d867e01a4f4d2093568fcb88057d59b"
+    },
+    {
+      "url": "/app.js",
+      "path": "review/character-rigid-body/app.js",
+      "sha256": "dde3d7a76fa3a41c55138fd87ea0d107a7eba0186deca5340597d5859030ba8a"
+    },
+    {
+      "url": "/compositor.js",
+      "path": "src/character-system/compositor.js",
+      "sha256": "7cbd882bb20f648b9b62f23d1bc3cce571587de67063f9eab45ec79634163ce3"
+    },
+    {
+      "url": "/canvas-renderer.js",
+      "path": "src/character-system/canvas-renderer.js",
+      "sha256": "3934e80fe4f1b07e3ccfb92413c64b9e8083540f6b8d762a7a3a58383439720f"
+    },
+    {
+      "url": "/raster-sources.js",
+      "path": "src/character-system/raster-sources.js",
+      "sha256": "b297f2b7ad8578ef2b6a023b198415f3a46528cec547f6292d6d4e55e7024f9e"
+    },
+    {
+      "url": "/generated/contract.json",
+      "path": "review/character-rigid-body/generated/contract.json",
+      "sha256": "45b4f6b3459a5ad4c0df37cdfdedf5b73649357a99cc587d2064757d4deac34d"
+    },
+    {
+      "url": "/generated/registry.json",
+      "path": "review/character-rigid-body/generated/registry.json",
+      "sha256": "1e44af2dc4d3e914701078704289862bfbc463956109e4c97500339ffc18545a"
+    },
+    {
+      "url": "/generated/manifest.json",
+      "path": "review/character-rigid-body/generated/manifest.json",
+      "sha256": "de3b31bc41fb860566e42c13606072fdf2a2d92387169d5ec0b7adda0915bc63"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/male-down/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/male-down/body.pelvis.png",
+      "sha256": "b7d85755fa2665a2d4c421ae4f7d9167f378074ba1931091c0148a11f9d46406"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/male-right/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/male-right/body.pelvis.png",
+      "sha256": "f851e59bba7a65c54fdc794228084070f2192927d4d4a1d7fce0c4d797545584"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/male-up/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/male-up/body.pelvis.png",
+      "sha256": "80ed6d4ba918861d9b44b49336156beb0eaa4827fd006a003f499871b5a4a477"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/male-left/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/male-left/body.pelvis.png",
+      "sha256": "60db1ba95808dd3b47020f13a5b02ae7e876b8da7e53bb4d33bf672e0e97af5b"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/female-down/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/female-down/body.pelvis.png",
+      "sha256": "6b33e80e5445b52ee3f85e19b58bdd397d0817bb719935d4c5d640c2d0fa3d22"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/female-right/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/female-right/body.pelvis.png",
+      "sha256": "63ff7c02f15d11343b7ae3212a541c0a65f15b9bbfcc696198871f87638e92e5"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/female-up/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/female-up/body.pelvis.png",
+      "sha256": "092e58db63a00dcbb747013c08c7e700a36d880b5be76a4d61b0069eaffe2b52"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/female-left/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/female-left/body.pelvis.png",
+      "sha256": "18b89f35e987755681f924777ce47edb33dae70920c56ce5208b9f602920f110"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/androgynous-down/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/androgynous-down/body.pelvis.png",
+      "sha256": "8ccd2001aa985ec8be35cf45c50cc36df8a359d67bac45494ce9aa253ff65e76"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/androgynous-right/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/androgynous-right/body.pelvis.png",
+      "sha256": "e53e94bb3b99265c2e32f0cb8b2eae96aa283a2c0fbc8a2222bd6b20956499a1"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/androgynous-up/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/androgynous-up/body.pelvis.png",
+      "sha256": "d6817daaa720280eb2fe14a5c7692c3f9390cba912476fea48ede5a4248093b6"
+    },
+    {
+      "url": "/source/graphics/character-system/layered-sources/completed-body-parts/androgynous-left/body.pelvis.png",
+      "path": "graphics/character-system/layered-sources/completed-body-parts/androgynous-left/body.pelvis.png",
+      "sha256": "2a6818e0424ce1400b7d206d6b80feb3b97a8efa2b6b596378cf4da8ef33651a"
+    }
+  ],
+  "uiReady": true,
+  "bodyApproved": false,
+  "clothingFrozen": true
+}

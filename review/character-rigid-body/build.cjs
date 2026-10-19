@@ -1,4 +1,4 @@
-// Prepare original cuts, then assemble completed TELEA source parts. No mesh.
+// Prepare original cuts, then assemble completed painted-texture parts. No mesh.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'../..'),map=require('./native-body-map.json'),{pose,scale,joint,length}=require('./rig.cjs');
 const out=path.join(__dirname,'generated');fs.mkdirSync(out,{recursive:true});
@@ -7,12 +7,13 @@ if(!rawOnly&&!fs.existsSync(repairPath))throw Error('Run build.cjs --raw, export
 const repairs=rawOnly?null:JSON.parse(fs.readFileSync(repairPath));
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const rect=(x,y,w,h)=>`M${x} ${y}h${w}v${h}h${-w}Z`;
-const contract={id:'bagseed-rigid-source-review',version:'1.1.0-completed-parts',coordinateSystem:{logicalCanvas:[96,144],finalFigureScale:1},profiles:{'average/neutral/adult':{width:1,height:1,headScale:1}},head:{faceFits:{soft:[1,1]},sideJawX:{down:96,up:96,right:96,left:96}},ordering:{},timing:{normal:{}},aliases:{},poses:{},bodyPoseSets:{},materialRoles:['skin']};
-const registry={contractId:contract.id,contractVersion:contract.version,anatomicalFamilies:true,stages:['farArm','farLeg','body','nearLeg','nearArm','head'],assets:{},supportedParameters:{topPat:['none'],botPat:['none']}};
+const contract={id:'bagseed-rigid-source-review',version:'1.2.0-painted-joints',coordinateSystem:{logicalCanvas:[96,144],finalFigureScale:1},profiles:{'average/neutral/adult':{width:1,height:1,headScale:1}},head:{faceFits:{soft:[1,1]},sideJawX:{down:96,up:96,right:96,left:96}},ordering:{},timing:{normal:{}},aliases:{},poses:{},bodyPoseSets:{},materialRoles:['skin']};
+const registry={contractId:contract.id,contractVersion:contract.version,anatomicalFamilies:true,stages:['farArm','farLeg','nearLeg','body','nearArm','head'],bodyFinish:{},assets:{},supportedParameters:{topPat:['none'],botPat:['none']}};
 const manifest={status:'Body art review pending approval. Clothing frozen. Builds deferred.',documents:[],files:[],uniformScale:scale};
-manifest.preparation=rawOnly?'Raw cuts for source repair only':{method:'cv2.INPAINT_TELEA',radius:5,newGenerationCalls:0,frontBackCalfProjection:.875};
+manifest.preparation=rawOnly?'Raw cuts for source repair only':{method:'same-part-patch-quilting',newGenerationCalls:3,acceptedGeneratedRepairs:0,frontBackCalfProjection:.85,frontBackForearmProjection:.9};
 for(const d of map.documents){
  const [_,anatomy,dir]=d.id.split('/'),side=['right','left'].includes(dir),near=dir==='left'?'L':'R';
+ registry.bodyFinish[anatomy]={color:repairs?.outlineColors?.[anatomy]||[65,60,58],widthAtDensity3:2};
  const input=fs.readFileSync(path.join(root,d.inputSVG),'utf8'),png=fs.readFileSync(path.join(root,d.source));
  if(sha(png)!==d.sourceSHA256)throw Error('Approved PNG changed: '+d.source);
  const image=input.match(/<image id="original"[^>]*\/>/)?.[0];
@@ -54,8 +55,8 @@ for(const d of map.documents){
  const asset=registry.assets['body/'+anatomy];asset.poseKeys.push(...Object.keys(poses));
  for(const [key,p]of Object.entries(poses))for(const part of parts){
   const arm=['upperArm','forearm','hand'].includes(part.name),leg=['thigh','calf','foot'].includes(part.name);
-  const source=part.completed,projected=!side&&part.name==='calf',binding={mode:projected?'frontBackCalf':'rigid',sourcePivot:part.pivot,target:part.target,uniformScale:scale,rotation:p.rotations[part.name+(part.side?'.'+part.side:'')]||0,...(projected?{direction:dir,part:'calf',projectionY:p.projection['calf.'+part.side]}:{})};
-  asset.layers.push({id:`${key}/${part.id}`,stage:arm?'arm':leg?'leg':'body',side:part.side,poseKeys:[key],material:'skin',alphaMask:'geometry',materialMasks:[{mask:'geometry',role:'skin',weight:1}],geometry:{type:'raster',...(source?{image:'/source/'+source.path,imageSHA256:sha(fs.readFileSync(path.join(root,source.path))),expected:'/source/'+source.expected}:{image:url,imageSHA256:hash,sourceGroup:part.id,sourceKey:`${anatomy}/${dir}/${part.id}`}),mask:'self',sourceCanvas:[w,h],sourceOffset:[x,y],tint:{mode:'preserve'},...(side&&part.side&&part.side!==near?{appearance:{rgbMultiply:[.75,.77,.80]}}:{}),binding}});
+  const source=part.completed,projected=!side&&['calf','forearm'].includes(part.name),binding={mode:projected?(part.name==='calf'?'frontBackCalf':'frontBackForearm'):'rigid',sourcePivot:part.pivot,target:part.target,uniformScale:scale,rotation:p.rotations[part.name+(part.side?'.'+part.side:'')]||0,...(projected?{direction:dir,part:part.name,projectionY:p.projection[part.name+'.'+part.side]}:{})};
+  asset.layers.push({id:`${key}/${part.id}`,stage:arm?'arm':leg?'leg':'body',side:part.side,poseKeys:[key],material:'skin',alphaMask:'geometry',materialMasks:[{mask:'geometry',role:'skin',weight:1}],geometry:{type:'raster',...(source?{image:'/source/'+source.path,imageSHA256:sha(fs.readFileSync(path.join(root,source.path))),expected:'/source/'+source.expected,repair:'/source/'+source.repair}:{image:url,imageSHA256:hash,sourceGroup:part.id,sourceKey:`${anatomy}/${dir}/${part.id}`}),mask:'self',sourceCanvas:[w,h],sourceOffset:[x,y],tint:{mode:'preserve'},...(side&&part.side&&part.side!==near?{appearance:{rgbMultiply:[.8,.8,.8],outlineStrength:.6}}:{}),binding}});
  }
  const bones={};for(const s of ['L','R'])for(const [a,b]of [['shoulder','elbow'],['elbow','wrist'],['hip','knee'],['knee','ankle']])bones[a+'-'+b+s]=length(measured.pins[a+s],measured.pins[b+s]);
  manifest.documents.push({...measured,layers:undefined,parts,bones,url,svgSHA256:hash,standingMatrix:[scale,0,0,scale,48-d.pins.root[0]*scale,143-d.pins.root[1]*scale]});

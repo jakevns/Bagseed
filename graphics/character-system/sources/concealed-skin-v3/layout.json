@@ -1,0 +1,116 @@
+[
+  {
+    "anatomy": "androgynous",
+    "cells": [
+      {
+        "direction": "right",
+        "sheetRect": [
+          62,
+          0,
+          295,
+          560
+        ],
+        "nativeCrop": [
+          590,
+          20,
+          295,
+          560
+        ]
+      },
+      {
+        "direction": "left",
+        "sheetRect": [
+          430,
+          0,
+          400,
+          560
+        ],
+        "nativeCrop": [
+          1355,
+          20,
+          400,
+          560
+        ]
+      }
+    ],
+    "target": "androgynous-edit-target.png",
+    "mask": "androgynous-edit-mask.png",
+    "output": "androgynous-concealed.png"
+  },
+  {
+    "anatomy": "female",
+    "cells": [
+      {
+        "direction": "right",
+        "sheetRect": [
+          62,
+          0,
+          295,
+          560
+        ],
+        "nativeCrop": [
+          590,
+          20,
+          295,
+          560
+        ]
+      },
+      {
+        "direction": "left",
+        "sheetRect": [
+          430,
+          0,
+          400,
+          560
+        ],
+        "nativeCrop": [
+          1355,
+          20,
+          400,
+          560
+        ]
+      }
+    ],
+    "target": "female-edit-target.png",
+    "mask": "female-edit-mask.png",
+    "output": "female-concealed.png"
+  },
+  {
+    "anatomy": "male",
+    "cells": [
+      {
+        "direction": "right",
+        "sheetRect": [
+          62,
+          0,
+          295,
+          560
+        ],
+        "nativeCrop": [
+          590,
+          20,
+          295,
+          560
+        ]
+      },
+      {
+        "direction": "left",
+        "sheetRect": [
+          430,
+          0,
+          400,
+          560
+        ],
+        "nativeCrop": [
+          1355,
+          20,
+          400,
+          560
+        ]
+      }
+    ],
+    "target": "male-edit-target.png",
+    "mask": "male-edit-mask.png",
+    "output": "male-concealed.png"
+  }
+]

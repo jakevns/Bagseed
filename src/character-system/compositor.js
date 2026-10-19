@@ -28,12 +28,12 @@
   }
   const apply=(m,[x,y])=>[m[0]*x+m[2]*y+m[4],m[1]*x+m[3]*y+m[5]];
   function resolveGeometry(shape,anchors,fit,head){
-    if(shape.type==='raster'&&['rigid','frontBackCalf'].includes(shape.binding?.mode)){
+    if(shape.type==='raster'&&['rigid','frontBackCalf','frontBackForearm'].includes(shape.binding?.mode)){
       const b=shape.binding,p=anchors[b.target],s=b.uniformScale,r=b.rotation;
       if(!p||!Array.isArray(b.sourcePivot)||b.sourcePivot.length!==2||!b.sourcePivot.every(Number.isFinite)||!(s>0)||!Number.isFinite(r))throw Error('Invalid rigid art attachment');
       if(fit.width!==1||fit.height!==1||shape.frameClip||shape.frameFill||shape.frameStrokes)throw Error('Rigid art cannot use body reshaping or destination silhouettes');
-      const projected=b.mode==='frontBackCalf';
-      if(projected&&(!['down','up'].includes(b.direction)||b.part!=='calf'||r!==0||!(b.projectionY===1||b.projectionY>=.85&&b.projectionY<=.9)))throw Error('Only front/back calves may use the approved vertical projection');
+      const projected=b.mode!=='rigid',part=b.mode==='frontBackForearm'?'forearm':'calf';
+      if(projected&&(!['down','up'].includes(b.direction)||b.part!==part||r!==0||!(b.projectionY>=(part==='calf'?.85:.9)&&b.projectionY<=1)))throw Error('Only approved front/back calf or forearm projection is supported');
       const a=s*Math.cos(r),bb=s*Math.sin(r),c=-bb,d=projected?s*b.projectionY:a,[x,y]=b.sourcePivot;
       return {shape:clone(shape),matrix:[a,bb,c,d,p[0]-a*x-c*y,p[1]-bb*x-d*y]};
     }
@@ -81,7 +81,7 @@
     let rigidScale=null;
     for(const asset of Object.values(registry.assets)){
       if(!/^[a-f0-9]{64}$/.test(asset.sourceSHA256||'')||!asset.sourcePath)throw Error('Attachment source provenance is missing: '+asset.id);
-      for(const layer of asset.layers)if(['rigid','frontBackCalf'].includes(layer.geometry?.binding?.mode)){
+      for(const layer of asset.layers)if(['rigid','frontBackCalf','frontBackForearm'].includes(layer.geometry?.binding?.mode)){
         const scale=layer.geometry.binding.uniformScale;
         if(!(scale>0)||!Number.isFinite(scale))throw Error('Invalid rigid character scale');
         if(rigidScale!==null&&scale!==rigidScale)throw Error('Rigid parts must share one whole-character scale');
@@ -117,7 +117,7 @@
       }
       const ordered=orderLayers(layers,registry.stages),maskIds=new Set(layers.map(l=>l.id));for(const mask of masks.values())for(const target of mask.targets)if(!maskIds.has(target))throw Error('Coverage target absent: '+target);
       const trace={...baseTrace,sources:sources.map(s=>({id:s.id,hash:s.sourceSHA256,reviewStatus:s.reviewStatus})),layers:ordered,drawOrder:ordered.map(l=>l.id),coverageMasks:[...masks.values()]};
-      return freeze({complete:true,look,trace,canvas:contract.coordinateSystem.logicalCanvas,finalFigureScale:contract.coordinateSystem.finalFigureScale,overlay:selected.requested.startsWith('sniff/')?{kind:'sniff',nose:apply(head.matrix,head.nativeLandmarks.nose)}:null});
+      return freeze({complete:true,look,trace,canvas:contract.coordinateSystem.logicalCanvas,finalFigureScale:contract.coordinateSystem.finalFigureScale,bodyFinish:registry.bodyFinish?.[look.anatomy]||null,overlay:selected.requested.startsWith('sniff/')?{kind:'sniff',nose:apply(head.matrix,head.nativeLandmarks.nose)}:null});
     }
     return Object.freeze({plan,contract,registry});
   }

@@ -1,0 +1,19 @@
+{
+  "candidate": "painted-joints",
+  "bodyApproved": false,
+  "step5Complete": false,
+  "clothingFrozen": true,
+  "published": false,
+  "sourceParts": 180,
+  "poses": 108,
+  "magentaLeaks": 0,
+  "jointLeaks": 0,
+  "maxFrontBackAnkleDriftLogicalPixels": 1,
+  "minExteriorOutlineCoverage": 1,
+  "maxSourcePatchBrightnessDifference": 0.024997659395187676,
+  "characterRegressionsPassed": 47,
+  "sharedCompositorRegressionsPassed": 10,
+  "generationCalls": 3,
+  "acceptedGeneratedRepairs": 0,
+  "knownVisualLimitation": "Concealed profile torso and pelvis repairs still show shading transitions. Numerical brightness averages do not establish visual acceptance. These regions need review before any clothing refit."
+}
