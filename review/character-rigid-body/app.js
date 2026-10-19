@@ -11,8 +11,8 @@ function redraw(){
  $('strip').replaceChildren(...frames.map((cv,i)=>{const fig=document.createElement('figure'),caption=document.createElement('figcaption');caption.textContent='Walk '+i;fig.append(caption,cv);return fig;}));
  const onion=make();onion.width=288;onion.height=432;const c=onion.getContext('2d');c.globalAlpha=.16;frames.forEach(cv=>c.drawImage(cv,0,0));$('onion').replaceChildren(onion);
  $('measurements').textContent=JSON.stringify({source:doc.source,uniformScale:manifest.uniformScale,bones:doc.bones,parts:doc.parts},null,2);
- $('caution').textContent=['right','left'].includes($('direction').value)?'Profile limitation: the painting conceals the far limbs and part of the torso. Far limbs reuse the corresponding visible limb pixels. No invented concealed skin is added; exposed cut boundaries still need your review.':'All visible parts retain the original pixels. Overlap comes from expanded source cuts, never newly drawn skin.';
- $('status').textContent=`${doc.id} · 15 original-pixel parts · Standing + Walk 0–7 · fixed uniform scale ${manifest.uniformScale} · builds excluded`;
+ $('caution').textContent='Completed source parts: TELEA inpainting, radius 5; rounded overlapping joints. Far profile limbs are shaded 20–25% darker and cooler. Front/back calves use the requested 0.875 vertical projection. Body approval is pending; clothing and mesh skinning are deferred.';
+ $('status').textContent=`${doc.id} · 15 completed art parts · Standing + Walk 0–7 · source scale ${manifest.uniformScale} · builds excluded`;
  showFrame();window.reviewReady=true;
 }
 function showFrame(){const cv=make();cv.width=288;cv.height=432;cv.getContext('2d').drawImage(frames[frame],0,0);$('animation').replaceChildren(cv);}
@@ -22,6 +22,7 @@ async function start(){
  engine=BagseedLayered.createEngine(contract,registry);sources=await BagseedRasterSources.load(registry);
  for(const doc of manifest.documents)if(!images[doc.source]){const img=new Image();img.src='/source/'+doc.source;await img.decode();images[doc.source]=img;}
  for(const id of ['anatomy','direction','anchors'])$(id).addEventListener('change',redraw);
+ $('magenta').onchange=()=>document.body.classList.toggle('magenta',$('magenta').checked);
  $('tint').addEventListener('change',tintChange);$('skin').addEventListener('change',tintChange);
  $('play').onclick=()=>{playing=!playing;$('play').textContent=playing?'Pause':'Play';};redraw();setInterval(()=>{if(playing&&frames.length){frame=(frame+1)%8;showFrame();}},160);
  window.bodyReview={plan,render,original,get manifest(){return manifest},get engine(){return engine},get sources(){return sources}};

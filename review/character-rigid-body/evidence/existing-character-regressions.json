@@ -25,5 +25,6 @@
     "tests/walk-no-donor-repairs.test.cjs",
     "tests/walk-pose-guides.test.cjs"
   ],
-  "scope": "Existing game regression checks after adding rigid attachment support. These results do not approve the new body's walk or concealed source surfaces."
+  "scope": "Existing game regression checks after adding the front/back calf projection and far-limb source shading. Visual approval of the body remains pending.",
+  "durationMs": 523470.2567
 }

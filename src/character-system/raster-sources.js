@@ -16,7 +16,7 @@
   return {images,cache,groups:new Map(),dispose(){for(const image of images.values())image.close?.();images.clear();cache.clear();this.groups.clear();}};
  }
  function maskedLayer(layer,sources,makeCanvas){
-  if(!sources)throw Error('Raster sources must be loaded before composition');const s=layer.geometry.shape,key=JSON.stringify([s.imageSHA256,s.maskSHA256,s.sourceKey,s.placements,s.sourceOffset,s.underpaint,layer.color,s.tint]);if(sources.cache.has(key))return sources.cache.get(key);
+  if(!sources)throw Error('Raster sources must be loaded before composition');const s=layer.geometry.shape,key=JSON.stringify([s.imageSHA256,s.maskSHA256,s.sourceKey,s.placements,s.sourceOffset,s.underpaint,layer.color,s.tint,s.appearance]);if(sources.cache.has(key))return sources.cache.get(key);
   const image=sources.images.get(s.sourceKey||s.image),mask=s.mask==='self'?null:sources.images.get(s.mask);if(!image||s.mask!=='self'&&!mask)throw Error('Unloaded raster source: '+layer.id);
   const [width,height]=s.sourceCanvas||[image.width,image.height];if(mask&&(width!==mask.width||height!==mask.height))throw Error('Raster/mask dimensions differ: '+layer.id);
   const cv=makeCanvas(width,height),c=cv.getContext('2d',{willReadFrequently:true});
@@ -28,6 +28,7 @@
    const rgba=c.getImageData(0,0,cv.width,cv.height),a=rgba.data,target=layer.color.slice(1).match(/../g).map(x=>parseInt(x,16)),reference=tint.referenceLuminance;if(!(reference>0&&reference<=255))throw Error('Explicit raster shading reference required');
    for(let i=0;i<a.length;i+=4){if(!a[i+3])continue;const shade=(.2126*a[i]+.7152*a[i+1]+.0722*a[i+2])/reference;for(let ch=0;ch<3;ch++)a[i+ch]=Math.max(0,Math.min(255,Math.round(target[ch]*shade)));}c.putImageData(rgba,0,0);
   }
+  if(s.appearance?.rgbMultiply){const factors=s.appearance.rgbMultiply;if(factors.length!==3||factors.some(v=>!Number.isFinite(v)||v<0||v>1))throw Error('Invalid source shading multiplier');const rgba=c.getImageData(0,0,cv.width,cv.height);for(let i=0;i<rgba.data.length;i+=4)if(rgba.data[i+3])for(let ch=0;ch<3;ch++)rgba.data[i+ch]=Math.round(rgba.data[i+ch]*factors[ch]);c.putImageData(rgba,0,0);}
   cv.sourceOffset=s.sourceOffset||[0,0];let result=cv;
   if(s.trim){const a=c.getImageData(0,0,cv.width,cv.height).data;let l=cv.width,t=cv.height,r=-1,b=-1;for(let y=0;y<cv.height;y++)for(let x=0;x<cv.width;x++)if(a[(y*cv.width+x)*4+3]){l=Math.min(l,x);t=Math.min(t,y);r=Math.max(r,x);b=Math.max(b,y);}if(r>=l){result=makeCanvas(r-l+1,b-t+1);result.getContext('2d').drawImage(cv,l,t,result.width,result.height,0,0,result.width,result.height);result.sourceOffset=[cv.sourceOffset[0]+l,cv.sourceOffset[1]+t];}}
   if(sources.cache.size>=128)sources.cache.delete(sources.cache.keys().next().value);sources.cache.set(key,result);return result;

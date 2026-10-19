@@ -28,11 +28,13 @@
   }
   const apply=(m,[x,y])=>[m[0]*x+m[2]*y+m[4],m[1]*x+m[3]*y+m[5]];
   function resolveGeometry(shape,anchors,fit,head){
-    if(shape.type==='raster'&&shape.binding?.mode==='rigid'){
+    if(shape.type==='raster'&&['rigid','frontBackCalf'].includes(shape.binding?.mode)){
       const b=shape.binding,p=anchors[b.target],s=b.uniformScale,r=b.rotation;
       if(!p||!Array.isArray(b.sourcePivot)||b.sourcePivot.length!==2||!b.sourcePivot.every(Number.isFinite)||!(s>0)||!Number.isFinite(r))throw Error('Invalid rigid art attachment');
       if(fit.width!==1||fit.height!==1||shape.frameClip||shape.frameFill||shape.frameStrokes)throw Error('Rigid art cannot use body reshaping or destination silhouettes');
-      const a=s*Math.cos(r),bb=s*Math.sin(r),c=-bb,d=a,[x,y]=b.sourcePivot;
+      const projected=b.mode==='frontBackCalf';
+      if(projected&&(!['down','up'].includes(b.direction)||b.part!=='calf'||r!==0||!(b.projectionY===1||b.projectionY>=.85&&b.projectionY<=.9)))throw Error('Only front/back calves may use the approved vertical projection');
+      const a=s*Math.cos(r),bb=s*Math.sin(r),c=-bb,d=projected?s*b.projectionY:a,[x,y]=b.sourcePivot;
       return {shape:clone(shape),matrix:[a,bb,c,d,p[0]-a*x-c*y,p[1]-bb*x-d*y]};
     }
     if(shape.type==='raster'&&shape.frameClip)shape={...shape,frameFit:[fit.width,fit.height]};
@@ -79,7 +81,7 @@
     let rigidScale=null;
     for(const asset of Object.values(registry.assets)){
       if(!/^[a-f0-9]{64}$/.test(asset.sourceSHA256||'')||!asset.sourcePath)throw Error('Attachment source provenance is missing: '+asset.id);
-      for(const layer of asset.layers)if(layer.geometry?.binding?.mode==='rigid'){
+      for(const layer of asset.layers)if(['rigid','frontBackCalf'].includes(layer.geometry?.binding?.mode)){
         const scale=layer.geometry.binding.uniformScale;
         if(!(scale>0)||!Number.isFinite(scale))throw Error('Invalid rigid character scale');
         if(rigidScale!==null&&scale!==rigidScale)throw Error('Rigid parts must share one whole-character scale');

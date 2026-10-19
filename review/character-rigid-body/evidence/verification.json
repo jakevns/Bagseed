@@ -1,78 +1,875 @@
 {
   "poses": 108,
   "matrices": 1620,
-  "comparisons": [
-    {
-      "id": "body/male/down",
-      "silhouetteIoU": 0.9927358460509128,
-      "opaqueMeanChannelError": 1.141468631737301,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/male/right",
-      "silhouetteIoU": 0.9905833280667383,
-      "opaqueMeanChannelError": 1.414559925093633,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/male/up",
-      "silhouetteIoU": 0.9956424223005447,
-      "opaqueMeanChannelError": 0.33610133708655876,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/male/left",
-      "silhouetteIoU": 0.9900631210549341,
-      "opaqueMeanChannelError": 1.7232314795480383,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/female/down",
-      "silhouetteIoU": 0.993574061388916,
-      "opaqueMeanChannelError": 1.014773809954533,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/female/right",
-      "silhouetteIoU": 0.9902243388895852,
-      "opaqueMeanChannelError": 1.2256281640425433,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/female/up",
-      "silhouetteIoU": 0.9957253801474907,
-      "opaqueMeanChannelError": 0.2980349997013677,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/female/left",
-      "silhouetteIoU": 0.9893491857080934,
-      "opaqueMeanChannelError": 1.4478565539983512,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/androgynous/down",
-      "silhouetteIoU": 0.9919393603253837,
-      "opaqueMeanChannelError": 1.3257043459204778,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/androgynous/right",
-      "silhouetteIoU": 0.9864782740808264,
-      "opaqueMeanChannelError": 1.7766129719594306,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/androgynous/up",
-      "silhouetteIoU": 0.9949366166399534,
-      "opaqueMeanChannelError": 0.34859651242398615,
-      "lostOpaquePixels": 0
-    },
-    {
-      "id": "body/androgynous/left",
-      "silhouetteIoU": 0.9857324269813998,
-      "opaqueMeanChannelError": 2.003441907320349,
-      "lostOpaquePixels": 0
-    }
-  ]
+  "maxAnkleDrift": 1,
+  "magenta": {
+    "frames": 108,
+    "results": [
+      {
+        "id": "body/male/down",
+        "frame": "Standing",
+        "checkedInteriorPixels": 26833,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1714,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/down",
+        "frame": 0,
+        "checkedInteriorPixels": 26524,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1714,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/down",
+        "frame": 1,
+        "checkedInteriorPixels": 26200,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1709,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/down",
+        "frame": 2,
+        "checkedInteriorPixels": 26653,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1713,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/down",
+        "frame": 3,
+        "checkedInteriorPixels": 26540,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1709,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/down",
+        "frame": 4,
+        "checkedInteriorPixels": 26517,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1707,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/down",
+        "frame": 5,
+        "checkedInteriorPixels": 26202,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1714,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/down",
+        "frame": 6,
+        "checkedInteriorPixels": 26660,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1713,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/down",
+        "frame": 7,
+        "checkedInteriorPixels": 26551,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1715,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": "Standing",
+        "checkedInteriorPixels": 13747,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2540,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": 0,
+        "checkedInteriorPixels": 20716,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2547,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": 1,
+        "checkedInteriorPixels": 18514,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2540,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": 2,
+        "checkedInteriorPixels": 16078,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2551,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": 3,
+        "checkedInteriorPixels": 18509,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2544,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": 4,
+        "checkedInteriorPixels": 20716,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2547,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": 5,
+        "checkedInteriorPixels": 18514,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2540,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": 6,
+        "checkedInteriorPixels": 16078,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2551,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/right",
+        "frame": 7,
+        "checkedInteriorPixels": 18509,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2544,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": "Standing",
+        "checkedInteriorPixels": 26668,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1668,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": 0,
+        "checkedInteriorPixels": 26377,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1664,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": 1,
+        "checkedInteriorPixels": 26070,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1670,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": 2,
+        "checkedInteriorPixels": 26495,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1665,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": 3,
+        "checkedInteriorPixels": 26381,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1666,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": 4,
+        "checkedInteriorPixels": 26379,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1670,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": 5,
+        "checkedInteriorPixels": 26055,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1668,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": 6,
+        "checkedInteriorPixels": 26500,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1672,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/up",
+        "frame": 7,
+        "checkedInteriorPixels": 26411,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1669,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": "Standing",
+        "checkedInteriorPixels": 13909,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2564,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": 0,
+        "checkedInteriorPixels": 21074,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2573,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": 1,
+        "checkedInteriorPixels": 18648,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2574,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": 2,
+        "checkedInteriorPixels": 16225,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2567,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": 3,
+        "checkedInteriorPixels": 18649,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2579,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": 4,
+        "checkedInteriorPixels": 21074,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2573,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": 5,
+        "checkedInteriorPixels": 18648,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2574,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": 6,
+        "checkedInteriorPixels": 16225,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2567,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/male/left",
+        "frame": 7,
+        "checkedInteriorPixels": 18649,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2579,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": "Standing",
+        "checkedInteriorPixels": 25916,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1552,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": 0,
+        "checkedInteriorPixels": 25551,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1551,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": 1,
+        "checkedInteriorPixels": 25261,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1547,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": 2,
+        "checkedInteriorPixels": 25765,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1554,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": 3,
+        "checkedInteriorPixels": 25641,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1552,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": 4,
+        "checkedInteriorPixels": 25556,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1551,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": 5,
+        "checkedInteriorPixels": 25250,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1550,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": 6,
+        "checkedInteriorPixels": 25752,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1552,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/down",
+        "frame": 7,
+        "checkedInteriorPixels": 25621,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1549,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": "Standing",
+        "checkedInteriorPixels": 13739,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2562,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": 0,
+        "checkedInteriorPixels": 20996,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2566,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": 1,
+        "checkedInteriorPixels": 18793,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2580,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": 2,
+        "checkedInteriorPixels": 16184,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2567,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": 3,
+        "checkedInteriorPixels": 18774,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2574,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": 4,
+        "checkedInteriorPixels": 20996,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2566,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": 5,
+        "checkedInteriorPixels": 18793,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2580,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": 6,
+        "checkedInteriorPixels": 16184,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2567,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/right",
+        "frame": 7,
+        "checkedInteriorPixels": 18774,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2574,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": "Standing",
+        "checkedInteriorPixels": 26012,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1540,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": 0,
+        "checkedInteriorPixels": 25632,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1530,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": 1,
+        "checkedInteriorPixels": 25342,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1535,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": 2,
+        "checkedInteriorPixels": 25833,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1540,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": 3,
+        "checkedInteriorPixels": 25694,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1535,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": 4,
+        "checkedInteriorPixels": 25647,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1531,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": 5,
+        "checkedInteriorPixels": 25314,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1534,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": 6,
+        "checkedInteriorPixels": 25840,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1544,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/up",
+        "frame": 7,
+        "checkedInteriorPixels": 25714,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1537,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": "Standing",
+        "checkedInteriorPixels": 13921,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2538,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": 0,
+        "checkedInteriorPixels": 21476,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2548,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": 1,
+        "checkedInteriorPixels": 18908,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2547,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": 2,
+        "checkedInteriorPixels": 16360,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2536,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": 3,
+        "checkedInteriorPixels": 18946,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2547,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": 4,
+        "checkedInteriorPixels": 21476,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2548,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": 5,
+        "checkedInteriorPixels": 18908,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2547,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": 6,
+        "checkedInteriorPixels": 16359,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2536,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/female/left",
+        "frame": 7,
+        "checkedInteriorPixels": 18946,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2547,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": "Standing",
+        "checkedInteriorPixels": 22325,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1131,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": 0,
+        "checkedInteriorPixels": 22046,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1128,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": 1,
+        "checkedInteriorPixels": 21799,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1127,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": 2,
+        "checkedInteriorPixels": 22207,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1133,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": 3,
+        "checkedInteriorPixels": 22135,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1125,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": 4,
+        "checkedInteriorPixels": 22057,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1124,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": 5,
+        "checkedInteriorPixels": 21799,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1123,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": 6,
+        "checkedInteriorPixels": 22211,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1125,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/down",
+        "frame": 7,
+        "checkedInteriorPixels": 22137,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1120,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": "Standing",
+        "checkedInteriorPixels": 11126,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2012,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": 0,
+        "checkedInteriorPixels": 18706,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2033,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": 1,
+        "checkedInteriorPixels": 16230,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2021,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": 2,
+        "checkedInteriorPixels": 13320,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2035,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": 3,
+        "checkedInteriorPixels": 16149,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2041,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": 4,
+        "checkedInteriorPixels": 18706,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2033,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": 5,
+        "checkedInteriorPixels": 16230,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2021,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": 6,
+        "checkedInteriorPixels": 13320,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2035,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/right",
+        "frame": 7,
+        "checkedInteriorPixels": 16149,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 2041,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": "Standing",
+        "checkedInteriorPixels": 22879,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1151,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": 0,
+        "checkedInteriorPixels": 22610,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1147,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": 1,
+        "checkedInteriorPixels": 22335,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1150,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": 2,
+        "checkedInteriorPixels": 22759,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1154,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": 3,
+        "checkedInteriorPixels": 22657,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1144,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": 4,
+        "checkedInteriorPixels": 22595,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1145,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": 5,
+        "checkedInteriorPixels": 22333,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1151,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": 6,
+        "checkedInteriorPixels": 22737,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1155,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/up",
+        "frame": 7,
+        "checkedInteriorPixels": 22657,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1149,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": "Standing",
+        "checkedInteriorPixels": 11422,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1888,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": 0,
+        "checkedInteriorPixels": 18946,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1882,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": 1,
+        "checkedInteriorPixels": 16515,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1894,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": 2,
+        "checkedInteriorPixels": 13637,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1887,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": 3,
+        "checkedInteriorPixels": 16521,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1884,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": 4,
+        "checkedInteriorPixels": 18945,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1882,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": 5,
+        "checkedInteriorPixels": 16515,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1894,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": 6,
+        "checkedInteriorPixels": 13637,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1887,
+        "jointLeaks": 0
+      },
+      {
+        "id": "body/androgynous/left",
+        "frame": 7,
+        "checkedInteriorPixels": 16521,
+        "magentaLeaks": 0,
+        "jointInteriorPixels": 1884,
+        "jointLeaks": 0
+      }
+    ],
+    "failures": []
+  }
 }

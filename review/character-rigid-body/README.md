@@ -1,13 +1,12 @@
-# Original-pixel body review (approval pending)
+# Completed-source body review (approval pending)
 
-This replaces the rejected `body-shape-review` preview. It is isolated from the
-published game. No clothes are loaded, fitted, regenerated or migrated here.
-No image-generation calls were made. Builds are excluded rather than stretching
-the three base paintings.
+This isolates body repair from the published game. Clothing, builds, catalog
+migration and mesh skinning remain deferred. No image-generation calls were used.
+The rejected `body-shape-review` generator remains disabled.
 
-## Reproduce
+## Run the review
 
-From the repository root with Node 22+:
+With Node 22+ and the repository dependencies installed:
 
 ```powershell
 node review/character-rigid-body/build.cjs
@@ -15,69 +14,100 @@ node review/character-rigid-body/verify.cjs
 node review/character-rigid-body/server.cjs
 ```
 
-Open <http://127.0.0.1:5189/?body-review=original-pixels>. The old review server
-entry point also delegates to this server, including old query-string links.
-The retired `build-body-review.cjs` fails explicitly without writing anything.
+Open <http://127.0.0.1:5189/?body-review=completed-parts>. Old query-string review
+links resolve to the same current page. The magenta toggle and joint dots are
+available on the page; Standing and all eight walking frames use the same parts.
 
-For browser verification, install the repository's Playwright dependency and
-provide Chrome (default Windows installation, or `CHROME_PATH`):
+## Reproduce the source preparation
+
+The original PNGs and twelve input SVGs are read-only. Source output lives in
+`graphics/character-system/layered-sources/completed-body-parts/`: 180 completed
+PNGs, 180 repair masks, 180 expected-alpha masks and `repairs.json`. These are
+versioned source assets, not 5,184 per-frame replacement outlines. A normal build
+requires no Python or private files; it reads these completed parts.
+
+To reproduce the art repairs with Python and Chrome:
 
 ```powershell
+python -m pip install --target review/character-rigid-body/.python-deps -r review/character-rigid-body/requirements-repair.txt
+node review/character-rigid-body/prepare.cjs --python python
 node review/character-rigid-body/verify.cjs --browser
+node review/character-rigid-body/capture.cjs
 ```
 
-Build outputs go only to `review/character-rigid-body/generated/`, which is
-ignored. Screenshots and the measured comparison report are reproducible outputs.
+Set `CHROME_PATH` if Chrome is outside its default Windows installation. The
+preparation runner executes `build.cjs --raw`, `export-cuts.cjs`,
+`repair-parts.py`, and the final build in order. Raw extraction does not replace
+the active review. Runtime JSON and raw extraction files stay in ignored
+`generated/`; dependency packages and logs are also ignored.
 
-## Art and attachments
+## Completed parts and joint ownership
 
-`native-body-map.json` records original PNG coordinates, view crops, manually
-registered joint centers and the existing layer ownership cuts from the approved
-`layered-sources/body-{anatomy}-{direction}.svg` documents. The builder verifies
-that those SVGs embed the exact fingerprinted approved PNG bytes. The source
-paintings, input SVGs, cut metadata, rig, builder, shared compositor and review
-are included in this commit; no private generator is required.
+Each anatomy and view has neck, torso, pelvis, and left/right upper arm, forearm,
+hand, thigh, calf and foot. Native pixel cuts retain approved skin and shading.
+Pixels already painted in the original supply overlap; TELEA (`cv2.INPAINT_TELEA`,
+radius 5) supplies hidden torso/pelvis/thigh skin and removes crossing cut ink.
+Only explicit repair-mask regions change color. The repair script asserts that
+painted pixels outside these masks remain unchanged.
 
-Each view retains 15 named parts: neck, torso, pelvis, and left/right upper arm,
-forearm, hand, thigh, calf and foot. The builder strips all synthetic underpaint,
-gradients and synthetic concealed limbs. Expanded source cut bands overlap at
-the shoulder, elbow, wrist, waist, hip, knee and ankle. They reveal only existing
-PNG pixels; mask geometry is static in source coordinates and never follows a
-skeleton silhouette.
+Caps are rounded source masks centered on measured joints, with radii measured
+from painted cross-sections. They extend beyond each pivot by the measured
+half-width. A 3px band removes cut-crossing ink while exterior contour ink is
+retained. Missing skin is repaired in source space, not with runtime gradient
+patches or pose-generated destination outlines. The repair report records the
+registered source joints, cap measurements and original painting hashes.
 
-The shared compositor's `rigid` attachment has one source pivot, target joint,
-rotation and common scale (0.13). It rejects body width/height fitting and
-destination silhouette clips. Each anatomy/view uses its own measured source
-vectors. The walk solves joints from those fixed lengths. There are no per-part
-scales, stretched endpoints or frame-dependent source masks. Standing sets all
-rotations to zero and reconstructs the source through the same 15-part route.
+Forearm draws over upper arm; hand over forearm; calf over thigh; foot over calf.
+Far limbs draw behind the body; near upper arm draws in front. Far profile limbs
+use independently repaired source files seeded from the visible limb painting,
+with inner edge ink reduced. After skin tinting, RGB multipliers .75/.77/.80 make
+these limbs 20-25% darker and slightly cooler. Their source origin is explicit;
+they are not claimed to be newly painted independent views.
 
-The default comparison preserves original colors. Optional tint multiplies the
-original luminance by the chosen material color through the explicit skin alpha;
-it preserves source shading and alpha rather than drawing a gradient.
+## Pose contract
 
-## Verification and its limits
+The source scale is .13 for the entire character. Side views use translations
+and rotations with measured bone vectors. The foot follows the shin angle. The
+actual repaired foot contour sets the ground contact by a single root translation.
+Standing has zero rotation. The near side uses this table; the far side is four
+frames offset:
 
-The structural check covers all 108 poses (3 anatomies × 4 directions × 9 frames),
-1,620 rigid matrices, 15 parts per pose, fixed measured bone lengths, source PNG
-identity, no synthetic fills/clips, and forward airborne foot travel. Browser
-checks compare each of the 12 Standing views to the corresponding PNG, with
-zero lost opaque pixels, silhouette overlap above 98%, and mean opaque channel
-error below 1% of 255. Small edge differences come from SVG decoding, overlapping
-alpha edges and PNG resampling. Served file hashes are checked against disk.
-These are technical checks, not visual approval of the walk.
+| Frame | Pose | Thigh forward | Knee bend | Opposite arm |
+| --- | --- | ---: | ---: | ---: |
+| 0 | Contact | 25 | 3 | 20 |
+| 1 | Down | 15 | 15 | 10 |
+| 2 | Passing | 0 | 38 | 0 |
+| 3 | Up | -15 | 20 | -10 |
+| 4 | Push-off | -25 | 5 | -20 |
+| 5 | Recovery | -15 | 35 | -10 |
+| 6 | Return | 0 | 5 | 0 |
+| 7 | Reach | 15 | 10 | 10 |
 
-The broader existing character regression selection also passed: 47 tests across
-18 files, with no failures or skips. The exact file list is recorded in
-`evidence/existing-character-regressions.json`. Published game input hashes are
-recorded separately in `evidence/published-inputs.json` and remain unchanged.
+Front/back legs and arms never rotate in the image plane. The swing calf's only
+scale exception is vertical projection .875; the planted leg stays full length.
+The swing foot rises 3-6 logical pixels. The pelvis/torso move down 1.5px at
+contact and up 1px at passing, with 1px sway toward the planted leg. Socket overlap
+accommodates this small body movement while planted feet stay grounded. Arms
+shift vertically. Ankle x positions remain within 1px of Standing (limit: 2px).
+The compositor rejects this projection on any part other than a front/back calf.
 
-**The walk is not approval-ready.** In profile, the original arm conceals torso
-skin, and the near leg conceals far limb surfaces. An exact cut cannot recover
-pixels that were never painted. The far profile limbs currently reuse the
-matching visible limb pixels, explicitly recorded in the manifest and UI.
-Moving the arm exposes missing torso skin and source boundary strokes. The
-missing-surface list below must be resolved with deliberately authored approved
-source artwork; adding skeleton outlines, gradient patches or stretching would
-violate this review's rules. No such replacements have been added. Clothing
-refitting and broader migration remain blocked on body approval.
+## Verification and evidence
+
+`verify.cjs --browser` covers all 108 poses and 1,620 part transforms. It checks
+source fingerprints, all fifteen parts, exact side angles and four-frame offset,
+foot/shin rotation, child-over-parent ordering, far shading, front/back zero
+rotation, calf projection, foot lift and ankle drift.
+
+The browser renders all poses on magenta. Independent completed-part masks define
+the expected silhouette; a full 5x5 erosion excludes only the antialiased exterior.
+The source and reference masks use the same canvas sampling path. Any interior
+alpha below 250 fails. Independent disks also check the interiors of all twelve
+limb joints. A deliberately erased interior pixel must expose magenta and fail
+the same opacity predicate. Neither expected masks nor joint disks clip or paint
+the character. They are diagnostic references only.
+
+Current reports and twelve magenta strips are in `evidence/`. The old
+`standing-original-comparisons.png` is the 1841f67 baseline, before source repair;
+it is not evidence of the current completed-source pass. Visual body approval
+still belongs to the user. Passing technical checks does not authorize clothing
+refitting, mesh work, integration or publication.
