@@ -1,0 +1,22 @@
+{
+  "id": "purplekush",
+  "lineId": "cl_purplekush",
+  "name": "Purple Kush",
+  "shortName": "Purple Kush",
+  "apiName": "BagseedPurplekushGrowth",
+  "revision": "purplekush-components-1",
+  "libraryRevision": "plant-parts-library-expanded-4",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "blue",
+    "colorName": "Purple",
+    "branching": 1.05
+  },
+  "description": "Broad sage-blue fans / plum-purple calyx clusters",
+  "finishCaption": "Purple fan senescence / silver resin and amber stigmas",
+  "finishPalette": "purple",
+  "coolNights": true,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-46d01f12-0fb1-4b38-bcdd-1eebfe387de4.png"
+}

@@ -67,7 +67,7 @@ async function capture({reviewRoot=review,kitKeys=keys,out=reviewRoot,animate=fa
     entries.forEach((e,i)=>{const x=i%cols*cw,y=100+Math.floor(i/cols)*ch;c.fillStyle='#e0e5d2';c.fillRect(x+8,y+5,cw-16,ch-20);
      if(e.inspectRole){const kit=BagseedPlants.kits[e.kit],a=kit.parts[e.inspectRole],k=Math.min(240/a.crop[2],260/a.crop[3]);c.drawImage(sourceImages[e.kit],...a.crop,x+(cw-a.crop[2]*k)/2,y+130,a.crop[2]*k,a.crop[3]*k);}
      else if(e.inspectEarly){const cv=BagseedPlants.detail(e.p,{joint:'root',span:e.p.stage===2?3.5:10,width:400,height:420}),left=x+(cw-400)/2,top=y+75,ground=top+420*.68;c.save();c.translate(x+cw/2,ground);c.scale(3.5,3.5);BagseedWaterPots.potSprite(c,0,0,3,60);c.restore();c.drawImage(cv,left,top);c.save();c.translate(x+cw/2,ground);c.scale(3.5,3.5);BagseedWaterPots.potSprite(c,0,0,3,60,false,true);c.restore();}
-     else specimen(c,e.p,x+cw/2,y+ch-110,e.scale??scale,0,0,e.potScale??e.scale??scale);
+     else specimen(c,e.p,x+cw/2,y+ch-145,e.scale??scale,0,0,e.potScale??e.scale??scale);
      c.fillStyle='#29483a';c.font='bold 24px Georgia';c.fillText(e.label,x+18,y+ch-58,cw-36);c.font='17px Georgia';c.fillText(e.note||'',x+18,y+ch-25,cw-36);});
     files[name]=cv.toDataURL();
    }
