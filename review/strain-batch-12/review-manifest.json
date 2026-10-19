@@ -1,0 +1,107 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "a7ae26576a4ae4404eb53893f6a8117123cd322b",
+  "coverage": {
+    "releasedDedicatedNamedStrains": 31,
+    "nativeNamedStrains": 37,
+    "remaining": 6,
+    "baseAtlases": 33,
+    "mutationAtlases": 17
+  },
+  "nativeLines": {
+    "cl_ak47": {
+      "kit": "ak47",
+      "name": "AK-47",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "forest",
+        "colorName": "Forest green",
+        "branching": 1
+      },
+      "generatedSource": "exec-8144455e-1168-4b3c-9b6b-f1b423dc5c38.png",
+      "sourceSHA256": "b3a24dfd25a10263a9e8056d034480f11ff20a488813b5e3f345a95eef7ea4ff",
+      "runtimeSHA256": "a9bdb5dd350a702747a3b41fdcc9fa6c70f61f95fc31d66af35c9a3d6cfdddea",
+      "manifestSHA256": "66ba3fac35d4f33ea99297eac9246d49a983dea52f17367c62daecb8919c552d",
+      "productionManifestSHA256": "5e9dd74802b3a2a3d9f8688fda213425ee335a05e699a64de2936c6bf7e5ea65"
+    },
+    "cl_ssh": {
+      "kit": "ssh",
+      "name": "Super Silver Haze",
+      "traits": {
+        "leafShape": "narrow",
+        "leafKey": "lime",
+        "colorName": "Lime green",
+        "branching": 0.9
+      },
+      "generatedSource": "exec-f8487d2d-ec05-4261-8c13-ad0d91ec44a4.png",
+      "sourceSHA256": "f0cece214e33e36b109d95e32a3a1410e64a9a8ed55c0bdd53d1267c4e5cb8d7",
+      "runtimeSHA256": "59f23996dd15c2cd62cc1f85aed841f8c028db41ce0fea85f1c3f7bf50c99898",
+      "manifestSHA256": "750d64b7a1882976fac40ed5d97244ecb3b494b69c5ffb581606ceb05d98a564",
+      "productionManifestSHA256": "970f3eb91e4f5221a32170f7091139eeb47239c0f81d4e625883af474e769841"
+    },
+    "cl_slh": {
+      "kit": "slh",
+      "name": "Super Lemon Haze",
+      "traits": {
+        "leafShape": "narrow",
+        "leafKey": "lime",
+        "colorName": "Lime green",
+        "branching": 0.9
+      },
+      "generatedSource": "exec-d8c45359-e289-46fc-a642-a3295c789278.png",
+      "sourceSHA256": "62375e118df9225ca717cd7ed21189fe7daa0d315f7176c8aa9c1965a6d6486f",
+      "runtimeSHA256": "6a244f6246706043a6fbf4b3d9de4679bc5b0b42602edfa6dce32dedc87c6658",
+      "manifestSHA256": "b7c39693a95061d032a2c43ebb8316b6056046008ec83afbc19e10558a9a1e85",
+      "productionManifestSHA256": "ec36a965db80c4c2d306095f47493b57659b4f773150dccb696624d94b891d3d"
+    }
+  },
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "958c52b8d5c2bfc54d47b14bd868fbf49f4fb92afe5deef59f6b06a5e48559f9",
+  "verification": {
+    "report": "verification.json",
+    "saveReload": true,
+    "readOnly": true,
+    "mutationCombinationsPassed": 45,
+    "coolNightCasesPassed": 0,
+    "staticIntegrityPassed": true,
+    "animation": {
+      "frames": 96,
+      "fps": 12,
+      "seconds": 8
+    },
+    "browserErrors": [],
+    "actualProductionPagePassed": true,
+    "oldLivingSaveUpgradePassed": true,
+    "postIntegrationBrowserTestsPassed": 3,
+    "characterPayloadPreserved": true
+  },
+  "files": {
+    "50-and-90-inches.png": "5e9e0af8fe98b8f89cee51748535e4db1724f1b80d523baad8538a3b1a2c348f",
+    "README.md": "2426b8e649b8f13c463ef33e5375a2fc9aa05d3b35394023b0449f71e2f7b4cf",
+    "ak47-growth.png": "b0069cd7c68cb7205c084b4e5ec54694d5b2cc685a17caf2fb59a3b285e0b522",
+    "care-and-training.png": "db10c5804f37cd078eaebebfb7d751ee278e1892c272344427c263daae52e169",
+    "flower-detail.png": "d8e66dfd696c7fa615a9f99453f555c1c347535d0a254cda23194a5b68d8ea95",
+    "growth-and-wind.gif": "a8430a767495507bd7c7d8bbe74645b5726c10aec368d2f67ccc63c485fe7e7d",
+    "growth-and-wind.mp4": "99bd01d173b435907097bd44873933aadad8a087d285d4717c979a9f19f9fd41",
+    "kits/ak47/assets/components.png": "b3a24dfd25a10263a9e8056d034480f11ff20a488813b5e3f345a95eef7ea4ff",
+    "kits/ak47/assets/components.webp": "a9bdb5dd350a702747a3b41fdcc9fa6c70f61f95fc31d66af35c9a3d6cfdddea",
+    "kits/ak47/sources/manifest.json": "66ba3fac35d4f33ea99297eac9246d49a983dea52f17367c62daecb8919c552d",
+    "kits/ak47/sources/profile.json": "e0dc83bd3c380f6de656adf2fb16c36717b500f1f7e5a3bf32e8fb7f67fe5269",
+    "kits/slh/assets/components.png": "62375e118df9225ca717cd7ed21189fe7daa0d315f7176c8aa9c1965a6d6486f",
+    "kits/slh/assets/components.webp": "6a244f6246706043a6fbf4b3d9de4679bc5b0b42602edfa6dce32dedc87c6658",
+    "kits/slh/sources/manifest.json": "b7c39693a95061d032a2c43ebb8316b6056046008ec83afbc19e10558a9a1e85",
+    "kits/slh/sources/profile.json": "e4db0e983596c07fdcc5595e5e4f672122257ddda26ec55c1b658a7cccbff0a8",
+    "kits/ssh/assets/components.png": "f0cece214e33e36b109d95e32a3a1410e64a9a8ed55c0bdd53d1267c4e5cb8d7",
+    "kits/ssh/assets/components.webp": "59f23996dd15c2cd62cc1f85aed841f8c028db41ce0fea85f1c3f7bf50c99898",
+    "kits/ssh/sources/manifest.json": "750d64b7a1882976fac40ed5d97244ecb3b494b69c5ffb581606ceb05d98a564",
+    "kits/ssh/sources/profile.json": "41e5034f12b8570ff020a42aff0c7c77f52f3c99fbd3aed920f53f71d74d2fc1",
+    "late-flower-senescence.png": "94224c6d19eba6226b4aaac91aacff4e2dabc84620ee0e311de15c69f6740797",
+    "slh-growth.png": "31133cc532a980ec0ce6c36245e34de581484cd8f7943307a8e294f94924dd50",
+    "ssh-growth.png": "4647bde7c5d8981a717e4bdc603e8019681d0be3ec2e1744831aa529389dcec8",
+    "three-strains-in-flower.png": "b11a01f113b32092b8260f86d857daeee66319b97d2a3654d6bf4ed299076259",
+    "vegetative-identities.png": "fb4e275733875061a8a5f11eb330dc541d97b0ec4d686ee4075dc32ef52f688c",
+    "verification.json": "d8876b4188e9ab80c1bcc85900af0c43622e1ec54cd1db751b5c8df31115a997"
+  },
+  "characterRelease": "character-alignment-audit-v6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2"
+}
