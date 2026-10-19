@@ -19083,7 +19083,7 @@ const CastBook = {
   html() {
     const rows = CAST_IDS.filter(id => Cast115.rel(id).met).map(id => { const D = CAST_DEF[id], R0 = Cast115.rel(id), w = Cast115.at(id); return `<div class="li"><canvas class="mini" width="32" height="32" data-draw="portrait:c_${id}"></canvas><div class="grow"><b>${esc(D.name)}</b> <span class="small muted">${esc(D.role)}</span><div class="small">${'♥'.repeat(Math.floor(R0.friend / 2))}${'♡'.repeat(5 - Math.floor(R0.friend / 2))} · ${R0.hist}/3 stories${R0.gift ? ' · keepsake ✓' : ''}</div><div class="small muted">Right now: ${w.phase === 'there' ? esc(CAST_PLACE[w.at] || w.at) : 'on the way somewhere'} · Likes ${esc(D.plants)}</div></div></div>`; });
     const unmet = CAST_IDS.filter(id => !Cast115.rel(id).met).length;
-    return `<h3>West side & visitors</h3>${rows.length ? `<div class="list115">${rows.join('')}</div>` : UI115.empty('Walk west through Willow Park to Westbrook Way to meet new neighbors.')}${unmet ? `<p class="small muted">${unmet} more people to meet.</p>` : ''}`;
+    return `<h3>West side & visitors</h3>${rows.length ? `<div class="list115">${rows.join('')}</div>` : UI115.empty(SHELVED.westbrook?'Westbrook Way residents pass through Willow Park, the community garden and Main Street. Say hello when you see them.':'Walk west through Willow Park to Westbrook Way to meet new neighbors.')}${unmet ? `<p class="small muted">${unmet} more people to meet.</p>` : ''}`;
   }
 };
 INIT115.push((st) => { st.v115 = st.v115 || {}; st.v115.cast = st.v115.cast || {}; });
@@ -22864,7 +22864,7 @@ Shop5.draw=function(c,t){const id=this.id(),D=this.def();if(!D)return;c.drawImag
 /* Westbrook uses the existing Cast relationship, Memories, volunteer voucher
    and Patient Care ledgers. Children are never patient candidates. */
 const WestSocial115={needs:{arthur:'arthritis-related pain, discussed with my clinician',rosie:'persistent pain after an old injury, under my care team'},
- help(id){const D=CAST_DEF[id],R0=Cast115.rel(id),jobs={mateo:['market','Restock produce crates'],elena:['garden','Water the starters'],rosa:['market','Sort the produce'],mara:['threads','Fold returned garments'],amina:['hardware','Sort mixed bolts'],ronan:['community','Set up the community room'],cass:['cafe','Refill the milk station'],hugo:['garden','Water the starter trays'],enzo:['community','Prepare sample-information handouts']},job=jobs[id]||['community',D.kid?'Help label the family garden plot':D.role.toLowerCase().includes('artist')?'Help hang the community artwork':'Tidy the neighborhood garden paths'];
+ help(id){const D=CAST_DEF[id],R0=Cast115.rel(id),jobs={mateo:['market','Restock produce crates'],elena:['garden','Water the starters'],rosa:['market','Sort the produce'],mara:[SHELVED.threads?'community':'threads',SHELVED.threads?'Sort donated fabric for the swap table':'Fold returned garments'],amina:['hardware','Sort mixed bolts'],ronan:['community','Set up the community room'],cass:['cafe','Refill the milk station'],hugo:['garden','Water the starter trays'],enzo:['community','Prepare sample-information handouts']},job=jobs[id]||['community',D.kid?'Help label the family garden plot':D.role.toLowerCase().includes('artist')?'Help hang the community artwork':'Tidy the neighborhood garden paths'];
  const ready=state.scene==='shop115'&&Shop5.id()===job[0]||job[0]==='community'&&state.scene==='cgarden';dialog({who:'c_'+id,name:D.first,text:R0.helpDay115===state.day?'Thanks again for helping today!':R0.helpTask115?`Meet me at ${SHOP115[job[0]].n}. We will ${job[1].toLowerCase()}. 30 minutes, 6 energy. Reward: friendship, community reputation and a shop voucher.`:`Could you help me ${job[1].toLowerCase()} at ${SHOP115[job[0]].n}?`,choices:[{label:ready?'Do the task (30 min, 6 energy)':'Accept and mark destination',fn:()=>{if(R0.helpDay115===state.day)return;if(!ready){R0.helpTask115={shop:job[0],task:job[1],day:state.day};Memory115.add('help:'+id+':'+state.day,D.first+' needs a hand',job[1]+' at '+SHOP115[job[0]].n,D.first);SaveSys.request('help accepted');return;}if(!spend(6,30))return;R0.helpTask115=null;R0.helpDay115=state.day;Cast115.bump(id,.65,'help');state.rep.community+=.35;Voucher115.grant(VSTORE115[job[0]]||'garden',id);toast(D.first+' thanks you. Friendship and a volunteer voucher earned.','social');SaveSys.important('Westbrook help');}},{label:'Another time',fn:()=>{}}]});},
  registry(id){const D=CAST_DEF[id],R0=Cast115.rel(id);if(!this.needs[id]||D.kid||D.teen)return;const ready=R0.friend>=4&&state.npc.patients.rosalind.met;dialog({who:'c_'+id,name:D.first,text:`I have been talking with my clinician about ${this.needs[id]}. ${ready?'I would like information about your registry. I will handle consent and qualifications with my care team.':'Let us get to know each other first. Your registry referral also needs to be established.'}`,choices:ready?[{label:'Explain the registry and ask permission',fn:()=>dialog({who:'c_'+id,name:D.first,text:'Yes, I would like to opt in. My care team stays in charge. Please add my preferences to the existing Care Desk.',choices:[{label:'Register with their consent',fn:()=>{if(state.npc.patients[id]?.met)return;state.npc.patients[id]={met:true,friend:R0.friend,trust:3,neighbor:false,consent115:{day:state.day,qualified:true},lastServed:-1,request:{day:state.day},history:[],favorites:[],claims:[]};Pt.prefs(id);Memory115.add('patient:'+id,D.first+' opted into the registry','Consent recorded. Preferences and requests are available in Care Desk.',D.first);SaveSys.important('Westbrook registry');toast(D.first+' joined Care Desk with consent.','social');}},{label:'Wait for another day',fn:()=>{}}]})},{label:'Respect their privacy',fn:()=>{}}]:[{label:'Of course',fn:()=>{}}]});}
 };
@@ -27799,5 +27799,72 @@ Panels.codex = (prev => function (id) {
 })(Panels.codex);
 hydrate = (prev => function (root) { prev(root); root.querySelectorAll('canvas[data-draw^="mutart:"]').forEach(cv => { const [, k, mode] = cv.dataset.draw.split(':'); safeRun('mutart', () => MutGen.draw(cv, k, mode)); }); })(hydrate);
 POSTLOAD115.push(() => { for (const p of Object.values(state.plants || {})) if (p && p.pheno && p.genome115) MutGen.sync(p); });
+</script>
+<script>
+/* ==== shelved.js ====
+   Content put away until its artwork catches up (October 2026 audit,
+   docs/audit/game-audit-oct-2026.md). Nothing is deleted: saves keep every
+   item, friendship and receipt. Flip a flag to bring a feature back.
+   • threads: Willow Threads shop, its 240-design catalog and LeafCart › Threads.
+   • westbrook: the road west of Willow Park and its homes. Residents still
+     visit the park, community garden and Main Street.
+   • wardrobe: creator and mirror offer only garments with finished art.
+     Pieces a save already wears stay selectable so they can be changed. */
+const SHELVED = { threads: true, westbrook: true, wardrobe: true };
+const SHELF_TOPS = ['hoodie', 'flannel', 'cardigan', 'jacket'];
+const SHELF_SLOTS = ['hat', 'glasses', 'acc'];
+if (SHELVED.threads) {
+  const soon = 'Willow Threads is closed for a refit. Mara says it will reopen in a future update.';
+  Town.use = (prev => function (id) { if (id === 'threads') { think(soon, 4200); return; } return prev.apply(this, arguments); })(Town.use);
+  Shop5.enter = (prev => function (id) { if (id === 'threads') { think(soon, 4200); return; } return prev.apply(this, arguments); })(Shop5.enter);
+  ShopHours.open = (prev => function (id) { return id === 'threads' ? false : prev.apply(this, arguments); })(ShopHours.open);
+  ShopHours.line = (prev => function (id) { return id === 'threads' ? 'CLOSED · reopening in a future update' : prev.apply(this, arguments); })(ShopHours.line);
+  Cloth115.open = (prev => function (kind) { if (state.scene !== 'shop115') { think(soon, 4200); return; } return prev.apply(this, arguments); })(Cloth115.open);
+  Cloth115.online = function () { think(soon, 4200); };
+  STORES.leafcart.cats = STORES.leafcart.cats.filter(([k]) => k !== 'clothes');
+  POSTLOAD115.push(() => { if (state.scene === 'shop115' && Shop5.id() === 'threads') Scene.place('town', 'b_threads'); });
+}
+if (SHELVED.westbrook) {
+  SCENES.park.exits = SCENES.park.exits.filter(e => e.to !== 'westway');
+  SCENES.park.solids = (prev => function () { return prev.apply(this, arguments).concat([[0, 104, 34, 72]]); })(SCENES.park.solids);
+  SCENES.park.spawns.west = [48, 140, 'right'];
+  delete SCENE_LINKS.park.westway; delete SCENE_LINKS.street.westway; delete SCENE_LINKS.cgarden.westway;
+  Scene.go = (prev => function (to) { if (to === 'westway') { think('The road to Westbrook Way is closed for work. New neighbors are coming in a future update.', 4200); return; } return prev.apply(this, arguments); })(Scene.go);
+  Scene.interact = (prev => function (k, a) { if (k === 'pk' && a === 'signW') { think('Westbrook Way is past the barrier. The road is closed for now; the neighbors still come through the park.', 4600); return true; } return prev.apply(this, arguments); })(Scene.interact);
+  /* a road-work barrier at the park's west edge */
+  ParkArt.draw = (prev => function (c, t) {
+    prev.apply(this, arguments);
+    const x = 6, y = 116, w = pxTextW('SOON') + 4;
+    R(c, x + 2, y + 6, 2, 20, '#5a3720'); R(c, x + w - 4, y + 6, 2, 20, '#5a3720');
+    R(c, x - 1, y - 1, w + 2, 9, '#2b2018');
+    for (let i = 0; i < w; i += 4) R(c, x + i, y, Math.min(4, w - i), 7, (i / 4) % 2 ? '#efe4cc' : '#e0702a');
+    R(c, x - 1, y + 10, w + 2, 9, '#2b2018'); R(c, x, y + 11, w, 7, '#efe4cc'); pxText(c, 'SOON', x + 2, y + 11, 1, '#8a3a1a');
+  })(ParkArt.draw);
+  POSTLOAD115.push(() => {
+    const home = state.scene === 'home115' && Home5.def && Home5.def();
+    if (state.scene === 'westway' || (home && home.street === 'westway')) Scene.place('park', 'west');
+  });
+  safeRun('shelf-help', () => { for (const sec of HELP) if (Array.isArray(sec[2])) sec[2] = sec[2].filter(line => !/Westbrook|Willow Threads/.test(line)); });
+}
+if (SHELVED.wardrobe) {
+  for (const id of ['cardigan', 'jacket']) if (!STARTER_WARDROBE.shirt.includes(id)) STARTER_WARDROBE.shirt.push(id);
+  if (!STARTER_WARDROBE.shoes.includes('rainboots')) STARTER_WARDROBE.shoes.push('rainboots');
+  const allowed = (slot, id, cur) => id === cur || (slot === 'shirt' || slot === 'topS' ? SHELF_TOPS.includes(id) : !SHELF_SLOTS.includes(slot) || id === 'none');
+  /* drop unfinished chips; drop hat/glasses/accessory rows unless something is worn there */
+  const prune = (root, act, look) => {
+    if (!root) return;
+    const key = { shirt: 'topS', bottom: 'bottomS', shoes: 'shoesS' };
+    for (const b of root.querySelectorAll(`button.chip[data-act="${act}"]`)) {
+      const [slot, id] = (b.dataset.arg || '').split(':'); if (!['shirt', 'topS', ...SHELF_SLOTS].includes(slot)) continue;
+      if (!allowed(slot, id, look[key[slot] || slot])) b.remove();
+    }
+    for (const row of root.querySelectorAll('.opt-row')) {
+      const chips = [...row.querySelectorAll(`button.chip[data-act="${act}"]`)], slot = chips[0] && chips[0].dataset.arg.split(':')[0];
+      if (SHELF_SLOTS.includes(slot) && (look[slot] || 'none') === 'none') row.remove();
+    }
+  };
+  renderCreator = (prev => function () { const r = prev.apply(this, arguments); prune($('#screen-create'), 'cr', runtime.cr || {}); return r; })(renderCreator);
+  renderPanel = (prev => function () { const r = prev.apply(this, arguments); if (state && $('#panelBody')?.querySelector('[data-act="wear"][data-arg^="shirt:"]')) prune($('#panelBody'), 'wear', Object.assign({ topS: state.player.topS || state.player.shirtS }, state.player)); return r; })(renderPanel);
+}
 </script>
 </body></html>
