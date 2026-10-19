@@ -1,0 +1,116 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "796764f94011c9c3945c1bc71cc92ee92e3e3aa1",
+  "mutationsAreSeparate": 15,
+  "coverage": {
+    "namedCatalogStrains": 37,
+    "approvedDedicatedStrainsBeforeBatch": 12,
+    "newDedicatedStrainSamples": 3,
+    "remainingAfterThisBatch": 22,
+    "approvedDedicatedStrains": 15
+  },
+  "nativeLines": {
+    "cl_ogkush": {
+      "kit": "ogkush",
+      "name": "OG Kush",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "forest",
+        "colorName": "Forest green",
+        "branching": 1
+      },
+      "generatedSource": "exec-f682c701-881d-4413-872a-46c6c5cb9182.png",
+      "sourceSHA256": "e6e52953cc0db6d8674290ae5114013bc99d3196337cb0346a0854ffa01543fa",
+      "runtimeSHA256": "999c982db8e7069e53912f2b26b2d9e79386a59776ea59ea0ec92a9a4ac0016a",
+      "manifestSHA256": "ff0209b66ff8526a1813ad35b40d246a3fcd5dd579ad66d648be426940098f62",
+      "productionManifestSHA256": "6393ee00a92e33985e77d7917df5ff9b6a1066872867bb3e4b975b11a4c547fc"
+    },
+    "cl_whitewidow": {
+      "kit": "whitewidow",
+      "name": "White Widow",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "lime",
+        "colorName": "Lime green",
+        "branching": 1.05
+      },
+      "generatedSource": "exec-5b6a09dc-1c71-4c65-b6ce-74830c360d78.png",
+      "sourceSHA256": "a3153a719ed9047c04b7ec8339c666a1146d9fd2efc3e5071986cdac6439c7c8",
+      "runtimeSHA256": "04a76082ed15b2aff4be7c97d7cd819bc0e95cdfd774c9557c61caa32951c00f",
+      "manifestSHA256": "5dd93a6f3334a3072be988f6c44a1128eb4545ac0730560ad8bd951c5cbbd58d",
+      "productionManifestSHA256": "a561b665cae77cceb356f381d55c5927d805832516524ac9500e836492d27269"
+    },
+    "cl_northernlights": {
+      "kit": "northernlights",
+      "name": "Northern Lights",
+      "traits": {
+        "leafShape": "broad",
+        "leafKey": "forest",
+        "colorName": "Forest green",
+        "branching": 1.1
+      },
+      "generatedSource": "exec-d73e0002-9e26-485c-9756-9a5b7c21afe1.png",
+      "sourceSHA256": "616cd68d7afedb78c6fc5cdd9a3ce075a23d934ef38a474ce2072ab31f433db0",
+      "runtimeSHA256": "cc76a656cf6c537d98a2eadbff8cd5138654a2d2fe319dd3fd6e7d38b29e60e8",
+      "manifestSHA256": "9a520780678c41567584fe749d0a611345d10e136c1a9a9f2658dd8b25d46ac1",
+      "productionManifestSHA256": "990efae207a2691055e3aff3ae67bf31ff3ef57cb1d17c08b828071edcc3725d"
+    }
+  },
+  "publishedHTMLSHA256": "90d358713dea62009be138a8a03c9b7c029b8c6057ee92dd7f3801819a373cb9",
+  "publishedHTMLUnchanged": true,
+  "verification": {
+    "report": "verification.json",
+    "saveReload": true,
+    "mutationCombinationsPassed": 45,
+    "sharedModelTestsPassed": 15,
+    "staticIntegrityPassed": true,
+    "animation": {
+      "frames": 96,
+      "fps": 12,
+      "seconds": 8
+    },
+    "browserErrors": [],
+    "productionReport": "production-verification.json",
+    "actualProductionPagePassed": true,
+    "existingSaveArtworkUpgradePassed": true,
+    "postIntegrationTestsPassed": 25,
+    "systemBrowser": "/usr/bin/chromium",
+    "latestCharacterPayloadPreserved": true
+  },
+  "files": {
+    "50-and-90-inches.png": "6ad54d10444880cd89acb74dc6ebab62aeb33e1f8b04de23a041a1175caf6986",
+    "README.md": "4ad78c5400cfae112d1184a0e76d0f7d7f1ec6d9950e440a9cad38efc0afdfad",
+    "care-and-training.png": "b4be5a6983646bd00ea5b97470ba9869c46b77368d68a4ed912c0287855a64e1",
+    "flower-detail.png": "c15475e9229b5c74386a21195df29af4c23978a3b299481e3d01b692c3fe72ba",
+    "growth-and-wind.gif": "ab991305a0b28ff605990ecb36d9d9c4b6c4bb35f554deb5ee76c1449b72c065",
+    "growth-and-wind.mp4": "cc39319d90e92cd6471a0b8ecd6bc6b5a615f94fb6973387a2c7737bfa378896",
+    "kits/northernlights/assets/components.png": "616cd68d7afedb78c6fc5cdd9a3ce075a23d934ef38a474ce2072ab31f433db0",
+    "kits/northernlights/assets/components.webp": "cc76a656cf6c537d98a2eadbff8cd5138654a2d2fe319dd3fd6e7d38b29e60e8",
+    "kits/northernlights/sources/manifest.json": "9a520780678c41567584fe749d0a611345d10e136c1a9a9f2658dd8b25d46ac1",
+    "kits/northernlights/sources/profile.json": "b200fb2a4d167205886b91db4cbb4db9305a2cebb1fc2548f7a3eb9dbd9328b1",
+    "kits/ogkush/assets/components.png": "e6e52953cc0db6d8674290ae5114013bc99d3196337cb0346a0854ffa01543fa",
+    "kits/ogkush/assets/components.webp": "999c982db8e7069e53912f2b26b2d9e79386a59776ea59ea0ec92a9a4ac0016a",
+    "kits/ogkush/sources/manifest.json": "ff0209b66ff8526a1813ad35b40d246a3fcd5dd579ad66d648be426940098f62",
+    "kits/ogkush/sources/profile.json": "0b52440b7f3d50710dd33aa353c503a013246ff56d7c929bd4b46863ddacd92d",
+    "kits/whitewidow/assets/components.png": "a3153a719ed9047c04b7ec8339c666a1146d9fd2efc3e5071986cdac6439c7c8",
+    "kits/whitewidow/assets/components.webp": "04a76082ed15b2aff4be7c97d7cd819bc0e95cdfd774c9557c61caa32951c00f",
+    "kits/whitewidow/sources/manifest.json": "5dd93a6f3334a3072be988f6c44a1128eb4545ac0730560ad8bd951c5cbbd58d",
+    "kits/whitewidow/sources/profile.json": "11214d9eda2c0f79ec4a3419fc3e441ca271f15276fa75f5d9e91b98b2eb7799",
+    "late-flower-senescence.png": "4d20c5495997669f9a4f95a305da0d1908f808d7386d44c829d99c68f95bed88",
+    "northernlights-growth.png": "913991538c1d0598bdc2de28d8f12509bdacf4d310c5a93342b1bd675094bf2e",
+    "ogkush-growth.png": "251b7e9f88c7cd25328858e8eb24b0b5e9238487181cdfee76fbf2c1bcf9f76a",
+    "production-verification.json": "e8f6b4c01a3d26bc980e310bbb53b5ad6417062d5925890be31fe3dadf528b71",
+    "three-strains-in-flower.png": "134168743f771f2544e4808054c740b580bfc75b38766184d02cf5368e92817b",
+    "vegetative-identities.png": "cf376bad63724f78117d9c0a24f5d83acf35aaa73b535fed0e32ec5029b3c466",
+    "verification.json": "16788102d74684c3073b98d12b466e82d96c1380c7249a5e66ff8abc4c761ac1",
+    "whitewidow-growth.png": "8915a16b557c174ffe4f554e79d9d23bdf5facb51b4c96ad28460a992e6e180e"
+  },
+  "characterRelease": "character-alignment-audit-v6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2",
+  "assetStorage": {
+    "baseAtlases": 17,
+    "mutationAtlases": 17,
+    "totalPlantAtlases": 34,
+    "publishedImagesDir": "public/assets/embedded"
+  }
+}

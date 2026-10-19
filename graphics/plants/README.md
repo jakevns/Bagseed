@@ -69,12 +69,12 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 
 ## Final named strain and additional experimental profiles
 
-`gasstation@1` completes component-kit coverage of all 12 named native catalog strains with narrow blue-green foliage, mint-blue flower spears and ochre senescence. At the user's request, `boglantern-lavender@1` and `frogprince-red@1` add Lavender Marsh and Copper Reed phenotype families of the existing Bog Lantern and Frog Prince lines. These are extra profiles, not new native strains. `lineId` retains the actual parent line, and `registerAsDefault: false` preserves the earlier default profiles. Existing saved plant/clone identities stay pinned. The profiles enforce compatible expressed foliage and flower palettes and can be selected explicitly through the existing identity helper's `profile` option. Native automatic phenotype selection and full painted-renderer integration remain pending. All three kits are approved in their review folders and `review/plant-batch-05/`.
+`gasstation@1` completes component-kit coverage of the original 12 named catalog strains with narrow blue-green foliage, mint-blue flower spears and ochre senescence. At the user's request, `boglantern-lavender@1` and `frogprince-red@1` add Lavender Marsh and Copper Reed phenotype families of the existing Bog Lantern and Frog Prince lines. These are extra profiles, not new native strains. `lineId` retains the actual parent line, and `registerAsDefault: false` preserves the earlier default profiles. Existing saved plant/clone identities stay pinned. The profiles enforce compatible expressed foliage and flower palettes and can be selected explicitly through the existing identity helper's `profile` option. Native automatic phenotype selection and full painted-renderer integration remain pending. All three kits are approved in their review folders and `review/plant-batch-05/`.
 
 
 ## Live renderer integration
 
-`tools/compile-live-plants.cjs` verifies all fourteen approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
+`tools/compile-live-plants.cjs` verifies all seventeen approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
 
 Visual recipes (`paintArt115`, schema v1) record the component donor kits, stable phenotype seed and expressed traits. Actual plant height, node count, water, health, nutrition, stress, pruning and training remain live inputs. Recipes are stored on plant and clone phenotype records, copied into photos, and populated for older saves at post-load and save boundaries. Rendering does not alter biology. Existing mutant genes from the latest merged update remain native; the painted compositor expresses all fifteen leaf/color/structure traits, including stacked traits.
 
@@ -85,7 +85,7 @@ Earlier per-strain notes describe the original prototype milestone. Production i
 
 The first mutation implementation is [Freakshow](mutations/freakshow/README.md).
 Its two leaf forms use dedicated painted development and mature-fan atlases,
-loaded through the same startup gate as the fourteen strain kits. The live
+loaded through the same startup gate as the seventeen strain kits. The live
 renderer applies the existing phenotype palette, finishing colors, symptoms,
 training and wind. Mutation kits are separate from the strain catalog; native
 mutation identities and genotype/save data are preserved.
@@ -114,3 +114,9 @@ The user approved these three gameplay implementations for production. Twin Lead
 ## Pocket Dwarf and Triploid
 
 The final two native mutation families have user-approved gameplay implementations. All fifteen mutation families now have approved component artwork. Pocket Dwarf has a compact connected axis, shorter branch reach and retained mature leaf detail at its actual saved height. Triploid retains inherited anatomy; a copper/verdigris 3x identity tag appears after discovery. The live renderer no longer forces uniformly enlarged/darkened Triploid tissue. Hidden traits remain unmarked, and revealing a trait invalidates its sprite cache. The guide description follows the approved scientific references while preserving existing Bagseed reproduction and balance rules. Review: `review/mutation-detail/implemented-batch-06/`.
+
+## Expanded catalog: OG Kush, White Widow and Northern Lights
+
+The full running catalog has **37 named strains**, plus generated Bag Seed. The original twelve dedicated strain kits and two experimental phenotype kits did not provide individual artwork for the 25 expanded catalog strains. This approved batch adds dedicated `ogkush`, `whitewidow` and `northernlights` kits mapped to `cl_ogkush`, `cl_whitewidow` and `cl_northernlights`. Production now has **15 dedicated named strains, 17 base atlases and 17 mutation atlases**; 22 named strains still use shared donor parts pending individual artwork. The fifteen mutation types are separate from strain coverage.
+
+Live plants receive matching new parts at create/load/save boundaries, preserving saved identity seeds, expressed traits, genomes and physical height. Incompatible traits retain their compatible donor parts. Historical photos retain pinned recipes. Native startup waits for all 34 plant atlases. Review, original PNGs, growth, senescence, care, expansion and wind: `review/strain-batch-06/`.

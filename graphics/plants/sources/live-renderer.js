@@ -17,7 +17,19 @@
   })[0];
   return{v:1,seed,leafKit:rank('leaf'),flowerKit:rank('flower'),traits:g};
  }
- function ensure(p){if(!p)return;const r=copy(recipe(p));p.paintArt115=r;if(p.pheno)p.pheno.paintArt115=copy(r);return r;}
+ // Upgrade living catalog plants at create/load/save boundaries. Pure recipe
+ // reads (including historical photos) keep their pinned parts. Seeds, expressed
+ // traits and simulation genomes never reroll during an artwork upgrade.
+ const dedicatedLines={cl_ogkush:'ogkush',cl_whitewidow:'whitewidow',cl_northernlights:'northernlights'};
+ function ensure(p){
+  if(!p)return;const r=copy(recipe(p)),id=dedicatedLines[p.lineId],kit=DATA[id];
+  if(kit&&r.lineArtRevision!==kit.revision){
+   if(r.traits.leafShape===kit.traits.leafShape&&r.traits.leafKey===kit.traits.leafKey)r.leafKit=id;
+   if(r.traits.colorName===kit.traits.colorName)r.flowerKit=id;
+   r.lineArtRevision=kit.revision;
+  }
+  p.paintArt115=r;if(p.pheno)p.pheno.paintArt115=copy(r);return r;
+ }
  function all(){if(!state?.plants)return;for(const p of Object.values(state.plants))ensure(p);runtime.sprites.clear();}
  function descriptor(p){const r=recipe(p),arts=typeof Mut!=='undefined'?Mut.list(p).map(k=>MUTS[k]?.art).filter(Boolean):[];
   const view=Object.assign(Object.create(p),{artIdentity:{seed:r.seed,traits:r.traits},pheno:{...p.pheno,mut:arts.includes('ink')?'ink':p.pheno?.mut},visualState:{...p.visualState,mutationArts:arts}});
@@ -223,5 +235,5 @@
  const prevWrite=SaveSys.write;SaveSys.write=function(){if(state?.plants)for(const p of Object.values(state.plants))ensure(p);return prevWrite.apply(this,arguments);};
  const atlases={...DATA};for(const m of Object.values(MUTATIONS))for(const [name,a]of Object.entries(m.atlases))atlases['mutation:'+m.mutationKey+':'+name]=a;
  const ready=Promise.all(Object.entries(atlases).map(([id,a])=>new Promise((resolve,reject)=>{const im=new Image();images[id]=im;im.onload=resolve;im.onerror=()=>reject(Error('Plant artwork failed: '+id));im.src=a.runtime;}))).then(()=>{loaded=true;all();});
- window.BagseedPlants=Object.freeze({revision:'live-plants-7',ready,recipe,ensure,descriptor,frame,build,detail,kits:DATA,mutations:MUTATIONS,atlasCount:Object.keys(atlases).length,Model,get loaded(){return loaded;},get tileCount(){return tiles.size;}});
+ window.BagseedPlants=Object.freeze({revision:'live-plants-8',ready,recipe,ensure,descriptor,frame,build,detail,kits:DATA,mutations:MUTATIONS,atlasCount:Object.keys(atlases).length,Model,get loaded(){return loaded;},get tileCount(){return tiles.size;}});
 })();

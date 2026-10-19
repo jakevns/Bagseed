@@ -2,9 +2,9 @@ const {test}=require('node:test'),assert=require('node:assert/strict'),fs=requir
 const library=require('../graphics/plants/sources/library.json'),identity=require('../graphics/plants/sources/phenotype-library.cjs'),model=require('../graphics/plants/porchlight/sources/model.cjs'),canopy=require('../graphics/plants/sources/canopy.cjs'),night=require('../graphics/plants/sources/night-color.cjs');
 const ids=['gasstation','boglantern-lavender','frogprince-red'],root=path.resolve(__dirname,'..'),sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 test('last catalog strain and two extra profiles preserve all eleven earlier kits and native defaults',()=>{
- const saved={};for(const id of Object.keys(library.strains).filter(id=>id!=='gasstation'))saved[id]={parts:Object.fromEntries(Object.entries(library.parts).filter(([key])=>key.startsWith(id+'.'))),profile:library.profiles[id+'@1'],strain:library.strains[id]};
+ const saved={};for(const id of Object.keys(library.strains).filter(id=>id!=='gasstation'&&!id.startsWith('cl_')))saved[id]={parts:Object.fromEntries(Object.entries(library.parts).filter(([key])=>key.startsWith(id+'.'))),profile:library.profiles[id+'@1'],strain:library.strains[id]};
  assert.equal(Object.keys(saved).length,11);assert.equal(sha(JSON.stringify(saved)),'034c7cbc0c172b8b43232a0079bd726de2c2abd5e8435a366c605d204e16fbb6');
- assert.equal(Object.keys(library.strains).length,12);assert.equal(library.strains.gasstation,'gasstation@1');assert.equal(library.strains.boglantern,'boglantern@1');assert.equal(library.strains.frogprince,'frogprince@1');
+ assert.equal(Object.keys(library.strains).filter(id=>!id.startsWith('cl_')).length,12);assert.equal(library.strains.gasstation,'gasstation@1');assert.equal(library.strains.boglantern,'boglantern@1');assert.equal(library.strains.frogprince,'frogprince@1');
  assert.equal(library.strains['boglantern-lavender'],undefined);assert.equal(library.strains['frogprince-red'],undefined);
  const source=fs.readFileSync(path.join(root,'src/game.html'),'utf8'),native=require('node:vm').runInNewContext('('+source.match(/const LINES = (\[[\s\S]*?\n\]);/)[1]+')');
  assert.equal(native.length,12);const gas=native.find(g=>g.id==='gasstation');assert.equal(gas.heightF,1.3);assert.equal(gas.lifecycle,'photo');assert.equal(gas.leafShape,'narrow');assert.equal(gas.colorName,'Blue-green');

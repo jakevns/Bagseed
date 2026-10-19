@@ -2,7 +2,7 @@
 
 Status: artwork, growth cycles, color shifts and wind samples approved on 2026-10-17; user requested the push.
 
-The user explicitly chose additional experimental phenotypes after the catalog audit found only Gas Station Sushi unfinished. This batch completes the twelve named catalog kits and adds two extra compatible profiles of existing native lines.
+The user explicitly chose additional experimental phenotypes after an audit of the original twelve-strain list found only Gas Station Sushi unfinished. That audit missed the 25 expanded catalog strains; dedicated work for them resumes in `review/strain-batch-06/`. This batch completes the original twelve named catalog kits and adds two extra compatible profiles of existing native lines.
 
 ![Late-flower comparison](next-three-late-flower.png)
 

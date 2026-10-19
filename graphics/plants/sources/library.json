@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "plant-parts-library-14",
+  "revision": "plant-parts-library-expanded-1",
   "parts": {
     "porchlight.seed@1": {
       "id": "porchlight.seed@1",
@@ -3969,6 +3969,846 @@
         246,
         282
       ]
+    },
+    "ogkush.seed@1": {
+      "id": "ogkush.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        138,
+        148,
+        84,
+        89
+      ]
+    },
+    "ogkush.radicle@1": {
+      "id": "ogkush.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.920635,
+        0.979452
+      ],
+      "when": {},
+      "crop": [
+        427,
+        127,
+        126,
+        146
+      ]
+    },
+    "ogkush.cotyledon@1": {
+      "id": "ogkush.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.497041,
+        0.964286
+      ],
+      "when": {},
+      "crop": [
+        709,
+        146,
+        169,
+        84
+      ]
+    },
+    "ogkush.singleLeaf@1": {
+      "id": "ogkush.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.507463,
+        0.983425
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1076,
+        90,
+        67,
+        181
+      ]
+    },
+    "ogkush.threeLeaf@1": {
+      "id": "ogkush.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.487179,
+        0.982759
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        85,
+        387,
+        195,
+        174
+      ]
+    },
+    "ogkush.fiveLeaf@1": {
+      "id": "ogkush.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.475806,
+        0.984127
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        399,
+        376,
+        186,
+        189
+      ]
+    },
+    "ogkush.sevenLeaf@1": {
+      "id": "ogkush.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.486047,
+        0.984772
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        687,
+        373,
+        215,
+        197
+      ]
+    },
+    "ogkush.sugarLeaf@1": {
+      "id": "ogkush.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.514451,
+        0.981928
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1018,
+        392,
+        173,
+        166
+      ]
+    },
+    "ogkush.stem@1": {
+      "id": "ogkush.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.490196,
+        0.980645
+      ],
+      "when": {},
+      "crop": [
+        145,
+        698,
+        51,
+        155
+      ]
+    },
+    "ogkush.node@1": {
+      "id": "ogkush.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.476744,
+        0.979452
+      ],
+      "when": {},
+      "crop": [
+        407,
+        710,
+        172,
+        146
+      ]
+    },
+    "ogkush.femaleEarly@1": {
+      "id": "ogkush.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.516908,
+        0.982036
+      ],
+      "when": {},
+      "crop": [
+        684,
+        699,
+        207,
+        167
+      ]
+    },
+    "ogkush.femaleMid@1": {
+      "id": "ogkush.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.523077,
+        0.983607
+      ],
+      "when": {},
+      "crop": [
+        1001,
+        686,
+        195,
+        183
+      ]
+    },
+    "ogkush.femaleLate@1": {
+      "id": "ogkush.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.506977,
+        0.985437
+      ],
+      "when": {},
+      "crop": [
+        79,
+        965,
+        215,
+        206
+      ]
+    },
+    "ogkush.maleClosed@1": {
+      "id": "ogkush.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.507353,
+        0.011236
+      ],
+      "when": {},
+      "crop": [
+        429,
+        983,
+        136,
+        178
+      ]
+    },
+    "ogkush.maleOpen@1": {
+      "id": "ogkush.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/ogkush/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.479532,
+        0.011236
+      ],
+      "when": {},
+      "crop": [
+        713,
+        984,
+        171,
+        178
+      ]
+    },
+    "whitewidow.seed@1": {
+      "id": "whitewidow.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        133,
+        150,
+        92,
+        95
+      ]
+    },
+    "whitewidow.radicle@1": {
+      "id": "whitewidow.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.92623,
+        0.978261
+      ],
+      "when": {},
+      "crop": [
+        421,
+        135,
+        122,
+        138
+      ]
+    },
+    "whitewidow.cotyledon@1": {
+      "id": "whitewidow.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.481283,
+        0.970874
+      ],
+      "when": {},
+      "crop": [
+        699,
+        147,
+        187,
+        103
+      ]
+    },
+    "whitewidow.singleLeaf@1": {
+      "id": "whitewidow.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.532787,
+        0.983146
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1051,
+        97,
+        61,
+        178
+      ]
+    },
+    "whitewidow.threeLeaf@1": {
+      "id": "whitewidow.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.484772,
+        0.983146
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        79,
+        393,
+        197,
+        178
+      ]
+    },
+    "whitewidow.fiveLeaf@1": {
+      "id": "whitewidow.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.984375
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        386,
+        380,
+        198,
+        192
+      ]
+    },
+    "whitewidow.sevenLeaf@1": {
+      "id": "whitewidow.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.481567,
+        0.985
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        683,
+        376,
+        217,
+        200
+      ]
+    },
+    "whitewidow.sugarLeaf@1": {
+      "id": "whitewidow.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.514451,
+        0.981928
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        996,
+        404,
+        173,
+        166
+      ]
+    },
+    "whitewidow.stem@1": {
+      "id": "whitewidow.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.480769,
+        0.980519
+      ],
+      "when": {},
+      "crop": [
+        148,
+        709,
+        52,
+        154
+      ]
+    },
+    "whitewidow.node@1": {
+      "id": "whitewidow.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.484277,
+        0.980392
+      ],
+      "when": {},
+      "crop": [
+        405,
+        711,
+        159,
+        153
+      ]
+    },
+    "whitewidow.femaleEarly@1": {
+      "id": "whitewidow.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.515625,
+        0.983516
+      ],
+      "when": {},
+      "crop": [
+        688,
+        693,
+        192,
+        182
+      ]
+    },
+    "whitewidow.femaleMid@1": {
+      "id": "whitewidow.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.529101,
+        0.983957
+      ],
+      "when": {},
+      "crop": [
+        987,
+        691,
+        189,
+        187
+      ]
+    },
+    "whitewidow.femaleLate@1": {
+      "id": "whitewidow.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.488152,
+        0.985507
+      ],
+      "when": {},
+      "crop": [
+        85,
+        954,
+        211,
+        207
+      ]
+    },
+    "whitewidow.maleClosed@1": {
+      "id": "whitewidow.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.503448,
+        0.01087
+      ],
+      "when": {},
+      "crop": [
+        415,
+        976,
+        145,
+        184
+      ]
+    },
+    "whitewidow.maleOpen@1": {
+      "id": "whitewidow.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/whitewidow/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.52907,
+        0.010695
+      ],
+      "when": {},
+      "crop": [
+        695,
+        976,
+        172,
+        187
+      ]
+    },
+    "northernlights.seed@1": {
+      "id": "northernlights.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        127,
+        142,
+        105,
+        103
+      ]
+    },
+    "northernlights.radicle@1": {
+      "id": "northernlights.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.929134,
+        0.97973
+      ],
+      "when": {},
+      "crop": [
+        418,
+        126,
+        127,
+        148
+      ]
+    },
+    "northernlights.cotyledon@1": {
+      "id": "northernlights.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.48913,
+        0.972727
+      ],
+      "when": {},
+      "crop": [
+        701,
+        149,
+        184,
+        110
+      ]
+    },
+    "northernlights.singleLeaf@1": {
+      "id": "northernlights.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.983871
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1034,
+        89,
+        104,
+        186
+      ]
+    },
+    "northernlights.threeLeaf@1": {
+      "id": "northernlights.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.494898,
+        0.982558
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        75,
+        393,
+        196,
+        172
+      ]
+    },
+    "northernlights.fiveLeaf@1": {
+      "id": "northernlights.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.510638,
+        0.983871
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        393,
+        375,
+        188,
+        186
+      ]
+    },
+    "northernlights.sevenLeaf@1": {
+      "id": "northernlights.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.509569,
+        0.984615
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        687,
+        375,
+        209,
+        195
+      ]
+    },
+    "northernlights.sugarLeaf@1": {
+      "id": "northernlights.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.982659
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        999,
+        392,
+        190,
+        173
+      ]
+    },
+    "northernlights.stem@1": {
+      "id": "northernlights.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.5,
+        0.981928
+      ],
+      "when": {},
+      "crop": [
+        144,
+        696,
+        56,
+        166
+      ]
+    },
+    "northernlights.node@1": {
+      "id": "northernlights.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.482759,
+        0.981818
+      ],
+      "when": {},
+      "crop": [
+        402,
+        698,
+        174,
+        165
+      ]
+    },
+    "northernlights.femaleEarly@1": {
+      "id": "northernlights.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.514563,
+        0.984456
+      ],
+      "when": {},
+      "crop": [
+        685,
+        683,
+        206,
+        193
+      ]
+    },
+    "northernlights.femaleMid@1": {
+      "id": "northernlights.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.534031,
+        0.984536
+      ],
+      "when": {},
+      "crop": [
+        991,
+        681,
+        191,
+        194
+      ]
+    },
+    "northernlights.femaleLate@1": {
+      "id": "northernlights.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.497653,
+        0.985366
+      ],
+      "when": {},
+      "crop": [
+        68,
+        961,
+        213,
+        205
+      ]
+    },
+    "northernlights.maleClosed@1": {
+      "id": "northernlights.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.5,
+        0.01087
+      ],
+      "when": {},
+      "crop": [
+        422,
+        976,
+        138,
+        184
+      ]
+    },
+    "northernlights.maleOpen@1": {
+      "id": "northernlights.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/northernlights/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.471204,
+        0.010753
+      ],
+      "when": {},
+      "crop": [
+        702,
+        980,
+        191,
+        186
+      ]
     }
   },
   "profiles": {
@@ -4688,6 +5528,162 @@
         ]
       },
       "lineId": "frogprince"
+    },
+    "ogkush@1": {
+      "id": "ogkush@1",
+      "name": "OG Kush",
+      "roles": {
+        "seed": [
+          "ogkush.seed@1"
+        ],
+        "radicle": [
+          "ogkush.radicle@1"
+        ],
+        "cotyledon": [
+          "ogkush.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "ogkush.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "ogkush.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "ogkush.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "ogkush.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "ogkush.sugarLeaf@1"
+        ],
+        "stem": [
+          "ogkush.stem@1"
+        ],
+        "node": [
+          "ogkush.node@1"
+        ],
+        "femaleEarly": [
+          "ogkush.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "ogkush.femaleMid@1"
+        ],
+        "femaleLate": [
+          "ogkush.femaleLate@1"
+        ],
+        "maleClosed": [
+          "ogkush.maleClosed@1"
+        ],
+        "maleOpen": [
+          "ogkush.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_ogkush"
+    },
+    "whitewidow@1": {
+      "id": "whitewidow@1",
+      "name": "White Widow",
+      "roles": {
+        "seed": [
+          "whitewidow.seed@1"
+        ],
+        "radicle": [
+          "whitewidow.radicle@1"
+        ],
+        "cotyledon": [
+          "whitewidow.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "whitewidow.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "whitewidow.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "whitewidow.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "whitewidow.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "whitewidow.sugarLeaf@1"
+        ],
+        "stem": [
+          "whitewidow.stem@1"
+        ],
+        "node": [
+          "whitewidow.node@1"
+        ],
+        "femaleEarly": [
+          "whitewidow.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "whitewidow.femaleMid@1"
+        ],
+        "femaleLate": [
+          "whitewidow.femaleLate@1"
+        ],
+        "maleClosed": [
+          "whitewidow.maleClosed@1"
+        ],
+        "maleOpen": [
+          "whitewidow.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_whitewidow"
+    },
+    "northernlights@1": {
+      "id": "northernlights@1",
+      "name": "Northern Lights",
+      "roles": {
+        "seed": [
+          "northernlights.seed@1"
+        ],
+        "radicle": [
+          "northernlights.radicle@1"
+        ],
+        "cotyledon": [
+          "northernlights.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "northernlights.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "northernlights.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "northernlights.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "northernlights.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "northernlights.sugarLeaf@1"
+        ],
+        "stem": [
+          "northernlights.stem@1"
+        ],
+        "node": [
+          "northernlights.node@1"
+        ],
+        "femaleEarly": [
+          "northernlights.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "northernlights.femaleMid@1"
+        ],
+        "femaleLate": [
+          "northernlights.femaleLate@1"
+        ],
+        "maleClosed": [
+          "northernlights.maleClosed@1"
+        ],
+        "maleOpen": [
+          "northernlights.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_northernlights"
     }
   },
   "strains": {
@@ -4702,7 +5698,10 @@
     "frogprince": "frogprince@1",
     "boglantern": "boglantern@1",
     "nightshift": "nightshift@1",
-    "gasstation": "gasstation@1"
+    "gasstation": "gasstation@1",
+    "cl_ogkush": "ogkush@1",
+    "cl_whitewidow": "whitewidow@1",
+    "cl_northernlights": "northernlights@1"
   },
   "inheritedTraits": {
     "leafShape": {
