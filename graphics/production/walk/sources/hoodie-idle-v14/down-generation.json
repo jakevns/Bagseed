@@ -1,0 +1,20 @@
+{
+  "garment": "hoodie",
+  "dir": "down",
+  "prompt": "Use case: illustration-story. Create ONE NEW HEADLESS STANDING IDLE body matching the WALK body proportions in images1 and3 exactly. Image2 is OLD idle ONLY for hoodie garment design; it is too bulky, do not copy its body thickness. Straight FRONT view, facing camera. Blue pullover hoodie with slim cream drawstrings, kangaroo pocket, rib cuffs/hem. Navy jeans with same seams, brown cream-toe-cap canvas sneakers with cream laces and soles. Upright neutral standing pose, both legs straight at equal ground level, shoes side by side hip-width apart, both arms hanging comfortably down, hands fully visible outside hips. SAME slim-average short-limb chibi build as walk: same shoulder width, torso length, waist/hip width, sleeve/hand volume, jean leg thickness, shoe scale and short skin neck cap. Do not broaden shoulders or make shirt boxy. Centered neck cap, no head/face/hair. Do not add movement, bent knee or raised fist. Colors muted blue RGB65,106,170 shadow57,88,144, soft highlight75,120,184, cream212,206,200, warm tan skin matching walk, muted navy jeans. Fine WARM BROWN #49382e contours, never black/near-black<=20; delicate colored seams, clean2-3tone cel shading with no grain/noise. Waist continuous with jeans, no added belt/dark hip strip/transparency gap. Single complete figure neck to entire shoes, portrait2:3 with generous transparent margins, actual transparent background, no glow/shadow/floor/words/extra figures. Fresh paint, no pasted donor pixels.",
+  "references": [
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-down-1.png",
+    "graphics/production/customization/top/hoodie/down.png",
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+  ],
+  "source": "graphics/production/walk/sources/hoodie-idle-v14/down-raw.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "visualApproval": false,
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-down-1.png": "44b99afee1a7b7b5aebb525dfb4c2ed13f385912e5e0dbc4fd1d5fb698d80cb6",
+    "graphics/production/customization/top/hoodie/down.png": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+  }
+}

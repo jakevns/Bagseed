@@ -1,0 +1,38 @@
+{
+  "uniformScale": 0.16819317235636969,
+  "rotationDegrees": 0,
+  "translationPixels": [
+    54.946294754371365,
+    186.63363863447128
+  ],
+  "groundError": 0.0,
+  "operations": [
+    "uniform-scale",
+    "translate"
+  ],
+  "sourceBounds": [
+    206,
+    240,
+    846,
+    1441
+  ],
+  "guideBounds": [
+    90,
+    227,
+    198,
+    429
+  ],
+  "source": "sources/rerender-v6/hoodie-v14/top-hoodie-down-3.png",
+  "sourceSHA256": "57dddd51ea8061bc8b769c507502c4314e61a3f313b163768e88f87c39e18ae9",
+  "sourceSlot": 0,
+  "sourceFrame": "down/3",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "poseReference": "pose-guides-v6/down-3.png",
+  "poseReferenceSHA256": "ee3639347fd9c2c6930d6d6146ef7fb8425abee83c57f912990d3a60da49b263",
+  "registeredSHA256": "1f5c3aaeafc478512cb4af3adac5679bf79361ce2a5f50cf7dc7d6c2730915cd"
+}

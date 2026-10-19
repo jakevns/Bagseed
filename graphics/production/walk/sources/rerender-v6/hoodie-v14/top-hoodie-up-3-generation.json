@@ -1,0 +1,23 @@
+{
+  "garment": "hoodie",
+  "dir": "up",
+  "firstFrame": 3,
+  "count": 1,
+  "prompt": "Use case: illustration-story. Fresh production sprite of ONE HEADLESS body, Rear opposite PASSING walking AWAY: IMAGE LEFT leg supports vertically with full back heel lowest planted; IMAGE RIGHT knee flexes and shoe lifts under hip with sole facing viewer. Arms pass near torso, IMAGE RIGHT hand slightly higher and IMAGE LEFT hand lower. Back view ONLY. Image1 approved idle hoodie is garment/style reference. Image2 corrected technical mannequin is JOINT POSITIONS ONLY. Image3 freshly generated same-cycle front frame is body size, line weight and palette continuity reference; paint a complete new figure, do not paste its pixels. Same slim-average compact soft chibi build, short limbs, upright torso, rounded shoulders, SAME shoulder/waist widths, neck-to-hem length, jean fit, skin tone and shoe sizes across every phase. Rear blue pullover hoodie has the EXACT dropped triangular hood folded FLAT against upper back and ribbed cuffs/hem from image1; hood never up, no added white back collar/drawstrings, no front pocket visible. Navy jeans show two rear patch pockets, seams and real hems, brown canvas sneakers with cream soles. No buckle or extra dark waist band. Color lock: muted blue base #416aaa, shadow #395890, highlight #4b78b8; muted navy jeans; warm tan skin exactly as first frame; no saturation/value drift or beige/grey denim. Delicate thin warm brown #49382e outlines, subtle seams, clean 2-3 tone cel shading; no black or RGB<30, no thick sticker border, no texture grain, no muddy hands. Keep source torso and pelvis continuous with no transparent horizontal waist gap. Short centered skin neck cap, no head/hair/face. SINGLE complete neck-to-shoes figure centered with ample transparent margins in portrait2:3; transparent background, no shadow/glow/floor/labels/extra figures. Do not squash torso on passing phases; raised knee moves without shrinking body. Match base hoodie RGB65,106,170, shadow57,88,144, strings212,206,200. Ignore the slight color drift in image3; use it for body proportions only.",
+  "poseReference": "pose-guides-v6/up-3.png",
+  "references": [
+    "graphics/production/customization/top/hoodie/up.png",
+    "graphics/production/walk/pose-guides-v6/up-3.png",
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+  ],
+  "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-up-3.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "visualApproval": false,
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/customization/top/hoodie/up.png": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+    "graphics/production/walk/pose-guides-v6/up-3.png": "4929e4cf65a82d5b8c8ad8359fbac01e09dbaf9a1b8f39dc68922a28334406d9",
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+  }
+}

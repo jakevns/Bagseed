@@ -1,0 +1,20 @@
+{
+  "garment": "hoodie",
+  "dir": "up",
+  "prompt": "Use case: illustration-story. Create ONE NEW HEADLESS STANDING IDLE body matching the WALK body proportions in images1 and3 exactly. Image2 is OLD idle ONLY for hoodie garment design; it is too bulky, do not copy its body thickness. Straight BACK view. Same blue pullover hoodie with dropped hood folded FLAT against upper back, same triangular hood edge and ribs; no white back collar or strings, no front pocket. Navy jeans with two rear patch pockets, same hems and brown canvas sneakers showing back heels and cream soles. Upright neutral standing pose, both legs straight at equal ground level, shoes side by side hip-width apart, both arms hanging comfortably down, hands fully visible outside hips. SAME slim-average short-limb chibi build as walk: same shoulder width, torso length, waist/hip width, sleeve/hand volume, jean leg thickness, shoe scale and short skin neck cap. Do not broaden shoulders or make shirt boxy. Centered neck cap, no head/face/hair. Do not add movement, bent knee or raised fist. Colors muted blue RGB65,106,170 shadow57,88,144, soft highlight75,120,184, cream212,206,200, warm tan skin matching walk, muted navy jeans. Fine WARM BROWN #49382e contours, never black/near-black<=20; delicate colored seams, clean2-3tone cel shading with no grain/noise. Waist continuous with jeans, no added belt/dark hip strip/transparency gap. Single complete figure neck to entire shoes, portrait2:3 with generous transparent margins, actual transparent background, no glow/shadow/floor/words/extra figures. Fresh paint, no pasted donor pixels.",
+  "references": [
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-up-2.png",
+    "graphics/production/customization/top/hoodie/up.png",
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry2/top-hoodie-up-1.png"
+  ],
+  "source": "graphics/production/walk/sources/hoodie-idle-v14/up-raw.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "visualApproval": false,
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-up-2.png": "e7293cb12a80352cc483c80d88137a648484151ebc0613f6c1421cb6829e6504",
+    "graphics/production/customization/top/hoodie/up.png": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+    "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry2/top-hoodie-up-1.png": "4f3be6314726d6a0ae830a536596649f15b5c4348be6245f63230317f511ffc3"
+  }
+}

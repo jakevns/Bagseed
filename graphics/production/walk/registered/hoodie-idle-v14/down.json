@@ -1,0 +1,76 @@
+{
+  "source": "graphics\\production\\walk\\sources\\hoodie-idle-v14\\down-raw.png",
+  "sourceSHA256": "7fff41cb9d1a0abfad49e70ced8ebb6732d4b8c30eee153fb651d7e5a9dd6be6",
+  "oldIdleSHA256": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+  "registration": {
+    "uniformScale": 0.161106590724166,
+    "rotationDegrees": 0,
+    "translationPixels": [
+      60.191212367778675,
+      86.10659072416598
+    ],
+    "groundError": 0.0,
+    "operations": [
+      "uniform-scale",
+      "translate"
+    ],
+    "sourceBounds": [
+      197,
+      229,
+      828,
+      1458
+    ],
+    "guideBounds": [
+      80,
+      123,
+      207,
+      321
+    ]
+  },
+  "registeredSHA256": "72b5e44e573bd303e6ffd85681a0beeae6a6d763d012aa4ebabac860ac44de34",
+  "oldIdle": {
+    "shoulderBand": 110.5,
+    "upperBodyBand": 132.0,
+    "hipBand": 136.0,
+    "denimHipBand": 84.0,
+    "shinBand": 97.0
+  },
+  "newIdle": {
+    "shoulderBand": 94.0,
+    "upperBodyBand": 113.0,
+    "hipBand": 109.0,
+    "denimHipBand": 66.0,
+    "shinBand": 68.0
+  },
+  "walk": [
+    {
+      "shoulderBand": 94.0,
+      "upperBodyBand": 117.0,
+      "hipBand": 65.0,
+      "denimHipBand": 63.0,
+      "shinBand": 61.0
+    },
+    {
+      "shoulderBand": 90.5,
+      "upperBodyBand": 113.0,
+      "hipBand": 85.0,
+      "denimHipBand": 66.0,
+      "shinBand": 30.0
+    },
+    {
+      "shoulderBand": 93.5,
+      "upperBodyBand": 117.0,
+      "hipBand": 86.0,
+      "denimHipBand": 66.0,
+      "shinBand": 29.0
+    },
+    {
+      "shoulderBand": 97.0,
+      "upperBodyBand": 120.0,
+      "hipBand": 85.0,
+      "denimHipBand": 64.0,
+      "shinBand": 29.0
+    }
+  ],
+  "runtimeInstalled": false
+}

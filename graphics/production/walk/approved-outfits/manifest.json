@@ -1,5 +1,5 @@
 {
-  "version": "approved-cardigan-jacket-flannel-v1",
+  "version": "approved-custom-outfits-v2",
   "density": 3,
   "frameCounts": {
     "down": 4,
@@ -2879,6 +2879,964 @@
           }
         }
       }
+    },
+    "hoodie": {
+      "atlas": "atlases/approved-hoodie.png",
+      "atlasSHA256": "48172b1c8beadbaa89f978a50918db3c9f9f030541a6e38bed7f76aa6b4384a1",
+      "rolesAtlas": "atlases/approved-hoodie-roles.png",
+      "rolesSHA256": "86e20d364edfd13b9f08d5813f97f40bfe554b54aede11efe13ce101322e60b7",
+      "frames": {
+        "down/idle": {
+          "rect": [
+            0,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/registered/hoodie-idle-v15/down.png",
+          "sourceSHA256": "df9e3d9116f216c2c03a854622a858682e5216f1c905b5866e70323f5c48cad4",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              34.666666666666664,
+              110.0
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              60.0,
+              110.33333333333333
+            ],
+            "waist": [
+              48,
+              107.0
+            ],
+            "nearArm": "L"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.1168,
+            "3": 58.8022,
+            "4": 118.9569
+          },
+          "feet": {
+            "all": [
+              107,
+              392,
+              178,
+              429
+            ],
+            "left": [
+              107,
+              392,
+              139,
+              429
+            ],
+            "right": [
+              147,
+              392,
+              178,
+              429
+            ]
+          }
+        },
+        "down/0": {
+          "rect": [
+            288,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-0.png",
+          "sourceSHA256": "e9c29d259fc38f8798b3f3ce426049574b457f21c5a384861df95222a46316cd",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              34.0,
+              106.0
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              58.333333333333336,
+              97.66666666666667
+            ],
+            "waist": [
+              48,
+              105.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.04459999999999,
+            "3": 58.5896,
+            "4": 141.21079999999998
+          },
+          "feet": {
+            "all": [
+              116,
+              372,
+              172,
+              429
+            ],
+            "left": [
+              116,
+              404,
+              146,
+              429
+            ],
+            "right": [
+              150,
+              372,
+              172,
+              395
+            ]
+          }
+        },
+        "down/1": {
+          "rect": [
+            576,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-1.png",
+          "sourceSHA256": "adbc2d9a9cebc2ec02d45a24464593446df377fdcb2809191af3f1e20be16593",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              43,
+              125
+            ],
+            "ankleL": [
+              43,
+              137
+            ],
+            "kneeR": [
+              55,
+              116
+            ],
+            "ankleR": [
+              54,
+              125
+            ],
+            "elbowL": [
+              34,
+              99
+            ],
+            "handL": [
+              34.333333333333336,
+              107.0
+            ],
+            "elbowR": [
+              62,
+              98
+            ],
+            "handR": [
+              58.0,
+              100.33333333333333
+            ],
+            "waist": [
+              48,
+              104.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.04459999999999,
+            "3": 58.5896,
+            "4": 141.21079999999998
+          },
+          "feet": {
+            "all": [
+              117,
+              362,
+              171,
+              429
+            ],
+            "left": [
+              117,
+              405,
+              147,
+              429
+            ],
+            "right": [
+              148,
+              362,
+              171,
+              384
+            ]
+          }
+        },
+        "down/2": {
+          "rect": [
+            864,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-2.png",
+          "sourceSHA256": "a8adf491160b22360642f789ca965a6365815edfed8d6f2868dfc3e1c30cc29c",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              62,
+              110
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              35,
+              104
+            ],
+            "waist": [
+              48,
+              104.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.1168,
+            "3": 58.5896,
+            "4": 134.3512
+          },
+          "feet": {
+            "all": [
+              111,
+              359,
+              186,
+              429
+            ],
+            "left": [
+              111,
+              359,
+              135,
+              384
+            ],
+            "right": [
+              156,
+              403,
+              186,
+              429
+            ]
+          }
+        },
+        "down/3": {
+          "rect": [
+            1152,
+            0,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-3.png",
+          "sourceSHA256": "361d11386e82bc5cdcdb32328ecc8453395e7420b895df6bec4bf5a9904fd7b1",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              53,
+              125
+            ],
+            "ankleL": [
+              53,
+              137
+            ],
+            "kneeR": [
+              41,
+              116
+            ],
+            "ankleR": [
+              42,
+              125
+            ],
+            "elbowL": [
+              62,
+              99
+            ],
+            "handL": [
+              60,
+              111
+            ],
+            "elbowR": [
+              34,
+              98
+            ],
+            "handR": [
+              36,
+              108
+            ],
+            "waist": [
+              48,
+              104.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.1168,
+            "3": 58.8022,
+            "4": 134.3512
+          },
+          "feet": {
+            "all": [
+              116,
+              359,
+              171,
+              429
+            ],
+            "left": [
+              116,
+              359,
+              140,
+              382
+            ],
+            "right": [
+              142,
+              406,
+              171,
+              429
+            ]
+          }
+        },
+        "up/idle": {
+          "rect": [
+            0,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/registered/hoodie-idle-v15/up.png",
+          "sourceSHA256": "1db65d395737c886cae20f3e8bd5e7df2d11c5f8adcc8fd26024c3c19f23099a",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              33.666666666666664,
+              110.66666666666667
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              61.0,
+              110.66666666666667
+            ],
+            "waist": [
+              48,
+              107.66666666666667
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.1168,
+            "3": 58.8022,
+            "4": 114.27779999999998
+          },
+          "feet": {
+            "all": [
+              111,
+              393,
+              174,
+              429
+            ],
+            "left": [
+              111,
+              393,
+              140,
+              429
+            ],
+            "right": [
+              145,
+              393,
+              174,
+              429
+            ]
+          }
+        },
+        "up/0": {
+          "rect": [
+            288,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-0.png",
+          "sourceSHA256": "676022378001dbc4ec9088aa7b96dd8284510f825bfecfe8d142511cc5a87735",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              56,
+              124
+            ],
+            "ankleL": [
+              57,
+              137
+            ],
+            "kneeR": [
+              42,
+              123
+            ],
+            "ankleR": [
+              40,
+              132
+            ],
+            "elbowL": [
+              63,
+              98
+            ],
+            "handL": [
+              62,
+              110
+            ],
+            "elbowR": [
+              31,
+              96
+            ],
+            "handR": [
+              35,
+              104
+            ],
+            "waist": [
+              48,
+              104.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.04459999999999,
+            "3": 58.8022,
+            "4": 141.21079999999998
+          },
+          "feet": {
+            "all": [
+              113,
+              376,
+              175,
+              429
+            ],
+            "left": [
+              113,
+              376,
+              137,
+              408
+            ],
+            "right": [
+              147,
+              415,
+              175,
+              429
+            ]
+          }
+        },
+        "up/1": {
+          "rect": [
+            576,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-1.png",
+          "sourceSHA256": "54e0642dbf82cf2f72d7f6e2bb1f738b4ac21c4dd78e09f4ef11269823c20415",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              59,
+              85
+            ],
+            "shoulderR": [
+              37,
+              85
+            ],
+            "hipL": [
+              53,
+              110
+            ],
+            "hipR": [
+              43,
+              110
+            ],
+            "kneeL": [
+              53,
+              125
+            ],
+            "ankleL": [
+              53,
+              137
+            ],
+            "kneeR": [
+              41,
+              116
+            ],
+            "ankleR": [
+              42,
+              125
+            ],
+            "elbowL": [
+              62,
+              99
+            ],
+            "handL": [
+              60,
+              111
+            ],
+            "elbowR": [
+              34,
+              98
+            ],
+            "handR": [
+              36,
+              108
+            ],
+            "waist": [
+              48,
+              104.33333333333333
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 144.40720000000002,
+            "2": 101.04459999999999,
+            "3": 58.8022,
+            "4": 115.0652
+          },
+          "feet": {
+            "all": [
+              118,
+              362,
+              174,
+              429
+            ],
+            "left": [
+              118,
+              362,
+              141,
+              400
+            ],
+            "right": [
+              146,
+              412,
+              174,
+              429
+            ]
+          }
+        },
+        "up/2": {
+          "rect": [
+            864,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-2.png",
+          "sourceSHA256": "35a0b1d058b6fa87454e247fb57a516044035030cb695e970d24337cdedb8683",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              40,
+              124
+            ],
+            "ankleL": [
+              39,
+              137
+            ],
+            "kneeR": [
+              54,
+              123
+            ],
+            "ankleR": [
+              56,
+              132
+            ],
+            "elbowL": [
+              33,
+              98
+            ],
+            "handL": [
+              33.166666666666664,
+              108.33333333333333
+            ],
+            "elbowR": [
+              65,
+              96
+            ],
+            "handR": [
+              64.33333333333333,
+              98.0
+            ],
+            "waist": [
+              48,
+              105.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.1168,
+            "3": 58.5896,
+            "4": 115.0652
+          },
+          "feet": {
+            "all": [
+              120,
+              379,
+              179,
+              429
+            ],
+            "left": [
+              120,
+              411,
+              147,
+              429
+            ],
+            "right": [
+              155,
+              379,
+              179,
+              411
+            ]
+          }
+        },
+        "up/3": {
+          "rect": [
+            1152,
+            432,
+            288,
+            432
+          ],
+          "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-3.png",
+          "sourceSHA256": "6d9a7cd14ae0a3fee2ba2155900ea0c311fd2c395583da9ed284637316c0dcf1",
+          "keypoints": {
+            "neck": [
+              48,
+              78
+            ],
+            "shoulderL": [
+              37,
+              85
+            ],
+            "shoulderR": [
+              59,
+              85
+            ],
+            "hipL": [
+              43,
+              110
+            ],
+            "hipR": [
+              53,
+              110
+            ],
+            "kneeL": [
+              43,
+              125
+            ],
+            "ankleL": [
+              43,
+              137
+            ],
+            "kneeR": [
+              55,
+              116
+            ],
+            "ankleR": [
+              54,
+              125
+            ],
+            "elbowL": [
+              34,
+              99
+            ],
+            "handL": [
+              34.333333333333336,
+              106.33333333333333
+            ],
+            "elbowR": [
+              62,
+              98
+            ],
+            "handR": [
+              60.666666666666664,
+              101.33333333333333
+            ],
+            "waist": [
+              48,
+              104.0
+            ],
+            "nearArm": "R"
+          },
+          "materialBases": {
+            "1": 143.692,
+            "2": 101.04459999999999,
+            "3": 58.5896,
+            "4": 144.1386
+          },
+          "feet": {
+            "all": [
+              119,
+              353,
+              174,
+              429
+            ],
+            "left": [
+              119,
+              414,
+              148,
+              429
+            ],
+            "right": [
+              150,
+              353,
+              174,
+              392
+            ]
+          }
+        }
+      }
     }
   },
   "sources": {
@@ -2911,6 +3869,16 @@
     "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-0.png": "1e7dc422eae5f384b5e20203b39e663ac55f84f485713e5d78b8359afb59c71e",
     "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-1.png": "a77d0384682a90266b549c287f6ba0477908c1b30441a8f8fefd47613d09ce92",
     "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-2.png": "3a6c2c1377993e8205130812852f838bd02077cd050976b15a254a02034bac56",
-    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-3.png": "97b7e4d16c04ae6604bbd8d386b4704747b39394ddd7a4cb12cb1fab8c8146dd"
+    "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-3.png": "97b7e4d16c04ae6604bbd8d386b4704747b39394ddd7a4cb12cb1fab8c8146dd",
+    "graphics/production/walk/registered/hoodie-idle-v15/down.png": "df9e3d9116f216c2c03a854622a858682e5216f1c905b5866e70323f5c48cad4",
+    "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-0.png": "e9c29d259fc38f8798b3f3ce426049574b457f21c5a384861df95222a46316cd",
+    "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-1.png": "adbc2d9a9cebc2ec02d45a24464593446df377fdcb2809191af3f1e20be16593",
+    "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-2.png": "a8adf491160b22360642f789ca965a6365815edfed8d6f2868dfc3e1c30cc29c",
+    "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-3.png": "361d11386e82bc5cdcdb32328ecc8453395e7420b895df6bec4bf5a9904fd7b1",
+    "graphics/production/walk/registered/hoodie-idle-v15/up.png": "1db65d395737c886cae20f3e8bd5e7df2d11c5f8adcc8fd26024c3c19f23099a",
+    "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-0.png": "676022378001dbc4ec9088aa7b96dd8284510f825bfecfe8d142511cc5a87735",
+    "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-1.png": "54e0642dbf82cf2f72d7f6e2bb1f738b4ac21c4dd78e09f4ef11269823c20415",
+    "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-2.png": "35a0b1d058b6fa87454e247fb57a516044035030cb695e970d24337cdedb8683",
+    "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-3.png": "6d9a7cd14ae0a3fee2ba2155900ea0c311fd2c395583da9ed284637316c0dcf1"
   }
 }

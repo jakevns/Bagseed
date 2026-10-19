@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-18",
+  "branch": "ccr-12191481-bpni4g",
+  "mergedMain": "34c3a14",
+  "userApproval": "User approved hoodie-proportions-v15 and requested implementation and push",
+  "scope": {
+    "top": "hoodie",
+    "review": "review/hoodie-proportions-v15/index.html",
+    "combination": {
+      "bottomS": "jeans",
+      "shoesS": "sneakers"
+    },
+    "directions": [
+      "down",
+      "up"
+    ],
+    "paintings": 10,
+    "otherCombinations": "existing complete renderer retained",
+    "profiles": "existing eight-frame renderer retained"
+  },
+  "approvedPackPaintings": 40,
+  "build": "npm run build:graphics passed",
+  "fullSuite": {
+    "command": "npm test -- --test-concurrency=4",
+    "tests": 240,
+    "pass": 240,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMilliseconds": 1334532.7684
+  },
+  "characterAudit": {
+    "appearances": 69,
+    "directionComparisons": 276,
+    "flaggedRows": 0
+  },
+  "colorIntegrity": {
+    "frames": [
+      {
+        "direction": "down",
+        "frame": "idle",
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "down",
+        "frame": 0,
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "down",
+        "frame": 1,
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "down",
+        "frame": 2,
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "down",
+        "frame": 3,
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "up",
+        "frame": "idle",
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "up",
+        "frame": 0,
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "up",
+        "frame": 1,
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "up",
+        "frame": 2,
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      },
+      {
+        "direction": "up",
+        "frame": 3,
+        "sameDimensions": true,
+        "sameAlpha": true,
+        "sameProtectedInk": true,
+        "sourceAndDerivativeHashesMatch": true,
+        "artChecksPassed": true
+      }
+    ],
+    "failures": 0
+  },
+  "imageHashesVerified": 1849,
+  "scaleReference": "Measured Remy/Priya/Doug alpha heights, unchanged one-world-unit rest/reaction tolerance; see hoodie-height-reference.json",
+  "gitIndexVerification": {
+    "referencedExternalImages": 1849,
+    "missingFromGitIndex": [],
+    "approvedPaintingSources": 40,
+    "hoodieGenerationRecords": 10,
+    "allPromptReferencesStaged": true,
+    "builtGameMatchesGitIndex": true
+  }
+}

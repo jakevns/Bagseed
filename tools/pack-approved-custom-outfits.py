@@ -52,7 +52,7 @@ def shoe_boxes(part,alpha):
  def bounds(points):
   y,x=points.T;return [int(x.min()),int(y.min()),int(x.max()+1),int(y.max()+1)]
  return {'all':bounds(np.concatenate(feet)),'left':bounds(feet[0]),'right':bounds(feet[1])}
-for garment,attempt,version in [('cardigan','individual-v8','11'),('jacket','jacket-v9','9'),('flannel','flannel-v13','13')]:
+for garment,attempt,version in [('cardigan','individual-v8','11'),('jacket','jacket-v9','9'),('flannel','flannel-v13','13'),('hoodie','hoodie-v15','15')]:
  atlas=Image.new('RGBA',(1440,864));roles=Image.new('RGBA',atlas.size);frames={}
  for row,d in enumerate(['down','up']):
   for col,f in enumerate(['idle',0,1,2,3]):
@@ -79,5 +79,5 @@ for garment,attempt,version in [('cardigan','individual-v8','11'),('jacket','jac
  ap=W/f'atlases/approved-{garment}.png';rp=W/f'atlases/approved-{garment}-roles.png';atlas.save(ap);roles.save(rp)
  items[garment]={'atlas':ap.relative_to(W).as_posix(),'atlasSHA256':sha(ap),'rolesAtlas':rp.relative_to(W).as_posix(),'rolesSHA256':sha(rp),'frames':frames}
 out=W/'approved-outfits/manifest.json';out.parent.mkdir(parents=True,exist_ok=True)
-out.write_text(json.dumps({'version':'approved-cardigan-jacket-flannel-v1','density':3,'frameCounts':{'down':4,'up':4},'items':items,'sources':sources},indent=2)+'\n',encoding='utf-8',newline='\n')
-print('Packed 30 approved idle/walk paintings and masks; no painted pixel modified.')
+out.write_text(json.dumps({'version':'approved-custom-outfits-v2','density':3,'frameCounts':{'down':4,'up':4},'items':items,'sources':sources},indent=2)+'\n',encoding='utf-8',newline='\n')
+print(f'Packed {sum(len(item["frames"]) for item in items.values())} approved idle/walk paintings and masks; no painted pixel modified.')

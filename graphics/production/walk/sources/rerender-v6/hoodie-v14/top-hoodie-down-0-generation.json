@@ -1,0 +1,21 @@
+{
+  "garment": "hoodie",
+  "dir": "down",
+  "firstFrame": 0,
+  "count": 1,
+  "prompt": "Use case: illustration-story. Production game sprite, ONE freshly painted HEADLESS body walking TOWARD camera, straight FRONT view. Image 1 is the approved idle hoodie: copy its garment identity, MUTED low-saturation denim-blue #4b71a0 fabric, thin warm brown line weight, white drawstrings, kangaroo pocket, rib cuffs and hem, navy jeans with subtle seams, brown canvas sneakers with CREAM toe caps and soles, warm tan skin. Image 2 is ONLY a technical pose guide: copy joint positions and support leg, never diagram style. Contact phase: IMAGE LEFT leg extended down and forward with full shoe planted lowest; IMAGE RIGHT leg trails and its shoe is slightly raised. IMAGE RIGHT arm swings forward with bent elbow and hand higher; IMAGE LEFT arm back and hand low. No mirroring. Preserve compact soft chibi body, short limbs, gentle round shoulders, slim average build, fixed torso length and shoulder width. Two or three tone cel shading, clean smooth painted shapes, crisp fine colored linework; no grain, no texture noise, no pixel art. Darkest contour/seam/shoe-bottom color warm brown #49382e, never black, no RGB below30. No extra belt, hip band, jacket opening or buttons. Short centered skin neck cap only; no head, face, hair. Output single complete neck-to-shoes figure on genuinely transparent background, centered in portrait2:3 composition with ample clear margins; no cast shadow, glow, floor, words or extra figure. Fresh art from these references only. This is frame0 of a coordinated cycle; torso stays upright and same size in every phase. Critical color instruction: match image1's muted blue-grey fabric and dark navy jeans EXACTLY, not royal blue, not cobalt. Base RGB75,113,160 (#4b71a0), shadows RGB58,84,121 (#3a5479), highlights RGB94,130,173 (#5e82ad). White drawstrings must stay thin and slim. Thin understated contours, match idle softness. Contact step should show two relatively extended legs, trailing foot slightly raised; not the high bent-knee passing pose.",
+  "poseReference": "pose-guides-v6/down-0.png",
+  "references": [
+    "graphics/production/customization/top/hoodie/down.png",
+    "graphics/production/walk/pose-guides-v6/down-0.png"
+  ],
+  "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "visualApproval": false,
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/customization/top/hoodie/down.png": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+    "graphics/production/walk/pose-guides-v6/down-0.png": "786181ecf759adb804e62e9958f691a3c8870b6ba29a0d963b51c32a795ffd61"
+  }
+}

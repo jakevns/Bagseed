@@ -1,0 +1,21 @@
+{
+  "garment": "hoodie",
+  "dir": "down",
+  "firstFrame": 2,
+  "count": 1,
+  "prompt": "Fresh ONE HEADLESS front-view hoodie body in EXACT pose of second image. Image1 idle defines outfit and warm thin line style. Image2 pose map is mandatory. SUPPORT LEG IS ON IMAGE RIGHT: shoe in BOTTOM-RIGHT, toe points toward viewer, leg straight downward. Trailing shoe on IMAGE LEFT is higher with slight knee bend. DO NOT put planted shoe on bottom-left. IMAGE LEFT hand is lifted toward stomach on a bent elbow; IMAGE RIGHT hand hangs low near hip. Paint blue hoodie with cream slim drawstrings, kangaroo pocket and rib hem, navy jeans, brown cream-toe canvas sneakers, warm tan skin. Body slim-average compact chibi with short limbs; torso stable, headless short neck cap. Color same idle: blue RGB65,106,170 shadow57,88,144, cream strings212,206,200, dark navy jeans. All contours fine warm brown #49382e, no pure/near black RGB<=20 even shoe-bottom/laces. Delicate clean 2-3 tone cel shading, no texture grain, no heavy borders. Waist/legs continuous without horizontal transparent split. One full neck-to-shoes figure on truly transparent background, no glow/shadow/floor/labels. Portrait2:3 ample margins. Follow IMAGE RIGHT planted foot and IMAGE LEFT high hand exactly, do not mirror.",
+  "poseReference": "pose-guides-v6/down-2.png",
+  "references": [
+    "graphics/production/customization/top/hoodie/down.png",
+    "graphics/production/walk/pose-guides-v6/down-2.png"
+  ],
+  "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry3/top-hoodie-down-2.png",
+  "seed": null,
+  "seedNote": "Built-in tool does not expose seed",
+  "visualApproval": false,
+  "runtimeInstalled": false,
+  "referenceSHA256": {
+    "graphics/production/customization/top/hoodie/down.png": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+    "graphics/production/walk/pose-guides-v6/down-2.png": "a683d27e2c34f132f73ab48ad251675829c95f222327e8df4985d293461cd19a"
+  }
+}

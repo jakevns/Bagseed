@@ -149,6 +149,56 @@
       "garment": "flannel",
       "frame": "up/3",
       "source": "graphics/production/walk/sources/rerender-v6/registered/flannel-v13/top-flannel/up-3.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "down/idle",
+      "source": "graphics/production/walk/registered/hoodie-idle-v15/down.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "down/0",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-0.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "down/1",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-1.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "down/2",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-2.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "down/3",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/down-3.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "up/idle",
+      "source": "graphics/production/walk/registered/hoodie-idle-v15/up.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "up/0",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-0.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "up/1",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-1.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "up/2",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-2.png"
+    },
+    {
+      "garment": "hoodie",
+      "frame": "up/3",
+      "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v15/top-hoodie/up-3.png"
     }
   ],
   "failures": []

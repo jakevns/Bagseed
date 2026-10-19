@@ -1,0 +1,222 @@
+[
+  {
+    "garment": "hoodie",
+    "dir": "down",
+    "prompt": "Use case: illustration-story. Create ONE NEW HEADLESS STANDING IDLE body matching the WALK body proportions in images1 and3 exactly. Image2 is OLD idle ONLY for hoodie garment design; it is too bulky, do not copy its body thickness. Straight FRONT view, facing camera. Blue pullover hoodie with slim cream drawstrings, kangaroo pocket, rib cuffs/hem. Navy jeans with same seams, brown cream-toe-cap canvas sneakers with cream laces and soles. Upright neutral standing pose, both legs straight at equal ground level, shoes side by side hip-width apart, both arms hanging comfortably down, hands fully visible outside hips. SAME slim-average short-limb chibi build as walk: same shoulder width, torso length, waist/hip width, sleeve/hand volume, jean leg thickness, shoe scale and short skin neck cap. Do not broaden shoulders or make shirt boxy. Centered neck cap, no head/face/hair. Do not add movement, bent knee or raised fist. Colors muted blue RGB65,106,170 shadow57,88,144, soft highlight75,120,184, cream212,206,200, warm tan skin matching walk, muted navy jeans. Fine WARM BROWN #49382e contours, never black/near-black<=20; delicate colored seams, clean2-3tone cel shading with no grain/noise. Waist continuous with jeans, no added belt/dark hip strip/transparency gap. Single complete figure neck to entire shoes, portrait2:3 with generous transparent margins, actual transparent background, no glow/shadow/floor/words/extra figures. Fresh paint, no pasted donor pixels.",
+    "references": [
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-down-1.png",
+      "graphics/production/customization/top/hoodie/down.png",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+    ],
+    "source": "graphics/production/walk/sources/hoodie-idle-v14/down-raw.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-down-1.png": "44b99afee1a7b7b5aebb525dfb4c2ed13f385912e5e0dbc4fd1d5fb698d80cb6",
+      "graphics/production/customization/top/hoodie/down.png": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "up",
+    "prompt": "Use case: illustration-story. Create ONE NEW HEADLESS STANDING IDLE body matching the WALK body proportions in images1 and3 exactly. Image2 is OLD idle ONLY for hoodie garment design; it is too bulky, do not copy its body thickness. Straight BACK view. Same blue pullover hoodie with dropped hood folded FLAT against upper back, same triangular hood edge and ribs; no white back collar or strings, no front pocket. Navy jeans with two rear patch pockets, same hems and brown canvas sneakers showing back heels and cream soles. Upright neutral standing pose, both legs straight at equal ground level, shoes side by side hip-width apart, both arms hanging comfortably down, hands fully visible outside hips. SAME slim-average short-limb chibi build as walk: same shoulder width, torso length, waist/hip width, sleeve/hand volume, jean leg thickness, shoe scale and short skin neck cap. Do not broaden shoulders or make shirt boxy. Centered neck cap, no head/face/hair. Do not add movement, bent knee or raised fist. Colors muted blue RGB65,106,170 shadow57,88,144, soft highlight75,120,184, cream212,206,200, warm tan skin matching walk, muted navy jeans. Fine WARM BROWN #49382e contours, never black/near-black<=20; delicate colored seams, clean2-3tone cel shading with no grain/noise. Waist continuous with jeans, no added belt/dark hip strip/transparency gap. Single complete figure neck to entire shoes, portrait2:3 with generous transparent margins, actual transparent background, no glow/shadow/floor/words/extra figures. Fresh paint, no pasted donor pixels.",
+    "references": [
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-up-2.png",
+      "graphics/production/customization/top/hoodie/up.png",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry2/top-hoodie-up-1.png"
+    ],
+    "source": "graphics/production/walk/sources/hoodie-idle-v14/up-raw.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-up-2.png": "e7293cb12a80352cc483c80d88137a648484151ebc0613f6c1421cb6829e6504",
+      "graphics/production/customization/top/hoodie/up.png": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry2/top-hoodie-up-1.png": "4f3be6314726d6a0ae830a536596649f15b5c4348be6245f63230317f511ffc3"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "down",
+    "firstFrame": 0,
+    "count": 1,
+    "prompt": "Use case: illustration-story. Production game sprite, ONE freshly painted HEADLESS body walking TOWARD camera, straight FRONT view. Image 1 is the approved idle hoodie: copy its garment identity, MUTED low-saturation denim-blue #4b71a0 fabric, thin warm brown line weight, white drawstrings, kangaroo pocket, rib cuffs and hem, navy jeans with subtle seams, brown canvas sneakers with CREAM toe caps and soles, warm tan skin. Image 2 is ONLY a technical pose guide: copy joint positions and support leg, never diagram style. Contact phase: IMAGE LEFT leg extended down and forward with full shoe planted lowest; IMAGE RIGHT leg trails and its shoe is slightly raised. IMAGE RIGHT arm swings forward with bent elbow and hand higher; IMAGE LEFT arm back and hand low. No mirroring. Preserve compact soft chibi body, short limbs, gentle round shoulders, slim average build, fixed torso length and shoulder width. Two or three tone cel shading, clean smooth painted shapes, crisp fine colored linework; no grain, no texture noise, no pixel art. Darkest contour/seam/shoe-bottom color warm brown #49382e, never black, no RGB below30. No extra belt, hip band, jacket opening or buttons. Short centered skin neck cap only; no head, face, hair. Output single complete neck-to-shoes figure on genuinely transparent background, centered in portrait2:3 composition with ample clear margins; no cast shadow, glow, floor, words or extra figure. Fresh art from these references only. This is frame0 of a coordinated cycle; torso stays upright and same size in every phase. Critical color instruction: match image1's muted blue-grey fabric and dark navy jeans EXACTLY, not royal blue, not cobalt. Base RGB75,113,160 (#4b71a0), shadows RGB58,84,121 (#3a5479), highlights RGB94,130,173 (#5e82ad). White drawstrings must stay thin and slim. Thin understated contours, match idle softness. Contact step should show two relatively extended legs, trailing foot slightly raised; not the high bent-knee passing pose.",
+    "poseReference": "pose-guides-v6/down-0.png",
+    "references": [
+      "graphics/production/customization/top/hoodie/down.png",
+      "graphics/production/walk/pose-guides-v6/down-0.png"
+    ],
+    "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/customization/top/hoodie/down.png": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+      "graphics/production/walk/pose-guides-v6/down-0.png": "786181ecf759adb804e62e9958f691a3c8870b6ba29a0d963b51c32a795ffd61"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "down",
+    "firstFrame": 1,
+    "count": 1,
+    "prompt": "Use case: illustration-story. Fresh production sprite of ONE HEADLESS body, Passing phase facing FRONT: IMAGE LEFT leg supports nearly vertically with full shoe lowest on ground; IMAGE RIGHT thigh lifts with bent knee and raised foot underneath the hip, sole not facing viewer. Arms pass near the torso, IMAGE LEFT hand lower and IMAGE RIGHT hand slightly higher, as in the guide. Image1 approved idle hoodie is garment/style reference. Image2 corrected technical mannequin is JOINT POSITIONS ONLY. Image3 freshly generated same-cycle front frame is body size, line weight and palette continuity reference; paint a complete new figure, do not paste its pixels. Same slim-average compact soft chibi build, short limbs, upright torso, rounded shoulders, SAME shoulder/waist widths, neck-to-hem length, jean fit, skin tone and shoe sizes across every phase. Blue pullover hoodie with two thin cream drawstrings, front kangaroo pocket, ribbed cuffs and hem; navy jeans, brown canvas sneakers with cream toe caps/soles and cream laces. Preserve the same pocket, hood opening and strings. No buttons or jacket opening. Color lock: muted blue base #416aaa, shadow #395890, highlight #4b78b8; muted navy jeans; warm tan skin exactly as first frame; no saturation/value drift or beige/grey denim. Delicate thin warm brown #49382e outlines, subtle seams, clean 2-3 tone cel shading; no black or RGB<30, no thick sticker border, no texture grain, no muddy hands. Keep source torso and pelvis continuous with no transparent horizontal waist gap. Short centered skin neck cap, no head/hair/face. SINGLE complete neck-to-shoes figure centered with ample transparent margins in portrait2:3; transparent background, no shadow/glow/floor/labels/extra figures. Do not squash torso on passing phases; raised knee moves without shrinking body. Match base hoodie RGB65,106,170, shadow57,88,144, strings212,206,200. Ignore the slight color drift in image3; use it for body proportions only.",
+    "poseReference": "pose-guides-v6/down-1.png",
+    "references": [
+      "graphics/production/customization/top/hoodie/down.png",
+      "graphics/production/walk/pose-guides-v6/down-1.png",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+    ],
+    "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-down-1.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/customization/top/hoodie/down.png": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+      "graphics/production/walk/pose-guides-v6/down-1.png": "8d0f867c983fe28af4febb0988f7d2a475da2b35c18527636357ad39b1aec9aa",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "down",
+    "firstFrame": 2,
+    "count": 1,
+    "prompt": "Fresh ONE HEADLESS front-view hoodie body in EXACT pose of second image. Image1 idle defines outfit and warm thin line style. Image2 pose map is mandatory. SUPPORT LEG IS ON IMAGE RIGHT: shoe in BOTTOM-RIGHT, toe points toward viewer, leg straight downward. Trailing shoe on IMAGE LEFT is higher with slight knee bend. DO NOT put planted shoe on bottom-left. IMAGE LEFT hand is lifted toward stomach on a bent elbow; IMAGE RIGHT hand hangs low near hip. Paint blue hoodie with cream slim drawstrings, kangaroo pocket and rib hem, navy jeans, brown cream-toe canvas sneakers, warm tan skin. Body slim-average compact chibi with short limbs; torso stable, headless short neck cap. Color same idle: blue RGB65,106,170 shadow57,88,144, cream strings212,206,200, dark navy jeans. All contours fine warm brown #49382e, no pure/near black RGB<=20 even shoe-bottom/laces. Delicate clean 2-3 tone cel shading, no texture grain, no heavy borders. Waist/legs continuous without horizontal transparent split. One full neck-to-shoes figure on truly transparent background, no glow/shadow/floor/labels. Portrait2:3 ample margins. Follow IMAGE RIGHT planted foot and IMAGE LEFT high hand exactly, do not mirror.",
+    "poseReference": "pose-guides-v6/down-2.png",
+    "references": [
+      "graphics/production/customization/top/hoodie/down.png",
+      "graphics/production/walk/pose-guides-v6/down-2.png"
+    ],
+    "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry3/top-hoodie-down-2.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/customization/top/hoodie/down.png": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+      "graphics/production/walk/pose-guides-v6/down-2.png": "a683d27e2c34f132f73ab48ad251675829c95f222327e8df4985d293461cd19a"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "down",
+    "firstFrame": 3,
+    "count": 1,
+    "prompt": "Use case: illustration-story. Fresh production sprite of ONE HEADLESS body, Opposite PASSING phase facing FRONT: IMAGE RIGHT leg supports vertically with shoe lowest planted; IMAGE LEFT thigh lifts with bent knee and raised foot under hip. Arms pass near torso, IMAGE LEFT hand slightly higher and IMAGE RIGHT hand lower. Keep IMAGE RIGHT support foot lowest. Image1 approved idle hoodie is garment/style reference. Image2 corrected technical mannequin is JOINT POSITIONS ONLY. Image3 freshly generated same-cycle front frame is body size, line weight and palette continuity reference; paint a complete new figure, do not paste its pixels. Same slim-average compact soft chibi build, short limbs, upright torso, rounded shoulders, SAME shoulder/waist widths, neck-to-hem length, jean fit, skin tone and shoe sizes across every phase. Blue pullover hoodie with two thin cream drawstrings, front kangaroo pocket, ribbed cuffs and hem; navy jeans, brown canvas sneakers with cream toe caps/soles and cream laces. Preserve the same pocket, hood opening and strings. No buttons or jacket opening. Color lock: muted blue base #416aaa, shadow #395890, highlight #4b78b8; muted navy jeans; warm tan skin exactly as first frame; no saturation/value drift or beige/grey denim. Delicate thin warm brown #49382e outlines, subtle seams, clean 2-3 tone cel shading; no black or RGB<30, no thick sticker border, no texture grain, no muddy hands. Keep source torso and pelvis continuous with no transparent horizontal waist gap. Short centered skin neck cap, no head/hair/face. SINGLE complete neck-to-shoes figure centered with ample transparent margins in portrait2:3; transparent background, no shadow/glow/floor/labels/extra figures. Do not squash torso on passing phases; raised knee moves without shrinking body. Match base hoodie RGB65,106,170, shadow57,88,144, strings212,206,200. Ignore the slight color drift in image3; use it for body proportions only.",
+    "poseReference": "pose-guides-v6/down-3.png",
+    "references": [
+      "graphics/production/customization/top/hoodie/down.png",
+      "graphics/production/walk/pose-guides-v6/down-3.png",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+    ],
+    "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-down-3.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/customization/top/hoodie/down.png": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+      "graphics/production/walk/pose-guides-v6/down-3.png": "ee3639347fd9c2c6930d6d6146ef7fb8425abee83c57f912990d3a60da49b263",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "up",
+    "firstFrame": 0,
+    "count": 1,
+    "prompt": "Use case: illustration-story. Fresh production sprite of ONE HEADLESS body, Rear CONTACT walking AWAY: IMAGE RIGHT leg extends down with heel on ground, full shoe lowest, back heel visible; IMAGE LEFT leg trails with foot higher, partial sole visible. IMAGE LEFT arm bends forward away from viewer and hand is higher; IMAGE RIGHT arm swings back toward viewer and hand is lower. Back view ONLY, no front pockets on jeans, show back pockets. Image1 approved idle hoodie is garment/style reference. Image2 corrected technical mannequin is JOINT POSITIONS ONLY. Image3 freshly generated same-cycle front frame is body size, line weight and palette continuity reference; paint a complete new figure, do not paste its pixels. Same slim-average compact soft chibi build, short limbs, upright torso, rounded shoulders, SAME shoulder/waist widths, neck-to-hem length, jean fit, skin tone and shoe sizes across every phase. Rear blue pullover hoodie has the EXACT dropped triangular hood folded FLAT against upper back and ribbed cuffs/hem from image1; hood never up, no added white back collar/drawstrings, no front pocket visible. Navy jeans show two rear patch pockets, seams and real hems, brown canvas sneakers with cream soles. No buckle or extra dark waist band. Color lock: muted blue base #416aaa, shadow #395890, highlight #4b78b8; muted navy jeans; warm tan skin exactly as first frame; no saturation/value drift or beige/grey denim. Delicate thin warm brown #49382e outlines, subtle seams, clean 2-3 tone cel shading; no black or RGB<30, no thick sticker border, no texture grain, no muddy hands. Keep source torso and pelvis continuous with no transparent horizontal waist gap. Short centered skin neck cap, no head/hair/face. SINGLE complete neck-to-shoes figure centered with ample transparent margins in portrait2:3; transparent background, no shadow/glow/floor/labels/extra figures. Do not squash torso on passing phases; raised knee moves without shrinking body. Match base hoodie RGB65,106,170, shadow57,88,144, strings212,206,200. Ignore the slight color drift in image3; use it for body proportions only.",
+    "poseReference": "pose-guides-v6/up-0.png",
+    "references": [
+      "graphics/production/customization/top/hoodie/up.png",
+      "graphics/production/walk/pose-guides-v6/up-0.png",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+    ],
+    "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-up-0.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/customization/top/hoodie/up.png": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+      "graphics/production/walk/pose-guides-v6/up-0.png": "7eed86413627a3a30a7d282f4d485f2e87c8f822f21642ee7b95dd18f1bdb716",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "up",
+    "firstFrame": 1,
+    "count": 1,
+    "prompt": "Use case: illustration-story. Fresh production sprite of ONE HEADLESS body, Rear PASSING walking AWAY: IMAGE RIGHT leg supports vertically with full heel lowest planted. IMAGE LEFT knee flexes, foot lifts under hip and shoe sole faces viewer. Arms passing near torso, IMAGE LEFT hand a little higher, IMAGE RIGHT hand lower. Back view ONLY. Image1 approved idle hoodie is garment/style reference. Image2 corrected technical mannequin is JOINT POSITIONS ONLY. Image3 freshly generated same-cycle front frame is body size, line weight and palette continuity reference; paint a complete new figure, do not paste its pixels. Same slim-average compact soft chibi build, short limbs, upright torso, rounded shoulders, SAME shoulder/waist widths, neck-to-hem length, jean fit, skin tone and shoe sizes across every phase. Rear blue pullover hoodie has the EXACT dropped triangular hood folded FLAT against upper back and ribbed cuffs/hem from image1; hood never up, no added white back collar/drawstrings, no front pocket visible. Navy jeans show two rear patch pockets, seams and real hems, brown canvas sneakers with cream soles. No buckle or extra dark waist band. Color lock: muted blue base #416aaa, shadow #395890, highlight #4b78b8; muted navy jeans; warm tan skin exactly as first frame; no saturation/value drift or beige/grey denim. Delicate thin warm brown #49382e outlines, subtle seams, clean 2-3 tone cel shading; no black or RGB<30, no thick sticker border, no texture grain, no muddy hands. Keep source torso and pelvis continuous with no transparent horizontal waist gap. Short centered skin neck cap, no head/hair/face. SINGLE complete neck-to-shoes figure centered with ample transparent margins in portrait2:3; transparent background, no shadow/glow/floor/labels/extra figures. Do not squash torso on passing phases; raised knee moves without shrinking body. Match base hoodie RGB65,106,170, shadow57,88,144, strings212,206,200. Ignore the slight color drift in image3; use it for body proportions only. Revision: previous candidate had near-black silhouette pixels. Use fine WARM BROWN RGB73,56,46 for every outer edge including shoes/soles/laces and folds; absolutely no black RGB20 or lower, even at shoe bottoms. Do not add an outline pass. Render fresh clean artwork in the same thin-line style. Both hands must be visible beyond sleeve cuffs.",
+    "poseReference": "pose-guides-v6/up-1.png",
+    "references": [
+      "graphics/production/customization/top/hoodie/up.png",
+      "graphics/production/walk/pose-guides-v6/up-1.png",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+    ],
+    "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry2/top-hoodie-up-1.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/customization/top/hoodie/up.png": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+      "graphics/production/walk/pose-guides-v6/up-1.png": "f87f51043d4399a147392516030246e5f25cf3fd8d729887811882eab765c6fe",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "up",
+    "firstFrame": 2,
+    "count": 1,
+    "prompt": "Use case: illustration-story. Fresh production sprite of ONE HEADLESS body, Rear opposite CONTACT walking AWAY: IMAGE LEFT leg extends down and full back heel is lowest planted; IMAGE RIGHT trailing foot is higher with partial sole visible. IMAGE RIGHT arm swings forward away and hand is higher; IMAGE LEFT arm swings back toward viewer and hand is lower. Back view ONLY, do NOT mirror support side. Image1 approved idle hoodie is garment/style reference. Image2 corrected technical mannequin is JOINT POSITIONS ONLY. Image3 freshly generated same-cycle front frame is body size, line weight and palette continuity reference; paint a complete new figure, do not paste its pixels. Same slim-average compact soft chibi build, short limbs, upright torso, rounded shoulders, SAME shoulder/waist widths, neck-to-hem length, jean fit, skin tone and shoe sizes across every phase. Rear blue pullover hoodie has the EXACT dropped triangular hood folded FLAT against upper back and ribbed cuffs/hem from image1; hood never up, no added white back collar/drawstrings, no front pocket visible. Navy jeans show two rear patch pockets, seams and real hems, brown canvas sneakers with cream soles. No buckle or extra dark waist band. Color lock: muted blue base #416aaa, shadow #395890, highlight #4b78b8; muted navy jeans; warm tan skin exactly as first frame; no saturation/value drift or beige/grey denim. Delicate thin warm brown #49382e outlines, subtle seams, clean 2-3 tone cel shading; no black or RGB<30, no thick sticker border, no texture grain, no muddy hands. Keep source torso and pelvis continuous with no transparent horizontal waist gap. Short centered skin neck cap, no head/hair/face. SINGLE complete neck-to-shoes figure centered with ample transparent margins in portrait2:3; transparent background, no shadow/glow/floor/labels/extra figures. Do not squash torso on passing phases; raised knee moves without shrinking body. Match base hoodie RGB65,106,170, shadow57,88,144, strings212,206,200. Ignore the slight color drift in image3; use it for body proportions only.",
+    "poseReference": "pose-guides-v6/up-2.png",
+    "references": [
+      "graphics/production/customization/top/hoodie/up.png",
+      "graphics/production/walk/pose-guides-v6/up-2.png",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+    ],
+    "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-up-2.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/customization/top/hoodie/up.png": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+      "graphics/production/walk/pose-guides-v6/up-2.png": "92e1d8287cb73e8437b51d082df9ea9d15aef88b3e7410ef0420d6553a1d9079",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+    }
+  },
+  {
+    "garment": "hoodie",
+    "dir": "up",
+    "firstFrame": 3,
+    "count": 1,
+    "prompt": "Use case: illustration-story. Fresh production sprite of ONE HEADLESS body, Rear opposite PASSING walking AWAY: IMAGE LEFT leg supports vertically with full back heel lowest planted; IMAGE RIGHT knee flexes and shoe lifts under hip with sole facing viewer. Arms pass near torso, IMAGE RIGHT hand slightly higher and IMAGE LEFT hand lower. Back view ONLY. Image1 approved idle hoodie is garment/style reference. Image2 corrected technical mannequin is JOINT POSITIONS ONLY. Image3 freshly generated same-cycle front frame is body size, line weight and palette continuity reference; paint a complete new figure, do not paste its pixels. Same slim-average compact soft chibi build, short limbs, upright torso, rounded shoulders, SAME shoulder/waist widths, neck-to-hem length, jean fit, skin tone and shoe sizes across every phase. Rear blue pullover hoodie has the EXACT dropped triangular hood folded FLAT against upper back and ribbed cuffs/hem from image1; hood never up, no added white back collar/drawstrings, no front pocket visible. Navy jeans show two rear patch pockets, seams and real hems, brown canvas sneakers with cream soles. No buckle or extra dark waist band. Color lock: muted blue base #416aaa, shadow #395890, highlight #4b78b8; muted navy jeans; warm tan skin exactly as first frame; no saturation/value drift or beige/grey denim. Delicate thin warm brown #49382e outlines, subtle seams, clean 2-3 tone cel shading; no black or RGB<30, no thick sticker border, no texture grain, no muddy hands. Keep source torso and pelvis continuous with no transparent horizontal waist gap. Short centered skin neck cap, no head/hair/face. SINGLE complete neck-to-shoes figure centered with ample transparent margins in portrait2:3; transparent background, no shadow/glow/floor/labels/extra figures. Do not squash torso on passing phases; raised knee moves without shrinking body. Match base hoodie RGB65,106,170, shadow57,88,144, strings212,206,200. Ignore the slight color drift in image3; use it for body proportions only.",
+    "poseReference": "pose-guides-v6/up-3.png",
+    "references": [
+      "graphics/production/customization/top/hoodie/up.png",
+      "graphics/production/walk/pose-guides-v6/up-3.png",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png"
+    ],
+    "source": "graphics/production/walk/sources/rerender-v6/hoodie-v14/top-hoodie-up-3.png",
+    "seed": null,
+    "seedNote": "Built-in tool does not expose seed",
+    "visualApproval": false,
+    "runtimeInstalled": false,
+    "referenceSHA256": {
+      "graphics/production/customization/top/hoodie/up.png": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+      "graphics/production/walk/pose-guides-v6/up-3.png": "4929e4cf65a82d5b8c8ad8359fbac01e09dbaf9a1b8f39dc68922a28334406d9",
+      "graphics/production/walk/sources/rerender-v6/hoodie-v14-retry1/top-hoodie-down-0.png": "b3c92ec4e169b4303e11678f82c3b6135fe9c613c1f7e79ec3e234adf4c619d6"
+    }
+  }
+]
