@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "plant-parts-library-expanded-7",
+  "revision": "plant-parts-library-expanded-8",
   "parts": {
     "porchlight.seed@1": {
       "id": "porchlight.seed@1",
@@ -9289,6 +9289,846 @@
         177,
         219
       ]
+    },
+    "pineexpress.seed@1": {
+      "id": "pineexpress.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        121,
+        128,
+        89,
+        105
+      ]
+    },
+    "pineexpress.radicle@1": {
+      "id": "pineexpress.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.561798,
+        0.985646
+      ],
+      "when": {},
+      "crop": [
+        437,
+        78,
+        89,
+        209
+      ]
+    },
+    "pineexpress.cotyledon@1": {
+      "id": "pineexpress.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.47807,
+        0.980892
+      ],
+      "when": {},
+      "crop": [
+        673,
+        105,
+        228,
+        157
+      ]
+    },
+    "pineexpress.singleLeaf@1": {
+      "id": "pineexpress.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.059006,
+        0.987124
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1045,
+        34,
+        161,
+        233
+      ]
+    },
+    "pineexpress.threeLeaf@1": {
+      "id": "pineexpress.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.496063,
+        0.985437
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        38,
+        368,
+        254,
+        206
+      ]
+    },
+    "pineexpress.fiveLeaf@1": {
+      "id": "pineexpress.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.507874,
+        0.988235
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        348,
+        320,
+        254,
+        255
+      ]
+    },
+    "pineexpress.sevenLeaf@1": {
+      "id": "pineexpress.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.501618,
+        0.98855
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        632,
+        321,
+        309,
+        262
+      ]
+    },
+    "pineexpress.sugarLeaf@1": {
+      "id": "pineexpress.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.366935,
+        0.987854
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1048,
+        336,
+        124,
+        247
+      ]
+    },
+    "pineexpress.stem@1": {
+      "id": "pineexpress.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.477612,
+        0.987552
+      ],
+      "when": {},
+      "crop": [
+        140,
+        633,
+        67,
+        241
+      ]
+    },
+    "pineexpress.node@1": {
+      "id": "pineexpress.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.494949,
+        0.987755
+      ],
+      "when": {},
+      "crop": [
+        379,
+        632,
+        198,
+        245
+      ]
+    },
+    "pineexpress.femaleEarly@1": {
+      "id": "pineexpress.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.505682,
+        0.984772
+      ],
+      "when": {},
+      "crop": [
+        698,
+        664,
+        176,
+        197
+      ]
+    },
+    "pineexpress.femaleMid@1": {
+      "id": "pineexpress.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.43254,
+        0.986957
+      ],
+      "when": {},
+      "crop": [
+        987,
+        651,
+        252,
+        230
+      ]
+    },
+    "pineexpress.femaleLate@1": {
+      "id": "pineexpress.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.498437,
+        0.990476
+      ],
+      "when": {},
+      "crop": [
+        35,
+        906,
+        320,
+        315
+      ]
+    },
+    "pineexpress.maleClosed@1": {
+      "id": "pineexpress.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.299363,
+        0.007547
+      ],
+      "when": {},
+      "crop": [
+        446,
+        939,
+        157,
+        265
+      ]
+    },
+    "pineexpress.maleOpen@1": {
+      "id": "pineexpress.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/pineexpress/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.367521,
+        0.007782
+      ],
+      "when": {},
+      "crop": [
+        681,
+        927,
+        234,
+        257
+      ]
+    },
+    "gsc.seed@1": {
+      "id": "gsc.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        99,
+        105,
+        129,
+        109
+      ]
+    },
+    "gsc.radicle@1": {
+      "id": "gsc.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.524194,
+        0.986784
+      ],
+      "when": {},
+      "crop": [
+        409,
+        65,
+        124,
+        227
+      ]
+    },
+    "gsc.cotyledon@1": {
+      "id": "gsc.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.492424,
+        0.983425
+      ],
+      "when": {},
+      "crop": [
+        655,
+        84,
+        264,
+        181
+      ]
+    },
+    "gsc.singleLeaf@1": {
+      "id": "gsc.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.086957,
+        0.988722
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1047,
+        27,
+        138,
+        266
+      ]
+    },
+    "gsc.threeLeaf@1": {
+      "id": "gsc.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.504065,
+        0.987755
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        47,
+        343,
+        246,
+        245
+      ]
+    },
+    "gsc.fiveLeaf@1": {
+      "id": "gsc.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.501931,
+        0.988372
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        351,
+        336,
+        259,
+        258
+      ]
+    },
+    "gsc.sevenLeaf@1": {
+      "id": "gsc.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.486532,
+        0.989933
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        654,
+        312,
+        297,
+        298
+      ]
+    },
+    "gsc.sugarLeaf@1": {
+      "id": "gsc.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.300885,
+        0.987854
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1052,
+        353,
+        113,
+        247
+      ]
+    },
+    "gsc.stem@1": {
+      "id": "gsc.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.480519,
+        0.987124
+      ],
+      "when": {},
+      "crop": [
+        126,
+        646,
+        77,
+        233
+      ]
+    },
+    "gsc.node@1": {
+      "id": "gsc.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.468487,
+        0.987069
+      ],
+      "when": {},
+      "crop": [
+        369,
+        655,
+        238,
+        232
+      ]
+    },
+    "gsc.femaleEarly@1": {
+      "id": "gsc.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.486772,
+        0.986547
+      ],
+      "when": {},
+      "crop": [
+        701,
+        663,
+        189,
+        223
+      ]
+    },
+    "gsc.femaleMid@1": {
+      "id": "gsc.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.485075,
+        0.988327
+      ],
+      "when": {},
+      "crop": [
+        968,
+        640,
+        268,
+        257
+      ]
+    },
+    "gsc.femaleLate@1": {
+      "id": "gsc.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.587879,
+        0.990854
+      ],
+      "when": {},
+      "crop": [
+        20,
+        900,
+        330,
+        328
+      ]
+    },
+    "gsc.maleClosed@1": {
+      "id": "gsc.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.536313,
+        0.007605
+      ],
+      "when": {},
+      "crop": [
+        397,
+        929,
+        179,
+        263
+      ]
+    },
+    "gsc.maleOpen@1": {
+      "id": "gsc.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/gsc/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.334711,
+        0.007326
+      ],
+      "when": {},
+      "crop": [
+        681,
+        917,
+        242,
+        273
+      ]
+    },
+    "gg4.seed@1": {
+      "id": "gg4.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        106,
+        99,
+        108,
+        124
+      ]
+    },
+    "gg4.radicle@1": {
+      "id": "gg4.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.5,
+        0.987603
+      ],
+      "when": {},
+      "crop": [
+        424,
+        50,
+        98,
+        242
+      ]
+    },
+    "gg4.cotyledon@1": {
+      "id": "gg4.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.501992,
+        0.984211
+      ],
+      "when": {},
+      "crop": [
+        659,
+        80,
+        251,
+        190
+      ]
+    },
+    "gg4.singleLeaf@1": {
+      "id": "gg4.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.047904,
+        0.987705
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1027,
+        40,
+        167,
+        244
+      ]
+    },
+    "gg4.threeLeaf@1": {
+      "id": "gg4.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.495968,
+        0.988372
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        32,
+        328,
+        248,
+        258
+      ]
+    },
+    "gg4.fiveLeaf@1": {
+      "id": "gg4.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.501901,
+        0.98855
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        345,
+        327,
+        263,
+        262
+      ]
+    },
+    "gg4.sevenLeaf@1": {
+      "id": "gg4.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.498333,
+        0.989583
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        635,
+        312,
+        300,
+        288
+      ]
+    },
+    "gg4.sugarLeaf@1": {
+      "id": "gg4.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.598739,
+        0.988506
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        976,
+        334,
+        238,
+        261
+      ]
+    },
+    "gg4.stem@1": {
+      "id": "gg4.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.490566,
+        0.987603
+      ],
+      "when": {},
+      "crop": [
+        131,
+        630,
+        53,
+        242
+      ]
+    },
+    "gg4.node@1": {
+      "id": "gg4.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.497175,
+        0.987552
+      ],
+      "when": {},
+      "crop": [
+        388,
+        631,
+        177,
+        241
+      ]
+    },
+    "gg4.femaleEarly@1": {
+      "id": "gg4.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.513514,
+        0.987342
+      ],
+      "when": {},
+      "crop": [
+        685,
+        645,
+        185,
+        237
+      ]
+    },
+    "gg4.femaleMid@1": {
+      "id": "gg4.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.584677,
+        0.987952
+      ],
+      "when": {},
+      "crop": [
+        970,
+        634,
+        248,
+        249
+      ]
+    },
+    "gg4.femaleLate@1": {
+      "id": "gg4.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.319149,
+        0.990881
+      ],
+      "when": {},
+      "crop": [
+        14,
+        903,
+        329,
+        329
+      ]
+    },
+    "gg4.maleClosed@1": {
+      "id": "gg4.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.541063,
+        0.006711
+      ],
+      "when": {},
+      "crop": [
+        406,
+        903,
+        207,
+        298
+      ]
+    },
+    "gg4.maleOpen@1": {
+      "id": "gg4.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/gg4/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.542636,
+        0.006757
+      ],
+      "when": {},
+      "crop": [
+        666,
+        909,
+        258,
+        296
+      ]
     }
   },
   "profiles": {
@@ -10996,6 +11836,162 @@
         ]
       },
       "lineId": "cl_slh"
+    },
+    "pineexpress@1": {
+      "id": "pineexpress@1",
+      "name": "Pineapple Express",
+      "roles": {
+        "seed": [
+          "pineexpress.seed@1"
+        ],
+        "radicle": [
+          "pineexpress.radicle@1"
+        ],
+        "cotyledon": [
+          "pineexpress.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "pineexpress.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "pineexpress.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "pineexpress.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "pineexpress.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "pineexpress.sugarLeaf@1"
+        ],
+        "stem": [
+          "pineexpress.stem@1"
+        ],
+        "node": [
+          "pineexpress.node@1"
+        ],
+        "femaleEarly": [
+          "pineexpress.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "pineexpress.femaleMid@1"
+        ],
+        "femaleLate": [
+          "pineexpress.femaleLate@1"
+        ],
+        "maleClosed": [
+          "pineexpress.maleClosed@1"
+        ],
+        "maleOpen": [
+          "pineexpress.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_pineexpress"
+    },
+    "gsc@1": {
+      "id": "gsc@1",
+      "name": "GSC",
+      "roles": {
+        "seed": [
+          "gsc.seed@1"
+        ],
+        "radicle": [
+          "gsc.radicle@1"
+        ],
+        "cotyledon": [
+          "gsc.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "gsc.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "gsc.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "gsc.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "gsc.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "gsc.sugarLeaf@1"
+        ],
+        "stem": [
+          "gsc.stem@1"
+        ],
+        "node": [
+          "gsc.node@1"
+        ],
+        "femaleEarly": [
+          "gsc.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "gsc.femaleMid@1"
+        ],
+        "femaleLate": [
+          "gsc.femaleLate@1"
+        ],
+        "maleClosed": [
+          "gsc.maleClosed@1"
+        ],
+        "maleOpen": [
+          "gsc.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_gsc"
+    },
+    "gg4@1": {
+      "id": "gg4@1",
+      "name": "GG4",
+      "roles": {
+        "seed": [
+          "gg4.seed@1"
+        ],
+        "radicle": [
+          "gg4.radicle@1"
+        ],
+        "cotyledon": [
+          "gg4.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "gg4.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "gg4.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "gg4.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "gg4.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "gg4.sugarLeaf@1"
+        ],
+        "stem": [
+          "gg4.stem@1"
+        ],
+        "node": [
+          "gg4.node@1"
+        ],
+        "femaleEarly": [
+          "gg4.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "gg4.femaleMid@1"
+        ],
+        "femaleLate": [
+          "gg4.femaleLate@1"
+        ],
+        "maleClosed": [
+          "gg4.maleClosed@1"
+        ],
+        "maleOpen": [
+          "gg4.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_gg4"
     }
   },
   "strains": {
@@ -11029,7 +12025,10 @@
     "cl_trainwreck": "trainwreck@1",
     "cl_ak47": "ak47@1",
     "cl_ssh": "ssh@1",
-    "cl_slh": "slh@1"
+    "cl_slh": "slh@1",
+    "cl_pineexpress": "pineexpress@1",
+    "cl_gsc": "gsc@1",
+    "cl_gg4": "gg4@1"
   },
   "inheritedTraits": {
     "leafShape": {

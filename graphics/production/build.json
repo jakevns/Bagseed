@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "46ede16f4821333d14adf6e9d06a10ca48b56ca3a3fe9a94146f95e568bbbb5b",
-  "updatedSHA": "f4a4bfaec7bdc326a97979fc224dbb54d7bb996d61ad4eba162088f822a8fc39",
+  "updatedSHA": "427951a86c74483308dcc07dce40609d96383faa5f3b4b69660e6c17f08d7dda",
   "characterRevision": "character-alignment-audit-v6",
   "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2",
   "characterSourcesSHA256": {
@@ -32,7 +32,7 @@
     "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 4054344,
+  "bytes": 4080925,
   "modularAssets": 544,
   "embeddedImages": 1820,
   "approvedIdentities": [
@@ -150,8 +150,8 @@
     "pro",
     "premium"
   ],
-  "livePlantsRevision": "live-plants-14",
-  "livePlantKits": 33,
+  "livePlantsRevision": "live-plants-15",
+  "livePlantKits": 36,
   "personScaleRevision": "person-scale-1",
   "personScale": 1.35,
   "livePlantMutationKits": 15,

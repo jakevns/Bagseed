@@ -74,7 +74,7 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 
 ## Live renderer integration
 
-`tools/compile-live-plants.cjs` verifies all thirty-three approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
+`tools/compile-live-plants.cjs` verifies all thirty-six approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
 
 Visual recipes (`paintArt115`, schema v1) record the component donor kits, stable phenotype seed and expressed traits. Actual plant height, node count, water, health, nutrition, stress, pruning and training remain live inputs. Recipes are stored on plant and clone phenotype records, copied into photos, and populated for older saves at post-load and save boundaries. Rendering does not alter biology. Existing mutant genes from the latest merged update remain native; the painted compositor expresses all fifteen leaf/color/structure traits, including stacked traits.
 
@@ -85,7 +85,7 @@ Earlier per-strain notes describe the original prototype milestone. Production i
 
 The first mutation implementation is [Freakshow](mutations/freakshow/README.md).
 Its two leaf forms use dedicated painted development and mature-fan atlases,
-loaded through the same startup gate as the thirty-three strain kits. The live
+loaded through the same startup gate as the thirty-six strain kits. The live
 renderer applies the existing phenotype palette, finishing colors, symptoms,
 training and wind. Mutation kits are separate from the strain catalog; native
 mutation identities and genotype/save data are preserved.
@@ -144,3 +144,7 @@ Approved dedicated kits map to `cl_jackherer`, `cl_durban` and `cl_trainwreck`. 
 ## Expanded catalog: AK-47, Super Silver Haze and Super Lemon Haze
 
 Approved kits `ak47`, `ssh` and `slh` map to their existing native lines. Released dedicated coverage is **31/37 named strains**, with six remaining. Startup gates 33 base and 17 mutation atlases (50 images). All three retain natural golden finishing with no added purple eligibility. Native genetics, biological growth and pinned historical photos remain intact; compatible living plants receive their new dedicated artwork at load/save boundaries. Exact approved sources and full-cycle media: `review/strain-batch-12/`.
+
+## Expanded catalog: Pineapple Express, GSC and GG4
+
+Approved dedicated kits map to existing `cl_pineexpress`, `cl_gsc` and `cl_gg4`. Released dedicated coverage is **34/37 named strains**, with three remaining. Startup gates 36 base and 17 mutation atlases (53 images). Only GSC retains purple senescence and native cool-night pigment eligibility; Pineapple Express/GG4 keep golden finishing. Compatible living saves upgrade artwork while preserving genetics, seed, expressed traits and height. Historical photos remain pinned. Exact approved source/media checkpoint: `review/strain-batch-13/`.

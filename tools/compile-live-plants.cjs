@@ -9,7 +9,7 @@ module.exports=function(){
   const spec=fs.existsSync(pfile)?JSON.parse(fs.readFileSync(pfile)):{id,name:'Porchlight',traits:{leafShape:'broad',leafKey:'forest',colorName:'Forest green',branching:1.1}};
   kits[id]={...m,traits:spec.traits,lineId:spec.lineId||id};
  }
- assert.equal(Object.keys(kits).length,33);
+ assert.equal(Object.keys(kits).length,36);
  const mutations={};
  for(const id of fs.readdirSync(path.join(base,'mutations'))){
   const file=path.join(base,'mutations',id,'sources/manifest.json');if(!fs.existsSync(file))continue;
