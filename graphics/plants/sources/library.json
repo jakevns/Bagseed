@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "plant-parts-library-expanded-5",
+  "revision": "plant-parts-library-expanded-6",
   "parts": {
     "porchlight.seed@1": {
       "id": "porchlight.seed@1",
@@ -7609,6 +7609,846 @@
         222,
         241
       ]
+    },
+    "jackherer.seed@1": {
+      "id": "jackherer.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        100,
+        148,
+        138,
+        149
+      ]
+    },
+    "jackherer.radicle@1": {
+      "id": "jackherer.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.901163,
+        0.985646
+      ],
+      "when": {},
+      "crop": [
+        384,
+        127,
+        172,
+        209
+      ]
+    },
+    "jackherer.cotyledon@1": {
+      "id": "jackherer.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.494949,
+        0.977778
+      ],
+      "when": {},
+      "crop": [
+        642,
+        166,
+        297,
+        135
+      ]
+    },
+    "jackherer.singleLeaf@1": {
+      "id": "jackherer.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.331461,
+        0.988889
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1060,
+        69,
+        89,
+        270
+      ]
+    },
+    "jackherer.threeLeaf@1": {
+      "id": "jackherer.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.481633,
+        0.988417
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        54,
+        372,
+        245,
+        259
+      ]
+    },
+    "jackherer.fiveLeaf@1": {
+      "id": "jackherer.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.502008,
+        0.98893
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        345,
+        360,
+        249,
+        271
+      ]
+    },
+    "jackherer.sevenLeaf@1": {
+      "id": "jackherer.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.49481,
+        0.989324
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        647,
+        353,
+        289,
+        281
+      ]
+    },
+    "jackherer.sugarLeaf@1": {
+      "id": "jackherer.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.987234
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        989,
+        397,
+        234,
+        235
+      ]
+    },
+    "jackherer.stem@1": {
+      "id": "jackherer.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.5,
+        0.983146
+      ],
+      "when": {},
+      "crop": [
+        126,
+        689,
+        79,
+        178
+      ]
+    },
+    "jackherer.node@1": {
+      "id": "jackherer.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.5,
+        0.984615
+      ],
+      "when": {},
+      "crop": [
+        368,
+        684,
+        222,
+        195
+      ]
+    },
+    "jackherer.femaleEarly@1": {
+      "id": "jackherer.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.490347,
+        0.987342
+      ],
+      "when": {},
+      "crop": [
+        658,
+        666,
+        259,
+        237
+      ]
+    },
+    "jackherer.femaleMid@1": {
+      "id": "jackherer.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.771784,
+        0.988722
+      ],
+      "when": {},
+      "crop": [
+        975,
+        650,
+        241,
+        266
+      ]
+    },
+    "jackherer.femaleLate@1": {
+      "id": "jackherer.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.472527,
+        0.990798
+      ],
+      "when": {},
+      "crop": [
+        57,
+        891,
+        273,
+        326
+      ]
+    },
+    "jackherer.maleClosed@1": {
+      "id": "jackherer.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.478947,
+        0.007273
+      ],
+      "when": {},
+      "crop": [
+        403,
+        926,
+        190,
+        275
+      ]
+    },
+    "jackherer.maleOpen@1": {
+      "id": "jackherer.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/jackherer/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.474265,
+        0.007605
+      ],
+      "when": {},
+      "crop": [
+        657,
+        930,
+        272,
+        263
+      ]
+    },
+    "durban.seed@1": {
+      "id": "durban.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        129,
+        146,
+        128,
+        135
+      ]
+    },
+    "durban.radicle@1": {
+      "id": "durban.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.905063,
+        0.984772
+      ],
+      "when": {},
+      "crop": [
+        421,
+        117,
+        158,
+        197
+      ]
+    },
+    "durban.cotyledon@1": {
+      "id": "durban.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.493827,
+        0.976923
+      ],
+      "when": {},
+      "crop": [
+        687,
+        149,
+        243,
+        130
+      ]
+    },
+    "durban.singleLeaf@1": {
+      "id": "durban.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.353659,
+        0.988
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1075,
+        73,
+        82,
+        250
+      ]
+    },
+    "durban.threeLeaf@1": {
+      "id": "durban.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.497738,
+        0.988
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        73,
+        379,
+        221,
+        250
+      ]
+    },
+    "durban.fiveLeaf@1": {
+      "id": "durban.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.508439,
+        0.988506
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        364,
+        367,
+        237,
+        261
+      ]
+    },
+    "durban.sevenLeaf@1": {
+      "id": "durban.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.490494,
+        0.989051
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        684,
+        361,
+        263,
+        274
+      ]
+    },
+    "durban.sugarLeaf@1": {
+      "id": "durban.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.522843,
+        0.987069
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1024,
+        398,
+        197,
+        232
+      ]
+    },
+    "durban.stem@1": {
+      "id": "durban.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.471429,
+        0.983516
+      ],
+      "when": {},
+      "crop": [
+        146,
+        698,
+        70,
+        182
+      ]
+    },
+    "durban.node@1": {
+      "id": "durban.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.492105,
+        0.983333
+      ],
+      "when": {},
+      "crop": [
+        390,
+        705,
+        190,
+        180
+      ]
+    },
+    "durban.femaleEarly@1": {
+      "id": "durban.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.497608,
+        0.985507
+      ],
+      "when": {},
+      "crop": [
+        687,
+        694,
+        209,
+        207
+      ]
+    },
+    "durban.femaleMid@1": {
+      "id": "durban.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.825893,
+        0.987448
+      ],
+      "when": {},
+      "crop": [
+        984,
+        669,
+        224,
+        239
+      ]
+    },
+    "durban.femaleLate@1": {
+      "id": "durban.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.52459,
+        0.989547
+      ],
+      "when": {},
+      "crop": [
+        65,
+        924,
+        244,
+        287
+      ]
+    },
+    "durban.maleClosed@1": {
+      "id": "durban.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.521978,
+        0.008032
+      ],
+      "when": {},
+      "crop": [
+        427,
+        946,
+        182,
+        249
+      ]
+    },
+    "durban.maleOpen@1": {
+      "id": "durban.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/durban/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.458333,
+        0.008333
+      ],
+      "when": {},
+      "crop": [
+        699,
+        952,
+        240,
+        240
+      ]
+    },
+    "trainwreck.seed@1": {
+      "id": "trainwreck.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        109,
+        146,
+        128,
+        133
+      ]
+    },
+    "trainwreck.radicle@1": {
+      "id": "trainwreck.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.908284,
+        0.984615
+      ],
+      "when": {},
+      "crop": [
+        391,
+        128,
+        169,
+        195
+      ]
+    },
+    "trainwreck.cotyledon@1": {
+      "id": "trainwreck.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.494297,
+        0.976
+      ],
+      "when": {},
+      "crop": [
+        671,
+        143,
+        263,
+        125
+      ]
+    },
+    "trainwreck.singleLeaf@1": {
+      "id": "trainwreck.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.091667,
+        0.989286
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1071,
+        54,
+        120,
+        280
+      ]
+    },
+    "trainwreck.threeLeaf@1": {
+      "id": "trainwreck.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.501992,
+        0.987705
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        44,
+        364,
+        251,
+        244
+      ]
+    },
+    "trainwreck.fiveLeaf@1": {
+      "id": "trainwreck.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.498113,
+        0.988679
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        354,
+        346,
+        265,
+        265
+      ]
+    },
+    "trainwreck.sevenLeaf@1": {
+      "id": "trainwreck.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.509646,
+        0.989691
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        639,
+        330,
+        311,
+        291
+      ]
+    },
+    "trainwreck.sugarLeaf@1": {
+      "id": "trainwreck.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.504032,
+        0.987342
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        982,
+        383,
+        248,
+        237
+      ]
+    },
+    "trainwreck.stem@1": {
+      "id": "trainwreck.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.5,
+        0.983146
+      ],
+      "when": {},
+      "crop": [
+        136,
+        687,
+        72,
+        178
+      ]
+    },
+    "trainwreck.node@1": {
+      "id": "trainwreck.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.495305,
+        0.984536
+      ],
+      "when": {},
+      "crop": [
+        380,
+        684,
+        213,
+        194
+      ]
+    },
+    "trainwreck.femaleEarly@1": {
+      "id": "trainwreck.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.763158,
+        0.988372
+      ],
+      "when": {},
+      "crop": [
+        659,
+        653,
+        266,
+        258
+      ]
+    },
+    "trainwreck.femaleMid@1": {
+      "id": "trainwreck.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.533465,
+        0.98855
+      ],
+      "when": {},
+      "crop": [
+        976,
+        648,
+        254,
+        262
+      ]
+    },
+    "trainwreck.femaleLate@1": {
+      "id": "trainwreck.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.483923,
+        0.991202
+      ],
+      "when": {},
+      "crop": [
+        32,
+        883,
+        311,
+        341
+      ]
+    },
+    "trainwreck.maleClosed@1": {
+      "id": "trainwreck.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.553191,
+        0.007937
+      ],
+      "when": {},
+      "crop": [
+        415,
+        955,
+        188,
+        252
+      ]
+    },
+    "trainwreck.maleOpen@1": {
+      "id": "trainwreck.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/trainwreck/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.5,
+        0.008065
+      ],
+      "when": {},
+      "crop": [
+        682,
+        962,
+        240,
+        248
+      ]
     }
   },
   "profiles": {
@@ -9004,6 +9844,162 @@
         ]
       },
       "lineId": "cl_chemdawg"
+    },
+    "jackherer@1": {
+      "id": "jackherer@1",
+      "name": "Jack Herer",
+      "roles": {
+        "seed": [
+          "jackherer.seed@1"
+        ],
+        "radicle": [
+          "jackherer.radicle@1"
+        ],
+        "cotyledon": [
+          "jackherer.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "jackherer.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "jackherer.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "jackherer.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "jackherer.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "jackherer.sugarLeaf@1"
+        ],
+        "stem": [
+          "jackherer.stem@1"
+        ],
+        "node": [
+          "jackherer.node@1"
+        ],
+        "femaleEarly": [
+          "jackherer.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "jackherer.femaleMid@1"
+        ],
+        "femaleLate": [
+          "jackherer.femaleLate@1"
+        ],
+        "maleClosed": [
+          "jackherer.maleClosed@1"
+        ],
+        "maleOpen": [
+          "jackherer.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_jackherer"
+    },
+    "durban@1": {
+      "id": "durban@1",
+      "name": "Durban Poison",
+      "roles": {
+        "seed": [
+          "durban.seed@1"
+        ],
+        "radicle": [
+          "durban.radicle@1"
+        ],
+        "cotyledon": [
+          "durban.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "durban.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "durban.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "durban.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "durban.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "durban.sugarLeaf@1"
+        ],
+        "stem": [
+          "durban.stem@1"
+        ],
+        "node": [
+          "durban.node@1"
+        ],
+        "femaleEarly": [
+          "durban.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "durban.femaleMid@1"
+        ],
+        "femaleLate": [
+          "durban.femaleLate@1"
+        ],
+        "maleClosed": [
+          "durban.maleClosed@1"
+        ],
+        "maleOpen": [
+          "durban.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_durban"
+    },
+    "trainwreck@1": {
+      "id": "trainwreck@1",
+      "name": "Trainwreck",
+      "roles": {
+        "seed": [
+          "trainwreck.seed@1"
+        ],
+        "radicle": [
+          "trainwreck.radicle@1"
+        ],
+        "cotyledon": [
+          "trainwreck.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "trainwreck.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "trainwreck.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "trainwreck.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "trainwreck.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "trainwreck.sugarLeaf@1"
+        ],
+        "stem": [
+          "trainwreck.stem@1"
+        ],
+        "node": [
+          "trainwreck.node@1"
+        ],
+        "femaleEarly": [
+          "trainwreck.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "trainwreck.femaleMid@1"
+        ],
+        "femaleLate": [
+          "trainwreck.femaleLate@1"
+        ],
+        "maleClosed": [
+          "trainwreck.maleClosed@1"
+        ],
+        "maleOpen": [
+          "trainwreck.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_trainwreck"
     }
   },
   "strains": {
@@ -9031,7 +10027,10 @@
     "cl_blueberry": "blueberry@1",
     "cl_bluedream": "bluedream@1",
     "cl_sourdiesel": "sourdiesel@1",
-    "cl_chemdawg": "chemdawg@1"
+    "cl_chemdawg": "chemdawg@1",
+    "cl_jackherer": "jackherer@1",
+    "cl_durban": "durban@1",
+    "cl_trainwreck": "trainwreck@1"
   },
   "inheritedTraits": {
     "leafShape": {
