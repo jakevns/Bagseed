@@ -1,0 +1,60 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "c2d741fff1eb986109feff9bb2b818a95c37a772",
+  "nativeLine": "cl_skunk1",
+  "name": "Skunk #1",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1.05
+  },
+  "generatedSource": "exec-a6a8dd60-1721-405d-a703-9ced56111efa.png",
+  "sourceSHA256": "e6ac6e1a7ef97848a6c9859cdaa7f6f4af93f19a7c2717d5a2269954b7bc9459",
+  "runtimeSHA256": "431c2ff98a1aca9c37ba4e2e97be25a6fe1348d34c370f9dfbda241497897697",
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "d26540181a8d39c25320ca39e907fabaf79f269e0c322c640d58c81a7ff0b56f",
+  "verification": {
+    "report": "verification.json",
+    "saveReload": true,
+    "mutationCombinationsPassed": 15,
+    "animation": {
+      "frames": 96,
+      "fps": 12,
+      "seconds": 8
+    },
+    "browserErrors": [],
+    "actualProductionPagePassed": true,
+    "existingSaveArtworkUpgradePassed": true,
+    "postIntegrationBrowserTestsPassed": 3,
+    "staticIntegrityPassed": true,
+    "pinnedOldPhotoRecipesPreserved": true
+  },
+  "files": {
+    "50-and-90-inches.png": "48797e59c38196b57c909b6042e49b56620ae1ab07916a26fc9f3c1e0023a12d",
+    "README.md": "d08a6c26498a55bc4be8f8beada0ca0db6ceaa988cf5d318e395ca3a3a17843d",
+    "care-and-training.png": "4426be417e4e14290a71a236d716e859e5e79079c9a11346d0be91e2515a7b38",
+    "flower-detail.png": "65b63ceb63bb0a33bc3f9b894ee7fb1ab6c22f6644e6901ca89495aa855bca0b",
+    "growth-and-wind.gif": "bcf00ae519957479e5456b1fee6516ea82aaff4818a6964fa4b5c839ad254bc0",
+    "growth-and-wind.mp4": "afc9cb7c6feca3303efad9907576856692d70a377a6c3be759230ca6bacebc39",
+    "kits/skunk1/assets/components.png": "e6ac6e1a7ef97848a6c9859cdaa7f6f4af93f19a7c2717d5a2269954b7bc9459",
+    "kits/skunk1/assets/components.webp": "431c2ff98a1aca9c37ba4e2e97be25a6fe1348d34c370f9dfbda241497897697",
+    "kits/skunk1/sources/manifest.json": "ca13ff9863187256b515b3bdee909552b14bf280e275cd8b599c54313db82faf",
+    "kits/skunk1/sources/profile.json": "edf5d96ed8f5b28831bc2fe6474cab94b462d2eeb595e9bfed5be4b98fdf20b7",
+    "late-flower-senescence.png": "9bcd399cc1d87114a43fefa7ab1e9bfb0915c807194b46f9d76f05046abb55ca",
+    "skunk1-growth.png": "0219ad019a3d70625d622c5a7700a70cba8a8d1cbec1cec66ed2e24af5e991eb",
+    "strain-for-approval.png": "ec13495317a3b3952d3f2128ef8267ba4ee3961c301be020337ca5108e7c3faf",
+    "three-strains-in-flower.png": "b80d6da63cee6103e217b381972b7b9236328e9c595e06b839bbc84f63b31301",
+    "vegetative-identities.png": "2c3f337f8522adb736834ecd48e6ff31b85f1aaedc482fa860c7c6889f20cd5b",
+    "verification.json": "2ac24f131c0f8951f13ac168d6c8579262b0e25ca4dd555c9a8c72b20ba17817"
+  },
+  "characterRelease": "character-alignment-audit-v6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2",
+  "productionManifestSHA256": "e3ec97b5f277125771bfa3a0b215f4e137fabdbb45ddf39f3da946e41247e551",
+  "coverage": {
+    "dedicatedNamedStrains": 16,
+    "namedStrainsTotal": 37,
+    "baseAtlases": 18,
+    "mutationAtlases": 17
+  }
+}

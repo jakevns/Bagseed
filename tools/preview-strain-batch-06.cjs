@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,'..'),review=path.join(root,'review/strain-bat
 const keys=['ogkush','whitewidow','northernlights'];
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
-function reviewBuild(){
+function reviewBuild({reviewRoot=review,kitKeys=keys}={}){
  const kits={},mutations={},routes={},specs=[];
  for(const id of fs.readdirSync(path.join(root,'graphics/plants'))){
   const dir='graphics/plants/'+id,file=dir+'/sources/manifest.json';
@@ -15,8 +15,8 @@ function reviewBuild(){
   const s=fs.existsSync(path.join(root,specFile))?JSON.parse(read(specFile)):{traits:{leafShape:'broad',leafKey:'forest',colorName:'Forest green',branching:1.1}};
   kits[id]={...m,traits:s.traits,lineId:s.lineId||id};
  }
- for(const key of keys){
-  const dir=path.join(review,'kits',key),m=JSON.parse(fs.readFileSync(path.join(dir,'sources/manifest.json'))),s=JSON.parse(fs.readFileSync(path.join(dir,'sources/profile.json')));
+ for(const key of kitKeys){
+  const dir=path.join(reviewRoot,'kits',key),m=JSON.parse(fs.readFileSync(path.join(dir,'sources/manifest.json'))),s=JSON.parse(fs.readFileSync(path.join(dir,'sources/profile.json')));
   assert.equal(m.status,'sample-awaiting-approval');
   const source=fs.readFileSync(path.join(dir,m.source)),runtime=fs.readFileSync(path.join(dir,'assets/components.webp'));
   assert.equal(sha(source),m.sourceSHA256);assert.equal(sha(runtime),m.runtimeSHA256);
@@ -29,10 +29,10 @@ function reviewBuild(){
  const code='(()=>{const module={exports:{}};'+read('graphics/plants/porchlight/sources/model.cjs')+';window.BagseedPlantModel=module.exports;})();\n'+read('graphics/plants/sources/live-renderer.js').replace('__BAGSEED_LIVE_PLANTS__',()=>JSON.stringify(kits)).replace('__BAGSEED_PLANT_MUTATIONS__',()=>JSON.stringify(mutations));
  const html=read('public/index.html'),pattern=/<script id="bagseed-live-plants-code">[\s\S]*?<\/script>/;
  assert.equal((html.match(new RegExp(pattern.source,'g'))||[]).length,1);
- return{html:html.replace(pattern,()=>'<script id="bagseed-live-plants-code">\n'+code+'\n</script>'),routes,specs};
+ return{html:html.replace(pattern,()=>'<script id="bagseed-live-plants-code">\n'+code+'\n</script>'),routes,specs,atlasCount:Object.keys(kits).length+Object.values(mutations).reduce((n,m)=>n+Object.keys(m.atlases).length,0)};
 }
-async function capture({out=review,animate=false,production=false}={}){
- fs.mkdirSync(out,{recursive:true});const original=sha(read('public/index.html')),build=reviewBuild();
+async function capture({reviewRoot=review,kitKeys=keys,out=reviewRoot,animate=false,production=false}={}){
+ fs.mkdirSync(out,{recursive:true});const original=sha(read('public/index.html')),build=reviewBuild({reviewRoot,kitKeys});
  const {createStaticServer}=await import('./server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
  try{
   browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'/usr/bin/chromium'});
@@ -61,7 +61,7 @@ async function capture({out=review,animate=false,production=false}={}){
     const s=PlantArt.build(p),frame=BagseedPlants.frame(p,s,t,wind);c.drawImage(frame,x-s.ax*scale,y-s.ay*scale,s.w*scale,s.h*scale);
     c.save();c.translate(x,y);c.scale(potScale,potScale);BagseedWaterPots.potSprite(c,0,0,3,p.water,false,true);c.restore();return s;
    }
-   function board(name,title,subtitle,entries,{cols=3,cw=600,ch=880,scale=null}={}){
+   function board(name,title,subtitle,entries,{cols=Math.min(3,specs.length),cw=600,ch=880,scale=null}={}){
     const [cv,c]=canvas(cols*cw,100+Math.ceil(entries.length/cols)*ch,title,subtitle);
     scale??=Math.min(6,...entries.map(e=>{const s=PlantArt.build(e.p);return Math.min((cw-45)/s.w,(ch-145)/s.h);}));
     entries.forEach((e,i)=>{const x=i%cols*cw,y=100+Math.floor(i/cols)*ch;c.fillStyle='#e0e5d2';c.fillRect(x+8,y+5,cw-16,ch-20);
@@ -71,7 +71,8 @@ async function capture({out=review,animate=false,production=false}={}){
      c.fillStyle='#29483a';c.font='bold 24px Georgia';c.fillText(e.label,x+18,y+ch-58,cw-36);c.font='17px Georgia';c.fillText(e.note||'',x+18,y+ch-25,cw-36);});
     files[name]=cv.toDataURL();
    }
-   board('three-strains-in-flower','BAGSEED / three new strain identities','OG Kush, White Widow and Northern Lights / native game compositor / matched 50-inch plants',specs.map((s,i)=>({p:make(i),label:s.name,note:['Forest hybrid fans / tapered resinous flowers','Lime hybrid fans / heavy white resin frost','Broad forest fans / compact flower clusters'][i]})));
+   board('three-strains-in-flower','BAGSEED / dedicated strain identities',specs.map(s=>s.name).join(', ')+' / native game compositor / matched 50-inch plants',specs.map((s,i)=>({p:make(i),label:s.name,note:s.traits.leafShape+' fans / '+s.traits.colorName})));
+   if(specs.length===1)board('strain-for-approval',specs[0].name.toUpperCase()+' / DEDICATED PLANT ART','One saved phenotype / vegetative growth, flowering and natural final-week fade.',[{p:make(0,5,35),label:'Vegetative growth',note:'Forest-green hybrid fans'},{p:make(0,8,50),label:'Building flowers',note:'Resinous flower clusters / attached branch buds'},{p:make(0,10,50),label:'Final-week senescence',note:'Golden fans / amber pistils / retained flower detail'}],{cols:3});
    board('late-flower-senescence','BAGSEED / the final week','Healthy finishing color follows the current green phenotypes: golden fans, retained flower detail.',specs.map((s,i)=>({p:make(i,10),label:s.name,note:'Late flower / golden phenotype senescence'})));
    board('vegetative-identities','BAGSEED / leaf anatomy and branching','The same three plants before flowering / no mutation overlays.',specs.map((s,i)=>({p:make(i,5,35),label:s.name,note:s.traits.leafShape+' fans / '+s.traits.colorName})));
    const cycle=[[0,.5,'Seed'],[1,.5,'Germination'],[2,3,'Seedling'],[3,12,'Young vegetative'],[5,35,'Mature vegetative'],[7,50,'Early flower'],[8,50,'Building flowers'],[9,50,'Late flower'],[10,50,'Harvest ready']];
@@ -79,7 +80,7 @@ async function capture({out=review,animate=false,production=false}={}){
    board('50-and-90-inches','BAGSEED / expanding plants','Each row holds one strain at the same physical scale / 50-inch pot and 90-inch outdoor model.',specs.flatMap((s,i)=>[50,90].map(height=>({p:make(i,8,height,{loc:height>50?'outdoor':mothers[i].loc}),label:s.name+' / '+height+' in',note:height>50?'Outdoor giant / more attached branches':'Potted model / current shared growth system'}))),{cols:2,cw:650,ch:850,scale:3.45});
    const care=specs.flatMap((s,i)=>[{p:make(i),label:s.name+' / natural'},{p:make(i,8,50,{staked:true}),label:'Bamboo support'},{p:make(i,8,50,{training:'scrog'}),label:'SCROG'},{p:make(i,8,50,{canopy:BagseedCanopy.care({...make(i),stage:7})}),label:'Lower growth cleaned'},{p:make(i,8,50,{water:9,nutr:12,health:40,stress:65}),label:'Low water / nutrient stress'}]);
    board('care-and-training','BAGSEED / connected care and training','Support, net training, lower-leaf/popcorn removal and stress reuse native saved systems.',care,{cols:5,cw:360,ch:660});
-   const [detail,dc]=canvas(1800,1100,'BAGSEED / flowering detail','The real game compositor redrawn at inspection resolution / characteristic flower texture and sugar leaves.');
+   const [detail,dc]=canvas(specs.length*600,1100,'BAGSEED / flowering detail','Native compositor / inspection detail');
    specs.forEach((s,i)=>{dc.fillStyle='#e0e5d2';dc.fillRect(i*600+8,105,584,910);const cv=BagseedPlants.detail(make(i),{joint:'node:9',span:10,width:570,height:800});dc.drawImage(cv,i*600+15,140);dc.fillStyle='#29483a';dc.font='bold 26px Georgia';dc.fillText(s.name,i*600+24,1060);});files['flower-detail']=detail.toDataURL();
    const families=specs.map((s,i)=>{
     const p=make(i),rig=PlantArt.build(p),m=rig.model,recipe=BagseedPlants.recipe(p),known=new Set([...m.joints.map(j=>j.id),...m.branches.map(b=>b.id)]),clean=PlantArt.build(care[i*5+3].p),giant=PlantArt.build(make(i,8,90,{loc:'outdoor'})),basePNG=rig.cv.toDataURL();
@@ -99,13 +100,13 @@ async function capture({out=review,animate=false,production=false}={}){
    const existing={...make(0),paintArt115:{...BagseedPlants.recipe(make(0)),leafKit:'cruise',flowerKit:'velvet'}};
    const pinnedRecipesPreserved=BagseedPlants.recipe(existing).leafKit==='cruise'&&BagseedPlants.recipe(existing).flowerKit==='velvet';
    window.strainBatchReview={frame(frame){
-    settings.reduced=false;const [cv,c]=canvas(1500,930,'BAGSEED / growth and gentle wind','Three new strain kits / fixed roots and attached branch movement / selected review stages.');
+    settings.reduced=false;const [cv,c]=canvas(specs.length*500,930,'BAGSEED / growth and wind','Fixed roots / attached branches / review stages.');
     specs.forEach((s,i)=>{const u=Math.min(1,frame/64),stage=u<.08?2:u<.2?3:u<.42?5:u<.6?7:u<.78?8:10,height=3+47*Math.min(1,u/.65),p=make(i,stage,height,{nodes:2+9*Math.min(1,u/.6)});c.fillStyle='#e0e5d2';c.fillRect(i*500+8,105,484,705);specimen(c,p,i*500+250,760,5.15,frame/12,1.25);c.fillStyle='#29483a';c.font='bold 23px Georgia';c.fillText(s.name,i*500+22,855);c.font='18px Georgia';c.fillText(Math.round(height)+' in / '+(stage===10?'final-week fade':stage>=7?'flowering':'growing'),i*500+22,892);});return cv.toDataURL();
    }};
    const readOnly=mothers.every((p,i)=>JSON.stringify([p.genome115,p.pheno,p.height,p.stage,p.nodes,p.training])===before[i]);
    SaveSys.now('Expanded strain artwork review');return{files,families,mutationChecks,pinnedRecipesPreserved,readOnly,atlasCount:BagseedPlants.atlasCount,catalogCount:LINES.length};
   },build.specs);
-  assert.equal(result.readOnly,true);assert.equal(result.pinnedRecipesPreserved,true);assert.equal(result.atlasCount,34);assert.equal(result.catalogCount,37);
+  assert.equal(result.readOnly,true);assert.equal(result.pinnedRecipesPreserved,true);assert.equal(result.atlasCount,build.atlasCount);assert.equal(result.catalogCount,37);
   for(const f of result.families){
    for(const key of ['dedicatedParts','connected','windChanged','reducedStable','rootFixed','expanding','gradedBuds','popcornPresent','cleanupRemoves','cleanupEnlargesTop','stressChanges','maleWorks','cloneStable','snapshotStable'])assert.equal(f[key],true,f.key+'/'+key);
    assert.equal(f.trainingForms,4);assert.equal(f.physicalHeight,50);assert.equal(f.giantHeight,90);assert.equal(f.senescence.palette,'gold');
@@ -116,7 +117,7 @@ async function capture({out=review,animate=false,production=false}={}){
   if(animate){const temp=fs.mkdtempSync(path.join(os.tmpdir(),'bagseed-strains06-'));try{
    for(let i=0;i<96;i++){const url=await page.evaluate(i=>strainBatchReview.frame(i),i);fs.writeFileSync(path.join(temp,String(i).padStart(3,'0')+'.png'),Buffer.from(url.split(',')[1],'base64'));if(i%24===0)console.log('Strain growth/wind frame',i);}
    execFileSync('ffmpeg',['-v','error','-y','-framerate','12','-i',path.join(temp,'%03d.png'),'-c:v','libx264','-pix_fmt','yuv420p','-crf','20','-movflags','+faststart',path.join(out,'growth-and-wind.mp4')]);
-   execFileSync('ffmpeg',['-v','error','-y','-i',path.join(out,'growth-and-wind.mp4'),'-vf','fps=8,scale=1050:-1:flags=lanczos','-loop','0',path.join(out,'growth-and-wind.gif')]);result.animation={frames:96,fps:12,seconds:8};
+   execFileSync('ffmpeg',['-v','error','-y','-i',path.join(out,'growth-and-wind.mp4'),'-vf','fps=8,scale='+Math.min(1050,kitKeys.length*500)+':-1:flags=lanczos','-loop','0',path.join(out,'growth-and-wind.gif')]);result.animation={frames:96,fps:12,seconds:8};
   }finally{fs.rmSync(temp,{recursive:true,force:true});}}
   await page.reload();await page.evaluate(()=>BagseedStartup.ready);await page.locator('[data-act=continueGame]').click();await page.waitForFunction(()=>screen==='game'&&!!state.player);
   const restored=await page.evaluate(ids=>ids.map(id=>({genome:JSON.stringify(state.plants[id].genome115),recipe:JSON.stringify(state.plants[id].paintArt115)})),result.families.map(f=>f.id));
@@ -125,7 +126,7 @@ async function capture({out=review,animate=false,production=false}={}){
    const oldRecipes=await page.evaluate(ids=>{const save=JSON.parse(localStorage.getItem(SAVE_KEYS.main));const before=ids.map(id=>{const p=save.plants[id],r={...p.paintArt115,leafKit:'cruise',flowerKit:'velvet'};delete r.lineArtRevision;p.paintArt115=r;p.pheno.paintArt115=JSON.parse(JSON.stringify(r));return{seed:r.seed,traits:r.traits,genome:JSON.stringify(p.genome115),height:p.height};});localStorage.setItem(SAVE_KEYS.main,JSON.stringify(save));return before;},result.families.map(f=>f.id));
    await page.reload();await page.evaluate(()=>BagseedStartup.ready);await page.locator('[data-act=continueGame]').click();await page.waitForFunction(()=>screen==='game'&&!!state.player);
    const migrated=await page.evaluate(ids=>ids.map(id=>{const p=state.plants[id],a=JSON.stringify(p.paintArt115);BagseedPlants.ensure(p);return{recipe:p.paintArt115,genome:JSON.stringify(p.genome115),height:p.height,idempotent:a===JSON.stringify(p.paintArt115)};}),result.families.map(f=>f.id));
-   migrated.forEach((p,i)=>{assert.equal(p.recipe.leafKit,keys[i]);assert.equal(p.recipe.flowerKit,keys[i]);assert.equal(p.recipe.seed,oldRecipes[i].seed);assert.deepEqual(p.recipe.traits,oldRecipes[i].traits);assert.equal(p.genome,oldRecipes[i].genome);assert.equal(p.height,oldRecipes[i].height);assert.equal(p.idempotent,true);});
+   migrated.forEach((p,i)=>{assert.equal(p.recipe.leafKit,kitKeys[i]);assert.equal(p.recipe.flowerKit,kitKeys[i]);assert.equal(p.recipe.seed,oldRecipes[i].seed);assert.deepEqual(p.recipe.traits,oldRecipes[i].traits);assert.equal(p.genome,oldRecipes[i].genome);assert.equal(p.height,oldRecipes[i].height);assert.equal(p.idempotent,true);});
    result.existingSaveArtworkUpgraded=true;result.artworkUpgradePreservesGeneticsSeedTraitsAndHeight=true;
   }
   assert.deepEqual(errors,[]);assert.equal(sha(read('public/index.html')),original);

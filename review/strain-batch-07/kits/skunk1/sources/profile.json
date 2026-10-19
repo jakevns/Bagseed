@@ -1,0 +1,21 @@
+{
+  "id": "skunk1",
+  "lineId": "cl_skunk1",
+  "name": "Skunk #1",
+  "shortName": "Skunk #1",
+  "apiName": "BagseedSkunk1Growth",
+  "revision": "skunk1-components-1",
+  "libraryRevision": "plant-parts-library-expanded-2",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1.05
+  },
+  "description": "Forest-green hybrid fans, elongated olive/lime flowers, amber stigmas and golden late-flower senescence.",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-a6a8dd60-1721-405d-a703-9ced56111efa.png"
+}

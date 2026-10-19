@@ -10,7 +10,8 @@ root = Path(__file__).resolve().parents[1]
 strain = sys.argv[1]
 assert re.fullmatch(r'[a-z0-9-]+', strain)
 review_only = '--review-only' in sys.argv
-base = root / ('review/strain-batch-06/kits' if review_only else 'graphics/plants') / strain
+review_root = next((arg.split('=',1)[1] for arg in sys.argv if arg.startswith('--review-root=')), 'review/strain-batch-06')
+base = (root / review_root / 'kits' if review_only else root / 'graphics/plants') / strain
 spec = json.loads((base / 'sources/profile.json').read_text())
 assert spec['id'] == strain
 source = base / 'assets/components.png'

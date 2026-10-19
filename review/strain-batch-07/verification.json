@@ -1,0 +1,239 @@
+{
+  "families": [
+    {
+      "key": "skunk1",
+      "lineId": "cl_skunk1",
+      "id": "p_j2ghex6",
+      "genome": "{\"id\":\"ph_co73uer\",\"alleles\":{\"heightF\":[0.9912743745238985,1.0087256254761015],\"branching\":[1.03601820046145,1.06398179953855],\"yield\":[1.0493487144637155,1.0506512855362846],\"aromaInt\":[1.0438607568917215,1.0561392431082786],\"moldRes\":[0.7589804118914762,0.7410195881085238],\"pestRes\":[0.6954182985652471,0.7045817014347528],\"speed\":[1.0642654155785103,1.0357345844214898],\"stressSens\":[0.5178501900173724,0.5221498099826276],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Funk\",\"Funk\"],\"leafShape\":[\"hybrid\",\"hybrid\"]},\"cx\":{\"t\":0.8795795592945069,\"c\":1.1291094369720667,\"tp\":[0.9005205539986492,0.8784111040644348,1.0904259271919727],\"minor\":0.07481172238476574},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_skunk1\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_co73uer\",\"leafKit\":\"skunk1\",\"flowerKit\":\"skunk1\",\"traits\":{\"leafShape\":\"hybrid\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.05}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "skunk1",
+          "flowerKit": "skunk1"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "gold",
+        "rgb": [
+          218,
+          180,
+          66
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    }
+  ],
+  "mutationChecks": [
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ]
+  ],
+  "pinnedRecipesPreserved": true,
+  "readOnly": true,
+  "atlasCount": 35,
+  "catalogCount": 37,
+  "animation": {
+    "frames": 96,
+    "fps": 12,
+    "seconds": 8
+  },
+  "status": "sample-awaiting-approval",
+  "productionRenderer": false,
+  "saveReload": true,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "90d358713dea62009be138a8a03c9b7c029b8c6057ee92dd7f3801819a373cb9",
+  "errors": []
+}

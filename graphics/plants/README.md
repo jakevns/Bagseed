@@ -74,7 +74,7 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 
 ## Live renderer integration
 
-`tools/compile-live-plants.cjs` verifies all seventeen approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
+`tools/compile-live-plants.cjs` verifies all eighteen approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
 
 Visual recipes (`paintArt115`, schema v1) record the component donor kits, stable phenotype seed and expressed traits. Actual plant height, node count, water, health, nutrition, stress, pruning and training remain live inputs. Recipes are stored on plant and clone phenotype records, copied into photos, and populated for older saves at post-load and save boundaries. Rendering does not alter biology. Existing mutant genes from the latest merged update remain native; the painted compositor expresses all fifteen leaf/color/structure traits, including stacked traits.
 
@@ -85,7 +85,7 @@ Earlier per-strain notes describe the original prototype milestone. Production i
 
 The first mutation implementation is [Freakshow](mutations/freakshow/README.md).
 Its two leaf forms use dedicated painted development and mature-fan atlases,
-loaded through the same startup gate as the seventeen strain kits. The live
+loaded through the same startup gate as the eighteen strain kits. The live
 renderer applies the existing phenotype palette, finishing colors, symptoms,
 training and wind. Mutation kits are separate from the strain catalog; native
 mutation identities and genotype/save data are preserved.
@@ -120,3 +120,7 @@ The final two native mutation families have user-approved gameplay implementatio
 The full running catalog has **37 named strains**, plus generated Bag Seed. The original twelve dedicated strain kits and two experimental phenotype kits did not provide individual artwork for the 25 expanded catalog strains. This approved batch adds dedicated `ogkush`, `whitewidow` and `northernlights` kits mapped to `cl_ogkush`, `cl_whitewidow` and `cl_northernlights`. Production now has **15 dedicated named strains, 17 base atlases and 17 mutation atlases**; 22 named strains still use shared donor parts pending individual artwork. The fifteen mutation types are separate from strain coverage.
 
 Live plants receive matching new parts at create/load/save boundaries, preserving saved identity seeds, expressed traits, genomes and physical height. Incompatible traits retain their compatible donor parts. Historical photos retain pinned recipes. Native startup waits for all 34 plant atlases. Review, original PNGs, growth, senescence, care, expansion and wind: `review/strain-batch-06/`.
+
+## Expanded catalog: Skunk #1
+
+The approved `skunk1` kit maps to existing native `cl_skunk1`. Production now covers **16 of 37 named strains** with dedicated kits: 18 base atlases including the two extra experimental profiles, plus 17 mutation atlases. Startup gates all 35 images. Twenty-one named strains still await their individual kits. Living-save upgrades retain seeds, traits, genetics and height, while historical photos remain pinned. Approved media and source checkpoint: `review/strain-batch-07/`. Next requested review batch: Afghani, Hindu Kush and Bubba Kush.
