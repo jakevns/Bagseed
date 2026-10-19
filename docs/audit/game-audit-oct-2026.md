@@ -45,6 +45,12 @@ So far, 4 tops (hoodie, flannel, cardigan, jacket) have approved hand-made art. 
 
 ## 4. What to put away for now
 
+**Done (October 19).** The flags are in `SHELVED` at the end of `src/game.html`. Each one can be switched back independently:
+- `threads`: the Threads door shows a "closed for a refit" message, its sign reads CLOSED, LeafCart has no Threads tab and the online catalog is closed. Mara's volunteer task moved to the community center.
+- `westbrook`: a road-work barrier closes the west edge of Willow Park. Saves inside Westbrook Way or its homes now load in the park. Residents still pass through the park, the community garden and Main Street. The park and the community garden stay open.
+- `wardrobe`: the creator and mirror offer only hoodie, flannel, cardigan and jacket (cardigan and jacket are now owned from the start). Hats, glasses and accessories are hidden. Older saves keep whatever they already wear, and that piece stays selectable so it can be changed.
+
+
 Hide these from the player rather than deleting them. The code and saves stay intact, and each can come back as an update.
 
 1. **Willow Threads (clothing shop).** Close it with a "Coming soon" sign. Nothing in the grow loop depends on it.
