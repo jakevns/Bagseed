@@ -1,0 +1,118 @@
+{
+  "source": "graphics\\production\\walk\\sources\\hoodie-idle-v14\\up-raw.png",
+  "sourceSHA256": "823f9583f60535f23ab5370d2a1898b60f651bfc4cf8c7b3e97a4fc3186eeaa3",
+  "oldIdleSHA256": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+  "registration": {
+    "uniformScale": 0.16666666666666666,
+    "rotationDegrees": 0,
+    "translationPixels": [
+      57.16666666666667,
+      85.16666666666669
+    ],
+    "groundError": 0.0,
+    "operations": [
+      "uniform-scale",
+      "translate"
+    ],
+    "sourceBounds": [
+      187,
+      227,
+      837,
+      1415
+    ],
+    "guideBounds": [
+      82,
+      123,
+      205,
+      321
+    ]
+  },
+  "registeredSHA256": "1db65d395737c886cae20f3e8bd5e7df2d11c5f8adcc8fd26024c3c19f23099a",
+  "oldIdle": {
+    "shoulderBand": 107.5,
+    "upperBodyBand": 130.0,
+    "hipBand": 131.0,
+    "denimHipBand": 131.0,
+    "shinBand": 94.0
+  },
+  "newIdle": {
+    "shoulderBand": 93.0,
+    "upperBodyBand": 118.0,
+    "hipBand": 120.0,
+    "denimHipBand": 64.0,
+    "shinBand": 66.0
+  },
+  "walk": [
+    {
+      "shoulderBand": 95.0,
+      "upperBodyBand": 118.0,
+      "hipBand": 86.0,
+      "denimHipBand": 62.0,
+      "shinBand": 68.0
+    },
+    {
+      "shoulderBand": 93.0,
+      "upperBodyBand": 118.0,
+      "hipBand": 91.0,
+      "denimHipBand": 62.5,
+      "shinBand": 63.0
+    },
+    {
+      "shoulderBand": 94.5,
+      "upperBodyBand": 124.0,
+      "hipBand": 91.0,
+      "denimHipBand": 60.5,
+      "shinBand": 65.0
+    },
+    {
+      "shoulderBand": 94.5,
+      "upperBodyBand": 117.0,
+      "hipBand": 67.0,
+      "denimHipBand": 62.5,
+      "shinBand": 62.0
+    }
+  ],
+  "runtimeInstalled": false,
+  "colorDerivative": {
+    "source": "graphics/production/walk/registered/hoodie-idle-v14/up.png",
+    "sourceSHA256": "e35dce525473913ed55de4c5a3250d4932f3672a8b781806e47d60bcde7a60cd",
+    "method": "Shared 256-color material ramps, bounded lightness gain 0.8\u20131.2",
+    "paletteReference": "graphics/production/customization/top/hoodie/down.png"
+  },
+  "visualApproval": false,
+  "checks": {
+    "alphaUnchanged": true,
+    "inkUnchanged": true,
+    "outsideMaskUnchanged": true,
+    "sourceHashUnchanged": true,
+    "palette": {
+      "clusterDeltaE": [
+        4.4375387274119635,
+        5.012054153090954,
+        2.224474722093831,
+        0.6907482461394215
+      ],
+      "maxDeltaE": 5.012054153090954,
+      "dominantDeltaE": 2.345979686749669,
+      "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+      "idleWeights": [
+        0.6275139428764577,
+        0.05577150583065743,
+        0.14517491972283253,
+        0.1715396315700524
+      ],
+      "walkWeights": [
+        0.7634481206392078,
+        0.027458924150348864,
+        0.1836596893990547,
+        0.025433265811388703
+      ],
+      "pass": true
+    },
+    "outlineRatio": 0.6003786554039345,
+    "blackEdgeFraction": 0.006396588486140725,
+    "backNeckPass": true,
+    "edgeClipped": false
+  },
+  "failures": []
+}

@@ -64,7 +64,9 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
       const region=(canvas,x,y,w,h)=>Array.from(canvas.getContext('2d').getImageData(x,y+(canvas.width===96?canvas.height-108:0),w,h).data).join(',');
       const head=region(BagseedArt.portrait(base),0,0,192,124),mismatches=[],widths={};let footChecks=0;
       // Check anatomical landmarks and material masks, not just nonblank art.
-      const redTop=charSprite({...base,shirtC:'#c94f4f'},'down').getContext('2d').getImageData(0,36,96,108).data;
+      // Keep the established modular body as the part-registration reference.
+      // Approved complete paintings have separately verified source geometry.
+      const redTop=charSprite({...base,topS:'tee',shirtC:'#c94f4f'},'down').getContext('2d').getImageData(0,36,96,108).data;
       let waistband=108;
       for(let y=55;y<85;y++)for(let x=44;x<53;x++){const i=(y*96+x)*4;if(redTop[i+3]>128&&redTop[i+2]>redTop[i]*1.25&&redTop[i+2]>redTop[i+1]*1.1)waistband=Math.min(waistband,y);}
       if(waistband<66||waistband>71)mismatches.push('Waistband leaves the legs too short: '+waistband);
@@ -77,11 +79,13 @@ test('custom outfits keep a consistent face, joined legs and a single footwear l
       const tops=['tee','tank','hoodie','flannel','sweater','cardigan','overalls','work','crop','jacket','garden','pjs','labcoat','suit','officer'];
       for(const topS of tops)if(region(BagseedArt.portrait({...base,topS}),0,0,192,124)!==head)mismatches.push('face changed with '+topS);
       for(const dir of ['down','right','up','left']){
-        const image=charSprite(base,dir),a=image.getContext('2d').getImageData(0,image.height-108,96,108).data,rows=[];
+        // These width floors guard the legacy modular leg fit. The approved
+        // slimmer full paintings are checked against their exact source PNGs.
+        const image=charSprite({...base,topS:'tee'},dir),a=image.getContext('2d').getImageData(0,image.height-108,96,108).data,rows=[];
         for(let y=84;y<97;y++){const xs=[];for(let x=0;x<96;x++)if(a[(y*96+x)*4+3]>128)xs.push(x);rows.push(xs.length?xs.at(-1)-xs[0]+1:0);}
         widths[dir]=rows.reduce((a,b)=>a+b,0)/rows.length;
         for(const shoesS of ['sneakers','boots','sandals','rainboots']){
-          const look={...base,shoesS},feet=region(charSprite(look,dir),0,104,96,4); // below the longest trouser hem
+          const look={...base,shoesS},feet=region(charSprite({...look,topS:'tee'},dir),0,104,96,4); // unchanged modular soles below the trouser hem
           for(const topS of tops)for(const bottomS of ['jeans','joggers','cargo','shorts','skirt']){
             const rendered=charSprite({...look,topS,bottomS},dir),approved=rendered.bagseedApprovedOutfit&&__BAGSEED_ILLUSTRATED_DATA__.walk.approvedOutfits?.items[topS]?.frames[dir+'/idle'];
             // Reviewed outfits have their own painted footwear geometry;

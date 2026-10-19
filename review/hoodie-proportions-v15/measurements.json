@@ -1,0 +1,907 @@
+{
+  "status": "Source-art review; no runtime installation",
+  "reviewScale": "Every figure uniformly normalized to 240px body height; width untouched",
+  "views": {
+    "down": {
+      "source": "graphics\\production\\walk\\sources\\hoodie-idle-v14\\down-raw.png",
+      "sourceSHA256": "7fff41cb9d1a0abfad49e70ced8ebb6732d4b8c30eee153fb651d7e5a9dd6be6",
+      "oldIdleSHA256": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+      "registration": {
+        "uniformScale": 0.161106590724166,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          60.191212367778675,
+          86.10659072416598
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          197,
+          229,
+          828,
+          1458
+        ],
+        "guideBounds": [
+          80,
+          123,
+          207,
+          321
+        ]
+      },
+      "registeredSHA256": "72b5e44e573bd303e6ffd85681a0beeae6a6d763d012aa4ebabac860ac44de34",
+      "oldIdle": {
+        "shoulderBand": 110.5,
+        "upperBodyBand": 132.0,
+        "hipBand": 136.0,
+        "denimHipBand": 84.0,
+        "shinBand": 97.0
+      },
+      "newIdle": {
+        "shoulderBand": 94.0,
+        "upperBodyBand": 113.0,
+        "hipBand": 109.0,
+        "denimHipBand": 66.0,
+        "shinBand": 68.0
+      },
+      "walk": [
+        {
+          "shoulderBand": 94.0,
+          "upperBodyBand": 117.0,
+          "hipBand": 65.0,
+          "denimHipBand": 63.0,
+          "shinBand": 61.0
+        },
+        {
+          "shoulderBand": 90.5,
+          "upperBodyBand": 113.0,
+          "hipBand": 85.0,
+          "denimHipBand": 66.0,
+          "shinBand": 30.0
+        },
+        {
+          "shoulderBand": 93.5,
+          "upperBodyBand": 117.0,
+          "hipBand": 86.0,
+          "denimHipBand": 66.0,
+          "shinBand": 29.0
+        },
+        {
+          "shoulderBand": 97.0,
+          "upperBodyBand": 120.0,
+          "hipBand": 85.0,
+          "denimHipBand": 64.0,
+          "shinBand": 29.0
+        }
+      ],
+      "runtimeInstalled": false,
+      "paletteComparedWithOriginal": {
+        "clusterDeltaE": [
+          5.922858739227154,
+          37.26280895816064,
+          7.296244646762323,
+          11.341094494782043
+        ],
+        "maxDeltaE": 37.26280895816064,
+        "dominantDeltaE": 7.038142303484996,
+        "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+        "idleWeights": [
+          0.8385321100917431,
+          0.012844036697247707,
+          0.13577981651376148,
+          0.012844036697247707
+        ],
+        "walkWeights": [
+          0.041332073689182805,
+          0.022437411431270666,
+          0.11289560699102504,
+          0.8233349078885215
+        ],
+        "pass": false
+      },
+      "rawSHA256Unchanged": true
+    },
+    "up": {
+      "source": "graphics\\production\\walk\\sources\\hoodie-idle-v14\\up-raw.png",
+      "sourceSHA256": "823f9583f60535f23ab5370d2a1898b60f651bfc4cf8c7b3e97a4fc3186eeaa3",
+      "oldIdleSHA256": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+      "registration": {
+        "uniformScale": 0.16666666666666666,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          57.16666666666667,
+          85.16666666666669
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          187,
+          227,
+          837,
+          1415
+        ],
+        "guideBounds": [
+          82,
+          123,
+          205,
+          321
+        ]
+      },
+      "registeredSHA256": "e35dce525473913ed55de4c5a3250d4932f3672a8b781806e47d60bcde7a60cd",
+      "oldIdle": {
+        "shoulderBand": 107.5,
+        "upperBodyBand": 130.0,
+        "hipBand": 131.0,
+        "denimHipBand": 131.0,
+        "shinBand": 94.0
+      },
+      "newIdle": {
+        "shoulderBand": 93.0,
+        "upperBodyBand": 118.0,
+        "hipBand": 120.0,
+        "denimHipBand": 64.0,
+        "shinBand": 66.0
+      },
+      "walk": [
+        {
+          "shoulderBand": 95.0,
+          "upperBodyBand": 118.0,
+          "hipBand": 86.0,
+          "denimHipBand": 62.0,
+          "shinBand": 68.0
+        },
+        {
+          "shoulderBand": 93.0,
+          "upperBodyBand": 118.0,
+          "hipBand": 91.0,
+          "denimHipBand": 62.5,
+          "shinBand": 63.0
+        },
+        {
+          "shoulderBand": 94.5,
+          "upperBodyBand": 124.0,
+          "hipBand": 91.0,
+          "denimHipBand": 60.5,
+          "shinBand": 65.0
+        },
+        {
+          "shoulderBand": 94.5,
+          "upperBodyBand": 117.0,
+          "hipBand": 67.0,
+          "denimHipBand": 62.5,
+          "shinBand": 62.0
+        }
+      ],
+      "runtimeInstalled": false,
+      "paletteComparedWithOriginal": {
+        "clusterDeltaE": [
+          4.581204872616228,
+          4.358546988077386,
+          6.5274726034112485,
+          9.63706185404342
+        ],
+        "maxDeltaE": 9.63706185404342,
+        "dominantDeltaE": 6.034011354793692,
+        "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+        "idleWeights": [
+          0.6275139428764577,
+          0.05577150583065743,
+          0.14517491972283253,
+          0.1715396315700524
+        ],
+        "walkWeights": [
+          0.5127175368139224,
+          0.02186523873270861,
+          0.2788933511825078,
+          0.18652387327086123
+        ],
+        "pass": false
+      },
+      "rawSHA256Unchanged": true
+    }
+  },
+  "colorValidation": {
+    "failedFrames": 0,
+    "frames": [
+      {
+        "direction": "down",
+        "frame": "idle",
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              0.3752415561912878,
+              13.59718260774952,
+              2.798122337978289,
+              7.970341027805201
+            ],
+            "maxDeltaE": 13.59718260774952,
+            "dominantDeltaE": 0.9450418475216926,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.8385321100917431,
+              0.012844036697247707,
+              0.13577981651376148,
+              0.012844036697247707
+            ],
+            "walkWeights": [
+              0.12071063519104405,
+              0.006327573618885374,
+              0.015332197614991482,
+              0.8576295935750791
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.7476372268630771,
+          "blackEdgeFraction": 0.0015467904098994587,
+          "backNeckPass": true,
+          "edgeClipped": false
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.0,
+            168.0
+          ],
+          "drawstrings": [
+            201.0,
+            195.0,
+            189.0
+          ]
+        }
+      },
+      {
+        "direction": "down",
+        "frame": 0,
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              0.5598402227211074,
+              4.998088920992684,
+              0.4564032355199441,
+              1.4490926580689771
+            ],
+            "maxDeltaE": 4.998088920992684,
+            "dominantDeltaE": 0.5915968797908288,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.8385321100917431,
+              0.012844036697247707,
+              0.13577981651376148,
+              0.012844036697247707
+            ],
+            "walkWeights": [
+              0.8065437548688652,
+              0.003635419371591794,
+              0.1770968579589717,
+              0.01272396780057128
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.7274233896185116,
+          "blackEdgeFraction": 0.001893939393939394,
+          "backNeckPass": true,
+          "edgeClipped": false,
+          "leadingFootPass": true
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.0,
+            168.0
+          ],
+          "drawstrings": [
+            201.0,
+            195.0,
+            189.5
+          ]
+        }
+      },
+      {
+        "direction": "down",
+        "frame": 1,
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              0.7919517949678613,
+              42.39330940266992,
+              2.6804966762929703,
+              13.33505422038119
+            ],
+            "maxDeltaE": 42.39330940266992,
+            "dominantDeltaE": 3.437846821347714,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.8385321100917431,
+              0.012844036697247707,
+              0.13577981651376148,
+              0.012844036697247707
+            ],
+            "walkWeights": [
+              0.7668863261943987,
+              0.12246018671059858,
+              0.09362987369577155,
+              0.017023613399231193
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.6781850388336286,
+          "blackEdgeFraction": 0.0111731843575419,
+          "backNeckPass": true,
+          "edgeClipped": false,
+          "leadingFootPass": true
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.0,
+            168.0
+          ],
+          "drawstrings": [
+            201.0,
+            195.0,
+            189.0
+          ]
+        }
+      },
+      {
+        "direction": "down",
+        "frame": 2,
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              0.39722087352128305,
+              10.006804739297753,
+              0.738297115506633,
+              0.6783489875022278
+            ],
+            "maxDeltaE": 10.006804739297753,
+            "dominantDeltaE": 0.5691366248786981,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.8385321100917431,
+              0.012844036697247707,
+              0.13577981651376148,
+              0.012844036697247707
+            ],
+            "walkWeights": [
+              0.16023993144815768,
+              0.011710939731505284,
+              0.8163381890888317,
+              0.011710939731505284
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.7926739926739926,
+          "blackEdgeFraction": 0.003734827264239029,
+          "backNeckPass": true,
+          "edgeClipped": false,
+          "leadingFootPass": true
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.0,
+            168.0
+          ],
+          "drawstrings": [
+            201.0,
+            195.0,
+            189.0
+          ]
+        }
+      },
+      {
+        "direction": "down",
+        "frame": 3,
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              0.6503304302233407,
+              38.10075170867327,
+              1.8400444201842778,
+              5.163160010668224
+            ],
+            "maxDeltaE": 38.10075170867327,
+            "dominantDeltaE": 2.090396444573248,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.8385321100917431,
+              0.012844036697247707,
+              0.13577981651376148,
+              0.012844036697247707
+            ],
+            "walkWeights": [
+              0.7972792744731928,
+              0.01867164577220592,
+              0.05174713256868498,
+              0.13230194718591626
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.6946653797351668,
+          "blackEdgeFraction": 0.007707129094412331,
+          "backNeckPass": true,
+          "edgeClipped": false,
+          "leadingFootPass": true
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.0,
+            168.0
+          ],
+          "drawstrings": [
+            201.0,
+            195.0,
+            189.0
+          ]
+        }
+      },
+      {
+        "direction": "up",
+        "frame": "idle",
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              4.4375387274119635,
+              5.012054153090954,
+              2.224474722093831,
+              0.6907482461394215
+            ],
+            "maxDeltaE": 5.012054153090954,
+            "dominantDeltaE": 2.345979686749669,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.6275139428764577,
+              0.05577150583065743,
+              0.14517491972283253,
+              0.1715396315700524
+            ],
+            "walkWeights": [
+              0.7634481206392078,
+              0.027458924150348864,
+              0.1836596893990547,
+              0.025433265811388703
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.6003786554039345,
+          "blackEdgeFraction": 0.006396588486140725,
+          "backNeckPass": true,
+          "edgeClipped": false
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.0,
+            168.0
+          ]
+        }
+      },
+      {
+        "direction": "up",
+        "frame": 0,
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              1.3680658785907942,
+              2.4472778704584894,
+              3.441856122313603,
+              2.8341147289417394
+            ],
+            "maxDeltaE": 3.441856122313603,
+            "dominantDeltaE": 1.888983122159477,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.6275139428764577,
+              0.05577150583065743,
+              0.14517491972283253,
+              0.1715396315700524
+            ],
+            "walkWeights": [
+              0.7435761589403973,
+              0.10781456953642383,
+              0.037350993377483446,
+              0.11125827814569536
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.7009539614105013,
+          "blackEdgeFraction": 0.014769765421372719,
+          "backNeckPass": true,
+          "edgeClipped": false,
+          "leadingFootPass": true
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.5,
+            167.5
+          ]
+        }
+      },
+      {
+        "direction": "up",
+        "frame": 1,
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              1.6916941742220397,
+              5.505060091045855,
+              4.201885374095202,
+              3.338152033575412
+            ],
+            "maxDeltaE": 5.505060091045855,
+            "dominantDeltaE": 2.3855621697175,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.6275139428764577,
+              0.05577150583065743,
+              0.14517491972283253,
+              0.1715396315700524
+            ],
+            "walkWeights": [
+              0.7714578529336408,
+              0.02946451447604407,
+              0.09710479118626697,
+              0.10197284140404816
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.5838475176051305,
+          "blackEdgeFraction": 0.0,
+          "backNeckPass": true,
+          "edgeClipped": false,
+          "leadingFootPass": true
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.0,
+            168.0
+          ]
+        }
+      },
+      {
+        "direction": "up",
+        "frame": 2,
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              1.3183028981772302,
+              1.3246942765690006,
+              3.066188006779454,
+              3.5311916907227725
+            ],
+            "maxDeltaE": 3.5311916907227725,
+            "dominantDeltaE": 1.852499983334873,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.6275139428764577,
+              0.05577150583065743,
+              0.14517491972283253,
+              0.1715396315700524
+            ],
+            "walkWeights": [
+              0.7373761208117037,
+              0.041764983482774895,
+              0.10405851816894762,
+              0.11680037753657385
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.6295671975629756,
+          "blackEdgeFraction": 0.005823627287853577,
+          "backNeckPass": true,
+          "edgeClipped": false,
+          "leadingFootPass": true
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.0,
+            168.0
+          ]
+        }
+      },
+      {
+        "direction": "up",
+        "frame": 3,
+        "checks": {
+          "alphaUnchanged": true,
+          "inkUnchanged": true,
+          "outsideMaskUnchanged": true,
+          "sourceHashUnchanged": true,
+          "palette": {
+            "clusterDeltaE": [
+              1.6828536985895524,
+              2.1134098175974354,
+              2.9420183102502606,
+              2.7144818251792406
+            ],
+            "maxDeltaE": 2.9420183102502606,
+            "dominantDeltaE": 2.018975388324242,
+            "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+            "idleWeights": [
+              0.6275139428764577,
+              0.05577150583065743,
+              0.14517491972283253,
+              0.1715396315700524
+            ],
+            "walkWeights": [
+              0.13192052980132452,
+              0.7340397350993377,
+              0.026490066225165563,
+              0.10754966887417218
+            ],
+            "pass": true
+          },
+          "outlineRatio": 0.6309692545627962,
+          "blackEdgeFraction": 0.00429553264604811,
+          "backNeckPass": true,
+          "edgeClipped": false,
+          "leadingFootPass": true
+        },
+        "failures": [],
+        "materialMedians": {
+          "flannel": [
+            65.0,
+            105.0,
+            169.0
+          ],
+          "jeans": [
+            56.0,
+            58.0,
+            75.0
+          ],
+          "skin": [
+            207.0,
+            131.0,
+            83.0
+          ],
+          "leather": [
+            145.0,
+            108.0,
+            86.0
+          ],
+          "cream": [
+            228.0,
+            198.5,
+            167.5
+          ]
+        }
+      }
+    ]
+  },
+  "sourceVersion": "Geometry v14; color-only derivatives v15"
+}

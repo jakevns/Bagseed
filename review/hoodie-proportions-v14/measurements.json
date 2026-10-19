@@ -1,0 +1,208 @@
+{
+  "status": "Source-art review; no runtime installation",
+  "reviewScale": "Every figure uniformly normalized to 240px body height; width untouched",
+  "views": {
+    "down": {
+      "source": "graphics\\production\\walk\\sources\\hoodie-idle-v14\\down-raw.png",
+      "sourceSHA256": "7fff41cb9d1a0abfad49e70ced8ebb6732d4b8c30eee153fb651d7e5a9dd6be6",
+      "oldIdleSHA256": "43d190878993756f35aab1746f054eb3cfaa163cb8b8c77ff5394afee64ded48",
+      "registration": {
+        "uniformScale": 0.161106590724166,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          60.191212367778675,
+          86.10659072416598
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          197,
+          229,
+          828,
+          1458
+        ],
+        "guideBounds": [
+          80,
+          123,
+          207,
+          321
+        ]
+      },
+      "registeredSHA256": "72b5e44e573bd303e6ffd85681a0beeae6a6d763d012aa4ebabac860ac44de34",
+      "oldIdle": {
+        "shoulderBand": 110.5,
+        "upperBodyBand": 132.0,
+        "hipBand": 136.0,
+        "denimHipBand": 84.0,
+        "shinBand": 97.0
+      },
+      "newIdle": {
+        "shoulderBand": 94.0,
+        "upperBodyBand": 113.0,
+        "hipBand": 109.0,
+        "denimHipBand": 66.0,
+        "shinBand": 68.0
+      },
+      "walk": [
+        {
+          "shoulderBand": 94.0,
+          "upperBodyBand": 117.0,
+          "hipBand": 65.0,
+          "denimHipBand": 63.0,
+          "shinBand": 61.0
+        },
+        {
+          "shoulderBand": 90.5,
+          "upperBodyBand": 113.0,
+          "hipBand": 85.0,
+          "denimHipBand": 66.0,
+          "shinBand": 30.0
+        },
+        {
+          "shoulderBand": 93.5,
+          "upperBodyBand": 117.0,
+          "hipBand": 86.0,
+          "denimHipBand": 66.0,
+          "shinBand": 29.0
+        },
+        {
+          "shoulderBand": 97.0,
+          "upperBodyBand": 120.0,
+          "hipBand": 85.0,
+          "denimHipBand": 64.0,
+          "shinBand": 29.0
+        }
+      ],
+      "runtimeInstalled": false,
+      "paletteComparedWithOriginal": {
+        "clusterDeltaE": [
+          5.922858739227154,
+          37.26280895816064,
+          7.296244646762323,
+          11.341094494782043
+        ],
+        "maxDeltaE": 37.26280895816064,
+        "dominantDeltaE": 7.038142303484996,
+        "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+        "idleWeights": [
+          0.8385321100917431,
+          0.012844036697247707,
+          0.13577981651376148,
+          0.012844036697247707
+        ],
+        "walkWeights": [
+          0.041332073689182805,
+          0.022437411431270666,
+          0.11289560699102504,
+          0.8233349078885215
+        ],
+        "pass": false
+      },
+      "rawSHA256Unchanged": true
+    },
+    "up": {
+      "source": "graphics\\production\\walk\\sources\\hoodie-idle-v14\\up-raw.png",
+      "sourceSHA256": "823f9583f60535f23ab5370d2a1898b60f651bfc4cf8c7b3e97a4fc3186eeaa3",
+      "oldIdleSHA256": "50dc0d30203be7e8091dfd817b5be13572d722cfb7e032794a7a76a813d49046",
+      "registration": {
+        "uniformScale": 0.16666666666666666,
+        "rotationDegrees": 0,
+        "translationPixels": [
+          57.16666666666667,
+          85.16666666666669
+        ],
+        "groundError": 0.0,
+        "operations": [
+          "uniform-scale",
+          "translate"
+        ],
+        "sourceBounds": [
+          187,
+          227,
+          837,
+          1415
+        ],
+        "guideBounds": [
+          82,
+          123,
+          205,
+          321
+        ]
+      },
+      "registeredSHA256": "e35dce525473913ed55de4c5a3250d4932f3672a8b781806e47d60bcde7a60cd",
+      "oldIdle": {
+        "shoulderBand": 107.5,
+        "upperBodyBand": 130.0,
+        "hipBand": 131.0,
+        "denimHipBand": 131.0,
+        "shinBand": 94.0
+      },
+      "newIdle": {
+        "shoulderBand": 93.0,
+        "upperBodyBand": 118.0,
+        "hipBand": 120.0,
+        "denimHipBand": 64.0,
+        "shinBand": 66.0
+      },
+      "walk": [
+        {
+          "shoulderBand": 95.0,
+          "upperBodyBand": 118.0,
+          "hipBand": 86.0,
+          "denimHipBand": 62.0,
+          "shinBand": 68.0
+        },
+        {
+          "shoulderBand": 93.0,
+          "upperBodyBand": 118.0,
+          "hipBand": 91.0,
+          "denimHipBand": 62.5,
+          "shinBand": 63.0
+        },
+        {
+          "shoulderBand": 94.5,
+          "upperBodyBand": 124.0,
+          "hipBand": 91.0,
+          "denimHipBand": 60.5,
+          "shinBand": 65.0
+        },
+        {
+          "shoulderBand": 94.5,
+          "upperBodyBand": 117.0,
+          "hipBand": 67.0,
+          "denimHipBand": 62.5,
+          "shinBand": 62.0
+        }
+      ],
+      "runtimeInstalled": false,
+      "paletteComparedWithOriginal": {
+        "clusterDeltaE": [
+          4.581204872616228,
+          4.358546988077386,
+          6.5274726034112485,
+          9.63706185404342
+        ],
+        "maxDeltaE": 9.63706185404342,
+        "dominantDeltaE": 6.034011354793692,
+        "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+        "idleWeights": [
+          0.6275139428764577,
+          0.05577150583065743,
+          0.14517491972283253,
+          0.1715396315700524
+        ],
+        "walkWeights": [
+          0.5127175368139224,
+          0.02186523873270861,
+          0.2788933511825078,
+          0.18652387327086123
+        ],
+        "pass": false
+      },
+      "rawSHA256Unchanged": true
+    }
+  }
+}

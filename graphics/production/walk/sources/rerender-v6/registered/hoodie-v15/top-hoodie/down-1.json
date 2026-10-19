@@ -1,0 +1,82 @@
+{
+  "uniformScale": 0.17339055793991417,
+  "rotationDegrees": 0,
+  "translationPixels": [
+    54.203862660944196,
+    181.05150214592274
+  ],
+  "groundError": 0.0,
+  "operations": [
+    "uniform-scale",
+    "translate"
+  ],
+  "sourceBounds": [
+    221,
+    265,
+    807,
+    1430
+  ],
+  "guideBounds": [
+    90,
+    227,
+    198,
+    429
+  ],
+  "source": "sources/rerender-v6/hoodie-v14/top-hoodie-down-1.png",
+  "sourceSHA256": "44b99afee1a7b7b5aebb525dfb4c2ed13f385912e5e0dbc4fd1d5fb698d80cb6",
+  "sourceSlot": 0,
+  "sourceFrame": "down/1",
+  "sourceCell": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "poseReference": "pose-guides-v6/down-1.png",
+  "poseReferenceSHA256": "8d0f867c983fe28af4febb0988f7d2a475da2b35c18527636357ad39b1aec9aa",
+  "registeredSHA256": "adbc2d9a9cebc2ec02d45a24464593446df377fdcb2809191af3f1e20be16593",
+  "colorDerivative": {
+    "source": "graphics/production/walk/sources/rerender-v6/registered/hoodie-v14/top-hoodie/down-1.png",
+    "sourceSHA256": "e5cb0ab021bc4eac920a624d0eea82bb6c1adbe07cbd2dd4b26fd32992d5b55b",
+    "method": "Shared 256-color material ramps, bounded lightness gain 0.8\u20131.2",
+    "paletteReference": "graphics/production/customization/top/hoodie/down.png"
+  },
+  "runtimeInstalled": false,
+  "visualApproval": false,
+  "checks": {
+    "alphaUnchanged": true,
+    "inkUnchanged": true,
+    "outsideMaskUnchanged": true,
+    "sourceHashUnchanged": true,
+    "palette": {
+      "clusterDeltaE": [
+        0.7919517949678613,
+        42.39330940266992,
+        2.6804966762929703,
+        13.33505422038119
+      ],
+      "maxDeltaE": 42.39330940266992,
+      "dominantDeltaE": 3.437846821347714,
+      "comparison": "k=4 matched Lab centroids, weighted by average cluster occupancy",
+      "idleWeights": [
+        0.8385321100917431,
+        0.012844036697247707,
+        0.13577981651376148,
+        0.012844036697247707
+      ],
+      "walkWeights": [
+        0.7668863261943987,
+        0.12246018671059858,
+        0.09362987369577155,
+        0.017023613399231193
+      ],
+      "pass": true
+    },
+    "outlineRatio": 0.6781850388336286,
+    "blackEdgeFraction": 0.0111731843575419,
+    "backNeckPass": true,
+    "edgeClipped": false,
+    "leadingFootPass": true
+  },
+  "failures": []
+}
