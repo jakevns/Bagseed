@@ -1,0 +1,61 @@
+{
+  "id": "P010",
+  "key": "bokchoy",
+  "name": "Bok choy",
+  "status": "approved-growth-artwork",
+  "revision": "bokchoy-garden-1",
+  "generatedSource": "exec-5d5515b4-e682-4145-b020-19612d09978b.png",
+  "sourceSHA256": "e75ea852b693af715862dcbd807f637b62ae557832d00c0b579ab65406c0bb98",
+  "runtimeSHA256": "2192554ad792607a3dcd09567c77891779246aaa4713a6e2eaaec9a8e724b066",
+  "runtime": "/assets/garden-plants/bokchoy/stages-2192554ad792.webp",
+  "stages": [
+    {
+      "crop": [
+        123,
+        267,
+        389,
+        233
+      ],
+      "attach": [
+        199.0,
+        230.0
+      ]
+    },
+    {
+      "crop": [
+        690,
+        113,
+        490,
+        400
+      ],
+      "attach": [
+        260.0,
+        397.0
+      ]
+    },
+    {
+      "crop": [
+        26,
+        630,
+        585,
+        505
+      ],
+      "attach": [
+        299.0,
+        501.0
+      ]
+    },
+    {
+      "crop": [
+        627,
+        626,
+        613,
+        500
+      ],
+      "attach": [
+        315.0,
+        497.0
+      ]
+    }
+  ]
+}

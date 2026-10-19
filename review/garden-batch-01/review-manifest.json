@@ -1,0 +1,331 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "56e28178b93e8518edd57b6afaf57ed428990263",
+  "species": {
+    "P051": {
+      "key": "basil",
+      "name": "Basil",
+      "generatedSource": "exec-63c2192b-3a90-4df6-95d1-6704dc47ac88.png",
+      "sourceSHA256": "066ac368ea53daf587e6ec95cf5e266d08f64d3cc1b02089d91588a56fa0236b",
+      "runtimeSHA256": "fd33197f45e9c0df5e2f1c1c10bd288b4093412bc2fa2aec29073d2a203a4b34",
+      "stages": [
+        {
+          "crop": [
+            179,
+            296,
+            315,
+            201
+          ],
+          "attach": [
+            156.0,
+            197.0
+          ]
+        },
+        {
+          "crop": [
+            705,
+            149,
+            430,
+            356
+          ],
+          "attach": [
+            210.0,
+            353.0
+          ]
+        },
+        {
+          "crop": [
+            45,
+            655,
+            556,
+            469
+          ],
+          "attach": [
+            291.0,
+            466.0
+          ]
+        },
+        {
+          "crop": [
+            636,
+            579,
+            593,
+            576
+          ],
+          "attach": [
+            307.0,
+            573.0
+          ]
+        }
+      ]
+    },
+    "P010": {
+      "key": "bokchoy",
+      "name": "Bok choy",
+      "generatedSource": "exec-5d5515b4-e682-4145-b020-19612d09978b.png",
+      "sourceSHA256": "e75ea852b693af715862dcbd807f637b62ae557832d00c0b579ab65406c0bb98",
+      "runtimeSHA256": "2192554ad792607a3dcd09567c77891779246aaa4713a6e2eaaec9a8e724b066",
+      "stages": [
+        {
+          "crop": [
+            123,
+            267,
+            389,
+            233
+          ],
+          "attach": [
+            199.0,
+            230.0
+          ]
+        },
+        {
+          "crop": [
+            690,
+            113,
+            490,
+            400
+          ],
+          "attach": [
+            260.0,
+            397.0
+          ]
+        },
+        {
+          "crop": [
+            26,
+            630,
+            585,
+            505
+          ],
+          "attach": [
+            299.0,
+            501.0
+          ]
+        },
+        {
+          "crop": [
+            627,
+            626,
+            613,
+            500
+          ],
+          "attach": [
+            315.0,
+            497.0
+          ]
+        }
+      ]
+    },
+    "P001": {
+      "key": "lettuce",
+      "name": "Lettuce",
+      "generatedSource": "exec-3029d9c1-5186-412b-bb84-2ec9ab63ff44.png",
+      "sourceSHA256": "3597f3eba4797aac6a74d0726971c19ab221af50a1f04b28ad6ea4756bceeeb6",
+      "runtimeSHA256": "96e7c480f7b86e48e2b255f3af1135faa0ed3fd4811d375436023f150e40d5be",
+      "stages": [
+        {
+          "crop": [
+            126,
+            236,
+            399,
+            257
+          ],
+          "attach": [
+            197.0,
+            254.0
+          ]
+        },
+        {
+          "crop": [
+            697,
+            125,
+            500,
+            379
+          ],
+          "attach": [
+            235.0,
+            376.0
+          ]
+        },
+        {
+          "crop": [
+            21,
+            680,
+            587,
+            472
+          ],
+          "attach": [
+            301.0,
+            469.0
+          ]
+        },
+        {
+          "crop": [
+            641,
+            661,
+            602,
+            503
+          ],
+          "attach": [
+            300.0,
+            499.0
+          ]
+        }
+      ]
+    },
+    "P098": {
+      "key": "marigold",
+      "name": "Marigold",
+      "generatedSource": "exec-54766ada-fde1-4728-9c49-a0c42a6c5004.png",
+      "sourceSHA256": "36bc7b97cd45b6d97e140a3dd4816faaa8e0ce78509a66ec903501d68192ed30",
+      "runtimeSHA256": "268363233bec089d436ed60df4c96c60f3530c0d980caf7c4382f05f20715cd0",
+      "stages": [
+        {
+          "crop": [
+            187,
+            223,
+            284,
+            217
+          ],
+          "attach": [
+            143.0,
+            214.0
+          ]
+        },
+        {
+          "crop": [
+            732,
+            74,
+            396,
+            375
+          ],
+          "attach": [
+            213.0,
+            371.0
+          ]
+        },
+        {
+          "crop": [
+            39,
+            584,
+            578,
+            549
+          ],
+          "attach": [
+            296.0,
+            545.0
+          ]
+        },
+        {
+          "crop": [
+            652,
+            567,
+            615,
+            575
+          ],
+          "attach": [
+            311.0,
+            572.0
+          ]
+        }
+      ]
+    },
+    "P061": {
+      "key": "mint",
+      "name": "Mint",
+      "generatedSource": "exec-d2a878c0-8c73-4f6d-bd20-f68bcf1d84bf.png",
+      "sourceSHA256": "ea8fcf4cb1da7e031bbc46355c27323149bf67e0db06d9371185a2b43d0943e3",
+      "runtimeSHA256": "f973c01b25f05d003c25a69281451d77a995d53948a6e9f9bcc2635143d7d6b7",
+      "stages": [
+        {
+          "crop": [
+            187,
+            253,
+            301,
+            220
+          ],
+          "attach": [
+            153.0,
+            217.0
+          ]
+        },
+        {
+          "crop": [
+            763,
+            68,
+            364,
+            412
+          ],
+          "attach": [
+            172.0,
+            408.0
+          ]
+        },
+        {
+          "crop": [
+            71,
+            594,
+            531,
+            567
+          ],
+          "attach": [
+            250.0,
+            564.0
+          ]
+        },
+        {
+          "crop": [
+            645,
+            541,
+            577,
+            659
+          ],
+          "attach": [
+            305.0,
+            651.0
+          ]
+        }
+      ]
+    }
+  },
+  "verification": {
+    "report": "verification.json",
+    "growthStagesPassed": 20,
+    "windAndReducedMotionPassed": 5,
+    "saveReload": true,
+    "publishedHTMLUnchanged": true,
+    "staticIntegrityPassed": true,
+    "errors": [],
+    "actualProductionPagePassed": true,
+    "startupGardenRequests": 5,
+    "postIntegrationBrowserTestsPassed": 3,
+    "characterPayloadPreserved": true
+  },
+  "files": {
+    "README.md": "96c2ba81a2ddb235b12efc8e01256893c57e7d05f548e5abdf1f223253e53823",
+    "five-plants-in-pots.png": "daeefb107a2e44212e731e953505f1c6c2c463afe542f5a01d78eedb4c3680dc",
+    "growth-and-wind.mp4": "2742bebe370b3e8da4147320e8cb370b860f40f0b301534de53d4497354c43fa",
+    "growth-stages.png": "05748b7a049f8786cdc76aed52c8c8052aa97066203e0725cf38531e53b9ba54",
+    "kits/basil/assets/stages.png": "066ac368ea53daf587e6ec95cf5e266d08f64d3cc1b02089d91588a56fa0236b",
+    "kits/basil/assets/stages.webp": "fd33197f45e9c0df5e2f1c1c10bd288b4093412bc2fa2aec29073d2a203a4b34",
+    "kits/basil/sources/manifest.json": "4739a66d60143b987c429b60571cfc70295992568bfdef517dab242e0ba3ff04",
+    "kits/bokchoy/assets/stages.png": "e75ea852b693af715862dcbd807f637b62ae557832d00c0b579ab65406c0bb98",
+    "kits/bokchoy/assets/stages.webp": "2192554ad792607a3dcd09567c77891779246aaa4713a6e2eaaec9a8e724b066",
+    "kits/bokchoy/sources/manifest.json": "b1ffe5df114b6310f9f5576bd134840213b6f5e0857a3488234cc42055a222b0",
+    "kits/lettuce/assets/stages.png": "3597f3eba4797aac6a74d0726971c19ab221af50a1f04b28ad6ea4756bceeeb6",
+    "kits/lettuce/assets/stages.webp": "96e7c480f7b86e48e2b255f3af1135faa0ed3fd4811d375436023f150e40d5be",
+    "kits/lettuce/sources/manifest.json": "e271c6680340db0940b382422807df9ba77944e2f5162713620f0c2a47fe71ce",
+    "kits/marigold/assets/stages.png": "36bc7b97cd45b6d97e140a3dd4816faaa8e0ce78509a66ec903501d68192ed30",
+    "kits/marigold/assets/stages.webp": "268363233bec089d436ed60df4c96c60f3530c0d980caf7c4382f05f20715cd0",
+    "kits/marigold/sources/manifest.json": "5c311570a89672b0d015f330d0bcd349fcfa35566c33bd78e2bf289d2359950a",
+    "kits/mint/assets/stages.png": "ea8fcf4cb1da7e031bbc46355c27323149bf67e0db06d9371185a2b43d0943e3",
+    "kits/mint/assets/stages.webp": "f973c01b25f05d003c25a69281451d77a995d53948a6e9f9bcc2635143d7d6b7",
+    "kits/mint/sources/manifest.json": "996d522063a3ec791f62236bb866a679728d261ec21f0eded41c9f5b8177258e",
+    "pot-tiers.png": "0e55c60976aebae7809b9bbf3bb1787566ca532274a76d3111df6452e7e5654b",
+    "store-artwork.png": "c1090f2b9678920c212d63e8b84f383e72e051a7983621828a6f0bb08878ad1a",
+    "tent-example.png": "0803d216405dacbbf7acb6f7e517722581f41aabd2470b1864507e58ad3de0a9",
+    "verification.json": "b6c3ec8c5797893eea6e31c205a4d5a5a396a87c0ce7a03896eb57d2cec17842"
+  },
+  "rendererSHA256": "e079c624fc1783aed784cdbb0af5281511d7b63cd2851de0818803659d632839",
+  "productionRendererSHA256": "acb45f168f8de788a3ed7aebe8ed7c9c98f521309afe1b3f7f18ec1972106ad3"
+}

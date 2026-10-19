@@ -1,0 +1,61 @@
+{
+  "id": "P001",
+  "key": "lettuce",
+  "name": "Lettuce",
+  "status": "approved-growth-artwork",
+  "revision": "lettuce-garden-1",
+  "generatedSource": "exec-3029d9c1-5186-412b-bb84-2ec9ab63ff44.png",
+  "sourceSHA256": "3597f3eba4797aac6a74d0726971c19ab221af50a1f04b28ad6ea4756bceeeb6",
+  "runtimeSHA256": "96e7c480f7b86e48e2b255f3af1135faa0ed3fd4811d375436023f150e40d5be",
+  "runtime": "/assets/garden-plants/lettuce/stages-96e7c480f7b8.webp",
+  "stages": [
+    {
+      "crop": [
+        126,
+        236,
+        399,
+        257
+      ],
+      "attach": [
+        197.0,
+        254.0
+      ]
+    },
+    {
+      "crop": [
+        697,
+        125,
+        500,
+        379
+      ],
+      "attach": [
+        235.0,
+        376.0
+      ]
+    },
+    {
+      "crop": [
+        21,
+        680,
+        587,
+        472
+      ],
+      "attach": [
+        301.0,
+        469.0
+      ]
+    },
+    {
+      "crop": [
+        641,
+        661,
+        602,
+        503
+      ],
+      "attach": [
+        300.0,
+        499.0
+      ]
+    }
+  ]
+}

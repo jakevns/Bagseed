@@ -49,7 +49,7 @@ html[data-bagseed-loading="loading"] body > :not(#bagseed-loading):not(script):n
   const statusText=document.getElementById('bagseed-loading-status'),detail=document.getElementById('bagseed-loading-detail'),reload=document.getElementById('bagseed-loading-reload');
   let savedReduced=false;try{savedReduced=!!JSON.parse(localStorage.getItem('bagseed.settings.v1'))?.reduced;}catch{}
   overlay.dataset.reduced=String(matchMedia('(prefers-reduced-motion: reduce)').matches||savedReduced);
-  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners','BagseedHVAC','BagseedTentDetails','BagseedWaterPots','BagseedPlants'];
+  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners','BagseedHVAC','BagseedTentDetails','BagseedWaterPots','BagseedPlants','BagseedGardenPlants'];
   let phase='loading',resolveReady,rejectReady;
   const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});ready.catch(()=>{});
   const guarded=['click','pointerdown','touchstart','keydown','wheel'];
@@ -31952,6 +31952,42 @@ module.exports={build,pose,counts,senescence};
   return plantDraw.apply(this,arguments);
  };
  window.BagseedPlantResolution=Object.freeze({revision:'plant-resolution-1',density,maxDensity:6,maxWorldPixels:MAX_PIXELS});
+})();
+
+</script>
+<script id="bagseed-garden-plants-code">
+/* Shared four-stage painted garden artwork. Approved species retain native growth, care and pot layering. */
+(()=>{
+ 'use strict';
+ const DATA={"P051":{"id":"P051","key":"basil","name":"Basil","status":"approved-growth-artwork","revision":"basil-garden-1","generatedSource":"exec-63c2192b-3a90-4df6-95d1-6704dc47ac88.png","sourceSHA256":"066ac368ea53daf587e6ec95cf5e266d08f64d3cc1b02089d91588a56fa0236b","runtimeSHA256":"fd33197f45e9c0df5e2f1c1c10bd288b4093412bc2fa2aec29073d2a203a4b34","runtime":"/assets/garden-plants/basil/stages-fd33197f45e9.webp","stages":[{"crop":[179,296,315,201],"attach":[156,197]},{"crop":[705,149,430,356],"attach":[210,353]},{"crop":[45,655,556,469],"attach":[291,466]},{"crop":[636,579,593,576],"attach":[307,573]}]},"P010":{"id":"P010","key":"bokchoy","name":"Bok choy","status":"approved-growth-artwork","revision":"bokchoy-garden-1","generatedSource":"exec-5d5515b4-e682-4145-b020-19612d09978b.png","sourceSHA256":"e75ea852b693af715862dcbd807f637b62ae557832d00c0b579ab65406c0bb98","runtimeSHA256":"2192554ad792607a3dcd09567c77891779246aaa4713a6e2eaaec9a8e724b066","runtime":"/assets/garden-plants/bokchoy/stages-2192554ad792.webp","stages":[{"crop":[123,267,389,233],"attach":[199,230]},{"crop":[690,113,490,400],"attach":[260,397]},{"crop":[26,630,585,505],"attach":[299,501]},{"crop":[627,626,613,500],"attach":[315,497]}]},"P001":{"id":"P001","key":"lettuce","name":"Lettuce","status":"approved-growth-artwork","revision":"lettuce-garden-1","generatedSource":"exec-3029d9c1-5186-412b-bb84-2ec9ab63ff44.png","sourceSHA256":"3597f3eba4797aac6a74d0726971c19ab221af50a1f04b28ad6ea4756bceeeb6","runtimeSHA256":"96e7c480f7b86e48e2b255f3af1135faa0ed3fd4811d375436023f150e40d5be","runtime":"/assets/garden-plants/lettuce/stages-96e7c480f7b8.webp","stages":[{"crop":[126,236,399,257],"attach":[197,254]},{"crop":[697,125,500,379],"attach":[235,376]},{"crop":[21,680,587,472],"attach":[301,469]},{"crop":[641,661,602,503],"attach":[300,499]}]},"P098":{"id":"P098","key":"marigold","name":"Marigold","status":"approved-growth-artwork","revision":"marigold-garden-1","generatedSource":"exec-54766ada-fde1-4728-9c49-a0c42a6c5004.png","sourceSHA256":"36bc7b97cd45b6d97e140a3dd4816faaa8e0ce78509a66ec903501d68192ed30","runtimeSHA256":"268363233bec089d436ed60df4c96c60f3530c0d980caf7c4382f05f20715cd0","runtime":"/assets/garden-plants/marigold/stages-268363233bec.webp","stages":[{"crop":[187,223,284,217],"attach":[143,214]},{"crop":[732,74,396,375],"attach":[213,371]},{"crop":[39,584,578,549],"attach":[296,545]},{"crop":[652,567,615,575],"attach":[311,572]}]},"P061":{"id":"P061","key":"mint","name":"Mint","status":"approved-growth-artwork","revision":"mint-garden-1","generatedSource":"exec-d2a878c0-8c73-4f6d-bd20-f68bcf1d84bf.png","sourceSHA256":"ea8fcf4cb1da7e031bbc46355c27323149bf67e0db06d9371185a2b43d0943e3","runtimeSHA256":"f973c01b25f05d003c25a69281451d77a995d53948a6e9f9bcc2635143d7d6b7","runtime":"/assets/garden-plants/mint/stages-f973c01b25f0.webp","stages":[{"crop":[187,253,301,220],"attach":[153,217]},{"crop":[763,68,364,412],"attach":[172,408]},{"crop":[71,594,531,567],"attach":[250,564]},{"crop":[645,541,577,659],"attach":[305,651]}]}},images={},draw=GPArt.draw,icon=GPArt.icon,slots=RoomArt.drawSlots,mainContexts=new Set();let loaded=false;
+ function geometry(id,stage,scale=1){const sp=GP.sp(id),part=DATA[id].stages[Math.max(0,Math.min(3,Math.floor(stage)))],h=(stage<=0?3:sp.h*(stage===1?.55:1))*scale;return{part,h,w:h*part.crop[2]/part.crop[3],ax:part.attach[0]/part.crop[2],ay:part.attach[1]/part.crop[3]};}
+ function offset(u,t,seed,stage){return settings.reduced?0:Math.sin(t*1.45+seed*.23+u*.9)*u*u*(stage<=0?.08:stage===1?.15:.26);}
+ function paintDirect(c,id,stage,x,y,t=0,scale=1){
+  const g=geometry(id,stage,scale),a=g.part,[sx,sy,sw,sh]=a.crop,seed=+id.slice(1),base=mainContexts.has(c)?y+(window.BagseedWaterPots?.gardenLift(id,stage)||0)-1:y;
+  c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.translate(x,base);
+  const ox=-g.ax*g.w,oy=-g.ay*g.h;
+  if(settings.reduced||stage<=0)c.drawImage(images[id],sx,sy,sw,sh,ox,oy,g.w,g.h);
+  else{
+   // Overlapping horizontal strips bend the upper foliage; displacement is
+   // zero at the soil attachment and never separates stems from their leaves.
+   const n=Math.min(80,Math.max(24,Math.ceil(g.h*5))),dh=g.h/n;
+   for(let i=0;i<n;i++){const yy=oy+i*dh,u=Math.max(0,Math.min(1,-yy/Math.max(1,g.ay*g.h))),dx=offset(u,t,seed,stage)*scale;c.drawImage(images[id],sx,sy+sh*i/n,sw,Math.min(sh-sh*i/n,sh/n+.5),ox+dx,yy,g.w,dh+.035);}
+  }c.restore();return g;
+ }
+ const frames=new Map();
+ function painted(c,id,stage,x,y,t=0,scale=1){
+  const m=c.getTransform(),density=Math.max(6,Math.min(24,Math.ceil(Math.max(Math.hypot(m.a,m.b),Math.hypot(m.c,m.d))*Math.abs(scale)))),key=id+':'+stage+':'+density,phase=settings.reduced?'still':Math.floor(t*8);
+  const g=geometry(id,stage),ax=2+g.ax*g.w,ay=2+g.ay*g.h;let f=frames.get(key);
+  if(!f){const cv=document.createElement('canvas');cv.width=Math.ceil((g.w+4)*density);cv.height=Math.ceil((g.h+4)*density);f={cv,phase:null};if(frames.size>=64)frames.delete(frames.keys().next().value);frames.set(key,f);}
+  if(f.phase!==phase){const ctx=f.cv.getContext('2d');ctx.resetTransform();ctx.clearRect(0,0,f.cv.width,f.cv.height);ctx.scale(density,density);paintDirect(ctx,id,stage,ax,ay,settings.reduced?0:phase/8,1);f.phase=phase;}
+  const base=mainContexts.has(c)?y+(window.BagseedWaterPots?.gardenLift(id,stage)||0)-1:y;
+  c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(f.cv,x-ax*scale,base-ay*scale,f.cv.width/density*scale,f.cv.height/density*scale);c.restore();return {...g,base};
+ }
+ GPArt.draw=function(c,id,stage,x,y,t=0,scale=1,opts={}){if(!loaded||!DATA[id])return draw.apply(this,arguments);return painted(c,id,stage,x,y,t,scale);};
+ RoomArt.drawSlots=function(c){const active=mainContexts.has(c);mainContexts.add(c);try{return slots.apply(this,arguments);}finally{if(!active)mainContexts.delete(c);}};
+ GPArt.icon=function(cv,id){if(!loaded||!DATA[id])return icon.apply(this,arguments);const aspect=cv.height/cv.width;cv.width=Math.max(384,cv.width);cv.height=Math.round(cv.width*aspect);const c=cv.getContext('2d'),W=cv.width,H=cv.height;c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const x=W*.25,y=H*.055,w=W*.5,h=H*.89;c.fillStyle='#8e7750';c.beginPath();c.roundRect(x-2,y-2,w+4,h+4,8);c.fill();c.fillStyle='#faf1d8';c.beginPath();c.roundRect(x,y,w,h,7);c.fill();c.fillStyle=GP.catCol(GP.sp(id));c.fillRect(x,y,w,H*.09);const g=geometry(id,3),sc=Math.min(w*.86/g.w,h*.69/g.h);painted(c,id,3,W/2,y+h*.85,0,sc);c.fillStyle='#426047';c.font=Math.max(10,W*.032)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,y+h*.965,w*.94);};
+ const ready=Promise.all(Object.entries(DATA).map(([id,a])=>new Promise((resolve,reject)=>{const im=images[id]=new Image();im.onload=resolve;im.onerror=()=>reject(Error('Garden art failed: '+id));im.src=a.runtime;}))).then(()=>{loaded=true;});
+ window.BagseedGardenPlants=Object.freeze({revision:'garden-batch-01',ready,geometry,offset,kits:DATA,get loaded(){return loaded;}});
 })();
 
 </script>
