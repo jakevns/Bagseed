@@ -41,6 +41,13 @@ for role, region in zip(roles,ordered):
     ax=float(np.median(xs)) if len(xs) else w/2
     ay=2 if top else h-3
     if role=='seed': ax,ay=w/2,h/2
+    # Some flower leaves extend below the stem: use an inspected source-pixel
+    # anchor rather than mistaking a hanging leaflet for the attachment.
+    if role in spec.get('attachmentPoints', {}):
+        sx, sy = spec['attachmentPoints'][role]
+        assert np.isfinite([sx, sy]).all() and x0 <= sx < x1 and y0 <= sy < y1
+        assert alpha[round(sy), round(sx)] > 160, 'Attachment must lie on an opaque organ pixel'
+        ax, ay = float(sx-x0), float(sy-y0)
     ys,xs=np.where(patch>100)
     # Hull is sufficient for all projected canopy extrema, independent of rotation.
     pts=np.column_stack([xs,ys]); hull=pts[ConvexHull(pts).vertices]
