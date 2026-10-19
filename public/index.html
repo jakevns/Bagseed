@@ -16099,7 +16099,7 @@ const Gear115 = {
       const firstLight = it.slot === 'light' && (state.story === 'wait' || state.story === 'light');
       this.apply(it.slot, it.tier, loc, it.cond); it.at = loc;
       const parked = it.slot === 'hvac' ? this.parkClimate(loc) : [];
-      state.stats.upgrades++; state.rep.equipment += .3; runtime.flash = .8;
+      if (!opts.move) { state.stats.upgrades++; state.rep.equipment += .3; } runtime.flash = .8;
       if (firstLight) { setStory(state.locations.closet.equip.pot ? 'plant' : 'container'); think(it.tier === 1 ? 'It\'s... purple. Very purple. The box says PROFESSIONAL six times.' : 'Oh, that\'s a real light.', 4500); }
       Sfx.good(); safeRun('ach', checkAch); updateHUD(); bgCache.clear();
       if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}${parked.length ? ` ${parked.map(item => esc(this.name(item))).join(' and ')} moved to <b>Unused gear</b>; this unit heats and cools the whole room.` : ''}`, 'social');
@@ -16333,9 +16333,8 @@ const Inv115 = {
     for (const loc of ownedLocs().filter(l => LOC_DEF[l].kind !== 'outdoor')) groups.push([loc, locName(loc) + ' · ' + Access.where(loc), Gear115.installed().filter(i => i.at === loc)]);
     groups.push(['home', 'Home (computer, bench, camera, storage, watering)', Gear115.installed().filter(i => i.at === 'home')]);
     return `<p class="small muted">What is installed where. Remove sends a piece to Unused gear with its condition; Move takes it straight to another compatible space. You need to be at a grow space to take gear out of it.</p>` + groups.map(([loc, name, list]) => `<h3 style="margin:10px 0 4px">${esc(name)} ${loc !== 'home' ? `<button class="btn sm ghost" data-act="openSpace" data-arg="${loc}">Controls</button>` : ''}</h3>${list.length ? `<div class="g115">${list.map(it => {
-      const here = loc === 'home' || Access.atLoc(loc), moves = Gear115.targets(it).filter(l => l !== loc && l !== 'home' && Gear115.check(it, l).ok);
-      const r = Gear115.canRemove(it);
-      return this.card(it, `<div class="row115"><button class="btn sm" data-act="gearRemove" data-arg="${it.iid}" ${here && r.ok ? '' : 'disabled'} title="${esc(!r.ok ? r.why : here ? '' : 'Walk to the ' + locShort(loc))}">Remove</button>${moves.map(l => `<button class="btn sm ghost" data-act="gearInstall" data-arg="${it.iid}:${l}" ${here && r.ok ? '' : 'disabled'}>Move → ${esc(locShort(l))}</button>`).join('')}</div>${!here ? `<div class="small muted">Walk to the ${esc(locShort(loc))} to change it.</div>` : ''}`);
+      const here = loc === 'home' || Access.atLoc(loc), r = Gear115.canRemove(it);
+      return this.card(it, `<div class="row115"><button class="btn sm" data-act="gearRemove" data-arg="${it.iid}" ${here && r.ok ? '' : 'disabled'} title="${esc(!r.ok ? r.why : here ? '' : 'Walk to the ' + locShort(loc))}">Remove</button>${loc === 'home' ? '' : GearMove115.buttons(it)}</div>${!here ? `<div class="small muted">Walk to the ${esc(locShort(loc))} to change it.</div>` : ''}`);
     }).join('')}</div>` : '<div class="small muted">Nothing installed.</div>'}`).join('') + this.museum();
   },
   museum() { const m = (state.museum || []).filter(x => x.slot !== 'junk'); if (!m.length) return ''; return `<details style="margin-top:10px"><summary class="small muted">Old gear history (before 1.1.5, ${m.length})</summary><div class="small muted">${m.slice(-20).map(x => esc(x.name) + ' · day ' + x.day).join('<br>')}</div><div class="small muted">Older versions threw replaced gear away; that history can't be turned back into items.</div></details>`; },
@@ -16354,6 +16353,47 @@ Object.assign(ACT, {
   gearSell(iid) { const it = Gear115.get(iid); if (!it) return; dialog({ who: 'you', name: 'Hand-Me-Down · sell', text: `${Gear115.name(it)} (${(COND115[it.cond] || COND115.new).n}). Game resale estimate: ${money(Gear115.quote(it))} (${Math.round(RESALE115 * 100)}% of the ${money(EQ[it.slot][it.tier].price)} list price × condition). Listing reserves the item; a buyer picks it up next morning and the money arrives then. You can cancel until then.`, choices: [{ label: `List it for ${money(Gear115.quote(it))}`, fn: () => Gear115.list(iid) }, { label: 'Keep it', fn: () => { } }] }); },
   gearUnlist(iid) { Gear115.unlist(iid); }
 });
+/* Move installed gear straight to another grow space, e.g. starter or 2x2 gear into a new 4x4.
+   An empty spot just takes it; if the other space already has one, the two pieces trade places
+   (when the other piece fits back here, otherwise it goes to Unused gear). You pick gear up at its tent. */
+const GearMove115 = {
+  item(loc, slot) {
+    const L = state.locations[loc]; if (!L || !L.equip[slot]) return null;
+    let it = Gear115.at(loc, slot); if (!it || it.tier !== L.equip[slot]) { Gear115.sync(); it = Gear115.at(loc, slot); }
+    return it;
+  },
+  plan(it, to) {
+    const cur = Gear115.at(to, it.slot), c = Gear115.check(it, to);
+    if (!c.ok) return { ok: false, why: c.why, cur };
+    const r = cur && Gear115.canRemove(cur); if (r && !r.ok) return { ok: false, why: r.why, cur };
+    return { ok: true, cur, back: !!cur && Gear115.check(cur, it.at).ok };
+  },
+  buttons(it) {
+    const from = it.at, here = Access.atLoc(from), r = Gear115.canRemove(it);
+    return Gear115.targets(it).filter(l => l !== from && l !== 'home' && Gear115.check(it, l).ok).map(l => {
+      const p = this.plan(it, l), ok = here && r.ok && p.ok;
+      const label = !p.cur ? `Move → ${esc(locShort(l))}` : p.back ? `Swap ↔ ${esc(locShort(l))}` : `Move → ${esc(locShort(l))} (replaces ${esc(Gear115.name(p.cur))})`;
+      const why = !r.ok ? r.why : !p.ok ? p.why : !here ? `Walk to the ${locShort(from)} to pick it up` : !p.cur ? `The ${locShort(l)} has an open spot` : p.back ? `Trades places with the ${Gear115.name(p.cur)}` : `The ${Gear115.name(p.cur)} doesn't fit the ${locShort(from)}, so it goes to Unused gear`;
+      return `<button class="btn sm ${ok && !p.cur ? 'primary' : 'ghost'}" data-act="gearMove" data-arg="${it.iid}:${l}" ${ok ? '' : 'disabled'} title="${esc(why)}">${label}</button>`;
+    }).join('');
+  },
+  row(slot, loc) {
+    const it = this.item(loc, slot); if (!it) return '';
+    const b = this.buttons(it); if (!b) return '';
+    return `<div class="ctl"><span class="lab">Move</span><span class="row115">${b}</span></div>${Access.atLoc(loc) ? '' : `<div class="small muted">Walk to the ${esc(locShort(loc))} to move this.</div>`}`;
+  },
+  move(iid, to) {
+    const it = Gear115.get(iid); if (!it || !it.at || it.at === 'home') return false;
+    const from = it.at, p = this.plan(it, to); if (!p.ok) { toast(esc(p.why), 'warn'); Sfx.bad(); return false; }
+    if (!Gear115.install(iid, to, { quiet: true, move: true })) return false;
+    const back = p.back && Gear115.install(p.cur.iid, from, { quiet: true, move: true });
+    toast(`<b>${esc(Gear115.name(it))}</b> moved to the ${esc(locShort(to))}.${p.cur ? back ? ` The ${esc(Gear115.name(p.cur))} went to the ${esc(locShort(from))}.` : ` Your ${esc(Gear115.name(p.cur))} went to <b>Unused gear</b>.` : ''}`, 'social');
+    SaveSys.request('gear-move'); return true;
+  }
+};
+ACT.gearMove = arg => { const [iid, to] = String(arg).split(':'), it = Gear115.get(iid); if (!it || !it.at) return; if (!Access.atLoc(it.at)) { Access.denyLoc(it.at); return; } if (GearMove115.move(iid, to)) renderPanel(); };
+const devCtl115 = devCtl;
+devCtl = function (slot, loc) { return devCtl115(slot, loc) + (safeRun('gearMove', () => GearMove115.row(slot, loc)) || ''); };
 /* Hand-Me-Down: Buy | Sell */
 const usedPanel115 = Panels.used;
 Panels.used = function (tab) {
