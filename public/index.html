@@ -49,7 +49,7 @@ html[data-bagseed-loading="loading"] body > :not(#bagseed-loading):not(script):n
   const statusText=document.getElementById('bagseed-loading-status'),detail=document.getElementById('bagseed-loading-detail'),reload=document.getElementById('bagseed-loading-reload');
   let savedReduced=false;try{savedReduced=!!JSON.parse(localStorage.getItem('bagseed.settings.v1'))?.reduced;}catch{}
   overlay.dataset.reduced=String(matchMedia('(prefers-reduced-motion: reduce)').matches||savedReduced);
-  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners','BagseedHVAC','BagseedTentDetails','BagseedWaterPots','BagseedPlants','BagseedGardenPlants'];
+  const required=['BagseedLoadingScene','BagseedMenu','BagseedArt','BagseedBedroom','BagseedBeds','BagseedDesks','BagseedCurtains','BagseedComputerDesks','BagseedEquipment','BagseedCameras','BagseedChairs','BagseedCoffee','BagseedUnderDeskStorage','BagseedStarterTent','BagseedTent2','BagseedTent4','BagseedTent5','BagseedGrowLights','BagseedFans','BagseedExhaust','BagseedHumidifiers','BagseedDehumidifiers','BagseedSensors','BagseedHeaters','BagseedAirConditioners','BagseedHVAC','BagseedTentDetails','BagseedWaterPots','BagseedPlants','BagseedGardenPlants','BagseedCompanionPots'];
   let phase='loading',resolveReady,rejectReady;
   const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});ready.catch(()=>{});
   const guarded=['click','pointerdown','touchstart','keydown','wheel'];
@@ -31988,6 +31988,42 @@ module.exports={build,pose,counts,senescence};
  GPArt.icon=function(cv,id){if(!loaded||!DATA[id])return icon.apply(this,arguments);const aspect=cv.height/cv.width;cv.width=Math.max(384,cv.width);cv.height=Math.round(cv.width*aspect);const c=cv.getContext('2d'),W=cv.width,H=cv.height;if(GP.sp(id).form==='starter'){c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const g=geometry(id,3),scale=Math.min(W*.7/Math.max(18,g.w),H*.75/(g.h+11));c.save();c.translate(W/2,H*.10+g.h*scale);c.scale(scale,scale);BagseedWaterPots.potSprite(c,0,0,1,70);painted(c,id,3,0,0,0,1);BagseedWaterPots.potSprite(c,0,0,1,70,false,true);c.restore();c.fillStyle='#426047';c.font=Math.max(10,W*.04)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,H*.95,W*.9);return;}c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const x=W*.25,y=H*.055,w=W*.5,h=H*.89;c.fillStyle='#8e7750';c.beginPath();c.roundRect(x-2,y-2,w+4,h+4,8);c.fill();c.fillStyle='#faf1d8';c.beginPath();c.roundRect(x,y,w,h,7);c.fill();c.fillStyle=GP.catCol(GP.sp(id));c.fillRect(x,y,w,H*.09);const g=geometry(id,3),sc=Math.min(w*.86/g.w,h*.69/g.h);painted(c,id,3,W/2,y+h*.85,0,sc);c.fillStyle='#426047';c.font=Math.max(10,W*.032)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,y+h*.965,w*.94);};
  const ready=Promise.all(Object.entries(DATA).map(([id,a])=>new Promise((resolve,reject)=>{const im=images[id]=new Image();im.onload=resolve;im.onerror=()=>reject(Error('Garden art failed: '+id));im.src=a.runtime;}))).then(()=>{loaded=true;});
  window.BagseedGardenPlants=Object.freeze({revision:'garden-batch-03',ready,geometry,offset,kits:DATA,get loaded(){return loaded;}});
+})();
+
+</script>
+<script id="bagseed-companion-pots-code">
+/* Painted companion pots: soil/back -> native plant -> near rim. Review only until approved. */
+(()=>{
+ 'use strict';
+ const DATA={"revision":"companion-pots-1","status":"approved","generatedSource":"exec-f600419d-d93e-4e34-8b66-dd5271d9d899.png","sourceSHA256":"5d0766b9a7d8470816f442eb8e404a7435b689ff89ed3492ef5ca0e557764c96","runtimeSHA256":"0808994b77995d759511b25390b097c7484b57bf571e2a43912bf7abdecc9eee","runtime":"/assets/companion-pots/pot-0808994b7799.webp","size":[1254,1254],"crop":[197,321,862,677],"soil":[627,446,358,82],"height":6,"nativePlantScale":0.8,"nativeRootOffset":[0,-4],"nativePotCapacity":{"closet":1,"tent2":2,"tent4":2,"tent5":3},"nativePurchaseOptions":0},oldDraw=Companion.draw,pot=new Image(),layers=[];
+ let loaded=false,front;
+ const [sx,sy,sw,sh]=DATA.crop,[cx,cy,rx,ry]=DATA.soil,scale=DATA.height/sh;
+ const geo={left:-(cx-sx)*scale,top:-(cy-sy)*scale,w:sw*scale,h:DATA.height,soilRX:rx*scale,soilRY:ry*scale};
+ function frontImage(){
+  if(front)return front;
+  front=document.createElement('canvas');front.width=sw;front.height=sh;
+  const c=front.getContext('2d');c.drawImage(pot,sx,sy,sw,sh,0,0,sw,sh);
+  c.globalCompositeOperation='destination-out';c.fillStyle='#000';c.fillRect(0,0,sw,cy-sy);
+  c.beginPath();c.ellipse(cx-sx,cy-sy,rx,ry,0,0,Math.PI*2);c.fill();return front;
+ }
+ function drawPot(c,x,y,near=false){
+  if(!loaded)return;c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
+  if(near)c.drawImage(frontImage(),x+geo.left,y+geo.top,geo.w,geo.h);
+  else c.drawImage(pot,sx,sy,sw,sh,x+geo.left,y+geo.top,geo.w,geo.h);
+  c.restore();
+ }
+ function hit(c,loc,x,y,p){RoomArt.hit('gpot:'+loc,x-6,y-16,13,18,p?`${GP.sp(p.sp).name} (companion pot)`:'Companion pot (empty)',[x,y+8],'item');}
+ Companion.draw=function(c,loc,t){
+  if(!loaded)return oldDraw.apply(this,arguments);
+  const pots=GP.pots()[loc];if(!pots||!locOwned(loc))return;
+  pots.forEach((gid,i)=>{const xy=this.potXY(loc,i);if(!xy)return;const [x,y]=xy,root=y-4,p=gid&&GP.plant(gid);
+   drawPot(c,x,root);if(p)GPArt.draw(c,p.sp,GP.stageOf(p),x,root,t,.8);drawPot(c,x,root,true);hit(c,loc,x,y,p);
+   if(layers.length>=32)layers.shift();layers.push({loc,index:i,x,y,rootY:root,phase:'back-plant-front',species:p?.sp||null});
+  });
+ };
+ function icon(cv){cv.width=320;cv.height=270;const c=cv.getContext('2d');const s=Math.min(280/geo.w,224/geo.h);c.save();c.translate(160-(geo.left+geo.w/2)*s,126-(geo.top+geo.h/2)*s);c.scale(s,s);drawPot(c,0,0);c.restore();return cv;}
+ const ready=new Promise((resolve,reject)=>{pot.onload=()=>{loaded=true;resolve();};pot.onerror=()=>reject(Error('Companion pot artwork failed to load'));pot.src=DATA.runtime;});
+ window.BagseedCompanionPots={revision:DATA.revision,ready,get loaded(){return loaded;},geometry:geo,data:DATA,layers,drawPot,icon};
 })();
 
 </script>

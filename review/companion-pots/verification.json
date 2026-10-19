@@ -1,0 +1,19 @@
+{
+  "positions": 8,
+  "targets": 8,
+  "layerOcclusion": true,
+  "mainPotsUnchanged": true,
+  "readOnly": true,
+  "eligibleSpecies": 76,
+  "stageRenders": 304,
+  "saveReload": true,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "cbf94c4951c2d1bd4d5953e50f4f97a573026b5608eb9294c08951a5fd26cf1f",
+  "productionRenderer": false,
+  "animation": {
+    "frames": 72,
+    "fps": 12,
+    "seconds": 6
+  },
+  "errors": []
+}

@@ -1,0 +1,66 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "eedbf4f5469bf826c225ecc639a3c03c5bc48650",
+  "artManifest": "sources/manifest.json",
+  "sourceSHA256": "5d0766b9a7d8470816f442eb8e404a7435b689ff89ed3492ef5ca0e557764c96",
+  "runtimeSHA256": "0808994b77995d759511b25390b097c7484b57bf571e2a43912bf7abdecc9eee",
+  "sharedStyles": 1,
+  "newStoreProducts": 0,
+  "verification": {
+    "positions": 8,
+    "targets": 8,
+    "layerOcclusion": true,
+    "mainPotsUnchanged": true,
+    "readOnly": true,
+    "eligibleSpecies": 76,
+    "stageRenders": 304,
+    "saveReload": true,
+    "publishedHTMLUnchanged": true,
+    "publishedHTMLSHA256": "cbf94c4951c2d1bd4d5953e50f4f97a573026b5608eb9294c08951a5fd26cf1f",
+    "productionRenderer": false,
+    "animation": {
+      "frames": 72,
+      "fps": 12,
+      "seconds": 6
+    },
+    "errors": []
+  },
+  "files": {
+    "README.md": "3e14b4963cfed9df74fc4e14a32f8959cbf456cfb9fbe990b0f9165283926bae",
+    "approval.png": "8c6ed71ba240d1f527c1ee5022dd75dddf08f70dbe9afbc0b0e2db2c64261a5a",
+    "assets/pot.png": "5d0766b9a7d8470816f442eb8e404a7435b689ff89ed3492ef5ca0e557764c96",
+    "assets/pot.webp": "0808994b77995d759511b25390b097c7484b57bf571e2a43912bf7abdecc9eee",
+    "before-after.png": "5e85320e5ac41064ee5ab110cdb7aabc25b91d9950c14c7583b9c1e6ebf39a2d",
+    "pot-icon.png": "8e7c2a8a835593b2a914348979b710336638f1e853cf8623549e11d70995bcd5",
+    "production/desktop-detail.png": "44fdb885d9d8ebf916c5951f4d2d8744fb31cee69a33c91f0b49be54d21cea7a",
+    "production/desktop-game.png": "31d6ac766dde8ca96404c50b16269922f41695702e77391488a9973402d56f58",
+    "production/mobile-detail.png": "10cd74fb736ef59e57109d71d9651ff3a2848cccca0d85b5bd4d876de02560ec",
+    "production/mobile-game.png": "6ca47ffbbabbbcea511d17ec0130294213fc41c0d486d2e0b3f3d21f2d1d8b25",
+    "production/verification.json": "ab854d3609518c54af373fbb8bf8decb2bb5589b7ab8b0f794cb167bc3039bc8",
+    "sources/manifest.json": "30dfcae9af36c83b590579e10c95c3cc97dec509a0eed16e460bf0d2fc40ecc0",
+    "sources/renderer.js": "58392c7934f530fa0ed441b5f8bfd02e30c4db2168235611336c67cf8b399860",
+    "tent-placements.png": "806edba4cfbcee4d74f30be065f3a3f928a0261fa750dbbec890f4d260b5d12f",
+    "verification.json": "da49fbd6ab719c1669c6a596f39e230aa937d2b4a8a483eff53a228f0bb6da21",
+    "wind.mp4": "a05b950fef182c995d9fb5938ed2af504f303fc990c0ad3b0f4d21e8226dca62"
+  },
+  "previewToolSHA256": "0a376abf041bd7d17e280a38e630fd9f19f738aeeb7e9a1dab471ee5baa1dc91",
+  "productionManifestSHA256": "f1daed89c35f3323ba9dae2034dd9dca5d8be4fb7e7837dbb6b241d9d5e7a6b1",
+  "productionRendererSHA256": "58392c7934f530fa0ed441b5f8bfd02e30c4db2168235611336c67cf8b399860",
+  "productionVerification": {
+    "report": "production/verification.json",
+    "browserTestsPassed": 6,
+    "staticIntegrityPassed": true,
+    "characterPayloadPreserved": true,
+    "startupAssetWait": true,
+    "devices": [
+      "mobile",
+      "desktop"
+    ],
+    "zoomSettings": [
+      "wide",
+      "normal",
+      "close"
+    ],
+    "originalArtworkRetained": true
+  }
+}
