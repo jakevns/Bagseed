@@ -1,0 +1,61 @@
+{
+  "id": "P052",
+  "key": "thaibasil",
+  "name": "Thai basil",
+  "status": "sample-awaiting-approval",
+  "revision": "thaibasil-garden-1",
+  "generatedSource": "exec-bc2e349c-8611-4cd0-a0aa-32de20d144dd.png",
+  "sourceSHA256": "ca879b9150e10806acec0bc6d577c97b7fc9e4de4e762f60f02c728456d34661",
+  "runtimeSHA256": "fe2c195998ff487f15e20b087a01e13ad235e04c1984dbdebf8117f02bfbc867",
+  "runtime": "/garden-review/thaibasil.webp",
+  "stages": [
+    {
+      "crop": [
+        212,
+        341,
+        245,
+        156
+      ],
+      "attach": [
+        124.0,
+        153.0
+      ]
+    },
+    {
+      "crop": [
+        733,
+        91,
+        428,
+        409
+      ],
+      "attach": [
+        212.0,
+        406.0
+      ]
+    },
+    {
+      "crop": [
+        39,
+        636,
+        585,
+        548
+      ],
+      "attach": [
+        298.0,
+        545.0
+      ]
+    },
+    {
+      "crop": [
+        659,
+        555,
+        581,
+        631
+      ],
+      "attach": [
+        297.0,
+        627.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "P058",
+  "key": "thyme",
+  "name": "Thyme",
+  "status": "approved-growth-artwork",
+  "revision": "thyme-garden-1",
+  "generatedSource": "exec-2f658964-9d89-4498-9fc3-08827212a1ca.png",
+  "sourceSHA256": "c58b8e77ccafcfe936938fe58be414ce807f11484d46586c6984d87c4251f029",
+  "runtimeSHA256": "4f1566e062fe21a3c68648bc6a21c32ceb0c3e71a1957d4e02ae36734da7b017",
+  "runtime": "/assets/garden-plants/thyme/stages-4f1566e062fe.webp",
+  "stages": [
+    {
+      "crop": [
+        223,
+        388,
+        198,
+        188
+      ],
+      "attach": [
+        102.0,
+        184.0
+      ]
+    },
+    {
+      "crop": [
+        741,
+        194,
+        414,
+        382
+      ],
+      "attach": [
+        203.0,
+        379.0
+      ]
+    },
+    {
+      "crop": [
+        56,
+        751,
+        552,
+        419
+      ],
+      "attach": [
+        266.0,
+        415.0
+      ]
+    },
+    {
+      "crop": [
+        645,
+        706,
+        591,
+        463
+      ],
+      "attach": [
+        300.0,
+        460.0
+      ]
+    }
+  ]
+}

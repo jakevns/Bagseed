@@ -1,0 +1,61 @@
+{
+  "id": "P056",
+  "key": "chives",
+  "name": "Chives",
+  "status": "sample-awaiting-approval",
+  "revision": "chives-garden-1",
+  "generatedSource": "exec-7812859b-c9c5-46f6-9a0f-008c4bffd731.png",
+  "sourceSHA256": "d921fd89f4f68395b898b076daed9fa0936f088c3d8a390a5dc133bcc3b281eb",
+  "runtimeSHA256": "84d160d008d7b9ba4744fc939857b694ed61e13c696d615f6054338c5904f649",
+  "runtime": "/garden-review/chives.webp",
+  "stages": [
+    {
+      "crop": [
+        206,
+        280,
+        184,
+        202
+      ],
+      "attach": [
+        110.0,
+        199.0
+      ]
+    },
+    {
+      "crop": [
+        745,
+        78,
+        404,
+        417
+      ],
+      "attach": [
+        193.0,
+        414.0
+      ]
+    },
+    {
+      "crop": [
+        20,
+        602,
+        609,
+        571
+      ],
+      "attach": [
+        304.0,
+        568.0
+      ]
+    },
+    {
+      "crop": [
+        661,
+        580,
+        577,
+        599
+      ],
+      "attach": [
+        286.0,
+        596.0
+      ]
+    }
+  ]
+}
