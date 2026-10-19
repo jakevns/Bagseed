@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "plant-parts-library-expanded-4",
+  "revision": "plant-parts-library-expanded-5",
   "parts": {
     "porchlight.seed@1": {
       "id": "porchlight.seed@1",
@@ -6769,6 +6769,846 @@
         285,
         277
       ]
+    },
+    "bluedream.seed@1": {
+      "id": "bluedream.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        92,
+        120,
+        156,
+        146
+      ]
+    },
+    "bluedream.radicle@1": {
+      "id": "bluedream.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.930481,
+        0.986425
+      ],
+      "when": {},
+      "crop": [
+        390,
+        86,
+        187,
+        221
+      ]
+    },
+    "bluedream.cotyledon@1": {
+      "id": "bluedream.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.491409,
+        0.981481
+      ],
+      "when": {},
+      "crop": [
+        655,
+        113,
+        291,
+        162
+      ]
+    },
+    "bluedream.singleLeaf@1": {
+      "id": "bluedream.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.518797,
+        0.98951
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1051,
+        23,
+        133,
+        286
+      ]
+    },
+    "bluedream.threeLeaf@1": {
+      "id": "bluedream.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.490809,
+        0.988506
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        38,
+        343,
+        272,
+        261
+      ]
+    },
+    "bluedream.fiveLeaf@1": {
+      "id": "bluedream.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.493333,
+        0.989324
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        343,
+        325,
+        300,
+        281
+      ]
+    },
+    "bluedream.sevenLeaf@1": {
+      "id": "bluedream.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.514019,
+        0.990476
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        653,
+        297,
+        321,
+        315
+      ]
+    },
+    "bluedream.sugarLeaf@1": {
+      "id": "bluedream.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.50211,
+        0.986364
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        999,
+        386,
+        237,
+        220
+      ]
+    },
+    "bluedream.stem@1": {
+      "id": "bluedream.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.493506,
+        0.984536
+      ],
+      "when": {},
+      "crop": [
+        132,
+        667,
+        77,
+        194
+      ]
+    },
+    "bluedream.node@1": {
+      "id": "bluedream.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.488987,
+        0.985075
+      ],
+      "when": {},
+      "crop": [
+        373,
+        672,
+        227,
+        201
+      ]
+    },
+    "bluedream.femaleEarly@1": {
+      "id": "bluedream.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.481752,
+        0.988462
+      ],
+      "when": {},
+      "crop": [
+        675,
+        635,
+        274,
+        260
+      ]
+    },
+    "bluedream.femaleMid@1": {
+      "id": "bluedream.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.565056,
+        0.989051
+      ],
+      "when": {},
+      "crop": [
+        969,
+        626,
+        269,
+        274
+      ]
+    },
+    "bluedream.femaleLate@1": {
+      "id": "bluedream.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.472789,
+        0.991573
+      ],
+      "when": {},
+      "crop": [
+        35,
+        877,
+        294,
+        356
+      ]
+    },
+    "bluedream.maleClosed@1": {
+      "id": "bluedream.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.525114,
+        0.007042
+      ],
+      "when": {},
+      "crop": [
+        385,
+        925,
+        219,
+        284
+      ]
+    },
+    "bluedream.maleOpen@1": {
+      "id": "bluedream.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/bluedream/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.505226,
+        0.007042
+      ],
+      "when": {},
+      "crop": [
+        670,
+        934,
+        287,
+        284
+      ]
+    },
+    "sourdiesel.seed@1": {
+      "id": "sourdiesel.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        114,
+        138,
+        112,
+        119
+      ]
+    },
+    "sourdiesel.radicle@1": {
+      "id": "sourdiesel.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.912752,
+        0.982857
+      ],
+      "when": {},
+      "crop": [
+        402,
+        117,
+        149,
+        175
+      ]
+    },
+    "sourdiesel.cotyledon@1": {
+      "id": "sourdiesel.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.485849,
+        0.971698
+      ],
+      "when": {},
+      "crop": [
+        690,
+        153,
+        212,
+        106
+      ]
+    },
+    "sourdiesel.singleLeaf@1": {
+      "id": "sourdiesel.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.349398,
+        0.986111
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1072,
+        77,
+        83,
+        216
+      ]
+    },
+    "sourdiesel.threeLeaf@1": {
+      "id": "sourdiesel.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.477833,
+        0.985366
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        72,
+        391,
+        203,
+        205
+      ]
+    },
+    "sourdiesel.fiveLeaf@1": {
+      "id": "sourdiesel.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.495146,
+        0.986301
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        378,
+        376,
+        206,
+        219
+      ]
+    },
+    "sourdiesel.sevenLeaf@1": {
+      "id": "sourdiesel.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.495968,
+        0.986784
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        664,
+        366,
+        248,
+        227
+      ]
+    },
+    "sourdiesel.sugarLeaf@1": {
+      "id": "sourdiesel.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.51005,
+        0.984772
+      ],
+      "when": {
+        "leafShape": "narrow"
+      },
+      "crop": [
+        1006,
+        404,
+        199,
+        197
+      ]
+    },
+    "sourdiesel.stem@1": {
+      "id": "sourdiesel.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.507042,
+        0.980892
+      ],
+      "when": {},
+      "crop": [
+        127,
+        695,
+        71,
+        157
+      ]
+    },
+    "sourdiesel.node@1": {
+      "id": "sourdiesel.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.47486,
+        0.982036
+      ],
+      "when": {},
+      "crop": [
+        394,
+        692,
+        179,
+        167
+      ]
+    },
+    "sourdiesel.femaleEarly@1": {
+      "id": "sourdiesel.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.507109,
+        0.983607
+      ],
+      "when": {},
+      "crop": [
+        681,
+        690,
+        211,
+        183
+      ]
+    },
+    "sourdiesel.femaleMid@1": {
+      "id": "sourdiesel.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.516667,
+        0.985222
+      ],
+      "when": {},
+      "crop": [
+        1000,
+        675,
+        210,
+        203
+      ]
+    },
+    "sourdiesel.femaleLate@1": {
+      "id": "sourdiesel.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.49763,
+        0.987952
+      ],
+      "when": {},
+      "crop": [
+        63,
+        933,
+        211,
+        249
+      ]
+    },
+    "sourdiesel.maleClosed@1": {
+      "id": "sourdiesel.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.52381,
+        0.009132
+      ],
+      "when": {},
+      "crop": [
+        416,
+        957,
+        147,
+        219
+      ]
+    },
+    "sourdiesel.maleOpen@1": {
+      "id": "sourdiesel.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/sourdiesel/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.471963,
+        0.009434
+      ],
+      "when": {},
+      "crop": [
+        687,
+        953,
+        214,
+        212
+      ]
+    },
+    "chemdawg.seed@1": {
+      "id": "chemdawg.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        102,
+        144,
+        125,
+        135
+      ]
+    },
+    "chemdawg.radicle@1": {
+      "id": "chemdawg.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.905325,
+        0.984694
+      ],
+      "when": {},
+      "crop": [
+        391,
+        127,
+        169,
+        196
+      ]
+    },
+    "chemdawg.cotyledon@1": {
+      "id": "chemdawg.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.5,
+        0.977778
+      ],
+      "when": {},
+      "crop": [
+        673,
+        135,
+        258,
+        135
+      ]
+    },
+    "chemdawg.singleLeaf@1": {
+      "id": "chemdawg.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.203704,
+        0.988142
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        1076,
+        71,
+        108,
+        253
+      ]
+    },
+    "chemdawg.threeLeaf@1": {
+      "id": "chemdawg.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.473783,
+        0.986842
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        45,
+        377,
+        267,
+        228
+      ]
+    },
+    "chemdawg.fiveLeaf@1": {
+      "id": "chemdawg.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.988372
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        358,
+        348,
+        260,
+        258
+      ]
+    },
+    "chemdawg.sevenLeaf@1": {
+      "id": "chemdawg.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.71885,
+        0.989051
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        638,
+        345,
+        313,
+        274
+      ]
+    },
+    "chemdawg.sugarLeaf@1": {
+      "id": "chemdawg.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.508772,
+        0.986607
+      ],
+      "when": {
+        "leafShape": "hybrid"
+      },
+      "crop": [
+        994,
+        393,
+        228,
+        224
+      ]
+    },
+    "chemdawg.stem@1": {
+      "id": "chemdawg.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.48,
+        0.983516
+      ],
+      "when": {},
+      "crop": [
+        138,
+        689,
+        75,
+        182
+      ]
+    },
+    "chemdawg.node@1": {
+      "id": "chemdawg.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.473684,
+        0.984536
+      ],
+      "when": {},
+      "crop": [
+        384,
+        683,
+        209,
+        194
+      ]
+    },
+    "chemdawg.femaleEarly@1": {
+      "id": "chemdawg.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.732342,
+        0.987552
+      ],
+      "when": {},
+      "crop": [
+        662,
+        665,
+        269,
+        241
+      ]
+    },
+    "chemdawg.femaleMid@1": {
+      "id": "chemdawg.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.50996,
+        0.988593
+      ],
+      "when": {},
+      "crop": [
+        980,
+        642,
+        251,
+        263
+      ]
+    },
+    "chemdawg.femaleLate@1": {
+      "id": "chemdawg.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.492908,
+        0.990854
+      ],
+      "when": {},
+      "crop": [
+        40,
+        892,
+        282,
+        328
+      ]
+    },
+    "chemdawg.maleClosed@1": {
+      "id": "chemdawg.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.532544,
+        0.008621
+      ],
+      "when": {},
+      "crop": [
+        416,
+        967,
+        169,
+        232
+      ]
+    },
+    "chemdawg.maleOpen@1": {
+      "id": "chemdawg.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/chemdawg/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.504505,
+        0.008299
+      ],
+      "when": {},
+      "crop": [
+        684,
+        960,
+        222,
+        241
+      ]
     }
   },
   "profiles": {
@@ -8008,6 +8848,162 @@
         ]
       },
       "lineId": "cl_blueberry"
+    },
+    "bluedream@1": {
+      "id": "bluedream@1",
+      "name": "Blue Dream",
+      "roles": {
+        "seed": [
+          "bluedream.seed@1"
+        ],
+        "radicle": [
+          "bluedream.radicle@1"
+        ],
+        "cotyledon": [
+          "bluedream.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "bluedream.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "bluedream.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "bluedream.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "bluedream.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "bluedream.sugarLeaf@1"
+        ],
+        "stem": [
+          "bluedream.stem@1"
+        ],
+        "node": [
+          "bluedream.node@1"
+        ],
+        "femaleEarly": [
+          "bluedream.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "bluedream.femaleMid@1"
+        ],
+        "femaleLate": [
+          "bluedream.femaleLate@1"
+        ],
+        "maleClosed": [
+          "bluedream.maleClosed@1"
+        ],
+        "maleOpen": [
+          "bluedream.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_bluedream"
+    },
+    "sourdiesel@1": {
+      "id": "sourdiesel@1",
+      "name": "Sour Diesel",
+      "roles": {
+        "seed": [
+          "sourdiesel.seed@1"
+        ],
+        "radicle": [
+          "sourdiesel.radicle@1"
+        ],
+        "cotyledon": [
+          "sourdiesel.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "sourdiesel.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "sourdiesel.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "sourdiesel.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "sourdiesel.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "sourdiesel.sugarLeaf@1"
+        ],
+        "stem": [
+          "sourdiesel.stem@1"
+        ],
+        "node": [
+          "sourdiesel.node@1"
+        ],
+        "femaleEarly": [
+          "sourdiesel.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "sourdiesel.femaleMid@1"
+        ],
+        "femaleLate": [
+          "sourdiesel.femaleLate@1"
+        ],
+        "maleClosed": [
+          "sourdiesel.maleClosed@1"
+        ],
+        "maleOpen": [
+          "sourdiesel.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_sourdiesel"
+    },
+    "chemdawg@1": {
+      "id": "chemdawg@1",
+      "name": "Chemdawg",
+      "roles": {
+        "seed": [
+          "chemdawg.seed@1"
+        ],
+        "radicle": [
+          "chemdawg.radicle@1"
+        ],
+        "cotyledon": [
+          "chemdawg.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "chemdawg.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "chemdawg.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "chemdawg.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "chemdawg.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "chemdawg.sugarLeaf@1"
+        ],
+        "stem": [
+          "chemdawg.stem@1"
+        ],
+        "node": [
+          "chemdawg.node@1"
+        ],
+        "femaleEarly": [
+          "chemdawg.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "chemdawg.femaleMid@1"
+        ],
+        "femaleLate": [
+          "chemdawg.femaleLate@1"
+        ],
+        "maleClosed": [
+          "chemdawg.maleClosed@1"
+        ],
+        "maleOpen": [
+          "chemdawg.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_chemdawg"
     }
   },
   "strains": {
@@ -8032,7 +9028,10 @@
     "cl_bubbakush": "bubbakush@1",
     "cl_purplekush": "purplekush@1",
     "cl_gdp": "gdp@1",
-    "cl_blueberry": "blueberry@1"
+    "cl_blueberry": "blueberry@1",
+    "cl_bluedream": "bluedream@1",
+    "cl_sourdiesel": "sourdiesel@1",
+    "cl_chemdawg": "chemdawg@1"
   },
   "inheritedTraits": {
     "leafShape": {

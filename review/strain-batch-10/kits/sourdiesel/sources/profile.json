@@ -1,0 +1,22 @@
+{
+  "id": "sourdiesel",
+  "lineId": "cl_sourdiesel",
+  "name": "Sour Diesel",
+  "shortName": "Sour Diesel",
+  "apiName": "BagseedSourdieselGrowth",
+  "revision": "sourdiesel-components-1",
+  "libraryRevision": "plant-parts-library-expanded-5",
+  "traits": {
+    "leafShape": "narrow",
+    "leafKey": "lime",
+    "colorName": "Lime green",
+    "branching": 0.95
+  },
+  "description": "Narrow lime-green fans / elongated green flower spears",
+  "finishCaption": "Golden fan senescence / lime flowers and orange stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-99ec1705-b8cf-4045-afe2-60e4a726807b.png"
+}

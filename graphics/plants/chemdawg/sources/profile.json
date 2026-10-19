@@ -1,0 +1,22 @@
+{
+  "id": "chemdawg",
+  "lineId": "cl_chemdawg",
+  "name": "Chemdawg",
+  "shortName": "Chemdawg",
+  "apiName": "BagseedChemdawgGrowth",
+  "revision": "chemdawg-components-1",
+  "libraryRevision": "plant-parts-library-expanded-5",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1
+  },
+  "description": "Forest-green hybrid fans / dense frosted olive bracts",
+  "finishCaption": "Golden fan senescence / resinous green flowers",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-147c8698-1892-4d98-904b-85cbe243487e.png"
+}
