@@ -1,0 +1,22 @@
+{
+  "id": "afghani",
+  "lineId": "cl_afghani",
+  "name": "Afghani",
+  "shortName": "Afghani",
+  "apiName": "BagseedAfghaniGrowth",
+  "revision": "afghani-components-1",
+  "libraryRevision": "plant-parts-library-expanded-3",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1.15
+  },
+  "description": "Broad forest fans / rounded resinous flowers",
+  "finishCaption": "Golden fan senescence / amber stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-91663955-f10e-457a-b9f0-1ed53eda17fa.png"
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "plant-parts-library-expanded-2",
+  "revision": "plant-parts-library-expanded-3",
   "parts": {
     "porchlight.seed@1": {
       "id": "porchlight.seed@1",
@@ -5089,6 +5089,846 @@
         212,
         227
       ]
+    },
+    "afghani.seed@1": {
+      "id": "afghani.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        113,
+        143,
+        121,
+        115
+      ]
+    },
+    "afghani.radicle@1": {
+      "id": "afghani.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.910256,
+        0.982456
+      ],
+      "when": {},
+      "crop": [
+        398,
+        118,
+        156,
+        171
+      ]
+    },
+    "afghani.cotyledon@1": {
+      "id": "afghani.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.488372,
+        0.976378
+      ],
+      "when": {},
+      "crop": [
+        683,
+        145,
+        215,
+        127
+      ]
+    },
+    "afghani.singleLeaf@1": {
+      "id": "afghani.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.51773,
+        0.986301
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1021,
+        76,
+        141,
+        219
+      ]
+    },
+    "afghani.threeLeaf@1": {
+      "id": "afghani.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.487288,
+        0.985915
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        57,
+        373,
+        236,
+        213
+      ]
+    },
+    "afghani.fiveLeaf@1": {
+      "id": "afghani.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.513944,
+        0.987013
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        349,
+        353,
+        251,
+        231
+      ]
+    },
+    "afghani.sevenLeaf@1": {
+      "id": "afghani.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.242647,
+        0.988095
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        654,
+        342,
+        272,
+        252
+      ]
+    },
+    "afghani.sugarLeaf@1": {
+      "id": "afghani.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.495556,
+        0.984772
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        978,
+        391,
+        225,
+        197
+      ]
+    },
+    "afghani.stem@1": {
+      "id": "afghani.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.493151,
+        0.984043
+      ],
+      "when": {},
+      "crop": [
+        127,
+        682,
+        73,
+        188
+      ]
+    },
+    "afghani.node@1": {
+      "id": "afghani.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.488038,
+        0.984456
+      ],
+      "when": {},
+      "crop": [
+        382,
+        681,
+        209,
+        193
+      ]
+    },
+    "afghani.femaleEarly@1": {
+      "id": "afghani.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.533898,
+        0.986842
+      ],
+      "when": {},
+      "crop": [
+        664,
+        654,
+        236,
+        228
+      ]
+    },
+    "afghani.femaleMid@1": {
+      "id": "afghani.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.502242,
+        0.9875
+      ],
+      "when": {},
+      "crop": [
+        977,
+        649,
+        223,
+        240
+      ]
+    },
+    "afghani.femaleLate@1": {
+      "id": "afghani.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.492647,
+        0.988806
+      ],
+      "when": {},
+      "crop": [
+        45,
+        928,
+        272,
+        268
+      ]
+    },
+    "afghani.maleClosed@1": {
+      "id": "afghani.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.482955,
+        0.00823
+      ],
+      "when": {},
+      "crop": [
+        395,
+        943,
+        176,
+        243
+      ]
+    },
+    "afghani.maleOpen@1": {
+      "id": "afghani.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/afghani/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.479592,
+        0.008511
+      ],
+      "when": {},
+      "crop": [
+        675,
+        954,
+        245,
+        235
+      ]
+    },
+    "hindukush.seed@1": {
+      "id": "hindukush.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        99,
+        144,
+        141,
+        126
+      ]
+    },
+    "hindukush.radicle@1": {
+      "id": "hindukush.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.928571,
+        0.984615
+      ],
+      "when": {},
+      "crop": [
+        402,
+        114,
+        161,
+        195
+      ]
+    },
+    "hindukush.cotyledon@1": {
+      "id": "hindukush.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.480349,
+        0.978571
+      ],
+      "when": {},
+      "crop": [
+        684,
+        142,
+        229,
+        140
+      ]
+    },
+    "hindukush.singleLeaf@1": {
+      "id": "hindukush.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.515873,
+        0.987342
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1039,
+        72,
+        126,
+        237
+      ]
+    },
+    "hindukush.threeLeaf@1": {
+      "id": "hindukush.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.494118,
+        0.986425
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        46,
+        362,
+        255,
+        221
+      ]
+    },
+    "hindukush.fiveLeaf@1": {
+      "id": "hindukush.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.814453,
+        0.988
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        353,
+        335,
+        256,
+        250
+      ]
+    },
+    "hindukush.sevenLeaf@1": {
+      "id": "hindukush.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.708185,
+        0.988593
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        658,
+        333,
+        281,
+        263
+      ]
+    },
+    "hindukush.sugarLeaf@1": {
+      "id": "hindukush.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.5,
+        0.984694
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        994,
+        386,
+        212,
+        196
+      ]
+    },
+    "hindukush.stem@1": {
+      "id": "hindukush.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.493151,
+        0.984043
+      ],
+      "when": {},
+      "crop": [
+        133,
+        677,
+        73,
+        188
+      ]
+    },
+    "hindukush.node@1": {
+      "id": "hindukush.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.482759,
+        0.985
+      ],
+      "when": {},
+      "crop": [
+        381,
+        670,
+        203,
+        200
+      ]
+    },
+    "hindukush.femaleEarly@1": {
+      "id": "hindukush.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.211111,
+        0.988189
+      ],
+      "when": {},
+      "crop": [
+        663,
+        636,
+        270,
+        254
+      ]
+    },
+    "hindukush.femaleMid@1": {
+      "id": "hindukush.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.139442,
+        0.988462
+      ],
+      "when": {},
+      "crop": [
+        970,
+        632,
+        251,
+        260
+      ]
+    },
+    "hindukush.femaleLate@1": {
+      "id": "hindukush.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.162921,
+        0.990323
+      ],
+      "when": {},
+      "crop": [
+        51,
+        907,
+        267,
+        310
+      ]
+    },
+    "hindukush.maleClosed@1": {
+      "id": "hindukush.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.446237,
+        0.008
+      ],
+      "when": {},
+      "crop": [
+        408,
+        950,
+        186,
+        250
+      ]
+    },
+    "hindukush.maleOpen@1": {
+      "id": "hindukush.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/hindukush/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.488722,
+        0.008032
+      ],
+      "when": {},
+      "crop": [
+        665,
+        952,
+        266,
+        249
+      ]
+    },
+    "bubbakush.seed@1": {
+      "id": "bubbakush.seed@1",
+      "role": "seed",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "seed-center",
+      "attach": [
+        0.5,
+        0.5
+      ],
+      "when": {},
+      "crop": [
+        101,
+        129,
+        141,
+        133
+      ]
+    },
+    "bubbakush.radicle@1": {
+      "id": "bubbakush.radicle@1",
+      "role": "radicle",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "radicle-tip",
+      "attach": [
+        0.924419,
+        0.984694
+      ],
+      "when": {},
+      "crop": [
+        394,
+        103,
+        172,
+        196
+      ]
+    },
+    "bubbakush.cotyledon@1": {
+      "id": "bubbakush.cotyledon@1",
+      "role": "cotyledon",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "stem-base",
+      "attach": [
+        0.490421,
+        0.979452
+      ],
+      "when": {},
+      "crop": [
+        673,
+        132,
+        261,
+        146
+      ]
+    },
+    "bubbakush.singleLeaf@1": {
+      "id": "bubbakush.singleLeaf@1",
+      "role": "singleLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.534247,
+        0.986784
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1039,
+        74,
+        146,
+        227
+      ]
+    },
+    "bubbakush.threeLeaf@1": {
+      "id": "bubbakush.threeLeaf@1",
+      "role": "threeLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.50365,
+        0.987805
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        31,
+        358,
+        274,
+        246
+      ]
+    },
+    "bubbakush.fiveLeaf@1": {
+      "id": "bubbakush.fiveLeaf@1",
+      "role": "fiveLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.517794,
+        0.988636
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        344,
+        338,
+        281,
+        264
+      ]
+    },
+    "bubbakush.sevenLeaf@1": {
+      "id": "bubbakush.sevenLeaf@1",
+      "role": "sevenLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.751613,
+        0.988764
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        656,
+        343,
+        310,
+        267
+      ]
+    },
+    "bubbakush.sugarLeaf@1": {
+      "id": "bubbakush.sugarLeaf@1",
+      "role": "sugarLeaf",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "petiole-base",
+      "attach": [
+        0.50655,
+        0.986047
+      ],
+      "when": {
+        "leafShape": "broad"
+      },
+      "crop": [
+        1000,
+        389,
+        229,
+        215
+      ]
+    },
+    "bubbakush.stem@1": {
+      "id": "bubbakush.stem@1",
+      "role": "stem",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "lower-node",
+      "attach": [
+        0.506667,
+        0.984127
+      ],
+      "when": {},
+      "crop": [
+        127,
+        689,
+        75,
+        189
+      ]
+    },
+    "bubbakush.node@1": {
+      "id": "bubbakush.node@1",
+      "role": "node",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "branch-junction",
+      "attach": [
+        0.486239,
+        0.984772
+      ],
+      "when": {},
+      "crop": [
+        382,
+        685,
+        218,
+        197
+      ]
+    },
+    "bubbakush.femaleEarly@1": {
+      "id": "bubbakush.femaleEarly@1",
+      "role": "femaleEarly",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.515152,
+        0.988
+      ],
+      "when": {},
+      "crop": [
+        678,
+        647,
+        231,
+        250
+      ]
+    },
+    "bubbakush.femaleMid@1": {
+      "id": "bubbakush.femaleMid@1",
+      "role": "femaleMid",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.534615,
+        0.988095
+      ],
+      "when": {},
+      "crop": [
+        970,
+        645,
+        260,
+        252
+      ]
+    },
+    "bubbakush.femaleLate@1": {
+      "id": "bubbakush.femaleLate@1",
+      "role": "femaleLate",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "flower-base",
+      "attach": [
+        0.505017,
+        0.990033
+      ],
+      "when": {},
+      "crop": [
+        20,
+        907,
+        299,
+        301
+      ]
+    },
+    "bubbakush.maleClosed@1": {
+      "id": "bubbakush.maleClosed@1",
+      "role": "maleClosed",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.484694,
+        0.007968
+      ],
+      "when": {},
+      "crop": [
+        393,
+        947,
+        196,
+        251
+      ]
+    },
+    "bubbakush.maleOpen@1": {
+      "id": "bubbakush.maleOpen@1",
+      "role": "maleOpen",
+      "status": "draft",
+      "asset": "graphics/plants/bubbakush/assets/components.webp",
+      "attachmentType": "pedicel-base",
+      "attach": [
+        0.478723,
+        0.007634
+      ],
+      "when": {},
+      "crop": [
+        671,
+        949,
+        282,
+        262
+      ]
     }
   },
   "profiles": {
@@ -6016,6 +6856,162 @@
         ]
       },
       "lineId": "cl_skunk1"
+    },
+    "afghani@1": {
+      "id": "afghani@1",
+      "name": "Afghani",
+      "roles": {
+        "seed": [
+          "afghani.seed@1"
+        ],
+        "radicle": [
+          "afghani.radicle@1"
+        ],
+        "cotyledon": [
+          "afghani.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "afghani.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "afghani.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "afghani.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "afghani.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "afghani.sugarLeaf@1"
+        ],
+        "stem": [
+          "afghani.stem@1"
+        ],
+        "node": [
+          "afghani.node@1"
+        ],
+        "femaleEarly": [
+          "afghani.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "afghani.femaleMid@1"
+        ],
+        "femaleLate": [
+          "afghani.femaleLate@1"
+        ],
+        "maleClosed": [
+          "afghani.maleClosed@1"
+        ],
+        "maleOpen": [
+          "afghani.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_afghani"
+    },
+    "hindukush@1": {
+      "id": "hindukush@1",
+      "name": "Hindu Kush",
+      "roles": {
+        "seed": [
+          "hindukush.seed@1"
+        ],
+        "radicle": [
+          "hindukush.radicle@1"
+        ],
+        "cotyledon": [
+          "hindukush.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "hindukush.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "hindukush.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "hindukush.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "hindukush.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "hindukush.sugarLeaf@1"
+        ],
+        "stem": [
+          "hindukush.stem@1"
+        ],
+        "node": [
+          "hindukush.node@1"
+        ],
+        "femaleEarly": [
+          "hindukush.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "hindukush.femaleMid@1"
+        ],
+        "femaleLate": [
+          "hindukush.femaleLate@1"
+        ],
+        "maleClosed": [
+          "hindukush.maleClosed@1"
+        ],
+        "maleOpen": [
+          "hindukush.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_hindukush"
+    },
+    "bubbakush@1": {
+      "id": "bubbakush@1",
+      "name": "Bubba Kush",
+      "roles": {
+        "seed": [
+          "bubbakush.seed@1"
+        ],
+        "radicle": [
+          "bubbakush.radicle@1"
+        ],
+        "cotyledon": [
+          "bubbakush.cotyledon@1"
+        ],
+        "singleLeaf": [
+          "bubbakush.singleLeaf@1"
+        ],
+        "threeLeaf": [
+          "bubbakush.threeLeaf@1"
+        ],
+        "fiveLeaf": [
+          "bubbakush.fiveLeaf@1"
+        ],
+        "sevenLeaf": [
+          "bubbakush.sevenLeaf@1"
+        ],
+        "sugarLeaf": [
+          "bubbakush.sugarLeaf@1"
+        ],
+        "stem": [
+          "bubbakush.stem@1"
+        ],
+        "node": [
+          "bubbakush.node@1"
+        ],
+        "femaleEarly": [
+          "bubbakush.femaleEarly@1"
+        ],
+        "femaleMid": [
+          "bubbakush.femaleMid@1"
+        ],
+        "femaleLate": [
+          "bubbakush.femaleLate@1"
+        ],
+        "maleClosed": [
+          "bubbakush.maleClosed@1"
+        ],
+        "maleOpen": [
+          "bubbakush.maleOpen@1"
+        ]
+      },
+      "lineId": "cl_bubbakush"
     }
   },
   "strains": {
@@ -6034,7 +7030,10 @@
     "cl_ogkush": "ogkush@1",
     "cl_whitewidow": "whitewidow@1",
     "cl_northernlights": "northernlights@1",
-    "cl_skunk1": "skunk1@1"
+    "cl_skunk1": "skunk1@1",
+    "cl_afghani": "afghani@1",
+    "cl_hindukush": "hindukush@1",
+    "cl_bubbakush": "bubbakush@1"
   },
   "inheritedTraits": {
     "leafShape": {
