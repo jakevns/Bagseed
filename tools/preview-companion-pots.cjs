@@ -18,7 +18,7 @@ const nativeBody=fs.readFileSync(path.join(root,'src/game.html'),'utf8').match(/
   await page.addScriptTag({content:renderer});await page.evaluate(()=>BagseedCompanionPots.ready);
   const result=await page.evaluate(before=>{
    const check=(v,m)=>{if(!v)throw Error(m);},api=BagseedCompanionPots,files={};
-   
+
    function canvas(w,h){const cv=document.createElement('canvas');cv.width=w;cv.height=h;return cv;}
    function board(w,h,title,sub){const cv=canvas(w,h),c=cv.getContext('2d');c.fillStyle='#f5efdf';c.fillRect(0,0,w,h);c.fillStyle='#294c3d';c.font='bold 30px Georgia';c.fillText(title,26,43);c.font='18px Georgia';c.fillText(sub,26,74);return{cv,c};}
    function side(c,loc,index,x,y,scale,t=0,old=false){const arr=GP.pots()[loc],keep=arr.slice(),gid=arr[index],[px,py]=Companion.potXY(loc,index);arr.fill(null);arr[index]=gid;c.save();c.translate(x,y);c.scale(scale,scale);c.translate(-px,-py+4);try{(old?oldCompanionDraw:Companion.draw).call(Companion,c,loc,t);}finally{c.restore();arr.splice(0,arr.length,...keep);}}
