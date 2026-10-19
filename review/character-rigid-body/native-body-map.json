@@ -1,0 +1,2477 @@
+{
+  "coordinateSystem": "1774 x 887 original PNG pixels. Manually registered joint centers from the approved paintings; source masks inherited from layered-sources. No skeleton silhouette.",
+  "documents": [
+    {
+      "id": "body/male/down",
+      "source": "graphics/character-system/sources/anatomy/male-attempt-01.png",
+      "sourceSHA256": "1c5f8a6191583e904a7f0a023683d188c3ac6919023e781907db987f4f5380d2",
+      "inputSVG": "graphics/character-system/layered-sources/body-male-down.svg",
+      "crop": [
+        115,
+        20,
+        440,
+        850
+      ],
+      "pins": {
+        "neck": [
+          334,
+          75
+        ],
+        "shoulderR": [
+          215,
+          135
+        ],
+        "shoulderL": [
+          450,
+          135
+        ],
+        "elbowR": [
+          183,
+          280
+        ],
+        "elbowL": [
+          487,
+          280
+        ],
+        "wristR": [
+          161,
+          411
+        ],
+        "wristL": [
+          506,
+          411
+        ],
+        "palmR": [
+          167,
+          459
+        ],
+        "palmL": [
+          500,
+          459
+        ],
+        "waist": [
+          334,
+          333
+        ],
+        "hipR": [
+          270,
+          424
+        ],
+        "hipL": [
+          397,
+          424
+        ],
+        "kneeR": [
+          248,
+          580
+        ],
+        "kneeL": [
+          410,
+          580
+        ],
+        "ankleR": [
+          238,
+          777
+        ],
+        "ankleL": [
+          438,
+          777
+        ],
+        "jawAttach": [
+          334,
+          35
+        ],
+        "root": [
+          334,
+          855
+        ],
+        "heelL": [
+          420,
+          840
+        ],
+        "toeL": [
+          455,
+          840
+        ],
+        "heelR": [
+          220,
+          840
+        ],
+        "toeR": [
+          255,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M115 20h440v75h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M115 95h440v255h-440Z",
+          "exclude": [
+            "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+            "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M115 350h440v97h-440Z",
+          "exclude": [
+            "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+            "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+          "intersection": "M115 95h440v190h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+          "intersection": "M115 285h440v140h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M115 447h219v143h-219Z",
+          "exclude": [
+            "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+            "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M115 590h219v205h-219Z",
+          "exclude": [
+            "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+            "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+          "intersection": "M115 425h440v105h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M115 795h219v92h-219Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z",
+          "intersection": "M115 95h440v190h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z",
+          "intersection": "M115 285h440v140h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M334 447h221v143h-221Z",
+          "exclude": [
+            "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+            "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M334 590h221v205h-221Z",
+          "exclude": [
+            "M215 95L243 205L241 255L223 310L223 360L204 418L204 530L84 530L84 95Z",
+            "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M453 95L425 205L427 255L445 310L445 360L464 418L464 530L584 530L584 95Z",
+          "intersection": "M115 425h440v105h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M334 795h221v92h-221Z",
+          "actualPixels": true
+        }
+      ]
+    },
+    {
+      "id": "body/male/right",
+      "source": "graphics/character-system/sources/anatomy/male-attempt-01.png",
+      "sourceSHA256": "1c5f8a6191583e904a7f0a023683d188c3ac6919023e781907db987f4f5380d2",
+      "inputSVG": "graphics/character-system/layered-sources/body-male-right.svg",
+      "crop": [
+        590,
+        20,
+        295,
+        850
+      ],
+      "pins": {
+        "neck": [
+          742,
+          75
+        ],
+        "shoulderR": [
+          714,
+          138
+        ],
+        "shoulderL": [
+          714,
+          138
+        ],
+        "elbowR": [
+          716,
+          285
+        ],
+        "elbowL": [
+          716,
+          285
+        ],
+        "wristR": [
+          748,
+          421
+        ],
+        "wristL": [
+          748,
+          421
+        ],
+        "palmR": [
+          760,
+          466
+        ],
+        "palmL": [
+          760,
+          466
+        ],
+        "waist": [
+          742,
+          333
+        ],
+        "hipR": [
+          729,
+          422
+        ],
+        "hipL": [
+          729,
+          422
+        ],
+        "kneeR": [
+          711,
+          584
+        ],
+        "kneeL": [
+          711,
+          584
+        ],
+        "ankleR": [
+          696,
+          786
+        ],
+        "ankleL": [
+          696,
+          786
+        ],
+        "jawAttach": [
+          742,
+          35
+        ],
+        "root": [
+          742,
+          855
+        ],
+        "heelL": [
+          666,
+          840
+        ],
+        "toeL": [
+          796,
+          840
+        ],
+        "heelR": [
+          666,
+          840
+        ],
+        "toeR": [
+          796,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M590 20h295v75h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M590 95h295v255h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M590 350h295v97h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 95h295v190h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 285h295v140h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M590 447h295v143h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M590 590h295v205h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 425h295v105h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M590 795h295v92h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 95h295v190h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 285h295v140h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M590 447h295v143h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M590 590h295v205h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 425h295v105h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M590 795h295v92h-295Z",
+          "actualPixels": false
+        }
+      ]
+    },
+    {
+      "id": "body/male/up",
+      "source": "graphics/character-system/sources/anatomy/male-attempt-01.png",
+      "sourceSHA256": "1c5f8a6191583e904a7f0a023683d188c3ac6919023e781907db987f4f5380d2",
+      "inputSVG": "graphics/character-system/layered-sources/body-male-up.svg",
+      "crop": [
+        900,
+        20,
+        450,
+        850
+      ],
+      "pins": {
+        "neck": [
+          1117,
+          75
+        ],
+        "shoulderR": [
+          1236,
+          135
+        ],
+        "shoulderL": [
+          1001,
+          135
+        ],
+        "elbowR": [
+          1268,
+          280
+        ],
+        "elbowL": [
+          964,
+          280
+        ],
+        "wristR": [
+          1290,
+          411
+        ],
+        "wristL": [
+          945,
+          411
+        ],
+        "palmR": [
+          1284,
+          459
+        ],
+        "palmL": [
+          951,
+          459
+        ],
+        "waist": [
+          1117,
+          333
+        ],
+        "hipR": [
+          1181,
+          424
+        ],
+        "hipL": [
+          1054,
+          424
+        ],
+        "kneeR": [
+          1203,
+          580
+        ],
+        "kneeL": [
+          1041,
+          580
+        ],
+        "ankleR": [
+          1213,
+          777
+        ],
+        "ankleL": [
+          1013,
+          777
+        ],
+        "jawAttach": [
+          1117,
+          35
+        ],
+        "root": [
+          1117,
+          855
+        ],
+        "heelL": [
+          995,
+          840
+        ],
+        "toeL": [
+          1030,
+          840
+        ],
+        "heelR": [
+          1195,
+          840
+        ],
+        "toeR": [
+          1230,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M900 20h450v75h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M900 95h450v255h-450Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M900 350h450v97h-450Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 95h450v190h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 285h450v140h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M1117 447h233v143h-233Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M1117 590h233v205h-233Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 425h450v105h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M1117 795h233v92h-233Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 95h450v190h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 285h450v140h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M900 447h217v143h-217Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M900 590h217v205h-217Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 425h450v105h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M900 795h217v92h-217Z",
+          "actualPixels": true
+        }
+      ]
+    },
+    {
+      "id": "body/male/left",
+      "source": "graphics/character-system/sources/anatomy/male-attempt-01.png",
+      "sourceSHA256": "1c5f8a6191583e904a7f0a023683d188c3ac6919023e781907db987f4f5380d2",
+      "inputSVG": "graphics/character-system/layered-sources/body-male-left.svg",
+      "crop": [
+        1355,
+        20,
+        400,
+        850
+      ],
+      "pins": {
+        "neck": [
+          1502,
+          75
+        ],
+        "shoulderR": [
+          1525,
+          138
+        ],
+        "shoulderL": [
+          1525,
+          138
+        ],
+        "elbowR": [
+          1510,
+          285
+        ],
+        "elbowL": [
+          1510,
+          285
+        ],
+        "wristR": [
+          1480,
+          421
+        ],
+        "wristL": [
+          1480,
+          421
+        ],
+        "palmR": [
+          1470,
+          466
+        ],
+        "palmL": [
+          1470,
+          466
+        ],
+        "waist": [
+          1502,
+          333
+        ],
+        "hipR": [
+          1510,
+          422
+        ],
+        "hipL": [
+          1510,
+          422
+        ],
+        "kneeR": [
+          1526,
+          584
+        ],
+        "kneeL": [
+          1526,
+          584
+        ],
+        "ankleR": [
+          1538,
+          786
+        ],
+        "ankleL": [
+          1538,
+          786
+        ],
+        "jawAttach": [
+          1502,
+          35
+        ],
+        "root": [
+          1502,
+          855
+        ],
+        "heelL": [
+          1568,
+          840
+        ],
+        "toeL": [
+          1438,
+          840
+        ],
+        "heelR": [
+          1568,
+          840
+        ],
+        "toeR": [
+          1438,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M1355 20h400v75h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M1355 95h400v255h-400Z",
+          "exclude": [
+            "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M1355 350h400v97h-400Z",
+          "exclude": [
+            "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z",
+          "intersection": "M1355 95h400v190h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z",
+          "intersection": "M1355 285h400v140h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M1355 447h400v143h-400Z",
+          "exclude": [
+            "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M1355 590h400v205h-400Z",
+          "exclude": [
+            "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z",
+          "intersection": "M1355 425h400v105h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M1355 795h400v92h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z",
+          "intersection": "M1355 95h400v190h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z",
+          "intersection": "M1355 285h400v140h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M1355 447h400v143h-400Z",
+          "exclude": [
+            "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M1355 590h400v205h-400Z",
+          "exclude": [
+            "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M1533 92Q1604 119 1571 217L1542 291L1524 402L1526 478Q1485 530 1438 486L1446 438L1470 389L1486 274Q1467 196 1467 142Q1483 97 1533 92Z",
+          "intersection": "M1355 425h400v105h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M1355 795h400v92h-400Z",
+          "actualPixels": true
+        }
+      ]
+    },
+    {
+      "id": "body/female/down",
+      "source": "graphics/character-system/sources/anatomy/female-attempt-02.png",
+      "sourceSHA256": "87ee221a7f9e71b7f5ba8c3c436b98381467b832ed767613baf92e306d37539e",
+      "inputSVG": "graphics/character-system/layered-sources/body-female-down.svg",
+      "crop": [
+        115,
+        20,
+        440,
+        850
+      ],
+      "pins": {
+        "neck": [
+          333,
+          75
+        ],
+        "shoulderR": [
+          215,
+          132
+        ],
+        "shoulderL": [
+          451,
+          132
+        ],
+        "elbowR": [
+          186,
+          284
+        ],
+        "elbowL": [
+          484,
+          284
+        ],
+        "wristR": [
+          159,
+          414
+        ],
+        "wristL": [
+          508,
+          414
+        ],
+        "palmR": [
+          167,
+          459
+        ],
+        "palmL": [
+          500,
+          459
+        ],
+        "waist": [
+          333,
+          333
+        ],
+        "hipR": [
+          276,
+          430
+        ],
+        "hipL": [
+          394,
+          430
+        ],
+        "kneeR": [
+          252,
+          585
+        ],
+        "kneeL": [
+          410,
+          585
+        ],
+        "ankleR": [
+          238,
+          788
+        ],
+        "ankleL": [
+          438,
+          788
+        ],
+        "jawAttach": [
+          333,
+          35
+        ],
+        "root": [
+          333,
+          855
+        ],
+        "heelL": [
+          420,
+          840
+        ],
+        "toeL": [
+          455,
+          840
+        ],
+        "heelR": [
+          220,
+          840
+        ],
+        "toeR": [
+          255,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M115 20h440v75h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M115 95h440v255h-440Z",
+          "exclude": [
+            "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+            "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M115 350h440v97h-440Z",
+          "exclude": [
+            "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+            "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+          "intersection": "M115 95h440v190h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+          "intersection": "M115 285h440v140h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M115 447h218v143h-218Z",
+          "exclude": [
+            "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+            "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M115 590h218v205h-218Z",
+          "exclude": [
+            "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+            "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+          "intersection": "M115 425h440v105h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M115 795h218v92h-218Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z",
+          "intersection": "M115 95h440v190h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z",
+          "intersection": "M115 285h440v140h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M333 447h222v143h-222Z",
+          "exclude": [
+            "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+            "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M333 590h222v205h-222Z",
+          "exclude": [
+            "M214 95L242 205L240 255L222 310L222 360L203 418L203 530L83 530L83 95Z",
+            "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M452 95L424 205L426 255L444 310L444 360L463 418L463 530L583 530L583 95Z",
+          "intersection": "M115 425h440v105h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M333 795h222v92h-222Z",
+          "actualPixels": true
+        }
+      ]
+    },
+    {
+      "id": "body/female/right",
+      "source": "graphics/character-system/sources/anatomy/female-attempt-02.png",
+      "sourceSHA256": "87ee221a7f9e71b7f5ba8c3c436b98381467b832ed767613baf92e306d37539e",
+      "inputSVG": "graphics/character-system/layered-sources/body-female-right.svg",
+      "crop": [
+        590,
+        20,
+        295,
+        850
+      ],
+      "pins": {
+        "neck": [
+          742,
+          75
+        ],
+        "shoulderR": [
+          715,
+          138
+        ],
+        "shoulderL": [
+          715,
+          138
+        ],
+        "elbowR": [
+          720,
+          285
+        ],
+        "elbowL": [
+          720,
+          285
+        ],
+        "wristR": [
+          750,
+          421
+        ],
+        "wristL": [
+          750,
+          421
+        ],
+        "palmR": [
+          760,
+          470
+        ],
+        "palmL": [
+          760,
+          470
+        ],
+        "waist": [
+          742,
+          333
+        ],
+        "hipR": [
+          727,
+          422
+        ],
+        "hipL": [
+          727,
+          422
+        ],
+        "kneeR": [
+          716,
+          584
+        ],
+        "kneeL": [
+          716,
+          584
+        ],
+        "ankleR": [
+          700,
+          786
+        ],
+        "ankleL": [
+          700,
+          786
+        ],
+        "jawAttach": [
+          742,
+          35
+        ],
+        "root": [
+          742,
+          855
+        ],
+        "heelL": [
+          670,
+          840
+        ],
+        "toeL": [
+          800,
+          840
+        ],
+        "heelR": [
+          670,
+          840
+        ],
+        "toeR": [
+          800,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M590 20h295v75h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M590 95h295v255h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M590 350h295v97h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 95h295v190h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 285h295v140h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M590 447h295v143h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M590 590h295v205h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 425h295v105h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M590 795h295v92h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 95h295v190h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 285h295v140h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M590 447h295v143h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M590 590h295v205h-295Z",
+          "exclude": [
+            "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M711 92Q640 119 673 217L702 291L720 402L718 478Q759 530 806 486L798 438L774 389L758 274Q777 196 777 142Q761 97 711 92Z",
+          "intersection": "M590 425h295v105h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M590 795h295v92h-295Z",
+          "actualPixels": false
+        }
+      ]
+    },
+    {
+      "id": "body/female/up",
+      "source": "graphics/character-system/sources/anatomy/female-attempt-02.png",
+      "sourceSHA256": "87ee221a7f9e71b7f5ba8c3c436b98381467b832ed767613baf92e306d37539e",
+      "inputSVG": "graphics/character-system/layered-sources/body-female-up.svg",
+      "crop": [
+        900,
+        20,
+        450,
+        850
+      ],
+      "pins": {
+        "neck": [
+          1117,
+          75
+        ],
+        "shoulderR": [
+          1235,
+          132
+        ],
+        "shoulderL": [
+          999,
+          132
+        ],
+        "elbowR": [
+          1264,
+          284
+        ],
+        "elbowL": [
+          966,
+          284
+        ],
+        "wristR": [
+          1291,
+          414
+        ],
+        "wristL": [
+          942,
+          414
+        ],
+        "palmR": [
+          1283,
+          459
+        ],
+        "palmL": [
+          950,
+          459
+        ],
+        "waist": [
+          1117,
+          333
+        ],
+        "hipR": [
+          1174,
+          430
+        ],
+        "hipL": [
+          1056,
+          430
+        ],
+        "kneeR": [
+          1198,
+          585
+        ],
+        "kneeL": [
+          1040,
+          585
+        ],
+        "ankleR": [
+          1212,
+          788
+        ],
+        "ankleL": [
+          1012,
+          788
+        ],
+        "jawAttach": [
+          1117,
+          35
+        ],
+        "root": [
+          1117,
+          855
+        ],
+        "heelL": [
+          994,
+          840
+        ],
+        "toeL": [
+          1029,
+          840
+        ],
+        "heelR": [
+          1194,
+          840
+        ],
+        "toeR": [
+          1229,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M900 20h450v75h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M900 95h450v255h-450Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M900 350h450v97h-450Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 95h450v190h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 285h450v140h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M1117 447h233v143h-233Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M1117 590h233v205h-233Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 425h450v105h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M1117 795h233v92h-233Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 95h450v190h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 285h450v140h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M900 447h217v143h-217Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M900 590h217v205h-217Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 425h450v105h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M900 795h217v92h-217Z",
+          "actualPixels": true
+        }
+      ]
+    },
+    {
+      "id": "body/female/left",
+      "source": "graphics/character-system/sources/anatomy/female-attempt-02.png",
+      "sourceSHA256": "87ee221a7f9e71b7f5ba8c3c436b98381467b832ed767613baf92e306d37539e",
+      "inputSVG": "graphics/character-system/layered-sources/body-female-left.svg",
+      "crop": [
+        1355,
+        20,
+        400,
+        850
+      ],
+      "pins": {
+        "neck": [
+          1517,
+          75
+        ],
+        "shoulderR": [
+          1530,
+          138
+        ],
+        "shoulderL": [
+          1530,
+          138
+        ],
+        "elbowR": [
+          1515,
+          285
+        ],
+        "elbowL": [
+          1515,
+          285
+        ],
+        "wristR": [
+          1485,
+          421
+        ],
+        "wristL": [
+          1485,
+          421
+        ],
+        "palmR": [
+          1477,
+          470
+        ],
+        "palmL": [
+          1477,
+          470
+        ],
+        "waist": [
+          1517,
+          333
+        ],
+        "hipR": [
+          1520,
+          422
+        ],
+        "hipL": [
+          1520,
+          422
+        ],
+        "kneeR": [
+          1530,
+          584
+        ],
+        "kneeL": [
+          1530,
+          584
+        ],
+        "ankleR": [
+          1540,
+          786
+        ],
+        "ankleL": [
+          1540,
+          786
+        ],
+        "jawAttach": [
+          1517,
+          35
+        ],
+        "root": [
+          1517,
+          855
+        ],
+        "heelL": [
+          1570,
+          840
+        ],
+        "toeL": [
+          1440,
+          840
+        ],
+        "heelR": [
+          1570,
+          840
+        ],
+        "toeR": [
+          1440,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M1355 20h400v75h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M1355 95h400v255h-400Z",
+          "exclude": [
+            "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M1355 350h400v97h-400Z",
+          "exclude": [
+            "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z",
+          "intersection": "M1355 95h400v190h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z",
+          "intersection": "M1355 285h400v140h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M1355 447h400v143h-400Z",
+          "exclude": [
+            "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M1355 590h400v205h-400Z",
+          "exclude": [
+            "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z",
+          "intersection": "M1355 425h400v105h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M1355 795h400v92h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z",
+          "intersection": "M1355 95h400v190h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z",
+          "intersection": "M1355 285h400v140h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M1355 447h400v143h-400Z",
+          "exclude": [
+            "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M1355 590h400v205h-400Z",
+          "exclude": [
+            "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M1548 92Q1619 119 1586 217L1557 291L1539 402L1541 478Q1500 530 1453 486L1461 438L1485 389L1501 274Q1482 196 1482 142Q1498 97 1548 92Z",
+          "intersection": "M1355 425h400v105h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M1355 795h400v92h-400Z",
+          "actualPixels": true
+        }
+      ]
+    },
+    {
+      "id": "body/androgynous/down",
+      "source": "graphics/character-system/sources/anatomy/androgynous-attempt-02.png",
+      "sourceSHA256": "f91363c8310a2e0379f1ab70089fd6d5ec24f2fb1d00a1ae848a511915630e89",
+      "inputSVG": "graphics/character-system/layered-sources/body-androgynous-down.svg",
+      "crop": [
+        115,
+        20,
+        440,
+        850
+      ],
+      "pins": {
+        "neck": [
+          339,
+          75
+        ],
+        "shoulderR": [
+          225,
+          131
+        ],
+        "shoulderL": [
+          455,
+          131
+        ],
+        "elbowR": [
+          190,
+          282
+        ],
+        "elbowL": [
+          485,
+          282
+        ],
+        "wristR": [
+          173,
+          419
+        ],
+        "wristL": [
+          503,
+          419
+        ],
+        "palmR": [
+          174,
+          465
+        ],
+        "palmL": [
+          490,
+          465
+        ],
+        "waist": [
+          339,
+          333
+        ],
+        "hipR": [
+          279,
+          426
+        ],
+        "hipL": [
+          400,
+          426
+        ],
+        "kneeR": [
+          267,
+          583
+        ],
+        "kneeL": [
+          411,
+          583
+        ],
+        "ankleR": [
+          246,
+          787
+        ],
+        "ankleL": [
+          434,
+          787
+        ],
+        "jawAttach": [
+          339,
+          35
+        ],
+        "root": [
+          339,
+          855
+        ],
+        "heelL": [
+          416,
+          840
+        ],
+        "toeL": [
+          451,
+          840
+        ],
+        "heelR": [
+          228,
+          840
+        ],
+        "toeR": [
+          263,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M115 20h440v75h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M115 95h440v255h-440Z",
+          "exclude": [
+            "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+            "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M115 350h440v97h-440Z",
+          "exclude": [
+            "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+            "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+          "intersection": "M115 95h440v190h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+          "intersection": "M115 285h440v140h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M115 447h224v143h-224Z",
+          "exclude": [
+            "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+            "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M115 590h224v205h-224Z",
+          "exclude": [
+            "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+            "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+          "intersection": "M115 425h440v105h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M115 795h224v92h-224Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z",
+          "intersection": "M115 95h440v190h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z",
+          "intersection": "M115 285h440v140h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M339 447h216v143h-216Z",
+          "exclude": [
+            "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+            "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M339 590h216v205h-216Z",
+          "exclude": [
+            "M220 95L248 205L246 255L228 310L228 360L209 418L209 530L89 530L89 95Z",
+            "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M458 95L430 205L432 255L450 310L450 360L469 418L469 530L589 530L589 95Z",
+          "intersection": "M115 425h440v105h-440Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M339 795h216v92h-216Z",
+          "actualPixels": true
+        }
+      ]
+    },
+    {
+      "id": "body/androgynous/right",
+      "source": "graphics/character-system/sources/anatomy/androgynous-attempt-02.png",
+      "sourceSHA256": "f91363c8310a2e0379f1ab70089fd6d5ec24f2fb1d00a1ae848a511915630e89",
+      "inputSVG": "graphics/character-system/layered-sources/body-androgynous-right.svg",
+      "crop": [
+        590,
+        20,
+        295,
+        850
+      ],
+      "pins": {
+        "neck": [
+          747,
+          75
+        ],
+        "shoulderR": [
+          735,
+          138
+        ],
+        "shoulderL": [
+          735,
+          138
+        ],
+        "elbowR": [
+          747,
+          285
+        ],
+        "elbowL": [
+          747,
+          285
+        ],
+        "wristR": [
+          761,
+          421
+        ],
+        "wristL": [
+          761,
+          421
+        ],
+        "palmR": [
+          770,
+          470
+        ],
+        "palmL": [
+          770,
+          470
+        ],
+        "waist": [
+          747,
+          333
+        ],
+        "hipR": [
+          738,
+          422
+        ],
+        "hipL": [
+          738,
+          422
+        ],
+        "kneeR": [
+          726,
+          584
+        ],
+        "kneeL": [
+          726,
+          584
+        ],
+        "ankleR": [
+          713,
+          786
+        ],
+        "ankleL": [
+          713,
+          786
+        ],
+        "jawAttach": [
+          747,
+          35
+        ],
+        "root": [
+          747,
+          855
+        ],
+        "heelL": [
+          683,
+          840
+        ],
+        "toeL": [
+          813,
+          840
+        ],
+        "heelR": [
+          683,
+          840
+        ],
+        "toeR": [
+          813,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M590 20h295v75h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M590 95h295v255h-295Z",
+          "exclude": [
+            "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M590 350h295v97h-295Z",
+          "exclude": [
+            "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z",
+          "intersection": "M590 95h295v190h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z",
+          "intersection": "M590 285h295v140h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M590 447h295v143h-295Z",
+          "exclude": [
+            "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M590 590h295v205h-295Z",
+          "exclude": [
+            "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z",
+          "intersection": "M590 425h295v105h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M590 795h295v92h-295Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z",
+          "intersection": "M590 95h295v190h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z",
+          "intersection": "M590 285h295v140h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M590 447h295v143h-295Z",
+          "exclude": [
+            "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M590 590h295v205h-295Z",
+          "exclude": [
+            "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M716 92Q645 119 678 217L707 291L725 402L723 478Q764 530 811 486L803 438L779 389L763 274Q782 196 782 142Q766 97 716 92Z",
+          "intersection": "M590 425h295v105h-295Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M590 795h295v92h-295Z",
+          "actualPixels": false
+        }
+      ]
+    },
+    {
+      "id": "body/androgynous/up",
+      "source": "graphics/character-system/sources/anatomy/androgynous-attempt-02.png",
+      "sourceSHA256": "f91363c8310a2e0379f1ab70089fd6d5ec24f2fb1d00a1ae848a511915630e89",
+      "inputSVG": "graphics/character-system/layered-sources/body-androgynous-up.svg",
+      "crop": [
+        900,
+        20,
+        450,
+        850
+      ],
+      "pins": {
+        "neck": [
+          1117,
+          75
+        ],
+        "shoulderR": [
+          1231,
+          131
+        ],
+        "shoulderL": [
+          1001,
+          131
+        ],
+        "elbowR": [
+          1266,
+          282
+        ],
+        "elbowL": [
+          971,
+          282
+        ],
+        "wristR": [
+          1283,
+          419
+        ],
+        "wristL": [
+          953,
+          419
+        ],
+        "palmR": [
+          1282,
+          465
+        ],
+        "palmL": [
+          966,
+          465
+        ],
+        "waist": [
+          1117,
+          333
+        ],
+        "hipR": [
+          1177,
+          426
+        ],
+        "hipL": [
+          1056,
+          426
+        ],
+        "kneeR": [
+          1189,
+          583
+        ],
+        "kneeL": [
+          1045,
+          583
+        ],
+        "ankleR": [
+          1210,
+          787
+        ],
+        "ankleL": [
+          1022,
+          787
+        ],
+        "jawAttach": [
+          1117,
+          35
+        ],
+        "root": [
+          1117,
+          855
+        ],
+        "heelL": [
+          1004,
+          840
+        ],
+        "toeL": [
+          1039,
+          840
+        ],
+        "heelR": [
+          1192,
+          840
+        ],
+        "toeR": [
+          1227,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M900 20h450v75h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M900 95h450v255h-450Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M900 350h450v97h-450Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 95h450v190h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 285h450v140h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M1117 447h233v143h-233Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M1117 590h233v205h-233Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z",
+          "intersection": "M900 425h450v105h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M1117 795h233v92h-233Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 95h450v190h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 285h450v140h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M900 447h217v143h-217Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M900 590h217v205h-217Z",
+          "exclude": [
+            "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+            "M1236 95L1208 205L1210 255L1228 310L1228 360L1247 418L1247 530L1367 530L1367 95Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M998 95L1026 205L1024 255L1006 310L1006 360L987 418L987 530L867 530L867 95Z",
+          "intersection": "M900 425h450v105h-450Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M900 795h217v92h-217Z",
+          "actualPixels": true
+        }
+      ]
+    },
+    {
+      "id": "body/androgynous/left",
+      "source": "graphics/character-system/sources/anatomy/androgynous-attempt-02.png",
+      "sourceSHA256": "f91363c8310a2e0379f1ab70089fd6d5ec24f2fb1d00a1ae848a511915630e89",
+      "inputSVG": "graphics/character-system/layered-sources/body-androgynous-left.svg",
+      "crop": [
+        1355,
+        20,
+        400,
+        850
+      ],
+      "pins": {
+        "neck": [
+          1530,
+          75
+        ],
+        "shoulderR": [
+          1545,
+          138
+        ],
+        "shoulderL": [
+          1545,
+          138
+        ],
+        "elbowR": [
+          1535,
+          285
+        ],
+        "elbowL": [
+          1535,
+          285
+        ],
+        "wristR": [
+          1510,
+          421
+        ],
+        "wristL": [
+          1510,
+          421
+        ],
+        "palmR": [
+          1498,
+          470
+        ],
+        "palmL": [
+          1498,
+          470
+        ],
+        "waist": [
+          1530,
+          333
+        ],
+        "hipR": [
+          1540,
+          422
+        ],
+        "hipL": [
+          1540,
+          422
+        ],
+        "kneeR": [
+          1550,
+          584
+        ],
+        "kneeL": [
+          1550,
+          584
+        ],
+        "ankleR": [
+          1560,
+          786
+        ],
+        "ankleL": [
+          1560,
+          786
+        ],
+        "jawAttach": [
+          1530,
+          35
+        ],
+        "root": [
+          1530,
+          855
+        ],
+        "heelL": [
+          1590,
+          840
+        ],
+        "toeL": [
+          1460,
+          840
+        ],
+        "heelR": [
+          1590,
+          840
+        ],
+        "toeR": [
+          1460,
+          840
+        ]
+      },
+      "layers": [
+        {
+          "id": "body.neck",
+          "mask": "M1355 20h400v75h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.torso",
+          "mask": "M1355 95h400v255h-400Z",
+          "exclude": [
+            "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.pelvis",
+          "mask": "M1355 350h400v97h-400Z",
+          "exclude": [
+            "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.upperArm.R",
+          "mask": "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z",
+          "intersection": "M1355 95h400v190h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.forearm.R",
+          "mask": "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z",
+          "intersection": "M1355 285h400v140h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.thigh.R",
+          "mask": "M1355 447h400v143h-400Z",
+          "exclude": [
+            "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.calf.R",
+          "mask": "M1355 590h400v205h-400Z",
+          "exclude": [
+            "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z"
+          ],
+          "actualPixels": false
+        },
+        {
+          "id": "body.hand.R",
+          "mask": "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z",
+          "intersection": "M1355 425h400v105h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.foot.R",
+          "mask": "M1355 795h400v92h-400Z",
+          "actualPixels": false
+        },
+        {
+          "id": "body.upperArm.L",
+          "mask": "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z",
+          "intersection": "M1355 95h400v190h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.forearm.L",
+          "mask": "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z",
+          "intersection": "M1355 285h400v140h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.thigh.L",
+          "mask": "M1355 447h400v143h-400Z",
+          "exclude": [
+            "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.calf.L",
+          "mask": "M1355 590h400v205h-400Z",
+          "exclude": [
+            "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z"
+          ],
+          "actualPixels": true
+        },
+        {
+          "id": "body.hand.L",
+          "mask": "M1561 92Q1632 119 1599 217L1570 291L1552 402L1554 478Q1513 530 1466 486L1474 438L1498 389L1514 274Q1495 196 1495 142Q1511 97 1561 92Z",
+          "intersection": "M1355 425h400v105h-400Z",
+          "actualPixels": true
+        },
+        {
+          "id": "body.foot.L",
+          "mask": "M1355 795h400v92h-400Z",
+          "actualPixels": true
+        }
+      ]
+    }
+  ]
+}

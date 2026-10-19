@@ -1,0 +1,29 @@
+{
+  "runner": "node --test --test-concurrency=2",
+  "browser": "Google Chrome, headless, BAGSEED_BROWSER_PATH set to the local installation",
+  "tests": 47,
+  "passed": 47,
+  "failed": 0,
+  "skipped": 0,
+  "files": [
+    "tests/character-identities.test.cjs",
+    "tests/character-view-provenance.test.cjs",
+    "tests/character-authored-lookup.test.cjs",
+    "tests/character-authored-reaction.test.cjs",
+    "tests/character-external-assets.test.cjs",
+    "tests/custom-heads.test.cjs",
+    "tests/custom-arm-layer.test.cjs",
+    "tests/custom-walk.test.cjs",
+    "tests/custom-idle-walk-neck.test.cjs",
+    "tests/custom-waist-coverage.test.cjs",
+    "tests/neck-join.test.cjs",
+    "tests/face-details.test.cjs",
+    "tests/hair-material-anatomy.test.cjs",
+    "tests/hair-layers.test.cjs",
+    "tests/graphics.test.cjs",
+    "tests/person-scale.test.cjs",
+    "tests/walk-no-donor-repairs.test.cjs",
+    "tests/walk-pose-guides.test.cjs"
+  ],
+  "scope": "Existing game regression checks after adding rigid attachment support. These results do not approve the new body's walk or concealed source surfaces."
+}

@@ -1,0 +1,78 @@
+{
+  "poses": 108,
+  "matrices": 1620,
+  "comparisons": [
+    {
+      "id": "body/male/down",
+      "silhouetteIoU": 0.9927358460509128,
+      "opaqueMeanChannelError": 1.141468631737301,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/male/right",
+      "silhouetteIoU": 0.9905833280667383,
+      "opaqueMeanChannelError": 1.414559925093633,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/male/up",
+      "silhouetteIoU": 0.9956424223005447,
+      "opaqueMeanChannelError": 0.33610133708655876,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/male/left",
+      "silhouetteIoU": 0.9900631210549341,
+      "opaqueMeanChannelError": 1.7232314795480383,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/female/down",
+      "silhouetteIoU": 0.993574061388916,
+      "opaqueMeanChannelError": 1.014773809954533,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/female/right",
+      "silhouetteIoU": 0.9902243388895852,
+      "opaqueMeanChannelError": 1.2256281640425433,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/female/up",
+      "silhouetteIoU": 0.9957253801474907,
+      "opaqueMeanChannelError": 0.2980349997013677,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/female/left",
+      "silhouetteIoU": 0.9893491857080934,
+      "opaqueMeanChannelError": 1.4478565539983512,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/androgynous/down",
+      "silhouetteIoU": 0.9919393603253837,
+      "opaqueMeanChannelError": 1.3257043459204778,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/androgynous/right",
+      "silhouetteIoU": 0.9864782740808264,
+      "opaqueMeanChannelError": 1.7766129719594306,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/androgynous/up",
+      "silhouetteIoU": 0.9949366166399534,
+      "opaqueMeanChannelError": 0.34859651242398615,
+      "lostOpaquePixels": 0
+    },
+    {
+      "id": "body/androgynous/left",
+      "silhouetteIoU": 0.9857324269813998,
+      "opaqueMeanChannelError": 2.003441907320349,
+      "lostOpaquePixels": 0
+    }
+  ]
+}

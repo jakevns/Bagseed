@@ -1,0 +1,26 @@
+{
+  "status": "Needs deliberately authored source art; no generation authorized or performed in this correction",
+  "anatomies": ["androgynous", "female", "male"],
+  "items": [
+    {
+      "views": ["right", "left"],
+      "surface": "Torso and hip skin concealed by the source arm",
+      "observed": "Rotating the original arm away exposes a hole because these skin pixels do not exist in the painting.",
+      "required": "An approved independent torso/pelvis source layer painted behind the arm, including removal of the baked arm boundary from that concealed layer."
+    },
+    {
+      "views": ["right", "left"],
+      "surface": "Independent far arm, hand, leg and foot",
+      "observed": "The source painting conceals these surfaces. The preview explicitly reuses the visible limb cut; it does not claim those are independently approved far surfaces.",
+      "required": "Approved concealed source layers if duplication of the visible cut is not acceptable."
+    },
+    {
+      "views": ["down", "up", "right", "left"],
+      "surface": "Concealed joint interiors at large rotations",
+      "observed": "Expanded static cuts overlap using actual adjacent pixels. Their original contour strokes may become visible during rotation; source cuts cannot invent missing interiors.",
+      "required": "Review each joint through the motion range and deliberately author missing concealed interiors in the source art where necessary."
+    }
+  ],
+  "clothingRefitAllowed": false,
+  "bodyApproved": false
+}

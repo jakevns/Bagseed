@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Original pixel body review</title><style>
+body{font:16px system-ui;background:#17212b;color:#e7edf3;margin:24px}h1{font-size:25px}p{max-width:1000px;line-height:1.5}select,button,input{font:inherit;margin:5px;padding:6px}label{display:inline-block;margin-right:18px}canvas{width:288px;height:432px;background:repeating-conic-gradient(#d1d5d9 0 25%,#e4e6e8 0 50%) 0/20px 20px}figure{margin:10px;text-align:center}figcaption{padding:8px}.row{display:flex;flex-wrap:wrap;align-items:start}#strip canvas{width:192px;height:288px}#status{color:#9ee0bd}#caution{color:#f4d29b}code{color:#c3dcff}details{margin:18px 0}a{color:#9ecbff}#onion canvas{width:384px;height:576px}
+</style></head><body>
+<h1>Body review — approved pixels, rigid joints</h1>
+<p>Body approval is pending. This page uses the original paintings through 15 source cuts. Joints translate and rotate the cuts at one uniform character scale. Builds and clothing are deferred.</p>
+<label>Anatomy <select id="anatomy"><option>androgynous</option><option>female</option><option>male</option></select></label>
+<label>Direction <select id="direction"><option value="right">Right</option><option value="down">Front</option><option value="up">Back</option><option value="left">Left</option></select></label>
+<label>Inspect slot <select disabled><option>Underlying body</option></select></label>
+<label><input id="anchors" type="checkbox">Joint pivots</label>
+<label><input id="tint" type="checkbox">Skin tint <input id="skin" type="color" value="#cf9670"></label>
+<p id="status">Loading fingerprinted original artwork…</p>
+<div class="row"><figure><figcaption>Matching source PNG view — original colors</figcaption><div id="reference"></div></figure><figure><figcaption>Standing — same 15 parts used for walking</figcaption><div id="standing"></div></figure><figure><figcaption>Walk animation</figcaption><div id="animation"></div><button id="play">Pause</button></figure></div>
+<p id="caution"></p>
+<div id="strip" class="row"></div>
+<details><summary>Walk 0–7 onion skin</summary><div id="onion"></div></details>
+<details><summary>Measured native joints, bone lengths and pixel ownership</summary><pre id="measurements"></pre></details>
+<p><a href="/generated/manifest.json">Source manifest and fingerprints</a> · <a href="/generated/contract.json">Per-frame joint data</a></p>
+<script src="/compositor.js"></script><script src="/raster-sources.js"></script><script src="/canvas-renderer.js"></script><script src="/app.js"></script></body></html>

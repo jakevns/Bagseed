@@ -1,0 +1,9 @@
+{
+  "check": "Published game inputs frozen during original-pixel body correction",
+  "files": {
+    "public/index.html": "53dc5e00e53bdd3228368f35d03ccd337e63ce7ccff9346d3481e57143cc10c8",
+    "public/character-data.js": "6fa6bc02c61d43c63dbcc9aefdb047e780d69f4fea69b33f05a30fead17856a1",
+    "graphics/production/sources/renderer.js": "134599a43b31c8ec6ce339782aa79c17edc3dac03b8220bd9f12bb943b2d9c77",
+    "graphics/production/walk/sources/renderer.js": "d043b551e79e873032705a6157e2930604a64821a8985a969fe98579ec41f768"
+  }
+}
