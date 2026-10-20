@@ -37,6 +37,15 @@ This audit uses the current `main` build. Every location was rendered in a real 
 | **Westbrook Way** | Rarely | 8 households, 24 residents |
 | **Library** | Rarely | |
 
+## 2b. Also in progress (October 20)
+
+| Area | Finished / total | Advice |
+| --- | --- | --- |
+| Non-cannabis (garden) plants | 15 of 150 species | At five per batch, the rest is about 27 more batches. Finish a starter set of 25 to 30 (the herbs, greens and flowers that also grow in pots and tents), then put the unpainted species away in Fern & Forge the same way Threads was put away. |
+| Dog | 0 of 6 breeds | Seen every day once adopted, so it's worth doing. Paint one breed first (the rescue mix), make sure walking, sitting and sleeping look right, then do the others or hide them until they're ready. |
+| Cat | In progress | High value: it wanders the house and bedroom daily. One cat done well beats several variants. |
+| Placeable decor | 0 of 67 items in 10 categories | Do the items that cover the most screen first: rugs, seating and lamps. Posters and art are small and cheap, so batch them. Gifts (9 items) can wait, since players only get them from friends. |
+
 ## 3. Player clothing math (why Threads is too much)
 
 The creator offers 12 tops, 5 bottoms, 4 shoes, 6 hats, 4 glasses and 5 accessories on 6 body builds. Each piece needs idle and 8-pose walking art in 4 directions, and it has to fit every build.
@@ -74,18 +83,21 @@ The order follows what the player sees most and what breaks immersion most. Each
 4. **Grow room shell.** One painted room background (walls, floor, door, shelf). The tents are already done, so this is cheap and gives a big payoff.
 5. **Backyard.** Painted ground, house wall and fence, plus the garden beds and greenhouse tiers.
 6. **Kitchen and living room furniture.** Fridge, stove, table, couch and TV: the pieces players actually click.
+7. **Cat, then one dog breed.** Pets are on screen every day, so they're worth finishing before town work.
+8. **Placeable decor: rugs, seating and lamps first.** Decor shares the bedroom's painted style, so it pays off immediately.
+9. **Garden plants up to a starter set of 25 to 30,** then put the rest away until a later update.
 
 ### Tier 3: leaving the house
 
-7. **Willow Lane.** Repaint the 7 house facades, the sidewalk and the bus stop. All are reusable pieces.
-8. **NPC walk for the 8 Willow Lane neighbors.** Remy, Priya and Doug are done, so 5 remain: Marcus, Inés, Tobias, Bev and Kenji. These are the people you see walking every day.
-9. **Main Street storefronts.** One facade per shop. Do the shops you actually use first: Fern & Forge, café, hardware, market.
+10. **Willow Lane.** Repaint the 7 house facades, the sidewalk and the bus stop. All are reusable pieces.
+11. **NPC walk for the 8 Willow Lane neighbors.** Remy, Priya and Doug are done, so 5 remain: Marcus, Inés, Tobias, Bev and Kenji. These are the people you see walking every day.
+12. **Main Street storefronts.** One facade per shop. Do the shops you actually use first: Fern & Forge, café, hardware, market.
 
 ### Tier 4: interiors and story
 
-10. **Shop interiors:** Fern & Forge first (the seed shop), then café and market. One shared "shop shell" with different props keeps the cost down.
-11. **Storyline pass.** The writing for the 8 neighbors and Remy already exists (`STORY115`). Focus the story on those characters while Westbrook is shelved, which keeps it small enough to finish.
-12. **Other NPC walks:** shop staff, then patients.
+13. **Shop interiors:** Fern & Forge first (the seed shop), then café and market. One shared "shop shell" with different props keeps the cost down.
+14. **Storyline pass.** The writing for the 8 neighbors and Remy already exists (`STORY115`). Focus the story on those characters while Westbrook is shelved, which keeps it small enough to finish.
+15. **Other NPC walks:** shop staff, then patients.
 
 ### Later (an update after the core is polished)
 
