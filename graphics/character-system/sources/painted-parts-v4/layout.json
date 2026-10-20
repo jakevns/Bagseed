@@ -1,0 +1,512 @@
+[
+  {
+    "anatomy": "androgynous",
+    "size": [
+      1600,
+      1200
+    ],
+    "cells": [
+      {
+        "direction": "right",
+        "part": "hand",
+        "cell": [
+          0,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          52,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          400,
+          295,
+          130
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "torso",
+        "cell": [
+          400,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          452,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          20,
+          295,
+          350
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "hips",
+        "cell": [
+          800,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          852,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          330,
+          295,
+          160
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "thigh",
+        "cell": [
+          1200,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          1252,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          470,
+          295,
+          140
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "hand",
+        "cell": [
+          0,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          0,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          400,
+          400,
+          130
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "torso",
+        "cell": [
+          400,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          400,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          20,
+          400,
+          350
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "hips",
+        "cell": [
+          800,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          800,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          330,
+          400,
+          160
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "thigh",
+        "cell": [
+          1200,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          1200,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          470,
+          400,
+          140
+        ]
+      }
+    ],
+    "source": "graphics/character-system/sources/anatomy/androgynous-attempt-02.png"
+  },
+  {
+    "anatomy": "female",
+    "size": [
+      1600,
+      1200
+    ],
+    "cells": [
+      {
+        "direction": "right",
+        "part": "hand",
+        "cell": [
+          0,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          52,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          400,
+          295,
+          130
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "torso",
+        "cell": [
+          400,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          452,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          20,
+          295,
+          350
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "hips",
+        "cell": [
+          800,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          852,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          330,
+          295,
+          160
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "thigh",
+        "cell": [
+          1200,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          1252,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          470,
+          295,
+          140
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "hand",
+        "cell": [
+          0,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          0,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          400,
+          400,
+          130
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "torso",
+        "cell": [
+          400,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          400,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          20,
+          400,
+          350
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "hips",
+        "cell": [
+          800,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          800,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          330,
+          400,
+          160
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "thigh",
+        "cell": [
+          1200,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          1200,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          470,
+          400,
+          140
+        ]
+      }
+    ],
+    "source": "graphics/character-system/sources/anatomy/female-attempt-02.png"
+  },
+  {
+    "anatomy": "male",
+    "size": [
+      1600,
+      1200
+    ],
+    "cells": [
+      {
+        "direction": "right",
+        "part": "hand",
+        "cell": [
+          0,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          52,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          400,
+          295,
+          130
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "torso",
+        "cell": [
+          400,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          452,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          20,
+          295,
+          350
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "hips",
+        "cell": [
+          800,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          852,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          330,
+          295,
+          160
+        ]
+      },
+      {
+        "direction": "right",
+        "part": "thigh",
+        "cell": [
+          1200,
+          0,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          1252,
+          90
+        ],
+        "nativeCrop": [
+          590,
+          470,
+          295,
+          140
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "hand",
+        "cell": [
+          0,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          0,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          400,
+          400,
+          130
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "torso",
+        "cell": [
+          400,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          400,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          20,
+          400,
+          350
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "hips",
+        "cell": [
+          800,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          800,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          330,
+          400,
+          160
+        ]
+      },
+      {
+        "direction": "left",
+        "part": "thigh",
+        "cell": [
+          1200,
+          600,
+          400,
+          600
+        ],
+        "fragmentOrigin": [
+          1200,
+          690
+        ],
+        "nativeCrop": [
+          1355,
+          470,
+          400,
+          140
+        ]
+      }
+    ],
+    "source": "graphics/character-system/sources/anatomy/male-attempt-01.png"
+  }
+]

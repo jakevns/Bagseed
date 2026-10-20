@@ -1,0 +1,18 @@
+{
+  "limit": 6,
+  "attempted": 6,
+  "remaining": 0,
+  "accepted": 0,
+  "mode": "built-in imagegen edit",
+  "results": [
+    {"anatomy":"androgynous","attempt":1,"file":"androgynous-attempt-01.png","status":"rejected: arm retained in torso, resized/repositioned paint"},
+    {"anatomy":"androgynous","attempt":2,"file":"androgynous-attempt-02.png","status":"rejected: source pixels and registration changed; hip overlaps still geometrically cut"},
+    {"anatomy":"female","attempt":1,"file":"female-attempt-01.png","status":"rejected: arm retained, altered registration, flat overlap edges"},
+    {"anatomy":"female","attempt":2,"status":"image service blocked output","serviceCategory":"sexual","requestId":"52ee7a82-586f-411b-9352-9cc25e886101"},
+    {"anatomy":"male","attempt":1,"file":"male-attempt-01.png","status":"rejected: anatomy drift, arm retained, altered registration"},
+    {"anatomy":"male","attempt":2,"file":"male-attempt-02.png","status":"rejected: anatomy and source-pixel drift, flat cut edges"}
+  ],
+  "integrated": false,
+  "clothingFrozen": true,
+  "walkUnchanged": true
+}

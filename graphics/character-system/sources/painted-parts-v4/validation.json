@@ -1,0 +1,50 @@
+{
+  "summary": "Unapproved model drafts. Source-pixel preservation is mandatory; failures are not repaired by resizing, warping or code-drawn caps. Walk checks are deferred until part approval.",
+  "results": [
+    {
+      "anatomy": "androgynous",
+      "size": [
+        1448,
+        1086
+      ],
+      "requiredSize": [
+        1600,
+        1200
+      ],
+      "approved": false,
+      "integrated": false,
+      "status": "FAIL: output dimensions/alpha do not match; do not rescale original paint"
+    },
+    {
+      "anatomy": "female",
+      "size": [
+        1448,
+        1086
+      ],
+      "requiredSize": [
+        1600,
+        1200
+      ],
+      "approved": false,
+      "integrated": false,
+      "status": "FAIL: output dimensions/alpha do not match; do not rescale original paint"
+    },
+    {
+      "anatomy": "male",
+      "size": [
+        1448,
+        1086
+      ],
+      "requiredSize": [
+        1600,
+        1200
+      ],
+      "approved": false,
+      "integrated": false,
+      "status": "FAIL: output dimensions/alpha do not match; do not rescale original paint"
+    }
+  ],
+  "integrated": false,
+  "walkChecksRun": false,
+  "bodyApproved": false
+}
