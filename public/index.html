@@ -26925,6 +26925,157 @@ RoomArt.drawSlots = (prev => function (c, loc, t) {
   try { return prev.call(this, c, loc, t); } finally { self.hit = hit; Gear.pot = pot; }
 })(RoomArt.drawSlots);
 </script>
+<script id="pot-shuffle1151-code">
+'use strict';
+/* =====================================================================
+   TRADE POTS · garden plants move like real containers
+   A garden plant in a grow pot or companion pot can move to any empty
+   tent pot, or trade places with another garden plant or with a
+   cannabis plant (growing or drying) in a grow pot. Drying harvests
+   need a dark tent, so they never share one with garden plants.
+   ===================================================================== */
+const PotShuffle = {
+  valid(at) {
+    if (!at || !TentSwap1151.tent(at.loc).ok || !(at.i >= 0)) return false;
+    if (at.kind === 'slot') return !!state.locations[at.loc].equip.pot && at.i < slotCount(at.loc);
+    return at.kind === 'pot' && at.i < (GP.pots()[at.loc] || []).length;
+  },
+  held(at) {
+    if (at.kind === 'slot') { const pid = state.locations[at.loc].slots[at.i]; if (pid && state.plants[pid]) return { type: 'cann', id: pid, p: state.plants[pid] }; }
+    const g = (at.kind === 'slot' ? GrowPotGarden.arr(at.loc) : GP.pots()[at.loc] || [])[at.i], p = g && GP.plant(g);
+    return p ? { type: 'garden', id: g, p } : null;
+  },
+  locate(gid) {
+    for (const loc of LOC_ORDER) {
+      if (!GrowPotGarden.ok(loc)) continue;
+      let i = ((state.v115 && state.v115.mpots) || {})[loc]?.indexOf(gid) ?? -1; if (i >= 0) return { kind: 'slot', loc, i };
+      i = (GP.pots()[loc] || []).indexOf(gid); if (i >= 0) return { kind: 'pot', loc, i };
+    }
+    return null;
+  },
+  spots(loc) {
+    const out = []; if (!TentSwap1151.tent(loc).ok) return out;
+    if (state.locations[loc].equip.pot) for (let i = 0; i < slotCount(loc); i++) out.push({ kind: 'slot', loc, i });
+    (GP.pots()[loc] || []).forEach((_, i) => out.push({ kind: 'pot', loc, i }));
+    return out;
+  },
+  gardens(loc) { return GrowPotGarden.ok(loc) ? [...(GP.pots()[loc] || []), ...GrowPotGarden.arr(loc)].filter(g => g && GP.plant(g)).length : 0; },
+  drying(loc) { return plantsIn(loc).some(p => p.stage >= S.drying); },
+  clash(loc) { return `${locName(loc)} would hold a drying harvest next to garden plants. Drying needs a dark, closed tent; garden plants need the grow light.`; },
+  /* after trading a ⇄ b, no tent may hold drying harvest and garden plants together */
+  mix(a, b, x, y) {
+    for (const loc of new Set([a.loc, b.loc])) {
+      let cann = plantsIn(loc), garden = this.gardens(loc);
+      for (const [h, from, to] of [[x, a, b], [y, b, a]]) {
+        if (!h) continue;
+        if (from.loc === loc) { if (h.type === 'cann') cann = cann.filter(p => p !== h.p); else garden--; }
+        if (to.loc === loc) { if (h.type === 'cann') cann = cann.concat(h.p); else garden++; }
+      }
+      if (garden > 0 && cann.some(p => p.stage >= S.drying)) return this.clash(loc);
+    }
+    return '';
+  },
+  check(a, b) {
+    if (!this.valid(a) || !this.valid(b)) return { ok: false, why: 'That pot is no longer available.' };
+    if (a.kind === b.kind && a.loc === b.loc && a.i === b.i) return { ok: false, why: 'This is the same pot.' };
+    const x = this.held(a), y = this.held(b);
+    if (!x && !y) return { ok: false, why: 'Both pots are empty.' };
+    if (x?.type !== 'garden' && y?.type !== 'garden') return { ok: false, why: 'Use Move or Swap plants for cannabis.' };
+    if (!Access.atLoc(a.loc) && !Access.atLoc(b.loc)) return { ok: false, why: 'Walk up to one of the tents first.' };
+    for (const [h, to] of [[x, b], [y, a]]) {
+      if (!h) continue;
+      if (h.type === 'cann') {
+        if (to.kind !== 'slot') return { ok: false, why: `${h.p.name} needs a full-size grow pot, not a small companion pot.` };
+        const r = TentSwap1151.record(h.p); if (!r.ok) return r;
+      } else {
+        const r = GP.canPlant(GP.sp(h.p.sp), { kind: to.kind, ref: to.loc, moving: true }); if (!r.ok) return r;
+      }
+    }
+    const clash = this.mix(a, b, x, y); if (clash) return { ok: false, why: clash };
+    return { ok: true, x, y };
+  },
+  exchange(a, b) {
+    const x = this.held(a), y = this.held(b);
+    const put = (h, to) => {
+      if (to.kind === 'slot') { state.locations[to.loc].slots[to.i] = h && h.type === 'cann' ? h.id : null; GrowPotGarden.arr(to.loc)[to.i] = h && h.type === 'garden' ? h.id : null; }
+      else GP.pots()[to.loc][to.i] = h ? h.id : null;
+      if (!h) return;
+      if (h.type === 'cann') { TentSwap1151.origin(h.p); h.p.loc = to.loc; h.p.slot = to.i; invalidate(h.p); }
+      else h.p.at = { kind: to.kind, ref: to.loc };
+    };
+    put(x, b); put(y, a);
+  },
+  /* ---- UI ---- */
+  enc(at) { return `${at.kind},${at.loc},${at.i}`; },
+  dec(s) { const [kind, loc, i] = String(s).split(','); return { kind, loc, i: +i }; },
+  label(at) { return at.kind === 'slot' ? `Grow pot ${at.i + 1}` : `Companion pot ${at.i + 1}`; },
+  name(h) {
+    if (!h) return 'Empty';
+    if (h.type === 'cann') return `${h.p.name} · ${TentSwap1151.status(h.p)}`;
+    const sp = GP.sp(h.p.sp), st = GP.stageOf(h.p); return `${sp.name} · ${['Sprouting', 'Young', 'Growing', GP_KIND[sp.grp] === 'flower' ? 'In bloom' : 'Ready'][st]}`;
+  },
+  button(a, b, label) {
+    const c = this.check(a, b), x = this.held(a), y = this.held(b);
+    return `${c.ok ? '' : `<p class="small muted">${esc(c.why)}</p>`}<button type="button" class="btn sm ${c.ok ? 'primary' : ''}" data-act="potShuffleGo" data-arg="${esc([this.enc(a), this.enc(b), x ? x.id : '', y ? y.id : ''].join('|'))}" ${c.ok ? '' : 'disabled'}>${esc(label || (y ? 'Trade pots' : 'Move here'))}</button>`;
+  },
+  open(gid) {
+    const src = this.locate(gid); if (!src) { toast('That plant is no longer in a tent pot.', 'warn'); return; }
+    runtime.potShuffle = { gid };
+    openPanel('Move or trade pots', () => this.html(runtime.potShuffle && runtime.potShuffle.gid));
+  },
+  html(gid) {
+    const a = gid && this.locate(gid), x = a && this.held(a);
+    if (!x) return '<div class="note bad">That plant is no longer in a tent pot.</div><div class="actions"><button class="btn" data-act="panelBack">Back</button></div>';
+    let h = `<div class="card"><h3>${esc(this.name(x))}</h3><div class="small muted">${esc(locName(a.loc))} · ${esc(this.label(a).toLowerCase())}</div><p class="small">Carry the whole pot somewhere else: an empty pot, or trade places with another garden plant or a cannabis plant in a grow pot. Growth, water and harvests come along.</p></div>`;
+    for (const loc of LOC_ORDER) {
+      const spots = this.spots(loc).filter(b => !(b.kind === a.kind && b.loc === a.loc && b.i === a.i)); if (!spots.length) continue;
+      h += `<section style="margin-top:10px"><h3>${esc(locName(loc))}</h3><div class="small muted">${esc(Access.where(loc))}</div><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(170px,1fr))">${spots.map(b => `<div class="card"><h4>${esc(this.label(b))}</h4><div class="small muted">${esc(this.name(this.held(b)))}</div>${this.button(a, b)}</div>`).join('')}</div></section>`;
+    }
+    return h + '<div class="actions"><button type="button" class="btn ghost" data-act="panelBack">Cancel</button></div>';
+  },
+  go(arg) {
+    const [ea, eb, xid, yid, ...extra] = String(arg).split('|'); if (extra.length) return false;
+    const a = this.dec(ea), b = this.dec(eb), x = this.valid(a) && this.held(a), y = this.valid(b) && this.held(b);
+    if ((x ? x.id : '') !== xid || (y ? y.id : '') !== yid) { toast('Those pots changed. Choose again.', 'warn'); renderPanel(); return false; }
+    const c = this.check(a, b); if (!c.ok) { toast(esc(c.why), 'warn'); Sfx.bad(); renderPanel(); return false; }
+    this.exchange(a, b);
+    const dry = [[x, b], [y, a]].find(([h, to]) => h && h.type === 'cann' && h.p.stage >= S.drying && (state.locations[to.loc].on.light !== false || state.locations[to.loc].door !== 'closed'));
+    notify(y ? `${this.name(x).split(' · ')[0]} and ${this.name(y).split(' · ')[0]} traded pots.` : `${this.name(x).split(' · ')[0]} moved to the ${locShort(b.loc)} ${this.label(b).toLowerCase()}.`);
+    if (dry) toast(`Close the ${esc(locShort(dry[1].loc))} and switch its light off so the harvest dries in the dark.`, 'warn');
+    Sfx.good(); SaveSys.important('pot trade'); runtime.potShuffle = null; closePanel(); updateHUD(); return true;
+  }
+};
+Object.assign(ACT, { potShuffle(gid) { PotShuffle.open(gid); }, potShuffleGo(arg) { PotShuffle.go(arg); } });
+/* garden plants can't be sown next to a drying harvest */
+GP.canPlant = (prev => function (sp, at) {
+  const r = prev.call(this, sp, at);
+  if (r.ok && at && !at.moving && (at.kind === 'pot' || at.kind === 'slot') && LOC_DEF[at.ref] && PotShuffle.drying(at.ref)) return { ok: false, why: 'A harvest is drying in this tent. Garden plants need the grow light; plant here once it is jarred or moved.' };
+  return r;
+})(GP.canPlant);
+/* swapping cannabis between tents can't put a drying harvest beside garden plants */
+TentSwap1151.pair = (prev => function (p, q) {
+  const r = prev.call(this, p, q); if (!r.ok) return r;
+  for (const [loc, incoming] of [[p.loc, q], [q.loc, p]]) if (incoming.stage >= S.drying && PotShuffle.gardens(loc)) return { ok: false, why: PotShuffle.clash(loc) + ' Move the garden plants first.' };
+  return r;
+})(TentSwap1151.pair);
+/* the cannabis swap list also offers trading pots with garden plants */
+TentSwap1151.actions = (prev => function (choose) {
+  const r = runtime.tentSwap1151, p = !choose && r && this.current(r); if (!p) return prev.call(this, choose);
+  const a = { kind: 'slot', loc: p.loc, i: p.slot }, rows = [];
+  for (const loc of LOC_ORDER) for (const b of PotShuffle.spots(loc)) { if (b.kind !== 'slot') continue; const y = PotShuffle.held(b); if (y && y.type === 'garden') rows.push(`<div class="card"><h4>${esc(PotShuffle.name(y))}</h4><div class="small muted">${esc(locName(loc))} · grow pot ${b.i + 1}</div>${PotShuffle.button(b, a, 'Trade pots')}</div>`); }
+  return (rows.length ? `<section><h3>Garden plants in grow pots</h3><div class="small muted">Trade pots with a herb, vegetable or flower.</div><div class="grid">${rows.join('')}</div></section>` : '') + prev.call(this, choose);
+})(TentSwap1151.actions);
+/* a Move / trade button on every garden plant in a tent pot */
+GSpot.html = (prev => function (kind, ref) {
+  const h = prev.call(this, kind, ref); if (kind !== 'pot' && kind !== 'slot') return h;
+  return h.replace(/(<button class="btn sm ghost" data-act="gPull" data-arg="(?:pot|slot):[^:"]+:([^"]+)"( disabled)?[^>]*>[^<]*<\/button>)/g, (m, btn, gid, dis) => `${btn}<button class="btn sm" data-act="potShuffle" data-arg="${gid}"${dis || ''}>Move / trade</button>`);
+})(GSpot.html);
+/* companion plants and garden plants block a harvest move; say how to clear them */
+HarvestMove1151.target = (prev => function (p, loc) {
+  const r = prev.call(this, p, loc);
+  return !r.ok && /companion plants|garden plants/.test(r.why) ? { ok: false, why: r.why.replace('Choose a tent with no other crops.', 'Use Move / trade on them to clear the tent, or choose one with no other crops.') } : r;
+})(HarvestMove1151.target);
+</script>
 <script>
 'use strict';
 /* =====================================================================
