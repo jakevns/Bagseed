@@ -1463,7 +1463,9 @@ function controllerTick(loc) {
   if (own.drying && L.on.light) { L.on.light = false; toast('Controller: drying mode. Grow light switched off.'); }
   if (L.equip.humid === 3) L.humidTarget = own.h;
   if (L.equip.dehum === 2) L.dehumTarget = own.h + 4;
+  if (L.equip.dehum === 1) { const was = L.dehumOn; L.dehumOn = false; L.dehumOn = envFor(loc).hum > own.h + 4; if (L.dehumOn !== was && L.dehumOn) toast(`Controller: humidity over ${own.h + 4}%. ${EQ.dehum[1].name} switched on.`); } // plain unit: switched at the plug to hold the same ceiling
 }
+const ctrlCeiling = loc => { const own = ctrlPowered(loc) && controllerPlan([loc]); return own ? own.h + 4 : null; };
 /* a slider is locked only while a controller is actually steering it */
 function ctrlSteers(loc, slot) {
   if (['heater', 'ac', 'hvac'].includes(slot)) return climatePeers(loc).some(ctrlPowered) && !!controllerPlan(climatePeers(loc));
@@ -4328,12 +4330,16 @@ function devCtl(slot, loc) {
       if (tier === 3) h += crow('Power', pwr('humid')) + slider('humidTarget', 30, 80, L.humidTarget, 'Target', ctrlOn);
       else { h += crow('Mode', ['OFF', 'LOW', 'HIGH'].map((n, i) => `<button class="chip ${L.humidMode === i ? 'on' : ''}" data-act="humid" data-arg="${loc}:${i}">${n}</button>`).join('')); if (tier === 2) h += crow('Timer', `<button class="chip ${L.humidTimer ? 'on' : ''}" data-act="humidTimer" data-arg="${loc}">Lights-on only</button>`); }
       h += fix('humStuck', 'Unplug & replug'); break;
-    case 'dehum': h += tier === 2 ? slider('dehumTarget', 35, 75, L.dehumTarget, 'Ceiling', ctrlOn) : crow('Power', `<button class="chip ${L.dehumOn ? 'on' : ''}" data-act="dehum" data-arg="${loc}">${L.dehumOn ? 'ON' : 'OFF'}</button>`); break;
+    case 'dehum': { const cap = ctrlOn ? ctrlCeiling(loc) : tier === 2 ? L.dehumTarget : null;
+      h += tier === 2 ? slider('dehumTarget', 35, 75, L.dehumTarget, 'Ceiling', ctrlOn) : crow('Power', `<button class="chip ${L.dehumOn ? 'on' : ''}" data-act="dehum" data-arg="${loc}" ${ctrlOn ? 'disabled' : ''}>${L.dehumOn ? 'ON' : 'OFF'}</button>`);
+      if (ctrlOn && tier === 1) h += `<div class="small muted">The controller switches it on above ${cap}% RH.</div>`;
+      if (cap != null && (L.dehumOn || tier === 2) && env.hum > cap + 2) h += `<div class="note">Running flat out and still at ${env.hum}% RH (ceiling ${cap}%). ${tier === 1 ? 'A stronger dehumidifier' : 'More exhaust'}, fewer plants or an open door would help.</div>`;
+      break; }
     case 'heater': h += crow('Power', pwr('heater')) + (it.manual ? crow('Setting', `<button class="chip ${L.heatMode === 1 ? 'on' : ''}" data-act="heatMode" data-arg="${loc}:1">LOW</button><button class="chip ${L.heatMode === 2 ? 'on' : ''}" data-act="heatMode" data-arg="${loc}:2">HIGH</button>`) : slider('heatTo', 55, 80, L.heatTo, 'Heat below', ctrlOn)) + fix('heatTrip', 'Reset the breaker'); break;
     case 'ac': h += crow('Power', pwr('ac')) + (it.manual ? crow('Setting', `<button class="chip ${L.acMode === 1 ? 'on' : ''}" data-act="acMode" data-arg="${loc}:1">LOW</button><button class="chip ${L.acMode === 2 ? 'on' : ''}" data-act="acMode" data-arg="${loc}:2">HIGH</button>`) : slider('coolTo', 64, 88, L.coolTo, 'Cool above', ctrlOn)) + fix('acIce', 'Let it thaw'); break;
     case 'hvac': h += crow('Power', pwr('hvac')) + `<div class="ctl">${slider('heatTo', 55, 80, L.heatTo, 'Heat below', ctrlOn)}${slider('coolTo', 64, 88, L.coolTo, 'Cool above', ctrlOn)}</div>`; break;
-    case 'ctrl': { const ctl = climatePeers(loc).filter(l => l === loc || !ctrlPowered(l)).flatMap(l => ['heater', 'ac', 'hvac'].filter(k => state.locations[l].equip[k] && EQ[k][state.locations[l].equip[k]].thermo).map(k => EQ[k][state.locations[l].equip[k]].name + (l === loc ? '' : ` (${locShort(l)})`))).concat(L.equip.humid === 3 ? [EQ.humid[3].name] : [], L.equip.dehum === 2 ? [EQ.dehum[2].name] : []);
-      h += crow('Automation', pwr('ctrl')) + `<div class="small muted">${ctl.length ? 'Steering: ' + esc(ctl.join(', ')) + '.' : 'No digital devices to steer yet. Manual gear stays manual.'} Switches to drying mode (dark, ~70/70) after harvest.</div>`; break; }
+    case 'ctrl': { const ctl = climatePeers(loc).filter(l => l === loc || !ctrlPowered(l)).flatMap(l => ['heater', 'ac', 'hvac'].filter(k => state.locations[l].equip[k] && EQ[k][state.locations[l].equip[k]].thermo).map(k => EQ[k][state.locations[l].equip[k]].name + (l === loc ? '' : ` (${locShort(l)})`))).concat(L.equip.humid === 3 ? [EQ.humid[3].name] : [], L.equip.dehum ? [EQ.dehum[L.equip.dehum].name + (L.equip.dehum === 1 ? ' (on/off at the plug)' : '')] : []);
+      h += crow('Automation', pwr('ctrl')) + `<div class="small muted">${ctl.length ? 'Steering: ' + esc(ctl.join(', ')) + '.' : 'No digital devices to steer yet. Manual gear stays manual.'}${L.equip.dehum && ctrlCeiling(loc) != null && envFor(loc).hum > ctrlCeiling(loc) + 2 ? ` Humidity is ${envFor(loc).hum}%, above the ${ctrlCeiling(loc)}% ceiling: the dehumidifier can't keep up.` : ''} Switches to drying mode (dark, ~70/70) after harvest.</div>`; break; }
     case 'sensor': { const ps = plantsIn(loc).filter(p => p.stage < S.drying), id = ps[0] ? idealFor(ps[0].stage) : null;
       h += `<div class="mono">Temp <b>${esc(readTemp(loc, env))}</b> · RH <b>${esc(readHum(loc, env))}</b></div><div class="small muted">Quality: ${['vibes only', 'rough', 'accurate', 'accurate + 48h log'][tier]}${tier >= 2 && id ? ` · Comfort zone now: ${id.t[0]}–${id.t[1]}°F, ${id.h[0]}–${id.h[1]}%` : ''}</div>${tier === 3 ? `<canvas width="300" height="90" data-draw="graph:${loc}" style="width:100%;margin-top:6px"></canvas>` : ''}` + fix('sensor', 'Reset sensor'); break; }
     case 'pot': h += `<div class="small muted">${esc(it.desc || '')}</div>`; break;
@@ -4631,7 +4637,7 @@ const ACT = {
   mixSet(arg) { const [k, v] = arg.split(':'); runtime.mix[k] = v; renderPanel(); }, mixGo() { mixGo(); },
   sched(arg) { const [loc, m] = arg.split(':'); state.locations[loc].schedule = m; Sfx.click(); if (m === 'flower') think('12/12. Long nights from now on.'); renderPanel(); },
   fix(kind) { if (!spend(3, 10)) return; if (kind === 'flicker' && chance(.3)) { think('Jiggled it. Still flickering. Jiggled harder. ...Nope.'); renderPanel(); return; } state.fail[kind] = false; think({ flicker: 'Jiggled the cord. Steady light. For now.', rattle: 'Tightened the screw. Blessed silence.', sensor: 'Reset. It reads normal numbers again.', humStuck: 'Unplugged, replugged. It stopped raining in the tent.', heatTrip: 'Breaker reset. The heater hums back to life.', acIce: 'Thawed out. Cold air again.' }[kind]); Sfx.good(); renderPanel(); },
-  humid(arg) { const [loc, i] = arg.split(':'); state.locations[loc].humidMode = +i; renderPanel(); }, humidTimer(loc) { state.locations[loc].humidTimer = !state.locations[loc].humidTimer; renderPanel(); }, dehum(loc) { state.locations[loc].dehumOn = !state.locations[loc].dehumOn; renderPanel(); },
+  humid(arg) { const [loc, i] = arg.split(':'); state.locations[loc].humidMode = +i; renderPanel(); }, humidTimer(loc) { state.locations[loc].humidTimer = !state.locations[loc].humidTimer; renderPanel(); }, dehum(loc) { if (ctrlSteers(loc, 'dehum')) return; state.locations[loc].dehumOn = !state.locations[loc].dehumOn; renderPanel(); },
   openBox() { runtime.pkgOpen = true; Sfx.pkg(); renderPanel(); }, install(where) { openPackageInstall(where); },
   sow(arg) { const [loc, slot, sid] = arg.split(':'), s = state.inv.seeds.find(x => x.id === sid); if (!s || state.locations[loc].slots[+slot]) return; if (!spend(4, 15)) return; state.inv.seeds = state.inv.seeds.filter(x => x !== s); const p = createPlant(s.lineId, loc, +slot, s.pheno ? Object.assign({}, s.pheno) : null, s.seedType); if (!s.pheno && !s.blueprint115 && s.inherit && !p.pheno.mut && chance(.35)) { p.pheno.mut = s.inherit; p.pheno.muts = [s.inherit]; } SaveSys.request('sow'); if (s.kind === 'cutting') { p.stage = S.seedling; p.height = 3; p.nodes = 2; } if (state.story === 'plant') setStory('grow'); closePanel(); Sfx.good(); think(GEN(s.lineId).bag ? 'Tucked in. Good luck, little mystery.' : `${p.name} is in the dirt. Let\'s go.`, 4000); },
   town(id) { townGo(id); }, nameLine() { const g = GEN(runtime.nameGid), v = ($('#lineName') || {}).value; g.lineName = (v || '').trim().slice(0, 24) || 'Closet Miracle'; toast(`The bag-seed line is now <b>${esc(g.lineName)}</b>.`, 'social'); closePanel(); },
@@ -8623,7 +8629,7 @@ Object.assign(ACT, {
   openBreaker(room) { Panels.power(room || 'bedroom'); },
   pwrRoom(r) { runtime.pwrRoom = r; renderPanel(); },
   pwrB(arg) { const [loc, k] = arg.split(':'), L = state.locations[loc]; L.on[k] = !locOn(L, k); Sfx.click(); renderPanel(); updateHUD(); },
-  dehumB(loc) { state.locations[loc].dehumOn = !state.locations[loc].dehumOn; Sfx.click(); renderPanel(); },
+  dehumB(loc) { if (ctrlSteers(loc, 'dehum')) return; state.locations[loc].dehumOn = !state.locations[loc].dehumOn; Sfx.click(); renderPanel(); },
   breakerReset(room) { Power.reset(room); renderPanel(); },
   circuitUp(room) { Power.orderUpgrade(room); renderPanel(); },
   tipOk() { Tips.dismiss(); }, tipShow() { Tips.showTarget(); },
