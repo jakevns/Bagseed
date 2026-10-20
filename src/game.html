@@ -1434,19 +1434,40 @@ function odorLevel() {
   return clamp(Math.round(o), 0, 100);
 }
 const odorWord = o => o < 10 ? 'None' : o < 25 ? 'Faint' : o < 45 ? 'Noticeable' : o < 70 ? 'Strong' : 'Whole block knows';
-/* smart controller: steers digital devices to the current stage (or to drying mode) */
-function controllerTick(loc) {
-  const L = state.locations[loc]; if (!L.equip.ctrl || !locOn(L, 'ctrl')) return;
-  const ps = plantsIn(loc), drying = ps.some(p => p.stage === S.drying), grow = ps.find(p => p.stage < S.drying);
-  let t, h;
-  if (drying && !grow) { t = [68, 72]; h = 70; if (L.on.light) { L.on.light = false; toast('Controller: drying mode. Grow light switched off.'); } }
-  else if (grow) { const id = idealFor(grow.stage); t = [id.t[0] + 1, id.t[1] - 1]; h = Math.round((id.h[0] + id.h[1]) / 2); }
-  else return;
+/* smart controller: steers digital devices to the current stage (or to drying mode).
+   Heaters, ACs and mini-splits condition the whole lung room, so a powered controller
+   anywhere in that room steers them too, following the plants in their own space first. */
+function controllerPlan(locs) {
+  const ps = locs.flatMap(plantsIn), drying = ps.some(p => p.stage === S.drying), grow = ps.find(p => p.stage < S.drying);
+  if (grow) { const id = idealFor(grow.stage); return { t: [id.t[0] + 1, id.t[1] - 1], h: Math.round((id.h[0] + id.h[1]) / 2) }; }
+  return drying ? { t: [68, 72], h: 70, drying: true } : null;
+}
+const climatePeers = loc => { const room = lungRoomOf(loc); return room ? ownedLocs().filter(l => lungRoomOf(l) === room) : [loc]; };
+const ctrlPowered = loc => { const L = state.locations[loc]; return !!L.equip.ctrl && locOn(L, 'ctrl'); };
+const roomClimateGear = L => !!(L.equip.hvac || L.equip.heater === 2 || L.equip.ac === 2);
+function steerClimate(L, t) {
   L.heatTo = t[0]; L.coolTo = t[1];
-  if (L.equip.humid === 3) L.humidTarget = h;
-  if (L.equip.dehum === 2) L.dehumTarget = h + 4;
   if (L.equip.hvac || L.equip.heater === 2) L.on.heater = L.on.hvac = true;
   if (L.equip.ac === 2) L.on.ac = true;
+}
+function controllerTick(loc) {
+  const L = state.locations[loc]; if (!ctrlPowered(loc)) return;
+  const peers = climatePeers(loc), room = controllerPlan(peers), own = controllerPlan([loc]);
+  for (const peer of peers) {
+    if (peer === loc || ctrlPowered(peer) || !roomClimateGear(state.locations[peer])) continue;
+    const plan = controllerPlan([peer]) || room; if (plan) steerClimate(state.locations[peer], plan.t);
+  }
+  const plan = own || room; if (!plan) return;
+  steerClimate(L, plan.t);
+  if (!own) return;
+  if (own.drying && L.on.light) { L.on.light = false; toast('Controller: drying mode. Grow light switched off.'); }
+  if (L.equip.humid === 3) L.humidTarget = own.h;
+  if (L.equip.dehum === 2) L.dehumTarget = own.h + 4;
+}
+/* a slider is locked only while a controller is actually steering it */
+function ctrlSteers(loc, slot) {
+  if (['heater', 'ac', 'hvac'].includes(slot)) return climatePeers(loc).some(ctrlPowered) && !!controllerPlan(climatePeers(loc));
+  return ctrlPowered(loc) && !!controllerPlan([loc]);
 }
 
 /* ============================ DRYING ================================
@@ -4287,7 +4308,7 @@ function devState(slot, loc) {
   return ['on', ''];
 }
 function devCtl(slot, loc) {
-  const L = state.locations[loc], tier = L.equip[slot], it = EQ[slot][tier] || {}, F = state.fail, env = envFor(loc), ctrlOn = L.equip.ctrl && locOn(L, 'ctrl');
+  const L = state.locations[loc], tier = L.equip[slot], it = EQ[slot][tier] || {}, F = state.fail, env = envFor(loc), ctrlOn = ctrlSteers(loc, slot);
   const pwr = k => `<button class="chip ${locOn(L, k) ? 'on' : ''}" data-act="pwr" data-arg="${loc}:${k}" aria-pressed="${locOn(L, k)}">${locOn(L, k) ? 'ON' : 'OFF'}</button>`;
   const fix = (k, label) => F[k] ? `<div class="note bad">${esc({ flicker: 'The light is flickering.', rattle: 'The fan is rattling.', sensor: 'The sensor is reading nonsense.', humStuck: 'Stuck on HIGH. It is raining in here.', heatTrip: 'Tripped the breaker. Smells like burnt dust.', acIce: 'Iced over. Not cooling.' }[k])} <button class="btn sm amber" data-act="fix" data-arg="${k}">${label}</button></div>` : '';
   const slider = (key, min, max, val, label, dis) => `<label class="field" style="flex:1 1 140px">${label} <b class="mono" style="color:var(--text)">${val}${key.includes('hum') ? '%' : '°F'}</b><input type="range" min="${min}" max="${max}" step="1" value="${val}" data-input="${key}" data-loc="${loc}" ${dis ? 'disabled' : ''}></label>`;
@@ -4311,7 +4332,7 @@ function devCtl(slot, loc) {
     case 'heater': h += crow('Power', pwr('heater')) + (it.manual ? crow('Setting', `<button class="chip ${L.heatMode === 1 ? 'on' : ''}" data-act="heatMode" data-arg="${loc}:1">LOW</button><button class="chip ${L.heatMode === 2 ? 'on' : ''}" data-act="heatMode" data-arg="${loc}:2">HIGH</button>`) : slider('heatTo', 55, 80, L.heatTo, 'Heat below', ctrlOn)) + fix('heatTrip', 'Reset the breaker'); break;
     case 'ac': h += crow('Power', pwr('ac')) + (it.manual ? crow('Setting', `<button class="chip ${L.acMode === 1 ? 'on' : ''}" data-act="acMode" data-arg="${loc}:1">LOW</button><button class="chip ${L.acMode === 2 ? 'on' : ''}" data-act="acMode" data-arg="${loc}:2">HIGH</button>`) : slider('coolTo', 64, 88, L.coolTo, 'Cool above', ctrlOn)) + fix('acIce', 'Let it thaw'); break;
     case 'hvac': h += crow('Power', pwr('hvac')) + `<div class="ctl">${slider('heatTo', 55, 80, L.heatTo, 'Heat below', ctrlOn)}${slider('coolTo', 64, 88, L.coolTo, 'Cool above', ctrlOn)}</div>`; break;
-    case 'ctrl': { const ctl = ['heater', 'ac', 'hvac'].filter(k => L.equip[k] && (EQ[k][L.equip[k]].thermo)).map(k => EQ[k][L.equip[k]].name).concat(L.equip.humid === 3 ? [EQ.humid[3].name] : [], L.equip.dehum === 2 ? [EQ.dehum[2].name] : []);
+    case 'ctrl': { const ctl = climatePeers(loc).filter(l => l === loc || !ctrlPowered(l)).flatMap(l => ['heater', 'ac', 'hvac'].filter(k => state.locations[l].equip[k] && EQ[k][state.locations[l].equip[k]].thermo).map(k => EQ[k][state.locations[l].equip[k]].name + (l === loc ? '' : ` (${locShort(l)})`))).concat(L.equip.humid === 3 ? [EQ.humid[3].name] : [], L.equip.dehum === 2 ? [EQ.dehum[2].name] : []);
       h += crow('Automation', pwr('ctrl')) + `<div class="small muted">${ctl.length ? 'Steering: ' + esc(ctl.join(', ')) + '.' : 'No digital devices to steer yet. Manual gear stays manual.'} Switches to drying mode (dark, ~70/70) after harvest.</div>`; break; }
     case 'sensor': { const ps = plantsIn(loc).filter(p => p.stage < S.drying), id = ps[0] ? idealFor(ps[0].stage) : null;
       h += `<div class="mono">Temp <b>${esc(readTemp(loc, env))}</b> · RH <b>${esc(readHum(loc, env))}</b></div><div class="small muted">Quality: ${['vibes only', 'rough', 'accurate', 'accurate + 48h log'][tier]}${tier >= 2 && id ? ` · Comfort zone now: ${id.t[0]}–${id.t[1]}°F, ${id.h[0]}–${id.h[1]}%` : ''}</div>${tier === 3 ? `<canvas width="300" height="90" data-draw="graph:${loc}" style="width:100%;margin-top:6px"></canvas>` : ''}` + fix('sensor', 'Reset sensor'); break; }
@@ -4625,7 +4646,7 @@ const ACT = {
 Object.assign(ACT, {
   openSpace(loc) { Panels.space(loc || runtime.spaceLoc || 'closet'); }, spaceTab(k) { runtime.spaceLoc = k; renderPanel(); }, openPlant(pid) { Panels.plant(pid); },
   shopFrom(cat) { runtime.device = 'phone'; Panels.shop(cat); },
-  pwr(arg) { const [loc, k] = arg.split(':'), L = state.locations[loc]; L.on[k] = !locOn(L, k); Sfx.click(); if (k === 'light' && !L.on.light && plantsIn(loc).some(p => p.stage >= S.seedling && p.stage < S.drying)) toast('Growing plants in this space need that light.', 'warn'); renderPanel(); updateHUD(); },
+  pwr(arg) { const [loc, k] = arg.split(':'), L = state.locations[loc]; L.on[k] = !locOn(L, k); Sfx.click(); if (k === 'ctrl' && L.on.ctrl) controllerTick(loc); if (k === 'light' && !L.on.light && plantsIn(loc).some(p => p.stage >= S.seedling && p.stage < S.drying)) toast('Growing plants in this space need that light.', 'warn'); renderPanel(); updateHUD(); },
   pwrSet(arg) { const [loc, k, v] = arg.split(':'); state.locations[loc].on[k] = v === '1'; Sfx.click(); renderPanel(); updateHUD(); },
   door(loc) { const L = state.locations[loc]; setDoor(loc, L.door === 'closed' ? 'open' : 'closed'); renderPanel(); },
   fanSpd(arg) { const [loc, n] = arg.split(':'); state.locations[loc].fanSpeed = +n; Sfx.click(); renderPanel(); },
