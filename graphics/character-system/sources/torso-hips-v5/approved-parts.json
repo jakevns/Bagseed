@@ -1,0 +1,188 @@
+[
+  {
+    "anatomy": "androgynous",
+    "approvedParts": [
+      {
+        "direction": "right",
+        "part": "hand",
+        "file": "androgynous-right-approved-hand.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/androgynous-candidate.png",
+        "sourceBox": [
+          0,
+          0,
+          362,
+          543
+        ],
+        "sha256": "3151783b149357f673ba2ba6b1062742572fed9648ec8e664b88d1a20e118aa8"
+      },
+      {
+        "direction": "right",
+        "part": "thigh",
+        "file": "androgynous-right-approved-thigh.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/androgynous-candidate.png",
+        "sourceBox": [
+          1086,
+          0,
+          1448,
+          543
+        ],
+        "sha256": "723277b06ac055bb72bf6f1fba8fdb924a81d36b10cc9190e4cc709299b44eb9"
+      },
+      {
+        "direction": "left",
+        "part": "hand",
+        "file": "androgynous-left-approved-hand.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/androgynous-candidate.png",
+        "sourceBox": [
+          0,
+          543,
+          362,
+          1086
+        ],
+        "sha256": "634e99b933167687b0b5441237f2181068526b3a94dc39c9d30e2d6b1c96cd1a"
+      },
+      {
+        "direction": "left",
+        "part": "thigh",
+        "file": "androgynous-left-approved-thigh.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/androgynous-candidate.png",
+        "sourceBox": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "sha256": "2d7268a6bddb8531859ec87de1d56acc16b20f74a7e0d144f83492f1769c172e"
+      }
+    ],
+    "sourceScale": 1,
+    "approvedSourceSheetSize": [
+      1448,
+      1086
+    ]
+  },
+  {
+    "anatomy": "female",
+    "approvedParts": [
+      {
+        "direction": "right",
+        "part": "hand",
+        "file": "female-right-approved-hand.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/female-candidate.png",
+        "sourceBox": [
+          0,
+          0,
+          362,
+          543
+        ],
+        "sha256": "bb2957e65378f7c5446b4d1e59a5bb1cd66421bd388ad8a5e376c77f89ac356f"
+      },
+      {
+        "direction": "right",
+        "part": "thigh",
+        "file": "female-right-approved-thigh.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/female-candidate.png",
+        "sourceBox": [
+          1086,
+          0,
+          1448,
+          543
+        ],
+        "sha256": "b1d1f9ebf1e1c217f9a3c8c11e2507f8ed3a10447a49f0684fed57cf2f8adac2"
+      },
+      {
+        "direction": "left",
+        "part": "hand",
+        "file": "female-left-approved-hand.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/female-candidate.png",
+        "sourceBox": [
+          0,
+          543,
+          362,
+          1086
+        ],
+        "sha256": "270ebbe01686abf6b46de5a72f8a9129b1a960a14fbfd6eb07cc5f6d91951f38"
+      },
+      {
+        "direction": "left",
+        "part": "thigh",
+        "file": "female-left-approved-thigh.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/female-candidate.png",
+        "sourceBox": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "sha256": "147385693389dee43029ec12a64b0b5b61b79662f61c5f53a5a67d284fdc4284"
+      }
+    ],
+    "sourceScale": 1,
+    "approvedSourceSheetSize": [
+      1448,
+      1086
+    ]
+  },
+  {
+    "anatomy": "male",
+    "approvedParts": [
+      {
+        "direction": "right",
+        "part": "hand",
+        "file": "male-right-approved-hand.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/male-candidate.png",
+        "sourceBox": [
+          0,
+          0,
+          362,
+          543
+        ],
+        "sha256": "247ef6de3cfc844f39d50260a1307ea956938d3d84086ba9db98c8ff86b12b49"
+      },
+      {
+        "direction": "right",
+        "part": "thigh",
+        "file": "male-right-approved-thigh.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/male-candidate.png",
+        "sourceBox": [
+          1086,
+          0,
+          1448,
+          543
+        ],
+        "sha256": "96cd448799b8cf7ac2fa0b307cb8ff6499fea068e648bd432ac2a0b2fa18a4e5"
+      },
+      {
+        "direction": "left",
+        "part": "hand",
+        "file": "male-left-approved-hand.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/male-candidate.png",
+        "sourceBox": [
+          0,
+          543,
+          362,
+          1086
+        ],
+        "sha256": "1edbeede0ffe390cfde9427ba00ce25cb34038f346a1b8907aeaadf031574222"
+      },
+      {
+        "direction": "left",
+        "part": "thigh",
+        "file": "male-left-approved-thigh.png",
+        "sourceSheet": "graphics/character-system/sources/painted-parts-v4/male-candidate.png",
+        "sourceBox": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "sha256": "5700989e7702e6f40993f89078b3659a7c919e31e02fda53ea2b4df3144e85cd"
+      }
+    ],
+    "sourceScale": 1,
+    "approvedSourceSheetSize": [
+      1448,
+      1086
+    ]
+  }
+]

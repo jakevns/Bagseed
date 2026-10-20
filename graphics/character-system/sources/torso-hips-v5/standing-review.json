@@ -1,0 +1,314 @@
+{
+  "results": [
+    {
+      "anatomy": "androgynous",
+      "direction": "right",
+      "comparison": "androgynous-right-standing-comparison.png",
+      "transforms": {
+        "approvedThigh": {
+          "sourceBox": [
+            115,
+            75,
+            251,
+            396
+          ],
+          "uniformScale": 0.43613707165109034,
+          "translation": [
+            108,
+            417
+          ]
+        },
+        "hips": {
+          "sourceBox": [
+            199,
+            114,
+            457,
+            539
+          ],
+          "uniformScale": 0.4117647058823529,
+          "translation": [
+            74,
+            258
+          ]
+        },
+        "torso": {
+          "sourceBox": [
+            187,
+            62,
+            456,
+            669
+          ],
+          "uniformScale": 0.5271828665568369,
+          "translation": [
+            40,
+            -23
+          ]
+        }
+      },
+      "standingSilhouetteDifference": 0.1482598686821723,
+      "approvedHandsThighsHashesMatch": true,
+      "bodyApproved": false,
+      "integrated": false,
+      "visualStatus": "Failed Standing assembly; no animation integration."
+    },
+    {
+      "anatomy": "androgynous",
+      "direction": "left",
+      "comparison": "androgynous-left-standing-comparison.png",
+      "transforms": {
+        "approvedThigh": {
+          "sourceBox": [
+            118,
+            77,
+            265,
+            387
+          ],
+          "uniformScale": 0.45161290322580644,
+          "translation": [
+            109,
+            415
+          ]
+        },
+        "hips": {
+          "sourceBox": [
+            115,
+            112,
+            372,
+            539
+          ],
+          "uniformScale": 0.4098360655737705,
+          "translation": [
+            75,
+            259
+          ]
+        },
+        "torso": {
+          "sourceBox": [
+            115,
+            59,
+            385,
+            669
+          ],
+          "uniformScale": 0.5245901639344263,
+          "translation": [
+            44,
+            -21
+          ]
+        }
+      },
+      "standingSilhouetteDifference": 0.17642531261503452,
+      "approvedHandsThighsHashesMatch": true,
+      "bodyApproved": false,
+      "integrated": false,
+      "visualStatus": "Failed Standing assembly; no animation integration."
+    },
+    {
+      "anatomy": "female",
+      "direction": "right",
+      "comparison": "female-right-standing-comparison.png",
+      "transforms": {
+        "approvedThigh": {
+          "sourceBox": [
+            106,
+            83,
+            262,
+            418
+          ],
+          "uniformScale": 0.417910447761194,
+          "translation": [
+            101,
+            415
+          ]
+        },
+        "hips": {
+          "sourceBox": [
+            128,
+            98,
+            434,
+            581
+          ],
+          "uniformScale": 0.36231884057971014,
+          "translation": [
+            102,
+            269
+          ]
+        },
+        "torso": {
+          "sourceBox": [
+            158,
+            68,
+            486,
+            737
+          ],
+          "uniformScale": 0.47832585949177875,
+          "translation": [
+            50,
+            -23
+          ]
+        }
+      },
+      "standingSilhouetteDifference": 0.22129674995917034,
+      "approvedHandsThighsHashesMatch": true,
+      "bodyApproved": false,
+      "integrated": false,
+      "visualStatus": "Failed Standing assembly; no animation integration."
+    },
+    {
+      "anatomy": "female",
+      "direction": "left",
+      "comparison": "female-left-standing-comparison.png",
+      "transforms": {
+        "approvedThigh": {
+          "sourceBox": [
+            85,
+            82,
+            253,
+            415
+          ],
+          "uniformScale": 0.42042042042042044,
+          "translation": [
+            104,
+            416
+          ]
+        },
+        "hips": {
+          "sourceBox": [
+            77,
+            98,
+            383,
+            581
+          ],
+          "uniformScale": 0.36231884057971014,
+          "translation": [
+            79,
+            269
+          ]
+        },
+        "torso": {
+          "sourceBox": [
+            25,
+            68,
+            353,
+            737
+          ],
+          "uniformScale": 0.47832585949177875,
+          "translation": [
+            72,
+            -23
+          ]
+        }
+      },
+      "standingSilhouetteDifference": 0.26737361236123613,
+      "approvedHandsThighsHashesMatch": true,
+      "bodyApproved": false,
+      "integrated": false,
+      "visualStatus": "Failed Standing assembly; no animation integration."
+    },
+    {
+      "anatomy": "male",
+      "direction": "right",
+      "comparison": "male-right-standing-comparison.png",
+      "transforms": {
+        "approvedThigh": {
+          "sourceBox": [
+            121,
+            77,
+            273,
+            406
+          ],
+          "uniformScale": 0.425531914893617,
+          "translation": [
+            89,
+            417
+          ]
+        },
+        "hips": {
+          "sourceBox": [
+            126,
+            137,
+            439,
+            647
+          ],
+          "uniformScale": 0.3431372549019608,
+          "translation": [
+            107,
+            258
+          ]
+        },
+        "torso": {
+          "sourceBox": [
+            124,
+            28,
+            471,
+            768
+          ],
+          "uniformScale": 0.43243243243243246,
+          "translation": [
+            75,
+            -2
+          ]
+        }
+      },
+      "standingSilhouetteDifference": 0.20616370666743425,
+      "approvedHandsThighsHashesMatch": true,
+      "bodyApproved": false,
+      "integrated": false,
+      "visualStatus": "Failed Standing assembly; no animation integration."
+    },
+    {
+      "anatomy": "male",
+      "direction": "left",
+      "comparison": "male-left-standing-comparison.png",
+      "transforms": {
+        "approvedThigh": {
+          "sourceBox": [
+            118,
+            45,
+            276,
+            374
+          ],
+          "uniformScale": 0.425531914893617,
+          "translation": [
+            87,
+            431
+          ]
+        },
+        "hips": {
+          "sourceBox": [
+            74,
+            136,
+            386,
+            646
+          ],
+          "uniformScale": 0.3431372549019608,
+          "translation": [
+            68,
+            258
+          ]
+        },
+        "torso": {
+          "sourceBox": [
+            42,
+            27,
+            388,
+            768
+          ],
+          "uniformScale": 0.4318488529014845,
+          "translation": [
+            54,
+            -2
+          ]
+        }
+      },
+      "standingSilhouetteDifference": 0.20875584373542042,
+      "approvedHandsThighsHashesMatch": true,
+      "bodyApproved": false,
+      "integrated": false,
+      "visualStatus": "Failed Standing assembly; no animation integration."
+    }
+  ],
+  "alignment": "Explicit uniform display scales + translations, no stretch or destination silhouette. Native model PNGs retained.",
+  "originalArmRemoved": "Only visible source pixels retained; missing original skin remains transparent.",
+  "approved": false,
+  "status": "Standing checks FAILED: retained shoulder/arm form, visible waist ledges, hip/thigh alignment and source silhouette differences. Six calls used; no torso/hips accepted. Approved hands/thighs unchanged."
+}

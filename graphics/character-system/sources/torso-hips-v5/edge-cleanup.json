@@ -1,0 +1,26 @@
+[
+  {
+    "anatomy": "androgynous",
+    "source": "androgynous-attempt-02.png",
+    "output": "androgynous-candidate.png",
+    "removedPixels": 18133,
+    "skinPaintAdded": 0,
+    "contourPaintAdded": 0
+  },
+  {
+    "anatomy": "female",
+    "source": "female-attempt-02.png",
+    "output": "female-candidate.png",
+    "removedPixels": 15705,
+    "skinPaintAdded": 0,
+    "contourPaintAdded": 0
+  },
+  {
+    "anatomy": "male",
+    "source": "male-attempt-02.png",
+    "output": "male-candidate.png",
+    "removedPixels": 28163,
+    "skinPaintAdded": 0,
+    "contourPaintAdded": 0
+  }
+]

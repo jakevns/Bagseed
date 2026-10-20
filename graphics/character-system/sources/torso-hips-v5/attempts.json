@@ -1,0 +1,16 @@
+{
+  "limit":6,
+  "perAnatomy":2,
+  "attempted":6,
+  "remaining":0,
+  "mode":"built-in imagegen",
+  "results":[
+    {"anatomy":"androgynous","attempts":2,"status":"Standing assembly rejected: shoulder/arm muscle retained; waist overlap and silhouette mismatch"},
+    {"anatomy":"female","attempts":2,"status":"Standing assembly rejected: retained shoulder form, overlap ledge, mismatched hip profile and proportions"},
+    {"anatomy":"male","attempts":2,"status":"Standing assembly rejected: retained shoulder and changed chest/hips, waist seam and silhouette mismatch"}
+  ],
+  "acceptedTorsoHips":0,
+  "approvedHandsThighsRegenerated":false,
+  "animationIntegrated":false,
+  "published":false
+}
