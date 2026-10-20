@@ -22959,8 +22959,10 @@ Route116.westSpot=(prev=>function(id,b){const s=prev.call(this,id,b);if(b.walk){
 for(const s of Object.values(WEST_STYLE))if(s.extra==='stallsign'||s.extra==='mannequin')s.extra='pots';
 W115.sign=(prev=>function(c,x,y,label){if(state?.scene==='westway'&&/PARK/.test(label))return;return prev.call(this,c,x,y,label);})(W115.sign);
 /* Patient visits: synchronous transaction attempt is committed once, then
-   departure follows valid room portals. Save reload resumes remaining path. */
-VisitFlow.start=function(k,bid,mode='share'){if(this.active()){toast('Your visitor is still leaving. Please wait.','warn');return;}closePanel();const P=state.npc.patients[k];if(!P||!P.met||!PATIENTS[k])return;const bedroom=state.scene==='bedroom',p=bedroom?SCENES.bedroom.spawns.door:PlayerHouse115.doors.front;state.visitFlow={id:uid(),k,bid,mode,who:CAST_DEF[k]?'c_'+k:P.neighbor?'nb_'+k:k,served:false,phase:bedroom?'arrive':'wait',scene:bedroom?'bedroom':'hallway',x:p[0],y:p[1],dir:'down',path:bedroom?Corrective115.path('bedroom',{x:p[0],y:p[1]},[p[0],132]):[],pathI:0,elapsed115:0,version115:1};if(!bedroom)this.settle(state.visitFlow);Sfx.doorbell();SaveSys.important('visit');};
+   departure follows valid room portals. Save reload resumes remaining path.
+   Visitors keep walking while time is paused (they are not on the game
+   clock), and a served visitor never blocks the next sale. */
+VisitFlow.start=function(k,bid,mode='share'){const O=this.S();if(O&&!O.served){toast('Your visitor is still coming in. Please wait.','warn');return;}if(O)state.visitFlow=null;closePanel();const P=state.npc.patients[k];if(!P||!P.met||!PATIENTS[k])return;const bedroom=state.scene==='bedroom',p=bedroom?SCENES.bedroom.spawns.door:PlayerHouse115.doors.front;state.visitFlow={id:uid(),k,bid,mode,who:CAST_DEF[k]?'c_'+k:P.neighbor?'nb_'+k:k,served:false,phase:bedroom?'arrive':'wait',scene:bedroom?'bedroom':'hallway',x:p[0],y:p[1],dir:'down',path:bedroom?Corrective115.path('bedroom',{x:p[0],y:p[1]},[p[0],132]):[],pathI:0,elapsed115:0,version115:1};if(!bedroom)this.settle(state.visitFlow);Sfx.doorbell();SaveSys.important('visit');};
 VisitFlow.settle=function(F){if(F.served)return;F.served=true;F.settlement115='attempting';const before=state.money,b=Batches.find(F.bid),j=b?.jars;try{Pt.serve(F.k,F.bid,F.mode);F.settlement115=state.money>before?'sold':b&&j>0?'declined':'no-stock';}catch(e){F.settlement115='interrupted';console.error('Visit settlement',e);}F.phase='visit';F.elapsed115=0;SaveSys.important('visit settlement');};
 Pt.serve=(prev=>function(k,bid,mode){const F=VisitFlow.S();if(F?.k===k){if(F.transaction115)return;F.transaction115=true;}const b=Batches.find(bid);if(!b||!(b.jars>0))return;return prev.call(this,k,bid,mode);})(Pt.serve);
 VisitFlow.route=function(F,to){F.target115=to.slice();F.path=Corrective115.path(F.scene,F,to)||[];F.pathI=0;F.elapsed115=0;if(!F.path.length&&Math.hypot(F.x-to[0],F.y-to[1])>3)F.retry115=.75;};
@@ -22971,7 +22973,7 @@ VisitFlow.next=function(F){F.elapsed115=0;F.moving=false;
  if(F.phase==='house'){F.phase='street';F.scene='street';[F.x,F.y]=SCENES.street.spawns.frontDoor.slice(0,2);this.route(F,[SCENES.street.walk[2]-4,152]);return;}
  if(F.phase==='street'){state.visitFlow=null;SaveSys.request('visit departed');}
 };
-VisitFlow.tick=function(dt){const F=this.S();if(!F)return;F.moving=false;if(settings.speed===0||runtime.overlay||runtime.dialogOpen||runtime.dialogQ?.length||runtime.sleeping)return;dt=Math.min(dt,.1)*([0,1,2,4][settings.speed]||0);F.elapsed115=(F.elapsed115||0)+dt;
+VisitFlow.tick=function(dt){const F=this.S();if(!F)return;F.moving=false;if(runtime.overlay||runtime.dialogOpen||runtime.dialogQ?.length||runtime.sleeping)return;dt=Math.min(dt,.1)*(settings.speed?[0,1,2,4][settings.speed]||1:2);F.elapsed115=(F.elapsed115||0)+dt;
  if(F.phase==='visit'||F.phase==='wait'){if(F.elapsed115>.65)this.next(F);return;}
  if(F.pathI){F.path=F.path?.slice(F.pathI)||[];F.pathI=0;}
  if(!F.path?.length){if(!F.target115||Math.hypot(F.x-F.target115[0],F.y-F.target115[1])<4){this.next(F);return;}if(F.elapsed115>2&&!F.warned115){F.warned115=true;toast('Your visitor is waiting for a clear route to the door.','warn');}F.retry115=(F.retry115||0)+dt;if(F.retry115>.75){F.retry115=0;Corrective115.stats.visitRetries++;this.route(F,F.target115);}return;}
