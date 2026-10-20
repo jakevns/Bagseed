@@ -26117,6 +26117,111 @@ Panels.trellisVideo=(previous=>function(id){const result=previous.call(this,id);
 Clip115.control=(previous=>function(id,k){if(!['play','replay','loop'].includes(k))return;const s=this.state(id);if(!s)return;if(k==='play'&&s.time>=TrellisFilm1151.plan(s.media).duration)s.time=0;const result=previous.call(this,id,k);TrellisFilm1151.promote();return result;})(Clip115.control);
 Trellis.watch=(previous=>function(id){const before=runtime.watching,result=previous.call(this,id);if(runtime.watching!==before&&runtime.watching?.id===id){const s=Clip115.state(id);if(s){s.time=0;s.playing=true;s.watchObject1151=runtime.watching;renderPanel();}}return result;})(Trellis.watch);
 </script>
+<script id="social-media-speed1151-code">
+'use strict';
+/* Sprout and Trellis responsiveness.
+   1. Post photos are frozen records, but every panel refresh repainted each one from
+      scratch through the illustrated plant renderer (and NPC photos up to three times).
+      A Sprout feed of 24 posts froze the game for seconds on every comment, reply or
+      post. Finished photos are now kept by exactly what they show and copied back.
+   2. A Trellis thumbnail or video that has no recorded plant never shows its plant
+      snapshot, yet each one painted the plant and stored a ~15 KB image in the save.
+      Those are no longer made, and old saves drop the unused copies on load. Posts with
+      a recorded plant keep their frozen snapshot exactly as before. */
+const SocialSpeed1151 = {
+  photos: new Map(), max: 80, final: false,
+  photoKey(cv, snap, o) {
+    let pot = '';
+    try { const L = state && snap && state.locations && state.locations[snap.loc]; if (L && L.equip) pot = L.equip.pot; } catch (e) { }
+    return [cv.width, cv.height, window.BagseedPlants && window.BagseedPlants.loaded ? 1 : 0, pot, JSON.stringify(snap), JSON.stringify(o)].join('|');
+  },
+  remember(key, cv) {
+    const copy = document.createElement('canvas'); copy.width = cv.width; copy.height = cv.height;
+    copy.getContext('2d').drawImage(cv, 0, 0);
+    this.photos.delete(key); this.photos.set(key, copy);
+    while (this.photos.size > this.max) this.photos.delete(this.photos.keys().next().value);
+  },
+  queue: [], pumping: false,
+  pump() {
+    const start = performance.now();
+    while (this.queue.length && (performance.now() - start < 10)) {
+      const job = this.queue.shift(); if (!job.cv.isConnected) continue;
+      const kept = this.photos.get(job.key), out = job.cv.getContext('2d');
+      if (kept) { out.save(); out.setTransform(1, 0, 0, 1, 0, 0); out.clearRect(0, 0, job.cv.width, job.cv.height); out.drawImage(kept, 0, 0); out.restore(); continue; }
+      try { job.paint(job.cv, job.snap, job.o); this.remember(job.key, job.cv); } catch (e) { console.error('feed photo', e); }
+    }
+    if (this.queue.length) requestAnimationFrame(() => this.pump()); else this.pumping = false;
+  },
+  usesSnapshot(m) { return !!(m && m.post && m.post.snap); },
+  prune(s) {
+    const media = s && s.completion115 && s.completion115.media; if (!media) return 0;
+    let n = 0;
+    for (const m of Object.values(media)) if (m && !this.usesSnapshot(m) && (m.png || m.art)) { m.png = null; m.art = null; n++; }
+    return n;
+  }
+};
+// Neighbor feed photos were painted by three stacked refresh passes; only the last
+// (Photo115, the frozen look) is ever seen. The earlier two are skipped.
+Photo115.draw = (previous => function (cv, f) {
+  SocialSpeed1151.final = true;
+  try { return previous.apply(this, arguments); } finally { SocialSpeed1151.final = false; }
+})(Photo115.draw);
+renderPhoto = (previous => function (cv, snap, o) {
+  if (!cv || !cv.width || !cv.height || !snap || !o) return previous.apply(this, arguments);
+  if (!SocialSpeed1151.final && cv.dataset && String(cv.dataset.draw || '').startsWith('npcpost:')) return;
+  let key;
+  try { key = SocialSpeed1151.photoKey(cv, snap, o); } catch (e) { return previous.apply(this, arguments); }
+  const kept = SocialSpeed1151.photos.get(key), out = cv.getContext('2d');
+  if (kept) {
+    SocialSpeed1151.photos.delete(key); SocialSpeed1151.photos.set(key, kept);
+    out.save(); out.setTransform(1, 0, 0, 1, 0, 0); out.globalAlpha = 1; out.globalCompositeOperation = 'source-over'; out.filter = 'none';
+    out.clearRect(0, 0, cv.width, cv.height); out.drawImage(kept, 0, 0); out.restore();
+    return;
+  }
+  // Feed photos that aren't ready yet are painted a few per frame, so opening a long
+  // feed never stalls the game; each one appears as soon as it is done.
+  if (cv.isConnected && /^(npcpost|post):/.test(String(cv.dataset && cv.dataset.draw || ''))) {
+    out.save(); out.setTransform(1, 0, 0, 1, 0, 0); out.fillStyle = '#2b2f2a'; out.fillRect(0, 0, cv.width, cv.height); out.restore();
+    SocialSpeed1151.queue.push({ cv, snap, o, key, paint: previous });
+    if (!SocialSpeed1151.pumping) { SocialSpeed1151.pumping = true; requestAnimationFrame(() => SocialSpeed1151.pump()); }
+    return;
+  }
+  const result = previous.apply(this, arguments);
+  SocialSpeed1151.remember(key, cv);
+  return result;
+})(renderPhoto);
+Clip115.ensure = (previous => function (id) {
+  const store = this.S(); if (store[id]) return store[id];
+  const p = this.source(id) || Trellis.video(id);
+  if (!p || p.snap) return previous.call(this, id);
+  // Same media record without painting a plant image nothing will display.
+  const build = PlantArt.build;
+  PlantArt.build = () => ({ cv: { toDataURL: () => null }, w: 0, h: 0, ax: 0, ay: 0 });
+  let m;
+  try { m = previous.call(this, id); } finally { PlantArt.build = build; }
+  if (m) { m.png = null; m.art = null; }
+  return m;
+})(Clip115.ensure);
+// Trellis thumbnails are still posters; reuse each one instead of repainting the whole
+// shelf on every refresh. Playing clips are drawn live exactly as before.
+TrellisFilm1151.posters = new Map();
+TrellisFilm1151.draw = (previous => function (c, cv, m, time = 0, poster = false) {
+  if (!poster || !c || !m || !cv || !cv.width || !cv.height) return previous.apply(this, arguments);
+  const key = [m.id, settings.reduced ? 1 : 0, cv.width, cv.height, this.snapshots.get(m)?.ready ? 1 : 0].join('|');
+  if (this.last.get(cv) === 'poster|' + key) return;
+  const kept = this.posters.get(key);
+  if (kept) {
+    this.posters.delete(key); this.posters.set(key, kept);
+    c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, cv.width, cv.height); c.drawImage(kept, 0, 0); c.restore();
+  } else {
+    previous.apply(this, arguments);
+    const copy = document.createElement('canvas'); copy.width = cv.width; copy.height = cv.height; copy.getContext('2d').drawImage(cv, 0, 0);
+    this.posters.set(key, copy); while (this.posters.size > 48) this.posters.delete(this.posters.keys().next().value);
+  }
+  this.last.set(cv, 'poster|' + key);
+})(TrellisFilm1151.draw);
+if (typeof POSTLOAD115 !== 'undefined') POSTLOAD115.push(s => { if (SocialSpeed1151.prune(s || state)) SaveSys.request('trimmed unused clip images'); });
+</script>
 
 <script id="smell-reactions1151-code">
 function buildNoseSprite1151(L, dir, frame, breath, blink, act) {
