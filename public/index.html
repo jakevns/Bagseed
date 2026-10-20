@@ -4591,7 +4591,9 @@ function seedInfo(lineId, s) {
   const g = GEN(lineId), stype = s && s.seedType ? s.seedType : g.bag ? 'unknown' : g.seedType || 'fem';
   const life = g.revealed.lifecycle ? (g.lifecycle === 'auto' ? 'Autoflower' : 'Photoperiod') : '<span class="unk">???</span>';
   const prof = g.revealed.profile ? esc(TYPE_LABEL[g.type]) : '<span class="unk">???</span>';
-  return `<dl class="kv small"><dt>Lifecycle</dt><dd>${life}</dd><dt>Seed type</dt><dd>${stype === 'unknown' ? '<span class="unk">???</span>' : SEEDTYPE_LABEL[stype]}${s && s.kind === 'cutting' ? ' (clone)' : ''}</dd><dt>Category</dt><dd>${prof}</dd><dt>Breeder</dt><dd>${g.bag ? '<span class="unk">???</span>' : esc(BREEDERS[g.breeder] ? BREEDERS[g.breeder].name : '—')}</dd><dt>Rarity</dt><dd>${esc(g.rarity || '—')}</dd></dl>`;
+  // a cutting is the mother plant itself: show her sex, not the seed's
+  const ph = s && s.kind === 'cutting' && s.pheno, sex = ph ? (ph.sexKnown ? (ph.sex === 'M' ? '♂ Male' : '♀ Female') : '<span class="unk">???</span>') : null;
+  return `<dl class="kv small"><dt>Lifecycle</dt><dd>${life}</dd>${ph ? `<dt>Sex</dt><dd>${sex} (clone)</dd>` : `<dt>Seed type</dt><dd>${stype === 'unknown' ? '<span class="unk">???</span>' : SEEDTYPE_LABEL[stype]}${s && s.kind === 'cutting' ? ' (clone)' : ''}</dd>`}<dt>Category</dt><dd>${prof}</dd><dt>Breeder</dt><dd>${g.bag ? '<span class="unk">???</span>' : esc(BREEDERS[g.breeder] ? BREEDERS[g.breeder].name : '—')}</dd><dt>Rarity</dt><dd>${esc(g.rarity || '—')}</dd></dl>`;
 }
 </script>
 <script>
@@ -10610,9 +10612,11 @@ const Batches = {
     const L = b.lab || { status: 'untested' };
     if (L.status === 'quarantined') return { k: 'quarantined', sym: '✕', txt: 'FAILED · quarantined', col: 'var(--danger)' };
     if (L.status === 'disposed') return { k: 'disposed', sym: '✕', txt: 'Disposed', col: 'var(--muted)' };
+    // a retest in progress doesn't erase the results the batch already has
+    const re = L.pending ? ' · retest pending' : '';
+    if (L.status === 'passed') return { k: 'passed', sym: '✓', txt: 'Full panel PASSED' + re, col: 'var(--leaf)' };
+    if (L.status === 'potency') return { k: 'potency', sym: '◐', txt: 'Potency tested · safety unverified' + re, col: '#7fd4ff' };
     if (L.pending) return { k: 'pending', sym: '…', txt: 'Lab pending', col: 'var(--amber)' };
-    if (L.status === 'passed') return { k: 'passed', sym: '✓', txt: 'Full panel PASSED', col: 'var(--leaf)' };
-    if (L.status === 'potency') return { k: 'potency', sym: '◐', txt: 'Potency tested · safety unverified', col: '#7fd4ff' };
     return { k: 'untested', sym: '○', txt: 'Not lab tested', col: 'var(--muted)' };
   },
   sellable(b) { const s = (b.lab || {}).status; return s !== 'quarantined' && s !== 'disposed' && b.jars > 0; },
@@ -10864,7 +10868,7 @@ const Pt = {
       for (const c of P.claims || []) {
         if (c.found) continue;
         const b = Batches.find(c.batchId); const st = b ? Batches.status(b).k : 'untested';
-        if (st === 'passed') { c.found = 'ok'; continue; }
+        if (st === 'passed' || st === 'potency') { c.found = 'ok'; continue; }
         if (chance(.25)) { c.found = true; P.trust = clamp(P.trust - 2.5, 0, 10); P.friend = clamp(P.friend - 1.2, 0, 10); state.rep.patient = Math.max(0, state.rep.patient - 2); addMsg(k, `I asked the registry for the lab report on ${c.batchId}. There isn't one. You told me it was tested. I'm disappointed. I trusted that.`, [{ label: 'Apologize', fx: 'friend:' + k + ':0' }]); }
       }
       if (P.met && P.request && !P.request.note && P.lastBatch) { P.request.note = true; }
@@ -22077,6 +22081,22 @@ ACT.sow=(prev=>function(arg){
   }
 })(ACT.sow);
 doCare=(prev=>function(action){const p=curPlant();if(action==='cut'&&p){p.pheno.genome115=SeedLots115.copy(Individual115.ensure(p));}return prev(action);})(doCare);
+/* clones share their mother's sex: once any plant of a phenotype shows preflowers,
+   its stored cuttings and living clones are known to be the same sex */
+const CloneSex115={
+  sync(){
+    if(!state)return;const known={};
+    // only mothers (cut from) and clones (grown from a cutting): seed siblings can share a lot but not a sex
+    const line=p=>(p.cutting||p.clone)&&p.pheno&&p.pheno.pid;
+    for(const p of allPlants())if(p.sexKnown&&line(p))known[p.pheno.pid]=p.sex;
+    for(const s of state.inv.seeds)if(s.kind==='cutting'&&s.pheno&&s.pheno.pid&&s.pheno.sexKnown)known[s.pheno.pid]=known[s.pheno.pid]||s.pheno.sex;
+    for(const s of state.inv.seeds){const sx=s.kind==='cutting'&&s.pheno&&known[s.pheno.pid];if(sx){s.pheno.sex=sx;s.pheno.sexKnown=true;}}
+    for(const p of allPlants()){const sx=line(p)&&known[p.pheno.pid];if(sx&&!p.sexKnown){p.sex=sx;p.sexKnown=true;invalidate(p);}}
+  }
+};
+revealSex=(prev=>function(p){const r=prev.apply(this,arguments);CloneSex115.sync();return r;})(revealSex);
+doCare=(prev=>function(action){const r=prev(action);if(action==='cut')CloneSex115.sync();return r;})(doCare);
+POSTLOAD115.push(()=>CloneSex115.sync());
 Breeding.makeCross=(prev=>function(mid,fid,opts={}){
   const g=prev.call(Breeding,mid,fid,opts),m=opts.mother115,f=opts.father115;
   if(!m||!f){g.generation115='Unknown';g.gen=1;g.ancestryUnknown115=true;return g;}
