@@ -4284,7 +4284,7 @@ const Panels = {
       const sensorTier = L.equip.sensor, smart = EQ.pot[L.equip.pot] && L.equip.pot === 3;
       const sexTxt = p.sexKnown ? (p.sex === 'M' ? '♂ Male' + (p.keepMale ? ' (kept for breeding)' : '') : '♀ Female') : '<span class="unk">???</span>';
       const left = `<div><canvas class="px" width="120" height="150" data-draw="plantbig:${p.id}" style="width:100%;max-width:300px;box-shadow:0 0 0 3px var(--line2)"></canvas>
-        <div class="actions"><button class="btn sm ${t === 'overview' ? 'primary' : ''}" data-act="plantTab" data-arg="overview">Inspect</button><button class="btn sm ${t === 'care' ? 'primary' : ''}" data-act="plantTab" data-arg="care">Care</button><button class="btn sm ${t === 'train' ? 'primary' : ''}" data-act="plantTab" data-arg="train">Train</button><button class="btn sm" data-act="photoPlant" data-arg="${p.id}">Photo</button><button class="btn sm ghost" data-act="openSpace" data-arg="${p.loc}">Space controls</button></div></div>`;
+        <div class="actions"><button class="btn sm ${t === 'overview' ? 'primary' : ''}" data-act="plantTab" data-arg="overview">Inspect</button><button class="btn sm ${t === 'care' ? 'primary' : ''}" data-act="plantTab" data-arg="care">Care</button><button class="btn sm ${t === 'train' ? 'primary' : ''}" data-act="plantTab" data-arg="train">Train</button><button class="btn sm" data-act="photoPlant" data-arg="${p.id}">Photo</button><button class="btn sm ghost" data-act="openSpace" data-arg="${p.loc}">Space controls</button><button class="btn sm ghost" data-act="renamePlant" data-arg="${p.id}">Rename</button></div></div>`;
       let right = '';
       if (t === 'overview') {
         const notes = runtime.inspect && runtime.inspect.pid === p.id && runtime.inspect.day === state.day ? runtime.inspect.notes : null;
@@ -9627,7 +9627,13 @@ Object.assign(ACT, {
   collectPollen(pid) { const p = state.plants[pid]; if (p) Breeding.pollenFrom(p); },
   pollinateWith(arg) { const [q, v] = arg.split(':'); Breeding.pollinate(q, v); },
   nameCross(gid) { Panels.nameCross(gid); },
-  saveCrossName() { const g = GEN(runtime.crossGid), v = (($('#crossName') || {}).value || '').trim().slice(0, 26); if (v) { g.name = v; g.named = true; } toast(`Cross named <b>${esc(g.name)}</b>.`, 'social'); closePanel(); SaveSys.request('cross'); }
+  saveCrossName() { const g = GEN(runtime.crossGid), v = (($('#crossName') || {}).value || '').trim().slice(0, 26); if (v && v !== g.name) {
+      // plants and jars took the old name when planted ("Old Name #3"): carry the new name to them; hand-picked names stay
+      const was = g.name, rn = o => { if (o && o.lineId === g.id && !o.customName115 && typeof o.name === 'string' && o.name.startsWith(was + ' #')) { o.name = v + o.name.slice(was.length); return true; } };
+      for (const p of allPlants()) if (rn(p)) invalidate(p);
+      for (const b of state.inv.harvest || []) rn(b);
+    }
+    if (v) { g.name = v; g.named = true; } toast(`Cross named <b>${esc(g.name)}</b>.`, 'social'); closePanel(); SaveSys.request('cross'); }
 });
 
 /* ---------------- stress → hermaphrodites ---------------- */
@@ -22097,6 +22103,17 @@ const CloneSex115={
 revealSex=(prev=>function(p){const r=prev.apply(this,arguments);CloneSex115.sync();return r;})(revealSex);
 doCare=(prev=>function(action){const r=prev(action);if(action==='cut')CloneSex115.sync();return r;})(doCare);
 POSTLOAD115.push(()=>CloneSex115.sync());
+/* players can give any plant its own name; a chosen name is never replaced by a cross rename */
+Panels.renamePlant=function(pid){const p=state.plants[pid];if(!p)return;runtime.renamePid=pid;openPanel('Rename plant',()=>`<label class="field" for="plantName">Plant name<input id="plantName" type="text" maxlength="30" value="${esc(p.name)}"></label><div class="actions"><button class="btn primary" data-act="savePlantName">Save name</button><button class="btn" data-act="openPlant" data-arg="${p.id}">Cancel</button></div>`);};
+Object.assign(ACT,{
+  renamePlant(pid){Panels.renamePlant(pid);},
+  savePlantName(){const p=state.plants[runtime.renamePid];if(!p)return closePanel();const v=(($('#plantName')||{}).value||'').replace(/[<>&"]/g,'').replace(/\s+/g,' ').trim().slice(0,30);
+    if(v&&v!==p.name){p.name=v;p.customName115=true;invalidate(p);toast(`Plant renamed <b>${esc(v)}</b>.`,'social');SaveSys.request('rename plant');}
+    Panels.plant(p.id);}
+});
+/* saves from before named crosses renamed their plants: a plant of a named cross still
+   wearing an automatic "Mother × Father … #n" name takes the cross's name */
+POSTLOAD115.push(()=>{for(const p of allPlants()){const g=GEN(p.lineId),m=!p.customName115&&g&&g.cross&&g.named&&/^(.+) #(\d+)$/.exec(p.name||'');if(m&&m[1]!==g.name&&m[1].includes(' × ')){p.name=g.name+' #'+m[2];invalidate(p);}}});
 Breeding.makeCross=(prev=>function(mid,fid,opts={}){
   const g=prev.call(Breeding,mid,fid,opts),m=opts.mother115,f=opts.father115;
   if(!m||!f){g.generation115='Unknown';g.gen=1;g.ancestryUnknown115=true;return g;}
