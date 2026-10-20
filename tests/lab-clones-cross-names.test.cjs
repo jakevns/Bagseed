@@ -3,8 +3,9 @@ const assert = require('node:assert/strict');
 const { chromium } = require('playwright');
 
 // A tested batch stays tested while it is back at the lab for another panel,
-// and cuttings keep (and learn) their mother's sex.
-test('lab retests and clone sex', async () => {
+// cuttings keep (and learn) their mother's sex, naming a cross renames its plants,
+// and players can rename a plant themselves.
+test('lab retests, clone sex and cross names', async () => {
   const { createStaticServer } = await import('../tools/server.mjs');
   const server = createStaticServer();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -43,6 +44,23 @@ test('lab retests and clone sex', async () => {
       return { before, female: info.includes('♀ Female'), clone: c && [c.sex, c.sexKnown] };
     });
     assert.deepEqual(clone, { before: true, female: true, clone: ['F', true] }, 'The cutting lost its mother\'s sex');
+    const cross = await page.evaluate(() => {
+      const g = Breeding.makeCross('porchlight', 'porchlight', {}); state.genetics[g.id] = g;
+      const loc = Object.keys(state.locations).find(l => state.locations[l].slots.some(x => !x)), L = state.locations[loc];
+      const p = createPlant(g.id, loc, L.slots.findIndex(x => !x), null, 'reg'), auto = p.name;
+      ACT.nameCross(g.id); document.getElementById('crossName').value = 'Sunny Day'; ACT.saveCrossName();
+      return { auto, name: p.name, line: GEN(g.id).name };
+    });
+    assert.equal(cross.line, 'Sunny Day');
+    assert.match(cross.name, /^Sunny Day #\d+$/, `Plant kept its old cross name (${cross.auto})`);
+    const renamed = await page.evaluate(() => {
+      const p = Object.values(state.plants).find(x => GEN(x.lineId).name === 'Sunny Day');
+      Panels.plant(p.id); const button = !!document.querySelector(`[data-act=renamePlant][data-arg="${p.id}"]`);
+      ACT.renamePlant(p.id); document.getElementById('plantName').value = 'Big Sue'; ACT.savePlantName();
+      const g = GEN(p.lineId); ACT.nameCross(g.id); document.getElementById('crossName').value = 'Rainy Day'; ACT.saveCrossName();
+      return { button, name: p.name };
+    });
+    assert.deepEqual(renamed, { button: true, name: 'Big Sue' }, 'A plant\'s chosen name was lost or the rename button is missing');
     assert.deepEqual(errors, []);
   } finally {
     if (browser) await browser.close();
