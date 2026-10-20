@@ -1601,19 +1601,40 @@ function odorLevel() {
   return clamp(Math.round(o), 0, 100);
 }
 const odorWord = o => o < 10 ? 'None' : o < 25 ? 'Faint' : o < 45 ? 'Noticeable' : o < 70 ? 'Strong' : 'Whole block knows';
-/* smart controller: steers digital devices to the current stage (or to drying mode) */
-function controllerTick(loc) {
-  const L = state.locations[loc]; if (!L.equip.ctrl || !locOn(L, 'ctrl')) return;
-  const ps = plantsIn(loc), drying = ps.some(p => p.stage === S.drying), grow = ps.find(p => p.stage < S.drying);
-  let t, h;
-  if (drying && !grow) { t = [68, 72]; h = 70; if (L.on.light) { L.on.light = false; toast('Controller: drying mode. Grow light switched off.'); } }
-  else if (grow) { const id = idealFor(grow.stage); t = [id.t[0] + 1, id.t[1] - 1]; h = Math.round((id.h[0] + id.h[1]) / 2); }
-  else return;
+/* smart controller: steers digital devices to the current stage (or to drying mode).
+   Heaters, ACs and mini-splits condition the whole lung room, so a powered controller
+   anywhere in that room steers them too, following the plants in their own space first. */
+function controllerPlan(locs) {
+  const ps = locs.flatMap(plantsIn), drying = ps.some(p => p.stage === S.drying), grow = ps.find(p => p.stage < S.drying);
+  if (grow) { const id = idealFor(grow.stage); return { t: [id.t[0] + 1, id.t[1] - 1], h: Math.round((id.h[0] + id.h[1]) / 2) }; }
+  return drying ? { t: [68, 72], h: 70, drying: true } : null;
+}
+const climatePeers = loc => { const room = lungRoomOf(loc); return room ? ownedLocs().filter(l => lungRoomOf(l) === room) : [loc]; };
+const ctrlPowered = loc => { const L = state.locations[loc]; return !!L.equip.ctrl && locOn(L, 'ctrl'); };
+const roomClimateGear = L => !!(L.equip.hvac || L.equip.heater === 2 || L.equip.ac === 2);
+function steerClimate(L, t) {
   L.heatTo = t[0]; L.coolTo = t[1];
-  if (L.equip.humid === 3) L.humidTarget = h;
-  if (L.equip.dehum === 2) L.dehumTarget = h + 4;
   if (L.equip.hvac || L.equip.heater === 2) L.on.heater = L.on.hvac = true;
   if (L.equip.ac === 2) L.on.ac = true;
+}
+function controllerTick(loc) {
+  const L = state.locations[loc]; if (!ctrlPowered(loc)) return;
+  const peers = climatePeers(loc), room = controllerPlan(peers), own = controllerPlan([loc]);
+  for (const peer of peers) {
+    if (peer === loc || ctrlPowered(peer) || !roomClimateGear(state.locations[peer])) continue;
+    const plan = controllerPlan([peer]) || room; if (plan) steerClimate(state.locations[peer], plan.t);
+  }
+  const plan = own || room; if (!plan) return;
+  steerClimate(L, plan.t);
+  if (!own) return;
+  if (own.drying && L.on.light) { L.on.light = false; toast('Controller: drying mode. Grow light switched off.'); }
+  if (L.equip.humid === 3) L.humidTarget = own.h;
+  if (L.equip.dehum === 2) L.dehumTarget = own.h + 4;
+}
+/* a slider is locked only while a controller is actually steering it */
+function ctrlSteers(loc, slot) {
+  if (['heater', 'ac', 'hvac'].includes(slot)) return climatePeers(loc).some(ctrlPowered) && !!controllerPlan(climatePeers(loc));
+  return ctrlPowered(loc) && !!controllerPlan([loc]);
 }
 
 /* ============================ DRYING ================================
@@ -4454,7 +4475,7 @@ function devState(slot, loc) {
   return ['on', ''];
 }
 function devCtl(slot, loc) {
-  const L = state.locations[loc], tier = L.equip[slot], it = EQ[slot][tier] || {}, F = state.fail, env = envFor(loc), ctrlOn = L.equip.ctrl && locOn(L, 'ctrl');
+  const L = state.locations[loc], tier = L.equip[slot], it = EQ[slot][tier] || {}, F = state.fail, env = envFor(loc), ctrlOn = ctrlSteers(loc, slot);
   const pwr = k => `<button class="chip ${locOn(L, k) ? 'on' : ''}" data-act="pwr" data-arg="${loc}:${k}" aria-pressed="${locOn(L, k)}">${locOn(L, k) ? 'ON' : 'OFF'}</button>`;
   const fix = (k, label) => F[k] ? `<div class="note bad">${esc({ flicker: 'The light is flickering.', rattle: 'The fan is rattling.', sensor: 'The sensor is reading nonsense.', humStuck: 'Stuck on HIGH. It is raining in here.', heatTrip: 'Tripped the breaker. Smells like burnt dust.', acIce: 'Iced over. Not cooling.' }[k])} <button class="btn sm amber" data-act="fix" data-arg="${k}">${label}</button></div>` : '';
   const slider = (key, min, max, val, label, dis) => `<label class="field" style="flex:1 1 140px">${label} <b class="mono" style="color:var(--text)">${val}${key.includes('hum') ? '%' : '°F'}</b><input type="range" min="${min}" max="${max}" step="1" value="${val}" data-input="${key}" data-loc="${loc}" ${dis ? 'disabled' : ''}></label>`;
@@ -4478,7 +4499,7 @@ function devCtl(slot, loc) {
     case 'heater': h += crow('Power', pwr('heater')) + (it.manual ? crow('Setting', `<button class="chip ${L.heatMode === 1 ? 'on' : ''}" data-act="heatMode" data-arg="${loc}:1">LOW</button><button class="chip ${L.heatMode === 2 ? 'on' : ''}" data-act="heatMode" data-arg="${loc}:2">HIGH</button>`) : slider('heatTo', 55, 80, L.heatTo, 'Heat below', ctrlOn)) + fix('heatTrip', 'Reset the breaker'); break;
     case 'ac': h += crow('Power', pwr('ac')) + (it.manual ? crow('Setting', `<button class="chip ${L.acMode === 1 ? 'on' : ''}" data-act="acMode" data-arg="${loc}:1">LOW</button><button class="chip ${L.acMode === 2 ? 'on' : ''}" data-act="acMode" data-arg="${loc}:2">HIGH</button>`) : slider('coolTo', 64, 88, L.coolTo, 'Cool above', ctrlOn)) + fix('acIce', 'Let it thaw'); break;
     case 'hvac': h += crow('Power', pwr('hvac')) + `<div class="ctl">${slider('heatTo', 55, 80, L.heatTo, 'Heat below', ctrlOn)}${slider('coolTo', 64, 88, L.coolTo, 'Cool above', ctrlOn)}</div>`; break;
-    case 'ctrl': { const ctl = ['heater', 'ac', 'hvac'].filter(k => L.equip[k] && (EQ[k][L.equip[k]].thermo)).map(k => EQ[k][L.equip[k]].name).concat(L.equip.humid === 3 ? [EQ.humid[3].name] : [], L.equip.dehum === 2 ? [EQ.dehum[2].name] : []);
+    case 'ctrl': { const ctl = climatePeers(loc).filter(l => l === loc || !ctrlPowered(l)).flatMap(l => ['heater', 'ac', 'hvac'].filter(k => state.locations[l].equip[k] && EQ[k][state.locations[l].equip[k]].thermo).map(k => EQ[k][state.locations[l].equip[k]].name + (l === loc ? '' : ` (${locShort(l)})`))).concat(L.equip.humid === 3 ? [EQ.humid[3].name] : [], L.equip.dehum === 2 ? [EQ.dehum[2].name] : []);
       h += crow('Automation', pwr('ctrl')) + `<div class="small muted">${ctl.length ? 'Steering: ' + esc(ctl.join(', ')) + '.' : 'No digital devices to steer yet. Manual gear stays manual.'} Switches to drying mode (dark, ~70/70) after harvest.</div>`; break; }
     case 'sensor': { const ps = plantsIn(loc).filter(p => p.stage < S.drying), id = ps[0] ? idealFor(ps[0].stage) : null;
       h += `<div class="mono">Temp <b>${esc(readTemp(loc, env))}</b> · RH <b>${esc(readHum(loc, env))}</b></div><div class="small muted">Quality: ${['vibes only', 'rough', 'accurate', 'accurate + 48h log'][tier]}${tier >= 2 && id ? ` · Comfort zone now: ${id.t[0]}–${id.t[1]}°F, ${id.h[0]}–${id.h[1]}%` : ''}</div>${tier === 3 ? `<canvas width="300" height="90" data-draw="graph:${loc}" style="width:100%;margin-top:6px"></canvas>` : ''}` + fix('sensor', 'Reset sensor'); break; }
@@ -4792,7 +4813,7 @@ const ACT = {
 Object.assign(ACT, {
   openSpace(loc) { Panels.space(loc || runtime.spaceLoc || 'closet'); }, spaceTab(k) { runtime.spaceLoc = k; renderPanel(); }, openPlant(pid) { Panels.plant(pid); },
   shopFrom(cat) { runtime.device = 'phone'; Panels.shop(cat); },
-  pwr(arg) { const [loc, k] = arg.split(':'), L = state.locations[loc]; L.on[k] = !locOn(L, k); Sfx.click(); if (k === 'light' && !L.on.light && plantsIn(loc).some(p => p.stage >= S.seedling && p.stage < S.drying)) toast('Growing plants in this space need that light.', 'warn'); renderPanel(); updateHUD(); },
+  pwr(arg) { const [loc, k] = arg.split(':'), L = state.locations[loc]; L.on[k] = !locOn(L, k); Sfx.click(); if (k === 'ctrl' && L.on.ctrl) controllerTick(loc); if (k === 'light' && !L.on.light && plantsIn(loc).some(p => p.stage >= S.seedling && p.stage < S.drying)) toast('Growing plants in this space need that light.', 'warn'); renderPanel(); updateHUD(); },
   pwrSet(arg) { const [loc, k, v] = arg.split(':'); state.locations[loc].on[k] = v === '1'; Sfx.click(); renderPanel(); updateHUD(); },
   door(loc) { const L = state.locations[loc]; setDoor(loc, L.door === 'closed' ? 'open' : 'closed'); renderPanel(); },
   fanSpd(arg) { const [loc, n] = arg.split(':'); state.locations[loc].fanSpeed = +n; Sfx.click(); renderPanel(); },
@@ -14906,13 +14927,13 @@ Scene.interact = function (k, a, b, id) {
    Services keep their baseline effects; the old 60 min / 5 energy
    "trip" cost is replaced by the bus ride (café visit: 20 min).
    Library 8 AM–8 PM: study (60 min · 6 energy · +10 xp, library cap
-   = level 6) and volunteer (2 tasks/day). Inés works the front desk
+   = level 6) and volunteer (each task once a day). Inés works the front desk
    Mon/Wed/Fri 10 AM–3 PM and runs the Sunday book club.
    Original pixel art; side-view street like Willow Lane, top-down
    interior like the neighbor homes.
    ===================================================================== */
 const TOWN = { busMin: 25, busE: 3, open: 7 * 60, close: 21 * 60, libOpen: 8 * 60, libClose: 20 * 60, cafeMin: 20,
-  studyMin: 60, studyE: 6, studyXp: 10, libCap: 6, mktMaxL: 5, mktPerL: .02, volPerDay: 2 };
+  studyMin: 60, studyE: 6, studyXp: 10, libCap: 6, mktMaxL: 5, mktPerL: .02 };
 const TownS = () => { const v = V114S(); v.lib = v.lib || {}; const L = v.lib; L.read = L.read || {}; L.today = L.today || { day: 0, subj: {} }; L.mkt = L.mkt || 0;
   L.vol = L.vol || { hours: 0, day: 0, n: 0, log: [], ms: [] }; L.visits = L.visits || 0; return L; };
 const Town = {
@@ -15240,11 +15261,12 @@ const Library = {
     const T = LIB_VOL[id]; if (!T) return; const L = TownS(), V = L.vol, dow = Routine.dow();
     if (state.scene !== 'library') return;
     if (!Town.libOpen()) { think('The library is closed.'); return; }
-    if (V.day !== state.day) { V.day = state.day; V.n = 0; }
-    if (V.n >= TOWN.volPerDay) { think('That\'s plenty for today. The library will still need you tomorrow.'); return; }
+    if (V.day !== state.day) { V.day = state.day; V.n = 0; V.done = {}; }
+    V.done = V.done || {};
+    if (V.done[id]) { think('You already did that one today. The library will still need it tomorrow.'); return; }
     if (T.days && !T.days.includes(dow)) { think('Reading events run Thursday to Sunday.'); return; }
     if (!spend(T.e, T.mins)) return;
-    V.n++; V.hours = Math.round((V.hours + T.mins / 60) * 100) / 100; V.log.unshift({ day: state.day, id }); V.log.length = Math.min(V.log.length, 20);
+    V.n++; V.done[id] = 1; V.hours = Math.round((V.hours + T.mins / 60) * 100) / 100; V.log.unshift({ day: state.day, id }); V.log.length = Math.min(V.log.length, 20);
     if (state.knowledge[T.k] === undefined) state.knowledge[T.k] = 0; Knowledge.add(T.k, T.xp);
     state.rep.community = (state.rep.community || 0) + (T.rep || .1);
     let extra = '';
@@ -15290,9 +15312,9 @@ Panels.library = function (tab) {
           <div class="desc">${esc(Library.effect(s.k))}</div>
           <button class="btn sm" data-act="libStudy" data-arg="${s.k}" ${!here || !open || mx ? 'disabled' : ''}>${mx ? 'Read it all' : `Read (${TOWN.studyMin} min · ${TOWN.studyE}⚡)`}</button></div>`; }).join('')}`;
     } else if (t === 'vol') {
-      const left = V.day === state.day ? TOWN.volPerDay - V.n : TOWN.volPerDay, dow = Routine.dow();
+      const doneToday = V.day === state.day ? V.done || {} : {}, dow = Routine.dow(), avail = id => !doneToday[id] && (!LIB_VOL[id].days || LIB_VOL[id].days.includes(dow)), left = Object.keys(LIB_VOL).filter(avail).length;
       body = `<p class="small muted">Unpaid, but it builds knowledge, community reputation and (when Inés is working) your friendship with her. ${left} task${left === 1 ? '' : 's'} left today. Total: <b>${V.hours.toFixed(1)} h</b>.</p>
-        ${Object.entries(LIB_VOL).map(([id, T]) => { const ok = here && open && left > 0 && (!T.days || T.days.includes(dow)); return `<div class="card study-row"><h3>${esc(T.n)}</h3><div class="desc">${T.mins} min · ${T.e} energy · +${T.xp} ${esc(KNOW_CATS[T.k])} xp${T.rep ? ' · extra community rep' : ''}${T.days ? ' · Thu–Sun only' : ''}</div><button class="btn sm" data-act="libVol" data-arg="${id}" ${ok ? '' : 'disabled'}>Do it</button></div>`; }).join('')}
+        ${Object.entries(LIB_VOL).map(([id, T]) => { const done = !!doneToday[id], ok = here && open && avail(id); return `<div class="card study-row"><h3>${esc(T.n)}</h3><div class="desc">${T.mins} min · ${T.e} energy · +${T.xp} ${esc(KNOW_CATS[T.k])} xp${T.rep ? ' · extra community rep' : ''}${T.days ? ' · Thu–Sun only' : ''}</div><button class="btn sm" data-act="libVol" data-arg="${id}" ${ok ? '' : 'disabled'}>${done ? 'Done today' : 'Do it'}</button></div>`; }).join('')}
         <div class="card"><h3>Milestones</h3><div class="desc">${[[5, 'Volunteer badge (+Inés, +community)'], [15, 'Seed library thank-you packet (2 classic seeds)'], [30, 'Friend of the Library: +15% study xp']].map(([h, n]) => `${V.ms.includes(h) ? '✓' : '○'} ${h} h · ${esc(n)}`).join('<br>')}</div></div>`;
     } else {
       body = `<div class="card"><h3>Your library card</h3><div class="desc">Visits: ${L.visits} · Sessions read: ${Object.values(L.read).reduce((a, b) => a + b, 0)} · Volunteer hours: ${V.hours.toFixed(1)}<br>Hours: 8 AM–8 PM daily. Inés works the desk Mon/Wed/Fri 10 AM–3 PM and hosts Sunday book club 9:30–noon.<br>Marketing & content level ${Library.mktLevel()} / ${TOWN.mktMaxL}.</div></div>`;
