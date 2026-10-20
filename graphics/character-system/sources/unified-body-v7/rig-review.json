@@ -1,0 +1,1554 @@
+[
+  {
+    "key": "male-right",
+    "board": "male-right-five-panel.png",
+    "source": "native v6 repair",
+    "mirror": null,
+    "rigPins": {
+      "neck": [
+        152.0,
+        55.0
+      ],
+      "shoulderR": [
+        133.0,
+        128.0
+      ],
+      "shoulderL": [
+        130.0,
+        118.0
+      ],
+      "elbowR": [
+        139.0,
+        265.0
+      ],
+      "elbowL": [
+        139.0,
+        265.0
+      ],
+      "wristR": [
+        156.0,
+        372.0
+      ],
+      "wristL": [
+        164.5,
+        401.0
+      ],
+      "palmR": [
+        170.0,
+        446.0
+      ],
+      "palmL": [
+        170.0,
+        446.0
+      ],
+      "waist": [
+        152.0,
+        313.0
+      ],
+      "hipR": [
+        135.0,
+        398.0
+      ],
+      "hipL": [
+        139.0,
+        402.0
+      ],
+      "kneeR": [
+        140.5,
+        564.0
+      ],
+      "kneeL": [
+        140.5,
+        564.0
+      ],
+      "ankleR": [
+        120.0,
+        766.0
+      ],
+      "ankleL": [
+        120.0,
+        766.0
+      ],
+      "jawAttach": [
+        152.0,
+        15.0
+      ],
+      "root": [
+        152.0,
+        835.0
+      ],
+      "heelL": [
+        76.0,
+        820.0
+      ],
+      "toeL": [
+        206.0,
+        820.0
+      ],
+      "heelR": [
+        76.0,
+        820.0
+      ],
+      "toeR": [
+        206.0,
+        820.0
+      ]
+    },
+    "shoulderPivot": [
+      133.0,
+      128.0
+    ],
+    "previousShoulderPivot": [
+      130.0,
+      118.0
+    ],
+    "hipPivot": [
+      135.0,
+      398.0
+    ],
+    "previousHipPivot": [
+      139.0,
+      402.0
+    ],
+    "hipSearchDepths": [
+      1.0,
+      1.0
+    ],
+    "fold": 427,
+    "waist": 313.0,
+    "knee": 564.0,
+    "outlineColorBGR": [
+      2,
+      16,
+      39
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 159.0,
+    "handKnuckleSourceRow": 158,
+    "handWristSourceRow": 94,
+    "handUniformScale": 0.8916453022826206,
+    "handMatrix": [
+      [
+        0.8910891089108911,
+        -0.03148880853668542,
+        -1.8816361559674135
+      ],
+      [
+        0.03148880853668542,
+        0.8910891089108911,
+        282.5538938215045
+      ]
+    ],
+    "originalContractWrist": [
+      164.5,
+      401.0
+    ],
+    "measuredPaintingWrist": [
+      156.0,
+      372.0
+    ],
+    "handRotationDegrees": -2.023844075950343,
+    "handForearmAngleErrorDegrees": 0.0,
+    "originalKnuckleWidth": 90.0,
+    "fittedKnuckleWidth": 90.10891089108911,
+    "knuckleWidthDifference": 0.001210121012101221,
+    "wristJoinMaxRowStep": 1.0,
+    "wristJoinGap": false,
+    "standingHandInFront": true,
+    "handCutOff": false,
+    "handWristError": 0.0,
+    "handEdgeDistances": {
+      "max": 20.393798828125,
+      "p95": 14.196124076843262,
+      "mean": 3.567138195037842
+    },
+    "handSourceSHA256": "247ef6de3cfc844f39d50260a1307ea956938d3d84086ba9db98c8ff86b12b49",
+    "standingOutlineDifference": 0.008061468698828568,
+    "nearArmDrawOrder": {
+      "standing": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 27402,
+        "reversedOrderDifferentPixels": 26921
+      },
+      "thigh-plus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 27402,
+        "reversedOrderDifferentPixels": 26921
+      },
+      "thigh-minus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 27402,
+        "reversedOrderDifferentPixels": 26921
+      },
+      "arm-plus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 25126,
+        "reversedOrderDifferentPixels": 25019
+      },
+      "arm-minus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 21063,
+        "reversedOrderDifferentPixels": 20901
+      },
+      "walk0": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 21871,
+        "reversedOrderDifferentPixels": 21714
+      },
+      "walk4": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 25717,
+        "reversedOrderDifferentPixels": 25619
+      }
+    },
+    "nativePartCanvas": [
+      295,
+      850
+    ],
+    "reviewCanvas": [
+      860,
+      1010
+    ],
+    "testPadding": [
+      230,
+      80
+    ],
+    "partOrder": [
+      "far-leg",
+      "far-arm",
+      "near-calf",
+      "near-thigh",
+      "hips",
+      "torso",
+      "near-arm"
+    ],
+    "displayScale": 0.43564356435643564,
+    "walkPoseTable": {
+      "0": {
+        "thigh": 20,
+        "knee": 3,
+        "arm": -18,
+        "farThigh": -20,
+        "farKnee": 5
+      },
+      "4": {
+        "thigh": -20,
+        "knee": 5,
+        "arm": 18,
+        "farThigh": 20,
+        "farKnee": 3
+      }
+    },
+    "imageGenerationCalls": 0,
+    "walkIntegrated": false,
+    "approved": false
+  },
+  {
+    "key": "female-right",
+    "board": "female-right-five-panel.png",
+    "source": "native v6 repair",
+    "mirror": null,
+    "rigPins": {
+      "neck": [
+        152.0,
+        55.0
+      ],
+      "shoulderR": [
+        134.0,
+        127.0
+      ],
+      "shoulderL": [
+        130.0,
+        118.0
+      ],
+      "elbowR": [
+        139.0,
+        265.0
+      ],
+      "elbowL": [
+        139.0,
+        265.0
+      ],
+      "wristR": [
+        166.0,
+        384.0
+      ],
+      "wristL": [
+        164.5,
+        401.0
+      ],
+      "palmR": [
+        170.0,
+        450.0
+      ],
+      "palmL": [
+        170.0,
+        450.0
+      ],
+      "waist": [
+        152.0,
+        313.0
+      ],
+      "hipR": [
+        133.0,
+        398.0
+      ],
+      "hipL": [
+        137.0,
+        402.0
+      ],
+      "kneeR": [
+        140.5,
+        564.0
+      ],
+      "kneeL": [
+        140.5,
+        564.0
+      ],
+      "ankleR": [
+        116.5,
+        766.0
+      ],
+      "ankleL": [
+        116.5,
+        766.0
+      ],
+      "jawAttach": [
+        152.0,
+        15.0
+      ],
+      "root": [
+        152.0,
+        835.0
+      ],
+      "heelL": [
+        80.0,
+        820.0
+      ],
+      "toeL": [
+        210.0,
+        820.0
+      ],
+      "heelR": [
+        80.0,
+        820.0
+      ],
+      "toeR": [
+        210.0,
+        820.0
+      ]
+    },
+    "shoulderPivot": [
+      134.0,
+      127.0
+    ],
+    "previousShoulderPivot": [
+      130.0,
+      118.0
+    ],
+    "hipPivot": [
+      133.0,
+      398.0
+    ],
+    "previousHipPivot": [
+      137.0,
+      402.0
+    ],
+    "hipSearchDepths": [
+      1.399999976158142,
+      2.0
+    ],
+    "fold": 425,
+    "waist": 313.0,
+    "knee": 564.0,
+    "outlineColorBGR": [
+      7,
+      16,
+      31
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 149.0,
+    "handKnuckleSourceRow": 155,
+    "handWristSourceRow": 88,
+    "handUniformScale": 0.7715416626772109,
+    "handMatrix": [
+      [
+        0.7714285714285715,
+        0.013209709701147862,
+        16.72325983201327
+      ],
+      [
+        -0.013209709701147862,
+        0.7714285714285715,
+        318.6505499769061
+      ]
+    ],
+    "originalContractWrist": [
+      164.5,
+      401.0
+    ],
+    "measuredPaintingWrist": [
+      166.0,
+      384.0
+    ],
+    "handRotationDegrees": 0.9810197336408172,
+    "handForearmAngleErrorDegrees": 0.0,
+    "originalKnuckleWidth": 81.0,
+    "fittedKnuckleWidth": 81.22857142857143,
+    "knuckleWidthDifference": 0.002821869488536145,
+    "wristJoinMaxRowStep": 1.0,
+    "wristJoinGap": false,
+    "standingHandInFront": true,
+    "handCutOff": false,
+    "handWristError": 0.0,
+    "handEdgeDistances": {
+      "max": 16.378297805786133,
+      "p95": 12.1968994140625,
+      "mean": 5.238245964050293
+    },
+    "handSourceSHA256": "bb2957e65378f7c5446b4d1e59a5bb1cd66421bd388ad8a5e376c77f89ac356f",
+    "standingOutlineDifference": 0.001057936446872355,
+    "nearArmDrawOrder": {
+      "standing": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 26673,
+        "reversedOrderDifferentPixels": 26145
+      },
+      "thigh-plus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 26673,
+        "reversedOrderDifferentPixels": 26145
+      },
+      "thigh-minus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 26673,
+        "reversedOrderDifferentPixels": 26145
+      },
+      "arm-plus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 22958,
+        "reversedOrderDifferentPixels": 22756
+      },
+      "arm-minus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 20207,
+        "reversedOrderDifferentPixels": 20058
+      },
+      "walk0": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 21065,
+        "reversedOrderDifferentPixels": 20903
+      },
+      "walk4": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 23680,
+        "reversedOrderDifferentPixels": 23496
+      }
+    },
+    "nativePartCanvas": [
+      295,
+      850
+    ],
+    "reviewCanvas": [
+      860,
+      1010
+    ],
+    "testPadding": [
+      230,
+      80
+    ],
+    "partOrder": [
+      "far-leg",
+      "far-arm",
+      "near-calf",
+      "near-thigh",
+      "hips",
+      "torso",
+      "near-arm"
+    ],
+    "displayScale": 0.43564356435643564,
+    "walkPoseTable": {
+      "0": {
+        "thigh": 20,
+        "knee": 3,
+        "arm": -18,
+        "farThigh": -20,
+        "farKnee": 5
+      },
+      "4": {
+        "thigh": -20,
+        "knee": 5,
+        "arm": 18,
+        "farThigh": 20,
+        "farKnee": 3
+      }
+    },
+    "imageGenerationCalls": 0,
+    "walkIntegrated": false,
+    "approved": false
+  },
+  {
+    "key": "androgynous-right",
+    "board": "androgynous-right-five-panel.png",
+    "source": "native v6 repair",
+    "mirror": null,
+    "rigPins": {
+      "neck": [
+        157.0,
+        55.0
+      ],
+      "shoulderR": [
+        135.0,
+        125.0
+      ],
+      "shoulderL": [
+        136.5,
+        118.0
+      ],
+      "elbowR": [
+        144.0,
+        265.0
+      ],
+      "elbowL": [
+        144.0,
+        265.0
+      ],
+      "wristR": [
+        164.5,
+        384.0
+      ],
+      "wristL": [
+        169.5,
+        401.0
+      ],
+      "palmR": [
+        174.0,
+        450.0
+      ],
+      "palmL": [
+        174.0,
+        450.0
+      ],
+      "waist": [
+        157.0,
+        313.0
+      ],
+      "hipR": [
+        144.0,
+        410.0
+      ],
+      "hipL": [
+        148.0,
+        402.0
+      ],
+      "kneeR": [
+        150.5,
+        564.0
+      ],
+      "kneeL": [
+        150.5,
+        564.0
+      ],
+      "ankleR": [
+        124.5,
+        766.0
+      ],
+      "ankleL": [
+        124.5,
+        766.0
+      ],
+      "jawAttach": [
+        157.0,
+        15.0
+      ],
+      "root": [
+        157.0,
+        835.0
+      ],
+      "heelL": [
+        93.0,
+        820.0
+      ],
+      "toeL": [
+        223.0,
+        820.0
+      ],
+      "heelR": [
+        93.0,
+        820.0
+      ],
+      "toeR": [
+        223.0,
+        820.0
+      ]
+    },
+    "shoulderPivot": [
+      135.0,
+      125.0
+    ],
+    "previousShoulderPivot": [
+      136.5,
+      118.0
+    ],
+    "hipPivot": [
+      144.0,
+      410.0
+    ],
+    "previousHipPivot": [
+      148.0,
+      402.0
+    ],
+    "hipSearchDepths": [
+      1.0,
+      1.0
+    ],
+    "fold": 427,
+    "waist": 313.0,
+    "knee": 564.0,
+    "outlineColorBGR": [
+      4,
+      15,
+      30
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 155.0,
+    "handKnuckleSourceRow": 215,
+    "handWristSourceRow": 116,
+    "handUniformScale": 0.6665486661669785,
+    "handMatrix": [
+      [
+        0.6648214285714286,
+        -0.04795406636796334,
+        35.76874312725516
+      ],
+      [
+        0.04795406636796334,
+        0.6648214285714286,
+        297.1939928793857
+      ]
+    ],
+    "originalContractWrist": [
+      169.5,
+      401.0
+    ],
+    "measuredPaintingWrist": [
+      164.5,
+      384.0
+    ],
+    "handRotationDegrees": -4.1256422599434055,
+    "handForearmAngleErrorDegrees": 0.0,
+    "originalKnuckleWidth": 73.0,
+    "fittedKnuckleWidth": 74.79517857142858,
+    "knuckleWidthDifference": 0.02459148727984355,
+    "wristJoinMaxRowStep": 1.0,
+    "wristJoinGap": false,
+    "standingHandInFront": true,
+    "handCutOff": false,
+    "handWristError": 0.0,
+    "handEdgeDistances": {
+      "max": 12.384498596191406,
+      "p95": 8.399999618530273,
+      "mean": 4.1118855476379395
+    },
+    "handSourceSHA256": "3151783b149357f673ba2ba6b1062742572fed9648ec8e664b88d1a20e118aa8",
+    "standingOutlineDifference": 0.012719847408638263,
+    "nearArmDrawOrder": {
+      "standing": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 23983,
+        "reversedOrderDifferentPixels": 22970
+      },
+      "thigh-plus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 23983,
+        "reversedOrderDifferentPixels": 22970
+      },
+      "thigh-minus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 23983,
+        "reversedOrderDifferentPixels": 22970
+      },
+      "arm-plus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 19950,
+        "reversedOrderDifferentPixels": 19443
+      },
+      "arm-minus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 14440,
+        "reversedOrderDifferentPixels": 13879
+      },
+      "walk0": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 15168,
+        "reversedOrderDifferentPixels": 14649
+      },
+      "walk4": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 20561,
+        "reversedOrderDifferentPixels": 20025
+      }
+    },
+    "nativePartCanvas": [
+      295,
+      850
+    ],
+    "reviewCanvas": [
+      860,
+      1010
+    ],
+    "testPadding": [
+      230,
+      80
+    ],
+    "partOrder": [
+      "far-leg",
+      "far-arm",
+      "near-calf",
+      "near-thigh",
+      "hips",
+      "torso",
+      "near-arm"
+    ],
+    "displayScale": 0.43564356435643564,
+    "walkPoseTable": {
+      "0": {
+        "thigh": 20,
+        "knee": 3,
+        "arm": -18,
+        "farThigh": -20,
+        "farKnee": 5
+      },
+      "4": {
+        "thigh": -20,
+        "knee": 5,
+        "arm": 18,
+        "farThigh": 20,
+        "farKnee": 3
+      }
+    },
+    "imageGenerationCalls": 0,
+    "walkIntegrated": false,
+    "approved": false
+  },
+  {
+    "key": "androgynous-left",
+    "board": "androgynous-left-five-panel.png",
+    "source": "native v6 repair",
+    "mirror": null,
+    "rigPins": {
+      "neck": [
+        175.0,
+        55.0
+      ],
+      "shoulderR": [
+        188.0,
+        118.0
+      ],
+      "shoulderL": [
+        186.0,
+        130.0
+      ],
+      "elbowR": [
+        183.0,
+        265.0
+      ],
+      "elbowL": [
+        183.0,
+        265.0
+      ],
+      "wristR": [
+        161.5,
+        401.0
+      ],
+      "wristL": [
+        153.0,
+        382.0
+      ],
+      "palmR": [
+        156.0,
+        450.0
+      ],
+      "palmL": [
+        156.0,
+        450.0
+      ],
+      "waist": [
+        175.0,
+        313.0
+      ],
+      "hipR": [
+        185.0,
+        402.0
+      ],
+      "hipL": [
+        177.0,
+        410.0
+      ],
+      "kneeR": [
+        166.5,
+        564.0
+      ],
+      "kneeL": [
+        166.5,
+        564.0
+      ],
+      "ankleR": [
+        190.5,
+        766.0
+      ],
+      "ankleL": [
+        190.5,
+        766.0
+      ],
+      "jawAttach": [
+        175.0,
+        15.0
+      ],
+      "root": [
+        175.0,
+        835.0
+      ],
+      "heelL": [
+        235.0,
+        820.0
+      ],
+      "toeL": [
+        105.0,
+        820.0
+      ],
+      "heelR": [
+        235.0,
+        820.0
+      ],
+      "toeR": [
+        105.0,
+        820.0
+      ]
+    },
+    "shoulderPivot": [
+      186.0,
+      130.0
+    ],
+    "previousShoulderPivot": [
+      188.0,
+      118.0
+    ],
+    "hipPivot": [
+      177.0,
+      410.0
+    ],
+    "previousHipPivot": [
+      185.0,
+      402.0
+    ],
+    "hipSearchDepths": [
+      1.0,
+      1.399999976158142
+    ],
+    "fold": 427,
+    "waist": 313.0,
+    "knee": 564.0,
+    "outlineColorBGR": [
+      4,
+      14,
+      30
+    ],
+    "outlineWidth": 6,
+    "skinMedian": 155.0,
+    "handKnuckleSourceRow": 215,
+    "handWristSourceRow": 86,
+    "handUniformScale": 0.5880051883505796,
+    "handMatrix": [
+      [
+        0.588,
+        -0.002470126960418213,
+        45.90243091859597
+      ],
+      [
+        0.002470126960418213,
+        0.588,
+        330.98120182972366
+      ]
+    ],
+    "originalContractWrist": [
+      161.5,
+      401.0
+    ],
+    "measuredPaintingWrist": [
+      153.0,
+      382.0
+    ],
+    "handRotationDegrees": -0.2406922060600722,
+    "handForearmAngleErrorDegrees": 0.0,
+    "originalKnuckleWidth": 69.0,
+    "fittedKnuckleWidth": 68.03199999999998,
+    "knuckleWidthDifference": 0.014028985507246634,
+    "wristJoinMaxRowStep": 1.0,
+    "wristJoinGap": false,
+    "standingHandInFront": true,
+    "handCutOff": false,
+    "handWristError": 0.0,
+    "handEdgeDistances": {
+      "max": 30.5906982421875,
+      "p95": 28.995349884033203,
+      "mean": 8.551923751831055
+    },
+    "handSourceSHA256": "634e99b933167687b0b5441237f2181068526b3a94dc39c9d30e2d6b1c96cd1a",
+    "standingOutlineDifference": 0.01822118817811154,
+    "nearArmDrawOrder": {
+      "standing": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 23127,
+        "reversedOrderDifferentPixels": 22293
+      },
+      "thigh-plus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 23127,
+        "reversedOrderDifferentPixels": 22293
+      },
+      "thigh-minus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 23127,
+        "reversedOrderDifferentPixels": 22293
+      },
+      "arm-plus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 13942,
+        "reversedOrderDifferentPixels": 13356
+      },
+      "arm-minus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 19257,
+        "reversedOrderDifferentPixels": 18865
+      },
+      "walk0": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 14614,
+        "reversedOrderDifferentPixels": 14229
+      },
+      "walk4": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 19706,
+        "reversedOrderDifferentPixels": 19309
+      }
+    },
+    "nativePartCanvas": [
+      400,
+      850
+    ],
+    "reviewCanvas": [
+      860,
+      1010
+    ],
+    "testPadding": [
+      230,
+      80
+    ],
+    "partOrder": [
+      "far-leg",
+      "far-arm",
+      "near-calf",
+      "near-thigh",
+      "hips",
+      "torso",
+      "near-arm"
+    ],
+    "displayScale": 0.43564356435643564,
+    "walkPoseTable": {
+      "0": {
+        "thigh": 20,
+        "knee": 3,
+        "arm": -18,
+        "farThigh": -20,
+        "farKnee": 5
+      },
+      "4": {
+        "thigh": -20,
+        "knee": 5,
+        "arm": 18,
+        "farThigh": 20,
+        "farKnee": 3
+      }
+    },
+    "imageGenerationCalls": 0,
+    "walkIntegrated": false,
+    "approved": false
+  },
+  {
+    "key": "female-left",
+    "board": "female-left-five-panel.png",
+    "source": "horizontal reflection of right repair; one uniform scale and translation",
+    "mirror": {
+      "anatomy": "female",
+      "uniformScale": 0.9986019621961159,
+      "translation": [
+        13.65078814245507,
+        0.5039926283002387
+      ],
+      "matrix": [
+        [
+          0.9986019621961159,
+          0.0,
+          13.65078814245507
+        ],
+        [
+          0.0,
+          0.9986019621961159,
+          0.5039926283002387
+        ]
+      ],
+      "outlineDifference": 0.14894202435474135,
+      "jointRmsNativePixels": 6.8919089373681475,
+      "jointMaxNativePixels": 10.91736514425269,
+      "jointNames": [
+        "neck",
+        "waist",
+        "shoulder",
+        "elbow",
+        "wrist",
+        "hip",
+        "knee",
+        "ankle"
+      ],
+      "jointErrors": [
+        6.5616480608090875,
+        6.548069964302662,
+        3.5945136634725827,
+        3.5684062919333863,
+        5.530547595020774,
+        5.431606083394614,
+        9.440477207025781,
+        10.91736514425269
+      ],
+      "rotationDegrees": 0,
+      "warping": false
+    },
+    "rigPins": {
+      "neck": [
+        162.0,
+        55.0
+      ],
+      "shoulderR": [
+        181.0,
+        118.0
+      ],
+      "shoulderL": [
+        172.0,
+        125.0
+      ],
+      "elbowR": [
+        172.0,
+        265.0
+      ],
+      "elbowL": [
+        172.0,
+        265.0
+      ],
+      "wristR": [
+        148.5,
+        401.0
+      ],
+      "wristL": [
+        132.0,
+        383.0
+      ],
+      "palmR": [
+        143.0,
+        450.0
+      ],
+      "palmL": [
+        143.0,
+        450.0
+      ],
+      "waist": [
+        162.0,
+        313.0
+      ],
+      "hipR": [
+        165.0,
+        402.0
+      ],
+      "hipL": [
+        177.0,
+        402.0
+      ],
+      "kneeR": [
+        157.5,
+        564.0
+      ],
+      "kneeL": [
+        157.5,
+        564.0
+      ],
+      "ankleR": [
+        180.0,
+        766.0
+      ],
+      "ankleL": [
+        180.0,
+        766.0
+      ],
+      "jawAttach": [
+        162.0,
+        15.0
+      ],
+      "root": [
+        162.0,
+        835.0
+      ],
+      "heelL": [
+        215.0,
+        820.0
+      ],
+      "toeL": [
+        85.0,
+        820.0
+      ],
+      "heelR": [
+        215.0,
+        820.0
+      ],
+      "toeR": [
+        85.0,
+        820.0
+      ]
+    },
+    "shoulderPivot": [
+      172.0,
+      125.0
+    ],
+    "previousShoulderPivot": [
+      181.0,
+      118.0
+    ],
+    "hipPivot": [
+      177.0,
+      402.0
+    ],
+    "previousHipPivot": [
+      165.0,
+      402.0
+    ],
+    "hipSearchDepths": [
+      2.0,
+      2.0
+    ],
+    "fold": 425,
+    "waist": 313.0,
+    "knee": 564.0,
+    "outlineColorBGR": [
+      6,
+      16,
+      30
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 148.0,
+    "handKnuckleSourceRow": 155,
+    "handWristSourceRow": 111,
+    "handUniformScale": 0.5676000656670761,
+    "handMatrix": [
+      [
+        0.5645714285714285,
+        -0.05855712241978334,
+        56.072412017167395
+      ],
+      [
+        0.05855712241978334,
+        0.5645714285714285,
+        310.78323155528307
+      ]
+    ],
+    "originalContractWrist": [
+      148.5,
+      401.0
+    ],
+    "measuredPaintingWrist": [
+      132.0,
+      383.0
+    ],
+    "handRotationDegrees": -5.92152177998581,
+    "handForearmAngleErrorDegrees": 0.0,
+    "originalKnuckleWidth": 57.0,
+    "fittedKnuckleWidth": 59.71542857142856,
+    "knuckleWidthDifference": 0.04763909774436071,
+    "wristJoinMaxRowStep": 2.0,
+    "wristJoinGap": false,
+    "standingHandInFront": true,
+    "handCutOff": false,
+    "handWristError": 1.0,
+    "handEdgeDistances": {
+      "max": 49.150390625,
+      "p95": 47.772090911865234,
+      "mean": 15.519893646240234
+    },
+    "handSourceSHA256": "270ebbe01686abf6b46de5a72f8a9129b1a960a14fbfd6eb07cc5f6d91951f38",
+    "standingOutlineDifference": 0.14749748457353504,
+    "nearArmDrawOrder": {
+      "standing": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 26090,
+        "reversedOrderDifferentPixels": 25939
+      },
+      "thigh-plus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 26090,
+        "reversedOrderDifferentPixels": 25939
+      },
+      "thigh-minus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 26090,
+        "reversedOrderDifferentPixels": 25939
+      },
+      "arm-plus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 20771,
+        "reversedOrderDifferentPixels": 20593
+      },
+      "arm-minus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 21497,
+        "reversedOrderDifferentPixels": 21381
+      },
+      "walk0": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 21611,
+        "reversedOrderDifferentPixels": 21459
+      },
+      "walk4": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 22169,
+        "reversedOrderDifferentPixels": 22040
+      }
+    },
+    "nativePartCanvas": [
+      400,
+      850
+    ],
+    "reviewCanvas": [
+      860,
+      1010
+    ],
+    "testPadding": [
+      230,
+      80
+    ],
+    "partOrder": [
+      "far-leg",
+      "far-arm",
+      "near-calf",
+      "near-thigh",
+      "hips",
+      "torso",
+      "near-arm"
+    ],
+    "displayScale": 0.43564356435643564,
+    "walkPoseTable": {
+      "0": {
+        "thigh": 20,
+        "knee": 3,
+        "arm": -18,
+        "farThigh": -20,
+        "farKnee": 5
+      },
+      "4": {
+        "thigh": -20,
+        "knee": 5,
+        "arm": 18,
+        "farThigh": 20,
+        "farKnee": 3
+      }
+    },
+    "imageGenerationCalls": 0,
+    "walkIntegrated": false,
+    "approved": false
+  },
+  {
+    "key": "male-left",
+    "board": "male-left-five-panel.png",
+    "source": "horizontal reflection of right repair; one uniform scale and translation",
+    "mirror": {
+      "anatomy": "male",
+      "uniformScale": 0.9995941627606155,
+      "translation": [
+        2.499136530731505,
+        0.14630432479810906
+      ],
+      "matrix": [
+        [
+          0.9995941627606155,
+          0.0,
+          2.499136530731505
+        ],
+        [
+          0.0,
+          0.9995941627606155,
+          0.14630432479810906
+        ]
+      ],
+      "outlineDifference": 0.05379333665217024,
+      "jointRmsNativePixels": 2.58981511970681,
+      "jointMaxNativePixels": 3.9377066922418638,
+      "jointNames": [
+        "neck",
+        "waist",
+        "shoulder",
+        "elbow",
+        "wrist",
+        "hip",
+        "knee",
+        "ankle"
+      ],
+      "jointErrors": [
+        2.5614946798788774,
+        2.5585649796826564,
+        1.5705074044218268,
+        1.5642484627291973,
+        1.5535063444471848,
+        2.4362899751412344,
+        3.9377066922418638,
+        3.4324681388117124
+      ],
+      "rotationDegrees": 0,
+      "warping": false
+    },
+    "rigPins": {
+      "neck": [
+        147.0,
+        55.0
+      ],
+      "shoulderR": [
+        168.0,
+        118.0
+      ],
+      "shoulderL": [
+        164.0,
+        128.0
+      ],
+      "elbowR": [
+        159.0,
+        265.0
+      ],
+      "elbowL": [
+        159.0,
+        265.0
+      ],
+      "wristR": [
+        133.5,
+        401.0
+      ],
+      "wristL": [
+        132.5,
+        373.0
+      ],
+      "palmR": [
+        128.0,
+        446.0
+      ],
+      "palmL": [
+        128.0,
+        446.0
+      ],
+      "waist": [
+        147.0,
+        313.0
+      ],
+      "hipR": [
+        155.0,
+        402.0
+      ],
+      "hipL": [
+        163.0,
+        398.0
+      ],
+      "kneeR": [
+        152.0,
+        564.0
+      ],
+      "kneeL": [
+        152.0,
+        564.0
+      ],
+      "ankleR": [
+        173.0,
+        766.0
+      ],
+      "ankleL": [
+        173.0,
+        766.0
+      ],
+      "jawAttach": [
+        147.0,
+        15.0
+      ],
+      "root": [
+        147.0,
+        835.0
+      ],
+      "heelL": [
+        213.0,
+        820.0
+      ],
+      "toeL": [
+        83.0,
+        820.0
+      ],
+      "heelR": [
+        213.0,
+        820.0
+      ],
+      "toeR": [
+        83.0,
+        820.0
+      ]
+    },
+    "shoulderPivot": [
+      164.0,
+      128.0
+    ],
+    "previousShoulderPivot": [
+      168.0,
+      118.0
+    ],
+    "hipPivot": [
+      163.0,
+      398.0
+    ],
+    "previousHipPivot": [
+      155.0,
+      402.0
+    ],
+    "hipSearchDepths": [
+      1.0,
+      1.0
+    ],
+    "fold": 427,
+    "waist": 313.0,
+    "knee": 564.0,
+    "outlineColorBGR": [
+      2,
+      16,
+      38
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 159.0,
+    "handKnuckleSourceRow": 145,
+    "handWristSourceRow": 83,
+    "handUniformScale": 0.7897539306887291,
+    "handMatrix": [
+      [
+        0.7884615384615384,
+        -0.045162743552201824,
+        34.53696925329429
+      ],
+      [
+        0.045162743552201824,
+        0.7884615384615384,
+        301.7316983894583
+      ]
+    ],
+    "originalContractWrist": [
+      133.5,
+      401.0
+    ],
+    "measuredPaintingWrist": [
+      132.5,
+      373.0
+    ],
+    "handRotationDegrees": -3.2782958484395386,
+    "handForearmAngleErrorDegrees": 8.537736462515939e-07,
+    "originalKnuckleWidth": 82.0,
+    "fittedKnuckleWidth": 82.21153846153845,
+    "knuckleWidthDifference": 0.00257973733583479,
+    "wristJoinMaxRowStep": 1.0,
+    "wristJoinGap": false,
+    "standingHandInFront": true,
+    "handCutOff": false,
+    "handWristError": 0.0,
+    "handEdgeDistances": {
+      "max": 26.1968994140625,
+      "p95": 23.196895599365234,
+      "mean": 8.379024505615234
+    },
+    "handSourceSHA256": "1edbeede0ffe390cfde9427ba00ce25cb34038f346a1b8907aeaadf031574222",
+    "standingOutlineDifference": 0.05157714857579849,
+    "nearArmDrawOrder": {
+      "standing": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 27529,
+        "reversedOrderDifferentPixels": 27183
+      },
+      "thigh-plus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 27529,
+        "reversedOrderDifferentPixels": 27183
+      },
+      "thigh-minus25": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 27529,
+        "reversedOrderDifferentPixels": 27183
+      },
+      "arm-plus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 21691,
+        "reversedOrderDifferentPixels": 21462
+      },
+      "arm-minus20": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 24666,
+        "reversedOrderDifferentPixels": 24568
+      },
+      "walk0": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 22626,
+        "reversedOrderDifferentPixels": 22384
+      },
+      "walk4": {
+        "nearArmOrderErrors": 0,
+        "overlapPixels": 25314,
+        "reversedOrderDifferentPixels": 25206
+      }
+    },
+    "nativePartCanvas": [
+      400,
+      850
+    ],
+    "reviewCanvas": [
+      860,
+      1010
+    ],
+    "testPadding": [
+      230,
+      80
+    ],
+    "partOrder": [
+      "far-leg",
+      "far-arm",
+      "near-calf",
+      "near-thigh",
+      "hips",
+      "torso",
+      "near-arm"
+    ],
+    "displayScale": 0.43564356435643564,
+    "walkPoseTable": {
+      "0": {
+        "thigh": 20,
+        "knee": 3,
+        "arm": -18,
+        "farThigh": -20,
+        "farKnee": 5
+      },
+      "4": {
+        "thigh": -20,
+        "knee": 5,
+        "arm": 18,
+        "farThigh": 20,
+        "farKnee": 3
+      }
+    },
+    "imageGenerationCalls": 0,
+    "walkIntegrated": false,
+    "approved": false
+  }
+]

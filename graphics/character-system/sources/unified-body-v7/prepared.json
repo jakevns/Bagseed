@@ -1,0 +1,1122 @@
+[
+  {
+    "key": "male-right",
+    "anatomy": "male",
+    "direction": "right",
+    "near": "R",
+    "source": "native v6 repair",
+    "sourceSHA256": "1c5f8a6191583e904a7f0a023683d188c3ac6919023e781907db987f4f5380d2",
+    "crop": [
+      590,
+      20,
+      295,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      236,
+      80
+    ],
+    "pins": {
+      "neck": [
+        152.0,
+        55.0
+      ],
+      "shoulderR": [
+        130.0,
+        118.0
+      ],
+      "shoulderL": [
+        130.0,
+        118.0
+      ],
+      "elbowR": [
+        139.0,
+        265.0
+      ],
+      "elbowL": [
+        139.0,
+        265.0
+      ],
+      "wristR": [
+        164.5,
+        401.0
+      ],
+      "wristL": [
+        164.5,
+        401.0
+      ],
+      "palmR": [
+        170.0,
+        446.0
+      ],
+      "palmL": [
+        170.0,
+        446.0
+      ],
+      "waist": [
+        152.0,
+        313.0
+      ],
+      "hipR": [
+        139.0,
+        402.0
+      ],
+      "hipL": [
+        139.0,
+        402.0
+      ],
+      "kneeR": [
+        140.5,
+        564.0
+      ],
+      "kneeL": [
+        140.5,
+        564.0
+      ],
+      "ankleR": [
+        120.0,
+        766.0
+      ],
+      "ankleL": [
+        120.0,
+        766.0
+      ],
+      "jawAttach": [
+        152.0,
+        15.0
+      ],
+      "root": [
+        152.0,
+        835.0
+      ],
+      "heelL": [
+        76.0,
+        820.0
+      ],
+      "toeL": [
+        206.0,
+        820.0
+      ],
+      "heelR": [
+        76.0,
+        820.0
+      ],
+      "toeR": [
+        206.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 32151,
+    "maskPixels": 42896,
+    "userApprovedLeftoverInkExtensionPixels": 4739,
+    "initialColorMatch": {
+      "ringPixels": 9230,
+      "filledPixels": 41655,
+      "ringMeanBGR": [
+        81.49804983748646,
+        139.78407367280607,
+        216.86251354279523
+      ],
+      "ringStdBGR": [
+        5.659051225153643,
+        7.8104068339076,
+        7.774562862412652
+      ],
+      "filledMeanBGR": [
+        81.55995678790062,
+        139.752754771336,
+        216.8542551914536
+      ],
+      "filledStdBGR": [
+        5.689492761391856,
+        7.802536330825579,
+        7.777157061970335
+      ],
+      "meanDifference": 0.0007596126599053878,
+      "spreadDifference": 0.005379265008753508,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "colorMatch": {
+      "ringPixels": 9230,
+      "filledPixels": 39932,
+      "ringMeanBGR": [
+        81.49804983748646,
+        139.78407367280607,
+        216.86251354279523
+      ],
+      "ringStdBGR": [
+        5.659051225153643,
+        7.8104068339076,
+        7.774562862412652
+      ],
+      "filledMeanBGR": [
+        81.53791445457277,
+        139.76760492837823,
+        216.54580286487027
+      ],
+      "filledStdBGR": [
+        5.717071302264122,
+        7.812903097861023,
+        7.665495571848144
+      ],
+      "meanDifference": 0.0014604215027806558,
+      "spreadDifference": 0.01402873608390396,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "outlineColorBGR": [
+      2,
+      16,
+      39
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 159.0,
+    "internalArmInkRemoved": 0,
+    "outsideRepairMaskEdgeCleanupPixels": 67887
+  },
+  {
+    "key": "female-right",
+    "anatomy": "female",
+    "direction": "right",
+    "near": "R",
+    "source": "native v6 repair",
+    "sourceSHA256": "87ee221a7f9e71b7f5ba8c3c436b98381467b832ed767613baf92e306d37539e",
+    "crop": [
+      590,
+      20,
+      295,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      236,
+      80
+    ],
+    "pins": {
+      "neck": [
+        152.0,
+        55.0
+      ],
+      "shoulderR": [
+        130.0,
+        118.0
+      ],
+      "shoulderL": [
+        130.0,
+        118.0
+      ],
+      "elbowR": [
+        139.0,
+        265.0
+      ],
+      "elbowL": [
+        139.0,
+        265.0
+      ],
+      "wristR": [
+        164.5,
+        401.0
+      ],
+      "wristL": [
+        164.5,
+        401.0
+      ],
+      "palmR": [
+        170.0,
+        450.0
+      ],
+      "palmL": [
+        170.0,
+        450.0
+      ],
+      "waist": [
+        152.0,
+        313.0
+      ],
+      "hipR": [
+        137.0,
+        402.0
+      ],
+      "hipL": [
+        137.0,
+        402.0
+      ],
+      "kneeR": [
+        140.5,
+        564.0
+      ],
+      "kneeL": [
+        140.5,
+        564.0
+      ],
+      "ankleR": [
+        116.5,
+        766.0
+      ],
+      "ankleL": [
+        116.5,
+        766.0
+      ],
+      "jawAttach": [
+        152.0,
+        15.0
+      ],
+      "root": [
+        152.0,
+        835.0
+      ],
+      "heelL": [
+        80.0,
+        820.0
+      ],
+      "toeL": [
+        210.0,
+        820.0
+      ],
+      "heelR": [
+        80.0,
+        820.0
+      ],
+      "toeR": [
+        210.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 32150,
+    "maskPixels": 41422,
+    "userApprovedLeftoverInkExtensionPixels": 3266,
+    "initialColorMatch": {
+      "ringPixels": 8586,
+      "filledPixels": 40305,
+      "ringMeanBGR": [
+        145.11891451199628,
+        147.15746564174236,
+        151.49103191241556
+      ],
+      "ringStdBGR": [
+        8.247225202234306,
+        8.016994429334828,
+        7.797711872226447
+      ],
+      "filledMeanBGR": [
+        145.0982756481826,
+        147.1838233469793,
+        151.48877310507382
+      ],
+      "filledStdBGR": [
+        8.246671171762364,
+        8.027775645175499,
+        7.796918666878876
+      ],
+      "meanDifference": 0.00017911225313638622,
+      "spreadDifference": 0.0013447952266527627,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "colorMatch": {
+      "ringPixels": 8586,
+      "filledPixels": 38900,
+      "ringMeanBGR": [
+        145.11891451199628,
+        147.15746564174236,
+        151.49103191241556
+      ],
+      "ringStdBGR": [
+        8.247225202234306,
+        8.016994429334828,
+        7.797711872226447
+      ],
+      "filledMeanBGR": [
+        145.15858611825192,
+        147.19686375321336,
+        151.43331619537275
+      ],
+      "filledStdBGR": [
+        8.256888815466011,
+        8.01849151039344,
+        7.793844420679754
+      ],
+      "meanDifference": 0.00038098438114923637,
+      "spreadDifference": 0.0011717411607830403,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "outlineColorBGR": [
+      7,
+      16,
+      31
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 149.0,
+    "internalArmInkRemoved": 0,
+    "outsideRepairMaskEdgeCleanupPixels": 69227
+  },
+  {
+    "key": "androgynous-right",
+    "anatomy": "androgynous",
+    "direction": "right",
+    "near": "R",
+    "source": "native v6 repair",
+    "sourceSHA256": "f91363c8310a2e0379f1ab70089fd6d5ec24f2fb1d00a1ae848a511915630e89",
+    "crop": [
+      590,
+      20,
+      295,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      236,
+      80
+    ],
+    "pins": {
+      "neck": [
+        157.0,
+        55.0
+      ],
+      "shoulderR": [
+        136.5,
+        118.0
+      ],
+      "shoulderL": [
+        136.5,
+        118.0
+      ],
+      "elbowR": [
+        144.0,
+        265.0
+      ],
+      "elbowL": [
+        144.0,
+        265.0
+      ],
+      "wristR": [
+        169.5,
+        401.0
+      ],
+      "wristL": [
+        169.5,
+        401.0
+      ],
+      "palmR": [
+        174.0,
+        450.0
+      ],
+      "palmL": [
+        174.0,
+        450.0
+      ],
+      "waist": [
+        157.0,
+        313.0
+      ],
+      "hipR": [
+        148.0,
+        402.0
+      ],
+      "hipL": [
+        148.0,
+        402.0
+      ],
+      "kneeR": [
+        150.5,
+        564.0
+      ],
+      "kneeL": [
+        150.5,
+        564.0
+      ],
+      "ankleR": [
+        124.5,
+        766.0
+      ],
+      "ankleL": [
+        124.5,
+        766.0
+      ],
+      "jawAttach": [
+        157.0,
+        15.0
+      ],
+      "root": [
+        157.0,
+        835.0
+      ],
+      "heelL": [
+        93.0,
+        820.0
+      ],
+      "toeL": [
+        223.0,
+        820.0
+      ],
+      "heelR": [
+        93.0,
+        820.0
+      ],
+      "toeR": [
+        223.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 31789,
+    "maskPixels": 41687,
+    "userApprovedLeftoverInkExtensionPixels": 3776,
+    "initialColorMatch": {
+      "ringPixels": 8937,
+      "filledPixels": 35606,
+      "ringMeanBGR": [
+        148.30513595166164,
+        151.9522211032785,
+        157.24862929394652
+      ],
+      "ringStdBGR": [
+        5.832111743377786,
+        5.800790136622918,
+        5.680142593687337
+      ],
+      "filledMeanBGR": [
+        148.36069763523003,
+        151.95222715272706,
+        157.20592035050274
+      ],
+      "filledStdBGR": [
+        5.858520700179535,
+        5.822048272986492,
+        5.6576986791886466
+      ],
+      "meanDifference": 0.0003746443655632713,
+      "spreadDifference": 0.004528198011935492,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "colorMatch": {
+      "ringPixels": 8937,
+      "filledPixels": 34741,
+      "ringMeanBGR": [
+        148.30513595166164,
+        151.9522211032785,
+        157.24862929394652
+      ],
+      "ringStdBGR": [
+        5.832111743377786,
+        5.800790136622918,
+        5.680142593687337
+      ],
+      "filledMeanBGR": [
+        148.2879594715178,
+        151.97075501568753,
+        157.29270890302524
+      ],
+      "filledStdBGR": [
+        5.832667698105746,
+        5.803802881903836,
+        5.669871834883325
+      ],
+      "meanDifference": 0.00028031792249408533,
+      "spreadDifference": 0.001808186790139093,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "outlineColorBGR": [
+      4,
+      15,
+      30
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 155.0,
+    "internalArmInkRemoved": 0,
+    "outsideRepairMaskEdgeCleanupPixels": 51384
+  },
+  {
+    "key": "androgynous-left",
+    "anatomy": "androgynous",
+    "direction": "left",
+    "near": "L",
+    "source": "native v6 repair",
+    "sourceSHA256": "f91363c8310a2e0379f1ab70089fd6d5ec24f2fb1d00a1ae848a511915630e89",
+    "crop": [
+      1355,
+      20,
+      400,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      184,
+      80
+    ],
+    "pins": {
+      "neck": [
+        175.0,
+        55.0
+      ],
+      "shoulderR": [
+        188.0,
+        118.0
+      ],
+      "shoulderL": [
+        188.0,
+        118.0
+      ],
+      "elbowR": [
+        183.0,
+        265.0
+      ],
+      "elbowL": [
+        183.0,
+        265.0
+      ],
+      "wristR": [
+        161.5,
+        401.0
+      ],
+      "wristL": [
+        161.5,
+        401.0
+      ],
+      "palmR": [
+        156.0,
+        450.0
+      ],
+      "palmL": [
+        156.0,
+        450.0
+      ],
+      "waist": [
+        175.0,
+        313.0
+      ],
+      "hipR": [
+        185.0,
+        402.0
+      ],
+      "hipL": [
+        185.0,
+        402.0
+      ],
+      "kneeR": [
+        166.5,
+        564.0
+      ],
+      "kneeL": [
+        166.5,
+        564.0
+      ],
+      "ankleR": [
+        190.5,
+        766.0
+      ],
+      "ankleL": [
+        190.5,
+        766.0
+      ],
+      "jawAttach": [
+        175.0,
+        15.0
+      ],
+      "root": [
+        175.0,
+        835.0
+      ],
+      "heelL": [
+        235.0,
+        820.0
+      ],
+      "toeL": [
+        105.0,
+        820.0
+      ],
+      "heelR": [
+        235.0,
+        820.0
+      ],
+      "toeR": [
+        105.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 29598,
+    "maskPixels": 41269,
+    "userApprovedLeftoverInkExtensionPixels": 5414,
+    "initialColorMatch": {
+      "ringPixels": 8283,
+      "filledPixels": 35521,
+      "ringMeanBGR": [
+        147.63177592659665,
+        151.25425570445492,
+        156.54340214897985
+      ],
+      "ringStdBGR": [
+        7.034752015107422,
+        6.985389777762545,
+        6.8180076569989065
+      ],
+      "filledMeanBGR": [
+        147.67270065595,
+        151.25399059711157,
+        156.5232679260156
+      ],
+      "filledStdBGR": [
+        7.058628739656917,
+        6.997867127377623,
+        6.818819436027123
+      ],
+      "meanDifference": 0.00027720813555543545,
+      "spreadDifference": 0.003394110339386289,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "colorMatch": {
+      "ringPixels": 8283,
+      "filledPixels": 32727,
+      "ringMeanBGR": [
+        147.63177592659665,
+        151.25425570445492,
+        156.54340214897985
+      ],
+      "ringStdBGR": [
+        7.034752015107422,
+        6.985389777762545,
+        6.8180076569989065
+      ],
+      "filledMeanBGR": [
+        147.59669386133774,
+        151.24881596235525,
+        156.61129953860726
+      ],
+      "filledStdBGR": [
+        6.9994341757964476,
+        7.011013017373495,
+        6.8115875431563
+      ],
+      "meanDifference": 0.0004337288489666756,
+      "spreadDifference": 0.0050204810681496684,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "outlineColorBGR": [
+      4,
+      14,
+      30
+    ],
+    "outlineWidth": 6,
+    "skinMedian": 155.0,
+    "internalArmInkRemoved": 0,
+    "outsideRepairMaskEdgeCleanupPixels": 53271
+  },
+  {
+    "key": "female-left",
+    "anatomy": "female",
+    "direction": "left",
+    "near": "L",
+    "source": "horizontal reflection of right repair; one uniform scale and translation",
+    "sourceSHA256": "87ee221a7f9e71b7f5ba8c3c436b98381467b832ed767613baf92e306d37539e",
+    "crop": [
+      1355,
+      20,
+      400,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      184,
+      80
+    ],
+    "pins": {
+      "neck": [
+        162.0,
+        55.0
+      ],
+      "shoulderR": [
+        181.0,
+        118.0
+      ],
+      "shoulderL": [
+        181.0,
+        118.0
+      ],
+      "elbowR": [
+        172.0,
+        265.0
+      ],
+      "elbowL": [
+        172.0,
+        265.0
+      ],
+      "wristR": [
+        148.5,
+        401.0
+      ],
+      "wristL": [
+        148.5,
+        401.0
+      ],
+      "palmR": [
+        143.0,
+        450.0
+      ],
+      "palmL": [
+        143.0,
+        450.0
+      ],
+      "waist": [
+        162.0,
+        313.0
+      ],
+      "hipR": [
+        165.0,
+        402.0
+      ],
+      "hipL": [
+        165.0,
+        402.0
+      ],
+      "kneeR": [
+        157.5,
+        564.0
+      ],
+      "kneeL": [
+        157.5,
+        564.0
+      ],
+      "ankleR": [
+        180.0,
+        766.0
+      ],
+      "ankleL": [
+        180.0,
+        766.0
+      ],
+      "jawAttach": [
+        162.0,
+        15.0
+      ],
+      "root": [
+        162.0,
+        835.0
+      ],
+      "heelL": [
+        215.0,
+        820.0
+      ],
+      "toeL": [
+        85.0,
+        820.0
+      ],
+      "heelR": [
+        215.0,
+        820.0
+      ],
+      "toeR": [
+        85.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 31207,
+    "maskPixels": 43357,
+    "userApprovedLeftoverInkExtensionPixels": 5918,
+    "mirror": {
+      "anatomy": "female",
+      "uniformScale": 0.9986019621961159,
+      "translation": [
+        13.65078814245507,
+        0.5039926283002387
+      ],
+      "matrix": [
+        [
+          0.9986019621961159,
+          0.0,
+          13.65078814245507
+        ],
+        [
+          0.0,
+          0.9986019621961159,
+          0.5039926283002387
+        ]
+      ],
+      "outlineDifference": 0.14894202435474135,
+      "jointRmsNativePixels": 6.8919089373681475,
+      "jointMaxNativePixels": 10.91736514425269,
+      "jointNames": [
+        "neck",
+        "waist",
+        "shoulder",
+        "elbow",
+        "wrist",
+        "hip",
+        "knee",
+        "ankle"
+      ],
+      "jointErrors": [
+        6.5616480608090875,
+        6.548069964302662,
+        3.5945136634725827,
+        3.5684062919333863,
+        5.530547595020774,
+        5.431606083394614,
+        9.440477207025781,
+        10.91736514425269
+      ],
+      "rotationDegrees": 0,
+      "warping": false
+    },
+    "colorMatch": {
+      "ringPixels": 10733,
+      "filledPixels": 39939,
+      "ringMeanBGR": [
+        142.31072393552594,
+        144.25072207211403,
+        148.5364762880835
+      ],
+      "ringStdBGR": [
+        9.048400017394425,
+        8.842653393887963,
+        8.726647743429552
+      ],
+      "filledMeanBGR": [
+        142.27734795563234,
+        144.1721375097023,
+        148.52234657853225
+      ],
+      "filledStdBGR": [
+        9.014871267574433,
+        8.86000286867936,
+        8.697032175066767
+      ],
+      "meanDifference": 0.0005447776016846139,
+      "spreadDifference": 0.0037054893412687964,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "outlineColorBGR": [
+      6,
+      16,
+      30
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 148.0,
+    "internalArmInkRemoved": 0,
+    "outsideRepairMaskEdgeCleanupPixels": null
+  },
+  {
+    "key": "male-left",
+    "anatomy": "male",
+    "direction": "left",
+    "near": "L",
+    "source": "horizontal reflection of right repair; one uniform scale and translation",
+    "sourceSHA256": "1c5f8a6191583e904a7f0a023683d188c3ac6919023e781907db987f4f5380d2",
+    "crop": [
+      1355,
+      20,
+      400,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      184,
+      80
+    ],
+    "pins": {
+      "neck": [
+        147.0,
+        55.0
+      ],
+      "shoulderR": [
+        168.0,
+        118.0
+      ],
+      "shoulderL": [
+        168.0,
+        118.0
+      ],
+      "elbowR": [
+        159.0,
+        265.0
+      ],
+      "elbowL": [
+        159.0,
+        265.0
+      ],
+      "wristR": [
+        133.5,
+        401.0
+      ],
+      "wristL": [
+        133.5,
+        401.0
+      ],
+      "palmR": [
+        128.0,
+        446.0
+      ],
+      "palmL": [
+        128.0,
+        446.0
+      ],
+      "waist": [
+        147.0,
+        313.0
+      ],
+      "hipR": [
+        155.0,
+        402.0
+      ],
+      "hipL": [
+        155.0,
+        402.0
+      ],
+      "kneeR": [
+        152.0,
+        564.0
+      ],
+      "kneeL": [
+        152.0,
+        564.0
+      ],
+      "ankleR": [
+        173.0,
+        766.0
+      ],
+      "ankleL": [
+        173.0,
+        766.0
+      ],
+      "jawAttach": [
+        147.0,
+        15.0
+      ],
+      "root": [
+        147.0,
+        835.0
+      ],
+      "heelL": [
+        213.0,
+        820.0
+      ],
+      "toeL": [
+        83.0,
+        820.0
+      ],
+      "heelR": [
+        213.0,
+        820.0
+      ],
+      "toeR": [
+        83.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 32154,
+    "maskPixels": 43998,
+    "userApprovedLeftoverInkExtensionPixels": 5841,
+    "mirror": {
+      "anatomy": "male",
+      "uniformScale": 0.9995941627606155,
+      "translation": [
+        2.499136530731505,
+        0.14630432479810906
+      ],
+      "matrix": [
+        [
+          0.9995941627606155,
+          0.0,
+          2.499136530731505
+        ],
+        [
+          0.0,
+          0.9995941627606155,
+          0.14630432479810906
+        ]
+      ],
+      "outlineDifference": 0.05379333665217024,
+      "jointRmsNativePixels": 2.58981511970681,
+      "jointMaxNativePixels": 3.9377066922418638,
+      "jointNames": [
+        "neck",
+        "waist",
+        "shoulder",
+        "elbow",
+        "wrist",
+        "hip",
+        "knee",
+        "ankle"
+      ],
+      "jointErrors": [
+        2.5614946798788774,
+        2.5585649796826564,
+        1.5705074044218268,
+        1.5642484627291973,
+        1.5535063444471848,
+        2.4362899751412344,
+        3.9377066922418638,
+        3.4324681388117124
+      ],
+      "rotationDegrees": 0,
+      "warping": false
+    },
+    "colorMatch": {
+      "ringPixels": 10128,
+      "filledPixels": 40699,
+      "ringMeanBGR": [
+        81.57424960505529,
+        139.12440758293837,
+        215.72383491311217
+      ],
+      "ringStdBGR": [
+        6.046866104171225,
+        8.245296701636233,
+        8.478498070251089
+      ],
+      "filledMeanBGR": [
+        81.46674365463525,
+        139.22494410182068,
+        215.90510823361754
+      ],
+      "filledStdBGR": [
+        5.962271400316808,
+        8.2461779340999,
+        8.576267293923033
+      ],
+      "meanDifference": 0.001317890767497439,
+      "spreadDifference": 0.01398984240713759,
+      "ringWidth": 12,
+      "feather": 6
+    },
+    "outlineColorBGR": [
+      2,
+      16,
+      38
+    ],
+    "outlineWidth": 5,
+    "skinMedian": 159.0,
+    "internalArmInkRemoved": 0,
+    "outsideRepairMaskEdgeCleanupPixels": null
+  }
+]

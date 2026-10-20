@@ -1,0 +1,1135 @@
+{
+  "views": 6,
+  "imageCalls": 0,
+  "results": [
+    {
+      "key": "male-right",
+      "board": "male-right-five-panel.png",
+      "edgeChecks": {
+        "standing": {
+          "exteriorPixels": 2371,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1878,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "armless": {
+          "exteriorPixels": 2373,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1877,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-plus25": {
+          "exteriorPixels": 3042,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2028,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-minus25": {
+          "exteriorPixels": 3109,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2009,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-plus20": {
+          "exteriorPixels": 2645,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2039,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-minus20": {
+          "exteriorPixels": 2478,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1955,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk0": {
+          "exteriorPixels": 3584,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2664,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk4": {
+          "exteriorPixels": 3584,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2664,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        }
+      },
+      "reviewCanvases": {
+        "standing": [
+          860,
+          1010
+        ],
+        "armless": [
+          860,
+          1010
+        ],
+        "thigh-plus25": [
+          860,
+          1010
+        ],
+        "thigh-minus25": [
+          860,
+          1010
+        ],
+        "arm-plus20": [
+          860,
+          1010
+        ],
+        "arm-minus20": [
+          860,
+          1010
+        ],
+        "walk0": [
+          860,
+          1010
+        ],
+        "walk4": [
+          860,
+          1010
+        ]
+      },
+      "repairColorMeanDifference": 0.0014604215027806558,
+      "repairColorSpreadDifference": 0.01402873608390396,
+      "internalTorsoArmInkPixels": 0,
+      "shoulderInteriorStraightSegments": {
+        "arm-plus20": 0,
+        "arm-minus20": 0
+      },
+      "hipNotchDepths": [
+        1.0,
+        1.0
+      ],
+      "stressJoints": {
+        "thigh-plus25": {
+          "jointTransparentPixels": 0
+        },
+        "thigh-minus25": {
+          "jointTransparentPixels": 0
+        },
+        "arm-plus20": {
+          "jointTransparentPixels": 0
+        },
+        "arm-minus20": {
+          "jointTransparentPixels": 0
+        }
+      },
+      "nearArmOrderErrors": 0,
+      "handEdgeDistancesInformationalOnly": true,
+      "handEdgeDistances": {
+        "max": 20.393798828125,
+        "p95": 14.196124076843262,
+        "mean": 3.567138195037842
+      },
+      "handWristError": 0.0,
+      "knuckleWidthDifference": 0.001210121012101221,
+      "wristJoinMaxRowStep": 1.0,
+      "wristJoinGap": false,
+      "handForearmAngleErrorDegrees": 0.0,
+      "handCutOff": false,
+      "standingHandInFront": true,
+      "standingOutlineDifference": 0.008061468698828568,
+      "mirror": null,
+      "failures": [],
+      "automatedGatesPass": true,
+      "approved": false,
+      "walkIntegrated": false
+    },
+    {
+      "key": "female-right",
+      "board": "female-right-five-panel.png",
+      "edgeChecks": {
+        "standing": {
+          "exteriorPixels": 2476,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1911,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "armless": {
+          "exteriorPixels": 2483,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1913,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-plus25": {
+          "exteriorPixels": 3179,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2062,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-minus25": {
+          "exteriorPixels": 3230,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2055,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-plus20": {
+          "exteriorPixels": 2839,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2128,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-minus20": {
+          "exteriorPixels": 2503,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1950,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk0": {
+          "exteriorPixels": 3706,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2721,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk4": {
+          "exteriorPixels": 3706,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2721,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        }
+      },
+      "reviewCanvases": {
+        "standing": [
+          860,
+          1010
+        ],
+        "armless": [
+          860,
+          1010
+        ],
+        "thigh-plus25": [
+          860,
+          1010
+        ],
+        "thigh-minus25": [
+          860,
+          1010
+        ],
+        "arm-plus20": [
+          860,
+          1010
+        ],
+        "arm-minus20": [
+          860,
+          1010
+        ],
+        "walk0": [
+          860,
+          1010
+        ],
+        "walk4": [
+          860,
+          1010
+        ]
+      },
+      "repairColorMeanDifference": 0.00038098438114923637,
+      "repairColorSpreadDifference": 0.0011717411607830403,
+      "internalTorsoArmInkPixels": 0,
+      "shoulderInteriorStraightSegments": {
+        "arm-plus20": 0,
+        "arm-minus20": 0
+      },
+      "hipNotchDepths": [
+        1.399999976158142,
+        2.0
+      ],
+      "stressJoints": {
+        "thigh-plus25": {
+          "jointTransparentPixels": 0
+        },
+        "thigh-minus25": {
+          "jointTransparentPixels": 0
+        },
+        "arm-plus20": {
+          "jointTransparentPixels": 0
+        },
+        "arm-minus20": {
+          "jointTransparentPixels": 0
+        }
+      },
+      "nearArmOrderErrors": 0,
+      "handEdgeDistancesInformationalOnly": true,
+      "handEdgeDistances": {
+        "max": 16.378297805786133,
+        "p95": 12.1968994140625,
+        "mean": 5.238245964050293
+      },
+      "handWristError": 0.0,
+      "knuckleWidthDifference": 0.002821869488536145,
+      "wristJoinMaxRowStep": 1.0,
+      "wristJoinGap": false,
+      "handForearmAngleErrorDegrees": 0.0,
+      "handCutOff": false,
+      "standingHandInFront": true,
+      "standingOutlineDifference": 0.001057936446872355,
+      "mirror": null,
+      "failures": [],
+      "automatedGatesPass": true,
+      "approved": false,
+      "walkIntegrated": false
+    },
+    {
+      "key": "androgynous-right",
+      "board": "androgynous-right-five-panel.png",
+      "edgeChecks": {
+        "standing": {
+          "exteriorPixels": 2355,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1908,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "armless": {
+          "exteriorPixels": 2359,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1906,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-plus25": {
+          "exteriorPixels": 3176,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2064,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-minus25": {
+          "exteriorPixels": 3259,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2049,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-plus20": {
+          "exteriorPixels": 2788,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2182,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-minus20": {
+          "exteriorPixels": 2630,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2112,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk0": {
+          "exteriorPixels": 3875,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2896,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk4": {
+          "exteriorPixels": 3875,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2896,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        }
+      },
+      "reviewCanvases": {
+        "standing": [
+          860,
+          1010
+        ],
+        "armless": [
+          860,
+          1010
+        ],
+        "thigh-plus25": [
+          860,
+          1010
+        ],
+        "thigh-minus25": [
+          860,
+          1010
+        ],
+        "arm-plus20": [
+          860,
+          1010
+        ],
+        "arm-minus20": [
+          860,
+          1010
+        ],
+        "walk0": [
+          860,
+          1010
+        ],
+        "walk4": [
+          860,
+          1010
+        ]
+      },
+      "repairColorMeanDifference": 0.00028031792249408533,
+      "repairColorSpreadDifference": 0.001808186790139093,
+      "internalTorsoArmInkPixels": 0,
+      "shoulderInteriorStraightSegments": {
+        "arm-plus20": 0,
+        "arm-minus20": 0
+      },
+      "hipNotchDepths": [
+        1.0,
+        1.0
+      ],
+      "stressJoints": {
+        "thigh-plus25": {
+          "jointTransparentPixels": 0
+        },
+        "thigh-minus25": {
+          "jointTransparentPixels": 0
+        },
+        "arm-plus20": {
+          "jointTransparentPixels": 0
+        },
+        "arm-minus20": {
+          "jointTransparentPixels": 0
+        }
+      },
+      "nearArmOrderErrors": 0,
+      "handEdgeDistancesInformationalOnly": true,
+      "handEdgeDistances": {
+        "max": 12.384498596191406,
+        "p95": 8.399999618530273,
+        "mean": 4.1118855476379395
+      },
+      "handWristError": 0.0,
+      "knuckleWidthDifference": 0.02459148727984355,
+      "wristJoinMaxRowStep": 1.0,
+      "wristJoinGap": false,
+      "handForearmAngleErrorDegrees": 0.0,
+      "handCutOff": false,
+      "standingHandInFront": true,
+      "standingOutlineDifference": 0.012719847408638263,
+      "mirror": null,
+      "failures": [],
+      "automatedGatesPass": true,
+      "approved": false,
+      "walkIntegrated": false
+    },
+    {
+      "key": "androgynous-left",
+      "board": "androgynous-left-five-panel.png",
+      "edgeChecks": {
+        "standing": {
+          "exteriorPixels": 2370,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 6.0,
+          "minThickness": 5,
+          "maxThickness": 7,
+          "thicknessSamples": 1911,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "armless": {
+          "exteriorPixels": 2360,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 6.0,
+          "minThickness": 5,
+          "maxThickness": 7,
+          "thicknessSamples": 1901,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-plus25": {
+          "exteriorPixels": 3259,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 6.0,
+          "minThickness": 5,
+          "maxThickness": 7,
+          "thicknessSamples": 2054,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-minus25": {
+          "exteriorPixels": 3173,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 6.0,
+          "minThickness": 5,
+          "maxThickness": 7,
+          "thicknessSamples": 2064,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-plus20": {
+          "exteriorPixels": 2624,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 6.0,
+          "minThickness": 5,
+          "maxThickness": 7,
+          "thicknessSamples": 2118,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-minus20": {
+          "exteriorPixels": 2801,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 6.0,
+          "minThickness": 5,
+          "maxThickness": 7,
+          "thicknessSamples": 2172,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk0": {
+          "exteriorPixels": 3872,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 6.0,
+          "minThickness": 5,
+          "maxThickness": 7,
+          "thicknessSamples": 2894,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk4": {
+          "exteriorPixels": 3872,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 6.0,
+          "minThickness": 5,
+          "maxThickness": 7,
+          "thicknessSamples": 2894,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        }
+      },
+      "reviewCanvases": {
+        "standing": [
+          860,
+          1010
+        ],
+        "armless": [
+          860,
+          1010
+        ],
+        "thigh-plus25": [
+          860,
+          1010
+        ],
+        "thigh-minus25": [
+          860,
+          1010
+        ],
+        "arm-plus20": [
+          860,
+          1010
+        ],
+        "arm-minus20": [
+          860,
+          1010
+        ],
+        "walk0": [
+          860,
+          1010
+        ],
+        "walk4": [
+          860,
+          1010
+        ]
+      },
+      "repairColorMeanDifference": 0.0004337288489666756,
+      "repairColorSpreadDifference": 0.0050204810681496684,
+      "internalTorsoArmInkPixels": 0,
+      "shoulderInteriorStraightSegments": {
+        "arm-plus20": 0,
+        "arm-minus20": 0
+      },
+      "hipNotchDepths": [
+        1.0,
+        1.399999976158142
+      ],
+      "stressJoints": {
+        "thigh-plus25": {
+          "jointTransparentPixels": 0
+        },
+        "thigh-minus25": {
+          "jointTransparentPixels": 0
+        },
+        "arm-plus20": {
+          "jointTransparentPixels": 0
+        },
+        "arm-minus20": {
+          "jointTransparentPixels": 0
+        }
+      },
+      "nearArmOrderErrors": 0,
+      "handEdgeDistancesInformationalOnly": true,
+      "handEdgeDistances": {
+        "max": 30.5906982421875,
+        "p95": 28.995349884033203,
+        "mean": 8.551923751831055
+      },
+      "handWristError": 0.0,
+      "knuckleWidthDifference": 0.014028985507246634,
+      "wristJoinMaxRowStep": 1.0,
+      "wristJoinGap": false,
+      "handForearmAngleErrorDegrees": 0.0,
+      "handCutOff": false,
+      "standingHandInFront": true,
+      "standingOutlineDifference": 0.01822118817811154,
+      "mirror": null,
+      "failures": [],
+      "automatedGatesPass": true,
+      "approved": false,
+      "walkIntegrated": false
+    },
+    {
+      "key": "female-left",
+      "board": "female-left-five-panel.png",
+      "edgeChecks": {
+        "standing": {
+          "exteriorPixels": 2475,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1910,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "armless": {
+          "exteriorPixels": 2475,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1910,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-plus25": {
+          "exteriorPixels": 3214,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2054,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-minus25": {
+          "exteriorPixels": 3159,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2061,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-plus20": {
+          "exteriorPixels": 2428,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1914,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-minus20": {
+          "exteriorPixels": 2759,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2066,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk0": {
+          "exteriorPixels": 3775,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2785,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk4": {
+          "exteriorPixels": 3775,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2785,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        }
+      },
+      "reviewCanvases": {
+        "standing": [
+          860,
+          1010
+        ],
+        "armless": [
+          860,
+          1010
+        ],
+        "thigh-plus25": [
+          860,
+          1010
+        ],
+        "thigh-minus25": [
+          860,
+          1010
+        ],
+        "arm-plus20": [
+          860,
+          1010
+        ],
+        "arm-minus20": [
+          860,
+          1010
+        ],
+        "walk0": [
+          860,
+          1010
+        ],
+        "walk4": [
+          860,
+          1010
+        ]
+      },
+      "repairColorMeanDifference": 0.0005447776016846139,
+      "repairColorSpreadDifference": 0.0037054893412687964,
+      "internalTorsoArmInkPixels": 0,
+      "shoulderInteriorStraightSegments": {
+        "arm-plus20": 0,
+        "arm-minus20": 0
+      },
+      "hipNotchDepths": [
+        2.0,
+        2.0
+      ],
+      "stressJoints": {
+        "thigh-plus25": {
+          "jointTransparentPixels": 0
+        },
+        "thigh-minus25": {
+          "jointTransparentPixels": 0
+        },
+        "arm-plus20": {
+          "jointTransparentPixels": 0
+        },
+        "arm-minus20": {
+          "jointTransparentPixels": 0
+        }
+      },
+      "nearArmOrderErrors": 0,
+      "handEdgeDistancesInformationalOnly": true,
+      "handEdgeDistances": {
+        "max": 49.150390625,
+        "p95": 47.772090911865234,
+        "mean": 15.519893646240234
+      },
+      "handWristError": 1.0,
+      "knuckleWidthDifference": 0.04763909774436071,
+      "wristJoinMaxRowStep": 2.0,
+      "wristJoinGap": false,
+      "handForearmAngleErrorDegrees": 0.0,
+      "handCutOff": false,
+      "standingHandInFront": true,
+      "standingOutlineDifference": 0.14749748457353504,
+      "mirror": {
+        "anatomy": "female",
+        "uniformScale": 0.9986019621961159,
+        "translation": [
+          13.65078814245507,
+          0.5039926283002387
+        ],
+        "matrix": [
+          [
+            0.9986019621961159,
+            0.0,
+            13.65078814245507
+          ],
+          [
+            0.0,
+            0.9986019621961159,
+            0.5039926283002387
+          ]
+        ],
+        "outlineDifference": 0.14894202435474135,
+        "jointRmsNativePixels": 6.8919089373681475,
+        "jointMaxNativePixels": 10.91736514425269,
+        "jointNames": [
+          "neck",
+          "waist",
+          "shoulder",
+          "elbow",
+          "wrist",
+          "hip",
+          "knee",
+          "ankle"
+        ],
+        "jointErrors": [
+          6.5616480608090875,
+          6.548069964302662,
+          3.5945136634725827,
+          3.5684062919333863,
+          5.530547595020774,
+          5.431606083394614,
+          9.440477207025781,
+          10.91736514425269
+        ],
+        "rotationDegrees": 0,
+        "warping": false
+      },
+      "failures": [],
+      "automatedGatesPass": true,
+      "approved": false,
+      "walkIntegrated": false
+    },
+    {
+      "key": "male-left",
+      "board": "male-left-five-panel.png",
+      "edgeChecks": {
+        "standing": {
+          "exteriorPixels": 2372,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1875,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "armless": {
+          "exteriorPixels": 2372,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1875,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-plus25": {
+          "exteriorPixels": 3113,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2014,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "thigh-minus25": {
+          "exteriorPixels": 3036,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2026,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-plus20": {
+          "exteriorPixels": 2399,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 1902,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "arm-minus20": {
+          "exteriorPixels": 2652,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2039,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk0": {
+          "exteriorPixels": 3589,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2658,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        },
+        "walk4": {
+          "exteriorPixels": 3589,
+          "lightPixelsOutsideInk": 0,
+          "medianThickness": 5.0,
+          "minThickness": 4,
+          "maxThickness": 6,
+          "thicknessSamples": 2658,
+          "outsideMedianPlusMinus1": 0,
+          "problemLocations": [],
+          "thicknessPass": true
+        }
+      },
+      "reviewCanvases": {
+        "standing": [
+          860,
+          1010
+        ],
+        "armless": [
+          860,
+          1010
+        ],
+        "thigh-plus25": [
+          860,
+          1010
+        ],
+        "thigh-minus25": [
+          860,
+          1010
+        ],
+        "arm-plus20": [
+          860,
+          1010
+        ],
+        "arm-minus20": [
+          860,
+          1010
+        ],
+        "walk0": [
+          860,
+          1010
+        ],
+        "walk4": [
+          860,
+          1010
+        ]
+      },
+      "repairColorMeanDifference": 0.001317890767497439,
+      "repairColorSpreadDifference": 0.01398984240713759,
+      "internalTorsoArmInkPixels": 0,
+      "shoulderInteriorStraightSegments": {
+        "arm-plus20": 0,
+        "arm-minus20": 0
+      },
+      "hipNotchDepths": [
+        1.0,
+        1.0
+      ],
+      "stressJoints": {
+        "thigh-plus25": {
+          "jointTransparentPixels": 0
+        },
+        "thigh-minus25": {
+          "jointTransparentPixels": 0
+        },
+        "arm-plus20": {
+          "jointTransparentPixels": 0
+        },
+        "arm-minus20": {
+          "jointTransparentPixels": 0
+        }
+      },
+      "nearArmOrderErrors": 0,
+      "handEdgeDistancesInformationalOnly": true,
+      "handEdgeDistances": {
+        "max": 26.1968994140625,
+        "p95": 23.196895599365234,
+        "mean": 8.379024505615234
+      },
+      "handWristError": 0.0,
+      "knuckleWidthDifference": 0.00257973733583479,
+      "wristJoinMaxRowStep": 1.0,
+      "wristJoinGap": false,
+      "handForearmAngleErrorDegrees": 8.537736462515939e-07,
+      "handCutOff": false,
+      "standingHandInFront": true,
+      "standingOutlineDifference": 0.05157714857579849,
+      "mirror": {
+        "anatomy": "male",
+        "uniformScale": 0.9995941627606155,
+        "translation": [
+          2.499136530731505,
+          0.14630432479810906
+        ],
+        "matrix": [
+          [
+            0.9995941627606155,
+            0.0,
+            2.499136530731505
+          ],
+          [
+            0.0,
+            0.9995941627606155,
+            0.14630432479810906
+          ]
+        ],
+        "outlineDifference": 0.05379333665217024,
+        "jointRmsNativePixels": 2.58981511970681,
+        "jointMaxNativePixels": 3.9377066922418638,
+        "jointNames": [
+          "neck",
+          "waist",
+          "shoulder",
+          "elbow",
+          "wrist",
+          "hip",
+          "knee",
+          "ankle"
+        ],
+        "jointErrors": [
+          2.5614946798788774,
+          2.5585649796826564,
+          1.5705074044218268,
+          1.5642484627291973,
+          1.5535063444471848,
+          2.4362899751412344,
+          3.9377066922418638,
+          3.4324681388117124
+        ],
+        "rotationDegrees": 0,
+        "warping": false
+      },
+      "failures": [],
+      "automatedGatesPass": true,
+      "approved": false,
+      "walkIntegrated": false
+    }
+  ],
+  "approvedHandsUnchanged": true,
+  "bodyApproved": false,
+  "walkIntegrated": false
+}

@@ -1,0 +1,16 @@
+{
+  "url": "http://127.0.0.1:5193/?body-review=v7&sync=verified",
+  "boards": [
+    "male-right-five-panel.png",
+    "female-right-five-panel.png",
+    "androgynous-right-five-panel.png",
+    "androgynous-left-five-panel.png",
+    "female-left-five-panel.png",
+    "male-left-five-panel.png"
+  ],
+  "imageFilesMatchDisk": true,
+  "auditMatchesDisk": true,
+  "browserErrors": [],
+  "walkIntegrated": false,
+  "approved": false
+}
