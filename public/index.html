@@ -2868,7 +2868,7 @@ const RoomArt = {
     if (runtime.visitor) items.push({ y: 100, d: () => { groundShadow(c, 306, 100, 12); drawPerson(c, 306, 100, lookFor(runtime.visitor), 1, { dir: 'left', frame: runtime.visitor === 'rosalind' && !settings.reduced ? Math.floor(t * 2) % 2 * 2 : 0, breath: Math.floor(t / 1.6) % 2, blink: idleBlink(t, 3) }); } });
     items.sort((a, b) => a.y - b.y).forEach(i => i.d());
     // gnats
-    for (const p of allPlants()) if (p.pest.type === 'gnats' && p.pest.lvl > .05 && state.locations[p.loc].door !== 'closed') { const [px, py] = SLOT_POS[p.loc][p.slot]; for (let k = 0; k < 2 + p.pest.lvl * 8; k++) R(c, px + Math.sin(t * 3 + k * 2.1) * 8, py - 3 - Math.abs(Math.cos(t * 2.3 + k)) * 8, 1, 1, '#1b1b1b'); }
+    for (const p of allPlants()) if ((p.loc === 'closet' || p.loc === 'tent2') && p.pest.type === 'gnats' && p.pest.lvl > .05 && state.locations[p.loc].door !== 'closed') { const [px, py] = SLOT_POS[p.loc][p.slot]; for (let k = 0; k < 2 + p.pest.lvl * 8; k++) R(c, px + Math.sin(t * 3 + k * 2.1) * 8, py - 3 - Math.abs(Math.cos(t * 2.3 + k)) * 8, 1, 1, '#1b1b1b'); }
     // sex-reveal magnifier sparkle
     const fx = runtime.sexFx; if (fx && performance.now() < fx.until && state.plants[fx.pid]) { const p = state.plants[fx.pid], [px, py] = SLOT_POS[p.loc][p.slot], k = Math.floor(performance.now() / 120) % 4; c.fillStyle = '#ffffff'; for (let i = 0; i < 4; i++) { const a = i * 1.57 + k * .4; R(c, px + Math.cos(a) * 12, py - 20 + Math.sin(a) * 10, 1, 1, i % 2 ? '#fff6a0' : '#ffffff'); } R(c, px + 6, py - 26, 7, 7, '#2b1d14'); R(c, px + 7, py - 25, 5, 5, '#bfe3ff'); R(c, px + 12, py - 19, 3, 3, '#6b4426'); }
     // ---------- lighting ----------
