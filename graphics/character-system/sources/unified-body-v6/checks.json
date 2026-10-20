@@ -1,0 +1,246 @@
+[
+  {
+    "key": "male-right",
+    "fourPanel": "male-right-four-panel.png",
+    "sourceNativeSize": [
+      295,
+      850
+    ],
+    "cutJoints": {
+      "waist": 313.0,
+      "buttockFold": 427,
+      "knee": 564.0
+    },
+    "cutCurveAmplitude": 4,
+    "standingOutlineDifference": 0.013366203150880166,
+    "standingOutlinePass": true,
+    "regionMaxChannelDifferences": {
+      "torso": 0.008605390749062395,
+      "hips": 0.032373320817197584,
+      "thigh": 0.014334119492533274,
+      "calf-foot": 0.0009730870006991405
+    },
+    "regionColorPass": false,
+    "armlessCutReassemblyDifference": 0.0003315100281783524,
+    "armlessEnclosedTransparentPixels": 10,
+    "tests": {
+      "thigh-plus25": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 6292,
+        "jointInteriorTransparentPixels": 0
+      },
+      "thigh-minus25": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 6280,
+        "jointInteriorTransparentPixels": 0
+      },
+      "arm-plus20": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 10,
+        "jointInteriorTransparentPixels": 0
+      },
+      "arm-minus20": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 0,
+        "jointInteriorTransparentPixels": 0
+      }
+    },
+    "approvedHandSourceSHA256": "247ef6de3cfc844f39d50260a1307ea956938d3d84086ba9db98c8ff86b12b49",
+    "approvedHandWristRow": 100,
+    "handUniformScale": 1.0,
+    "handColorGainsBGR": [
+      0.934828099635407,
+      1.0021434179551714,
+      1.0498241408211486
+    ],
+    "armOutlineNativeWidth": 3,
+    "armOutlineBGR": [
+      2.0,
+      15.0,
+      39.0
+    ],
+    "armMissingInkPixelsRestored": 726,
+    "visualReview": "pending",
+    "accepted": false,
+    "walkIntegrated": false
+  },
+  {
+    "key": "female-right",
+    "fourPanel": "female-right-four-panel.png",
+    "sourceNativeSize": [
+      295,
+      850
+    ],
+    "cutJoints": {
+      "waist": 313.0,
+      "buttockFold": 425,
+      "knee": 564.0
+    },
+    "cutCurveAmplitude": 4,
+    "standingOutlineDifference": 0.005349695604237572,
+    "standingOutlinePass": true,
+    "regionMaxChannelDifferences": {
+      "torso": 0.0003410678059224425,
+      "hips": 0.02802278229004337,
+      "thigh": 0.00555353159341896,
+      "calf-foot": 0.0
+    },
+    "regionColorPass": true,
+    "armlessCutReassemblyDifference": 0.000385375018064454,
+    "armlessEnclosedTransparentPixels": 46,
+    "tests": {
+      "thigh-plus25": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 7257,
+        "jointInteriorTransparentPixels": 0
+      },
+      "thigh-minus25": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 7255,
+        "jointInteriorTransparentPixels": 0
+      },
+      "arm-plus20": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 41,
+        "jointInteriorTransparentPixels": 0
+      },
+      "arm-minus20": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 16,
+        "jointInteriorTransparentPixels": 0
+      }
+    },
+    "approvedHandSourceSHA256": "bb2957e65378f7c5446b4d1e59a5bb1cd66421bd388ad8a5e376c77f89ac356f",
+    "approvedHandWristRow": 90,
+    "handUniformScale": 0.8611111111111112,
+    "handColorGainsBGR": [
+      0.9703658028405509,
+      0.959694756975653,
+      0.9411507821674169
+    ],
+    "armOutlineNativeWidth": 3,
+    "armOutlineBGR": [
+      9.0,
+      18.0,
+      33.0
+    ],
+    "armMissingInkPixelsRestored": 620,
+    "visualReview": "pending",
+    "accepted": false,
+    "walkIntegrated": false
+  },
+  {
+    "key": "androgynous-right",
+    "fourPanel": "androgynous-right-four-panel.png",
+    "sourceNativeSize": [
+      295,
+      850
+    ],
+    "cutJoints": {
+      "waist": 313.0,
+      "buttockFold": 427,
+      "knee": 564.0
+    },
+    "cutCurveAmplitude": 4,
+    "standingOutlineDifference": 0.029143981859828038,
+    "standingOutlinePass": false,
+    "regionMaxChannelDifferences": {
+      "torso": 0.006408029096386516,
+      "hips": 0.010333934078442459,
+      "thigh": 0.023562918746838944,
+      "calf-foot": 0.00013018085590247043
+    },
+    "regionColorPass": true,
+    "armlessCutReassemblyDifference": 0.001617007110075381,
+    "armlessEnclosedTransparentPixels": 9,
+    "tests": {
+      "thigh-plus25": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 9634,
+        "jointInteriorTransparentPixels": 0
+      },
+      "thigh-minus25": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 9587,
+        "jointInteriorTransparentPixels": 0
+      },
+      "arm-plus20": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 162,
+        "jointInteriorTransparentPixels": 0
+      },
+      "arm-minus20": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 80,
+        "jointInteriorTransparentPixels": 0
+      }
+    },
+    "approvedHandSourceSHA256": "3151783b149357f673ba2ba6b1062742572fed9648ec8e664b88d1a20e118aa8",
+    "approvedHandWristRow": 147,
+    "handUniformScale": 0.8933333333333333,
+    "handColorGainsBGR": [
+      0.9863074923850649,
+      0.9710546421778781,
+      0.9561123985668436
+    ],
+    "armOutlineNativeWidth": 3,
+    "armOutlineBGR": [
+      4.0,
+      13.0,
+      29.0
+    ],
+    "armMissingInkPixelsRestored": 329,
+    "visualReview": "pending",
+    "accepted": false,
+    "walkIntegrated": false
+  },
+  {
+    "key": "androgynous-left",
+    "fourPanel": "androgynous-left-four-panel.png",
+    "sourceNativeSize": [
+      400,
+      850
+    ],
+    "cutJoints": {
+      "waist": 313.0,
+      "buttockFold": 427,
+      "knee": 564.0
+    },
+    "cutCurveAmplitude": 4,
+    "standingOutlineDifference": 0.017845256948747962,
+    "standingOutlinePass": true,
+    "regionMaxChannelDifferences": {
+      "torso": 0.031597299629547,
+      "hips": 0.030315587571992177,
+      "thigh": 0.01896823219249173,
+      "calf-foot": 0.0
+    },
+    "regionColorPass": false,
+    "armlessCutReassemblyDifference": 0.0006734881962331923,
+    "armlessEnclosedTransparentPixels": 0,
+    "tests": {
+      "thigh-plus25": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 27,
+        "jointInteriorTransparentPixels": 0
+      },
+      "thigh-minus25": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 6,
+        "jointInteriorTransparentPixels": 0
+      },
+      "arm-plus20": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 1164,
+        "jointInteriorTransparentPixels": 0
+      },
+      "arm-minus20": {
+        "enclosedTransparentPixelsIncludingBetweenLimbs": 119,
+        "jointInteriorTransparentPixels": 0
+      }
+    },
+    "approvedHandSourceSHA256": "634e99b933167687b0b5441237f2181068526b3a94dc39c9d30e2d6b1c96cd1a",
+    "approvedHandWristRow": 137,
+    "handUniformScale": 0.6944444444444444,
+    "handColorGainsBGR": [
+      0.9800893142295336,
+      0.963706249116153,
+      0.9488359863432655
+    ],
+    "armOutlineNativeWidth": 3,
+    "armOutlineBGR": [
+      4.0,
+      13.0,
+      28.0
+    ],
+    "armMissingInkPixelsRestored": 243,
+    "visualReview": "pending",
+    "accepted": false,
+    "walkIntegrated": false
+  }
+]

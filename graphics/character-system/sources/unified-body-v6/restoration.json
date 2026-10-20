@@ -1,0 +1,128 @@
+[
+  {
+    "key": "male-right",
+    "candidate": "male-right-candidate.png",
+    "registrationMethod": "ORB similarity outside mask",
+    "registrationMatrix": [
+      [
+        0.7081140065981445,
+        -0.003664208542311099,
+        2.7291233748532986
+      ],
+      [
+        0.003664208542311099,
+        0.7081140065981445,
+        3.6980115080510476
+      ]
+    ],
+    "featureMatches": 89,
+    "featureInliers": 63,
+    "outsideMaskChangedPixels": 0,
+    "colorMatchGainsBGR": [
+      0.9525999557043223,
+      0.9807994817053275,
+      1.0047290850243036
+    ],
+    "holeRingMaxChannelDifference": 0.0016011852969136518,
+    "colorGatePass": true,
+    "internalDarkStrokeWarnings": [
+      {
+        "pixels": 45,
+        "width": 4,
+        "height": 24
+      }
+    ],
+    "shoulderMuscleVisualCheck": "pending",
+    "accepted": false
+  },
+  {
+    "key": "female-right",
+    "candidate": "female-right-candidate.png",
+    "registrationMethod": "ORB similarity outside mask",
+    "registrationMatrix": [
+      [
+        0.7067171786813902,
+        7.15361205581961e-05,
+        -0.5358014259668129
+      ],
+      [
+        -7.15361205581961e-05,
+        0.7067171786813902,
+        1.8229957337901397
+      ]
+    ],
+    "featureMatches": 76,
+    "featureInliers": 56,
+    "outsideMaskChangedPixels": 0,
+    "colorMatchGainsBGR": [
+      0.9703971490213955,
+      0.9626962343501231,
+      0.9542334329374987
+    ],
+    "holeRingMaxChannelDifference": 0.0007486455254801975,
+    "colorGatePass": true,
+    "internalDarkStrokeWarnings": [],
+    "shoulderMuscleVisualCheck": "pending",
+    "accepted": false
+  },
+  {
+    "key": "androgynous-right",
+    "candidate": "androgynous-right-candidate.png",
+    "registrationMethod": "ORB similarity outside mask",
+    "registrationMatrix": [
+      [
+        0.7265384254057986,
+        -0.0023327769576736573,
+        -11.144578785491
+      ],
+      [
+        0.0023327769576736573,
+        0.7265384254057986,
+        -3.300303041686921
+      ]
+    ],
+    "featureMatches": 62,
+    "featureInliers": 35,
+    "outsideMaskChangedPixels": 0,
+    "colorMatchGainsBGR": [
+      0.9643446824837141,
+      0.9621951606716489,
+      0.9619260336983624
+    ],
+    "holeRingMaxChannelDifference": 0.0010529758724181642,
+    "colorGatePass": true,
+    "internalDarkStrokeWarnings": [],
+    "shoulderMuscleVisualCheck": "pending",
+    "accepted": false
+  },
+  {
+    "key": "androgynous-left",
+    "candidate": "androgynous-left-candidate.png",
+    "registrationMethod": "ORB similarity outside mask",
+    "registrationMatrix": [
+      [
+        0.6987151925829228,
+        0.0013900296997594085,
+        -8.336184006912653
+      ],
+      [
+        -0.0013900296997594085,
+        0.6987151925829228,
+        13.179713251954203
+      ]
+    ],
+    "featureMatches": 37,
+    "featureInliers": 22,
+    "outsideMaskChangedPixels": 0,
+    "colorMatchGainsBGR": [
+      0.9334394845837973,
+      0.9281805948453546,
+      0.9258621211076081
+    ],
+    "holeRingMaxChannelDifference": 0.0006040900039958908,
+    "colorGatePass": true,
+    "internalDarkStrokeWarnings": [],
+    "shoulderMuscleVisualCheck": "pending",
+    "accepted": false
+  }
+]

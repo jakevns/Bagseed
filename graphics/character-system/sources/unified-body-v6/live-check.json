@@ -1,0 +1,10 @@
+{
+  "url": "http://127.0.0.1:5192/",
+  "sections": 6,
+  "returnedViews": 4,
+  "blockedViews": 2,
+  "allFourBoardsDecoded": true,
+  "servedImagesMatchDisk": true,
+  "bodyApproved": false,
+  "noWalkIntegration": true
+}

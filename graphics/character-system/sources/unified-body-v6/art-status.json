@@ -1,0 +1,9 @@
+{
+  "approvedAndPreserved":["painted-parts-v4 hands, all three anatomies and both sides"],
+  "retiredForThisReplacement":["painted-parts-v4 thighs","torso-hips-v5 torso drafts","torso-hips-v5 hips drafts"],
+  "retiredAssetsRetainedAsArchive":true,
+  "replacementMethod":"one armless native source per anatomy/direction, then shared-source curved cuts",
+  "mask":"exact inherited arm-hole mask, grown 6 native pixels; local leftover interior arm ink additionally included with explicit user approval",
+  "status":"unified-body-v6 review incomplete and unapproved",
+  "activeGameAndWalkUnchanged":true
+}

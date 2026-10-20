@@ -1,0 +1,698 @@
+[
+  {
+    "key": "male-right",
+    "anatomy": "male",
+    "direction": "right",
+    "near": "R",
+    "source": "graphics/character-system/sources/anatomy/male-attempt-01.png",
+    "sourceSHA256": "1c5f8a6191583e904a7f0a023683d188c3ac6919023e781907db987f4f5380d2",
+    "crop": [
+      590,
+      20,
+      295,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      236,
+      80
+    ],
+    "pins": {
+      "neck": [
+        152.0,
+        55.0
+      ],
+      "shoulderR": [
+        130.0,
+        118.0
+      ],
+      "shoulderL": [
+        130.0,
+        118.0
+      ],
+      "elbowR": [
+        139.0,
+        265.0
+      ],
+      "elbowL": [
+        139.0,
+        265.0
+      ],
+      "wristR": [
+        164.5,
+        401.0
+      ],
+      "wristL": [
+        164.5,
+        401.0
+      ],
+      "palmR": [
+        170.0,
+        446.0
+      ],
+      "palmL": [
+        170.0,
+        446.0
+      ],
+      "waist": [
+        152.0,
+        313.0
+      ],
+      "hipR": [
+        139.0,
+        402.0
+      ],
+      "hipL": [
+        139.0,
+        402.0
+      ],
+      "kneeR": [
+        140.5,
+        564.0
+      ],
+      "kneeL": [
+        140.5,
+        564.0
+      ],
+      "ankleR": [
+        120.0,
+        766.0
+      ],
+      "ankleL": [
+        120.0,
+        766.0
+      ],
+      "jawAttach": [
+        152.0,
+        15.0
+      ],
+      "root": [
+        152.0,
+        835.0
+      ],
+      "heelL": [
+        76.0,
+        820.0
+      ],
+      "toeL": [
+        206.0,
+        820.0
+      ],
+      "heelR": [
+        76.0,
+        820.0
+      ],
+      "toeR": [
+        206.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 32151,
+    "maskPixels": 42896,
+    "userApprovedLeftoverInkExtensionPixels": 4739
+  },
+  {
+    "key": "male-left",
+    "anatomy": "male",
+    "direction": "left",
+    "near": "L",
+    "source": "graphics/character-system/sources/anatomy/male-attempt-01.png",
+    "sourceSHA256": "1c5f8a6191583e904a7f0a023683d188c3ac6919023e781907db987f4f5380d2",
+    "crop": [
+      1355,
+      20,
+      400,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      184,
+      80
+    ],
+    "pins": {
+      "neck": [
+        147.0,
+        55.0
+      ],
+      "shoulderR": [
+        168.0,
+        118.0
+      ],
+      "shoulderL": [
+        168.0,
+        118.0
+      ],
+      "elbowR": [
+        159.0,
+        265.0
+      ],
+      "elbowL": [
+        159.0,
+        265.0
+      ],
+      "wristR": [
+        133.5,
+        401.0
+      ],
+      "wristL": [
+        133.5,
+        401.0
+      ],
+      "palmR": [
+        128.0,
+        446.0
+      ],
+      "palmL": [
+        128.0,
+        446.0
+      ],
+      "waist": [
+        147.0,
+        313.0
+      ],
+      "hipR": [
+        155.0,
+        402.0
+      ],
+      "hipL": [
+        155.0,
+        402.0
+      ],
+      "kneeR": [
+        152.0,
+        564.0
+      ],
+      "kneeL": [
+        152.0,
+        564.0
+      ],
+      "ankleR": [
+        173.0,
+        766.0
+      ],
+      "ankleL": [
+        173.0,
+        766.0
+      ],
+      "jawAttach": [
+        147.0,
+        15.0
+      ],
+      "root": [
+        147.0,
+        835.0
+      ],
+      "heelL": [
+        213.0,
+        820.0
+      ],
+      "toeL": [
+        83.0,
+        820.0
+      ],
+      "heelR": [
+        213.0,
+        820.0
+      ],
+      "toeR": [
+        83.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 32154,
+    "maskPixels": 43998,
+    "userApprovedLeftoverInkExtensionPixels": 5841
+  },
+  {
+    "key": "female-right",
+    "anatomy": "female",
+    "direction": "right",
+    "near": "R",
+    "source": "graphics/character-system/sources/anatomy/female-attempt-02.png",
+    "sourceSHA256": "87ee221a7f9e71b7f5ba8c3c436b98381467b832ed767613baf92e306d37539e",
+    "crop": [
+      590,
+      20,
+      295,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      236,
+      80
+    ],
+    "pins": {
+      "neck": [
+        152.0,
+        55.0
+      ],
+      "shoulderR": [
+        130.0,
+        118.0
+      ],
+      "shoulderL": [
+        130.0,
+        118.0
+      ],
+      "elbowR": [
+        139.0,
+        265.0
+      ],
+      "elbowL": [
+        139.0,
+        265.0
+      ],
+      "wristR": [
+        164.5,
+        401.0
+      ],
+      "wristL": [
+        164.5,
+        401.0
+      ],
+      "palmR": [
+        170.0,
+        450.0
+      ],
+      "palmL": [
+        170.0,
+        450.0
+      ],
+      "waist": [
+        152.0,
+        313.0
+      ],
+      "hipR": [
+        137.0,
+        402.0
+      ],
+      "hipL": [
+        137.0,
+        402.0
+      ],
+      "kneeR": [
+        140.5,
+        564.0
+      ],
+      "kneeL": [
+        140.5,
+        564.0
+      ],
+      "ankleR": [
+        116.5,
+        766.0
+      ],
+      "ankleL": [
+        116.5,
+        766.0
+      ],
+      "jawAttach": [
+        152.0,
+        15.0
+      ],
+      "root": [
+        152.0,
+        835.0
+      ],
+      "heelL": [
+        80.0,
+        820.0
+      ],
+      "toeL": [
+        210.0,
+        820.0
+      ],
+      "heelR": [
+        80.0,
+        820.0
+      ],
+      "toeR": [
+        210.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 32150,
+    "maskPixels": 41422,
+    "userApprovedLeftoverInkExtensionPixels": 3266
+  },
+  {
+    "key": "female-left",
+    "anatomy": "female",
+    "direction": "left",
+    "near": "L",
+    "source": "graphics/character-system/sources/anatomy/female-attempt-02.png",
+    "sourceSHA256": "87ee221a7f9e71b7f5ba8c3c436b98381467b832ed767613baf92e306d37539e",
+    "crop": [
+      1355,
+      20,
+      400,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      184,
+      80
+    ],
+    "pins": {
+      "neck": [
+        162.0,
+        55.0
+      ],
+      "shoulderR": [
+        181.0,
+        118.0
+      ],
+      "shoulderL": [
+        181.0,
+        118.0
+      ],
+      "elbowR": [
+        172.0,
+        265.0
+      ],
+      "elbowL": [
+        172.0,
+        265.0
+      ],
+      "wristR": [
+        148.5,
+        401.0
+      ],
+      "wristL": [
+        148.5,
+        401.0
+      ],
+      "palmR": [
+        143.0,
+        450.0
+      ],
+      "palmL": [
+        143.0,
+        450.0
+      ],
+      "waist": [
+        162.0,
+        313.0
+      ],
+      "hipR": [
+        165.0,
+        402.0
+      ],
+      "hipL": [
+        165.0,
+        402.0
+      ],
+      "kneeR": [
+        157.5,
+        564.0
+      ],
+      "kneeL": [
+        157.5,
+        564.0
+      ],
+      "ankleR": [
+        180.0,
+        766.0
+      ],
+      "ankleL": [
+        180.0,
+        766.0
+      ],
+      "jawAttach": [
+        162.0,
+        15.0
+      ],
+      "root": [
+        162.0,
+        835.0
+      ],
+      "heelL": [
+        215.0,
+        820.0
+      ],
+      "toeL": [
+        85.0,
+        820.0
+      ],
+      "heelR": [
+        215.0,
+        820.0
+      ],
+      "toeR": [
+        85.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 31207,
+    "maskPixels": 43357,
+    "userApprovedLeftoverInkExtensionPixels": 5918
+  },
+  {
+    "key": "androgynous-right",
+    "anatomy": "androgynous",
+    "direction": "right",
+    "near": "R",
+    "source": "graphics/character-system/sources/anatomy/androgynous-attempt-02.png",
+    "sourceSHA256": "f91363c8310a2e0379f1ab70089fd6d5ec24f2fb1d00a1ae848a511915630e89",
+    "crop": [
+      590,
+      20,
+      295,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      236,
+      80
+    ],
+    "pins": {
+      "neck": [
+        157.0,
+        55.0
+      ],
+      "shoulderR": [
+        136.5,
+        118.0
+      ],
+      "shoulderL": [
+        136.5,
+        118.0
+      ],
+      "elbowR": [
+        144.0,
+        265.0
+      ],
+      "elbowL": [
+        144.0,
+        265.0
+      ],
+      "wristR": [
+        169.5,
+        401.0
+      ],
+      "wristL": [
+        169.5,
+        401.0
+      ],
+      "palmR": [
+        174.0,
+        450.0
+      ],
+      "palmL": [
+        174.0,
+        450.0
+      ],
+      "waist": [
+        157.0,
+        313.0
+      ],
+      "hipR": [
+        148.0,
+        402.0
+      ],
+      "hipL": [
+        148.0,
+        402.0
+      ],
+      "kneeR": [
+        150.5,
+        564.0
+      ],
+      "kneeL": [
+        150.5,
+        564.0
+      ],
+      "ankleR": [
+        124.5,
+        766.0
+      ],
+      "ankleL": [
+        124.5,
+        766.0
+      ],
+      "jawAttach": [
+        157.0,
+        15.0
+      ],
+      "root": [
+        157.0,
+        835.0
+      ],
+      "heelL": [
+        93.0,
+        820.0
+      ],
+      "toeL": [
+        223.0,
+        820.0
+      ],
+      "heelR": [
+        93.0,
+        820.0
+      ],
+      "toeR": [
+        223.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 31789,
+    "maskPixels": 41687,
+    "userApprovedLeftoverInkExtensionPixels": 3776
+  },
+  {
+    "key": "androgynous-left",
+    "anatomy": "androgynous",
+    "direction": "left",
+    "near": "L",
+    "source": "graphics/character-system/sources/anatomy/androgynous-attempt-02.png",
+    "sourceSHA256": "f91363c8310a2e0379f1ab70089fd6d5ec24f2fb1d00a1ae848a511915630e89",
+    "crop": [
+      1355,
+      20,
+      400,
+      850
+    ],
+    "canvas": [
+      768,
+      1024
+    ],
+    "padding": [
+      184,
+      80
+    ],
+    "pins": {
+      "neck": [
+        175.0,
+        55.0
+      ],
+      "shoulderR": [
+        188.0,
+        118.0
+      ],
+      "shoulderL": [
+        188.0,
+        118.0
+      ],
+      "elbowR": [
+        183.0,
+        265.0
+      ],
+      "elbowL": [
+        183.0,
+        265.0
+      ],
+      "wristR": [
+        161.5,
+        401.0
+      ],
+      "wristL": [
+        161.5,
+        401.0
+      ],
+      "palmR": [
+        156.0,
+        450.0
+      ],
+      "palmL": [
+        156.0,
+        450.0
+      ],
+      "waist": [
+        175.0,
+        313.0
+      ],
+      "hipR": [
+        185.0,
+        402.0
+      ],
+      "hipL": [
+        185.0,
+        402.0
+      ],
+      "kneeR": [
+        166.5,
+        564.0
+      ],
+      "kneeL": [
+        166.5,
+        564.0
+      ],
+      "ankleR": [
+        190.5,
+        766.0
+      ],
+      "ankleL": [
+        190.5,
+        766.0
+      ],
+      "jawAttach": [
+        175.0,
+        15.0
+      ],
+      "root": [
+        175.0,
+        835.0
+      ],
+      "heelL": [
+        235.0,
+        820.0
+      ],
+      "toeL": [
+        105.0,
+        820.0
+      ],
+      "heelR": [
+        235.0,
+        820.0
+      ],
+      "toeR": [
+        105.0,
+        820.0
+      ]
+    },
+    "maskGrowthNativePixels": 6,
+    "holePixels": 29598,
+    "maskPixels": 41269,
+    "userApprovedLeftoverInkExtensionPixels": 5414
+  }
+]

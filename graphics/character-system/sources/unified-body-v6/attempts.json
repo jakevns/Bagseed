@@ -1,0 +1,18 @@
+{
+  "limit":12,
+  "perView":2,
+  "attempted":10,
+  "remainingUnspent":2,
+  "mode":"built-in imagegen edit with guide masks; source restoration in code",
+  "results":[
+    {"key":"androgynous-right","attempts":2,"selectedAttempt":2,"status":"returned; visual and Standing gates fail"},
+    {"key":"androgynous-left","attempts":2,"selectedAttempt":2,"status":"returned; visual and color gates fail"},
+    {"key":"male-right","attempts":2,"selectedAttempt":2,"status":"returned; visual and color gates fail"},
+    {"key":"female-right","attempts":2,"selectedAttempt":1,"status":"first returned; correction blocked by image service","requestId":"99c69cbf-6684-438e-ba77-dddb4bbc427f"},
+    {"key":"female-left","attempts":1,"status":"output blocked by image service; not retried","requestId":"fe9c06f6-0978-450f-8a36-43fe28d282af"},
+    {"key":"male-left","attempts":1,"status":"output blocked by image service; not retried","requestId":"3b27d9fd-84a1-4200-aa01-79b333e41af1"}
+  ],
+  "accepted":0,
+  "walkIntegrated":false,
+  "published":false
+}

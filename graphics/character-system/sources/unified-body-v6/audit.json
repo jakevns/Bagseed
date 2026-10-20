@@ -1,0 +1,126 @@
+{
+  "results": [
+    {
+      "key": "male-right",
+      "outsideMaskIdentical": true,
+      "standingOutlineDifference": 0.013366203150880166,
+      "regionColorDifferences": {
+        "torso": 0.008605390749062395,
+        "hips": 0.032373320817197584,
+        "thigh": 0.014334119492533274,
+        "calf-foot": 0.0009730870006991405
+      },
+      "holeRingColorDifference": 0.0016011852969136518,
+      "darkOutlineContinuity": 1.0,
+      "maxBoundaryJumpNearJoin": {
+        "waist": 5,
+        "buttockFold": 1,
+        "knee": 1
+      },
+      "armlessCutReassemblyDifference": 0.0003315100281783524,
+      "rotationJointGatesPass": true,
+      "fourPanel": "male-right-four-panel.png",
+      "failures": [
+        "Standing region mean color difference >=3%",
+        "Armless boundary jump >2px near cut join",
+        "Visual rejection: residual shoulder shading / repair-boundary transitions and arm-contour artifacts"
+      ],
+      "accepted": false
+    },
+    {
+      "key": "male-left",
+      "status": "BLOCKED: image service rejected output; no replacement was fabricated",
+      "accepted": false
+    },
+    {
+      "key": "female-right",
+      "outsideMaskIdentical": true,
+      "standingOutlineDifference": 0.005349695604237572,
+      "regionColorDifferences": {
+        "torso": 0.0003410678059224425,
+        "hips": 0.02802278229004337,
+        "thigh": 0.00555353159341896,
+        "calf-foot": 0.0
+      },
+      "holeRingColorDifference": 0.0007486455254801975,
+      "darkOutlineContinuity": 1.0,
+      "maxBoundaryJumpNearJoin": {
+        "waist": 1,
+        "buttockFold": 1,
+        "knee": 1
+      },
+      "armlessCutReassemblyDifference": 0.000385375018064454,
+      "rotationJointGatesPass": true,
+      "fourPanel": "female-right-four-panel.png",
+      "failures": [
+        "Visual rejection: residual shoulder shading / repair-boundary transitions and arm-contour artifacts"
+      ],
+      "accepted": false
+    },
+    {
+      "key": "female-left",
+      "status": "BLOCKED: image service rejected output; no replacement was fabricated",
+      "accepted": false
+    },
+    {
+      "key": "androgynous-right",
+      "outsideMaskIdentical": true,
+      "standingOutlineDifference": 0.029143981859828038,
+      "regionColorDifferences": {
+        "torso": 0.006408029096386516,
+        "hips": 0.010333934078442459,
+        "thigh": 0.023562918746838944,
+        "calf-foot": 0.00013018085590247043
+      },
+      "holeRingColorDifference": 0.0010529758724181642,
+      "darkOutlineContinuity": 1.0,
+      "maxBoundaryJumpNearJoin": {
+        "waist": 8,
+        "buttockFold": 5,
+        "knee": 1
+      },
+      "armlessCutReassemblyDifference": 0.001617007110075381,
+      "rotationJointGatesPass": true,
+      "fourPanel": "androgynous-right-four-panel.png",
+      "failures": [
+        "Standing silhouette difference >=2%",
+        "Armless boundary jump >2px near cut join",
+        "Visual rejection: residual shoulder shading / repair-boundary transitions and arm-contour artifacts"
+      ],
+      "accepted": false
+    },
+    {
+      "key": "androgynous-left",
+      "outsideMaskIdentical": true,
+      "standingOutlineDifference": 0.017845256948747962,
+      "regionColorDifferences": {
+        "torso": 0.031597299629547,
+        "hips": 0.030315587571992177,
+        "thigh": 0.01896823219249173,
+        "calf-foot": 0.0
+      },
+      "holeRingColorDifference": 0.0006040900039958908,
+      "darkOutlineContinuity": 0.9995194617972128,
+      "maxBoundaryJumpNearJoin": {
+        "waist": 8,
+        "buttockFold": 3,
+        "knee": 1
+      },
+      "armlessCutReassemblyDifference": 0.0006734881962331923,
+      "rotationJointGatesPass": true,
+      "fourPanel": "androgynous-left-four-panel.png",
+      "failures": [
+        "Standing region mean color difference >=3%",
+        "Armless boundary jump >2px near cut join",
+        "Visual rejection: residual shoulder shading / repair-boundary transitions and arm-contour artifacts"
+      ],
+      "accepted": false
+    }
+  ],
+  "viewsRequested": 6,
+  "renderedViews": 4,
+  "acceptedViews": 0,
+  "approvedHandSourcesUnchanged": true,
+  "noWalkIntegration": true,
+  "scope": "Native PNG comparisons and static stress tests. Natural background between limbs is not a joint hole. Visual checks still fail."
+}
