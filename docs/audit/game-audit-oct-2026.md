@@ -7,7 +7,7 @@ This audit uses the current `main` build. Every location was rendered in a real 
 - **Done:** almost everything inside the bedroom, all grow gear, plants, the menu and loading screen, and the people. That covers the part of the game you play most.
 - **Not started:** every other place in the game. That is 13 of 14 locations, including the rest of your own house.
 - **Where the effort went:** about 46 of the 126 review folders are for the player character (hair, neck, faces, outfits, walk cycles). Most of that work is fine detail on one character.
-- **Biggest visual problem:** the bedroom is a painted side-view scene. The rest of the house is a flat top-down floor plan in a different style. You walk from one into the other in under ten seconds.
+- **Biggest visual problem:** the gap between the painted art and the old pixel art. Your house is the first place you walk into from the bedroom, so you see the difference every day. The top-down layout is the game's standard view (house, every building interior, backyard, community garden). The bedroom and grow room, with their tall front walls, are the exceptions.
 - **Recommendation:** freeze the player character once the walk is done. Shelve Westbrook Way and the Threads clothing shop. Spend the art budget on the home loop first (house, grow room, backyard, Willow Lane), then town.
 
 ## 1. What's updated (new illustrated style)
@@ -26,7 +26,7 @@ This audit uses the current `main` build. Every location was rendered in a real 
 
 | Location | How often you see it | Notes |
 | --- | --- | --- |
-| **House** (kitchen, bath, living room, laundry, entry, Remy's room) | Every day | Top-down floor plan in a different perspective. The biggest inconsistency in the game. |
+| **House** (kitchen, bath, living room, laundry, entry, Remy's room) | Every day | Old pixel art next to the painted bedroom. The most visible style gap. Its top-down layout matches the other interiors and should stay. |
 | **Grow room** (den) | Every day once unlocked | Plain brick wall and concrete. The new tents get placed into an unfinished room. |
 | **Backyard** | Every day in season | Flat grass. The garden beds and greenhouse are blocky. |
 | **Willow Lane** (your street) | Every trip out | Clean pixel art. It works, but the new people look pasted on. |
@@ -70,7 +70,7 @@ The order follows what the player sees most and what breaks immersion most. Each
 
 ### Tier 2: the home loop (where players spend most of their time)
 
-3. **House: decide the perspective.** The recommended fix is to split the house into side-view rooms like the bedroom (kitchen and living room first, bathroom second), connected by a hallway scene. A quicker fix is to paint the top-down floor plan to match the new palette. Either way, this is the most visible gap left.
+3. **House: repaint it in the new style, keeping its top-down layout.** Floors, walls and doors first, then the kitchen and living room. These are the same pieces every other interior uses, so painting them once also covers the shops and neighbor homes later. The bedroom's tall-wall view is the one exception in the game. Whether it should eventually match the top-down rooms is your call, but it works as it is and doesn't need usage now.
 4. **Grow room shell.** One painted room background (walls, floor, door, shelf). The tents are already done, so this is cheap and gives a big payoff.
 5. **Backyard.** Painted ground, house wall and fence, plus the garden beds and greenhouse tiers.
 6. **Kitchen and living room furniture.** Fridge, stove, table, couch and TV: the pieces players actually click.
