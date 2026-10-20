@@ -144,6 +144,7 @@
     }
   }
   function authoredWalk(L,dir,frame,blink,density=1){
+    const unified=unifiedFigure(L,dir,frame,blink,density);if(unified)return unified;
     const approved=approvedWalkFigure(L,dir,frame%4,blink,density);if(approved)return approved;
     const walk=customWalkSet(L,dir),top='top-'+L.topS,bottom='bottom-'+L.bottomS,shoe='shoe-'+L.shoesS,items=walk?.items;
     if(!items?.[top]?.accepted||!items[shoe]?.accepted||!items[top].fullSuit&&!items[bottom]?.accepted||isChild(L))return null;

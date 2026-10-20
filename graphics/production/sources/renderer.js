@@ -27,7 +27,7 @@
     for(const field of ['skin','hairC','shirtC','pantsC','shoesC','eyeC','hairHi','hatC','capC','accC','topC2','botC2'])if(/^#[\da-f]{3}(?:[\da-f]{3})?$/i.test(L[field]||'')){let color=L[field].toLowerCase();if(color.length===4)color='#'+[...color.slice(1)].map(c=>c+c).join('');L[field]=color;}
     L.extras=[...(look.extras||[])];L.pierce=[...(look.pierce||[])];L.marks=[...(look.marks||[])];return L;
   }
-  const fields=[...Object.keys(fallback),'short','hatC','capC','accC','topPat','topC2','botPat','botC2','emb','prop'];
+  const fields=[...Object.keys(fallback),'anatomy','short','hatC','capC','accC','topPat','topC2','botPat','botC2','emb','prop'];
   const key = look => {const L=normalize(look);return JSON.stringify([fields.map(k=>L[k]??null),L.extras,L.pierce,L.marks]);};
   const approvalKey = look => key({...look,expr:'neutral',prop:null});
   const canonical = new Map([...DATA.approved,...DATA.cast].map(p=>[approvalKey(p.look),p]));
@@ -690,9 +690,10 @@
     if(bodies.size>200)bodies.clear();bodies.set(signature,out);return out;
   }
   __BAGSEED_WALK_RENDERER__
+  __BAGSEED_UNIFIED_V7__
   const PLAYER_FIGURE_SCALE=100/97;
   function scalePlayerFigure(source,factor){
-    const out=cv(source.width,source.height),g=out.getContext('2d'),density=source.width/96,ground=143;
+    const out=cv(source.width,source.height),g=out.getContext('2d',{willReadFrequently:!!source.bagseedUnifiedV7}),density=source.width/96,ground=143;
     g.imageSmoothingQuality='high';g.setTransform(factor,0,0,factor,48*density*(1-factor),ground*density*(1-factor));g.drawImage(source,0,0);
     const point=([x,y])=>[48+(x-48)*factor,ground+(y-ground)*factor];
     out.bagseedEyes=(source.bagseedEyes||[]).map(point);
@@ -702,10 +703,12 @@
     out.bagseedAuthoredWalk=source.bagseedAuthoredWalk;out.bagseedWalkProfile=source.bagseedWalkProfile;
     out.bagseedApprovedOutfit=source.bagseedApprovedOutfit;
     out.bagseedBodyTransform=source.bagseedBodyTransform;
+    out.bagseedUnifiedV7=source.bagseedUnifiedV7;
     if(source.bagseedAlignment){const a=source.bagseedAlignment;out.bagseedAlignment={...a,origin:point(a.origin),jaw:point(a.jaw),collar:point(a.collar),shoulderBand:a.shoulderBand.map(y=>point([48,y])[1]),neckLength:a.neckLength*factor,shoulderWidth:a.shoulderWidth*factor,headScale:a.headScale*factor};}
     out.bagseedFigureScale=factor;return out;
   }
   function generic(L,dir,nose=false,blink=false,density=1) {
+    const unified=unifiedFigure(L,dir,null,blink,density);if(unified)return unified;
     const out=cv(96*density,144*density),g=out.getContext('2d'),B=body(L,dir,nose,3);
     // The reaction artwork turns toward the raised hand. A profile head's
     // projecting nose cannot meet these front-facing fingers at the collar.
@@ -770,7 +773,7 @@
     return near.length?{x:near.reduce((s,p)=>s+p.x,0)/near.length,y:near.reduce((s,p)=>s+p.y,0)/near.length}:{x:dir==='down'||dir==='up'?31:48,y:72+offset};
   }
   function animate(source,L,dir,frame,breath,blink,act,rig,density=1) {
-    const height=source.height/(source.width/96),ground=height-1,offset=height-108,out=cv(96*density,height*density),g=out.getContext('2d');g.scale(density,density);g.imageSmoothingEnabled=source.width>=out.width;g.imageSmoothingQuality='high';
+    const height=source.height/(source.width/96),ground=height-1,offset=height-108,out=cv(96*density,height*density),g=out.getContext('2d',{willReadFrequently:!!source.bagseedUnifiedV7});g.scale(density,density);g.imageSmoothingEnabled=source.width>=out.width;g.imageSmoothingQuality='high';
     // Custom figures already contain several fitted art layers. A second
     // whole-bitmap 99% squash softened every line whenever idle breath toggled.
     // Preserve their native rest drawing; blinking remains independent.
@@ -790,6 +793,7 @@
     }
     out.bagseedEyes=(source.bagseedEyes||[]).map(([x,y])=>rig&&frame?[x+(frame===1?1:frame===3?-1:0)*(dir==='right'||dir==='left'?.018:.01)*(y-ground),ground+(y-ground)*(frame%2?.988:1)]:breathe?[x,ground+(y-ground)*.99]:[x,y]);
     out.bagseedNose=source.bagseedNose;
+    out.bagseedUnifiedV7=source.bagseedUnifiedV7;
     out.bagseedHeadOrigin=source.bagseedHeadOrigin;
     out.bagseedAlignment=source.bagseedAlignment;
     out.bagseedBodyTransform=source.bagseedBodyTransform;
@@ -955,6 +959,6 @@
   const ready=Promise.all(Object.entries(DATA.images).map(([id,src])=>new Promise((resolve,reject)=>{
     const image=new Image();image.onload=()=>{images.set(id,image);resolve();};image.onerror=()=>reject(new Error('Failed character asset '+id));image.src=src;
   }))).then(()=>{loaded=true;charCache.clear();portraitCache.clear();Smell1151.poses.clear();if(screen==='create')hydrate($('#screen-create'));else if(screen==='game'){hydrate(document);View.snap();}return {assets:images.size,haircuts:DATA.haircuts,approvedIdentities:DATA.approved.length};});
-  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'character-alignment-audit-v6',playerFigureScale:PLAYER_FIGURE_SCALE,walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
+  window.BagseedArt=Object.freeze({version:'illustrated-1',renderingRevision:'character-unified-v7-1',playerFigureScale:PLAYER_FIGURE_SCALE,walkFrameCount:castWalkFrameCount,customWalkFrameCount,walkReview:{status:DATA.walk.status,rig:DATA.walk.rig,items:DATA.walk.items},unifiedV7:DATA.unifiedV7&&{version:DATA.unifiedV7.version,views:Object.keys(DATA.unifiedV7.views)},ready,sprite,portrait,normalize,key,head,body,landmarks:(look,dir='down')=>transformedDetails(normalize(look),dir),baldBase:(look,dir='down')=>baldBase(normalize(look),dir),hairLayer:(look,dir='down')=>hairLayer(normalize(look),dir),assets:DATA.manifest,approved:DATA.approved.map(p=>p.id),cast:DATA.cast.map(p=>({id:p.id,name:p.name,look:p.look,aliases:p.aliases})),get loaded(){return loaded;}});
   ready.catch(error=>console.error('Illustrated character assets failed',error));
 })();

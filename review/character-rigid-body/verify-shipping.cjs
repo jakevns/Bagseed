@@ -1,0 +1,13 @@
+const fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
+(async()=>{const {createStaticServer}=await import('../../tools/server.mjs'),server=createStaticServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
+try{browser=await chromium.launch({executablePath:process.env.BAGSEED_BROWSER_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true,args:['--disable-gpu','--disable-accelerated-2d-canvas']});const page=await require('../../tests/helpers/art-page.cjs')(browser);const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:'+server.address().port,{timeout:180000});await page.evaluate(()=>BagseedArt.ready);
+const result=await page.evaluate(()=>{const board=document.createElement('canvas');board.width=2592;board.height=2592;const g=board.getContext('2d');g.fillStyle='#d8dadd';g.fillRect(0,0,board.width,board.height);const checks=[];
+for(const [ai,anatomy]of ['male','female','androgynous'].entries())for(const [di,dir]of ['right','left'].entries()){
+ const base={anatomy,pres:'neutral',topS:di?'hoodie':'tee',bottomS:di?'shorts':'jeans',shoesS:di?'boots':'sneakers',hairS:di?'long':'short',shirtC:'#3f7fbf',skin:'#cf9670'};const frames=[];
+ for(let slot=0;slot<9;slot++){const frame=slot-1,im=BagseedArt.sprite(base,dir,Math.max(0,frame),0,0,0,false,3,frame>=0);g.drawImage(im,slot*288,(ai*2+di)*432);frames.push(im.toDataURL());
+ const pixels=im.getContext('2d').getImageData(0,0,im.width,im.height).data;let bottom=-1,count=0;for(let y=0;y<im.height;y++)for(let x=0;x<im.width;x++)if(pixels[(y*im.width+x)*4+3]>100){bottom=y;count++;}
+ checks.push({anatomy,dir,frame,unified:im.bagseedUnifiedV7,head:im.bagseedHeadOrigin,hand:im.bagseedHand,bottom:bottom/3,pixels:count});}
+ if(new Set(frames.slice(1)).size!==8)throw Error('Repeated walk: '+anatomy+'/'+dir);
+}return{checks,board:board.toDataURL()};});
+const out=path.resolve(__dirname,'../unified-v7-shipping');fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'live-standing-walk.png'),Buffer.from(result.board.split(',')[1],'base64'));delete result.board;result.browserErrors=errors;fs.writeFileSync(path.join(out,'live-checks.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({frames:result.checks.length,missing:result.checks.filter(c=>!c.unified).length,bottoms:[Math.min(...result.checks.map(c=>c.bottom)),Math.max(...result.checks.map(c=>c.bottom))],errors},null,2));
+}finally{await browser?.close();await new Promise(r=>server.close(r));}})().catch(e=>{console.error(e);process.exitCode=1});

@@ -32,7 +32,7 @@ test('complete hair ends remain above garments in figures, walking and nose-cove
    // Project the independently composed transparent head at the documented
    // jaw attachment to the body's single neck. Inspect hair below the collar,
    // erased it. Testing only head() could never detect that figure-layer bug.
-   const factor=BagseedArt.playerFigureScale,original=cv(288,432);const probe=BagseedArt.sprite(look,dir,0,0,0,0,false,3),[headX,headYRegistered]=probe.bagseedHeadOrigin;
+   const original=cv(288,432),probe=BagseedArt.sprite(look,dir,0,0,0,0,false,3),factor=probe.bagseedFigureScale||BagseedArt.playerFigureScale,[headX,headYRegistered]=probe.bagseedHeadOrigin;
    // Reproduce the two native raster passes: head composition, then uniform
    // figure registration. A single resized head has different strand-edge
    // antialiasing and falsely reports clothing over those opaque strands.

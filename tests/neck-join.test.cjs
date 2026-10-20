@@ -36,10 +36,18 @@ test('standing garments and head/body shapes share one body neck and one jaw att
   for(const topS of tops)for(const face of faces)for(const[bi,body]of bodies.entries())for(const dir of ['down','right','up','left']){
    const L=BagseedArt.normalize({topS,face,body,pres:['neutral','masc','fem'][bi%3],skin:['#f0c7a0','#cf9670','#5d3829'][bi%3],hairS:'bald',facial:'none',ears:'hidden',hat:'none',acc:'none'}),sy=body==='tall'?1.07:1,width=({slim:.84,average:1,broad:1.15,curvy:1.08,stocky:1.2,tall:.91}[body])*(L.pres==='masc'?1.045:L.pres==='fem'?.955:1),shapeY=(199-BagseedArt.landmarks(L,'down').chin[1])/16,neck=143+(BagseedArt.body(L,dir,false,3).bagseedNeck.root[1]-107)*sy,headY=neck-199/3;
    for(const nose of [false]){
-    const projected=cv(),g=projected.getContext('2d'),B=BagseedArt.body(L,dir,nose,3);g.scale(3,3);g.translate(48,143);g.scale(width,sy);g.drawImage(B,-48,-107,96,108);const registered=cv(),r=registered.getContext('2d'),factor=BagseedArt.playerFigureScale;r.imageSmoothingQuality='high';r.setTransform(factor,0,0,factor,144*(1-factor),429*(1-factor));r.drawImage(projected,0,0);const expected=read(registered),sprite=BagseedArt.sprite(L,dir,0,0,0,0,nose,3),a=read(sprite);
+    const projected=cv(),g=projected.getContext('2d'),sprite=BagseedArt.sprite(L,dir,0,0,0,0,nose,3),unified=!!sprite.bagseedUnifiedV7,factor=sprite.bagseedFigureScale||BagseedArt.playerFigureScale;g.scale(3,3);
+    if(unified){
+     // The new painted body joins the head's detached painted neck layer.
+     // Project that independent source at the actual uniform figure scale.
+     const H=BagseedArt.head(L,dir,false,true),[hx,hy]=sprite.bagseedHeadOrigin;
+     g.drawImage(H.bagseedNeckBridge,48+(hx-48)/factor,143+(hy-143)/factor,64,H.height/3);
+    }else{const B=BagseedArt.body(L,dir,nose,3);g.translate(48,143);g.scale(width,sy);g.drawImage(B,-48,-107,96,108);}
+    const registered=cv(),r=registered.getContext('2d');r.imageSmoothingQuality='high';r.setTransform(factor,0,0,factor,144*(1-factor),429*(1-factor));r.drawImage(projected,0,0);const expected=read(registered),a=read(sprite);
     // This band lies below the jaw and within the removed head-neck material.
     // Its skin and collar must come directly from the selected garment body.
-    for(let y=neck+6;y<neck+8;y+=.5)for(let x=46;x<=49;x+=.5){const xx=Math.round((48+(x-48)*factor)*3),yy=Math.round((143+(y-143)*factor)*3),n=(yy*288+xx)*4;if(expected[n+3]>250){neckPixels++;if(Math.max(...[0,1,2,3].map(k=>Math.abs(expected[n+k]-a[n+k])))>6)failures.push({topS,face,body,dir,nose,x,y,reason:'head repainted body neck'});}}
+    const band=unified?[sprite.bagseedAlignment.collar[0]-1.5,sprite.bagseedAlignment.collar[0]+1.5,sprite.bagseedAlignment.jaw[1]+1,sprite.bagseedAlignment.jaw[1]+3]:[46,49,neck+6,neck+8];
+    for(let y=band[2];y<band[3];y+=.5)for(let x=band[0];x<=band[1];x+=.5){const xx=Math.round((unified?x:48+(x-48)*factor)*3),yy=Math.round((unified?y:143+(y-143)*factor)*3),n=(yy*288+xx)*4;if(expected[n+3]>250){neckPixels++;if(Math.max(...[0,1,2,3].map(k=>Math.abs(expected[n+k]-a[n+k])))>6)failures.push({topS,face,body,dir,nose,x,y,reason:'painted neck source changed during assembly'});}}
     const features=BagseedArt.landmarks(L,dir).eyes;for(let i=0;i<features.length;i++){const[x,y]=features[i],actual=sprite.bagseedEyes[i],target=[sprite.bagseedHeadOrigin[0]+x/3*factor,sprite.bagseedHeadOrigin[1]+y/3*factor];if(actual.some((v,k)=>Math.abs(v-target[k])>.001))failures.push({topS,face,body,dir,nose,reason:'jaw does not match the painted collar registration'});eyes++;}
     views++;
    }

@@ -1,0 +1,450 @@
+[
+  {
+    "document": "upper/tee/right",
+    "id": "upper.torso",
+    "role": "upper.primary",
+    "file": "core-sources/upper-tee-right/upper.torso.png",
+    "svg": "graphics/character-system/layered-sources/upper-tee-right.svg",
+    "svgSHA256": "de9abce24f62913f2d526da48189ef1bec8b53739f325e1832c0c029aa2d1d19"
+  },
+  {
+    "document": "upper/tee/right",
+    "id": "upper.sleeveUpper.R",
+    "role": "upper.primary",
+    "file": "core-sources/upper-tee-right/upper.sleeveUpper.R.png",
+    "svg": "graphics/character-system/layered-sources/upper-tee-right.svg",
+    "svgSHA256": "de9abce24f62913f2d526da48189ef1bec8b53739f325e1832c0c029aa2d1d19"
+  },
+  {
+    "document": "upper/tee/right",
+    "id": "upper.sleeveUpper.L",
+    "role": "upper.primary",
+    "file": "core-sources/upper-tee-right/upper.sleeveUpper.L.png",
+    "svg": "graphics/character-system/layered-sources/upper-tee-right.svg",
+    "svgSHA256": "de9abce24f62913f2d526da48189ef1bec8b53739f325e1832c0c029aa2d1d19"
+  },
+  {
+    "document": "upper/tee/left",
+    "id": "upper.torso",
+    "role": "upper.primary",
+    "file": "core-sources/upper-tee-left/upper.torso.png",
+    "svg": "graphics/character-system/layered-sources/upper-tee-left.svg",
+    "svgSHA256": "0dbac8b1d14b1bfca78fbd80168cec2d4869911e613b24939726876640ee783f"
+  },
+  {
+    "document": "upper/tee/left",
+    "id": "upper.sleeveUpper.L",
+    "role": "upper.primary",
+    "file": "core-sources/upper-tee-left/upper.sleeveUpper.L.png",
+    "svg": "graphics/character-system/layered-sources/upper-tee-left.svg",
+    "svgSHA256": "0dbac8b1d14b1bfca78fbd80168cec2d4869911e613b24939726876640ee783f"
+  },
+  {
+    "document": "upper/tee/left",
+    "id": "upper.sleeveUpper.R",
+    "role": "upper.primary",
+    "file": "core-sources/upper-tee-left/upper.sleeveUpper.R.png",
+    "svg": "graphics/character-system/layered-sources/upper-tee-left.svg",
+    "svgSHA256": "0dbac8b1d14b1bfca78fbd80168cec2d4869911e613b24939726876640ee783f"
+  },
+  {
+    "document": "upper/hoodie/right",
+    "id": "upper.torso",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-right/upper.torso.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-right.svg",
+    "svgSHA256": "f34933866f0b77c2014131668be68d327bbd0dada8fd54ae07ab8093824d2a76"
+  },
+  {
+    "document": "upper/hoodie/right",
+    "id": "upper.hood",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-right/upper.hood.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-right.svg",
+    "svgSHA256": "f34933866f0b77c2014131668be68d327bbd0dada8fd54ae07ab8093824d2a76"
+  },
+  {
+    "document": "upper/hoodie/right",
+    "id": "upper.sleeveUpper.R",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-right/upper.sleeveUpper.R.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-right.svg",
+    "svgSHA256": "f34933866f0b77c2014131668be68d327bbd0dada8fd54ae07ab8093824d2a76"
+  },
+  {
+    "document": "upper/hoodie/right",
+    "id": "upper.sleeveLower.R",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-right/upper.sleeveLower.R.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-right.svg",
+    "svgSHA256": "f34933866f0b77c2014131668be68d327bbd0dada8fd54ae07ab8093824d2a76"
+  },
+  {
+    "document": "upper/hoodie/right",
+    "id": "upper.sleeveUpper.L",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-right/upper.sleeveUpper.L.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-right.svg",
+    "svgSHA256": "f34933866f0b77c2014131668be68d327bbd0dada8fd54ae07ab8093824d2a76"
+  },
+  {
+    "document": "upper/hoodie/right",
+    "id": "upper.sleeveLower.L",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-right/upper.sleeveLower.L.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-right.svg",
+    "svgSHA256": "f34933866f0b77c2014131668be68d327bbd0dada8fd54ae07ab8093824d2a76"
+  },
+  {
+    "document": "upper/hoodie/right",
+    "id": "upper.drawstrings",
+    "role": "fixed.trim",
+    "file": "core-sources/upper-hoodie-right/upper.drawstrings.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-right.svg",
+    "svgSHA256": "f34933866f0b77c2014131668be68d327bbd0dada8fd54ae07ab8093824d2a76"
+  },
+  {
+    "document": "upper/hoodie/left",
+    "id": "upper.torso",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-left/upper.torso.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-left.svg",
+    "svgSHA256": "0127916592e6674e0c7bec50f58ab752f1bc2f3cdd0788b81386840316ee856f"
+  },
+  {
+    "document": "upper/hoodie/left",
+    "id": "upper.hood",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-left/upper.hood.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-left.svg",
+    "svgSHA256": "0127916592e6674e0c7bec50f58ab752f1bc2f3cdd0788b81386840316ee856f"
+  },
+  {
+    "document": "upper/hoodie/left",
+    "id": "upper.sleeveUpper.L",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-left/upper.sleeveUpper.L.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-left.svg",
+    "svgSHA256": "0127916592e6674e0c7bec50f58ab752f1bc2f3cdd0788b81386840316ee856f"
+  },
+  {
+    "document": "upper/hoodie/left",
+    "id": "upper.sleeveLower.L",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-left/upper.sleeveLower.L.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-left.svg",
+    "svgSHA256": "0127916592e6674e0c7bec50f58ab752f1bc2f3cdd0788b81386840316ee856f"
+  },
+  {
+    "document": "upper/hoodie/left",
+    "id": "upper.sleeveUpper.R",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-left/upper.sleeveUpper.R.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-left.svg",
+    "svgSHA256": "0127916592e6674e0c7bec50f58ab752f1bc2f3cdd0788b81386840316ee856f"
+  },
+  {
+    "document": "upper/hoodie/left",
+    "id": "upper.sleeveLower.R",
+    "role": "upper.primary",
+    "file": "core-sources/upper-hoodie-left/upper.sleeveLower.R.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-left.svg",
+    "svgSHA256": "0127916592e6674e0c7bec50f58ab752f1bc2f3cdd0788b81386840316ee856f"
+  },
+  {
+    "document": "upper/hoodie/left",
+    "id": "upper.drawstrings",
+    "role": "fixed.trim",
+    "file": "core-sources/upper-hoodie-left/upper.drawstrings.png",
+    "svg": "graphics/character-system/layered-sources/upper-hoodie-left.svg",
+    "svgSHA256": "0127916592e6674e0c7bec50f58ab752f1bc2f3cdd0788b81386840316ee856f"
+  },
+  {
+    "document": "lower/jeans/right",
+    "id": "lower.waist",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-right/lower.waist.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-right.svg",
+    "svgSHA256": "b539142f1dabcd95c43fea26e68a4f13912d2a2f3020084d11885125dcfc481b"
+  },
+  {
+    "document": "lower/jeans/right",
+    "id": "lower.thigh.R",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-right/lower.thigh.R.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-right.svg",
+    "svgSHA256": "b539142f1dabcd95c43fea26e68a4f13912d2a2f3020084d11885125dcfc481b"
+  },
+  {
+    "document": "lower/jeans/right",
+    "id": "lower.calf.R",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-right/lower.calf.R.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-right.svg",
+    "svgSHA256": "b539142f1dabcd95c43fea26e68a4f13912d2a2f3020084d11885125dcfc481b"
+  },
+  {
+    "document": "lower/jeans/right",
+    "id": "lower.cuff.R",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-right/lower.cuff.R.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-right.svg",
+    "svgSHA256": "b539142f1dabcd95c43fea26e68a4f13912d2a2f3020084d11885125dcfc481b"
+  },
+  {
+    "document": "lower/jeans/right",
+    "id": "lower.thigh.L",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-right/lower.thigh.L.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-right.svg",
+    "svgSHA256": "b539142f1dabcd95c43fea26e68a4f13912d2a2f3020084d11885125dcfc481b"
+  },
+  {
+    "document": "lower/jeans/right",
+    "id": "lower.calf.L",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-right/lower.calf.L.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-right.svg",
+    "svgSHA256": "b539142f1dabcd95c43fea26e68a4f13912d2a2f3020084d11885125dcfc481b"
+  },
+  {
+    "document": "lower/jeans/left",
+    "id": "lower.waist",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-left/lower.waist.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-left.svg",
+    "svgSHA256": "029323afa3da4f3b8adbfc194ed104f7cc4f684525dd672e811cefee448cc1c6"
+  },
+  {
+    "document": "lower/jeans/left",
+    "id": "lower.thigh.L",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-left/lower.thigh.L.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-left.svg",
+    "svgSHA256": "029323afa3da4f3b8adbfc194ed104f7cc4f684525dd672e811cefee448cc1c6"
+  },
+  {
+    "document": "lower/jeans/left",
+    "id": "lower.calf.L",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-left/lower.calf.L.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-left.svg",
+    "svgSHA256": "029323afa3da4f3b8adbfc194ed104f7cc4f684525dd672e811cefee448cc1c6"
+  },
+  {
+    "document": "lower/jeans/left",
+    "id": "lower.cuff.L",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-left/lower.cuff.L.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-left.svg",
+    "svgSHA256": "029323afa3da4f3b8adbfc194ed104f7cc4f684525dd672e811cefee448cc1c6"
+  },
+  {
+    "document": "lower/jeans/left",
+    "id": "lower.thigh.R",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-left/lower.thigh.R.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-left.svg",
+    "svgSHA256": "029323afa3da4f3b8adbfc194ed104f7cc4f684525dd672e811cefee448cc1c6"
+  },
+  {
+    "document": "lower/jeans/left",
+    "id": "lower.calf.R",
+    "role": "lower.primary",
+    "file": "core-sources/lower-jeans-left/lower.calf.R.png",
+    "svg": "graphics/character-system/layered-sources/lower-jeans-left.svg",
+    "svgSHA256": "029323afa3da4f3b8adbfc194ed104f7cc4f684525dd672e811cefee448cc1c6"
+  },
+  {
+    "document": "lower/shorts/right",
+    "id": "lower.waist",
+    "role": "lower.primary",
+    "file": "core-sources/lower-shorts-right/lower.waist.png",
+    "svg": "graphics/character-system/layered-sources/lower-shorts-right.svg",
+    "svgSHA256": "3d9051637ccb4b04988d42b20abe410dc30d6a8ee7db8e2be6f49a0cdb88b980"
+  },
+  {
+    "document": "lower/shorts/right",
+    "id": "lower.thigh.R",
+    "role": "lower.primary",
+    "file": "core-sources/lower-shorts-right/lower.thigh.R.png",
+    "svg": "graphics/character-system/layered-sources/lower-shorts-right.svg",
+    "svgSHA256": "3d9051637ccb4b04988d42b20abe410dc30d6a8ee7db8e2be6f49a0cdb88b980"
+  },
+  {
+    "document": "lower/shorts/right",
+    "id": "lower.hem.R",
+    "role": "lower.primary",
+    "file": "core-sources/lower-shorts-right/lower.hem.R.png",
+    "svg": "graphics/character-system/layered-sources/lower-shorts-right.svg",
+    "svgSHA256": "3d9051637ccb4b04988d42b20abe410dc30d6a8ee7db8e2be6f49a0cdb88b980"
+  },
+  {
+    "document": "lower/shorts/right",
+    "id": "lower.thigh.L",
+    "role": "lower.primary",
+    "file": "core-sources/lower-shorts-right/lower.thigh.L.png",
+    "svg": "graphics/character-system/layered-sources/lower-shorts-right.svg",
+    "svgSHA256": "3d9051637ccb4b04988d42b20abe410dc30d6a8ee7db8e2be6f49a0cdb88b980"
+  },
+  {
+    "document": "lower/shorts/left",
+    "id": "lower.waist",
+    "role": "lower.primary",
+    "file": "core-sources/lower-shorts-left/lower.waist.png",
+    "svg": "graphics/character-system/layered-sources/lower-shorts-left.svg",
+    "svgSHA256": "cbf0410caab6322334cc57ed3da44a856203de7d4402f855f859350b6e9c37c0"
+  },
+  {
+    "document": "lower/shorts/left",
+    "id": "lower.thigh.L",
+    "role": "lower.primary",
+    "file": "core-sources/lower-shorts-left/lower.thigh.L.png",
+    "svg": "graphics/character-system/layered-sources/lower-shorts-left.svg",
+    "svgSHA256": "cbf0410caab6322334cc57ed3da44a856203de7d4402f855f859350b6e9c37c0"
+  },
+  {
+    "document": "lower/shorts/left",
+    "id": "lower.hem.L",
+    "role": "lower.primary",
+    "file": "core-sources/lower-shorts-left/lower.hem.L.png",
+    "svg": "graphics/character-system/layered-sources/lower-shorts-left.svg",
+    "svgSHA256": "cbf0410caab6322334cc57ed3da44a856203de7d4402f855f859350b6e9c37c0"
+  },
+  {
+    "document": "lower/shorts/left",
+    "id": "lower.thigh.R",
+    "role": "lower.primary",
+    "file": "core-sources/lower-shorts-left/lower.thigh.R.png",
+    "svg": "graphics/character-system/layered-sources/lower-shorts-left.svg",
+    "svgSHA256": "cbf0410caab6322334cc57ed3da44a856203de7d4402f855f859350b6e9c37c0"
+  },
+  {
+    "document": "footwear/sneakers/right",
+    "id": "footwear.upper.R",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-sneakers-right/footwear.upper.R.png",
+    "svg": "graphics/character-system/layered-sources/footwear-sneakers-right.svg",
+    "svgSHA256": "99ef86a6646196b454329febde4f636b460cde8ae8e22598470e1dec372293b2"
+  },
+  {
+    "document": "footwear/sneakers/right",
+    "id": "footwear.sole.R",
+    "role": "fixed.trim",
+    "file": "core-sources/footwear-sneakers-right/footwear.sole.R.png",
+    "svg": "graphics/character-system/layered-sources/footwear-sneakers-right.svg",
+    "svgSHA256": "99ef86a6646196b454329febde4f636b460cde8ae8e22598470e1dec372293b2"
+  },
+  {
+    "document": "footwear/sneakers/right",
+    "id": "footwear.upper.L",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-sneakers-right/footwear.upper.L.png",
+    "svg": "graphics/character-system/layered-sources/footwear-sneakers-right.svg",
+    "svgSHA256": "99ef86a6646196b454329febde4f636b460cde8ae8e22598470e1dec372293b2"
+  },
+  {
+    "document": "footwear/sneakers/right",
+    "id": "footwear.lacePanels",
+    "role": "fixed.trim",
+    "file": "core-sources/footwear-sneakers-right/footwear.lacePanels.png",
+    "svg": "graphics/character-system/layered-sources/footwear-sneakers-right.svg",
+    "svgSHA256": "99ef86a6646196b454329febde4f636b460cde8ae8e22598470e1dec372293b2"
+  },
+  {
+    "document": "footwear/sneakers/left",
+    "id": "footwear.upper.L",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-sneakers-left/footwear.upper.L.png",
+    "svg": "graphics/character-system/layered-sources/footwear-sneakers-left.svg",
+    "svgSHA256": "2daa600590c4190bafcf7bc8578e141eb7f1a9d8d1a3bdb0ffa278dc36f306f1"
+  },
+  {
+    "document": "footwear/sneakers/left",
+    "id": "footwear.sole.L",
+    "role": "fixed.trim",
+    "file": "core-sources/footwear-sneakers-left/footwear.sole.L.png",
+    "svg": "graphics/character-system/layered-sources/footwear-sneakers-left.svg",
+    "svgSHA256": "2daa600590c4190bafcf7bc8578e141eb7f1a9d8d1a3bdb0ffa278dc36f306f1"
+  },
+  {
+    "document": "footwear/sneakers/left",
+    "id": "footwear.upper.R",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-sneakers-left/footwear.upper.R.png",
+    "svg": "graphics/character-system/layered-sources/footwear-sneakers-left.svg",
+    "svgSHA256": "2daa600590c4190bafcf7bc8578e141eb7f1a9d8d1a3bdb0ffa278dc36f306f1"
+  },
+  {
+    "document": "footwear/sneakers/left",
+    "id": "footwear.lacePanels",
+    "role": "fixed.trim",
+    "file": "core-sources/footwear-sneakers-left/footwear.lacePanels.png",
+    "svg": "graphics/character-system/layered-sources/footwear-sneakers-left.svg",
+    "svgSHA256": "2daa600590c4190bafcf7bc8578e141eb7f1a9d8d1a3bdb0ffa278dc36f306f1"
+  },
+  {
+    "document": "footwear/boots/right",
+    "id": "footwear.upper.R",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-boots-right/footwear.upper.R.png",
+    "svg": "graphics/character-system/layered-sources/footwear-boots-right.svg",
+    "svgSHA256": "930064e46a65a63272b7f74eacf5bf529897853fa9988196568f221aea0af070"
+  },
+  {
+    "document": "footwear/boots/right",
+    "id": "footwear.sole.R",
+    "role": "fixed.trim",
+    "file": "core-sources/footwear-boots-right/footwear.sole.R.png",
+    "svg": "graphics/character-system/layered-sources/footwear-boots-right.svg",
+    "svgSHA256": "930064e46a65a63272b7f74eacf5bf529897853fa9988196568f221aea0af070"
+  },
+  {
+    "document": "footwear/boots/right",
+    "id": "footwear.lining.R",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-boots-right/footwear.lining.R.png",
+    "svg": "graphics/character-system/layered-sources/footwear-boots-right.svg",
+    "svgSHA256": "930064e46a65a63272b7f74eacf5bf529897853fa9988196568f221aea0af070"
+  },
+  {
+    "document": "footwear/boots/right",
+    "id": "footwear.upper.L",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-boots-right/footwear.upper.L.png",
+    "svg": "graphics/character-system/layered-sources/footwear-boots-right.svg",
+    "svgSHA256": "930064e46a65a63272b7f74eacf5bf529897853fa9988196568f221aea0af070"
+  },
+  {
+    "document": "footwear/boots/left",
+    "id": "footwear.upper.L",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-boots-left/footwear.upper.L.png",
+    "svg": "graphics/character-system/layered-sources/footwear-boots-left.svg",
+    "svgSHA256": "2728ef4d762edcf5c70ecc3823e10a85392ec3ca572d21d60697c3e380f3b5f5"
+  },
+  {
+    "document": "footwear/boots/left",
+    "id": "footwear.sole.L",
+    "role": "fixed.trim",
+    "file": "core-sources/footwear-boots-left/footwear.sole.L.png",
+    "svg": "graphics/character-system/layered-sources/footwear-boots-left.svg",
+    "svgSHA256": "2728ef4d762edcf5c70ecc3823e10a85392ec3ca572d21d60697c3e380f3b5f5"
+  },
+  {
+    "document": "footwear/boots/left",
+    "id": "footwear.lining.L",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-boots-left/footwear.lining.L.png",
+    "svg": "graphics/character-system/layered-sources/footwear-boots-left.svg",
+    "svgSHA256": "2728ef4d762edcf5c70ecc3823e10a85392ec3ca572d21d60697c3e380f3b5f5"
+  },
+  {
+    "document": "footwear/boots/left",
+    "id": "footwear.upper.R",
+    "role": "footwear.primary",
+    "file": "core-sources/footwear-boots-left/footwear.upper.R.png",
+    "svg": "graphics/character-system/layered-sources/footwear-boots-left.svg",
+    "svgSHA256": "2728ef4d762edcf5c70ecc3823e10a85392ec3ca572d21d60697c3e380f3b5f5"
+  }
+]
