@@ -50,7 +50,7 @@ test('beneficials treat seedling thrips and companion plants count in both pot t
     assert.equal(treated.inspect, null, 'old infestation notes are discarded after treatment');
     await page.locator('[data-act=plantTab][data-arg=overview]').click();
     assert.match(await page.locator('#panel').innerText(), /Pest level.*20%/s);
-    await page.locator('[data-act=plantTab][data-arg=care]').click();
+    await page.getByRole('button', { name: 'Care', exact: true }).click();
     await page.locator('[data-act=care][data-arg=mites]').click();
     assert.deepEqual(await page.evaluate(id => ({ pest: state.plants[id].pest, sachets: state.inv.mites }), ids.p), {
       pest: { type: null, lvl: 0, known: false }, sachets: 0
@@ -85,6 +85,7 @@ test('beneficials treat seedling thrips and companion plants count in both pot t
       return { results, spiderMitesCleared, remoteDenied, staleTrapDenied, trapsWork };
     }, ids.p);
     assert.deepEqual(guards, { results: Array(8).fill(true), spiderMitesCleared: true, remoteDenied: true, staleTrapDenied: true, trapsWork: true });
+    assert.deepEqual(await page.evaluate(() => [...new Set(Object.values(COMP_THEME).flat())].filter(id => !GP.has(GP.sp(id), 'c'))), [], 'every advertised theme partner is registered as a companion');
 
     const companion = await page.evaluate(ids => {
       const p = state.plants[ids.p], other = state.plants[ids.other];
@@ -113,7 +114,7 @@ test('beneficials treat seedling thrips and companion plants count in both pot t
       const seedNotes = Catalog115.education(GP.sp('P058'));
       const setup = []; Companion.setupItems('tent2', (...args) => setup.push(args));
       // Outdoor flowers retain the existing proximity-limited pest buffer.
-      state.locations.outdoor.owned = true;
+      state.outdoor.unlocked = true; state.locations.outdoor.owned = true;
       const outdoor = createPlant('porchlight', 'outdoor', 0); outdoor.stage = S.seedling;
       const [x, y] = SLOT_POS.outdoor[0], b = { bid: 'beneficial-test', type: 'BED004', x: x - 17, y: y - 6, slots: [] };
       GP.yard().beds.push(b);
