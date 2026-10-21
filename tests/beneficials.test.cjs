@@ -37,7 +37,7 @@ test('beneficials treat seedling thrips and companion plants count in both pot t
     assert.equal(await page.locator('[data-act=care][data-arg=mites]').count(), 0);
     await page.locator('[data-act=inspect]').click();
     assert.match(await page.locator('#panel').innerText(), /Thrips.*pest level 90%/);
-    assert.match(await page.locator('#panel').innerText(), /Companion plants in tents reduce stress/);
+    assert.match(await page.locator('#panel').innerText(), /Beneficial plants prevent new pests/);
     await page.locator('[data-act=care][data-arg=mites]').click();
     const treated = await page.evaluate(ids => ({
       pest: state.plants[ids.p].pest, other: state.plants[ids.other].pest.lvl,
@@ -165,6 +165,122 @@ test('beneficials treat seedling thrips and companion plants count in both pot t
     assert.ok(overflow <= 1, 'treatment instructions fit a phone screen');
     await page.locator('[data-act=care][data-arg=mites]').click();
     assert.equal(await page.evaluate(id => state.plants[id].pest.type, ids.p), null);
+    assert.deepEqual(errors, []);
+  } finally {
+    await browser?.close(); await new Promise(resolve => server.close(resolve));
+  }
+});
+
+test('growing beneficials prevent pest rolls in tents, outdoors and after moves', async () => {
+  const { createStaticServer } = await import('../tools/server.mjs');
+  const server = createStaticServer();
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  let browser;
+  try {
+    browser = await chromium.launch({ executablePath: process.env.BAGSEED_BROWSER_PATH || '/usr/bin/chromium' });
+    const page = await require('./helpers/art-page.cjs')(browser, { viewport: { width: 1100, height: 1000 } });
+    const errors = []; page.on('pageerror', e => errors.push(e.message));
+    await page.goto(`http://127.0.0.1:${server.address().port}`, { timeout: 120000 });
+    await page.evaluate(() => BagseedStartup.ready);
+    await page.locator('[data-act=newGame]').click();
+    await page.locator('#crName').fill('Beneficial prevention');
+    await page.locator('[data-act=startGame]').click();
+    await page.waitForFunction(() => screen === 'game' && !!state.player);
+    const result = await page.evaluate(() => {
+      const check = (ok, message) => { if (!ok) throw Error(message); };
+      const equal = (a, b, message) => check(Math.abs(a - b) < 1e-9, `${message}: ${a} vs ${b}`);
+      settings.speed = 0; settings.reduced = true; state.tut.on = false; state.minute = 720; state.vibe = 'curious';
+      runtime.dialogQ = []; if (runtime.curDialog) ACT.dlg(0); ACT.tipOff(); closePanel();
+      state.outdoor.unlocked = true; state.locations.tent2.owned = true;
+      for (const loc of ['closet', 'tent2']) Object.assign(state.locations[loc].equip, { pot: 2, light: 2 });
+      const p = createPlant('porchlight', 'tent2', 0); p.stage = S.seedling; p.water = 90;
+      const L = state.locations.tent2; L.clean = 20;
+      const env = { temp: 90, hum: 30 }, g = { pestRes: .6 };
+      state.difficulty = 'standard';
+      const oldRandom = Math.random;
+      let draws = 0, sequence = [];
+      const random = values => { sequence = values.slice(); draws = 0; Math.random = () => { draws++; return sequence.shift() ?? .999999; }; };
+      const base = .03 * .7 * (1 - .04 * Knowledge.level('health'));
+      const baseline = [base + .4 * .12, base + .4 * .08, base * .5 + .4 * .04];
+      const protectedRates = baseline.map(risk => risk * .75);
+      let preventedThrips = false;
+      try {
+        const full = GP.newPlant('P058', { kind: 'slot', ref: 'tent2' });
+        GrowPotGarden.arr('tent2')[1] = full.gid;
+        equal(Companion.protection(p), 0, 'sprouts do not protect yet');
+        full.age = GP.sp(full.sp).days * .5;
+        equal(Companion.protection(p), .25, 'Growing beneficial in full-size pot protects seedlings');
+        // Identical random draws infest the unprotected seedling but are
+        // prevented by a Growing beneficial for every supported pest type.
+        for (const [i, type] of ['gnats', 'mites', 'thrips'].entries()) {
+          const values = Array(i).fill(.999999).concat((baseline[i] + protectedRates[i]) / 2);
+          p.pest = { type: null, lvl: 0, known: false }; random(values); pestDaily(p, g, env, L);
+          check(!p.pest.type, 'beneficial prevents ' + type);
+          full.water = 0; p.pest = { type: null, lvl: 0, known: false }; random(values); pestDaily(p, g, env, L);
+          check(p.pest.type === type, 'same roll infests without beneficial: ' + type);
+          full.water = 80;
+        }
+        preventedThrips = true;
+        full.water = 80; p.pest = { type: 'thrips', lvl: .2, known: true };
+        pestDaily(p, g, env, L); equal(p.pest.lvl, .2 + .08 * .7 * .75, 'existing pest growth is slowed');
+        const small = GP.newPlant('P098', { kind: 'pot', ref: 'tent2' }); small.age = GP.sp(small.sp).days;
+        GP.pots().tent2[0] = small.gid; equal(Companion.protection(p), .5, 'both pot types stack');
+        const third = GP.newPlant('P051', { kind: 'pot', ref: 'tent2' }); third.age = GP.sp(third.sp).days;
+        GP.pots().tent2[1] = third.gid; equal(Companion.protection(p), .75, 'protection caps at 75%');
+        // Duplicate references never grant more protection.
+        GP.pots().tent2.push(third.gid); equal(Companion.protection(p), .75, 'deduplicate references'); GP.pots().tent2.pop();
+        third.water = 0; equal(Companion.protection(p), .5, 'dry beneficial stops protecting'); third.water = 80;
+        GP.remove(small.gid); equal(Companion.protection(p), .5, 'removed beneficial stops protecting');
+        third.at.ref = 'closet'; GP.pots().tent2[1] = null; GP.pots().closet[0] = third.gid;
+        equal(Companion.protection(p), .25, 'moving beneficial transfers protection');
+        full.age = 0; equal(Companion.protection(p), 0, 'no other tent leaks its protection'); full.age = GP.sp(full.sp).days;
+        p.stage = S.drying; equal(Companion.protection(p), 0, 'drying batches do not get pest rolls'); p.stage = S.seedling;
+        Math.random = oldRandom; // createPlant needs unique random IDs, independent of pest-roll fixtures.
+        const outdoor = createPlant('porchlight', 'outdoor', 0); outdoor.stage = S.seedling;
+        const far = createPlant('velvet', 'outdoor', 5); far.stage = S.seedling;
+        const [x, y] = SLOT_POS.outdoor[0];
+        const bed = { bid: 'prevention-bed', type: 'BED004', x: x - 17, y: y - 6, slots: [] };
+        GP.yard().beds.push(bed);
+        const herb = GP.newPlant('P058', { kind: 'bed', ref: bed.bid }); herb.age = GP.sp(herb.sp).days * .5; bed.slots = [herb.gid];
+        equal(Companion.protection(outdoor), .25, 'nearby Growing outdoor beneficial protects');
+        equal(Companion.protection(far), 0, 'distant crop is unprotected');
+        // Seasonal pest arrivals must use the same protection as daily rolls.
+        state.weather = 'Sunny'; state.outTemp = 70; outdoor.pest = far.pest = { type: null, lvl: 0, known: false };
+        const seasonalRisk = .05 * (1 - Seasons.protection('outdoor')) * (1 - Knowledge.level('health') * .04);
+        random([seasonalRisk * .875, seasonalRisk * .875, 0]);
+        Seasons.daily();
+        check(!outdoor.pest.type && far.pest.type, 'seasonal rolls prevent infestation only on the protected outdoor crop');
+        // Moving outdoors into a protected tent uses its destination protection.
+        state.scene = 'backyard'; state.player.energy = 100;
+        state.player.x = x; state.player.y = y + 8;
+        check(Access.atPlant(outdoor), 'fixture is within reach of the outdoor plant');
+        random([.15 * .875]);
+        Mover.move(outdoor.id, 'closet', 0, true);
+        check(outdoor.loc === 'closet', 'relocation completed');
+        check(!outdoor.pest.type, 'destination beneficial prevents relocation thrips');
+        GP.remove(full.gid); equal(Companion.protection(p), 0, 'pulling last beneficial removes protection');
+        p.stage = S.seed; random([]); pestDaily(p, g, env, L); check(!draws, 'seeds receive no pest rolls'); p.stage = S.seedling;
+        full.age = GP.sp(full.sp).days; GP.S().list[full.gid] = full; GrowPotGarden.arr('tent2')[1] = full.gid;
+        const difficulty = state.difficulty, custom = state.custom;
+        state.difficulty = 'custom'; state.custom = { ...custom, pests: false }; random([]);
+        equal(Companion.protection(p), 0, 'pest toggle disables protection mechanics');
+        pestDaily(p, g, env, L); check(!draws, 'disabled pests never roll');
+        check(Companion.protectionNote(p).includes('Pests are disabled'), 'disabled status is shown');
+        state.difficulty = difficulty; state.custom = custom;
+        window.preventionFixture = { p: p.id, full: full.gid };
+        state.scene = 'bedroom'; const r = locRect('tent2'); state.player.x = r[0] + r[2] / 2; state.player.y = r[1] + r[3] + 6;
+        state.vibe = 'curious'; p.pest = { type: null, lvl: 0, known: false }; Panels.plant(p.id, 'overview');
+        SaveSys.now('beneficial prevention');
+        return { baseline, protectedRates, preventedThrips, fixture: preventionFixture };
+      } finally { Math.random = oldRandom; }
+    });
+    assert.equal(result.preventedThrips, true);
+    assert.match(await page.locator('#panel').innerText(), /Beneficial pest protection: 25%/);
+    await page.setViewportSize({ width: 440, height: 960 });
+    assert.ok(await page.locator('#panel').evaluate(el => el.scrollWidth <= el.clientWidth + 1));
+    await page.reload({ timeout: 120000 }); await page.evaluate(() => BagseedStartup.ready);
+    await page.locator('[data-act=continueGame]').click();
+    assert.equal(await page.evaluate(id => Companion.protection(state.plants[id]), result.fixture.p), .25, 'protection restores from saved plants');
     assert.deepEqual(errors, []);
   } finally {
     await browser?.close(); await new Promise(resolve => server.close(resolve));

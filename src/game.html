@@ -1162,19 +1162,20 @@ function advanceStage(p, to) {
   return nm;
 }
 function pestDaily(p, g, env, L) {
-  if (!sysOn('pests') || p.stage < S.seedling) return;
+  if (!sysOn('pests') || p.stage < S.seedling || p.stage >= S.drying) return;
+  const pressure = 1 - Companion.protection(p);
   if (p.pest.type) {
     const grow = p.pest.type === 'gnats' ? (p.water > 70 ? .12 : .02) : p.pest.type === 'mites' ? (env.hum < 45 ? .14 : .06) : .08;
-    p.pest.lvl = clamp(p.pest.lvl + grow * (1.3 - g.pestRes), 0, 1);
+    p.pest.lvl = clamp(p.pest.lvl + grow * (1.3 - g.pestRes) * pressure, 0, 1);
     if (p.pest.lvl > .45 - .025 * Knowledge.level('health') && !state.hints['pestwarn' + p.id]) { state.hints['pestwarn' + p.id] = 1; notify(`${p.name}'s leaves look speckled and sad.`, 'bad'); }
     if (!p.pest.known && Knowledge.level('health') >= 4 && p.pest.lvl > .14) { p.pest.known = true; notify(`Your Trellis studying pays off: you spot early ${p.pest.type} on ${p.name}.`, 'warn'); }
     return;
   }
   const dirt = (60 - L.clean) / 100, base = (diff() === 'horti' ? .05 : diff() === 'cozy' ? .015 : .03) * (1.3 - g.pestRes) * (1 - .04 * Knowledge.level('health'));
   let type = null;
-  if (p.water > 75 && chance(base + dirt * .12)) type = 'gnats';
-  else if (env.temp > 80 && env.hum < 45 && chance(base + dirt * .08)) type = 'mites';
-  else if (chance(base * .5 + dirt * .04)) type = 'thrips';
+  if (p.water > 75 && chance(clamp(base + dirt * .12, 0, 1) * pressure)) type = 'gnats';
+  else if (env.temp > 80 && env.hum < 45 && chance(clamp(base + dirt * .08, 0, 1) * pressure)) type = 'mites';
+  else if (chance(clamp(base * .5 + dirt * .04, 0, 1) * pressure)) type = 'thrips';
   if (type) { p.pest = { type, lvl: .08, known: false }; p.hist.pest++; if (!state.hints.firstpest) hint('firstpest', 'Something moved near the soil... Inspect the plant.'); }
 }
 
@@ -4107,7 +4108,7 @@ const Panels = {
       const tabs = `<div class="tabs">${[['seeds', 'Seeds & Genetics'], ['harvest', 'Harvest'], ['supplies', 'Supplies'], ['equip', 'Equipment'], ['decor', 'Decor & Clothing']].map(([k, n]) => `<button class="chip ${k === t ? 'on' : ''}" data-act="invTab" data-arg="${k}">${n}</button>`).join('')}</div>`;
       if (t === 'seeds') return tabs + `<p class="small muted">Stored in your ${esc(EQ.storage[state.gear.storage].name)}. Click an empty pot in the room to plant. Regular seeds can turn out male, so they're a bigger gamble in a one-pot starter tent.</p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))">${I.seeds.map(s => { const g = GEN(s.lineId); return `<div class="card"><canvas class="px" width="48" height="64" data-draw="inv:${s.id}" style="width:72px;margin:auto"></canvas><h3>${esc(g.bag ? (g.lineName || 'Bag Seed') : g.name)}${s.kind === 'cutting' ? ' (cutting)' : ''}</h3><div class="meta">${esc(s.from ? 'From ' + (BREEDERS[s.from] ? BREEDERS[s.from].name : s.from) : '')}</div>${seedInfo(s.lineId, s)}</div>`; }).join('') || '<p class="muted">No seeds in storage.</p>'}</div>`;
       if (t === 'harvest') return tabs + `<div class="grid">${I.harvest.map(b => `<div class="card"><h3>${esc(b.name)}</h3><div class="meta mono">GRADE ${b.grade} · ${b.jars} JAR(S) · DAY ${b.day}${b.dry ? ' · ' + esc(b.dry.toUpperCase()) : ''}</div>${Object.entries(b.scores).map(([k, v]) => bar(k, v * 100, 100, lvlCol(v * 100))).join('')}<div class="small">${esc(TYPE_LABEL[b.type])} · ${esc(b.aromaName)} · ${b.organic ? 'Organic' : 'Synthetic'}</div></div>`).join('') || '<p class="muted">No jars yet.</p>'}</div>`;
-      if (t === 'supplies') return tabs + `<dl class="kv"><dt>Grow-Mo (synthetic)</dt><dd>${I.synth} mixes</dd><dt>Wormcastle (organic)</dt><dd>${I.organic} mixes</dd><dt>Feed jug</dt><dd>${I.jug ? `${I.jug.line} · ${I.jug.uses} feeding(s) · ${I.jug.ready > state.day ? 'brewing until tomorrow' : 'ready'}` : 'Empty'}</dd><dt>Balance pen</dt><dd>${I.phpen ? 'Yes' : 'No'}</dd><dt>Sticky traps</dt><dd>${I.traps}</dd><dt>Beneficial mites</dt><dd>${I.mites} sachets<span class="small muted"> · Inspect the affected plant, then use Care → Release beneficial mites. Treats thrips or spider mites on that plant, including seedlings. Companion plants give a separate, automatic bonus.</span></dd><dt>Trellis nets</dt><dd>${I.net}</dd><dt>Bamboo stakes</dt><dd>${I.stakes}</dd><dt>Pollen vials</dt><dd>${(I.pollen || []).length ? I.pollen.map(p => esc(p.name)).join(', ') + ' <span class="muted">(pollinate a flowering female from her Care tab)</span>' : 'None'}</dd><dt>Carbon refills</dt><dd>${Object.entries(I.carbon || {}).filter(([, n]) => n > 0).map(([t, n]) => esc(CARBON[t].name) + ' ×' + n).join(', ') || 'None'}</dd><dt>Tomatoes</dt><dd>${I.tomatoes || 0} ${I.tomatoes ? '<button class="btn sm" data-act="eat">Eat one (+15 energy)</button>' : ''}</dd><dt>Kenji's chili peppers</dt><dd>${I.peppers || 0} ${I.peppers ? '<button class="btn sm" data-act="eatPepper">Brave it (+20 energy?)</button>' : ''}</dd></dl>`;
+      if (t === 'supplies') return tabs + `<dl class="kv"><dt>Grow-Mo (synthetic)</dt><dd>${I.synth} mixes</dd><dt>Wormcastle (organic)</dt><dd>${I.organic} mixes</dd><dt>Feed jug</dt><dd>${I.jug ? `${I.jug.line} · ${I.jug.uses} feeding(s) · ${I.jug.ready > state.day ? 'brewing until tomorrow' : 'ready'}` : 'Empty'}</dd><dt>Balance pen</dt><dd>${I.phpen ? 'Yes' : 'No'}</dd><dt>Sticky traps</dt><dd>${I.traps}</dd><dt>Beneficial mites</dt><dd>${I.mites} sachets<span class="small muted"> · Inspect the affected plant, then use Care → Release beneficial mites. Treats thrips or spider mites on that plant, including seedlings. Growing beneficial plants automatically lower pest risk; keep them watered alongside your crops.</span></dd><dt>Trellis nets</dt><dd>${I.net}</dd><dt>Bamboo stakes</dt><dd>${I.stakes}</dd><dt>Pollen vials</dt><dd>${(I.pollen || []).length ? I.pollen.map(p => esc(p.name)).join(', ') + ' <span class="muted">(pollinate a flowering female from her Care tab)</span>' : 'None'}</dd><dt>Carbon refills</dt><dd>${Object.entries(I.carbon || {}).filter(([, n]) => n > 0).map(([t, n]) => esc(CARBON[t].name) + ' ×' + n).join(', ') || 'None'}</dd><dt>Tomatoes</dt><dd>${I.tomatoes || 0} ${I.tomatoes ? '<button class="btn sm" data-act="eat">Eat one (+15 energy)</button>' : ''}</dd><dt>Kenji's chili peppers</dt><dd>${I.peppers || 0} ${I.peppers ? '<button class="btn sm" data-act="eatPepper">Brave it (+20 energy?)</button>' : ''}</dd></dl>`;
       if (t === 'equip') return tabs + ownedLocs().filter(l => LOC_DEF[l].kind !== 'outdoor').map(l => `<h3>${esc(locName(l))} <button class="btn sm" data-act="openSpace" data-arg="${l}">Controls</button></h3><div class="grid">${LOC_SLOTS.filter(sl => locAccepts(l, sl) && (state.locations[l].equip[sl] || ['light', 'fan', 'exhaust', 'sensor', 'pot'].includes(sl))).map(sl => { const tier = state.locations[l].equip[sl]; return `<div class="card"><canvas class="px" width="96" height="48" data-draw="gear:${sl}:${tier}" style="width:100%;background:#141c18"></canvas><div class="meta mono">${sl.toUpperCase()} · TIER ${tier}</div><h3>${esc(EQ[sl][tier].name)}</h3></div>`; }).join('')}</div>`).join('') + `<h3>Home</h3><div class="grid">${GLOBAL_SLOTS.map(sl => `<div class="card"><canvas class="px" width="96" height="48" data-draw="gear:${sl}:${state.gear[sl]}" style="width:100%;background:#141c18"></canvas><div class="meta mono">${sl.toUpperCase()}</div><h3>${esc(EQ[sl][state.gear[sl]].name)}</h3></div>`).join('')}</div>`;
       const own = Object.keys(state.room.own).filter(k => !k.startsWith('s:') && decorDef(k));
       return tabs + `<p class="small muted">Decor you own. Place, move and flip items in Decorate mode.</p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">${own.map(k => { const D = decorDef(k); return `<div class="card"><canvas class="px" width="48" height="36" data-draw="decor:${k}" style="width:96px;margin:auto;background:#141c18"></canvas><h3>${esc(D.n)}</h3><div class="meta">${decorFree(k)} free · ${state.room.own[k] - decorFree(k)} placed</div>${D.gift ? `<div class="small" style="color:var(--amber)">${esc(D.gift)}</div>` : ''}</div>`; }).join('') || '<p class="muted">No decor yet.</p>'}</div><div class="actions"><button class="btn primary" data-act="decorate">Decorate room</button><button class="btn" data-act="wardrobe">Open wardrobe</button></div>`;
@@ -4134,7 +4135,7 @@ const Panels = {
       const p = state.plants[runtime.plantSel]; if (!p) return '<p class="muted">This plant is gone.</p>';
       const g = GEN(p.lineId), L = state.locations[p.loc], env = envFor(p.loc), t = runtime.plantTab, q = k => traitText(g, k) ? esc(traitText(g, k)) : '<span class="unk">???</span>';
       const pips = STAGES.map((s, i) => `<span class="pip ${i < p.stage ? 'done' : i === p.stage ? 'now' : ''}" title="${s.name}"></span>`).join('');
-      const pestRisk = p.pest.type ? (p.pest.known ? Math.round(p.pest.lvl * 100) : null) : Math.round(clamp((60 - L.clean) + (p.water > 80 ? 20 : 0), 0, 100) * .6);
+      const pestRisk = p.pest.type ? (p.pest.known ? Math.round(p.pest.lvl * 100) : null) : Math.round(clamp((60 - L.clean) + (p.water > 80 ? 20 : 0), 0, 100) * .6 * (1 - Companion.protection(p)));
       const moldRisk = Math.round(clamp((env.hum - 45) * 2 + p.density * 40 - env.airflow * 40 + p.mold * 100, 0, 100));
       const envScore = Math.round(clamp(100 - (Math.max(0, idealFor(p.stage).t[0] - env.temp) + Math.max(0, env.temp - idealFor(p.stage).t[1])) * 7 - (Math.max(0, idealFor(p.stage).h[0] - env.hum) + Math.max(0, env.hum - idealFor(p.stage).h[1])) * 2.5, 0, 100));
       const sensorTier = L.equip.sensor, smart = EQ.pot[L.equip.pot] && L.equip.pot === 3;
@@ -4150,6 +4151,7 @@ const Panels = {
           ${bar('Water', p.water, 100, '#7fd4ff', smart || sensorTier >= 2 ? Math.round(p.water) + '%' : p.water < 20 ? 'Dry' : p.water > 85 ? 'Soggy' : 'Damp')}${bar('Nutrition', p.nutr, 100, lvlCol(p.nutr))}${bar('Roots', p.root, 100, lvlCol(p.root))}
           ${bar('Environment', envScore, 100, lvlCol(envScore), sensorTier ? envScore + '%' : envScore > 65 ? 'Fine?' : 'Off?')}${bar('Canopy', p.density * 100, 100, '#7fb03a', Math.round(p.density * 100) + '%')}
           ${bar(p.pest.type && p.pest.known ? 'Pest level' : 'Pest risk', pestRisk ?? 50, 100, lvlCol(pestRisk ?? 50, 1), pestRisk === null ? '?' : pestRisk + '%')}${bar('Mold risk', moldRisk, 100, lvlCol(moldRisk, 1), moldRisk + '%')}
+          ${Companion.protectionNote(p)}
           ${p.pest.type && p.pest.known ? `<div class="note warn">${esc(p.pest.type === 'mites' ? 'Spider mites' : p.pest.type === 'thrips' ? 'Thrips' : 'Fungus gnats')} detected. Treat this plant from its Care tab.<button class="btn sm" data-act="plantTab" data-arg="care">Treat pests</button></div>` : ''}`}
           <div class="small mono muted" style="margin:6px 0">Temp ${esc(readTemp(p.loc, env))} · Humidity ${esc(readHum(p.loc, env))} · Light ${env.lightOn ? 'ON' : 'OFF'} (${L.schedule === 'veg' ? '18/6' : '12/12'}) · ${L.door === 'closed' ? 'Closed' : 'Open'}</div>
           <dl class="kv" style="margin-top:8px"><dt>Genetics</dt><dd>${g.bag ? '<span class="unk">??? (bag seed)</span>' : esc(g.name)}</dd><dt>Breeder</dt><dd>${g.bag ? '<span class="unk">???</span>' : q('breeder')}</dd><dt>Seed type</dt><dd>${p.seedType === 'unknown' ? '<span class="unk">???</span>' : SEEDTYPE_LABEL[p.seedType || 'fem']}</dd><dt>Sex</dt><dd>${sexTxt}</dd><dt>Lifecycle</dt><dd>${q('lifecycle')}</dd><dt>Leaves</dt><dd>${q('leaf')}</dd><dt>Structure</dt><dd>${q('structure')}</dd><dt>Height</dt><dd>${q('height')} · ${Math.round(p.height)}" now (light at ${clearance(p.loc)}")</dd><dt>Color</dt><dd>${q('color')}</dd><dt>Aroma</dt><dd>${q('aroma')}</dd><dt>Profile</dt><dd>${q('profile')}</dd><dt>Training</dt><dd>${esc({ natural: 'Natural', lst: 'Low-stress training', topped: 'Topped', scrog: 'SCROG' }[p.training])}</dd>${p.seeded ? '<dt>Seeds</dt><dd>Pollinated: will set seeds</dd>' : ''}</dl>
@@ -4166,6 +4168,7 @@ const Panels = {
     if (st === S.finished) { if (p.dry && p.dry.spoiled) add('jar', 'Compost spoiled batch', 'Mold took it. Clear the space for the next plant. 4 energy', true, 'danger'); else add('jar', 'Trim & jar', `Turn the dried harvest into jars.${p.dry && p.dry.result ? ' Drying result: ' + esc(p.dry.result.label) + '.' : ''} 10 energy · 1 hr`, true, 'primary'); }
     else if (st === S.drying) A.push(dryPanel(p.loc) + `<div class="actions"><button class="btn sm" data-act="openSpace" data-arg="${p.loc}">Open Grow Space Controls</button></div>`);
     else {
+      if (st >= S.seedling) A.push(Companion.protectionNote(p));
       if (st === S.ready && !male) add('harvest', 'Harvest', 'Chop and hang to dry. Then: light off, space closed, aim for about 70°F / 70%. 15 energy · 1 hr', true, 'primary');
       if (male) { if (!p.keepMale) add('keepmale', 'Keep for future breeding', 'He stays. His pollen will seed any flowering female sharing this space.', true); add('remove', p.keepMale ? 'Retire male' : 'Remove plant', p.keepMale && st >= S.midflower ? 'Collect a pollen vial for future breeding, then compost him.' : 'Pull him before he can pollinate anything. 4 energy', true, 'danger'); }
       add('water', 'Water', `${state.gear.water === 3 ? 'Drip handles mornings, but you can hand-water' : esc(wt.name)} · ${state.gear.water === 3 ? 4 : wt.energy} energy`, true, p.water < 25 ? 'primary' : '');
@@ -4177,7 +4180,7 @@ const Panels = {
       if (g.lifecycle === 'photo' && st >= S.earlyveg && st <= S.matveg) add('flip', L.schedule === 'flower' ? 'Lights already on 12/12' : 'Flip lights to 12/12', g.revealed.lifecycle ? 'Longer nights trigger flowering in photoperiods. Affects every plant in this space.' : 'You don\'t know her lifecycle yet. Flipping now is a gamble.', L.schedule !== 'flower');
       if (p.pest.type && p.pest.known) {
         const t = p.pest.type;
-        A.push(`<div class="note">${esc(t === 'mites' ? 'Spider mites' : t === 'thrips' ? 'Thrips' : 'Fungus gnats')} · pest level ${Math.round(p.pest.lvl * 100)}%. Treatments below affect this plant, including seedlings. Companion plants in tents reduce stress; they do not treat an infestation.</div>`);
+        A.push(`<div class="note">${esc(t === 'mites' ? 'Spider mites' : t === 'thrips' ? 'Thrips' : 'Fungus gnats')} · pest level ${Math.round(p.pest.lvl * 100)}%. Beneficial plants prevent new pests and slow an existing infestation. Use the treatments below to bring this plant's pest level down, including on seedlings.</div>`);
         if (t === 'gnats' || t === 'thrips') add('traps', 'Hang sticky traps', `${I.traps} left · lowers pest level by ${t === 'gnats' ? 50 : 35} points · 3 energy · 10 min${I.traps > 0 ? '' : ' · buy from LeafCart → Tools'}`, I.traps > 0);
         if (t === 'mites' || t === 'thrips') add('mites', 'Release beneficial mites', `${I.mites} sachets · uses 1 on this plant · lowers pest level by 70 points · 3 energy · 10 min${I.mites > 0 ? '' : ' · buy from LeafCart → Tools'}`, I.mites > 0);
         if (t === 'gnats') add('dry', 'Let the soil dry out', 'Gnat larvae hate dry topsoil. Works when water is low.', true);
@@ -7493,7 +7496,7 @@ const Seasons = {
         if (wx === 'Heat Wave') { p.stress += 8 * (1 - prot); p.water = clamp(p.water - 25 * (1 - prot), 0, 100); if (prot < .5 && chance(.4)) hit = 'The heat wave left ' + p.name + ' wilted by afternoon.'; }
         if ((wx === 'Cold Snap' || state.outTemp < 40) && chance(.7 * (1 - prot))) { p.health = clamp(p.health - 14 * (1 - prot), 1, 100); p.stress += 10; hit = 'Frost bit the leaves on ' + p.name + '.'; }
         if ((wx === 'Rain' || wx === 'Storm') && loc === 'outdoor') { p.water = Math.max(p.water, 72); if (isFlowering(p) && chance(.35)) p.mold = clamp(p.mold + .04, 0, 1); }
-        if (sysOn('pests') && !p.pest.type && chance(.05 * (1 - prot) * (1 - Knowledge.level('health') * .04))) { p.pest = { type: pick(['mites', 'thrips', 'gnats']), lvl: .08, known: false }; p.hist.pest++; }
+        if (sysOn('pests') && p.stage >= S.seedling && !p.pest.type && chance(Companion.pestChance(p, .05 * (1 - prot) * (1 - Knowledge.level('health') * .04)))) { p.pest = { type: pick(['mites', 'thrips', 'gnats']), lvl: .08, known: false }; p.hist.pest++; }
         if (hit) { state.outdoor.weatherHits++; invalidate(p); notify(hit, 'warn'); }
       }
     }
@@ -9404,7 +9407,7 @@ const Mover = {
       if (p.harden && p.harden.done) { st += 2; think(`${p.name} is used to the sun already. She settles right in.`); }
       else { st += 14 + this.harsh(); p.shock = state.day + 2; p.repStress = (p.repStress || 0) + 6; think(`Straight out into the world. ${p.name}'s leaves droop in protest.`); }
       p.indoorStart = true; Tips.show('outdoorUnlock');
-    } else if (fromK === 'outdoor' && toK !== 'outdoor') { st += 5; if (!p.pest.type && chance(.15)) { p.pest = { type: 'thrips', lvl: .06, known: false }; } }
+    } else if (fromK === 'outdoor' && toK !== 'outdoor') { st += 5; if (sysOn('pests') && p.stage >= S.seedling && !p.pest.type && chance(Companion.pestChance(p, .15))) { p.pest = { type: 'thrips', lvl: .06, known: false }; p.hist.pest++; } }
     p.stress = clamp(p.stress + st, 0, 100); (p.moves = p.moves || []).push(state.day); if (p.moves.length > 6) p.moves.shift();
     invalidate(p); runtime.sprites.delete(p.id);
     notify(`${p.name} moved to the ${locShort(loc)}.`); Tips.show('moving'); SaveSys.request('move'); closePanel();
@@ -18270,13 +18273,16 @@ GP.sp = function (id) { const s = spBase115(id); if (s) return s; const T = GP.t
    Each tent has small pots at its front corner for indoor-friendly herbs
    and flowers (starter tent 1, 2×2 and 4×4 two, 5×5 three). They use the
    tent's light and that room's water tank (or you water them by hand).
-   Companion bonus (game design, not a real-world claim):
+   Companion bonuses (game balance):
+     watered, growing beneficials (stage 2+) prevent pests automatically:
+       25% less infestation risk per plant, capped at 75%, and the same
+       reduction in pest growth. Tents count both pot types; backyard
+       beds protect individual cannabis pots within 90 scene units.
      indoors: each growing companion (stage 2+) adds a "pairing comfort"
        of 1.5%, +1.5% more when it matches the strain's theme; total
        capped at 5% per tent. Applied as slightly lower daily stress for
        the cannabis plants in that tent. It never replaces light, water,
-       airflow, a filter or climate control, and indoor companions don't
-       attract outdoor insects through a closed tent.
+       airflow, a filter or climate control.
      outdoors: a flowering companion in a backyard bed within ~90 px of
        the cannabis beds gives a small insectary buffer that scales with
        each plant's pest vulnerability (1 − pest resistance), capped at
@@ -18291,15 +18297,42 @@ const Companion = {
   },
   live(loc) {
     const ids = new Set([...(GP.pots()[loc] || []), ...((state.v115?.mpots || {})[loc] || [])]);
-    return [...ids].map(g => g && GP.plant(g)).filter(p => p && p.at.ref === loc && ['pot', 'slot'].includes(p.at.kind) && GP.stageOf(p) >= 2 && GP.has(GP.sp(p.sp), 'c'));
+    return [...ids].map(g => g && GP.plant(g)).filter(p => p && p.at.ref === loc && ['pot', 'slot'].includes(p.at.kind) && this.active(p));
+  },
+  active(p) { return p.water > 0 && GP.stageOf(p) >= 2 && GP.has(GP.sp(p.sp), 'c'); },
+  nearby(p) {
+    const kind = LOC_DEF[p.loc]?.kind;
+    if (kind === 'closet' || kind === 'tent') return this.live(p.loc);
+    if (kind !== 'outdoor') return [];
+    const target = SLOT_POS[p.loc]?.[p.slot]; if (!target) return [];
+    const found = new Map();
+    for (const bed of GP.yard().beds) {
+      const [w, h] = Yard115.dims(bed);
+      if (Math.hypot(target[0] - bed.x - w / 2, target[1] - bed.y - h / 2) >= 90) continue;
+      for (const gid of bed.slots.filter(Boolean)) {
+        const q = GP.plant(gid);
+        if (q && q.at.kind === 'bed' && q.at.ref === bed.bid && this.active(q)) found.set(gid, q);
+      }
+    }
+    return [...found.values()];
+  },
+  protection(p) {
+    if (!sysOn('pests') || !locOwned(p.loc) || p.stage < S.seedling || p.stage >= S.drying) return 0;
+    return Math.min(.75, this.nearby(p).length * .25);
+  },
+  pestChance(p, risk) { return clamp(risk, 0, 1) * (1 - this.protection(p)); },
+  protectionNote(p) {
+    if (!sysOn('pests')) return '<div class="note small">Pests are disabled in your settings.</div>';
+    const protection = this.protection(p), names = this.nearby(p).map(q => GP.sp(q.sp).name);
+    return `<div class="note small"><b>Beneficial pest protection: ${Math.round(protection * 100)}%</b><br>${protection ? `${esc(names.join(', '))} automatically reduce the chance of thrips, spider mites and fungus gnats, and slow pest growth by ${Math.round(protection * 100)}%.` : 'Grow beneficial plants alongside this plant to reduce pest risk automatically.'} Keep them watered and at Growing stage or later. Each adds 25% protection, up to 75%. In tents, both small and full-size pots count; outdoors, use a garden bed within 90 px of this pot. Protection lowers risk; check and treat any pests that get through.</div>`;
   },
   indoorBonus(loc, p) {
     const L = this.live(loc); if (!L.length) return 0; const theme = COMP_THEME[p?.lineId] || [];
     let b = 0; for (const c of L) { b += .015; if (theme.includes(c.sp)) b += .015; } return Math.min(.05, b);
   },
   outdoorBonus(p) {
-    const Y = GP.yard(); let flowers = 0;
-    for (const b of Y.beds) { const [bw, bh] = Yard115.dims(b), cx = b.x + bw / 2, cy = b.y + bh / 2; const near = SLOT_POS.outdoor.some(([x, y]) => Math.hypot(x - cx, y - cy) < 90); if (!near) continue; for (const g of new Set(b.slots.filter(Boolean))) { const q = GP.plant(g); if (q && GP.stageOf(q) >= 3 && GP.has(GP.sp(q.sp), 'c')) flowers++; } }
+    let flowers = 0;
+    for (const q of this.nearby(p)) if (GP.stageOf(q) >= 3) flowers++;
     if (!flowers) return 0; const g = (typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)), vul = clamp(1 - (g.pestRes ?? .6), .1, .9); return Math.min(.05, flowers * .012 * (vul * 1.6));
   },
   daily() {
@@ -18308,18 +18341,18 @@ const Companion = {
       for (const p of plantsIn(loc)) {
         if (p.stage >= S.drying) continue;
         if (kind === 'closet' || kind === 'tent') { const b = this.indoorBonus(loc, p); if (b) p.stress = Math.max(0, (p.stress || 0) - b * 20); }
-        if (kind === 'outdoor') { const b = this.outdoorBonus(p); if (b && p.pest && p.pest.lvl > 0) p.pest.lvl = Math.max(0, p.pest.lvl * (1 - b * 2)); }
+        if (kind === 'outdoor' && sysOn('pests') && p.stage >= S.seedling) { const b = this.outdoorBonus(p); if (b && p.pest && p.pest.lvl > 0) p.pest.lvl = Math.max(0, p.pest.lvl * (1 - b * 2)); }
       }
     }
   },
   setupItems(loc, add) {
     const pots = GP.pots()[loc]; if (!pots) return;
     const live = this.live(loc), ps = plantsIn(loc).filter(p => p.stage < S.drying), b = ps.length ? Math.max(...ps.map(p => this.indoorBonus(loc, p))) : (live.length ? Math.min(.05, live.length * .015) : 0);
-    add(live.length ? 'ok' : 'optional', 'comp', 'Companion plants', live.length ? `${live.length} companion${live.length > 1 ? 's' : ''} growing in small or full-size pots: −${(b * 20).toFixed(1)} stress/day for the plants here (game pairing bonus, max 5%). This does not treat pests.` : `${pots.length} small pot${pots.length > 1 ? 's' : ''} by the tent for indoor herbs/flowers (basil, thyme, chamomile, marigold…). Companions in full-size grow pots count too once Growing (stage 2). They reduce stress, not pests.`, { comp: true });
+    add(live.length ? 'ok' : 'optional', 'comp', 'Beneficial plants', live.length ? `${live.length} companion${live.length > 1 ? 's' : ''} growing in small or full-size pots: ${Math.round(Math.min(.75, live.length * .25) * 100)}% lower pest risk and slower infestations while pests are enabled. Also −${(b * 20).toFixed(1)} stress/day for the plants here.` : `${pots.length} small pot${pots.length > 1 ? 's' : ''} by the tent for beneficial herbs/flowers (basil, thyme, chamomile, marigold…). Full-size grow pots count too. Keep beneficials watered; protection starts at Growing (stage 2): 25% per plant, up to 75%.`, { comp: true });
   },
   potFooter(loc) {
     const ps = plantsIn(loc).filter(p => p.stage < S.drying), live = this.live(loc);
-    return `<div class="card" style="margin-top:8px"><h3>Companion effect</h3><div class="small">${live.length ? ps.map(p => { const b = this.indoorBonus(loc, p), th = (COMP_THEME[p.lineId] || []).map(id => GP.sp(id).name); return `${esc(p.name)}: pairing ${(b * 100).toFixed(1)}% → −${(b * 20).toFixed(1)} stress/day${th.length ? ` (themed partners: ${esc(th.join(', '))})` : ''}`; }).join('<br>') || 'No cannabis plants in this tent right now.' : 'No companion plants growing yet (stage 2+ companion species in small or full-size grow pots count).'}</div><div class="small muted">Companion plants work automatically once Growing. Fictional game balance: capped at 1 stress point/day per plant. Indoor companions do not treat pests. For thrips or spider mites, inspect the affected plant, then use Care → Release beneficial mites with a purchased sachet.</div></div>`;
+    return `<div class="card" style="margin-top:8px"><h3>Companion effect</h3><div class="small">${live.length ? ps.map(p => { const b = this.indoorBonus(loc, p); return `${esc(p.name)}: ${Math.round(this.protection(p) * 100)}% pest protection · −${(b * 20).toFixed(1)} stress/day`; }).join('<br>') || `${live.length} beneficial plant(s) ready to protect this tent.` : 'No active beneficial plants yet. Small and full-size grow pots both count.'}</div><div class="small muted">Beneficial plants prevent pests automatically once Growing (stage 2) and watered: 25% lower pest risk and slower pest growth per plant, capped at 75%. They also reduce stress by up to 1 point/day. Inspect any infestation that gets through and use the Care tab to treat it.</div></div>`;
   },
   draw(c, loc, t) {
     const pots = GP.pots()[loc]; if (!pots || !locOwned(loc)) return;
@@ -22040,7 +22073,7 @@ const Catalog115 = {
   matches(s){const m=this.species(s),k=runtime.seedKind115||'all',se=runtime.seedSeason115||'all';return (k==='all'||k===m.kind||k==='beneficial'&&m.companion)&&(se==='all'||m.seasons.includes(se));},
   bar(){return `<div class="card catalog115"><b>Plant category</b><div class="chips">${this.kinds.map(([k,n])=>`<button class="chip ${(runtime.seedKind115||'all')===k?'on':''}" data-act="seedKind115" data-arg="${k}">${n}</button>`).join('')}</div><b>Outdoor planting season</b><div class="chips">${['all','Fall','Winter','Spring','Summer'].map(se=>`<button class="chip ${(runtime.seedSeason115||'all')===se?'on':''}" data-act="seedSeason115" data-arg="${se}">${se==='all'?'All seasons':se}</button>`).join('')}</div><p class="small muted">Both filters apply together. Indoor cannabis packets stay available year round; check Calendar before planting outdoors.</p></div>`;},
   education(s){const m=this.species(s);let text=`${s.name}: ${GP_FORM[s.form]}. Outdoor planting: ${m.seasons.join(', ')||'protected conditions only'}. ${m.indoor?'Small tent pots supported.':'Outdoor space needed.'} About ${s.days} game days to mature. ${GP.large(s)?'Uses two small planting slots.':'Uses one small planting slot.'}${GP.has(s,'t')?' Requires a trellis.':''}${GP.has(s,'h')?' Tender: protected indoors only.':''}${GP.has(s,'p')?' Perennial: returns after harvesting.':GP.has(s,'r')?' Continues producing after harvesting.':''} Harvest unit: ${s.unit}; market value about ${money(s.sell)} per unit. These are fictional game timings and climate rules.`;
-    if(m.companion){const themes=Object.entries(COMP_THEME).filter(([,ids])=>ids.includes(s.id)).map(([id])=>GEN(id).lineName||GEN(id).name);text+=` ${s.name} is a designated companion in this game's registry. ${themes.length?'Theme pairings: '+themes.join(', ')+'.':'No additional strain theme pairing is assigned.'} In a tent, plant it in a small companion pot or an empty full-size grow pot. Once Growing (stage 2), it automatically gives 0.3 fewer stress points per game day, plus 0.3 for a matching theme; the whole tent is capped at 1 stress point/day. Outdoors, stage 3 or later in a bed within 90 px of the cannabis beds contributes to a pest buffer based on pest vulnerability: min(5%, flowers × 1.2% × vulnerability × 1.6). The daily pest level is multiplied by (1 − 2 × buffer). These fictional modifiers do not increase THC or replace care. Companions consume water, planting slots and light; crowding and mismatched growing conditions are tradeoffs. Indoor companions do not treat thrips or spider mites: inspect the affected plant and use Care → Release beneficial mites with a purchased sachet. Closed tents do not gain outdoor insects.`;}
+    if(m.companion){const themes=Object.entries(COMP_THEME).filter(([,ids])=>ids.includes(s.id)).map(([id])=>GEN(id).lineName||GEN(id).name);text+=` ${s.name} is a beneficial companion. Plant it alongside your crops: in a small companion pot or full-size grow pot in the same tent, or in an outdoor garden bed within 90 px of the crop's pot. Keep it watered. Once Growing (stage 2), it automatically reduces the chance of thrips, spider mites and fungus gnats by 25% and slows existing pest growth by 25%. Multiple beneficials add protection, capped at 75%. These percentages are game balance, and protection does not guarantee a pest-free plant. Mature outdoor flowers also gently suppress pest levels. In tents, each growing companion also reduces daily stress by 0.3 points, plus 0.3 for a theme match, capped at 1 point/day. ${themes.length?'Theme pairings: '+themes.join(', ')+'.':''} Check the crop’s Inspect or Care tab for its current pest protection. Inspect and treat infestations that get through. Companions use water, light and planting space.`;}
     return text;
   },
   seedsHTML(){

@@ -14,6 +14,8 @@ Some content is put away until its artwork is ready: the Willow Threads clothing
 
 Players who would rather not grow cannabis can grow garden plants in the starter tent and grow-tent pots instead. Clicking an empty pot lists cannabis seeds alongside garden seeds from Fern & Forge. Herbs, greens, peppers, flowers and houseplants grow there under the grow light in any season. Plants that need a whole garden bed or a trellis stay outdoors. Each pot holds either cannabis or a garden plant, never both. These plants are watered, fed, harvested and sold the same way as other garden plants.
 
+Beneficial plants prevent pests automatically once they reach Growing and have water. Each provides 25% lower infestation risk and slower pest growth, stacking up to 75%. Both tent pot types count; outdoor beneficials protect crop pots within 90 scene units of their garden bed. Inspect and Care show each crop's current protection. Existing saves gain protection from their qualifying plants automatically. These percentages are game balance; infestations that get through can still be treated from Care.
+
 The [combined release checkpoint](docs/graphics/merge-checkpoint.md) records the merge with the latest menu, curtains and desk work. Publishing checks require the generated game, embedded character payload and character source checksums to agree, preventing a stale character release from passing deployment validation.
 
 ## Develop and verify
