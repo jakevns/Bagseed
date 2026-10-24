@@ -1,0 +1,61 @@
+{
+  "id": "P071",
+  "key": "strawberry",
+  "name": "Strawberry",
+  "status": "approved-growth-artwork",
+  "revision": "strawberry-garden-1",
+  "generatedSource": "strawberry.png",
+  "sourceSHA256": "f57c2116d78ea2e9e20360d220988b53d37a203cdf15c3d49ee900faa3c553d3",
+  "runtimeSHA256": "14313e63b162684fbb56856cb8782e6d69bc2810fcf419ddfe1552abac4ef218",
+  "runtime": "assets/garden-plants/strawberry/stages-14313e63b162.webp",
+  "stages": [
+    {
+      "crop": [
+        217,
+        314,
+        233,
+        193
+      ],
+      "attach": [
+        116.0,
+        190.0
+      ]
+    },
+    {
+      "crop": [
+        631,
+        49,
+        567,
+        466
+      ],
+      "attach": [
+        283.0,
+        463.0
+      ]
+    },
+    {
+      "crop": [
+        13,
+        594,
+        591,
+        529
+      ],
+      "attach": [
+        308.0,
+        526.0
+      ]
+    },
+    {
+      "crop": [
+        632,
+        553,
+        608,
+        582
+      ],
+      "attach": [
+        295.0,
+        579.0
+      ]
+    }
+  ]
+}

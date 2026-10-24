@@ -1,0 +1,62 @@
+[
+  {
+    "key": "parsley",
+    "id": "P054",
+    "name": "Parsley",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "ready or in bloom"
+    ],
+    "botanicalTarget": "Curly-leaf parsley matching native curly anatomy; divided ruffled leaf tufts, no flowers."
+  },
+  {
+    "key": "sage",
+    "id": "P059",
+    "name": "Sage",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "ready or in bloom"
+    ],
+    "botanicalTarget": "Broad velvety gray-green leaves and violet two-lipped flowers."
+  },
+  {
+    "key": "oregano",
+    "id": "P060",
+    "name": "Oregano",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "ready or in bloom"
+    ],
+    "botanicalTarget": "Small opposite oval leaves, branching stems, pink-purple terminal flowers."
+  },
+  {
+    "key": "strawberry",
+    "id": "P071",
+    "name": "Strawberry",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "ready or in bloom"
+    ],
+    "botanicalTarget": "Trifoliate serrated leaves, five-petal white flowers, attached green and red berries."
+  },
+  {
+    "key": "jalapeno",
+    "id": "P033",
+    "name": "Jalapeno",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "ready or in bloom"
+    ],
+    "botanicalTarget": "Smooth entire pointed leaves, white flowers, attached blunt green/red peppers."
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "id": "P059",
+  "key": "sage",
+  "name": "Sage",
+  "status": "sample-awaiting-approval",
+  "revision": "sage-garden-1",
+  "generatedSource": "sage-spaced.png",
+  "sourceSHA256": "e3836f40990845f5f4c70318fceed5700751685eeebfa36d7d9088c8e9f9ab59",
+  "runtimeSHA256": "f0b45a78266fb64753558241c8fd6809e1f14f8642a0b088c91c37b67dc160e6",
+  "runtime": "/garden-review/sage.webp",
+  "stages": [
+    {
+      "crop": [
+        226,
+        255,
+        230,
+        193
+      ],
+      "attach": [
+        114.0,
+        189.0
+      ]
+    },
+    {
+      "crop": [
+        725,
+        145,
+        397,
+        317
+      ],
+      "attach": [
+        193.0,
+        313.0
+      ]
+    },
+    {
+      "crop": [
+        46,
+        703,
+        545,
+        474
+      ],
+      "attach": [
+        269.0,
+        471.0
+      ]
+    },
+    {
+      "crop": [
+        673,
+        619,
+        540,
+        561
+      ],
+      "attach": [
+        267.0,
+        557.0
+      ]
+    }
+  ]
+}

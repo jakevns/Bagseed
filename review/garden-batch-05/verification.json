@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "id": "P054",
+      "stable": true,
+      "wind": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P059",
+      "stable": true,
+      "wind": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P060",
+      "stable": true,
+      "wind": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P071",
+      "stable": true,
+      "wind": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P033",
+      "stable": true,
+      "wind": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    }
+  ],
+  "readOnly": true,
+  "species": [
+    {
+      "id": "P054",
+      "name": "Parsley",
+      "height": 9
+    },
+    {
+      "id": "P059",
+      "name": "Sage",
+      "height": 9
+    },
+    {
+      "id": "P060",
+      "name": "Oregano",
+      "height": 9
+    },
+    {
+      "id": "P071",
+      "name": "Strawberry",
+      "height": 9
+    },
+    {
+      "id": "P033",
+      "name": "Jalapeno",
+      "height": 14
+    }
+  ],
+  "ids": [
+    "gp1",
+    "gp2",
+    "gp3",
+    "gp4",
+    "gp5"
+  ],
+  "saveReload": true,
+  "productionRenderer": false,
+  "startupGardenRequests": 0,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "8ea3a00e795d1bd9494b3c8e703b00518d48b865db466efae9c5502552147570",
+  "animation": {
+    "frames": 96,
+    "fps": 12,
+    "seconds": 8
+  },
+  "errors": []
+}

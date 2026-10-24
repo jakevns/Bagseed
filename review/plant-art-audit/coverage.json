@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "8ea3a00e795d1bd9494b3c8e703b00518d48b865db466efae9c5502552147570",
+  "publishedHTMLSHA256": "2ebcf9e16442c63c3e96cca7ed48d0ff969c0be1d4c8b0ab33cb4bdc648034c9",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -166,7 +166,7 @@
     {
       "id": "P033",
       "name": "Jalapeno",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P034",
@@ -271,7 +271,7 @@
     {
       "id": "P054",
       "name": "Parsley",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P055",
@@ -296,12 +296,12 @@
     {
       "id": "P059",
       "name": "Sage",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P060",
       "name": "Oregano",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P061",
@@ -356,7 +356,7 @@
     {
       "id": "P071",
       "name": "Strawberry",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P072",
