@@ -1,0 +1,61 @@
+{
+  "id": "P007",
+  "key": "mustardgreens",
+  "name": "Mustard greens",
+  "status": "approved-growth-artwork",
+  "revision": "mustardgreens-garden-1",
+  "generatedSource": "mustardgreens.png",
+  "sourceSHA256": "65cf8a0895e62c6190271ee39d967366abdb1770712794c819a8c115cf6e9128",
+  "runtimeSHA256": "db4f0b759aa96a701b971125fa93c474cc80b4a11d10be4de152313b44688e09",
+  "runtime": "assets/garden-plants/mustardgreens/stages-db4f0b759aa9.webp",
+  "stages": [
+    {
+      "crop": [
+        238,
+        246,
+        210,
+        150
+      ],
+      "attach": [
+        105.0,
+        146.0
+      ]
+    },
+    {
+      "crop": [
+        725,
+        136,
+        385,
+        292
+      ],
+      "attach": [
+        177.0,
+        289.0
+      ]
+    },
+    {
+      "crop": [
+        34,
+        676,
+        545,
+        434
+      ],
+      "attach": [
+        276.0,
+        399.0
+      ]
+    },
+    {
+      "crop": [
+        602,
+        561,
+        637,
+        551
+      ],
+      "attach": [
+        326.0,
+        548.0
+      ]
+    }
+  ]
+}

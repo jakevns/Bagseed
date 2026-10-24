@@ -1,0 +1,61 @@
+{
+  "id": "P009",
+  "key": "tatsoi",
+  "name": "Tatsoi",
+  "status": "sample-awaiting-approval",
+  "revision": "tatsoi-garden-1",
+  "generatedSource": "tatsoi.png",
+  "sourceSHA256": "9b3686bf93ee3e8cfb48144d0241f5b7c30a146b66fd66cf787a70b265cacdfb",
+  "runtimeSHA256": "cc2319f99199a5acfcd29bbf01d3a6925f6619ac0218172300f4f51a50a6413e",
+  "runtime": "/garden-review/tatsoi.webp",
+  "stages": [
+    {
+      "crop": [
+        210,
+        288,
+        238,
+        146
+      ],
+      "attach": [
+        117.0,
+        143.0
+      ]
+    },
+    {
+      "crop": [
+        746,
+        214,
+        392,
+        275
+      ],
+      "attach": [
+        195.0,
+        230.0
+      ]
+    },
+    {
+      "crop": [
+        37,
+        743,
+        544,
+        323
+      ],
+      "attach": [
+        281.0,
+        261.0
+      ]
+    },
+    {
+      "crop": [
+        632,
+        677,
+        601,
+        432
+      ],
+      "attach": [
+        308.0,
+        303.0
+      ]
+    }
+  ]
+}

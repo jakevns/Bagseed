@@ -1,0 +1,61 @@
+{
+  "id": "P008",
+  "key": "mizuna",
+  "name": "Mizuna",
+  "status": "sample-awaiting-approval",
+  "revision": "mizuna-garden-1",
+  "generatedSource": "mizuna.png",
+  "sourceSHA256": "56cc63d7b99ab9ca953e083f3f4ec8229a97303f064bb4c7569cbd85c29244e5",
+  "runtimeSHA256": "423df3e55335ffa67bdbf8e0b992e522b840afbf0a2f4c651ab8f88e19e663e3",
+  "runtime": "/garden-review/mizuna.webp",
+  "stages": [
+    {
+      "crop": [
+        219,
+        309,
+        207,
+        150
+      ],
+      "attach": [
+        104.0,
+        147.0
+      ]
+    },
+    {
+      "crop": [
+        665,
+        84,
+        484,
+        377
+      ],
+      "attach": [
+        235.0,
+        374.0
+      ]
+    },
+    {
+      "crop": [
+        26,
+        585,
+        545,
+        535
+      ],
+      "attach": [
+        300.0,
+        531.0
+      ]
+    },
+    {
+      "crop": [
+        583,
+        540,
+        653,
+        590
+      ],
+      "attach": [
+        346.0,
+        586.0
+      ]
+    }
+  ]
+}

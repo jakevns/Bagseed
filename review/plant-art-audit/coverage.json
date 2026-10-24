@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "2ebcf9e16442c63c3e96cca7ed48d0ff969c0be1d4c8b0ab33cb4bdc648034c9",
+  "publishedHTMLSHA256": "ceec3984975b1565ef05d18174e09997e2d726d3270b4553c239b7a08938f7d6",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -26,27 +26,27 @@
     {
       "id": "P005",
       "name": "Kale",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P006",
       "name": "Collard greens",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P007",
       "name": "Mustard greens",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P008",
       "name": "Mizuna",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P009",
       "name": "Tatsoi",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P010",

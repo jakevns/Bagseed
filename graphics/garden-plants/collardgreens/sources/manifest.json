@@ -1,0 +1,61 @@
+{
+  "id": "P006",
+  "key": "collardgreens",
+  "name": "Collard greens",
+  "status": "approved-growth-artwork",
+  "revision": "collardgreens-garden-1",
+  "generatedSource": "collardgreens.png",
+  "sourceSHA256": "95b6130397449a5e19e549156bd96e92253f454e836e4f31d8bb60db6d53d710",
+  "runtimeSHA256": "a23ae187ed9ca4a4f53c25b460a3079b7699c212e4a3024acf3d41baa280f53d",
+  "runtime": "assets/garden-plants/collardgreens/stages-a23ae187ed9c.webp",
+  "stages": [
+    {
+      "crop": [
+        197,
+        257,
+        236,
+        196
+      ],
+      "attach": [
+        116.0,
+        192.0
+      ]
+    },
+    {
+      "crop": [
+        711,
+        87,
+        445,
+        382
+      ],
+      "attach": [
+        206.0,
+        379.0
+      ]
+    },
+    {
+      "crop": [
+        11,
+        634,
+        588,
+        485
+      ],
+      "attach": [
+        287.0,
+        482.0
+      ]
+    },
+    {
+      "crop": [
+        631,
+        546,
+        618,
+        585
+      ],
+      "attach": [
+        314.0,
+        581.0
+      ]
+    }
+  ]
+}

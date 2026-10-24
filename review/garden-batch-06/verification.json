@@ -1,0 +1,200 @@
+{
+  "checks": [
+    {
+      "id": "P005",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": false,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P007",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P008",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P009",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P006",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": false,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    }
+  ],
+  "readOnly": true,
+  "species": [
+    {
+      "id": "P005",
+      "name": "Kale",
+      "height": 9
+    },
+    {
+      "id": "P007",
+      "name": "Mustard greens",
+      "height": 9
+    },
+    {
+      "id": "P008",
+      "name": "Mizuna",
+      "height": 9
+    },
+    {
+      "id": "P009",
+      "name": "Tatsoi",
+      "height": 9
+    },
+    {
+      "id": "P006",
+      "name": "Collard greens",
+      "height": 9
+    }
+  ],
+  "ids": [
+    "gp1",
+    "gp2",
+    "gp3",
+    "gp4",
+    "gp5"
+  ],
+  "saveReload": true,
+  "productionRenderer": false,
+  "startupGardenRequests": 0,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "2ebcf9e16442c63c3e96cca7ed48d0ff969c0be1d4c8b0ab33cb4bdc648034c9",
+  "animation": {
+    "frames": 96,
+    "fps": 12,
+    "seconds": 8
+  },
+  "errors": []
+}

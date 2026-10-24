@@ -1,0 +1,72 @@
+[
+  {
+    "key": "kale",
+    "id": "P005",
+    "name": "Kale",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Blue-green long crinkled leaves with densely curled edges; open upright bunch.",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "harvest-ready"
+    ]
+  },
+  {
+    "key": "mustardgreens",
+    "id": "P007",
+    "name": "Mustard greens",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Bright lime broad leaf blades with finely frilled serrated margins.",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "harvest-ready"
+    ]
+  },
+  {
+    "key": "mizuna",
+    "id": "P008",
+    "name": "Mizuna",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Slender deeply cut pointed blades on long fine pale petioles; airy fountain clump.",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "harvest-ready"
+    ]
+  },
+  {
+    "key": "tatsoi",
+    "id": "P009",
+    "name": "Tatsoi",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Low radial rosette of dark green fleshy spoon-shaped leaves.",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "harvest-ready"
+    ]
+  },
+  {
+    "key": "collardgreens",
+    "id": "P006",
+    "name": "Collard greens",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Large smooth broad waxy leaves with thick pale midribs, open upright form.",
+    "stages": [
+      "sprouting",
+      "young",
+      "growing",
+      "harvest-ready"
+    ]
+  }
+]
