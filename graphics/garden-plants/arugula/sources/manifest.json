@@ -1,0 +1,61 @@
+{
+  "id": "P003",
+  "key": "arugula",
+  "name": "Arugula",
+  "status": "approved-growth-artwork",
+  "revision": "arugula-garden-1",
+  "generatedSource": "exec-7673eaec-e858-4786-9d50-e65f8ee4aad5.png",
+  "sourceSHA256": "13766e5f08e8a64404cdc941b0b4db917a7f53a1ea4a3c857c834a686c9b6714",
+  "runtimeSHA256": "cd66aa4d4c45f41664fd2d0e8d8506b74a71cd6e966e9f89ab342fc485499133",
+  "runtime": "assets/garden-plants/arugula/stages-cd66aa4d4c45.webp",
+  "stages": [
+    {
+      "crop": [
+        177,
+        260,
+        334,
+        201
+      ],
+      "attach": [
+        162.0,
+        198.0
+      ]
+    },
+    {
+      "crop": [
+        683,
+        49,
+        481,
+        438
+      ],
+      "attach": [
+        237.0,
+        435.0
+      ]
+    },
+    {
+      "crop": [
+        19,
+        582,
+        562,
+        601
+      ],
+      "attach": [
+        305.0,
+        598.0
+      ]
+    },
+    {
+      "crop": [
+        609,
+        521,
+        627,
+        673
+      ],
+      "attach": [
+        334.0,
+        670.0
+      ]
+    }
+  ]
+}

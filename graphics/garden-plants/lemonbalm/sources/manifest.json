@@ -1,0 +1,61 @@
+{
+  "id": "P062",
+  "key": "lemonbalm",
+  "name": "Lemon balm",
+  "status": "approved-growth-artwork",
+  "revision": "lemonbalm-garden-1",
+  "generatedSource": "exec-e289bfd5-36c7-4e9f-9d85-86870a73135f.png",
+  "sourceSHA256": "db1309ebea6f9719d8624bb49762d06afc57d95c16da5a87f60754e9028ee08e",
+  "runtimeSHA256": "549811d40b6c555f2b810a810daa4bf1a372034e2ba6a3e6c33ec05a7233f837",
+  "runtime": "assets/garden-plants/lemonbalm/stages-549811d40b6c.webp",
+  "stages": [
+    {
+      "crop": [
+        231,
+        216,
+        200,
+        223
+      ],
+      "attach": [
+        101.0,
+        219.0
+      ]
+    },
+    {
+      "crop": [
+        758,
+        51,
+        326,
+        393
+      ],
+      "attach": [
+        166.0,
+        390.0
+      ]
+    },
+    {
+      "crop": [
+        35,
+        522,
+        584,
+        642
+      ],
+      "attach": [
+        285.0,
+        639.0
+      ]
+    },
+    {
+      "crop": [
+        619,
+        497,
+        614,
+        681
+      ],
+      "attach": [
+        304.0,
+        677.0
+      ]
+    }
+  ]
+}

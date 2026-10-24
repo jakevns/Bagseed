@@ -1,0 +1,61 @@
+{
+  "id": "P057",
+  "key": "rosemary",
+  "name": "Rosemary",
+  "status": "sample-awaiting-approval",
+  "revision": "rosemary-garden-1",
+  "generatedSource": "exec-a7f99e3b-34c6-499a-b72c-4d260f53d01d.png",
+  "sourceSHA256": "29d878f8be78bca5fc52fcde87d51e5432e2a6f19ab36694cd4b389f8b44f5a1",
+  "runtimeSHA256": "da485bd9f3295733220dc7277245d5c2cb29552f607d5f6142f53d155be6bb1a",
+  "runtime": "/garden-review/rosemary.webp",
+  "stages": [
+    {
+      "crop": [
+        214,
+        265,
+        175,
+        251
+      ],
+      "attach": [
+        86.0,
+        247.0
+      ]
+    },
+    {
+      "crop": [
+        776,
+        41,
+        374,
+        477
+      ],
+      "attach": [
+        177.0,
+        474.0
+      ]
+    },
+    {
+      "crop": [
+        54,
+        586,
+        526,
+        607
+      ],
+      "attach": [
+        273.0,
+        604.0
+      ]
+    },
+    {
+      "crop": [
+        619,
+        539,
+        608,
+        672
+      ],
+      "attach": [
+        307.0,
+        668.0
+      ]
+    }
+  ]
+}
