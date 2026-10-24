@@ -21,3 +21,5 @@ node tools/preview-garden-batch-01.cjs --offline --review-root=review/garden-bat
 ```
 
 `kits/*/sources/manifest.json` retains the preview compiler's `sample-awaiting-approval` lifecycle marker; the user’s approval is recorded here. The matching production manifests under `graphics/garden-plants/` use `approved-growth-artwork` and hashed asset paths.
+
+Production validation: build and static integrity passed; all seven browser tests passed, covering four garden batches, live cannabis/genetics/mutations, mobile plant resolution and the merged pollen inventory update. Startup awaits twenty garden atlases. The character payload is preserved. See `production-verification.json`.

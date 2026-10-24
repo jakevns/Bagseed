@@ -4107,7 +4107,7 @@ const Panels = {
       const tabs = `<div class="tabs">${[['seeds', 'Seeds & Genetics'], ['harvest', 'Harvest'], ['supplies', 'Supplies'], ['equip', 'Equipment'], ['decor', 'Decor & Clothing']].map(([k, n]) => `<button class="chip ${k === t ? 'on' : ''}" data-act="invTab" data-arg="${k}">${n}</button>`).join('')}</div>`;
       if (t === 'seeds') return tabs + `<p class="small muted">Stored in your ${esc(EQ.storage[state.gear.storage].name)}. Click an empty pot in the room to plant. Regular seeds can turn out male, so they're a bigger gamble in a one-pot starter tent.</p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))">${I.seeds.map(s => { const g = GEN(s.lineId); return `<div class="card"><canvas class="px" width="48" height="64" data-draw="inv:${s.id}" style="width:72px;margin:auto"></canvas><h3>${esc(g.bag ? (g.lineName || 'Bag Seed') : g.name)}${s.kind === 'cutting' ? ' (cutting)' : ''}</h3><div class="meta">${esc(s.from ? 'From ' + (BREEDERS[s.from] ? BREEDERS[s.from].name : s.from) : '')}</div>${seedInfo(s.lineId, s)}</div>`; }).join('') || '<p class="muted">No seeds in storage.</p>'}</div>`;
       if (t === 'harvest') return tabs + `<div class="grid">${I.harvest.map(b => `<div class="card"><h3>${esc(b.name)}</h3><div class="meta mono">GRADE ${b.grade} · ${b.jars} JAR(S) · DAY ${b.day}${b.dry ? ' · ' + esc(b.dry.toUpperCase()) : ''}</div>${Object.entries(b.scores).map(([k, v]) => bar(k, v * 100, 100, lvlCol(v * 100))).join('')}<div class="small">${esc(TYPE_LABEL[b.type])} · ${esc(b.aromaName)} · ${b.organic ? 'Organic' : 'Synthetic'}</div></div>`).join('') || '<p class="muted">No jars yet.</p>'}</div>`;
-      if (t === 'supplies') return tabs + `<dl class="kv"><dt>Grow-Mo (synthetic)</dt><dd>${I.synth} mixes</dd><dt>Wormcastle (organic)</dt><dd>${I.organic} mixes</dd><dt>Feed jug</dt><dd>${I.jug ? `${I.jug.line} · ${I.jug.uses} feeding(s) · ${I.jug.ready > state.day ? 'brewing until tomorrow' : 'ready'}` : 'Empty'}</dd><dt>Balance pen</dt><dd>${I.phpen ? 'Yes' : 'No'}</dd><dt>Sticky traps</dt><dd>${I.traps}</dd><dt>Beneficial mites</dt><dd>${I.mites} sachets<span class="small muted"> · Inspect the affected plant, then use Care → Release beneficial mites. Treats thrips or spider mites on that plant, including seedlings. Companion plants give a separate, automatic bonus.</span></dd><dt>Trellis nets</dt><dd>${I.net}</dd><dt>Bamboo stakes</dt><dd>${I.stakes}</dd><dt>Pollen vials</dt><dd>${(I.pollen || []).length ? I.pollen.map(p => esc(p.name)).join(', ') + ' <span class="muted">(pollinate a flowering female from her Care tab)</span>' : 'None'}</dd><dt>Carbon refills</dt><dd>${Object.entries(I.carbon || {}).filter(([, n]) => n > 0).map(([t, n]) => esc(CARBON[t].name) + ' ×' + n).join(', ') || 'None'}</dd><dt>Tomatoes</dt><dd>${I.tomatoes || 0} ${I.tomatoes ? '<button class="btn sm" data-act="eat">Eat one (+15 energy)</button>' : ''}</dd><dt>Kenji's chili peppers</dt><dd>${I.peppers || 0} ${I.peppers ? '<button class="btn sm" data-act="eatPepper">Brave it (+20 energy?)</button>' : ''}</dd></dl>`;
+      if (t === 'supplies') return tabs + `<dl class="kv"><dt>Grow-Mo (synthetic)</dt><dd>${I.synth} mixes</dd><dt>Wormcastle (organic)</dt><dd>${I.organic} mixes</dd><dt>Feed jug</dt><dd>${I.jug ? `${I.jug.line} · ${I.jug.uses} feeding(s) · ${I.jug.ready > state.day ? 'brewing until tomorrow' : 'ready'}` : 'Empty'}</dd><dt>Balance pen</dt><dd>${I.phpen ? 'Yes' : 'No'}</dd><dt>Sticky traps</dt><dd>${I.traps}</dd><dt>Beneficial mites</dt><dd>${I.mites} sachets<span class="small muted"> · Inspect the affected plant, then use Care → Release beneficial mites. Treats thrips or spider mites on that plant, including seedlings. Companion plants give a separate, automatic bonus.</span></dd><dt>Trellis nets</dt><dd>${I.net}</dd><dt>Bamboo stakes</dt><dd>${I.stakes}</dd><dt>Pollen vials</dt><dd>${(I.pollen || []).length} vial(s) <button class="btn sm" data-act="invOpen" data-arg="pollen">Manage pollen</button></dd><dt>Carbon refills</dt><dd>${Object.entries(I.carbon || {}).filter(([, n]) => n > 0).map(([t, n]) => esc(CARBON[t].name) + ' ×' + n).join(', ') || 'None'}</dd><dt>Tomatoes</dt><dd>${I.tomatoes || 0} ${I.tomatoes ? '<button class="btn sm" data-act="eat">Eat one (+15 energy)</button>' : ''}</dd><dt>Kenji's chili peppers</dt><dd>${I.peppers || 0} ${I.peppers ? '<button class="btn sm" data-act="eatPepper">Brave it (+20 energy?)</button>' : ''}</dd></dl>`;
       if (t === 'equip') return tabs + ownedLocs().filter(l => LOC_DEF[l].kind !== 'outdoor').map(l => `<h3>${esc(locName(l))} <button class="btn sm" data-act="openSpace" data-arg="${l}">Controls</button></h3><div class="grid">${LOC_SLOTS.filter(sl => locAccepts(l, sl) && (state.locations[l].equip[sl] || ['light', 'fan', 'exhaust', 'sensor', 'pot'].includes(sl))).map(sl => { const tier = state.locations[l].equip[sl]; return `<div class="card"><canvas class="px" width="96" height="48" data-draw="gear:${sl}:${tier}" style="width:100%;background:#141c18"></canvas><div class="meta mono">${sl.toUpperCase()} · TIER ${tier}</div><h3>${esc(EQ[sl][tier].name)}</h3></div>`; }).join('')}</div>`).join('') + `<h3>Home</h3><div class="grid">${GLOBAL_SLOTS.map(sl => `<div class="card"><canvas class="px" width="96" height="48" data-draw="gear:${sl}:${state.gear[sl]}" style="width:100%;background:#141c18"></canvas><div class="meta mono">${sl.toUpperCase()}</div><h3>${esc(EQ[sl][state.gear[sl]].name)}</h3></div>`).join('')}</div>`;
       const own = Object.keys(state.room.own).filter(k => !k.startsWith('s:') && decorDef(k));
       return tabs + `<p class="small muted">Decor you own. Place, move and flip items in Decorate mode.</p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">${own.map(k => { const D = decorDef(k); return `<div class="card"><canvas class="px" width="48" height="36" data-draw="decor:${k}" style="width:96px;margin:auto;background:#141c18"></canvas><h3>${esc(D.n)}</h3><div class="meta">${decorFree(k)} free · ${state.room.own[k] - decorFree(k)} placed</div>${D.gift ? `<div class="small" style="color:var(--amber)">${esc(D.gift)}</div>` : ''}</div>`; }).join('') || '<p class="muted">No decor yet.</p>'}</div><div class="actions"><button class="btn primary" data-act="decorate">Decorate room</button><button class="btn" data-act="wardrobe">Open wardrobe</button></div>`;
@@ -11160,7 +11160,7 @@ Panels.careActions = function (p, g, L) {
     // pollinating: confirmed females in early-to-mid flower, with a vial
     if (sx === 'F' && !p.seeded) {
       const V = I.pollen || [];
-      if (st >= S.earlyflower && st <= S.midflower) { if (V.length) for (const [i, v] of V.slice(0, 4).entries()) row('pollinateWith', `${p.id}:${v.id || i}`, `Pollinate with ${esc(v.name)}'s pollen`, `Her harvest will carry seeds of a NEW cross: ${esc(Breeding.short(g))} × ${esc(Breeding.short(GEN(v.lineId)))}. 4 energy`); else info('Breed her', 'No pollen vials in your inventory. Collect one from a male in mid flower.'); }
+      if (st >= S.earlyflower && st <= S.midflower) { if (V.some(v => (v.uses115 ?? 1) > 0)) row('pollenChoose', p.id, 'Pollinate…', 'Choose any usable pollen vial. 4 energy'); else info('Breed her', 'No usable pollen vials. Collect pollen from a male in mid flower, or manage empty vials in Inventory → Pollen.'); }
       else if (st < S.earlyflower && st >= S.veg) info('Breed her', 'She can be pollinated in early to mid flower.');
     }
     if (sx === 'unknown' && st >= S.seedling) info('Breeding', 'Sex unknown. Preflowers show in veg (inspect her). Pollen and pollinating options appear once you know.');
@@ -16165,7 +16165,7 @@ ACT.openBox = ACT.pkgOpen115;
    INVENTORY · v1.1.5 — Unused gear · Installed gear · Seeds & starters ·
    Harvests · Supplies · Furniture & beds · Wardrobe · Memories
    ===================================================================== */
-const INV_TABS115 = [['unused', 'Unused gear'], ['installed', 'Installed gear'], ['seeds', 'Seeds & starters'], ['harvest', 'Harvests'], ['supplies', 'Supplies'], ['decor', 'Furniture & beds'], ['wardrobe', 'Wardrobe'], ['memories', 'Memories']];
+const INV_TABS115 = [['unused', 'Unused gear'], ['installed', 'Installed gear'], ['seeds', 'Seeds & starters'], ['harvest', 'Harvests'], ['supplies', 'Supplies'], ['pollen', 'Pollen'], ['decor', 'Furniture & beds'], ['wardrobe', 'Wardrobe'], ['memories', 'Memories']];
 const INV_OLD115 = new Set(['seeds', 'harvest', 'supplies', 'decor']);
 const INV_EXTRA115 = {};   // tab -> () => html appended by other modules
 const inventory115 = Panels.inventory;
@@ -17386,7 +17386,7 @@ const Packet = {
 };
 drawPacket = function (ctx, cv, lineId, kind) { try { Packet.draw(ctx, cv, lineId, kind); } catch (e) { console.error(e); } };
 /* pollen vials get pictures in Supplies */
-INV_EXTRA115.supplies = () => { const P = state.inv.pollen || []; if (!P.length) return ''; return `<h3 style="margin:12px 0 4px">Pollen vials</h3><div class="g115">${P.map((p, i) => `<div class="card"><canvas class="px" width="40" height="64" data-draw="pollenvial:${i}" style="width:40px;margin:auto"></canvas><h3>${esc(p.name)}</h3><div class="small muted">Pollinate a flowering female from her Care tab.</div></div>`).join('')}</div>`; };
+INV_EXTRA115.supplies = () => ''; // See Inventory → Pollen.
 const hydrate115a = hydrate;
 hydrate = function (root) {
   hydrate115a(root);
@@ -22000,7 +22000,7 @@ Breeding.pollenFrom=function(p){
   state.rep.breeding+=.5;toast(`Collected ${esc(p.name)}'s pollen: 12 careful applications.`,'social');SaveSys.request('pollen batch');renderPanel();
 };
 Breeding.pollinate=function(qid,vid){
-  const q=state.plants[qid],v=state.inv.pollen.find((v,i)=>v.id===vid||String(i)===String(vid));
+  const q=state.plants[qid],v=state.inv.pollen.find(v=>v.id===vid);
   if(!q||!v||!(v.uses115>0)||q.seeded)return;
   if(!Access.atLoc(q.loc))return think('Walk to her grow space first.');
   if(sexOf(q)!=='F'||q.stage<S.earlyflower||q.stage>S.midflower)return think('A confirmed female can be pollinated in early to mid flower.');
@@ -28090,5 +28090,56 @@ if (SHELVED.wardrobe) {
   renderCreator = (prev => function () { const r = prev.apply(this, arguments); prune($('#screen-create'), 'cr', runtime.cr || {}); return r; })(renderCreator);
   renderPanel = (prev => function () { const r = prev.apply(this, arguments); if (state && $('#panelBody')?.querySelector('[data-act="wear"][data-arg^="shirt:"]')) prune($('#panelBody'), 'wear', Object.assign({ topS: state.player.topS || state.player.shirtS }, state.player)); return r; })(renderPanel);
 }
+</script>
+<script>
+/* Individual pollen selection and storage; historic donor snapshots stay intact. */
+const PollenUI = {
+  all() {
+    const V = state.inv.pollen || (state.inv.pollen = []), seen = new Set();
+    for (const v of V) {
+      if (!v.id || seen.has(v.id)) v.id = uid();
+      seen.add(v.id);
+      if (v.uses115 == null) v.uses115 = 1;
+    }
+    return V;
+  },
+  label(v) { return `${v.name || 'Unknown donor'} · ${GEN(v.lineId).name} · ${v.day == null ? 'Collection day unknown' : 'Day ' + v.day} · ${v.uses115} applications left · Vial ${v.id}`; },
+  eligible(p) { return p && sexOf(p) === 'F' && !p.seeded && p.stage >= S.earlyflower && p.stage <= S.midflower; },
+  back(pid) { Panels.plant(pid, 'care'); },
+  open(pid) {
+    const p = state.plants[pid];
+    if (!this.eligible(p)) return think('Choose an unpollinated female in early to mid flower.');
+    if (!Access.atLoc(p.loc)) return think('Walk to her grow space first.');
+    openPanel('Pollinate ' + p.name, () => {
+      const V = this.all().filter(v => v.uses115 > 0);
+      return `<p>Choose a donor for ${esc(p.name)}. Pollination costs 4 energy.</p>${V.length ? `<label for="pollenVial">Pollen vial</label><select id="pollenVial" style="display:block;width:100%;min-width:0;max-width:100%;margin:8px 0 12px">${V.map(v => `<option value="${esc(v.id)}">${esc(this.label(v))}</option>`).join('')}</select><button class="btn primary" data-act="pollenApply" data-arg="${esc(pid)}">Pollinate with selected vial</button>` : '<p class="muted">No usable pollen vials. Collect pollen from a male in mid flower.</p>'}<div class="actions"><button class="btn" data-act="pollenBack" data-arg="${esc(pid)}">Back to plant</button><button class="btn" data-act="invOpen" data-arg="pollen">Manage pollen</button></div>`;
+    });
+  },
+  html() {
+    const V = this.all();
+    return `<p class="small muted">All ${V.length} pollen vials. To use one, open a flowering female’s Care tab and choose Pollinate.</p><div class="g115">${V.map((v, i) => `<div class="card" style="min-width:0;overflow-wrap:anywhere"><canvas class="px" width="40" height="64" data-draw="pollenvial:${i}" style="width:40px;margin:auto"></canvas><h3>${esc(v.name || 'Unknown donor')}</h3><div class="small">${esc(this.label(v))}</div>${v.uses115 > 0 ? '' : '<div class="small muted">Empty vial</div>'}<button class="btn sm danger" data-act="pollenTrash" data-arg="${esc(v.id)}">Trash vial…</button></div>`).join('') || '<p class="muted">No pollen vials in storage. Collect pollen from a male in mid flower.</p>'}</div>`;
+  },
+  trash(id) {
+    const v = this.all().find(v => v.id === id); if (!v) return;
+    openPanel('Trash pollen vial?', () => `<p>${esc(this.label(v))}</p><p>This permanently discards this vial and its remaining pollen.</p><div class="actions"><button class="btn danger" data-act="pollenDiscard" data-arg="${esc(id)}">Trash this vial</button><button class="btn" data-act="invOpen" data-arg="pollen">Cancel</button></div>`);
+  }
+};
+Inv115.pollen = () => PollenUI.html();
+POSTLOAD115.push(() => PollenUI.all());
+Object.assign(ACT, {
+  pollenChoose(pid) { PollenUI.open(pid); },
+  pollenBack(pid) { PollenUI.back(pid); },
+  pollenApply(pid) {
+    const id = document.getElementById('pollenVial')?.value, v = PollenUI.all().find(v => v.id === id);
+    if (!v || v.uses115 <= 0) { toast('That vial is no longer available.', 'warn'); renderPanel(); return; }
+    Breeding.pollinate(pid, id);
+    if (state.plants[pid]?.seeded) PollenUI.back(pid);
+  },
+  pollenTrash(id) { PollenUI.trash(id); },
+  pollenDiscard(id) {
+    const V = PollenUI.all(), i = V.findIndex(v => v.id === id); if (i < 0) return;
+    V.splice(i, 1); SaveSys.request('discard pollen'); Panels.inventory('pollen');
+  }
+});
 </script>
 </body></html>

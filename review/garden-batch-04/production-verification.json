@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "browserTests": {
+    "passed": 7,
+    "failed": 0,
+    "files": [
+      "tests/garden-plants-browser.test.cjs",
+      "tests/live-plants-browser.test.cjs",
+      "tests/plant-resolution.test.cjs",
+      "tests/pollen-inventory.test.cjs"
+    ]
+  },
+  "buildPassed": true,
+  "staticIntegrityPassed": true,
+  "gardenAtlasCount": 20,
+  "nativeBiologyPreserved": true,
+  "publishedHTMLSHA256": "8ea3a00e795d1bd9494b3c8e703b00518d48b865db466efae9c5502552147570",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2",
+  "sourcePNGsPreserved": true,
+  "mergedOriginMain": "315c70e"
+}
