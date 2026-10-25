@@ -1,0 +1,42 @@
+[
+  {
+    "key": "tomato",
+    "id": "P031",
+    "name": "Tomato",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Compound serrated tomato foliage, yellow star flowers, attached round green/red fruit."
+  },
+  {
+    "key": "bellpepper",
+    "id": "P032",
+    "name": "Bell pepper",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Smooth entire leaves, white flowers, attached blocky green/red bell peppers."
+  },
+  {
+    "key": "carrot",
+    "id": "P011",
+    "name": "Carrot",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Dissected green carrot tops, tiny orange shoulder at mature soil crown; no pulled roots."
+  },
+  {
+    "key": "beet",
+    "id": "P012",
+    "name": "Beet",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Broad green leaves with red petioles/veins; burgundy upper root shoulder at mature crown."
+  },
+  {
+    "key": "radish",
+    "id": "P013",
+    "name": "Radish",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Rough lobed green leaves; small red-and-cream root shoulder at mature soil crown."
+  }
+]

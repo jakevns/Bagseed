@@ -1,0 +1,61 @@
+{
+  "id": "P013",
+  "key": "radish",
+  "name": "Radish",
+  "status": "sample-awaiting-approval",
+  "revision": "radish-garden-1",
+  "generatedSource": "radish.png",
+  "sourceSHA256": "78e85933ce9ea73ff603c37040f477a9c5b6c2dc53b0c1778d285e713de47c2f",
+  "runtimeSHA256": "81d9c01cd973be0e43af5314f81abc9db93e82cd7440da7f4f1f0189d7f28318",
+  "runtime": "/garden-review/radish.webp",
+  "stages": [
+    {
+      "crop": [
+        168,
+        260,
+        372,
+        232
+      ],
+      "attach": [
+        193.0,
+        229.0
+      ]
+    },
+    {
+      "crop": [
+        662,
+        64,
+        550,
+        434
+      ],
+      "attach": [
+        264.0,
+        430.0
+      ]
+    },
+    {
+      "crop": [
+        8,
+        596,
+        620,
+        531
+      ],
+      "attach": [
+        337.0,
+        518.0
+      ]
+    },
+    {
+      "crop": [
+        632,
+        573,
+        618,
+        573
+      ],
+      "attach": [
+        319.0,
+        559.0
+      ]
+    }
+  ]
+}

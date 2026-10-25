@@ -1,0 +1,61 @@
+{
+  "id": "P031",
+  "key": "tomato",
+  "name": "Tomato",
+  "status": "approved-growth-artwork",
+  "revision": "tomato-garden-1",
+  "generatedSource": "tomato.png",
+  "sourceSHA256": "ab208175a9e2dfec9e0fd4fa8da933e88697a209842b0a7d89a06ae7727f80a9",
+  "runtimeSHA256": "d6bbff6dcb6ac2ed403328064c5dd7419dd8b3a711f0adb5de7912c903a2a551",
+  "runtime": "assets/garden-plants/tomato/stages-d6bbff6dcb6a.webp",
+  "stages": [
+    {
+      "crop": [
+        147,
+        252,
+        380,
+        222
+      ],
+      "attach": [
+        189.0,
+        219.0
+      ]
+    },
+    {
+      "crop": [
+        707,
+        43,
+        469,
+        441
+      ],
+      "attach": [
+        213.0,
+        436.0
+      ]
+    },
+    {
+      "crop": [
+        45,
+        547,
+        581,
+        614
+      ],
+      "attach": [
+        281.0,
+        602.0
+      ]
+    },
+    {
+      "crop": [
+        646,
+        529,
+        585,
+        639
+      ],
+      "attach": [
+        290.0,
+        634.0
+      ]
+    }
+  ]
+}

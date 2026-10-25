@@ -1,6 +1,6 @@
 # Garden and companion plant visual-update plan
 
-Status: batches 1–6 are accepted and integrated (30 species). Batch 7 is in progress; later batches retain their original artwork. The ranked order below is the saved production plan.
+Status: batches 1–7 are accepted and integrated (35 species). Batch 8 is in progress; later batches retain their original artwork. The ranked order below is the saved production plan.
 
 Order is **highest to lowest visual-update priority**, based on current pot visibility, the reported lettuce/pot issues, companion interactions and reusable botanical components. This is an art-production ranking, not a claim about botanical or economic importance. No usage analytics were available.
 

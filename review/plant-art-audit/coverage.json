@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "ceec3984975b1565ef05d18174e09997e2d726d3270b4553c239b7a08938f7d6",
+  "publishedHTMLSHA256": "bb6d5c5cf0220b898d02a845646bea0de76dd7bb9f797f660d6cd25759cd808a",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -56,17 +56,17 @@
     {
       "id": "P011",
       "name": "Carrot",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P012",
       "name": "Beet",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P013",
       "name": "Radish",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P014",
@@ -156,12 +156,12 @@
     {
       "id": "P031",
       "name": "Tomato",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P032",
       "name": "Bell pepper",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P033",

@@ -1,0 +1,61 @@
+{
+  "id": "P012",
+  "key": "beet",
+  "name": "Beet",
+  "status": "approved-growth-artwork",
+  "revision": "beet-garden-1",
+  "generatedSource": "beet-spaced.png",
+  "sourceSHA256": "1d2161a8936bee7077673cf9e50171c6aab0339893816cfb8f3d252d128d4763",
+  "runtimeSHA256": "7760ff53106b1d7ee3635f27134792bb2f5ddcfe5f1c0053954f174e3327ef55",
+  "runtime": "assets/garden-plants/beet/stages-7760ff53106b.webp",
+  "stages": [
+    {
+      "crop": [
+        147,
+        305,
+        360,
+        184
+      ],
+      "attach": [
+        181.0,
+        181.0
+      ]
+    },
+    {
+      "crop": [
+        649,
+        103,
+        535,
+        413
+      ],
+      "attach": [
+        246.0,
+        401.0
+      ]
+    },
+    {
+      "crop": [
+        66,
+        673,
+        521,
+        460
+      ],
+      "attach": [
+        249.0,
+        457.0
+      ]
+    },
+    {
+      "crop": [
+        658,
+        621,
+        559,
+        525
+      ],
+      "attach": [
+        285.0,
+        521.0
+      ]
+    }
+  ]
+}
