@@ -1,0 +1,61 @@
+{
+  "id": "P005",
+  "key": "kale",
+  "name": "Kale",
+  "status": "sample-awaiting-approval",
+  "revision": "kale-garden-1",
+  "generatedSource": "kale.png",
+  "sourceSHA256": "ad925a15b5269dbb55cf7420be7c4bd83fb2760b24f9ef7f7b3ad30e22e4a655",
+  "runtimeSHA256": "47ba1906da6242c6d36f13ec581d2f055611b2ed2a0a6ec08db680eb1fd81e3a",
+  "runtime": "/garden-review/kale.webp",
+  "stages": [
+    {
+      "crop": [
+        187,
+        285,
+        268,
+        180
+      ],
+      "attach": [
+        132.0,
+        177.0
+      ]
+    },
+    {
+      "crop": [
+        673,
+        72,
+        476,
+        399
+      ],
+      "attach": [
+        232.0,
+        396.0
+      ]
+    },
+    {
+      "crop": [
+        36,
+        629,
+        564,
+        519
+      ],
+      "attach": [
+        283.0,
+        515.0
+      ]
+    },
+    {
+      "crop": [
+        631,
+        563,
+        603,
+        616
+      ],
+      "attach": [
+        309.0,
+        577.0
+      ]
+    }
+  ]
+}

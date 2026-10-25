@@ -1,0 +1,61 @@
+{
+  "id": "P033",
+  "key": "jalapeno",
+  "name": "Jalapeno",
+  "status": "sample-awaiting-approval",
+  "revision": "jalapeno-garden-1",
+  "generatedSource": "jalapeno.png",
+  "sourceSHA256": "34e64a90919b8706f5717020ca4b4ae7780657d807b702a53d218fe3481b9762",
+  "runtimeSHA256": "1281c9dcf5a5189a48459bbbf7b4748858da8a37bf967078d83004cff1ec47f0",
+  "runtime": "/garden-review/jalapeno.webp",
+  "stages": [
+    {
+      "crop": [
+        162,
+        212,
+        381,
+        211
+      ],
+      "attach": [
+        186.0,
+        207.0
+      ]
+    },
+    {
+      "crop": [
+        672,
+        84,
+        466,
+        367
+      ],
+      "attach": [
+        239.0,
+        364.0
+      ]
+    },
+    {
+      "crop": [
+        23,
+        534,
+        560,
+        637
+      ],
+      "attach": [
+        280.0,
+        633.0
+      ]
+    },
+    {
+      "crop": [
+        603,
+        484,
+        635,
+        689
+      ],
+      "attach": [
+        311.0,
+        685.0
+      ]
+    }
+  ]
+}

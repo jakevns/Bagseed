@@ -1,0 +1,22 @@
+{
+  "id": "gg4",
+  "lineId": "cl_gg4",
+  "name": "GG4",
+  "shortName": "GG4",
+  "apiName": "BagseedGg4Growth",
+  "revision": "gg4-components-1",
+  "libraryRevision": "plant-parts-library-expanded-8",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1.05
+  },
+  "description": "Forest-green hybrid fans / dense silver-frosted olive flowers",
+  "finishCaption": "Golden fan senescence / resinous green flowers and amber stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-03d44efb-9a61-4065-bc1c-26f8917ff637.png"
+}

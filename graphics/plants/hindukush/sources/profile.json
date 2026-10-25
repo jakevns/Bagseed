@@ -1,0 +1,22 @@
+{
+  "id": "hindukush",
+  "lineId": "cl_hindukush",
+  "name": "Hindu Kush",
+  "shortName": "Hindu Kush",
+  "apiName": "BagseedHindukushGrowth",
+  "revision": "hindukush-components-1",
+  "libraryRevision": "plant-parts-library-expanded-3",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1.1
+  },
+  "description": "Tapered broad fans / compact olive flower clusters",
+  "finishCaption": "Golden fan senescence / copper stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-20337e53-6905-4fc2-9296-e51109ac53a5.png"
+}

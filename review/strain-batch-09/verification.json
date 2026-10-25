@@ -1,0 +1,785 @@
+{
+  "families": [
+    {
+      "key": "purplekush",
+      "lineId": "cl_purplekush",
+      "id": "p_k28dmt9",
+      "genome": "{\"id\":\"ph_hgbbski\",\"alleles\":{\"heightF\":[0.8633855214972281,0.8366144785027718],\"branching\":[1.0603418422936695,1.0396581577063306],\"yield\":[0.9073806295978138,0.8926193704021862],\"aromaInt\":[0.7422486605235609,0.7577513394764391],\"moldRes\":[0.5920794625810347,0.6079205374189652],\"pestRes\":[0.5980074614639393,0.6019925385360606],\"speed\":[0.9454487518682726,0.9545512481317273],\"stressSens\":[0.5180936528891046,0.5219063471108955],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"blue\",\"blue\"],\"colorName\":[\"Purple\",\"Purple\"],\"aroma\":[\"Earthy\",\"Earthy\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":1.0085898275952787,\"c\":1.0453194095753133,\"tp\":[0.9607632567174733,0.8702640665695072,1.0454987183213236],\"minor\":0.05516536720097065},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_purplekush\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_hgbbski\",\"leafKit\":\"purplekush\",\"flowerKit\":\"purplekush\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"blue\",\"colorName\":\"Purple\",\"branching\":1.05}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "purplekush",
+          "flowerKit": "purplekush"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "purple",
+        "rgb": [
+          124,
+          67,
+          140
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    },
+    {
+      "key": "gdp",
+      "lineId": "cl_gdp",
+      "id": "p_e0xeb9s",
+      "genome": "{\"id\":\"ph_4g6g5qw\",\"alleles\":{\"heightF\":[0.7980230624614284,0.8019769375385717],\"branching\":[1.0861820539583453,1.1138179460416548],\"yield\":[1.0097944772455376,0.9902055227544624],\"aromaInt\":[0.8604217727835406,0.8395782272164594],\"moldRes\":[0.5566951661380823,0.5433048338619177],\"pestRes\":[0.6031416588781401,0.5968583411218599],\"speed\":[0.9614659554756013,0.9385340445243986],\"stressSens\":[0.5143348753264081,0.5256651246735919],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"blue\",\"blue\"],\"colorName\":[\"Dark purple\",\"Dark purple\"],\"aroma\":[\"Berry\",\"Berry\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":0.8877899957587942,\"c\":0.9418644834775477,\"tp\":[0.8197479983791709,1.027312702778727,1.058855412900448],\"minor\":0.048899034736678004},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_gdp\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_4g6g5qw\",\"leafKit\":\"gdp\",\"flowerKit\":\"gdp\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"blue\",\"colorName\":\"Dark purple\",\"branching\":1.1}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "gdp",
+          "flowerKit": "gdp"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "deep-purple",
+        "rgb": [
+          77,
+          44,
+          92
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    },
+    {
+      "key": "blueberry",
+      "lineId": "cl_blueberry",
+      "id": "p_7vzc2mm",
+      "genome": "{\"id\":\"ph_co1iz3e\",\"alleles\":{\"heightF\":[0.8922324911418836,0.9077675088581164],\"branching\":[0.9841462651116308,1.0158537348883692],\"yield\":[0.9638687124492018,0.9361312875507981],\"aromaInt\":[0.7932270720141009,0.8067729279858992],\"moldRes\":[0.6046678197210654,0.5953321802789345],\"pestRes\":[0.6003497477932367,0.5996502522067633],\"speed\":[1.011739177312702,0.9882608226872981],\"stressSens\":[0.5158510090247728,0.5241489909752273],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"blue\",\"blue\"],\"colorName\":[\"Lavender\",\"Lavender\"],\"aroma\":[\"Berry\",\"Berry\"],\"leafShape\":[\"hybrid\",\"hybrid\"]},\"cx\":{\"t\":1.138949258835055,\"c\":1.1028726928401738,\"tp\":[1.0367208184674384,0.9732996482402086,1.0182686040177942],\"minor\":0.18847799277864397},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_blueberry\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_co1iz3e\",\"leafKit\":\"blueberry\",\"flowerKit\":\"blueberry\",\"traits\":{\"leafShape\":\"hybrid\",\"leafKey\":\"blue\",\"colorName\":\"Lavender\",\"branching\":1}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "blueberry",
+          "flowerKit": "blueberry"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "lavender",
+        "rgb": [
+          158,
+          116,
+          183
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    }
+  ],
+  "mutationChecks": [
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ],
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ],
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ]
+  ],
+  "coolStudies": [
+    {
+      "key": "purplekush",
+      "nightTemp": 70,
+      "dayTemp": 78,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "purple",
+        "hex": "#622a8f",
+        "rgb": [
+          98,
+          42,
+          143
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "key": "gdp",
+      "nightTemp": 70,
+      "dayTemp": 78,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "near-black purple",
+        "hex": "#201a30",
+        "rgb": [
+          32,
+          26,
+          48
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "key": "blueberry",
+      "nightTemp": 70,
+      "dayTemp": 78,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "lavender",
+        "hex": "#8262ac",
+        "rgb": [
+          130,
+          98,
+          172
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "key": "purplekush",
+      "nightTemp": 68,
+      "dayTemp": 78,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "purple",
+        "hex": "#622a8f",
+        "rgb": [
+          98,
+          42,
+          143
+        ]
+      },
+      "sproutBonus": 0.08
+    },
+    {
+      "key": "gdp",
+      "nightTemp": 68,
+      "dayTemp": 78,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "near-black purple",
+        "hex": "#201a30",
+        "rgb": [
+          32,
+          26,
+          48
+        ]
+      },
+      "sproutBonus": 0.08
+    },
+    {
+      "key": "blueberry",
+      "nightTemp": 68,
+      "dayTemp": 78,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "lavender",
+        "hex": "#8262ac",
+        "rgb": [
+          130,
+          98,
+          172
+        ]
+      },
+      "sproutBonus": 0.08
+    }
+  ],
+  "pinnedRecipesPreserved": true,
+  "readOnly": true,
+  "atlasCount": 41,
+  "catalogCount": 37,
+  "animation": {
+    "frames": 96,
+    "fps": 12,
+    "seconds": 8
+  },
+  "status": "sample-awaiting-approval",
+  "productionRenderer": false,
+  "saveReload": true,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "2fc5931b0a936bd05e6321370272edc3bee8b56d905df8ce739d1a73579f5cc8",
+  "errors": []
+}

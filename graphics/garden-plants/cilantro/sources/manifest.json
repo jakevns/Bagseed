@@ -1,0 +1,61 @@
+{
+  "id": "P053",
+  "key": "cilantro",
+  "name": "Cilantro",
+  "status": "approved-growth-artwork",
+  "revision": "cilantro-garden-1",
+  "generatedSource": "exec-c5f0e383-5831-4f85-9718-e0bac06b213d.png",
+  "sourceSHA256": "d10b145d0762846955f3022ac6300ef30d5fac746e7f7414b589014ad352d6cb",
+  "runtimeSHA256": "13a04bcc85bbbbbac1d08a903668564e565a1666484e001230f4d5ea0edc7bff",
+  "runtime": "assets/garden-plants/cilantro/stages-13a04bcc85bb.webp",
+  "stages": [
+    {
+      "crop": [
+        200,
+        257,
+        258,
+        204
+      ],
+      "attach": [
+        123.0,
+        201.0
+      ]
+    },
+    {
+      "crop": [
+        705,
+        70,
+        470,
+        408
+      ],
+      "attach": [
+        243.0,
+        404.0
+      ]
+    },
+    {
+      "crop": [
+        37,
+        620,
+        581,
+        564
+      ],
+      "attach": [
+        296.0,
+        561.0
+      ]
+    },
+    {
+      "crop": [
+        687,
+        536,
+        545,
+        665
+      ],
+      "attach": [
+        267.0,
+        661.0
+      ]
+    }
+  ]
+}

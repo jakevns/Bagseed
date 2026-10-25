@@ -1,0 +1,61 @@
+{
+  "id": "P060",
+  "key": "oregano",
+  "name": "Oregano",
+  "status": "sample-awaiting-approval",
+  "revision": "oregano-garden-1",
+  "generatedSource": "oregano.png",
+  "sourceSHA256": "20dec852ac46aaa0544989f1f42c4f15999ec4c05eae20dfd99697e1685136d6",
+  "runtimeSHA256": "2e255e13f1e323d526941ebf3721409af1276fb6884158aafa6c71f054b91188",
+  "runtime": "/garden-review/oregano.webp",
+  "stages": [
+    {
+      "crop": [
+        233,
+        297,
+        180,
+        173
+      ],
+      "attach": [
+        91.0,
+        169.0
+      ]
+    },
+    {
+      "crop": [
+        790,
+        94,
+        273,
+        381
+      ],
+      "attach": [
+        137.0,
+        377.0
+      ]
+    },
+    {
+      "crop": [
+        36,
+        643,
+        572,
+        501
+      ],
+      "attach": [
+        280.0,
+        497.0
+      ]
+    },
+    {
+      "crop": [
+        648,
+        535,
+        585,
+        613
+      ],
+      "attach": [
+        299.0,
+        610.0
+      ]
+    }
+  ]
+}

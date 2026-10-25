@@ -1,0 +1,22 @@
+{
+  "id": "slh",
+  "lineId": "cl_slh",
+  "name": "Super Lemon Haze",
+  "shortName": "Super Lemon Haze",
+  "apiName": "BagseedSlhGrowth",
+  "revision": "slh-components-1",
+  "libraryRevision": "plant-parts-library-expanded-7",
+  "traits": {
+    "leafShape": "narrow",
+    "leafKey": "lime",
+    "colorName": "Lime green",
+    "branching": 0.9
+  },
+  "description": "Fine lime fans / pointed yellow-green flowers and golden stigmas",
+  "finishCaption": "Golden fan senescence / natural green flowers and amber stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-d8c45359-e289-46fc-a642-a3295c789278.png"
+}

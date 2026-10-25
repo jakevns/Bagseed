@@ -1,0 +1,334 @@
+{
+  "cases": [
+    {
+      "scene": "bedroom",
+      "zoom": "wide",
+      "d": 4,
+      "pixels": 1382400,
+      "world": [
+        1920,
+        720
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            1920,
+            720
+          ],
+          "destination": [
+            0,
+            431,
+            1920,
+            720
+          ],
+          "smooth": true
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0"
+      ]
+    },
+    {
+      "scene": "bedroom",
+      "zoom": "normal",
+      "d": 6,
+      "pixels": 3110400,
+      "world": [
+        2880,
+        1080
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            2880,
+            1080
+          ],
+          "destination": [
+            0,
+            251,
+            2880,
+            1080
+          ],
+          "smooth": true
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0"
+      ]
+    },
+    {
+      "scene": "bedroom",
+      "zoom": "close",
+      "d": 6,
+      "pixels": 3110400,
+      "world": [
+        2880,
+        1080
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            2880,
+            1080
+          ],
+          "destination": [
+            0,
+            71,
+            3840,
+            1440
+          ],
+          "smooth": true
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0"
+      ]
+    },
+    {
+      "scene": "growroom",
+      "zoom": "wide",
+      "d": 4,
+      "pixels": 1433600,
+      "world": [
+        1792,
+        800
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            1792,
+            800
+          ],
+          "destination": [
+            -412,
+            391,
+            1792,
+            800
+          ],
+          "smooth": true
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0",
+        "plant:tent4:0",
+        "plant:tent5:0"
+      ]
+    },
+    {
+      "scene": "growroom",
+      "zoom": "normal",
+      "d": 6,
+      "pixels": 3225600,
+      "world": [
+        2688,
+        1200
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            2688,
+            1200
+          ],
+          "destination": [
+            -832,
+            191,
+            2688,
+            1200
+          ],
+          "smooth": true
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0"
+      ]
+    },
+    {
+      "scene": "growroom",
+      "zoom": "close",
+      "d": 6,
+      "pixels": 3225600,
+      "world": [
+        2688,
+        1200
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            2688,
+            1200
+          ],
+          "destination": [
+            -1252,
+            -18,
+            3584,
+            1600
+          ],
+          "smooth": true
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0"
+      ]
+    },
+    {
+      "scene": "backyard",
+      "zoom": "wide",
+      "d": 3,
+      "pixels": 1728000,
+      "world": [
+        1800,
+        960
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            1800,
+            960
+          ],
+          "destination": [
+            0,
+            151,
+            2400,
+            1280
+          ],
+          "smooth": false
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0"
+      ]
+    },
+    {
+      "scene": "backyard",
+      "zoom": "normal",
+      "d": 3,
+      "pixels": 1728000,
+      "world": [
+        1800,
+        960
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            1800,
+            960
+          ],
+          "destination": [
+            0,
+            0,
+            3600,
+            1920
+          ],
+          "smooth": false
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0"
+      ]
+    },
+    {
+      "scene": "backyard",
+      "zoom": "close",
+      "d": 3,
+      "pixels": 1728000,
+      "world": [
+        1800,
+        960
+      ],
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            1800,
+            960
+          ],
+          "destination": [
+            0,
+            -81,
+            4800,
+            2560
+          ],
+          "smooth": false
+        }
+      ],
+      "roundTrip": true,
+      "hits": [
+        "plant:closet:0",
+        "plant:tent2:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0",
+        "plant:tent4:0",
+        "plant:tent5:0"
+      ]
+    }
+  ],
+  "biologyUnchanged": true,
+  "stillSize": [
+    246,
+    330
+  ],
+  "logicalSize": [
+    41,
+    55
+  ],
+  "stable": true,
+  "wind": true,
+  "errors": []
+}

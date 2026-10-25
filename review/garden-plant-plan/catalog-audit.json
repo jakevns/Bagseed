@@ -1,0 +1,1642 @@
+{
+  "standardSpecies": 151,
+  "rareVarieties": 12,
+  "totalGardenIdentities": 163,
+  "mainPotEligible": 132,
+  "sidePotEligible": 76,
+  "companionFlag": 31,
+  "separateTrees": 20,
+  "source": "src/game.html",
+  "order": [
+    {
+      "rank": 1,
+      "batch": 1,
+      "id": "P001",
+      "name": "Lettuce",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 2,
+      "batch": 1,
+      "id": "P010",
+      "name": "Bok choy",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 3,
+      "batch": 1,
+      "id": "P051",
+      "name": "Basil",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 4,
+      "batch": 1,
+      "id": "P061",
+      "name": "Mint",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 5,
+      "batch": 1,
+      "id": "P098",
+      "name": "Marigold",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 6,
+      "batch": 2,
+      "id": "P070",
+      "name": "Chamomile",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 7,
+      "batch": 2,
+      "id": "P126",
+      "name": "Lavender",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 8,
+      "batch": 2,
+      "id": "P151",
+      "name": "Calendula",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 9,
+      "batch": 2,
+      "id": "P108",
+      "name": "Sweet alyssum",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 10,
+      "batch": 2,
+      "id": "P105",
+      "name": "Nasturtium",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 11,
+      "batch": 3,
+      "id": "P058",
+      "name": "Thyme",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 12,
+      "batch": 3,
+      "id": "P056",
+      "name": "Chives",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 13,
+      "batch": 3,
+      "id": "P055",
+      "name": "Dill",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 14,
+      "batch": 3,
+      "id": "P053",
+      "name": "Cilantro",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 15,
+      "batch": 3,
+      "id": "P052",
+      "name": "Thai basil",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 16,
+      "batch": 4,
+      "id": "P002",
+      "name": "Spinach",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 17,
+      "batch": 4,
+      "id": "P004",
+      "name": "Swiss chard",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 18,
+      "batch": 4,
+      "id": "P003",
+      "name": "Arugula",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 19,
+      "batch": 4,
+      "id": "P057",
+      "name": "Rosemary",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 20,
+      "batch": 4,
+      "id": "P062",
+      "name": "Lemon balm",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 21,
+      "batch": 5,
+      "id": "P054",
+      "name": "Parsley",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 22,
+      "batch": 5,
+      "id": "P059",
+      "name": "Sage",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 23,
+      "batch": 5,
+      "id": "P060",
+      "name": "Oregano",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 24,
+      "batch": 5,
+      "id": "P071",
+      "name": "Strawberry",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 25,
+      "batch": 5,
+      "id": "P033",
+      "name": "Jalapeno",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 26,
+      "batch": 6,
+      "id": "P005",
+      "name": "Kale",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 27,
+      "batch": 6,
+      "id": "P007",
+      "name": "Mustard greens",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 28,
+      "batch": 6,
+      "id": "P008",
+      "name": "Mizuna",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 29,
+      "batch": 6,
+      "id": "P009",
+      "name": "Tatsoi",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 30,
+      "batch": 6,
+      "id": "P006",
+      "name": "Collard greens",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 31,
+      "batch": 7,
+      "id": "P031",
+      "name": "Tomato",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 32,
+      "batch": 7,
+      "id": "P032",
+      "name": "Bell pepper",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 33,
+      "batch": 7,
+      "id": "P011",
+      "name": "Carrot",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 34,
+      "batch": 7,
+      "id": "P012",
+      "name": "Beet",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 35,
+      "batch": 7,
+      "id": "P013",
+      "name": "Radish",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 36,
+      "batch": 8,
+      "id": "P021",
+      "name": "Broccoli",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 37,
+      "batch": 8,
+      "id": "P022",
+      "name": "Cauliflower",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 38,
+      "batch": 8,
+      "id": "P023",
+      "name": "Cabbage",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 39,
+      "batch": 8,
+      "id": "P025",
+      "name": "Kohlrabi",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 40,
+      "batch": 8,
+      "id": "P027",
+      "name": "Celery",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 41,
+      "batch": 9,
+      "id": "P063",
+      "name": "Tarragon",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 42,
+      "batch": 9,
+      "id": "P064",
+      "name": "Marjoram",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 43,
+      "batch": 9,
+      "id": "P065",
+      "name": "Summer savory",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 44,
+      "batch": 9,
+      "id": "P066",
+      "name": "Chervil",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 45,
+      "batch": 9,
+      "id": "P067",
+      "name": "Lemon verbena",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 46,
+      "batch": 10,
+      "id": "P068",
+      "name": "Lemongrass",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 47,
+      "batch": 10,
+      "id": "P083",
+      "name": "Tulip",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 48,
+      "batch": 10,
+      "id": "P084",
+      "name": "Daffodil",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 49,
+      "batch": 10,
+      "id": "P085",
+      "name": "Crocus",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 50,
+      "batch": 10,
+      "id": "P086",
+      "name": "Hyacinth",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 51,
+      "batch": 11,
+      "id": "P087",
+      "name": "Grape hyacinth",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 52,
+      "batch": 11,
+      "id": "P088",
+      "name": "Snowdrop",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 53,
+      "batch": 11,
+      "id": "P090",
+      "name": "Primrose",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 54,
+      "batch": 11,
+      "id": "P091",
+      "name": "Pansy",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 55,
+      "batch": 11,
+      "id": "P092",
+      "name": "Viola",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 56,
+      "batch": 12,
+      "id": "P093",
+      "name": "Ranunculus",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 57,
+      "batch": 12,
+      "id": "P094",
+      "name": "Anemone",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 58,
+      "batch": 12,
+      "id": "P099",
+      "name": "Petunia",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 59,
+      "batch": 12,
+      "id": "P100",
+      "name": "Impatiens",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 60,
+      "batch": 12,
+      "id": "P101",
+      "name": "Begonia",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 61,
+      "batch": 13,
+      "id": "P102",
+      "name": "Geranium",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 62,
+      "batch": 13,
+      "id": "P109",
+      "name": "Portulaca",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 63,
+      "batch": 13,
+      "id": "P114",
+      "name": "Dianthus",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 64,
+      "batch": 13,
+      "id": "P116",
+      "name": "Chrysanthemum",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 65,
+      "batch": 13,
+      "id": "P123",
+      "name": "Sedum stonecrop",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 66,
+      "batch": 14,
+      "id": "P135",
+      "name": "Hosta",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 67,
+      "batch": 14,
+      "id": "P136",
+      "name": "Heuchera",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 68,
+      "batch": 14,
+      "id": "P137",
+      "name": "Coleus",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 69,
+      "batch": 14,
+      "id": "P138",
+      "name": "Ornamental kale",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 70,
+      "batch": 14,
+      "id": "P139",
+      "name": "Dusty miller",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 71,
+      "batch": 15,
+      "id": "P140",
+      "name": "Fern",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 72,
+      "batch": 15,
+      "id": "P142",
+      "name": "Succulent rosette",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 73,
+      "batch": 15,
+      "id": "P144",
+      "name": "Dwarf heather",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 74,
+      "batch": 15,
+      "id": "P145",
+      "name": "Poinsettia",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 75,
+      "batch": 15,
+      "id": "P146",
+      "name": "Amaryllis",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 76,
+      "batch": 16,
+      "id": "P147",
+      "name": "Christmas cactus",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 77,
+      "batch": 16,
+      "id": "P148",
+      "name": "Paperwhite narcissus",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 78,
+      "batch": 16,
+      "id": "P149",
+      "name": "Cyclamen",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 79,
+      "batch": 16,
+      "id": "P150",
+      "name": "Hellebore",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 80,
+      "batch": 16,
+      "id": "P069",
+      "name": "Anise hyssop",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 81,
+      "batch": 17,
+      "id": "P096",
+      "name": "Zinnia",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 82,
+      "batch": 17,
+      "id": "P097",
+      "name": "Cosmos",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 83,
+      "batch": 17,
+      "id": "P107",
+      "name": "Bachelor button",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 84,
+      "batch": 17,
+      "id": "P118",
+      "name": "Goldenrod",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 85,
+      "batch": 17,
+      "id": "P121",
+      "name": "Rudbeckia",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 86,
+      "batch": 18,
+      "id": "P122",
+      "name": "Echinacea",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 87,
+      "batch": 18,
+      "id": "P128",
+      "name": "Salvia",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 88,
+      "batch": 18,
+      "id": "P129",
+      "name": "Coreopsis",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 89,
+      "batch": 18,
+      "id": "P130",
+      "name": "Yarrow",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 90,
+      "batch": 18,
+      "id": "P014",
+      "name": "Turnip",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 91,
+      "batch": 19,
+      "id": "P015",
+      "name": "Parsnip",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 92,
+      "batch": 19,
+      "id": "P016",
+      "name": "Rutabaga",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 93,
+      "batch": 19,
+      "id": "P017",
+      "name": "Daikon",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 94,
+      "batch": 19,
+      "id": "P018",
+      "name": "Onion",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 95,
+      "batch": 19,
+      "id": "P019",
+      "name": "Garlic",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 96,
+      "batch": 20,
+      "id": "P020",
+      "name": "Shallot",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 97,
+      "batch": 20,
+      "id": "P026",
+      "name": "Leek",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 98,
+      "batch": 20,
+      "id": "P029",
+      "name": "Fava bean",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 99,
+      "batch": 20,
+      "id": "P030",
+      "name": "Celeriac",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 100,
+      "batch": 20,
+      "id": "P034",
+      "name": "Eggplant",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 101,
+      "batch": 21,
+      "id": "P035",
+      "name": "Okra",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 102,
+      "batch": 21,
+      "id": "P037",
+      "name": "Tomatillo",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 103,
+      "batch": 21,
+      "id": "P038",
+      "name": "Green bean",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 104,
+      "batch": 21,
+      "id": "P039",
+      "name": "Soybean",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 105,
+      "batch": 21,
+      "id": "P089",
+      "name": "Iris",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 106,
+      "batch": 22,
+      "id": "P103",
+      "name": "Snapdragon",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 107,
+      "batch": 22,
+      "id": "P106",
+      "name": "California poppy",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 108,
+      "batch": 22,
+      "id": "P110",
+      "name": "Celosia",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 109,
+      "batch": 22,
+      "id": "P111",
+      "name": "Gomphrena",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 110,
+      "batch": 22,
+      "id": "P112",
+      "name": "Larkspur",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 111,
+      "batch": 23,
+      "id": "P113",
+      "name": "Scabiosa",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 112,
+      "batch": 23,
+      "id": "P117",
+      "name": "Aster",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 113,
+      "batch": 23,
+      "id": "P119",
+      "name": "Japanese anemone",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 114,
+      "batch": 23,
+      "id": "P120",
+      "name": "Helenium",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 115,
+      "batch": 23,
+      "id": "P125",
+      "name": "Rose",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 116,
+      "batch": 24,
+      "id": "P131",
+      "name": "Delphinium",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 117,
+      "batch": 24,
+      "id": "P132",
+      "name": "Lupine",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 118,
+      "batch": 24,
+      "id": "P133",
+      "name": "Hollyhock",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 119,
+      "batch": 24,
+      "id": "P134",
+      "name": "Columbine",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 120,
+      "batch": 24,
+      "id": "P141",
+      "name": "Ornamental grass",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 121,
+      "batch": 25,
+      "id": "P143",
+      "name": "Dwarf boxwood",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 122,
+      "batch": 25,
+      "id": "RARE007",
+      "name": "Violet Kitchen",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": "P051"
+    },
+    {
+      "rank": 123,
+      "batch": 25,
+      "id": "RARE009",
+      "name": "Sunset Button",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": "P098"
+    },
+    {
+      "rank": 124,
+      "batch": 25,
+      "id": "RARE011",
+      "name": "Festival Climber",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": "P105"
+    },
+    {
+      "rank": 125,
+      "batch": 25,
+      "id": "RARE012",
+      "name": "Snowlace",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": true,
+      "rare_parent": "P108"
+    },
+    {
+      "rank": 126,
+      "batch": 26,
+      "id": "RARE004",
+      "name": "Grandad's Ruby",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": "P012"
+    },
+    {
+      "rank": 127,
+      "batch": 26,
+      "id": "RARE005",
+      "name": "Copper Ribbon",
+      "main_pot": true,
+      "side_pot": true,
+      "companion_bonus": false,
+      "rare_parent": "P004"
+    },
+    {
+      "rank": 128,
+      "batch": 26,
+      "id": "RARE008",
+      "name": "Peach Lantern",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": "P096"
+    },
+    {
+      "rank": 129,
+      "batch": 26,
+      "id": "RARE010",
+      "name": "Willow Blue",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": "P107"
+    },
+    {
+      "rank": 130,
+      "batch": 26,
+      "id": "RARE001",
+      "name": "Willow Street Stripe",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": "P031"
+    },
+    {
+      "rank": 131,
+      "batch": 27,
+      "id": "RARE002",
+      "name": "Lantern Gold",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": "P032"
+    },
+    {
+      "rank": 132,
+      "batch": 27,
+      "id": "RARE006",
+      "name": "Midnight Ruffle",
+      "main_pot": true,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": "P005"
+    },
+    {
+      "rank": 133,
+      "batch": 27,
+      "id": "P024",
+      "name": "Brussels sprouts",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 134,
+      "batch": 27,
+      "id": "P028",
+      "name": "Garden peas",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 135,
+      "batch": 27,
+      "id": "P036",
+      "name": "Sweet corn",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 136,
+      "batch": 28,
+      "id": "P040",
+      "name": "Sweet potato",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 137,
+      "batch": 28,
+      "id": "P041",
+      "name": "Cucumber",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 138,
+      "batch": 28,
+      "id": "P042",
+      "name": "Zucchini",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 139,
+      "batch": 28,
+      "id": "P043",
+      "name": "Pattypan squash",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 140,
+      "batch": 28,
+      "id": "P044",
+      "name": "Butternut squash",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 141,
+      "batch": 29,
+      "id": "P045",
+      "name": "Acorn squash",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 142,
+      "batch": 29,
+      "id": "P046",
+      "name": "Spaghetti squash",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 143,
+      "batch": 29,
+      "id": "P047",
+      "name": "Pumpkin",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 144,
+      "batch": 29,
+      "id": "P048",
+      "name": "Watermelon",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 145,
+      "batch": 29,
+      "id": "P049",
+      "name": "Cantaloupe",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 146,
+      "batch": 30,
+      "id": "P050",
+      "name": "Honeydew",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 147,
+      "batch": 30,
+      "id": "P072",
+      "name": "Blueberry",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 148,
+      "batch": 30,
+      "id": "P073",
+      "name": "Raspberry",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 149,
+      "batch": 30,
+      "id": "P074",
+      "name": "Blackberry",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 150,
+      "batch": 30,
+      "id": "P075",
+      "name": "Gooseberry",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 151,
+      "batch": 31,
+      "id": "P076",
+      "name": "Redcurrant",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 152,
+      "batch": 31,
+      "id": "P077",
+      "name": "Blackcurrant",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 153,
+      "batch": 31,
+      "id": "P078",
+      "name": "Grape",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 154,
+      "batch": 31,
+      "id": "P079",
+      "name": "Apple",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 155,
+      "batch": 31,
+      "id": "P080",
+      "name": "Pear",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 156,
+      "batch": 32,
+      "id": "P081",
+      "name": "Peach",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 157,
+      "batch": 32,
+      "id": "P082",
+      "name": "Fig",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 158,
+      "batch": 32,
+      "id": "P095",
+      "name": "Sunflower",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 159,
+      "batch": 32,
+      "id": "P104",
+      "name": "Sweet pea",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 160,
+      "batch": 32,
+      "id": "P115",
+      "name": "Dahlia",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 161,
+      "batch": 33,
+      "id": "P124",
+      "name": "Tithonia",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": true,
+      "rare_parent": ""
+    },
+    {
+      "rank": 162,
+      "batch": 33,
+      "id": "P127",
+      "name": "Peony",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": ""
+    },
+    {
+      "rank": 163,
+      "batch": 33,
+      "id": "RARE003",
+      "name": "Moonbeam Mini",
+      "main_pot": false,
+      "side_pot": false,
+      "companion_bonus": false,
+      "rare_parent": "P047"
+    }
+  ]
+}

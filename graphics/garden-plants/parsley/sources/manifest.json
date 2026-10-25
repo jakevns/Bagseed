@@ -1,0 +1,61 @@
+{
+  "id": "P054",
+  "key": "parsley",
+  "name": "Parsley",
+  "status": "approved-growth-artwork",
+  "revision": "parsley-garden-1",
+  "generatedSource": "parsley.png",
+  "sourceSHA256": "4b7a7f9380e378b98246cde57d9a4cc76ca1746cffaab00976fe1e4538330da8",
+  "runtimeSHA256": "b951a217e1de6a8910294220e6b03beff05ba82448f22704b3be82a24d2ce30d",
+  "runtime": "assets/garden-plants/parsley/stages-b951a217e1de.webp",
+  "stages": [
+    {
+      "crop": [
+        126,
+        130,
+        476,
+        322
+      ],
+      "attach": [
+        244.0,
+        318.0
+      ]
+    },
+    {
+      "crop": [
+        690,
+        74,
+        449,
+        416
+      ],
+      "attach": [
+        222.0,
+        413.0
+      ]
+    },
+    {
+      "crop": [
+        45,
+        573,
+        545,
+        529
+      ],
+      "attach": [
+        275.0,
+        526.0
+      ]
+    },
+    {
+      "crop": [
+        590,
+        564,
+        636,
+        576
+      ],
+      "attach": [
+        323.0,
+        572.0
+      ]
+    }
+  ]
+}

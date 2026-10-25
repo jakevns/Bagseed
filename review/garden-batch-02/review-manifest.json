@@ -1,0 +1,344 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "02ae556dc0f1c309dfbf1215e2c774041de0fed3",
+  "species": {
+    "P108": {
+      "key": "alyssum",
+      "name": "Sweet alyssum",
+      "generatedSource": "exec-c6762721-2dd7-4e67-891f-a9aab4fec340.png",
+      "sourceSHA256": "66a4046b4841747af577b624874c7051a74ce8651d0880bc3ebf75aa73483a33",
+      "runtimeSHA256": "b9605b965b7526a121b4a7705d4694e452ad69fa359c7e04726fc90a9d53f196",
+      "stages": [
+        {
+          "crop": [
+            167,
+            273,
+            323,
+            230
+          ],
+          "attach": [
+            164.0,
+            227.0
+          ]
+        },
+        {
+          "crop": [
+            699,
+            145,
+            454,
+            387
+          ],
+          "attach": [
+            232.0,
+            384.0
+          ]
+        },
+        {
+          "crop": [
+            73,
+            684,
+            511,
+            434
+          ],
+          "attach": [
+            248.0,
+            431.0
+          ]
+        },
+        {
+          "crop": [
+            636,
+            655,
+            599,
+            492
+          ],
+          "attach": [
+            293.0,
+            489.0
+          ]
+        }
+      ]
+    },
+    "P151": {
+      "key": "calendula",
+      "name": "Calendula",
+      "generatedSource": "exec-9f0fc41f-f9ef-4ca5-9cc7-9f832e624dff.png",
+      "sourceSHA256": "5258effa85fa78d1ef4016b078594b8b56c8cdaae615c8dc5d7d48e66995fb43",
+      "runtimeSHA256": "24d6e12f66bc144f550be8c098cf4aa36f5951b97db3a756d781f89f2ad00c2b",
+      "stages": [
+        {
+          "crop": [
+            100,
+            244,
+            447,
+            247
+          ],
+          "attach": [
+            222.0,
+            244.0
+          ]
+        },
+        {
+          "crop": [
+            686,
+            91,
+            510,
+            407
+          ],
+          "attach": [
+            252.0,
+            404.0
+          ]
+        },
+        {
+          "crop": [
+            23,
+            606,
+            579,
+            577
+          ],
+          "attach": [
+            291.0,
+            564.0
+          ]
+        },
+        {
+          "crop": [
+            608,
+            554,
+            622,
+            635
+          ],
+          "attach": [
+            328.0,
+            625.0
+          ]
+        }
+      ]
+    },
+    "P070": {
+      "key": "chamomile",
+      "name": "Chamomile",
+      "generatedSource": "exec-c8d2a8fa-a91b-46ae-9a1c-6a50f0272e62.png",
+      "sourceSHA256": "09f4a5844bccdf6f310f3279c1a86566a4362e684866b1ea2198da6c211add76",
+      "runtimeSHA256": "d34b0798ac83e3fd850cfe5639cf2bf437d5f855631fa30246bbf0603d182136",
+      "stages": [
+        {
+          "crop": [
+            180,
+            255,
+            303,
+            178
+          ],
+          "attach": [
+            152.0,
+            174.0
+          ]
+        },
+        {
+          "crop": [
+            745,
+            31,
+            416,
+            417
+          ],
+          "attach": [
+            209.0,
+            414.0
+          ]
+        },
+        {
+          "crop": [
+            71,
+            602,
+            525,
+            530
+          ],
+          "attach": [
+            239.0,
+            526.0
+          ]
+        },
+        {
+          "crop": [
+            689,
+            568,
+            571,
+            573
+          ],
+          "attach": [
+            279.0,
+            570.0
+          ]
+        }
+      ]
+    },
+    "P126": {
+      "key": "lavender",
+      "name": "Lavender",
+      "generatedSource": "exec-8ecfb7bb-4481-4ee8-9f22-c8f0fbe98444.png",
+      "sourceSHA256": "6d84f1ee41fdf9e494ddd45f5a6ffb58650cc1d1dc249b119777b661e2712fe3",
+      "runtimeSHA256": "497a70026b666a9b9d811e44942cfe8b4213bef96734380c4f447346abfc6af8",
+      "stages": [
+        {
+          "crop": [
+            154,
+            294,
+            345,
+            178
+          ],
+          "attach": [
+            178.0,
+            174.0
+          ]
+        },
+        {
+          "crop": [
+            728,
+            64,
+            406,
+            426
+          ],
+          "attach": [
+            210.0,
+            423.0
+          ]
+        },
+        {
+          "crop": [
+            85,
+            601,
+            510,
+            579
+          ],
+          "attach": [
+            251.0,
+            575.0
+          ]
+        },
+        {
+          "crop": [
+            673,
+            553,
+            526,
+            627
+          ],
+          "attach": [
+            261.0,
+            624.0
+          ]
+        }
+      ]
+    },
+    "P105": {
+      "key": "nasturtium",
+      "name": "Nasturtium",
+      "generatedSource": "exec-fd4e100d-36b3-4b48-87c1-746a3fbd1f17.png",
+      "sourceSHA256": "1c894b72121b6c83a0f2112ef4261235c703aab605269e5f1fed2c48fdec1b30",
+      "runtimeSHA256": "4ce8f94b9b2104afff2bc74e24b972a66b83715b574732d0603fe6cb62eefd22",
+      "stages": [
+        {
+          "crop": [
+            120,
+            310,
+            391,
+            221
+          ],
+          "attach": [
+            197.0,
+            217.0
+          ]
+        },
+        {
+          "crop": [
+            698,
+            133,
+            483,
+            399
+          ],
+          "attach": [
+            226.0,
+            396.0
+          ]
+        },
+        {
+          "crop": [
+            26,
+            600,
+            561,
+            571
+          ],
+          "attach": [
+            291.0,
+            567.0
+          ]
+        },
+        {
+          "crop": [
+            613,
+            588,
+            623,
+            588
+          ],
+          "attach": [
+            283.0,
+            585.0
+          ]
+        }
+      ]
+    }
+  },
+  "renderer": "renderer.js",
+  "rendererSHA256": "a1989c868cf754bc1c63099bc49d3de7405acf90fbe811aebf4d957fdc9dc408",
+  "verification": {
+    "report": "verification.json",
+    "growthStagesPassed": 20,
+    "windAndReducedMotionPassed": 5,
+    "saveReload": true,
+    "publishedHTMLUnchanged": true,
+    "staticIntegrityPassed": true,
+    "errors": []
+  },
+  "files": {
+    "README.md": "c340dceca06ac76475f4dff0bec0ad5576c3bf507dcd6dd2ef07d922dae490f4",
+    "five-plants-in-pots.png": "0cc06407c63527c9872dd15db08335a4e9d45db30b6d36a644caa89f31607408",
+    "growth-and-wind.mp4": "54ba9f4d1d7df8b79fdc03f602b26d6e7ab718632639910fd84fa9d86c54b5a2",
+    "growth-stages.png": "397bcfe9a3a6dd09ccbeefcda4a294c1f9ecc139d5bbfca573bda8b8f0fd15f9",
+    "kits/alyssum/assets/stages.png": "66a4046b4841747af577b624874c7051a74ce8651d0880bc3ebf75aa73483a33",
+    "kits/alyssum/assets/stages.webp": "b9605b965b7526a121b4a7705d4694e452ad69fa359c7e04726fc90a9d53f196",
+    "kits/alyssum/sources/manifest.json": "90273e3f94c6529f4326a95654025a084842ece118eee15457c16333669c71c3",
+    "kits/calendula/assets/stages.png": "5258effa85fa78d1ef4016b078594b8b56c8cdaae615c8dc5d7d48e66995fb43",
+    "kits/calendula/assets/stages.webp": "24d6e12f66bc144f550be8c098cf4aa36f5951b97db3a756d781f89f2ad00c2b",
+    "kits/calendula/sources/attachment-points.json": "561f53298fa1415daedf9a4179920d3f30eca7573f6bc1efbbb0fae70ffd4294",
+    "kits/calendula/sources/manifest.json": "cec8a06aed571424349dd59bbf63cad5d13c6f1fb9658a91e5ed9d03f81a05cf",
+    "kits/chamomile/assets/stages.png": "09f4a5844bccdf6f310f3279c1a86566a4362e684866b1ea2198da6c211add76",
+    "kits/chamomile/assets/stages.webp": "d34b0798ac83e3fd850cfe5639cf2bf437d5f855631fa30246bbf0603d182136",
+    "kits/chamomile/sources/manifest.json": "9c292650def9d6259f474f52268bd6e5143b9abba0fc9f2172b21ceb3140e7ee",
+    "kits/lavender/assets/stages.png": "6d84f1ee41fdf9e494ddd45f5a6ffb58650cc1d1dc249b119777b661e2712fe3",
+    "kits/lavender/assets/stages.webp": "497a70026b666a9b9d811e44942cfe8b4213bef96734380c4f447346abfc6af8",
+    "kits/lavender/sources/manifest.json": "96a07db99c3e32ac928557f0380bec6e1d4cc22fb4388b17d622b787631c90df",
+    "kits/nasturtium/assets/stages.png": "1c894b72121b6c83a0f2112ef4261235c703aab605269e5f1fed2c48fdec1b30",
+    "kits/nasturtium/assets/stages.webp": "4ce8f94b9b2104afff2bc74e24b972a66b83715b574732d0603fe6cb62eefd22",
+    "kits/nasturtium/sources/manifest.json": "6febfe6e70463aebbfa75a1ca97e08a832304ebd39ac6350cd82d395b7873322",
+    "pot-tiers.png": "7fc82a28e649c520e7a64a2d45677b6d2ccc78b913817626edb6ce6cd8de6343",
+    "renderer.js": "a1989c868cf754bc1c63099bc49d3de7405acf90fbe811aebf4d957fdc9dc408",
+    "store-artwork.png": "3aa543b1af54035a77f6a1a696f267bfa7fa24420710095c866a86ff3daaa606",
+    "tent-example.png": "d545530754b7ff9b9e17bb59cd80e5c460f8600fa4fb14447b1e520101de669c",
+    "verification.json": "cde94512bc690be824751490ab3e2a392583962a50412e9f970eedcfcdcce72f"
+  },
+  "productionRendererSHA256": "a1989c868cf754bc1c63099bc49d3de7405acf90fbe811aebf4d957fdc9dc408",
+  "productionManifests": {
+    "chamomile": "4f3dde00d54ce658f3eff10c67d6d6491c226677d420423479d2cb4ea640a98a",
+    "lavender": "f2f2eb332bd5bf938d81b45cc5d2b28b0736a30faabf7fd370152ad78f97533f",
+    "calendula": "acd6b4b5e3a2f5bafe95fc7d9e41bbd0fa89e6777ab0e320b0a1ccda33bb7a6a",
+    "alyssum": "f9633d1c05fd6f3bec2db85f4aac5de7f4a9a5ee09d825a9b307641b50f34ca0",
+    "nasturtium": "ea6702276462cc79cffedc5d1385da5f91fe673266f92140b33d3f24f49d7784"
+  },
+  "productionVerification": {
+    "browserTestsPassed": 4,
+    "startupGardenRequests": 10,
+    "characterPayloadPreserved": true,
+    "buildPassed": true,
+    "staticIntegrityPassed": true
+  }
+}

@@ -9,7 +9,9 @@ from scipy.spatial import ConvexHull
 root = Path(__file__).resolve().parents[1]
 strain = sys.argv[1]
 assert re.fullmatch(r'[a-z0-9-]+', strain)
-base = root / 'graphics/plants' / strain
+review_only = '--review-only' in sys.argv
+review_root = next((arg.split('=',1)[1] for arg in sys.argv if arg.startswith('--review-root=')), 'review/strain-batch-06')
+base = (root / review_root / 'kits' if review_only else root / 'graphics/plants') / strain
 spec = json.loads((base / 'sources/profile.json').read_text())
 assert spec['id'] == strain
 source = base / 'assets/components.png'
@@ -39,6 +41,13 @@ for role, region in zip(roles,ordered):
     ax=float(np.median(xs)) if len(xs) else w/2
     ay=2 if top else h-3
     if role=='seed': ax,ay=w/2,h/2
+    # Some flower leaves extend below the stem: use an inspected source-pixel
+    # anchor rather than mistaking a hanging leaflet for the attachment.
+    if role in spec.get('attachmentPoints', {}):
+        sx, sy = spec['attachmentPoints'][role]
+        assert np.isfinite([sx, sy]).all() and x0 <= sx < x1 and y0 <= sy < y1
+        assert alpha[round(sy), round(sx)] > 160, 'Attachment must lie on an opaque organ pixel'
+        ax, ay = float(sx-x0), float(sy-y0)
     ys,xs=np.where(patch>100)
     # Hull is sufficient for all projected canopy extrema, independent of rotation.
     pts=np.column_stack([xs,ys]); hull=pts[ConvexHull(pts).vertices]
@@ -51,9 +60,11 @@ for i,a in enumerate(parts.values()):
 runtime=base/'assets/components.webp'; im.save(runtime,'WEBP',lossless=True,exact=True)
 assert np.array_equal(np.array(im),np.array(Image.open(runtime).convert('RGBA')))
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
-dest=root/f'public/assets/plants/{strain}/components-{sha(runtime)[:12]}.webp'
-dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(runtime.read_bytes())
-manifest={'revision':spec['revision'],'status':'sample-awaiting-approval','name':spec['name'],'apiName':spec['apiName'],'source':'assets/components.png','sourceSHA256':sha(source),'runtime':str(dest.relative_to(root/'public')),'runtimeSHA256':sha(runtime),'size':list(im.size),'parts':parts}
+runtime_url=f'assets/plants/{strain}/components-{sha(runtime)[:12]}.webp'
+if not review_only:
+    dest=root/'public'/runtime_url
+    dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(runtime.read_bytes())
+manifest={'revision':spec['revision'],'status':'sample-awaiting-approval','name':spec['name'],'apiName':spec['apiName'],'source':'assets/components.png','sourceSHA256':sha(source),'runtime':runtime_url,'runtimeSHA256':sha(runtime),'size':list(im.size),'parts':parts}
 if 'lineId' in spec: manifest['lineId']=spec['lineId']
 (base/'sources').mkdir(parents=True,exist_ok=True)
 previous_manifest=base/'sources/manifest.json'
@@ -62,6 +73,9 @@ if previous_manifest.exists():
     assert prior['sourceSHA256']==manifest['sourceSHA256'], 'Create a new revision for changed art'
     manifest['status']=prior['status']
 (base/'sources/manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+if review_only:
+    print('Measured 16 review components; RGBA-exact WebP verified; production files and library unchanged: '+strain)
+    sys.exit(0)
 catalog_path=root/'graphics/plants/sources/library.json'; catalog=json.loads(catalog_path.read_text())
 new_profile = f'{strain}@1' not in catalog['profiles']
 if new_profile: catalog['revision']=spec['libraryRevision']

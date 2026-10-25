@@ -1,0 +1,108 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "06219fc4ce21c3df47b3f183acd7630e3c6164d2",
+  "coverage": {
+    "releasedDedicatedNamedStrains": 25,
+    "nativeNamedStrains": 37,
+    "remaining": 12,
+    "baseAtlases": 27,
+    "mutationAtlases": 17
+  },
+  "nativeLines": {
+    "cl_bluedream": {
+      "kit": "bluedream",
+      "name": "Blue Dream",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "blue",
+        "colorName": "Blue-green",
+        "branching": 1
+      },
+      "generatedSource": "exec-397e7d9c-ca2b-4272-84b5-c7d8d102fff6.png",
+      "sourceSHA256": "91025f8164761b59ca5662188f39cc97945afc63def468bd9ffe332986d2ea56",
+      "runtimeSHA256": "eca0ed010817836155ab62ed3ce3d58af77818765f252eff515fbffb15b51750",
+      "manifestSHA256": "9759f055a444c1dbf22a657bc7239b0b6a0ed1da622fa706503c57e5d61fa5b9",
+      "productionManifestSHA256": "0ba34bef0e36bc5e85c45ce550f5f85ce94246a5597c0acaa7f20dcf5e0945dd"
+    },
+    "cl_sourdiesel": {
+      "kit": "sourdiesel",
+      "name": "Sour Diesel",
+      "traits": {
+        "leafShape": "narrow",
+        "leafKey": "lime",
+        "colorName": "Lime green",
+        "branching": 0.95
+      },
+      "generatedSource": "exec-99ec1705-b8cf-4045-afe2-60e4a726807b.png",
+      "sourceSHA256": "7150e6cd6322d46b2c59228aad43e4e2b5a351dafe066e6ae98e023a66c03203",
+      "runtimeSHA256": "a80bace754a239676904a8cecdedd4dd1f46247ce572238e97474ee5917a363f",
+      "manifestSHA256": "fe06f53ce7835a4f857733f1bd07a446d03350fca40214d8ef42ba712b94d709",
+      "productionManifestSHA256": "f82a7e5169df9e9b088d4ed6498fea0ea9265ff87abefff9d5a82046eb6a32ef"
+    },
+    "cl_chemdawg": {
+      "kit": "chemdawg",
+      "name": "Chemdawg",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "forest",
+        "colorName": "Forest green",
+        "branching": 1
+      },
+      "generatedSource": "exec-147c8698-1892-4d98-904b-85cbe243487e.png",
+      "sourceSHA256": "6712f3d0940ea2c3d23c445c90128c53f4e06237da30a28ffc50e7df9fe5262e",
+      "runtimeSHA256": "079f36f9f2b685426878373c4a5a8f9de90b06ea942b7bccf0fd7ec7a495a0ff",
+      "manifestSHA256": "f6c84d56cd40543b4a7be88206608eb4e2cc1897ebd0defa84800c84c9d84728",
+      "productionManifestSHA256": "8cc9692781a9f1436bad53adf75985e7de43cb1f9c4b8807696eb21e3977440a"
+    }
+  },
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "4bad9d8f778f45e07c47c316c0510d4d52ae6ddcdb7debba8be84d859deef5ff",
+  "verification": {
+    "report": "verification.json",
+    "saveReload": true,
+    "readOnly": true,
+    "mutationCombinationsPassed": 45,
+    "coolNightCasesPassed": 6,
+    "staticIntegrityPassed": true,
+    "animation": {
+      "frames": 96,
+      "fps": 12,
+      "seconds": 8
+    },
+    "browserErrors": [],
+    "actualProductionPagePassed": true,
+    "oldLivingSaveUpgradePassed": true,
+    "postIntegrationBrowserTestsPassed": 3,
+    "characterPayloadPreserved": true
+  },
+  "files": {
+    "50-and-90-inches.png": "da04c8551d3b9da77649f0ef3c14fc11430431c2c2457c01110b04fecb013746",
+    "README.md": "086aaf0e3e336e822f4e53ca67c87a5f3fba5f839eda983f8041df4ef7cc18ce",
+    "bluedream-growth.png": "4f6efd9de2d1b3c69556d5cc0d123a3574b594169735bd8977d74cbe10112fa4",
+    "care-and-training.png": "d8b3b6cd450f642728d82c219c31bceb96745dc0225fdf5d2ba2adac2f950296",
+    "chemdawg-growth.png": "51a3d7c34a277eb7b190684931cfdbdded516d055b0ecf9ef15621d5fd5ea135",
+    "cool-night-colors.png": "a1dd96feea9f2ba5ef2c5429e7db266f400fd99c2c77476e3aa860788abe2f5c",
+    "flower-detail.png": "ea9410385d46d22970d4aaf075c30ae773a1f0871351b226abb0a6f3646c7cab",
+    "growth-and-wind.gif": "ebb8b3ec1e46f3201378d8bada977f20b2e5e34b1aea977570b860a235e49949",
+    "growth-and-wind.mp4": "a1f6ac3bf5e03163ac07053b890d6ba9f236951c866a8910fa46407d8fb756a2",
+    "kits/bluedream/assets/components.png": "91025f8164761b59ca5662188f39cc97945afc63def468bd9ffe332986d2ea56",
+    "kits/bluedream/assets/components.webp": "eca0ed010817836155ab62ed3ce3d58af77818765f252eff515fbffb15b51750",
+    "kits/bluedream/sources/manifest.json": "9759f055a444c1dbf22a657bc7239b0b6a0ed1da622fa706503c57e5d61fa5b9",
+    "kits/bluedream/sources/profile.json": "a108af4b0d6c0c3d32dfc98232f6b149c56b5b26bdf941d603509dd0b06fe635",
+    "kits/chemdawg/assets/components.png": "6712f3d0940ea2c3d23c445c90128c53f4e06237da30a28ffc50e7df9fe5262e",
+    "kits/chemdawg/assets/components.webp": "079f36f9f2b685426878373c4a5a8f9de90b06ea942b7bccf0fd7ec7a495a0ff",
+    "kits/chemdawg/sources/manifest.json": "f6c84d56cd40543b4a7be88206608eb4e2cc1897ebd0defa84800c84c9d84728",
+    "kits/chemdawg/sources/profile.json": "3f6b7f62746782689e80917f7d0131adc2c826f6c583a56d00626bd481a10c53",
+    "kits/sourdiesel/assets/components.png": "7150e6cd6322d46b2c59228aad43e4e2b5a351dafe066e6ae98e023a66c03203",
+    "kits/sourdiesel/assets/components.webp": "a80bace754a239676904a8cecdedd4dd1f46247ce572238e97474ee5917a363f",
+    "kits/sourdiesel/sources/manifest.json": "fe06f53ce7835a4f857733f1bd07a446d03350fca40214d8ef42ba712b94d709",
+    "kits/sourdiesel/sources/profile.json": "ac6b542376c6f40c3f47e05b042db735d827c9288d321ad094c3f69888f5c448",
+    "late-flower-senescence.png": "4e11684639a0c805fd97fdf517bf5b846abef916702a10481be4015d61154716",
+    "sourdiesel-growth.png": "12bd833f4e0e0c671284f904952a876f50c69d848a9afc8d0988a478268083ca",
+    "three-strains-in-flower.png": "91379c4536b2a4a692de7c86547592430485dfc8481ba3ed059d2df1f0668251",
+    "vegetative-identities.png": "2eeb20e05753035baf49bc5eeb6a02000d89f010613b08b2c018f97e4d1efa99",
+    "verification.json": "481f8e5a87f0cff553ba0b6fe3e1f69bc3ae60b902a83e02a3b53c1300493806"
+  },
+  "characterRelease": "character-alignment-audit-v6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2"
+}

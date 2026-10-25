@@ -1,0 +1,108 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "c303d65623dda41a3fe4daa3cf51a67ef4198365",
+  "coverage": {
+    "releasedDedicatedNamedStrains": 22,
+    "nativeNamedStrains": 37,
+    "remaining": 15,
+    "baseAtlases": 24,
+    "mutationAtlases": 17
+  },
+  "nativeLines": {
+    "cl_purplekush": {
+      "kit": "purplekush",
+      "name": "Purple Kush",
+      "traits": {
+        "leafShape": "broad",
+        "leafKey": "blue",
+        "colorName": "Purple",
+        "branching": 1.05
+      },
+      "generatedSource": "exec-46d01f12-0fb1-4b38-bcdd-1eebfe387de4.png",
+      "sourceSHA256": "7d3b1fa4a185ee6fd2fc1d7a363fe926dd02356e2acf5ffe9e6bb66b00122ab3",
+      "runtimeSHA256": "8b5d1422403b1a6f48977ce25bf653d30a2c3c3f9ebdb31f0416e3dee80e0f11",
+      "manifestSHA256": "9d9e66970e0e9c0ceab8fc69245dc0abfaa9438d6a5f86cbdf5f52a92ab42d27",
+      "productionManifestSHA256": "03871695a501e5c81f56a6dbedccc385ddf6a1eff0efef2169f171608105a9d6"
+    },
+    "cl_gdp": {
+      "kit": "gdp",
+      "name": "Granddaddy Purple",
+      "traits": {
+        "leafShape": "broad",
+        "leafKey": "blue",
+        "colorName": "Dark purple",
+        "branching": 1.1
+      },
+      "generatedSource": "exec-b692e7fa-efcf-4295-9c14-85354f1d2909.png",
+      "sourceSHA256": "260819f4253c3188147dcfd5182a8434078d13568f4db7a94fe44ab6c79439e2",
+      "runtimeSHA256": "96169d661b8a4341643da28ba4d42629a06e564451561798af26f065f3aa4cee",
+      "manifestSHA256": "574ab2c8cc4bdc9f1ee69311c7a8715aeab6e26361335985c978255f2f5e87eb",
+      "productionManifestSHA256": "efbdb289fb670bbf5c2b26ce1a31b051c1a4a9c04f5c0318636903776f23c5d9"
+    },
+    "cl_blueberry": {
+      "kit": "blueberry",
+      "name": "Blueberry",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "blue",
+        "colorName": "Lavender",
+        "branching": 1
+      },
+      "generatedSource": "exec-bbbf92b7-dc57-4641-83c1-dd4cdc7f9a15.png",
+      "sourceSHA256": "ed8f5c9ba056dacfc302e64369a4776fb01a058c849fe425df7761db35972654",
+      "runtimeSHA256": "13d639297b1946c49236b9e5a9bd3b4099be22eb5cc61ed70d865a6b368045d8",
+      "manifestSHA256": "4e8db63a7347daef01e7462830f14e0dec47c40991f519b125a74ee5430ae4d7",
+      "productionManifestSHA256": "04d6a09fa915c5b154835235130f60b4868f04f52a31d761d8a76cf4f8618633"
+    }
+  },
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "ce29d4eb278a010ae185cd8b439cc127ad0f4a188c95e3c0e3c14c9df8d2dc1d",
+  "verification": {
+    "report": "verification.json",
+    "saveReload": true,
+    "readOnly": true,
+    "mutationCombinationsPassed": 45,
+    "coolNightCasesPassed": 6,
+    "staticIntegrityPassed": true,
+    "animation": {
+      "frames": 96,
+      "fps": 12,
+      "seconds": 8
+    },
+    "browserErrors": [],
+    "actualProductionPagePassed": true,
+    "oldLivingSaveUpgradePassed": true,
+    "postIntegrationBrowserTestsPassed": 3,
+    "characterPayloadPreserved": true
+  },
+  "files": {
+    "50-and-90-inches.png": "f775845664d2a0ebf57140704658f02b4ca7bd3276d063066e42697ba05d0843",
+    "README.md": "fdc4f76c191416161597b311b879186aa542026cb4e3b6e6fd6b6f840656f328",
+    "blueberry-growth.png": "d1d6451c8c03792f25fa19919463ca7dd47054a8329e45cfb36a695dbec6ded8",
+    "care-and-training.png": "0a4df408cbcae8fcb0a2568826de9d1d16c11e67c1fd4b4fd861ed387a75cc63",
+    "cool-night-colors.png": "58631c2e2aa0c2d36229e8e71a1f9ac7632566b5e77c27864e51c23f21f0d331",
+    "flower-detail.png": "4f9d29b02fc2c6545bdb8a368c105b2b41f5c3aee335f956c008847935414503",
+    "gdp-growth.png": "e9ac890abca47492586218bb0fdbb6ba14275d8aace23af69e0f41c50e1fb888",
+    "growth-and-wind.gif": "406bd7f2673d0f58eeb5dbc8cfda1aa30ebae28dcc7882b228da4f71b0143708",
+    "growth-and-wind.mp4": "e225ff7993d14561f1b136f798a764b0e9576aed3f5b135d88475ac734cd1535",
+    "kits/blueberry/assets/components.png": "ed8f5c9ba056dacfc302e64369a4776fb01a058c849fe425df7761db35972654",
+    "kits/blueberry/assets/components.webp": "13d639297b1946c49236b9e5a9bd3b4099be22eb5cc61ed70d865a6b368045d8",
+    "kits/blueberry/sources/manifest.json": "4e8db63a7347daef01e7462830f14e0dec47c40991f519b125a74ee5430ae4d7",
+    "kits/blueberry/sources/profile.json": "ed351368f39d75cf061e91fc77af908ced18df8e635f76ea5629b42d3ffb6127",
+    "kits/gdp/assets/components.png": "260819f4253c3188147dcfd5182a8434078d13568f4db7a94fe44ab6c79439e2",
+    "kits/gdp/assets/components.webp": "96169d661b8a4341643da28ba4d42629a06e564451561798af26f065f3aa4cee",
+    "kits/gdp/sources/manifest.json": "574ab2c8cc4bdc9f1ee69311c7a8715aeab6e26361335985c978255f2f5e87eb",
+    "kits/gdp/sources/profile.json": "163e5bc40f22c248155728fcee1f6f14c595a99481f052c3916b412c18aca23b",
+    "kits/purplekush/assets/components.png": "7d3b1fa4a185ee6fd2fc1d7a363fe926dd02356e2acf5ffe9e6bb66b00122ab3",
+    "kits/purplekush/assets/components.webp": "8b5d1422403b1a6f48977ce25bf653d30a2c3c3f9ebdb31f0416e3dee80e0f11",
+    "kits/purplekush/sources/manifest.json": "9d9e66970e0e9c0ceab8fc69245dc0abfaa9438d6a5f86cbdf5f52a92ab42d27",
+    "kits/purplekush/sources/profile.json": "dc12f59941ed6c8dd887a02a0375e55b1dfa0434ce0194e65a27bfad606df56b",
+    "late-flower-senescence.png": "579f0fde164490c1f76e39ec2c4867a5a2b3278bf378c6c9474432b77a50e228",
+    "purplekush-growth.png": "182682a92d0fde6a19a8e1b91b654146d5f35da7409fedf706294500b56ff459",
+    "three-strains-in-flower.png": "6beff8653996c189840361715ce604d869fa873118eb150ed423d57be5272013",
+    "vegetative-identities.png": "ebf6f9df0b67c900dd1ffeec60ebb59123e86a9338e9dc62eb5df997e71b1d6d",
+    "verification.json": "5d25d002bc49f6c5546ba1c7eeeeb40fa891333f8379bd2aaa1bb6a891b0bf45"
+  },
+  "characterRelease": "character-alignment-audit-v6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2"
+}

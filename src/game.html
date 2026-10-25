@@ -807,7 +807,7 @@ const SHOP_EXTRA = [
   { id: 'organic', cat: 'tools', name: 'Wormcastle Brew Kit', brand: 'Wormcastle', price: 29.99, desc: 'Organic soil-life tea. Forgiving, slower. Brews overnight. 8 mixes.', review: [5, 'Smells like a forest floor. In a good way?'] },
   { id: 'phpen', cat: 'tools', name: 'BalanceStick Pen', brand: 'BalanceStick', price: 29.99, desc: 'Shows exact mix balance at the workbench. Finally, numbers.', review: [4, 'Must calibrate. I did not calibrate. Still fun.'] },
   { id: 'traps', cat: 'tools', name: 'Sticky Traps (6)', brand: 'GnatNab', price: 7.99, desc: 'Yellow cards. Catch fungus gnats and thrips.', review: [4, 'Gross. Effective. Gross.'] },
-  { id: 'mites', cat: 'tools', name: 'Beneficial Mite Sachets', brand: 'Tiny Allies', price: 24.99, desc: 'Predatory mites that hunt spider mites and thrips. Release and relax.', review: [5, 'Hired a tiny army. They work for free.'] },
+  { id: 'mites', cat: 'tools', name: 'Beneficial Mite Sachets', brand: 'Tiny Allies', price: 24.99, desc: 'Two sachets for spider mites or thrips. Inspect the affected plant, then choose Care → Release beneficial mites. Each sachet lowers that plant’s pest level by 70 points.', review: [5, 'Hired a tiny army. They work for free.'] },
   { id: 'net', cat: 'tools', name: 'Trellis Net', brand: 'ScrogLogic', price: 9.99, desc: 'Elastic canopy net. Enables SCROG training.', review: [4, 'My plant is now a flat green table. Beautiful.'] },
   { id: 'stakes', cat: 'tools', name: 'Bamboo Stakes', brand: 'Panda Pantry', price: 5.99, desc: 'Support heavy branches late in flower.', review: [4, 'Stakes. They hold things up. 4 stars.'] }
 ];
@@ -1434,19 +1434,42 @@ function odorLevel() {
   return clamp(Math.round(o), 0, 100);
 }
 const odorWord = o => o < 10 ? 'None' : o < 25 ? 'Faint' : o < 45 ? 'Noticeable' : o < 70 ? 'Strong' : 'Whole block knows';
-/* smart controller: steers digital devices to the current stage (or to drying mode) */
-function controllerTick(loc) {
-  const L = state.locations[loc]; if (!L.equip.ctrl || !locOn(L, 'ctrl')) return;
-  const ps = plantsIn(loc), drying = ps.some(p => p.stage === S.drying), grow = ps.find(p => p.stage < S.drying);
-  let t, h;
-  if (drying && !grow) { t = [68, 72]; h = 70; if (L.on.light) { L.on.light = false; toast('Controller: drying mode. Grow light switched off.'); } }
-  else if (grow) { const id = idealFor(grow.stage); t = [id.t[0] + 1, id.t[1] - 1]; h = Math.round((id.h[0] + id.h[1]) / 2); }
-  else return;
+/* smart controller: steers digital devices to the current stage (or to drying mode).
+   Heaters, ACs and mini-splits condition the whole lung room, so a powered controller
+   anywhere in that room steers them too, following the plants in their own space first. */
+function controllerPlan(locs) {
+  const ps = locs.flatMap(plantsIn), drying = ps.some(p => p.stage === S.drying), grow = ps.find(p => p.stage < S.drying);
+  if (grow) { const id = idealFor(grow.stage); return { t: [id.t[0] + 1, id.t[1] - 1], h: Math.round((id.h[0] + id.h[1]) / 2) }; }
+  return drying ? { t: [68, 72], h: 70, drying: true } : null;
+}
+const climatePeers = loc => { const room = lungRoomOf(loc); return room ? ownedLocs().filter(l => lungRoomOf(l) === room) : [loc]; };
+const ctrlPowered = loc => { const L = state.locations[loc]; return !!L.equip.ctrl && locOn(L, 'ctrl'); };
+const roomClimateGear = L => !!(L.equip.hvac || L.equip.heater === 2 || L.equip.ac === 2);
+function steerClimate(L, t) {
   L.heatTo = t[0]; L.coolTo = t[1];
-  if (L.equip.humid === 3) L.humidTarget = h;
-  if (L.equip.dehum === 2) L.dehumTarget = h + 4;
   if (L.equip.hvac || L.equip.heater === 2) L.on.heater = L.on.hvac = true;
   if (L.equip.ac === 2) L.on.ac = true;
+}
+function controllerTick(loc) {
+  const L = state.locations[loc]; if (!ctrlPowered(loc)) return;
+  const peers = climatePeers(loc), room = controllerPlan(peers), own = controllerPlan([loc]);
+  for (const peer of peers) {
+    if (peer === loc || ctrlPowered(peer) || !roomClimateGear(state.locations[peer])) continue;
+    const plan = controllerPlan([peer]) || room; if (plan) steerClimate(state.locations[peer], plan.t);
+  }
+  const plan = own || room; if (!plan) return;
+  steerClimate(L, plan.t);
+  if (!own) return;
+  if (own.drying && L.on.light) { L.on.light = false; toast('Controller: drying mode. Grow light switched off.'); }
+  if (L.equip.humid === 3) L.humidTarget = own.h;
+  if (L.equip.dehum === 2) L.dehumTarget = own.h + 4;
+  if (L.equip.dehum === 1) { const was = L.dehumOn; L.dehumOn = false; L.dehumOn = envFor(loc).hum > own.h + 4; if (L.dehumOn !== was && L.dehumOn) toast(`Controller: humidity over ${own.h + 4}%. ${EQ.dehum[1].name} switched on.`); } // plain unit: switched at the plug to hold the same ceiling
+}
+const ctrlCeiling = loc => { const own = ctrlPowered(loc) && controllerPlan([loc]); return own ? own.h + 4 : null; };
+/* a slider is locked only while a controller is actually steering it */
+function ctrlSteers(loc, slot) {
+  if (['heater', 'ac', 'hvac'].includes(slot)) return climatePeers(loc).some(ctrlPowered) && !!controllerPlan(climatePeers(loc));
+  return ctrlPowered(loc) && !!controllerPlan([loc]);
 }
 
 /* ============================ DRYING ================================
@@ -2680,7 +2703,7 @@ const RoomArt = {
     if (runtime.visitor) items.push({ y: 100, d: () => { groundShadow(c, 306, 100, 12); drawPerson(c, 306, 100, lookFor(runtime.visitor), 1, { dir: 'left', frame: runtime.visitor === 'rosalind' && !settings.reduced ? Math.floor(t * 2) % 2 * 2 : 0, breath: Math.floor(t / 1.6) % 2, blink: idleBlink(t, 3) }); } });
     items.sort((a, b) => a.y - b.y).forEach(i => i.d());
     // gnats
-    for (const p of allPlants()) if (p.pest.type === 'gnats' && p.pest.lvl > .05 && state.locations[p.loc].door !== 'closed') { const [px, py] = SLOT_POS[p.loc][p.slot]; for (let k = 0; k < 2 + p.pest.lvl * 8; k++) R(c, px + Math.sin(t * 3 + k * 2.1) * 8, py - 3 - Math.abs(Math.cos(t * 2.3 + k)) * 8, 1, 1, '#1b1b1b'); }
+    for (const p of allPlants()) if ((p.loc === 'closet' || p.loc === 'tent2') && p.pest.type === 'gnats' && p.pest.lvl > .05 && state.locations[p.loc].door !== 'closed') { const [px, py] = SLOT_POS[p.loc][p.slot]; for (let k = 0; k < 2 + p.pest.lvl * 8; k++) R(c, px + Math.sin(t * 3 + k * 2.1) * 8, py - 3 - Math.abs(Math.cos(t * 2.3 + k)) * 8, 1, 1, '#1b1b1b'); }
     // sex-reveal magnifier sparkle
     const fx = runtime.sexFx; if (fx && performance.now() < fx.until && state.plants[fx.pid]) { const p = state.plants[fx.pid], [px, py] = SLOT_POS[p.loc][p.slot], k = Math.floor(performance.now() / 120) % 4; c.fillStyle = '#ffffff'; for (let i = 0; i < 4; i++) { const a = i * 1.57 + k * .4; R(c, px + Math.cos(a) * 12, py - 20 + Math.sin(a) * 10, 1, 1, i % 2 ? '#fff6a0' : '#ffffff'); } R(c, px + 6, py - 26, 7, 7, '#2b1d14'); R(c, px + 7, py - 25, 5, 5, '#bfe3ff'); R(c, px + 12, py - 19, 3, 3, '#6b4426'); }
     // ---------- lighting ----------
@@ -4084,7 +4107,7 @@ const Panels = {
       const tabs = `<div class="tabs">${[['seeds', 'Seeds & Genetics'], ['harvest', 'Harvest'], ['supplies', 'Supplies'], ['equip', 'Equipment'], ['decor', 'Decor & Clothing']].map(([k, n]) => `<button class="chip ${k === t ? 'on' : ''}" data-act="invTab" data-arg="${k}">${n}</button>`).join('')}</div>`;
       if (t === 'seeds') return tabs + `<p class="small muted">Stored in your ${esc(EQ.storage[state.gear.storage].name)}. Click an empty pot in the room to plant. Regular seeds can turn out male, so they're a bigger gamble in a one-pot starter tent.</p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))">${I.seeds.map(s => { const g = GEN(s.lineId); return `<div class="card"><canvas class="px" width="48" height="64" data-draw="inv:${s.id}" style="width:72px;margin:auto"></canvas><h3>${esc(g.bag ? (g.lineName || 'Bag Seed') : g.name)}${s.kind === 'cutting' ? ' (cutting)' : ''}</h3><div class="meta">${esc(s.from ? 'From ' + (BREEDERS[s.from] ? BREEDERS[s.from].name : s.from) : '')}</div>${seedInfo(s.lineId, s)}</div>`; }).join('') || '<p class="muted">No seeds in storage.</p>'}</div>`;
       if (t === 'harvest') return tabs + `<div class="grid">${I.harvest.map(b => `<div class="card"><h3>${esc(b.name)}</h3><div class="meta mono">GRADE ${b.grade} · ${b.jars} JAR(S) · DAY ${b.day}${b.dry ? ' · ' + esc(b.dry.toUpperCase()) : ''}</div>${Object.entries(b.scores).map(([k, v]) => bar(k, v * 100, 100, lvlCol(v * 100))).join('')}<div class="small">${esc(TYPE_LABEL[b.type])} · ${esc(b.aromaName)} · ${b.organic ? 'Organic' : 'Synthetic'}</div></div>`).join('') || '<p class="muted">No jars yet.</p>'}</div>`;
-      if (t === 'supplies') return tabs + `<dl class="kv"><dt>Grow-Mo (synthetic)</dt><dd>${I.synth} mixes</dd><dt>Wormcastle (organic)</dt><dd>${I.organic} mixes</dd><dt>Feed jug</dt><dd>${I.jug ? `${I.jug.line} · ${I.jug.uses} feeding(s) · ${I.jug.ready > state.day ? 'brewing until tomorrow' : 'ready'}` : 'Empty'}</dd><dt>Balance pen</dt><dd>${I.phpen ? 'Yes' : 'No'}</dd><dt>Sticky traps</dt><dd>${I.traps}</dd><dt>Beneficial mites</dt><dd>${I.mites}</dd><dt>Trellis nets</dt><dd>${I.net}</dd><dt>Bamboo stakes</dt><dd>${I.stakes}</dd><dt>Pollen vials</dt><dd>${(I.pollen || []).length ? I.pollen.map(p => esc(p.name)).join(', ') + ' <span class="muted">(pollinate a flowering female from her Care tab)</span>' : 'None'}</dd><dt>Carbon refills</dt><dd>${Object.entries(I.carbon || {}).filter(([, n]) => n > 0).map(([t, n]) => esc(CARBON[t].name) + ' ×' + n).join(', ') || 'None'}</dd><dt>Tomatoes</dt><dd>${I.tomatoes || 0} ${I.tomatoes ? '<button class="btn sm" data-act="eat">Eat one (+15 energy)</button>' : ''}</dd><dt>Kenji's chili peppers</dt><dd>${I.peppers || 0} ${I.peppers ? '<button class="btn sm" data-act="eatPepper">Brave it (+20 energy?)</button>' : ''}</dd></dl>`;
+      if (t === 'supplies') return tabs + `<dl class="kv"><dt>Grow-Mo (synthetic)</dt><dd>${I.synth} mixes</dd><dt>Wormcastle (organic)</dt><dd>${I.organic} mixes</dd><dt>Feed jug</dt><dd>${I.jug ? `${I.jug.line} · ${I.jug.uses} feeding(s) · ${I.jug.ready > state.day ? 'brewing until tomorrow' : 'ready'}` : 'Empty'}</dd><dt>Balance pen</dt><dd>${I.phpen ? 'Yes' : 'No'}</dd><dt>Sticky traps</dt><dd>${I.traps}</dd><dt>Beneficial mites</dt><dd>${I.mites} sachets<span class="small muted"> · Inspect the affected plant, then use Care → Release beneficial mites. Treats thrips or spider mites on that plant, including seedlings. Companion plants give a separate, automatic bonus.</span></dd><dt>Trellis nets</dt><dd>${I.net}</dd><dt>Bamboo stakes</dt><dd>${I.stakes}</dd><dt>Pollen vials</dt><dd>${(I.pollen || []).length} vial(s) <button class="btn sm" data-act="invOpen" data-arg="pollen">Manage pollen</button></dd><dt>Carbon refills</dt><dd>${Object.entries(I.carbon || {}).filter(([, n]) => n > 0).map(([t, n]) => esc(CARBON[t].name) + ' ×' + n).join(', ') || 'None'}</dd><dt>Tomatoes</dt><dd>${I.tomatoes || 0} ${I.tomatoes ? '<button class="btn sm" data-act="eat">Eat one (+15 energy)</button>' : ''}</dd><dt>Kenji's chili peppers</dt><dd>${I.peppers || 0} ${I.peppers ? '<button class="btn sm" data-act="eatPepper">Brave it (+20 energy?)</button>' : ''}</dd></dl>`;
       if (t === 'equip') return tabs + ownedLocs().filter(l => LOC_DEF[l].kind !== 'outdoor').map(l => `<h3>${esc(locName(l))} <button class="btn sm" data-act="openSpace" data-arg="${l}">Controls</button></h3><div class="grid">${LOC_SLOTS.filter(sl => locAccepts(l, sl) && (state.locations[l].equip[sl] || ['light', 'fan', 'exhaust', 'sensor', 'pot'].includes(sl))).map(sl => { const tier = state.locations[l].equip[sl]; return `<div class="card"><canvas class="px" width="96" height="48" data-draw="gear:${sl}:${tier}" style="width:100%;background:#141c18"></canvas><div class="meta mono">${sl.toUpperCase()} · TIER ${tier}</div><h3>${esc(EQ[sl][tier].name)}</h3></div>`; }).join('')}</div>`).join('') + `<h3>Home</h3><div class="grid">${GLOBAL_SLOTS.map(sl => `<div class="card"><canvas class="px" width="96" height="48" data-draw="gear:${sl}:${state.gear[sl]}" style="width:100%;background:#141c18"></canvas><div class="meta mono">${sl.toUpperCase()}</div><h3>${esc(EQ[sl][state.gear[sl]].name)}</h3></div>`).join('')}</div>`;
       const own = Object.keys(state.room.own).filter(k => !k.startsWith('s:') && decorDef(k));
       return tabs + `<p class="small muted">Decor you own. Place, move and flip items in Decorate mode.</p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">${own.map(k => { const D = decorDef(k); return `<div class="card"><canvas class="px" width="48" height="36" data-draw="decor:${k}" style="width:96px;margin:auto;background:#141c18"></canvas><h3>${esc(D.n)}</h3><div class="meta">${decorFree(k)} free · ${state.room.own[k] - decorFree(k)} placed</div>${D.gift ? `<div class="small" style="color:var(--amber)">${esc(D.gift)}</div>` : ''}</div>`; }).join('') || '<p class="muted">No decor yet.</p>'}</div><div class="actions"><button class="btn primary" data-act="decorate">Decorate room</button><button class="btn" data-act="wardrobe">Open wardrobe</button></div>`;
@@ -4117,7 +4140,7 @@ const Panels = {
       const sensorTier = L.equip.sensor, smart = EQ.pot[L.equip.pot] && L.equip.pot === 3;
       const sexTxt = p.sexKnown ? (p.sex === 'M' ? '♂ Male' + (p.keepMale ? ' (kept for breeding)' : '') : '♀ Female') : '<span class="unk">???</span>';
       const left = `<div><canvas class="px" width="120" height="150" data-draw="plantbig:${p.id}" style="width:100%;max-width:300px;box-shadow:0 0 0 3px var(--line2)"></canvas>
-        <div class="actions"><button class="btn sm ${t === 'overview' ? 'primary' : ''}" data-act="plantTab" data-arg="overview">Inspect</button><button class="btn sm ${t === 'care' ? 'primary' : ''}" data-act="plantTab" data-arg="care">Care</button><button class="btn sm ${t === 'train' ? 'primary' : ''}" data-act="plantTab" data-arg="train">Train</button><button class="btn sm" data-act="photoPlant" data-arg="${p.id}">Photo</button><button class="btn sm ghost" data-act="openSpace" data-arg="${p.loc}">Space controls</button></div></div>`;
+        <div class="actions"><button class="btn sm ${t === 'overview' ? 'primary' : ''}" data-act="plantTab" data-arg="overview">Inspect</button><button class="btn sm ${t === 'care' ? 'primary' : ''}" data-act="plantTab" data-arg="care">Care</button><button class="btn sm ${t === 'train' ? 'primary' : ''}" data-act="plantTab" data-arg="train">Train</button><button class="btn sm" data-act="photoPlant" data-arg="${p.id}">Photo</button><button class="btn sm ghost" data-act="openSpace" data-arg="${p.loc}">Space controls</button><button class="btn sm ghost" data-act="renamePlant" data-arg="${p.id}">Rename</button></div></div>`;
       let right = '';
       if (t === 'overview') {
         const notes = runtime.inspect && runtime.inspect.pid === p.id && runtime.inspect.day === state.day ? runtime.inspect.notes : null;
@@ -4126,7 +4149,8 @@ const Panels = {
           ${bar('Health ' + lvlSym(p.health), p.health, 100, lvlCol(p.health))}${bar('Stress ' + lvlSym(p.stress, 1), p.stress, 100, lvlCol(p.stress, 1))}
           ${bar('Water', p.water, 100, '#7fd4ff', smart || sensorTier >= 2 ? Math.round(p.water) + '%' : p.water < 20 ? 'Dry' : p.water > 85 ? 'Soggy' : 'Damp')}${bar('Nutrition', p.nutr, 100, lvlCol(p.nutr))}${bar('Roots', p.root, 100, lvlCol(p.root))}
           ${bar('Environment', envScore, 100, lvlCol(envScore), sensorTier ? envScore + '%' : envScore > 65 ? 'Fine?' : 'Off?')}${bar('Canopy', p.density * 100, 100, '#7fb03a', Math.round(p.density * 100) + '%')}
-          ${bar('Pest risk', pestRisk ?? 50, 100, lvlCol(pestRisk ?? 50, 1), pestRisk === null ? '?' : pestRisk + '%')}${bar('Mold risk', moldRisk, 100, lvlCol(moldRisk, 1), moldRisk + '%')}`}
+          ${bar(p.pest.type && p.pest.known ? 'Pest level' : 'Pest risk', pestRisk ?? 50, 100, lvlCol(pestRisk ?? 50, 1), pestRisk === null ? '?' : pestRisk + '%')}${bar('Mold risk', moldRisk, 100, lvlCol(moldRisk, 1), moldRisk + '%')}
+          ${p.pest.type && p.pest.known ? `<div class="note warn">${esc(p.pest.type === 'mites' ? 'Spider mites' : p.pest.type === 'thrips' ? 'Thrips' : 'Fungus gnats')} detected. Treat this plant from its Care tab.<button class="btn sm" data-act="plantTab" data-arg="care">Treat pests</button></div>` : ''}`}
           <div class="small mono muted" style="margin:6px 0">Temp ${esc(readTemp(p.loc, env))} · Humidity ${esc(readHum(p.loc, env))} · Light ${env.lightOn ? 'ON' : 'OFF'} (${L.schedule === 'veg' ? '18/6' : '12/12'}) · ${L.door === 'closed' ? 'Closed' : 'Open'}</div>
           <dl class="kv" style="margin-top:8px"><dt>Genetics</dt><dd>${g.bag ? '<span class="unk">??? (bag seed)</span>' : esc(g.name)}</dd><dt>Breeder</dt><dd>${g.bag ? '<span class="unk">???</span>' : q('breeder')}</dd><dt>Seed type</dt><dd>${p.seedType === 'unknown' ? '<span class="unk">???</span>' : SEEDTYPE_LABEL[p.seedType || 'fem']}</dd><dt>Sex</dt><dd>${sexTxt}</dd><dt>Lifecycle</dt><dd>${q('lifecycle')}</dd><dt>Leaves</dt><dd>${q('leaf')}</dd><dt>Structure</dt><dd>${q('structure')}</dd><dt>Height</dt><dd>${q('height')} · ${Math.round(p.height)}" now (light at ${clearance(p.loc)}")</dd><dt>Color</dt><dd>${q('color')}</dd><dt>Aroma</dt><dd>${q('aroma')}</dd><dt>Profile</dt><dd>${q('profile')}</dd><dt>Training</dt><dd>${esc({ natural: 'Natural', lst: 'Low-stress training', topped: 'Topped', scrog: 'SCROG' }[p.training])}</dd>${p.seeded ? '<dt>Seeds</dt><dd>Pollinated: will set seeds</dd>' : ''}</dl>
           ${p.stage >= S.drying ? '' : notes ? `<div class="note" style="margin-top:10px">${notes.map(n => '• ' + esc(n)).join('<br>')}</div>` : `<div class="actions"><button class="btn sm amber" data-act="inspect" data-arg="${p.id}">Look closely (2 energy)</button></div>`}`;
@@ -4153,11 +4177,13 @@ const Panels = {
       if (g.lifecycle === 'photo' && st >= S.earlyveg && st <= S.matveg) add('flip', L.schedule === 'flower' ? 'Lights already on 12/12' : 'Flip lights to 12/12', g.revealed.lifecycle ? 'Longer nights trigger flowering in photoperiods. Affects every plant in this space.' : 'You don\'t know her lifecycle yet. Flipping now is a gamble.', L.schedule !== 'flower');
       if (p.pest.type && p.pest.known) {
         const t = p.pest.type;
-        if (t === 'gnats' || t === 'thrips') add('traps', 'Hang sticky traps', `${I.traps} left · catches flyers`, I.traps > 0);
-        if (t === 'mites' || t === 'thrips') add('mites', 'Release beneficial mites', `${I.mites} sachets · tiny allies`, I.mites > 0);
+        A.push(`<div class="note">${esc(t === 'mites' ? 'Spider mites' : t === 'thrips' ? 'Thrips' : 'Fungus gnats')} · pest level ${Math.round(p.pest.lvl * 100)}%. Treatments below affect this plant, including seedlings. Companion plants in tents reduce stress; they do not treat an infestation.</div>`);
+        if (t === 'gnats' || t === 'thrips') add('traps', 'Hang sticky traps', `${I.traps} left · lowers pest level by ${t === 'gnats' ? 50 : 35} points · 3 energy · 10 min${I.traps > 0 ? '' : ' · buy from LeafCart → Tools'}`, I.traps > 0);
+        if (t === 'mites' || t === 'thrips') add('mites', 'Release beneficial mites', `${I.mites} sachets · uses 1 on this plant · lowers pest level by 70 points · 3 energy · 10 min${I.mites > 0 ? '' : ' · buy from LeafCart → Tools'}`, I.mites > 0);
         if (t === 'gnats') add('dry', 'Let the soil dry out', 'Gnat larvae hate dry topsoil. Works when water is low.', true);
         if (t !== 'gnats') add('wipe', 'Wipe leaves', 'Slow but free. 10 energy', true);
       }
+      if (st >= S.seedling && !p.pest.known) A.push(`<div class="note">Suspect pests? Look closely to identify them and unlock treatment options.<button class="btn sm" data-act="inspect" data-arg="${p.id}">Look closely (2 energy)</button></div>`);
       if (p.mold > .05 && runtime.inspect && runtime.inspect.pid === p.id) add('mold', 'Remove moldy buds', 'Cut out the fuzz. Loses some yield. Saves the rest.', true, 'danger');
     }
     if (st < S.drying && !male) add('cull', 'Remove / cull plant', Cull.valuable(p).length ? 'Special plant: you\'ll be asked twice before it\'s removed.' : 'Not happy with this one? Free the pot. 4 energy', true, 'danger');
@@ -4287,7 +4313,7 @@ function devState(slot, loc) {
   return ['on', ''];
 }
 function devCtl(slot, loc) {
-  const L = state.locations[loc], tier = L.equip[slot], it = EQ[slot][tier] || {}, F = state.fail, env = envFor(loc), ctrlOn = L.equip.ctrl && locOn(L, 'ctrl');
+  const L = state.locations[loc], tier = L.equip[slot], it = EQ[slot][tier] || {}, F = state.fail, env = envFor(loc), ctrlOn = ctrlSteers(loc, slot);
   const pwr = k => `<button class="chip ${locOn(L, k) ? 'on' : ''}" data-act="pwr" data-arg="${loc}:${k}" aria-pressed="${locOn(L, k)}">${locOn(L, k) ? 'ON' : 'OFF'}</button>`;
   const fix = (k, label) => F[k] ? `<div class="note bad">${esc({ flicker: 'The light is flickering.', rattle: 'The fan is rattling.', sensor: 'The sensor is reading nonsense.', humStuck: 'Stuck on HIGH. It is raining in here.', heatTrip: 'Tripped the breaker. Smells like burnt dust.', acIce: 'Iced over. Not cooling.' }[k])} <button class="btn sm amber" data-act="fix" data-arg="${k}">${label}</button></div>` : '';
   const slider = (key, min, max, val, label, dis) => `<label class="field" style="flex:1 1 140px">${label} <b class="mono" style="color:var(--text)">${val}${key.includes('hum') ? '%' : '°F'}</b><input type="range" min="${min}" max="${max}" step="1" value="${val}" data-input="${key}" data-loc="${loc}" ${dis ? 'disabled' : ''}></label>`;
@@ -4307,12 +4333,16 @@ function devCtl(slot, loc) {
       if (tier === 3) h += crow('Power', pwr('humid')) + slider('humidTarget', 30, 80, L.humidTarget, 'Target', ctrlOn);
       else { h += crow('Mode', ['OFF', 'LOW', 'HIGH'].map((n, i) => `<button class="chip ${L.humidMode === i ? 'on' : ''}" data-act="humid" data-arg="${loc}:${i}">${n}</button>`).join('')); if (tier === 2) h += crow('Timer', `<button class="chip ${L.humidTimer ? 'on' : ''}" data-act="humidTimer" data-arg="${loc}">Lights-on only</button>`); }
       h += fix('humStuck', 'Unplug & replug'); break;
-    case 'dehum': h += tier === 2 ? slider('dehumTarget', 35, 75, L.dehumTarget, 'Ceiling', ctrlOn) : crow('Power', `<button class="chip ${L.dehumOn ? 'on' : ''}" data-act="dehum" data-arg="${loc}">${L.dehumOn ? 'ON' : 'OFF'}</button>`); break;
+    case 'dehum': { const cap = ctrlOn ? ctrlCeiling(loc) : tier === 2 ? L.dehumTarget : null;
+      h += tier === 2 ? slider('dehumTarget', 35, 75, L.dehumTarget, 'Ceiling', ctrlOn) : crow('Power', `<button class="chip ${L.dehumOn ? 'on' : ''}" data-act="dehum" data-arg="${loc}" ${ctrlOn ? 'disabled' : ''}>${L.dehumOn ? 'ON' : 'OFF'}</button>`);
+      if (ctrlOn && tier === 1) h += `<div class="small muted">The controller switches it on above ${cap}% RH.</div>`;
+      if (cap != null && (L.dehumOn || tier === 2) && env.hum > cap + 2) h += `<div class="note">Running flat out and still at ${env.hum}% RH (ceiling ${cap}%). ${tier === 1 ? 'A stronger dehumidifier' : 'More exhaust'}, fewer plants or an open door would help.</div>`;
+      break; }
     case 'heater': h += crow('Power', pwr('heater')) + (it.manual ? crow('Setting', `<button class="chip ${L.heatMode === 1 ? 'on' : ''}" data-act="heatMode" data-arg="${loc}:1">LOW</button><button class="chip ${L.heatMode === 2 ? 'on' : ''}" data-act="heatMode" data-arg="${loc}:2">HIGH</button>`) : slider('heatTo', 55, 80, L.heatTo, 'Heat below', ctrlOn)) + fix('heatTrip', 'Reset the breaker'); break;
     case 'ac': h += crow('Power', pwr('ac')) + (it.manual ? crow('Setting', `<button class="chip ${L.acMode === 1 ? 'on' : ''}" data-act="acMode" data-arg="${loc}:1">LOW</button><button class="chip ${L.acMode === 2 ? 'on' : ''}" data-act="acMode" data-arg="${loc}:2">HIGH</button>`) : slider('coolTo', 64, 88, L.coolTo, 'Cool above', ctrlOn)) + fix('acIce', 'Let it thaw'); break;
     case 'hvac': h += crow('Power', pwr('hvac')) + `<div class="ctl">${slider('heatTo', 55, 80, L.heatTo, 'Heat below', ctrlOn)}${slider('coolTo', 64, 88, L.coolTo, 'Cool above', ctrlOn)}</div>`; break;
-    case 'ctrl': { const ctl = ['heater', 'ac', 'hvac'].filter(k => L.equip[k] && (EQ[k][L.equip[k]].thermo)).map(k => EQ[k][L.equip[k]].name).concat(L.equip.humid === 3 ? [EQ.humid[3].name] : [], L.equip.dehum === 2 ? [EQ.dehum[2].name] : []);
-      h += crow('Automation', pwr('ctrl')) + `<div class="small muted">${ctl.length ? 'Steering: ' + esc(ctl.join(', ')) + '.' : 'No digital devices to steer yet. Manual gear stays manual.'} Switches to drying mode (dark, ~70/70) after harvest.</div>`; break; }
+    case 'ctrl': { const ctl = climatePeers(loc).filter(l => l === loc || !ctrlPowered(l)).flatMap(l => ['heater', 'ac', 'hvac'].filter(k => state.locations[l].equip[k] && EQ[k][state.locations[l].equip[k]].thermo).map(k => EQ[k][state.locations[l].equip[k]].name + (l === loc ? '' : ` (${locShort(l)})`))).concat(L.equip.humid === 3 ? [EQ.humid[3].name] : [], L.equip.dehum ? [EQ.dehum[L.equip.dehum].name + (L.equip.dehum === 1 ? ' (on/off at the plug)' : '')] : []);
+      h += crow('Automation', pwr('ctrl')) + `<div class="small muted">${ctl.length ? 'Steering: ' + esc(ctl.join(', ')) + '.' : 'No digital devices to steer yet. Manual gear stays manual.'}${L.equip.dehum && ctrlCeiling(loc) != null && envFor(loc).hum > ctrlCeiling(loc) + 2 ? ` Humidity is ${envFor(loc).hum}%, above the ${ctrlCeiling(loc)}% ceiling: the dehumidifier can't keep up.` : ''} Switches to drying mode (dark, ~70/70) after harvest.</div>`; break; }
     case 'sensor': { const ps = plantsIn(loc).filter(p => p.stage < S.drying), id = ps[0] ? idealFor(ps[0].stage) : null;
       h += `<div class="mono">Temp <b>${esc(readTemp(loc, env))}</b> · RH <b>${esc(readHum(loc, env))}</b></div><div class="small muted">Quality: ${['vibes only', 'rough', 'accurate', 'accurate + 48h log'][tier]}${tier >= 2 && id ? ` · Comfort zone now: ${id.t[0]}–${id.t[1]}°F, ${id.h[0]}–${id.h[1]}%` : ''}</div>${tier === 3 ? `<canvas width="300" height="90" data-draw="graph:${loc}" style="width:100%;margin-top:6px"></canvas>` : ''}` + fix('sensor', 'Reset sensor'); break; }
     case 'pot': h += `<div class="small muted">${esc(it.desc || '')}</div>`; break;
@@ -4424,7 +4454,9 @@ function seedInfo(lineId, s) {
   const g = GEN(lineId), stype = s && s.seedType ? s.seedType : g.bag ? 'unknown' : g.seedType || 'fem';
   const life = g.revealed.lifecycle ? (g.lifecycle === 'auto' ? 'Autoflower' : 'Photoperiod') : '<span class="unk">???</span>';
   const prof = g.revealed.profile ? esc(TYPE_LABEL[g.type]) : '<span class="unk">???</span>';
-  return `<dl class="kv small"><dt>Lifecycle</dt><dd>${life}</dd><dt>Seed type</dt><dd>${stype === 'unknown' ? '<span class="unk">???</span>' : SEEDTYPE_LABEL[stype]}${s && s.kind === 'cutting' ? ' (clone)' : ''}</dd><dt>Category</dt><dd>${prof}</dd><dt>Breeder</dt><dd>${g.bag ? '<span class="unk">???</span>' : esc(BREEDERS[g.breeder] ? BREEDERS[g.breeder].name : '—')}</dd><dt>Rarity</dt><dd>${esc(g.rarity || '—')}</dd></dl>`;
+  // a cutting is the mother plant itself: show her sex, not the seed's
+  const ph = s && s.kind === 'cutting' && s.pheno, sex = ph ? (ph.sexKnown ? (ph.sex === 'M' ? '♂ Male' : '♀ Female') : '<span class="unk">???</span>') : null;
+  return `<dl class="kv small"><dt>Lifecycle</dt><dd>${life}</dd>${ph ? `<dt>Sex</dt><dd>${sex} (clone)</dd>` : `<dt>Seed type</dt><dd>${stype === 'unknown' ? '<span class="unk">???</span>' : SEEDTYPE_LABEL[stype]}${s && s.kind === 'cutting' ? ' (clone)' : ''}</dd>`}<dt>Category</dt><dd>${prof}</dd><dt>Breeder</dt><dd>${g.bag ? '<span class="unk">???</span>' : esc(BREEDERS[g.breeder] ? BREEDERS[g.breeder].name : '—')}</dd><dt>Rarity</dt><dd>${esc(g.rarity || '—')}</dd></dl>`;
 }
 </script>
 <script>
@@ -4463,7 +4495,7 @@ function doInspect(pid) {
 }
 function doCare(a) {
   const p = curPlant(); if (!p) return; const g = (typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)), L = state.locations[p.loc], I = state.inv, auto = g.lifecycle === 'auto';
-  const pestFix = d => { p.pest.lvl = Math.max(0, p.pest.lvl - d); if (p.pest.lvl <= .05) { notify(`${p.name}'s ${p.pest.type} are gone. Victory.`); p.pest = { type: null, lvl: 0, known: false }; } invalidate(p); };
+  const pestFix = d => { p.pest.lvl = Math.max(0, p.pest.lvl - d); if (p.pest.lvl <= .05) { notify(`${p.name}'s ${p.pest.type} are gone. Victory.`); p.pest = { type: null, lvl: 0, known: false }; } else toast(`${esc(p.name)}: pest level is now ${Math.round(p.pest.lvl * 100)}%. Keep checking this plant.`, 'warn'); if (runtime.inspect?.pid === p.id) runtime.inspect = null; invalidate(p); };
   switch (a) {
     case 'water': { const wt = EQ.water[state.gear.water], e = state.gear.water === 3 ? 4 : wt.energy; if (!spend(e, 10)) return; if (p.water > 85) { p.root -= 6; think('Already soggy... maybe that was too much.'); } p.water = clamp(p.water + (wt.add || 45), 0, 100); state.stats.waterings++; Sfx.water(); if (!state.hints.water1) { state.hints.water1 = 1; think('Glug glug. Water when the top of the soil dries, not on a schedule.', 4000); } break; }
     case 'feed': { const j = I.jug; if (!j || !spend(6, 10)) return; p.nutr = clamp(p.nutr + 32 + j.strDiff * 4, 0, 100); if (j.strDiff > 2.5) { p.nutr = 100; p.stress += 15; think('Uh oh. That mix was way too strong.'); } else think(j.q > .7 ? 'She drinks it up.' : 'Hope that was okay...'); p.health = clamp(p.health + (j.q - .5) * 10, 1, 100); if (j.line === 'synthetic') p.organic = false; else { p.root = clamp(p.root + 4, 0, 100); state.rep.organic += .2; } j.uses--; if (j.uses <= 0) I.jug = null; Sfx.water(); break; }
@@ -4473,8 +4505,8 @@ function doCare(a) {
     case 'cut': if (g.lifecycle === 'auto') { if (!g.revealed.lifecycle) reveal(g, 'lifecycle', true); toast('Autoflower genetics can\'t be preserved through this cutting system.', 'warn'); think('The cutting won\'t take. She runs on her own internal clock: an autoflower.'); renderPanel(); return; }
       if (!spend(8, 20)) return; p.cutting = true; addSeed(p.lineId, 'your own ' + p.name, 'cutting', Object.assign({}, p.pheno, { sex: p.sex, sexKnown: p.sexKnown }), p.seedType); p.stress += 5; if (g.bag && g.lifecycle === 'photo') unlock('stillgotit'); notify(`Cutting of ${p.name} is rooting in your ${EQ.storage[state.gear.storage].name}.`); break;
     case 'flip': L.schedule = 'flower'; think('Lights to 12/12. Long nights from now on.'); notify('Light schedule set to 12/12. Photoperiods will start flowering in a couple of days.'); break;
-    case 'traps': if (!I.traps || !spend(3, 10)) return; I.traps--; pestFix(p.pest.type === 'gnats' ? .5 : .35); break;
-    case 'mites': if (!I.mites || !spend(3, 10)) return; I.mites--; pestFix(.7); break;
+    case 'traps': if (p.stage < S.seedling || p.stage >= S.drying || !p.pest.known || !['gnats', 'thrips'].includes(p.pest.type) || !(I.traps > 0) || !spend(3, 10)) return; I.traps--; pestFix(p.pest.type === 'gnats' ? .5 : .35); break;
+    case 'mites': if (p.stage < S.seedling || p.stage >= S.drying || !p.pest.known || !['mites', 'thrips'].includes(p.pest.type) || !(I.mites > 0) || !spend(3, 10)) return; I.mites--; pestFix(.7); break;
     case 'dry': if (p.water < 40) pestFix(.35); else think('The soil is still wet. Skip watering for a while, then try again.'); break;
     case 'wipe': if (!spend(10, 40)) return; pestFix(.2); break;
     case 'mold': if (!spend(8, 30)) return; p.mold = 0; p.yieldPot *= .85; think('Cut it out. Bagged it. Gross but necessary.'); break;
@@ -4608,7 +4640,7 @@ const ACT = {
   mixSet(arg) { const [k, v] = arg.split(':'); runtime.mix[k] = v; renderPanel(); }, mixGo() { mixGo(); },
   sched(arg) { const [loc, m] = arg.split(':'); state.locations[loc].schedule = m; Sfx.click(); if (m === 'flower') think('12/12. Long nights from now on.'); renderPanel(); },
   fix(kind) { if (!spend(3, 10)) return; if (kind === 'flicker' && chance(.3)) { think('Jiggled it. Still flickering. Jiggled harder. ...Nope.'); renderPanel(); return; } state.fail[kind] = false; think({ flicker: 'Jiggled the cord. Steady light. For now.', rattle: 'Tightened the screw. Blessed silence.', sensor: 'Reset. It reads normal numbers again.', humStuck: 'Unplugged, replugged. It stopped raining in the tent.', heatTrip: 'Breaker reset. The heater hums back to life.', acIce: 'Thawed out. Cold air again.' }[kind]); Sfx.good(); renderPanel(); },
-  humid(arg) { const [loc, i] = arg.split(':'); state.locations[loc].humidMode = +i; renderPanel(); }, humidTimer(loc) { state.locations[loc].humidTimer = !state.locations[loc].humidTimer; renderPanel(); }, dehum(loc) { state.locations[loc].dehumOn = !state.locations[loc].dehumOn; renderPanel(); },
+  humid(arg) { const [loc, i] = arg.split(':'); state.locations[loc].humidMode = +i; renderPanel(); }, humidTimer(loc) { state.locations[loc].humidTimer = !state.locations[loc].humidTimer; renderPanel(); }, dehum(loc) { if (ctrlSteers(loc, 'dehum')) return; state.locations[loc].dehumOn = !state.locations[loc].dehumOn; renderPanel(); },
   openBox() { runtime.pkgOpen = true; Sfx.pkg(); renderPanel(); }, install(where) { openPackageInstall(where); },
   sow(arg) { const [loc, slot, sid] = arg.split(':'), s = state.inv.seeds.find(x => x.id === sid); if (!s || state.locations[loc].slots[+slot]) return; if (!spend(4, 15)) return; state.inv.seeds = state.inv.seeds.filter(x => x !== s); const p = createPlant(s.lineId, loc, +slot, s.pheno ? Object.assign({}, s.pheno) : null, s.seedType); if (!s.pheno && !s.blueprint115 && s.inherit && !p.pheno.mut && chance(.35)) { p.pheno.mut = s.inherit; p.pheno.muts = [s.inherit]; } SaveSys.request('sow'); if (s.kind === 'cutting') { p.stage = S.seedling; p.height = 3; p.nodes = 2; } if (state.story === 'plant') setStory('grow'); closePanel(); Sfx.good(); think(GEN(s.lineId).bag ? 'Tucked in. Good luck, little mystery.' : `${p.name} is in the dirt. Let\'s go.`, 4000); },
   town(id) { townGo(id); }, nameLine() { const g = GEN(runtime.nameGid), v = ($('#lineName') || {}).value; g.lineName = (v || '').trim().slice(0, 24) || 'Closet Miracle'; toast(`The bag-seed line is now <b>${esc(g.lineName)}</b>.`, 'social'); closePanel(); },
@@ -4623,7 +4655,7 @@ const ACT = {
 Object.assign(ACT, {
   openSpace(loc) { Panels.space(loc || runtime.spaceLoc || 'closet'); }, spaceTab(k) { runtime.spaceLoc = k; renderPanel(); }, openPlant(pid) { Panels.plant(pid); },
   shopFrom(cat) { runtime.device = 'phone'; Panels.shop(cat); },
-  pwr(arg) { const [loc, k] = arg.split(':'), L = state.locations[loc]; L.on[k] = !locOn(L, k); Sfx.click(); if (k === 'light' && !L.on.light && plantsIn(loc).some(p => p.stage >= S.seedling && p.stage < S.drying)) toast('Growing plants in this space need that light.', 'warn'); renderPanel(); updateHUD(); },
+  pwr(arg) { const [loc, k] = arg.split(':'), L = state.locations[loc]; L.on[k] = !locOn(L, k); Sfx.click(); if (k === 'ctrl' && L.on.ctrl) controllerTick(loc); if (k === 'light' && !L.on.light && plantsIn(loc).some(p => p.stage >= S.seedling && p.stage < S.drying)) toast('Growing plants in this space need that light.', 'warn'); renderPanel(); updateHUD(); },
   pwrSet(arg) { const [loc, k, v] = arg.split(':'); state.locations[loc].on[k] = v === '1'; Sfx.click(); renderPanel(); updateHUD(); },
   door(loc) { const L = state.locations[loc]; setDoor(loc, L.door === 'closed' ? 'open' : 'closed'); renderPanel(); },
   fanSpd(arg) { const [loc, n] = arg.split(':'); state.locations[loc].fanSpeed = +n; Sfx.click(); renderPanel(); },
@@ -8600,7 +8632,7 @@ Object.assign(ACT, {
   openBreaker(room) { Panels.power(room || 'bedroom'); },
   pwrRoom(r) { runtime.pwrRoom = r; renderPanel(); },
   pwrB(arg) { const [loc, k] = arg.split(':'), L = state.locations[loc]; L.on[k] = !locOn(L, k); Sfx.click(); renderPanel(); updateHUD(); },
-  dehumB(loc) { state.locations[loc].dehumOn = !state.locations[loc].dehumOn; Sfx.click(); renderPanel(); },
+  dehumB(loc) { if (ctrlSteers(loc, 'dehum')) return; state.locations[loc].dehumOn = !state.locations[loc].dehumOn; Sfx.click(); renderPanel(); },
   breakerReset(room) { Power.reset(room); renderPanel(); },
   circuitUp(room) { Power.orderUpgrade(room); renderPanel(); },
   tipOk() { Tips.dismiss(); }, tipShow() { Tips.showTarget(); },
@@ -9458,7 +9490,13 @@ Object.assign(ACT, {
   collectPollen(pid) { const p = state.plants[pid]; if (p) Breeding.pollenFrom(p); },
   pollinateWith(arg) { const [q, v] = arg.split(':'); Breeding.pollinate(q, v); },
   nameCross(gid) { Panels.nameCross(gid); },
-  saveCrossName() { const g = GEN(runtime.crossGid), v = (($('#crossName') || {}).value || '').trim().slice(0, 26); if (v) { g.name = v; g.named = true; } toast(`Cross named <b>${esc(g.name)}</b>.`, 'social'); closePanel(); SaveSys.request('cross'); }
+  saveCrossName() { const g = GEN(runtime.crossGid), v = (($('#crossName') || {}).value || '').trim().slice(0, 26); if (v && v !== g.name) {
+      // plants and jars took the old name when planted ("Old Name #3"): carry the new name to them; hand-picked names stay
+      const was = g.name, rn = o => { if (o && o.lineId === g.id && !o.customName115 && typeof o.name === 'string' && o.name.startsWith(was + ' #')) { o.name = v + o.name.slice(was.length); return true; } };
+      for (const p of allPlants()) if (rn(p)) invalidate(p);
+      for (const b of state.inv.harvest || []) rn(b);
+    }
+    if (v) { g.name = v; g.named = true; } toast(`Cross named <b>${esc(g.name)}</b>.`, 'social'); closePanel(); SaveSys.request('cross'); }
 });
 
 /* ---------------- stress → hermaphrodites ---------------- */
@@ -10443,9 +10481,11 @@ const Batches = {
     const L = b.lab || { status: 'untested' };
     if (L.status === 'quarantined') return { k: 'quarantined', sym: '✕', txt: 'FAILED · quarantined', col: 'var(--danger)' };
     if (L.status === 'disposed') return { k: 'disposed', sym: '✕', txt: 'Disposed', col: 'var(--muted)' };
+    // a retest in progress doesn't erase the results the batch already has
+    const re = L.pending ? ' · retest pending' : '';
+    if (L.status === 'passed') return { k: 'passed', sym: '✓', txt: 'Full panel PASSED' + re, col: 'var(--leaf)' };
+    if (L.status === 'potency') return { k: 'potency', sym: '◐', txt: 'Potency tested · safety unverified' + re, col: '#7fd4ff' };
     if (L.pending) return { k: 'pending', sym: '…', txt: 'Lab pending', col: 'var(--amber)' };
-    if (L.status === 'passed') return { k: 'passed', sym: '✓', txt: 'Full panel PASSED', col: 'var(--leaf)' };
-    if (L.status === 'potency') return { k: 'potency', sym: '◐', txt: 'Potency tested · safety unverified', col: '#7fd4ff' };
     return { k: 'untested', sym: '○', txt: 'Not lab tested', col: 'var(--muted)' };
   },
   sellable(b) { const s = (b.lab || {}).status; return s !== 'quarantined' && s !== 'disposed' && b.jars > 0; },
@@ -10697,7 +10737,7 @@ const Pt = {
       for (const c of P.claims || []) {
         if (c.found) continue;
         const b = Batches.find(c.batchId); const st = b ? Batches.status(b).k : 'untested';
-        if (st === 'passed') { c.found = 'ok'; continue; }
+        if (st === 'passed' || st === 'potency') { c.found = 'ok'; continue; }
         if (chance(.25)) { c.found = true; P.trust = clamp(P.trust - 2.5, 0, 10); P.friend = clamp(P.friend - 1.2, 0, 10); state.rep.patient = Math.max(0, state.rep.patient - 2); addMsg(k, `I asked the registry for the lab report on ${c.batchId}. There isn't one. You told me it was tested. I'm disappointed. I trusted that.`, [{ label: 'Apologize', fx: 'friend:' + k + ':0' }]); }
       }
       if (P.met && P.request && !P.request.note && P.lastBatch) { P.request.note = true; }
@@ -11120,7 +11160,7 @@ Panels.careActions = function (p, g, L) {
     // pollinating: confirmed females in early-to-mid flower, with a vial
     if (sx === 'F' && !p.seeded) {
       const V = I.pollen || [];
-      if (st >= S.earlyflower && st <= S.midflower) { if (V.length) for (const [i, v] of V.slice(0, 4).entries()) row('pollinateWith', `${p.id}:${v.id || i}`, `Pollinate with ${esc(v.name)}'s pollen`, `Her harvest will carry seeds of a NEW cross: ${esc(Breeding.short(g))} × ${esc(Breeding.short(GEN(v.lineId)))}. 4 energy`); else info('Breed her', 'No pollen vials in your inventory. Collect one from a male in mid flower.'); }
+      if (st >= S.earlyflower && st <= S.midflower) { if (V.some(v => (v.uses115 ?? 1) > 0)) row('pollenChoose', p.id, 'Pollinate…', 'Choose any usable pollen vial. 4 energy'); else info('Breed her', 'No usable pollen vials. Collect pollen from a male in mid flower, or manage empty vials in Inventory → Pollen.'); }
       else if (st < S.earlyflower && st >= S.veg) info('Breed her', 'She can be pollinated in early to mid flower.');
     }
     if (sx === 'unknown' && st >= S.seedling) info('Breeding', 'Sex unknown. Preflowers show in veg (inspect her). Pollen and pollinating options appear once you know.');
@@ -14729,13 +14769,13 @@ Scene.interact = function (k, a, b, id) {
    Services keep their baseline effects; the old 60 min / 5 energy
    "trip" cost is replaced by the bus ride (café visit: 20 min).
    Library 8 AM–8 PM: study (60 min · 6 energy · +10 xp, library cap
-   = level 6) and volunteer (2 tasks/day). Inés works the front desk
+   = level 6) and volunteer (each task once a day). Inés works the front desk
    Mon/Wed/Fri 10 AM–3 PM and runs the Sunday book club.
    Original pixel art; side-view street like Willow Lane, top-down
    interior like the neighbor homes.
    ===================================================================== */
 const TOWN = { busMin: 25, busE: 3, open: 7 * 60, close: 21 * 60, libOpen: 8 * 60, libClose: 20 * 60, cafeMin: 20,
-  studyMin: 60, studyE: 6, studyXp: 10, libCap: 6, mktMaxL: 5, mktPerL: .02, volPerDay: 2 };
+  studyMin: 60, studyE: 6, studyXp: 10, libCap: 6, mktMaxL: 5, mktPerL: .02 };
 const TownS = () => { const v = V114S(); v.lib = v.lib || {}; const L = v.lib; L.read = L.read || {}; L.today = L.today || { day: 0, subj: {} }; L.mkt = L.mkt || 0;
   L.vol = L.vol || { hours: 0, day: 0, n: 0, log: [], ms: [] }; L.visits = L.visits || 0; return L; };
 const Town = {
@@ -15063,11 +15103,12 @@ const Library = {
     const T = LIB_VOL[id]; if (!T) return; const L = TownS(), V = L.vol, dow = Routine.dow();
     if (state.scene !== 'library') return;
     if (!Town.libOpen()) { think('The library is closed.'); return; }
-    if (V.day !== state.day) { V.day = state.day; V.n = 0; }
-    if (V.n >= TOWN.volPerDay) { think('That\'s plenty for today. The library will still need you tomorrow.'); return; }
+    if (V.day !== state.day) { V.day = state.day; V.n = 0; V.done = {}; }
+    V.done = V.done || {};
+    if (V.done[id]) { think('You already did that one today. The library will still need it tomorrow.'); return; }
     if (T.days && !T.days.includes(dow)) { think('Reading events run Thursday to Sunday.'); return; }
     if (!spend(T.e, T.mins)) return;
-    V.n++; V.hours = Math.round((V.hours + T.mins / 60) * 100) / 100; V.log.unshift({ day: state.day, id }); V.log.length = Math.min(V.log.length, 20);
+    V.n++; V.done[id] = 1; V.hours = Math.round((V.hours + T.mins / 60) * 100) / 100; V.log.unshift({ day: state.day, id }); V.log.length = Math.min(V.log.length, 20);
     if (state.knowledge[T.k] === undefined) state.knowledge[T.k] = 0; Knowledge.add(T.k, T.xp);
     state.rep.community = (state.rep.community || 0) + (T.rep || .1);
     let extra = '';
@@ -15113,9 +15154,9 @@ Panels.library = function (tab) {
           <div class="desc">${esc(Library.effect(s.k))}</div>
           <button class="btn sm" data-act="libStudy" data-arg="${s.k}" ${!here || !open || mx ? 'disabled' : ''}>${mx ? 'Read it all' : `Read (${TOWN.studyMin} min · ${TOWN.studyE}⚡)`}</button></div>`; }).join('')}`;
     } else if (t === 'vol') {
-      const left = V.day === state.day ? TOWN.volPerDay - V.n : TOWN.volPerDay, dow = Routine.dow();
+      const doneToday = V.day === state.day ? V.done || {} : {}, dow = Routine.dow(), avail = id => !doneToday[id] && (!LIB_VOL[id].days || LIB_VOL[id].days.includes(dow)), left = Object.keys(LIB_VOL).filter(avail).length;
       body = `<p class="small muted">Unpaid, but it builds knowledge, community reputation and (when Inés is working) your friendship with her. ${left} task${left === 1 ? '' : 's'} left today. Total: <b>${V.hours.toFixed(1)} h</b>.</p>
-        ${Object.entries(LIB_VOL).map(([id, T]) => { const ok = here && open && left > 0 && (!T.days || T.days.includes(dow)); return `<div class="card study-row"><h3>${esc(T.n)}</h3><div class="desc">${T.mins} min · ${T.e} energy · +${T.xp} ${esc(KNOW_CATS[T.k])} xp${T.rep ? ' · extra community rep' : ''}${T.days ? ' · Thu–Sun only' : ''}</div><button class="btn sm" data-act="libVol" data-arg="${id}" ${ok ? '' : 'disabled'}>Do it</button></div>`; }).join('')}
+        ${Object.entries(LIB_VOL).map(([id, T]) => { const done = !!doneToday[id], ok = here && open && avail(id); return `<div class="card study-row"><h3>${esc(T.n)}</h3><div class="desc">${T.mins} min · ${T.e} energy · +${T.xp} ${esc(KNOW_CATS[T.k])} xp${T.rep ? ' · extra community rep' : ''}${T.days ? ' · Thu–Sun only' : ''}</div><button class="btn sm" data-act="libVol" data-arg="${id}" ${ok ? '' : 'disabled'}>${done ? 'Done today' : 'Do it'}</button></div>`; }).join('')}
         <div class="card"><h3>Milestones</h3><div class="desc">${[[5, 'Volunteer badge (+Inés, +community)'], [15, 'Seed library thank-you packet (2 classic seeds)'], [30, 'Friend of the Library: +15% study xp']].map(([h, n]) => `${V.ms.includes(h) ? '✓' : '○'} ${h} h · ${esc(n)}`).join('<br>')}</div></div>`;
     } else {
       body = `<div class="card"><h3>Your library card</h3><div class="desc">Visits: ${L.visits} · Sessions read: ${Object.values(L.read).reduce((a, b) => a + b, 0)} · Volunteer hours: ${V.hours.toFixed(1)}<br>Hours: 8 AM–8 PM daily. Inés works the desk Mon/Wed/Fri 10 AM–3 PM and hosts Sunday book club 9:30–noon.<br>Marketing & content level ${Library.mktLevel()} / ${TOWN.mktMaxL}.</div></div>`;
@@ -15931,7 +15972,7 @@ const Gear115 = {
       const firstLight = it.slot === 'light' && (state.story === 'wait' || state.story === 'light');
       this.apply(it.slot, it.tier, loc, it.cond); it.at = loc;
       const parked = it.slot === 'hvac' ? this.parkClimate(loc) : [];
-      state.stats.upgrades++; state.rep.equipment += .3; runtime.flash = .8;
+      if (!opts.move) { state.stats.upgrades++; state.rep.equipment += .3; } runtime.flash = .8;
       if (firstLight) { setStory(state.locations.closet.equip.pot ? 'plant' : 'container'); think(it.tier === 1 ? 'It\'s... purple. Very purple. The box says PROFESSIONAL six times.' : 'Oh, that\'s a real light.', 4500); }
       Sfx.good(); safeRun('ach', checkAch); updateHUD(); bgCache.clear();
       if (!opts.quiet) toast(`<b>${esc(this.name(it))}</b> installed${loc === 'home' ? '' : ' in the ' + esc(locShort(loc))}.${cur ? ` Your ${esc(this.name(cur))} went to <b>Unused gear</b>.` : ''}${parked.length ? ` ${parked.map(item => esc(this.name(item))).join(' and ')} moved to <b>Unused gear</b>; this unit heats and cools the whole room.` : ''}`, 'social');
@@ -16124,7 +16165,7 @@ ACT.openBox = ACT.pkgOpen115;
    INVENTORY · v1.1.5 — Unused gear · Installed gear · Seeds & starters ·
    Harvests · Supplies · Furniture & beds · Wardrobe · Memories
    ===================================================================== */
-const INV_TABS115 = [['unused', 'Unused gear'], ['installed', 'Installed gear'], ['seeds', 'Seeds & starters'], ['harvest', 'Harvests'], ['supplies', 'Supplies'], ['decor', 'Furniture & beds'], ['wardrobe', 'Wardrobe'], ['memories', 'Memories']];
+const INV_TABS115 = [['unused', 'Unused gear'], ['installed', 'Installed gear'], ['seeds', 'Seeds & starters'], ['harvest', 'Harvests'], ['supplies', 'Supplies'], ['pollen', 'Pollen'], ['decor', 'Furniture & beds'], ['wardrobe', 'Wardrobe'], ['memories', 'Memories']];
 const INV_OLD115 = new Set(['seeds', 'harvest', 'supplies', 'decor']);
 const INV_EXTRA115 = {};   // tab -> () => html appended by other modules
 const inventory115 = Panels.inventory;
@@ -16165,9 +16206,8 @@ const Inv115 = {
     for (const loc of ownedLocs().filter(l => LOC_DEF[l].kind !== 'outdoor')) groups.push([loc, locName(loc) + ' · ' + Access.where(loc), Gear115.installed().filter(i => i.at === loc)]);
     groups.push(['home', 'Home (computer, bench, camera, storage, watering)', Gear115.installed().filter(i => i.at === 'home')]);
     return `<p class="small muted">What is installed where. Remove sends a piece to Unused gear with its condition; Move takes it straight to another compatible space. You need to be at a grow space to take gear out of it.</p>` + groups.map(([loc, name, list]) => `<h3 style="margin:10px 0 4px">${esc(name)} ${loc !== 'home' ? `<button class="btn sm ghost" data-act="openSpace" data-arg="${loc}">Controls</button>` : ''}</h3>${list.length ? `<div class="g115">${list.map(it => {
-      const here = loc === 'home' || Access.atLoc(loc), moves = Gear115.targets(it).filter(l => l !== loc && l !== 'home' && Gear115.check(it, l).ok);
-      const r = Gear115.canRemove(it);
-      return this.card(it, `<div class="row115"><button class="btn sm" data-act="gearRemove" data-arg="${it.iid}" ${here && r.ok ? '' : 'disabled'} title="${esc(!r.ok ? r.why : here ? '' : 'Walk to the ' + locShort(loc))}">Remove</button>${moves.map(l => `<button class="btn sm ghost" data-act="gearInstall" data-arg="${it.iid}:${l}" ${here && r.ok ? '' : 'disabled'}>Move → ${esc(locShort(l))}</button>`).join('')}</div>${!here ? `<div class="small muted">Walk to the ${esc(locShort(loc))} to change it.</div>` : ''}`);
+      const here = loc === 'home' || Access.atLoc(loc), r = Gear115.canRemove(it);
+      return this.card(it, `<div class="row115"><button class="btn sm" data-act="gearRemove" data-arg="${it.iid}" ${here && r.ok ? '' : 'disabled'} title="${esc(!r.ok ? r.why : here ? '' : 'Walk to the ' + locShort(loc))}">Remove</button>${loc === 'home' ? '' : GearMove115.buttons(it)}</div>${!here ? `<div class="small muted">Walk to the ${esc(locShort(loc))} to change it.</div>` : ''}`);
     }).join('')}</div>` : '<div class="small muted">Nothing installed.</div>'}`).join('') + this.museum();
   },
   museum() { const m = (state.museum || []).filter(x => x.slot !== 'junk'); if (!m.length) return ''; return `<details style="margin-top:10px"><summary class="small muted">Old gear history (before 1.1.5, ${m.length})</summary><div class="small muted">${m.slice(-20).map(x => esc(x.name) + ' · day ' + x.day).join('<br>')}</div><div class="small muted">Older versions threw replaced gear away; that history can't be turned back into items.</div></details>`; },
@@ -16186,6 +16226,47 @@ Object.assign(ACT, {
   gearSell(iid) { const it = Gear115.get(iid); if (!it) return; dialog({ who: 'you', name: 'Hand-Me-Down · sell', text: `${Gear115.name(it)} (${(COND115[it.cond] || COND115.new).n}). Game resale estimate: ${money(Gear115.quote(it))} (${Math.round(RESALE115 * 100)}% of the ${money(EQ[it.slot][it.tier].price)} list price × condition). Listing reserves the item; a buyer picks it up next morning and the money arrives then. You can cancel until then.`, choices: [{ label: `List it for ${money(Gear115.quote(it))}`, fn: () => Gear115.list(iid) }, { label: 'Keep it', fn: () => { } }] }); },
   gearUnlist(iid) { Gear115.unlist(iid); }
 });
+/* Move installed gear straight to another grow space, e.g. starter or 2x2 gear into a new 4x4.
+   An empty spot just takes it; if the other space already has one, the two pieces trade places
+   (when the other piece fits back here, otherwise it goes to Unused gear). You pick gear up at its tent. */
+const GearMove115 = {
+  item(loc, slot) {
+    const L = state.locations[loc]; if (!L || !L.equip[slot]) return null;
+    let it = Gear115.at(loc, slot); if (!it || it.tier !== L.equip[slot]) { Gear115.sync(); it = Gear115.at(loc, slot); }
+    return it;
+  },
+  plan(it, to) {
+    const cur = Gear115.at(to, it.slot), c = Gear115.check(it, to);
+    if (!c.ok) return { ok: false, why: c.why, cur };
+    const r = cur && Gear115.canRemove(cur); if (r && !r.ok) return { ok: false, why: r.why, cur };
+    return { ok: true, cur, back: !!cur && Gear115.check(cur, it.at).ok };
+  },
+  buttons(it) {
+    const from = it.at, here = Access.atLoc(from), r = Gear115.canRemove(it);
+    return Gear115.targets(it).filter(l => l !== from && l !== 'home' && Gear115.check(it, l).ok).map(l => {
+      const p = this.plan(it, l), ok = here && r.ok && p.ok;
+      const label = !p.cur ? `Move → ${esc(locShort(l))}` : p.back ? `Swap ↔ ${esc(locShort(l))}` : `Move → ${esc(locShort(l))} (replaces ${esc(Gear115.name(p.cur))})`;
+      const why = !r.ok ? r.why : !p.ok ? p.why : !here ? `Walk to the ${locShort(from)} to pick it up` : !p.cur ? `The ${locShort(l)} has an open spot` : p.back ? `Trades places with the ${Gear115.name(p.cur)}` : `The ${Gear115.name(p.cur)} doesn't fit the ${locShort(from)}, so it goes to Unused gear`;
+      return `<button class="btn sm ${ok && !p.cur ? 'primary' : 'ghost'}" data-act="gearMove" data-arg="${it.iid}:${l}" ${ok ? '' : 'disabled'} title="${esc(why)}">${label}</button>`;
+    }).join('');
+  },
+  row(slot, loc) {
+    const it = this.item(loc, slot); if (!it) return '';
+    const b = this.buttons(it); if (!b) return '';
+    return `<div class="ctl"><span class="lab">Move</span><span class="row115">${b}</span></div>${Access.atLoc(loc) ? '' : `<div class="small muted">Walk to the ${esc(locShort(loc))} to move this.</div>`}`;
+  },
+  move(iid, to) {
+    const it = Gear115.get(iid); if (!it || !it.at || it.at === 'home') return false;
+    const from = it.at, p = this.plan(it, to); if (!p.ok) { toast(esc(p.why), 'warn'); Sfx.bad(); return false; }
+    if (!Gear115.install(iid, to, { quiet: true, move: true })) return false;
+    const back = p.back && Gear115.install(p.cur.iid, from, { quiet: true, move: true });
+    toast(`<b>${esc(Gear115.name(it))}</b> moved to the ${esc(locShort(to))}.${p.cur ? back ? ` The ${esc(Gear115.name(p.cur))} went to the ${esc(locShort(from))}.` : ` Your ${esc(Gear115.name(p.cur))} went to <b>Unused gear</b>.` : ''}`, 'social');
+    SaveSys.request('gear-move'); return true;
+  }
+};
+ACT.gearMove = arg => { const [iid, to] = String(arg).split(':'), it = Gear115.get(iid); if (!it || !it.at) return; if (!Access.atLoc(it.at)) { Access.denyLoc(it.at); return; } if (GearMove115.move(iid, to)) renderPanel(); };
+const devCtl115 = devCtl;
+devCtl = function (slot, loc) { return devCtl115(slot, loc) + (safeRun('gearMove', () => GearMove115.row(slot, loc)) || ''); };
 /* Hand-Me-Down: Buy | Sell */
 const usedPanel115 = Panels.used;
 Panels.used = function (tab) {
@@ -17305,7 +17386,7 @@ const Packet = {
 };
 drawPacket = function (ctx, cv, lineId, kind) { try { Packet.draw(ctx, cv, lineId, kind); } catch (e) { console.error(e); } };
 /* pollen vials get pictures in Supplies */
-INV_EXTRA115.supplies = () => { const P = state.inv.pollen || []; if (!P.length) return ''; return `<h3 style="margin:12px 0 4px">Pollen vials</h3><div class="g115">${P.map((p, i) => `<div class="card"><canvas class="px" width="40" height="64" data-draw="pollenvial:${i}" style="width:40px;margin:auto"></canvas><h3>${esc(p.name)}</h3><div class="small muted">Pollinate a flowering female from her Care tab.</div></div>`).join('')}</div>`; };
+INV_EXTRA115.supplies = () => ''; // See Inventory → Pollen.
 const hydrate115a = hydrate;
 hydrate = function (root) {
   hydrate115a(root);
@@ -17366,7 +17447,7 @@ Actors.addTo = function (items, c, t, scene) {
 /* ==== 06a_plantdata.js ==== */
 'use strict';
 /* generated by tools/gen/gen_plants.py from catalogs/plant-and-garden-catalog-briefs.json + hand-tuned game balance */
-const GP_DATA = {"plants":[["P001","Lettuce","leafy","rosette",["#7fc04a","#b8e070","#4f8a2c"],"seed","cool",9,"head",4,"ir"],["P002","Spinach","leafy","spoon",["#3f7a2c","#5f9c3a","#2c5a20"],"seed","cool",8,"bunch",4,"ir"],["P003","Arugula","leafy","lobed",["#5f9c3a","#8ac04a","#e9e2d4"],"seed","cool",7,"bunch",4,"ir"],["P004","Swiss chard","leafy","stalks",["#3f7a2c","#e05a3a","#f2c94c"],"seed","cool",10,"bunch",5,"ir"],["P005","Kale","leafy","ruffle",["#2f5a3a","#4f7a5a","#6a9a7a"],"seed","cool",12,"bunch",5,"r"],["P006","Collard greens","leafy","broadleaf",["#3f6a3a","#5f8a5a","#c8d8a0"],"seed","cool",12,"bunch",4,"r"],["P007","Mustard greens","leafy","frill",["#9ac03a","#c8e04a","#6a8a2a"],"seed","cool",8,"bunch",4,"i"],["P008","Mizuna","leafy","fine",["#5fae3a","#8ad05a","#e9e2d4"],"seed","cool",7,"bunch",4,"i"],["P009","Tatsoi","leafy","spoon",["#2c5a2a","#3f7a3a","#e9f2d8"],"seed","cool",8,"head",4,"i"],["P010","Bok choy","leafy","stalks",["#5f9c3a","#e9f2d8","#8ac04a"],"seed","cool",9,"head",4,"i"],["P011","Carrot","root","roottop",["#5fae3a","#f08a2a","#8ad05a"],"seed","cool",14,"bunch",3,"i"],["P012","Beet","root","roundroot",["#3f7a2c","#a82a4a","#c94f6a"],"seed","cool",13,"bunch",4,"i"],["P013","Radish","root","roundroot",["#6fb03a","#e0405a","#f2efe6"],"seed","cool",6,"bunch",3,"i"],["P014","Turnip","root","roundroot",["#5f9c3a","#9a6ab0","#f2efe6"],"seed","cool",12,"root",3,""],["P015","Parsnip","root","roottop",["#7fb04a","#efe4cc","#c8b890"],"seed","cool",18,"root",4,""],["P016","Rutabaga","root","roundroot",["#5f8a5a","#e0b84a","#9a6ab0"],"seed","cool",20,"root",4,""],["P017","Daikon","root","roottop",["#7fc04a","#f2f2ee","#c8d8a0"],"seed","cool",14,"root",4,""],["P018","Onion","root","tube",["#5fae5a","#d8a85a","#8ac07a"],"set","cool",18,"unit",2,""],["P019","Garlic","root","tube",["#7fb07a","#efe8d8","#a8a0c0"],"clove","bulb",24,"unit",3,""],["P020","Shallot","root","tube",["#6fa86a","#c88a6a","#e8c8a8"],"set","cool",18,"bunch",4,""],["P021","Broccoli","cool","crown",["#3f6a4a","#2f6a3a","#5f9c5a"],"starter","cool",16,"head",5,""],["P022","Cauliflower","cool","crown",["#4f7a5a","#f2ead0","#e0d8b8"],"starter","cool",18,"head",6,""],["P023","Cabbage","cool","head",["#7fb07a","#a8d0a0","#5f8a5a"],"starter","cool",20,"head",5,""],["P024","Brussels sprouts","cool","sprouts",["#4f7a5a","#7fb04a","#3f6a3a"],"starter","cool",24,"basket",6,"2"],["P025","Kohlrabi","cool","kohl",["#6fa87a","#a8d0b0","#8a6ab0"],"seed","cool",12,"unit",4,""],["P026","Leek","cool","fan",["#5f8a6a","#e9f2d8","#3f6a4a"],"starter","cool",20,"unit",4,""],["P027","Celery","cool","stalks",["#7fc04a","#c8e0a0","#5f9c3a"],"starter","cool",20,"bunch",4,""],["P028","Garden peas","cool","pods",["#6fb03a","#9ad05a","#f2efe6"],"seed","cool",12,"basket",5,"tr"],["P029","Fava bean","cool","pods",["#5f8a4a","#8ab05a","#efe8d8"],"seed","cool",16,"basket",5,""],["P030","Celeriac","cool","knob",["#5f9c3a","#d8c8a0","#8a7a5a"],"starter","cool",22,"root",5,""],["P031","Tomato","warm","vine",["#3f7a2c","#e0402a","#f2c94c"],"starter","warm",16,"basket",5,"r"],["P032","Bell pepper","warm","bush",["#3f7a2c","#e0402a","#f2c94c"],"starter","warm",16,"unit",3,"r"],["P033","Jalapeno","warm","bush",["#3f7a2c","#3f8a2c","#c94f2a"],"starter","warm",14,"basket",4,"ir"],["P034","Eggplant","warm","bush",["#4f6a4a","#5a2a6a","#7a4a8a"],"starter","warm",18,"unit",4,"r"],["P035","Okra","warm","tallpods",["#4f8a3a","#7fb04a","#f2e8a0"],"seed","warm",16,"basket",5,"r"],["P036","Sweet corn","warm","corn",["#5f9c3a","#f2d25a","#c8a04a"],"seed","warm",20,"unit",2,"2"],["P037","Tomatillo","warm","husk",["#4f8a3a","#c8e070","#8ab04a"],"starter","warm",18,"basket",5,"r"],["P038","Green bean","warm","pods",["#5f9c3a","#7fc04a","#3f7a2c"],"seed","warm",11,"basket",4,"r"],["P039","Soybean","warm","pods",["#5f8a3a","#9ab05a","#c8c070"],"seed","warm",16,"basket",4,""],["P040","Sweet potato","warm","lowvine",["#3f8a3a","#c8603a","#7a3a5a"],"cutting","warm",22,"basket",6,"2"],["P041","Cucumber","vine","cuke",["#3f8a3a","#2f6a2a","#f2d25a"],"seed","warm",14,"unit",2,"tr"],["P042","Zucchini","vine","squash",["#3f7a3a","#2f5a2a","#f2c94c"],"seed","warm",12,"unit",2,"r2"],["P043","Pattypan squash","vine","squash",["#4f8a3a","#f2e8a0","#f2c94c"],"seed","warm",14,"unit",3,"r2"],["P044","Butternut squash","vine","squash",["#4f7a3a","#d8b07a","#f2c94c"],"seed","warm",22,"unit",5,"2"],["P045","Acorn squash","vine","squash",["#4f7a3a","#2a3a2a","#e0a33a"],"seed","warm",20,"unit",5,"2"],["P046","Spaghetti squash","vine","squash",["#4f7a3a","#f2e08a","#f2c94c"],"seed","warm",20,"unit",5,"2"],["P047","Pumpkin","vine","melon",["#4f7a3a","#e0782a","#c8602a"],"seed","warm",24,"unit",18,"2"],["P048","Watermelon","vine","melon",["#4f7a3a","#3f8a3a","#c8e0a0"],"seed","warm",24,"unit",12,"2"],["P049","Cantaloupe","vine","melon",["#4f7a3a","#d8c08a","#a89060"],"seed","warm",22,"unit",8,"2"],["P050","Honeydew","vine","melon",["#4f7a3a","#d8e8b0","#b8d090"],"seed","warm",22,"unit",8,"2"],["P051","Basil","herb","herb",["#4fae3a","#7fd05a","#f2efe6"],"seed","herb",8,"bunch",5,"irc"],["P052","Thai basil","herb","herb",["#3f8a3a","#7a3a8a","#b98ad0"],"seed","herb",9,"bunch",5,"irc"],["P053","Cilantro","herb","lacy",["#5fae3a","#8ad05a","#f2efe6"],"seed","herb",7,"bunch",4,"irc"],["P054","Parsley","herb","curly",["#3f9a3a","#6fc04a","#2f7a2a"],"seed","herb",10,"bunch",4,"ir"],["P055","Dill","herb","umbel",["#7fc04a","#f2d25a","#5f9c3a"],"seed","herb",10,"bunch",4,"irc"],["P056","Chives","herb","tube",["#4f9a4a","#b98ad0","#7a4aa0"],"starter","herb",9,"bunch",4,"irpc"],["P057","Rosemary","herb","needle",["#4f7a5a","#8aa8c0","#b0c8e0"],"starter","herb",14,"bunch",5,"irp"],["P058","Thyme","herb","cushion",["#6f8a5a","#c8a8d8","#9ab08a"],"starter","herb",10,"bunch",5,"irpc"],["P059","Sage","herb","softleaf",["#8aa08a","#a8b8a0","#9a7ac0"],"starter","herb",12,"bunch",5,"irp"],["P060","Oregano","herb","herb",["#5f8a4a","#d8b8e0","#7fa05a"],"starter","herb",10,"bunch",4,"irp"],["P061","Mint","aroma","serrate",["#4fae4a","#7fd06a","#c8a8e0"],"starter","herb",8,"bunch",4,"irpc"],["P062","Lemon balm","aroma","softleaf",["#8ac05a","#c8e070","#f2efe6"],"starter","herb",9,"bunch",4,"irp"],["P063","Tarragon","aroma","narrow",["#5f8a4a","#8ab05a","#e8e0a0"],"starter","herb",12,"bunch",5,"irp"],["P064","Marjoram","aroma","cushion",["#7f9a6a","#e8d0e0","#a8b890"],"seed","herb",10,"bunch",4,"ir"],["P065","Summer savory","aroma","narrow",["#6f8a5a","#e8c8e0","#8aa070"],"seed","herb",9,"bunch",4,"ir"],["P066","Chervil","aroma","lacy",["#8ad05a","#f2efe6","#5fae3a"],"seed","herb",8,"bunch",4,"ir"],["P067","Lemon verbena","aroma","narrow",["#9ad04a","#f2efe6","#c8e070"],"starter","herb",14,"bunch",5,"ip"],["P068","Lemongrass","aroma","grass",["#9ac05a","#c8e080","#6a9a3a"],"starter","warm",16,"bunch",5,"ip"],["P069","Anise hyssop","aroma","spike",["#5f8a4a","#9a6ad0","#c8a8f0"],"starter","herb",14,"stem",4,"pc"],["P070","Chamomile","aroma","daisy",["#8ac05a","#f2f2ee","#f2d25a"],"seed","herb",10,"bunch",5,"irc"],["P071","Strawberry","berry","strawberry",["#3f8a3a","#e0304a","#f2efe6"],"starter","berry",16,"basket",6,"irp"],["P072","Blueberry","berry","berrybush",["#3f6a4a","#3a5ad0","#9ab0e0"],"starter","berry",26,"basket",8,"2p"],["P073","Raspberry","berry","cane",["#4f7a3a","#d0305a","#8a5a3a"],"cane","berry",22,"basket",8,"2p"],["P074","Blackberry","berry","cane",["#3f6a3a","#2a1a3a","#8a5a3a"],"cane","berry",24,"basket",8,"2p"],["P075","Gooseberry","berry","berrybush",["#5f8a4a","#b8d870","#e8f0c0"],"starter","berry",24,"basket",7,"2p"],["P076","Redcurrant","berry","currant",["#4f7a3a","#e0202a","#ff8a8a"],"starter","berry",22,"basket",7,"2p"],["P077","Blackcurrant","berry","currant",["#3f6a3a","#2a1a3a","#5a3a6a"],"starter","berry",22,"basket",7,"2p"],["P078","Grape","berry","grape",["#4f7a3a","#7a3a8a","#a87ac0"],"cutting","berry",28,"basket",9,"2pt"],["P079","Apple","berry","dwarftree",["#4f8a3a","#d0302a","#7a4a2a"],"sapling","berry",30,"basket",5,"2p"],["P080","Pear","berry","dwarftree",["#4f8a3a","#c8c04a","#7a4a2a"],"sapling","berry",30,"basket",5,"2p"],["P081","Peach","berry","dwarftree",["#5f8a3a","#f0a07a","#7a4a2a"],"sapling","berry",30,"basket",6,"2p"],["P082","Fig","berry","fig",["#4f7a3a","#6a3a6a","#8a6a4a"],"cutting","berry",26,"basket",7,"2p"],["P083","Tulip","sbulb","cup",["#5f9c5a","#e0304a","#f2d25a"],"bulb","bulb",18,"stem",6,"i"],["P084","Daffodil","sbulb","trumpet",["#5f9c5a","#f2d25a","#f08a2a"],"bulb","bulb",18,"stem",5,"ip"],["P085","Crocus","sbulb","lowcup",["#5f9c5a","#9a6ad0","#f2d25a"],"bulb","bulb",14,"stem",4,"ip"],["P086","Hyacinth","sbulb","spike",["#5f9c5a","#7a8ae0","#f2efe6"],"bulb","bulb",18,"stem",6,"ip"],["P087","Grape hyacinth","sbulb","beads",["#5f9c5a","#3a4ac0","#8a9ae0"],"bulb","bulb",14,"stem",4,"ip"],["P088","Snowdrop","sbulb","bells",["#5f9c5a","#f2f2ee","#8ad05a"],"bulb","bulb",14,"stem",4,"ip"],["P089","Iris","sbulb","iris",["#5f8a6a","#6a4ac0","#f2d25a"],"bulb","bulb",20,"stem",7,"p"],["P090","Primrose","sbulb","rosettebloom",["#5f9c3a","#f2e05a","#e0405a"],"starter","cool",10,"stem",4,"ip"],["P091","Pansy","sbulb","face",["#4f8a3a","#7a4ac0","#f2d25a"],"starter","cool",9,"stem",3,"i"],["P092","Viola","sbulb","smallflower",["#4f8a3a","#9a6ad0","#f2efe6"],"starter","cool",8,"stem",3,"i"],["P093","Ranunculus","sbulb","layered",["#5f8a4a","#f07a6a","#f2c0a0"],"bulb","bulb",18,"stem",8,"i"],["P094","Anemone","sbulb","cup",["#5f8a4a","#d0304a","#1d1d22"],"bulb","bulb",16,"stem",6,"i"],["P095","Sunflower","sumA","sunflower",["#4f8a3a","#f2c02a","#5a3a1a"],"seed","summer",16,"stem",8,"2c"],["P096","Zinnia","sumA","daisy",["#4f8a3a","#e0405a","#f2a02a"],"seed","summer",12,"stem",5,"c"],["P097","Cosmos","sumA","daisy",["#7fc04a","#f08ac0","#f2d25a"],"seed","summer",12,"stem",4,"c"],["P098","Marigold","sumA","pompom",["#4f7a3a","#f08a1a","#f2c02a"],"seed","summer",10,"stem",3,"ic"],["P099","Petunia","sumA","trumpet",["#4f8a3a","#b03ab0","#f2efe6"],"starter","summer",10,"stem",3,"i"],["P100","Impatiens","sumA","mound",["#4f8a3a","#f05a8a","#f2efe6"],"starter","summer",9,"stem",3,"i"],["P101","Begonia","sumA","begonia",["#7a3a3a","#f0507a","#4f7a3a"],"starter","summer",10,"stem",4,"i"],["P102","Geranium","sumA","cluster",["#4f8a3a","#e0302a","#f2efe6"],"starter","summer",11,"stem",4,"ip"],["P103","Snapdragon","sumA","spike",["#4f8a3a","#f07ab0","#f2d25a"],"seed","summer",14,"stem",5,""],["P104","Sweet pea","sumA","climbflower",["#7fc04a","#c8a0e0","#f0a0c0"],"seed","cool",14,"stem",5,"t"],["P105","Nasturtium","sumB","shieldleaf",["#6fb03a","#f08a2a","#f2d25a"],"seed","summer",10,"stem",4,"ic"],["P106","California poppy","sumB","cup",["#8ab0a0","#f0a02a","#f2d25a"],"seed","summer",10,"stem",4,""],["P107","Bachelor button","sumB","fringe",["#8ab08a","#3a6ae0","#f2efe6"],"seed","summer",11,"stem",4,"c"],["P108","Sweet alyssum","sumB","carpet",["#7fb05a","#f2f2ee","#d8c8f0"],"seed","summer",8,"stem",3,"ic"],["P109","Portulaca","sumB","succflower",["#8ac06a","#f05a8a","#f2d25a"],"starter","summer",8,"stem",3,"i"],["P110","Celosia","sumB","plume",["#4f8a3a","#e0304a","#f2a02a"],"seed","summer",12,"stem",5,""],["P111","Gomphrena","sumB","buttons",["#5f8a4a","#a03ab0","#f2efe6"],"seed","summer",12,"stem",4,""],["P112","Larkspur","sumB","spike",["#7fb05a","#5a6ae0","#f2efe6"],"seed","cool",16,"stem",5,""],["P113","Scabiosa","sumB","pincushion",["#7f9a7a","#b8a0e0","#f2efe6"],"seed","summer",14,"stem",5,""],["P114","Dianthus","sumB","fringe",["#8aa8a0","#f0507a","#f2efe6"],"starter","summer",10,"stem",4,"ip"],["P115","Dahlia","late","dahlia",["#4f7a3a","#d0305a","#f2a0b0"],"bulb","late",18,"stem",12,"2"],["P116","Chrysanthemum","late","pompom",["#4f7a3a","#e0a02a","#f2d25a"],"starter","late",16,"stem",6,"ip"],["P117","Aster","late","daisy",["#5f8a4a","#8a6ae0","#f2d25a"],"starter","late",16,"stem",5,"p"],["P118","Goldenrod","late","plume",["#6f9a3a","#f2c02a","#e0a02a"],"starter","late",16,"stem",4,"pc"],["P119","Japanese anemone","late","cup",["#5f8a4a","#f0c0d0","#f2d25a"],"starter","late",18,"stem",6,"p"],["P120","Helenium","late","daisy",["#5f8a3a","#d8602a","#5a3a1a"],"starter","late",16,"stem",5,"p"],["P121","Rudbeckia","late","daisy",["#5f8a3a","#f2c02a","#3a2a1a"],"seed","late",14,"stem",5,"pc"],["P122","Echinacea","late","cone",["#5f8a3a","#d070a0","#c8602a"],"starter","late",16,"stem",6,"pc"],["P123","Sedum stonecrop","late","sedum",["#8ab08a","#e080a0","#a8c8a0"],"starter","late",14,"stem",4,"ip"],["P124","Tithonia","late","daisy",["#4f7a3a","#f0602a","#f2d25a"],"seed","late",16,"stem",5,"2c"],["P125","Rose","peren","rose",["#3f6a3a","#d0304a","#f2a0b0"],"starter","peren",20,"stem",10,"p"],["P126","Lavender","peren","needle",["#8aa08a","#8a6ad0","#c8b0f0"],"starter","peren",16,"bunch",7,"ipc"],["P127","Peony","peren","layered",["#4f7a3a","#f0a0c0","#f2efe6"],"starter","peren",24,"stem",10,"2p"],["P128","Salvia","peren","spike",["#5f8a4a","#5a3ac0","#a07ae0"],"starter","peren",12,"stem",4,"pc"],["P129","Coreopsis","peren","daisy",["#7fa04a","#f2d02a","#c8602a"],"seed","peren",12,"stem",4,"pc"],["P130","Yarrow","peren","umbel",["#8aa070","#f2efe6","#f0a0b0"],"starter","peren",14,"stem",4,"pc"],["P131","Delphinium","peren","spike",["#5f8a4a","#3a5ae0","#a0b0f0"],"starter","peren",20,"stem",7,"p"],["P132","Lupine","peren","lupine",["#5f8a4a","#d070c0","#f2d25a"],"seed","peren",18,"stem",6,"p"],["P133","Hollyhock","peren","hollyhock",["#5f8a4a","#f0809a","#f2efe6"],"seed","peren",22,"stem",6,"p"],["P134","Columbine","peren","bells",["#7fa08a","#8a6ae0","#f2d25a"],"starter","peren",16,"stem",5,"p"],["P135","Hosta","foli","hosta",["#3f7a5a","#7fb08a","#c8e0b0"],"starter","peren",12,"unit",5,"ip"],["P136","Heuchera","foli","frillfoliage",["#7a3a5a","#a85a7a","#f0a0c0"],"starter","peren",12,"unit",5,"ip"],["P137","Coleus","foli","coleus",["#7a2a4a","#9ad04a","#f0a02a"],"cutting","summer",10,"unit",4,"i"],["P138","Ornamental kale","foli","ruffle",["#5f8a7a","#d070b0","#f2efe6"],"starter","cool",12,"unit",5,"i"],["P139","Dusty miller","foli","silver",["#b8c0c0","#d8e0e0","#9aa0a0"],"starter","summer",10,"unit",3,"i"],["P140","Fern","foli","fern",["#3f8a3a","#6fb05a","#2f6a2a"],"starter","peren",12,"unit",5,"ip"],["P141","Ornamental grass","foli","grass",["#a8b06a","#e8d8a0","#7a8a4a"],"starter","peren",14,"unit",5,"p"],["P142","Succulent rosette","foli","succulent",["#7ab0a0","#a8d8c0","#e080a0"],"cutting","peren",12,"unit",5,"ip"],["P143","Dwarf boxwood","foli","boxwood",["#3f6a3a","#5f8a4a","#2f5a2f"],"starter","peren",18,"unit",7,"p"],["P144","Dwarf heather","foli","heather",["#5f7a5a","#d070a0","#f0a0c0"],"starter","peren",14,"unit",5,"ip"],["P145","Poinsettia","holi","bract",["#3f6a3a","#d0202a","#f2d25a"],"starter","holi",14,"unit",9,"ih"],["P146","Amaryllis","holi","amaryllis",["#4f8a3a","#d0202a","#f2efe6"],"bulb","holi",16,"stem",9,"ih"],["P147","Christmas cactus","holi","cactus",["#4f8a4a","#f0507a","#f2efe6"],"cutting","holi",16,"unit",8,"iph"],["P148","Paperwhite narcissus","holi","paperwhite",["#5f9c5a","#f2f2ee","#f2d25a"],"bulb","holi",12,"stem",5,"ih"],["P149","Cyclamen","holi","cyclamen",["#3f6a4a","#e0407a","#c8d8c8"],"starter","holi",14,"unit",7,"ih"],["P150","Hellebore","holi","bells",["#3f6a4a","#e8d8e0","#a05a8a"],"starter","holi",18,"stem",7,"iph"]],"rare":[["RARE001","Willow Street Stripe","P031","#e0402a,#f2c94c","Alternating gold/red fruit bands; vine illustration","A tomato line kept on Willow Lane for decades, swapped porch to porch."],["RARE002","Lantern Gold","P032","#f2c02a,#e0a02a","Rounded golden peppers and tiny lantern motif","An autumn garden donation from a retired neighbor."],["RARE003","Moonbeam Mini","P047","#f2efe6,#d8d0b0","Small pale pumpkins with curved vine border","Saved from the library's holiday display."],["RARE004","Grandad's Ruby","P012","#8a1a3a,#c03a5a","Deep ruby root and red-veined leaves","A family seed-saving story; donated with a handwritten card."],["RARE005","Copper Ribbon","P004","#c8783a,#e0a05a","Copper-toned stalk illustration and ribbon label","Picked for color in a community plot years ago."],["RARE006","Midnight Ruffle","P005","#3a2a4a,#5a4a7a","Deep purple-green frilled leaf silhouette","A cool-season collector variety."],["RARE007","Violet Kitchen","P051","#7a3a9a,#b98ad0","Violet-accented leaves; kitchen-window motif","Came in during an herb swap."],["RARE008","Peach Lantern","P096","#f0a080,#f0c0b0","Peach/pink layered blooms","A resident's flower project, now shared."],["RARE009","Sunset Button","P098","#f06a2a,#d0302a","Orange/red rim on compact flower heads","Volunteer-grown seed donation."],["RARE010","Willow Blue","P107","#3a5ae0,#f2efe6","Blue disk with white edge accents","Part of the library's local flower collection."],["RARE011","Festival Climber","P105","#f0705a,#f2d25a","Coral/yellow flowers and round climbing leaves","From the town festival seed exchange."],["RARE012","Snowlace","P108","#f8f8f4,#e8e0f0","White flower carpet and lace-like packet border","A community border-planting tradition."]],"trees":[["TREE001","Dwarf apple",45,18,"round","#4f8a3a","#d0302a","#7a4a2a",5,"Fall"],["TREE002","Dwarf pear",55,20,"upright","#5f8a3a","#c8c04a","#6a4a2a",5,"Fall"],["TREE003","Dwarf fig",60,18,"figtree","#4f7a3a","#6a3a6a","#8a7a6a",7,"Summer"],["TREE004","Dwarf peach",70,20,"round","#5f8a3a","#f0a07a","#7a4a2a",6,"Summer"],["TREE005","Dwarf plum",75,22,"round","#4f7a4a","#6a2a6a","#6a3a2a",6,"Summer"],["TREE006","Dwarf lemon",85,22,"citrus","#3f7a3a","#f2e02a","#7a5a3a",6,"Winter"],["TREE007","Dwarf lime",90,22,"citrus","#3f7a3a","#7fc02a","#7a5a3a",6,"Summer"],["TREE008","Dwarf orange",100,24,"citrus","#3f7a3a","#f08a1a","#7a5a3a",6,"Winter"],["TREE009","Dwarf cherry",110,26,"blossom","#4f8a3a","#c0102a","#5a2a2a",7,"Spring"],["TREE010","Pomegranate",125,28,"shrubtree","#5f8a3a","#c0202a","#7a5a3a",8,"Fall"],["TREE011","Compact avocado",190,36,"broad","#3f6a3a","#4a6a2a","#5a4a3a",9,"Spring"],["TREE012","Crape myrtle",65,24,"vase","#4f8a3a","#e070b0","#c8a8a0",0,"Summer"],["TREE013","Eastern redbud",90,28,"heart","#5f8a3a","#d070c0","#3a2a2a",0,"Spring"],["TREE014","Japanese maple",145,32,"maple","#b0302a","#e0602a","#4a2a2a",0,"Fall"],["TREE015","Magnolia",180,40,"magnolia","#3f6a3a","#f2e0e8","#6a5a5a",0,"Spring"],["TREE016","Birch",100,30,"birch","#7fb04a","#f2d25a","#efefe8",0,"Fall"],["TREE017","Compact pine",120,34,"pine","#2f5a3a","#4f7a5a","#6a4a2a",0,""],["TREE018","Jacaranda",220,42,"jacaranda","#5f9a4a","#9a7ae0","#6a5a4a",0,"Spring"],["TREE019","Backyard willow",240,48,"willow","#7fb04a","#a8d070","#6a5a3a",0,""],["TREE020","Oak",300,56,"oak","#4f7a3a","#c8902a","#5a4a2a",0,"Fall"]],"beds":[["BED001","Repurposed garden crate",15,1,14,8,"crate"],["BED002","Small terracotta planter",20,1,10,8,"terracotta"],["BED003","Narrow flower trough",35,2,26,7,"trough"],["BED004","Simple wooden raised bed",50,4,34,12,"wood"],["BED005","Round stone flower bed",70,4,28,16,"stone"],["BED006","Large cedar bed",100,6,46,14,"cedar"],["BED007","Metal raised bed",145,8,52,16,"metal"],["BED008","Corner / L-shaped bed",180,8,44,30,"corner"],["BED009","Trellis planter",90,2,24,8,"trellis"],["BED010","Ornamental barrel planter",45,2,16,12,"barrel"]],"sups":[["SUP001","Hand trowel",12,"tool","Transplant one small garden plant to another bed or slot without losing its growth."],["SUP002","Garden spade",26,"tool","Prepare big planting spaces: needed to plant trees in the backyard."],["SUP003","Weeding hoe",18,"tool","Pull weeds in half the time (community plot and backyard beds)."],["SUP004","Garden rake",16,"tool","Smooth a cleared bed: freshly prepared slots grow 5% faster for their first plant."],["SUP005","Pruning shears",22,"tool","Harvest flowers and fruit trees cleanly: +1 stem or fruit on each harvest of perennials and trees."],["SUP006","Gardening gloves",10,"wear","Wearable gloves: garden chores cost 1 less energy."],["SUP007","Watering can (garden)",15,"tool","Water your backyard beds and tent companion pots by hand."],["SUP008","Seed-starting tray",14,"consumable","Start 6 seeds indoors: the next six garden plantings begin as sturdy starters (one stage ahead)."],["SUP009","Potting mix",9,"consumable","Refresh one bed or pot after harvest: +10% quality for its next plant."],["SUP010","Compost",8,"consumable","Feed a bed or plot: +15% growth for 7 days (organic)."],["SUP011","Mulch",10,"consumable","Spread on a bed or plot: weeds grow half as fast for 14 days."],["SUP012","Balanced garden fertilizer",14,"consumable","Optional feed: +20% growth and +1 harvest quality step for 7 days."],["SUP013","Plant stakes",7,"consumable","Support one tall plant (corn, sunflower, dahlia, delphinium, hollyhock)."],["SUP014","Garden trellis",24,"install","Lets a bed grow climbers (peas, cucumber, sweet pea, grape, nasturtium)."],["SUP015","Hose reel",35,"install","Hose reaches every backyard bed: watering them all takes one action."],["SUP016","Backyard sprinkler",59,"install","Waters your backyard beds every morning (uses the rain barrel if you have one; otherwise the tap)."]]};
+const GP_DATA = {"plants":[["P001","Lettuce","leafy","rosette",["#7fc04a","#b8e070","#4f8a2c"],"seed","cool",9,"head",4,"ir"],["P002","Spinach","leafy","spoon",["#3f7a2c","#5f9c3a","#2c5a20"],"seed","cool",8,"bunch",4,"ir"],["P003","Arugula","leafy","lobed",["#5f9c3a","#8ac04a","#e9e2d4"],"seed","cool",7,"bunch",4,"ir"],["P004","Swiss chard","leafy","stalks",["#3f7a2c","#e05a3a","#f2c94c"],"seed","cool",10,"bunch",5,"ir"],["P005","Kale","leafy","ruffle",["#2f5a3a","#4f7a5a","#6a9a7a"],"seed","cool",12,"bunch",5,"r"],["P006","Collard greens","leafy","broadleaf",["#3f6a3a","#5f8a5a","#c8d8a0"],"seed","cool",12,"bunch",4,"r"],["P007","Mustard greens","leafy","frill",["#9ac03a","#c8e04a","#6a8a2a"],"seed","cool",8,"bunch",4,"i"],["P008","Mizuna","leafy","fine",["#5fae3a","#8ad05a","#e9e2d4"],"seed","cool",7,"bunch",4,"i"],["P009","Tatsoi","leafy","spoon",["#2c5a2a","#3f7a3a","#e9f2d8"],"seed","cool",8,"head",4,"i"],["P010","Bok choy","leafy","stalks",["#5f9c3a","#e9f2d8","#8ac04a"],"seed","cool",9,"head",4,"i"],["P011","Carrot","root","roottop",["#5fae3a","#f08a2a","#8ad05a"],"seed","cool",14,"bunch",3,"i"],["P012","Beet","root","roundroot",["#3f7a2c","#a82a4a","#c94f6a"],"seed","cool",13,"bunch",4,"i"],["P013","Radish","root","roundroot",["#6fb03a","#e0405a","#f2efe6"],"seed","cool",6,"bunch",3,"i"],["P014","Turnip","root","roundroot",["#5f9c3a","#9a6ab0","#f2efe6"],"seed","cool",12,"root",3,""],["P015","Parsnip","root","roottop",["#7fb04a","#efe4cc","#c8b890"],"seed","cool",18,"root",4,""],["P016","Rutabaga","root","roundroot",["#5f8a5a","#e0b84a","#9a6ab0"],"seed","cool",20,"root",4,""],["P017","Daikon","root","roottop",["#7fc04a","#f2f2ee","#c8d8a0"],"seed","cool",14,"root",4,""],["P018","Onion","root","tube",["#5fae5a","#d8a85a","#8ac07a"],"set","cool",18,"unit",2,""],["P019","Garlic","root","tube",["#7fb07a","#efe8d8","#a8a0c0"],"clove","bulb",24,"unit",3,""],["P020","Shallot","root","tube",["#6fa86a","#c88a6a","#e8c8a8"],"set","cool",18,"bunch",4,""],["P021","Broccoli","cool","crown",["#3f6a4a","#2f6a3a","#5f9c5a"],"starter","cool",16,"head",5,""],["P022","Cauliflower","cool","crown",["#4f7a5a","#f2ead0","#e0d8b8"],"starter","cool",18,"head",6,""],["P023","Cabbage","cool","head",["#7fb07a","#a8d0a0","#5f8a5a"],"starter","cool",20,"head",5,""],["P024","Brussels sprouts","cool","sprouts",["#4f7a5a","#7fb04a","#3f6a3a"],"starter","cool",24,"basket",6,"2"],["P025","Kohlrabi","cool","kohl",["#6fa87a","#a8d0b0","#8a6ab0"],"seed","cool",12,"unit",4,""],["P026","Leek","cool","fan",["#5f8a6a","#e9f2d8","#3f6a4a"],"starter","cool",20,"unit",4,""],["P027","Celery","cool","stalks",["#7fc04a","#c8e0a0","#5f9c3a"],"starter","cool",20,"bunch",4,""],["P028","Garden peas","cool","pods",["#6fb03a","#9ad05a","#f2efe6"],"seed","cool",12,"basket",5,"tr"],["P029","Fava bean","cool","pods",["#5f8a4a","#8ab05a","#efe8d8"],"seed","cool",16,"basket",5,""],["P030","Celeriac","cool","knob",["#5f9c3a","#d8c8a0","#8a7a5a"],"starter","cool",22,"root",5,""],["P031","Tomato","warm","vine",["#3f7a2c","#e0402a","#f2c94c"],"starter","warm",16,"basket",5,"r"],["P032","Bell pepper","warm","bush",["#3f7a2c","#e0402a","#f2c94c"],"starter","warm",16,"unit",3,"r"],["P033","Jalapeno","warm","bush",["#3f7a2c","#3f8a2c","#c94f2a"],"starter","warm",14,"basket",4,"ir"],["P034","Eggplant","warm","bush",["#4f6a4a","#5a2a6a","#7a4a8a"],"starter","warm",18,"unit",4,"r"],["P035","Okra","warm","tallpods",["#4f8a3a","#7fb04a","#f2e8a0"],"seed","warm",16,"basket",5,"r"],["P036","Sweet corn","warm","corn",["#5f9c3a","#f2d25a","#c8a04a"],"seed","warm",20,"unit",2,"2"],["P037","Tomatillo","warm","husk",["#4f8a3a","#c8e070","#8ab04a"],"starter","warm",18,"basket",5,"r"],["P038","Green bean","warm","pods",["#5f9c3a","#7fc04a","#3f7a2c"],"seed","warm",11,"basket",4,"r"],["P039","Soybean","warm","pods",["#5f8a3a","#9ab05a","#c8c070"],"seed","warm",16,"basket",4,""],["P040","Sweet potato","warm","lowvine",["#3f8a3a","#c8603a","#7a3a5a"],"cutting","warm",22,"basket",6,"2"],["P041","Cucumber","vine","cuke",["#3f8a3a","#2f6a2a","#f2d25a"],"seed","warm",14,"unit",2,"tr"],["P042","Zucchini","vine","squash",["#3f7a3a","#2f5a2a","#f2c94c"],"seed","warm",12,"unit",2,"r2"],["P043","Pattypan squash","vine","squash",["#4f8a3a","#f2e8a0","#f2c94c"],"seed","warm",14,"unit",3,"r2"],["P044","Butternut squash","vine","squash",["#4f7a3a","#d8b07a","#f2c94c"],"seed","warm",22,"unit",5,"2"],["P045","Acorn squash","vine","squash",["#4f7a3a","#2a3a2a","#e0a33a"],"seed","warm",20,"unit",5,"2"],["P046","Spaghetti squash","vine","squash",["#4f7a3a","#f2e08a","#f2c94c"],"seed","warm",20,"unit",5,"2"],["P047","Pumpkin","vine","melon",["#4f7a3a","#e0782a","#c8602a"],"seed","warm",24,"unit",18,"2"],["P048","Watermelon","vine","melon",["#4f7a3a","#3f8a3a","#c8e0a0"],"seed","warm",24,"unit",12,"2"],["P049","Cantaloupe","vine","melon",["#4f7a3a","#d8c08a","#a89060"],"seed","warm",22,"unit",8,"2"],["P050","Honeydew","vine","melon",["#4f7a3a","#d8e8b0","#b8d090"],"seed","warm",22,"unit",8,"2"],["P051","Basil","herb","herb",["#4fae3a","#7fd05a","#f2efe6"],"seed","herb",8,"bunch",5,"irc"],["P052","Thai basil","herb","herb",["#3f8a3a","#7a3a8a","#b98ad0"],"seed","herb",9,"bunch",5,"irc"],["P053","Cilantro","herb","lacy",["#5fae3a","#8ad05a","#f2efe6"],"seed","herb",7,"bunch",4,"irc"],["P054","Parsley","herb","curly",["#3f9a3a","#6fc04a","#2f7a2a"],"seed","herb",10,"bunch",4,"ir"],["P055","Dill","herb","umbel",["#7fc04a","#f2d25a","#5f9c3a"],"seed","herb",10,"bunch",4,"irc"],["P056","Chives","herb","tube",["#4f9a4a","#b98ad0","#7a4aa0"],"starter","herb",9,"bunch",4,"irpc"],["P057","Rosemary","herb","needle",["#4f7a5a","#8aa8c0","#b0c8e0"],"starter","herb",14,"bunch",5,"irpc"],["P058","Thyme","herb","cushion",["#6f8a5a","#c8a8d8","#9ab08a"],"starter","herb",10,"bunch",5,"irpc"],["P059","Sage","herb","softleaf",["#8aa08a","#a8b8a0","#9a7ac0"],"starter","herb",12,"bunch",5,"irp"],["P060","Oregano","herb","herb",["#5f8a4a","#d8b8e0","#7fa05a"],"starter","herb",10,"bunch",4,"irp"],["P061","Mint","aroma","serrate",["#4fae4a","#7fd06a","#c8a8e0"],"starter","herb",8,"bunch",4,"irpc"],["P062","Lemon balm","aroma","softleaf",["#8ac05a","#c8e070","#f2efe6"],"starter","herb",9,"bunch",4,"irpc"],["P063","Tarragon","aroma","narrow",["#5f8a4a","#8ab05a","#e8e0a0"],"starter","herb",12,"bunch",5,"irp"],["P064","Marjoram","aroma","cushion",["#7f9a6a","#e8d0e0","#a8b890"],"seed","herb",10,"bunch",4,"ir"],["P065","Summer savory","aroma","narrow",["#6f8a5a","#e8c8e0","#8aa070"],"seed","herb",9,"bunch",4,"ir"],["P066","Chervil","aroma","lacy",["#8ad05a","#f2efe6","#5fae3a"],"seed","herb",8,"bunch",4,"ir"],["P067","Lemon verbena","aroma","narrow",["#9ad04a","#f2efe6","#c8e070"],"starter","herb",14,"bunch",5,"ip"],["P068","Lemongrass","aroma","grass",["#9ac05a","#c8e080","#6a9a3a"],"starter","warm",16,"bunch",5,"ip"],["P069","Anise hyssop","aroma","spike",["#5f8a4a","#9a6ad0","#c8a8f0"],"starter","herb",14,"stem",4,"pc"],["P070","Chamomile","aroma","daisy",["#8ac05a","#f2f2ee","#f2d25a"],"seed","herb",10,"bunch",5,"irc"],["P071","Strawberry","berry","strawberry",["#3f8a3a","#e0304a","#f2efe6"],"starter","berry",16,"basket",6,"irp"],["P072","Blueberry","berry","berrybush",["#3f6a4a","#3a5ad0","#9ab0e0"],"starter","berry",26,"basket",8,"2p"],["P073","Raspberry","berry","cane",["#4f7a3a","#d0305a","#8a5a3a"],"cane","berry",22,"basket",8,"2p"],["P074","Blackberry","berry","cane",["#3f6a3a","#2a1a3a","#8a5a3a"],"cane","berry",24,"basket",8,"2p"],["P075","Gooseberry","berry","berrybush",["#5f8a4a","#b8d870","#e8f0c0"],"starter","berry",24,"basket",7,"2p"],["P076","Redcurrant","berry","currant",["#4f7a3a","#e0202a","#ff8a8a"],"starter","berry",22,"basket",7,"2p"],["P077","Blackcurrant","berry","currant",["#3f6a3a","#2a1a3a","#5a3a6a"],"starter","berry",22,"basket",7,"2p"],["P078","Grape","berry","grape",["#4f7a3a","#7a3a8a","#a87ac0"],"cutting","berry",28,"basket",9,"2pt"],["P079","Apple","berry","dwarftree",["#4f8a3a","#d0302a","#7a4a2a"],"sapling","berry",30,"basket",5,"2p"],["P080","Pear","berry","dwarftree",["#4f8a3a","#c8c04a","#7a4a2a"],"sapling","berry",30,"basket",5,"2p"],["P081","Peach","berry","dwarftree",["#5f8a3a","#f0a07a","#7a4a2a"],"sapling","berry",30,"basket",6,"2p"],["P082","Fig","berry","fig",["#4f7a3a","#6a3a6a","#8a6a4a"],"cutting","berry",26,"basket",7,"2p"],["P083","Tulip","sbulb","cup",["#5f9c5a","#e0304a","#f2d25a"],"bulb","bulb",18,"stem",6,"i"],["P084","Daffodil","sbulb","trumpet",["#5f9c5a","#f2d25a","#f08a2a"],"bulb","bulb",18,"stem",5,"ip"],["P085","Crocus","sbulb","lowcup",["#5f9c5a","#9a6ad0","#f2d25a"],"bulb","bulb",14,"stem",4,"ip"],["P086","Hyacinth","sbulb","spike",["#5f9c5a","#7a8ae0","#f2efe6"],"bulb","bulb",18,"stem",6,"ip"],["P087","Grape hyacinth","sbulb","beads",["#5f9c5a","#3a4ac0","#8a9ae0"],"bulb","bulb",14,"stem",4,"ip"],["P088","Snowdrop","sbulb","bells",["#5f9c5a","#f2f2ee","#8ad05a"],"bulb","bulb",14,"stem",4,"ip"],["P089","Iris","sbulb","iris",["#5f8a6a","#6a4ac0","#f2d25a"],"bulb","bulb",20,"stem",7,"p"],["P090","Primrose","sbulb","rosettebloom",["#5f9c3a","#f2e05a","#e0405a"],"starter","cool",10,"stem",4,"ip"],["P091","Pansy","sbulb","face",["#4f8a3a","#7a4ac0","#f2d25a"],"starter","cool",9,"stem",3,"i"],["P092","Viola","sbulb","smallflower",["#4f8a3a","#9a6ad0","#f2efe6"],"starter","cool",8,"stem",3,"i"],["P093","Ranunculus","sbulb","layered",["#5f8a4a","#f07a6a","#f2c0a0"],"bulb","bulb",18,"stem",8,"i"],["P094","Anemone","sbulb","cup",["#5f8a4a","#d0304a","#1d1d22"],"bulb","bulb",16,"stem",6,"i"],["P095","Sunflower","sumA","sunflower",["#4f8a3a","#f2c02a","#5a3a1a"],"seed","summer",16,"stem",8,"2c"],["P096","Zinnia","sumA","daisy",["#4f8a3a","#e0405a","#f2a02a"],"seed","summer",12,"stem",5,"c"],["P097","Cosmos","sumA","daisy",["#7fc04a","#f08ac0","#f2d25a"],"seed","summer",12,"stem",4,"c"],["P098","Marigold","sumA","pompom",["#4f7a3a","#f08a1a","#f2c02a"],"seed","summer",10,"stem",3,"ic"],["P099","Petunia","sumA","trumpet",["#4f8a3a","#b03ab0","#f2efe6"],"starter","summer",10,"stem",3,"i"],["P100","Impatiens","sumA","mound",["#4f8a3a","#f05a8a","#f2efe6"],"starter","summer",9,"stem",3,"i"],["P101","Begonia","sumA","begonia",["#7a3a3a","#f0507a","#4f7a3a"],"starter","summer",10,"stem",4,"i"],["P102","Geranium","sumA","cluster",["#4f8a3a","#e0302a","#f2efe6"],"starter","summer",11,"stem",4,"ip"],["P103","Snapdragon","sumA","spike",["#4f8a3a","#f07ab0","#f2d25a"],"seed","summer",14,"stem",5,""],["P104","Sweet pea","sumA","climbflower",["#7fc04a","#c8a0e0","#f0a0c0"],"seed","cool",14,"stem",5,"t"],["P105","Nasturtium","sumB","shieldleaf",["#6fb03a","#f08a2a","#f2d25a"],"seed","summer",10,"stem",4,"ic"],["P106","California poppy","sumB","cup",["#8ab0a0","#f0a02a","#f2d25a"],"seed","summer",10,"stem",4,""],["P107","Bachelor button","sumB","fringe",["#8ab08a","#3a6ae0","#f2efe6"],"seed","summer",11,"stem",4,"c"],["P108","Sweet alyssum","sumB","carpet",["#7fb05a","#f2f2ee","#d8c8f0"],"seed","summer",8,"stem",3,"ic"],["P109","Portulaca","sumB","succflower",["#8ac06a","#f05a8a","#f2d25a"],"starter","summer",8,"stem",3,"i"],["P110","Celosia","sumB","plume",["#4f8a3a","#e0304a","#f2a02a"],"seed","summer",12,"stem",5,""],["P111","Gomphrena","sumB","buttons",["#5f8a4a","#a03ab0","#f2efe6"],"seed","summer",12,"stem",4,""],["P112","Larkspur","sumB","spike",["#7fb05a","#5a6ae0","#f2efe6"],"seed","cool",16,"stem",5,""],["P113","Scabiosa","sumB","pincushion",["#7f9a7a","#b8a0e0","#f2efe6"],"seed","summer",14,"stem",5,""],["P114","Dianthus","sumB","fringe",["#8aa8a0","#f0507a","#f2efe6"],"starter","summer",10,"stem",4,"ip"],["P115","Dahlia","late","dahlia",["#4f7a3a","#d0305a","#f2a0b0"],"bulb","late",18,"stem",12,"2"],["P116","Chrysanthemum","late","pompom",["#4f7a3a","#e0a02a","#f2d25a"],"starter","late",16,"stem",6,"ip"],["P117","Aster","late","daisy",["#5f8a4a","#8a6ae0","#f2d25a"],"starter","late",16,"stem",5,"p"],["P118","Goldenrod","late","plume",["#6f9a3a","#f2c02a","#e0a02a"],"starter","late",16,"stem",4,"pc"],["P119","Japanese anemone","late","cup",["#5f8a4a","#f0c0d0","#f2d25a"],"starter","late",18,"stem",6,"p"],["P120","Helenium","late","daisy",["#5f8a3a","#d8602a","#5a3a1a"],"starter","late",16,"stem",5,"p"],["P121","Rudbeckia","late","daisy",["#5f8a3a","#f2c02a","#3a2a1a"],"seed","late",14,"stem",5,"pc"],["P122","Echinacea","late","cone",["#5f8a3a","#d070a0","#c8602a"],"starter","late",16,"stem",6,"pc"],["P123","Sedum stonecrop","late","sedum",["#8ab08a","#e080a0","#a8c8a0"],"starter","late",14,"stem",4,"ip"],["P124","Tithonia","late","daisy",["#4f7a3a","#f0602a","#f2d25a"],"seed","late",16,"stem",5,"2c"],["P125","Rose","peren","rose",["#3f6a3a","#d0304a","#f2a0b0"],"starter","peren",20,"stem",10,"pc"],["P126","Lavender","peren","needle",["#8aa08a","#8a6ad0","#c8b0f0"],"starter","peren",16,"bunch",7,"ipc"],["P127","Peony","peren","layered",["#4f7a3a","#f0a0c0","#f2efe6"],"starter","peren",24,"stem",10,"2p"],["P128","Salvia","peren","spike",["#5f8a4a","#5a3ac0","#a07ae0"],"starter","peren",12,"stem",4,"pc"],["P129","Coreopsis","peren","daisy",["#7fa04a","#f2d02a","#c8602a"],"seed","peren",12,"stem",4,"pc"],["P130","Yarrow","peren","umbel",["#8aa070","#f2efe6","#f0a0b0"],"starter","peren",14,"stem",4,"pc"],["P131","Delphinium","peren","spike",["#5f8a4a","#3a5ae0","#a0b0f0"],"starter","peren",20,"stem",7,"p"],["P132","Lupine","peren","lupine",["#5f8a4a","#d070c0","#f2d25a"],"seed","peren",18,"stem",6,"p"],["P133","Hollyhock","peren","hollyhock",["#5f8a4a","#f0809a","#f2efe6"],"seed","peren",22,"stem",6,"p"],["P134","Columbine","peren","bells",["#7fa08a","#8a6ae0","#f2d25a"],"starter","peren",16,"stem",5,"p"],["P135","Hosta","foli","hosta",["#3f7a5a","#7fb08a","#c8e0b0"],"starter","peren",12,"unit",5,"ip"],["P136","Heuchera","foli","frillfoliage",["#7a3a5a","#a85a7a","#f0a0c0"],"starter","peren",12,"unit",5,"ip"],["P137","Coleus","foli","coleus",["#7a2a4a","#9ad04a","#f0a02a"],"cutting","summer",10,"unit",4,"i"],["P138","Ornamental kale","foli","ruffle",["#5f8a7a","#d070b0","#f2efe6"],"starter","cool",12,"unit",5,"i"],["P139","Dusty miller","foli","silver",["#b8c0c0","#d8e0e0","#9aa0a0"],"starter","summer",10,"unit",3,"i"],["P140","Fern","foli","fern",["#3f8a3a","#6fb05a","#2f6a2a"],"starter","peren",12,"unit",5,"ip"],["P141","Ornamental grass","foli","grass",["#a8b06a","#e8d8a0","#7a8a4a"],"starter","peren",14,"unit",5,"p"],["P142","Succulent rosette","foli","succulent",["#7ab0a0","#a8d8c0","#e080a0"],"cutting","peren",12,"unit",5,"ip"],["P143","Dwarf boxwood","foli","boxwood",["#3f6a3a","#5f8a4a","#2f5a2f"],"starter","peren",18,"unit",7,"p"],["P144","Dwarf heather","foli","heather",["#5f7a5a","#d070a0","#f0a0c0"],"starter","peren",14,"unit",5,"ip"],["P145","Poinsettia","holi","bract",["#3f6a3a","#d0202a","#f2d25a"],"starter","holi",14,"unit",9,"ih"],["P146","Amaryllis","holi","amaryllis",["#4f8a3a","#d0202a","#f2efe6"],"bulb","holi",16,"stem",9,"ih"],["P147","Christmas cactus","holi","cactus",["#4f8a4a","#f0507a","#f2efe6"],"cutting","holi",16,"unit",8,"iph"],["P148","Paperwhite narcissus","holi","paperwhite",["#5f9c5a","#f2f2ee","#f2d25a"],"bulb","holi",12,"stem",5,"ih"],["P149","Cyclamen","holi","cyclamen",["#3f6a4a","#e0407a","#c8d8c8"],"starter","holi",14,"unit",7,"ih"],["P150","Hellebore","holi","bells",["#3f6a4a","#e8d8e0","#a05a8a"],"starter","holi",18,"stem",7,"iph"]],"rare":[["RARE001","Willow Street Stripe","P031","#e0402a,#f2c94c","Alternating gold/red fruit bands; vine illustration","A tomato line kept on Willow Lane for decades, swapped porch to porch."],["RARE002","Lantern Gold","P032","#f2c02a,#e0a02a","Rounded golden peppers and tiny lantern motif","An autumn garden donation from a retired neighbor."],["RARE003","Moonbeam Mini","P047","#f2efe6,#d8d0b0","Small pale pumpkins with curved vine border","Saved from the library's holiday display."],["RARE004","Grandad's Ruby","P012","#8a1a3a,#c03a5a","Deep ruby root and red-veined leaves","A family seed-saving story; donated with a handwritten card."],["RARE005","Copper Ribbon","P004","#c8783a,#e0a05a","Copper-toned stalk illustration and ribbon label","Picked for color in a community plot years ago."],["RARE006","Midnight Ruffle","P005","#3a2a4a,#5a4a7a","Deep purple-green frilled leaf silhouette","A cool-season collector variety."],["RARE007","Violet Kitchen","P051","#7a3a9a,#b98ad0","Violet-accented leaves; kitchen-window motif","Came in during an herb swap."],["RARE008","Peach Lantern","P096","#f0a080,#f0c0b0","Peach/pink layered blooms","A resident's flower project, now shared."],["RARE009","Sunset Button","P098","#f06a2a,#d0302a","Orange/red rim on compact flower heads","Volunteer-grown seed donation."],["RARE010","Willow Blue","P107","#3a5ae0,#f2efe6","Blue disk with white edge accents","Part of the library's local flower collection."],["RARE011","Festival Climber","P105","#f0705a,#f2d25a","Coral/yellow flowers and round climbing leaves","From the town festival seed exchange."],["RARE012","Snowlace","P108","#f8f8f4,#e8e0f0","White flower carpet and lace-like packet border","A community border-planting tradition."]],"trees":[["TREE001","Dwarf apple",45,18,"round","#4f8a3a","#d0302a","#7a4a2a",5,"Fall"],["TREE002","Dwarf pear",55,20,"upright","#5f8a3a","#c8c04a","#6a4a2a",5,"Fall"],["TREE003","Dwarf fig",60,18,"figtree","#4f7a3a","#6a3a6a","#8a7a6a",7,"Summer"],["TREE004","Dwarf peach",70,20,"round","#5f8a3a","#f0a07a","#7a4a2a",6,"Summer"],["TREE005","Dwarf plum",75,22,"round","#4f7a4a","#6a2a6a","#6a3a2a",6,"Summer"],["TREE006","Dwarf lemon",85,22,"citrus","#3f7a3a","#f2e02a","#7a5a3a",6,"Winter"],["TREE007","Dwarf lime",90,22,"citrus","#3f7a3a","#7fc02a","#7a5a3a",6,"Summer"],["TREE008","Dwarf orange",100,24,"citrus","#3f7a3a","#f08a1a","#7a5a3a",6,"Winter"],["TREE009","Dwarf cherry",110,26,"blossom","#4f8a3a","#c0102a","#5a2a2a",7,"Spring"],["TREE010","Pomegranate",125,28,"shrubtree","#5f8a3a","#c0202a","#7a5a3a",8,"Fall"],["TREE011","Compact avocado",190,36,"broad","#3f6a3a","#4a6a2a","#5a4a3a",9,"Spring"],["TREE012","Crape myrtle",65,24,"vase","#4f8a3a","#e070b0","#c8a8a0",0,"Summer"],["TREE013","Eastern redbud",90,28,"heart","#5f8a3a","#d070c0","#3a2a2a",0,"Spring"],["TREE014","Japanese maple",145,32,"maple","#b0302a","#e0602a","#4a2a2a",0,"Fall"],["TREE015","Magnolia",180,40,"magnolia","#3f6a3a","#f2e0e8","#6a5a5a",0,"Spring"],["TREE016","Birch",100,30,"birch","#7fb04a","#f2d25a","#efefe8",0,"Fall"],["TREE017","Compact pine",120,34,"pine","#2f5a3a","#4f7a5a","#6a4a2a",0,""],["TREE018","Jacaranda",220,42,"jacaranda","#5f9a4a","#9a7ae0","#6a5a4a",0,"Spring"],["TREE019","Backyard willow",240,48,"willow","#7fb04a","#a8d070","#6a5a3a",0,""],["TREE020","Oak",300,56,"oak","#4f7a3a","#c8902a","#5a4a2a",0,"Fall"]],"beds":[["BED001","Repurposed garden crate",15,1,14,8,"crate"],["BED002","Small terracotta planter",20,1,10,8,"terracotta"],["BED003","Narrow flower trough",35,2,26,7,"trough"],["BED004","Simple wooden raised bed",50,4,34,12,"wood"],["BED005","Round stone flower bed",70,4,28,16,"stone"],["BED006","Large cedar bed",100,6,46,14,"cedar"],["BED007","Metal raised bed",145,8,52,16,"metal"],["BED008","Corner / L-shaped bed",180,8,44,30,"corner"],["BED009","Trellis planter",90,2,24,8,"trellis"],["BED010","Ornamental barrel planter",45,2,16,12,"barrel"]],"sups":[["SUP001","Hand trowel",12,"tool","Transplant one small garden plant to another bed or slot without losing its growth."],["SUP002","Garden spade",26,"tool","Prepare big planting spaces: needed to plant trees in the backyard."],["SUP003","Weeding hoe",18,"tool","Pull weeds in half the time (community plot and backyard beds)."],["SUP004","Garden rake",16,"tool","Smooth a cleared bed: freshly prepared slots grow 5% faster for their first plant."],["SUP005","Pruning shears",22,"tool","Harvest flowers and fruit trees cleanly: +1 stem or fruit on each harvest of perennials and trees."],["SUP006","Gardening gloves",10,"wear","Wearable gloves: garden chores cost 1 less energy."],["SUP007","Watering can (garden)",15,"tool","Water your backyard beds and tent companion pots by hand."],["SUP008","Seed-starting tray",14,"consumable","Start 6 seeds indoors: the next six garden plantings begin as sturdy starters (one stage ahead)."],["SUP009","Potting mix",9,"consumable","Refresh one bed or pot after harvest: +10% quality for its next plant."],["SUP010","Compost",8,"consumable","Feed a bed or plot: +15% growth for 7 days (organic)."],["SUP011","Mulch",10,"consumable","Spread on a bed or plot: weeds grow half as fast for 14 days."],["SUP012","Balanced garden fertilizer",14,"consumable","Optional feed: +20% growth and +1 harvest quality step for 7 days."],["SUP013","Plant stakes",7,"consumable","Support one tall plant (corn, sunflower, dahlia, delphinium, hollyhock)."],["SUP014","Garden trellis",24,"install","Lets a bed grow climbers (peas, cucumber, sweet pea, grape, nasturtium)."],["SUP015","Hose reel",35,"install","Hose reaches every backyard bed: watering them all takes one action."],["SUP016","Backyard sprinkler",59,"install","Waters your backyard beds every morning (uses the rain barrel if you have one; otherwise the tap)."]]};
 
 </script>
 <script>
@@ -18208,9 +18289,12 @@ const Companion = {
     if (loc === 'tent2') return [T2_BOX[0] + T2_BOX[2] + 4 + i * 9, T2_BOX[1] + T2_BOX[3] + 2];
     const g = TentArt.geo[loc]; if (!g) return null; return [g.x + g.w - 10 - i * 10, g.y + g.h + 6];
   },
-  live(loc) { return (GP.pots()[loc] || []).map(g => g && GP.plant(g)).filter(p => p && GP.stageOf(p) >= 2 && GP.has(GP.sp(p.sp), 'c')); },
+  live(loc) {
+    const ids = new Set([...(GP.pots()[loc] || []), ...((state.v115?.mpots || {})[loc] || [])]);
+    return [...ids].map(g => g && GP.plant(g)).filter(p => p && p.at.ref === loc && ['pot', 'slot'].includes(p.at.kind) && GP.stageOf(p) >= 2 && GP.has(GP.sp(p.sp), 'c'));
+  },
   indoorBonus(loc, p) {
-    const L = this.live(loc); if (!L.length) return 0; const theme = COMP_THEME[p ? ((typeof PlantTraits115 !== 'undefined' ? PlantTraits115.for(p) : GEN(p.lineId)).breeder ? p.lineId : p.lineId) : ''] || [];
+    const L = this.live(loc); if (!L.length) return 0; const theme = COMP_THEME[p?.lineId] || [];
     let b = 0; for (const c of L) { b += .015; if (theme.includes(c.sp)) b += .015; } return Math.min(.05, b);
   },
   outdoorBonus(p) {
@@ -18231,11 +18315,11 @@ const Companion = {
   setupItems(loc, add) {
     const pots = GP.pots()[loc]; if (!pots) return;
     const live = this.live(loc), ps = plantsIn(loc).filter(p => p.stage < S.drying), b = ps.length ? Math.max(...ps.map(p => this.indoorBonus(loc, p))) : (live.length ? Math.min(.05, live.length * .015) : 0);
-    add(live.length ? 'ok' : 'optional', 'comp', 'Companion pots', live.length ? `${live.length} companion${live.length > 1 ? 's' : ''} growing: −${(b * 20).toFixed(1)} stress/day for the plants here (game pairing bonus, max 5%).` : `${pots.length} small pot${pots.length > 1 ? 's' : ''} by the tent for indoor herbs/flowers (basil, thyme, chamomile, marigold…). A modest game bonus; growing solo is perfectly fine.`, { comp: true });
+    add(live.length ? 'ok' : 'optional', 'comp', 'Companion plants', live.length ? `${live.length} companion${live.length > 1 ? 's' : ''} growing in small or full-size pots: −${(b * 20).toFixed(1)} stress/day for the plants here (game pairing bonus, max 5%). This does not treat pests.` : `${pots.length} small pot${pots.length > 1 ? 's' : ''} by the tent for indoor herbs/flowers (basil, thyme, chamomile, marigold…). Companions in full-size grow pots count too once Growing (stage 2). They reduce stress, not pests.`, { comp: true });
   },
   potFooter(loc) {
     const ps = plantsIn(loc).filter(p => p.stage < S.drying), live = this.live(loc);
-    return `<div class="card" style="margin-top:8px"><h3>Companion effect</h3><div class="small">${live.length ? ps.map(p => { const b = this.indoorBonus(loc, p), th = (COMP_THEME[p.lineId] || []).map(id => GP.sp(id).name); return `${esc(p.name)}: pairing ${(b * 100).toFixed(1)}% → −${(b * 20).toFixed(1)} stress/day${th.length ? ` (themed partners: ${esc(th.join(', '))})` : ''}`; }).join('<br>') || 'No cannabis plants in this tent right now.' : 'No companion plants growing yet (stage 2+ companion species count).'}</div><div class="small muted">Fictional game balance: capped at 5% per tent, explained here, never a substitute for light, water or airflow. Indoor companions don't bring in outdoor insects.</div></div>`;
+    return `<div class="card" style="margin-top:8px"><h3>Companion effect</h3><div class="small">${live.length ? ps.map(p => { const b = this.indoorBonus(loc, p), th = (COMP_THEME[p.lineId] || []).map(id => GP.sp(id).name); return `${esc(p.name)}: pairing ${(b * 100).toFixed(1)}% → −${(b * 20).toFixed(1)} stress/day${th.length ? ` (themed partners: ${esc(th.join(', '))})` : ''}`; }).join('<br>') || 'No cannabis plants in this tent right now.' : 'No companion plants growing yet (stage 2+ companion species in small or full-size grow pots count).'}</div><div class="small muted">Companion plants work automatically once Growing. Fictional game balance: capped at 1 stress point/day per plant. Indoor companions do not treat pests. For thrips or spider mites, inspect the affected plant, then use Care → Release beneficial mites with a purchased sachet.</div></div>`;
   },
   draw(c, loc, t) {
     const pots = GP.pots()[loc]; if (!pots || !locOwned(loc)) return;
@@ -19043,7 +19127,7 @@ const CastBook = {
   html() {
     const rows = CAST_IDS.filter(id => Cast115.rel(id).met).map(id => { const D = CAST_DEF[id], R0 = Cast115.rel(id), w = Cast115.at(id); return `<div class="li"><canvas class="mini" width="32" height="32" data-draw="portrait:c_${id}"></canvas><div class="grow"><b>${esc(D.name)}</b> <span class="small muted">${esc(D.role)}</span><div class="small">${'♥'.repeat(Math.floor(R0.friend / 2))}${'♡'.repeat(5 - Math.floor(R0.friend / 2))} · ${R0.hist}/3 stories${R0.gift ? ' · keepsake ✓' : ''}</div><div class="small muted">Right now: ${w.phase === 'there' ? esc(CAST_PLACE[w.at] || w.at) : 'on the way somewhere'} · Likes ${esc(D.plants)}</div></div></div>`; });
     const unmet = CAST_IDS.filter(id => !Cast115.rel(id).met).length;
-    return `<h3>West side & visitors</h3>${rows.length ? `<div class="list115">${rows.join('')}</div>` : UI115.empty('Walk west through Willow Park to Westbrook Way to meet new neighbors.')}${unmet ? `<p class="small muted">${unmet} more people to meet.</p>` : ''}`;
+    return `<h3>West side & visitors</h3>${rows.length ? `<div class="list115">${rows.join('')}</div>` : UI115.empty(SHELVED.westbrook?'Westbrook Way residents pass through Willow Park, the community garden and Main Street. Say hello when you see them.':'Walk west through Willow Park to Westbrook Way to meet new neighbors.')}${unmet ? `<p class="small muted">${unmet} more people to meet.</p>` : ''}`;
   }
 };
 INIT115.push((st) => { st.v115 = st.v115 || {}; st.v115.cast = st.v115.cast || {}; });
@@ -21869,6 +21953,33 @@ ACT.sow=(prev=>function(arg){
   }
 })(ACT.sow);
 doCare=(prev=>function(action){const p=curPlant();if(action==='cut'&&p){p.pheno.genome115=SeedLots115.copy(Individual115.ensure(p));}return prev(action);})(doCare);
+/* clones share their mother's sex: once any plant of a phenotype shows preflowers,
+   its stored cuttings and living clones are known to be the same sex */
+const CloneSex115={
+  sync(){
+    if(!state)return;const known={};
+    // only mothers (cut from) and clones (grown from a cutting): seed siblings can share a lot but not a sex
+    const line=p=>(p.cutting||p.clone)&&p.pheno&&p.pheno.pid;
+    for(const p of allPlants())if(p.sexKnown&&line(p))known[p.pheno.pid]=p.sex;
+    for(const s of state.inv.seeds)if(s.kind==='cutting'&&s.pheno&&s.pheno.pid&&s.pheno.sexKnown)known[s.pheno.pid]=known[s.pheno.pid]||s.pheno.sex;
+    for(const s of state.inv.seeds){const sx=s.kind==='cutting'&&s.pheno&&known[s.pheno.pid];if(sx){s.pheno.sex=sx;s.pheno.sexKnown=true;}}
+    for(const p of allPlants()){const sx=line(p)&&known[p.pheno.pid];if(sx&&!p.sexKnown){p.sex=sx;p.sexKnown=true;invalidate(p);}}
+  }
+};
+revealSex=(prev=>function(p){const r=prev.apply(this,arguments);CloneSex115.sync();return r;})(revealSex);
+doCare=(prev=>function(action){const r=prev(action);if(action==='cut')CloneSex115.sync();return r;})(doCare);
+POSTLOAD115.push(()=>CloneSex115.sync());
+/* players can give any plant its own name; a chosen name is never replaced by a cross rename */
+Panels.renamePlant=function(pid){const p=state.plants[pid];if(!p)return;runtime.renamePid=pid;openPanel('Rename plant',()=>`<label class="field" for="plantName">Plant name<input id="plantName" type="text" maxlength="30" value="${esc(p.name)}"></label><div class="actions"><button class="btn primary" data-act="savePlantName">Save name</button><button class="btn" data-act="openPlant" data-arg="${p.id}">Cancel</button></div>`);};
+Object.assign(ACT,{
+  renamePlant(pid){Panels.renamePlant(pid);},
+  savePlantName(){const p=state.plants[runtime.renamePid];if(!p)return closePanel();const v=(($('#plantName')||{}).value||'').replace(/[<>&"]/g,'').replace(/\s+/g,' ').trim().slice(0,30);
+    if(v&&v!==p.name){p.name=v;p.customName115=true;invalidate(p);toast(`Plant renamed <b>${esc(v)}</b>.`,'social');SaveSys.request('rename plant');}
+    Panels.plant(p.id);}
+});
+/* saves from before named crosses renamed their plants: a plant of a named cross still
+   wearing an automatic "Mother × Father … #n" name takes the cross's name */
+POSTLOAD115.push(()=>{for(const p of allPlants()){const g=GEN(p.lineId),m=!p.customName115&&g&&g.cross&&g.named&&/^(.+) #(\d+)$/.exec(p.name||'');if(m&&m[1]!==g.name&&m[1].includes(' × ')){p.name=g.name+' #'+m[2];invalidate(p);}}});
 Breeding.makeCross=(prev=>function(mid,fid,opts={}){
   const g=prev.call(Breeding,mid,fid,opts),m=opts.mother115,f=opts.father115;
   if(!m||!f){g.generation115='Unknown';g.gen=1;g.ancestryUnknown115=true;return g;}
@@ -21889,7 +22000,7 @@ Breeding.pollenFrom=function(p){
   state.rep.breeding+=.5;toast(`Collected ${esc(p.name)}'s pollen: 12 careful applications.`,'social');SaveSys.request('pollen batch');renderPanel();
 };
 Breeding.pollinate=function(qid,vid){
-  const q=state.plants[qid],v=state.inv.pollen.find((v,i)=>v.id===vid||String(i)===String(vid));
+  const q=state.plants[qid],v=state.inv.pollen.find(v=>v.id===vid);
   if(!q||!v||!(v.uses115>0)||q.seeded)return;
   if(!Access.atLoc(q.loc))return think('Walk to her grow space first.');
   if(sexOf(q)!=='F'||q.stage<S.earlyflower||q.stage>S.midflower)return think('A confirmed female can be pollinated in early to mid flower.');
@@ -21929,7 +22040,7 @@ const Catalog115 = {
   matches(s){const m=this.species(s),k=runtime.seedKind115||'all',se=runtime.seedSeason115||'all';return (k==='all'||k===m.kind||k==='beneficial'&&m.companion)&&(se==='all'||m.seasons.includes(se));},
   bar(){return `<div class="card catalog115"><b>Plant category</b><div class="chips">${this.kinds.map(([k,n])=>`<button class="chip ${(runtime.seedKind115||'all')===k?'on':''}" data-act="seedKind115" data-arg="${k}">${n}</button>`).join('')}</div><b>Outdoor planting season</b><div class="chips">${['all','Fall','Winter','Spring','Summer'].map(se=>`<button class="chip ${(runtime.seedSeason115||'all')===se?'on':''}" data-act="seedSeason115" data-arg="${se}">${se==='all'?'All seasons':se}</button>`).join('')}</div><p class="small muted">Both filters apply together. Indoor cannabis packets stay available year round; check Calendar before planting outdoors.</p></div>`;},
   education(s){const m=this.species(s);let text=`${s.name}: ${GP_FORM[s.form]}. Outdoor planting: ${m.seasons.join(', ')||'protected conditions only'}. ${m.indoor?'Small tent pots supported.':'Outdoor space needed.'} About ${s.days} game days to mature. ${GP.large(s)?'Uses two small planting slots.':'Uses one small planting slot.'}${GP.has(s,'t')?' Requires a trellis.':''}${GP.has(s,'h')?' Tender: protected indoors only.':''}${GP.has(s,'p')?' Perennial: returns after harvesting.':GP.has(s,'r')?' Continues producing after harvesting.':''} Harvest unit: ${s.unit}; market value about ${money(s.sell)} per unit. These are fictional game timings and climate rules.`;
-    if(m.companion){const themes=Object.entries(COMP_THEME).filter(([,ids])=>ids.includes(s.id)).map(([id])=>GEN(id).lineName||GEN(id).name);text+=` ${s.name} is a designated companion in this game's registry. ${themes.length?'Theme pairings: '+themes.join(', ')+'.':'No additional strain theme pairing is assigned.'} In a tent, stage 2 or later gives 0.3 fewer stress points per game day, plus 0.3 for a matching theme; the whole tent is capped at 1 stress point/day. Outdoors, stage 3 or later in a bed within 90 px of the cannabis beds contributes to a pest buffer based on pest vulnerability: min(5%, flowers × 1.2% × vulnerability × 1.6). The daily pest level is multiplied by (1 − 2 × buffer). These fictional modifiers do not increase THC or replace care. Companions consume water, planting slots and light; crowding and mismatched growing conditions are tradeoffs. Closed tents do not gain outdoor insects.`;}
+    if(m.companion){const themes=Object.entries(COMP_THEME).filter(([,ids])=>ids.includes(s.id)).map(([id])=>GEN(id).lineName||GEN(id).name);text+=` ${s.name} is a designated companion in this game's registry. ${themes.length?'Theme pairings: '+themes.join(', ')+'.':'No additional strain theme pairing is assigned.'} In a tent, plant it in a small companion pot or an empty full-size grow pot. Once Growing (stage 2), it automatically gives 0.3 fewer stress points per game day, plus 0.3 for a matching theme; the whole tent is capped at 1 stress point/day. Outdoors, stage 3 or later in a bed within 90 px of the cannabis beds contributes to a pest buffer based on pest vulnerability: min(5%, flowers × 1.2% × vulnerability × 1.6). The daily pest level is multiplied by (1 − 2 × buffer). These fictional modifiers do not increase THC or replace care. Companions consume water, planting slots and light; crowding and mismatched growing conditions are tradeoffs. Indoor companions do not treat thrips or spider mites: inspect the affected plant and use Care → Release beneficial mites with a purchased sachet. Closed tents do not gain outdoor insects.`;}
     return text;
   },
   seedsHTML(){
@@ -22751,8 +22862,10 @@ Route116.westSpot=(prev=>function(id,b){const s=prev.call(this,id,b);if(b.walk){
 for(const s of Object.values(WEST_STYLE))if(s.extra==='stallsign'||s.extra==='mannequin')s.extra='pots';
 W115.sign=(prev=>function(c,x,y,label){if(state?.scene==='westway'&&/PARK/.test(label))return;return prev.call(this,c,x,y,label);})(W115.sign);
 /* Patient visits: synchronous transaction attempt is committed once, then
-   departure follows valid room portals. Save reload resumes remaining path. */
-VisitFlow.start=function(k,bid,mode='share'){if(this.active()){toast('Your visitor is still leaving. Please wait.','warn');return;}closePanel();const P=state.npc.patients[k];if(!P||!P.met||!PATIENTS[k])return;const bedroom=state.scene==='bedroom',p=bedroom?SCENES.bedroom.spawns.door:PlayerHouse115.doors.front;state.visitFlow={id:uid(),k,bid,mode,who:CAST_DEF[k]?'c_'+k:P.neighbor?'nb_'+k:k,served:false,phase:bedroom?'arrive':'wait',scene:bedroom?'bedroom':'hallway',x:p[0],y:p[1],dir:'down',path:bedroom?Corrective115.path('bedroom',{x:p[0],y:p[1]},[p[0],132]):[],pathI:0,elapsed115:0,version115:1};if(!bedroom)this.settle(state.visitFlow);Sfx.doorbell();SaveSys.important('visit');};
+   departure follows valid room portals. Save reload resumes remaining path.
+   Visitors keep walking while time is paused (they are not on the game
+   clock), and a served visitor never blocks the next sale. */
+VisitFlow.start=function(k,bid,mode='share'){const O=this.S();if(O&&!O.served){toast('Your visitor is still coming in. Please wait.','warn');return;}if(O)state.visitFlow=null;closePanel();const P=state.npc.patients[k];if(!P||!P.met||!PATIENTS[k])return;const bedroom=state.scene==='bedroom',p=bedroom?SCENES.bedroom.spawns.door:PlayerHouse115.doors.front;state.visitFlow={id:uid(),k,bid,mode,who:CAST_DEF[k]?'c_'+k:P.neighbor?'nb_'+k:k,served:false,phase:bedroom?'arrive':'wait',scene:bedroom?'bedroom':'hallway',x:p[0],y:p[1],dir:'down',path:bedroom?Corrective115.path('bedroom',{x:p[0],y:p[1]},[p[0],132]):[],pathI:0,elapsed115:0,version115:1};if(!bedroom)this.settle(state.visitFlow);Sfx.doorbell();SaveSys.important('visit');};
 VisitFlow.settle=function(F){if(F.served)return;F.served=true;F.settlement115='attempting';const before=state.money,b=Batches.find(F.bid),j=b?.jars;try{Pt.serve(F.k,F.bid,F.mode);F.settlement115=state.money>before?'sold':b&&j>0?'declined':'no-stock';}catch(e){F.settlement115='interrupted';console.error('Visit settlement',e);}F.phase='visit';F.elapsed115=0;SaveSys.important('visit settlement');};
 Pt.serve=(prev=>function(k,bid,mode){const F=VisitFlow.S();if(F?.k===k){if(F.transaction115)return;F.transaction115=true;}const b=Batches.find(bid);if(!b||!(b.jars>0))return;return prev.call(this,k,bid,mode);})(Pt.serve);
 VisitFlow.route=function(F,to){F.target115=to.slice();F.path=Corrective115.path(F.scene,F,to)||[];F.pathI=0;F.elapsed115=0;if(!F.path.length&&Math.hypot(F.x-to[0],F.y-to[1])>3)F.retry115=.75;};
@@ -22763,7 +22876,7 @@ VisitFlow.next=function(F){F.elapsed115=0;F.moving=false;
  if(F.phase==='house'){F.phase='street';F.scene='street';[F.x,F.y]=SCENES.street.spawns.frontDoor.slice(0,2);this.route(F,[SCENES.street.walk[2]-4,152]);return;}
  if(F.phase==='street'){state.visitFlow=null;SaveSys.request('visit departed');}
 };
-VisitFlow.tick=function(dt){const F=this.S();if(!F)return;F.moving=false;if(settings.speed===0||runtime.overlay||runtime.dialogOpen||runtime.dialogQ?.length||runtime.sleeping)return;dt=Math.min(dt,.1)*([0,1,2,4][settings.speed]||0);F.elapsed115=(F.elapsed115||0)+dt;
+VisitFlow.tick=function(dt){const F=this.S();if(!F)return;F.moving=false;if(runtime.overlay||runtime.dialogOpen||runtime.dialogQ?.length||runtime.sleeping)return;dt=Math.min(dt,.1)*(settings.speed?[0,1,2,4][settings.speed]||1:2);F.elapsed115=(F.elapsed115||0)+dt;
  if(F.phase==='visit'||F.phase==='wait'){if(F.elapsed115>.65)this.next(F);return;}
  if(F.pathI){F.path=F.path?.slice(F.pathI)||[];F.pathI=0;}
  if(!F.path?.length){if(!F.target115||Math.hypot(F.x-F.target115[0],F.y-F.target115[1])<4){this.next(F);return;}if(F.elapsed115>2&&!F.warned115){F.warned115=true;toast('Your visitor is waiting for a clear route to the door.','warn');}F.retry115=(F.retry115||0)+dt;if(F.retry115>.75){F.retry115=0;Corrective115.stats.visitRetries++;this.route(F,F.target115);}return;}
@@ -22824,7 +22937,7 @@ Shop5.draw=function(c,t){const id=this.id(),D=this.def();if(!D)return;c.drawImag
 /* Westbrook uses the existing Cast relationship, Memories, volunteer voucher
    and Patient Care ledgers. Children are never patient candidates. */
 const WestSocial115={needs:{arthur:'arthritis-related pain, discussed with my clinician',rosie:'persistent pain after an old injury, under my care team'},
- help(id){const D=CAST_DEF[id],R0=Cast115.rel(id),jobs={mateo:['market','Restock produce crates'],elena:['garden','Water the starters'],rosa:['market','Sort the produce'],mara:['threads','Fold returned garments'],amina:['hardware','Sort mixed bolts'],ronan:['community','Set up the community room'],cass:['cafe','Refill the milk station'],hugo:['garden','Water the starter trays'],enzo:['community','Prepare sample-information handouts']},job=jobs[id]||['community',D.kid?'Help label the family garden plot':D.role.toLowerCase().includes('artist')?'Help hang the community artwork':'Tidy the neighborhood garden paths'];
+ help(id){const D=CAST_DEF[id],R0=Cast115.rel(id),jobs={mateo:['market','Restock produce crates'],elena:['garden','Water the starters'],rosa:['market','Sort the produce'],mara:[SHELVED.threads?'community':'threads',SHELVED.threads?'Sort donated fabric for the swap table':'Fold returned garments'],amina:['hardware','Sort mixed bolts'],ronan:['community','Set up the community room'],cass:['cafe','Refill the milk station'],hugo:['garden','Water the starter trays'],enzo:['community','Prepare sample-information handouts']},job=jobs[id]||['community',D.kid?'Help label the family garden plot':D.role.toLowerCase().includes('artist')?'Help hang the community artwork':'Tidy the neighborhood garden paths'];
  const ready=state.scene==='shop115'&&Shop5.id()===job[0]||job[0]==='community'&&state.scene==='cgarden';dialog({who:'c_'+id,name:D.first,text:R0.helpDay115===state.day?'Thanks again for helping today!':R0.helpTask115?`Meet me at ${SHOP115[job[0]].n}. We will ${job[1].toLowerCase()}. 30 minutes, 6 energy. Reward: friendship, community reputation and a shop voucher.`:`Could you help me ${job[1].toLowerCase()} at ${SHOP115[job[0]].n}?`,choices:[{label:ready?'Do the task (30 min, 6 energy)':'Accept and mark destination',fn:()=>{if(R0.helpDay115===state.day)return;if(!ready){R0.helpTask115={shop:job[0],task:job[1],day:state.day};Memory115.add('help:'+id+':'+state.day,D.first+' needs a hand',job[1]+' at '+SHOP115[job[0]].n,D.first);SaveSys.request('help accepted');return;}if(!spend(6,30))return;R0.helpTask115=null;R0.helpDay115=state.day;Cast115.bump(id,.65,'help');state.rep.community+=.35;Voucher115.grant(VSTORE115[job[0]]||'garden',id);toast(D.first+' thanks you. Friendship and a volunteer voucher earned.','social');SaveSys.important('Westbrook help');}},{label:'Another time',fn:()=>{}}]});},
  registry(id){const D=CAST_DEF[id],R0=Cast115.rel(id);if(!this.needs[id]||D.kid||D.teen)return;const ready=R0.friend>=4&&state.npc.patients.rosalind.met;dialog({who:'c_'+id,name:D.first,text:`I have been talking with my clinician about ${this.needs[id]}. ${ready?'I would like information about your registry. I will handle consent and qualifications with my care team.':'Let us get to know each other first. Your registry referral also needs to be established.'}`,choices:ready?[{label:'Explain the registry and ask permission',fn:()=>dialog({who:'c_'+id,name:D.first,text:'Yes, I would like to opt in. My care team stays in charge. Please add my preferences to the existing Care Desk.',choices:[{label:'Register with their consent',fn:()=>{if(state.npc.patients[id]?.met)return;state.npc.patients[id]={met:true,friend:R0.friend,trust:3,neighbor:false,consent115:{day:state.day,qualified:true},lastServed:-1,request:{day:state.day},history:[],favorites:[],claims:[]};Pt.prefs(id);Memory115.add('patient:'+id,D.first+' opted into the registry','Consent recorded. Preferences and requests are available in Care Desk.',D.first);SaveSys.important('Westbrook registry');toast(D.first+' joined Care Desk with consent.','social');}},{label:'Wait for another day',fn:()=>{}}]})},{label:'Respect their privacy',fn:()=>{}}]:[{label:'Of course',fn:()=>{}}]});}
 };
@@ -26533,7 +26646,7 @@ const GrowPotGarden = {
     const I = GP.inv(), planted = arr.some(Boolean);
     h += `<div class="actions"><button class="btn sm" data-act="gWater" data-arg="slot:${loc}" ${near && planted ? '' : 'disabled'}>Water (${GP.choreE(2)}⚡ · 5 min)</button>`;
     for (const [sid, lab] of [['SUP012', 'Fertilize'], ['SUP010', 'Add compost']]) if (I.sup[sid] > 0) h += `<button class="btn sm ghost" data-act="gSupply" data-arg="slot:${loc}:${sid}" ${near && planted ? '' : 'disabled'}>${lab} (×${I.sup[sid]})</button>`;
-    return h + '</div>';
+    return h + '</div>' + Companion.potFooter(loc);
   },
   /* tents that were lost (or never owned) can't hold garden plants */
   tidy() {
@@ -26649,6 +26762,157 @@ RoomArt.drawSlots = (prev => function (c, loc, t) {
   };
   try { return prev.call(this, c, loc, t); } finally { self.hit = hit; Gear.pot = pot; }
 })(RoomArt.drawSlots);
+</script>
+<script id="pot-shuffle1151-code">
+'use strict';
+/* =====================================================================
+   TRADE POTS · garden plants move like real containers
+   A garden plant in a grow pot or companion pot can move to any empty
+   tent pot, or trade places with another garden plant or with a
+   cannabis plant (growing or drying) in a grow pot. Drying harvests
+   need a dark tent, so they never share one with garden plants.
+   ===================================================================== */
+const PotShuffle = {
+  valid(at) {
+    if (!at || !TentSwap1151.tent(at.loc).ok || !(at.i >= 0)) return false;
+    if (at.kind === 'slot') return !!state.locations[at.loc].equip.pot && at.i < slotCount(at.loc);
+    return at.kind === 'pot' && at.i < (GP.pots()[at.loc] || []).length;
+  },
+  held(at) {
+    if (at.kind === 'slot') { const pid = state.locations[at.loc].slots[at.i]; if (pid && state.plants[pid]) return { type: 'cann', id: pid, p: state.plants[pid] }; }
+    const g = (at.kind === 'slot' ? GrowPotGarden.arr(at.loc) : GP.pots()[at.loc] || [])[at.i], p = g && GP.plant(g);
+    return p ? { type: 'garden', id: g, p } : null;
+  },
+  locate(gid) {
+    for (const loc of LOC_ORDER) {
+      if (!GrowPotGarden.ok(loc)) continue;
+      let i = ((state.v115 && state.v115.mpots) || {})[loc]?.indexOf(gid) ?? -1; if (i >= 0) return { kind: 'slot', loc, i };
+      i = (GP.pots()[loc] || []).indexOf(gid); if (i >= 0) return { kind: 'pot', loc, i };
+    }
+    return null;
+  },
+  spots(loc) {
+    const out = []; if (!TentSwap1151.tent(loc).ok) return out;
+    if (state.locations[loc].equip.pot) for (let i = 0; i < slotCount(loc); i++) out.push({ kind: 'slot', loc, i });
+    (GP.pots()[loc] || []).forEach((_, i) => out.push({ kind: 'pot', loc, i }));
+    return out;
+  },
+  gardens(loc) { return GrowPotGarden.ok(loc) ? [...(GP.pots()[loc] || []), ...GrowPotGarden.arr(loc)].filter(g => g && GP.plant(g)).length : 0; },
+  drying(loc) { return plantsIn(loc).some(p => p.stage >= S.drying); },
+  clash(loc) { return `${locName(loc)} would hold a drying harvest next to garden plants. Drying needs a dark, closed tent; garden plants need the grow light.`; },
+  /* after trading a ⇄ b, no tent may hold drying harvest and garden plants together */
+  mix(a, b, x, y) {
+    for (const loc of new Set([a.loc, b.loc])) {
+      let cann = plantsIn(loc), garden = this.gardens(loc);
+      for (const [h, from, to] of [[x, a, b], [y, b, a]]) {
+        if (!h) continue;
+        if (from.loc === loc) { if (h.type === 'cann') cann = cann.filter(p => p !== h.p); else garden--; }
+        if (to.loc === loc) { if (h.type === 'cann') cann = cann.concat(h.p); else garden++; }
+      }
+      if (garden > 0 && cann.some(p => p.stage >= S.drying)) return this.clash(loc);
+    }
+    return '';
+  },
+  check(a, b) {
+    if (!this.valid(a) || !this.valid(b)) return { ok: false, why: 'That pot is no longer available.' };
+    if (a.kind === b.kind && a.loc === b.loc && a.i === b.i) return { ok: false, why: 'This is the same pot.' };
+    const x = this.held(a), y = this.held(b);
+    if (!x && !y) return { ok: false, why: 'Both pots are empty.' };
+    if (x?.type !== 'garden' && y?.type !== 'garden') return { ok: false, why: 'Use Move or Swap plants for cannabis.' };
+    if (!Access.atLoc(a.loc) && !Access.atLoc(b.loc)) return { ok: false, why: 'Walk up to one of the tents first.' };
+    for (const [h, to] of [[x, b], [y, a]]) {
+      if (!h) continue;
+      if (h.type === 'cann') {
+        if (to.kind !== 'slot') return { ok: false, why: `${h.p.name} needs a full-size grow pot, not a small companion pot.` };
+        const r = TentSwap1151.record(h.p); if (!r.ok) return r;
+      } else {
+        const r = GP.canPlant(GP.sp(h.p.sp), { kind: to.kind, ref: to.loc, moving: true }); if (!r.ok) return r;
+      }
+    }
+    const clash = this.mix(a, b, x, y); if (clash) return { ok: false, why: clash };
+    return { ok: true, x, y };
+  },
+  exchange(a, b) {
+    const x = this.held(a), y = this.held(b);
+    const put = (h, to) => {
+      if (to.kind === 'slot') { state.locations[to.loc].slots[to.i] = h && h.type === 'cann' ? h.id : null; GrowPotGarden.arr(to.loc)[to.i] = h && h.type === 'garden' ? h.id : null; }
+      else GP.pots()[to.loc][to.i] = h ? h.id : null;
+      if (!h) return;
+      if (h.type === 'cann') { TentSwap1151.origin(h.p); h.p.loc = to.loc; h.p.slot = to.i; invalidate(h.p); }
+      else h.p.at = { kind: to.kind, ref: to.loc };
+    };
+    put(x, b); put(y, a);
+  },
+  /* ---- UI ---- */
+  enc(at) { return `${at.kind},${at.loc},${at.i}`; },
+  dec(s) { const [kind, loc, i] = String(s).split(','); return { kind, loc, i: +i }; },
+  label(at) { return at.kind === 'slot' ? `Grow pot ${at.i + 1}` : `Companion pot ${at.i + 1}`; },
+  name(h) {
+    if (!h) return 'Empty';
+    if (h.type === 'cann') return `${h.p.name} · ${TentSwap1151.status(h.p)}`;
+    const sp = GP.sp(h.p.sp), st = GP.stageOf(h.p); return `${sp.name} · ${['Sprouting', 'Young', 'Growing', GP_KIND[sp.grp] === 'flower' ? 'In bloom' : 'Ready'][st]}`;
+  },
+  button(a, b, label) {
+    const c = this.check(a, b), x = this.held(a), y = this.held(b);
+    return `${c.ok ? '' : `<p class="small muted">${esc(c.why)}</p>`}<button type="button" class="btn sm ${c.ok ? 'primary' : ''}" data-act="potShuffleGo" data-arg="${esc([this.enc(a), this.enc(b), x ? x.id : '', y ? y.id : ''].join('|'))}" ${c.ok ? '' : 'disabled'}>${esc(label || (y ? 'Trade pots' : 'Move here'))}</button>`;
+  },
+  open(gid) {
+    const src = this.locate(gid); if (!src) { toast('That plant is no longer in a tent pot.', 'warn'); return; }
+    runtime.potShuffle = { gid };
+    openPanel('Move or trade pots', () => this.html(runtime.potShuffle && runtime.potShuffle.gid));
+  },
+  html(gid) {
+    const a = gid && this.locate(gid), x = a && this.held(a);
+    if (!x) return '<div class="note bad">That plant is no longer in a tent pot.</div><div class="actions"><button class="btn" data-act="panelBack">Back</button></div>';
+    let h = `<div class="card"><h3>${esc(this.name(x))}</h3><div class="small muted">${esc(locName(a.loc))} · ${esc(this.label(a).toLowerCase())}</div><p class="small">Carry the whole pot somewhere else: an empty pot, or trade places with another garden plant or a cannabis plant in a grow pot. Growth, water and harvests come along.</p></div>`;
+    for (const loc of LOC_ORDER) {
+      const spots = this.spots(loc).filter(b => !(b.kind === a.kind && b.loc === a.loc && b.i === a.i)); if (!spots.length) continue;
+      h += `<section style="margin-top:10px"><h3>${esc(locName(loc))}</h3><div class="small muted">${esc(Access.where(loc))}</div><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(170px,1fr))">${spots.map(b => `<div class="card"><h4>${esc(this.label(b))}</h4><div class="small muted">${esc(this.name(this.held(b)))}</div>${this.button(a, b)}</div>`).join('')}</div></section>`;
+    }
+    return h + '<div class="actions"><button type="button" class="btn ghost" data-act="panelBack">Cancel</button></div>';
+  },
+  go(arg) {
+    const [ea, eb, xid, yid, ...extra] = String(arg).split('|'); if (extra.length) return false;
+    const a = this.dec(ea), b = this.dec(eb), x = this.valid(a) && this.held(a), y = this.valid(b) && this.held(b);
+    if ((x ? x.id : '') !== xid || (y ? y.id : '') !== yid) { toast('Those pots changed. Choose again.', 'warn'); renderPanel(); return false; }
+    const c = this.check(a, b); if (!c.ok) { toast(esc(c.why), 'warn'); Sfx.bad(); renderPanel(); return false; }
+    this.exchange(a, b);
+    const dry = [[x, b], [y, a]].find(([h, to]) => h && h.type === 'cann' && h.p.stage >= S.drying && (state.locations[to.loc].on.light !== false || state.locations[to.loc].door !== 'closed'));
+    notify(y ? `${this.name(x).split(' · ')[0]} and ${this.name(y).split(' · ')[0]} traded pots.` : `${this.name(x).split(' · ')[0]} moved to the ${locShort(b.loc)} ${this.label(b).toLowerCase()}.`);
+    if (dry) toast(`Close the ${esc(locShort(dry[1].loc))} and switch its light off so the harvest dries in the dark.`, 'warn');
+    Sfx.good(); SaveSys.important('pot trade'); runtime.potShuffle = null; closePanel(); updateHUD(); return true;
+  }
+};
+Object.assign(ACT, { potShuffle(gid) { PotShuffle.open(gid); }, potShuffleGo(arg) { PotShuffle.go(arg); } });
+/* garden plants can't be sown next to a drying harvest */
+GP.canPlant = (prev => function (sp, at) {
+  const r = prev.call(this, sp, at);
+  if (r.ok && at && !at.moving && (at.kind === 'pot' || at.kind === 'slot') && LOC_DEF[at.ref] && PotShuffle.drying(at.ref)) return { ok: false, why: 'A harvest is drying in this tent. Garden plants need the grow light; plant here once it is jarred or moved.' };
+  return r;
+})(GP.canPlant);
+/* swapping cannabis between tents can't put a drying harvest beside garden plants */
+TentSwap1151.pair = (prev => function (p, q) {
+  const r = prev.call(this, p, q); if (!r.ok) return r;
+  for (const [loc, incoming] of [[p.loc, q], [q.loc, p]]) if (incoming.stage >= S.drying && PotShuffle.gardens(loc)) return { ok: false, why: PotShuffle.clash(loc) + ' Move the garden plants first.' };
+  return r;
+})(TentSwap1151.pair);
+/* the cannabis swap list also offers trading pots with garden plants */
+TentSwap1151.actions = (prev => function (choose) {
+  const r = runtime.tentSwap1151, p = !choose && r && this.current(r); if (!p) return prev.call(this, choose);
+  const a = { kind: 'slot', loc: p.loc, i: p.slot }, rows = [];
+  for (const loc of LOC_ORDER) for (const b of PotShuffle.spots(loc)) { if (b.kind !== 'slot') continue; const y = PotShuffle.held(b); if (y && y.type === 'garden') rows.push(`<div class="card"><h4>${esc(PotShuffle.name(y))}</h4><div class="small muted">${esc(locName(loc))} · grow pot ${b.i + 1}</div>${PotShuffle.button(b, a, 'Trade pots')}</div>`); }
+  return (rows.length ? `<section><h3>Garden plants in grow pots</h3><div class="small muted">Trade pots with a herb, vegetable or flower.</div><div class="grid">${rows.join('')}</div></section>` : '') + prev.call(this, choose);
+})(TentSwap1151.actions);
+/* a Move / trade button on every garden plant in a tent pot */
+GSpot.html = (prev => function (kind, ref) {
+  const h = prev.call(this, kind, ref); if (kind !== 'pot' && kind !== 'slot') return h;
+  return h.replace(/(<button class="btn sm ghost" data-act="gPull" data-arg="(?:pot|slot):[^:"]+:([^"]+)"( disabled)?[^>]*>[^<]*<\/button>)/g, (m, btn, gid, dis) => `${btn}<button class="btn sm" data-act="potShuffle" data-arg="${gid}"${dis || ''}>Move / trade</button>`);
+})(GSpot.html);
+/* companion plants and garden plants block a harvest move; say how to clear them */
+HarvestMove1151.target = (prev => function (p, loc) {
+  const r = prev.call(this, p, loc);
+  return !r.ok && /companion plants|garden plants/.test(r.why) ? { ok: false, why: r.why.replace('Choose a tent with no other crops.', 'Use Move / trade on them to clear the tent, or choose one with no other crops.') } : r;
+})(HarvestMove1151.target);
 </script>
 <script>
 'use strict';
@@ -27759,6 +28023,124 @@ Panels.codex = (prev => function (id) {
 })(Panels.codex);
 hydrate = (prev => function (root) { prev(root); root.querySelectorAll('canvas[data-draw^="mutart:"]').forEach(cv => { const [, k, mode] = cv.dataset.draw.split(':'); safeRun('mutart', () => MutGen.draw(cv, k, mode)); }); })(hydrate);
 POSTLOAD115.push(() => { for (const p of Object.values(state.plants || {})) if (p && p.pheno && p.genome115) MutGen.sync(p); });
+</script>
+<script>
+/* ==== shelved.js ====
+   Content put away until its artwork catches up (October 2026 audit,
+   docs/audit/game-audit-oct-2026.md). Nothing is deleted: saves keep every
+   item, friendship and receipt. Flip a flag to bring a feature back.
+   • threads: Willow Threads shop, its 240-design catalog and LeafCart › Threads.
+   • westbrook: the road west of Willow Park and its homes. Residents still
+     visit the park, community garden and Main Street.
+   • wardrobe: creator and mirror offer only garments with finished art.
+     Pieces a save already wears stay selectable so they can be changed. */
+const SHELVED = { threads: true, westbrook: true, wardrobe: true };
+const SHELF_TOPS = ['hoodie', 'flannel', 'cardigan', 'jacket'];
+const SHELF_SLOTS = ['hat', 'glasses', 'acc'];
+if (SHELVED.threads) {
+  const soon = 'Willow Threads is closed for a refit. Mara says it will reopen in a future update.';
+  Town.use = (prev => function (id) { if (id === 'threads') { think(soon, 4200); return; } return prev.apply(this, arguments); })(Town.use);
+  Shop5.enter = (prev => function (id) { if (id === 'threads') { think(soon, 4200); return; } return prev.apply(this, arguments); })(Shop5.enter);
+  ShopHours.open = (prev => function (id) { return id === 'threads' ? false : prev.apply(this, arguments); })(ShopHours.open);
+  ShopHours.line = (prev => function (id) { return id === 'threads' ? 'CLOSED · reopening in a future update' : prev.apply(this, arguments); })(ShopHours.line);
+  Cloth115.open = (prev => function (kind) { if (state.scene !== 'shop115') { think(soon, 4200); return; } return prev.apply(this, arguments); })(Cloth115.open);
+  Cloth115.online = function () { think(soon, 4200); };
+  STORES.leafcart.cats = STORES.leafcart.cats.filter(([k]) => k !== 'clothes');
+  POSTLOAD115.push(() => { if (state.scene === 'shop115' && Shop5.id() === 'threads') Scene.place('town', 'b_threads'); });
+}
+if (SHELVED.westbrook) {
+  SCENES.park.exits = SCENES.park.exits.filter(e => e.to !== 'westway');
+  SCENES.park.solids = (prev => function () { return prev.apply(this, arguments).concat([[0, 104, 34, 72]]); })(SCENES.park.solids);
+  SCENES.park.spawns.west = [48, 140, 'right'];
+  delete SCENE_LINKS.park.westway; delete SCENE_LINKS.street.westway; delete SCENE_LINKS.cgarden.westway;
+  Scene.go = (prev => function (to) { if (to === 'westway') { think('The road to Westbrook Way is closed for work. New neighbors are coming in a future update.', 4200); return; } return prev.apply(this, arguments); })(Scene.go);
+  Scene.interact = (prev => function (k, a) { if (k === 'pk' && a === 'signW') { think('Westbrook Way is past the barrier. The road is closed for now; the neighbors still come through the park.', 4600); return true; } return prev.apply(this, arguments); })(Scene.interact);
+  /* a road-work barrier at the park's west edge */
+  ParkArt.draw = (prev => function (c, t) {
+    prev.apply(this, arguments);
+    const x = 6, y = 116, w = pxTextW('SOON') + 4;
+    R(c, x + 2, y + 6, 2, 20, '#5a3720'); R(c, x + w - 4, y + 6, 2, 20, '#5a3720');
+    R(c, x - 1, y - 1, w + 2, 9, '#2b2018');
+    for (let i = 0; i < w; i += 4) R(c, x + i, y, Math.min(4, w - i), 7, (i / 4) % 2 ? '#efe4cc' : '#e0702a');
+    R(c, x - 1, y + 10, w + 2, 9, '#2b2018'); R(c, x, y + 11, w, 7, '#efe4cc'); pxText(c, 'SOON', x + 2, y + 11, 1, '#8a3a1a');
+  })(ParkArt.draw);
+  POSTLOAD115.push(() => {
+    const home = state.scene === 'home115' && Home5.def && Home5.def();
+    if (state.scene === 'westway' || (home && home.street === 'westway')) Scene.place('park', 'west');
+  });
+  safeRun('shelf-help', () => { for (const sec of HELP) if (Array.isArray(sec[2])) sec[2] = sec[2].filter(line => !/Westbrook|Willow Threads/.test(line)); });
+}
+if (SHELVED.wardrobe) {
+  for (const id of ['cardigan', 'jacket']) if (!STARTER_WARDROBE.shirt.includes(id)) STARTER_WARDROBE.shirt.push(id);
+  if (!STARTER_WARDROBE.shoes.includes('rainboots')) STARTER_WARDROBE.shoes.push('rainboots');
+  const allowed = (slot, id, cur) => id === cur || (slot === 'shirt' || slot === 'topS' ? SHELF_TOPS.includes(id) : !SHELF_SLOTS.includes(slot) || id === 'none');
+  /* drop unfinished chips; drop hat/glasses/accessory rows unless something is worn there */
+  const prune = (root, act, look) => {
+    if (!root) return;
+    const key = { shirt: 'topS', bottom: 'bottomS', shoes: 'shoesS' };
+    for (const b of root.querySelectorAll(`button.chip[data-act="${act}"]`)) {
+      const [slot, id] = (b.dataset.arg || '').split(':'); if (!['shirt', 'topS', ...SHELF_SLOTS].includes(slot)) continue;
+      if (!allowed(slot, id, look[key[slot] || slot])) b.remove();
+    }
+    for (const row of root.querySelectorAll('.opt-row')) {
+      const chips = [...row.querySelectorAll(`button.chip[data-act="${act}"]`)], slot = chips[0] && chips[0].dataset.arg.split(':')[0];
+      if (SHELF_SLOTS.includes(slot) && (look[slot] || 'none') === 'none') row.remove();
+    }
+  };
+  renderCreator = (prev => function () { const r = prev.apply(this, arguments); prune($('#screen-create'), 'cr', runtime.cr || {}); return r; })(renderCreator);
+  renderPanel = (prev => function () { const r = prev.apply(this, arguments); if (state && $('#panelBody')?.querySelector('[data-act="wear"][data-arg^="shirt:"]')) prune($('#panelBody'), 'wear', Object.assign({ topS: state.player.topS || state.player.shirtS }, state.player)); return r; })(renderPanel);
+}
+</script>
+<script>
+/* Individual pollen selection and storage; historic donor snapshots stay intact. */
+const PollenUI = {
+  all() {
+    const V = state.inv.pollen || (state.inv.pollen = []), seen = new Set();
+    for (const v of V) {
+      if (!v.id || seen.has(v.id)) v.id = uid();
+      seen.add(v.id);
+      if (v.uses115 == null) v.uses115 = 1;
+    }
+    return V;
+  },
+  label(v) { return `${v.name || 'Unknown donor'} · ${GEN(v.lineId).name} · ${v.day == null ? 'Collection day unknown' : 'Day ' + v.day} · ${v.uses115} applications left · Vial ${v.id}`; },
+  eligible(p) { return p && sexOf(p) === 'F' && !p.seeded && p.stage >= S.earlyflower && p.stage <= S.midflower; },
+  back(pid) { Panels.plant(pid, 'care'); },
+  open(pid) {
+    const p = state.plants[pid];
+    if (!this.eligible(p)) return think('Choose an unpollinated female in early to mid flower.');
+    if (!Access.atLoc(p.loc)) return think('Walk to her grow space first.');
+    openPanel('Pollinate ' + p.name, () => {
+      const V = this.all().filter(v => v.uses115 > 0);
+      return `<p>Choose a donor for ${esc(p.name)}. Pollination costs 4 energy.</p>${V.length ? `<label for="pollenVial">Pollen vial</label><select id="pollenVial" style="display:block;width:100%;min-width:0;max-width:100%;margin:8px 0 12px">${V.map(v => `<option value="${esc(v.id)}">${esc(this.label(v))}</option>`).join('')}</select><button class="btn primary" data-act="pollenApply" data-arg="${esc(pid)}">Pollinate with selected vial</button>` : '<p class="muted">No usable pollen vials. Collect pollen from a male in mid flower.</p>'}<div class="actions"><button class="btn" data-act="pollenBack" data-arg="${esc(pid)}">Back to plant</button><button class="btn" data-act="invOpen" data-arg="pollen">Manage pollen</button></div>`;
+    });
+  },
+  html() {
+    const V = this.all();
+    return `<p class="small muted">All ${V.length} pollen vials. To use one, open a flowering female’s Care tab and choose Pollinate.</p><div class="g115">${V.map((v, i) => `<div class="card" style="min-width:0;overflow-wrap:anywhere"><canvas class="px" width="40" height="64" data-draw="pollenvial:${i}" style="width:40px;margin:auto"></canvas><h3>${esc(v.name || 'Unknown donor')}</h3><div class="small">${esc(this.label(v))}</div>${v.uses115 > 0 ? '' : '<div class="small muted">Empty vial</div>'}<button class="btn sm danger" data-act="pollenTrash" data-arg="${esc(v.id)}">Trash vial…</button></div>`).join('') || '<p class="muted">No pollen vials in storage. Collect pollen from a male in mid flower.</p>'}</div>`;
+  },
+  trash(id) {
+    const v = this.all().find(v => v.id === id); if (!v) return;
+    openPanel('Trash pollen vial?', () => `<p>${esc(this.label(v))}</p><p>This permanently discards this vial and its remaining pollen.</p><div class="actions"><button class="btn danger" data-act="pollenDiscard" data-arg="${esc(id)}">Trash this vial</button><button class="btn" data-act="invOpen" data-arg="pollen">Cancel</button></div>`);
+  }
+};
+Inv115.pollen = () => PollenUI.html();
+POSTLOAD115.push(() => PollenUI.all());
+Object.assign(ACT, {
+  pollenChoose(pid) { PollenUI.open(pid); },
+  pollenBack(pid) { PollenUI.back(pid); },
+  pollenApply(pid) {
+    const id = document.getElementById('pollenVial')?.value, v = PollenUI.all().find(v => v.id === id);
+    if (!v || v.uses115 <= 0) { toast('That vial is no longer available.', 'warn'); renderPanel(); return; }
+    Breeding.pollinate(pid, id);
+    if (state.plants[pid]?.seeded) PollenUI.back(pid);
+  },
+  pollenTrash(id) { PollenUI.trash(id); },
+  pollenDiscard(id) {
+    const V = PollenUI.all(), i = V.findIndex(v => v.id === id); if (i < 0) return;
+    V.splice(i, 1); SaveSys.request('discard pollen'); Panels.inventory('pollen');
+  }
+});
 </script>
 <script id="social-comment-performance-code">
 'use strict';

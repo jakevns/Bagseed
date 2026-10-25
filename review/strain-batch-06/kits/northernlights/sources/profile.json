@@ -1,0 +1,21 @@
+{
+  "id": "northernlights",
+  "lineId": "cl_northernlights",
+  "name": "Northern Lights",
+  "shortName": "Northern Lights",
+  "apiName": "BagseedNorthernlightsGrowth",
+  "revision": "northernlights-components-1",
+  "libraryRevision": "plant-parts-library-expanded-1",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1.1
+  },
+  "description": "Broad forest-green fans; dense rounded olive flower clusters and amber pistils.",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-d73e0002-9e26-485c-9756-9a5b7c21afe1.png"
+}

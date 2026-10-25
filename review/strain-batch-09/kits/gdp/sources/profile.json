@@ -1,0 +1,22 @@
+{
+  "id": "gdp",
+  "lineId": "cl_gdp",
+  "name": "Granddaddy Purple",
+  "shortName": "Granddaddy Purple",
+  "apiName": "BagseedGdpGrowth",
+  "revision": "gdp-components-1",
+  "libraryRevision": "plant-parts-library-expanded-4",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "blue",
+    "colorName": "Dark purple",
+    "branching": 1.1
+  },
+  "description": "Broad dusky-blue fans / dense dark-plum flower clusters",
+  "finishCaption": "Deep-purple fan senescence / frosted eggplant flowers",
+  "finishPalette": "deep-purple",
+  "coolNights": true,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-b692e7fa-efcf-4295-9c14-85354f1d2909.png"
+}

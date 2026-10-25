@@ -1,0 +1,26 @@
+{
+  "parsley": {
+    "generatedFile": "exec-e73330ea-cc5a-4521-ae40-aaab9686c687.png",
+    "originalSHA256": "4b7a7f9380e378b98246cde57d9a4cc76ca1746cffaab00976fe1e4538330da8"
+  },
+  "sage": {
+    "generatedFile": "exec-06d6553b-5e94-434f-9951-14859a740c75.png",
+    "originalSHA256": "2b92f5abc0d8d1bfeec672cd296a5dd513b172e0875e74850a0c8bba1e48b901",
+    "spacingRevision": {
+      "generatedFile": "exec-d64a60c1-7b5f-4061-a5d9-86ed3ef7c977.png",
+      "SHA256": "e3836f40990845f5f4c70318fceed5700751685eeebfa36d7d9088c8e9f9ab59"
+    }
+  },
+  "oregano": {
+    "generatedFile": "exec-d0596f71-4df6-48a8-903d-175ceb7aa4ea.png",
+    "originalSHA256": "20dec852ac46aaa0544989f1f42c4f15999ec4c05eae20dfd99697e1685136d6"
+  },
+  "strawberry": {
+    "generatedFile": "exec-0d53a02f-f0e5-4081-8bf5-467d546ec221.png",
+    "originalSHA256": "f57c2116d78ea2e9e20360d220988b53d37a203cdf15c3d49ee900faa3c553d3"
+  },
+  "jalapeno": {
+    "generatedFile": "exec-32f6e9e0-bce7-458c-b2b3-72776f34880d.png",
+    "originalSHA256": "34e64a90919b8706f5717020ca4b4ae7780657d807b702a53d218fe3481b9762"
+  }
+}

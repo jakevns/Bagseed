@@ -69,12 +69,12 @@ Validation: `node --test tests/plant-phenotype-library.test.cjs` covers read-onl
 
 ## Final named strain and additional experimental profiles
 
-`gasstation@1` completes component-kit coverage of all 12 named native catalog strains with narrow blue-green foliage, mint-blue flower spears and ochre senescence. At the user's request, `boglantern-lavender@1` and `frogprince-red@1` add Lavender Marsh and Copper Reed phenotype families of the existing Bog Lantern and Frog Prince lines. These are extra profiles, not new native strains. `lineId` retains the actual parent line, and `registerAsDefault: false` preserves the earlier default profiles. Existing saved plant/clone identities stay pinned. The profiles enforce compatible expressed foliage and flower palettes and can be selected explicitly through the existing identity helper's `profile` option. Native automatic phenotype selection and full painted-renderer integration remain pending. All three kits are approved in their review folders and `review/plant-batch-05/`.
+`gasstation@1` completes component-kit coverage of the original 12 named catalog strains with narrow blue-green foliage, mint-blue flower spears and ochre senescence. At the user's request, `boglantern-lavender@1` and `frogprince-red@1` add Lavender Marsh and Copper Reed phenotype families of the existing Bog Lantern and Frog Prince lines. These are extra profiles, not new native strains. `lineId` retains the actual parent line, and `registerAsDefault: false` preserves the earlier default profiles. Existing saved plant/clone identities stay pinned. The profiles enforce compatible expressed foliage and flower palettes and can be selected explicitly through the existing identity helper's `profile` option. Native automatic phenotype selection and full painted-renderer integration remain pending. All three kits are approved in their review folders and `review/plant-batch-05/`.
 
 
 ## Live renderer integration
 
-`tools/compile-live-plants.cjs` verifies all fourteen approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
+`tools/compile-live-plants.cjs` verifies all thirty-nine approved atlas manifests and their runtime hashes, then embeds the shared model and production compositor in `index.html`. `BagseedPlants.ready` participates in the startup cover so original pixel plants cannot flash during atlas downloads. The live native catalog also includes the expanded seed library, random bag seed and player-generated crosses: the compositor selects leaf anatomy/foliage and flower color independently from expressed `PlantTraits115`, then pins the visual recipe. It does not require every cross to have a dedicated named profile, and never changes simulation genes.
 
 Visual recipes (`paintArt115`, schema v1) record the component donor kits, stable phenotype seed and expressed traits. Actual plant height, node count, water, health, nutrition, stress, pruning and training remain live inputs. Recipes are stored on plant and clone phenotype records, copied into photos, and populated for older saves at post-load and save boundaries. Rendering does not alter biology. Existing mutant genes from the latest merged update remain native; the painted compositor expresses all fifteen leaf/color/structure traits, including stacked traits.
 
@@ -85,7 +85,7 @@ Earlier per-strain notes describe the original prototype milestone. Production i
 
 The first mutation implementation is [Freakshow](mutations/freakshow/README.md).
 Its two leaf forms use dedicated painted development and mature-fan atlases,
-loaded through the same startup gate as the fourteen strain kits. The live
+loaded through the same startup gate as the thirty-nine strain kits. The live
 renderer applies the existing phenotype palette, finishing colors, symptoms,
 training and wind. Mutation kits are separate from the strain catalog; native
 mutation identities and genotype/save data are preserved.
@@ -114,3 +114,45 @@ The user approved these three gameplay implementations for production. Twin Lead
 ## Pocket Dwarf and Triploid
 
 The final two native mutation families have user-approved gameplay implementations. All fifteen mutation families now have approved component artwork. Pocket Dwarf has a compact connected axis, shorter branch reach and retained mature leaf detail at its actual saved height. Triploid retains inherited anatomy; a copper/verdigris 3x identity tag appears after discovery. The live renderer no longer forces uniformly enlarged/darkened Triploid tissue. Hidden traits remain unmarked, and revealing a trait invalidates its sprite cache. The guide description follows the approved scientific references while preserving existing Bagseed reproduction and balance rules. Review: `review/mutation-detail/implemented-batch-06/`.
+
+## Expanded catalog: OG Kush, White Widow and Northern Lights
+
+The full running catalog has **37 named strains**, plus generated Bag Seed. The original twelve dedicated strain kits and two experimental phenotype kits did not provide individual artwork for the 25 expanded catalog strains. This approved batch adds dedicated `ogkush`, `whitewidow` and `northernlights` kits mapped to `cl_ogkush`, `cl_whitewidow` and `cl_northernlights`. Production now has **15 dedicated named strains, 17 base atlases and 17 mutation atlases**; 22 named strains still use shared donor parts pending individual artwork. The fifteen mutation types are separate from strain coverage.
+
+Live plants receive matching new parts at create/load/save boundaries, preserving saved identity seeds, expressed traits, genomes and physical height. Incompatible traits retain their compatible donor parts. Historical photos retain pinned recipes. Native startup waits for all 34 plant atlases. Review, original PNGs, growth, senescence, care, expansion and wind: `review/strain-batch-06/`.
+
+## Expanded catalog: Skunk #1
+
+The approved `skunk1` kit maps to existing native `cl_skunk1`. Production now covers **16 of 37 named strains** with dedicated kits: 18 base atlases including the two extra experimental profiles, plus 17 mutation atlases. Startup gates all 35 images. Twenty-one named strains still await their individual kits. Living-save upgrades retain seeds, traits, genetics and height, while historical photos remain pinned. Approved media and source checkpoint: `review/strain-batch-07/`. Next requested review batch: Afghani, Hindu Kush and Bubba Kush.
+
+## Expanded catalog: Afghani, Hindu Kush and Bubba Kush
+
+Approved dedicated kits now map `afghani`, `hindukush` and `bubbakush` to native `cl_afghani`, `cl_hindukush` and `cl_bubbakush`. Released coverage is **19 of 37 named strains**, plus two extra experimental profiles: 21 base atlases and 17 mutation atlases, all 38 gated by startup. Eighteen named strains still await individual kits. Afghani/Hindu Kush retain golden finishing and no extra purple eligibility; Bubba Kush retains Dark purple finishing and its existing receptive cool-night response. Living-save upgrades preserve biology and prior unrelated/photo recipes. Review: `review/strain-batch-08/`.
+
+## Expanded catalog: Purple Kush, Granddaddy Purple and Blueberry
+
+Approved kits `purplekush`, `gdp` and `blueberry` map to existing native `cl_purplekush`, `cl_gdp` and `cl_blueberry`. Released dedicated coverage is **22 of 37 named strains**, with fifteen remaining. Including two extra experimental profiles, startup now gates 24 base and 17 mutation atlases (41 images). The three native finishes remain purple, deep purple and lavender, with existing genotype-gated cool-night responses. Living-save artwork upgrades preserve seeds, traits, genomes and height; unrelated recipes and historical photos stay pinned. Approved media/source checkpoint: `review/strain-batch-09/`.
+
+## Expanded catalog: Blue Dream, Sour Diesel and Chemdawg
+
+Approved kits `bluedream`, `sourdiesel` and `chemdawg` map to native `cl_bluedream`, `cl_sourdiesel` and `cl_chemdawg`. This preceding batch brought dedicated coverage to 25 of 37 named strains. Blue Dream keeps its ochre finish and existing receptive blue-violet night response; Sour Diesel/Chemdawg keep golden finishing and no extra purple eligibility. Living-save upgrades preserve seeds, expressed traits, genomes and physical height; historical photos and unrelated recipes remain pinned. Source/media checkpoint: `review/strain-batch-10/`.
+
+## Expanded catalog: Jack Herer, Durban Poison and Trainwreck
+
+Approved dedicated kits map to `cl_jackherer`, `cl_durban` and `cl_trainwreck`. Released coverage is **28 of 37 named strains**, with nine remaining. Including two experimental profiles, startup gates 30 base and 17 mutation atlases (47 images). All three retain native narrow lime-green traits and golden final-week senescence, without additional night-pigment eligibility. Compatible living saves upgrade artwork while retaining genetics, expressed traits, seed and height. Approved source/media checkpoint: `review/strain-batch-11/`.
+
+## Expanded catalog: AK-47, Super Silver Haze and Super Lemon Haze
+
+Approved kits `ak47`, `ssh` and `slh` map to their existing native lines. Released dedicated coverage is **31/37 named strains**, with six remaining. Startup gates 33 base and 17 mutation atlases (50 images). All three retain natural golden finishing with no added purple eligibility. Native genetics, biological growth and pinned historical photos remain intact; compatible living plants receive their new dedicated artwork at load/save boundaries. Exact approved sources and full-cycle media: `review/strain-batch-12/`.
+
+## Expanded catalog: Pineapple Express, GSC and GG4
+
+Approved dedicated kits map to existing `cl_pineexpress`, `cl_gsc` and `cl_gg4`. Released dedicated coverage is **34/37 named strains**, with three remaining. Startup gates 36 base and 17 mutation atlases (53 images). Only GSC retains purple senescence and native cool-night pigment eligibility; Pineapple Express/GG4 keep golden finishing. Compatible living saves upgrade artwork while preserving genetics, seed, expressed traits and height. Historical photos remain pinned. Exact approved source/media checkpoint: `review/strain-batch-13/`.
+
+## Completed catalog: Harlequin, Cannatonic and ACDC
+
+Approved dedicated kits map to `cl_harlequin`, `cl_cannatonic` and `cl_acdc`. All **37/37 named native strains** now have library mappings and dedicated artwork. Two extra experimental phenotype profiles bring the base atlas count to 39; 17 mutation atlases bring startup to 56 images. Native traits, simulation genetics, physical growth and golden senescence remain unchanged. Compatible living saves upgrade artwork while historical photos remain pinned. ACDC mid-flower explicitly attaches at source pixel (1092, 901), its central stem rather than a dangling leaflet; the compiler validates the anchor on opaque organ pixels. Approved checkpoint: `review/strain-batch-14/`.
+
+## Tent plant resolution
+
+The plant compiler appends `sources/scene-resolution.js` after the compositor. Bedroom/growroom use zoom-aware 3–6× world backing surfaces with a four-million-pixel cap, actual backing-size camera sampling and smooth final scaling. Plant frame surfaces match effective draw density, capped at 6×; reduced motion remains still. These rendering-only changes retain logical room coordinates, layering, genetics and the existing character payload. Review checkpoint: `review/plant-resolution/`.

@@ -1,0 +1,61 @@
+{
+  "id": "P004",
+  "key": "swisschard",
+  "name": "Swiss chard",
+  "status": "sample-awaiting-approval",
+  "revision": "swisschard-garden-1",
+  "generatedSource": "exec-719ccfba-ec95-4938-b87d-a53969a84980.png",
+  "sourceSHA256": "b6de3ccbf3353306b9d2ecb5ba07e14a99da6c291431bc18db8774607ae3dbd5",
+  "runtimeSHA256": "9f3cd4609a9d2a34a608f8872777ee8f6efffc73819d264725cc354309df44a2",
+  "runtime": "/garden-review/swisschard.webp",
+  "stages": [
+    {
+      "crop": [
+        161,
+        223,
+        313,
+        200
+      ],
+      "attach": [
+        164.0,
+        196.0
+      ]
+    },
+    {
+      "crop": [
+        721,
+        133,
+        434,
+        305
+      ],
+      "attach": [
+        219.0,
+        301.0
+      ]
+    },
+    {
+      "crop": [
+        31,
+        531,
+        567,
+        629
+      ],
+      "attach": [
+        311.0,
+        625.0
+      ]
+    },
+    {
+      "crop": [
+        633,
+        492,
+        606,
+        680
+      ],
+      "attach": [
+        302.0,
+        677.0
+      ]
+    }
+  ]
+}

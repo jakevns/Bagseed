@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "browserTests": {
+    "passed": 8,
+    "failed": 0,
+    "files": [
+      "tests/garden-plants-browser.test.cjs",
+      "tests/live-plants-browser.test.cjs",
+      "tests/plant-resolution.test.cjs"
+    ]
+  },
+  "buildPassed": true,
+  "staticIntegrityPassed": true,
+  "gardenAtlasCount": 30,
+  "publishedHTMLSHA256": "ceec3984975b1565ef05d18174e09997e2d726d3270b4553c239b7a08938f7d6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2",
+  "sourcePNGsPreserved": true,
+  "nativePotEligibilityPreserved": true
+}

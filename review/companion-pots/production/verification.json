@@ -1,0 +1,1638 @@
+{
+  "productionRenderer": true,
+  "injectedAdapter": false,
+  "reports": [
+    {
+      "device": "mobile",
+      "deviceScaleFactor": 2,
+      "startupAssetWait": true,
+      "saveReload": true,
+      "cases": [
+        {
+          "scene": "bedroom",
+          "zoom": "wide",
+          "world": [
+            1920,
+            720
+          ],
+          "density": 4,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                1920,
+                720,
+                -12,
+                431,
+                1920,
+                720
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 3
+        },
+        {
+          "scene": "bedroom",
+          "zoom": "normal",
+          "world": [
+            2880,
+            1080
+          ],
+          "density": 6,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                2880,
+                1080,
+                -232,
+                251,
+                2880,
+                1080
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 3
+        },
+        {
+          "scene": "bedroom",
+          "zoom": "close",
+          "world": [
+            2880,
+            1080
+          ],
+          "density": 6,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                2880,
+                1080,
+                -452,
+                71,
+                3840,
+                1440
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 3
+        },
+        {
+          "scene": "growroom",
+          "zoom": "wide",
+          "world": [
+            1792,
+            800
+          ],
+          "density": 4,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                1792,
+                800,
+                -772,
+                391,
+                1792,
+                800
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 5
+        },
+        {
+          "scene": "growroom",
+          "zoom": "normal",
+          "world": [
+            2688,
+            1200
+          ],
+          "density": 6,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                2688,
+                1200,
+                -1372,
+                191,
+                2688,
+                1200
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 5
+        },
+        {
+          "scene": "growroom",
+          "zoom": "close",
+          "world": [
+            2688,
+            1200
+          ],
+          "density": 6,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                2688,
+                1200,
+                -1972,
+                -18,
+                3584,
+                1600
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 5
+        }
+      ],
+      "eligibleSpecies": 76,
+      "stageRenders": 304,
+      "biologyUnchanged": true,
+      "layerOcclusion": true,
+      "positions": {
+        "closet": [
+          [
+            48,
+            104
+          ]
+        ],
+        "tent2": [
+          [
+            154,
+            122
+          ],
+          [
+            163,
+            122
+          ]
+        ],
+        "tent4": [
+          [
+            144,
+            140
+          ],
+          [
+            134,
+            140
+          ]
+        ],
+        "tent5": [
+          [
+            350,
+            150
+          ],
+          [
+            340,
+            150
+          ],
+          [
+            330,
+            150
+          ]
+        ]
+      },
+      "fixtureIds": [
+        "gp1",
+        "gp2",
+        "gp3",
+        "gp4",
+        "gp5",
+        "gp6",
+        "gp7",
+        "gp8"
+      ],
+      "runtimeSHA256": "0808994b77995d759511b25390b097c7484b57bf571e2a43912bf7abdecc9eee",
+      "errors": []
+    },
+    {
+      "device": "desktop",
+      "deviceScaleFactor": 1,
+      "startupAssetWait": true,
+      "saveReload": true,
+      "cases": [
+        {
+          "scene": "bedroom",
+          "zoom": "wide",
+          "world": [
+            1440,
+            540
+          ],
+          "density": 3,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                1440,
+                540,
+                0,
+                116,
+                1440,
+                540
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 3
+        },
+        {
+          "scene": "bedroom",
+          "zoom": "normal",
+          "world": [
+            1920,
+            720
+          ],
+          "density": 4,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                1920,
+                720,
+                0,
+                26,
+                1920,
+                720
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 3
+        },
+        {
+          "scene": "bedroom",
+          "zoom": "close",
+          "world": [
+            2880,
+            1080
+          ],
+          "density": 6,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                2880,
+                1080,
+                0,
+                -309,
+                2880,
+                1080
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 3
+        },
+        {
+          "scene": "growroom",
+          "zoom": "wide",
+          "world": [
+            1344,
+            600
+          ],
+          "density": 3,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 3
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                1344,
+                600,
+                12,
+                86,
+                1344,
+                600
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 5
+        },
+        {
+          "scene": "growroom",
+          "zoom": "normal",
+          "world": [
+            1792,
+            800
+          ],
+          "density": 4,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 4
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                1792,
+                800,
+                -424,
+                -29,
+                1792,
+                800
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 5
+        },
+        {
+          "scene": "growroom",
+          "zoom": "close",
+          "world": [
+            2688,
+            1200
+          ],
+          "density": 6,
+          "back": [
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                1254,
+                1254
+              ],
+              "crop": [
+                197,
+                321,
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "front": [
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            },
+            {
+              "source": [
+                862,
+                677
+              ],
+              "smoothing": true,
+              "quality": "high",
+              "d": 6
+            }
+          ],
+          "passes": [
+            {
+              "args": [
+                0,
+                0,
+                2688,
+                1200,
+                -1116,
+                -418,
+                2688,
+                1200
+              ],
+              "smoothing": true
+            }
+          ],
+          "targets": 5
+        }
+      ],
+      "eligibleSpecies": 76,
+      "stageRenders": 304,
+      "biologyUnchanged": true,
+      "layerOcclusion": true,
+      "positions": {
+        "closet": [
+          [
+            48,
+            104
+          ]
+        ],
+        "tent2": [
+          [
+            154,
+            122
+          ],
+          [
+            163,
+            122
+          ]
+        ],
+        "tent4": [
+          [
+            144,
+            140
+          ],
+          [
+            134,
+            140
+          ]
+        ],
+        "tent5": [
+          [
+            350,
+            150
+          ],
+          [
+            340,
+            150
+          ],
+          [
+            330,
+            150
+          ]
+        ]
+      },
+      "fixtureIds": [
+        "gp1",
+        "gp2",
+        "gp3",
+        "gp4",
+        "gp5",
+        "gp6",
+        "gp7",
+        "gp8"
+      ],
+      "runtimeSHA256": "0808994b77995d759511b25390b097c7484b57bf571e2a43912bf7abdecc9eee",
+      "errors": []
+    }
+  ]
+}

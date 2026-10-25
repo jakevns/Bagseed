@@ -1,0 +1,22 @@
+{
+  "kale": {
+    "generatedFile": "exec-9d742989-b87f-40f7-a658-e1b88a92da84.png",
+    "sourceSHA256": "ad925a15b5269dbb55cf7420be7c4bd83fb2760b24f9ef7f7b3ad30e22e4a655"
+  },
+  "mustardgreens": {
+    "generatedFile": "exec-d5ddcdc3-3c0e-45fa-bdc6-a5215f64cb7e.png",
+    "sourceSHA256": "65cf8a0895e62c6190271ee39d967366abdb1770712794c819a8c115cf6e9128"
+  },
+  "mizuna": {
+    "generatedFile": "exec-7917db18-4080-4106-95d6-60c040e7b41f.png",
+    "sourceSHA256": "56cc63d7b99ab9ca953e083f3f4ec8229a97303f064bb4c7569cbd85c29244e5"
+  },
+  "tatsoi": {
+    "generatedFile": "exec-e9411def-b561-43fd-ac3d-f9c14e369d07.png",
+    "sourceSHA256": "9b3686bf93ee3e8cfb48144d0241f5b7c30a146b66fd66cf787a70b265cacdfb"
+  },
+  "collardgreens": {
+    "generatedFile": "exec-aa885330-0a7c-4c2d-9ebb-a65937408297.png",
+    "sourceSHA256": "95b6130397449a5e19e549156bd96e92253f454e836e4f31d8bb60db6d53d710"
+  }
+}

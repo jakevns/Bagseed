@@ -1,0 +1,28 @@
+{
+  "id": "acdc",
+  "lineId": "cl_acdc",
+  "name": "ACDC",
+  "shortName": "ACDC",
+  "apiName": "BagseedAcdcGrowth",
+  "revision": "acdc-components-1",
+  "libraryRevision": "plant-parts-library-expanded-9",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "lime",
+    "colorName": "Lime green",
+    "branching": 0.95
+  },
+  "description": "Bright lime hybrid fans / pointed open light-green flowers",
+  "finishCaption": "Golden fan senescence / natural green flowers and amber stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-75806bae-2308-46ab-8c9d-e87966e6777d.png",
+  "attachmentPoints": {
+    "femaleMid": [
+      1092,
+      901
+    ]
+  }
+}

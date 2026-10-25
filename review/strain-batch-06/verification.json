@@ -1,0 +1,674 @@
+{
+  "families": [
+    {
+      "key": "ogkush",
+      "lineId": "cl_ogkush",
+      "id": "p_4kg5rm9",
+      "genome": "{\"id\":\"ph_u4kww98\",\"alleles\":{\"heightF\":[1.0089739083333407,0.9910260916666593],\"branching\":[1.006297240533866,0.9937027594661341],\"yield\":[1.0054921762230806,0.9945078237769194],\"aromaInt\":[0.9118454680940369,0.8881545319059632],\"moldRes\":[0.5964506619045976,0.6035493380954023],\"pestRes\":[0.5973219995189923,0.6026780004810076],\"speed\":[0.9947527454567607,1.0052472545432392],\"stressSens\":[0.5155434325807262,0.5244565674192738],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Gas\",\"Gas\"],\"leafShape\":[\"hybrid\",\"hybrid\"]},\"cx\":{\"t\":1.0097549729049207,\"c\":1.0776949513936416,\"tp\":[0.961455838661641,1.0569075188599528,0.8729804612696171],\"minor\":0.7962446883320808},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_ogkush\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_u4kww98\",\"leafKit\":\"ogkush\",\"flowerKit\":\"ogkush\",\"traits\":{\"leafShape\":\"hybrid\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "ogkush",
+          "flowerKit": "ogkush"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "gold",
+        "rgb": [
+          218,
+          180,
+          66
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    },
+    {
+      "key": "whitewidow",
+      "lineId": "cl_whitewidow",
+      "id": "p_7097eio",
+      "genome": "{\"id\":\"ph_p3rxhir\",\"alleles\":{\"heightF\":[0.9573483779551228,0.9426516220448771],\"branching\":[1.0667024206704343,1.0332975793295658],\"yield\":[0.9924798441834282,1.0075201558165718],\"aromaInt\":[0.7020141066328389,0.697985893367161],\"moldRes\":[0.6984433655233587,0.7015566344766412],\"pestRes\":[0.6452374212794355,0.6547625787205645],\"speed\":[1.0160575548282358,0.9839424451717641],\"stressSens\":[0.5270717529378739,0.5129282470621261],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"lime\",\"lime\"],\"colorName\":[\"Lime green\",\"Lime green\"],\"aroma\":[\"Earthy\",\"Earthy\"],\"leafShape\":[\"hybrid\",\"hybrid\"]},\"cx\":{\"t\":1.0539242704631762,\"c\":1.1488023049663751,\"tp\":[1.134966187272221,1.10292011173442,1.024031564872712],\"minor\":0.5197300664149225},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_whitewidow\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_p3rxhir\",\"leafKit\":\"whitewidow\",\"flowerKit\":\"whitewidow\",\"traits\":{\"leafShape\":\"hybrid\",\"leafKey\":\"lime\",\"colorName\":\"Lime green\",\"branching\":1.05}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "whitewidow",
+          "flowerKit": "whitewidow"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "gold",
+        "rgb": [
+          218,
+          185,
+          65
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    },
+    {
+      "key": "northernlights",
+      "lineId": "cl_northernlights",
+      "id": "p_403opar",
+      "genome": "{\"id\":\"ph_57n8vz6\",\"alleles\":{\"heightF\":[0.8528076161568868,0.8471923838431131],\"branching\":[1.0991671523289523,1.1008328476710478],\"yield\":[0.9937589788171463,1.0062410211828536],\"aromaInt\":[0.5928352395543829,0.6071647604456171],\"moldRes\":[0.7480502899472485,0.7519497100527515],\"pestRes\":[0.6893320304341847,0.7106679695658152],\"speed\":[1.049993175463134,1.0500068245368661],\"stressSens\":[0.515904782205997,0.524095217794003],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Earthy\",\"Earthy\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":0.9076343985740095,\"c\":0.9776903846068308,\"tp\":[1.120436638686806,0.86278913654387,1.1111483249813319],\"minor\":0.6980269851628691},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_northernlights\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_57n8vz6\",\"leafKit\":\"northernlights\",\"flowerKit\":\"northernlights\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "northernlights",
+          "flowerKit": "northernlights"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "gold",
+        "rgb": [
+          218,
+          180,
+          66
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    }
+  ],
+  "mutationChecks": [
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ],
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ],
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ]
+  ],
+  "pinnedRecipesPreserved": true,
+  "readOnly": true,
+  "atlasCount": 34,
+  "catalogCount": 37,
+  "animation": {
+    "frames": 96,
+    "fps": 12,
+    "seconds": 8
+  },
+  "status": "sample-awaiting-approval",
+  "saveReload": true,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "9f9adfaf363c0ca17ad522995b834fad2e156123c93605618f08853be0bf3e78",
+  "errors": []
+}

@@ -1,0 +1,769 @@
+{
+  "families": [
+    {
+      "key": "afghani",
+      "lineId": "cl_afghani",
+      "id": "p_tvcdby4",
+      "genome": "{\"id\":\"ph_3aslggq\",\"alleles\":{\"heightF\":[0.8028718803379685,0.7971281196620316],\"branching\":[1.1640804764177766,1.1359195235822233],\"yield\":[0.984787852501031,1.015212147498969],\"aromaInt\":[0.6907932058084989,0.709206794191501],\"moldRes\":[0.6909049045926425,0.7090950954073574],\"pestRes\":[0.7588435077309259,0.7411564922690741],\"speed\":[1.0088009920800105,0.9911990079199895],\"stressSens\":[0.520428874723455,0.519571125276545],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Spice\",\"Spice\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":0.8800100274384022,\"c\":0.8639817495830356,\"tp\":[0.8154585330747068,1.0237832837738097,1.0383469630964102],\"minor\":0.3685071982908994},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_afghani\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_3aslggq\",\"leafKit\":\"afghani\",\"flowerKit\":\"afghani\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.15}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "afghani",
+          "flowerKit": "afghani"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "gold",
+        "rgb": [
+          218,
+          180,
+          66
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    },
+    {
+      "key": "hindukush",
+      "lineId": "cl_hindukush",
+      "id": "p_9b4cq6e",
+      "genome": "{\"id\":\"ph_j06tp20\",\"alleles\":{\"heightF\":[0.7965783845696599,0.8034216154303402],\"branching\":[1.095038697340945,1.1049613026590552],\"yield\":[0.9400408236608957,0.9599591763391042],\"aromaInt\":[0.6955248762635979,0.704475123736402],\"moldRes\":[0.7576317408032482,0.7423682591967518],\"pestRes\":[0.7382985667611938,0.7617014332388062],\"speed\":[1.0131350355946924,0.9868649644053076],\"stressSens\":[0.5202113844426349,0.5197886155573651],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Forest green\",\"Forest green\"],\"aroma\":[\"Earthy\",\"Earthy\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":1.0200965085299685,\"c\":1.0194190272362902,\"tp\":[1.1291700335219503,0.9979289682582021,1.0601995022036137],\"minor\":0.4222013959661126},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_hindukush\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_j06tp20\",\"leafKit\":\"hindukush\",\"flowerKit\":\"hindukush\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Forest green\",\"branching\":1.1}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "hindukush",
+          "flowerKit": "hindukush"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "gold",
+        "rgb": [
+          218,
+          180,
+          66
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    },
+    {
+      "key": "bubbakush",
+      "lineId": "cl_bubbakush",
+      "id": "p_b4a2vsg",
+      "genome": "{\"id\":\"ph_nq4flwj\",\"alleles\":{\"heightF\":[0.809320190874301,0.7906798091256991],\"branching\":[1.1123469888104593,1.0876530111895408],\"yield\":[0.9443448864741832,0.9556551135258167],\"aromaInt\":[0.7896874265896157,0.8103125734103844],\"moldRes\":[0.6423531128163333,0.6576468871836667],\"pestRes\":[0.6605210359154968,0.6394789640845032],\"speed\":[0.9648014965833397,0.9351985034166602],\"stressSens\":[0.5161475889094919,0.5238524110905082],\"lifecycle\":[\"photo\",\"photo\"],\"type\":[\"I\",\"I\"],\"leafKey\":[\"forest\",\"forest\"],\"colorName\":[\"Dark purple\",\"Dark purple\"],\"aroma\":[\"Spice\",\"Spice\"],\"leafShape\":[\"broad\",\"broad\"]},\"cx\":{\"t\":1.0253128946758807,\"c\":1.0473618384683505,\"tp\":[0.8620418911799789,0.8205818369984628,0.8947017685510219],\"minor\":0.3872389164753258},\"mut\":null,\"family\":null,\"generation\":null,\"lineId\":\"cl_bubbakush\",\"source\":\"saved simulation traits\",\"ancestryKnown\":false,\"mg\":{},\"som\":[]}",
+      "recipe": "{\"v\":1,\"seed\":\"ph_nq4flwj\",\"leafKit\":\"bubbakush\",\"flowerKit\":\"bubbakush\",\"traits\":{\"leafShape\":\"broad\",\"leafKey\":\"forest\",\"colorName\":\"Dark purple\",\"branching\":1.1}}",
+      "stages": [
+        {
+          "stage": 0,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 1,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 2,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 3,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 4,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 5,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 6,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 7,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 8,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 9,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 10,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 11,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        },
+        {
+          "stage": 12,
+          "painted": true,
+          "finite": true,
+          "leafKit": "bubbakush",
+          "flowerKit": "bubbakush"
+        }
+      ],
+      "physicalHeight": 50,
+      "giantHeight": 90,
+      "senescence": {
+        "amount": 0.9,
+        "palette": "deep-purple",
+        "rgb": [
+          77,
+          44,
+          92
+        ]
+      },
+      "dedicatedParts": true,
+      "connected": true,
+      "windChanged": true,
+      "reducedStable": true,
+      "rootFixed": true,
+      "expanding": true,
+      "gradedBuds": true,
+      "popcornPresent": true,
+      "cleanupRemoves": true,
+      "cleanupEnlargesTop": true,
+      "stressChanges": true,
+      "trainingForms": 4,
+      "maleWorks": true,
+      "cloneStable": true,
+      "snapshotStable": true
+    }
+  ],
+  "mutationChecks": [
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ],
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ],
+    [
+      {
+        "key": "fernfrond",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "freakshow",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ducksfoot",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "monophylla",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "moonmarble",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "snowtip",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "goldleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "ember",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pinkpistil",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "inkleaf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "twinleader",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "crested",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "whorl",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "pocketdwarf",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      },
+      {
+        "key": "triploid",
+        "painted": true,
+        "finite": true,
+        "changed": true
+      }
+    ]
+  ],
+  "coolStudies": [
+    {
+      "key": "afghani",
+      "nightTemp": 70,
+      "dayTemp": 78,
+      "hours": 0,
+      "expression": {
+        "capable": false,
+        "strength": 0,
+        "palette": null,
+        "hex": null,
+        "rgb": null
+      },
+      "sproutBonus": 0
+    },
+    {
+      "key": "hindukush",
+      "nightTemp": 70,
+      "dayTemp": 78,
+      "hours": 0,
+      "expression": {
+        "capable": false,
+        "strength": 0,
+        "palette": null,
+        "hex": null,
+        "rgb": null
+      },
+      "sproutBonus": 0
+    },
+    {
+      "key": "bubbakush",
+      "nightTemp": 70,
+      "dayTemp": 78,
+      "hours": 0,
+      "expression": {
+        "capable": true,
+        "strength": 0,
+        "palette": "near-black purple",
+        "hex": "#201a30",
+        "rgb": [
+          32,
+          26,
+          48
+        ]
+      },
+      "sproutBonus": 0
+    },
+    {
+      "key": "afghani",
+      "nightTemp": 68,
+      "dayTemp": 78,
+      "hours": 0,
+      "expression": {
+        "capable": false,
+        "strength": 0,
+        "palette": null,
+        "hex": null,
+        "rgb": null
+      },
+      "sproutBonus": 0
+    },
+    {
+      "key": "hindukush",
+      "nightTemp": 68,
+      "dayTemp": 78,
+      "hours": 0,
+      "expression": {
+        "capable": false,
+        "strength": 0,
+        "palette": null,
+        "hex": null,
+        "rgb": null
+      },
+      "sproutBonus": 0
+    },
+    {
+      "key": "bubbakush",
+      "nightTemp": 68,
+      "dayTemp": 78,
+      "hours": 24,
+      "expression": {
+        "capable": true,
+        "strength": 1,
+        "palette": "near-black purple",
+        "hex": "#201a30",
+        "rgb": [
+          32,
+          26,
+          48
+        ]
+      },
+      "sproutBonus": 0.08
+    }
+  ],
+  "pinnedRecipesPreserved": true,
+  "readOnly": true,
+  "atlasCount": 38,
+  "catalogCount": 37,
+  "animation": {
+    "frames": 96,
+    "fps": 12,
+    "seconds": 8
+  },
+  "status": "sample-awaiting-approval",
+  "productionRenderer": false,
+  "saveReload": true,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "d26540181a8d39c25320ca39e907fabaf79f269e0c322c640d58c81a7ff0b56f",
+  "errors": []
+}

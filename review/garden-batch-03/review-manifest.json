@@ -1,0 +1,344 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "53ba5fcc07e672259a603a0a21fe38f589315aa2",
+  "species": {
+    "P056": {
+      "key": "chives",
+      "name": "Chives",
+      "generatedSource": "exec-7812859b-c9c5-46f6-9a0f-008c4bffd731.png",
+      "sourceSHA256": "d921fd89f4f68395b898b076daed9fa0936f088c3d8a390a5dc133bcc3b281eb",
+      "runtimeSHA256": "84d160d008d7b9ba4744fc939857b694ed61e13c696d615f6054338c5904f649",
+      "stages": [
+        {
+          "crop": [
+            206,
+            280,
+            184,
+            202
+          ],
+          "attach": [
+            110.0,
+            199.0
+          ]
+        },
+        {
+          "crop": [
+            745,
+            78,
+            404,
+            417
+          ],
+          "attach": [
+            193.0,
+            414.0
+          ]
+        },
+        {
+          "crop": [
+            20,
+            602,
+            609,
+            571
+          ],
+          "attach": [
+            304.0,
+            568.0
+          ]
+        },
+        {
+          "crop": [
+            661,
+            580,
+            577,
+            599
+          ],
+          "attach": [
+            286.0,
+            596.0
+          ]
+        }
+      ]
+    },
+    "P053": {
+      "key": "cilantro",
+      "name": "Cilantro",
+      "generatedSource": "exec-c5f0e383-5831-4f85-9718-e0bac06b213d.png",
+      "sourceSHA256": "d10b145d0762846955f3022ac6300ef30d5fac746e7f7414b589014ad352d6cb",
+      "runtimeSHA256": "13a04bcc85bbbbbac1d08a903668564e565a1666484e001230f4d5ea0edc7bff",
+      "stages": [
+        {
+          "crop": [
+            200,
+            257,
+            258,
+            204
+          ],
+          "attach": [
+            123.0,
+            201.0
+          ]
+        },
+        {
+          "crop": [
+            705,
+            70,
+            470,
+            408
+          ],
+          "attach": [
+            243.0,
+            404.0
+          ]
+        },
+        {
+          "crop": [
+            37,
+            620,
+            581,
+            564
+          ],
+          "attach": [
+            296.0,
+            561.0
+          ]
+        },
+        {
+          "crop": [
+            687,
+            536,
+            545,
+            665
+          ],
+          "attach": [
+            267.0,
+            661.0
+          ]
+        }
+      ]
+    },
+    "P055": {
+      "key": "dill",
+      "name": "Dill",
+      "generatedSource": "exec-78f0e968-f6d7-438e-a4e8-bfdb3bdc6111.png",
+      "sourceSHA256": "f9ca75e0ed39390c71e2997fd5117be26ed3fb7a0ebe55d558d82645e722732d",
+      "runtimeSHA256": "e464877f0733977ba87b1435493edbe646344948125bc94a0ef522ce147bc752",
+      "stages": [
+        {
+          "crop": [
+            194,
+            346,
+            266,
+            180
+          ],
+          "attach": [
+            130.0,
+            177.0
+          ]
+        },
+        {
+          "crop": [
+            740,
+            45,
+            370,
+            487
+          ],
+          "attach": [
+            192.0,
+            484.0
+          ]
+        },
+        {
+          "crop": [
+            52,
+            605,
+            562,
+            588
+          ],
+          "attach": [
+            289.0,
+            585.0
+          ]
+        },
+        {
+          "crop": [
+            662,
+            579,
+            558,
+            619
+          ],
+          "attach": [
+            278.0,
+            616.0
+          ]
+        }
+      ]
+    },
+    "P052": {
+      "key": "thaibasil",
+      "name": "Thai basil",
+      "generatedSource": "exec-bc2e349c-8611-4cd0-a0aa-32de20d144dd.png",
+      "sourceSHA256": "ca879b9150e10806acec0bc6d577c97b7fc9e4de4e762f60f02c728456d34661",
+      "runtimeSHA256": "fe2c195998ff487f15e20b087a01e13ad235e04c1984dbdebf8117f02bfbc867",
+      "stages": [
+        {
+          "crop": [
+            212,
+            341,
+            245,
+            156
+          ],
+          "attach": [
+            124.0,
+            153.0
+          ]
+        },
+        {
+          "crop": [
+            733,
+            91,
+            428,
+            409
+          ],
+          "attach": [
+            212.0,
+            406.0
+          ]
+        },
+        {
+          "crop": [
+            39,
+            636,
+            585,
+            548
+          ],
+          "attach": [
+            298.0,
+            545.0
+          ]
+        },
+        {
+          "crop": [
+            659,
+            555,
+            581,
+            631
+          ],
+          "attach": [
+            297.0,
+            627.0
+          ]
+        }
+      ]
+    },
+    "P058": {
+      "key": "thyme",
+      "name": "Thyme",
+      "generatedSource": "exec-2f658964-9d89-4498-9fc3-08827212a1ca.png",
+      "sourceSHA256": "c58b8e77ccafcfe936938fe58be414ce807f11484d46586c6984d87c4251f029",
+      "runtimeSHA256": "4f1566e062fe21a3c68648bc6a21c32ceb0c3e71a1957d4e02ae36734da7b017",
+      "stages": [
+        {
+          "crop": [
+            223,
+            388,
+            198,
+            188
+          ],
+          "attach": [
+            102.0,
+            184.0
+          ]
+        },
+        {
+          "crop": [
+            741,
+            194,
+            414,
+            382
+          ],
+          "attach": [
+            203.0,
+            379.0
+          ]
+        },
+        {
+          "crop": [
+            56,
+            751,
+            552,
+            419
+          ],
+          "attach": [
+            266.0,
+            415.0
+          ]
+        },
+        {
+          "crop": [
+            645,
+            706,
+            591,
+            463
+          ],
+          "attach": [
+            300.0,
+            460.0
+          ]
+        }
+      ]
+    }
+  },
+  "renderer": "renderer.js",
+  "rendererSHA256": "016eded8fcbd178055c424fedcfd6cf8c4dfc9f41ba17c2ae3e48571b27cdc49",
+  "verification": {
+    "report": "verification.json",
+    "growthStagesPassed": 20,
+    "windAndReducedMotionPassed": 5,
+    "saveReload": true,
+    "publishedHTMLUnchanged": true,
+    "staticIntegrityPassed": true,
+    "errors": []
+  },
+  "files": {
+    "README.md": "5be2314c92af4f0ba9651bafeec6076579abd99a524378b713edda5c4678e5da",
+    "botanical-targets.json": "777091dbd8e751ccf01e7de863cb9f6c9d3efe5112a34295c6af364509a1091b",
+    "five-plants-in-pots.png": "974c906e05443f472fd5e1788b4dc5649c024f7792500236c1622a9d15e90a04",
+    "growth-and-wind.mp4": "028a3744c5bd5a0355cfc7ab9a7267f772af92100d899e7d7dce9d03acd29cdc",
+    "growth-stages.png": "2e5f221b3004b6bb7d352140157454f8db23c8b723f657394062f599d55f0531",
+    "kits/chives/assets/stages.png": "d921fd89f4f68395b898b076daed9fa0936f088c3d8a390a5dc133bcc3b281eb",
+    "kits/chives/assets/stages.webp": "84d160d008d7b9ba4744fc939857b694ed61e13c696d615f6054338c5904f649",
+    "kits/chives/sources/manifest.json": "e81fb64d2c5a56ca720107ae3d71fa9e5c49d65d3078f09a8cba928b6ab64da7",
+    "kits/cilantro/assets/stages.png": "d10b145d0762846955f3022ac6300ef30d5fac746e7f7414b589014ad352d6cb",
+    "kits/cilantro/assets/stages.webp": "13a04bcc85bbbbbac1d08a903668564e565a1666484e001230f4d5ea0edc7bff",
+    "kits/cilantro/sources/manifest.json": "5b4a3c301e8f0c57b552c8e346c8af0da3173b5ffa89d35305568737353f8426",
+    "kits/dill/assets/stages.png": "f9ca75e0ed39390c71e2997fd5117be26ed3fb7a0ebe55d558d82645e722732d",
+    "kits/dill/assets/stages.webp": "e464877f0733977ba87b1435493edbe646344948125bc94a0ef522ce147bc752",
+    "kits/dill/sources/manifest.json": "634cfdef668fe2152cce6f13aa0b6fb449f3588e8d8995667d48bf3e0edf3198",
+    "kits/thaibasil/assets/stages.png": "ca879b9150e10806acec0bc6d577c97b7fc9e4de4e762f60f02c728456d34661",
+    "kits/thaibasil/assets/stages.webp": "fe2c195998ff487f15e20b087a01e13ad235e04c1984dbdebf8117f02bfbc867",
+    "kits/thaibasil/sources/manifest.json": "8bd122af8ad8995126ccb29c89d0677fe5915f66efc26c4ef0c6d4ca8f664fe6",
+    "kits/thyme/assets/stages.png": "c58b8e77ccafcfe936938fe58be414ce807f11484d46586c6984d87c4251f029",
+    "kits/thyme/assets/stages.webp": "4f1566e062fe21a3c68648bc6a21c32ceb0c3e71a1957d4e02ae36734da7b017",
+    "kits/thyme/sources/manifest.json": "345a9228bca6e535dfe5903a378d5d5cfaa76851fafbdc912f0ce59bbb7794ed",
+    "pot-tiers.png": "1b7580d28da0b6a605a2afc0768be1b018de0bd91931502e6d855216055864bf",
+    "renderer.js": "016eded8fcbd178055c424fedcfd6cf8c4dfc9f41ba17c2ae3e48571b27cdc49",
+    "store-artwork.png": "c34119097c348a6f58fdfe40bd4cdf32d0d15d19bc2e34730ee10e4beec5a52d",
+    "tent-example.png": "34d16c941ba66f7cf3adbd602019a8c8e98ca27f453513860eb8e71c46d4e722",
+    "verification.json": "9709c7e9f8625e0d5a9105f0ab73f333ae8a940c45c5294206e0a956bfe57ca3"
+  },
+  "productionRendererSHA256": "016eded8fcbd178055c424fedcfd6cf8c4dfc9f41ba17c2ae3e48571b27cdc49",
+  "productionManifests": {
+    "thyme": "2360a1cb50d898d153d67d20aaacfd844df6f69a5c9d0027f3d67ac449b4d5b9",
+    "chives": "57f679687c67c5cd6ad3615b730aad68904d524a27a32a31d1c9a3d2ab5071ee",
+    "dill": "63cea239c42bd5891847364e079457022375fba39bdc9d8c5940fde7795cb75b",
+    "cilantro": "3cf28c88b7dd1101328b65b8e86d09748500eb6d77d9d18c5f0a51b3712e4ab7",
+    "thaibasil": "745486b4dedbbe8d7ecc65d64b49b20b46ef0f5f6e12c52d582f69e385970d05"
+  },
+  "productionVerification": {
+    "browserTestsPassed": 5,
+    "startupGardenRequests": 15,
+    "characterPayloadPreserved": true,
+    "buildPassed": true,
+    "staticIntegrityPassed": true
+  }
+}

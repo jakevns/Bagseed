@@ -1,0 +1,61 @@
+{
+  "id": "P011",
+  "key": "carrot",
+  "name": "Carrot",
+  "status": "approved-growth-artwork",
+  "revision": "carrot-garden-1",
+  "generatedSource": "carrot.png",
+  "sourceSHA256": "74d46b0aa9119c2c0021174cf27e74518e6d3ff3dd6589e718dceeca6ca56899",
+  "runtimeSHA256": "9e576c0d357c80c216f61f865daf3c3d011807fc11daa1ccdfa410cabe1cace2",
+  "runtime": "assets/garden-plants/carrot/stages-9e576c0d357c.webp",
+  "stages": [
+    {
+      "crop": [
+        169,
+        269,
+        353,
+        181
+      ],
+      "attach": [
+        183.0,
+        178.0
+      ]
+    },
+    {
+      "crop": [
+        706,
+        46,
+        516,
+        416
+      ],
+      "attach": [
+        241.0,
+        412.0
+      ]
+    },
+    {
+      "crop": [
+        29,
+        592,
+        581,
+        582
+      ],
+      "attach": [
+        301.0,
+        579.0
+      ]
+    },
+    {
+      "crop": [
+        642,
+        487,
+        593,
+        709
+      ],
+      "attach": [
+        290.0,
+        705.0
+      ]
+    }
+  ]
+}

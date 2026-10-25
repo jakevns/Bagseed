@@ -1,0 +1,22 @@
+{
+  "id": "ssh",
+  "lineId": "cl_ssh",
+  "name": "Super Silver Haze",
+  "shortName": "Super Silver Haze",
+  "apiName": "BagseedSshGrowth",
+  "revision": "ssh-components-1",
+  "libraryRevision": "plant-parts-library-expanded-7",
+  "traits": {
+    "leafShape": "narrow",
+    "leafKey": "lime",
+    "colorName": "Lime green",
+    "branching": 0.9
+  },
+  "description": "Slender lime fans / elongated silvery resinous flowers",
+  "finishCaption": "Golden fan senescence / natural green flowers and amber stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-f8487d2d-ec05-4261-8c13-ad0d91ec44a4.png"
+}

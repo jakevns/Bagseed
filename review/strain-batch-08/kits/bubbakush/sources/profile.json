@@ -1,0 +1,22 @@
+{
+  "id": "bubbakush",
+  "lineId": "cl_bubbakush",
+  "name": "Bubba Kush",
+  "shortName": "Bubba Kush",
+  "apiName": "BagseedBubbakushGrowth",
+  "revision": "bubbakush-components-1",
+  "libraryRevision": "plant-parts-library-expanded-3",
+  "traits": {
+    "leafShape": "broad",
+    "leafKey": "forest",
+    "colorName": "Dark purple",
+    "branching": 1.1
+  },
+  "description": "Broad green fans / chunky dark-plum flowers",
+  "finishCaption": "Deep-purple fan senescence / frosted plum flowers",
+  "finishPalette": "deep-purple",
+  "coolNights": true,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-ec2849dc-da95-4102-beef-dd20a87129da.png"
+}

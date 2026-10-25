@@ -1,0 +1,106 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "eecd2e74be6e699c0dc59bc372773e69251e27ae",
+  "coverage": {
+    "releasedDedicatedNamedStrains": 28,
+    "nativeNamedStrains": 37,
+    "remaining": 9,
+    "baseAtlases": 30,
+    "mutationAtlases": 17
+  },
+  "nativeLines": {
+    "cl_jackherer": {
+      "kit": "jackherer",
+      "name": "Jack Herer",
+      "traits": {
+        "leafShape": "narrow",
+        "leafKey": "lime",
+        "colorName": "Lime green",
+        "branching": 0.95
+      },
+      "generatedSource": "exec-808df014-327b-47a1-b350-8267b9c737ee.png",
+      "sourceSHA256": "2c448e395c0992f94ba9760d6d3cc1283a456d64c0cb4c455bc6f0252be916ef",
+      "runtimeSHA256": "b02105336ec9ec7412eba00f506798bee975c287c53e0c1ffadb8f0d3023e591",
+      "manifestSHA256": "6a86ae40860a0604ccff2308f7185c9831ae03868333cc06a7a4b6bceccf2645",
+      "productionManifestSHA256": "16a4d99760906e97128e71f73cf9fc687b9985cd2bc5ff08f5c1c6822f9c236e"
+    },
+    "cl_durban": {
+      "kit": "durban",
+      "name": "Durban Poison",
+      "traits": {
+        "leafShape": "narrow",
+        "leafKey": "lime",
+        "colorName": "Lime green",
+        "branching": 0.9
+      },
+      "generatedSource": "exec-a87d463c-c3ea-4a6f-aff8-328347fca5bf.png",
+      "sourceSHA256": "e980c358f2828a7cf51d5a8feac4692b5c161e2a451fda4e4d1f3ec23d0a6787",
+      "runtimeSHA256": "a4c619ec0dfcb86868d024fb0429e48e034905f38b2ac2d68c4b8014b6a425fd",
+      "manifestSHA256": "b652f6bde6ab131eff069c5486e3cc4895d693ae4a0b93abff26c2a941b88f9e",
+      "productionManifestSHA256": "14bd0b8691065388b05cc58de047de845223227787345c7043b17fc7ece59d1e"
+    },
+    "cl_trainwreck": {
+      "kit": "trainwreck",
+      "name": "Trainwreck",
+      "traits": {
+        "leafShape": "narrow",
+        "leafKey": "lime",
+        "colorName": "Lime green",
+        "branching": 0.95
+      },
+      "generatedSource": "exec-b91174e1-8131-4250-990a-0c3363e7aa80.png",
+      "sourceSHA256": "dc6fa535c8825c54f8ce22b7a209cb9097ef43db2565955e27b4bf4174823d9c",
+      "runtimeSHA256": "df912006f0c641b0ce4e86278632c65b53b14536dd5e1318e5a7fedd88b143b7",
+      "manifestSHA256": "45569a9dd9c4a1bf109a5d71c3eafccd9cd2b8ea684544d5f6f324744bf0a210",
+      "productionManifestSHA256": "ed9b582e2d935aac20074da8500d342aceaef8beeb5c14b47f850b6c7e81c445"
+    }
+  },
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "4bad9d8f778f45e07c47c316c0510d4d52ae6ddcdb7debba8be84d859deef5ff",
+  "verification": {
+    "report": "verification.json",
+    "saveReload": true,
+    "readOnly": true,
+    "mutationCombinationsPassed": 45,
+    "staticIntegrityPassed": true,
+    "animation": {
+      "frames": 96,
+      "fps": 12,
+      "seconds": 8
+    },
+    "browserErrors": [],
+    "actualProductionPagePassed": true,
+    "oldLivingSaveUpgradePassed": true,
+    "postIntegrationBrowserTestsPassed": 3,
+    "characterPayloadPreserved": true
+  },
+  "files": {
+    "50-and-90-inches.png": "d8df71209453f9564169eb12794d78c9f2e79e28365561957a6713a22fdda882",
+    "README.md": "4cb144793ae310b67be60a8b40f8237bd4800c85e7b0a10032776835b3650b6e",
+    "care-and-training.png": "029897a654624ef86d5e1ae30730fdd4a4508b59e5670e92a95e323228648580",
+    "durban-growth.png": "caf0fe1e4a6b87e1f0ea3994b3ac2253bdb54c7782b3943be745ddeb12886243",
+    "flower-detail.png": "b5c1f51a1d92ab9ddbe48432381728d06db9cabea20250725b4c602e6a6ac269",
+    "growth-and-wind.gif": "9abdd1eb8964790fbdf5c628f764935452952984fc50deed332a9436f9d00231",
+    "growth-and-wind.mp4": "23441216ece1fe2560bc1ae76f51187b4ae8b78f6fd9f3487e82f04c8b5e5db1",
+    "jackherer-growth.png": "a106d7427cfdebb02d2fe970c152ee59b6333aab5831860e3f14598df6b7b63d",
+    "kits/durban/assets/components.png": "e980c358f2828a7cf51d5a8feac4692b5c161e2a451fda4e4d1f3ec23d0a6787",
+    "kits/durban/assets/components.webp": "a4c619ec0dfcb86868d024fb0429e48e034905f38b2ac2d68c4b8014b6a425fd",
+    "kits/durban/sources/manifest.json": "b652f6bde6ab131eff069c5486e3cc4895d693ae4a0b93abff26c2a941b88f9e",
+    "kits/durban/sources/profile.json": "f4cb62050bab9adadb10f599d8bb23231c0a4cb1ffddab132ec11caea842756b",
+    "kits/jackherer/assets/components.png": "2c448e395c0992f94ba9760d6d3cc1283a456d64c0cb4c455bc6f0252be916ef",
+    "kits/jackherer/assets/components.webp": "b02105336ec9ec7412eba00f506798bee975c287c53e0c1ffadb8f0d3023e591",
+    "kits/jackherer/sources/manifest.json": "6a86ae40860a0604ccff2308f7185c9831ae03868333cc06a7a4b6bceccf2645",
+    "kits/jackherer/sources/profile.json": "7cf6393590366ab31d0659f8f2ba309121a2409fc82640dc5e662bdbe086e516",
+    "kits/trainwreck/assets/components.png": "dc6fa535c8825c54f8ce22b7a209cb9097ef43db2565955e27b4bf4174823d9c",
+    "kits/trainwreck/assets/components.webp": "df912006f0c641b0ce4e86278632c65b53b14536dd5e1318e5a7fedd88b143b7",
+    "kits/trainwreck/sources/manifest.json": "45569a9dd9c4a1bf109a5d71c3eafccd9cd2b8ea684544d5f6f324744bf0a210",
+    "kits/trainwreck/sources/profile.json": "1a7ab30292ba5261903cc9ac7aeda306ae5fcd83519621c1417f553313a4885e",
+    "late-flower-senescence.png": "dc13b6f92fb995c91f777b940ce7f694787e6ba069030a345e330531233b1dda",
+    "three-strains-in-flower.png": "65ff4636a35ccf24d474db47872977801d4bb751d7bb559dbc915a571e01ebbb",
+    "trainwreck-growth.png": "ad1fa131bbdd628ed0cfe814f362bf4d7692b18620a9d128f2aea1e8b15d08fa",
+    "vegetative-identities.png": "cfd1a7965f7ffbb14b0a13e5450e8b3a12f30b59ed9e9ae895bf0c4f893eb38d",
+    "verification.json": "99cca6cddef209076cf4fb82d982740a5f8227867bda005d6e5ea7b76b7e78bc"
+  },
+  "characterRelease": "character-alignment-audit-v6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2"
+}

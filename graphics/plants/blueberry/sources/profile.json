@@ -1,0 +1,22 @@
+{
+  "id": "blueberry",
+  "lineId": "cl_blueberry",
+  "name": "Blueberry",
+  "shortName": "Blueberry",
+  "apiName": "BagseedBlueberryGrowth",
+  "revision": "blueberry-components-1",
+  "libraryRevision": "plant-parts-library-expanded-4",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "blue",
+    "colorName": "Lavender",
+    "branching": 1
+  },
+  "description": "Sage-blue hybrid fans / soft lilac flower clusters",
+  "finishCaption": "Lavender fan senescence / silvery lilac flowers",
+  "finishPalette": "lavender",
+  "coolNights": true,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-bbbf92b7-dc57-4641-83c1-dd4cdc7f9a15.png"
+}

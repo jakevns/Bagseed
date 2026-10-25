@@ -1,0 +1,108 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "0bb3673e2c0fa2cd1e3eecaa6013bdf249d1c84e",
+  "coverage": {
+    "releasedDedicatedNamedStrains": 34,
+    "nativeNamedStrains": 37,
+    "remaining": 3,
+    "baseAtlases": 36,
+    "mutationAtlases": 17
+  },
+  "nativeLines": {
+    "cl_pineexpress": {
+      "kit": "pineexpress",
+      "name": "Pineapple Express",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "lime",
+        "colorName": "Lime green",
+        "branching": 1
+      },
+      "generatedSource": "exec-37f47e74-2522-4aef-8fec-24ed49f02aa1.png",
+      "sourceSHA256": "50dc01915c97aa990998fc3e2dd2ea4bf5b0d1a0e9a352be5696a3a5e6a42669",
+      "runtimeSHA256": "651015caa5f069e9b8caf6bbe59e70680c7c59b1456261235c9909d352246d3e",
+      "manifestSHA256": "79a84b20d48881f3eb42af123a856dc9a09e931205b2e3467dd7c3ae5372874c",
+      "productionManifestSHA256": "ef8b29e115cc9debe8da98fad643e6f0c26f88ffa321505208dd71a3027d1bc6"
+    },
+    "cl_gsc": {
+      "kit": "gsc",
+      "name": "GSC",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "blue",
+        "colorName": "Purple",
+        "branching": 1.05
+      },
+      "generatedSource": "exec-33c4d82b-80bf-4313-98df-f0692c5c9a8a.png",
+      "sourceSHA256": "dbf10b0f32207fc0f8ff6654b18cb6bac47e8136b7c4c8d623dd43df3d1d21bc",
+      "runtimeSHA256": "03dc42746d4cadfb3fbc8a9104e97cb7021865f9904e139ade2ac00b04b4cd97",
+      "manifestSHA256": "1dad1c014624d55ef63d94a8c4b4fed2f680dcf1b15576305b48a0495c8f2c1d",
+      "productionManifestSHA256": "ecd70c98f2d5601f4be82b8834dc17a919ff32d85c40da18969645b7bad729e3"
+    },
+    "cl_gg4": {
+      "kit": "gg4",
+      "name": "GG4",
+      "traits": {
+        "leafShape": "hybrid",
+        "leafKey": "forest",
+        "colorName": "Forest green",
+        "branching": 1.05
+      },
+      "generatedSource": "exec-03d44efb-9a61-4065-bc1c-26f8917ff637.png",
+      "sourceSHA256": "0659d0152061297f57dd39de82cdc190ae16ec07b11030a6a011214f20daafe4",
+      "runtimeSHA256": "f7429482f5d344ca272d780b96e3725a45636af136697d2db56fccf7fdaf16f5",
+      "manifestSHA256": "c0200d558d5d383ccb7da6d925dbf646a0efdea40de5461ab81f2a3d19121ba3",
+      "productionManifestSHA256": "4519172370a1b9158f5cd4c9879be4d4d9e1b9a98dcba222a5abec737b9c70b9"
+    }
+  },
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "f4a4bfaec7bdc326a97979fc224dbb54d7bb996d61ad4eba162088f822a8fc39",
+  "verification": {
+    "report": "verification.json",
+    "saveReload": true,
+    "readOnly": true,
+    "mutationCombinationsPassed": 45,
+    "coolNightCasesPassed": 6,
+    "staticIntegrityPassed": true,
+    "animation": {
+      "frames": 96,
+      "fps": 12,
+      "seconds": 8
+    },
+    "browserErrors": [],
+    "actualProductionPagePassed": true,
+    "oldLivingSaveUpgradePassed": true,
+    "postIntegrationBrowserTestsPassed": 3,
+    "characterPayloadPreserved": true
+  },
+  "files": {
+    "50-and-90-inches.png": "a311d393f52a3f540eb24a800e83c7c37c8f8dfd224ca39177e89d0621ec40b3",
+    "README.md": "fdb02a70825a3299e93ad4bebf3566b9733f6c6aa1d55034ae19290735715525",
+    "care-and-training.png": "c5827e8c43a530cf31b23407fd44221fdb1a22f4cb86599520749869981f1de5",
+    "cool-night-colors.png": "cc4da5479e6820b5e364fc1d5259c501654b2712a29bedf04015aeb962500064",
+    "flower-detail.png": "0f54a9982f8d9b70da13e50f6039ea96de0f8998da91bfe41dd65fcb43e381cb",
+    "gg4-growth.png": "dd97e903a8f66c2b4a216af7e0060985ced6148c4cb0c43f1783bc05a63fa25e",
+    "growth-and-wind.gif": "db760e864106d8a4c5a59809d038933ecc772324416a61880d6dc5f68ef8453e",
+    "growth-and-wind.mp4": "e23da4e359f845819119442a30b56b260ae3fdf93594bcbc5523e93f5158fa5d",
+    "gsc-growth.png": "a8f400247a025956191a080c1fb04fe9ea3fcb9eb0cd357433a7f58f8eaf404b",
+    "kits/gg4/assets/components.png": "0659d0152061297f57dd39de82cdc190ae16ec07b11030a6a011214f20daafe4",
+    "kits/gg4/assets/components.webp": "f7429482f5d344ca272d780b96e3725a45636af136697d2db56fccf7fdaf16f5",
+    "kits/gg4/sources/manifest.json": "c0200d558d5d383ccb7da6d925dbf646a0efdea40de5461ab81f2a3d19121ba3",
+    "kits/gg4/sources/profile.json": "ac7db398e7acdfbfa8fdbd7de173e3c35767f676b3e68f4f56dcbce7ea59a398",
+    "kits/gsc/assets/components.png": "dbf10b0f32207fc0f8ff6654b18cb6bac47e8136b7c4c8d623dd43df3d1d21bc",
+    "kits/gsc/assets/components.webp": "03dc42746d4cadfb3fbc8a9104e97cb7021865f9904e139ade2ac00b04b4cd97",
+    "kits/gsc/sources/manifest.json": "1dad1c014624d55ef63d94a8c4b4fed2f680dcf1b15576305b48a0495c8f2c1d",
+    "kits/gsc/sources/profile.json": "ca9c6c3f3be46ba3eb4d6722858b52dafa905024c1a4c4550744f60b8c605dca",
+    "kits/pineexpress/assets/components.png": "50dc01915c97aa990998fc3e2dd2ea4bf5b0d1a0e9a352be5696a3a5e6a42669",
+    "kits/pineexpress/assets/components.webp": "651015caa5f069e9b8caf6bbe59e70680c7c59b1456261235c9909d352246d3e",
+    "kits/pineexpress/sources/manifest.json": "79a84b20d48881f3eb42af123a856dc9a09e931205b2e3467dd7c3ae5372874c",
+    "kits/pineexpress/sources/profile.json": "1283ca77b87bb421cfe5a58a27805a333583ec5a5fea3fbb58a14538c86095cc",
+    "late-flower-senescence.png": "aa4d02d7e95a8ee78b59344b3affbbe2c915d9c20fb41a4ebb3b1acea45e6379",
+    "pineexpress-growth.png": "82f0d7eb27798c420501b6207fa266d87b26248bbdb3d269c4435f86db8c9972",
+    "three-strains-in-flower.png": "500cad752b6c3a2b422ef9eff7c66e1ac03e43473d98d7c51aa9fef7a1f195a6",
+    "vegetative-identities.png": "f183dd57140788ab78dfaffdda0ce87d0308b8bba110b19cdf6b74ccc3b3b19a",
+    "verification.json": "169980abc04a0d3be2478df73bd9da68363ceef6cb10fab06d336cf4cb3c4873"
+  },
+  "characterRelease": "character-alignment-audit-v6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2"
+}

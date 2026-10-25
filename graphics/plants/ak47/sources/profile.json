@@ -1,0 +1,22 @@
+{
+  "id": "ak47",
+  "lineId": "cl_ak47",
+  "name": "AK-47",
+  "shortName": "AK-47",
+  "apiName": "BagseedAk47Growth",
+  "revision": "ak47-components-1",
+  "libraryRevision": "plant-parts-library-expanded-7",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1
+  },
+  "description": "Forest-green hybrid fans / compact olive flowers and copper stigmas",
+  "finishCaption": "Golden fan senescence / natural green flowers and amber stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-8144455e-1168-4b3c-9b6b-f1b423dc5c38.png"
+}

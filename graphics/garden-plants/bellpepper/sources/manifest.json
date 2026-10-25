@@ -1,0 +1,61 @@
+{
+  "id": "P032",
+  "key": "bellpepper",
+  "name": "Bell pepper",
+  "status": "approved-growth-artwork",
+  "revision": "bellpepper-garden-1",
+  "generatedSource": "bellpepper.png",
+  "sourceSHA256": "25285dffb433837aa3c5c56080b86a0a4260eb51c7fb96093e897fd219b3af59",
+  "runtimeSHA256": "f9b680f7487acdc06bd2a1301e9e0ef1609392f7e22b8f209f11862842cfb81a",
+  "runtime": "assets/garden-plants/bellpepper/stages-f9b680f7487a.webp",
+  "stages": [
+    {
+      "crop": [
+        161,
+        239,
+        362,
+        197
+      ],
+      "attach": [
+        181.0,
+        194.0
+      ]
+    },
+    {
+      "crop": [
+        669,
+        46,
+        488,
+        400
+      ],
+      "attach": [
+        247.0,
+        388.0
+      ]
+    },
+    {
+      "crop": [
+        14,
+        530,
+        578,
+        598
+      ],
+      "attach": [
+        297.0,
+        594.0
+      ]
+    },
+    {
+      "crop": [
+        596,
+        493,
+        646,
+        690
+      ],
+      "attach": [
+        336.0,
+        672.0
+      ]
+    }
+  ]
+}

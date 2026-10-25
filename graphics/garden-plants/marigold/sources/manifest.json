@@ -1,0 +1,61 @@
+{
+  "id": "P098",
+  "key": "marigold",
+  "name": "Marigold",
+  "status": "approved-growth-artwork",
+  "revision": "marigold-garden-1",
+  "generatedSource": "exec-54766ada-fde1-4728-9c49-a0c42a6c5004.png",
+  "sourceSHA256": "36bc7b97cd45b6d97e140a3dd4816faaa8e0ce78509a66ec903501d68192ed30",
+  "runtimeSHA256": "268363233bec089d436ed60df4c96c60f3530c0d980caf7c4382f05f20715cd0",
+  "runtime": "assets/garden-plants/marigold/stages-268363233bec.webp",
+  "stages": [
+    {
+      "crop": [
+        187,
+        223,
+        284,
+        217
+      ],
+      "attach": [
+        143.0,
+        214.0
+      ]
+    },
+    {
+      "crop": [
+        732,
+        74,
+        396,
+        375
+      ],
+      "attach": [
+        213.0,
+        371.0
+      ]
+    },
+    {
+      "crop": [
+        39,
+        584,
+        578,
+        549
+      ],
+      "attach": [
+        296.0,
+        545.0
+      ]
+    },
+    {
+      "crop": [
+        652,
+        567,
+        615,
+        575
+      ],
+      "attach": [
+        311.0,
+        572.0
+      ]
+    }
+  ]
+}

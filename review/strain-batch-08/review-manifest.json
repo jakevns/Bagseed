@@ -1,0 +1,109 @@
+{
+  "status": "user-approved-production-integration",
+  "integrationBase": "2e2ac31e1d8151ee64fecdb0500319488244e605",
+  "coverage": {
+    "releasedDedicatedNamedStrains": 19,
+    "nativeNamedStrains": 37,
+    "remaining": 18,
+    "baseAtlases": 21,
+    "mutationAtlases": 17
+  },
+  "nativeLines": {
+    "cl_afghani": {
+      "kit": "afghani",
+      "name": "Afghani",
+      "traits": {
+        "leafShape": "broad",
+        "leafKey": "forest",
+        "colorName": "Forest green",
+        "branching": 1.15
+      },
+      "generatedSource": "exec-91663955-f10e-457a-b9f0-1ed53eda17fa.png",
+      "sourceSHA256": "750295db0c74755ea768324d35a6dddb6a4ebe60a94df0261a3c5d67f8ebfae0",
+      "runtimeSHA256": "9ce32edadd6f85e6472dff6cb32fc7abc800005264b64603e44323dad8d014aa",
+      "manifestSHA256": "fd5c64d27f8200592ebd83e7c6e267d63368ab2229c770d16832d3f739ba9649",
+      "productionManifestSHA256": "ce64c515aa8ad70a34219116d86ccb08bf44908fe0e0635b4e074ae20ac29d90"
+    },
+    "cl_hindukush": {
+      "kit": "hindukush",
+      "name": "Hindu Kush",
+      "traits": {
+        "leafShape": "broad",
+        "leafKey": "forest",
+        "colorName": "Forest green",
+        "branching": 1.1
+      },
+      "generatedSource": "exec-20337e53-6905-4fc2-9296-e51109ac53a5.png",
+      "sourceSHA256": "23d016b25d5f740c017f925b88215339a11b44f0d9360f645d10a60b87a59b80",
+      "runtimeSHA256": "19f442105441bba5047010d5a39ae4da79eabee69e86c317e97f314bfd35cc18",
+      "manifestSHA256": "5a0f825e7a1c4f478fcf97de2e25d5132b4892aa6a272e44a2fc2db34c02d225",
+      "productionManifestSHA256": "0923abb2b32c88dc66acab2ba26833377c2ee25fba7afbe554f1d25bfd6087f5"
+    },
+    "cl_bubbakush": {
+      "kit": "bubbakush",
+      "name": "Bubba Kush",
+      "traits": {
+        "leafShape": "broad",
+        "leafKey": "forest",
+        "colorName": "Dark purple",
+        "branching": 1.1
+      },
+      "generatedSource": "exec-ec2849dc-da95-4102-beef-dd20a87129da.png",
+      "sourceSHA256": "f40dc1749015d91d20970873b056dec4f4f43e0f3d07e0c0fcfac27749232627",
+      "runtimeSHA256": "916e925893414f485ffdf08aabc16b7514ebdceef5462634ef1195239ef0f054",
+      "manifestSHA256": "326a5ffc7392ec583bd202dc041be0f5d217c1377a98774ee12f502e9e175b6b",
+      "productionManifestSHA256": "f2dffacb346b020a33d0bebf86f1dd5da14973c1f80ff4bcca393965b9d9d454"
+    }
+  },
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "2fc5931b0a936bd05e6321370272edc3bee8b56d905df8ce739d1a73579f5cc8",
+  "verification": {
+    "report": "verification.json",
+    "saveReload": true,
+    "readOnly": true,
+    "mutationCombinationsPassed": 45,
+    "coolNightCasesPassed": 6,
+    "nightColorUnitTestsPassed": 5,
+    "staticIntegrityPassed": true,
+    "animation": {
+      "frames": 96,
+      "fps": 12,
+      "seconds": 8
+    },
+    "browserErrors": [],
+    "actualProductionPagePassed": true,
+    "existingLivingSaveUpgradePassed": true,
+    "postIntegrationBrowserTestsPassed": 3,
+    "characterPayloadPreserved": true
+  },
+  "files": {
+    "50-and-90-inches.png": "17e3d425a75b9911ca63ced9bf07b9f73bfdc5d275a520f12322c4881e7cc383",
+    "README.md": "18518b72f52a76b499e2b81b7197a3749badffc7a537a10bc58bdf28182b9a7e",
+    "afghani-growth.png": "4143e04d6f409f90aca2f8a7b19715bbe94b04673088fdce8a4901d2e142dfc1",
+    "bubbakush-growth.png": "a08d779761fc2a8be169e88aa99d8b43b0ea97ada9d50378f16073388fdbd6d8",
+    "care-and-training.png": "b9c6a4875f49a54e71d1c57c07e8a25ca700a7df2662c83abcd72b5ecd9cebac",
+    "cool-night-colors.png": "b35393c2aa24aef0c47e0f977d2489a9ac8dd069ba0fbcc990ab6c25c19cc4b5",
+    "flower-detail.png": "412f2afa7fb4231780652ab05f58a07f2c1811ebea06aee0260fcdeadd15aa10",
+    "growth-and-wind.gif": "77f53e2b13cfd3e2434b37c94381f496a832b224f3f529be4460f502f44baa71",
+    "growth-and-wind.mp4": "45eb07a8ef2d570e22de995c8e2a6da24ead2a524d60f14ba555dc80ed407425",
+    "hindukush-growth.png": "80938debc54ef9af5f937c3d27a7cdba38fbc9b0ab681dd5a06ffd1a83878d68",
+    "kits/afghani/assets/components.png": "750295db0c74755ea768324d35a6dddb6a4ebe60a94df0261a3c5d67f8ebfae0",
+    "kits/afghani/assets/components.webp": "9ce32edadd6f85e6472dff6cb32fc7abc800005264b64603e44323dad8d014aa",
+    "kits/afghani/sources/manifest.json": "fd5c64d27f8200592ebd83e7c6e267d63368ab2229c770d16832d3f739ba9649",
+    "kits/afghani/sources/profile.json": "3c91f0e15fd69f8d0343388f4422bbdeab736f63b135a69bb2353a8ebb5fab98",
+    "kits/bubbakush/assets/components.png": "f40dc1749015d91d20970873b056dec4f4f43e0f3d07e0c0fcfac27749232627",
+    "kits/bubbakush/assets/components.webp": "916e925893414f485ffdf08aabc16b7514ebdceef5462634ef1195239ef0f054",
+    "kits/bubbakush/sources/manifest.json": "326a5ffc7392ec583bd202dc041be0f5d217c1377a98774ee12f502e9e175b6b",
+    "kits/bubbakush/sources/profile.json": "2983a42becdec1f42a18bc1f9bd15372114bd207d3eeff3e61d4db04e689c433",
+    "kits/hindukush/assets/components.png": "23d016b25d5f740c017f925b88215339a11b44f0d9360f645d10a60b87a59b80",
+    "kits/hindukush/assets/components.webp": "19f442105441bba5047010d5a39ae4da79eabee69e86c317e97f314bfd35cc18",
+    "kits/hindukush/sources/manifest.json": "5a0f825e7a1c4f478fcf97de2e25d5132b4892aa6a272e44a2fc2db34c02d225",
+    "kits/hindukush/sources/profile.json": "f8a967f992186bd35d4eb5ed3e5e159d82272918a62535632c824c8e58752d04",
+    "late-flower-senescence.png": "a27e5f78dcf3c976729b8568f4f64011388402956c6774de5d139202a62e8931",
+    "three-strains-in-flower.png": "22dcbd7b2c6e23261662fb9703c7c991165ce9d6311cba2aa68b992364e8e844",
+    "vegetative-identities.png": "a27c64d142bc07e92208cdf544de18292d9dfce7a09f1386f5f5f5c4781aa022",
+    "verification.json": "b9c798f28a5eddc4aa302229920ad003b99bf68f6de19fd7c53e11816d6cc5a0"
+  },
+  "characterRelease": "character-alignment-audit-v6",
+  "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2"
+}

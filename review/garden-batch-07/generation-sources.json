@@ -1,0 +1,26 @@
+{
+  "tomato": {
+    "generatedFile": "exec-9c259fe5-9ee5-4b08-b962-ab8e0f1d5056.png",
+    "SHA256": "ab208175a9e2dfec9e0fd4fa8da933e88697a209842b0a7d89a06ae7727f80a9"
+  },
+  "bellpepper": {
+    "generatedFile": "exec-d15923a4-5680-46ff-bfca-043a9ec87049.png",
+    "SHA256": "25285dffb433837aa3c5c56080b86a0a4260eb51c7fb96093e897fd219b3af59"
+  },
+  "carrot": {
+    "generatedFile": "exec-4f3cf8e6-c48f-4357-a820-f3c582b6dea6.png",
+    "SHA256": "74d46b0aa9119c2c0021174cf27e74518e6d3ff3dd6589e718dceeca6ca56899"
+  },
+  "beet": {
+    "generatedFile": "exec-64088083-4264-447d-a550-cb9e3cdae2ac.png",
+    "SHA256": "eadb944cea6cbdb7758678fc5f3095d12ef07ad3ca683c9c45d8e02634084e29",
+    "spacingRevision": {
+      "generatedFile": "exec-30214f62-41b2-4709-adaa-efea772ccc71.png",
+      "SHA256": "1d2161a8936bee7077673cf9e50171c6aab0339893816cfb8f3d252d128d4763"
+    }
+  },
+  "radish": {
+    "generatedFile": "exec-993d27fb-770f-4dfc-bd1d-b81f121c2f11.png",
+    "SHA256": "78e85933ce9ea73ff603c37040f477a9c5b6c2dc53b0c1778d285e713de47c2f"
+  }
+}

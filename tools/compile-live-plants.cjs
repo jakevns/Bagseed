@@ -9,7 +9,7 @@ module.exports=function(){
   const spec=fs.existsSync(pfile)?JSON.parse(fs.readFileSync(pfile)):{id,name:'Porchlight',traits:{leafShape:'broad',leafKey:'forest',colorName:'Forest green',branching:1.1}};
   kits[id]={...m,traits:spec.traits,lineId:spec.lineId||id};
  }
- assert.equal(Object.keys(kits).length,14);
+ assert.equal(Object.keys(kits).length,39);
  const mutations={};
  for(const id of fs.readdirSync(path.join(base,'mutations'))){
   const file=path.join(base,'mutations',id,'sources/manifest.json');if(!fs.existsSync(file))continue;
@@ -25,6 +25,6 @@ module.exports=function(){
  }
  const model=fs.readFileSync(path.join(base,'porchlight/sources/model.cjs'),'utf8');
  const renderer=fs.readFileSync(path.join(base,'sources/live-renderer.js'),'utf8').replace('__BAGSEED_LIVE_PLANTS__',()=>JSON.stringify(kits)).replace('__BAGSEED_PLANT_MUTATIONS__',()=>JSON.stringify(mutations));
- const code='(()=>{const module={exports:{}};'+model+';window.BagseedPlantModel=module.exports;})();\n'+renderer;
+ const code='(()=>{const module={exports:{}};'+model+';window.BagseedPlantModel=module.exports;})();\n'+renderer+'\n'+fs.readFileSync(path.join(base,'sources/scene-resolution.js'),'utf8');
  new(require('node:vm').Script)(code);return '<script id="bagseed-live-plants-code">\n'+code+'\n</script>\n';
 };

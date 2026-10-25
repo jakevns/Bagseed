@@ -1,0 +1,22 @@
+{
+  "id": "gsc",
+  "lineId": "cl_gsc",
+  "name": "GSC",
+  "shortName": "GSC",
+  "apiName": "BagseedGscGrowth",
+  "revision": "gsc-components-1",
+  "libraryRevision": "plant-parts-library-expanded-8",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "blue",
+    "colorName": "Purple",
+    "branching": 1.05
+  },
+  "description": "Sage-blue hybrid fans / dense plum and olive resinous bracts",
+  "finishCaption": "Purple fan senescence / plum flowers and amber stigmas",
+  "finishPalette": "purple",
+  "coolNights": true,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-33c4d82b-80bf-4313-98df-f0692c5c9a8a.png"
+}

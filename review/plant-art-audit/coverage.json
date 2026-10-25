@@ -1,0 +1,936 @@
+{
+  "publishedHTMLSHA256": "bb6d5c5cf0220b898d02a845646bea0de76dd7bb9f797f660d6cd25759cd808a",
+  "productionPayloadsMatchSource": true,
+  "cannabisNamedStrains": 37,
+  "garden": [
+    {
+      "id": "P001",
+      "name": "Lettuce",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P002",
+      "name": "Spinach",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P003",
+      "name": "Arugula",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P004",
+      "name": "Swiss chard",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P005",
+      "name": "Kale",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P006",
+      "name": "Collard greens",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P007",
+      "name": "Mustard greens",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P008",
+      "name": "Mizuna",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P009",
+      "name": "Tatsoi",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P010",
+      "name": "Bok choy",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P011",
+      "name": "Carrot",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P012",
+      "name": "Beet",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P013",
+      "name": "Radish",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P014",
+      "name": "Turnip",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P015",
+      "name": "Parsnip",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P016",
+      "name": "Rutabaga",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P017",
+      "name": "Daikon",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P018",
+      "name": "Onion",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P019",
+      "name": "Garlic",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P020",
+      "name": "Shallot",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P021",
+      "name": "Broccoli",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P022",
+      "name": "Cauliflower",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P023",
+      "name": "Cabbage",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P024",
+      "name": "Brussels sprouts",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P025",
+      "name": "Kohlrabi",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P026",
+      "name": "Leek",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P027",
+      "name": "Celery",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P028",
+      "name": "Garden peas",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P029",
+      "name": "Fava bean",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P030",
+      "name": "Celeriac",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P031",
+      "name": "Tomato",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P032",
+      "name": "Bell pepper",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P033",
+      "name": "Jalapeno",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P034",
+      "name": "Eggplant",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P035",
+      "name": "Okra",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P036",
+      "name": "Sweet corn",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P037",
+      "name": "Tomatillo",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P038",
+      "name": "Green bean",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P039",
+      "name": "Soybean",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P040",
+      "name": "Sweet potato",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P041",
+      "name": "Cucumber",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P042",
+      "name": "Zucchini",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P043",
+      "name": "Pattypan squash",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P044",
+      "name": "Butternut squash",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P045",
+      "name": "Acorn squash",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P046",
+      "name": "Spaghetti squash",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P047",
+      "name": "Pumpkin",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P048",
+      "name": "Watermelon",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P049",
+      "name": "Cantaloupe",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P050",
+      "name": "Honeydew",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P051",
+      "name": "Basil",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P052",
+      "name": "Thai basil",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P053",
+      "name": "Cilantro",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P054",
+      "name": "Parsley",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P055",
+      "name": "Dill",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P056",
+      "name": "Chives",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P057",
+      "name": "Rosemary",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P058",
+      "name": "Thyme",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P059",
+      "name": "Sage",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P060",
+      "name": "Oregano",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P061",
+      "name": "Mint",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P062",
+      "name": "Lemon balm",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P063",
+      "name": "Tarragon",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P064",
+      "name": "Marjoram",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P065",
+      "name": "Summer savory",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P066",
+      "name": "Chervil",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P067",
+      "name": "Lemon verbena",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P068",
+      "name": "Lemongrass",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P069",
+      "name": "Anise hyssop",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P070",
+      "name": "Chamomile",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P071",
+      "name": "Strawberry",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P072",
+      "name": "Blueberry",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P073",
+      "name": "Raspberry",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P074",
+      "name": "Blackberry",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P075",
+      "name": "Gooseberry",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P076",
+      "name": "Redcurrant",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P077",
+      "name": "Blackcurrant",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P078",
+      "name": "Grape",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P079",
+      "name": "Apple",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P080",
+      "name": "Pear",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P081",
+      "name": "Peach",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P082",
+      "name": "Fig",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P083",
+      "name": "Tulip",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P084",
+      "name": "Daffodil",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P085",
+      "name": "Crocus",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P086",
+      "name": "Hyacinth",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P087",
+      "name": "Grape hyacinth",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P088",
+      "name": "Snowdrop",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P089",
+      "name": "Iris",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P090",
+      "name": "Primrose",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P091",
+      "name": "Pansy",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P092",
+      "name": "Viola",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P093",
+      "name": "Ranunculus",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P094",
+      "name": "Anemone",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P095",
+      "name": "Sunflower",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P096",
+      "name": "Zinnia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P097",
+      "name": "Cosmos",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P098",
+      "name": "Marigold",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P099",
+      "name": "Petunia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P100",
+      "name": "Impatiens",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P101",
+      "name": "Begonia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P102",
+      "name": "Geranium",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P103",
+      "name": "Snapdragon",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P104",
+      "name": "Sweet pea",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P105",
+      "name": "Nasturtium",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P106",
+      "name": "California poppy",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P107",
+      "name": "Bachelor button",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P108",
+      "name": "Sweet alyssum",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P109",
+      "name": "Portulaca",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P110",
+      "name": "Celosia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P111",
+      "name": "Gomphrena",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P112",
+      "name": "Larkspur",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P113",
+      "name": "Scabiosa",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P114",
+      "name": "Dianthus",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P115",
+      "name": "Dahlia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P116",
+      "name": "Chrysanthemum",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P117",
+      "name": "Aster",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P118",
+      "name": "Goldenrod",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P119",
+      "name": "Japanese anemone",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P120",
+      "name": "Helenium",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P121",
+      "name": "Rudbeckia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P122",
+      "name": "Echinacea",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P123",
+      "name": "Sedum stonecrop",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P124",
+      "name": "Tithonia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P125",
+      "name": "Rose",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P126",
+      "name": "Lavender",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "P127",
+      "name": "Peony",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P128",
+      "name": "Salvia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P129",
+      "name": "Coreopsis",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P130",
+      "name": "Yarrow",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P131",
+      "name": "Delphinium",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P132",
+      "name": "Lupine",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P133",
+      "name": "Hollyhock",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P134",
+      "name": "Columbine",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P135",
+      "name": "Hosta",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P136",
+      "name": "Heuchera",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P137",
+      "name": "Coleus",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P138",
+      "name": "Ornamental kale",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P139",
+      "name": "Dusty miller",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P140",
+      "name": "Fern",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P141",
+      "name": "Ornamental grass",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P142",
+      "name": "Succulent rosette",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P143",
+      "name": "Dwarf boxwood",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P144",
+      "name": "Dwarf heather",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P145",
+      "name": "Poinsettia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P146",
+      "name": "Amaryllis",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P147",
+      "name": "Christmas cactus",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P148",
+      "name": "Paperwhite narcissus",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P149",
+      "name": "Cyclamen",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P150",
+      "name": "Hellebore",
+      "status": "original-artwork"
+    },
+    {
+      "id": "P151",
+      "name": "Calendula",
+      "status": "updated-in-production"
+    },
+    {
+      "id": "RARE001",
+      "name": "Willow Street Stripe",
+      "parent": "P031",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE002",
+      "name": "Lantern Gold",
+      "parent": "P032",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE003",
+      "name": "Moonbeam Mini",
+      "parent": "P047",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE004",
+      "name": "Grandad's Ruby",
+      "parent": "P012",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE005",
+      "name": "Copper Ribbon",
+      "parent": "P004",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE006",
+      "name": "Midnight Ruffle",
+      "parent": "P005",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE007",
+      "name": "Violet Kitchen",
+      "parent": "P051",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE008",
+      "name": "Peach Lantern",
+      "parent": "P096",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE009",
+      "name": "Sunset Button",
+      "parent": "P098",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE010",
+      "name": "Willow Blue",
+      "parent": "P107",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE011",
+      "name": "Festival Climber",
+      "parent": "P105",
+      "status": "original-artwork"
+    },
+    {
+      "id": "RARE012",
+      "name": "Snowlace",
+      "parent": "P108",
+      "status": "original-artwork"
+    }
+  ],
+  "trees": [
+    {
+      "id": "TREE001",
+      "name": "Dwarf apple",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE002",
+      "name": "Dwarf pear",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE003",
+      "name": "Dwarf fig",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE004",
+      "name": "Dwarf peach",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE005",
+      "name": "Dwarf plum",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE006",
+      "name": "Dwarf lemon",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE007",
+      "name": "Dwarf lime",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE008",
+      "name": "Dwarf orange",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE009",
+      "name": "Dwarf cherry",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE010",
+      "name": "Pomegranate",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE011",
+      "name": "Compact avocado",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE012",
+      "name": "Crape myrtle",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE013",
+      "name": "Eastern redbud",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE014",
+      "name": "Japanese maple",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE015",
+      "name": "Magnolia",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE016",
+      "name": "Birch",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE017",
+      "name": "Compact pine",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE018",
+      "name": "Jacaranda",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE019",
+      "name": "Backyard willow",
+      "status": "original-artwork"
+    },
+    {
+      "id": "TREE020",
+      "name": "Oak",
+      "status": "original-artwork"
+    }
+  ]
+}

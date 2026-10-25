@@ -1,0 +1,22 @@
+{
+  "id": "cannatonic",
+  "lineId": "cl_cannatonic",
+  "name": "Cannatonic",
+  "shortName": "Cannatonic",
+  "apiName": "BagseedCannatonicGrowth",
+  "revision": "cannatonic-components-1",
+  "libraryRevision": "plant-parts-library-expanded-9",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1
+  },
+  "description": "Deep forest-green hybrid fans / rounded olive flowers and cream stigmas",
+  "finishCaption": "Golden fan senescence / natural green flowers and amber stigmas",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-6bf9e573-63f7-426d-a8b5-24a2e20b2661.png"
+}

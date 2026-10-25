@@ -1,0 +1,22 @@
+{
+  "id": "bluedream",
+  "lineId": "cl_bluedream",
+  "name": "Blue Dream",
+  "shortName": "Blue Dream",
+  "apiName": "BagseedBluedreamGrowth",
+  "revision": "bluedream-components-1",
+  "libraryRevision": "plant-parts-library-expanded-5",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "blue",
+    "colorName": "Blue-green",
+    "branching": 1
+  },
+  "description": "Sage-blue hybrid fans / mint-blue-green resinous flowers",
+  "finishCaption": "Ochre fan senescence / mint-green flowers and amber stigmas",
+  "finishPalette": "ochre",
+  "coolNights": true,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-397e7d9c-ca2b-4272-84b5-c7d8d102fff6.png"
+}

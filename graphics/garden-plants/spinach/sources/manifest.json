@@ -1,0 +1,61 @@
+{
+  "id": "P002",
+  "key": "spinach",
+  "name": "Spinach",
+  "status": "approved-growth-artwork",
+  "revision": "spinach-garden-1",
+  "generatedSource": "exec-ac162c83-5e84-4790-8859-611b141d1a9b.png",
+  "sourceSHA256": "34b8d59af543e88aed620bfb7517bc504e0ab57fe0159eb90123f8e26b6a115f",
+  "runtimeSHA256": "4e2b22511ffa731a49be187939ad3abf06b4301ee253c6f491cd786dbf030295",
+  "runtime": "assets/garden-plants/spinach/stages-4e2b22511ffa.webp",
+  "stages": [
+    {
+      "crop": [
+        78,
+        263,
+        458,
+        265
+      ],
+      "attach": [
+        244.0,
+        262.0
+      ]
+    },
+    {
+      "crop": [
+        632,
+        62,
+        567,
+        468
+      ],
+      "attach": [
+        295.0,
+        464.0
+      ]
+    },
+    {
+      "crop": [
+        14,
+        638,
+        577,
+        474
+      ],
+      "attach": [
+        306.0,
+        470.0
+      ]
+    },
+    {
+      "crop": [
+        594,
+        570,
+        650,
+        572
+      ],
+      "attach": [
+        346.0,
+        552.0
+      ]
+    }
+  ]
+}

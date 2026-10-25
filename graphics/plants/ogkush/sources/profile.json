@@ -1,0 +1,21 @@
+{
+  "id": "ogkush",
+  "lineId": "cl_ogkush",
+  "name": "OG Kush",
+  "shortName": "OG Kush",
+  "apiName": "BagseedOgkushGrowth",
+  "revision": "ogkush-components-1",
+  "libraryRevision": "plant-parts-library-expanded-1",
+  "traits": {
+    "leafShape": "hybrid",
+    "leafKey": "forest",
+    "colorName": "Forest green",
+    "branching": 1
+  },
+  "description": "Deep forest hybrid fans; resinous tapered olive flowers and rust-orange pistils.",
+  "finishPalette": "gold",
+  "coolNights": false,
+  "experimental": false,
+  "registerAsDefault": true,
+  "generatedSource": "exec-f682c701-881d-4413-872a-46c6c5cb9182.png"
+}

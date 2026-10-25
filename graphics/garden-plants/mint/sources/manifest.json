@@ -1,0 +1,61 @@
+{
+  "id": "P061",
+  "key": "mint",
+  "name": "Mint",
+  "status": "approved-growth-artwork",
+  "revision": "mint-garden-1",
+  "generatedSource": "exec-d2a878c0-8c73-4f6d-bd20-f68bcf1d84bf.png",
+  "sourceSHA256": "ea8fcf4cb1da7e031bbc46355c27323149bf67e0db06d9371185a2b43d0943e3",
+  "runtimeSHA256": "f973c01b25f05d003c25a69281451d77a995d53948a6e9f9bcc2635143d7d6b7",
+  "runtime": "assets/garden-plants/mint/stages-f973c01b25f0.webp",
+  "stages": [
+    {
+      "crop": [
+        187,
+        253,
+        301,
+        220
+      ],
+      "attach": [
+        153.0,
+        217.0
+      ]
+    },
+    {
+      "crop": [
+        763,
+        68,
+        364,
+        412
+      ],
+      "attach": [
+        172.0,
+        408.0
+      ]
+    },
+    {
+      "crop": [
+        71,
+        594,
+        531,
+        567
+      ],
+      "attach": [
+        250.0,
+        564.0
+      ]
+    },
+    {
+      "crop": [
+        645,
+        541,
+        577,
+        659
+      ],
+      "attach": [
+        305.0,
+        651.0
+      ]
+    }
+  ]
+}

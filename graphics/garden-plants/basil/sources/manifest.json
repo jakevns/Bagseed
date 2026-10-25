@@ -1,0 +1,61 @@
+{
+  "id": "P051",
+  "key": "basil",
+  "name": "Basil",
+  "status": "approved-growth-artwork",
+  "revision": "basil-garden-1",
+  "generatedSource": "exec-63c2192b-3a90-4df6-95d1-6704dc47ac88.png",
+  "sourceSHA256": "066ac368ea53daf587e6ec95cf5e266d08f64d3cc1b02089d91588a56fa0236b",
+  "runtimeSHA256": "fd33197f45e9c0df5e2f1c1c10bd288b4093412bc2fa2aec29073d2a203a4b34",
+  "runtime": "assets/garden-plants/basil/stages-fd33197f45e9.webp",
+  "stages": [
+    {
+      "crop": [
+        179,
+        296,
+        315,
+        201
+      ],
+      "attach": [
+        156.0,
+        197.0
+      ]
+    },
+    {
+      "crop": [
+        705,
+        149,
+        430,
+        356
+      ],
+      "attach": [
+        210.0,
+        353.0
+      ]
+    },
+    {
+      "crop": [
+        45,
+        655,
+        556,
+        469
+      ],
+      "attach": [
+        291.0,
+        466.0
+      ]
+    },
+    {
+      "crop": [
+        636,
+        579,
+        593,
+        576
+      ],
+      "attach": [
+        307.0,
+        573.0
+      ]
+    }
+  ]
+}
