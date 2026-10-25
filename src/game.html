@@ -28142,4 +28142,83 @@ Object.assign(ACT, {
   }
 });
 </script>
+<script id="social-comment-performance-code">
+'use strict';
+/* Sprout and Trellis comment performance.
+   Comments run through three stacked versions that each redrew the panel,
+   and every feed photo was painted by three hydrate drawers per redraw, so one
+   comment repainted the feed about nine times. Trellis clip snapshots also kept
+   a PNG of every video in the save forever, filling browser storage.
+   - one panel redraw per comment, after every layer has run
+   - feed photos and Trellis posters paint once and reuse a cached bitmap
+   - clip snapshots save their plant recipe; the PNG is rebuilt from it in memory
+   - snapshots for videos and posts that no longer exist are dropped           */
+const PanelBatch1152 = {
+  depth: 0, dirty: false,
+  run(fn) { this.depth++; try { return fn(); } finally { if (--this.depth === 0 && this.dirty) { this.dirty = false; renderPanel(); } } }
+};
+renderPanel = (prev => function () { if (PanelBatch1152.depth) { PanelBatch1152.dirty = true; return; } return prev.apply(this, arguments); })(renderPanel);
+Social2.comment = (prev => function () { return PanelBatch1152.run(() => prev.apply(this, arguments)); })(Social2.comment);
+Trellis.comment = (prev => function () { return PanelBatch1152.run(() => prev.apply(this, arguments)); })(Trellis.comment);
+
+/* Deterministic artwork keyed by everything it is drawn from; least recently used entries go first. */
+const PaintCache1152 = {
+  max: 48, map: new Map(),
+  // Art packs (pots, plants, props) finish loading after startup; art painted before one loaded must not be reused after.
+  ready() { let s = ''; for (const k of Object.keys(window)) if (k.startsWith('Bagseed')) { try { const v = window[k]?.loaded; if (typeof v === 'boolean') s += v ? '1' : '0'; } catch (e) { } } return s; },
+  get(k) { const v = this.map.get(k); if (v) { this.map.delete(k); this.map.set(k, v); } return v; },
+  put(k, cv) { const c = document.createElement('canvas'); c.width = cv.width; c.height = cv.height; c.getContext('2d').drawImage(cv, 0, 0); this.map.set(k, c); while (this.map.size > this.max) this.map.delete(this.map.keys().next().value); },
+  paint(k, cv, draw) {
+    const hit = this.get(k);
+    if (hit && hit.width === cv.width && hit.height === cv.height) { const c = cv.getContext('2d'); c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.globalAlpha = 1; c.globalCompositeOperation = 'source-over'; c.clearRect(0, 0, cv.width, cv.height); c.drawImage(hit, 0, 0); c.restore(); return true; }
+    draw(); this.put(k, cv); return false;
+  }
+};
+const FeedPhoto1152 = {
+  key(cv, f) { const o = Photo115.npc(f); return 'photo|' + JSON.stringify([f.id || '', f.lineId, f.seed, o, cv.width, cv.height, state.locations.tent2?.equip?.pot || 0, PaintCache1152.ready()]); },
+  draw(cv, f) { if (!Photo115.npc(f)) return; PaintCache1152.paint(this.key(cv, f), cv, () => Photo115.draw(cv, f)); }
+};
+// Photo115 is the final word on npcpost canvases; hide them from the older drawers (and the blank-art check) whose output it overwrote.
+hydrate = (prev => function (root) {
+  const photos = [...root.querySelectorAll('canvas[data-draw^="npcpost:"]')];
+  for (const cv of photos) { cv.dataset.draw = 'npcpost1152:' + cv.dataset.draw.slice(8); cv.dataset.checked = 1; }
+  try { prev(root); } finally { for (const cv of photos) cv.dataset.draw = 'npcpost:' + cv.dataset.draw.slice(12); }
+  for (const cv of photos) { const f = state && state.social.feed[+cv.dataset.draw.split(':')[1]]; if (f) safeRun('photo1152', () => FeedPhoto1152.draw(cv, f)); }
+})(hydrate);
+TrellisFilm1151.draw = (prev => function (c, cv, m, time, poster) {
+  const snap = m && this.snapshots.get(m);
+  if (!poster || !cv || !snap) return prev.apply(this, arguments);
+  const live = m.post?.kind === 'live' && typeof Trellis.isLive === 'function' && Trellis.isLive(m.post.ch);
+  const key = 'film|' + JSON.stringify([m.id, cv.width, cv.height, settings.reduced ? 1 : 0, snap.ready ? 1 : 0, snap.failed ? 1 : 0, live ? 1 : 0, PaintCache1152.ready()]);
+  PaintCache1152.paint(key, cv, () => { this.last.delete(cv); prev.call(this, c, cv, m, time, poster); });
+})(TrellisFilm1151.draw);
+
+const ClipStore1152 = {
+  live() {
+    const ids = new Set(VIDEOS.map(v => v[0]));
+    for (const list of [state.trellis?.gen, state.social?.posts, state.social?.feed]) for (const p of list || []) if (p?.id) ids.add(p.id);
+    if (runtime.clip115?.id) ids.add(runtime.clip115.id);
+    return ids;
+  },
+  // Saved form of the store: every field except the PNG, which the plant recipe rebuilds exactly.
+  json() { const out = {}; for (const [id, m] of Object.entries(this)) { if (m && typeof m === 'object') { const { png, ...rest } = m; out[id] = rest; } else out[id] = m; } return out; },
+  hook(store) { if (store && !Object.prototype.hasOwnProperty.call(store, 'toJSON')) Object.defineProperty(store, 'toJSON', { value: ClipStore1152.json, enumerable: false, configurable: true, writable: true }); return store; },
+  prune(keepAll) {
+    const store = state?.completion115?.media; if (!store) return 0;
+    this.hook(store); const live = keepAll ? this.live() : new Set(runtime.clip115?.id ? [runtime.clip115.id] : []);
+    let n = 0; for (const id of Object.keys(store)) if (!live.has(id)) { delete store[id]; n++; }
+    return n;
+  }
+};
+Clip115.S = (prev => function () { return ClipStore1152.hook(prev.call(this)); })(Clip115.S);
+Clip115.ensure = (prev => function (id) {
+  const m = prev.call(this, id);
+  if (m && !m.png && m.plant) safeRun('clip1152', () => { m.png = PlantArt.build(m.plant).cv.toDataURL(); });
+  return m;
+})(Clip115.ensure);
+SaveSys.write = (prev => function () { if (state) safeRun('clip1152', () => ClipStore1152.prune(true)); return prev.apply(this, arguments); })(SaveSys.write);
+// Storage full: snapshots are rebuilt from their posts on demand, so all but the open clip can go.
+SaveSys.trim = (prev => function () { prev.apply(this, arguments); if (state) safeRun('clip1152', () => ClipStore1152.prune(false)); })(SaveSys.trim);
+POSTLOAD115.push(() => ClipStore1152.prune(true));
+</script>
 </body></html>
