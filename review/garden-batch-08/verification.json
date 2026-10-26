@@ -1,0 +1,200 @@
+{
+  "checks": [
+    {
+      "id": "P021",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": false,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P022",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": false,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P023",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": false,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P025",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": false,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P027",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": false,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    }
+  ],
+  "readOnly": true,
+  "species": [
+    {
+      "id": "P021",
+      "name": "Broccoli",
+      "height": 9
+    },
+    {
+      "id": "P022",
+      "name": "Cauliflower",
+      "height": 9
+    },
+    {
+      "id": "P023",
+      "name": "Cabbage",
+      "height": 9
+    },
+    {
+      "id": "P025",
+      "name": "Kohlrabi",
+      "height": 9
+    },
+    {
+      "id": "P027",
+      "name": "Celery",
+      "height": 12
+    }
+  ],
+  "ids": [
+    "gp1",
+    "gp2",
+    "gp3",
+    "gp4",
+    "gp5"
+  ],
+  "saveReload": true,
+  "productionRenderer": false,
+  "startupGardenRequests": 0,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "bb6d5c5cf0220b898d02a845646bea0de76dd7bb9f797f660d6cd25759cd808a",
+  "animation": {
+    "frames": 96,
+    "fps": 12,
+    "seconds": 8
+  },
+  "errors": []
+}

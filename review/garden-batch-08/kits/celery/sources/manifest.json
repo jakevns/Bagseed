@@ -1,0 +1,61 @@
+{
+  "id": "P027",
+  "key": "celery",
+  "name": "Celery",
+  "status": "sample-awaiting-approval",
+  "revision": "celery-garden-1",
+  "generatedSource": "celery.png",
+  "sourceSHA256": "d62c8d73024704f311d9909d7b6202db98b492dfa089dc41b9a82e9a2b688d93",
+  "runtimeSHA256": "742e386e252f0229738ea049af57e5fc1d51054b201d264df4dd87d42289223e",
+  "runtime": "/garden-review/celery.webp",
+  "stages": [
+    {
+      "crop": [
+        223,
+        184,
+        223,
+        179
+      ],
+      "attach": [
+        110.0,
+        175.0
+      ]
+    },
+    {
+      "crop": [
+        752,
+        55,
+        365,
+        325
+      ],
+      "attach": [
+        171.0,
+        322.0
+      ]
+    },
+    {
+      "crop": [
+        20,
+        499,
+        568,
+        700
+      ],
+      "attach": [
+        304.0,
+        696.0
+      ]
+    },
+    {
+      "crop": [
+        609,
+        413,
+        639,
+        794
+      ],
+      "attach": [
+        345.0,
+        791.0
+      ]
+    }
+  ]
+}

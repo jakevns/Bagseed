@@ -1,0 +1,22 @@
+{
+  "broccoli": {
+    "generatedFile": "exec-2a675e32-dfd4-4f0b-9564-1f552c2990a9.png",
+    "SHA256": "b3a5f79dad9dac1195cbd705ccff571c39a7f3cabbbb0a49ef27ac500317b946"
+  },
+  "cauliflower": {
+    "generatedFile": "exec-0d5a0282-3ff6-4156-a348-39e817e4056f.png",
+    "SHA256": "9b9b01c491a10567b30272ffb6a7c7583064bd81d69851b6f6050a55403d337c"
+  },
+  "cabbage": {
+    "generatedFile": "exec-77ca32f2-a689-4977-aabc-310cbee54de7.png",
+    "SHA256": "8cc1317c32fc5e63ef124aec17b914360afe14b85955a398c867fd17ae18f200"
+  },
+  "kohlrabi": {
+    "generatedFile": "exec-9c7324fe-009d-4504-be5b-86673b359790.png",
+    "SHA256": "db36817805811aa82cef66c1519a39c4abd72af14d069eb69f6f30a4d21587c4"
+  },
+  "celery": {
+    "generatedFile": "exec-e7eb097e-6e8b-4ec3-99e4-24bb69f6ecc8.png",
+    "SHA256": "d62c8d73024704f311d9909d7b6202db98b492dfa089dc41b9a82e9a2b688d93"
+  }
+}

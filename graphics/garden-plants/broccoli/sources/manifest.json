@@ -1,0 +1,61 @@
+{
+  "id": "P021",
+  "key": "broccoli",
+  "name": "Broccoli",
+  "status": "approved-growth-artwork",
+  "revision": "broccoli-garden-1",
+  "generatedSource": "broccoli.png",
+  "sourceSHA256": "b3a5f79dad9dac1195cbd705ccff571c39a7f3cabbbb0a49ef27ac500317b946",
+  "runtimeSHA256": "2eee6b7b7cb91e29ef0b6ad32cec33550b689116b2ec4abc8a04a9ae1c9b8015",
+  "runtime": "assets/garden-plants/broccoli/stages-2eee6b7b7cb9.webp",
+  "stages": [
+    {
+      "crop": [
+        224,
+        242,
+        260,
+        204
+      ],
+      "attach": [
+        129.0,
+        201.0
+      ]
+    },
+    {
+      "crop": [
+        700,
+        121,
+        442,
+        370
+      ],
+      "attach": [
+        236.0,
+        367.0
+      ]
+    },
+    {
+      "crop": [
+        18,
+        632,
+        618,
+        494
+      ],
+      "attach": [
+        338.0,
+        491.0
+      ]
+    },
+    {
+      "crop": [
+        654,
+        626,
+        590,
+        523
+      ],
+      "attach": [
+        296.0,
+        519.0
+      ]
+    }
+  ]
+}

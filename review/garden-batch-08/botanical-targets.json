@@ -1,0 +1,42 @@
+[
+  {
+    "key": "broccoli",
+    "id": "P021",
+    "name": "Broccoli",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Blue-green lobed foliage and an attached dark green unopened bud crown."
+  },
+  {
+    "key": "cauliflower",
+    "id": "P022",
+    "name": "Cauliflower",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Ivory curd cradled by inward-cupped waxy green wrapper leaves."
+  },
+  {
+    "key": "cabbage",
+    "id": "P023",
+    "name": "Cabbage",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Dense layered pale green head and blue-green outer wrapper leaves."
+  },
+  {
+    "key": "kohlrabi",
+    "id": "P025",
+    "name": "Kohlrabi",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Above-ground pale green swollen stem with separately attached long-petioled leaves."
+  },
+  {
+    "key": "celery",
+    "id": "P027",
+    "name": "Celery",
+    "mainPot": true,
+    "sidePot": false,
+    "target": "Long pale green ribbed petioles with compound coarsely toothed leafy tops."
+  }
+]

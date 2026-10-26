@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "bb6d5c5cf0220b898d02a845646bea0de76dd7bb9f797f660d6cd25759cd808a",
+  "publishedHTMLSHA256": "c3e027869585a81acb9dcfad3d91e32b5ea168fe89697673df948555e3d1b14a",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -106,17 +106,17 @@
     {
       "id": "P021",
       "name": "Broccoli",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P022",
       "name": "Cauliflower",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P023",
       "name": "Cabbage",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P024",
@@ -126,7 +126,7 @@
     {
       "id": "P025",
       "name": "Kohlrabi",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P026",
@@ -136,7 +136,7 @@
     {
       "id": "P027",
       "name": "Celery",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P028",

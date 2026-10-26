@@ -1,0 +1,61 @@
+{
+  "id": "P025",
+  "key": "kohlrabi",
+  "name": "Kohlrabi",
+  "status": "sample-awaiting-approval",
+  "revision": "kohlrabi-garden-1",
+  "generatedSource": "kohlrabi.png",
+  "sourceSHA256": "db36817805811aa82cef66c1519a39c4abd72af14d069eb69f6f30a4d21587c4",
+  "runtimeSHA256": "472bbad9f886fb7c52ef58f6178a5f6effec18f50c9a9a63b42360e9b2df7f7e",
+  "runtime": "/garden-review/kohlrabi.webp",
+  "stages": [
+    {
+      "crop": [
+        211,
+        258,
+        251,
+        162
+      ],
+      "attach": [
+        125.0,
+        159.0
+      ]
+    },
+    {
+      "crop": [
+        702,
+        104,
+        421,
+        326
+      ],
+      "attach": [
+        216.0,
+        323.0
+      ]
+    },
+    {
+      "crop": [
+        14,
+        568,
+        552,
+        555
+      ],
+      "attach": [
+        308.0,
+        552.0
+      ]
+    },
+    {
+      "crop": [
+        589,
+        516,
+        652,
+        631
+      ],
+      "attach": [
+        346.0,
+        628.0
+      ]
+    }
+  ]
+}

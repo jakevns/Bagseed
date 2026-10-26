@@ -1,0 +1,61 @@
+{
+  "id": "P023",
+  "key": "cabbage",
+  "name": "Cabbage",
+  "status": "approved-growth-artwork",
+  "revision": "cabbage-garden-1",
+  "generatedSource": "cabbage.png",
+  "sourceSHA256": "8cc1317c32fc5e63ef124aec17b914360afe14b85955a398c867fd17ae18f200",
+  "runtimeSHA256": "6b743cc7795f4388391d3632d9c388a33131458b6f038acc669ff85359d2f302",
+  "runtime": "assets/garden-plants/cabbage/stages-6b743cc7795f.webp",
+  "stages": [
+    {
+      "crop": [
+        207,
+        270,
+        263,
+        165
+      ],
+      "attach": [
+        128.0,
+        162.0
+      ]
+    },
+    {
+      "crop": [
+        704,
+        185,
+        435,
+        269
+      ],
+      "attach": [
+        216.0,
+        266.0
+      ]
+    },
+    {
+      "crop": [
+        20,
+        641,
+        590,
+        459
+      ],
+      "attach": [
+        280.0,
+        456.0
+      ]
+    },
+    {
+      "crop": [
+        647,
+        605,
+        587,
+        518
+      ],
+      "attach": [
+        283.0,
+        501.0
+      ]
+    }
+  ]
+}

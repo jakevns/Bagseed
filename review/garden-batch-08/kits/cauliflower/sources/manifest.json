@@ -1,0 +1,61 @@
+{
+  "id": "P022",
+  "key": "cauliflower",
+  "name": "Cauliflower",
+  "status": "sample-awaiting-approval",
+  "revision": "cauliflower-garden-1",
+  "generatedSource": "cauliflower.png",
+  "sourceSHA256": "9b9b01c491a10567b30272ffb6a7c7583064bd81d69851b6f6050a55403d337c",
+  "runtimeSHA256": "d5831d667b14010c21e8e37c2d2a72d7a4c2da8fb4c5acf892cb234ea0a1e8c9",
+  "runtime": "/garden-review/cauliflower.webp",
+  "stages": [
+    {
+      "crop": [
+        176,
+        259,
+        281,
+        190
+      ],
+      "attach": [
+        142.0,
+        186.0
+      ]
+    },
+    {
+      "crop": [
+        673,
+        77,
+        515,
+        413
+      ],
+      "attach": [
+        256.0,
+        394.0
+      ]
+    },
+    {
+      "crop": [
+        22,
+        584,
+        556,
+        554
+      ],
+      "attach": [
+        307.0,
+        551.0
+      ]
+    },
+    {
+      "crop": [
+        634,
+        538,
+        601,
+        628
+      ],
+      "attach": [
+        293.0,
+        624.0
+      ]
+    }
+  ]
+}
