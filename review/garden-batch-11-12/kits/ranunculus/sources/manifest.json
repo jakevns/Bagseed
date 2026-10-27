@@ -1,0 +1,61 @@
+{
+  "id": "P093",
+  "key": "ranunculus",
+  "name": "Ranunculus",
+  "status": "sample-awaiting-approval",
+  "revision": "ranunculus-garden-1",
+  "generatedSource": "ranunculus.png",
+  "sourceSHA256": "db3f60a1c5b38e8f4e3579165b25b365dfaac892986fd6c1ac5534b0a4aaa4ba",
+  "runtimeSHA256": "7a9883c1abc17b9e8784c548fccb2771efaeeccfeb084fd17cf3670ab7b18b1a",
+  "runtime": "/garden-review/ranunculus.webp",
+  "stages": [
+    {
+      "crop": [
+        115,
+        231,
+        423,
+        270
+      ],
+      "attach": [
+        223.0,
+        267.0
+      ]
+    },
+    {
+      "crop": [
+        687,
+        88,
+        499,
+        415
+      ],
+      "attach": [
+        241.0,
+        411.0
+      ]
+    },
+    {
+      "crop": [
+        48,
+        629,
+        524,
+        541
+      ],
+      "attach": [
+        259.0,
+        538.0
+      ]
+    },
+    {
+      "crop": [
+        646,
+        575,
+        577,
+        608
+      ],
+      "attach": [
+        274.0,
+        601.0
+      ]
+    }
+  ]
+}

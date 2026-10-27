@@ -1,0 +1,61 @@
+{
+  "id": "P092",
+  "key": "viola",
+  "name": "Viola",
+  "status": "approved-growth-artwork",
+  "revision": "viola-garden-1",
+  "generatedSource": "viola.png",
+  "sourceSHA256": "d918800c6062a1a1e7668c592be7ed54870d50b5b87118b46804ed9f65d6a95e",
+  "runtimeSHA256": "6eca32b76fe8938712ace0be2afa9922ae1f1c18c39ae44ddeec4c12cc3cde90",
+  "runtime": "/assets/garden-plants/viola/stages-6eca32b76fe8.webp",
+  "stages": [
+    {
+      "crop": [
+        161,
+        251,
+        336,
+        234
+      ],
+      "attach": [
+        169.0,
+        229.0
+      ]
+    },
+    {
+      "crop": [
+        680,
+        104,
+        506,
+        420
+      ],
+      "attach": [
+        249.0,
+        378.0
+      ]
+    },
+    {
+      "crop": [
+        82,
+        699,
+        452,
+        435
+      ],
+      "attach": [
+        234.0,
+        420.0
+      ]
+    },
+    {
+      "crop": [
+        614,
+        616,
+        599,
+        516
+      ],
+      "attach": [
+        306.0,
+        506.0
+      ]
+    }
+  ]
+}

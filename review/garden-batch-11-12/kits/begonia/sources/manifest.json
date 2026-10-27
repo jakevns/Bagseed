@@ -1,0 +1,61 @@
+{
+  "id": "P101",
+  "key": "begonia",
+  "name": "Begonia",
+  "status": "sample-awaiting-approval",
+  "revision": "begonia-garden-1",
+  "generatedSource": "begonia.png",
+  "sourceSHA256": "bbddfb9ebc78aa7bc2d037af066f7ffbd62662be11af6a312c40b3185b0cbba4",
+  "runtimeSHA256": "4983475cb95ec168130cf20357ad6fa58435949b827410e7a9896d34eacddeba",
+  "runtime": "/garden-review/begonia.webp",
+  "stages": [
+    {
+      "crop": [
+        138,
+        236,
+        387,
+        233
+      ],
+      "attach": [
+        200.0,
+        229.0
+      ]
+    },
+    {
+      "crop": [
+        699,
+        87,
+        511,
+        383
+      ],
+      "attach": [
+        261.0,
+        378.0
+      ]
+    },
+    {
+      "crop": [
+        30,
+        651,
+        557,
+        476
+      ],
+      "attach": [
+        303.0,
+        470.0
+      ]
+    },
+    {
+      "crop": [
+        645,
+        568,
+        596,
+        583
+      ],
+      "attach": [
+        311.0,
+        552.0
+      ]
+    }
+  ]
+}

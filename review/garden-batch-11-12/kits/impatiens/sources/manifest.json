@@ -1,0 +1,61 @@
+{
+  "id": "P100",
+  "key": "impatiens",
+  "name": "Impatiens",
+  "status": "sample-awaiting-approval",
+  "revision": "impatiens-garden-1",
+  "generatedSource": "impatiens.png",
+  "sourceSHA256": "c5cc62e7cce2b4a0635ed6621fa4619893a47d86a8f29ef8b6a3a039d12bd0ee",
+  "runtimeSHA256": "363778dac5374af79de3d8355f16d9e141ec5d86f3db189e81d28b2f158c790c",
+  "runtime": "/garden-review/impatiens.webp",
+  "stages": [
+    {
+      "crop": [
+        166,
+        210,
+        340,
+        268
+      ],
+      "attach": [
+        157.0,
+        265.0
+      ]
+    },
+    {
+      "crop": [
+        702,
+        84,
+        466,
+        402
+      ],
+      "attach": [
+        228.0,
+        398.0
+      ]
+    },
+    {
+      "crop": [
+        31,
+        637,
+        568,
+        492
+      ],
+      "attach": [
+        275.0,
+        489.0
+      ]
+    },
+    {
+      "crop": [
+        630,
+        601,
+        608,
+        567
+      ],
+      "attach": [
+        232.0,
+        564.0
+      ]
+    }
+  ]
+}

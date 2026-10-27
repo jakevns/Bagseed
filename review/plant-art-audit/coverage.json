@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "ada6904cdd6eb911adea82de6182e9d2a525ef59b1fb2ec72e9d9d0dae57fbb9",
+  "publishedHTMLSHA256": "ca5e2b46bb499868a4030b9fe6c7da4f30252dca41d05a82a223ecd3c2cbb6c7",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -436,12 +436,12 @@
     {
       "id": "P087",
       "name": "Grape hyacinth",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P088",
       "name": "Snowdrop",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P089",
@@ -451,27 +451,27 @@
     {
       "id": "P090",
       "name": "Primrose",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P091",
       "name": "Pansy",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P092",
       "name": "Viola",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P093",
       "name": "Ranunculus",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P094",
       "name": "Anemone",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P095",
@@ -496,17 +496,17 @@
     {
       "id": "P099",
       "name": "Petunia",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P100",
       "name": "Impatiens",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P101",
       "name": "Begonia",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P102",

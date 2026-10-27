@@ -1,0 +1,61 @@
+{
+  "id": "P090",
+  "key": "primrose",
+  "name": "Primrose",
+  "status": "approved-growth-artwork",
+  "revision": "primrose-garden-1",
+  "generatedSource": "primrose.png",
+  "sourceSHA256": "483331ffcea6395c0aee2985ff6b2a38ae3cb223a61186896922b0420158c12f",
+  "runtimeSHA256": "79f7b2cfd58b5c933246fbaed79d36e408966a79075ffb046848e07b05ead580",
+  "runtime": "/assets/garden-plants/primrose/stages-79f7b2cfd58b.webp",
+  "stages": [
+    {
+      "crop": [
+        150,
+        300,
+        361,
+        239
+      ],
+      "attach": [
+        180.0,
+        205.0
+      ]
+    },
+    {
+      "crop": [
+        674,
+        161,
+        523,
+        376
+      ],
+      "attach": [
+        251.0,
+        343.0
+      ]
+    },
+    {
+      "crop": [
+        27,
+        726,
+        566,
+        407
+      ],
+      "attach": [
+        288.0,
+        344.0
+      ]
+    },
+    {
+      "crop": [
+        637,
+        650,
+        594,
+        483
+      ],
+      "attach": [
+        293.0,
+        420.0
+      ]
+    }
+  ]
+}

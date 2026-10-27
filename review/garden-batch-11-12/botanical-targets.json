@@ -1,0 +1,82 @@
+[
+  {
+    "key": "grapehyacinth",
+    "id": "P087",
+    "name": "Grape hyacinth",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb"
+  },
+  {
+    "key": "snowdrop",
+    "id": "P088",
+    "name": "Snowdrop",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb"
+  },
+  {
+    "key": "primrose",
+    "id": "P090",
+    "name": "Primrose",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "pansy",
+    "id": "P091",
+    "name": "Pansy",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "viola",
+    "id": "P092",
+    "name": "Viola",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "ranunculus",
+    "id": "P093",
+    "name": "Ranunculus",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb"
+  },
+  {
+    "key": "anemone",
+    "id": "P094",
+    "name": "Anemone",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb"
+  },
+  {
+    "key": "petunia",
+    "id": "P099",
+    "name": "Petunia",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "impatiens",
+    "id": "P100",
+    "name": "Impatiens",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "begonia",
+    "id": "P101",
+    "name": "Begonia",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  }
+]

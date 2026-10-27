@@ -6,7 +6,7 @@
   "hairRuntimeFitRevision": "scalp-fit-12",
   "baselineSHA": "4889b1d5c14ee0b95085ed6ef208615e19598f2bf5a656604284f22085502164",
   "workingSourceSHA": "1e8a17fbafa062bc222ce516f32622c01eba769625e2962bf2bd685af767e147",
-  "updatedSHA": "ada6904cdd6eb911adea82de6182e9d2a525ef59b1fb2ec72e9d9d0dae57fbb9",
+  "updatedSHA": "ca5e2b46bb499868a4030b9fe6c7da4f30252dca41d05a82a223ecd3c2cbb6c7",
   "characterRevision": "character-alignment-audit-v6",
   "characterPayloadSHA256": "1034a12cc49cc9ec48951b54fec27622d2bcebf85162c67dac7b5fb593998bf2",
   "characterSourcesSHA256": {
@@ -32,7 +32,7 @@
     "graphics/production/walk/sources/profile_v3.py": "e0e87c992020c5cb8e3ebb8f06475cf2c44941ebd1d23a1bf7cf00bbcf50fa4a",
     "graphics/production/walk/sources/affine_footprint.py": "6bf4df760d4a9e1952d63bf204819af441b78c502841eb14d39dc9475374c82a"
   },
-  "bytes": 4182591,
+  "bytes": 4188401,
   "modularAssets": 544,
   "embeddedImages": 1820,
   "approvedIdentities": [
@@ -158,8 +158,8 @@
   "livePlantMutationAtlases": 17,
   "publishedImagesDir": "public/assets/embedded",
   "plantResolutionRevision": "plant-resolution-1",
-  "gardenPlantsRevision": "garden-batch-10",
-  "gardenPlantSpecies": 50,
+  "gardenPlantsRevision": "garden-batch-11-12",
+  "gardenPlantSpecies": 60,
   "companionPotsRevision": "companion-pots-1",
   "companionPotDesigns": 1
 }
