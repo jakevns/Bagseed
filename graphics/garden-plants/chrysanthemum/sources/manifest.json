@@ -1,0 +1,61 @@
+{
+  "id": "P116",
+  "key": "chrysanthemum",
+  "name": "Chrysanthemum",
+  "status": "approved-growth-artwork",
+  "revision": "chrysanthemum-garden-1",
+  "generatedSource": "chrysanthemum.png",
+  "sourceSHA256": "98055f9b8f8ded874ef79c030ef048729b9df9738cf97bd219b758e2f26d974b",
+  "runtimeSHA256": "51feba3ce6b4be1cf65faa056b5438119627b40bb5219350654c1dccfd35eae8",
+  "runtime": "/assets/garden-plants/chrysanthemum/stages-51feba3ce6b4.webp",
+  "stages": [
+    {
+      "crop": [
+        92,
+        236,
+        449,
+        305
+      ],
+      "attach": [
+        218.0,
+        290.0
+      ]
+    },
+    {
+      "crop": [
+        696,
+        27,
+        518,
+        516
+      ],
+      "attach": [
+        247.0,
+        500.0
+      ]
+    },
+    {
+      "crop": [
+        12,
+        621,
+        594,
+        589
+      ],
+      "attach": [
+        301.0,
+        577.0
+      ]
+    },
+    {
+      "crop": [
+        633,
+        579,
+        608,
+        646
+      ],
+      "attach": [
+        304.0,
+        629.0
+      ]
+    }
+  ]
+}

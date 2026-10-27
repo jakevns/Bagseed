@@ -1,0 +1,61 @@
+{
+  "id": "P109",
+  "key": "portulaca",
+  "name": "Portulaca",
+  "status": "approved-growth-artwork",
+  "revision": "portulaca-garden-1",
+  "generatedSource": "portulaca.png",
+  "sourceSHA256": "e156658b4a527187281c7f2a47fd015dbd36292241e78baeee66b023b51dc38e",
+  "runtimeSHA256": "802761658934fd695af8c0cd46443b47d4a6e286a4dba7054565daf179a62b66",
+  "runtime": "/assets/garden-plants/portulaca/stages-802761658934.webp",
+  "stages": [
+    {
+      "crop": [
+        165,
+        245,
+        265,
+        272
+      ],
+      "attach": [
+        155.0,
+        269.0
+      ]
+    },
+    {
+      "crop": [
+        642,
+        156,
+        573,
+        370
+      ],
+      "attach": [
+        274.0,
+        367.0
+      ]
+    },
+    {
+      "crop": [
+        9,
+        658,
+        589,
+        441
+      ],
+      "attach": [
+        311.0,
+        431.0
+      ]
+    },
+    {
+      "crop": [
+        615,
+        663,
+        624,
+        448
+      ],
+      "attach": [
+        305.0,
+        427.0
+      ]
+    }
+  ]
+}

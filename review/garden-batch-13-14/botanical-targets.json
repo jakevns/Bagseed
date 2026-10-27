@@ -1,0 +1,82 @@
+[
+  {
+    "key": "geranium",
+    "id": "P102",
+    "name": "Geranium",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "portulaca",
+    "id": "P109",
+    "name": "Portulaca",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "dianthus",
+    "id": "P114",
+    "name": "Dianthus",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "chrysanthemum",
+    "id": "P116",
+    "name": "Chrysanthemum",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "sedumstonecrop",
+    "id": "P123",
+    "name": "Sedum stonecrop",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "hosta",
+    "id": "P135",
+    "name": "Hosta",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "heuchera",
+    "id": "P136",
+    "name": "Heuchera",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "coleus",
+    "id": "P137",
+    "name": "Coleus",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "cutting"
+  },
+  {
+    "key": "ornamentalkale",
+    "id": "P138",
+    "name": "Ornamental kale",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "dustymiller",
+    "id": "P139",
+    "name": "Dusty miller",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  }
+]

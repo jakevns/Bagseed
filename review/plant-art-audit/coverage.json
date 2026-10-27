@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "ca5e2b46bb499868a4030b9fe6c7da4f30252dca41d05a82a223ecd3c2cbb6c7",
+  "publishedHTMLSHA256": "554d37453bdd6bfbb1e4e19b7f348064055e352226eb42f1e08126c9babf38fb",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -511,7 +511,7 @@
     {
       "id": "P102",
       "name": "Geranium",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P103",
@@ -546,7 +546,7 @@
     {
       "id": "P109",
       "name": "Portulaca",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P110",
@@ -571,7 +571,7 @@
     {
       "id": "P114",
       "name": "Dianthus",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P115",
@@ -581,7 +581,7 @@
     {
       "id": "P116",
       "name": "Chrysanthemum",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P117",
@@ -616,7 +616,7 @@
     {
       "id": "P123",
       "name": "Sedum stonecrop",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P124",
@@ -676,27 +676,27 @@
     {
       "id": "P135",
       "name": "Hosta",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P136",
       "name": "Heuchera",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P137",
       "name": "Coleus",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P138",
       "name": "Ornamental kale",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P139",
       "name": "Dusty miller",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P140",

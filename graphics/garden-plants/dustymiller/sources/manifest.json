@@ -1,0 +1,61 @@
+{
+  "id": "P139",
+  "key": "dustymiller",
+  "name": "Dusty miller",
+  "status": "approved-growth-artwork",
+  "revision": "dustymiller-garden-1",
+  "generatedSource": "dustymiller.png",
+  "sourceSHA256": "0a6eb314432acc094ceb5ab57b65a7f0a0167dc8a8f6fe2217466d1353e71e12",
+  "runtimeSHA256": "d1011beb2f6cfe6f007ffda13d5cab8df874f2f8501b6f7a737f1eadb03ad00e",
+  "runtime": "/assets/garden-plants/dustymiller/stages-d1011beb2f6c.webp",
+  "stages": [
+    {
+      "crop": [
+        142,
+        187,
+        362,
+        337
+      ],
+      "attach": [
+        172.0,
+        333.0
+      ]
+    },
+    {
+      "crop": [
+        668,
+        90,
+        519,
+        440
+      ],
+      "attach": [
+        260.0,
+        437.0
+      ]
+    },
+    {
+      "crop": [
+        44,
+        665,
+        540,
+        482
+      ],
+      "attach": [
+        284.0,
+        455.0
+      ]
+    },
+    {
+      "crop": [
+        617,
+        648,
+        603,
+        540
+      ],
+      "attach": [
+        322.0,
+        486.0
+      ]
+    }
+  ]
+}

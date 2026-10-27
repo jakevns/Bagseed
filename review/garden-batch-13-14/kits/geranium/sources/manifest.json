@@ -1,0 +1,61 @@
+{
+  "id": "P102",
+  "key": "geranium",
+  "name": "Geranium",
+  "status": "sample-awaiting-approval",
+  "revision": "geranium-garden-1",
+  "generatedSource": "geranium.png",
+  "sourceSHA256": "4bf6d39c0c306242cbbc9fd60af63421cbfe38e5141e5ed50298eefc50bb7fdb",
+  "runtimeSHA256": "d11bb3b019ba645609adb8087ef1c4e2f817c09f1a40e623dba01ca65346cc06",
+  "runtime": "/garden-review/geranium.webp",
+  "stages": [
+    {
+      "crop": [
+        120,
+        211,
+        373,
+        273
+      ],
+      "attach": [
+        187.0,
+        269.0
+      ]
+    },
+    {
+      "crop": [
+        674,
+        33,
+        484,
+        452
+      ],
+      "attach": [
+        231.0,
+        449.0
+      ]
+    },
+    {
+      "crop": [
+        37,
+        577,
+        555,
+        595
+      ],
+      "attach": [
+        277.0,
+        592.0
+      ]
+    },
+    {
+      "crop": [
+        597,
+        527,
+        631,
+        682
+      ],
+      "attach": [
+        323.0,
+        679.0
+      ]
+    }
+  ]
+}

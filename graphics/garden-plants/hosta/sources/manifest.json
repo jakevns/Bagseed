@@ -1,0 +1,61 @@
+{
+  "id": "P135",
+  "key": "hosta",
+  "name": "Hosta",
+  "status": "approved-growth-artwork",
+  "revision": "hosta-garden-1",
+  "generatedSource": "hosta.png",
+  "sourceSHA256": "5fc26709986b292750bac496fa3ac0cc29d5e1e83d06eb325e943b91addcc19c",
+  "runtimeSHA256": "21da219144e82bc3db23c7e456aaa2bfd021a030483181e66bd51fcca77d3719",
+  "runtime": "/assets/garden-plants/hosta/stages-21da219144e8.webp",
+  "stages": [
+    {
+      "crop": [
+        230,
+        107,
+        191,
+        376
+      ],
+      "attach": [
+        110.0,
+        373.0
+      ]
+    },
+    {
+      "crop": [
+        639,
+        121,
+        552,
+        364
+      ],
+      "attach": [
+        280.0,
+        361.0
+      ]
+    },
+    {
+      "crop": [
+        33,
+        575,
+        569,
+        554
+      ],
+      "attach": [
+        288.0,
+        550.0
+      ]
+    },
+    {
+      "crop": [
+        632,
+        518,
+        608,
+        626
+      ],
+      "attach": [
+        314.0,
+        623.0
+      ]
+    }
+  ]
+}

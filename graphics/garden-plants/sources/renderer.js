@@ -39,7 +39,15 @@
   const g=geometry(id,3),sc=Math.min(w*.72/g.w,h*.49/g.h);painted(c,id,3,W/2,y+h*.79,0,sc);
   c.fillStyle='#426047';c.font=Math.max(11,W*.036)+'px Georgia';c.fillText(DATA[id].name,W/2,y+h*.87,w*.78);
   c.fillStyle='#b3915d';c.fillRect(x+w*.025,y+h*.93,w*.95,h*.045);return;
+ }if(GP.sp(id).form==='cutting'){
+ c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);
+ const g=geometry(id,1),sc=Math.min(W*.70/g.w,H*.62/g.h),cx=W/2,base=H*.72;
+ painted(c,id,1,cx,base,0,sc);
+ c.fillStyle='#aa8b5d';c.beginPath();c.roundRect(W*.38,base-H*.035,W*.24,H*.14,6);c.fill();
+ c.fillStyle='#f8edcf';c.fillRect(W*.395,base+H*.005,W*.21,H*.07);
+ c.fillStyle='#426047';c.textAlign='center';c.font='bold '+Math.max(10,W*.033)+'px Georgia';c.fillText('CUTTING',cx,base+H*.052,W*.20);
+ c.font=Math.max(10,W*.04)+'px Georgia';c.fillText(DATA[id].name,cx,H*.95,W*.9);return;
  }if(GP.sp(id).form==='starter'){c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const g=geometry(id,3),scale=Math.min(W*.7/Math.max(18,g.w),H*.75/(g.h+11));c.save();c.translate(W/2,H*.10+g.h*scale);c.scale(scale,scale);BagseedWaterPots.potSprite(c,0,0,1,70);painted(c,id,3,0,0,0,1);BagseedWaterPots.potSprite(c,0,0,1,70,false,true);c.restore();c.fillStyle='#426047';c.font=Math.max(10,W*.04)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,H*.95,W*.9);return;}c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const x=W*.25,y=H*.055,w=W*.5,h=H*.89;c.fillStyle='#8e7750';c.beginPath();c.roundRect(x-2,y-2,w+4,h+4,8);c.fill();c.fillStyle='#faf1d8';c.beginPath();c.roundRect(x,y,w,h,7);c.fill();c.fillStyle=GP.catCol(GP.sp(id));c.fillRect(x,y,w,H*.09);const g=geometry(id,3),sc=Math.min(w*.86/g.w,h*.69/g.h);painted(c,id,3,W/2,y+h*.85,0,sc);c.fillStyle='#426047';c.font=Math.max(10,W*.032)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,y+h*.965,w*.94);};
  const ready=Promise.all(Object.entries(DATA).map(([id,a])=>new Promise((resolve,reject)=>{const im=images[id]=new Image();im.onload=resolve;im.onerror=()=>reject(Error('Garden art failed: '+id));im.src=a.runtime;}))).then(()=>{loaded=true;});
- window.BagseedGardenPlants=Object.freeze({revision:'garden-batch-11-12',ready,geometry,offset,kits:DATA,get loaded(){return loaded;}});
+ window.BagseedGardenPlants=Object.freeze({revision:'garden-batch-13-14',ready,geometry,offset,kits:DATA,get loaded(){return loaded;}});
 })();

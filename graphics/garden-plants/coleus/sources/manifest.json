@@ -1,0 +1,61 @@
+{
+  "id": "P137",
+  "key": "coleus",
+  "name": "Coleus",
+  "status": "approved-growth-artwork",
+  "revision": "coleus-garden-1",
+  "generatedSource": "coleus.png",
+  "sourceSHA256": "b9d97c3d68e0c34f3a8114f7fef2675028a323f4975e22594e73ac8915e6295d",
+  "runtimeSHA256": "816e33cda2028d0e85398282a2c8c5d85cb5d3446517e1e4a323e56cf094a184",
+  "runtime": "/assets/garden-plants/coleus/stages-816e33cda202.webp",
+  "stages": [
+    {
+      "crop": [
+        130,
+        210,
+        401,
+        265
+      ],
+      "attach": [
+        201.0,
+        261.0
+      ]
+    },
+    {
+      "crop": [
+        726,
+        52,
+        441,
+        443
+      ],
+      "attach": [
+        211.0,
+        416.0
+      ]
+    },
+    {
+      "crop": [
+        34,
+        588,
+        546,
+        571
+      ],
+      "attach": [
+        291.0,
+        554.0
+      ]
+    },
+    {
+      "crop": [
+        640,
+        541,
+        586,
+        657
+      ],
+      "attach": [
+        298.0,
+        579.0
+      ]
+    }
+  ]
+}

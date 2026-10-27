@@ -1,0 +1,61 @@
+{
+  "id": "P138",
+  "key": "ornamentalkale",
+  "name": "Ornamental kale",
+  "status": "sample-awaiting-approval",
+  "revision": "ornamentalkale-garden-1",
+  "generatedSource": "ornamentalkale-spacing.png",
+  "sourceSHA256": "5887c4b4536f590687498c89b4ac4eee9f090a99a92ccb15546f4fbae7a9decf",
+  "runtimeSHA256": "9cc35bb65ee507fd33624d710b6815384a832e8e7fdb3860a4c28565538040b6",
+  "runtime": "/garden-review/ornamentalkale.webp",
+  "stages": [
+    {
+      "crop": [
+        149,
+        236,
+        375,
+        294
+      ],
+      "attach": [
+        188.0,
+        290.0
+      ]
+    },
+    {
+      "crop": [
+        696,
+        199,
+        438,
+        374
+      ],
+      "attach": [
+        220.0,
+        342.0
+      ]
+    },
+    {
+      "crop": [
+        69,
+        689,
+        524,
+        429
+      ],
+      "attach": [
+        261.0,
+        397.0
+      ]
+    },
+    {
+      "crop": [
+        647,
+        638,
+        570,
+        501
+      ],
+      "attach": [
+        286.0,
+        450.0
+      ]
+    }
+  ]
+}

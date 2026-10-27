@@ -1,0 +1,61 @@
+{
+  "id": "P114",
+  "key": "dianthus",
+  "name": "Dianthus",
+  "status": "approved-growth-artwork",
+  "revision": "dianthus-garden-1",
+  "generatedSource": "dianthus-spacing.png",
+  "sourceSHA256": "ff0782ebd5dc263c9599bd6c06a45632d1c2be0972fdf8111747018883259326",
+  "runtimeSHA256": "43841294d359863fb6b6f8f05fa22de1c53b73b8b46f8be55093c8fc7e40401b",
+  "runtime": "/assets/garden-plants/dianthus/stages-43841294d359.webp",
+  "stages": [
+    {
+      "crop": [
+        192,
+        221,
+        242,
+        262
+      ],
+      "attach": [
+        138.0,
+        259.0
+      ]
+    },
+    {
+      "crop": [
+        699,
+        101,
+        431,
+        374
+      ],
+      "attach": [
+        214.0,
+        371.0
+      ]
+    },
+    {
+      "crop": [
+        106,
+        723,
+        393,
+        440
+      ],
+      "attach": [
+        200.0,
+        436.0
+      ]
+    },
+    {
+      "crop": [
+        685,
+        692,
+        510,
+        490
+      ],
+      "attach": [
+        253.0,
+        487.0
+      ]
+    }
+  ]
+}
