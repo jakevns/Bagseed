@@ -1,0 +1,61 @@
+{
+  "id": "P146",
+  "key": "amaryllis",
+  "name": "Amaryllis",
+  "status": "approved-growth-artwork",
+  "revision": "amaryllis-garden-1",
+  "generatedSource": "amaryllis.png",
+  "sourceSHA256": "c0e5d55002122ed9106b193c1e37320b1bda65cba06ffd2a733a04137b42d1c4",
+  "runtimeSHA256": "a969d839097a386e9b93653bac5917e491ba05e00bff2d4d4580a15161567a2f",
+  "runtime": "/assets/garden-plants/amaryllis/stages-a969d839097a.webp",
+  "stages": [
+    {
+      "crop": [
+        317,
+        67,
+        88,
+        412
+      ],
+      "attach": [
+        47.0,
+        409.0
+      ]
+    },
+    {
+      "crop": [
+        641,
+        70,
+        497,
+        418
+      ],
+      "attach": [
+        253.0,
+        414.0
+      ]
+    },
+    {
+      "crop": [
+        61,
+        541,
+        542,
+        652
+      ],
+      "attach": [
+        297.0,
+        649.0
+      ]
+    },
+    {
+      "crop": [
+        632,
+        511,
+        596,
+        682
+      ],
+      "attach": [
+        284.0,
+        679.0
+      ]
+    }
+  ]
+}

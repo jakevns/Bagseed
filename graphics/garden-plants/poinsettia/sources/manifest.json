@@ -1,0 +1,61 @@
+{
+  "id": "P145",
+  "key": "poinsettia",
+  "name": "Poinsettia",
+  "status": "approved-growth-artwork",
+  "revision": "poinsettia-garden-1",
+  "generatedSource": "poinsettia.png",
+  "sourceSHA256": "e5116821c352dfda0ae917bb242bb969f41a4aaeaf49660e8636b84bb4b70d1c",
+  "runtimeSHA256": "9cd1f3f3c20cc6045d38e31aa0beeafa61a7c8609278e8d799662c8866865e34",
+  "runtime": "/assets/garden-plants/poinsettia/stages-9cd1f3f3c20c.webp",
+  "stages": [
+    {
+      "crop": [
+        124,
+        262,
+        377,
+        238
+      ],
+      "attach": [
+        190.0,
+        229.0
+      ]
+    },
+    {
+      "crop": [
+        688,
+        111,
+        488,
+        389
+      ],
+      "attach": [
+        246.0,
+        384.0
+      ]
+    },
+    {
+      "crop": [
+        39,
+        621,
+        551,
+        514
+      ],
+      "attach": [
+        282.0,
+        486.0
+      ]
+    },
+    {
+      "crop": [
+        628,
+        570,
+        616,
+        573
+      ],
+      "attach": [
+        307.0,
+        563.0
+      ]
+    }
+  ]
+}

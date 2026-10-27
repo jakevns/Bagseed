@@ -1,0 +1,82 @@
+[
+  {
+    "key": "fern",
+    "id": "P140",
+    "name": "Fern",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "succulentrosette",
+    "id": "P142",
+    "name": "Succulent rosette",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "cutting"
+  },
+  {
+    "key": "dwarfheather",
+    "id": "P144",
+    "name": "Dwarf heather",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "poinsettia",
+    "id": "P145",
+    "name": "Poinsettia",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "amaryllis",
+    "id": "P146",
+    "name": "Amaryllis",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb"
+  },
+  {
+    "key": "christmascactus",
+    "id": "P147",
+    "name": "Christmas cactus",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "cutting"
+  },
+  {
+    "key": "paperwhitenarcissus",
+    "id": "P148",
+    "name": "Paperwhite narcissus",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb"
+  },
+  {
+    "key": "cyclamen",
+    "id": "P149",
+    "name": "Cyclamen",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "hellebore",
+    "id": "P150",
+    "name": "Hellebore",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter"
+  },
+  {
+    "key": "anisehyssop",
+    "id": "P069",
+    "name": "Anise hyssop",
+    "mainPot": true,
+    "sidePot": false,
+    "purchaseForm": "starter"
+  }
+]

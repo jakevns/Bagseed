@@ -1,0 +1,61 @@
+{
+  "id": "P148",
+  "key": "paperwhitenarcissus",
+  "name": "Paperwhite narcissus",
+  "status": "sample-awaiting-approval",
+  "revision": "paperwhitenarcissus-garden-1",
+  "generatedSource": "paperwhitenarcissus.png",
+  "sourceSHA256": "f2292940c7f604237ff3dd3662e86a7228daf45d5f11981c0bc135ad65660504",
+  "runtimeSHA256": "f852fbf5c75c67fc9a62ad8fac1ccbdf6fdf9e707fa4176d4f8af39984f0a62a",
+  "runtime": "/garden-review/paperwhitenarcissus.webp",
+  "stages": [
+    {
+      "crop": [
+        271,
+        179,
+        126,
+        343
+      ],
+      "attach": [
+        67.0,
+        339.0
+      ]
+    },
+    {
+      "crop": [
+        705,
+        45,
+        425,
+        477
+      ],
+      "attach": [
+        221.0,
+        474.0
+      ]
+    },
+    {
+      "crop": [
+        110,
+        594,
+        461,
+        613
+      ],
+      "attach": [
+        240.0,
+        609.0
+      ]
+    },
+    {
+      "crop": [
+        645,
+        560,
+        522,
+        653
+      ],
+      "attach": [
+        275.0,
+        650.0
+      ]
+    }
+  ]
+}

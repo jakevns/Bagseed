@@ -1,0 +1,61 @@
+{
+  "id": "P140",
+  "key": "fern",
+  "name": "Fern",
+  "status": "approved-growth-artwork",
+  "revision": "fern-garden-1",
+  "generatedSource": "fern.png",
+  "sourceSHA256": "5c4284dba53255d0ded226d62c6f52d8785276ca3398feec6a849646cc0cc137",
+  "runtimeSHA256": "f7b5870ffb73feacb525a6f7325d536f0d48dd206038e6eb42bd666a1226b766",
+  "runtime": "/assets/garden-plants/fern/stages-f7b5870ffb73.webp",
+  "stages": [
+    {
+      "crop": [
+        205,
+        220,
+        230,
+        309
+      ],
+      "attach": [
+        126.0,
+        304.0
+      ]
+    },
+    {
+      "crop": [
+        694,
+        117,
+        485,
+        413
+      ],
+      "attach": [
+        244.0,
+        409.0
+      ]
+    },
+    {
+      "crop": [
+        17,
+        674,
+        581,
+        456
+      ],
+      "attach": [
+        297.0,
+        434.0
+      ]
+    },
+    {
+      "crop": [
+        617,
+        632,
+        623,
+        535
+      ],
+      "attach": [
+        326.0,
+        473.0
+      ]
+    }
+  ]
+}

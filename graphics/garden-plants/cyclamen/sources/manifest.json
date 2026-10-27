@@ -1,0 +1,61 @@
+{
+  "id": "P149",
+  "key": "cyclamen",
+  "name": "Cyclamen",
+  "status": "approved-growth-artwork",
+  "revision": "cyclamen-garden-1",
+  "generatedSource": "cyclamen.png",
+  "sourceSHA256": "51fd10fbb76876fba5719806be7ccb9bc7d2d6ad4d3fcb00059b2bb5fc8ad0e9",
+  "runtimeSHA256": "29b93e49753daa3841e538cea803618d39a3fb17006d3795442a6ec6bdf7455e",
+  "runtime": "/assets/garden-plants/cyclamen/stages-29b93e49753d.webp",
+  "stages": [
+    {
+      "crop": [
+        129,
+        179,
+        367,
+        281
+      ],
+      "attach": [
+        191.0,
+        278.0
+      ]
+    },
+    {
+      "crop": [
+        642,
+        79,
+        535,
+        383
+      ],
+      "attach": [
+        265.0,
+        379.0
+      ]
+    },
+    {
+      "crop": [
+        44,
+        670,
+        556,
+        486
+      ],
+      "attach": [
+        278.0,
+        481.0
+      ]
+    },
+    {
+      "crop": [
+        611,
+        512,
+        629,
+        659
+      ],
+      "attach": [
+        301.0,
+        635.0
+      ]
+    }
+  ]
+}

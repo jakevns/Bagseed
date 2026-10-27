@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "554d37453bdd6bfbb1e4e19b7f348064055e352226eb42f1e08126c9babf38fb",
+  "publishedHTMLSHA256": "e77d7e5a595ee707d950139838efaf960c5b25fb79c7108e73730a6f2bf62cb4",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -346,7 +346,7 @@
     {
       "id": "P069",
       "name": "Anise hyssop",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P070",
@@ -701,7 +701,7 @@
     {
       "id": "P140",
       "name": "Fern",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P141",
@@ -711,7 +711,7 @@
     {
       "id": "P142",
       "name": "Succulent rosette",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P143",
@@ -721,37 +721,37 @@
     {
       "id": "P144",
       "name": "Dwarf heather",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P145",
       "name": "Poinsettia",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P146",
       "name": "Amaryllis",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P147",
       "name": "Christmas cactus",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P148",
       "name": "Paperwhite narcissus",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P149",
       "name": "Cyclamen",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P150",
       "name": "Hellebore",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P151",

@@ -1,0 +1,61 @@
+{
+  "id": "P142",
+  "key": "succulentrosette",
+  "name": "Succulent rosette",
+  "status": "sample-awaiting-approval",
+  "revision": "succulentrosette-garden-1",
+  "generatedSource": "succulentrosette.png",
+  "sourceSHA256": "8a7ffcb6998bec610d8758fbcb06695fc907eaa5df9409fcd9cd233cc6018a42",
+  "runtimeSHA256": "3edb496547606f411a8e8a63708cfb43f893f057362b7d6fc9c0a092a887422a",
+  "runtime": "/garden-review/succulentrosette.webp",
+  "stages": [
+    {
+      "crop": [
+        195,
+        252,
+        312,
+        263
+      ],
+      "attach": [
+        134.0,
+        259.0
+      ]
+    },
+    {
+      "crop": [
+        709,
+        147,
+        443,
+        396
+      ],
+      "attach": [
+        248.0,
+        392.0
+      ]
+    },
+    {
+      "crop": [
+        56,
+        676,
+        551,
+        460
+      ],
+      "attach": [
+        262.0,
+        457.0
+      ]
+    },
+    {
+      "crop": [
+        640,
+        611,
+        599,
+        546
+      ],
+      "attach": [
+        211.0,
+        542.0
+      ]
+    }
+  ]
+}

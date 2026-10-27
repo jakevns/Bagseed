@@ -1,0 +1,61 @@
+{
+  "id": "P144",
+  "key": "dwarfheather",
+  "name": "Dwarf heather",
+  "status": "sample-awaiting-approval",
+  "revision": "dwarfheather-garden-1",
+  "generatedSource": "dwarfheather.png",
+  "sourceSHA256": "39eeb1a87c6ce735a553c6dd2ed9c6d346824660f9b346e793225339da3d4341",
+  "runtimeSHA256": "76c34d94160249ebc402fd9550e47fd04292c8c979844595523e0946213cdda6",
+  "runtime": "/garden-review/dwarfheather.webp",
+  "stages": [
+    {
+      "crop": [
+        219,
+        200,
+        196,
+        308
+      ],
+      "attach": [
+        115.0,
+        304.0
+      ]
+    },
+    {
+      "crop": [
+        721,
+        101,
+        381,
+        417
+      ],
+      "attach": [
+        196.0,
+        413.0
+      ]
+    },
+    {
+      "crop": [
+        66,
+        668,
+        494,
+        487
+      ],
+      "attach": [
+        245.0,
+        483.0
+      ]
+    },
+    {
+      "crop": [
+        610,
+        598,
+        607,
+        570
+      ],
+      "attach": [
+        307.0,
+        567.0
+      ]
+    }
+  ]
+}

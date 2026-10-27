@@ -1,0 +1,61 @@
+{
+  "id": "P147",
+  "key": "christmascactus",
+  "name": "Christmas cactus",
+  "status": "approved-growth-artwork",
+  "revision": "christmascactus-garden-1",
+  "generatedSource": "christmascactus.png",
+  "sourceSHA256": "acb5d27bc93d5709e43158258043d47550363e5a6934731fcbb394ffe0dc7b25",
+  "runtimeSHA256": "a4aa6082b9b7037be9ba2cdbe033f19148a6ca6af0a01e307345d48d4d8a212f",
+  "runtime": "/assets/garden-plants/christmascactus/stages-a4aa6082b9b7.webp",
+  "stages": [
+    {
+      "crop": [
+        182,
+        219,
+        290,
+        294
+      ],
+      "attach": [
+        156.0,
+        289.0
+      ]
+    },
+    {
+      "crop": [
+        651,
+        112,
+        564,
+        406
+      ],
+      "attach": [
+        252.0,
+        402.0
+      ]
+    },
+    {
+      "crop": [
+        21,
+        628,
+        581,
+        513
+      ],
+      "attach": [
+        305.0,
+        408.0
+      ]
+    },
+    {
+      "crop": [
+        634,
+        608,
+        605,
+        563
+      ],
+      "attach": [
+        291.0,
+        464.0
+      ]
+    }
+  ]
+}

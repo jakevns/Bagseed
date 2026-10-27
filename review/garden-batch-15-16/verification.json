@@ -1,0 +1,380 @@
+{
+  "checks": [
+    {
+      "id": "P140",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P142",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P144",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P145",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P146",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P147",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P148",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P149",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P150",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": true,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    },
+    {
+      "id": "P069",
+      "stable": true,
+      "wind": true,
+      "sidePotEligible": false,
+      "mainPotEligible": true,
+      "stages": [
+        {
+          "stage": 0,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 1,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 2,
+          "finite": true,
+          "anchorInside": true
+        },
+        {
+          "stage": 3,
+          "finite": true,
+          "anchorInside": true
+        }
+      ],
+      "rootFixed": true
+    }
+  ],
+  "readOnly": true,
+  "species": [
+    {
+      "id": "P140",
+      "name": "Fern",
+      "height": 9
+    },
+    {
+      "id": "P142",
+      "name": "Succulent rosette",
+      "height": 9
+    },
+    {
+      "id": "P144",
+      "name": "Dwarf heather",
+      "height": 9
+    },
+    {
+      "id": "P145",
+      "name": "Poinsettia",
+      "height": 9
+    },
+    {
+      "id": "P146",
+      "name": "Amaryllis",
+      "height": 16
+    },
+    {
+      "id": "P147",
+      "name": "Christmas cactus",
+      "height": 9
+    },
+    {
+      "id": "P148",
+      "name": "Paperwhite narcissus",
+      "height": 9
+    },
+    {
+      "id": "P149",
+      "name": "Cyclamen",
+      "height": 9
+    },
+    {
+      "id": "P150",
+      "name": "Hellebore",
+      "height": 9
+    },
+    {
+      "id": "P069",
+      "name": "Anise hyssop",
+      "height": 18
+    }
+  ],
+  "ids": [
+    "gp1",
+    "gp2",
+    "gp3",
+    "gp4",
+    "gp5",
+    "gp6",
+    "gp7",
+    "gp8",
+    "gp9",
+    "gpa"
+  ],
+  "saveReload": true,
+  "productionRenderer": false,
+  "startupGardenRequests": 0,
+  "publishedHTMLUnchanged": true,
+  "publishedHTMLSHA256": "554d37453bdd6bfbb1e4e19b7f348064055e352226eb42f1e08126c9babf38fb",
+  "animation": {
+    "frames": 96,
+    "fps": 12,
+    "seconds": 8
+  },
+  "errors": []
+}

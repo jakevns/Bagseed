@@ -7,6 +7,6 @@ module.exports=function(){
   for(const p of m.stages){assert.ok(p.crop.length===4&&p.attach.length===2);assert.ok(p.attach[0]>=0&&p.attach[0]<p.crop[2]&&p.attach[1]>=0&&p.attach[1]<p.crop[3]);}
   assert.ok(!data[m.id]);data[m.id]=m;
  }
- assert.equal(Object.keys(data).length,70);
+ assert.equal(Object.keys(data).length,80);
  const code=fs.readFileSync(path.join(base,'sources/renderer.js'),'utf8').replace('__BAGSEED_GARDEN_DATA__',()=>JSON.stringify(data));new(require('node:vm').Script)(code);return '<script id="bagseed-garden-plants-code">\n'+code+'\n</script>\n';
 };
