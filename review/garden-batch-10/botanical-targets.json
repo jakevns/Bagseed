@@ -1,0 +1,47 @@
+[
+  {
+    "key": "lemongrass",
+    "id": "P068",
+    "name": "Lemongrass",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "starter",
+    "target": "Long arching flat grass blades and pale overlapping basal leaf sheaths."
+  },
+  {
+    "key": "tulip",
+    "id": "P083",
+    "name": "Tulip",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb",
+    "target": "Blue-green strap leaves, closed red bud and open six-tepal red cup."
+  },
+  {
+    "key": "daffodil",
+    "id": "P084",
+    "name": "Daffodil",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb",
+    "target": "Narrow strap leaves and yellow six-tepal blooms with orange-gold trumpet coronas."
+  },
+  {
+    "key": "crocus",
+    "id": "P085",
+    "name": "Crocus",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb",
+    "target": "Low purple six-tepal cups with golden centers and narrow white-striped leaves."
+  },
+  {
+    "key": "hyacinth",
+    "id": "P086",
+    "name": "Hyacinth",
+    "mainPot": true,
+    "sidePot": true,
+    "purchaseForm": "bulb",
+    "target": "Fleshy strap leaves and a dense upright raceme of blue-violet tubular florets."
+  }
+]

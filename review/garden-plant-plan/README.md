@@ -1,6 +1,6 @@
 # Garden and companion plant visual-update plan
 
-Status: batches 1–9 are accepted and integrated (45 species). Batch 10 is in progress; later batches retain their original artwork. The ranked order below is the saved production plan.
+Status: batches 1–10 are accepted and integrated (50 species). The next ten-plant review combines saved groups 11 and 12 and is in progress; later batches retain their original artwork. The ranked order below is the saved production plan.
 
 Order is **highest to lowest visual-update priority**, based on current pot visibility, the reported lettuce/pot issues, companion interactions and reusable botanical components. This is an art-production ranking, not a claim about botanical or economic importance. No usage analytics were available.
 
@@ -16,7 +16,7 @@ Order is **highest to lowest visual-update priority**, based on current pot visi
 
 Source: src/game.html, GP_DATA, GP.build, GP.canPlant and GrowPotGarden. Store eligibility labels alone are not used as the main-pot rule.
 
-## Five at a time
+## Ten at a time
 
 Every approved plant needs its actual four game stages (sprouting, young, growing, ready/in bloom), anatomically distinct leaves/stems/flowers/produce, attached wind animation with fixed roots, reduced-motion stillness, correct soil/rim placement in both eligible pot types, and matching store, inventory and plant-menu imagery. Preserve existing regrowth/perennial behavior; visually reset after harvest where the simulation already does. Add rare color/fruit patterns when that named variety reaches its batch. Do not change planting rules or gameplay.
 
@@ -24,7 +24,7 @@ Use high-resolution painted rendering consistent with the approved plants. Revie
 
 ## Ranked batches
 
-Batches 1–26 contain five main-pot plants each. Batch 27 starts with the final two main-pot plants, then three garden-only plants. The remaining batches are garden-only. The last batch has three entries because the catalog is not a multiple of five.
+The saved rows retain their original five-plant numbering; starting with groups 11–12, combine consecutive pairs into ten-plant reviews. Batches 1–26 contain five main-pot plants each. Batch 27 starts with the final two main-pot plants, then three garden-only plants. The remaining batches are garden-only. The last batch has three entries because the catalog is not a multiple of five.
 
 | Batch | Plants, in priority order |
 | --- | --- |

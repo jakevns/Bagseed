@@ -1,0 +1,61 @@
+{
+  "id": "P084",
+  "key": "daffodil",
+  "name": "Daffodil",
+  "status": "approved-growth-artwork",
+  "revision": "daffodil-garden-1",
+  "generatedSource": "daffodil.png",
+  "sourceSHA256": "001b0ad0c33bc10dc12883bb951ca7a1cb0a462aca607c146740b3a253f74ee9",
+  "runtimeSHA256": "4894a68bad3c0555a0cf86cecb204e39c5609faeff289b7f44388cb91a210ee4",
+  "runtime": "/assets/garden-plants/daffodil/stages-4894a68bad3c.webp",
+  "stages": [
+    {
+      "crop": [
+        300,
+        202,
+        86,
+        227
+      ],
+      "attach": [
+        52.0,
+        224.0
+      ]
+    },
+    {
+      "crop": [
+        723,
+        56,
+        356,
+        374
+      ],
+      "attach": [
+        195.0,
+        371.0
+      ]
+    },
+    {
+      "crop": [
+        84,
+        534,
+        521,
+        636
+      ],
+      "attach": [
+        282.0,
+        632.0
+      ]
+    },
+    {
+      "crop": [
+        655,
+        465,
+        539,
+        727
+      ],
+      "attach": [
+        268.0,
+        724.0
+      ]
+    }
+  ]
+}

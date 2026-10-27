@@ -1,0 +1,13 @@
+{
+  "approvedGardenIdentities": 50,
+  "build": "passed",
+  "staticChecks": "passed",
+  "focusedBrowserTests": 3,
+  "failures": 0,
+  "scope": [
+    "batch 10 startup, native pots, four stages, wind, reduced motion and save/reload",
+    "live painted plants, saved genetics and mutations",
+    "mobile plant resolution and interaction coordinates"
+  ],
+  "nextReviewSize": 10
+}

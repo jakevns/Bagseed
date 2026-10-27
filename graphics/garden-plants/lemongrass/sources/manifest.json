@@ -1,0 +1,61 @@
+{
+  "id": "P068",
+  "key": "lemongrass",
+  "name": "Lemongrass",
+  "status": "approved-growth-artwork",
+  "revision": "lemongrass-garden-1",
+  "generatedSource": "lemongrass.png",
+  "sourceSHA256": "9f4578f5f38c138e4b000d033dafb1e54208fe33c6b07a112b17075f4d359af5",
+  "runtimeSHA256": "2deff4fec564679de1092e8399d4491006801f07c510807616f75801df8a59dd",
+  "runtime": "/assets/garden-plants/lemongrass/stages-2deff4fec564.webp",
+  "stages": [
+    {
+      "crop": [
+        276,
+        233,
+        111,
+        210
+      ],
+      "attach": [
+        63.0,
+        207.0
+      ]
+    },
+    {
+      "crop": [
+        767,
+        76,
+        301,
+        376
+      ],
+      "attach": [
+        135.0,
+        373.0
+      ]
+    },
+    {
+      "crop": [
+        16,
+        614,
+        571,
+        546
+      ],
+      "attach": [
+        303.0,
+        542.0
+      ]
+    },
+    {
+      "crop": [
+        598,
+        517,
+        651,
+        644
+      ],
+      "attach": [
+        333.0,
+        640.0
+      ]
+    }
+  ]
+}

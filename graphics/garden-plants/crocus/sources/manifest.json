@@ -1,0 +1,61 @@
+{
+  "id": "P085",
+  "key": "crocus",
+  "name": "Crocus",
+  "status": "approved-growth-artwork",
+  "revision": "crocus-garden-1",
+  "generatedSource": "crocus.png",
+  "sourceSHA256": "8a6c3b77f71c208d3d772b788c66f1b4596b5642c2e52fa100b0f7ed2bb1dc8e",
+  "runtimeSHA256": "a92e4119257a8705f71d1ed3ff9ebaab18ee98fa64219939f06e4dd00d71a72e",
+  "runtime": "/assets/garden-plants/crocus/stages-a92e4119257a.webp",
+  "stages": [
+    {
+      "crop": [
+        287,
+        180,
+        67,
+        292
+      ],
+      "attach": [
+        32.0,
+        289.0
+      ]
+    },
+    {
+      "crop": [
+        691,
+        94,
+        496,
+        384
+      ],
+      "attach": [
+        248.0,
+        380.0
+      ]
+    },
+    {
+      "crop": [
+        24,
+        652,
+        539,
+        503
+      ],
+      "attach": [
+        304.0,
+        499.0
+      ]
+    },
+    {
+      "crop": [
+        580,
+        597,
+        655,
+        568
+      ],
+      "attach": [
+        352.0,
+        557.0
+      ]
+    }
+  ]
+}

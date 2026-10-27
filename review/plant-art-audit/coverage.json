@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "0487b9a096f64fc2aed545a63e7856c2ae92c3620fc94a6bfe64126b3b55b8f0",
+  "publishedHTMLSHA256": "ada6904cdd6eb911adea82de6182e9d2a525ef59b1fb2ec72e9d9d0dae57fbb9",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -341,7 +341,7 @@
     {
       "id": "P068",
       "name": "Lemongrass",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P069",
@@ -416,22 +416,22 @@
     {
       "id": "P083",
       "name": "Tulip",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P084",
       "name": "Daffodil",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P085",
       "name": "Crocus",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P086",
       "name": "Hyacinth",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P087",

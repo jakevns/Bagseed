@@ -27,7 +27,19 @@
  }
  GPArt.draw=function(c,id,stage,x,y,t=0,scale=1,opts={}){if(!loaded||!DATA[id])return draw.apply(this,arguments);return painted(c,id,stage,x,y,t,scale);};
  RoomArt.drawSlots=function(c){const active=mainContexts.has(c);mainContexts.add(c);try{return slots.apply(this,arguments);}finally{if(!active)mainContexts.delete(c);}};
- GPArt.icon=function(cv,id){if(!loaded||!DATA[id])return icon.apply(this,arguments);const aspect=cv.height/cv.width;cv.width=Math.max(384,cv.width);cv.height=Math.round(cv.width*aspect);const c=cv.getContext('2d'),W=cv.width,H=cv.height;if(GP.sp(id).form==='starter'){c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const g=geometry(id,3),scale=Math.min(W*.7/Math.max(18,g.w),H*.75/(g.h+11));c.save();c.translate(W/2,H*.10+g.h*scale);c.scale(scale,scale);BagseedWaterPots.potSprite(c,0,0,1,70);painted(c,id,3,0,0,0,1);BagseedWaterPots.potSprite(c,0,0,1,70,false,true);c.restore();c.fillStyle='#426047';c.font=Math.max(10,W*.04)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,H*.95,W*.9);return;}c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const x=W*.25,y=H*.055,w=W*.5,h=H*.89;c.fillStyle='#8e7750';c.beginPath();c.roundRect(x-2,y-2,w+4,h+4,8);c.fill();c.fillStyle='#faf1d8';c.beginPath();c.roundRect(x,y,w,h,7);c.fill();c.fillStyle=GP.catCol(GP.sp(id));c.fillRect(x,y,w,H*.09);const g=geometry(id,3),sc=Math.min(w*.86/g.w,h*.69/g.h);painted(c,id,3,W/2,y+h*.85,0,sc);c.fillStyle='#426047';c.font=Math.max(10,W*.032)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,y+h*.965,w*.94);};
+ GPArt.icon=function(cv,id){if(!loaded||!DATA[id])return icon.apply(this,arguments);const aspect=cv.height/cv.width;cv.width=Math.max(384,cv.width);cv.height=Math.round(cv.width*aspect);const c=cv.getContext('2d'),W=cv.width,H=cv.height;if(GP.sp(id).form==='bulb'){
+  c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);
+  const x=W*.18,y=H*.05,w=W*.64,h=H*.9;
+  c.fillStyle='#c9a573';c.beginPath();c.roundRect(x,y,w,h,W*.018);c.fill();
+  c.strokeStyle='#8e7751';c.lineWidth=Math.max(1,W*.006);c.stroke();
+  c.fillStyle='#ad8a55';c.fillRect(x+w*.025,y+h*.025,w*.95,h*.10);
+  c.fillStyle='#faf1d8';c.beginPath();c.roundRect(x+w*.075,y+h*.17,w*.85,h*.73,W*.012);c.fill();
+  c.fillStyle=GP.catCol(GP.sp(id));c.fillRect(x+w*.075,y+h*.17,w*.85,h*.11);
+  c.fillStyle='#294c3d';c.textAlign='center';c.font='bold '+Math.max(12,W*.045)+'px Georgia';c.fillText('BULBS',W/2,y+h*.25,w*.78);
+  const g=geometry(id,3),sc=Math.min(w*.72/g.w,h*.49/g.h);painted(c,id,3,W/2,y+h*.79,0,sc);
+  c.fillStyle='#426047';c.font=Math.max(11,W*.036)+'px Georgia';c.fillText(DATA[id].name,W/2,y+h*.87,w*.78);
+  c.fillStyle='#b3915d';c.fillRect(x+w*.025,y+h*.93,w*.95,h*.045);return;
+ }if(GP.sp(id).form==='starter'){c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const g=geometry(id,3),scale=Math.min(W*.7/Math.max(18,g.w),H*.75/(g.h+11));c.save();c.translate(W/2,H*.10+g.h*scale);c.scale(scale,scale);BagseedWaterPots.potSprite(c,0,0,1,70);painted(c,id,3,0,0,0,1);BagseedWaterPots.potSprite(c,0,0,1,70,false,true);c.restore();c.fillStyle='#426047';c.font=Math.max(10,W*.04)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,H*.95,W*.9);return;}c.fillStyle='#e7ead7';c.fillRect(0,0,W,H);const x=W*.25,y=H*.055,w=W*.5,h=H*.89;c.fillStyle='#8e7750';c.beginPath();c.roundRect(x-2,y-2,w+4,h+4,8);c.fill();c.fillStyle='#faf1d8';c.beginPath();c.roundRect(x,y,w,h,7);c.fill();c.fillStyle=GP.catCol(GP.sp(id));c.fillRect(x,y,w,H*.09);const g=geometry(id,3),sc=Math.min(w*.86/g.w,h*.69/g.h);painted(c,id,3,W/2,y+h*.85,0,sc);c.fillStyle='#426047';c.font=Math.max(10,W*.032)+'px Georgia';c.textAlign='center';c.fillText(DATA[id].name,W/2,y+h*.965,w*.94);};
  const ready=Promise.all(Object.entries(DATA).map(([id,a])=>new Promise((resolve,reject)=>{const im=images[id]=new Image();im.onload=resolve;im.onerror=()=>reject(Error('Garden art failed: '+id));im.src=a.runtime;}))).then(()=>{loaded=true;});
- window.BagseedGardenPlants=Object.freeze({revision:'garden-batch-09',ready,geometry,offset,kits:DATA,get loaded(){return loaded;}});
+ window.BagseedGardenPlants=Object.freeze({revision:'garden-batch-10',ready,geometry,offset,kits:DATA,get loaded(){return loaded;}});
 })();
