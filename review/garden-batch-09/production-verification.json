@@ -1,0 +1,12 @@
+{
+  "approvedGardenIdentities": 45,
+  "build": "passed",
+  "staticChecks": "passed",
+  "focusedBrowserTests": 3,
+  "failures": 0,
+  "scope": [
+    "batch 9 startup, pots, growth, wind, reduced motion, save/reload",
+    "live painted cannabis, genetics and mutations",
+    "mobile plant resolution and interaction coordinates"
+  ]
+}

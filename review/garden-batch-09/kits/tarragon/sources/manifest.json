@@ -1,0 +1,61 @@
+{
+  "id": "P063",
+  "key": "tarragon",
+  "name": "Tarragon",
+  "status": "sample-awaiting-approval",
+  "revision": "tarragon-garden-1",
+  "generatedSource": "tarragon.png",
+  "sourceSHA256": "917393a938c6d9ddb77916c3a4a15eb90f32afdf237c41b75f29d1cf93fe9494",
+  "runtimeSHA256": "abf9b80fc0fd42f74d6038f5fcfe5a9ae04c84e84ffe557b4b1b429a3366f4e6",
+  "runtime": "/garden-review/tarragon.webp",
+  "stages": [
+    {
+      "crop": [
+        237,
+        188,
+        199,
+        201
+      ],
+      "attach": [
+        111.0,
+        198.0
+      ]
+    },
+    {
+      "crop": [
+        767,
+        25,
+        307,
+        368
+      ],
+      "attach": [
+        168.0,
+        365.0
+      ]
+    },
+    {
+      "crop": [
+        49,
+        493,
+        560,
+        693
+      ],
+      "attach": [
+        272.0,
+        689.0
+      ]
+    },
+    {
+      "crop": [
+        638,
+        408,
+        589,
+        794
+      ],
+      "attach": [
+        288.0,
+        791.0
+      ]
+    }
+  ]
+}

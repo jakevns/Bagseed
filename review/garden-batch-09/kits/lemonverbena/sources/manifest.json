@@ -1,0 +1,61 @@
+{
+  "id": "P067",
+  "key": "lemonverbena",
+  "name": "Lemon verbena",
+  "status": "sample-awaiting-approval",
+  "revision": "lemonverbena-garden-1",
+  "generatedSource": "lemonverbena.png",
+  "sourceSHA256": "a4618fe6f528d54ca1791c0c70da1e223eb2099eb60d3cf721f9c5535f753ca8",
+  "runtimeSHA256": "844713b8f9d7ca8a2da87b050f26b25c2c93589a3e3b73eb7e0485777788661d",
+  "runtime": "/garden-review/lemonverbena.webp",
+  "stages": [
+    {
+      "crop": [
+        227,
+        207,
+        206,
+        201
+      ],
+      "attach": [
+        100.0,
+        198.0
+      ]
+    },
+    {
+      "crop": [
+        787,
+        42,
+        274,
+        395
+      ],
+      "attach": [
+        140.0,
+        392.0
+      ]
+    },
+    {
+      "crop": [
+        30,
+        566,
+        572,
+        578
+      ],
+      "attach": [
+        285.0,
+        574.0
+      ]
+    },
+    {
+      "crop": [
+        635,
+        508,
+        593,
+        666
+      ],
+      "attach": [
+        302.0,
+        659.0
+      ]
+    }
+  ]
+}

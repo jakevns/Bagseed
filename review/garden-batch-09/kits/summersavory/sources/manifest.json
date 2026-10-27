@@ -1,0 +1,61 @@
+{
+  "id": "P065",
+  "key": "summersavory",
+  "name": "Summer savory",
+  "status": "sample-awaiting-approval",
+  "revision": "summersavory-garden-1",
+  "generatedSource": "summersavory.png",
+  "sourceSHA256": "590eb6a56adc1c60674cb9dfc5467ea3b66255411cc5f3b8a8791620c4ac566e",
+  "runtimeSHA256": "b11d17dfb1c65be7fa7d31e5bb0166dcc503c5510ab9fa2e7fc62b10c41c8f62",
+  "runtime": "/garden-review/summersavory.webp",
+  "stages": [
+    {
+      "crop": [
+        240,
+        216,
+        184,
+        184
+      ],
+      "attach": [
+        87.0,
+        180.0
+      ]
+    },
+    {
+      "crop": [
+        811,
+        80,
+        314,
+        372
+      ],
+      "attach": [
+        153.0,
+        368.0
+      ]
+    },
+    {
+      "crop": [
+        69,
+        535,
+        518,
+        594
+      ],
+      "attach": [
+        262.0,
+        590.0
+      ]
+    },
+    {
+      "crop": [
+        644,
+        523,
+        589,
+        632
+      ],
+      "attach": [
+        301.0,
+        628.0
+      ]
+    }
+  ]
+}

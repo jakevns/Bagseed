@@ -1,0 +1,42 @@
+[
+  {
+    "key": "tarragon",
+    "id": "P063",
+    "name": "Tarragon",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Soft alternate narrow leaves on upright branching stems; sparse yellow-green flower heads."
+  },
+  {
+    "key": "marjoram",
+    "id": "P064",
+    "name": "Marjoram",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Small rounded gray-green felted opposite leaves; compact knot-like pale flower clusters."
+  },
+  {
+    "key": "summersavory",
+    "id": "P065",
+    "name": "Summer savory",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Narrow opposite pointed leaves, fine reddish stems and small axillary pink-lilac flowers."
+  },
+  {
+    "key": "chervil",
+    "id": "P066",
+    "name": "Chervil",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Light-green finely divided triangular compound leaves and delicate white umbels."
+  },
+  {
+    "key": "lemonverbena",
+    "id": "P067",
+    "name": "Lemon verbena",
+    "mainPot": true,
+    "sidePot": true,
+    "target": "Long lanceolate lightly toothed leaves in whorls of three, woody branching base and tiny white flower sprays."
+  }
+]

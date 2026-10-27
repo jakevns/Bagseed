@@ -1,5 +1,5 @@
 {
-  "publishedHTMLSHA256": "c3e027869585a81acb9dcfad3d91e32b5ea168fe89697673df948555e3d1b14a",
+  "publishedHTMLSHA256": "0487b9a096f64fc2aed545a63e7856c2ae92c3620fc94a6bfe64126b3b55b8f0",
   "productionPayloadsMatchSource": true,
   "cannabisNamedStrains": 37,
   "garden": [
@@ -316,27 +316,27 @@
     {
       "id": "P063",
       "name": "Tarragon",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P064",
       "name": "Marjoram",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P065",
       "name": "Summer savory",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P066",
       "name": "Chervil",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P067",
       "name": "Lemon verbena",
-      "status": "original-artwork"
+      "status": "updated-in-production"
     },
     {
       "id": "P068",

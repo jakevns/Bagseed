@@ -1,0 +1,61 @@
+{
+  "id": "P064",
+  "key": "marjoram",
+  "name": "Marjoram",
+  "status": "sample-awaiting-approval",
+  "revision": "marjoram-garden-1",
+  "generatedSource": "marjoram.png",
+  "sourceSHA256": "a53a1de5beb43468e5932d43b1e83288ca05828ce97a8d4a2dcfb1209847a3e5",
+  "runtimeSHA256": "184a887ffb41d4a537c8cf8a8953c10de18d97b42c00e21b9716406d7850887b",
+  "runtime": "/garden-review/marjoram.webp",
+  "stages": [
+    {
+      "crop": [
+        233,
+        259,
+        188,
+        164
+      ],
+      "attach": [
+        94.0,
+        160.0
+      ]
+    },
+    {
+      "crop": [
+        807,
+        155,
+        272,
+        312
+      ],
+      "attach": [
+        133.0,
+        309.0
+      ]
+    },
+    {
+      "crop": [
+        30,
+        656,
+        585,
+        462
+      ],
+      "attach": [
+        293.0,
+        445.0
+      ]
+    },
+    {
+      "crop": [
+        636,
+        607,
+        600,
+        518
+      ],
+      "attach": [
+        292.0,
+        501.0
+      ]
+    }
+  ]
+}

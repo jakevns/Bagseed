@@ -1,0 +1,61 @@
+{
+  "id": "P066",
+  "key": "chervil",
+  "name": "Chervil",
+  "status": "sample-awaiting-approval",
+  "revision": "chervil-garden-1",
+  "generatedSource": "chervil.png",
+  "sourceSHA256": "044df265bf77074b2df1d495b08acec28cf2a9596e6ede679de32e6b2351a7b6",
+  "runtimeSHA256": "3dde14cbf2b76ceedb1a77ce7b43ac22f48450825b38961bdac7aaefc3e36d95",
+  "runtime": "/garden-review/chervil.webp",
+  "stages": [
+    {
+      "crop": [
+        135,
+        210,
+        369,
+        177
+      ],
+      "attach": [
+        194.0,
+        173.0
+      ]
+    },
+    {
+      "crop": [
+        668,
+        69,
+        531,
+        366
+      ],
+      "attach": [
+        223.0,
+        361.0
+      ]
+    },
+    {
+      "crop": [
+        40,
+        591,
+        573,
+        588
+      ],
+      "attach": [
+        275.0,
+        554.0
+      ]
+    },
+    {
+      "crop": [
+        642,
+        511,
+        586,
+        673
+      ],
+      "attach": [
+        289.0,
+        647.0
+      ]
+    }
+  ]
+}
