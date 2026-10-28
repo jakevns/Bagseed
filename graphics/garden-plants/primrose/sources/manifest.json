@@ -7,7 +7,7 @@
   "generatedSource": "primrose.png",
   "sourceSHA256": "483331ffcea6395c0aee2985ff6b2a38ae3cb223a61186896922b0420158c12f",
   "runtimeSHA256": "79f7b2cfd58b5c933246fbaed79d36e408966a79075ffb046848e07b05ead580",
-  "runtime": "/assets/garden-plants/primrose/stages-79f7b2cfd58b.webp",
+  "runtime": "assets/garden-plants/primrose/stages-79f7b2cfd58b.webp",
   "stages": [
     {
       "crop": [

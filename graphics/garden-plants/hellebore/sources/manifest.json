@@ -7,7 +7,7 @@
   "generatedSource": "hellebore.png",
   "sourceSHA256": "a530e3a65d8101a8d3076df00aba57d38cb076c03c223d4945a802e778e929ba",
   "runtimeSHA256": "ebabcc95e22d4bd4c13b604844cc9e74826b16bdc4c818725aac72762335e1c8",
-  "runtime": "/assets/garden-plants/hellebore/stages-ebabcc95e22d.webp",
+  "runtime": "assets/garden-plants/hellebore/stages-ebabcc95e22d.webp",
   "stages": [
     {
       "crop": [

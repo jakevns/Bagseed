@@ -7,7 +7,7 @@
   "generatedSource": "anemone.png",
   "sourceSHA256": "9aae05a12e220c2f5d83bbaed7b375cc1e05a5b0fc2c6d6ce7f1df10a9207f80",
   "runtimeSHA256": "5ad964468cfd86fc0db5bc304876cc3f354da4bf00701307f581de4978f00176",
-  "runtime": "/assets/garden-plants/anemone/stages-5ad964468cfd.webp",
+  "runtime": "assets/garden-plants/anemone/stages-5ad964468cfd.webp",
   "stages": [
     {
       "crop": [

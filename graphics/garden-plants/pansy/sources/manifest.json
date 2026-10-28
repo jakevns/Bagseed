@@ -7,7 +7,7 @@
   "generatedSource": "pansy.png",
   "sourceSHA256": "10ed3829b5a06d7c3870ac1d0464c7def1ce4be12b23c56ebd9c34fbb2252009",
   "runtimeSHA256": "ccd84e3e30c2aa0de7eb4d1ab1eb20ed3f0ff6bbd25ce3693cddb4b2e55e3308",
-  "runtime": "/assets/garden-plants/pansy/stages-ccd84e3e30c2.webp",
+  "runtime": "assets/garden-plants/pansy/stages-ccd84e3e30c2.webp",
   "stages": [
     {
       "crop": [

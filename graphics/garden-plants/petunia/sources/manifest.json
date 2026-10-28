@@ -7,7 +7,7 @@
   "generatedSource": "petunia.png",
   "sourceSHA256": "cfd0a8348543cc837a91c4878515fb2992fe52fcb5724acb560357e632b18149",
   "runtimeSHA256": "f887216701bfd9e52af772b694eb50ca8641233e06955f2ec483485142297120",
-  "runtime": "/assets/garden-plants/petunia/stages-f887216701bf.webp",
+  "runtime": "assets/garden-plants/petunia/stages-f887216701bf.webp",
   "stages": [
     {
       "crop": [

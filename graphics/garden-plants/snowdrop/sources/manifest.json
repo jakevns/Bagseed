@@ -7,7 +7,7 @@
   "generatedSource": "snowdrop.png",
   "sourceSHA256": "5a9eeb78e98e1ce9fe8d6d3d29cd5b2ca04541913b6bbb7181f55fdfe8cf3d5b",
   "runtimeSHA256": "fe40b2e7e3669a73b38ac1063660c25d2b0532ca483c7141f831afba56968e3f",
-  "runtime": "/assets/garden-plants/snowdrop/stages-fe40b2e7e366.webp",
+  "runtime": "assets/garden-plants/snowdrop/stages-fe40b2e7e366.webp",
   "stages": [
     {
       "crop": [
