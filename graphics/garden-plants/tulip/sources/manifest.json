@@ -7,7 +7,7 @@
   "generatedSource": "tulip.png",
   "sourceSHA256": "5eb288adea58c51e039ad3683148db3acbf7d0ccd30f8ab789f56f518aaa0c35",
   "runtimeSHA256": "5077b0eab4597b686388b8c1256d674921f09a53a914203a7cacd97359830984",
-  "runtime": "/assets/garden-plants/tulip/stages-5077b0eab459.webp",
+  "runtime": "assets/garden-plants/tulip/stages-5077b0eab459.webp",
   "stages": [
     {
       "crop": [

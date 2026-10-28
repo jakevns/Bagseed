@@ -7,7 +7,7 @@
   "generatedSource": "chrysanthemum.png",
   "sourceSHA256": "98055f9b8f8ded874ef79c030ef048729b9df9738cf97bd219b758e2f26d974b",
   "runtimeSHA256": "51feba3ce6b4be1cf65faa056b5438119627b40bb5219350654c1dccfd35eae8",
-  "runtime": "/assets/garden-plants/chrysanthemum/stages-51feba3ce6b4.webp",
+  "runtime": "assets/garden-plants/chrysanthemum/stages-51feba3ce6b4.webp",
   "stages": [
     {
       "crop": [

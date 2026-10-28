@@ -7,7 +7,7 @@
   "generatedSource": "ranunculus.png",
   "sourceSHA256": "db3f60a1c5b38e8f4e3579165b25b365dfaac892986fd6c1ac5534b0a4aaa4ba",
   "runtimeSHA256": "7a9883c1abc17b9e8784c548fccb2771efaeeccfeb084fd17cf3670ab7b18b1a",
-  "runtime": "/assets/garden-plants/ranunculus/stages-7a9883c1abc1.webp",
+  "runtime": "assets/garden-plants/ranunculus/stages-7a9883c1abc1.webp",
   "stages": [
     {
       "crop": [

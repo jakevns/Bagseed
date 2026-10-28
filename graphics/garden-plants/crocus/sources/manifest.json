@@ -7,7 +7,7 @@
   "generatedSource": "crocus.png",
   "sourceSHA256": "8a6c3b77f71c208d3d772b788c66f1b4596b5642c2e52fa100b0f7ed2bb1dc8e",
   "runtimeSHA256": "a92e4119257a8705f71d1ed3ff9ebaab18ee98fa64219939f06e4dd00d71a72e",
-  "runtime": "/assets/garden-plants/crocus/stages-a92e4119257a.webp",
+  "runtime": "assets/garden-plants/crocus/stages-a92e4119257a.webp",
   "stages": [
     {
       "crop": [

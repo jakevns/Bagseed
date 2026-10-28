@@ -7,7 +7,7 @@
   "generatedSource": "hyacinth.png",
   "sourceSHA256": "033ec0207b6b8907345a5e2ab46b45749bb40ae78c62a0483d98312847bd30f9",
   "runtimeSHA256": "bea523e134e74d7707ea9f1145dec415fd36029f8d646567f31f31f0c815beba",
-  "runtime": "/assets/garden-plants/hyacinth/stages-bea523e134e7.webp",
+  "runtime": "assets/garden-plants/hyacinth/stages-bea523e134e7.webp",
   "stages": [
     {
       "crop": [

@@ -12,6 +12,9 @@ const assets = require('./external-assets.cjs');
 // Builders emit inline images; the published page links them instead.
 const published = text => assets.externalize(text).text;
 require('./compile-loading-screen.cjs').verify(html);
+// GitHub Pages serves the game from /Bagseed/, so root-absolute asset links 404 there and stall the loading screen.
+const rootAbsolute = html.match(/["'`(]\/assets\/[^"'`)]*/);
+if (rootAbsolute) throw new Error(`Published page links ${rootAbsolute[0].slice(1)} from the site root. Use a relative assets/ path.`);
 if (!html.includes(published(require('./compile-companion-pots.cjs')()))) throw new Error('Companion pot artwork differs from its approved source. Rebuild before publishing.');
 if (!html.includes(published(require('./compile-garden-plants.cjs')()))) throw new Error('Garden plant artwork differs from its approved source. Rebuild before publishing.');
 if (!html.includes(published(require('./compile-bedroom-window.cjs')()))) throw new Error('The live window renderer differs from its source. Rebuild before publishing.');

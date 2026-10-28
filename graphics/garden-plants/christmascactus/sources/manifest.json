@@ -7,7 +7,7 @@
   "generatedSource": "christmascactus.png",
   "sourceSHA256": "acb5d27bc93d5709e43158258043d47550363e5a6934731fcbb394ffe0dc7b25",
   "runtimeSHA256": "a4aa6082b9b7037be9ba2cdbe033f19148a6ca6af0a01e307345d48d4d8a212f",
-  "runtime": "/assets/garden-plants/christmascactus/stages-a4aa6082b9b7.webp",
+  "runtime": "assets/garden-plants/christmascactus/stages-a4aa6082b9b7.webp",
   "stages": [
     {
       "crop": [
