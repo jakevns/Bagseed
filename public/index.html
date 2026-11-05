@@ -25482,12 +25482,12 @@ const HarvestMove1151 = {
    const capacity=slotCount(loc);
    if(!Number.isInteger(capacity)||capacity<1||!Array.isArray(L.slots)||!L.on)return {ok:false,why:'This tent has no usable harvest slot.'};
    if(L.slots.some(Boolean)||allPlants().some(q=>q?.loc===loc))return {ok:false,why:'Occupied: this tent must be empty.'};
-   const pots=state.v115?.pots?.[loc]||[],garden=Object.values(state.v115?.gp?.list||{});
-   if(pots.some(Boolean)||garden.some(q=>q?.at?.kind==='pot'&&q.at.ref===loc))return {ok:false,why:'Contains companion plants. Choose a tent with no other crops.'};
+   // Companion pots sit beside the grow pots and keep growing; they never block a drying harvest.
    const slot=L.slots.findIndex((id,i)=>i<capacity&&!id);
    if(slot<0)return {ok:false,why:'This tent has no usable harvest slot.'};
    return {ok:true,slot};
  },
+ companions(loc){const G=state.v115?.gp?.list||{};return (state.v115?.pots?.[loc]||[]).filter(g=>g&&G[g]).length;},
  status(p){return p.dry.spoiled?'Spoiled · ready to compost':p.stage===S.finished?'Dry · ready to trim and jar':Math.round((p.dry.prog||0)*100)+'% dry';},
  button(p){return '<button type="button" class="btn sm" data-act="harvestMove1151" data-arg="'+esc(p.id)+'">Move harvest</button>';},
  active(){const r=runtime.harvestMove1151;return !!r&&runtime.overlay?.fn?.harvestMove1151===r.token;},
@@ -25504,7 +25504,7 @@ const HarvestMove1151 = {
    const tents=LOC_ORDER.filter(loc=>['closet','tent'].includes(LOC_DEF[loc]?.kind)&&loc!==p.loc);
    const cards=tents.map(loc=>{
      const check=this.target(p,loc),L=state.locations[loc];
-     return '<div class="card"><h3>'+esc(locName(loc))+'</h3><p class="small muted">'+esc(Access.where(loc))+' · '+slotCount(loc)+' harvest slots</p><p class="small '+(check.ok?'':'muted')+'">'+esc(check.ok?'Empty and available':check.why)+'</p>'+(check.ok?'<p class="small muted">The tent will be closed and its grow light switched off. Its existing climate and airflow will apply.</p>':'')+'<button type="button" class="btn '+(check.ok?'primary':'')+'" data-act="harvestMoveTo1151" data-arg="'+esc(request.token+':'+loc)+'" '+(check.ok?'':'disabled')+' aria-label="'+esc('Move '+p.name+' to '+locName(loc))+'">Move here</button></div>';
+     return '<div class="card"><h3>'+esc(locName(loc))+'</h3><p class="small muted">'+esc(Access.where(loc))+' · '+slotCount(loc)+' harvest slots</p><p class="small '+(check.ok?'':'muted')+'">'+esc(check.ok?'Empty and available'+(this.companions(loc)?' · '+this.companions(loc)+(this.companions(loc)===1?' companion plant stays':' companion plants stay')+' put':''):check.why)+'</p>'+(check.ok?'<p class="small muted">The tent will be closed and its grow light switched off. Its existing climate and airflow will apply.</p>':'')+'<button type="button" class="btn '+(check.ok?'primary':'')+'" data-act="harvestMoveTo1151" data-arg="'+esc(request.token+':'+loc)+'" '+(check.ok?'':'disabled')+' aria-label="'+esc('Move '+p.name+' to '+locName(loc))+'">Move here</button></div>';
    }).join('');
    return '<div class="harvest-move1151"><div class="card"><h3>'+esc(p.name)+'</h3><div class="small muted">'+esc(locName(p.loc))+' · '+esc(this.status(p))+'</div><p class="small">Moves the whole harvest, keeping its identity, genetics, drying history and quality. Growing-location yield stays with the harvest.</p></div><div class="grid">'+(cards||'<p class="muted">No other indoor tents are available.</p>')+'</div><div class="actions"><button type="button" class="btn ghost" data-act="harvestCancel1151">Cancel</button></div></div>';
  },
@@ -25620,8 +25620,8 @@ const TentSwap1151 = {
    const messages=[];
    for(const[loc,leaving,incoming]of [[p.loc,p,q],[q.loc,q,p]]){
      const L=state.locations[loc],plants=plantsIn(loc).map(x=>x.id===leaving.id?incoming:x),name=locName(loc);
-     const drying=plants.some(x=>x.stage===S.drying),growing=plants.some(x=>x.stage>=S.seedling&&x.stage<S.drying),companions=(state.v115?.pots?.[loc]||[]).some(Boolean)||Object.values(state.v115?.gp?.list||{}).some(x=>x?.at?.kind==='pot'&&x.at.ref===loc);
-     if(drying&&(growing||companions))messages.push(name+' will contain drying material alongside growing crops. Their lighting needs differ.');
+     const drying=plants.some(x=>x.stage===S.drying),growing=plants.some(x=>x.stage>=S.seedling&&x.stage<S.drying);
+     if(drying&&growing)messages.push(name+' will contain drying material alongside growing crops. Their lighting needs differ.');
      if(drying&&(L.on.light!==false||L.door!=='closed'))messages.push(name+' has its grow light enabled or is open. Drying material needs darkness.');
      if(growing&&(!L.equip.light||L.on.light===false))messages.push(name+' needs its grow light enabled for the arriving growing plant.');
      const male=plants.some(x=>(x.sexKnown&&x.sex==='M'||x.herm?.known)&&x.stage>=S.midflower&&x.stage<=S.ready),female=plants.some(x=>x.sex==='F'&&x.stage>=S.earlyflower&&x.stage<=S.lateflower);
@@ -26938,7 +26938,8 @@ RoomArt.drawSlots = (prev => function (c, loc, t) {
    A garden plant in a grow pot or companion pot can move to any empty
    tent pot, or trade places with another garden plant or with a
    cannabis plant (growing or drying) in a grow pot. Drying harvests
-   need a dark tent, so they never share one with garden plants.
+   need the tent's grow pots to themselves, so they never share a tent
+   with garden plants in grow pots. Small companion pots may stay.
    ===================================================================== */
 const PotShuffle = {
   valid(at) {
@@ -26965,17 +26966,18 @@ const PotShuffle = {
     (GP.pots()[loc] || []).forEach((_, i) => out.push({ kind: 'pot', loc, i }));
     return out;
   },
-  gardens(loc) { return GrowPotGarden.ok(loc) ? [...(GP.pots()[loc] || []), ...GrowPotGarden.arr(loc)].filter(g => g && GP.plant(g)).length : 0; },
+  /* garden plants in full-size grow pots; companion pots never clash with a drying harvest */
+  gardens(loc) { return GrowPotGarden.ok(loc) ? GrowPotGarden.arr(loc).filter(g => g && GP.plant(g)).length : 0; },
   drying(loc) { return plantsIn(loc).some(p => p.stage >= S.drying); },
-  clash(loc) { return `${locName(loc)} would hold a drying harvest next to garden plants. Drying needs a dark, closed tent; garden plants need the grow light.`; },
-  /* after trading a ⇄ b, no tent may hold drying harvest and garden plants together */
+  clash(loc) { return `${locName(loc)} would hold a drying harvest next to garden plants in grow pots. Drying needs a dark, closed tent; grow-pot plants need the grow light. Companion pots are fine.`; },
+  /* after trading a ⇄ b, no tent may hold a drying harvest and grow-pot garden plants together */
   mix(a, b, x, y) {
     for (const loc of new Set([a.loc, b.loc])) {
       let cann = plantsIn(loc), garden = this.gardens(loc);
       for (const [h, from, to] of [[x, a, b], [y, b, a]]) {
         if (!h) continue;
-        if (from.loc === loc) { if (h.type === 'cann') cann = cann.filter(p => p !== h.p); else garden--; }
-        if (to.loc === loc) { if (h.type === 'cann') cann = cann.concat(h.p); else garden++; }
+        if (from.loc === loc) { if (h.type === 'cann') cann = cann.filter(p => p !== h.p); else if (from.kind === 'slot') garden--; }
+        if (to.loc === loc) { if (h.type === 'cann') cann = cann.concat(h.p); else if (to.kind === 'slot') garden++; }
       }
       if (garden > 0 && cann.some(p => p.stage >= S.drying)) return this.clash(loc);
     }
@@ -27052,13 +27054,13 @@ const PotShuffle = {
   }
 };
 Object.assign(ACT, { potShuffle(gid) { PotShuffle.open(gid); }, potShuffleGo(arg) { PotShuffle.go(arg); } });
-/* garden plants can't be sown next to a drying harvest */
+/* garden plants can't be sown in a grow pot next to a drying harvest (companion pots are fine) */
 GP.canPlant = (prev => function (sp, at) {
   const r = prev.call(this, sp, at);
-  if (r.ok && at && !at.moving && (at.kind === 'pot' || at.kind === 'slot') && LOC_DEF[at.ref] && PotShuffle.drying(at.ref)) return { ok: false, why: 'A harvest is drying in this tent. Garden plants need the grow light; plant here once it is jarred or moved.' };
+  if (r.ok && at && !at.moving && at.kind === 'slot' && LOC_DEF[at.ref] && PotShuffle.drying(at.ref)) return { ok: false, why: 'A harvest is drying in this tent. Grow-pot plants need the grow light; plant here once it is jarred or moved, or use a companion pot.' };
   return r;
 })(GP.canPlant);
-/* swapping cannabis between tents can't put a drying harvest beside garden plants */
+/* swapping cannabis between tents can't put a drying harvest beside grow-pot garden plants */
 TentSwap1151.pair = (prev => function (p, q) {
   const r = prev.call(this, p, q); if (!r.ok) return r;
   for (const [loc, incoming] of [[p.loc, q], [q.loc, p]]) if (incoming.stage >= S.drying && PotShuffle.gardens(loc)) return { ok: false, why: PotShuffle.clash(loc) + ' Move the garden plants first.' };
@@ -27076,10 +27078,10 @@ GSpot.html = (prev => function (kind, ref) {
   const h = prev.call(this, kind, ref); if (kind !== 'pot' && kind !== 'slot') return h;
   return h.replace(/(<button class="btn sm ghost" data-act="gPull" data-arg="(?:pot|slot):[^:"]+:([^"]+)"( disabled)?[^>]*>[^<]*<\/button>)/g, (m, btn, gid, dis) => `${btn}<button class="btn sm" data-act="potShuffle" data-arg="${gid}"${dis || ''}>Move / trade</button>`);
 })(GSpot.html);
-/* companion plants and garden plants block a harvest move; say how to clear them */
+/* garden plants in grow pots block a harvest move; say how to clear them */
 HarvestMove1151.target = (prev => function (p, loc) {
   const r = prev.call(this, p, loc);
-  return !r.ok && /companion plants|garden plants/.test(r.why) ? { ok: false, why: r.why.replace('Choose a tent with no other crops.', 'Use Move / trade on them to clear the tent, or choose one with no other crops.') } : r;
+  return !r.ok && /garden plants/.test(r.why) ? { ok: false, why: r.why.replace('Choose a tent with no other crops.', 'Use Move / trade on them to clear the tent, or choose one with no other crops.') } : r;
 })(HarvestMove1151.target);
 </script>
 <script>
